@@ -40,7 +40,11 @@ class StaticPHPDriver implements MappingDriver
      *
      * @var array
      */
+<<<<<<< HEAD
     private $paths = [];
+=======
+    private $paths = array();
+>>>>>>> web and vendor directory from composer install
 
     /**
      * Map of all class names.
@@ -93,8 +97,13 @@ class StaticPHPDriver implements MappingDriver
             throw MappingException::pathRequired();
         }
 
+<<<<<<< HEAD
         $classes = [];
         $includedFiles = [];
+=======
+        $classes = array();
+        $includedFiles = array();
+>>>>>>> web and vendor directory from composer install
 
         foreach ($this->paths as $path) {
             if (!is_dir($path)) {

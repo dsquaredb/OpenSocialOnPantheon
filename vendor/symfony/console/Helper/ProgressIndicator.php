@@ -28,6 +28,10 @@ class ProgressIndicator
     private $indicatorCurrent;
     private $indicatorChangeInterval;
     private $indicatorUpdateTime;
+<<<<<<< HEAD
+=======
+    private $lastMessagesLength;
+>>>>>>> web and vendor directory from composer install
     private $started = false;
 
     private static $formatters;
@@ -76,6 +80,45 @@ class ProgressIndicator
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Gets the current indicator message.
+     *
+     * @return string|null
+     *
+     * @internal for PHP 5.3 compatibility
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
+
+    /**
+     * Gets the progress bar start time.
+     *
+     * @return int The progress bar start time
+     *
+     * @internal for PHP 5.3 compatibility
+     */
+    public function getStartTime()
+    {
+        return $this->startTime;
+    }
+
+    /**
+     * Gets the current animated indicator character.
+     *
+     * @return string
+     *
+     * @internal for PHP 5.3 compatibility
+     */
+    public function getCurrentValue()
+    {
+        return $this->indicatorValues[$this->indicatorCurrent % count($this->indicatorValues)];
+    }
+
+    /**
+>>>>>>> web and vendor directory from composer install
      * Starts the indicator output.
      *
      * @param $message
@@ -88,6 +131,10 @@ class ProgressIndicator
 
         $this->message = $message;
         $this->started = true;
+<<<<<<< HEAD
+=======
+        $this->lastMessagesLength = 0;
+>>>>>>> web and vendor directory from composer install
         $this->startTime = time();
         $this->indicatorUpdateTime = $this->getCurrentTimeInMilliseconds() + $this->indicatorChangeInterval;
         $this->indicatorCurrent = 0;
@@ -224,12 +271,35 @@ class ProgressIndicator
      */
     private function overwrite($message)
     {
+<<<<<<< HEAD
         if ($this->output->isDecorated()) {
             $this->output->write("\x0D\x1B[2K");
+=======
+        // append whitespace to match the line's length
+        if (null !== $this->lastMessagesLength) {
+            if ($this->lastMessagesLength > Helper::strlenWithoutDecoration($this->output->getFormatter(), $message)) {
+                $message = str_pad($message, $this->lastMessagesLength, "\x20", STR_PAD_RIGHT);
+            }
+        }
+
+        if ($this->output->isDecorated()) {
+            $this->output->write("\x0D");
+>>>>>>> web and vendor directory from composer install
             $this->output->write($message);
         } else {
             $this->output->writeln($message);
         }
+<<<<<<< HEAD
+=======
+
+        $this->lastMessagesLength = 0;
+
+        $len = Helper::strlenWithoutDecoration($this->output->getFormatter(), $message);
+
+        if ($len > $this->lastMessagesLength) {
+            $this->lastMessagesLength = $len;
+        }
+>>>>>>> web and vendor directory from composer install
     }
 
     private function getCurrentTimeInMilliseconds()
@@ -241,6 +311,7 @@ class ProgressIndicator
     {
         return array(
             'indicator' => function (ProgressIndicator $indicator) {
+<<<<<<< HEAD
                 return $indicator->indicatorValues[$indicator->indicatorCurrent % count($indicator->indicatorValues)];
             },
             'message' => function (ProgressIndicator $indicator) {
@@ -248,6 +319,15 @@ class ProgressIndicator
             },
             'elapsed' => function (ProgressIndicator $indicator) {
                 return Helper::formatTime(time() - $indicator->startTime);
+=======
+                return $indicator->getCurrentValue();
+            },
+            'message' => function (ProgressIndicator $indicator) {
+                return $indicator->getMessage();
+            },
+            'elapsed' => function (ProgressIndicator $indicator) {
+                return Helper::formatTime(time() - $indicator->getStartTime());
+>>>>>>> web and vendor directory from composer install
             },
             'memory' => function () {
                 return Helper::formatMemory(memory_get_usage(true));

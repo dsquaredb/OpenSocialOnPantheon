@@ -9,9 +9,12 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 /**
  * @final
  */
+=======
+>>>>>>> web and vendor directory from composer install
 class Twig_NodeVisitor_SafeAnalysis extends Twig_BaseNodeVisitor
 {
     protected $data = array();
@@ -60,11 +63,23 @@ class Twig_NodeVisitor_SafeAnalysis extends Twig_BaseNodeVisitor
         );
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * {@inheritdoc}
+     */
+>>>>>>> web and vendor directory from composer install
     protected function doEnterNode(Twig_Node $node, Twig_Environment $env)
     {
         return $node;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * {@inheritdoc}
+     */
+>>>>>>> web and vendor directory from composer install
     protected function doLeaveNode(Twig_Node $node, Twig_Environment $env)
     {
         if ($node instanceof Twig_Node_Expression_Constant) {
@@ -141,10 +156,19 @@ class Twig_NodeVisitor_SafeAnalysis extends Twig_BaseNodeVisitor
         return array_intersect($a, $b);
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * {@inheritdoc}
+     */
+>>>>>>> web and vendor directory from composer install
     public function getPriority()
     {
         return 0;
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_NodeVisitor_SafeAnalysis', 'Twig\NodeVisitor\SafeAnalysisNodeVisitor', false);
+=======
+>>>>>>> web and vendor directory from composer install

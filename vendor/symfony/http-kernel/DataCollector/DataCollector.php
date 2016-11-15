@@ -12,11 +12,14 @@
 namespace Symfony\Component\HttpKernel\DataCollector;
 
 use Symfony\Component\HttpKernel\DataCollector\Util\ValueExporter;
+<<<<<<< HEAD
 use Symfony\Component\VarDumper\Caster\CutStub;
 use Symfony\Component\VarDumper\Cloner\ClonerInterface;
 use Symfony\Component\VarDumper\Cloner\Data;
 use Symfony\Component\VarDumper\Cloner\Stub;
 use Symfony\Component\VarDumper\Cloner\VarCloner;
+=======
+>>>>>>> web and vendor directory from composer install
 
 /**
  * DataCollector.
@@ -35,11 +38,14 @@ abstract class DataCollector implements DataCollectorInterface, \Serializable
      */
     private $valueExporter;
 
+<<<<<<< HEAD
     /**
      * @var ClonerInterface
      */
     private $cloner;
 
+=======
+>>>>>>> web and vendor directory from composer install
     public function serialize()
     {
         return serialize($this->data);
@@ -51,6 +57,7 @@ abstract class DataCollector implements DataCollectorInterface, \Serializable
     }
 
     /**
+<<<<<<< HEAD
      * Converts the variable into a serializable Data instance.
      *
      * This array can be displayed in the template using
@@ -87,11 +94,14 @@ abstract class DataCollector implements DataCollectorInterface, \Serializable
     }
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * Converts a PHP variable to a string.
      *
      * @param mixed $var A PHP variable
      *
      * @return string The string representation of the variable
+<<<<<<< HEAD
      *
      * @deprecated since version 3.2, to be removed in 4.0. Use cloneVar() instead.
      */
@@ -99,12 +109,18 @@ abstract class DataCollector implements DataCollectorInterface, \Serializable
     {
         @trigger_error(sprintf('The %s() method is deprecated since Symfony 3.2 and will be removed in 4.0. Use cloneVar() instead.', __METHOD__), E_USER_DEPRECATED);
 
+=======
+     */
+    protected function varToString($var)
+    {
+>>>>>>> web and vendor directory from composer install
         if (null === $this->valueExporter) {
             $this->valueExporter = new ValueExporter();
         }
 
         return $this->valueExporter->exportValue($var);
     }
+<<<<<<< HEAD
 
     /**
      * @return callable[] The casters to add to the cloner
@@ -125,4 +141,6 @@ abstract class DataCollector implements DataCollectorInterface, \Serializable
             },
         );
     }
+=======
+>>>>>>> web and vendor directory from composer install
 }

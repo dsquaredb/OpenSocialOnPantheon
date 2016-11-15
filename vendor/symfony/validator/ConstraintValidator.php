@@ -11,7 +11,13 @@
 
 namespace Symfony\Component\Validator;
 
+<<<<<<< HEAD
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
+=======
+use Symfony\Component\Validator\Context\ExecutionContextInterface as ExecutionContextInterface2Dot5;
+use Symfony\Component\Validator\Violation\ConstraintViolationBuilderInterface;
+use Symfony\Component\Validator\Violation\LegacyConstraintViolationBuilder;
+>>>>>>> web and vendor directory from composer install
 
 /**
  * Base class for constraint validators.
@@ -23,11 +29,21 @@ abstract class ConstraintValidator implements ConstraintValidatorInterface
     /**
      * Whether to format {@link \DateTime} objects as RFC-3339 dates
      * ("Y-m-d H:i:s").
+<<<<<<< HEAD
+=======
+     *
+     * @var int
+>>>>>>> web and vendor directory from composer install
      */
     const PRETTY_DATE = 1;
 
     /**
      * Whether to cast objects with a "__toString()" method to strings.
+<<<<<<< HEAD
+=======
+     *
+     * @var int
+>>>>>>> web and vendor directory from composer install
      */
     const OBJECT_TO_STRING = 2;
 
@@ -45,6 +61,54 @@ abstract class ConstraintValidator implements ConstraintValidatorInterface
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Wrapper for {@link ExecutionContextInterface::buildViolation} that
+     * supports the 2.4 context API.
+     *
+     * @param string $message    The violation message
+     * @param array  $parameters The message parameters
+     *
+     * @return ConstraintViolationBuilderInterface The violation builder
+     *
+     * @deprecated since version 2.5, to be removed in 3.0.
+     */
+    protected function buildViolation($message, array $parameters = array())
+    {
+        @trigger_error('The '.__METHOD__.' is deprecated since version 2.5 and will be removed in 3.0.', E_USER_DEPRECATED);
+
+        if ($this->context instanceof ExecutionContextInterface2Dot5) {
+            return $this->context->buildViolation($message, $parameters);
+        }
+
+        return new LegacyConstraintViolationBuilder($this->context, $message, $parameters);
+    }
+
+    /**
+     * Wrapper for {@link ExecutionContextInterface::buildViolation} that
+     * supports the 2.4 context API.
+     *
+     * @param ExecutionContextInterface $context    The context to use
+     * @param string                    $message    The violation message
+     * @param array                     $parameters The message parameters
+     *
+     * @return ConstraintViolationBuilderInterface The violation builder
+     *
+     * @deprecated since version 2.5, to be removed in 3.0.
+     */
+    protected function buildViolationInContext(ExecutionContextInterface $context, $message, array $parameters = array())
+    {
+        @trigger_error('The '.__METHOD__.' is deprecated since version 2.5 and will be removed in 3.0.', E_USER_DEPRECATED);
+
+        if ($context instanceof ExecutionContextInterface2Dot5) {
+            return $context->buildViolation($message, $parameters);
+        }
+
+        return new LegacyConstraintViolationBuilder($context, $message, $parameters);
+    }
+
+    /**
+>>>>>>> web and vendor directory from composer install
      * Returns a string representation of the type of the value.
      *
      * This method should be used if you pass the type of a value as
@@ -68,7 +132,11 @@ abstract class ConstraintValidator implements ConstraintValidatorInterface
      * (i.e. "false" for false, "1" for 1 etc.). Strings are always wrapped
      * in double quotes ("). Objects, arrays and resources are formatted as
      * "object", "array" and "resource". If the $format bitmask contains
+<<<<<<< HEAD
      * the PRETTY_DATE bit, then {@link \DateTime} objects will be formatted
+=======
+     * the PRETTY_DATE bit, then {@link \DateTime} objects will be formatted 
+>>>>>>> web and vendor directory from composer install
      * as RFC-3339 dates ("Y-m-d H:i:s").
      *
      * Be careful when passing message parameters to a constraint violation
@@ -85,7 +153,11 @@ abstract class ConstraintValidator implements ConstraintValidatorInterface
      */
     protected function formatValue($value, $format = 0)
     {
+<<<<<<< HEAD
         $isDateTime = $value instanceof \DateTimeInterface;
+=======
+        $isDateTime = $value instanceof \DateTime || $value instanceof \DateTimeInterface;
+>>>>>>> web and vendor directory from composer install
 
         if (($format & self::PRETTY_DATE) && $isDateTime) {
             if (class_exists('IntlDateFormatter')) {

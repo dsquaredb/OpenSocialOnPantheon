@@ -3,7 +3,11 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
+=======
+ * (c) 2011 Fabien Potencier
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,8 +16,11 @@
 /**
  * Loads templates from other loaders.
  *
+<<<<<<< HEAD
  * @final
  *
+=======
+>>>>>>> web and vendor directory from composer install
  * @author Fabien Potencier <fabien@symfony.com>
  */
 class Twig_Loader_Chain implements Twig_LoaderInterface, Twig_ExistsLoaderInterface, Twig_SourceContextLoaderInterface
@@ -22,7 +29,13 @@ class Twig_Loader_Chain implements Twig_LoaderInterface, Twig_ExistsLoaderInterf
     protected $loaders = array();
 
     /**
+<<<<<<< HEAD
      * @param Twig_LoaderInterface[] $loaders
+=======
+     * Constructor.
+     *
+     * @param Twig_LoaderInterface[] $loaders An array of loader instances
+>>>>>>> web and vendor directory from composer install
      */
     public function __construct(array $loaders = array())
     {
@@ -31,12 +44,26 @@ class Twig_Loader_Chain implements Twig_LoaderInterface, Twig_ExistsLoaderInterf
         }
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Adds a loader instance.
+     *
+     * @param Twig_LoaderInterface $loader A Loader instance
+     */
+>>>>>>> web and vendor directory from composer install
     public function addLoader(Twig_LoaderInterface $loader)
     {
         $this->loaders[] = $loader;
         $this->hasSourceCache = array();
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * {@inheritdoc}
+     */
+>>>>>>> web and vendor directory from composer install
     public function getSource($name)
     {
         @trigger_error(sprintf('Calling "getSource" on "%s" is deprecated since 1.27. Use getSourceContext() instead.', get_class($this)), E_USER_DEPRECATED);
@@ -57,6 +84,12 @@ class Twig_Loader_Chain implements Twig_LoaderInterface, Twig_ExistsLoaderInterf
         throw new Twig_Error_Loader(sprintf('Template "%s" is not defined%s.', $name, $exceptions ? ' ('.implode(', ', $exceptions).')' : ''));
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * {@inheritdoc}
+     */
+>>>>>>> web and vendor directory from composer install
     public function getSourceContext($name)
     {
         $exceptions = array();
@@ -79,6 +112,12 @@ class Twig_Loader_Chain implements Twig_LoaderInterface, Twig_ExistsLoaderInterf
         throw new Twig_Error_Loader(sprintf('Template "%s" is not defined%s.', $name, $exceptions ? ' ('.implode(', ', $exceptions).')' : ''));
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * {@inheritdoc}
+     */
+>>>>>>> web and vendor directory from composer install
     public function exists($name)
     {
         $name = (string) $name;
@@ -111,6 +150,12 @@ class Twig_Loader_Chain implements Twig_LoaderInterface, Twig_ExistsLoaderInterf
         return $this->hasSourceCache[$name] = false;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * {@inheritdoc}
+     */
+>>>>>>> web and vendor directory from composer install
     public function getCacheKey($name)
     {
         $exceptions = array();
@@ -129,6 +174,12 @@ class Twig_Loader_Chain implements Twig_LoaderInterface, Twig_ExistsLoaderInterf
         throw new Twig_Error_Loader(sprintf('Template "%s" is not defined%s.', $name, $exceptions ? ' ('.implode(', ', $exceptions).')' : ''));
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * {@inheritdoc}
+     */
+>>>>>>> web and vendor directory from composer install
     public function isFresh($name, $time)
     {
         $exceptions = array();
@@ -147,5 +198,8 @@ class Twig_Loader_Chain implements Twig_LoaderInterface, Twig_ExistsLoaderInterf
         throw new Twig_Error_Loader(sprintf('Template "%s" is not defined%s.', $name, $exceptions ? ' ('.implode(', ', $exceptions).')' : ''));
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_Loader_Chain', 'Twig\Loader\ChainLoader', false);
+=======
+>>>>>>> web and vendor directory from composer install

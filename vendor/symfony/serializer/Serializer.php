@@ -15,6 +15,7 @@ use Symfony\Component\Serializer\Encoder\ChainDecoder;
 use Symfony\Component\Serializer\Encoder\ChainEncoder;
 use Symfony\Component\Serializer\Encoder\EncoderInterface;
 use Symfony\Component\Serializer\Encoder\DecoderInterface;
+<<<<<<< HEAD
 use Symfony\Component\Serializer\Exception\NotEncodableValueException;
 use Symfony\Component\Serializer\Exception\NotNormalizableValueException;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
@@ -22,6 +23,12 @@ use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Exception\LogicException;
+=======
+use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
+use Symfony\Component\Serializer\Exception\LogicException;
+use Symfony\Component\Serializer\Exception\UnexpectedValueException;
+>>>>>>> web and vendor directory from composer install
 
 /**
  * Serializer serializes and deserializes data.
@@ -57,15 +64,21 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
 
     /**
      * @var array
+<<<<<<< HEAD
      *
      * @deprecated since 3.1 will be removed in 4.0
+=======
+>>>>>>> web and vendor directory from composer install
      */
     protected $normalizerCache = array();
 
     /**
      * @var array
+<<<<<<< HEAD
      *
      * @deprecated since 3.1 will be removed in 4.0
+=======
+>>>>>>> web and vendor directory from composer install
      */
     protected $denormalizerCache = array();
 
@@ -75,6 +88,7 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
             if ($normalizer instanceof SerializerAwareInterface) {
                 $normalizer->setSerializer($this);
             }
+<<<<<<< HEAD
 
             if ($normalizer instanceof DenormalizerAwareInterface) {
                 $normalizer->setDenormalizer($this);
@@ -83,6 +97,8 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
             if ($normalizer instanceof NormalizerAwareInterface) {
                 $normalizer->setNormalizer($this);
             }
+=======
+>>>>>>> web and vendor directory from composer install
         }
         $this->normalizers = $normalizers;
 
@@ -108,11 +124,19 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
      */
     final public function serialize($data, $format, array $context = array())
     {
+<<<<<<< HEAD
         if (!$this->supportsEncoding($format, $context)) {
             throw new NotEncodableValueException(sprintf('Serialization for the format %s is not supported', $format));
         }
 
         if ($this->encoder->needsNormalization($format, $context)) {
+=======
+        if (!$this->supportsEncoding($format)) {
+            throw new UnexpectedValueException(sprintf('Serialization for the format %s is not supported', $format));
+        }
+
+        if ($this->encoder->needsNormalization($format)) {
+>>>>>>> web and vendor directory from composer install
             $data = $this->normalize($data, $format, $context);
         }
 
@@ -124,8 +148,13 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
      */
     final public function deserialize($data, $type, $format, array $context = array())
     {
+<<<<<<< HEAD
         if (!$this->supportsDecoding($format, $context)) {
             throw new NotEncodableValueException(sprintf('Deserialization for the format %s is not supported', $format));
+=======
+        if (!$this->supportsDecoding($format)) {
+            throw new UnexpectedValueException(sprintf('Deserialization for the format %s is not supported', $format));
+>>>>>>> web and vendor directory from composer install
         }
 
         $data = $this->decode($data, $format, $context);
@@ -139,7 +168,11 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
     public function normalize($data, $format = null, array $context = array())
     {
         // If a normalizer supports the given data, use it
+<<<<<<< HEAD
         if ($normalizer = $this->getNormalizer($data, $format, $context)) {
+=======
+        if ($normalizer = $this->getNormalizer($data, $format)) {
+>>>>>>> web and vendor directory from composer install
             return $normalizer->normalize($data, $format, $context);
         }
 
@@ -147,7 +180,11 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
             return $data;
         }
 
+<<<<<<< HEAD
         if (\is_array($data) || $data instanceof \Traversable) {
+=======
+        if (is_array($data) || $data instanceof \Traversable) {
+>>>>>>> web and vendor directory from composer install
             $normalized = array();
             foreach ($data as $key => $val) {
                 $normalized[$key] = $this->normalize($val, $format, $context);
@@ -156,19 +193,31 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
             return $normalized;
         }
 
+<<<<<<< HEAD
         if (\is_object($data)) {
+=======
+        if (is_object($data)) {
+>>>>>>> web and vendor directory from composer install
             if (!$this->normalizers) {
                 throw new LogicException('You must register at least one normalizer to be able to normalize objects.');
             }
 
+<<<<<<< HEAD
             throw new NotNormalizableValueException(sprintf('Could not normalize object of type %s, no supporting normalizer found.', \get_class($data)));
         }
 
         throw new NotNormalizableValueException(sprintf('An unexpected value could not be normalized: %s', var_export($data, true)));
+=======
+            throw new UnexpectedValueException(sprintf('Could not normalize object of type %s, no supporting normalizer found.', get_class($data)));
+        }
+
+        throw new UnexpectedValueException(sprintf('An unexpected value could not be normalized: %s', var_export($data, true)));
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
      * {@inheritdoc}
+<<<<<<< HEAD
      *
      * @throws NotNormalizableValueException
      */
@@ -183,11 +232,18 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
         }
 
         throw new NotNormalizableValueException(sprintf('Could not denormalize object of type %s, no supporting normalizer found.', $type));
+=======
+     */
+    public function denormalize($data, $type, $format = null, array $context = array())
+    {
+        return $this->denormalizeObject($data, $type, $format, $context);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function supportsNormalization($data, $format = null/*, array $context = array()*/)
     {
         if (\func_num_args() > 2) {
@@ -204,11 +260,17 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
         }
 
         return null !== $this->getNormalizer($data, $format, $context);
+=======
+    public function supportsNormalization($data, $format = null)
+    {
+        return null !== $this->getNormalizer($data, $format);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function supportsDenormalization($data, $type, $format = null/*, array $context = array()*/)
     {
         if (\func_num_args() > 3) {
@@ -225,11 +287,17 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
         }
 
         return null !== $this->getDenormalizer($data, $type, $format, $context);
+=======
+    public function supportsDenormalization($data, $type, $format = null)
+    {
+        return null !== $this->getDenormalizer($data, $type, $format);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Returns a matching normalizer.
      *
+<<<<<<< HEAD
      * @param mixed  $data    Data to get the serializer for
      * @param string $format  Format name, present to give the option to normalizers to act differently based on formats
      * @param array  $context Options available to the normalizer
@@ -240,6 +308,17 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
     {
         foreach ($this->normalizers as $normalizer) {
             if ($normalizer instanceof NormalizerInterface && $normalizer->supportsNormalization($data, $format, $context)) {
+=======
+     * @param mixed  $data   Data to get the serializer for
+     * @param string $format format name, present to give the option to normalizers to act differently based on formats
+     *
+     * @return NormalizerInterface|null
+     */
+    private function getNormalizer($data, $format)
+    {
+        foreach ($this->normalizers as $normalizer) {
+            if ($normalizer instanceof NormalizerInterface && $normalizer->supportsNormalization($data, $format)) {
+>>>>>>> web and vendor directory from composer install
                 return $normalizer;
             }
         }
@@ -248,6 +327,7 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
     /**
      * Returns a matching denormalizer.
      *
+<<<<<<< HEAD
      * @param mixed  $data    Data to restore
      * @param string $class   The expected class to instantiate
      * @param string $format  Format name, present to give the option to normalizers to act differently based on formats
@@ -259,6 +339,18 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
     {
         foreach ($this->normalizers as $normalizer) {
             if ($normalizer instanceof DenormalizerInterface && $normalizer->supportsDenormalization($data, $class, $format, $context)) {
+=======
+     * @param mixed  $data   data to restore
+     * @param string $class  the expected class to instantiate
+     * @param string $format format name, present to give the option to normalizers to act differently based on formats
+     *
+     * @return DenormalizerInterface|null
+     */
+    private function getDenormalizer($data, $class, $format)
+    {
+        foreach ($this->normalizers as $normalizer) {
+            if ($normalizer instanceof DenormalizerInterface && $normalizer->supportsDenormalization($data, $class, $format)) {
+>>>>>>> web and vendor directory from composer install
                 return $normalizer;
             }
         }
@@ -281,6 +373,7 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
     }
 
     /**
+<<<<<<< HEAD
      * {@inheritdoc}
      */
     public function supportsEncoding($format/*, array $context = array()*/)
@@ -299,11 +392,37 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
         }
 
         return $this->encoder->supportsEncoding($format, $context);
+=======
+     * Denormalizes data back into an object of the given class.
+     *
+     * @param mixed  $data    data to restore
+     * @param string $class   the expected class to instantiate
+     * @param string $format  format name, present to give the option to normalizers to act differently based on formats
+     * @param array  $context The context data for this particular denormalization
+     *
+     * @return object
+     *
+     * @throws LogicException
+     * @throws UnexpectedValueException
+     */
+    private function denormalizeObject($data, $class, $format, array $context = array())
+    {
+        if (!$this->normalizers) {
+            throw new LogicException('You must register at least one normalizer to be able to denormalize objects.');
+        }
+
+        if ($normalizer = $this->getDenormalizer($data, $class, $format)) {
+            return $normalizer->denormalize($data, $class, $format, $context);
+        }
+
+        throw new UnexpectedValueException(sprintf('Could not denormalize object of type %s, no supporting normalizer found.', $class));
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function supportsDecoding($format/*, array $context = array()*/)
     {
         if (\func_num_args() > 1) {
@@ -320,5 +439,18 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
         }
 
         return $this->decoder->supportsDecoding($format, $context);
+=======
+    public function supportsEncoding($format)
+    {
+        return $this->encoder->supportsEncoding($format);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function supportsDecoding($format)
+    {
+        return $this->decoder->supportsDecoding($format);
+>>>>>>> web and vendor directory from composer install
     }
 }

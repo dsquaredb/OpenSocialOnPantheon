@@ -35,6 +35,11 @@ class FragmentListener implements EventSubscriberInterface
     private $fragmentPath;
 
     /**
+<<<<<<< HEAD
+=======
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param UriSigner $signer       A UriSigner instance
      * @param string    $fragmentPath The path that triggers this listener
      */
@@ -47,7 +52,13 @@ class FragmentListener implements EventSubscriberInterface
     /**
      * Fixes request attributes when the path is '/_fragment'.
      *
+<<<<<<< HEAD
      * @throws AccessDeniedHttpException if the request does not come from a trusted IP
+=======
+     * @param GetResponseEvent $event A GetResponseEvent instance
+     *
+     * @throws AccessDeniedHttpException if the request does not come from a trusted IP.
+>>>>>>> web and vendor directory from composer install
      */
     public function onKernelRequest(GetResponseEvent $event)
     {
@@ -77,7 +88,11 @@ class FragmentListener implements EventSubscriberInterface
     protected function validateRequest(Request $request)
     {
         // is the Request safe?
+<<<<<<< HEAD
         if (!$request->isMethodSafe(false)) {
+=======
+        if (!$request->isMethodSafe()) {
+>>>>>>> web and vendor directory from composer install
             throw new AccessDeniedHttpException();
         }
 
@@ -90,6 +105,21 @@ class FragmentListener implements EventSubscriberInterface
         throw new AccessDeniedHttpException();
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @deprecated since version 2.3.19, to be removed in 3.0.
+     *
+     * @return string[]
+     */
+    protected function getLocalIpAddresses()
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 2.3.19 and will be removed in 3.0.', E_USER_DEPRECATED);
+
+        return array('127.0.0.1', 'fe80::1', '::1');
+    }
+
+>>>>>>> web and vendor directory from composer install
     public static function getSubscribedEvents()
     {
         return array(

@@ -3,7 +3,11 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
+=======
+ * (c) 2009 Fabien Potencier
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -39,9 +43,12 @@ class Twig_Error extends Exception
     protected $rawMessage;
     protected $previous;
 
+<<<<<<< HEAD
     private $sourcePath;
     private $sourceCode;
 
+=======
+>>>>>>> web and vendor directory from composer install
     /**
      * Constructor.
      *
@@ -54,6 +61,7 @@ class Twig_Error extends Exception
      *
      * By default, automatic guessing is enabled.
      *
+<<<<<<< HEAD
      * @param string                  $message  The error message
      * @param int                     $lineno   The template line where the error occurred
      * @param Twig_Source|string|null $source   The source context where the error occurred
@@ -71,6 +79,15 @@ class Twig_Error extends Exception
             $this->sourceCode = $source->getCode();
             $this->sourcePath = $source->getPath();
         }
+=======
+     * @param string    $message  The error message
+     * @param int       $lineno   The template line where the error occurred
+     * @param string    $name     The template logical name where the error occurred
+     * @param Exception $previous The previous exception
+     */
+    public function __construct($message, $lineno = -1, $name = null, Exception $previous = null)
+    {
+>>>>>>> web and vendor directory from composer install
         if (PHP_VERSION_ID < 50300) {
             $this->previous = $previous;
             parent::__construct('');
@@ -81,7 +98,11 @@ class Twig_Error extends Exception
         $this->lineno = $lineno;
         $this->filename = $name;
 
+<<<<<<< HEAD
         if (-1 === $lineno || null === $name || null === $this->sourcePath) {
+=======
+        if (-1 === $lineno || null === $name) {
+>>>>>>> web and vendor directory from composer install
             $this->guessTemplateInfo();
         }
 
@@ -105,11 +126,19 @@ class Twig_Error extends Exception
      *
      * @return string The name
      *
+<<<<<<< HEAD
      * @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead.
      */
     public function getTemplateFile()
     {
         @trigger_error(sprintf('The "%s" method is deprecated since version 1.27 and will be removed in 2.0. Use getSourceContext() instead.', __METHOD__), E_USER_DEPRECATED);
+=======
+     * @deprecated since 1.27 (to be removed in 2.0). Use getTemplateName() instead.
+     */
+    public function getTemplateFile()
+    {
+        @trigger_error(sprintf('The "%s" method is deprecated since version 1.27 and will be removed in 2.0. Use getTemplateName() instead.', __METHOD__), E_USER_DEPRECATED);
+>>>>>>> web and vendor directory from composer install
 
         return $this->filename;
     }
@@ -119,11 +148,19 @@ class Twig_Error extends Exception
      *
      * @param string $name The name
      *
+<<<<<<< HEAD
      * @deprecated since 1.27 (to be removed in 2.0). Use setSourceContext() instead.
      */
     public function setTemplateFile($name)
     {
         @trigger_error(sprintf('The "%s" method is deprecated since version 1.27 and will be removed in 2.0. Use setSourceContext() instead.', __METHOD__), E_USER_DEPRECATED);
+=======
+     * @deprecated since 1.27 (to be removed in 2.0). Use setTemplateName() instead.
+     */
+    public function setTemplateFile($name)
+    {
+        @trigger_error(sprintf('The "%s" method is deprecated since version 1.27 and will be removed in 2.0. Use setTemplateName() instead.', __METHOD__), E_USER_DEPRECATED);
+>>>>>>> web and vendor directory from composer install
 
         $this->filename = $name;
 
@@ -134,6 +171,7 @@ class Twig_Error extends Exception
      * Gets the logical name where the error occurred.
      *
      * @return string The name
+<<<<<<< HEAD
      *
      * @deprecated since 1.29 (to be removed in 2.0). Use getSourceContext() instead.
      */
@@ -141,6 +179,11 @@ class Twig_Error extends Exception
     {
         @trigger_error(sprintf('The "%s" method is deprecated since version 1.29 and will be removed in 2.0. Use getSourceContext() instead.', __METHOD__), E_USER_DEPRECATED);
 
+=======
+     */
+    public function getTemplateName()
+    {
+>>>>>>> web and vendor directory from composer install
         return $this->filename;
     }
 
@@ -148,6 +191,7 @@ class Twig_Error extends Exception
      * Sets the logical name where the error occurred.
      *
      * @param string $name The name
+<<<<<<< HEAD
      *
      * @deprecated since 1.29 (to be removed in 2.0). Use setSourceContext() instead.
      */
@@ -157,6 +201,12 @@ class Twig_Error extends Exception
 
         $this->filename = $name;
         $this->sourceCode = $this->sourcePath = null;
+=======
+     */
+    public function setTemplateName($name)
+    {
+        $this->filename = $name;
+>>>>>>> web and vendor directory from composer install
 
         $this->updateRepr();
     }
@@ -183,6 +233,7 @@ class Twig_Error extends Exception
         $this->updateRepr();
     }
 
+<<<<<<< HEAD
     /**
      * Gets the source context of the Twig template where the error occurred.
      *
@@ -209,6 +260,8 @@ class Twig_Error extends Exception
         $this->updateRepr();
     }
 
+=======
+>>>>>>> web and vendor directory from composer install
     public function guess()
     {
         $this->guessTemplateInfo();
@@ -247,6 +300,7 @@ class Twig_Error extends Exception
     {
         $this->message = $this->rawMessage;
 
+<<<<<<< HEAD
         if ($this->sourcePath && $this->lineno > 0) {
             $this->file = $this->sourcePath;
             $this->line = $this->lineno;
@@ -254,6 +308,8 @@ class Twig_Error extends Exception
             return;
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         $dot = false;
         if ('.' === substr($this->message, -1)) {
             $this->message = substr($this->message, 0, -1);
@@ -318,6 +374,7 @@ class Twig_Error extends Exception
             $this->filename = $template->getTemplateName();
         }
 
+<<<<<<< HEAD
         // update template path if any
         if (null !== $template && null === $this->sourcePath) {
             $src = $template->getSourceContext();
@@ -325,6 +382,8 @@ class Twig_Error extends Exception
             $this->sourcePath = $src->getPath();
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         if (null === $template || $this->lineno > -1) {
             return;
         }
@@ -332,6 +391,14 @@ class Twig_Error extends Exception
         $r = new ReflectionObject($template);
         $file = $r->getFileName();
 
+<<<<<<< HEAD
+=======
+        // hhvm has a bug where eval'ed files comes out as the current directory
+        if (is_dir($file)) {
+            $file = '';
+        }
+
+>>>>>>> web and vendor directory from composer install
         $exceptions = array($e = $this);
         while (($e instanceof self || method_exists($e, 'getPrevious')) && $e = $e->getPrevious()) {
             $exceptions[] = $e;
@@ -358,6 +425,9 @@ class Twig_Error extends Exception
         }
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_Error', 'Twig\Error\Error', false);
 class_exists('Twig_Source');
+=======
+>>>>>>> web and vendor directory from composer install

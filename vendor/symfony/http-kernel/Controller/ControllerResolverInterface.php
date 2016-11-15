@@ -34,6 +34,11 @@ interface ControllerResolverInterface
      * The resolver must only throw an exception when it should be able to load
      * controller but cannot because of some errors made by the developer.
      *
+<<<<<<< HEAD
+=======
+     * @param Request $request A Request instance
+     *
+>>>>>>> web and vendor directory from composer install
      * @return callable|false A PHP callable representing the Controller,
      *                        or false if this resolver is not able to determine the controller
      *
@@ -50,8 +55,11 @@ interface ControllerResolverInterface
      * @return array An array of arguments to pass to the controller
      *
      * @throws \RuntimeException When value for argument given is not provided
+<<<<<<< HEAD
      *
      * @deprecated This method is deprecated as of 3.1 and will be removed in 4.0. Please use the {@see ArgumentResolverInterface} instead.
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function getArguments(Request $request, $controller);
 }

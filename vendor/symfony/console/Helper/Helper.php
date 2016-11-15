@@ -23,7 +23,13 @@ abstract class Helper implements HelperInterface
     protected $helperSet = null;
 
     /**
+<<<<<<< HEAD
      * {@inheritdoc}
+=======
+     * Sets the helper set associated with this helper.
+     *
+     * @param HelperSet $helperSet A HelperSet instance
+>>>>>>> web and vendor directory from composer install
      */
     public function setHelperSet(HelperSet $helperSet = null)
     {
@@ -31,7 +37,13 @@ abstract class Helper implements HelperInterface
     }
 
     /**
+<<<<<<< HEAD
      * {@inheritdoc}
+=======
+     * Gets the helper set associated with this helper.
+     *
+     * @return HelperSet A HelperSet instance
+>>>>>>> web and vendor directory from composer install
      */
     public function getHelperSet()
     {
@@ -54,6 +66,7 @@ abstract class Helper implements HelperInterface
         return mb_strwidth($string, $encoding);
     }
 
+<<<<<<< HEAD
     /**
      * Returns the subset of a string, using mb_substr if it is available.
      *
@@ -72,6 +85,8 @@ abstract class Helper implements HelperInterface
         return mb_substr($string, $from, $length, $encoding);
     }
 
+=======
+>>>>>>> web and vendor directory from composer install
     public static function formatTime($secs)
     {
         static $timeFormats = array(
@@ -120,11 +135,14 @@ abstract class Helper implements HelperInterface
 
     public static function strlenWithoutDecoration(OutputFormatterInterface $formatter, $string)
     {
+<<<<<<< HEAD
         return self::strlen(self::removeDecoration($formatter, $string));
     }
 
     public static function removeDecoration(OutputFormatterInterface $formatter, $string)
     {
+=======
+>>>>>>> web and vendor directory from composer install
         $isDecorated = $formatter->isDecorated();
         $formatter->setDecorated(false);
         // remove <...> formatting
@@ -133,6 +151,10 @@ abstract class Helper implements HelperInterface
         $string = preg_replace("/\033\[[^m]*m/", '', $string);
         $formatter->setDecorated($isDecorated);
 
+<<<<<<< HEAD
         return $string;
+=======
+        return self::strlen($string);
+>>>>>>> web and vendor directory from composer install
     }
 }

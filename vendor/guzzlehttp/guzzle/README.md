@@ -19,13 +19,23 @@ trivial to integrate with web services.
 
 ```php
 $client = new \GuzzleHttp\Client();
+<<<<<<< HEAD
 $res = $client->request('GET', 'https://api.github.com/repos/guzzle/guzzle');
+=======
+$res = $client->request('GET', 'https://api.github.com/user', [
+    'auth' => ['user', 'pass']
+]);
+>>>>>>> web and vendor directory from composer install
 echo $res->getStatusCode();
 // 200
 echo $res->getHeaderLine('content-type');
 // 'application/json; charset=utf8'
 echo $res->getBody();
+<<<<<<< HEAD
 // '{"id": 1420053, "name": "guzzle", ...}'
+=======
+// {"type":"User"...'
+>>>>>>> web and vendor directory from composer install
 
 // Send an asynchronous request.
 $request = new \GuzzleHttp\Psr7\Request('GET', 'http://httpbin.org');
@@ -38,7 +48,11 @@ $promise->wait();
 ## Help and docs
 
 - [Documentation](http://guzzlephp.org/)
+<<<<<<< HEAD
 - [Stack Overflow](http://stackoverflow.com/questions/tagged/guzzle)
+=======
+- [stackoverflow](http://stackoverflow.com/questions/tagged/guzzle)
+>>>>>>> web and vendor directory from composer install
 - [Gitter](https://gitter.im/guzzle/guzzle)
 
 
@@ -73,6 +87,7 @@ composer.phar update
 
 ## Version Guidance
 
+<<<<<<< HEAD
 | Version | Status     | Packagist           | Namespace    | Repo                | Docs                | PSR-7 | PHP Version |
 |---------|------------|---------------------|--------------|---------------------|---------------------|-------|-------------|
 | 3.x     | EOL        | `guzzle/guzzle`     | `Guzzle`     | [v3][guzzle-3-repo] | [v3][guzzle-3-docs] | No    | >= 5.3.3    |
@@ -82,6 +97,16 @@ composer.phar update
 
 [guzzle-3-repo]: https://github.com/guzzle/guzzle3
 [guzzle-4-repo]: https://github.com/guzzle/guzzle/tree/4.x
+=======
+| Version | Status      | Packagist           | Namespace    | Repo                | Docs                | PSR-7 |
+|---------|-------------|---------------------|--------------|---------------------|---------------------|-------|
+| 3.x     | EOL         | `guzzle/guzzle`     | `Guzzle`     | [v3][guzzle-3-repo] | [v3][guzzle-3-docs] | No    |
+| 4.x     | EOL         | `guzzlehttp/guzzle` | `GuzzleHttp` | N/A                 | N/A                 | No    |
+| 5.x     | Maintained  | `guzzlehttp/guzzle` | `GuzzleHttp` | [v5][guzzle-5-repo] | [v5][guzzle-5-docs] | No    |
+| 6.x     | Latest      | `guzzlehttp/guzzle` | `GuzzleHttp` | [v6][guzzle-6-repo] | [v6][guzzle-6-docs] | Yes   |
+
+[guzzle-3-repo]: https://github.com/guzzle/guzzle3
+>>>>>>> web and vendor directory from composer install
 [guzzle-5-repo]: https://github.com/guzzle/guzzle/tree/5.3
 [guzzle-6-repo]: https://github.com/guzzle/guzzle
 [guzzle-3-docs]: http://guzzle3.readthedocs.org/en/latest/

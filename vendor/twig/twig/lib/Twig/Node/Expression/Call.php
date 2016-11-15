@@ -3,7 +3,11 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
+=======
+ * (c) 2012 Fabien Potencier
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -146,7 +150,11 @@ abstract class Twig_Node_Expression_Call extends Twig_Node_Expression
                     throw new Twig_Error_Syntax(sprintf('Argument "%s" is defined twice for %s "%s".', $name, $callType, $callName));
                 }
 
+<<<<<<< HEAD
                 if (count($missingArguments)) {
+=======
+                if (!empty($missingArguments)) {
+>>>>>>> web and vendor directory from composer install
                     throw new Twig_Error_Syntax(sprintf(
                         'Argument "%s" could not be assigned for %s "%s(%s)" because it is mapped to an internal PHP function which cannot determine default value for optional argument%s "%s".',
                         $name, $callType, $callName, implode(', ', $names), count($missingArguments) > 1 ? 's' : '', implode('", "', $missingArguments))
@@ -218,7 +226,11 @@ abstract class Twig_Node_Expression_Call extends Twig_Node_Expression
 
     private function getCallableParameters($callable, $isVariadic)
     {
+<<<<<<< HEAD
         list($r) = $this->reflectCallable($callable);
+=======
+        list($r, $_) = $this->reflectCallable($callable);
+>>>>>>> web and vendor directory from composer install
         if (null === $r) {
             return array();
         }
@@ -287,5 +299,8 @@ abstract class Twig_Node_Expression_Call extends Twig_Node_Expression
         return $this->reflector = array($r, $callable);
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_Node_Expression_Call', 'Twig\Node\Expression\CallExpression', false);
+=======
+>>>>>>> web and vendor directory from composer install

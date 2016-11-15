@@ -84,6 +84,11 @@ class Router implements RouterInterface, RequestMatcherInterface
     private $expressionLanguageProviders = array();
 
     /**
+<<<<<<< HEAD
+=======
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param LoaderInterface $loader   A LoaderInterface instance
      * @param mixed           $resource The main resource to load
      * @param array           $options  An array of options
@@ -226,6 +231,11 @@ class Router implements RouterInterface, RequestMatcherInterface
 
     /**
      * Sets the ConfigCache factory to use.
+<<<<<<< HEAD
+=======
+     *
+     * @param ConfigCacheFactoryInterface $configCacheFactory The factory to use
+>>>>>>> web and vendor directory from composer install
      */
     public function setConfigCacheFactory(ConfigCacheFactoryInterface $configCacheFactory)
     {
@@ -284,16 +294,30 @@ class Router implements RouterInterface, RequestMatcherInterface
             return $this->matcher;
         }
 
+<<<<<<< HEAD
         $cache = $this->getConfigCacheFactory()->cache($this->options['cache_dir'].'/'.$this->options['matcher_cache_class'].'.php',
             function (ConfigCacheInterface $cache) {
                 $dumper = $this->getMatcherDumperInstance();
                 if (method_exists($dumper, 'addExpressionLanguageProvider')) {
                     foreach ($this->expressionLanguageProviders as $provider) {
+=======
+        $class = $this->options['matcher_cache_class'];
+        $baseClass = $this->options['matcher_base_class'];
+        $expressionLanguageProviders = $this->expressionLanguageProviders;
+        $that = $this; // required for PHP 5.3 where "$this" cannot be use()d in anonymous functions. Change in Symfony 3.0.
+
+        $cache = $this->getConfigCacheFactory()->cache($this->options['cache_dir'].'/'.$class.'.php',
+            function (ConfigCacheInterface $cache) use ($that, $class, $baseClass, $expressionLanguageProviders) {
+                $dumper = $that->getMatcherDumperInstance();
+                if (method_exists($dumper, 'addExpressionLanguageProvider')) {
+                    foreach ($expressionLanguageProviders as $provider) {
+>>>>>>> web and vendor directory from composer install
                         $dumper->addExpressionLanguageProvider($provider);
                     }
                 }
 
                 $options = array(
+<<<<<<< HEAD
                     'class' => $this->options['matcher_cache_class'],
                     'base_class' => $this->options['matcher_base_class'],
                 );
@@ -307,6 +331,19 @@ class Router implements RouterInterface, RequestMatcherInterface
         }
 
         return $this->matcher = new $this->options['matcher_cache_class']($this->context);
+=======
+                    'class' => $class,
+                    'base_class' => $baseClass,
+                );
+
+                $cache->write($dumper->dump($options), $that->getRouteCollection()->getResources());
+            }
+        );
+
+        require_once $cache->getPath();
+
+        return $this->matcher = new $class($this->context);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -323,6 +360,7 @@ class Router implements RouterInterface, RequestMatcherInterface
         if (null === $this->options['cache_dir'] || null === $this->options['generator_cache_class']) {
             $this->generator = new $this->options['generator_class']($this->getRouteCollection(), $this->context, $this->logger);
         } else {
+<<<<<<< HEAD
             $cache = $this->getConfigCacheFactory()->cache($this->options['cache_dir'].'/'.$this->options['generator_cache_class'].'.php',
                 function (ConfigCacheInterface $cache) {
                     $dumper = $this->getGeneratorDumperInstance();
@@ -341,6 +379,27 @@ class Router implements RouterInterface, RequestMatcherInterface
             }
 
             $this->generator = new $this->options['generator_cache_class']($this->context, $this->logger);
+=======
+            $class = $this->options['generator_cache_class'];
+            $baseClass = $this->options['generator_base_class'];
+            $that = $this; // required for PHP 5.3 where "$this" cannot be use()d in anonymous functions. Change in Symfony 3.0.
+            $cache = $this->getConfigCacheFactory()->cache($this->options['cache_dir'].'/'.$class.'.php',
+                function (ConfigCacheInterface $cache) use ($that, $class, $baseClass) {
+                    $dumper = $that->getGeneratorDumperInstance();
+
+                    $options = array(
+                        'class' => $class,
+                        'base_class' => $baseClass,
+                    );
+
+                    $cache->write($dumper->dump($options), $that->getRouteCollection()->getResources());
+                }
+            );
+
+            require_once $cache->getPath();
+
+            $this->generator = new $class($this->context, $this->logger);
+>>>>>>> web and vendor directory from composer install
         }
 
         if ($this->generator instanceof ConfigurableRequirementsInterface) {
@@ -356,17 +415,37 @@ class Router implements RouterInterface, RequestMatcherInterface
     }
 
     /**
+<<<<<<< HEAD
      * @return GeneratorDumperInterface
      */
     protected function getGeneratorDumperInstance()
+=======
+     * This method is public because it needs to be callable from a closure in PHP 5.3. It should be converted back to protected in 3.0.
+     *
+     * @internal
+     *
+     * @return GeneratorDumperInterface
+     */
+    public function getGeneratorDumperInstance()
+>>>>>>> web and vendor directory from composer install
     {
         return new $this->options['generator_dumper_class']($this->getRouteCollection());
     }
 
     /**
+<<<<<<< HEAD
      * @return MatcherDumperInterface
      */
     protected function getMatcherDumperInstance()
+=======
+     * This method is public because it needs to be callable from a closure in PHP 5.3. It should be converted back to protected in 3.0.
+     *
+     * @internal
+     *
+     * @return MatcherDumperInterface
+     */
+    public function getMatcherDumperInstance()
+>>>>>>> web and vendor directory from composer install
     {
         return new $this->options['matcher_dumper_class']($this->getRouteCollection());
     }

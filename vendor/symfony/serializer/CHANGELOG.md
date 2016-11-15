@@ -1,6 +1,7 @@
 CHANGELOG
 =========
 
+<<<<<<< HEAD
 3.4.0
 -----
 
@@ -34,6 +35,8 @@ CHANGELOG
    with objects
  * added support to relation deserialization
 
+=======
+>>>>>>> web and vendor directory from composer install
 2.7.0
 -----
 
@@ -50,8 +53,11 @@ CHANGELOG
  * [DEPRECATION] the `Exception` interface has been renamed to `ExceptionInterface`
  * added `ObjectNormalizer` leveraging the `PropertyAccess` component to normalize
    objects containing both properties and getters / setters / issers / hassers methods.
+<<<<<<< HEAD
  * added `xml_type_cast_attributes` context option for allowing users to opt-out of typecasting
    xml attributes.
+=======
+>>>>>>> web and vendor directory from composer install
 
 2.6.0
 -----

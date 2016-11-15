@@ -11,6 +11,10 @@
 
 namespace Symfony\Component\Validator\Constraints;
 
+<<<<<<< HEAD
+=======
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
@@ -34,7 +38,11 @@ class TypeValidator extends ConstraintValidator
         }
 
         $type = strtolower($constraint->type);
+<<<<<<< HEAD
         $type = 'boolean' == $type ? 'bool' : $constraint->type;
+=======
+        $type = $type == 'boolean' ? 'bool' : $constraint->type;
+>>>>>>> web and vendor directory from composer install
         $isFunction = 'is_'.$type;
         $ctypeFunction = 'ctype_'.$type;
 
@@ -46,10 +54,26 @@ class TypeValidator extends ConstraintValidator
             return;
         }
 
+<<<<<<< HEAD
         $this->context->buildViolation($constraint->message)
             ->setParameter('{{ value }}', $this->formatValue($value))
             ->setParameter('{{ type }}', $constraint->type)
             ->setCode(Type::INVALID_TYPE_ERROR)
             ->addViolation();
+=======
+        if ($this->context instanceof ExecutionContextInterface) {
+            $this->context->buildViolation($constraint->message)
+                ->setParameter('{{ value }}', $this->formatValue($value))
+                ->setParameter('{{ type }}', $constraint->type)
+                ->setCode(Type::INVALID_TYPE_ERROR)
+                ->addViolation();
+        } else {
+            $this->buildViolation($constraint->message)
+                ->setParameter('{{ value }}', $this->formatValue($value))
+                ->setParameter('{{ type }}', $constraint->type)
+                ->setCode(Type::INVALID_TYPE_ERROR)
+                ->addViolation();
+        }
+>>>>>>> web and vendor directory from composer install
     }
 }

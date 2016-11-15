@@ -141,7 +141,11 @@ abstract class AbstractManagerRegistry implements ManagerRegistry
      */
     public function getConnections()
     {
+<<<<<<< HEAD
         $connections = [];
+=======
+        $connections = array();
+>>>>>>> web and vendor directory from composer install
         foreach ($this->connections as $name => $id) {
             $connections[$name] = $this->getService($id);
         }
@@ -226,7 +230,11 @@ abstract class AbstractManagerRegistry implements ManagerRegistry
      */
     public function getManagers()
     {
+<<<<<<< HEAD
         $dms = [];
+=======
+        $dms = array();
+>>>>>>> web and vendor directory from composer install
         foreach ($this->managers as $name => $id) {
             $dms[$name] = $this->getService($id);
         }
@@ -258,7 +266,10 @@ abstract class AbstractManagerRegistry implements ManagerRegistry
         // force the creation of a new document manager
         // if the current one is closed
         $this->resetService($this->managers[$name]);
+<<<<<<< HEAD
 
         return $this->getManager($name);
+=======
+>>>>>>> web and vendor directory from composer install
     }
 }

@@ -27,9 +27,18 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class FilterControllerEvent extends KernelEvent
 {
+<<<<<<< HEAD
     private $controller;
 
     public function __construct(HttpKernelInterface $kernel, callable $controller, Request $request, $requestType)
+=======
+    /**
+     * The current controller.
+     */
+    private $controller;
+
+    public function __construct(HttpKernelInterface $kernel, $controller, Request $request, $requestType)
+>>>>>>> web and vendor directory from composer install
     {
         parent::__construct($kernel, $request, $requestType);
 
@@ -46,8 +55,61 @@ class FilterControllerEvent extends KernelEvent
         return $this->controller;
     }
 
+<<<<<<< HEAD
     public function setController(callable $controller)
     {
         $this->controller = $controller;
     }
+=======
+    /**
+     * Sets a new controller.
+     *
+     * @param callable $controller
+     *
+     * @throws \LogicException
+     */
+    public function setController($controller)
+    {
+        // controller must be a callable
+        if (!is_callable($controller)) {
+            throw new \LogicException(sprintf('The controller must be a callable (%s given).', $this->varToString($controller)));
+        }
+
+        $this->controller = $controller;
+    }
+
+    private function varToString($var)
+    {
+        if (is_object($var)) {
+            return sprintf('Object(%s)', get_class($var));
+        }
+
+        if (is_array($var)) {
+            $a = array();
+            foreach ($var as $k => $v) {
+                $a[] = sprintf('%s => %s', $k, $this->varToString($v));
+            }
+
+            return sprintf('Array(%s)', implode(', ', $a));
+        }
+
+        if (is_resource($var)) {
+            return sprintf('Resource(%s)', get_resource_type($var));
+        }
+
+        if (null === $var) {
+            return 'null';
+        }
+
+        if (false === $var) {
+            return 'false';
+        }
+
+        if (true === $var) {
+            return 'true';
+        }
+
+        return (string) $var;
+    }
+>>>>>>> web and vendor directory from composer install
 }

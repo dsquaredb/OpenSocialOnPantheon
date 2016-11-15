@@ -27,6 +27,16 @@ class Callback extends Constraint
     public $callback;
 
     /**
+<<<<<<< HEAD
+=======
+     * @var array
+     *
+     * @deprecated since version 2.4, to be removed in 3.0.
+     */
+    public $methods;
+
+    /**
+>>>>>>> web and vendor directory from composer install
      * {@inheritdoc}
      */
     public function __construct($options = null)
@@ -36,8 +46,22 @@ class Callback extends Constraint
             $options = $options['value'];
         }
 
+<<<<<<< HEAD
         if (is_array($options) && !isset($options['callback']) && !isset($options['groups']) && !isset($options['payload'])) {
             $options = array('callback' => $options);
+=======
+        if (is_array($options) && isset($options['methods'])) {
+            @trigger_error('The "methods" option of the '.__CLASS__.' class is deprecated since version 2.4 and will be removed in 3.0. Use the "callback" option instead.', E_USER_DEPRECATED);
+        }
+
+        if (is_array($options) && !isset($options['callback']) && !isset($options['methods']) && !isset($options['groups']) && !isset($options['payload'])) {
+            if (is_callable($options) || !$options) {
+                $options = array('callback' => $options);
+            } else {
+                // @deprecated, to be removed in 3.0
+                $options = array('methods' => $options);
+            }
+>>>>>>> web and vendor directory from composer install
         }
 
         parent::__construct($options);

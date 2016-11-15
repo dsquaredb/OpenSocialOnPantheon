@@ -26,16 +26,24 @@ class ChoiceQuestion extends Question
     private $errorMessage = 'Value "%s" is invalid';
 
     /**
+<<<<<<< HEAD
+=======
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param string $question The question to ask to the user
      * @param array  $choices  The list of available choices
      * @param mixed  $default  The default answer to return
      */
     public function __construct($question, array $choices, $default = null)
     {
+<<<<<<< HEAD
         if (!$choices) {
             throw new \LogicException('Choice question must have at least 1 choice available.');
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         parent::__construct($question, $default);
 
         $this->choices = $choices;
@@ -60,7 +68,11 @@ class ChoiceQuestion extends Question
      *
      * @param bool $multiselect
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return ChoiceQuestion The current instance
+>>>>>>> web and vendor directory from composer install
      */
     public function setMultiselect($multiselect)
     {
@@ -95,7 +107,11 @@ class ChoiceQuestion extends Question
      *
      * @param string $prompt
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return ChoiceQuestion The current instance
+>>>>>>> web and vendor directory from composer install
      */
     public function setPrompt($prompt)
     {
@@ -111,7 +127,11 @@ class ChoiceQuestion extends Question
      *
      * @param string $errorMessage
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return ChoiceQuestion The current instance
+>>>>>>> web and vendor directory from composer install
      */
     public function setErrorMessage($errorMessage)
     {
@@ -139,7 +159,11 @@ class ChoiceQuestion extends Question
 
             if ($multiselect) {
                 // Check for a separated comma values
+<<<<<<< HEAD
                 if (!preg_match('/^[^,]+(?:,[^,]+)*$/', $selectedChoices, $matches)) {
+=======
+                if (!preg_match('/^[a-zA-Z0-9_-]+(?:,[a-zA-Z0-9_-]+)*$/', $selectedChoices, $matches)) {
+>>>>>>> web and vendor directory from composer install
                     throw new InvalidArgumentException(sprintf($errorMessage, $selected));
                 }
                 $selectedChoices = explode(',', $selectedChoices);

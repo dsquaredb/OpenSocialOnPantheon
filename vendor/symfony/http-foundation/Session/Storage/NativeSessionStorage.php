@@ -12,7 +12,12 @@
 namespace Symfony\Component\HttpFoundation\Session\Storage;
 
 use Symfony\Component\HttpFoundation\Session\SessionBagInterface;
+<<<<<<< HEAD
 use Symfony\Component\HttpFoundation\Session\Storage\Handler\StrictSessionHandler;
+=======
+use Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeSessionHandler;
+use Symfony\Component\HttpFoundation\Session\Storage\Proxy\NativeProxy;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\HttpFoundation\Session\Storage\Proxy\AbstractProxy;
 use Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy;
 
@@ -24,9 +29,17 @@ use Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy;
 class NativeSessionStorage implements SessionStorageInterface
 {
     /**
+<<<<<<< HEAD
      * @var SessionBagInterface[]
      */
     protected $bags = array();
+=======
+     * Array of SessionBagInterface.
+     *
+     * @var SessionBagInterface[]
+     */
+    protected $bags;
+>>>>>>> web and vendor directory from composer install
 
     /**
      * @var bool
@@ -39,7 +52,11 @@ class NativeSessionStorage implements SessionStorageInterface
     protected $closed = false;
 
     /**
+<<<<<<< HEAD
      * @var AbstractProxy|\SessionHandlerInterface
+=======
+     * @var AbstractProxy
+>>>>>>> web and vendor directory from composer install
      */
     protected $saveHandler;
 
@@ -49,6 +66,11 @@ class NativeSessionStorage implements SessionStorageInterface
     protected $metadataBag;
 
     /**
+<<<<<<< HEAD
+=======
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * Depending on how you want the storage driver to behave you probably
      * want to override this constructor entirely.
      *
@@ -61,7 +83,10 @@ class NativeSessionStorage implements SessionStorageInterface
      * PHP starts to execute user-land code. Setting during runtime has no effect).
      *
      * cache_limiter, "" (use "0" to prevent headers from being sent entirely).
+<<<<<<< HEAD
      * cache_expire, "0"
+=======
+>>>>>>> web and vendor directory from composer install
      * cookie_domain, ""
      * cookie_httponly, ""
      * cookie_lifetime, "0"
@@ -74,11 +99,17 @@ class NativeSessionStorage implements SessionStorageInterface
      * gc_probability, "1"
      * hash_bits_per_character, "4"
      * hash_function, "0"
+<<<<<<< HEAD
      * lazy_write, "1"
      * name, "PHPSESSID"
      * referer_check, ""
      * serialize_handler, "php"
      * use_strict_mode, "0"
+=======
+     * name, "PHPSESSID"
+     * referer_check, ""
+     * serialize_handler, "php"
+>>>>>>> web and vendor directory from composer install
      * use_cookies, "1"
      * use_only_cookies, "1"
      * use_trans_sid, "0"
@@ -89,6 +120,7 @@ class NativeSessionStorage implements SessionStorageInterface
      * upload_progress.freq, "1%"
      * upload_progress.min-freq, "1"
      * url_rewriter.tags, "a=href,area=href,frame=src,form=,fieldset="
+<<<<<<< HEAD
      * sid_length, "32"
      * sid_bits_per_character, "5"
      * trans_sid_hosts, $_SERVER['HTTP_HOST']
@@ -106,6 +138,17 @@ class NativeSessionStorage implements SessionStorageInterface
             'use_cookies' => 1,
             'lazy_write' => 1,
         );
+=======
+     *
+     * @param array                                                            $options Session configuration options
+     * @param AbstractProxy|NativeSessionHandler|\SessionHandlerInterface|null $handler
+     * @param MetadataBag                                                      $metaBag MetadataBag
+     */
+    public function __construct(array $options = array(), $handler = null, MetadataBag $metaBag = null)
+    {
+        session_cache_limiter(''); // disable by default because it's managed by HeaderBag (if used)
+        ini_set('session.use_cookies', 1);
+>>>>>>> web and vendor directory from composer install
 
         session_register_shutdown();
 
@@ -117,7 +160,11 @@ class NativeSessionStorage implements SessionStorageInterface
     /**
      * Gets the save handler instance.
      *
+<<<<<<< HEAD
      * @return AbstractProxy|\SessionHandlerInterface
+=======
+     * @return AbstractProxy
+>>>>>>> web and vendor directory from composer install
      */
     public function getSaveHandler()
     {
@@ -133,10 +180,22 @@ class NativeSessionStorage implements SessionStorageInterface
             return true;
         }
 
+<<<<<<< HEAD
         if (\PHP_SESSION_ACTIVE === session_status()) {
             throw new \RuntimeException('Failed to start the session: already started by PHP.');
         }
 
+=======
+        if (PHP_VERSION_ID >= 50400 && \PHP_SESSION_ACTIVE === session_status()) {
+            throw new \RuntimeException('Failed to start the session: already started by PHP.');
+        }
+
+        if (PHP_VERSION_ID < 50400 && !$this->closed && isset($_SESSION) && session_id()) {
+            // not 100% fool-proof, but is the most reliable way to determine if a session is active in PHP 5.3
+            throw new \RuntimeException('Failed to start the session: already started by PHP ($_SESSION is set).');
+        }
+
+>>>>>>> web and vendor directory from composer install
         if (ini_get('session.use_cookies') && headers_sent($file, $line)) {
             throw new \RuntimeException(sprintf('Failed to start the session because headers have already been sent by "%s" at line %d.', $file, $line));
         }
@@ -147,6 +206,13 @@ class NativeSessionStorage implements SessionStorageInterface
         }
 
         $this->loadSession();
+<<<<<<< HEAD
+=======
+        if (!$this->saveHandler->isWrapper() && !$this->saveHandler->isSessionHandlerInterface()) {
+            // This condition matches only PHP 5.3 with internal save handlers
+            $this->saveHandler->setActive(true);
+        }
+>>>>>>> web and vendor directory from composer install
 
         return true;
     }
@@ -189,11 +255,20 @@ class NativeSessionStorage implements SessionStorageInterface
     public function regenerate($destroy = false, $lifetime = null)
     {
         // Cannot regenerate the session ID for non-active sessions.
+<<<<<<< HEAD
         if (\PHP_SESSION_ACTIVE !== session_status()) {
             return false;
         }
 
         if (headers_sent()) {
+=======
+        if (PHP_VERSION_ID >= 50400 && \PHP_SESSION_ACTIVE !== session_status()) {
+            return false;
+        }
+
+        // Check if session ID exists in PHP 5.3
+        if (PHP_VERSION_ID < 50400 && '' === session_id()) {
+>>>>>>> web and vendor directory from composer install
             return false;
         }
 
@@ -219,6 +294,7 @@ class NativeSessionStorage implements SessionStorageInterface
      */
     public function save()
     {
+<<<<<<< HEAD
         $session = $_SESSION;
 
         foreach ($this->bags as $bag) {
@@ -252,6 +328,13 @@ class NativeSessionStorage implements SessionStorageInterface
             }
 
             trigger_error(sprintf('session_write_close(): Failed to write session data with %s handler', get_class($handler)), E_USER_WARNING);
+=======
+        session_write_close();
+
+        if (!$this->saveHandler->isWrapper() && !$this->saveHandler->isSessionHandlerInterface()) {
+            // This condition matches only PHP 5.3 with internal save handlers
+            $this->saveHandler->setActive(false);
+>>>>>>> web and vendor directory from composer install
         }
 
         $this->closed = true;
@@ -296,7 +379,11 @@ class NativeSessionStorage implements SessionStorageInterface
             throw new \InvalidArgumentException(sprintf('The SessionBagInterface %s is not registered.', $name));
         }
 
+<<<<<<< HEAD
         if (!$this->started && $this->saveHandler->isActive()) {
+=======
+        if ($this->saveHandler->isActive() && !$this->started) {
+>>>>>>> web and vendor directory from composer install
             $this->loadSession();
         } elseif (!$this->started) {
             $this->start();
@@ -305,6 +392,14 @@ class NativeSessionStorage implements SessionStorageInterface
         return $this->bags[$name];
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Sets the MetadataBag.
+     *
+     * @param MetadataBag $metaBag
+     */
+>>>>>>> web and vendor directory from composer install
     public function setMetadataBag(MetadataBag $metaBag = null)
     {
         if (null === $metaBag) {
@@ -344,6 +439,7 @@ class NativeSessionStorage implements SessionStorageInterface
      */
     public function setOptions(array $options)
     {
+<<<<<<< HEAD
         if (headers_sent() || \PHP_SESSION_ACTIVE === session_status()) {
             return;
         }
@@ -359,11 +455,27 @@ class NativeSessionStorage implements SessionStorageInterface
             'upload_progress.cleanup', 'upload_progress.prefix', 'upload_progress.name',
             'upload_progress.freq', 'upload_progress.min_freq', 'url_rewriter.tags',
             'sid_length', 'sid_bits_per_character', 'trans_sid_hosts', 'trans_sid_tags',
+=======
+        $validOptions = array_flip(array(
+            'cache_limiter', 'cookie_domain', 'cookie_httponly',
+            'cookie_lifetime', 'cookie_path', 'cookie_secure',
+            'entropy_file', 'entropy_length', 'gc_divisor',
+            'gc_maxlifetime', 'gc_probability', 'hash_bits_per_character',
+            'hash_function', 'name', 'referer_check',
+            'serialize_handler', 'use_cookies',
+            'use_only_cookies', 'use_trans_sid', 'upload_progress.enabled',
+            'upload_progress.cleanup', 'upload_progress.prefix', 'upload_progress.name',
+            'upload_progress.freq', 'upload_progress.min-freq', 'url_rewriter.tags',
+>>>>>>> web and vendor directory from composer install
         ));
 
         foreach ($options as $key => $value) {
             if (isset($validOptions[$key])) {
+<<<<<<< HEAD
                 ini_set('url_rewriter.tags' !== $key ? 'session.'.$key : $key, $value);
+=======
+                ini_set('session.'.$key, $value);
+>>>>>>> web and vendor directory from composer install
             }
         }
     }
@@ -377,7 +489,11 @@ class NativeSessionStorage implements SessionStorageInterface
      *     ini_set('session.save_handler', 'files');
      *     ini_set('session.save_path', '/tmp');
      *
+<<<<<<< HEAD
      * or pass in a \SessionHandler instance which configures session.save_handler in the
+=======
+     * or pass in a NativeSessionHandler instance which configures session.save_handler in the
+>>>>>>> web and vendor directory from composer install
      * constructor, for a template see NativeFileSessionHandler or use handlers in
      * composer package drak/native-session
      *
@@ -386,22 +502,34 @@ class NativeSessionStorage implements SessionStorageInterface
      * @see http://php.net/sessionhandler
      * @see http://github.com/drak/NativeSession
      *
+<<<<<<< HEAD
      * @param \SessionHandlerInterface|null $saveHandler
+=======
+     * @param AbstractProxy|NativeSessionHandler|\SessionHandlerInterface|null $saveHandler
+>>>>>>> web and vendor directory from composer install
      *
      * @throws \InvalidArgumentException
      */
     public function setSaveHandler($saveHandler = null)
     {
         if (!$saveHandler instanceof AbstractProxy &&
+<<<<<<< HEAD
             !$saveHandler instanceof \SessionHandlerInterface &&
             null !== $saveHandler) {
             throw new \InvalidArgumentException('Must be instance of AbstractProxy; implement \SessionHandlerInterface; or be null.');
+=======
+            !$saveHandler instanceof NativeSessionHandler &&
+            !$saveHandler instanceof \SessionHandlerInterface &&
+            null !== $saveHandler) {
+            throw new \InvalidArgumentException('Must be instance of AbstractProxy or NativeSessionHandler; implement \SessionHandlerInterface; or be null.');
+>>>>>>> web and vendor directory from composer install
         }
 
         // Wrap $saveHandler in proxy and prevent double wrapping of proxy
         if (!$saveHandler instanceof AbstractProxy && $saveHandler instanceof \SessionHandlerInterface) {
             $saveHandler = new SessionHandlerProxy($saveHandler);
         } elseif (!$saveHandler instanceof AbstractProxy) {
+<<<<<<< HEAD
             $saveHandler = new SessionHandlerProxy(new StrictSessionHandler(new \SessionHandler()));
         }
         $this->saveHandler = $saveHandler;
@@ -414,6 +542,26 @@ class NativeSessionStorage implements SessionStorageInterface
             session_set_save_handler($this->saveHandler->getHandler(), false);
         } elseif ($this->saveHandler instanceof \SessionHandlerInterface) {
             session_set_save_handler($this->saveHandler, false);
+=======
+            $saveHandler = PHP_VERSION_ID >= 50400 ?
+                new SessionHandlerProxy(new \SessionHandler()) : new NativeProxy();
+        }
+        $this->saveHandler = $saveHandler;
+
+        if ($this->saveHandler instanceof \SessionHandlerInterface) {
+            if (PHP_VERSION_ID >= 50400) {
+                session_set_save_handler($this->saveHandler, false);
+            } else {
+                session_set_save_handler(
+                    array($this->saveHandler, 'open'),
+                    array($this->saveHandler, 'close'),
+                    array($this->saveHandler, 'read'),
+                    array($this->saveHandler, 'write'),
+                    array($this->saveHandler, 'destroy'),
+                    array($this->saveHandler, 'gc')
+                );
+            }
+>>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -424,6 +572,11 @@ class NativeSessionStorage implements SessionStorageInterface
      * are set to (either PHP's internal, or a custom save handler set with session_set_save_handler()).
      * PHP takes the return value from the read() handler, unserializes it
      * and populates $_SESSION with the result automatically.
+<<<<<<< HEAD
+=======
+     *
+     * @param array|null $session
+>>>>>>> web and vendor directory from composer install
      */
     protected function loadSession(array &$session = null)
     {

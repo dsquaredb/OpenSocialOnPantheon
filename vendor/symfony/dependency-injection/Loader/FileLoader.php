@@ -11,6 +11,7 @@
 
 namespace Symfony\Component\DependencyInjection\Loader;
 
+<<<<<<< HEAD
 use Symfony\Component\DependencyInjection\ChildDefinition;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
@@ -18,6 +19,11 @@ use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
 use Symfony\Component\Config\Loader\FileLoader as BaseFileLoader;
 use Symfony\Component\Config\FileLocatorInterface;
 use Symfony\Component\Config\Resource\GlobResource;
+=======
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\Config\Loader\FileLoader as BaseFileLoader;
+use Symfony\Component\Config\FileLocatorInterface;
+>>>>>>> web and vendor directory from composer install
 
 /**
  * FileLoader is the abstract class used by all built-in loaders that are file based.
@@ -27,15 +33,24 @@ use Symfony\Component\Config\Resource\GlobResource;
 abstract class FileLoader extends BaseFileLoader
 {
     protected $container;
+<<<<<<< HEAD
     protected $isLoadingInstanceof = false;
     protected $instanceof = array();
 
+=======
+
+    /**
+     * @param ContainerBuilder     $container A ContainerBuilder instance
+     * @param FileLocatorInterface $locator   A FileLocator instance
+     */
+>>>>>>> web and vendor directory from composer install
     public function __construct(ContainerBuilder $container, FileLocatorInterface $locator)
     {
         $this->container = $container;
 
         parent::__construct($locator);
     }
+<<<<<<< HEAD
 
     /**
      * Registers a set of classes as services using PSR-4 for discovery.
@@ -177,4 +192,6 @@ abstract class FileLoader extends BaseFileLoader
 
         return $classes;
     }
+=======
+>>>>>>> web and vendor directory from composer install
 }

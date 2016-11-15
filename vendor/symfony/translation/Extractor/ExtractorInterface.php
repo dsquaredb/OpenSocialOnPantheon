@@ -24,7 +24,11 @@ interface ExtractorInterface
     /**
      * Extracts translation messages from files, a file or a directory to the catalogue.
      *
+<<<<<<< HEAD
      * @param string|array     $resource  Files, a file or a directory
+=======
+     * @param string|array     $resource  files, a file or a directory
+>>>>>>> web and vendor directory from composer install
      * @param MessageCatalogue $catalogue The catalogue
      */
     public function extract($resource, MessageCatalogue $catalogue);

@@ -28,8 +28,15 @@ class SilverStripeInstaller extends BaseInstaller
             && version_compare($package->getVersion(), '2.999.999') < 0
         ) {
             return $this->templatePath($this->locations['module'], array('name' => 'sapphire'));
+<<<<<<< HEAD
         }
 
         return parent::getInstallPath($package, $frameworkType);
+=======
+        } else {
+            return parent::getInstallPath($package, $frameworkType);
+        }
+
+>>>>>>> web and vendor directory from composer install
     }
 }

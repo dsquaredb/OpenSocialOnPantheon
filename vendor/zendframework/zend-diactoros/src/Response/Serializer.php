@@ -37,7 +37,11 @@ final class Serializer extends AbstractSerializer
      * Parse a response from a stream.
      *
      * @param StreamInterface $stream
+<<<<<<< HEAD
      * @return Response
+=======
+     * @return ResponseInterface
+>>>>>>> web and vendor directory from composer install
      * @throws InvalidArgumentException when the stream is not readable.
      * @throws UnexpectedValueException when errors occur parsing the message.
      */

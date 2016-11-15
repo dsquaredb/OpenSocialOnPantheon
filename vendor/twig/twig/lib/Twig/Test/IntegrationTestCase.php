@@ -3,21 +3,32 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
+=======
+ * (c) 2010 Fabien Potencier
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 use PHPUnit\Framework\TestCase;
 
+=======
+>>>>>>> web and vendor directory from composer install
 /**
  * Integration test helper.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Karma Dordrak <drak@zikula.org>
  */
+<<<<<<< HEAD
 abstract class Twig_Test_IntegrationTestCase extends TestCase
+=======
+abstract class Twig_Test_IntegrationTestCase extends PHPUnit_Framework_TestCase
+>>>>>>> web and vendor directory from composer install
 {
     /**
      * @return string
@@ -25,6 +36,7 @@ abstract class Twig_Test_IntegrationTestCase extends TestCase
     abstract protected function getFixturesDir();
 
     /**
+<<<<<<< HEAD
      * @return Twig_RuntimeLoaderInterface[]
      */
     protected function getRuntimeLoaders()
@@ -33,6 +45,8 @@ abstract class Twig_Test_IntegrationTestCase extends TestCase
     }
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * @return Twig_ExtensionInterface[]
      */
     protected function getExtensions()
@@ -131,10 +145,13 @@ abstract class Twig_Test_IntegrationTestCase extends TestCase
 
     protected function doIntegrationTest($file, $message, $condition, $templates, $exception, $outputs)
     {
+<<<<<<< HEAD
         if (!$outputs) {
             $this->markTestSkipped('no legacy tests to run');
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         if ($condition) {
             eval('$ret = '.$condition.';');
             if (!$ret) {
@@ -151,10 +168,13 @@ abstract class Twig_Test_IntegrationTestCase extends TestCase
             ), $match[2] ? eval($match[2].';') : array());
             $twig = new Twig_Environment($loader, $config);
             $twig->addGlobal('global', 'global');
+<<<<<<< HEAD
             foreach ($this->getRuntimeLoaders() as $runtimeLoader) {
                 $twig->addRuntimeLoader($runtimeLoader);
             }
 
+=======
+>>>>>>> web and vendor directory from composer install
             foreach ($this->getExtensions() as $extension) {
                 $twig->addExtension($extension);
             }
@@ -191,6 +211,15 @@ abstract class Twig_Test_IntegrationTestCase extends TestCase
                     return;
                 }
 
+<<<<<<< HEAD
+=======
+                if ($e instanceof Twig_Error_Syntax) {
+                    $e->setTemplateName($file);
+
+                    throw $e;
+                }
+
+>>>>>>> web and vendor directory from composer install
                 throw new Twig_Error(sprintf('%s: %s', get_class($e), $e->getMessage()), -1, $file, $e);
             }
 
@@ -203,15 +232,27 @@ abstract class Twig_Test_IntegrationTestCase extends TestCase
                     return;
                 }
 
+<<<<<<< HEAD
                 $e = new Twig_Error(sprintf('%s: %s', get_class($e), $e->getMessage()), -1, $file, $e);
+=======
+                if ($e instanceof Twig_Error_Syntax) {
+                    $e->setTemplateName($file);
+                } else {
+                    $e = new Twig_Error(sprintf('%s: %s', get_class($e), $e->getMessage()), -1, $file, $e);
+                }
+>>>>>>> web and vendor directory from composer install
 
                 $output = trim(sprintf('%s: %s', get_class($e), $e->getMessage()));
             }
 
             if (false !== $exception) {
                 list($class) = explode(':', $exception);
+<<<<<<< HEAD
                 $constraintClass = class_exists('PHPUnit\Framework\Constraint\Exception') ? 'PHPUnit\Framework\Constraint\Exception' : 'PHPUnit_Framework_Constraint_Exception';
                 $this->assertThat(null, new $constraintClass($class));
+=======
+                $this->assertThat(null, new PHPUnit_Framework_Constraint_Exception($class));
+>>>>>>> web and vendor directory from composer install
             }
 
             $expected = trim($match[3], "\n ");
@@ -245,5 +286,8 @@ abstract class Twig_Test_IntegrationTestCase extends TestCase
         return $templates;
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_Test_IntegrationTestCase', 'Twig\Test\IntegrationTestCase', false);
+=======
+>>>>>>> web and vendor directory from composer install

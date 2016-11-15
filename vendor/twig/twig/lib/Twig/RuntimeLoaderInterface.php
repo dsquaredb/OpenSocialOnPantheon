@@ -25,5 +25,8 @@ interface Twig_RuntimeLoaderInterface
      */
     public function load($class);
 }
+<<<<<<< HEAD
 
 class_alias('Twig_RuntimeLoaderInterface', 'Twig\RuntimeLoader\RuntimeLoaderInterface', false);
+=======
+>>>>>>> web and vendor directory from composer install

@@ -21,7 +21,10 @@ class Response
     const HTTP_CONTINUE = 100;
     const HTTP_SWITCHING_PROTOCOLS = 101;
     const HTTP_PROCESSING = 102;            // RFC2518
+<<<<<<< HEAD
     const HTTP_EARLY_HINTS = 103;           // RFC8297
+=======
+>>>>>>> web and vendor directory from composer install
     const HTTP_OK = 200;
     const HTTP_CREATED = 201;
     const HTTP_ACCEPTED = 202;
@@ -127,7 +130,10 @@ class Response
         100 => 'Continue',
         101 => 'Switching Protocols',
         102 => 'Processing',            // RFC2518
+<<<<<<< HEAD
         103 => 'Early Hints',
+=======
+>>>>>>> web and vendor directory from composer install
         200 => 'OK',
         201 => 'Created',
         202 => 'Accepted',
@@ -181,7 +187,11 @@ class Response
         503 => 'Service Unavailable',
         504 => 'Gateway Timeout',
         505 => 'HTTP Version Not Supported',
+<<<<<<< HEAD
         506 => 'Variant Also Negotiates',                                     // RFC2295
+=======
+        506 => 'Variant Also Negotiates (Experimental)',                      // RFC2295
+>>>>>>> web and vendor directory from composer install
         507 => 'Insufficient Storage',                                        // RFC4918
         508 => 'Loop Detected',                                               // RFC5842
         510 => 'Not Extended',                                                // RFC2774
@@ -189,6 +199,11 @@ class Response
     );
 
     /**
+<<<<<<< HEAD
+=======
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param mixed $content The response content, see setContent()
      * @param int   $status  The response status code
      * @param array $headers An array of response headers
@@ -215,7 +230,11 @@ class Response
      * @param int   $status  The response status code
      * @param array $headers An array of response headers
      *
+<<<<<<< HEAD
      * @return static
+=======
+     * @return Response
+>>>>>>> web and vendor directory from composer install
      */
     public static function create($content = '', $status = 200, $headers = array())
     {
@@ -256,7 +275,13 @@ class Response
      * compliant with RFC 2616. Most of the changes are based on
      * the Request that is "associated" with this Response.
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @param Request $request A Request instance
+     *
+     * @return Response The current response
+>>>>>>> web and vendor directory from composer install
      */
     public function prepare(Request $request)
     {
@@ -305,7 +330,11 @@ class Response
         }
 
         // Check if we need to send extra expire info headers
+<<<<<<< HEAD
         if ('1.0' == $this->getProtocolVersion() && false !== strpos($this->headers->get('Cache-Control'), 'no-cache')) {
+=======
+        if ('1.0' == $this->getProtocolVersion() && 'no-cache' == $this->headers->get('Cache-Control')) {
+>>>>>>> web and vendor directory from composer install
             $this->headers->set('pragma', 'no-cache');
             $this->headers->set('expires', -1);
         }
@@ -318,7 +347,11 @@ class Response
     /**
      * Sends HTTP headers.
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Response
+>>>>>>> web and vendor directory from composer install
      */
     public function sendHeaders()
     {
@@ -327,6 +360,13 @@ class Response
             return $this;
         }
 
+<<<<<<< HEAD
+=======
+        if (!$this->headers->has('Date')) {
+            $this->setDate(\DateTime::createFromFormat('U', time()));
+        }
+
+>>>>>>> web and vendor directory from composer install
         // headers
         foreach ($this->headers->allPreserveCase() as $name => $values) {
             foreach ($values as $value) {
@@ -337,13 +377,25 @@ class Response
         // status
         header(sprintf('HTTP/%s %s %s', $this->version, $this->statusCode, $this->statusText), true, $this->statusCode);
 
+<<<<<<< HEAD
+=======
+        // cookies
+        foreach ($this->headers->getCookies() as $cookie) {
+            setcookie($cookie->getName(), $cookie->getValue(), $cookie->getExpiresTime(), $cookie->getPath(), $cookie->getDomain(), $cookie->isSecure(), $cookie->isHttpOnly());
+        }
+
+>>>>>>> web and vendor directory from composer install
         return $this;
     }
 
     /**
      * Sends content for the current web response.
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Response
+>>>>>>> web and vendor directory from composer install
      */
     public function sendContent()
     {
@@ -355,7 +407,11 @@ class Response
     /**
      * Sends HTTP headers and content.
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Response
+>>>>>>> web and vendor directory from composer install
      */
     public function send()
     {
@@ -364,7 +420,11 @@ class Response
 
         if (function_exists('fastcgi_finish_request')) {
             fastcgi_finish_request();
+<<<<<<< HEAD
         } elseif (!\in_array(PHP_SAPI, array('cli', 'phpdbg'), true)) {
+=======
+        } elseif ('cli' !== PHP_SAPI) {
+>>>>>>> web and vendor directory from composer install
             static::closeOutputBuffers(0, true);
         }
 
@@ -378,7 +438,11 @@ class Response
      *
      * @param mixed $content Content that can be cast to string
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Response
+>>>>>>> web and vendor directory from composer install
      *
      * @throws \UnexpectedValueException
      */
@@ -408,9 +472,13 @@ class Response
      *
      * @param string $version The HTTP protocol version
      *
+<<<<<<< HEAD
      * @return $this
      *
      * @final since version 3.2
+=======
+     * @return Response
+>>>>>>> web and vendor directory from composer install
      */
     public function setProtocolVersion($version)
     {
@@ -423,8 +491,11 @@ class Response
      * Gets the HTTP protocol version.
      *
      * @return string The HTTP protocol version
+<<<<<<< HEAD
      *
      * @final since version 3.2
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function getProtocolVersion()
     {
@@ -434,6 +505,7 @@ class Response
     /**
      * Sets the response status code.
      *
+<<<<<<< HEAD
      * If the status text is null it will be automatically populated for the known
      * status codes and left empty otherwise.
      *
@@ -445,6 +517,17 @@ class Response
      * @throws \InvalidArgumentException When the HTTP status code is not valid
      *
      * @final since version 3.2
+=======
+     * @param int   $code HTTP status code
+     * @param mixed $text HTTP status text
+     *
+     * If the status text is null it will be automatically populated for the known
+     * status codes and left empty otherwise.
+     *
+     * @return Response
+     *
+     * @throws \InvalidArgumentException When the HTTP status code is not valid
+>>>>>>> web and vendor directory from composer install
      */
     public function setStatusCode($code, $text = null)
     {
@@ -474,8 +557,11 @@ class Response
      * Retrieves the status code for the current web response.
      *
      * @return int Status code
+<<<<<<< HEAD
      *
      * @final since version 3.2
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function getStatusCode()
     {
@@ -487,9 +573,13 @@ class Response
      *
      * @param string $charset Character set
      *
+<<<<<<< HEAD
      * @return $this
      *
      * @final since version 3.2
+=======
+     * @return Response
+>>>>>>> web and vendor directory from composer install
      */
     public function setCharset($charset)
     {
@@ -502,8 +592,11 @@ class Response
      * Retrieves the response charset.
      *
      * @return string Character set
+<<<<<<< HEAD
      *
      * @final since version 3.2
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function getCharset()
     {
@@ -511,12 +604,17 @@ class Response
     }
 
     /**
+<<<<<<< HEAD
      * Returns true if the response may safely be kept in a shared (surrogate) cache.
+=======
+     * Returns true if the response is worth caching under any circumstance.
+>>>>>>> web and vendor directory from composer install
      *
      * Responses marked "private" with an explicit Cache-Control directive are
      * considered uncacheable.
      *
      * Responses with neither a freshness lifetime (Expires, max-age) nor cache
+<<<<<<< HEAD
      * validator (Last-Modified, ETag) are considered uncacheable because there is
      * no way to tell when or how to remove them from the cache.
      *
@@ -528,6 +626,11 @@ class Response
      * @return bool true if the response is worth caching, false otherwise
      *
      * @final since version 3.3
+=======
+     * validator (Last-Modified, ETag) are considered uncacheable.
+     *
+     * @return bool true if the response is worth caching, false otherwise
+>>>>>>> web and vendor directory from composer install
      */
     public function isCacheable()
     {
@@ -550,8 +653,11 @@ class Response
      * indicator or Expires header and the calculated age is less than the freshness lifetime.
      *
      * @return bool true if the response is fresh, false otherwise
+<<<<<<< HEAD
      *
      * @final since version 3.3
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function isFresh()
     {
@@ -563,8 +669,11 @@ class Response
      * the response with the origin server using a conditional GET request.
      *
      * @return bool true if the response is validateable, false otherwise
+<<<<<<< HEAD
      *
      * @final since version 3.3
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function isValidateable()
     {
@@ -576,9 +685,13 @@ class Response
      *
      * It makes the response ineligible for serving other clients.
      *
+<<<<<<< HEAD
      * @return $this
      *
      * @final since version 3.2
+=======
+     * @return Response
+>>>>>>> web and vendor directory from composer install
      */
     public function setPrivate()
     {
@@ -593,9 +706,13 @@ class Response
      *
      * It makes the response eligible for serving other clients.
      *
+<<<<<<< HEAD
      * @return $this
      *
      * @final since version 3.2
+=======
+     * @return Response
+>>>>>>> web and vendor directory from composer install
      */
     public function setPublic()
     {
@@ -606,6 +723,7 @@ class Response
     }
 
     /**
+<<<<<<< HEAD
      * Marks the response as "immutable".
      *
      * @param bool $immutable enables or disables the immutable directive
@@ -638,6 +756,8 @@ class Response
     }
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * Returns true if the response must be revalidated by caches.
      *
      * This method indicates that the response must not be served stale by a
@@ -646,8 +766,11 @@ class Response
      * greater than the value provided by the origin.
      *
      * @return bool true if the response must be revalidated by a cache, false otherwise
+<<<<<<< HEAD
      *
      * @final since version 3.3
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function mustRevalidate()
     {
@@ -660,20 +783,36 @@ class Response
      * @return \DateTime A \DateTime instance
      *
      * @throws \RuntimeException When the header is not parseable
+<<<<<<< HEAD
      *
      * @final since version 3.2
      */
     public function getDate()
     {
+=======
+     */
+    public function getDate()
+    {
+        if (!$this->headers->has('Date')) {
+            $this->setDate(\DateTime::createFromFormat('U', time()));
+        }
+
+>>>>>>> web and vendor directory from composer install
         return $this->headers->getDate('Date');
     }
 
     /**
      * Sets the Date header.
      *
+<<<<<<< HEAD
      * @return $this
      *
      * @final since version 3.2
+=======
+     * @param \DateTime $date A \DateTime instance
+     *
+     * @return Response
+>>>>>>> web and vendor directory from composer install
      */
     public function setDate(\DateTime $date)
     {
@@ -687,8 +826,11 @@ class Response
      * Returns the age of the response.
      *
      * @return int The age of the response in seconds
+<<<<<<< HEAD
      *
      * @final since version 3.2
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function getAge()
     {
@@ -702,7 +844,11 @@ class Response
     /**
      * Marks the response stale by setting the Age header to be equal to the maximum age of the response.
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Response
+>>>>>>> web and vendor directory from composer install
      */
     public function expire()
     {
@@ -717,8 +863,11 @@ class Response
      * Returns the value of the Expires header as a DateTime instance.
      *
      * @return \DateTime|null A DateTime instance or null if the header does not exist
+<<<<<<< HEAD
      *
      * @final since version 3.2
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function getExpires()
     {
@@ -737,9 +886,13 @@ class Response
      *
      * @param \DateTime|null $date A \DateTime instance or null to remove the header
      *
+<<<<<<< HEAD
      * @return $this
      *
      * @final since version 3.2
+=======
+     * @return Response
+>>>>>>> web and vendor directory from composer install
      */
     public function setExpires(\DateTime $date = null)
     {
@@ -762,8 +915,11 @@ class Response
      * back on an expires header. It returns null when no maximum age can be established.
      *
      * @return int|null Number of seconds
+<<<<<<< HEAD
      *
      * @final since version 3.2
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function getMaxAge()
     {
@@ -787,9 +943,13 @@ class Response
      *
      * @param int $value Number of seconds
      *
+<<<<<<< HEAD
      * @return $this
      *
      * @final since version 3.2
+=======
+     * @return Response
+>>>>>>> web and vendor directory from composer install
      */
     public function setMaxAge($value)
     {
@@ -805,9 +965,13 @@ class Response
      *
      * @param int $value Number of seconds
      *
+<<<<<<< HEAD
      * @return $this
      *
      * @final since version 3.2
+=======
+     * @return Response
+>>>>>>> web and vendor directory from composer install
      */
     public function setSharedMaxAge($value)
     {
@@ -826,8 +990,11 @@ class Response
      * revalidating with the origin.
      *
      * @return int|null The TTL in seconds
+<<<<<<< HEAD
      *
      * @final since version 3.2
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function getTtl()
     {
@@ -843,9 +1010,13 @@ class Response
      *
      * @param int $seconds Number of seconds
      *
+<<<<<<< HEAD
      * @return $this
      *
      * @final since version 3.2
+=======
+     * @return Response
+>>>>>>> web and vendor directory from composer install
      */
     public function setTtl($seconds)
     {
@@ -861,9 +1032,13 @@ class Response
      *
      * @param int $seconds Number of seconds
      *
+<<<<<<< HEAD
      * @return $this
      *
      * @final since version 3.2
+=======
+     * @return Response
+>>>>>>> web and vendor directory from composer install
      */
     public function setClientTtl($seconds)
     {
@@ -878,8 +1053,11 @@ class Response
      * @return \DateTime|null A DateTime instance or null if the header does not exist
      *
      * @throws \RuntimeException When the HTTP header is not parseable
+<<<<<<< HEAD
      *
      * @final since version 3.2
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function getLastModified()
     {
@@ -893,9 +1071,13 @@ class Response
      *
      * @param \DateTime|null $date A \DateTime instance or null to remove the header
      *
+<<<<<<< HEAD
      * @return $this
      *
      * @final since version 3.2
+=======
+     * @return Response
+>>>>>>> web and vendor directory from composer install
      */
     public function setLastModified(\DateTime $date = null)
     {
@@ -914,8 +1096,11 @@ class Response
      * Returns the literal value of the ETag HTTP header.
      *
      * @return string|null The ETag HTTP header or null if it does not exist
+<<<<<<< HEAD
      *
      * @final since version 3.2
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function getEtag()
     {
@@ -928,9 +1113,13 @@ class Response
      * @param string|null $etag The ETag unique identifier or null to remove the header
      * @param bool        $weak Whether you want a weak ETag or not
      *
+<<<<<<< HEAD
      * @return $this
      *
      * @final since version 3.2
+=======
+     * @return Response
+>>>>>>> web and vendor directory from composer install
      */
     public function setEtag($etag = null, $weak = false)
     {
@@ -950,6 +1139,7 @@ class Response
     /**
      * Sets the response's cache headers (validation and/or expiration).
      *
+<<<<<<< HEAD
      * Available options are: etag, last_modified, max_age, s_maxage, private, public and immutable.
      *
      * @param array $options An array of cache options
@@ -963,6 +1153,19 @@ class Response
     public function setCache(array $options)
     {
         if ($diff = array_diff(array_keys($options), array('etag', 'last_modified', 'max_age', 's_maxage', 'private', 'public', 'immutable'))) {
+=======
+     * Available options are: etag, last_modified, max_age, s_maxage, private, and public.
+     *
+     * @param array $options An array of cache options
+     *
+     * @return Response
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function setCache(array $options)
+    {
+        if ($diff = array_diff(array_keys($options), array('etag', 'last_modified', 'max_age', 's_maxage', 'private', 'public'))) {
+>>>>>>> web and vendor directory from composer install
             throw new \InvalidArgumentException(sprintf('Response does not support the following options: "%s".', implode('", "', array_values($diff))));
         }
 
@@ -998,10 +1201,13 @@ class Response
             }
         }
 
+<<<<<<< HEAD
         if (isset($options['immutable'])) {
             $this->setImmutable((bool) $options['immutable']);
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         return $this;
     }
 
@@ -1011,11 +1217,17 @@ class Response
      * This sets the status, removes the body, and discards any headers
      * that MUST NOT be included in 304 responses.
      *
+<<<<<<< HEAD
      * @return $this
      *
      * @see http://tools.ietf.org/html/rfc2616#section-10.3.5
      *
      * @final since version 3.3
+=======
+     * @return Response
+     *
+     * @see http://tools.ietf.org/html/rfc2616#section-10.3.5
+>>>>>>> web and vendor directory from composer install
      */
     public function setNotModified()
     {
@@ -1034,8 +1246,11 @@ class Response
      * Returns true if the response includes a Vary header.
      *
      * @return bool true if the response includes a Vary header, false otherwise
+<<<<<<< HEAD
      *
      * @final since version 3.2
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function hasVary()
     {
@@ -1046,8 +1261,11 @@ class Response
      * Returns an array of header names given in the Vary header.
      *
      * @return array An array of Vary names
+<<<<<<< HEAD
      *
      * @final since version 3.2
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function getVary()
     {
@@ -1069,9 +1287,13 @@ class Response
      * @param string|array $headers
      * @param bool         $replace Whether to replace the actual value or not (true by default)
      *
+<<<<<<< HEAD
      * @return $this
      *
      * @final since version 3.2
+=======
+     * @return Response
+>>>>>>> web and vendor directory from composer install
      */
     public function setVary($headers, $replace = true)
     {
@@ -1087,9 +1309,15 @@ class Response
      * If the Response is not modified, it sets the status code to 304 and
      * removes the actual content by calling the setNotModified() method.
      *
+<<<<<<< HEAD
      * @return bool true if the Response validators match the Request, false otherwise
      *
      * @final since version 3.3
+=======
+     * @param Request $request A Request instance
+     *
+     * @return bool true if the Response validators match the Request, false otherwise
+>>>>>>> web and vendor directory from composer install
      */
     public function isNotModified(Request $request)
     {
@@ -1122,8 +1350,11 @@ class Response
      * @return bool
      *
      * @see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+<<<<<<< HEAD
      *
      * @final since version 3.2
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function isInvalid()
     {
@@ -1134,8 +1365,11 @@ class Response
      * Is response informative?
      *
      * @return bool
+<<<<<<< HEAD
      *
      * @final since version 3.3
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function isInformational()
     {
@@ -1146,8 +1380,11 @@ class Response
      * Is response successful?
      *
      * @return bool
+<<<<<<< HEAD
      *
      * @final since version 3.2
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function isSuccessful()
     {
@@ -1158,8 +1395,11 @@ class Response
      * Is the response a redirect?
      *
      * @return bool
+<<<<<<< HEAD
      *
      * @final since version 3.2
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function isRedirection()
     {
@@ -1170,8 +1410,11 @@ class Response
      * Is there a client error?
      *
      * @return bool
+<<<<<<< HEAD
      *
      * @final since version 3.2
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function isClientError()
     {
@@ -1182,8 +1425,11 @@ class Response
      * Was there a server side error?
      *
      * @return bool
+<<<<<<< HEAD
      *
      * @final since version 3.3
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function isServerError()
     {
@@ -1194,8 +1440,11 @@ class Response
      * Is the response OK?
      *
      * @return bool
+<<<<<<< HEAD
      *
      * @final since version 3.2
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function isOk()
     {
@@ -1206,8 +1455,11 @@ class Response
      * Is the response forbidden?
      *
      * @return bool
+<<<<<<< HEAD
      *
      * @final since version 3.2
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function isForbidden()
     {
@@ -1218,8 +1470,11 @@ class Response
      * Is the response a not found error?
      *
      * @return bool
+<<<<<<< HEAD
      *
      * @final since version 3.2
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function isNotFound()
     {
@@ -1232,8 +1487,11 @@ class Response
      * @param string $location
      *
      * @return bool
+<<<<<<< HEAD
      *
      * @final since version 3.2
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function isRedirect($location = null)
     {
@@ -1244,8 +1502,11 @@ class Response
      * Is the response empty?
      *
      * @return bool
+<<<<<<< HEAD
      *
      * @final since version 3.2
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function isEmpty()
     {
@@ -1259,17 +1520,26 @@ class Response
      *
      * @param int  $targetLevel The target output buffering level
      * @param bool $flush       Whether to flush or clean the buffers
+<<<<<<< HEAD
      *
      * @final since version 3.3
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public static function closeOutputBuffers($targetLevel, $flush)
     {
         $status = ob_get_status(true);
         $level = count($status);
+<<<<<<< HEAD
         // PHP_OUTPUT_HANDLER_* are not defined on HHVM 3.3
         $flags = defined('PHP_OUTPUT_HANDLER_REMOVABLE') ? PHP_OUTPUT_HANDLER_REMOVABLE | ($flush ? PHP_OUTPUT_HANDLER_FLUSHABLE : PHP_OUTPUT_HANDLER_CLEANABLE) : -1;
 
         while ($level-- > $targetLevel && ($s = $status[$level]) && (!isset($s['del']) ? !isset($s['flags']) || ($s['flags'] & $flags) === $flags : $s['del'])) {
+=======
+        $flags = defined('PHP_OUTPUT_HANDLER_REMOVABLE') ? PHP_OUTPUT_HANDLER_REMOVABLE | ($flush ? PHP_OUTPUT_HANDLER_FLUSHABLE : PHP_OUTPUT_HANDLER_CLEANABLE) : -1;
+
+        while ($level-- > $targetLevel && ($s = $status[$level]) && (!isset($s['del']) ? !isset($s['flags']) || $flags === ($s['flags'] & $flags) : $s['del'])) {
+>>>>>>> web and vendor directory from composer install
             if ($flush) {
                 ob_end_flush();
             } else {
@@ -1281,6 +1551,7 @@ class Response
     /**
      * Checks if we need to remove Cache-Control for SSL encrypted downloads when using IE < 9.
      *
+<<<<<<< HEAD
      * @see http://support.microsoft.com/kb/323308
      *
      * @final since version 3.3
@@ -1288,6 +1559,13 @@ class Response
     protected function ensureIEOverSSLCompatibility(Request $request)
     {
         if (false !== stripos($this->headers->get('Content-Disposition'), 'attachment') && 1 == preg_match('/MSIE (.*?);/i', $request->server->get('HTTP_USER_AGENT'), $match) && true === $request->isSecure()) {
+=======
+     * @link http://support.microsoft.com/kb/323308
+     */
+    protected function ensureIEOverSSLCompatibility(Request $request)
+    {
+        if (false !== stripos($this->headers->get('Content-Disposition'), 'attachment') && preg_match('/MSIE (.*?);/i', $request->server->get('HTTP_USER_AGENT'), $match) == 1 && true === $request->isSecure()) {
+>>>>>>> web and vendor directory from composer install
             if ((int) preg_replace('/(MSIE )(.*?);/', '$2', $match[0]) < 9) {
                 $this->headers->remove('Cache-Control');
             }

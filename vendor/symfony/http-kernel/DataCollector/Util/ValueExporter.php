@@ -11,12 +11,17 @@
 
 namespace Symfony\Component\HttpKernel\DataCollector\Util;
 
+<<<<<<< HEAD
 @trigger_error('The '.__NAMESPACE__.'\ValueExporter class is deprecated since Symfony 3.2 and will be removed in 4.0. Use the VarDumper component instead.', E_USER_DEPRECATED);
 
 /**
  * @author Bernhard Schussek <bschussek@gmail.com>
  *
  * @deprecated since version 3.2, to be removed in 4.0. Use the VarDumper component instead.
+=======
+/**
+ * @author Bernhard Schussek <bschussek@gmail.com>
+>>>>>>> web and vendor directory from composer install
  */
 class ValueExporter
 {
@@ -24,8 +29,13 @@ class ValueExporter
      * Converts a PHP value to a string.
      *
      * @param mixed $value The PHP value
+<<<<<<< HEAD
      * @param int   $depth Only for internal usage
      * @param bool  $deep  Only for internal usage
+=======
+     * @param int   $depth only for internal usage
+     * @param bool  $deep  only for internal usage
+>>>>>>> web and vendor directory from composer install
      *
      * @return string The string representation of the given value
      */
@@ -36,8 +46,13 @@ class ValueExporter
         }
 
         if (is_object($value)) {
+<<<<<<< HEAD
             if ($value instanceof \DateTimeInterface) {
                 return sprintf('Object(%s) - %s', get_class($value), $value->format(\DateTime::ATOM));
+=======
+            if ($value instanceof \DateTime || $value instanceof \DateTimeInterface) {
+                return sprintf('Object(%s) - %s', get_class($value), $value->format(\DateTime::ISO8601));
+>>>>>>> web and vendor directory from composer install
             }
 
             return sprintf('Object(%s)', get_class($value));
@@ -62,6 +77,7 @@ class ValueExporter
                 return sprintf("[\n%s%s\n%s]", $indent, implode(sprintf(", \n%s", $indent), $a), str_repeat('  ', $depth - 1));
             }
 
+<<<<<<< HEAD
             $s = sprintf('[%s]', implode(', ', $a));
 
             if (80 > strlen($s)) {
@@ -69,6 +85,9 @@ class ValueExporter
             }
 
             return sprintf("[\n%s%s\n]", $indent, implode(sprintf(",\n%s", $indent), $a));
+=======
+            return sprintf('[%s]', implode(', ', $a));
+>>>>>>> web and vendor directory from composer install
         }
 
         if (is_resource($value)) {

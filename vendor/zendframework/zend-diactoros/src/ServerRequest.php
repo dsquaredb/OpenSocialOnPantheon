@@ -31,7 +31,11 @@ use Psr\Http\Message\UriInterface;
  */
 class ServerRequest implements ServerRequestInterface
 {
+<<<<<<< HEAD
     use RequestTrait;
+=======
+    use MessageTrait, RequestTrait;
+>>>>>>> web and vendor directory from composer install
 
     /**
      * @var array

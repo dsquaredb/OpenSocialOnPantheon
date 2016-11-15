@@ -153,7 +153,11 @@ class ClassLoader
      */
     public function register()
     {
+<<<<<<< HEAD
         spl_autoload_register([$this, 'loadClass']);
+=======
+        spl_autoload_register(array($this, 'loadClass'));
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -163,7 +167,11 @@ class ClassLoader
      */
     public function unregister()
     {
+<<<<<<< HEAD
         spl_autoload_unregister([$this, 'loadClass']);
+=======
+        spl_autoload_unregister(array($this, 'loadClass'));
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -275,6 +283,10 @@ class ClassLoader
     {
         return class_exists($type, $autoload)
             || interface_exists($type, $autoload)
+<<<<<<< HEAD
             || trait_exists($type, $autoload);
+=======
+            || (function_exists('trait_exists') && trait_exists($type, $autoload));
+>>>>>>> web and vendor directory from composer install
     }
 }

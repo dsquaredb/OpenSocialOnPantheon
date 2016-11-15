@@ -25,10 +25,18 @@ interface InstantiatorInterface
     /**
      * Instantiates a proxy object.
      *
+<<<<<<< HEAD
      * @param ContainerInterface $container        The container from which the service is being requested
      * @param Definition         $definition       The definition of the requested service
      * @param string             $id               Identifier of the requested service
      * @param callable           $realInstantiator Zero-argument callback that is capable of producing the real service instance
+=======
+     * @param ContainerInterface $container        the container from which the service is being requested
+     * @param Definition         $definition       the definition of the requested service
+     * @param string             $id               identifier of the requested service
+     * @param callable           $realInstantiator zero-argument callback that is capable of producing the real
+     *                                             service instance
+>>>>>>> web and vendor directory from composer install
      *
      * @return object
      */

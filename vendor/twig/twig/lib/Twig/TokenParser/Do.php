@@ -3,7 +3,11 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
+=======
+ * (c) 2011 Fabien Potencier
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,8 +15,11 @@
 
 /**
  * Evaluates an expression, discarding the returned value.
+<<<<<<< HEAD
  *
  * @final
+=======
+>>>>>>> web and vendor directory from composer install
  */
 class Twig_TokenParser_Do extends Twig_TokenParser
 {
@@ -30,5 +37,8 @@ class Twig_TokenParser_Do extends Twig_TokenParser
         return 'do';
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_TokenParser_Do', 'Twig\TokenParser\DoTokenParser', false);
+=======
+>>>>>>> web and vendor directory from composer install

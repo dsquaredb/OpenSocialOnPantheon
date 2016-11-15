@@ -12,6 +12,7 @@
 namespace Symfony\Component\DependencyInjection\Dumper;
 
 use Symfony\Component\Yaml\Dumper as YmlDumper;
+<<<<<<< HEAD
 use Symfony\Component\Yaml\Parser;
 use Symfony\Component\Yaml\Tag\TaggedValue;
 use Symfony\Component\Yaml\Yaml;
@@ -20,6 +21,9 @@ use Symfony\Component\DependencyInjection\Argument\ArgumentInterface;
 use Symfony\Component\DependencyInjection\Argument\IteratorArgument;
 use Symfony\Component\DependencyInjection\Argument\ServiceClosureArgument;
 use Symfony\Component\DependencyInjection\Argument\TaggedIteratorArgument;
+=======
+use Symfony\Component\DependencyInjection\Alias;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Parameter;
@@ -39,6 +43,11 @@ class YamlDumper extends Dumper
     /**
      * Dumps the service container as an YAML string.
      *
+<<<<<<< HEAD
+=======
+     * @param array $options An array of options
+     *
+>>>>>>> web and vendor directory from composer install
      * @return string A YAML string representing of the service container
      */
     public function dump(array $options = array())
@@ -51,7 +60,11 @@ class YamlDumper extends Dumper
             $this->dumper = new YmlDumper();
         }
 
+<<<<<<< HEAD
         return $this->container->resolveEnvPlaceholders($this->addParameters()."\n".$this->addServices());
+=======
+        return $this->addParameters()."\n".$this->addServices();
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -62,7 +75,11 @@ class YamlDumper extends Dumper
      *
      * @return string
      */
+<<<<<<< HEAD
     private function addService($id, Definition $definition)
+=======
+    private function addService($id, $definition)
+>>>>>>> web and vendor directory from composer install
     {
         $code = "    $id:\n";
         if ($class = $definition->getClass()) {
@@ -73,8 +90,13 @@ class YamlDumper extends Dumper
             $code .= sprintf("        class: %s\n", $this->dumper->dump($class));
         }
 
+<<<<<<< HEAD
         if (!$definition->isPrivate()) {
             $code .= sprintf("        public: %s\n", $definition->isPublic() ? 'true' : 'false');
+=======
+        if (!$definition->isPublic()) {
+            $code .= "        public: false\n";
+>>>>>>> web and vendor directory from composer install
         }
 
         $tagsCode = '';
@@ -98,7 +120,15 @@ class YamlDumper extends Dumper
         }
 
         if ($definition->isSynthetic()) {
+<<<<<<< HEAD
             $code .= "        synthetic: true\n";
+=======
+            $code .= sprintf("        synthetic: true\n");
+        }
+
+        if ($definition->isSynchronized(false)) {
+            $code .= sprintf("        synchronized: true\n");
+>>>>>>> web and vendor directory from composer install
         }
 
         if ($definition->isDeprecated()) {
@@ -110,13 +140,18 @@ class YamlDumper extends Dumper
         }
 
         $autowiringTypesCode = '';
+<<<<<<< HEAD
         foreach ($definition->getAutowiringTypes(false) as $autowiringType) {
+=======
+        foreach ($definition->getAutowiringTypes() as $autowiringType) {
+>>>>>>> web and vendor directory from composer install
             $autowiringTypesCode .= sprintf("            - %s\n", $this->dumper->dump($autowiringType));
         }
         if ($autowiringTypesCode) {
             $code .= sprintf("        autowiring_types:\n%s", $autowiringTypesCode);
         }
 
+<<<<<<< HEAD
         if ($definition->isAutoconfigured()) {
             $code .= "        autoconfigure: true\n";
         }
@@ -127,6 +162,22 @@ class YamlDumper extends Dumper
 
         if ($definition->isLazy()) {
             $code .= "        lazy: true\n";
+=======
+        if ($definition->getFactoryClass(false)) {
+            $code .= sprintf("        factory_class: %s\n", $this->dumper->dump($definition->getFactoryClass(false)));
+        }
+
+        if ($definition->isLazy()) {
+            $code .= sprintf("        lazy: true\n");
+        }
+
+        if ($definition->getFactoryMethod(false)) {
+            $code .= sprintf("        factory_method: %s\n", $this->dumper->dump($definition->getFactoryMethod(false)));
+        }
+
+        if ($definition->getFactoryService(false)) {
+            $code .= sprintf("        factory_service: %s\n", $this->dumper->dump($definition->getFactoryService(false)));
+>>>>>>> web and vendor directory from composer install
         }
 
         if ($definition->getArguments()) {
@@ -145,6 +196,13 @@ class YamlDumper extends Dumper
             $code .= "        shared: false\n";
         }
 
+<<<<<<< HEAD
+=======
+        if (ContainerInterface::SCOPE_CONTAINER !== $scope = $definition->getScope(false)) {
+            $code .= sprintf("        scope: %s\n", $this->dumper->dump($scope));
+        }
+
+>>>>>>> web and vendor directory from composer install
         if (null !== $decorated = $definition->getDecoratedService()) {
             list($decorated, $renamedId, $priority) = $decorated;
             $code .= sprintf("        decorates: %s\n", $decorated);
@@ -175,6 +233,7 @@ class YamlDumper extends Dumper
      *
      * @return string
      */
+<<<<<<< HEAD
     private function addServiceAlias($alias, Alias $id)
     {
         if ($id->isPrivate()) {
@@ -182,6 +241,15 @@ class YamlDumper extends Dumper
         }
 
         return sprintf("    %s:\n        alias: %s\n        public: %s\n", $alias, $id, $id->isPublic() ? 'true' : 'false');
+=======
+    private function addServiceAlias($alias, $id)
+    {
+        if ($id->isPublic()) {
+            return sprintf("    %s: '@%s'\n", $alias, $id);
+        }
+
+        return sprintf("    %s:\n        alias: %s\n        public: false", $alias, $id);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -222,7 +290,11 @@ class YamlDumper extends Dumper
             return '';
         }
 
+<<<<<<< HEAD
         $parameters = $this->prepareParameters($this->container->getParameterBag()->all(), $this->container->isCompiled());
+=======
+        $parameters = $this->prepareParameters($this->container->getParameterBag()->all(), $this->container->isFrozen());
+>>>>>>> web and vendor directory from composer install
 
         return $this->dumper->dump(array('parameters' => $parameters), 2);
     }
@@ -258,6 +330,7 @@ class YamlDumper extends Dumper
      */
     private function dumpValue($value)
     {
+<<<<<<< HEAD
         if ($value instanceof ServiceClosureArgument) {
             $value = $value->getValues()[0];
         }
@@ -274,6 +347,8 @@ class YamlDumper extends Dumper
             return new TaggedValue($tag, $this->dumpValue($value->getValues()));
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         if (is_array($value)) {
             $code = array();
             foreach ($value as $k => $v) {
@@ -287,8 +362,11 @@ class YamlDumper extends Dumper
             return $this->getParameterCall((string) $value);
         } elseif ($value instanceof Expression) {
             return $this->getExpressionCall((string) $value);
+<<<<<<< HEAD
         } elseif ($value instanceof Definition) {
             return new TaggedValue('service', (new Parser())->parse("_:\n".$this->addService('_', $value), Yaml::PARSE_CUSTOM_TAGS)['_']['_']);
+=======
+>>>>>>> web and vendor directory from composer install
         } elseif (is_object($value) || is_resource($value)) {
             throw new RuntimeException('Unable to dump a service container if a parameter is an object or a resource.');
         }
@@ -306,12 +384,17 @@ class YamlDumper extends Dumper
      */
     private function getServiceCall($id, Reference $reference = null)
     {
+<<<<<<< HEAD
         if (null !== $reference) {
             switch ($reference->getInvalidBehavior()) {
                 case ContainerInterface::EXCEPTION_ON_INVALID_REFERENCE: break;
                 case ContainerInterface::IGNORE_ON_UNINITIALIZED_REFERENCE: return sprintf('@!%s', $id);
                 default: return sprintf('@?%s', $id);
             }
+=======
+        if (null !== $reference && ContainerInterface::EXCEPTION_ON_INVALID_REFERENCE !== $reference->getInvalidBehavior()) {
+            return sprintf('@?%s', $id);
+>>>>>>> web and vendor directory from composer install
         }
 
         return sprintf('@%s', $id);
@@ -361,6 +444,11 @@ class YamlDumper extends Dumper
     /**
      * Escapes arguments.
      *
+<<<<<<< HEAD
+=======
+     * @param array $arguments
+     *
+>>>>>>> web and vendor directory from composer install
      * @return array
      */
     private function escape(array $arguments)

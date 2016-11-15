@@ -3,8 +3,13 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
  * (c) Armin Ronacher
+=======
+ * (c) 2009 Fabien Potencier
+ * (c) 2009 Armin Ronacher
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -31,8 +36,17 @@ class Twig_Parser implements Twig_ParserInterface
     protected $importedSymbols;
     protected $traits;
     protected $embeddedTemplates = array();
+<<<<<<< HEAD
     private $varNameSalt = 0;
 
+=======
+
+    /**
+     * Constructor.
+     *
+     * @param Twig_Environment $env A Twig_Environment instance
+     */
+>>>>>>> web and vendor directory from composer install
     public function __construct(Twig_Environment $env)
     {
         $this->env = $env;
@@ -50,7 +64,11 @@ class Twig_Parser implements Twig_ParserInterface
 
     public function getVarName()
     {
+<<<<<<< HEAD
         return sprintf('__internal_%s', hash('sha256', __METHOD__.$this->stream->getSourceContext()->getCode().$this->varNameSalt++));
+=======
+        return sprintf('__internal_%s', hash('sha256', uniqid(mt_rand(), true), false));
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -63,6 +81,12 @@ class Twig_Parser implements Twig_ParserInterface
         return $this->stream->getSourceContext()->getName();
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * {@inheritdoc}
+     */
+>>>>>>> web and vendor directory from composer install
     public function parse(Twig_TokenStream $stream, $test = null, $dropNeedle = false)
     {
         // push all variables into the stack to keep the current state of the parser
@@ -99,7 +123,10 @@ class Twig_Parser implements Twig_ParserInterface
         $this->blockStack = array();
         $this->importedSymbols = array(array());
         $this->embeddedTemplates = array();
+<<<<<<< HEAD
         $this->varNameSalt = 0;
+=======
+>>>>>>> web and vendor directory from composer install
 
         try {
             $body = $this->subparse($test, $dropNeedle);
@@ -108,8 +135,13 @@ class Twig_Parser implements Twig_ParserInterface
                 $body = new Twig_Node();
             }
         } catch (Twig_Error_Syntax $e) {
+<<<<<<< HEAD
             if (!$e->getSourceContext()) {
                 $e->setSourceContext($this->stream->getSourceContext());
+=======
+            if (!$e->getTemplateName()) {
+                $e->setTemplateName($this->stream->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
             }
 
             if (!$e->getTemplateLine()) {
@@ -155,8 +187,13 @@ class Twig_Parser implements Twig_ParserInterface
                     $this->stream->next();
                     $token = $this->getCurrentToken();
 
+<<<<<<< HEAD
                     if (Twig_Token::NAME_TYPE !== $token->getType()) {
                         throw new Twig_Error_Syntax('A block must start with a tag name.', $token->getLine(), $this->stream->getSourceContext());
+=======
+                    if ($token->getType() !== Twig_Token::NAME_TYPE) {
+                        throw new Twig_Error_Syntax('A block must start with a tag name.', $token->getLine(), $this->stream->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
                     }
 
                     if (null !== $test && call_user_func($test, $token)) {
@@ -174,13 +211,21 @@ class Twig_Parser implements Twig_ParserInterface
                     $subparser = $this->handlers->getTokenParser($token->getValue());
                     if (null === $subparser) {
                         if (null !== $test) {
+<<<<<<< HEAD
                             $e = new Twig_Error_Syntax(sprintf('Unexpected "%s" tag', $token->getValue()), $token->getLine(), $this->stream->getSourceContext());
+=======
+                            $e = new Twig_Error_Syntax(sprintf('Unexpected "%s" tag', $token->getValue()), $token->getLine(), $this->stream->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
 
                             if (is_array($test) && isset($test[0]) && $test[0] instanceof Twig_TokenParserInterface) {
                                 $e->appendMessage(sprintf(' (expecting closing tag for the "%s" tag defined near line %s).', $test[0]->getTag(), $lineno));
                             }
                         } else {
+<<<<<<< HEAD
                             $e = new Twig_Error_Syntax(sprintf('Unknown "%s" tag.', $token->getValue()), $token->getLine(), $this->stream->getSourceContext());
+=======
+                            $e = new Twig_Error_Syntax(sprintf('Unknown "%s" tag.', $token->getValue()), $token->getLine(), $this->stream->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
                             $e->addSuggestions($token->getValue(), array_keys($this->env->getTags()));
                         }
 
@@ -196,7 +241,11 @@ class Twig_Parser implements Twig_ParserInterface
                     break;
 
                 default:
+<<<<<<< HEAD
                     throw new Twig_Error_Syntax('Lexer or parser ended up in unsupported state.', $this->getCurrentToken()->getLine(), $this->stream->getSourceContext());
+=======
+                    throw new Twig_Error_Syntax('Lexer or parser ended up in unsupported state.', 0, $this->stream->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -270,7 +319,11 @@ class Twig_Parser implements Twig_ParserInterface
     public function setMacro($name, Twig_Node_Macro $node)
     {
         if ($this->isReservedMacroName($name)) {
+<<<<<<< HEAD
             throw new Twig_Error_Syntax(sprintf('"%s" cannot be used as a macro name as it is a reserved keyword.', $name), $node->getTemplateLine(), $this->stream->getSourceContext());
+=======
+            throw new Twig_Error_Syntax(sprintf('"%s" cannot be used as a macro name as it is a reserved keyword.', $name), $node->getTemplateLine(), $this->stream->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
         }
 
         $this->macros[$name] = $node;
@@ -340,7 +393,13 @@ class Twig_Parser implements Twig_ParserInterface
     }
 
     /**
+<<<<<<< HEAD
      * @return Twig_ExpressionParser
+=======
+     * Gets the expression parser.
+     *
+     * @return Twig_ExpressionParser The expression parser
+>>>>>>> web and vendor directory from composer install
      */
     public function getExpressionParser()
     {
@@ -358,7 +417,13 @@ class Twig_Parser implements Twig_ParserInterface
     }
 
     /**
+<<<<<<< HEAD
      * @return Twig_TokenStream
+=======
+     * Gets the token stream.
+     *
+     * @return Twig_TokenStream The token stream
+>>>>>>> web and vendor directory from composer install
      */
     public function getStream()
     {
@@ -366,7 +431,13 @@ class Twig_Parser implements Twig_ParserInterface
     }
 
     /**
+<<<<<<< HEAD
      * @return Twig_Token
+=======
+     * Gets the current token.
+     *
+     * @return Twig_Token The current token
+>>>>>>> web and vendor directory from composer install
      */
     public function getCurrentToken()
     {
@@ -382,6 +453,7 @@ class Twig_Parser implements Twig_ParserInterface
             (!$node instanceof Twig_Node_Text && !$node instanceof Twig_Node_BlockReference && $node instanceof Twig_NodeOutputInterface)
         ) {
             if (false !== strpos((string) $node, chr(0xEF).chr(0xBB).chr(0xBF))) {
+<<<<<<< HEAD
                 throw new Twig_Error_Syntax('A template that extends another one cannot start with a byte order mark (BOM); it must be removed.', $node->getTemplateLine(), $this->stream->getSourceContext());
             }
 
@@ -390,6 +462,16 @@ class Twig_Parser implements Twig_ParserInterface
 
         // bypass nodes that will "capture" the output
         if ($node instanceof Twig_NodeCaptureInterface) {
+=======
+                throw new Twig_Error_Syntax('A template that extends another one cannot start with a byte order mark (BOM); it must be removed.', $node->getTemplateLine(), $this->stream->getSourceContext()->getName());
+            }
+
+            throw new Twig_Error_Syntax('A template that extends another one cannot include contents outside Twig blocks. Did you forget to put the contents inside a {% block %} tag?', $node->getTemplateLine(), $this->stream->getSourceContext()->getName());
+        }
+
+        // bypass "set" nodes as they "capture" the output
+        if ($node instanceof Twig_Node_Set) {
+>>>>>>> web and vendor directory from composer install
             return $node;
         }
 
@@ -406,7 +488,10 @@ class Twig_Parser implements Twig_ParserInterface
         return $node;
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_Parser', 'Twig\Parser', false);
 class_exists('Twig_Node');
 class_exists('Twig_TokenStream');
+=======
+>>>>>>> web and vendor directory from composer install

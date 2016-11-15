@@ -15,12 +15,22 @@ use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+<<<<<<< HEAD
 use Symfony\Component\VarDumper\Caster\LinkStub;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
  */
 class ConfigDataCollector extends DataCollector implements LateDataCollectorInterface
+=======
+
+/**
+ * ConfigDataCollector.
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ */
+class ConfigDataCollector extends DataCollector
+>>>>>>> web and vendor directory from composer install
 {
     /**
      * @var KernelInterface
@@ -28,9 +38,17 @@ class ConfigDataCollector extends DataCollector implements LateDataCollectorInte
     private $kernel;
     private $name;
     private $version;
+<<<<<<< HEAD
     private $hasVarDumper;
 
     /**
+=======
+    private $cacheVersionInfo = true;
+
+    /**
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param string $name    The name of the application using the web profiler
      * @param string $version The version of the application using the web profiler
      */
@@ -38,11 +56,19 @@ class ConfigDataCollector extends DataCollector implements LateDataCollectorInte
     {
         $this->name = $name;
         $this->version = $version;
+<<<<<<< HEAD
         $this->hasVarDumper = class_exists(LinkStub::class);
+=======
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Sets the Kernel associated with this Request.
+<<<<<<< HEAD
+=======
+     *
+     * @param KernelInterface $kernel A KernelInterface instance
+>>>>>>> web and vendor directory from composer install
      */
     public function setKernel(KernelInterface $kernel = null)
     {
@@ -64,11 +90,19 @@ class ConfigDataCollector extends DataCollector implements LateDataCollectorInte
             'env' => isset($this->kernel) ? $this->kernel->getEnvironment() : 'n/a',
             'debug' => isset($this->kernel) ? $this->kernel->isDebug() : 'n/a',
             'php_version' => PHP_VERSION,
+<<<<<<< HEAD
             'php_architecture' => PHP_INT_SIZE * 8,
             'php_intl_locale' => class_exists('Locale', false) && \Locale::getDefault() ? \Locale::getDefault() : 'n/a',
             'php_timezone' => date_default_timezone_get(),
             'xdebug_enabled' => extension_loaded('xdebug'),
             'apcu_enabled' => extension_loaded('apcu') && ini_get('apc.enabled'),
+=======
+            'xdebug_enabled' => extension_loaded('xdebug'),
+            'eaccel_enabled' => extension_loaded('eaccelerator') && ini_get('eaccelerator.enable'),
+            'apc_enabled' => extension_loaded('apc') && ini_get('apc.enabled'),
+            'xcache_enabled' => extension_loaded('xcache') && ini_get('xcache.cacher'),
+            'wincache_enabled' => extension_loaded('wincache') && ini_get('wincache.ocenabled'),
+>>>>>>> web and vendor directory from composer install
             'zend_opcache_enabled' => extension_loaded('Zend OPcache') && ini_get('opcache.enable'),
             'bundles' => array(),
             'sapi_name' => PHP_SAPI,
@@ -76,6 +110,7 @@ class ConfigDataCollector extends DataCollector implements LateDataCollectorInte
 
         if (isset($this->kernel)) {
             foreach ($this->kernel->getBundles() as $name => $bundle) {
+<<<<<<< HEAD
                 $this->data['bundles'][$name] = $this->hasVarDumper ? new LinkStub($bundle->getPath()) : $bundle->getPath();
             }
 
@@ -106,6 +141,15 @@ class ConfigDataCollector extends DataCollector implements LateDataCollectorInte
         $this->data = $this->cloneVar($this->data);
     }
 
+=======
+                $this->data['bundles'][$name] = $bundle->getPath();
+            }
+
+            $this->data['symfony_state'] = $this->determineSymfonyState();
+        }
+    }
+
+>>>>>>> web and vendor directory from composer install
     public function getApplicationName()
     {
         return $this->data['app_name'];
@@ -146,6 +190,7 @@ class ConfigDataCollector extends DataCollector implements LateDataCollectorInte
         return $this->data['symfony_state'];
     }
 
+<<<<<<< HEAD
     /**
      * Returns the minor Symfony version used (without patch numbers of extra
      * suffix like "RC", "beta", etc.).
@@ -177,6 +222,11 @@ class ConfigDataCollector extends DataCollector implements LateDataCollectorInte
     public function getSymfonyEol()
     {
         return $this->data['symfony_eol'];
+=======
+    public function setCacheVersionInfo($cacheVersionInfo)
+    {
+        $this->cacheVersionInfo = $cacheVersionInfo;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -190,6 +240,7 @@ class ConfigDataCollector extends DataCollector implements LateDataCollectorInte
     }
 
     /**
+<<<<<<< HEAD
      * Gets the PHP version extra part.
      *
      * @return string|null The extra part
@@ -281,6 +332,105 @@ class ConfigDataCollector extends DataCollector implements LateDataCollectorInte
     public function hasZendOpcache()
     {
         return $this->data['zend_opcache_enabled'];
+=======
+     * Gets the application name.
+     *
+     * @return string The application name
+     */
+    public function getAppName()
+    {
+        return $this->data['name'];
+    }
+
+    /**
+     * Gets the environment.
+     *
+     * @return string The environment
+     */
+    public function getEnv()
+    {
+        return $this->data['env'];
+    }
+
+    /**
+     * Returns true if the debug is enabled.
+     *
+     * @return bool true if debug is enabled, false otherwise
+     */
+    public function isDebug()
+    {
+        return $this->data['debug'];
+    }
+
+    /**
+     * Returns true if the XDebug is enabled.
+     *
+     * @return bool true if XDebug is enabled, false otherwise
+     */
+    public function hasXDebug()
+    {
+        return $this->data['xdebug_enabled'];
+    }
+
+    /**
+     * Returns true if EAccelerator is enabled.
+     *
+     * @return bool true if EAccelerator is enabled, false otherwise
+     */
+    public function hasEAccelerator()
+    {
+        return $this->data['eaccel_enabled'];
+    }
+
+    /**
+     * Returns true if APC is enabled.
+     *
+     * @return bool true if APC is enabled, false otherwise
+     */
+    public function hasApc()
+    {
+        return $this->data['apc_enabled'];
+    }
+
+    /**
+     * Returns true if Zend OPcache is enabled.
+     *
+     * @return bool true if Zend OPcache is enabled, false otherwise
+     */
+    public function hasZendOpcache()
+    {
+        return $this->data['zend_opcache_enabled'];
+    }
+
+    /**
+     * Returns true if XCache is enabled.
+     *
+     * @return bool true if XCache is enabled, false otherwise
+     */
+    public function hasXCache()
+    {
+        return $this->data['xcache_enabled'];
+    }
+
+    /**
+     * Returns true if WinCache is enabled.
+     *
+     * @return bool true if WinCache is enabled, false otherwise
+     */
+    public function hasWinCache()
+    {
+        return $this->data['wincache_enabled'];
+    }
+
+    /**
+     * Returns true if any accelerator is enabled.
+     *
+     * @return bool true if any accelerator is enabled, false otherwise
+     */
+    public function hasAccelerator()
+    {
+        return $this->hasApc() || $this->hasZendOpcache() || $this->hasEAccelerator() || $this->hasXCache() || $this->hasWinCache();
+>>>>>>> web and vendor directory from composer install
     }
 
     public function getBundles()

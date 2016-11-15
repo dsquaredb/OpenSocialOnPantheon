@@ -33,6 +33,11 @@ class InputOption
     private $description;
 
     /**
+<<<<<<< HEAD
+=======
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param string       $name        The option name
      * @param string|array $shortcut    The shortcuts, can be null, a string of shortcuts delimited by | or an array of shortcuts
      * @param int          $mode        The option mode: One of the VALUE_* constants
@@ -193,9 +198,17 @@ class InputOption
     /**
      * Checks whether the given option equals this one.
      *
+<<<<<<< HEAD
      * @return bool
      */
     public function equals(self $option)
+=======
+     * @param InputOption $option option to compare
+     *
+     * @return bool
+     */
+    public function equals(InputOption $option)
+>>>>>>> web and vendor directory from composer install
     {
         return $option->getName() === $this->getName()
             && $option->getShortcut() === $this->getShortcut()

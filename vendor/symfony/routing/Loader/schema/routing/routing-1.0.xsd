@@ -26,7 +26,11 @@
 
   <xsd:group name="configs">
     <xsd:choice>
+<<<<<<< HEAD
       <xsd:element name="default" nillable="true" type="default" />
+=======
+      <xsd:element name="default" nillable="true" type="element" />
+>>>>>>> web and vendor directory from composer install
       <xsd:element name="requirement" type="element" />
       <xsd:element name="option" type="element" />
       <xsd:element name="condition" type="xsd:string" />
@@ -37,11 +41,19 @@
     <xsd:group ref="configs" minOccurs="0" maxOccurs="unbounded" />
 
     <xsd:attribute name="id" type="xsd:string" use="required" />
+<<<<<<< HEAD
     <xsd:attribute name="path" type="xsd:string" use="required" />
     <xsd:attribute name="host" type="xsd:string" />
     <xsd:attribute name="schemes" type="xsd:string" />
     <xsd:attribute name="methods" type="xsd:string" />
     <xsd:attribute name="controller" type="xsd:string" />
+=======
+    <xsd:attribute name="path" type="xsd:string" />
+    <xsd:attribute name="pattern" type="xsd:string" />
+    <xsd:attribute name="host" type="xsd:string" />
+    <xsd:attribute name="schemes" type="xsd:string" />
+    <xsd:attribute name="methods" type="xsd:string" />
+>>>>>>> web and vendor directory from composer install
   </xsd:complexType>
 
   <xsd:complexType name="import">
@@ -53,6 +65,7 @@
     <xsd:attribute name="host" type="xsd:string" />
     <xsd:attribute name="schemes" type="xsd:string" />
     <xsd:attribute name="methods" type="xsd:string" />
+<<<<<<< HEAD
     <xsd:attribute name="controller" type="xsd:string" />
   </xsd:complexType>
 
@@ -66,6 +79,8 @@
       <xsd:element name="map" type="map" />
     </xsd:choice>
     <xsd:attribute name="key" type="xsd:string" use="required" />
+=======
+>>>>>>> web and vendor directory from composer install
   </xsd:complexType>
 
   <xsd:complexType name="element">
@@ -75,6 +90,7 @@
       </xsd:extension>
     </xsd:simpleContent>
   </xsd:complexType>
+<<<<<<< HEAD
 
   <xsd:complexType name="list">
     <xsd:choice minOccurs="0" maxOccurs="unbounded">
@@ -145,4 +161,6 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
+=======
+>>>>>>> web and vendor directory from composer install
 </xsd:schema>

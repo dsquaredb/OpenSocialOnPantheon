@@ -3,8 +3,13 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
  * (c) Armin Ronacher
+=======
+ * (c) 2009 Fabien Potencier
+ * (c) 2009 Armin Ronacher
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,6 +18,7 @@
 /**
  * Default base class for compiled templates.
  *
+<<<<<<< HEAD
  * This class is an implementation detail of how template compilation currently
  * works, which might change. It should never be used directly. Use $twig->load()
  * instead, which returns an instance of Twig_TemplateWrapper.
@@ -26,6 +32,12 @@ abstract class Twig_Template implements Twig_TemplateInterface
     /**
      * @internal
      */
+=======
+ * @author Fabien Potencier <fabien@symfony.com>
+ */
+abstract class Twig_Template implements Twig_TemplateInterface
+{
+>>>>>>> web and vendor directory from composer install
     protected static $cache = array();
 
     protected $parent;
@@ -34,6 +46,7 @@ abstract class Twig_Template implements Twig_TemplateInterface
     protected $blocks = array();
     protected $traits = array();
 
+<<<<<<< HEAD
     public function __construct(Twig_Environment $env)
     {
         $this->env = $env;
@@ -45,6 +58,16 @@ abstract class Twig_Template implements Twig_TemplateInterface
     public function __toString()
     {
         return $this->getTemplateName();
+=======
+    /**
+     * Constructor.
+     *
+     * @param Twig_Environment $env A Twig_Environment instance
+     */
+    public function __construct(Twig_Environment $env)
+    {
+        $this->env = $env;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -133,7 +156,11 @@ abstract class Twig_Template implements Twig_TemplateInterface
                 $this->parents[$parent] = $this->loadTemplate($parent);
             }
         } catch (Twig_Error_Loader $e) {
+<<<<<<< HEAD
             $e->setSourceContext(null);
+=======
+            $e->setTemplateName(null);
+>>>>>>> web and vendor directory from composer install
             $e->guess();
 
             throw $e;
@@ -173,7 +200,11 @@ abstract class Twig_Template implements Twig_TemplateInterface
         } elseif (false !== $parent = $this->getParent($context)) {
             $parent->displayBlock($name, $context, $blocks, false);
         } else {
+<<<<<<< HEAD
             throw new Twig_Error_Runtime(sprintf('The template has no parent and no traits defining the "%s" block.', $name), -1, $this->getSourceContext());
+=======
+            throw new Twig_Error_Runtime(sprintf('The template has no parent and no traits defining the "%s" block.', $name), -1, $this->getTemplateName());
+>>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -205,6 +236,7 @@ abstract class Twig_Template implements Twig_TemplateInterface
             $block = null;
         }
 
+<<<<<<< HEAD
         // avoid RCEs when sandbox is enabled
         if (null !== $template && !$template instanceof self) {
             throw new LogicException('A block must be a method on a Twig_Template instance.');
@@ -216,6 +248,19 @@ abstract class Twig_Template implements Twig_TemplateInterface
             } catch (Twig_Error $e) {
                 if (!$e->getSourceContext()) {
                     $e->setSourceContext($template->getSourceContext());
+=======
+        if (null !== $template) {
+            // avoid RCEs when sandbox is enabled
+            if (!$template instanceof self) {
+                throw new LogicException('A block must be a method on a Twig_Template instance.');
+            }
+
+            try {
+                $template->$block($context, $blocks);
+            } catch (Twig_Error $e) {
+                if (!$e->getTemplateName()) {
+                    $e->setTemplateName($template->getTemplateName());
+>>>>>>> web and vendor directory from composer install
                 }
 
                 // this is mostly useful for Twig_Error_Loader exceptions
@@ -227,12 +272,19 @@ abstract class Twig_Template implements Twig_TemplateInterface
 
                 throw $e;
             } catch (Exception $e) {
+<<<<<<< HEAD
                 throw new Twig_Error_Runtime(sprintf('An exception has been thrown during the rendering of a template ("%s").', $e->getMessage()), -1, $template->getSourceContext(), $e);
             }
         } elseif (false !== $parent = $this->getParent($context)) {
             $parent->displayBlock($name, $context, array_merge($this->blocks, $blocks), false);
         } else {
             @trigger_error(sprintf('Silent display of undefined block "%s" in template "%s" is deprecated since version 1.29 and will throw an exception in 2.0. Use the "block(\'%s\') is defined" expression to test for block existence.', $name, $this->getTemplateName(), $name), E_USER_DEPRECATED);
+=======
+                throw new Twig_Error_Runtime(sprintf('An exception has been thrown during the rendering of a template ("%s").', $e->getMessage()), -1, $template->getTemplateName(), $e);
+            }
+        } elseif (false !== $parent = $this->getParent($context)) {
+            $parent->displayBlock($name, $context, array_merge($this->blocks, $blocks), false);
+>>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -282,6 +334,7 @@ abstract class Twig_Template implements Twig_TemplateInterface
     }
 
     /**
+<<<<<<< HEAD
      * Returns whether a block exists or not in the current context of the template.
      *
      * This method checks blocks defined in the current template
@@ -290,11 +343,27 @@ abstract class Twig_Template implements Twig_TemplateInterface
      * @param string $name    The block name
      * @param array  $context The context
      * @param array  $blocks  The current set of blocks
+=======
+     * Returns whether a block exists or not.
+     *
+     * This method is for internal use only and should never be called
+     * directly.
+     *
+     * This method does only return blocks defined in the current template
+     * or defined in "used" traits.
+     *
+     * It does not return blocks from parent templates as the parent
+     * template name can be dynamic, which is only known based on the
+     * current context.
+     *
+     * @param string $name The block name
+>>>>>>> web and vendor directory from composer install
      *
      * @return bool true if the block exists, false otherwise
      *
      * @internal
      */
+<<<<<<< HEAD
     public function hasBlock($name, array $context = null, array $blocks = array())
     {
         if (null === $context) {
@@ -346,6 +415,28 @@ abstract class Twig_Template implements Twig_TemplateInterface
         }
 
         return array_unique($names);
+=======
+    public function hasBlock($name)
+    {
+        return isset($this->blocks[(string) $name]);
+    }
+
+    /**
+     * Returns all block names.
+     *
+     * This method is for internal use only and should never be called
+     * directly.
+     *
+     * @return array An array of block names
+     *
+     * @see hasBlock
+     *
+     * @internal
+     */
+    public function getBlockNames()
+    {
+        return array_keys($this->blocks);
+>>>>>>> web and vendor directory from composer install
     }
 
     protected function loadTemplate($template, $templateName = null, $line = null, $index = null)
@@ -359,6 +450,7 @@ abstract class Twig_Template implements Twig_TemplateInterface
                 return $template;
             }
 
+<<<<<<< HEAD
             if ($template instanceof Twig_TemplateWrapper) {
                 return $template;
             }
@@ -367,6 +459,12 @@ abstract class Twig_Template implements Twig_TemplateInterface
         } catch (Twig_Error $e) {
             if (!$e->getSourceContext()) {
                 $e->setSourceContext($templateName ? new Twig_Source('', $templateName) : $this->getSourceContext());
+=======
+            return $this->env->loadTemplate($template, $index);
+        } catch (Twig_Error $e) {
+            if (!$e->getTemplateName()) {
+                $e->setTemplateName($templateName ? $templateName : $this->getTemplateName());
+>>>>>>> web and vendor directory from composer install
             }
 
             if ($e->getTemplateLine()) {
@@ -391,6 +489,11 @@ abstract class Twig_Template implements Twig_TemplateInterface
      *
      * @return array An array of blocks
      *
+<<<<<<< HEAD
+=======
+     * @see hasBlock
+     *
+>>>>>>> web and vendor directory from composer install
      * @internal
      */
     public function getBlocks()
@@ -398,11 +501,23 @@ abstract class Twig_Template implements Twig_TemplateInterface
         return $this->blocks;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * {@inheritdoc}
+     */
+>>>>>>> web and vendor directory from composer install
     public function display(array $context, array $blocks = array())
     {
         $this->displayWithErrorHandling($this->env->mergeGlobals($context), array_merge($this->blocks, $blocks));
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * {@inheritdoc}
+     */
+>>>>>>> web and vendor directory from composer install
     public function render(array $context)
     {
         $level = ob_get_level();
@@ -431,8 +546,13 @@ abstract class Twig_Template implements Twig_TemplateInterface
         try {
             $this->doDisplay($context, $blocks);
         } catch (Twig_Error $e) {
+<<<<<<< HEAD
             if (!$e->getSourceContext()) {
                 $e->setSourceContext($this->getSourceContext());
+=======
+            if (!$e->getTemplateName()) {
+                $e->setTemplateName($this->getTemplateName());
+>>>>>>> web and vendor directory from composer install
             }
 
             // this is mostly useful for Twig_Error_Loader exceptions
@@ -444,7 +564,11 @@ abstract class Twig_Template implements Twig_TemplateInterface
 
             throw $e;
         } catch (Exception $e) {
+<<<<<<< HEAD
             throw new Twig_Error_Runtime(sprintf('An exception has been thrown during the rendering of a template ("%s").', $e->getMessage()), -1, $this->getSourceContext(), $e);
+=======
+            throw new Twig_Error_Runtime(sprintf('An exception has been thrown during the rendering of a template ("%s").', $e->getMessage()), -1, $this->getTemplateName(), $e);
+>>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -484,7 +608,11 @@ abstract class Twig_Template implements Twig_TemplateInterface
                 return;
             }
 
+<<<<<<< HEAD
             throw new Twig_Error_Runtime(sprintf('Variable "%s" does not exist.', $item), -1, $this->getSourceContext());
+=======
+            throw new Twig_Error_Runtime(sprintf('Variable "%s" does not exist.', $item), -1, $this->getTemplateName());
+>>>>>>> web and vendor directory from composer install
         }
 
         return $context[$item];
@@ -503,8 +631,11 @@ abstract class Twig_Template implements Twig_TemplateInterface
      * @return mixed The attribute value, or a Boolean when $isDefinedTest is true, or null when the attribute is not set and $ignoreStrictCheck is true
      *
      * @throws Twig_Error_Runtime if the attribute does not exist and Twig is running in strict mode and $isDefinedTest is false
+<<<<<<< HEAD
      *
      * @internal
+=======
+>>>>>>> web and vendor directory from composer install
      */
     protected function getAttribute($object, $item, array $arguments = array(), $type = self::ANY_CALL, $isDefinedTest = false, $ignoreStrictCheck = false)
     {
@@ -512,7 +643,11 @@ abstract class Twig_Template implements Twig_TemplateInterface
         if (self::METHOD_CALL !== $type) {
             $arrayItem = is_bool($item) || is_float($item) ? (int) $item : $item;
 
+<<<<<<< HEAD
             if ((is_array($object) && (isset($object[$arrayItem]) || array_key_exists($arrayItem, $object)))
+=======
+            if ((is_array($object) && array_key_exists($arrayItem, $object))
+>>>>>>> web and vendor directory from composer install
                 || ($object instanceof ArrayAccess && isset($object[$arrayItem]))
             ) {
                 if ($isDefinedTest) {
@@ -553,7 +688,11 @@ abstract class Twig_Template implements Twig_TemplateInterface
                     $message = sprintf('Impossible to access an attribute ("%s") on a %s variable ("%s").', $item, gettype($object), $object);
                 }
 
+<<<<<<< HEAD
                 throw new Twig_Error_Runtime($message, -1, $this->getSourceContext());
+=======
+                throw new Twig_Error_Runtime($message, -1, $this->getTemplateName());
+>>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -568,13 +707,20 @@ abstract class Twig_Template implements Twig_TemplateInterface
 
             if (null === $object) {
                 $message = sprintf('Impossible to invoke a method ("%s") on a null variable.', $item);
+<<<<<<< HEAD
             } elseif (is_array($object)) {
                 $message = sprintf('Impossible to invoke a method ("%s") on an array.', $item);
+=======
+>>>>>>> web and vendor directory from composer install
             } else {
                 $message = sprintf('Impossible to invoke a method ("%s") on a %s variable ("%s").', $item, gettype($object), $object);
             }
 
+<<<<<<< HEAD
             throw new Twig_Error_Runtime($message, -1, $this->getSourceContext());
+=======
+            throw new Twig_Error_Runtime($message, -1, $this->getTemplateName());
+>>>>>>> web and vendor directory from composer install
         }
 
         // object property
@@ -595,13 +741,18 @@ abstract class Twig_Template implements Twig_TemplateInterface
         $class = get_class($object);
 
         // object method
+<<<<<<< HEAD
         if (!isset(self::$cache[$class])) {
+=======
+        if (!isset(self::$cache[$class]['methods'])) {
+>>>>>>> web and vendor directory from composer install
             // get_class_methods returns all methods accessible in the scope, but we only want public ones to be accessible in templates
             if ($object instanceof self) {
                 $ref = new ReflectionClass($class);
                 $methods = array();
 
                 foreach ($ref->getMethods(ReflectionMethod::IS_PUBLIC) as $refMethod) {
+<<<<<<< HEAD
                     // Accessing the environment from templates is forbidden to prevent untrusted changes to the environment
                     if ('getenvironment' !== strtolower($refMethod->name)) {
                         $methods[] = $refMethod->name;
@@ -649,6 +800,32 @@ abstract class Twig_Template implements Twig_TemplateInterface
             $method = self::$cache[$class][$lcItem];
         } elseif (isset(self::$cache[$class]['__call'])) {
             $method = $item;
+=======
+                    $methodName = strtolower($refMethod->name);
+
+                    // Accessing the environment from templates is forbidden to prevent untrusted changes to the environment
+                    if ('getenvironment' !== $methodName) {
+                        $methods[$methodName] = true;
+                    }
+                }
+
+                self::$cache[$class]['methods'] = $methods;
+            } else {
+                self::$cache[$class]['methods'] = array_change_key_case(array_flip(get_class_methods($object)));
+            }
+        }
+
+        $call = false;
+        $lcItem = strtolower($item);
+        if (isset(self::$cache[$class]['methods'][$lcItem])) {
+            $method = (string) $item;
+        } elseif (isset(self::$cache[$class]['methods']['get'.$lcItem])) {
+            $method = 'get'.$item;
+        } elseif (isset(self::$cache[$class]['methods']['is'.$lcItem])) {
+            $method = 'is'.$item;
+        } elseif (isset(self::$cache[$class]['methods']['__call'])) {
+            $method = (string) $item;
+>>>>>>> web and vendor directory from composer install
             $call = true;
         } else {
             if ($isDefinedTest) {
@@ -659,7 +836,11 @@ abstract class Twig_Template implements Twig_TemplateInterface
                 return;
             }
 
+<<<<<<< HEAD
             throw new Twig_Error_Runtime(sprintf('Neither the property "%1$s" nor one of the methods "%1$s()", "get%1$s()"/"is%1$s()" or "__call()" exist and have public access in class "%2$s".', $item, $class), -1, $this->getSourceContext());
+=======
+            throw new Twig_Error_Runtime(sprintf('Neither the property "%1$s" nor one of the methods "%1$s()", "get%1$s()"/"is%1$s()" or "__call()" exist and have public access in class "%2$s".', $item, get_class($object)), -1, $this->getTemplateName());
+>>>>>>> web and vendor directory from composer install
         }
 
         if ($isDefinedTest) {
@@ -673,11 +854,15 @@ abstract class Twig_Template implements Twig_TemplateInterface
         // Some objects throw exceptions when they have __call, and the method we try
         // to call is not supported. If ignoreStrictCheck is true, we should return null.
         try {
+<<<<<<< HEAD
             if (!$arguments) {
                 $ret = $object->$method();
             } else {
                 $ret = call_user_func_array(array($object, $method), $arguments);
             }
+=======
+            $ret = call_user_func_array(array($object, $method), $arguments);
+>>>>>>> web and vendor directory from composer install
         } catch (BadMethodCallException $e) {
             if ($call && ($ignoreStrictCheck || !$this->env->isStrictVariables())) {
                 return;
@@ -685,6 +870,7 @@ abstract class Twig_Template implements Twig_TemplateInterface
             throw $e;
         }
 
+<<<<<<< HEAD
         // @deprecated in 1.28
         if ($object instanceof Twig_TemplateInterface) {
             $self = $object->getTemplateName() === $this->getTemplateName();
@@ -699,10 +885,19 @@ abstract class Twig_Template implements Twig_TemplateInterface
             @trigger_error($message, E_USER_DEPRECATED);
 
             return '' === $ret ? '' : new Twig_Markup($ret, $this->env->getCharset());
+=======
+        // useful when calling a template method from a template
+        // this is not supported but unfortunately heavily used in the Symfony profiler
+        if ($object instanceof Twig_TemplateInterface) {
+            return $ret === '' ? '' : new Twig_Markup($ret, $this->env->getCharset());
+>>>>>>> web and vendor directory from composer install
         }
 
         return $ret;
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_Template', 'Twig\Template', false);
+=======
+>>>>>>> web and vendor directory from composer install

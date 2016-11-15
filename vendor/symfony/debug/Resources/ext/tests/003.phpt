@@ -1,9 +1,13 @@
 --TEST--
 Test ErrorHandler in case of fatal error
 --SKIPIF--
+<<<<<<< HEAD
 <?php if (!extension_loaded('symfony_debug')) {
     echo 'skip';
 } ?>
+=======
+<?php if (!extension_loaded("symfony_debug")) print "skip"; ?>
+>>>>>>> web and vendor directory from composer install
 --FILE--
 <?php
 

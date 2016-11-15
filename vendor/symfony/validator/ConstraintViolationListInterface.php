@@ -20,11 +20,21 @@ interface ConstraintViolationListInterface extends \Traversable, \Countable, \Ar
 {
     /**
      * Adds a constraint violation to this list.
+<<<<<<< HEAD
+=======
+     *
+     * @param ConstraintViolationInterface $violation The violation to add
+>>>>>>> web and vendor directory from composer install
      */
     public function add(ConstraintViolationInterface $violation);
 
     /**
      * Merges an existing violation list into this list.
+<<<<<<< HEAD
+=======
+     *
+     * @param ConstraintViolationListInterface $otherList The list to merge
+>>>>>>> web and vendor directory from composer install
      */
     public function addAll(ConstraintViolationListInterface $otherList);
 
@@ -35,7 +45,11 @@ interface ConstraintViolationListInterface extends \Traversable, \Countable, \Ar
      *
      * @return ConstraintViolationInterface The violation
      *
+<<<<<<< HEAD
      * @throws \OutOfBoundsException if the offset does not exist
+=======
+     * @throws \OutOfBoundsException If the offset does not exist.
+>>>>>>> web and vendor directory from composer install
      */
     public function get($offset);
 

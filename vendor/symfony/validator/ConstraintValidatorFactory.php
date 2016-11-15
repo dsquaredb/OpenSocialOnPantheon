@@ -26,8 +26,16 @@ class ConstraintValidatorFactory implements ConstraintValidatorFactoryInterface
 {
     protected $validators = array();
 
+<<<<<<< HEAD
     public function __construct()
     {
+=======
+    private $propertyAccessor;
+
+    public function __construct($propertyAccessor = null)
+    {
+        $this->propertyAccessor = $propertyAccessor;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -39,7 +47,11 @@ class ConstraintValidatorFactory implements ConstraintValidatorFactoryInterface
 
         if (!isset($this->validators[$className])) {
             $this->validators[$className] = 'validator.expression' === $className
+<<<<<<< HEAD
                 ? new ExpressionValidator()
+=======
+                ? new ExpressionValidator($this->propertyAccessor)
+>>>>>>> web and vendor directory from composer install
                 : new $className();
         }
 

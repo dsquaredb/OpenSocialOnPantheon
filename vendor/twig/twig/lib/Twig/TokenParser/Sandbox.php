@@ -3,7 +3,11 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
+=======
+ * (c) 2010 Fabien Potencier
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -19,8 +23,11 @@
  * </pre>
  *
  * @see http://www.twig-project.org/doc/api.html#sandbox-extension for details
+<<<<<<< HEAD
  *
  * @final
+=======
+>>>>>>> web and vendor directory from composer install
  */
 class Twig_TokenParser_Sandbox extends Twig_TokenParser
 {
@@ -39,7 +46,11 @@ class Twig_TokenParser_Sandbox extends Twig_TokenParser
                 }
 
                 if (!$node instanceof Twig_Node_Include) {
+<<<<<<< HEAD
                     throw new Twig_Error_Syntax('Only "include" tags are allowed within a "sandbox" section.', $node->getTemplateLine(), $stream->getSourceContext());
+=======
+                    throw new Twig_Error_Syntax('Only "include" tags are allowed within a "sandbox" section.', $node->getTemplateLine(), $stream->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
                 }
             }
         }
@@ -57,5 +68,8 @@ class Twig_TokenParser_Sandbox extends Twig_TokenParser
         return 'sandbox';
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_TokenParser_Sandbox', 'Twig\TokenParser\SandboxTokenParser', false);
+=======
+>>>>>>> web and vendor directory from composer install

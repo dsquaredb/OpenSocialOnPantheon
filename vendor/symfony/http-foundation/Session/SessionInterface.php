@@ -25,7 +25,11 @@ interface SessionInterface
      *
      * @return bool True if session started
      *
+<<<<<<< HEAD
      * @throws \RuntimeException if session fails to start
+=======
+     * @throws \RuntimeException If session fails to start.
+>>>>>>> web and vendor directory from composer install
      */
     public function start();
 
@@ -159,6 +163,11 @@ interface SessionInterface
 
     /**
      * Registers a SessionBagInterface with the session.
+<<<<<<< HEAD
+=======
+     *
+     * @param SessionBagInterface $bag
+>>>>>>> web and vendor directory from composer install
      */
     public function registerBag(SessionBagInterface $bag);
 

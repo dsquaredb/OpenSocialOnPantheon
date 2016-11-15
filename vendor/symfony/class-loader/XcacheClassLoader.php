@@ -11,17 +11,29 @@
 
 namespace Symfony\Component\ClassLoader;
 
+<<<<<<< HEAD
 @trigger_error('The '.__NAMESPACE__.'\XcacheClassLoader class is deprecated since Symfony 3.3 and will be removed in 4.0. Use `composer install --apcu-autoloader` instead.', E_USER_DEPRECATED);
 
+=======
+>>>>>>> web and vendor directory from composer install
 /**
  * XcacheClassLoader implements a wrapping autoloader cached in XCache for PHP 5.3.
  *
  * It expects an object implementing a findFile method to find the file. This
  * allows using it as a wrapper around the other loaders of the component (the
+<<<<<<< HEAD
  * ClassLoader for instance) but also around any other autoloaders following
  * this convention (the Composer one for instance).
  *
  *     // with a Symfony autoloader
+=======
+ * ClassLoader and the UniversalClassLoader for instance) but also around any
+ * other autoloaders following this convention (the Composer one for instance).
+ *
+ *     // with a Symfony autoloader
+ *     use Symfony\Component\ClassLoader\ClassLoader;
+ *
+>>>>>>> web and vendor directory from composer install
  *     $loader = new ClassLoader();
  *     $loader->addPrefix('Symfony\Component', __DIR__.'/component');
  *     $loader->addPrefix('Symfony',           __DIR__.'/framework');
@@ -45,15 +57,32 @@ namespace Symfony\Component\ClassLoader;
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Kris Wallsmith <kris@symfony.com>
  * @author Kim Hemsø Rasmussen <kimhemsoe@gmail.com>
+<<<<<<< HEAD
  *
  * @deprecated since version 3.3, to be removed in 4.0. Use `composer install --apcu-autoloader` instead.
+=======
+>>>>>>> web and vendor directory from composer install
  */
 class XcacheClassLoader
 {
     private $prefix;
+<<<<<<< HEAD
     private $decorated;
 
     /**
+=======
+
+    /**
+     * A class loader object that implements the findFile() method.
+     *
+     * @var object
+     */
+    private $decorated;
+
+    /**
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param string $prefix    The XCache namespace prefix to use
      * @param object $decorated A class loader object that implements the findFile() method
      *

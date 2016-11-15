@@ -72,6 +72,11 @@ interface FlashBagInterface extends SessionBagInterface
 
     /**
      * Sets all flash messages.
+<<<<<<< HEAD
+=======
+     *
+     * @param array $messages
+>>>>>>> web and vendor directory from composer install
      */
     public function setAll(array $messages);
 

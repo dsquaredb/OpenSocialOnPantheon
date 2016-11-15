@@ -21,13 +21,18 @@
         "Dolibarr",
         "Drupal",
         "Elgg",
+<<<<<<< HEAD
         "Eliasis",
         "ExpressionEngine",
         "eZ Platform",
+=======
+        "ExpressionEngine",
+>>>>>>> web and vendor directory from composer install
         "FuelPHP",
         "Grav",
         "Hurad",
         "ImageCMS",
+<<<<<<< HEAD
         "iTop",
         "Joomla",
         "Kanboard",
@@ -50,18 +55,39 @@
         "Moodle",
         "Piwik",
         "pxcms",
+=======
+        "Joomla",
+        "Kohana",
+        "Laravel",
+        "Lithium",
+        "Magento",
+        "Mako",
+        "Mautic",
+        "MODX Evo",
+        "MediaWiki",
+        "OXID",
+        "MODULEWork",
+        "Moodle",
+        "Piwik",
+>>>>>>> web and vendor directory from composer install
         "phpBB",
         "Plentymarkets",
         "PPI",
         "Puppet",
+<<<<<<< HEAD
         "Porto",
+=======
+>>>>>>> web and vendor directory from composer install
         "RadPHP",
         "ReIndex",
         "Roundcube",
         "shopware",
         "SilverStripe",
         "SMF",
+<<<<<<< HEAD
         "SyDES",
+=======
+>>>>>>> web and vendor directory from composer install
         "symfony",
         "Thelia",
         "TYPO3",
@@ -97,7 +123,11 @@
     },
     "require-dev": {
         "composer/composer": "1.0.*@dev",
+<<<<<<< HEAD
         "phpunit/phpunit": "^4.8.36"
+=======
+        "phpunit/phpunit": "4.1.*"
+>>>>>>> web and vendor directory from composer install
     },
     "scripts": {
         "test": "phpunit"

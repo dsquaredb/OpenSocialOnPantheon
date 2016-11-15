@@ -19,22 +19,38 @@ namespace Symfony\Component\HttpFoundation;
 class RequestMatcher implements RequestMatcherInterface
 {
     /**
+<<<<<<< HEAD
      * @var string|null
+=======
+     * @var string
+>>>>>>> web and vendor directory from composer install
      */
     private $path;
 
     /**
+<<<<<<< HEAD
      * @var string|null
+=======
+     * @var string
+>>>>>>> web and vendor directory from composer install
      */
     private $host;
 
     /**
+<<<<<<< HEAD
      * @var string[]
+=======
+     * @var array
+>>>>>>> web and vendor directory from composer install
      */
     private $methods = array();
 
     /**
+<<<<<<< HEAD
      * @var string[]
+=======
+     * @var string
+>>>>>>> web and vendor directory from composer install
      */
     private $ips = array();
 
@@ -76,13 +92,21 @@ class RequestMatcher implements RequestMatcherInterface
      */
     public function matchScheme($scheme)
     {
+<<<<<<< HEAD
         $this->schemes = null !== $scheme ? array_map('strtolower', (array) $scheme) : array();
+=======
+        $this->schemes = array_map('strtolower', (array) $scheme);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Adds a check for the URL host name.
      *
+<<<<<<< HEAD
      * @param string|null $regexp A Regexp
+=======
+     * @param string $regexp A Regexp
+>>>>>>> web and vendor directory from composer install
      */
     public function matchHost($regexp)
     {
@@ -92,7 +116,11 @@ class RequestMatcher implements RequestMatcherInterface
     /**
      * Adds a check for the URL path info.
      *
+<<<<<<< HEAD
      * @param string|null $regexp A Regexp
+=======
+     * @param string $regexp A Regexp
+>>>>>>> web and vendor directory from composer install
      */
     public function matchPath($regexp)
     {
@@ -112,21 +140,37 @@ class RequestMatcher implements RequestMatcherInterface
     /**
      * Adds a check for the client IP.
      *
+<<<<<<< HEAD
      * @param string|string[]|null $ips A specific IP address or a range specified using IP/netmask like 192.168.1.0/24
      */
     public function matchIps($ips)
     {
         $this->ips = null !== $ips ? (array) $ips : array();
+=======
+     * @param string|string[] $ips A specific IP address or a range specified using IP/netmask like 192.168.1.0/24
+     */
+    public function matchIps($ips)
+    {
+        $this->ips = (array) $ips;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Adds a check for the HTTP method.
      *
+<<<<<<< HEAD
      * @param string|string[]|null $method An HTTP method or an array of HTTP methods
      */
     public function matchMethod($method)
     {
         $this->methods = null !== $method ? array_map('strtoupper', (array) $method) : array();
+=======
+     * @param string|string[] $method An HTTP method or an array of HTTP methods
+     */
+    public function matchMethod($method)
+    {
+        $this->methods = array_map('strtoupper', (array) $method);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -145,11 +189,19 @@ class RequestMatcher implements RequestMatcherInterface
      */
     public function matches(Request $request)
     {
+<<<<<<< HEAD
         if ($this->schemes && !in_array($request->getScheme(), $this->schemes, true)) {
             return false;
         }
 
         if ($this->methods && !in_array($request->getMethod(), $this->methods, true)) {
+=======
+        if ($this->schemes && !in_array($request->getScheme(), $this->schemes)) {
+            return false;
+        }
+
+        if ($this->methods && !in_array($request->getMethod(), $this->methods)) {
+>>>>>>> web and vendor directory from composer install
             return false;
         }
 
@@ -173,6 +225,10 @@ class RequestMatcher implements RequestMatcherInterface
 
         // Note to future implementors: add additional checks above the
         // foreach above or else your check might not be run!
+<<<<<<< HEAD
         return 0 === count($this->ips);
+=======
+        return count($this->ips) === 0;
+>>>>>>> web and vendor directory from composer install
     }
 }

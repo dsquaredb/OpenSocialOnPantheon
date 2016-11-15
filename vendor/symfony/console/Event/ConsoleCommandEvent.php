@@ -25,6 +25,11 @@ class ConsoleCommandEvent extends ConsoleEvent
 
     /**
      * Indicates if the command should be run or skipped.
+<<<<<<< HEAD
+=======
+     *
+     * @var bool
+>>>>>>> web and vendor directory from composer install
      */
     private $commandShouldRun = true;
 

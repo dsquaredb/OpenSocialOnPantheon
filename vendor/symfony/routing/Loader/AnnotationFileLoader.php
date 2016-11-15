@@ -27,6 +27,14 @@ class AnnotationFileLoader extends FileLoader
     protected $loader;
 
     /**
+<<<<<<< HEAD
+=======
+     * Constructor.
+     *
+     * @param FileLocatorInterface  $locator A FileLocator instance
+     * @param AnnotationClassLoader $loader  An AnnotationClassLoader instance
+     *
+>>>>>>> web and vendor directory from composer install
      * @throws \RuntimeException
      */
     public function __construct(FileLocatorInterface $locator, AnnotationClassLoader $loader)
@@ -59,7 +67,11 @@ class AnnotationFileLoader extends FileLoader
             $collection->addResource(new FileResource($path));
             $collection->addCollection($this->loader->load($class, $type));
         }
+<<<<<<< HEAD
         if (\PHP_VERSION_ID >= 70000) {
+=======
+        if (PHP_VERSION_ID >= 70000) {
+>>>>>>> web and vendor directory from composer install
             // PHP 7 memory manager will not release after token_get_all(), see https://bugs.php.net/70098
             gc_mem_caches();
         }
@@ -87,11 +99,14 @@ class AnnotationFileLoader extends FileLoader
         $class = false;
         $namespace = false;
         $tokens = token_get_all(file_get_contents($file));
+<<<<<<< HEAD
 
         if (1 === count($tokens) && T_INLINE_HTML === $tokens[0][0]) {
             throw new \InvalidArgumentException(sprintf('The file "%s" does not contain PHP code. Did you forgot to add the "<?php" start tag at the beginning of the file?', $file));
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         for ($i = 0; isset($tokens[$i]); ++$i) {
             $token = $tokens[$i];
 
@@ -112,22 +127,36 @@ class AnnotationFileLoader extends FileLoader
             }
 
             if (T_CLASS === $token[0]) {
+<<<<<<< HEAD
                 // Skip usage of ::class constant and anonymous classes
                 $skipClassToken = false;
+=======
+                // Skip usage of ::class constant
+                $isClassConstant = false;
+>>>>>>> web and vendor directory from composer install
                 for ($j = $i - 1; $j > 0; --$j) {
                     if (!isset($tokens[$j][1])) {
                         break;
                     }
 
+<<<<<<< HEAD
                     if (T_DOUBLE_COLON === $tokens[$j][0] || T_NEW === $tokens[$j][0]) {
                         $skipClassToken = true;
+=======
+                    if (T_DOUBLE_COLON === $tokens[$j][0]) {
+                        $isClassConstant = true;
+>>>>>>> web and vendor directory from composer install
                         break;
                     } elseif (!in_array($tokens[$j][0], array(T_WHITESPACE, T_DOC_COMMENT, T_COMMENT))) {
                         break;
                     }
                 }
 
+<<<<<<< HEAD
                 if (!$skipClassToken) {
+=======
+                if (!$isClassConstant) {
+>>>>>>> web and vendor directory from composer install
                     $class = true;
                 }
             }

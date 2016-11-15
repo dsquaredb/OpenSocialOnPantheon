@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * 1.35.3 (2018-03-20)
 
  * fixed block names unicity
@@ -116,6 +117,8 @@
  * added "is defined" support for block() and constant()
  * optimized the way attributes are fetched
 
+=======
+>>>>>>> web and vendor directory from composer install
 * 1.27.0 (2016-10-25)
 
  * deprecated Twig_Parser::getEnvironment()
@@ -168,7 +171,11 @@
 
  * fixed reserved keywords (forbids true, false, null and none keywords for variables names)
  * fixed support for PHP7 (Throwable support)
+<<<<<<< HEAD
  * marked the following methods as being internals on Twig_Environment:
+=======
+ * marked the following methods as being internals on Twig_Environment: 
+>>>>>>> web and vendor directory from composer install
    getFunctions(), getFilters(), getTests(), getFunction(), getFilter(), getTest(),
    getTokenParsers(), getTags(), getNodeVisitors(), getUnaryOperators(), getBinaryOperators(),
    getFunctions(), getFilters(), getGlobals(), initGlobals(), initExtensions(), and initExtension()
@@ -252,7 +259,11 @@
  * fixed limited RCEs when in sandbox mode
  * deprecated Twig_Template::getEnvironment()
  * deprecated the _self variable for usage outside of the from and import tags
+<<<<<<< HEAD
  * added Twig_BaseNodeVisitor to ease the compatibility of node visitors
+=======
+ * added Twig_BaseNodeVisitor to ease the compatibility of node visitors 
+>>>>>>> web and vendor directory from composer install
    between 1.x and 2.x
 
 * 1.19.0 (2015-07-31)

@@ -20,10 +20,20 @@ class ParameterBag implements \IteratorAggregate, \Countable
 {
     /**
      * Parameter storage.
+<<<<<<< HEAD
+=======
+     *
+     * @var array
+>>>>>>> web and vendor directory from composer install
      */
     protected $parameters;
 
     /**
+<<<<<<< HEAD
+=======
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param array $parameters An array of parameters
      */
     public function __construct(array $parameters = array())
@@ -74,6 +84,7 @@ class ParameterBag implements \IteratorAggregate, \Countable
     /**
      * Returns a parameter by name.
      *
+<<<<<<< HEAD
      * @param string $key     The key
      * @param mixed  $default The default value if the parameter key does not exist
      *
@@ -82,6 +93,69 @@ class ParameterBag implements \IteratorAggregate, \Countable
     public function get($key, $default = null)
     {
         return array_key_exists($key, $this->parameters) ? $this->parameters[$key] : $default;
+=======
+     * Note: Finding deep items is deprecated since version 2.8, to be removed in 3.0.
+     *
+     * @param string $key     The key
+     * @param mixed  $default The default value if the parameter key does not exist
+     * @param bool   $deep    If true, a path like foo[bar] will find deeper items
+     *
+     * @return mixed
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function get($key, $default = null, $deep = false)
+    {
+        if ($deep) {
+            @trigger_error('Using paths to find deeper items in '.__METHOD__.' is deprecated since version 2.8 and will be removed in 3.0. Filter the returned value in your own code instead.', E_USER_DEPRECATED);
+        }
+
+        if (!$deep || false === $pos = strpos($key, '[')) {
+            return array_key_exists($key, $this->parameters) ? $this->parameters[$key] : $default;
+        }
+
+        $root = substr($key, 0, $pos);
+        if (!array_key_exists($root, $this->parameters)) {
+            return $default;
+        }
+
+        $value = $this->parameters[$root];
+        $currentKey = null;
+        for ($i = $pos, $c = strlen($key); $i < $c; ++$i) {
+            $char = $key[$i];
+
+            if ('[' === $char) {
+                if (null !== $currentKey) {
+                    throw new \InvalidArgumentException(sprintf('Malformed path. Unexpected "[" at position %d.', $i));
+                }
+
+                $currentKey = '';
+            } elseif (']' === $char) {
+                if (null === $currentKey) {
+                    throw new \InvalidArgumentException(sprintf('Malformed path. Unexpected "]" at position %d.', $i));
+                }
+
+                if (!is_array($value) || !array_key_exists($currentKey, $value)) {
+                    return $default;
+                }
+
+                $value = $value[$currentKey];
+                $currentKey = null;
+            } else {
+                if (null === $currentKey) {
+                    throw new \InvalidArgumentException(sprintf('Malformed path. Unexpected "%s" at position %d.', $char, $i));
+                }
+
+                $currentKey .= $char;
+            }
+        }
+
+        if (null !== $currentKey) {
+            throw new \InvalidArgumentException(sprintf('Malformed path. Path must end with "]".'));
+        }
+
+        return $value;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -122,12 +196,22 @@ class ParameterBag implements \IteratorAggregate, \Countable
      *
      * @param string $key     The parameter key
      * @param string $default The default value if the parameter key does not exist
+<<<<<<< HEAD
      *
      * @return string The filtered value
      */
     public function getAlpha($key, $default = '')
     {
         return preg_replace('/[^[:alpha:]]/', '', $this->get($key, $default));
+=======
+     * @param bool   $deep    If true, a path like foo[bar] will find deeper items
+     *
+     * @return string The filtered value
+     */
+    public function getAlpha($key, $default = '', $deep = false)
+    {
+        return preg_replace('/[^[:alpha:]]/', '', $this->get($key, $default, $deep));
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -135,12 +219,22 @@ class ParameterBag implements \IteratorAggregate, \Countable
      *
      * @param string $key     The parameter key
      * @param string $default The default value if the parameter key does not exist
+<<<<<<< HEAD
      *
      * @return string The filtered value
      */
     public function getAlnum($key, $default = '')
     {
         return preg_replace('/[^[:alnum:]]/', '', $this->get($key, $default));
+=======
+     * @param bool   $deep    If true, a path like foo[bar] will find deeper items
+     *
+     * @return string The filtered value
+     */
+    public function getAlnum($key, $default = '', $deep = false)
+    {
+        return preg_replace('/[^[:alnum:]]/', '', $this->get($key, $default, $deep));
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -148,6 +242,7 @@ class ParameterBag implements \IteratorAggregate, \Countable
      *
      * @param string $key     The parameter key
      * @param string $default The default value if the parameter key does not exist
+<<<<<<< HEAD
      *
      * @return string The filtered value
      */
@@ -155,6 +250,16 @@ class ParameterBag implements \IteratorAggregate, \Countable
     {
         // we need to remove - and + because they're allowed in the filter
         return str_replace(array('-', '+'), '', $this->filter($key, $default, FILTER_SANITIZE_NUMBER_INT));
+=======
+     * @param bool   $deep    If true, a path like foo[bar] will find deeper items
+     *
+     * @return string The filtered value
+     */
+    public function getDigits($key, $default = '', $deep = false)
+    {
+        // we need to remove - and + because they're allowed in the filter
+        return str_replace(array('-', '+'), '', $this->filter($key, $default, FILTER_SANITIZE_NUMBER_INT, array(), $deep));
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -162,12 +267,22 @@ class ParameterBag implements \IteratorAggregate, \Countable
      *
      * @param string $key     The parameter key
      * @param int    $default The default value if the parameter key does not exist
+<<<<<<< HEAD
      *
      * @return int The filtered value
      */
     public function getInt($key, $default = 0)
     {
         return (int) $this->get($key, $default);
+=======
+     * @param bool   $deep    If true, a path like foo[bar] will find deeper items
+     *
+     * @return int The filtered value
+     */
+    public function getInt($key, $default = 0, $deep = false)
+    {
+        return (int) $this->get($key, $default, $deep);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -175,12 +290,22 @@ class ParameterBag implements \IteratorAggregate, \Countable
      *
      * @param string $key     The parameter key
      * @param mixed  $default The default value if the parameter key does not exist
+<<<<<<< HEAD
      *
      * @return bool The filtered value
      */
     public function getBoolean($key, $default = false)
     {
         return $this->filter($key, $default, FILTER_VALIDATE_BOOLEAN);
+=======
+     * @param bool   $deep    If true, a path like foo[bar] will find deeper items
+     *
+     * @return bool The filtered value
+     */
+    public function getBoolean($key, $default = false, $deep = false)
+    {
+        return $this->filter($key, $default, FILTER_VALIDATE_BOOLEAN, array(), $deep);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -190,14 +315,39 @@ class ParameterBag implements \IteratorAggregate, \Countable
      * @param mixed  $default Default = null
      * @param int    $filter  FILTER_* constant
      * @param mixed  $options Filter options
+<<<<<<< HEAD
+=======
+     * @param bool   $deep    Default = false
+>>>>>>> web and vendor directory from composer install
      *
      * @see http://php.net/manual/en/function.filter-var.php
      *
      * @return mixed
      */
+<<<<<<< HEAD
     public function filter($key, $default = null, $filter = FILTER_DEFAULT, $options = array())
     {
         $value = $this->get($key, $default);
+=======
+    public function filter($key, $default = null, $filter = FILTER_DEFAULT, $options = array(), $deep = false)
+    {
+        static $filters = null;
+
+        if (null === $filters) {
+            foreach (filter_list() as $tmp) {
+                $filters[filter_id($tmp)] = 1;
+            }
+        }
+        if (is_bool($filter) || !isset($filters[$filter]) || is_array($deep)) {
+            @trigger_error('Passing the $deep boolean as 3rd argument to the '.__METHOD__.' method is deprecated since version 2.8 and will be removed in 3.0. Remove it altogether as the $deep argument will be removed in 3.0.', E_USER_DEPRECATED);
+            $tmp = $deep;
+            $deep = $filter;
+            $filter = $options;
+            $options = $tmp;
+        }
+
+        $value = $this->get($key, $default, $deep);
+>>>>>>> web and vendor directory from composer install
 
         // Always turn $options into an array - this allows filter_var option shortcuts.
         if (!is_array($options) && $options) {

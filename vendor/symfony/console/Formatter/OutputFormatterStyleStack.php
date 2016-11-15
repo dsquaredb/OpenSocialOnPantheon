@@ -23,8 +23,21 @@ class OutputFormatterStyleStack
      */
     private $styles;
 
+<<<<<<< HEAD
     private $emptyStyle;
 
+=======
+    /**
+     * @var OutputFormatterStyleInterface
+     */
+    private $emptyStyle;
+
+    /**
+     * Constructor.
+     *
+     * @param OutputFormatterStyleInterface|null $emptyStyle
+     */
+>>>>>>> web and vendor directory from composer install
     public function __construct(OutputFormatterStyleInterface $emptyStyle = null)
     {
         $this->emptyStyle = $emptyStyle ?: new OutputFormatterStyle();
@@ -41,6 +54,11 @@ class OutputFormatterStyleStack
 
     /**
      * Pushes a style in the stack.
+<<<<<<< HEAD
+=======
+     *
+     * @param OutputFormatterStyleInterface $style
+>>>>>>> web and vendor directory from composer install
      */
     public function push(OutputFormatterStyleInterface $style)
     {
@@ -50,6 +68,11 @@ class OutputFormatterStyleStack
     /**
      * Pops a style from the stack.
      *
+<<<<<<< HEAD
+=======
+     * @param OutputFormatterStyleInterface|null $style
+     *
+>>>>>>> web and vendor directory from composer install
      * @return OutputFormatterStyleInterface
      *
      * @throws InvalidArgumentException When style tags incorrectly nested
@@ -90,7 +113,13 @@ class OutputFormatterStyleStack
     }
 
     /**
+<<<<<<< HEAD
      * @return $this
+=======
+     * @param OutputFormatterStyleInterface $emptyStyle
+     *
+     * @return OutputFormatterStyleStack
+>>>>>>> web and vendor directory from composer install
      */
     public function setEmptyStyle(OutputFormatterStyleInterface $emptyStyle)
     {

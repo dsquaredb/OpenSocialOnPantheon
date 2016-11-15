@@ -23,6 +23,19 @@ class PhpFileDumper extends FileDumper
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
+=======
+    protected function format(MessageCatalogue $messages, $domain)
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 2.8 and will be removed in 3.0. Use the formatCatalogue() method instead.', E_USER_DEPRECATED);
+
+        return $this->formatCatalogue($messages, $domain);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+>>>>>>> web and vendor directory from composer install
     public function formatCatalogue(MessageCatalogue $messages, $domain, array $options = array())
     {
         return "<?php\n\nreturn ".var_export($messages->all($domain), true).";\n";

@@ -1,5 +1,6 @@
 # Release Notes
 
+<<<<<<< HEAD
 2.3.0 (2017-09-04)
 
 - #129: image within inline svg breaks system (fixed by #133) 
@@ -8,6 +9,9 @@
 - #135: Raw & in attributes
 
 2.2.2 (2016-09-22)
+=======
+2.2.2 (2016-10-22)
+>>>>>>> web and vendor directory from composer install
 
 - #116: In XML mode, tags are case sensitive
 - #115: Fix PHP Notice in OutputRules
@@ -21,7 +25,12 @@
 2.2.0 (2016-04-11)
 
 - #105: Enable composer cache (for CI/CD)
+<<<<<<< HEAD
 - #100: Use mb_substitute_character inset of ini_set for environments where ini_set is disable (e.g., shared hosting)
+=======
+- #100: Use mb_substitute_character inset of ini_set for environments where
+  ini_set is disable (e.g., shared hosting)
+>>>>>>> web and vendor directory from composer install
 - #98: Allow link, meta, style tags in noscript tags
 - #96: Fixed xml:href on svgs that use the "use" breaking
 - #94: Counting UTF8 characters performance improvement

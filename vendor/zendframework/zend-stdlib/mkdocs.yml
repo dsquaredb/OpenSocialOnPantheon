@@ -2,6 +2,11 @@ docs_dir: doc/book
 site_dir: doc/html
 pages:
     - index.md
+<<<<<<< HEAD
+=======
+    - Reference:
+      - "Console Helper": console-helper.md
+>>>>>>> web and vendor directory from composer install
     - Migration: migration.md
 site_name: zend-stdlib
 site_description: Zend\Stdlib

@@ -35,7 +35,23 @@ class XmlFileLoader extends FileLoader
     public function loadClassMetadata(ClassMetadata $metadata)
     {
         if (null === $this->classes) {
+<<<<<<< HEAD
             $this->loadClassesFromXml();
+=======
+            // This method may throw an exception. Do not modify the class'
+            // state before it completes
+            $xml = $this->parseFile($this->file);
+
+            $this->classes = array();
+
+            foreach ($xml->namespace as $namespace) {
+                $this->addNamespaceAlias((string) $namespace['prefix'], trim((string) $namespace));
+            }
+
+            foreach ($xml->class as $class) {
+                $this->classes[(string) $class['name']] = $class;
+            }
+>>>>>>> web and vendor directory from composer install
         }
 
         if (isset($this->classes[$metadata->getClassName()])) {
@@ -50,6 +66,7 @@ class XmlFileLoader extends FileLoader
     }
 
     /**
+<<<<<<< HEAD
      * Return the names of the classes mapped in this file.
      *
      * @return string[] The classes names
@@ -64,6 +81,8 @@ class XmlFileLoader extends FileLoader
     }
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * Parses a collection of "constraint" XML nodes.
      *
      * @param \SimpleXMLElement $nodes The XML nodes
@@ -86,7 +105,11 @@ class XmlFileLoader extends FileLoader
                     $options = array();
                 }
             } elseif (strlen((string) $node) > 0) {
+<<<<<<< HEAD
                 $options = XmlUtils::phpize(trim($node));
+=======
+                $options = trim($node);
+>>>>>>> web and vendor directory from composer install
             } else {
                 $options = null;
             }
@@ -184,6 +207,7 @@ class XmlFileLoader extends FileLoader
         return simplexml_import_dom($dom);
     }
 
+<<<<<<< HEAD
     private function loadClassesFromXml()
     {
         // This method may throw an exception. Do not modify the class'
@@ -201,6 +225,8 @@ class XmlFileLoader extends FileLoader
         }
     }
 
+=======
+>>>>>>> web and vendor directory from composer install
     private function loadClassMetadataFromXml(ClassMetadata $metadata, \SimpleXMLElement $classDescription)
     {
         if (count($classDescription->{'group-sequence-provider'}) > 0) {

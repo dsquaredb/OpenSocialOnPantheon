@@ -31,6 +31,9 @@ class DateTime extends Constraint
         self::INVALID_TIME_ERROR => 'INVALID_TIME_ERROR',
     );
 
+<<<<<<< HEAD
     public $format = 'Y-m-d H:i:s';
+=======
+>>>>>>> web and vendor directory from composer install
     public $message = 'This value is not a valid datetime.';
 }

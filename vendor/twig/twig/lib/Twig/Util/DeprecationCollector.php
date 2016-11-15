@@ -11,8 +11,11 @@
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
+<<<<<<< HEAD
  *
  * @final
+=======
+>>>>>>> web and vendor directory from composer install
  */
 class Twig_Util_DeprecationCollector
 {
@@ -30,7 +33,11 @@ class Twig_Util_DeprecationCollector
      * @param string $dir A directory where templates are stored
      * @param string $ext Limit the loaded templates by extension
      *
+<<<<<<< HEAD
      * @return array An array of deprecations
+=======
+     * @return array() An array of deprecations
+>>>>>>> web and vendor directory from composer install
      */
     public function collectDir($dir, $ext = '.twig')
     {
@@ -46,11 +53,19 @@ class Twig_Util_DeprecationCollector
     /**
      * Returns deprecations for passed templates.
      *
+<<<<<<< HEAD
      * @param Traversable $iterator An iterator of templates (where keys are template names and values the contents of the template)
      *
      * @return array An array of deprecations
      */
     public function collect(Traversable $iterator)
+=======
+     * @param Iterator $iterator An iterator of templates (where keys are template names and values the contents of the template)
+     *
+     * @return array() An array of deprecations
+     */
+    public function collect(Iterator $iterator)
+>>>>>>> web and vendor directory from composer install
     {
         $this->deprecations = array();
 
@@ -58,7 +73,11 @@ class Twig_Util_DeprecationCollector
 
         foreach ($iterator as $name => $contents) {
             try {
+<<<<<<< HEAD
                 $this->twig->parse($this->twig->tokenize(new Twig_Source($contents, $name)));
+=======
+                $this->twig->parse($this->twig->tokenize($contents, $name));
+>>>>>>> web and vendor directory from composer install
             } catch (Twig_Error_Syntax $e) {
                 // ignore templates containing syntax errors
             }
@@ -82,5 +101,8 @@ class Twig_Util_DeprecationCollector
         }
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_Util_DeprecationCollector', 'Twig\Util\DeprecationCollector', false);
+=======
+>>>>>>> web and vendor directory from composer install

@@ -207,6 +207,7 @@ class Stream implements StreamInterface
         if (!$this->readable) {
             throw new \RuntimeException('Cannot read from non-readable stream');
         }
+<<<<<<< HEAD
         if ($length < 0) {
             throw new \RuntimeException('Length parameter cannot be negative');
         }
@@ -221,6 +222,10 @@ class Stream implements StreamInterface
         }
 
         return $string;
+=======
+
+        return fread($this->stream, $length);
+>>>>>>> web and vendor directory from composer install
     }
 
     public function write($string)

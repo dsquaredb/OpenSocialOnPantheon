@@ -11,6 +11,10 @@
 
 namespace Symfony\Component\HttpKernel\Fragment;
 
+<<<<<<< HEAD
+=======
+use Symfony\Component\HttpFoundation\Request;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -22,6 +26,14 @@ use Symfony\Component\HttpKernel\Controller\ControllerReference;
  * This class handles the rendering of resource fragments that are included into
  * a main resource. The handling of the rendering is managed by specialized renderers.
  *
+<<<<<<< HEAD
+=======
+ * This listener works in 2 modes:
+ *
+ *  * 2.3 compatibility mode where you must call setRequest whenever the Request changes.
+ *  * 2.4+ mode where you must pass a RequestStack instance in the constructor.
+ *
+>>>>>>> web and vendor directory from composer install
  * @author Fabien Potencier <fabien@symfony.com>
  *
  * @see FragmentRendererInterface
@@ -30,15 +42,49 @@ class FragmentHandler
 {
     private $debug;
     private $renderers = array();
+<<<<<<< HEAD
     private $requestStack;
 
     /**
+=======
+    private $request;
+    private $requestStack;
+
+    /**
+     * Constructor.
+     *
+     * RequestStack will become required in 3.0.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param RequestStack                $requestStack The Request stack that controls the lifecycle of requests
      * @param FragmentRendererInterface[] $renderers    An array of FragmentRendererInterface instances
      * @param bool                        $debug        Whether the debug mode is enabled or not
      */
+<<<<<<< HEAD
     public function __construct(RequestStack $requestStack, array $renderers = array(), $debug = false)
     {
+=======
+    public function __construct($requestStack = null, $renderers = array(), $debug = false)
+    {
+        if (is_array($requestStack)) {
+            $tmp = $debug;
+            $debug = func_num_args() < 2 ? false : $renderers;
+            $renderers = $requestStack;
+            $requestStack = func_num_args() < 3 ? null : $tmp;
+
+            @trigger_error('The '.__METHOD__.' method now requires a RequestStack to be given as first argument as '.__CLASS__.'::setRequest method will not be supported anymore in 3.0.', E_USER_DEPRECATED);
+        } elseif (!$requestStack instanceof RequestStack) {
+            @trigger_error('The '.__METHOD__.' method now requires a RequestStack instance as '.__CLASS__.'::setRequest method will not be supported anymore in 3.0.', E_USER_DEPRECATED);
+        }
+
+        if (null !== $requestStack && !$requestStack instanceof RequestStack) {
+            throw new \InvalidArgumentException('RequestStack instance expected.');
+        }
+        if (!is_array($renderers)) {
+            throw new \InvalidArgumentException('Renderers must be an array.');
+        }
+
+>>>>>>> web and vendor directory from composer install
         $this->requestStack = $requestStack;
         foreach ($renderers as $renderer) {
             $this->addRenderer($renderer);
@@ -48,6 +94,11 @@ class FragmentHandler
 
     /**
      * Adds a renderer.
+<<<<<<< HEAD
+=======
+     *
+     * @param FragmentRendererInterface $renderer A FragmentRendererInterface instance
+>>>>>>> web and vendor directory from composer install
      */
     public function addRenderer(FragmentRendererInterface $renderer)
     {
@@ -55,6 +106,27 @@ class FragmentHandler
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Sets the current Request.
+     *
+     * This method was used to synchronize the Request, but as the HttpKernel
+     * is doing that automatically now, you should never call it directly.
+     * It is kept public for BC with the 2.3 version.
+     *
+     * @param Request|null $request A Request instance
+     *
+     * @deprecated since version 2.4, to be removed in 3.0.
+     */
+    public function setRequest(Request $request = null)
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 2.4 and will be removed in 3.0.', E_USER_DEPRECATED);
+
+        $this->request = $request;
+    }
+
+    /**
+>>>>>>> web and vendor directory from composer install
      * Renders a URI and returns the Response content.
      *
      * Available options:
@@ -80,7 +152,11 @@ class FragmentHandler
             throw new \InvalidArgumentException(sprintf('The "%s" renderer does not exist.', $renderer));
         }
 
+<<<<<<< HEAD
         if (!$request = $this->requestStack->getCurrentRequest()) {
+=======
+        if (!$request = $this->getRequest()) {
+>>>>>>> web and vendor directory from composer install
             throw new \LogicException('Rendering a fragment can only be done when handling a Request.');
         }
 
@@ -93,6 +169,11 @@ class FragmentHandler
      * When the Response is a StreamedResponse, the content is streamed immediately
      * instead of being returned.
      *
+<<<<<<< HEAD
+=======
+     * @param Response $response A Response instance
+     *
+>>>>>>> web and vendor directory from composer install
      * @return string|null The Response content or null when the Response is streamed
      *
      * @throws \RuntimeException when the Response is not successful
@@ -100,7 +181,11 @@ class FragmentHandler
     protected function deliver(Response $response)
     {
         if (!$response->isSuccessful()) {
+<<<<<<< HEAD
             throw new \RuntimeException(sprintf('Error when rendering "%s" (Status code is %s).', $this->requestStack->getCurrentRequest()->getUri(), $response->getStatusCode()));
+=======
+            throw new \RuntimeException(sprintf('Error when rendering "%s" (Status code is %s).', $this->getRequest()->getUri(), $response->getStatusCode()));
+>>>>>>> web and vendor directory from composer install
         }
 
         if (!$response instanceof StreamedResponse) {
@@ -109,4 +194,12 @@ class FragmentHandler
 
         $response->sendContent();
     }
+<<<<<<< HEAD
+=======
+
+    private function getRequest()
+    {
+        return $this->requestStack ? $this->requestStack->getCurrentRequest() : $this->request;
+    }
+>>>>>>> web and vendor directory from composer install
 }

@@ -13,6 +13,10 @@ namespace Symfony\Component\Validator\Mapping;
 
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
+<<<<<<< HEAD
+=======
+use Symfony\Component\Validator\ValidationVisitorInterface;
+>>>>>>> web and vendor directory from composer install
 
 /**
  * Stores all metadata needed for validating a class property.
@@ -26,9 +30,17 @@ use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
  *
  * @see PropertyMetadataInterface
  */
+<<<<<<< HEAD
 abstract class MemberMetadata extends GenericMetadata implements PropertyMetadataInterface
 {
     /**
+=======
+abstract class MemberMetadata extends ElementMetadata implements PropertyMetadataInterface
+{
+    /**
+     * @var string
+     *
+>>>>>>> web and vendor directory from composer install
      * @internal This property is public in order to reduce the size of the
      *           class' serialized representation. Do not access it. Use
      *           {@link getClassName()} instead.
@@ -36,6 +48,11 @@ abstract class MemberMetadata extends GenericMetadata implements PropertyMetadat
     public $class;
 
     /**
+<<<<<<< HEAD
+=======
+     * @var string
+     *
+>>>>>>> web and vendor directory from composer install
      * @internal This property is public in order to reduce the size of the
      *           class' serialized representation. Do not access it. Use
      *           {@link getName()} instead.
@@ -43,6 +60,11 @@ abstract class MemberMetadata extends GenericMetadata implements PropertyMetadat
     public $name;
 
     /**
+<<<<<<< HEAD
+=======
+     * @var string
+     *
+>>>>>>> web and vendor directory from composer install
      * @internal This property is public in order to reduce the size of the
      *           class' serialized representation. Do not access it. Use
      *           {@link getPropertyName()} instead.
@@ -55,6 +77,11 @@ abstract class MemberMetadata extends GenericMetadata implements PropertyMetadat
     private $reflMember = array();
 
     /**
+<<<<<<< HEAD
+=======
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param string $class    The name of the class this member is defined on
      * @param string $name     The name of the member
      * @param string $property The property the member belongs to
@@ -68,6 +95,25 @@ abstract class MemberMetadata extends GenericMetadata implements PropertyMetadat
 
     /**
      * {@inheritdoc}
+<<<<<<< HEAD
+=======
+     *
+     * @deprecated since version 2.5, to be removed in 3.0.
+     */
+    public function accept(ValidationVisitorInterface $visitor, $value, $group, $propertyPath, $propagatedGroup = null)
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 2.5 and will be removed in 3.0.', E_USER_DEPRECATED);
+
+        $visitor->visit($this, $value, $group, $propertyPath);
+
+        if ($this->isCascaded()) {
+            $visitor->validate($value, $propagatedGroup ?: $group, $propertyPath, $this->isCollectionCascaded(), $this->isCollectionCascadedDeeply());
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+>>>>>>> web and vendor directory from composer install
      */
     public function addConstraint(Constraint $constraint)
     {
@@ -158,6 +204,56 @@ abstract class MemberMetadata extends GenericMetadata implements PropertyMetadat
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Returns whether objects stored in this member should be validated.
+     *
+     * @return bool
+     *
+     * @deprecated since version 2.5, to be removed in 3.0.
+     *             Use {@link getCascadingStrategy()} instead.
+     */
+    public function isCascaded()
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 2.5 and will be removed in 3.0. Use the getCascadingStrategy() method instead.', E_USER_DEPRECATED);
+
+        return (bool) ($this->cascadingStrategy & CascadingStrategy::CASCADE);
+    }
+
+    /**
+     * Returns whether arrays or traversable objects stored in this member
+     * should be traversed and validated in each entry.
+     *
+     * @return bool
+     *
+     * @deprecated since version 2.5, to be removed in 3.0.
+     *             Use {@link getTraversalStrategy()} instead.
+     */
+    public function isCollectionCascaded()
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 2.5 and will be removed in 3.0. Use the getTraversalStrategy() method instead.', E_USER_DEPRECATED);
+
+        return (bool) ($this->traversalStrategy & (TraversalStrategy::IMPLICIT | TraversalStrategy::TRAVERSE));
+    }
+
+    /**
+     * Returns whether arrays or traversable objects stored in this member
+     * should be traversed recursively for inner arrays/traversable objects.
+     *
+     * @return bool
+     *
+     * @deprecated since version 2.5, to be removed in 3.0.
+     *             Use {@link getTraversalStrategy()} instead.
+     */
+    public function isCollectionCascadedDeeply()
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 2.5 and will be removed in 3.0. Use the getTraversalStrategy() method instead.', E_USER_DEPRECATED);
+
+        return !($this->traversalStrategy & TraversalStrategy::STOP_RECURSION);
+    }
+
+    /**
+>>>>>>> web and vendor directory from composer install
      * Returns the reflection instance for accessing the member's value.
      *
      * @param object|string $objectOrClassName The object or the class name

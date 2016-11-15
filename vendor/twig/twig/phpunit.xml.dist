@@ -17,6 +17,7 @@
     </testsuite>
   </testsuites>
 
+<<<<<<< HEAD
   <php>
     <ini name="error_reporting" value="-1" />
   </php>
@@ -25,6 +26,8 @@
     <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
   </listeners>
 
+=======
+>>>>>>> web and vendor directory from composer install
   <filter>
     <whitelist>
       <directory suffix=".php">./lib/Twig/</directory>

@@ -27,7 +27,18 @@ use Psr\Log\LoggerInterface;
  */
 class UrlGenerator implements UrlGeneratorInterface, ConfigurableRequirementsInterface
 {
+<<<<<<< HEAD
     protected $routes;
+=======
+    /**
+     * @var RouteCollection
+     */
+    protected $routes;
+
+    /**
+     * @var RequestContext
+     */
+>>>>>>> web and vendor directory from composer install
     protected $context;
 
     /**
@@ -35,6 +46,12 @@ class UrlGenerator implements UrlGeneratorInterface, ConfigurableRequirementsInt
      */
     protected $strictRequirements = true;
 
+<<<<<<< HEAD
+=======
+    /**
+     * @var LoggerInterface|null
+     */
+>>>>>>> web and vendor directory from composer install
     protected $logger;
 
     /**
@@ -65,6 +82,16 @@ class UrlGenerator implements UrlGeneratorInterface, ConfigurableRequirementsInt
         '%7C' => '|',
     );
 
+<<<<<<< HEAD
+=======
+    /**
+     * Constructor.
+     *
+     * @param RouteCollection      $routes  A RouteCollection instance
+     * @param RequestContext       $context The context
+     * @param LoggerInterface|null $logger  A logger instance
+     */
+>>>>>>> web and vendor directory from composer install
     public function __construct(RouteCollection $routes, RequestContext $context, LoggerInterface $logger = null)
     {
         $this->routes = $routes;
@@ -126,6 +153,23 @@ class UrlGenerator implements UrlGeneratorInterface, ConfigurableRequirementsInt
      */
     protected function doGenerate($variables, $defaults, $requirements, $tokens, $parameters, $name, $referenceType, $hostTokens, array $requiredSchemes = array())
     {
+<<<<<<< HEAD
+=======
+        if (is_bool($referenceType) || is_string($referenceType)) {
+            @trigger_error('The hardcoded value you are using for the $referenceType argument of the '.__CLASS__.'::generate method is deprecated since version 2.8 and will not be supported anymore in 3.0. Use the constants defined in the UrlGeneratorInterface instead.', E_USER_DEPRECATED);
+
+            if (true === $referenceType) {
+                $referenceType = self::ABSOLUTE_URL;
+            } elseif (false === $referenceType) {
+                $referenceType = self::ABSOLUTE_PATH;
+            } elseif ('relative' === $referenceType) {
+                $referenceType = self::RELATIVE_PATH;
+            } elseif ('network' === $referenceType) {
+                $referenceType = self::NETWORK_PATH;
+            }
+        }
+
+>>>>>>> web and vendor directory from composer install
         $variables = array_flip($variables);
         $mergedParams = array_replace($defaults, $this->context->getParameters(), $parameters);
 
@@ -136,11 +180,15 @@ class UrlGenerator implements UrlGeneratorInterface, ConfigurableRequirementsInt
 
         $url = '';
         $optional = true;
+<<<<<<< HEAD
         $message = 'Parameter "{parameter}" for route "{route}" must match "{expected}" ("{given}" given) to generate a corresponding URL.';
+=======
+>>>>>>> web and vendor directory from composer install
         foreach ($tokens as $token) {
             if ('variable' === $token[0]) {
                 if (!$optional || !array_key_exists($token[3], $defaults) || null !== $mergedParams[$token[3]] && (string) $mergedParams[$token[3]] !== (string) $defaults[$token[3]]) {
                     // check requirement
+<<<<<<< HEAD
                     if (null !== $this->strictRequirements && !preg_match('#^'.$token[2].'$#'.(empty($token[4]) ? '' : 'u'), $mergedParams[$token[3]])) {
                         if ($this->strictRequirements) {
                             throw new InvalidParameterException(strtr($message, array('{parameter}' => $token[3], '{route}' => $name, '{expected}' => $token[2], '{given}' => $mergedParams[$token[3]])));
@@ -148,6 +196,16 @@ class UrlGenerator implements UrlGeneratorInterface, ConfigurableRequirementsInt
 
                         if ($this->logger) {
                             $this->logger->error($message, array('parameter' => $token[3], 'route' => $name, 'expected' => $token[2], 'given' => $mergedParams[$token[3]]));
+=======
+                    if (null !== $this->strictRequirements && !preg_match('#^'.$token[2].'$#', $mergedParams[$token[3]])) {
+                        $message = sprintf('Parameter "%s" for route "%s" must match "%s" ("%s" given) to generate a corresponding URL.', $token[3], $name, $token[2], $mergedParams[$token[3]]);
+                        if ($this->strictRequirements) {
+                            throw new InvalidParameterException($message);
+                        }
+
+                        if ($this->logger) {
+                            $this->logger->error($message);
+>>>>>>> web and vendor directory from composer install
                         }
 
                         return;
@@ -181,6 +239,7 @@ class UrlGenerator implements UrlGeneratorInterface, ConfigurableRequirementsInt
         }
 
         $schemeAuthority = '';
+<<<<<<< HEAD
         $host = $this->context->getHost();
         $scheme = $this->context->getScheme();
 
@@ -231,6 +290,65 @@ class UrlGenerator implements UrlGeneratorInterface, ConfigurableRequirementsInt
 
             $schemeAuthority = self::NETWORK_PATH === $referenceType ? '//' : "$scheme://";
             $schemeAuthority .= $host.$port;
+=======
+        if ($host = $this->context->getHost()) {
+            $scheme = $this->context->getScheme();
+
+            if ($requiredSchemes) {
+                if (!in_array($scheme, $requiredSchemes, true)) {
+                    $referenceType = self::ABSOLUTE_URL;
+                    $scheme = current($requiredSchemes);
+                }
+            } elseif (isset($requirements['_scheme']) && ($req = strtolower($requirements['_scheme'])) && $scheme !== $req) {
+                // We do this for BC; to be removed if _scheme is not supported anymore
+                $referenceType = self::ABSOLUTE_URL;
+                $scheme = $req;
+            }
+
+            if ($hostTokens) {
+                $routeHost = '';
+                foreach ($hostTokens as $token) {
+                    if ('variable' === $token[0]) {
+                        if (null !== $this->strictRequirements && !preg_match('#^'.$token[2].'$#i', $mergedParams[$token[3]])) {
+                            $message = sprintf('Parameter "%s" for route "%s" must match "%s" ("%s" given) to generate a corresponding URL.', $token[3], $name, $token[2], $mergedParams[$token[3]]);
+
+                            if ($this->strictRequirements) {
+                                throw new InvalidParameterException($message);
+                            }
+
+                            if ($this->logger) {
+                                $this->logger->error($message);
+                            }
+
+                            return;
+                        }
+
+                        $routeHost = $token[1].$mergedParams[$token[3]].$routeHost;
+                    } else {
+                        $routeHost = $token[1].$routeHost;
+                    }
+                }
+
+                if ($routeHost !== $host) {
+                    $host = $routeHost;
+                    if (self::ABSOLUTE_URL !== $referenceType) {
+                        $referenceType = self::NETWORK_PATH;
+                    }
+                }
+            }
+
+            if (self::ABSOLUTE_URL === $referenceType || self::NETWORK_PATH === $referenceType) {
+                $port = '';
+                if ('http' === $scheme && 80 != $this->context->getHttpPort()) {
+                    $port = ':'.$this->context->getHttpPort();
+                } elseif ('https' === $scheme && 443 != $this->context->getHttpsPort()) {
+                    $port = ':'.$this->context->getHttpsPort();
+                }
+
+                $schemeAuthority = self::NETWORK_PATH === $referenceType ? '//' : "$scheme://";
+                $schemeAuthority .= $host.$port;
+            }
+>>>>>>> web and vendor directory from composer install
         }
 
         if (self::RELATIVE_PATH === $referenceType) {
@@ -244,6 +362,7 @@ class UrlGenerator implements UrlGeneratorInterface, ConfigurableRequirementsInt
             return $a == $b ? 0 : 1;
         });
 
+<<<<<<< HEAD
         // extract fragment
         $fragment = '';
         if (isset($defaults['_fragment'])) {
@@ -256,15 +375,21 @@ class UrlGenerator implements UrlGeneratorInterface, ConfigurableRequirementsInt
         }
 
         if ($extra && $query = http_build_query($extra, '', '&', PHP_QUERY_RFC3986)) {
+=======
+        if ($extra && $query = http_build_query($extra, '', '&')) {
+>>>>>>> web and vendor directory from composer install
             // "/" and "?" can be left decoded for better user experience, see
             // http://tools.ietf.org/html/rfc3986#section-3.4
             $url .= '?'.strtr($query, array('%2F' => '/'));
         }
 
+<<<<<<< HEAD
         if ('' !== $fragment) {
             $url .= '#'.strtr(rawurlencode($fragment), array('%2F' => '/', '%3F' => '?'));
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         return $url;
     }
 

@@ -45,12 +45,20 @@ class ProcessTimedOutException extends RuntimeException
 
     public function isGeneralTimeout()
     {
+<<<<<<< HEAD
         return self::TYPE_GENERAL === $this->timeoutType;
+=======
+        return $this->timeoutType === self::TYPE_GENERAL;
+>>>>>>> web and vendor directory from composer install
     }
 
     public function isIdleTimeout()
     {
+<<<<<<< HEAD
         return self::TYPE_IDLE === $this->timeoutType;
+=======
+        return $this->timeoutType === self::TYPE_IDLE;
+>>>>>>> web and vendor directory from composer install
     }
 
     public function getExceededTimeout()

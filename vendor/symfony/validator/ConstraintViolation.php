@@ -18,6 +18,7 @@ namespace Symfony\Component\Validator;
  */
 class ConstraintViolation implements ConstraintViolationInterface
 {
+<<<<<<< HEAD
     private $message;
     private $messageTemplate;
     private $parameters;
@@ -27,6 +28,56 @@ class ConstraintViolation implements ConstraintViolationInterface
     private $invalidValue;
     private $constraint;
     private $code;
+=======
+    /**
+     * @var string
+     */
+    private $message;
+
+    /**
+     * @var string
+     */
+    private $messageTemplate;
+
+    /**
+     * @var array
+     */
+    private $parameters;
+
+    /**
+     * @var int|null
+     */
+    private $plural;
+
+    /**
+     * @var mixed
+     */
+    private $root;
+
+    /**
+     * @var string
+     */
+    private $propertyPath;
+
+    /**
+     * @var mixed
+     */
+    private $invalidValue;
+
+    /**
+     * @var Constraint|null
+     */
+    private $constraint;
+
+    /**
+     * @var mixed
+     */
+    private $code;
+
+    /**
+     * @var mixed
+     */
+>>>>>>> web and vendor directory from composer install
     private $cause;
 
     /**
@@ -102,6 +153,22 @@ class ConstraintViolation implements ConstraintViolationInterface
 
     /**
      * {@inheritdoc}
+<<<<<<< HEAD
+=======
+     *
+     * @deprecated since version 2.7, to be removed in 3.0.
+     *             Use getParameters() instead
+     */
+    public function getMessageParameters()
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 2.7, to be removed in 3.0. Use the ConstraintViolation::getParameters() method instead.', E_USER_DEPRECATED);
+
+        return $this->parameters;
+    }
+
+    /**
+     * Alias of {@link getMessageParameters()}.
+>>>>>>> web and vendor directory from composer install
      */
     public function getParameters()
     {
@@ -110,6 +177,22 @@ class ConstraintViolation implements ConstraintViolationInterface
 
     /**
      * {@inheritdoc}
+<<<<<<< HEAD
+=======
+     *
+     * @deprecated since version 2.7, to be removed in 3.0.
+     *             Use getPlural() instead
+     */
+    public function getMessagePluralization()
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 2.7, to be removed in 3.0. Use the ConstraintViolation::getPlural() method instead.', E_USER_DEPRECATED);
+
+        return $this->plural;
+    }
+
+    /**
+     * Alias of {@link getMessagePluralization()}.
+>>>>>>> web and vendor directory from composer install
      */
     public function getPlural()
     {

@@ -11,14 +11,27 @@
 
 namespace Symfony\Component\ClassLoader;
 
+<<<<<<< HEAD
 @trigger_error('The '.__NAMESPACE__.'\ClassMapGenerator class is deprecated since Symfony 3.3 and will be removed in 4.0. Use Composer instead.', E_USER_DEPRECATED);
+=======
+if (!defined('SYMFONY_TRAIT')) {
+    if (PHP_VERSION_ID >= 50400) {
+        define('SYMFONY_TRAIT', T_TRAIT);
+    } else {
+        define('SYMFONY_TRAIT', 0);
+    }
+}
+>>>>>>> web and vendor directory from composer install
 
 /**
  * ClassMapGenerator.
  *
  * @author Gyula Sallai <salla016@gmail.com>
+<<<<<<< HEAD
  *
  * @deprecated since version 3.3, to be removed in 4.0.
+=======
+>>>>>>> web and vendor directory from composer install
  */
 class ClassMapGenerator
 {
@@ -60,15 +73,25 @@ class ClassMapGenerator
                 continue;
             }
 
+<<<<<<< HEAD
             $path = $file->getRealPath() ?: $file->getPathname();
 
             if ('php' !== pathinfo($path, PATHINFO_EXTENSION)) {
+=======
+            $path = $file->getRealPath();
+
+            if (pathinfo($path, PATHINFO_EXTENSION) !== 'php') {
+>>>>>>> web and vendor directory from composer install
                 continue;
             }
 
             $classes = self::findClasses($path);
 
+<<<<<<< HEAD
             if (\PHP_VERSION_ID >= 70000) {
+=======
+            if (PHP_VERSION_ID >= 70000) {
+>>>>>>> web and vendor directory from composer install
                 // PHP 7 memory manager will not release after token_get_all(), see https://bugs.php.net/70098
                 gc_mem_caches();
             }
@@ -118,7 +141,11 @@ class ClassMapGenerator
                     break;
                 case T_CLASS:
                 case T_INTERFACE:
+<<<<<<< HEAD
                 case T_TRAIT:
+=======
+                case SYMFONY_TRAIT:
+>>>>>>> web and vendor directory from composer install
                     // Skip usage of ::class constant
                     $isClassConstant = false;
                     for ($j = $i - 1; $j > 0; --$j) {

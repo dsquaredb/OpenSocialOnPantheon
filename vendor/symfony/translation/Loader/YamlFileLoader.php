@@ -12,7 +12,10 @@
 namespace Symfony\Component\Translation\Loader;
 
 use Symfony\Component\Translation\Exception\InvalidResourceException;
+<<<<<<< HEAD
 use Symfony\Component\Translation\Exception\LogicException;
+=======
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\Yaml\Parser as YamlParser;
 use Symfony\Component\Yaml\Exception\ParseException;
 
@@ -32,12 +35,17 @@ class YamlFileLoader extends FileLoader
     {
         if (null === $this->yamlParser) {
             if (!class_exists('Symfony\Component\Yaml\Parser')) {
+<<<<<<< HEAD
                 throw new LogicException('Loading translations from the YAML format requires the Symfony Yaml component.');
+=======
+                throw new \LogicException('Loading translations from the YAML format requires the Symfony Yaml component.');
+>>>>>>> web and vendor directory from composer install
             }
 
             $this->yamlParser = new YamlParser();
         }
 
+<<<<<<< HEAD
         $prevErrorHandler = set_error_handler(function ($level, $message, $script, $line) use ($resource, &$prevErrorHandler) {
             $message = E_USER_DEPRECATED === $level ? preg_replace('/ on line \d+/', ' in "'.$resource.'"$0', $message) : $message;
 
@@ -50,6 +58,12 @@ class YamlFileLoader extends FileLoader
             throw new InvalidResourceException(sprintf('Error parsing YAML, invalid file "%s"', $resource), 0, $e);
         } finally {
             restore_error_handler();
+=======
+        try {
+            $messages = $this->yamlParser->parse(file_get_contents($resource));
+        } catch (ParseException $e) {
+            throw new InvalidResourceException(sprintf('Error parsing YAML, invalid file "%s"', $resource), 0, $e);
+>>>>>>> web and vendor directory from composer install
         }
 
         return $messages;

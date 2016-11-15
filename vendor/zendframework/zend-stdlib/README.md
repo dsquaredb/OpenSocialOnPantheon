@@ -7,7 +7,10 @@
 class for different scopes like:
 
 - array utilities functions;
+<<<<<<< HEAD
 - json serializable interfaces;
+=======
+>>>>>>> web and vendor directory from composer install
 - general messaging systems;
 - string wrappers;
 - etc.
@@ -15,4 +18,8 @@ class for different scopes like:
 ---
 
 - File issues at https://github.com/zendframework/zend-stdlib/issues
+<<<<<<< HEAD
 - Documentation is at http://framework.zend.com/manual/current/en/index.html#zend-stdlib
+=======
+- Documentation is at https://docs.zendframework.com/zend-stdlib/
+>>>>>>> web and vendor directory from composer install

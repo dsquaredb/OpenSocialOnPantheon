@@ -37,6 +37,10 @@ class HelpCommand extends Command
             ->setName('help')
             ->setDefinition(array(
                 new InputArgument('command_name', InputArgument::OPTIONAL, 'The command name', 'help'),
+<<<<<<< HEAD
+=======
+                new InputOption('xml', null, InputOption::VALUE_NONE, 'To output help as XML'),
+>>>>>>> web and vendor directory from composer install
                 new InputOption('format', null, InputOption::VALUE_REQUIRED, 'The output format (txt, xml, json, or md)', 'txt'),
                 new InputOption('raw', null, InputOption::VALUE_NONE, 'To output raw command help'),
             ))
@@ -56,6 +60,14 @@ EOF
         ;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Sets the command.
+     *
+     * @param Command $command The command to set
+     */
+>>>>>>> web and vendor directory from composer install
     public function setCommand(Command $command)
     {
         $this->command = $command;
@@ -70,6 +82,15 @@ EOF
             $this->command = $this->getApplication()->find($input->getArgument('command_name'));
         }
 
+<<<<<<< HEAD
+=======
+        if ($input->getOption('xml')) {
+            @trigger_error('The --xml option was deprecated in version 2.7 and will be removed in version 3.0. Use the --format option instead.', E_USER_DEPRECATED);
+
+            $input->setOption('format', 'xml');
+        }
+
+>>>>>>> web and vendor directory from composer install
         $helper = new DescriptorHelper();
         $helper->describe($output, $this->command, array(
             'format' => $input->getOption('format'),

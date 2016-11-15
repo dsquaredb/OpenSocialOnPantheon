@@ -442,12 +442,21 @@ class Uri implements UriInterface
             );
         }
 
+<<<<<<< HEAD
         $this->scheme    = isset($parts['scheme']) ? $this->filterScheme($parts['scheme']) : '';
         $this->userInfo  = isset($parts['user']) ? $parts['user'] : '';
         $this->host      = isset($parts['host']) ? $parts['host'] : '';
         $this->port      = isset($parts['port']) ? $parts['port'] : null;
         $this->path      = isset($parts['path']) ? $this->filterPath($parts['path']) : '';
         $this->query     = isset($parts['query']) ? $this->filterQuery($parts['query']) : '';
+=======
+        $this->scheme    = isset($parts['scheme'])   ? $this->filterScheme($parts['scheme']) : '';
+        $this->userInfo  = isset($parts['user'])     ? $parts['user']     : '';
+        $this->host      = isset($parts['host'])     ? $parts['host']     : '';
+        $this->port      = isset($parts['port'])     ? $parts['port']     : null;
+        $this->path      = isset($parts['path'])     ? $this->filterPath($parts['path']) : '';
+        $this->query     = isset($parts['query'])    ? $this->filterQuery($parts['query']) : '';
+>>>>>>> web and vendor directory from composer install
         $this->fragment  = isset($parts['fragment']) ? $this->filterFragment($parts['fragment']) : '';
 
         if (isset($parts['pass'])) {
@@ -470,11 +479,19 @@ class Uri implements UriInterface
         $uri = '';
 
         if (! empty($scheme)) {
+<<<<<<< HEAD
             $uri .= sprintf('%s:', $scheme);
         }
 
         if (! empty($authority)) {
             $uri .= '//' . $authority;
+=======
+            $uri .= sprintf('%s://', $scheme);
+        }
+
+        if (! empty($authority)) {
+            $uri .= $authority;
+>>>>>>> web and vendor directory from composer install
         }
 
         if ($path) {
@@ -556,7 +573,11 @@ class Uri implements UriInterface
     private function filterPath($path)
     {
         $path = preg_replace_callback(
+<<<<<<< HEAD
             '/(?:[^' . self::CHAR_UNRESERVED . ')(:@&=\+\$,\/;%]+|%(?![A-Fa-f0-9]{2}))/u',
+=======
+            '/(?:[^' . self::CHAR_UNRESERVED . ':@&=\+\$,\/;%]+|%(?![A-Fa-f0-9]{2}))/u',
+>>>>>>> web and vendor directory from composer install
             [$this, 'urlEncodeChar'],
             $path
         );

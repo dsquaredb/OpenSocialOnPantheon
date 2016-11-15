@@ -3,7 +3,11 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
+=======
+ * (c) 2012 Fabien Potencier
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -29,10 +33,13 @@ class Twig_Extension_Staging extends Twig_Extension
 
     public function addFunction($name, $function)
     {
+<<<<<<< HEAD
         if (isset($this->functions[$name])) {
             @trigger_error(sprintf('Overriding function "%s" that is already registered is deprecated since version 1.30 and won\'t be possible anymore in 2.0.', $name), E_USER_DEPRECATED);
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         $this->functions[$name] = $function;
     }
 
@@ -43,10 +50,13 @@ class Twig_Extension_Staging extends Twig_Extension
 
     public function addFilter($name, $filter)
     {
+<<<<<<< HEAD
         if (isset($this->filters[$name])) {
             @trigger_error(sprintf('Overriding filter "%s" that is already registered is deprecated since version 1.30 and won\'t be possible anymore in 2.0.', $name), E_USER_DEPRECATED);
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         $this->filters[$name] = $filter;
     }
 
@@ -67,11 +77,15 @@ class Twig_Extension_Staging extends Twig_Extension
 
     public function addTokenParser(Twig_TokenParserInterface $parser)
     {
+<<<<<<< HEAD
         if (isset($this->tokenParsers[$parser->getTag()])) {
             @trigger_error(sprintf('Overriding tag "%s" that is already registered is deprecated since version 1.30 and won\'t be possible anymore in 2.0.', $parser->getTag()), E_USER_DEPRECATED);
         }
 
         $this->tokenParsers[$parser->getTag()] = $parser;
+=======
+        $this->tokenParsers[] = $parser;
+>>>>>>> web and vendor directory from composer install
     }
 
     public function getTokenParsers()
@@ -91,10 +105,13 @@ class Twig_Extension_Staging extends Twig_Extension
 
     public function addTest($name, $test)
     {
+<<<<<<< HEAD
         if (isset($this->tests[$name])) {
             @trigger_error(sprintf('Overriding test "%s" that is already registered is deprecated since version 1.30 and won\'t be possible anymore in 2.0.', $name), E_USER_DEPRECATED);
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         $this->tests[$name] = $test;
     }
 
@@ -108,5 +125,8 @@ class Twig_Extension_Staging extends Twig_Extension
         return 'staging';
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_Extension_Staging', 'Twig\Extension\StagingExtension', false);
+=======
+>>>>>>> web and vendor directory from composer install

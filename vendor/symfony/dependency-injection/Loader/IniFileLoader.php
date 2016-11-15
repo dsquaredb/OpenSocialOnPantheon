@@ -11,7 +11,11 @@
 
 namespace Symfony\Component\DependencyInjection\Loader;
 
+<<<<<<< HEAD
 use Symfony\Component\Config\Util\XmlUtils;
+=======
+use Symfony\Component\Config\Resource\FileResource;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
 
 /**
@@ -28,20 +32,31 @@ class IniFileLoader extends FileLoader
     {
         $path = $this->locator->locate($resource);
 
+<<<<<<< HEAD
         $this->container->fileExists($path);
 
         // first pass to catch parsing errors
+=======
+        $this->container->addResource(new FileResource($path));
+
+>>>>>>> web and vendor directory from composer install
         $result = parse_ini_file($path, true);
         if (false === $result || array() === $result) {
             throw new InvalidArgumentException(sprintf('The "%s" file is not valid.', $resource));
         }
 
+<<<<<<< HEAD
         // real raw parsing
         $result = parse_ini_file($path, true, INI_SCANNER_RAW);
 
         if (isset($result['parameters']) && is_array($result['parameters'])) {
             foreach ($result['parameters'] as $key => $value) {
                 $this->container->setParameter($key, $this->phpize($value));
+=======
+        if (isset($result['parameters']) && is_array($result['parameters'])) {
+            foreach ($result['parameters'] as $key => $value) {
+                $this->container->setParameter($key, $value);
+>>>>>>> web and vendor directory from composer install
             }
         }
     }
@@ -51,6 +66,7 @@ class IniFileLoader extends FileLoader
      */
     public function supports($resource, $type = null)
     {
+<<<<<<< HEAD
         if (!is_string($resource)) {
             return false;
         }
@@ -89,5 +105,8 @@ class IniFileLoader extends FileLoader
             default:
                 return XmlUtils::phpize($value);
         }
+=======
+        return is_string($resource) && 'ini' === pathinfo($resource, PATHINFO_EXTENSION);
+>>>>>>> web and vendor directory from composer install
     }
 }

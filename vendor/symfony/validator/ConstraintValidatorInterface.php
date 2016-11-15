@@ -11,8 +11,11 @@
 
 namespace Symfony\Component\Validator;
 
+<<<<<<< HEAD
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
+=======
+>>>>>>> web and vendor directory from composer install
 /**
  * @author Bernhard Schussek <bschussek@gmail.com>
  */

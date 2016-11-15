@@ -31,6 +31,12 @@ class DescriptorHelper extends Helper
      */
     private $descriptors = array();
 
+<<<<<<< HEAD
+=======
+    /**
+     * Constructor.
+     */
+>>>>>>> web and vendor directory from composer install
     public function __construct()
     {
         $this
@@ -75,7 +81,11 @@ class DescriptorHelper extends Helper
      * @param string              $format
      * @param DescriptorInterface $descriptor
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return DescriptorHelper
+>>>>>>> web and vendor directory from composer install
      */
     public function register($format, DescriptorInterface $descriptor)
     {

@@ -60,10 +60,13 @@ abstract class ServerRequestFactory
         $files   = static::normalizeFiles($files ?: $_FILES);
         $headers = static::marshalHeaders($server);
 
+<<<<<<< HEAD
         if (null === $cookies && array_key_exists('cookie', $headers)) {
             $cookies = self::parseCookieHeader($headers['cookie']);
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         return new ServerRequest(
             $server,
             $files,
@@ -489,6 +492,7 @@ abstract class ServerRequestFactory
 
         return $matches['version'];
     }
+<<<<<<< HEAD
 
     /**
      * Parse a cookie header according to RFC 6265.
@@ -519,4 +523,6 @@ abstract class ServerRequestFactory
 
         return $cookies;
     }
+=======
+>>>>>>> web and vendor directory from composer install
 }

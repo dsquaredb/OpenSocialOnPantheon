@@ -3,7 +3,11 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
+=======
+ * (c) 2015 Fabien Potencier
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -44,6 +48,9 @@ class Twig_Extension_Profiler extends Twig_Extension
         return 'profiler';
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_Extension_Profiler', 'Twig\Extension\ProfilerExtension', false);
 class_exists('Twig_Profiler_Profile');
+=======
+>>>>>>> web and vendor directory from composer install

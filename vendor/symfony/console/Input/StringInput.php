@@ -28,6 +28,7 @@ class StringInput extends ArgvInput
     const REGEX_QUOTED_STRING = '(?:"([^"\\\\]*(?:\\\\.[^"\\\\]*)*)"|\'([^\'\\\\]*(?:\\\\.[^\'\\\\]*)*)\')';
 
     /**
+<<<<<<< HEAD
      * @param string $input A string representing the parameters from the CLI
      */
     public function __construct($input)
@@ -35,6 +36,28 @@ class StringInput extends ArgvInput
         parent::__construct(array());
 
         $this->setTokens($this->tokenize($input));
+=======
+     * Constructor.
+     *
+     * @param string          $input      An array of parameters from the CLI (in the argv format)
+     * @param InputDefinition $definition A InputDefinition instance
+     *
+     * @deprecated The second argument is deprecated as it does not work (will be removed in 3.0), use 'bind' method instead
+     */
+    public function __construct($input, InputDefinition $definition = null)
+    {
+        if ($definition) {
+            @trigger_error('The $definition argument of the '.__METHOD__.' method is deprecated and will be removed in 3.0. Set this parameter with the bind() method instead.', E_USER_DEPRECATED);
+        }
+
+        parent::__construct(array(), null);
+
+        $this->setTokens($this->tokenize($input));
+
+        if (null !== $definition) {
+            $this->bind($definition);
+        }
+>>>>>>> web and vendor directory from composer install
     }
 
     /**

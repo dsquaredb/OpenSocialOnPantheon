@@ -9,6 +9,12 @@
 
 namespace Zend\Stdlib;
 
+<<<<<<< HEAD
+=======
+/**
+ * @deprecated Since 3.1.0; use the native JsonSerializable interface
+ */
+>>>>>>> web and vendor directory from composer install
 interface JsonSerializable extends \JsonSerializable
 {
 }

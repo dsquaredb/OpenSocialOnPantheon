@@ -20,13 +20,32 @@ namespace Symfony\Component\EventDispatcher;
  */
 class GenericEvent extends Event implements \ArrayAccess, \IteratorAggregate
 {
+<<<<<<< HEAD
     protected $subject;
+=======
+    /**
+     * Event subject.
+     *
+     * @var mixed usually object or callable
+     */
+    protected $subject;
+
+    /**
+     * Array of arguments.
+     *
+     * @var array
+     */
+>>>>>>> web and vendor directory from composer install
     protected $arguments;
 
     /**
      * Encapsulate an event with $subject and $args.
      *
+<<<<<<< HEAD
      * @param mixed $subject   The subject of the event, usually an object or a callable
+=======
+     * @param mixed $subject   The subject of the event, usually an object
+>>>>>>> web and vendor directory from composer install
      * @param array $arguments Arguments to store in the event
      */
     public function __construct($subject = null, array $arguments = array())
@@ -52,7 +71,11 @@ class GenericEvent extends Event implements \ArrayAccess, \IteratorAggregate
      *
      * @return mixed Contents of array key
      *
+<<<<<<< HEAD
      * @throws \InvalidArgumentException if key is not found
+=======
+     * @throws \InvalidArgumentException If key is not found.
+>>>>>>> web and vendor directory from composer install
      */
     public function getArgument($key)
     {
@@ -69,7 +92,11 @@ class GenericEvent extends Event implements \ArrayAccess, \IteratorAggregate
      * @param string $key   Argument name
      * @param mixed  $value Value
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return GenericEvent
+>>>>>>> web and vendor directory from composer install
      */
     public function setArgument($key, $value)
     {
@@ -93,7 +120,11 @@ class GenericEvent extends Event implements \ArrayAccess, \IteratorAggregate
      *
      * @param array $args Arguments
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return GenericEvent
+>>>>>>> web and vendor directory from composer install
      */
     public function setArguments(array $args = array())
     {
@@ -121,7 +152,11 @@ class GenericEvent extends Event implements \ArrayAccess, \IteratorAggregate
      *
      * @return mixed
      *
+<<<<<<< HEAD
      * @throws \InvalidArgumentException if key does not exist in $this->args
+=======
+     * @throws \InvalidArgumentException If key does not exist in $this->args.
+>>>>>>> web and vendor directory from composer install
      */
     public function offsetGet($key)
     {

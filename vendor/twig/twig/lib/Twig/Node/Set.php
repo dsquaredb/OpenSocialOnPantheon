@@ -3,7 +3,11 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
+=======
+ * (c) 2010 Fabien Potencier
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,7 +18,11 @@
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
+<<<<<<< HEAD
 class Twig_Node_Set extends Twig_Node implements Twig_NodeCaptureInterface
+=======
+class Twig_Node_Set extends Twig_Node
+>>>>>>> web and vendor directory from composer install
 {
     public function __construct($capture, Twig_NodeInterface $names, Twig_NodeInterface $values, $lineno, $tag = null)
     {
@@ -94,5 +102,8 @@ class Twig_Node_Set extends Twig_Node implements Twig_NodeCaptureInterface
         $compiler->raw(";\n");
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_Node_Set', 'Twig\Node\SetNode', false);
+=======
+>>>>>>> web and vendor directory from composer install

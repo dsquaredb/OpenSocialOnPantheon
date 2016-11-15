@@ -17,7 +17,11 @@ use Symfony\Component\Validator\ConstraintValidator;
 /**
  * @author Michael Hirschler <michael.vhirsch@gmail.com>
  *
+<<<<<<< HEAD
  * @see https://en.wikipedia.org/wiki/ISO_9362#Structure
+=======
+ * @link https://en.wikipedia.org/wiki/ISO_9362#Structure
+>>>>>>> web and vendor directory from composer install
  */
 class BicValidator extends ConstraintValidator
 {

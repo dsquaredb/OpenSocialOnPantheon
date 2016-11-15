@@ -54,12 +54,20 @@ abstract class FileLoader extends ArrayLoader
         return $catalogue;
     }
 
+<<<<<<< HEAD
     /**
+=======
+    /*
+>>>>>>> web and vendor directory from composer install
      * @param string $resource
      *
      * @return array
      *
+<<<<<<< HEAD
      * @throws InvalidResourceException if stream content has an invalid format
+=======
+     * @throws InvalidResourceException If stream content has an invalid format.
+>>>>>>> web and vendor directory from composer install
      */
     abstract protected function loadResource($resource);
 }

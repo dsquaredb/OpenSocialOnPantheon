@@ -56,7 +56,11 @@ class Regex extends Constraint
      * Pattern is also ignored if match=false since the pattern should
      * then be reversed before application.
      *
+<<<<<<< HEAD
      * @see http://dev.w3.org/html5/spec/single-page.html#the-pattern-attribute
+=======
+     * @link http://dev.w3.org/html5/spec/single-page.html#the-pattern-attribute
+>>>>>>> web and vendor directory from composer install
      *
      * @return string|null
      */

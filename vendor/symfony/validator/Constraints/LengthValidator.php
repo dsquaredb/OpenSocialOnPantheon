@@ -11,6 +11,10 @@
 
 namespace Symfony\Component\Validator\Constraints;
 
+<<<<<<< HEAD
+=======
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
@@ -44,17 +48,36 @@ class LengthValidator extends ConstraintValidator
         }
 
         if ($invalidCharset) {
+<<<<<<< HEAD
             $this->context->buildViolation($constraint->charsetMessage)
                 ->setParameter('{{ value }}', $this->formatValue($stringValue))
                 ->setParameter('{{ charset }}', $constraint->charset)
                 ->setInvalidValue($value)
                 ->setCode(Length::INVALID_CHARACTERS_ERROR)
                 ->addViolation();
+=======
+            if ($this->context instanceof ExecutionContextInterface) {
+                $this->context->buildViolation($constraint->charsetMessage)
+                    ->setParameter('{{ value }}', $this->formatValue($stringValue))
+                    ->setParameter('{{ charset }}', $constraint->charset)
+                    ->setInvalidValue($value)
+                    ->setCode(Length::INVALID_CHARACTERS_ERROR)
+                    ->addViolation();
+            } else {
+                $this->buildViolation($constraint->charsetMessage)
+                    ->setParameter('{{ value }}', $this->formatValue($stringValue))
+                    ->setParameter('{{ charset }}', $constraint->charset)
+                    ->setInvalidValue($value)
+                    ->setCode(Length::INVALID_CHARACTERS_ERROR)
+                    ->addViolation();
+            }
+>>>>>>> web and vendor directory from composer install
 
             return;
         }
 
         if (null !== $constraint->max && $length > $constraint->max) {
+<<<<<<< HEAD
             $this->context->buildViolation($constraint->min == $constraint->max ? $constraint->exactMessage : $constraint->maxMessage)
                 ->setParameter('{{ value }}', $this->formatValue($stringValue))
                 ->setParameter('{{ limit }}', $constraint->max)
@@ -62,11 +85,31 @@ class LengthValidator extends ConstraintValidator
                 ->setPlural((int) $constraint->max)
                 ->setCode(Length::TOO_LONG_ERROR)
                 ->addViolation();
+=======
+            if ($this->context instanceof ExecutionContextInterface) {
+                $this->context->buildViolation($constraint->min == $constraint->max ? $constraint->exactMessage : $constraint->maxMessage)
+                    ->setParameter('{{ value }}', $this->formatValue($stringValue))
+                    ->setParameter('{{ limit }}', $constraint->max)
+                    ->setInvalidValue($value)
+                    ->setPlural((int) $constraint->max)
+                    ->setCode(Length::TOO_LONG_ERROR)
+                    ->addViolation();
+            } else {
+                $this->buildViolation($constraint->min == $constraint->max ? $constraint->exactMessage : $constraint->maxMessage)
+                    ->setParameter('{{ value }}', $this->formatValue($stringValue))
+                    ->setParameter('{{ limit }}', $constraint->max)
+                    ->setInvalidValue($value)
+                    ->setPlural((int) $constraint->max)
+                    ->setCode(Length::TOO_LONG_ERROR)
+                    ->addViolation();
+            }
+>>>>>>> web and vendor directory from composer install
 
             return;
         }
 
         if (null !== $constraint->min && $length < $constraint->min) {
+<<<<<<< HEAD
             $this->context->buildViolation($constraint->min == $constraint->max ? $constraint->exactMessage : $constraint->minMessage)
                 ->setParameter('{{ value }}', $this->formatValue($stringValue))
                 ->setParameter('{{ limit }}', $constraint->min)
@@ -74,6 +117,25 @@ class LengthValidator extends ConstraintValidator
                 ->setPlural((int) $constraint->min)
                 ->setCode(Length::TOO_SHORT_ERROR)
                 ->addViolation();
+=======
+            if ($this->context instanceof ExecutionContextInterface) {
+                $this->context->buildViolation($constraint->min == $constraint->max ? $constraint->exactMessage : $constraint->minMessage)
+                    ->setParameter('{{ value }}', $this->formatValue($stringValue))
+                    ->setParameter('{{ limit }}', $constraint->min)
+                    ->setInvalidValue($value)
+                    ->setPlural((int) $constraint->min)
+                    ->setCode(Length::TOO_SHORT_ERROR)
+                    ->addViolation();
+            } else {
+                $this->buildViolation($constraint->min == $constraint->max ? $constraint->exactMessage : $constraint->minMessage)
+                    ->setParameter('{{ value }}', $this->formatValue($stringValue))
+                    ->setParameter('{{ limit }}', $constraint->min)
+                    ->setInvalidValue($value)
+                    ->setPlural((int) $constraint->min)
+                    ->setCode(Length::TOO_SHORT_ERROR)
+                    ->addViolation();
+            }
+>>>>>>> web and vendor directory from composer install
         }
     }
 }

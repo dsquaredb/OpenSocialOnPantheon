@@ -3,8 +3,13 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
  * (c) Armin Ronacher
+=======
+ * (c) 2009 Fabien Potencier
+ * (c) 2009 Armin Ronacher
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,8 +18,11 @@
 /**
  * Represents a token stream.
  *
+<<<<<<< HEAD
  * @final
  *
+=======
+>>>>>>> web and vendor directory from composer install
  * @author Fabien Potencier <fabien@symfony.com>
  */
 class Twig_TokenStream
@@ -26,6 +34,11 @@ class Twig_TokenStream
     private $source;
 
     /**
+<<<<<<< HEAD
+=======
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param array       $tokens An array of tokens
      * @param string|null $name   The name of the template which tokens are associated with
      * @param string|null $source The source code associated with the tokens
@@ -47,6 +60,14 @@ class Twig_TokenStream
         $this->filename = $this->source->getName();
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Returns a string representation of the token stream.
+     *
+     * @return string
+     */
+>>>>>>> web and vendor directory from composer install
     public function __toString()
     {
         return implode("\n", $this->tokens);
@@ -65,7 +86,11 @@ class Twig_TokenStream
     public function next()
     {
         if (!isset($this->tokens[++$this->current])) {
+<<<<<<< HEAD
             throw new Twig_Error_Syntax('Unexpected end of template.', $this->tokens[$this->current - 1]->getLine(), $this->source);
+=======
+            throw new Twig_Error_Syntax('Unexpected end of template.', $this->tokens[$this->current - 1]->getLine(), $this->source->getName());
+>>>>>>> web and vendor directory from composer install
         }
 
         return $this->tokens[$this->current - 1];
@@ -98,7 +123,11 @@ class Twig_TokenStream
                 Twig_Token::typeToEnglish($token->getType()), $token->getValue(),
                 Twig_Token::typeToEnglish($type), $value ? sprintf(' with value "%s"', $value) : ''),
                 $line,
+<<<<<<< HEAD
                 $this->source
+=======
+                $this->source->getName()
+>>>>>>> web and vendor directory from composer install
             );
         }
         $this->next();
@@ -116,7 +145,11 @@ class Twig_TokenStream
     public function look($number = 1)
     {
         if (!isset($this->tokens[$this->current + $number])) {
+<<<<<<< HEAD
             throw new Twig_Error_Syntax('Unexpected end of template.', $this->tokens[$this->current + $number - 1]->getLine(), $this->source);
+=======
+            throw new Twig_Error_Syntax('Unexpected end of template.', $this->tokens[$this->current + $number - 1]->getLine(), $this->source->getName());
+>>>>>>> web and vendor directory from composer install
         }
 
         return $this->tokens[$this->current + $number];
@@ -139,10 +172,19 @@ class Twig_TokenStream
      */
     public function isEOF()
     {
+<<<<<<< HEAD
         return Twig_Token::EOF_TYPE === $this->tokens[$this->current]->getType();
     }
 
     /**
+=======
+        return $this->tokens[$this->current]->getType() === Twig_Token::EOF_TYPE;
+    }
+
+    /**
+     * Gets the current token.
+     *
+>>>>>>> web and vendor directory from composer install
      * @return Twig_Token
      */
     public function getCurrent()
@@ -192,5 +234,8 @@ class Twig_TokenStream
         return $this->source;
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_TokenStream', 'Twig\TokenStream', false);
+=======
+>>>>>>> web and vendor directory from composer install

@@ -37,7 +37,11 @@ class TableStyle
      *
      * @param string $paddingChar
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return TableStyle
+>>>>>>> web and vendor directory from composer install
      */
     public function setPaddingChar($paddingChar)
     {
@@ -65,7 +69,11 @@ class TableStyle
      *
      * @param string $horizontalBorderChar
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return TableStyle
+>>>>>>> web and vendor directory from composer install
      */
     public function setHorizontalBorderChar($horizontalBorderChar)
     {
@@ -89,7 +97,11 @@ class TableStyle
      *
      * @param string $verticalBorderChar
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return TableStyle
+>>>>>>> web and vendor directory from composer install
      */
     public function setVerticalBorderChar($verticalBorderChar)
     {
@@ -113,7 +125,11 @@ class TableStyle
      *
      * @param string $crossingChar
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return TableStyle
+>>>>>>> web and vendor directory from composer install
      */
     public function setCrossingChar($crossingChar)
     {
@@ -137,7 +153,11 @@ class TableStyle
      *
      * @param string $cellHeaderFormat
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return TableStyle
+>>>>>>> web and vendor directory from composer install
      */
     public function setCellHeaderFormat($cellHeaderFormat)
     {
@@ -161,7 +181,11 @@ class TableStyle
      *
      * @param string $cellRowFormat
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return TableStyle
+>>>>>>> web and vendor directory from composer install
      */
     public function setCellRowFormat($cellRowFormat)
     {
@@ -185,7 +209,11 @@ class TableStyle
      *
      * @param string $cellRowContentFormat
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return TableStyle
+>>>>>>> web and vendor directory from composer install
      */
     public function setCellRowContentFormat($cellRowContentFormat)
     {
@@ -209,7 +237,11 @@ class TableStyle
      *
      * @param string $borderFormat
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return TableStyle
+>>>>>>> web and vendor directory from composer install
      */
     public function setBorderFormat($borderFormat)
     {
@@ -233,7 +265,11 @@ class TableStyle
      *
      * @param int $padType STR_PAD_*
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return TableStyle
+>>>>>>> web and vendor directory from composer install
      */
     public function setPadType($padType)
     {

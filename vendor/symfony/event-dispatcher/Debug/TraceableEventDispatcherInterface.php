@@ -15,8 +15,11 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
+<<<<<<< HEAD
  *
  * @method reset() Resets the trace.
+=======
+>>>>>>> web and vendor directory from composer install
  */
 interface TraceableEventDispatcherInterface extends EventDispatcherInterface
 {

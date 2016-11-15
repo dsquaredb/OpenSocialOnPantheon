@@ -11,12 +11,18 @@
 
 namespace Symfony\Component\HttpKernel\DependencyInjection;
 
+<<<<<<< HEAD
 use Symfony\Component\DependencyInjection\Compiler\ServiceLocatorTagPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\Fragment\FragmentRendererInterface;
+=======
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Reference;
+use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
+>>>>>>> web and vendor directory from composer install
 
 /**
  * Adds services tagged kernel.fragment_renderer as HTTP content rendering strategies.
@@ -45,6 +51,7 @@ class FragmentRendererPass implements CompilerPassInterface
         }
 
         $definition = $container->getDefinition($this->handlerService);
+<<<<<<< HEAD
         $renderers = array();
         foreach ($container->findTaggedServiceIds($this->rendererTag, true) as $id => $tags) {
             $def = $container->getDefinition($id);
@@ -63,5 +70,39 @@ class FragmentRendererPass implements CompilerPassInterface
         }
 
         $definition->replaceArgument(0, ServiceLocatorTagPass::register($container, $renderers));
+=======
+        foreach ($container->findTaggedServiceIds($this->rendererTag) as $id => $tags) {
+            $def = $container->getDefinition($id);
+            if (!$def->isPublic()) {
+                throw new \InvalidArgumentException(sprintf('The service "%s" must be public as fragment renderer are lazy-loaded.', $id));
+            }
+
+            if ($def->isAbstract()) {
+                throw new \InvalidArgumentException(sprintf('The service "%s" must not be abstract as fragment renderer are lazy-loaded.', $id));
+            }
+
+            $class = $container->getParameterBag()->resolveValue($def->getClass());
+            $interface = 'Symfony\Component\HttpKernel\Fragment\FragmentRendererInterface';
+
+            if (!is_subclass_of($class, $interface)) {
+                if (!class_exists($class, false)) {
+                    throw new \InvalidArgumentException(sprintf('Class "%s" used for service "%s" cannot be found.', $class, $id));
+                }
+
+                throw new \InvalidArgumentException(sprintf('Service "%s" must implement interface "%s".', $id, $interface));
+            }
+
+            foreach ($tags as $tag) {
+                if (!isset($tag['alias'])) {
+                    @trigger_error(sprintf('Service "%s" will have to define the "alias" attribute on the "%s" tag as of Symfony 3.0.', $id, $this->rendererTag), E_USER_DEPRECATED);
+
+                    // register the handler as a non-lazy-loaded one
+                    $definition->addMethodCall('addRenderer', array(new Reference($id)));
+                } else {
+                    $definition->addMethodCall('addRendererService', array($tag['alias'], $id));
+                }
+            }
+        }
+>>>>>>> web and vendor directory from composer install
     }
 }

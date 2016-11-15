@@ -13,7 +13,10 @@ namespace Symfony\Component\Routing\Loader;
 
 use Symfony\Component\Config\Loader\FileLoader;
 use Symfony\Component\Config\Resource\FileResource;
+<<<<<<< HEAD
 use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
+=======
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\Routing\RouteCollection;
 
 /**
@@ -38,6 +41,7 @@ class PhpFileLoader extends FileLoader
         $path = $this->locator->locate($file);
         $this->setCurrentDir(dirname($path));
 
+<<<<<<< HEAD
         // the closure forbids access to the private scope in the included file
         $loader = $this;
         $load = \Closure::bind(function ($file) use ($loader) {
@@ -53,6 +57,9 @@ class PhpFileLoader extends FileLoader
             $collection = $result;
         }
 
+=======
+        $collection = self::includeFile($path, $this);
+>>>>>>> web and vendor directory from composer install
         $collection->addResource(new FileResource($path));
 
         return $collection;
@@ -65,6 +72,7 @@ class PhpFileLoader extends FileLoader
     {
         return is_string($resource) && 'php' === pathinfo($resource, PATHINFO_EXTENSION) && (!$type || 'php' === $type);
     }
+<<<<<<< HEAD
 }
 
 /**
@@ -72,4 +80,19 @@ class PhpFileLoader extends FileLoader
  */
 final class ProtectedPhpFileLoader extends PhpFileLoader
 {
+=======
+
+    /**
+     * Safe include. Used for scope isolation.
+     *
+     * @param string        $file   File to include
+     * @param PhpFileLoader $loader the loader variable is exposed to the included file below
+     *
+     * @return RouteCollection
+     */
+    private static function includeFile($file, PhpFileLoader $loader)
+    {
+        return include $file;
+    }
+>>>>>>> web and vendor directory from composer install
 }

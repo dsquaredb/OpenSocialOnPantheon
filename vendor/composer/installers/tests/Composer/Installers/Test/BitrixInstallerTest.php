@@ -3,6 +3,10 @@
 namespace Composer\Installers\Test;
 
 use Composer\Installers\BitrixInstaller;
+<<<<<<< HEAD
+=======
+use Composer\Package\PackageInterface;
+>>>>>>> web and vendor directory from composer install
 use Composer\Package\Package;
 use Composer\Composer;
 
@@ -72,4 +76,8 @@ class BitrixInstallerTest extends TestCase
             ),
         );
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> web and vendor directory from composer install

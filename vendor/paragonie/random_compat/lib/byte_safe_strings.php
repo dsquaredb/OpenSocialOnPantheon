@@ -5,7 +5,11 @@
  *
  * The MIT License (MIT)
  *
+<<<<<<< HEAD
  * Copyright (c) 2015 - 2017 Paragon Initiative Enterprises
+=======
+ * Copyright (c) 2015 Paragon Initiative Enterprises
+>>>>>>> web and vendor directory from composer install
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -26,7 +30,11 @@
  * SOFTWARE.
  */
 
+<<<<<<< HEAD
 if (!is_callable('RandomCompat_strlen')) {
+=======
+if (!function_exists('RandomCompat_strlen')) {
+>>>>>>> web and vendor directory from composer install
     if (
         defined('MB_OVERLOAD_STRING') &&
         ini_get('mbstring.func_overload') & MB_OVERLOAD_STRING
@@ -51,7 +59,11 @@ if (!is_callable('RandomCompat_strlen')) {
                 );
             }
 
+<<<<<<< HEAD
             return (int) mb_strlen($binary_string, '8bit');
+=======
+            return mb_strlen($binary_string, '8bit');
+>>>>>>> web and vendor directory from composer install
         }
 
     } else {
@@ -73,12 +85,20 @@ if (!is_callable('RandomCompat_strlen')) {
                     'RandomCompat_strlen() expects a string'
                 );
             }
+<<<<<<< HEAD
             return (int) strlen($binary_string);
+=======
+            return strlen($binary_string);
+>>>>>>> web and vendor directory from composer install
         }
     }
 }
 
+<<<<<<< HEAD
 if (!is_callable('RandomCompat_substr')) {
+=======
+if (!function_exists('RandomCompat_substr')) {
+>>>>>>> web and vendor directory from composer install
 
     if (
         defined('MB_OVERLOAD_STRING')
@@ -118,13 +138,18 @@ if (!is_callable('RandomCompat_substr')) {
                  * mb_substr($str, 0, NULL, '8bit') returns an empty string on
                  * PHP 5.3, so we have to find the length ourselves.
                  */
+<<<<<<< HEAD
                 $length = RandomCompat_strlen($binary_string) - $start;
+=======
+                $length = RandomCompat_strlen($length) - $start;
+>>>>>>> web and vendor directory from composer install
             } elseif (!is_int($length)) {
                 throw new TypeError(
                     'RandomCompat_substr(): Third argument should be an integer, or omitted'
                 );
             }
 
+<<<<<<< HEAD
             // Consistency with PHP's behavior
             if ($start === RandomCompat_strlen($binary_string) && $length === 0) {
                 return '';
@@ -134,6 +159,9 @@ if (!is_callable('RandomCompat_substr')) {
             }
 
             return (string) mb_substr($binary_string, $start, $length, '8bit');
+=======
+            return mb_substr($binary_string, $start, $length, '8bit');
+>>>>>>> web and vendor directory from composer install
         }
 
     } else {
@@ -172,10 +200,17 @@ if (!is_callable('RandomCompat_substr')) {
                     );
                 }
 
+<<<<<<< HEAD
                 return (string) substr($binary_string, $start, $length);
             }
 
             return (string) substr($binary_string, $start);
+=======
+                return substr($binary_string, $start, $length);
+            }
+
+            return substr($binary_string, $start);
+>>>>>>> web and vendor directory from composer install
         }
     }
 }

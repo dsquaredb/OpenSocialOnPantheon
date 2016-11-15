@@ -20,9 +20,20 @@ use Symfony\Component\Serializer\Exception\MappingException;
  */
 abstract class FileLoader implements LoaderInterface
 {
+<<<<<<< HEAD
     protected $file;
 
     /**
+=======
+    /**
+     * @var string
+     */
+    protected $file;
+
+    /**
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param string $file The mapping file to load
      *
      * @throws MappingException if the mapping file does not exist or is not readable

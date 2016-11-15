@@ -44,6 +44,11 @@ class Profile
     private $children = array();
 
     /**
+<<<<<<< HEAD
+=======
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param string $token The token
      */
     public function __construct($token)
@@ -73,6 +78,11 @@ class Profile
 
     /**
      * Sets the parent token.
+<<<<<<< HEAD
+=======
+     *
+     * @param Profile $parent The parent Profile
+>>>>>>> web and vendor directory from composer install
      */
     public function setParent(Profile $parent)
     {
@@ -82,7 +92,11 @@ class Profile
     /**
      * Returns the parent profile.
      *
+<<<<<<< HEAD
      * @return self
+=======
+     * @return Profile The parent profile
+>>>>>>> web and vendor directory from composer install
      */
     public function getParent()
     {
@@ -152,7 +166,11 @@ class Profile
     /**
      * Returns the time.
      *
+<<<<<<< HEAD
      * @return int The time
+=======
+     * @return string The time
+>>>>>>> web and vendor directory from composer install
      */
     public function getTime()
     {
@@ -163,9 +181,12 @@ class Profile
         return $this->time;
     }
 
+<<<<<<< HEAD
     /**
      * @param int $time The time
      */
+=======
+>>>>>>> web and vendor directory from composer install
     public function setTime($time)
     {
         $this->time = $time;
@@ -190,7 +211,11 @@ class Profile
     /**
      * Finds children profilers.
      *
+<<<<<<< HEAD
      * @return self[]
+=======
+     * @return Profile[] An array of Profile
+>>>>>>> web and vendor directory from composer install
      */
     public function getChildren()
     {
@@ -200,7 +225,11 @@ class Profile
     /**
      * Sets children profiler.
      *
+<<<<<<< HEAD
      * @param Profile[] $children
+=======
+     * @param Profile[] $children An array of Profile
+>>>>>>> web and vendor directory from composer install
      */
     public function setChildren(array $children)
     {
@@ -212,6 +241,11 @@ class Profile
 
     /**
      * Adds the child token.
+<<<<<<< HEAD
+=======
+     *
+     * @param Profile $child The child Profile
+>>>>>>> web and vendor directory from composer install
      */
     public function addChild(Profile $child)
     {
@@ -262,6 +296,11 @@ class Profile
 
     /**
      * Adds a Collector.
+<<<<<<< HEAD
+=======
+     *
+     * @param DataCollectorInterface $collector A DataCollectorInterface instance
+>>>>>>> web and vendor directory from composer install
      */
     public function addCollector(DataCollectorInterface $collector)
     {
@@ -282,6 +321,10 @@ class Profile
 
     public function __sleep()
     {
+<<<<<<< HEAD
         return array('token', 'parent', 'children', 'collectors', 'ip', 'method', 'url', 'time', 'statusCode');
+=======
+        return array('token', 'parent', 'children', 'collectors', 'ip', 'method', 'url', 'time');
+>>>>>>> web and vendor directory from composer install
     }
 }

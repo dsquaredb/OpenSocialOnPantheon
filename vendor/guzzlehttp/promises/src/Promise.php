@@ -263,6 +263,7 @@ class Promise implements PromiseInterface
         $this->waitList = null;
 
         foreach ($waitList as $result) {
+<<<<<<< HEAD
             while (true) {
                 $result->waitIfPending();
 
@@ -274,6 +275,12 @@ class Promise implements PromiseInterface
                     }
                     break;
                 }
+=======
+            $result->waitIfPending();
+            while ($result->result instanceof Promise) {
+                $result = $result->result;
+                $result->waitIfPending();
+>>>>>>> web and vendor directory from composer install
             }
         }
     }

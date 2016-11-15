@@ -44,6 +44,7 @@ interface AttributeMetadataInterface
     public function getGroups();
 
     /**
+<<<<<<< HEAD
      * Sets the serialization max depth for this attribute.
      *
      * @param int|null $maxDepth
@@ -59,6 +60,11 @@ interface AttributeMetadataInterface
 
     /**
      * Merges an {@see AttributeMetadataInterface} with in the current one.
+=======
+     * Merges an {@see AttributeMetadataInterface} with in the current one.
+     *
+     * @param AttributeMetadataInterface $attributeMetadata
+>>>>>>> web and vendor directory from composer install
      */
     public function merge(AttributeMetadataInterface $attributeMetadata);
 }

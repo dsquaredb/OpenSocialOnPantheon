@@ -12,6 +12,7 @@ use Psr\Http\Message\UriInterface;
  */
 class Uri implements UriInterface
 {
+<<<<<<< HEAD
     /**
      * Absolute http and https URIs require a host per RFC 7230 Section 2.7
      * but in generic URIs the host can be empty. So for http(s) URIs
@@ -32,6 +33,11 @@ class Uri implements UriInterface
         'imap' => 143,
         'pop' => 110,
         'ldap' => 389,
+=======
+    private static $schemes = [
+        'http'  => 80,
+        'https' => 443,
+>>>>>>> web and vendor directory from composer install
     ];
 
     private static $charUnreserved = 'a-zA-Z0-9_\-\.~';
@@ -64,7 +70,10 @@ class Uri implements UriInterface
      */
     public function __construct($uri = '')
     {
+<<<<<<< HEAD
         // weak type check to also accept null until we can add scalar type hints
+=======
+>>>>>>> web and vendor directory from composer install
         if ($uri != '') {
             $parts = parse_url($uri);
             if ($parts === false) {
@@ -76,7 +85,11 @@ class Uri implements UriInterface
 
     public function __toString()
     {
+<<<<<<< HEAD
         return self::composeComponents(
+=======
+        return self::createUriString(
+>>>>>>> web and vendor directory from composer install
             $this->scheme,
             $this->getAuthority(),
             $this->path,
@@ -86,6 +99,7 @@ class Uri implements UriInterface
     }
 
     /**
+<<<<<<< HEAD
      * Composes a URI reference string from its various components.
      *
      * Usually this method does not need to be called manually but instead is used indirectly via
@@ -270,14 +284,64 @@ class Uri implements UriInterface
 
     /**
      * Converts the relative URI into a new URI that is resolved against the base URI.
+=======
+     * Removes dot segments from a path and returns the new path.
+     *
+     * @param string $path
+     *
+     * @return string
+     * @link http://tools.ietf.org/html/rfc3986#section-5.2.4
+     */
+    public static function removeDotSegments($path)
+    {
+        static $noopPaths = ['' => true, '/' => true, '*' => true];
+        static $ignoreSegments = ['.' => true, '..' => true];
+
+        if (isset($noopPaths[$path])) {
+            return $path;
+        }
+
+        $results = [];
+        $segments = explode('/', $path);
+        foreach ($segments as $segment) {
+            if ($segment === '..') {
+                array_pop($results);
+            } elseif (!isset($ignoreSegments[$segment])) {
+                $results[] = $segment;
+            }
+        }
+
+        $newPath = implode('/', $results);
+        // Add the leading slash if necessary
+        if (substr($path, 0, 1) === '/' &&
+            substr($newPath, 0, 1) !== '/'
+        ) {
+            $newPath = '/' . $newPath;
+        }
+
+        // Add the trailing slash if necessary
+        if ($newPath !== '/' && isset($ignoreSegments[end($segments)])) {
+            $newPath .= '/';
+        }
+
+        return $newPath;
+    }
+
+    /**
+     * Resolve a base URI with a relative URI and return a new URI.
+>>>>>>> web and vendor directory from composer install
      *
      * @param UriInterface        $base Base URI
      * @param string|UriInterface $rel  Relative URI
      *
      * @return UriInterface
+<<<<<<< HEAD
      *
      * @deprecated since version 1.4. Use UriResolver::resolve instead.
      * @see UriResolver::resolve
+=======
+     * @link http://tools.ietf.org/html/rfc3986#section-5.2
+>>>>>>> web and vendor directory from composer install
      */
     public static function resolve(UriInterface $base, $rel)
     {
@@ -285,11 +349,63 @@ class Uri implements UriInterface
             $rel = new self($rel);
         }
 
+<<<<<<< HEAD
         return UriResolver::resolve($base, $rel);
     }
 
     /**
      * Creates a new URI with a specific query string value removed.
+=======
+        if ((string) $rel === '') {
+            // we can simply return the same base URI instance for this same-document reference
+            return $base;
+        }
+
+        if ($rel->getScheme() != '') {
+            return $rel->withPath(self::removeDotSegments($rel->getPath()));
+        }
+
+        if ($rel->getAuthority() != '') {
+            $targetAuthority = $rel->getAuthority();
+            $targetPath = self::removeDotSegments($rel->getPath());
+            $targetQuery = $rel->getQuery();
+        } else {
+            $targetAuthority = $base->getAuthority();
+            if ($rel->getPath() === '') {
+                $targetPath = $base->getPath();
+                $targetQuery = $rel->getQuery() != '' ? $rel->getQuery() : $base->getQuery();
+            } else {
+                if ($rel->getPath()[0] === '/') {
+                    $targetPath = $rel->getPath();
+                } else {
+                    if ($targetAuthority != '' && $base->getPath() === '') {
+                        $targetPath = '/' . $rel->getPath();
+                    } else {
+                        $lastSlashPos = strrpos($base->getPath(), '/');
+                        if ($lastSlashPos === false) {
+                            $targetPath = $rel->getPath();
+                        } else {
+                            $targetPath = substr($base->getPath(), 0, $lastSlashPos + 1) . $rel->getPath();
+                        }
+                    }
+                }
+                $targetPath = self::removeDotSegments($targetPath);
+                $targetQuery = $rel->getQuery();
+            }
+        }
+
+        return new self(self::createUriString(
+            $base->getScheme(),
+            $targetAuthority,
+            $targetPath,
+            $targetQuery,
+            $rel->getFragment()
+        ));
+    }
+
+    /**
+     * Create a new URI with a specific query string value removed.
+>>>>>>> web and vendor directory from composer install
      *
      * Any existing query string values that exactly match the provided key are
      * removed.
@@ -302,7 +418,11 @@ class Uri implements UriInterface
     public static function withoutQueryValue(UriInterface $uri, $key)
     {
         $current = $uri->getQuery();
+<<<<<<< HEAD
         if ($current === '') {
+=======
+        if ($current == '') {
+>>>>>>> web and vendor directory from composer install
             return $uri;
         }
 
@@ -315,7 +435,11 @@ class Uri implements UriInterface
     }
 
     /**
+<<<<<<< HEAD
      * Creates a new URI with a specific query string value.
+=======
+     * Create a new URI with a specific query string value.
+>>>>>>> web and vendor directory from composer install
      *
      * Any existing query string values that exactly match the provided key are
      * removed and replaced with the given key value pair.
@@ -333,7 +457,11 @@ class Uri implements UriInterface
     {
         $current = $uri->getQuery();
 
+<<<<<<< HEAD
         if ($current === '') {
+=======
+        if ($current == '') {
+>>>>>>> web and vendor directory from composer install
             $result = [];
         } else {
             $decodedKey = rawurldecode($key);
@@ -357,6 +485,7 @@ class Uri implements UriInterface
     }
 
     /**
+<<<<<<< HEAD
      * Creates a URI from a hash of `parse_url` components.
      *
      * @param array $parts
@@ -365,13 +494,23 @@ class Uri implements UriInterface
      * @link http://php.net/manual/en/function.parse-url.php
      *
      * @throws \InvalidArgumentException If the components do not form a valid URI.
+=======
+     * Create a URI from a hash of parse_url parts.
+     *
+     * @param array $parts
+     *
+     * @return self
+>>>>>>> web and vendor directory from composer install
      */
     public static function fromParts(array $parts)
     {
         $uri = new self();
         $uri->applyParts($parts);
+<<<<<<< HEAD
         $uri->validateState();
 
+=======
+>>>>>>> web and vendor directory from composer install
         return $uri;
     }
 
@@ -382,8 +521,17 @@ class Uri implements UriInterface
 
     public function getAuthority()
     {
+<<<<<<< HEAD
         $authority = $this->host;
         if ($this->userInfo !== '') {
+=======
+        if ($this->host == '') {
+            return '';
+        }
+
+        $authority = $this->host;
+        if ($this->userInfo != '') {
+>>>>>>> web and vendor directory from composer install
             $authority = $this->userInfo . '@' . $authority;
         }
 
@@ -434,9 +582,13 @@ class Uri implements UriInterface
 
         $new = clone $this;
         $new->scheme = $scheme;
+<<<<<<< HEAD
         $new->removeDefaultPort();
         $new->validateState();
 
+=======
+        $new->port = $new->filterPort($new->port);
+>>>>>>> web and vendor directory from composer install
         return $new;
     }
 
@@ -453,8 +605,11 @@ class Uri implements UriInterface
 
         $new = clone $this;
         $new->userInfo = $info;
+<<<<<<< HEAD
         $new->validateState();
 
+=======
+>>>>>>> web and vendor directory from composer install
         return $new;
     }
 
@@ -468,8 +623,11 @@ class Uri implements UriInterface
 
         $new = clone $this;
         $new->host = $host;
+<<<<<<< HEAD
         $new->validateState();
 
+=======
+>>>>>>> web and vendor directory from composer install
         return $new;
     }
 
@@ -483,9 +641,12 @@ class Uri implements UriInterface
 
         $new = clone $this;
         $new->port = $port;
+<<<<<<< HEAD
         $new->removeDefaultPort();
         $new->validateState();
 
+=======
+>>>>>>> web and vendor directory from composer install
         return $new;
     }
 
@@ -499,8 +660,11 @@ class Uri implements UriInterface
 
         $new = clone $this;
         $new->path = $path;
+<<<<<<< HEAD
         $new->validateState();
 
+=======
+>>>>>>> web and vendor directory from composer install
         return $new;
     }
 
@@ -514,7 +678,10 @@ class Uri implements UriInterface
 
         $new = clone $this;
         $new->query = $query;
+<<<<<<< HEAD
 
+=======
+>>>>>>> web and vendor directory from composer install
         return $new;
     }
 
@@ -528,7 +695,10 @@ class Uri implements UriInterface
 
         $new = clone $this;
         $new->fragment = $fragment;
+<<<<<<< HEAD
 
+=======
+>>>>>>> web and vendor directory from composer install
         return $new;
     }
 
@@ -561,8 +731,74 @@ class Uri implements UriInterface
         if (isset($parts['pass'])) {
             $this->userInfo .= ':' . $parts['pass'];
         }
+<<<<<<< HEAD
 
         $this->removeDefaultPort();
+=======
+    }
+
+    /**
+     * Create a URI string from its various parts
+     *
+     * @param string $scheme
+     * @param string $authority
+     * @param string $path
+     * @param string $query
+     * @param string $fragment
+     * @return string
+     */
+    private static function createUriString($scheme, $authority, $path, $query, $fragment)
+    {
+        $uri = '';
+
+        if ($scheme != '') {
+            $uri .= $scheme . ':';
+        }
+
+        if ($authority != '') {
+            $uri .= '//' . $authority;
+        }
+
+        if ($path != '') {
+            if ($path[0] !== '/') {
+                if ($authority != '') {
+                    // If the path is rootless and an authority is present, the path MUST be prefixed by "/"
+                    $path = '/' . $path;
+                }
+            } elseif (isset($path[1]) && $path[1] === '/') {
+                if ($authority == '') {
+                    // If the path is starting with more than one "/" and no authority is present, the
+                    // starting slashes MUST be reduced to one.
+                    $path = '/' . ltrim($path, '/');
+                }
+            }
+
+            $uri .= $path;
+        }
+
+        if ($query != '') {
+            $uri .= '?' . $query;
+        }
+
+        if ($fragment != '') {
+            $uri .= '#' . $fragment;
+        }
+
+        return $uri;
+    }
+
+    /**
+     * Is a given port non-standard for the current scheme?
+     *
+     * @param string $scheme
+     * @param int    $port
+     *
+     * @return bool
+     */
+    private static function isNonStandardPort($scheme, $port)
+    {
+        return !isset(self::$schemes[$scheme]) || $port !== self::$schemes[$scheme];
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -617,6 +853,7 @@ class Uri implements UriInterface
             );
         }
 
+<<<<<<< HEAD
         return $port;
     }
 
@@ -625,6 +862,9 @@ class Uri implements UriInterface
         if ($this->port !== null && self::isDefaultPort($this)) {
             $this->port = null;
         }
+=======
+        return self::isNonStandardPort($this->scheme, $port) ? $port : null;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -675,6 +915,7 @@ class Uri implements UriInterface
     {
         return rawurlencode($match[0]);
     }
+<<<<<<< HEAD
 
     private function validateState()
     {
@@ -699,4 +940,6 @@ class Uri implements UriInterface
             //throw new \InvalidArgumentException('The path of a URI with an authority must start with a slash "/" or be empty');
         }
     }
+=======
+>>>>>>> web and vendor directory from composer install
 }

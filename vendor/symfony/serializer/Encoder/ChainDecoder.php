@@ -19,10 +19,15 @@ use Symfony\Component\Serializer\Exception\RuntimeException;
  * @author Jordi Boggiano <j.boggiano@seld.be>
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
  * @author Lukas Kahwe Smith <smith@pooteeweet.org>
+<<<<<<< HEAD
  *
  * @final since version 3.3.
  */
 class ChainDecoder implements DecoderInterface /*, ContextAwareDecoderInterface*/
+=======
+ */
+class ChainDecoder implements DecoderInterface
+>>>>>>> web and vendor directory from composer install
 {
     protected $decoders = array();
     protected $decoderByFormat = array();
@@ -37,18 +42,29 @@ class ChainDecoder implements DecoderInterface /*, ContextAwareDecoderInterface*
      */
     final public function decode($data, $format, array $context = array())
     {
+<<<<<<< HEAD
         return $this->getDecoder($format, $context)->decode($data, $format, $context);
+=======
+        return $this->getDecoder($format)->decode($data, $format, $context);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function supportsDecoding($format/*, array $context = array()*/)
     {
         $context = func_num_args() > 1 ? func_get_arg(1) : array();
 
         try {
             $this->getDecoder($format, $context);
+=======
+    public function supportsDecoding($format)
+    {
+        try {
+            $this->getDecoder($format);
+>>>>>>> web and vendor directory from composer install
         } catch (RuntimeException $e) {
             return false;
         }
@@ -60,6 +76,7 @@ class ChainDecoder implements DecoderInterface /*, ContextAwareDecoderInterface*
      * Gets the decoder supporting the format.
      *
      * @param string $format
+<<<<<<< HEAD
      * @param array  $context
      *
      * @return DecoderInterface
@@ -67,6 +84,14 @@ class ChainDecoder implements DecoderInterface /*, ContextAwareDecoderInterface*
      * @throws RuntimeException if no decoder is found
      */
     private function getDecoder($format, array $context)
+=======
+     *
+     * @return DecoderInterface
+     *
+     * @throws RuntimeException If no decoder is found.
+     */
+    private function getDecoder($format)
+>>>>>>> web and vendor directory from composer install
     {
         if (isset($this->decoderByFormat[$format])
             && isset($this->decoders[$this->decoderByFormat[$format]])
@@ -75,7 +100,11 @@ class ChainDecoder implements DecoderInterface /*, ContextAwareDecoderInterface*
         }
 
         foreach ($this->decoders as $i => $decoder) {
+<<<<<<< HEAD
             if ($decoder->supportsDecoding($format, $context)) {
+=======
+            if ($decoder->supportsDecoding($format)) {
+>>>>>>> web and vendor directory from composer install
                 $this->decoderByFormat[$format] = $i;
 
                 return $decoder;

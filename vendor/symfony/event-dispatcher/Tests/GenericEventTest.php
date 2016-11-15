@@ -11,13 +11,20 @@
 
 namespace Symfony\Component\EventDispatcher\Tests;
 
+<<<<<<< HEAD
 use PHPUnit\Framework\TestCase;
+=======
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\EventDispatcher\GenericEvent;
 
 /**
  * Test class for Event.
  */
+<<<<<<< HEAD
 class GenericEventTest extends TestCase
+=======
+class GenericEventTest extends \PHPUnit_Framework_TestCase
+>>>>>>> web and vendor directory from composer install
 {
     /**
      * @var GenericEvent
@@ -96,7 +103,11 @@ class GenericEventTest extends TestCase
         $this->assertEquals('Event', $this->event['name']);
 
         // test getting invalid arg
+<<<<<<< HEAD
         $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('InvalidArgumentException');
+=======
+        $this->setExpectedException('InvalidArgumentException');
+>>>>>>> web and vendor directory from composer install
         $this->assertFalse($this->event['nameNotExist']);
     }
 
@@ -114,8 +125,13 @@ class GenericEventTest extends TestCase
 
     public function testOffsetIsset()
     {
+<<<<<<< HEAD
         $this->assertArrayHasKey('name', $this->event);
         $this->assertArrayNotHasKey('nameNotExist', $this->event);
+=======
+        $this->assertTrue(isset($this->event['name']));
+        $this->assertFalse(isset($this->event['nameNotExist']));
+>>>>>>> web and vendor directory from composer install
     }
 
     public function testHasArgument()

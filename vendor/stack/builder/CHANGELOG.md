@@ -1,10 +1,13 @@
 CHANGELOG
 =========
 
+<<<<<<< HEAD
 * 1.0.5 (2017-11-18)
 
   * Add compability with Symfony 4.
 
+=======
+>>>>>>> web and vendor directory from composer install
 * 1.0.4 (2016-06-02)
 
   * Add compability with Symfony 3.

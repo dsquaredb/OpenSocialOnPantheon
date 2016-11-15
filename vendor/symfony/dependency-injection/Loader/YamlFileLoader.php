@@ -11,6 +11,7 @@
 
 namespace Symfony\Component\DependencyInjection\Loader;
 
+<<<<<<< HEAD
 use Symfony\Component\DependencyInjection\Alias;
 use Symfony\Component\DependencyInjection\Argument\ArgumentInterface;
 use Symfony\Component\DependencyInjection\Argument\BoundArgument;
@@ -18,24 +19,40 @@ use Symfony\Component\DependencyInjection\Argument\IteratorArgument;
 use Symfony\Component\DependencyInjection\Argument\TaggedIteratorArgument;
 use Symfony\Component\DependencyInjection\ChildDefinition;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+=======
+use Symfony\Component\DependencyInjection\DefinitionDecorator;
+use Symfony\Component\DependencyInjection\Alias;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
 use Symfony\Component\DependencyInjection\Exception\RuntimeException;
+<<<<<<< HEAD
 use Symfony\Component\Yaml\Exception\ParseException;
 use Symfony\Component\Yaml\Parser as YamlParser;
 use Symfony\Component\Yaml\Tag\TaggedValue;
 use Symfony\Component\Yaml\Yaml;
+=======
+use Symfony\Component\Config\Resource\FileResource;
+use Symfony\Component\Yaml\Exception\ParseException;
+use Symfony\Component\Yaml\Parser as YamlParser;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\ExpressionLanguage\Expression;
 
 /**
  * YamlFileLoader loads YAML files service definitions.
  *
+<<<<<<< HEAD
+=======
+ * The YAML format does not support anonymous services (cf. the XML loader).
+ *
+>>>>>>> web and vendor directory from composer install
  * @author Fabien Potencier <fabien@symfony.com>
  */
 class YamlFileLoader extends FileLoader
 {
+<<<<<<< HEAD
     private static $serviceKeywords = array(
         'alias' => 'alias',
         'parent' => 'parent',
@@ -107,6 +124,10 @@ class YamlFileLoader extends FileLoader
     private $anonymousServicesCount;
     private $anonymousServicesSuffix;
 
+=======
+    private $yamlParser;
+
+>>>>>>> web and vendor directory from composer install
     /**
      * {@inheritdoc}
      */
@@ -116,7 +137,11 @@ class YamlFileLoader extends FileLoader
 
         $content = $this->loadFile($path);
 
+<<<<<<< HEAD
         $this->container->fileExists($path);
+=======
+        $this->container->addResource(new FileResource($path));
+>>>>>>> web and vendor directory from composer install
 
         // empty file
         if (null === $content) {
@@ -129,11 +154,19 @@ class YamlFileLoader extends FileLoader
         // parameters
         if (isset($content['parameters'])) {
             if (!is_array($content['parameters'])) {
+<<<<<<< HEAD
                 throw new InvalidArgumentException(sprintf('The "parameters" key should contain an array in %s. Check your YAML syntax.', $path));
             }
 
             foreach ($content['parameters'] as $key => $value) {
                 $this->container->setParameter($key, $this->resolveServices($value, $path, true));
+=======
+                throw new InvalidArgumentException(sprintf('The "parameters" key should contain an array in %s. Check your YAML syntax.', $resource));
+            }
+
+            foreach ($content['parameters'] as $key => $value) {
+                $this->container->setParameter($key, $this->resolveServices($value));
+>>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -141,6 +174,7 @@ class YamlFileLoader extends FileLoader
         $this->loadFromExtensions($content);
 
         // services
+<<<<<<< HEAD
         $this->anonymousServicesCount = 0;
         $this->anonymousServicesSuffix = ContainerBuilder::hash($path);
         $this->setCurrentDir(dirname($path));
@@ -149,6 +183,9 @@ class YamlFileLoader extends FileLoader
         } finally {
             $this->instanceof = array();
         }
+=======
+        $this->parseDefinitions($content, $resource);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -156,6 +193,7 @@ class YamlFileLoader extends FileLoader
      */
     public function supports($resource, $type = null)
     {
+<<<<<<< HEAD
         if (!is_string($resource)) {
             return false;
         }
@@ -165,6 +203,9 @@ class YamlFileLoader extends FileLoader
         }
 
         return in_array($type, array('yaml', 'yml'), true);
+=======
+        return is_string($resource) && in_array(pathinfo($resource, PATHINFO_EXTENSION), array('yml', 'yaml'), true);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -173,7 +214,11 @@ class YamlFileLoader extends FileLoader
      * @param array  $content
      * @param string $file
      */
+<<<<<<< HEAD
     private function parseImports(array $content, $file)
+=======
+    private function parseImports($content, $file)
+>>>>>>> web and vendor directory from composer install
     {
         if (!isset($content['imports'])) {
             return;
@@ -186,6 +231,7 @@ class YamlFileLoader extends FileLoader
         $defaultDirectory = dirname($file);
         foreach ($content['imports'] as $import) {
             if (!is_array($import)) {
+<<<<<<< HEAD
                 $import = array('resource' => $import);
             }
             if (!isset($import['resource'])) {
@@ -194,6 +240,13 @@ class YamlFileLoader extends FileLoader
 
             $this->setCurrentDir($defaultDirectory);
             $this->import($import['resource'], isset($import['type']) ? $import['type'] : null, isset($import['ignore_errors']) ? (bool) $import['ignore_errors'] : false, $file);
+=======
+                throw new InvalidArgumentException(sprintf('The values in the "imports" key should be arrays in %s. Check your YAML syntax.', $file));
+            }
+
+            $this->setCurrentDir($defaultDirectory);
+            $this->import($import['resource'], null, isset($import['ignore_errors']) ? (bool) $import['ignore_errors'] : false, $file);
+>>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -203,7 +256,11 @@ class YamlFileLoader extends FileLoader
      * @param array  $content
      * @param string $file
      */
+<<<<<<< HEAD
     private function parseDefinitions(array $content, $file)
+=======
+    private function parseDefinitions($content, $file)
+>>>>>>> web and vendor directory from composer install
     {
         if (!isset($content['services'])) {
             return;
@@ -213,6 +270,7 @@ class YamlFileLoader extends FileLoader
             throw new InvalidArgumentException(sprintf('The "services" key should contain an array in %s. Check your YAML syntax.', $file));
         }
 
+<<<<<<< HEAD
         if (array_key_exists('_instanceof', $content['services'])) {
             $instanceof = $content['services']['_instanceof'];
             unset($content['services']['_instanceof']);
@@ -237,10 +295,15 @@ class YamlFileLoader extends FileLoader
         $defaults = $this->parseDefaults($content, $file);
         foreach ($content['services'] as $id => $service) {
             $this->parseDefinition($id, $service, $file, $defaults);
+=======
+        foreach ($content['services'] as $id => $service) {
+            $this->parseDefinition($id, $service, $file);
+>>>>>>> web and vendor directory from composer install
         }
     }
 
     /**
+<<<<<<< HEAD
      * @param array  $content
      * @param string $file
      *
@@ -341,10 +404,25 @@ class YamlFileLoader extends FileLoader
             if (isset($defaults['public'])) {
                 $alias->setPublic($defaults['public']);
             }
+=======
+     * Parses a definition.
+     *
+     * @param string $id
+     * @param array  $service
+     * @param string $file
+     *
+     * @throws InvalidArgumentException When tags are invalid
+     */
+    private function parseDefinition($id, $service, $file)
+    {
+        if (is_string($service) && 0 === strpos($service, '@')) {
+            $this->container->setAlias($id, substr($service, 1));
+>>>>>>> web and vendor directory from composer install
 
             return;
         }
 
+<<<<<<< HEAD
         if (is_array($service) && $this->isUsingShortSyntax($service)) {
             $service = array('arguments' => $service);
         }
@@ -353,10 +431,13 @@ class YamlFileLoader extends FileLoader
             $service = array();
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         if (!is_array($service)) {
             throw new InvalidArgumentException(sprintf('A service definition must be an array or a string starting with "@" but %s found for service "%s" in %s. Check your YAML syntax.', gettype($service), $id, $file));
         }
 
+<<<<<<< HEAD
         $this->checkDefinition($id, $service, $file);
 
         if (isset($service['alias'])) {
@@ -372,10 +453,16 @@ class YamlFileLoader extends FileLoader
                     @trigger_error(sprintf('The configuration key "%s" is unsupported for the service "%s" which is defined as an alias in "%s". Allowed configuration keys for service aliases are "alias" and "public". The YamlFileLoader will raise an exception in Symfony 4.0, instead of silently ignoring unsupported attributes.', $key, $id, $file), E_USER_DEPRECATED);
                 }
             }
+=======
+        if (isset($service['alias'])) {
+            $public = !array_key_exists('public', $service) || (bool) $service['public'];
+            $this->container->setAlias($id, new Alias($service['alias'], $public));
+>>>>>>> web and vendor directory from composer install
 
             return;
         }
 
+<<<<<<< HEAD
         if ($this->isLoadingInstanceof) {
             $definition = new ChildDefinition('');
         } elseif (isset($service['parent'])) {
@@ -412,6 +499,12 @@ class YamlFileLoader extends FileLoader
             }
 
             $definition->setChanges(array());
+=======
+        if (isset($service['parent'])) {
+            $definition = new DefinitionDecorator($service['parent']);
+        } else {
+            $definition = new Definition();
+>>>>>>> web and vendor directory from composer install
         }
 
         if (isset($service['class'])) {
@@ -422,10 +515,28 @@ class YamlFileLoader extends FileLoader
             $definition->setShared($service['shared']);
         }
 
+<<<<<<< HEAD
+=======
+        if (isset($service['scope'])) {
+            if ('request' !== $id) {
+                @trigger_error(sprintf('The "scope" key of service "%s" in file "%s" is deprecated since version 2.8 and will be removed in 3.0.', $id, $file), E_USER_DEPRECATED);
+            }
+            $definition->setScope($service['scope'], false);
+        }
+
+>>>>>>> web and vendor directory from composer install
         if (isset($service['synthetic'])) {
             $definition->setSynthetic($service['synthetic']);
         }
 
+<<<<<<< HEAD
+=======
+        if (isset($service['synchronized'])) {
+            @trigger_error(sprintf('The "synchronized" key of service "%s" in file "%s" is deprecated since version 2.7 and will be removed in 3.0.', $id, $file), E_USER_DEPRECATED);
+            $definition->setSynchronized($service['synchronized'], 'request' !== $id);
+        }
+
+>>>>>>> web and vendor directory from composer install
         if (isset($service['lazy'])) {
             $definition->setLazy($service['lazy']);
         }
@@ -443,7 +554,35 @@ class YamlFileLoader extends FileLoader
         }
 
         if (isset($service['factory'])) {
+<<<<<<< HEAD
             $definition->setFactory($this->parseCallable($service['factory'], 'factory', $id, $file));
+=======
+            if (is_string($service['factory'])) {
+                if (strpos($service['factory'], ':') !== false && strpos($service['factory'], '::') === false) {
+                    $parts = explode(':', $service['factory']);
+                    $definition->setFactory(array($this->resolveServices('@'.$parts[0]), $parts[1]));
+                } else {
+                    $definition->setFactory($service['factory']);
+                }
+            } else {
+                $definition->setFactory(array($this->resolveServices($service['factory'][0]), $service['factory'][1]));
+            }
+        }
+
+        if (isset($service['factory_class'])) {
+            @trigger_error(sprintf('The "factory_class" key of service "%s" in file "%s" is deprecated since version 2.6 and will be removed in 3.0. Use "factory" instead.', $id, $file), E_USER_DEPRECATED);
+            $definition->setFactoryClass($service['factory_class']);
+        }
+
+        if (isset($service['factory_method'])) {
+            @trigger_error(sprintf('The "factory_method" key of service "%s" in file "%s" is deprecated since version 2.6 and will be removed in 3.0. Use "factory" instead.', $id, $file), E_USER_DEPRECATED);
+            $definition->setFactoryMethod($service['factory_method']);
+        }
+
+        if (isset($service['factory_service'])) {
+            @trigger_error(sprintf('The "factory_service" key of service "%s" in file "%s" is deprecated since version 2.6 and will be removed in 3.0. Use "factory" instead.', $id, $file), E_USER_DEPRECATED);
+            $definition->setFactoryService($service['factory_service']);
+>>>>>>> web and vendor directory from composer install
         }
 
         if (isset($service['file'])) {
@@ -451,6 +590,7 @@ class YamlFileLoader extends FileLoader
         }
 
         if (isset($service['arguments'])) {
+<<<<<<< HEAD
             $definition->setArguments($this->resolveServices($service['arguments'], $file));
         }
 
@@ -460,6 +600,21 @@ class YamlFileLoader extends FileLoader
 
         if (isset($service['configurator'])) {
             $definition->setConfigurator($this->parseCallable($service['configurator'], 'configurator', $id, $file));
+=======
+            $definition->setArguments($this->resolveServices($service['arguments']));
+        }
+
+        if (isset($service['properties'])) {
+            $definition->setProperties($this->resolveServices($service['properties']));
+        }
+
+        if (isset($service['configurator'])) {
+            if (is_string($service['configurator'])) {
+                $definition->setConfigurator($service['configurator']);
+            } else {
+                $definition->setConfigurator(array($this->resolveServices($service['configurator'][0]), $service['configurator'][1]));
+            }
+>>>>>>> web and vendor directory from composer install
         }
 
         if (isset($service['calls'])) {
@@ -470,6 +625,7 @@ class YamlFileLoader extends FileLoader
             foreach ($service['calls'] as $call) {
                 if (isset($call['method'])) {
                     $method = $call['method'];
+<<<<<<< HEAD
                     $args = isset($call['arguments']) ? $this->resolveServices($call['arguments'], $file) : array();
                 } else {
                     $method = $call[0];
@@ -479,10 +635,19 @@ class YamlFileLoader extends FileLoader
                 if (!is_array($args)) {
                     throw new InvalidArgumentException(sprintf('The second parameter for function call "%s" must be an array of its arguments for service "%s" in %s. Check your YAML syntax.', $method, $id, $file));
                 }
+=======
+                    $args = isset($call['arguments']) ? $this->resolveServices($call['arguments']) : array();
+                } else {
+                    $method = $call[0];
+                    $args = isset($call[1]) ? $this->resolveServices($call[1]) : array();
+                }
+
+>>>>>>> web and vendor directory from composer install
                 $definition->addMethodCall($method, $args);
             }
         }
 
+<<<<<<< HEAD
         $tags = isset($service['tags']) ? $service['tags'] : array();
         if (!is_array($tags)) {
             throw new InvalidArgumentException(sprintf('Parameter "tags" must be an array for service "%s" in %s. Check your YAML syntax.', $id, $file));
@@ -514,6 +679,37 @@ class YamlFileLoader extends FileLoader
             }
 
             $definition->addTag($name, $tag);
+=======
+        if (isset($service['tags'])) {
+            if (!is_array($service['tags'])) {
+                throw new InvalidArgumentException(sprintf('Parameter "tags" must be an array for service "%s" in %s. Check your YAML syntax.', $id, $file));
+            }
+
+            foreach ($service['tags'] as $tag) {
+                if (!is_array($tag)) {
+                    throw new InvalidArgumentException(sprintf('A "tags" entry must be an array for service "%s" in %s. Check your YAML syntax.', $id, $file));
+                }
+
+                if (!isset($tag['name'])) {
+                    throw new InvalidArgumentException(sprintf('A "tags" entry is missing a "name" key for service "%s" in %s.', $id, $file));
+                }
+
+                if (!is_string($tag['name']) || '' === $tag['name']) {
+                    throw new InvalidArgumentException(sprintf('The tag name for service "%s" in %s must be a non-empty string.', $id, $file));
+                }
+
+                $name = $tag['name'];
+                unset($tag['name']);
+
+                foreach ($tag as $attribute => $value) {
+                    if (!is_scalar($value) && null !== $value) {
+                        throw new InvalidArgumentException(sprintf('A "tags" attribute must be of a scalar-type for service "%s", tag "%s", attribute "%s" in %s. Check your YAML syntax.', $id, $name, $attribute, $file));
+                    }
+                }
+
+                $definition->addTag($name, $tag);
+            }
+>>>>>>> web and vendor directory from composer install
         }
 
         if (isset($service['decorates'])) {
@@ -548,6 +744,7 @@ class YamlFileLoader extends FileLoader
             }
         }
 
+<<<<<<< HEAD
         if (isset($defaults['bind']) || isset($service['bind'])) {
             // deep clone, to avoid multiple process of the same instance in the passes
             $bindings = isset($defaults['bind']) ? unserialize(serialize($defaults['bind'])) : array();
@@ -628,6 +825,9 @@ class YamlFileLoader extends FileLoader
         }
 
         throw new InvalidArgumentException(sprintf('Parameter "%s" must be a string or an array for service "%s" in %s. Check your YAML syntax.', $parameter, $id, $file));
+=======
+        $this->container->setDefinition($id, $definition);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -650,13 +850,18 @@ class YamlFileLoader extends FileLoader
         }
 
         if (!file_exists($file)) {
+<<<<<<< HEAD
             throw new InvalidArgumentException(sprintf('The file "%s" does not exist.', $file));
+=======
+            throw new InvalidArgumentException(sprintf('The service file "%s" is not valid.', $file));
+>>>>>>> web and vendor directory from composer install
         }
 
         if (null === $this->yamlParser) {
             $this->yamlParser = new YamlParser();
         }
 
+<<<<<<< HEAD
         $prevErrorHandler = set_error_handler(function ($level, $message, $script, $line) use ($file, &$prevErrorHandler) {
             $message = E_USER_DEPRECATED === $level ? preg_replace('/ on line \d+/', ' in "'.$file.'"$0', $message) : $message;
 
@@ -669,6 +874,12 @@ class YamlFileLoader extends FileLoader
             throw new InvalidArgumentException(sprintf('The file "%s" does not contain valid YAML.', $file), 0, $e);
         } finally {
             restore_error_handler();
+=======
+        try {
+            $configuration = $this->yamlParser->parse(file_get_contents($file));
+        } catch (ParseException $e) {
+            throw new InvalidArgumentException(sprintf('The file "%s" does not contain valid YAML.', $file), 0, $e);
+>>>>>>> web and vendor directory from composer install
         }
 
         return $this->validate($configuration, $file);
@@ -717,6 +928,7 @@ class YamlFileLoader extends FileLoader
     /**
      * Resolves services.
      *
+<<<<<<< HEAD
      * @param mixed  $value
      * @param string $file
      * @param bool   $isParameter
@@ -782,14 +994,28 @@ class YamlFileLoader extends FileLoader
                 throw new \LogicException(sprintf('The "@=" expression syntax cannot be used without the ExpressionLanguage component. Try running "composer require symfony/expression-language".'));
             }
 
+=======
+     * @param string|array $value
+     *
+     * @return array|string|Reference
+     */
+    private function resolveServices($value)
+    {
+        if (is_array($value)) {
+            $value = array_map(array($this, 'resolveServices'), $value);
+        } elseif (is_string($value) && 0 === strpos($value, '@=')) {
+>>>>>>> web and vendor directory from composer install
             return new Expression(substr($value, 2));
         } elseif (is_string($value) && 0 === strpos($value, '@')) {
             if (0 === strpos($value, '@@')) {
                 $value = substr($value, 1);
                 $invalidBehavior = null;
+<<<<<<< HEAD
             } elseif (0 === strpos($value, '@!')) {
                 $value = substr($value, 2);
                 $invalidBehavior = ContainerInterface::IGNORE_ON_UNINITIALIZED_REFERENCE;
+=======
+>>>>>>> web and vendor directory from composer install
             } elseif (0 === strpos($value, '@?')) {
                 $value = substr($value, 2);
                 $invalidBehavior = ContainerInterface::IGNORE_ON_INVALID_REFERENCE;
@@ -799,12 +1025,23 @@ class YamlFileLoader extends FileLoader
             }
 
             if ('=' === substr($value, -1)) {
+<<<<<<< HEAD
                 @trigger_error(sprintf('The "=" suffix that used to disable strict references in Symfony 2.x is deprecated since Symfony 3.3 and will be unsupported in 4.0. Remove it in "%s".', $value), E_USER_DEPRECATED);
                 $value = substr($value, 0, -1);
             }
 
             if (null !== $invalidBehavior) {
                 $value = new Reference($value, $invalidBehavior);
+=======
+                $value = substr($value, 0, -1);
+                $strict = false;
+            } else {
+                $strict = true;
+            }
+
+            if (null !== $invalidBehavior) {
+                $value = new Reference($value, $invalidBehavior, $strict);
+>>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -813,21 +1050,33 @@ class YamlFileLoader extends FileLoader
 
     /**
      * Loads from Extensions.
+<<<<<<< HEAD
      */
     private function loadFromExtensions(array $content)
+=======
+     *
+     * @param array $content
+     */
+    private function loadFromExtensions($content)
+>>>>>>> web and vendor directory from composer install
     {
         foreach ($content as $namespace => $values) {
             if (in_array($namespace, array('imports', 'parameters', 'services'))) {
                 continue;
             }
 
+<<<<<<< HEAD
             if (!is_array($values) && null !== $values) {
+=======
+            if (!is_array($values)) {
+>>>>>>> web and vendor directory from composer install
                 $values = array();
             }
 
             $this->container->loadFromExtension($namespace, $values);
         }
     }
+<<<<<<< HEAD
 
     /**
      * Checks the keywords used to define a service.
@@ -856,4 +1105,6 @@ class YamlFileLoader extends FileLoader
             }
         }
     }
+=======
+>>>>>>> web and vendor directory from composer install
 }

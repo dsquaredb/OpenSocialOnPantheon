@@ -519,6 +519,7 @@ Determines the mimetype of a file by looking at its extension.
 Maps a file extensions to a mimetype.
 
 
+<<<<<<< HEAD
 # Additional URI Methods
 
 Aside from the standard `Psr\Http\Message\UriInterface` implementation in form of the `GuzzleHttp\Psr7\Uri` class,
@@ -737,3 +738,53 @@ Whether two URIs can be considered equivalent. Both URIs are normalized automati
 `$normalizations` bitmask. The method also accepts relative URI references and returns true when they are equivalent.
 This of course assumes they will be resolved against the same base URI. If this is not the case, determination of
 equivalence or difference of relative references does not mean anything.
+=======
+# Static URI methods
+
+The `GuzzleHttp\Psr7\Uri` class has several static methods to manipulate URIs.
+
+
+## `GuzzleHttp\Psr7\Uri::removeDotSegments`
+
+`public static function removeDotSegments(string $path): string`
+
+Removes dot segments from a path and returns the new path.
+
+See http://tools.ietf.org/html/rfc3986#section-5.2.4
+
+
+## `GuzzleHttp\Psr7\Uri::resolve`
+
+`public static function resolve(UriInterface $base, $rel): UriInterface`
+
+Resolve a base URI with a relative URI and return a new URI.
+
+See http://tools.ietf.org/html/rfc3986#section-5
+
+
+## `GuzzleHttp\Psr7\Uri::withQueryValue`
+
+`public static function withQueryValue(UriInterface $uri, $key, $value): UriInterface`
+
+Create a new URI with a specific query string value.
+
+Any existing query string values that exactly match the provided key are
+removed and replaced with the given key value pair.
+
+
+## `GuzzleHttp\Psr7\Uri::withoutQueryValue`
+
+`public static function withoutQueryValue(UriInterface $uri, $key): UriInterface`
+
+Create a new URI with a specific query string value removed.
+
+Any existing query string values that exactly match the provided key are
+removed.
+
+
+## `GuzzleHttp\Psr7\Uri::fromParts`
+
+`public static function fromParts(array $parts): UriInterface`
+
+Create a `GuzzleHttp\Psr7\Uri` object from a hash of `parse_url` parts.
+>>>>>>> web and vendor directory from composer install

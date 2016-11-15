@@ -20,6 +20,7 @@ class Twig_Node_Expression_NullCoalesce extends Twig_Node_Expression_Conditional
 
         parent::__construct($test, $left, $right, $lineno);
     }
+<<<<<<< HEAD
 
     public function compile(Twig_Compiler $compiler)
     {
@@ -46,3 +47,6 @@ class Twig_Node_Expression_NullCoalesce extends Twig_Node_Expression_Conditional
 }
 
 class_alias('Twig_Node_Expression_NullCoalesce', 'Twig\Node\Expression\NullCoalesceExpression', false);
+=======
+}
+>>>>>>> web and vendor directory from composer install

@@ -29,6 +29,7 @@ class RouteCompiler implements RouteCompilerInterface
     const SEPARATORS = '/,;.:-_~+*=@|';
 
     /**
+<<<<<<< HEAD
      * The maximum supported length of a PCRE subpattern name
      * http://pcre.org/current/doc/html/pcre2pattern.html#SEC16.
      *
@@ -43,6 +44,13 @@ class RouteCompiler implements RouteCompilerInterface
      * @throws \LogicException           if a variable is referenced more than once
      * @throws \DomainException          if a variable name starts with a digit or if it is too long to be successfully used as
      *                                   a PCRE subpattern
+=======
+     * {@inheritdoc}
+     *
+     * @throws \LogicException  If a variable is referenced more than once
+     * @throws \DomainException If a variable name is numeric because PHP raises an error for such
+     *                          subpatterns in PCRE and thus would break matching, e.g. "(?P<123>.+)".
+>>>>>>> web and vendor directory from composer install
      */
     public static function compile(Route $route)
     {
@@ -68,6 +76,7 @@ class RouteCompiler implements RouteCompilerInterface
         $staticPrefix = $result['staticPrefix'];
 
         $pathVariables = $result['variables'];
+<<<<<<< HEAD
 
         foreach ($pathVariables as $pathParam) {
             if ('_fragment' === $pathParam) {
@@ -75,6 +84,8 @@ class RouteCompiler implements RouteCompilerInterface
             }
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         $variables = array_merge($variables, $pathVariables);
 
         $tokens = $result['tokens'];
@@ -99,6 +110,7 @@ class RouteCompiler implements RouteCompilerInterface
         $matches = array();
         $pos = 0;
         $defaultSeparator = $isHost ? '.' : '/';
+<<<<<<< HEAD
         $useUtf8 = preg_match('//u', $pattern);
         $needsUtf8 = $route->getOption('utf8');
 
@@ -109,6 +121,8 @@ class RouteCompiler implements RouteCompilerInterface
         if (!$useUtf8 && $needsUtf8) {
             throw new \LogicException(sprintf('Cannot mix UTF-8 requirements with non-UTF-8 pattern "%s".', $pattern));
         }
+=======
+>>>>>>> web and vendor directory from composer install
 
         // Match all variables enclosed in "{}" and iterate over them. But we only want to match the innermost variable
         // in case of nested "{}", e.g. {foo{bar}}. This in ensured because \w does not match "{" or "}" itself.
@@ -118,6 +132,7 @@ class RouteCompiler implements RouteCompilerInterface
             // get all static text preceding the current variable
             $precedingText = substr($pattern, $pos, $match[0][1] - $pos);
             $pos = $match[0][1] + strlen($match[0][0]);
+<<<<<<< HEAD
 
             if (!strlen($precedingText)) {
                 $precedingChar = '';
@@ -133,17 +148,29 @@ class RouteCompiler implements RouteCompilerInterface
             // variable would not be usable as a Controller action argument.
             if (preg_match('/^\d/', $varName)) {
                 throw new \DomainException(sprintf('Variable name "%s" cannot start with a digit in route pattern "%s". Please use a different name.', $varName, $pattern));
+=======
+            $precedingChar = strlen($precedingText) > 0 ? substr($precedingText, -1) : '';
+            $isSeparator = '' !== $precedingChar && false !== strpos(static::SEPARATORS, $precedingChar);
+
+            if (is_numeric($varName)) {
+                throw new \DomainException(sprintf('Variable name "%s" cannot be numeric in route pattern "%s". Please use a different name.', $varName, $pattern));
+>>>>>>> web and vendor directory from composer install
             }
             if (in_array($varName, $variables)) {
                 throw new \LogicException(sprintf('Route pattern "%s" cannot reference variable name "%s" more than once.', $pattern, $varName));
             }
 
+<<<<<<< HEAD
             if (strlen($varName) > self::VARIABLE_MAXIMUM_LENGTH) {
                 throw new \DomainException(sprintf('Variable name "%s" cannot be longer than %s characters in route pattern "%s". Please use a shorter name.', $varName, self::VARIABLE_MAXIMUM_LENGTH, $pattern));
             }
 
             if ($isSeparator && $precedingText !== $precedingChar) {
                 $tokens[] = array('text', substr($precedingText, 0, -strlen($precedingChar)));
+=======
+            if ($isSeparator && strlen($precedingText) > 1) {
+                $tokens[] = array('text', substr($precedingText, 0, -1));
+>>>>>>> web and vendor directory from composer install
             } elseif (!$isSeparator && strlen($precedingText) > 0) {
                 $tokens[] = array('text', $precedingText);
             }
@@ -158,7 +185,11 @@ class RouteCompiler implements RouteCompilerInterface
                 // If {page} would also match the separating dot, {_format} would never match as {page} will eagerly consume everything.
                 // Also even if {_format} was not optional the requirement prevents that {page} matches something that was originally
                 // part of {_format} when generating the URL, e.g. _format = 'mobile.html'.
+<<<<<<< HEAD
                 $nextSeparator = self::findNextSeparator($followingPattern, $useUtf8);
+=======
+                $nextSeparator = self::findNextSeparator($followingPattern);
+>>>>>>> web and vendor directory from composer install
                 $regexp = sprintf(
                     '[^%s%s]+',
                     preg_quote($defaultSeparator, self::REGEX_DELIMITER),
@@ -172,6 +203,7 @@ class RouteCompiler implements RouteCompilerInterface
                     // directly adjacent, e.g. '/{x}{y}'.
                     $regexp .= '+';
                 }
+<<<<<<< HEAD
             } else {
                 if (!preg_match('//u', $regexp)) {
                     $useUtf8 = false;
@@ -182,6 +214,8 @@ class RouteCompiler implements RouteCompilerInterface
                 if (!$useUtf8 && $needsUtf8) {
                     throw new \LogicException(sprintf('Cannot mix UTF-8 requirement with non-UTF-8 charset for variable "%s" in pattern "%s".', $varName, $pattern));
                 }
+=======
+>>>>>>> web and vendor directory from composer install
             }
 
             $tokens[] = array('variable', $isSeparator ? $precedingChar : '', $regexp, $varName);
@@ -210,6 +244,7 @@ class RouteCompiler implements RouteCompilerInterface
         for ($i = 0, $nbToken = count($tokens); $i < $nbToken; ++$i) {
             $regexp .= self::computeRegexp($tokens, $i, $firstOptional);
         }
+<<<<<<< HEAD
         $regexp = self::REGEX_DELIMITER.'^'.$regexp.'$'.self::REGEX_DELIMITER.'sD'.($isHost ? 'i' : '');
 
         // enable Utf8 matching if really required
@@ -225,12 +260,19 @@ class RouteCompiler implements RouteCompilerInterface
         return array(
             'staticPrefix' => self::determineStaticPrefix($route, $tokens),
             'regex' => $regexp,
+=======
+
+        return array(
+            'staticPrefix' => 'text' === $tokens[0][0] ? $tokens[0][1] : '',
+            'regex' => self::REGEX_DELIMITER.'^'.$regexp.'$'.self::REGEX_DELIMITER.'s'.($isHost ? 'i' : ''),
+>>>>>>> web and vendor directory from composer install
             'tokens' => array_reverse($tokens),
             'variables' => $variables,
         );
     }
 
     /**
+<<<<<<< HEAD
      * Determines the longest static prefix possible for a route.
      *
      * @return string The leading static part of a route's path
@@ -259,12 +301,22 @@ class RouteCompiler implements RouteCompilerInterface
      * @return string The next static character that functions as separator (or empty string when none available)
      */
     private static function findNextSeparator($pattern, $useUtf8)
+=======
+     * Returns the next static character in the Route pattern that will serve as a separator.
+     *
+     * @param string $pattern The route pattern
+     *
+     * @return string The next static character that functions as separator (or empty string when none available)
+     */
+    private static function findNextSeparator($pattern)
+>>>>>>> web and vendor directory from composer install
     {
         if ('' == $pattern) {
             // return empty string if pattern is empty or false (false which can be returned by substr)
             return '';
         }
         // first remove all placeholders from the pattern so we can find the next real static character
+<<<<<<< HEAD
         if ('' === $pattern = preg_replace('#\{\w+\}#', '', $pattern)) {
             return '';
         }
@@ -273,6 +325,11 @@ class RouteCompiler implements RouteCompilerInterface
         }
 
         return false !== strpos(static::SEPARATORS, $pattern[0]) ? $pattern[0] : '';
+=======
+        $pattern = preg_replace('#\{\w+\}#', '', $pattern);
+
+        return isset($pattern[0]) && false !== strpos(static::SEPARATORS, $pattern[0]) ? $pattern[0] : '';
+>>>>>>> web and vendor directory from composer install
     }
 
     /**

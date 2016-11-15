@@ -26,6 +26,7 @@ class DebugClassLoader
 {
     private $classLoader;
     private $isFinder;
+<<<<<<< HEAD
     private $loaded = array();
     private static $caseCheck;
     private static $checkedClasses = array();
@@ -41,6 +42,31 @@ class DebugClassLoader
     {
         $this->classLoader = $classLoader;
         $this->isFinder = is_array($classLoader) && method_exists($classLoader[0], 'findFile');
+=======
+    private $wasFinder;
+    private static $caseCheck;
+    private static $deprecated = array();
+    private static $php7Reserved = array('int', 'float', 'bool', 'string', 'true', 'false', 'null');
+    private static $darwinCache = array('/' => array('/', array()));
+
+    /**
+     * Constructor.
+     *
+     * @param callable|object $classLoader Passing an object is @deprecated since version 2.5 and support for it will be removed in 3.0
+     */
+    public function __construct($classLoader)
+    {
+        $this->wasFinder = is_object($classLoader) && method_exists($classLoader, 'findFile');
+
+        if ($this->wasFinder) {
+            @trigger_error('The '.__METHOD__.' method will no longer support receiving an object into its $classLoader argument in 3.0.', E_USER_DEPRECATED);
+            $this->classLoader = array($classLoader, 'loadClass');
+            $this->isFinder = true;
+        } else {
+            $this->classLoader = $classLoader;
+            $this->isFinder = is_array($classLoader) && method_exists($classLoader[0], 'findFile');
+        }
+>>>>>>> web and vendor directory from composer install
 
         if (!isset(self::$caseCheck)) {
             $file = file_exists(__FILE__) ? __FILE__ : rtrim(realpath('.'), DIRECTORY_SEPARATOR);
@@ -69,11 +95,19 @@ class DebugClassLoader
     /**
      * Gets the wrapped class loader.
      *
+<<<<<<< HEAD
      * @return callable The wrapped class loader
      */
     public function getClassLoader()
     {
         return $this->classLoader;
+=======
+     * @return callable|object A class loader. Since version 2.5, returning an object is @deprecated and support for it will be removed in 3.0
+     */
+    public function getClassLoader()
+    {
+        return $this->wasFinder ? $this->classLoader[0] : $this->classLoader;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -125,6 +159,27 @@ class DebugClassLoader
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Finds a file by class name.
+     *
+     * @param string $class A class name to resolve to file
+     *
+     * @return string|null
+     *
+     * @deprecated since version 2.5, to be removed in 3.0.
+     */
+    public function findFile($class)
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 2.5 and will be removed in 3.0.', E_USER_DEPRECATED);
+
+        if ($this->wasFinder) {
+            return $this->classLoader[0]->findFile($class);
+        }
+    }
+
+    /**
+>>>>>>> web and vendor directory from composer install
      * Loads the given class or interface.
      *
      * @param string $class The name of the class
@@ -135,6 +190,7 @@ class DebugClassLoader
      */
     public function loadClass($class)
     {
+<<<<<<< HEAD
         $e = error_reporting(error_reporting() | E_PARSE | E_ERROR | E_CORE_ERROR | E_COMPILE_ERROR);
 
         try {
@@ -148,11 +204,20 @@ class DebugClassLoader
                     if ($wasCached) {
                         return;
                     }
+=======
+        ErrorHandler::stackErrors();
+
+        try {
+            if ($this->isFinder) {
+                if ($file = $this->classLoader[0]->findFile($class)) {
+                    require_once $file;
+>>>>>>> web and vendor directory from composer install
                 }
             } else {
                 call_user_func($this->classLoader, $class);
                 $file = false;
             }
+<<<<<<< HEAD
         } finally {
             error_reporting($e);
         }
@@ -165,10 +230,28 @@ class DebugClassLoader
         $exists = null === $file || \class_exists($class, false) || \interface_exists($class, false) || \trait_exists($class, false);
 
         if (null !== $file && $class && '\\' === $class[0]) {
+=======
+        } catch (\Exception $e) {
+            ErrorHandler::unstackErrors();
+
+            throw $e;
+        } catch (\Throwable $e) {
+            ErrorHandler::unstackErrors();
+
+            throw $e;
+        }
+
+        ErrorHandler::unstackErrors();
+
+        $exists = class_exists($class, false) || interface_exists($class, false) || (function_exists('trait_exists') && trait_exists($class, false));
+
+        if ('\\' === $class[0]) {
+>>>>>>> web and vendor directory from composer install
             $class = substr($class, 1);
         }
 
         if ($exists) {
+<<<<<<< HEAD
             if (isset(self::$checkedClasses[$class])) {
                 return;
             }
@@ -282,6 +365,64 @@ class DebugClassLoader
             if (isset(self::$php7Reserved[\strtolower($refl->getShortName())])) {
                 @trigger_error(sprintf('The "%s" class uses the reserved name "%s", it will break on PHP 7 and higher', $name, $refl->getShortName()), E_USER_DEPRECATED);
             }
+=======
+            $refl = new \ReflectionClass($class);
+            $name = $refl->getName();
+
+            if ($name !== $class && 0 === strcasecmp($name, $class)) {
+                throw new \RuntimeException(sprintf('Case mismatch between loaded and declared class names: %s vs %s', $class, $name));
+            }
+
+            if (in_array(strtolower($refl->getShortName()), self::$php7Reserved)) {
+                @trigger_error(sprintf('%s uses a reserved class name (%s) that will break on PHP 7 and higher', $name, $refl->getShortName()), E_USER_DEPRECATED);
+            } elseif (preg_match('#\n \* @deprecated (.*?)\r?\n \*(?: @|/$)#s', $refl->getDocComment(), $notice)) {
+                self::$deprecated[$name] = preg_replace('#\s*\r?\n \* +#', ' ', $notice[1]);
+            } else {
+                if (2 > $len = 1 + (strpos($name, '\\', 1 + strpos($name, '\\')) ?: strpos($name, '_'))) {
+                    $len = 0;
+                    $ns = '';
+                } else {
+                    switch ($ns = substr($name, 0, $len)) {
+                        case 'Symfony\Bridge\\':
+                        case 'Symfony\Bundle\\':
+                        case 'Symfony\Component\\':
+                            $ns = 'Symfony\\';
+                            $len = strlen($ns);
+                            break;
+                    }
+                }
+                $parent = get_parent_class($class);
+
+                if (!$parent || strncmp($ns, $parent, $len)) {
+                    if ($parent && isset(self::$deprecated[$parent]) && strncmp($ns, $parent, $len)) {
+                        @trigger_error(sprintf('The %s class extends %s that is deprecated %s', $name, $parent, self::$deprecated[$parent]), E_USER_DEPRECATED);
+                    }
+
+                    $parentInterfaces = array();
+                    $deprecatedInterfaces = array();
+                    if ($parent) {
+                        foreach (class_implements($parent) as $interface) {
+                            $parentInterfaces[$interface] = 1;
+                        }
+                    }
+
+                    foreach ($refl->getInterfaceNames() as $interface) {
+                        if (isset(self::$deprecated[$interface]) && strncmp($ns, $interface, $len)) {
+                            $deprecatedInterfaces[] = $interface;
+                        }
+                        foreach (class_implements($interface) as $interface) {
+                            $parentInterfaces[$interface] = 1;
+                        }
+                    }
+
+                    foreach ($deprecatedInterfaces as $interface) {
+                        if (!isset($parentInterfaces[$interface])) {
+                            @trigger_error(sprintf('The %s %s %s that is deprecated %s', $name, $refl->isInterface() ? 'interface extends' : 'class implements', $interface, self::$deprecated[$interface]), E_USER_DEPRECATED);
+                        }
+                    }
+                }
+            }
+>>>>>>> web and vendor directory from composer install
         }
 
         if ($file) {
@@ -374,6 +515,7 @@ class DebugClassLoader
                 if (0 === substr_compare($real, $tail, -$tailLen, $tailLen, true)
                   && 0 !== substr_compare($real, $tail, -$tailLen, $tailLen, false)
                 ) {
+<<<<<<< HEAD
                     throw new \RuntimeException(sprintf('Case mismatch between class and real file names: "%s" vs "%s" in "%s".', substr($tail, -$tailLen + 1), substr($real, -$tailLen + 1), substr($real, 0, -$tailLen + 1)));
                 }
             }
@@ -405,5 +547,13 @@ class DebugClassLoader
         }
 
         return $ownInterfaces;
+=======
+                    throw new \RuntimeException(sprintf('Case mismatch between class and real file names: %s vs %s in %s', substr($tail, -$tailLen + 1), substr($real, -$tailLen + 1), substr($real, 0, -$tailLen + 1)));
+                }
+            }
+
+            return true;
+        }
+>>>>>>> web and vendor directory from composer install
     }
 }

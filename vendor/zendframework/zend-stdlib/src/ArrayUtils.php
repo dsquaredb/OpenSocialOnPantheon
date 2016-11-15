@@ -39,11 +39,19 @@ abstract class ArrayUtils
      */
     public static function hasStringKeys($value, $allowEmpty = false)
     {
+<<<<<<< HEAD
         if (!is_array($value)) {
             return false;
         }
 
         if (!$value) {
+=======
+        if (! is_array($value)) {
+            return false;
+        }
+
+        if (! $value) {
+>>>>>>> web and vendor directory from composer install
             return $allowEmpty;
         }
 
@@ -59,11 +67,19 @@ abstract class ArrayUtils
      */
     public static function hasIntegerKeys($value, $allowEmpty = false)
     {
+<<<<<<< HEAD
         if (!is_array($value)) {
             return false;
         }
 
         if (!$value) {
+=======
+        if (! is_array($value)) {
+            return false;
+        }
+
+        if (! $value) {
+>>>>>>> web and vendor directory from composer install
             return $allowEmpty;
         }
 
@@ -86,11 +102,19 @@ abstract class ArrayUtils
      */
     public static function hasNumericKeys($value, $allowEmpty = false)
     {
+<<<<<<< HEAD
         if (!is_array($value)) {
             return false;
         }
 
         if (!$value) {
+=======
+        if (! is_array($value)) {
+            return false;
+        }
+
+        if (! $value) {
+>>>>>>> web and vendor directory from composer install
             return $allowEmpty;
         }
 
@@ -119,11 +143,19 @@ abstract class ArrayUtils
      */
     public static function isList($value, $allowEmpty = false)
     {
+<<<<<<< HEAD
         if (!is_array($value)) {
             return false;
         }
 
         if (!$value) {
+=======
+        if (! is_array($value)) {
+            return false;
+        }
+
+        if (! $value) {
+>>>>>>> web and vendor directory from composer install
             return $allowEmpty;
         }
 
@@ -161,11 +193,19 @@ abstract class ArrayUtils
      */
     public static function isHashTable($value, $allowEmpty = false)
     {
+<<<<<<< HEAD
         if (!is_array($value)) {
             return false;
         }
 
         if (!$value) {
+=======
+        if (! is_array($value)) {
+            return false;
+        }
+
+        if (! $value) {
+>>>>>>> web and vendor directory from composer install
             return $allowEmpty;
         }
 
@@ -187,7 +227,11 @@ abstract class ArrayUtils
      */
     public static function inArray($needle, array $haystack, $strict = false)
     {
+<<<<<<< HEAD
         if (!$strict) {
+=======
+        if (! $strict) {
+>>>>>>> web and vendor directory from composer install
             if (is_int($needle) || is_float($needle)) {
                 $needle = (string) $needle;
             }
@@ -215,11 +259,19 @@ abstract class ArrayUtils
      */
     public static function iteratorToArray($iterator, $recursive = true)
     {
+<<<<<<< HEAD
         if (!is_array($iterator) && !$iterator instanceof Traversable) {
             throw new Exception\InvalidArgumentException(__METHOD__ . ' expects an array or Traversable object');
         }
 
         if (!$recursive) {
+=======
+        if (! is_array($iterator) && ! $iterator instanceof Traversable) {
+            throw new Exception\InvalidArgumentException(__METHOD__ . ' expects an array or Traversable object');
+        }
+
+        if (! $recursive) {
+>>>>>>> web and vendor directory from composer install
             if (is_array($iterator)) {
                 return $iterator;
             }
@@ -274,7 +326,11 @@ abstract class ArrayUtils
             } elseif (isset($a[$key]) || array_key_exists($key, $a)) {
                 if ($value instanceof MergeRemoveKey) {
                     unset($a[$key]);
+<<<<<<< HEAD
                 } elseif (!$preserveNumericKeys && is_int($key)) {
+=======
+                } elseif (! $preserveNumericKeys && is_int($key)) {
+>>>>>>> web and vendor directory from composer install
                     $a[] = $value;
                 } elseif (is_array($value) && is_array($a[$key])) {
                     $a[$key] = static::merge($a[$key], $value, $preserveNumericKeys);
@@ -282,7 +338,11 @@ abstract class ArrayUtils
                     $a[$key] = $value;
                 }
             } else {
+<<<<<<< HEAD
                 if (!$value instanceof MergeRemoveKey) {
+=======
+                if (! $value instanceof MergeRemoveKey) {
+>>>>>>> web and vendor directory from composer install
                     $a[$key] = $value;
                 }
             }

@@ -11,9 +11,15 @@
 
 namespace Symfony\Component\Validator\Constraints;
 
+<<<<<<< HEAD
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\InvalidOptionsException;
+=======
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
+use Symfony\Component\Validator\Constraint;
+use Symfony\Component\Validator\ConstraintValidator;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 /**
@@ -23,9 +29,15 @@ class UrlValidator extends ConstraintValidator
 {
     const PATTERN = '~^
             (%s)://                                 # protocol
+<<<<<<< HEAD
             (([\.\pL\pN-]+:)?([\.\pL\pN-]+)@)?      # basic auth
             (
                 ([\pL\pN\pS\-\.])+(\.?([\pL\pN]|xn\-\-[\pL\pN-]+)+\.?) # a domain name
+=======
+            (([\pL\pN-]+:)?([\pL\pN-]+)@)?          # basic auth
+            (
+                ([\pL\pN\pS-\.])+(\.?([\pL\pN]|xn\-\-[\pL\pN-]+)+\.?) # a domain name
+>>>>>>> web and vendor directory from composer install
                     |                                                 # or
                 \d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}                    # an IP address
                     |                                                 # or
@@ -34,9 +46,13 @@ class UrlValidator extends ConstraintValidator
                 \]  # an IPv6 address
             )
             (:[0-9]+)?                              # a port (optional)
+<<<<<<< HEAD
             (?:/ (?:[\pL\pN\-._\~!$&\'()*+,;=:@]|%%[0-9A-Fa-f]{2})* )*      # a path
             (?:\? (?:[\pL\pN\-._\~!$&\'()*+,;=:@/?]|%%[0-9A-Fa-f]{2})* )?   # a query (optional)
             (?:\# (?:[\pL\pN\-._\~!$&\'()*+,;=:@/?]|%%[0-9A-Fa-f]{2})* )?   # a fragment (optional)
+=======
+            (/?|/\S+|\?\S*|\#\S*)                   # a /, nothing, a / with something, a query or a fragment
+>>>>>>> web and vendor directory from composer install
         $~ixu';
 
     /**
@@ -48,7 +64,11 @@ class UrlValidator extends ConstraintValidator
             throw new UnexpectedTypeException($constraint, __NAMESPACE__.'\Url');
         }
 
+<<<<<<< HEAD
         if (null === $value || '' === $value) {
+=======
+        if (null === $value) {
+>>>>>>> web and vendor directory from composer install
             return;
         }
 
@@ -64,15 +84,30 @@ class UrlValidator extends ConstraintValidator
         $pattern = sprintf(static::PATTERN, implode('|', $constraint->protocols));
 
         if (!preg_match($pattern, $value)) {
+<<<<<<< HEAD
             $this->context->buildViolation($constraint->message)
                 ->setParameter('{{ value }}', $this->formatValue($value))
                 ->setCode(Url::INVALID_URL_ERROR)
                 ->addViolation();
+=======
+            if ($this->context instanceof ExecutionContextInterface) {
+                $this->context->buildViolation($constraint->message)
+                    ->setParameter('{{ value }}', $this->formatValue($value))
+                    ->setCode(Url::INVALID_URL_ERROR)
+                    ->addViolation();
+            } else {
+                $this->buildViolation($constraint->message)
+                    ->setParameter('{{ value }}', $this->formatValue($value))
+                    ->setCode(Url::INVALID_URL_ERROR)
+                    ->addViolation();
+            }
+>>>>>>> web and vendor directory from composer install
 
             return;
         }
 
         if ($constraint->checkDNS) {
+<<<<<<< HEAD
             // backwards compatibility
             if (true === $constraint->checkDNS) {
                 $constraint->checkDNS = Url::CHECK_DNS_TYPE_ANY;
@@ -103,6 +138,22 @@ class UrlValidator extends ConstraintValidator
                     ->setParameter('{{ value }}', $this->formatValue($host))
                     ->setCode(Url::INVALID_URL_ERROR)
                     ->addViolation();
+=======
+            $host = parse_url($value, PHP_URL_HOST);
+
+            if (!checkdnsrr($host, 'ANY')) {
+                if ($this->context instanceof ExecutionContextInterface) {
+                    $this->context->buildViolation($constraint->dnsMessage)
+                        ->setParameter('{{ value }}', $this->formatValue($host))
+                        ->setCode(Url::INVALID_URL_ERROR)
+                        ->addViolation();
+                } else {
+                    $this->buildViolation($constraint->dnsMessage)
+                        ->setParameter('{{ value }}', $this->formatValue($host))
+                        ->setCode(Url::INVALID_URL_ERROR)
+                        ->addViolation();
+                }
+>>>>>>> web and vendor directory from composer install
             }
         }
     }

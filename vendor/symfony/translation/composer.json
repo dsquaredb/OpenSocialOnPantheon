@@ -16,6 +16,7 @@
         }
     ],
     "require": {
+<<<<<<< HEAD
         "php": "^5.5.9|>=7.0.8",
         "symfony/polyfill-mbstring": "~1.0"
     },
@@ -31,11 +32,28 @@
         "symfony/config": "<2.8",
         "symfony/dependency-injection": "<3.4",
         "symfony/yaml": "<3.4"
+=======
+        "php": ">=5.3.9",
+        "symfony/polyfill-mbstring": "~1.0"
+    },
+    "require-dev": {
+        "symfony/config": "~2.8",
+        "symfony/intl": "~2.4|~3.0.0",
+        "symfony/yaml": "~2.2|~3.0.0",
+        "psr/log": "~1.0"
+    },
+    "conflict": {
+        "symfony/config": "<2.7"
+>>>>>>> web and vendor directory from composer install
     },
     "suggest": {
         "symfony/config": "",
         "symfony/yaml": "",
+<<<<<<< HEAD
         "psr/log-implementation": "To use logging capability in translator"
+=======
+        "psr/log": "To use logging capability in translator"
+>>>>>>> web and vendor directory from composer install
     },
     "autoload": {
         "psr-4": { "Symfony\\Component\\Translation\\": "" },
@@ -46,7 +64,11 @@
     "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
+<<<<<<< HEAD
             "dev-master": "3.4-dev"
+=======
+            "dev-master": "2.8-dev"
+>>>>>>> web and vendor directory from composer install
         }
     }
 }

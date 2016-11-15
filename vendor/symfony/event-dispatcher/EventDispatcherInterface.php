@@ -27,7 +27,11 @@ interface EventDispatcherInterface
      *                          the event is the name of the method that is
      *                          invoked on listeners.
      * @param Event  $event     The event to pass to the event handlers/listeners
+<<<<<<< HEAD
      *                          If not supplied, an empty Event instance is created
+=======
+     *                          If not supplied, an empty Event instance is created.
+>>>>>>> web and vendor directory from composer install
      *
      * @return Event
      */
@@ -48,6 +52,11 @@ interface EventDispatcherInterface
      *
      * The subscriber is asked for all the events he is
      * interested in and added as a listener for these events.
+<<<<<<< HEAD
+=======
+     *
+     * @param EventSubscriberInterface $subscriber The subscriber
+>>>>>>> web and vendor directory from composer install
      */
     public function addSubscriber(EventSubscriberInterface $subscriber);
 
@@ -59,6 +68,14 @@ interface EventDispatcherInterface
      */
     public function removeListener($eventName, $listener);
 
+<<<<<<< HEAD
+=======
+    /**
+     * Removes an event subscriber.
+     *
+     * @param EventSubscriberInterface $subscriber The subscriber
+     */
+>>>>>>> web and vendor directory from composer install
     public function removeSubscriber(EventSubscriberInterface $subscriber);
 
     /**
@@ -71,6 +88,7 @@ interface EventDispatcherInterface
     public function getListeners($eventName = null);
 
     /**
+<<<<<<< HEAD
      * Gets the listener priority for a specific event.
      *
      * Returns null if the event or the listener does not exist.
@@ -83,6 +101,8 @@ interface EventDispatcherInterface
     public function getListenerPriority($eventName, $listener);
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * Checks whether an event has any registered listeners.
      *
      * @param string $eventName The name of the event

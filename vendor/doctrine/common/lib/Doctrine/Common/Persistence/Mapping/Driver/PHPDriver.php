@@ -44,7 +44,12 @@ class PHPDriver extends FileDriver
      */
     public function __construct($locator, $fileExtension = null)
     {
+<<<<<<< HEAD
         parent::__construct($locator, '.php');
+=======
+        $fileExtension = ".php";
+        parent::__construct($locator, $fileExtension);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -53,7 +58,10 @@ class PHPDriver extends FileDriver
     public function loadMetadataForClass($className, ClassMetadata $metadata)
     {
         $this->metadata = $metadata;
+<<<<<<< HEAD
 
+=======
+>>>>>>> web and vendor directory from composer install
         $this->loadMappingFile($this->locator->findMappingFile($className));
     }
 
@@ -65,6 +73,10 @@ class PHPDriver extends FileDriver
         $metadata = $this->metadata;
         include $file;
 
+<<<<<<< HEAD
         return [$metadata->getName() => $metadata];
+=======
+        return array($metadata->getName() => $metadata);
+>>>>>>> web and vendor directory from composer install
     }
 }

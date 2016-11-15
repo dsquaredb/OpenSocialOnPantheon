@@ -12,7 +12,10 @@
 namespace Symfony\Component\Routing\Matcher;
 
 use Symfony\Component\HttpFoundation\Request;
+<<<<<<< HEAD
 use Symfony\Component\Routing\Exception\NoConfigurationException;
+=======
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\Exception\MethodNotAllowedException;
 
@@ -29,9 +32,16 @@ interface RequestMatcherInterface
      * If the matcher can not find information, it must throw one of the exceptions documented
      * below.
      *
+<<<<<<< HEAD
      * @return array An array of parameters
      *
      * @throws NoConfigurationException  If no routing configuration could be found
+=======
+     * @param Request $request The request to match
+     *
+     * @return array An array of parameters
+     *
+>>>>>>> web and vendor directory from composer install
      * @throws ResourceNotFoundException If no matching resource could be found
      * @throws MethodNotAllowedException If a matching resource was found but the request method is not allowed
      */

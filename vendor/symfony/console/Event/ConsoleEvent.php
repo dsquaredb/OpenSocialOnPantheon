@@ -28,7 +28,11 @@ class ConsoleEvent extends Event
     private $input;
     private $output;
 
+<<<<<<< HEAD
     public function __construct(Command $command = null, InputInterface $input, OutputInterface $output)
+=======
+    public function __construct(Command $command, InputInterface $input, OutputInterface $output)
+>>>>>>> web and vendor directory from composer install
     {
         $this->command = $command;
         $this->input = $input;
@@ -38,7 +42,11 @@ class ConsoleEvent extends Event
     /**
      * Gets the command that is executed.
      *
+<<<<<<< HEAD
      * @return Command|null A Command instance
+=======
+     * @return Command A Command instance
+>>>>>>> web and vendor directory from composer install
      */
     public function getCommand()
     {

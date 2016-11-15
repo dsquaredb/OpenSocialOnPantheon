@@ -104,21 +104,39 @@ interface MessageCatalogueInterface
      * Merges translations from the given Catalogue into the current one.
      *
      * The two catalogues must have the same locale.
+<<<<<<< HEAD
      */
     public function addCatalogue(self $catalogue);
+=======
+     *
+     * @param MessageCatalogueInterface $catalogue A MessageCatalogueInterface instance
+     */
+    public function addCatalogue(MessageCatalogueInterface $catalogue);
+>>>>>>> web and vendor directory from composer install
 
     /**
      * Merges translations from the given Catalogue into the current one
      * only when the translation does not exist.
      *
      * This is used to provide default translations when they do not exist for the current locale.
+<<<<<<< HEAD
      */
     public function addFallbackCatalogue(self $catalogue);
+=======
+     *
+     * @param MessageCatalogueInterface $catalogue A MessageCatalogueInterface instance
+     */
+    public function addFallbackCatalogue(MessageCatalogueInterface $catalogue);
+>>>>>>> web and vendor directory from composer install
 
     /**
      * Gets the fallback catalogue.
      *
+<<<<<<< HEAD
      * @return self|null A MessageCatalogueInterface instance or null when no fallback has been set
+=======
+     * @return MessageCatalogueInterface|null A MessageCatalogueInterface instance or null when no fallback has been set
+>>>>>>> web and vendor directory from composer install
      */
     public function getFallbackCatalogue();
 
@@ -131,6 +149,11 @@ interface MessageCatalogueInterface
 
     /**
      * Adds a resource for this collection.
+<<<<<<< HEAD
+=======
+     *
+     * @param ResourceInterface $resource A resource instance
+>>>>>>> web and vendor directory from composer install
      */
     public function addResource(ResourceInterface $resource);
 }

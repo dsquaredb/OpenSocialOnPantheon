@@ -11,8 +11,11 @@
 
 namespace Symfony\Component\Translation;
 
+<<<<<<< HEAD
 use Symfony\Component\Translation\Exception\InvalidArgumentException;
 
+=======
+>>>>>>> web and vendor directory from composer install
 /**
  * MessageSelector.
  *
@@ -45,6 +48,7 @@ class MessageSelector
      *
      * @return string
      *
+<<<<<<< HEAD
      * @throws InvalidArgumentException
      */
     public function choose($message, $number, $locale)
@@ -60,6 +64,17 @@ class MessageSelector
         $standardRules = array();
         foreach ($parts as $part) {
             $part = trim(str_replace('||', '|', $part));
+=======
+     * @throws \InvalidArgumentException
+     */
+    public function choose($message, $number, $locale)
+    {
+        $parts = explode('|', $message);
+        $explicitRules = array();
+        $standardRules = array();
+        foreach ($parts as $part) {
+            $part = trim($part);
+>>>>>>> web and vendor directory from composer install
 
             if (preg_match('/^(?P<interval>'.Interval::getIntervalRegexp().')\s*(?P<message>.*?)$/xs', $part, $matches)) {
                 $explicitRules[$matches['interval']] = $matches['message'];
@@ -86,7 +101,11 @@ class MessageSelector
                 return $standardRules[0];
             }
 
+<<<<<<< HEAD
             throw new InvalidArgumentException(sprintf('Unable to choose a translation for "%s" with locale "%s" for value "%d". Double check that this translation has the correct plural options (e.g. "There is one apple|There are %%count%% apples").', $message, $locale, $number));
+=======
+            throw new \InvalidArgumentException(sprintf('Unable to choose a translation for "%s" with locale "%s" for value "%d". Double check that this translation has the correct plural options (e.g. "There is one apple|There are %%count%% apples").', $message, $locale, $number));
+>>>>>>> web and vendor directory from composer install
         }
 
         return $standardRules[$position];

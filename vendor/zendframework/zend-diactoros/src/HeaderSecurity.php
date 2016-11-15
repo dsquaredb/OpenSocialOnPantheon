@@ -129,12 +129,15 @@ final class HeaderSecurity
      */
     public static function assertValid($value)
     {
+<<<<<<< HEAD
         if (! is_string($value) && ! is_numeric($value)) {
             throw new InvalidArgumentException(sprintf(
                 'Invalid header value type; must be a string or numeric; received %s',
                 (is_object($value) ? get_class($value) : gettype($value))
             ));
         }
+=======
+>>>>>>> web and vendor directory from composer install
         if (! self::isValid($value)) {
             throw new InvalidArgumentException(sprintf(
                 '"%s" is not valid header value',
@@ -152,12 +155,15 @@ final class HeaderSecurity
      */
     public static function assertValidName($name)
     {
+<<<<<<< HEAD
         if (! is_string($name)) {
             throw new InvalidArgumentException(sprintf(
                 'Invalid header name type; expected string; received %s',
                 (is_object($name) ? get_class($name) : gettype($name))
             ));
         }
+=======
+>>>>>>> web and vendor directory from composer install
         if (! preg_match('/^[a-zA-Z0-9\'`#$%&*+.^_|~!-]+$/', $name)) {
             throw new InvalidArgumentException(sprintf(
                 '"%s" is not valid header name',

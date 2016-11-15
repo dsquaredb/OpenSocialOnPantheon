@@ -15,7 +15,10 @@ use Symfony\Component\Config\Util\XmlUtils;
 use Symfony\Component\Translation\MessageCatalogue;
 use Symfony\Component\Translation\Exception\InvalidResourceException;
 use Symfony\Component\Translation\Exception\NotFoundResourceException;
+<<<<<<< HEAD
 use Symfony\Component\Translation\Exception\InvalidArgumentException;
+=======
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\Config\Resource\FileResource;
 
 /**
@@ -99,7 +102,10 @@ class XliffFileLoader implements LoaderInterface
             if ($notes = $this->parseNotesMetadata($translation->note, $encoding)) {
                 $metadata['notes'] = $notes;
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> web and vendor directory from composer install
             if (isset($translation->target) && $translation->target->attributes()) {
                 $metadata['target-attributes'] = array();
                 foreach ($translation->target->attributes() as $key => $value) {
@@ -107,10 +113,13 @@ class XliffFileLoader implements LoaderInterface
                 }
             }
 
+<<<<<<< HEAD
             if (isset($attributes['id'])) {
                 $metadata['id'] = (string) $attributes['id'];
             }
 
+=======
+>>>>>>> web and vendor directory from composer install
             $catalogue->setMetadata((string) $source, $metadata, $domain);
         }
     }
@@ -127,6 +136,7 @@ class XliffFileLoader implements LoaderInterface
 
         $xml->registerXPathNamespace('xliff', 'urn:oasis:names:tc:xliff:document:2.0');
 
+<<<<<<< HEAD
         foreach ($xml->xpath('//xliff:unit') as $unit) {
             foreach ($unit->segment as $segment) {
                 $source = $segment->source;
@@ -159,6 +169,26 @@ class XliffFileLoader implements LoaderInterface
 
                 $catalogue->setMetadata((string) $source, $metadata, $domain);
             }
+=======
+        foreach ($xml->xpath('//xliff:unit/xliff:segment') as $segment) {
+            $source = $segment->source;
+
+            // If the xlf file has another encoding specified, try to convert it because
+            // simple_xml will always return utf-8 encoded values
+            $target = $this->utf8ToCharset((string) (isset($segment->target) ? $segment->target : $source), $encoding);
+
+            $catalogue->set((string) $source, $target, $domain);
+
+            $metadata = array();
+            if (isset($segment->target) && $segment->target->attributes()) {
+                $metadata['target-attributes'] = array();
+                foreach ($segment->target->attributes() as $key => $value) {
+                    $metadata['target-attributes'][$key] = (string) $value;
+                }
+            }
+
+            $catalogue->setMetadata((string) $source, $metadata, $domain);
+>>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -186,6 +216,10 @@ class XliffFileLoader implements LoaderInterface
      * @param \DOMDocument $dom
      * @param string       $schema source of the schema
      *
+<<<<<<< HEAD
+=======
+     * @throws \RuntimeException
+>>>>>>> web and vendor directory from composer install
      * @throws InvalidResourceException
      */
     private function validateSchema($file, \DOMDocument $dom, $schema)
@@ -217,7 +251,11 @@ class XliffFileLoader implements LoaderInterface
             $schemaSource = file_get_contents(__DIR__.'/schema/dic/xliff-core/xliff-core-2.0.xsd');
             $xmlUri = 'informativeCopiesOf3rdPartySchemas/w3c/xml.xsd';
         } else {
+<<<<<<< HEAD
             throw new InvalidArgumentException(sprintf('No support implemented for loading XLIFF version "%s".', $xliffVersion));
+=======
+            throw new \InvalidArgumentException(sprintf('No support implemented for loading XLIFF version "%s".', $xliffVersion));
+>>>>>>> web and vendor directory from composer install
         }
 
         return $this->fixXmlLocation($schemaSource, $xmlUri);
@@ -235,6 +273,7 @@ class XliffFileLoader implements LoaderInterface
     {
         $newPath = str_replace('\\', '/', __DIR__).'/schema/dic/xliff-core/xml.xsd';
         $parts = explode('/', $newPath);
+<<<<<<< HEAD
         $locationstart = 'file:///';
         if (0 === stripos($newPath, 'phar://')) {
             $tmpfile = tempnam(sys_get_temp_dir(), 'symfony');
@@ -249,6 +288,17 @@ class XliffFileLoader implements LoaderInterface
 
         $drive = '\\' === DIRECTORY_SEPARATOR ? array_shift($parts).'/' : '';
         $newPath = $locationstart.$drive.implode('/', array_map('rawurlencode', $parts));
+=======
+        if (0 === stripos($newPath, 'phar://')) {
+            $tmpfile = tempnam(sys_get_temp_dir(), 'sf2');
+            if ($tmpfile) {
+                copy($newPath, $tmpfile);
+                $parts = explode('/', str_replace('\\', '/', $tmpfile));
+            }
+        }
+        $drive = '\\' === DIRECTORY_SEPARATOR ? array_shift($parts).'/' : '';
+        $newPath = 'file:///'.$drive.implode('/', array_map('rawurlencode', $parts));
+>>>>>>> web and vendor directory from composer install
 
         return str_replace($xmlUri, $newPath, $schemaSource);
     }
@@ -286,7 +336,11 @@ class XliffFileLoader implements LoaderInterface
      *
      * @param \DOMDocument $dom
      *
+<<<<<<< HEAD
      * @throws InvalidArgumentException
+=======
+     * @throws \InvalidArgumentException
+>>>>>>> web and vendor directory from composer install
      *
      * @return string
      */
@@ -301,8 +355,13 @@ class XliffFileLoader implements LoaderInterface
 
             $namespace = $xliff->attributes->getNamedItem('xmlns');
             if ($namespace) {
+<<<<<<< HEAD
                 if (0 !== substr_compare('urn:oasis:names:tc:xliff:document:', $namespace->nodeValue, 0, 34)) {
                     throw new InvalidArgumentException(sprintf('Not a valid XLIFF namespace "%s"', $namespace));
+=======
+                if (substr_compare('urn:oasis:names:tc:xliff:document:', $namespace->nodeValue, 0, 34) !== 0) {
+                    throw new \InvalidArgumentException(sprintf('Not a valid XLIFF namespace "%s"', $namespace));
+>>>>>>> web and vendor directory from composer install
                 }
 
                 return substr($namespace, 34);
@@ -313,7 +372,11 @@ class XliffFileLoader implements LoaderInterface
         return '1.2';
     }
 
+<<<<<<< HEAD
     /**
+=======
+    /*
+>>>>>>> web and vendor directory from composer install
      * @param \SimpleXMLElement|null $noteElement
      * @param string|null            $encoding
      *
@@ -327,7 +390,10 @@ class XliffFileLoader implements LoaderInterface
             return $notes;
         }
 
+<<<<<<< HEAD
         /** @var \SimpleXMLElement $xmlNote */
+=======
+>>>>>>> web and vendor directory from composer install
         foreach ($noteElement as $xmlNote) {
             $noteAttributes = $xmlNote->attributes();
             $note = array('content' => $this->utf8ToCharset((string) $xmlNote, $encoding));

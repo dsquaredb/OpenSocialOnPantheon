@@ -46,6 +46,11 @@ interface ProfilerStorageInterface
     /**
      * Saves a Profile.
      *
+<<<<<<< HEAD
+=======
+     * @param Profile $profile A Profile instance
+     *
+>>>>>>> web and vendor directory from composer install
      * @return bool Write operation successful
      */
     public function write(Profile $profile);

@@ -15,7 +15,10 @@ class Alias
 {
     private $id;
     private $public;
+<<<<<<< HEAD
     private $private;
+=======
+>>>>>>> web and vendor directory from composer install
 
     /**
      * @param string $id     Alias identifier
@@ -23,9 +26,14 @@ class Alias
      */
     public function __construct($id, $public = true)
     {
+<<<<<<< HEAD
         $this->id = (string) $id;
         $this->public = $public;
         $this->private = 2 > func_num_args();
+=======
+        $this->id = strtolower($id);
+        $this->public = $public;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -42,12 +50,16 @@ class Alias
      * Sets if this Alias is public.
      *
      * @param bool $boolean If this Alias should be public
+<<<<<<< HEAD
      *
      * @return $this
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function setPublic($boolean)
     {
         $this->public = (bool) $boolean;
+<<<<<<< HEAD
         $this->private = false;
 
         return $this;
@@ -80,6 +92,8 @@ class Alias
     public function isPrivate()
     {
         return $this->private;
+=======
+>>>>>>> web and vendor directory from composer install
     }
 
     /**

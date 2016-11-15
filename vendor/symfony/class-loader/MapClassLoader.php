@@ -11,20 +11,31 @@
 
 namespace Symfony\Component\ClassLoader;
 
+<<<<<<< HEAD
 @trigger_error('The '.__NAMESPACE__.'\MapClassLoader class is deprecated since Symfony 3.3 and will be removed in 4.0. Use Composer instead.', E_USER_DEPRECATED);
 
+=======
+>>>>>>> web and vendor directory from composer install
 /**
  * A class loader that uses a mapping file to look up paths.
  *
  * @author Fabien Potencier <fabien@symfony.com>
+<<<<<<< HEAD
  *
  * @deprecated since version 3.3, to be removed in 4.0.
+=======
+>>>>>>> web and vendor directory from composer install
  */
 class MapClassLoader
 {
     private $map = array();
 
     /**
+<<<<<<< HEAD
+=======
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param array $map A map where keys are classes and values the absolute file path
      */
     public function __construct(array $map)

@@ -19,6 +19,11 @@ namespace Symfony\Component\HttpFoundation\File\Exception;
 class AccessDeniedException extends FileException
 {
     /**
+<<<<<<< HEAD
+=======
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param string $path The path to the accessed file
      */
     public function __construct($path)

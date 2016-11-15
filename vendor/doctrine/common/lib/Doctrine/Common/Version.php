@@ -34,7 +34,11 @@ class Version
     /**
      * Current Doctrine Version.
      */
+<<<<<<< HEAD
     const VERSION = '2.6.2-DEV';
+=======
+    const VERSION = '2.5.3';
+>>>>>>> web and vendor directory from composer install
 
     /**
      * Compares a Doctrine version with the current one.

@@ -3,7 +3,11 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
+=======
+ * (c) 2009 Fabien Potencier
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -32,5 +36,8 @@ class Twig_Node_AutoEscape extends Twig_Node
         $compiler->subcompile($this->getNode('body'));
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_Node_AutoEscape', 'Twig\Node\AutoEscapeNode', false);
+=======
+>>>>>>> web and vendor directory from composer install

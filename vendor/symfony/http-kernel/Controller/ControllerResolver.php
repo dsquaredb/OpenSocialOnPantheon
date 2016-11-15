@@ -15,13 +15,22 @@ use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
+<<<<<<< HEAD
+=======
+ * ControllerResolver.
+ *
+>>>>>>> web and vendor directory from composer install
  * This implementation uses the '_controller' request attribute to determine
  * the controller to execute and uses the request attributes to determine
  * the controller method arguments.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
+<<<<<<< HEAD
 class ControllerResolver implements ArgumentResolverInterface, ControllerResolverInterface
+=======
+class ControllerResolver implements ControllerResolverInterface
+>>>>>>> web and vendor directory from composer install
 {
     private $logger;
 
@@ -35,18 +44,28 @@ class ControllerResolver implements ArgumentResolverInterface, ControllerResolve
     private $supportsVariadic;
 
     /**
+<<<<<<< HEAD
      * If scalar types exists.
      *
      * @var bool
      */
     private $supportsScalarTypes;
 
+=======
+     * Constructor.
+     *
+     * @param LoggerInterface $logger A LoggerInterface instance
+     */
+>>>>>>> web and vendor directory from composer install
     public function __construct(LoggerInterface $logger = null)
     {
         $this->logger = $logger;
 
         $this->supportsVariadic = method_exists('ReflectionParameter', 'isVariadic');
+<<<<<<< HEAD
         $this->supportsScalarTypes = method_exists('ReflectionParameter', 'getType');
+=======
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -88,7 +107,11 @@ class ControllerResolver implements ArgumentResolverInterface, ControllerResolve
         $callable = $this->createController($controller);
 
         if (!is_callable($callable)) {
+<<<<<<< HEAD
             throw new \InvalidArgumentException(sprintf('The controller for URI "%s" is not callable. %s', $request->getPathInfo(), $this->getControllerError($callable)));
+=======
+            throw new \InvalidArgumentException(sprintf('Controller "%s" for URI "%s" is not callable.', $controller, $request->getPathInfo()));
+>>>>>>> web and vendor directory from composer install
         }
 
         return $callable;
@@ -96,6 +119,7 @@ class ControllerResolver implements ArgumentResolverInterface, ControllerResolve
 
     /**
      * {@inheritdoc}
+<<<<<<< HEAD
      *
      * @deprecated This method is deprecated as of 3.1 and will be removed in 4.0. Implement the ArgumentResolverInterface and inject it in the HttpKernel instead.
      */
@@ -103,6 +127,11 @@ class ControllerResolver implements ArgumentResolverInterface, ControllerResolve
     {
         @trigger_error(sprintf('%s is deprecated as of 3.1 and will be removed in 4.0. Implement the %s and inject it in the HttpKernel instead.', __METHOD__, ArgumentResolverInterface::class), E_USER_DEPRECATED);
 
+=======
+     */
+    public function getArguments(Request $request, $controller)
+    {
+>>>>>>> web and vendor directory from composer install
         if (is_array($controller)) {
             $r = new \ReflectionMethod($controller[0], $controller[1]);
         } elseif (is_object($controller) && !$controller instanceof \Closure) {
@@ -121,6 +150,7 @@ class ControllerResolver implements ArgumentResolverInterface, ControllerResolve
      * @param \ReflectionParameter[] $parameters
      *
      * @return array The arguments to use when calling the action
+<<<<<<< HEAD
      *
      * @deprecated This method is deprecated as of 3.1 and will be removed in 4.0. Implement the ArgumentResolverInterface and inject it in the HttpKernel instead.
      */
@@ -128,6 +158,11 @@ class ControllerResolver implements ArgumentResolverInterface, ControllerResolve
     {
         @trigger_error(sprintf('%s is deprecated as of 3.1 and will be removed in 4.0. Implement the %s and inject it in the HttpKernel instead.', __METHOD__, ArgumentResolverInterface::class), E_USER_DEPRECATED);
 
+=======
+     */
+    protected function doGetArguments(Request $request, $controller, array $parameters)
+    {
+>>>>>>> web and vendor directory from composer install
         $attributes = $request->attributes->all();
         $arguments = array();
         foreach ($parameters as $param) {
@@ -141,7 +176,11 @@ class ControllerResolver implements ArgumentResolverInterface, ControllerResolve
                 $arguments[] = $request;
             } elseif ($param->isDefaultValueAvailable()) {
                 $arguments[] = $param->getDefaultValue();
+<<<<<<< HEAD
             } elseif ($this->supportsScalarTypes && $param->hasType() && $param->allowsNull()) {
+=======
+            } elseif ($param->allowsNull()) {
+>>>>>>> web and vendor directory from composer install
                 $arguments[] = null;
             } else {
                 if (is_array($controller)) {
@@ -194,6 +233,7 @@ class ControllerResolver implements ArgumentResolverInterface, ControllerResolve
     {
         return new $class();
     }
+<<<<<<< HEAD
 
     private function getControllerError($callable)
     {
@@ -255,4 +295,6 @@ class ControllerResolver implements ArgumentResolverInterface, ControllerResolve
 
         return $message;
     }
+=======
+>>>>>>> web and vendor directory from composer install
 }

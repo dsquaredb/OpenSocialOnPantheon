@@ -48,6 +48,11 @@ interface OutputFormatterStyleInterface
 
     /**
      * Sets multiple style options at once.
+<<<<<<< HEAD
+=======
+     *
+     * @param array $options
+>>>>>>> web and vendor directory from composer install
      */
     public function setOptions(array $options);
 

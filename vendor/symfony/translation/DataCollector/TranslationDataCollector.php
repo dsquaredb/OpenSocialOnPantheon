@@ -22,8 +22,19 @@ use Symfony\Component\Translation\DataCollectorTranslator;
  */
 class TranslationDataCollector extends DataCollector implements LateDataCollectorInterface
 {
+<<<<<<< HEAD
     private $translator;
 
+=======
+    /**
+     * @var DataCollectorTranslator
+     */
+    private $translator;
+
+    /**
+     * @param DataCollectorTranslator $translator
+     */
+>>>>>>> web and vendor directory from composer install
     public function __construct(DataCollectorTranslator $translator)
     {
         $this->translator = $translator;
@@ -38,11 +49,14 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
 
         $this->data = $this->computeCount($messages);
         $this->data['messages'] = $messages;
+<<<<<<< HEAD
 
         $this->data['locale'] = $this->translator->getLocale();
         $this->data['fallback_locales'] = $this->translator->getFallbackLocales();
 
         $this->data = $this->cloneVar($this->data);
+=======
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -53,6 +67,7 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
     }
 
     /**
+<<<<<<< HEAD
      * {@inheritdoc}
      */
     public function reset()
@@ -61,6 +76,8 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
     }
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * @return array
      */
     public function getMessages()
@@ -92,6 +109,7 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
         return isset($this->data[DataCollectorTranslator::MESSAGE_DEFINED]) ? $this->data[DataCollectorTranslator::MESSAGE_DEFINED] : 0;
     }
 
+<<<<<<< HEAD
     public function getLocale()
     {
         return !empty($this->data['locale']) ? $this->data['locale'] : null;
@@ -102,6 +120,8 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
         return (isset($this->data['fallback_locales']) && count($this->data['fallback_locales']) > 0) ? $this->data['fallback_locales'] : array();
     }
 
+=======
+>>>>>>> web and vendor directory from composer install
     /**
      * {@inheritdoc}
      */

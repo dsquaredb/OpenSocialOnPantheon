@@ -33,6 +33,11 @@ class StreamOutput extends Output
     private $stream;
 
     /**
+<<<<<<< HEAD
+=======
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param resource                      $stream    A stream resource
      * @param int                           $verbosity The verbosity level (one of the VERBOSITY constants in OutputInterface)
      * @param bool|null                     $decorated Whether to decorate messages (null for auto-guessing)
@@ -83,24 +88,35 @@ class StreamOutput extends Output
      *
      * Colorization is disabled if not supported by the stream:
      *
+<<<<<<< HEAD
      * This is tricky on Windows, because Cygwin, Msys2 etc emulate pseudo
      * terminals via named pipes, so we can only check the environment.
      *
      * Reference: Composer\XdebugHandler\Process::supportsColor
      * https://github.com/composer/xdebug-handler
+=======
+     *  -  Windows != 10.0.10586 without Ansicon, ConEmu or Mintty
+     *  -  non tty consoles
+>>>>>>> web and vendor directory from composer install
      *
      * @return bool true if the stream supports colorization, false otherwise
      */
     protected function hasColorSupport()
     {
         if (DIRECTORY_SEPARATOR === '\\') {
+<<<<<<< HEAD
             return (function_exists('sapi_windows_vt100_support')
                 && @sapi_windows_vt100_support($this->stream))
+=======
+            return
+                '10.0.10586' === PHP_WINDOWS_VERSION_MAJOR.'.'.PHP_WINDOWS_VERSION_MINOR.'.'.PHP_WINDOWS_VERSION_BUILD
+>>>>>>> web and vendor directory from composer install
                 || false !== getenv('ANSICON')
                 || 'ON' === getenv('ConEmuANSI')
                 || 'xterm' === getenv('TERM');
         }
 
+<<<<<<< HEAD
         if (function_exists('stream_isatty')) {
             return @stream_isatty($this->stream);
         }
@@ -112,5 +128,8 @@ class StreamOutput extends Output
         $stat = @fstat($this->stream);
         // Check if formatted mode is S_IFCHR
         return $stat ? 0020000 === ($stat['mode'] & 0170000) : false;
+=======
+        return function_exists('posix_isatty') && @posix_isatty($this->stream);
+>>>>>>> web and vendor directory from composer install
     }
 }

@@ -3,8 +3,13 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
  * (c) Armin Ronacher
+=======
+ * (c) 2009 Fabien Potencier
+ * (c) 2009 Armin Ronacher
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -19,8 +24,11 @@
  *    <title>{% block title %}{% endblock %} - My Webpage</title>
  *  {% endblock %}
  * </pre>
+<<<<<<< HEAD
  *
  * @final
+=======
+>>>>>>> web and vendor directory from composer install
  */
 class Twig_TokenParser_Block extends Twig_TokenParser
 {
@@ -30,7 +38,11 @@ class Twig_TokenParser_Block extends Twig_TokenParser
         $stream = $this->parser->getStream();
         $name = $stream->expect(Twig_Token::NAME_TYPE)->getValue();
         if ($this->parser->hasBlock($name)) {
+<<<<<<< HEAD
             throw new Twig_Error_Syntax(sprintf("The block '%s' has already been defined line %d.", $name, $this->parser->getBlock($name)->getTemplateLine()), $stream->getCurrent()->getLine(), $stream->getSourceContext());
+=======
+            throw new Twig_Error_Syntax(sprintf("The block '%s' has already been defined line %d.", $name, $this->parser->getBlock($name)->getTemplateLine()), $stream->getCurrent()->getLine(), $stream->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
         }
         $this->parser->setBlock($name, $block = new Twig_Node_Block($name, new Twig_Node(array()), $lineno));
         $this->parser->pushLocalScope();
@@ -42,7 +54,11 @@ class Twig_TokenParser_Block extends Twig_TokenParser
                 $value = $token->getValue();
 
                 if ($value != $name) {
+<<<<<<< HEAD
                     throw new Twig_Error_Syntax(sprintf('Expected endblock for block "%s" (but "%s" given).', $name, $value), $stream->getCurrent()->getLine(), $stream->getSourceContext());
+=======
+                    throw new Twig_Error_Syntax(sprintf('Expected endblock for block "%s" (but "%s" given).', $name, $value), $stream->getCurrent()->getLine(), $stream->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
                 }
             }
         } else {
@@ -69,5 +85,8 @@ class Twig_TokenParser_Block extends Twig_TokenParser
         return 'block';
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_TokenParser_Block', 'Twig\TokenParser\BlockTokenParser', false);
+=======
+>>>>>>> web and vendor directory from composer install

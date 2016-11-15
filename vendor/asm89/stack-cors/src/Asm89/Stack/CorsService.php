@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of asm89/stack-cors.
  *
@@ -9,6 +10,8 @@
  * file that was distributed with this source code.
  */
 
+=======
+>>>>>>> web and vendor directory from composer install
 namespace Asm89\Stack;
 
 use Symfony\Component\HttpKernel\HttpKernelInterface;
@@ -26,9 +29,15 @@ class CorsService
 
     private function normalizeOptions(array $options = array())
     {
+<<<<<<< HEAD
         $options += array(
             'allowedOrigins' => array(),
             'allowedOriginsPatterns' => array(),
+=======
+
+        $options += array(
+            'allowedOrigins' => array(),
+>>>>>>> web and vendor directory from composer install
             'supportsCredentials' => false,
             'allowedHeaders' => array(),
             'exposedHeaders' => array(),
@@ -38,6 +47,7 @@ class CorsService
 
         // normalize array('*') to true
         if (in_array('*', $options['allowedOrigins'])) {
+<<<<<<< HEAD
             $options['allowedOrigins'] = true;
         }
         if (in_array('*', $options['allowedHeaders'])) {
@@ -50,6 +60,20 @@ class CorsService
             $options['allowedMethods'] = true;
         } else {
             $options['allowedMethods'] = array_map('strtoupper', $options['allowedMethods']);
+=======
+          $options['allowedOrigins'] = true;
+        }
+        if (in_array('*', $options['allowedHeaders'])) {
+          $options['allowedHeaders'] = true;
+        } else {
+          $options['allowedHeaders'] = array_map('strtolower', $options['allowedHeaders']);
+        }
+
+        if (in_array('*', $options['allowedMethods'])) {
+          $options['allowedMethods'] = true;
+        } else {
+          $options['allowedMethods'] = array_map('strtoupper', $options['allowedMethods']);
+>>>>>>> web and vendor directory from composer install
         }
 
         return $options;
@@ -62,25 +86,41 @@ class CorsService
 
     public function isCorsRequest(Request $request)
     {
+<<<<<<< HEAD
         return $request->headers->has('Origin') && !$this->isSameHost($request);
+=======
+        return $request->headers->has('Origin');
+>>>>>>> web and vendor directory from composer install
     }
 
     public function isPreflightRequest(Request $request)
     {
         return $this->isCorsRequest($request)
+<<<<<<< HEAD
             && $request->getMethod() === 'OPTIONS'
+=======
+            &&$request->getMethod() === 'OPTIONS'
+>>>>>>> web and vendor directory from composer install
             && $request->headers->has('Access-Control-Request-Method');
     }
 
     public function addActualRequestHeaders(Response $response, Request $request)
     {
+<<<<<<< HEAD
         if (!$this->checkOrigin($request)) {
+=======
+        if ( ! $this->checkOrigin($request)) {
+>>>>>>> web and vendor directory from composer install
             return $response;
         }
 
         $response->headers->set('Access-Control-Allow-Origin', $request->headers->get('Origin'));
 
+<<<<<<< HEAD
         if (!$response->headers->has('Vary')) {
+=======
+        if ( ! $response->headers->has('Vary')) {
+>>>>>>> web and vendor directory from composer install
             $response->headers->set('Vary', 'Origin');
         } else {
             $response->headers->set('Vary', $response->headers->get('Vary') . ', Origin');
@@ -135,11 +175,19 @@ class CorsService
 
     private function checkPreflightRequestConditions(Request $request)
     {
+<<<<<<< HEAD
         if (!$this->checkOrigin($request)) {
             return $this->createBadRequestResponse(403, 'Origin not allowed');
         }
 
         if (!$this->checkMethod($request)) {
+=======
+        if ( ! $this->checkOrigin($request)) {
+            return $this->createBadRequestResponse(403, 'Origin not allowed');
+        }
+
+        if ( ! $this->checkMethod($request)) {
+>>>>>>> web and vendor directory from composer install
             return $this->createBadRequestResponse(405, 'Method not allowed');
         }
 
@@ -147,10 +195,17 @@ class CorsService
         // if allowedHeaders has been set to true ('*' allow all flag) just skip this check
         if ($this->options['allowedHeaders'] !== true && $request->headers->has('Access-Control-Request-Headers')) {
             $headers        = strtolower($request->headers->get('Access-Control-Request-Headers'));
+<<<<<<< HEAD
             $requestHeaders = array_filter(explode(',', $headers));
 
             foreach ($requestHeaders as $header) {
                 if (!in_array(trim($header), $this->options['allowedHeaders'])) {
+=======
+            $requestHeaders = explode(',', $headers);
+
+            foreach ($requestHeaders as $header) {
+                if ( ! in_array(trim($header), $this->options['allowedHeaders'])) {
+>>>>>>> web and vendor directory from composer install
                     return $this->createBadRequestResponse(403, 'Header not allowed');
                 }
             }
@@ -164,6 +219,7 @@ class CorsService
         return new Response($reason, $code);
     }
 
+<<<<<<< HEAD
     private function isSameHost(Request $request)
     {
         return $request->headers->get('Origin') === $request->getSchemeAndHttpHost();
@@ -171,12 +227,16 @@ class CorsService
 
     private function checkOrigin(Request $request)
     {
+=======
+    private function checkOrigin(Request $request) {
+>>>>>>> web and vendor directory from composer install
         if ($this->options['allowedOrigins'] === true) {
             // allow all '*' flag
             return true;
         }
         $origin = $request->headers->get('Origin');
 
+<<<<<<< HEAD
         if (in_array($origin, $this->options['allowedOrigins'])) {
             return true;
         }
@@ -192,6 +252,12 @@ class CorsService
 
     private function checkMethod(Request $request)
     {
+=======
+        return in_array($origin, $this->options['allowedOrigins']);
+    }
+
+    private function checkMethod(Request $request) {
+>>>>>>> web and vendor directory from composer install
         if ($this->options['allowedMethods'] === true) {
             // allow all '*' flag
             return true;
@@ -200,4 +266,8 @@ class CorsService
         $requestMethod = strtoupper($request->headers->get('Access-Control-Request-Method'));
         return in_array($requestMethod, $this->options['allowedMethods']);
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> web and vendor directory from composer install
 }

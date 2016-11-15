@@ -1,6 +1,7 @@
 CHANGELOG
 =========
 
+<<<<<<< HEAD
 3.3.0
 -----
 
@@ -14,6 +15,8 @@ CHANGELOG
  * The UniversalClassLoader class has been removed
  * The ApcUniversalClassLoader class has been removed
 
+=======
+>>>>>>> web and vendor directory from composer install
 2.4.0
 -----
 

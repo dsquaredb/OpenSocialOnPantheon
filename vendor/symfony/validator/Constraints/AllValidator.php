@@ -13,6 +13,10 @@ namespace Symfony\Component\Validator\Constraints;
 
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
+<<<<<<< HEAD
+=======
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 /**
@@ -39,10 +43,24 @@ class AllValidator extends ConstraintValidator
 
         $context = $this->context;
 
+<<<<<<< HEAD
         $validator = $context->getValidator()->inContext($context);
 
         foreach ($value as $key => $element) {
             $validator->atPath('['.$key.']')->validate($element, $constraint->constraints);
+=======
+        if ($context instanceof ExecutionContextInterface) {
+            $validator = $context->getValidator()->inContext($context);
+
+            foreach ($value as $key => $element) {
+                $validator->atPath('['.$key.']')->validate($element, $constraint->constraints);
+            }
+        } else {
+            // 2.4 API
+            foreach ($value as $key => $element) {
+                $context->validateValue($element, $constraint->constraints, '['.$key.']');
+            }
+>>>>>>> web and vendor directory from composer install
         }
     }
 }

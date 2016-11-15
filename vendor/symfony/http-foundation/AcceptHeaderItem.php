@@ -18,12 +18,38 @@ namespace Symfony\Component\HttpFoundation;
  */
 class AcceptHeaderItem
 {
+<<<<<<< HEAD
     private $value;
     private $quality = 1.0;
     private $index = 0;
     private $attributes = array();
 
     /**
+=======
+    /**
+     * @var string
+     */
+    private $value;
+
+    /**
+     * @var float
+     */
+    private $quality = 1.0;
+
+    /**
+     * @var int
+     */
+    private $index = 0;
+
+    /**
+     * @var array
+     */
+    private $attributes = array();
+
+    /**
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param string $value
      * @param array  $attributes
      */
@@ -40,7 +66,11 @@ class AcceptHeaderItem
      *
      * @param string $itemValue
      *
+<<<<<<< HEAD
      * @return self
+=======
+     * @return AcceptHeaderItem
+>>>>>>> web and vendor directory from composer install
      */
     public static function fromString($itemValue)
     {
@@ -50,7 +80,11 @@ class AcceptHeaderItem
 
         $lastNullAttribute = null;
         foreach ($bits as $bit) {
+<<<<<<< HEAD
             if (($start = substr($bit, 0, 1)) === ($end = substr($bit, -1)) && ('"' === $start || '\'' === $start)) {
+=======
+            if (($start = substr($bit, 0, 1)) === ($end = substr($bit, -1)) && ($start === '"' || $start === '\'')) {
+>>>>>>> web and vendor directory from composer install
                 $attributes[$lastNullAttribute] = substr($bit, 1, -1);
             } elseif ('=' === $end) {
                 $lastNullAttribute = $bit = substr($bit, 0, -1);
@@ -61,7 +95,11 @@ class AcceptHeaderItem
             }
         }
 
+<<<<<<< HEAD
         return new self(($start = substr($value, 0, 1)) === ($end = substr($value, -1)) && ('"' === $start || '\'' === $start) ? substr($value, 1, -1) : $value, $attributes);
+=======
+        return new self(($start = substr($value, 0, 1)) === ($end = substr($value, -1)) && ($start === '"' || $start === '\'') ? substr($value, 1, -1) : $value, $attributes);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -86,7 +124,11 @@ class AcceptHeaderItem
      *
      * @param string $value
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return AcceptHeaderItem
+>>>>>>> web and vendor directory from composer install
      */
     public function setValue($value)
     {
@@ -110,7 +152,11 @@ class AcceptHeaderItem
      *
      * @param float $quality
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return AcceptHeaderItem
+>>>>>>> web and vendor directory from composer install
      */
     public function setQuality($quality)
     {
@@ -134,7 +180,11 @@ class AcceptHeaderItem
      *
      * @param int $index
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return AcceptHeaderItem
+>>>>>>> web and vendor directory from composer install
      */
     public function setIndex($index)
     {
@@ -194,7 +244,11 @@ class AcceptHeaderItem
      * @param string $name
      * @param string $value
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return AcceptHeaderItem
+>>>>>>> web and vendor directory from composer install
      */
     public function setAttribute($name, $value)
     {

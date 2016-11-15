@@ -46,6 +46,11 @@ use Symfony\Component\Routing\Exception\RouteNotFoundException;
 use Psr\Log\LoggerInterface;
 
 /**
+<<<<<<< HEAD
+=======
+ * {$options['class']}
+ *
+>>>>>>> web and vendor directory from composer install
  * This class has been auto-generated
  * by the Symfony Routing Component.
  */
@@ -53,6 +58,12 @@ class {$options['class']} extends {$options['base_class']}
 {
     private static \$declaredRoutes;
 
+<<<<<<< HEAD
+=======
+    /**
+     * Constructor.
+     */
+>>>>>>> web and vendor directory from composer install
     public function __construct(RequestContext \$context, LoggerInterface \$logger = null)
     {
         \$this->context = \$context;

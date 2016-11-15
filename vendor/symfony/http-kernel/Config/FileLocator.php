@@ -25,6 +25,11 @@ class FileLocator extends BaseFileLocator
     private $path;
 
     /**
+<<<<<<< HEAD
+=======
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param KernelInterface $kernel A KernelInterface instance
      * @param null|string     $path   The path the global resource directory
      * @param array           $paths  An array of paths where to look for resources

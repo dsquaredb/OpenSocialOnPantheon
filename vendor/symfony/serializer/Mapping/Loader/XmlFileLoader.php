@@ -36,11 +36,20 @@ class XmlFileLoader extends FileLoader
     public function loadClassMetadata(ClassMetadataInterface $classMetadata)
     {
         if (null === $this->classes) {
+<<<<<<< HEAD
             $this->classes = $this->getClassesFromXml();
         }
 
         if (!$this->classes) {
             return false;
+=======
+            $this->classes = array();
+            $xml = $this->parseFile($this->file);
+
+            foreach ($xml->class as $class) {
+                $this->classes[(string) $class['name']] = $class;
+            }
+>>>>>>> web and vendor directory from composer install
         }
 
         $attributesMetadata = $classMetadata->getAttributesMetadata();
@@ -61,10 +70,13 @@ class XmlFileLoader extends FileLoader
                 foreach ($attribute->group as $group) {
                     $attributeMetadata->addGroup((string) $group);
                 }
+<<<<<<< HEAD
 
                 if (isset($attribute['max-depth'])) {
                     $attributeMetadata->setMaxDepth((int) $attribute['max-depth']);
                 }
+=======
+>>>>>>> web and vendor directory from composer install
             }
 
             return true;
@@ -74,6 +86,7 @@ class XmlFileLoader extends FileLoader
     }
 
     /**
+<<<<<<< HEAD
      * Return the names of the classes mapped in this file.
      *
      * @return string[] The classes names
@@ -88,6 +101,8 @@ class XmlFileLoader extends FileLoader
     }
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * Parses a XML File.
      *
      * @param string $file Path of file
@@ -106,6 +121,7 @@ class XmlFileLoader extends FileLoader
 
         return simplexml_import_dom($dom);
     }
+<<<<<<< HEAD
 
     private function getClassesFromXml()
     {
@@ -118,4 +134,6 @@ class XmlFileLoader extends FileLoader
 
         return $classes;
     }
+=======
+>>>>>>> web and vendor directory from composer install
 }

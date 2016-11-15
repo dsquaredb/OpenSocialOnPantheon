@@ -11,14 +11,21 @@
 
 namespace Symfony\Component\DependencyInjection\Exception;
 
+<<<<<<< HEAD
 use Psr\Container\ContainerExceptionInterface;
 
+=======
+>>>>>>> web and vendor directory from composer install
 /**
  * Base ExceptionInterface for Dependency Injection component.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Bulat Shakirzyanov <bulat@theopenskyproject.com>
  */
+<<<<<<< HEAD
 interface ExceptionInterface extends ContainerExceptionInterface
+=======
+interface ExceptionInterface
+>>>>>>> web and vendor directory from composer install
 {
 }

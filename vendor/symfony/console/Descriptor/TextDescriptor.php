@@ -13,8 +13,11 @@ namespace Symfony\Component\Console\Descriptor;
 
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\Command;
+<<<<<<< HEAD
 use Symfony\Component\Console\Formatter\OutputFormatter;
 use Symfony\Component\Console\Helper\Helper;
+=======
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputOption;
@@ -39,6 +42,7 @@ class TextDescriptor extends Descriptor
             $default = '';
         }
 
+<<<<<<< HEAD
         $totalWidth = isset($options['total_width']) ? $options['total_width'] : Helper::strlen($argument->getName());
         $spacingWidth = $totalWidth - strlen($argument->getName());
 
@@ -47,6 +51,16 @@ class TextDescriptor extends Descriptor
             str_repeat(' ', $spacingWidth),
             // + 4 = 2 spaces before <info>, 2 spaces after </info>
             preg_replace('/\s*[\r\n]\s*/', "\n".str_repeat(' ', $totalWidth + 4), $argument->getDescription()),
+=======
+        $totalWidth = isset($options['total_width']) ? $options['total_width'] : strlen($argument->getName());
+        $spacingWidth = $totalWidth - strlen($argument->getName()) + 2;
+
+        $this->writeText(sprintf('  <info>%s</info>%s%s%s',
+            $argument->getName(),
+            str_repeat(' ', $spacingWidth),
+            // + 17 = 2 spaces + <info> + </info> + 2 spaces
+            preg_replace('/\s*[\r\n]\s*/', "\n".str_repeat(' ', $totalWidth + 17), $argument->getDescription()),
+>>>>>>> web and vendor directory from composer install
             $default
         ), $options);
     }
@@ -77,6 +91,7 @@ class TextDescriptor extends Descriptor
             sprintf('--%s%s', $option->getName(), $value)
         );
 
+<<<<<<< HEAD
         $spacingWidth = $totalWidth - Helper::strlen($synopsis);
 
         $this->writeText(sprintf('  <info>%s</info>  %s%s%s%s',
@@ -84,6 +99,15 @@ class TextDescriptor extends Descriptor
             str_repeat(' ', $spacingWidth),
             // + 4 = 2 spaces before <info>, 2 spaces after </info>
             preg_replace('/\s*[\r\n]\s*/', "\n".str_repeat(' ', $totalWidth + 4), $option->getDescription()),
+=======
+        $spacingWidth = $totalWidth - strlen($synopsis) + 2;
+
+        $this->writeText(sprintf('  <info>%s</info>%s%s%s%s',
+            $synopsis,
+            str_repeat(' ', $spacingWidth),
+            // + 17 = 2 spaces + <info> + </info> + 2 spaces
+            preg_replace('/\s*[\r\n]\s*/', "\n".str_repeat(' ', $totalWidth + 17), $option->getDescription()),
+>>>>>>> web and vendor directory from composer install
             $default,
             $option->isArray() ? '<comment> (multiple values allowed)</comment>' : ''
         ), $options);
@@ -96,7 +120,11 @@ class TextDescriptor extends Descriptor
     {
         $totalWidth = $this->calculateTotalWidthForOptions($definition->getOptions());
         foreach ($definition->getArguments() as $argument) {
+<<<<<<< HEAD
             $totalWidth = max($totalWidth, Helper::strlen($argument->getName()));
+=======
+            $totalWidth = max($totalWidth, strlen($argument->getName()));
+>>>>>>> web and vendor directory from composer install
         }
 
         if ($definition->getArguments()) {
@@ -143,7 +171,11 @@ class TextDescriptor extends Descriptor
         $this->writeText('<comment>Usage:</comment>', $options);
         foreach (array_merge(array($command->getSynopsis(true)), $command->getAliases(), $command->getUsages()) as $usage) {
             $this->writeText("\n");
+<<<<<<< HEAD
             $this->writeText('  '.OutputFormatter::escape($usage), $options);
+=======
+            $this->writeText('  '.$usage, $options);
+>>>>>>> web and vendor directory from composer install
         }
         $this->writeText("\n");
 
@@ -191,6 +223,7 @@ class TextDescriptor extends Descriptor
             $this->writeText("\n");
             $this->writeText("\n");
 
+<<<<<<< HEAD
             $commands = $description->getCommands();
             $namespaces = $description->getNamespaces();
             if ($describedNamespace && $namespaces) {
@@ -205,6 +238,9 @@ class TextDescriptor extends Descriptor
             $width = $this->getColumnWidth(call_user_func_array('array_merge', array_map(function ($namespace) use ($commands) {
                 return array_intersect($namespace['commands'], array_keys($commands));
             }, $namespaces)));
+=======
+            $width = $this->getColumnWidth($description->getCommands());
+>>>>>>> web and vendor directory from composer install
 
             if ($describedNamespace) {
                 $this->writeText(sprintf('<comment>Available commands for the "%s" namespace:</comment>', $describedNamespace), $options);
@@ -212,6 +248,7 @@ class TextDescriptor extends Descriptor
                 $this->writeText('<comment>Available commands:</comment>', $options);
             }
 
+<<<<<<< HEAD
             foreach ($namespaces as $namespace) {
                 $namespace['commands'] = array_filter($namespace['commands'], function ($name) use ($commands) {
                     return isset($commands[$name]);
@@ -221,6 +258,10 @@ class TextDescriptor extends Descriptor
                     continue;
                 }
 
+=======
+            // add commands by namespace
+            foreach ($description->getNamespaces() as $namespace) {
+>>>>>>> web and vendor directory from composer install
                 if (!$describedNamespace && ApplicationDescription::GLOBAL_NAMESPACE !== $namespace['id']) {
                     $this->writeText("\n");
                     $this->writeText(' <comment>'.$namespace['id'].'</comment>', $options);
@@ -228,10 +269,15 @@ class TextDescriptor extends Descriptor
 
                 foreach ($namespace['commands'] as $name) {
                     $this->writeText("\n");
+<<<<<<< HEAD
                     $spacingWidth = $width - Helper::strlen($name);
                     $command = $commands[$name];
                     $commandAliases = $name === $command->getName() ? $this->getCommandAliasesText($command) : '';
                     $this->writeText(sprintf('  <info>%s</info>%s%s', $name, str_repeat(' ', $spacingWidth), $commandAliases.$command->getDescription()), $options);
+=======
+                    $spacingWidth = $width - strlen($name);
+                    $this->writeText(sprintf('  <info>%s</info>%s%s', $name, str_repeat(' ', $spacingWidth), $description->getCommand($name)->getDescription()), $options);
+>>>>>>> web and vendor directory from composer install
                 }
             }
 
@@ -251,6 +297,7 @@ class TextDescriptor extends Descriptor
     }
 
     /**
+<<<<<<< HEAD
      * Formats command aliases to show them in the command description.
      *
      * @return string
@@ -268,6 +315,8 @@ class TextDescriptor extends Descriptor
     }
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * Formats input option/argument default value.
      *
      * @param mixed $default
@@ -276,6 +325,7 @@ class TextDescriptor extends Descriptor
      */
     private function formatDefaultValue($default)
     {
+<<<<<<< HEAD
         if (INF === $default) {
             return 'INF';
         }
@@ -288,13 +338,21 @@ class TextDescriptor extends Descriptor
                     $default[$key] = OutputFormatter::escape($value);
                 }
             }
+=======
+        if (PHP_VERSION_ID < 50400) {
+            return str_replace(array('\/', '\\\\'), array('/', '\\'), json_encode($default));
+>>>>>>> web and vendor directory from composer install
         }
 
         return str_replace('\\\\', '\\', json_encode($default, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
     }
 
     /**
+<<<<<<< HEAD
      * @param (Command|string)[] $commands
+=======
+     * @param Command[] $commands
+>>>>>>> web and vendor directory from composer install
      *
      * @return int
      */
@@ -303,6 +361,7 @@ class TextDescriptor extends Descriptor
         $widths = array();
 
         foreach ($commands as $command) {
+<<<<<<< HEAD
             if ($command instanceof Command) {
                 $widths[] = Helper::strlen($command->getName());
                 foreach ($command->getAliases() as $alias) {
@@ -314,6 +373,15 @@ class TextDescriptor extends Descriptor
         }
 
         return $widths ? max($widths) + 2 : 0;
+=======
+            $widths[] = strlen($command->getName());
+            foreach ($command->getAliases() as $alias) {
+                $widths[] = strlen($alias);
+            }
+        }
+
+        return max($widths) + 2;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -321,15 +389,26 @@ class TextDescriptor extends Descriptor
      *
      * @return int
      */
+<<<<<<< HEAD
     private function calculateTotalWidthForOptions(array $options)
+=======
+    private function calculateTotalWidthForOptions($options)
+>>>>>>> web and vendor directory from composer install
     {
         $totalWidth = 0;
         foreach ($options as $option) {
             // "-" + shortcut + ", --" + name
+<<<<<<< HEAD
             $nameLength = 1 + max(Helper::strlen($option->getShortcut()), 1) + 4 + Helper::strlen($option->getName());
 
             if ($option->acceptValue()) {
                 $valueLength = 1 + Helper::strlen($option->getName()); // = + value
+=======
+            $nameLength = 1 + max(strlen($option->getShortcut()), 1) + 4 + strlen($option->getName());
+
+            if ($option->acceptValue()) {
+                $valueLength = 1 + strlen($option->getName()); // = + value
+>>>>>>> web and vendor directory from composer install
                 $valueLength += $option->isValueOptional() ? 2 : 0; // [ + ]
 
                 $nameLength += $valueLength;

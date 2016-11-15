@@ -11,6 +11,13 @@
 
 namespace Symfony\Component\Serializer\Normalizer;
 
+<<<<<<< HEAD
+=======
+use Symfony\Component\Serializer\Exception\CircularReferenceException;
+use Symfony\Component\Serializer\Exception\LogicException;
+use Symfony\Component\Serializer\Exception\RuntimeException;
+
+>>>>>>> web and vendor directory from composer install
 /**
  * Converts between objects with getter and setter methods and arrays.
  *
@@ -32,17 +39,110 @@ namespace Symfony\Component\Serializer\Normalizer;
  * @author Nils Adermann <naderman@naderman.de>
  * @author Kévin Dunglas <dunglas@gmail.com>
  */
+<<<<<<< HEAD
 class GetSetMethodNormalizer extends AbstractObjectNormalizer
 {
     private static $setterAccessibleCache = array();
     private $cache = array();
+=======
+class GetSetMethodNormalizer extends AbstractNormalizer
+{
+    /**
+     * {@inheritdoc}
+     *
+     * @throws LogicException
+     * @throws CircularReferenceException
+     */
+    public function normalize($object, $format = null, array $context = array())
+    {
+        if ($this->isCircularReference($object, $context)) {
+            return $this->handleCircularReference($object);
+        }
+
+        $reflectionObject = new \ReflectionObject($object);
+        $reflectionMethods = $reflectionObject->getMethods(\ReflectionMethod::IS_PUBLIC);
+        $allowedAttributes = $this->getAllowedAttributes($object, $context, true);
+
+        $attributes = array();
+        foreach ($reflectionMethods as $method) {
+            if ($this->isGetMethod($method)) {
+                $attributeName = lcfirst(substr($method->name, 0 === strpos($method->name, 'is') ? 2 : 3));
+                if (in_array($attributeName, $this->ignoredAttributes)) {
+                    continue;
+                }
+
+                if (false !== $allowedAttributes && !in_array($attributeName, $allowedAttributes)) {
+                    continue;
+                }
+
+                $attributeValue = $method->invoke($object);
+                if (isset($this->callbacks[$attributeName])) {
+                    $attributeValue = call_user_func($this->callbacks[$attributeName], $attributeValue);
+                }
+                if (null !== $attributeValue && !is_scalar($attributeValue)) {
+                    if (!$this->serializer instanceof NormalizerInterface) {
+                        throw new LogicException(sprintf('Cannot normalize attribute "%s" because injected serializer is not a normalizer', $attributeName));
+                    }
+
+                    $attributeValue = $this->serializer->normalize($attributeValue, $format, $context);
+                }
+
+                if ($this->nameConverter) {
+                    $attributeName = $this->nameConverter->normalize($attributeName);
+                }
+
+                $attributes[$attributeName] = $attributeValue;
+            }
+        }
+
+        return $attributes;
+    }
+
+    /**
+     * {@inheritdoc}
+     *
+     * @throws RuntimeException
+     */
+    public function denormalize($data, $class, $format = null, array $context = array())
+    {
+        $allowedAttributes = $this->getAllowedAttributes($class, $context, true);
+        $normalizedData = $this->prepareForDenormalization($data);
+
+        $reflectionClass = new \ReflectionClass($class);
+        $object = $this->instantiateObject($normalizedData, $class, $context, $reflectionClass, $allowedAttributes);
+
+        $classMethods = get_class_methods($object);
+        foreach ($normalizedData as $attribute => $value) {
+            if ($this->nameConverter) {
+                $attribute = $this->nameConverter->denormalize($attribute);
+            }
+
+            $allowed = $allowedAttributes === false || in_array($attribute, $allowedAttributes);
+            $ignored = in_array($attribute, $this->ignoredAttributes);
+
+            if ($allowed && !$ignored) {
+                $setter = 'set'.ucfirst($attribute);
+
+                if (in_array($setter, $classMethods) && !$reflectionClass->getMethod($setter)->isStatic()) {
+                    $object->$setter($value);
+                }
+            }
+        }
+
+        return $object;
+    }
+>>>>>>> web and vendor directory from composer install
 
     /**
      * {@inheritdoc}
      */
     public function supportsNormalization($data, $format = null)
     {
+<<<<<<< HEAD
         return parent::supportsNormalization($data, $format) && (isset($this->cache[$type = \get_class($data)]) ? $this->cache[$type] : $this->cache[$type] = $this->supports($type));
+=======
+        return is_object($data) && !$data instanceof \Traversable && $this->supports(get_class($data));
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -50,7 +150,11 @@ class GetSetMethodNormalizer extends AbstractObjectNormalizer
      */
     public function supportsDenormalization($data, $type, $format = null)
     {
+<<<<<<< HEAD
         return parent::supportsDenormalization($data, $type, $format) && (isset($this->cache[$type]) ? $this->cache[$type] : $this->cache[$type] = $this->supports($type));
+=======
+        return class_exists($type) && $this->supports($type);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -76,22 +180,36 @@ class GetSetMethodNormalizer extends AbstractObjectNormalizer
     /**
      * Checks if a method's name is get.* or is.*, and can be called without parameters.
      *
+<<<<<<< HEAD
+=======
+     * @param \ReflectionMethod $method the method to check
+     *
+>>>>>>> web and vendor directory from composer install
      * @return bool whether the method is a getter or boolean getter
      */
     private function isGetMethod(\ReflectionMethod $method)
     {
+<<<<<<< HEAD
         $methodLength = \strlen($method->name);
+=======
+        $methodLength = strlen($method->name);
+>>>>>>> web and vendor directory from composer install
 
         return
             !$method->isStatic() &&
             (
                 ((0 === strpos($method->name, 'get') && 3 < $methodLength) ||
+<<<<<<< HEAD
                 (0 === strpos($method->name, 'is') && 2 < $methodLength) ||
                 (0 === strpos($method->name, 'has') && 3 < $methodLength)) &&
+=======
+                (0 === strpos($method->name, 'is') && 2 < $methodLength)) &&
+>>>>>>> web and vendor directory from composer install
                 0 === $method->getNumberOfRequiredParameters()
             )
         ;
     }
+<<<<<<< HEAD
 
     /**
      * {@inheritdoc}
@@ -156,4 +274,6 @@ class GetSetMethodNormalizer extends AbstractObjectNormalizer
             $object->$setter($value);
         }
     }
+=======
+>>>>>>> web and vendor directory from composer install
 }

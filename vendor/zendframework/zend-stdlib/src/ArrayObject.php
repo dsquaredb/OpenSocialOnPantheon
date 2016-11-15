@@ -180,14 +180,25 @@ class ArrayObject implements IteratorAggregate, ArrayAccess, Serializable, Count
      */
     public function exchangeArray($data)
     {
+<<<<<<< HEAD
         if (!is_array($data) && !is_object($data)) {
             throw new Exception\InvalidArgumentException('Passed variable is not an array or object, using empty array instead');
+=======
+        if (! is_array($data) && ! is_object($data)) {
+            throw new Exception\InvalidArgumentException(
+                'Passed variable is not an array or object, using empty array instead'
+            );
+>>>>>>> web and vendor directory from composer install
         }
 
         if (is_object($data) && ($data instanceof self || $data instanceof \ArrayObject)) {
             $data = $data->getArrayCopy();
         }
+<<<<<<< HEAD
         if (!is_array($data)) {
+=======
+        if (! is_array($data)) {
+>>>>>>> web and vendor directory from composer install
             $data = (array) $data;
         }
 
@@ -290,7 +301,11 @@ class ArrayObject implements IteratorAggregate, ArrayAccess, Serializable, Count
     public function &offsetGet($key)
     {
         $ret = null;
+<<<<<<< HEAD
         if (!$this->offsetExists($key)) {
+=======
+        if (! $this->offsetExists($key)) {
+>>>>>>> web and vendor directory from composer install
             return $ret;
         }
         $ret =& $this->storage[$key];

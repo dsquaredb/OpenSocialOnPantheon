@@ -40,7 +40,11 @@ class SapiStreamEmitter implements EmitterInterface
 
         $range = $this->parseContentRange($response->getHeaderLine('Content-Range'));
 
+<<<<<<< HEAD
         if (is_array($range) && $range[0] === 'bytes') {
+=======
+        if (is_array($range)) {
+>>>>>>> web and vendor directory from composer install
             $this->emitBodyRange($range, $response, $maxBufferLength);
             return;
         }
@@ -58,15 +62,23 @@ class SapiStreamEmitter implements EmitterInterface
     {
         $body = $response->getBody();
 
+<<<<<<< HEAD
         if ($body->isSeekable()) {
             $body->rewind();
         }
 
         if (! $body->isReadable()) {
+=======
+        if (! $body->isSeekable()) {
+>>>>>>> web and vendor directory from composer install
             echo $body;
             return;
         }
 
+<<<<<<< HEAD
+=======
+        $body->rewind();
+>>>>>>> web and vendor directory from composer install
         while (! $body->eof()) {
             echo $body->read($maxBufferLength);
         }
@@ -85,6 +97,7 @@ class SapiStreamEmitter implements EmitterInterface
 
         $body = $response->getBody();
 
+<<<<<<< HEAD
         $length = $last - $first + 1;
 
         if ($body->isSeekable()) {
@@ -109,6 +122,26 @@ class SapiStreamEmitter implements EmitterInterface
 
         if ($remaining > 0 && ! $body->eof()) {
             echo $body->read($remaining);
+=======
+        if (! $body->isSeekable()) {
+            $contents = $body->getContents();
+            echo substr($contents, $first, $last - $first + 1);
+            return;
+        }
+
+        $body = new RelativeStream($body, $first);
+        $body->rewind();
+        $pos = 0;
+        $length = $last - $first + 1;
+        while (! $body->eof() && $pos < $length) {
+            if (($pos + $maxBufferLength) > $length) {
+                echo $body->read($length - $pos);
+                break;
+            }
+
+            echo $body->read($maxBufferLength);
+            $pos = $body->tell();
+>>>>>>> web and vendor directory from composer install
         }
     }
 

@@ -11,8 +11,11 @@
 
 namespace Symfony\Component\Console\Event;
 
+<<<<<<< HEAD
 @trigger_error(sprintf('The "%s" class is deprecated since Symfony 3.3 and will be removed in 4.0. Use the ConsoleErrorEvent instead.', ConsoleExceptionEvent::class), E_USER_DEPRECATED);
 
+=======
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -21,8 +24,11 @@ use Symfony\Component\Console\Output\OutputInterface;
  * Allows to handle exception thrown in a command.
  *
  * @author Fabien Potencier <fabien@symfony.com>
+<<<<<<< HEAD
  *
  * @deprecated since version 3.3, to be removed in 4.0. Use ConsoleErrorEvent instead.
+=======
+>>>>>>> web and vendor directory from composer install
  */
 class ConsoleExceptionEvent extends ConsoleEvent
 {

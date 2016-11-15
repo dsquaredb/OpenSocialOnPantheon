@@ -36,6 +36,7 @@ class UndefinedMethodFatalErrorHandler implements FatalErrorHandlerInterface
 
         $message = sprintf('Attempted to call an undefined method named "%s" of class "%s".', $methodName, $className);
 
+<<<<<<< HEAD
         if (!class_exists($className) || null === $methods = get_class_methods($className)) {
             // failed to get the class or its methods on which an unknown method was called (for example on an anonymous class)
             return new UndefinedMethodException($message, $exception);
@@ -43,6 +44,10 @@ class UndefinedMethodFatalErrorHandler implements FatalErrorHandlerInterface
 
         $candidates = array();
         foreach ($methods as $definedMethodName) {
+=======
+        $candidates = array();
+        foreach (get_class_methods($className) as $definedMethodName) {
+>>>>>>> web and vendor directory from composer install
             $lev = levenshtein($methodName, $definedMethodName);
             if ($lev <= strlen($methodName) / 3 || false !== strpos($definedMethodName, $methodName)) {
                 $candidates[] = $definedMethodName;
@@ -57,7 +62,10 @@ class UndefinedMethodFatalErrorHandler implements FatalErrorHandlerInterface
             } else {
                 $candidates = '"'.$last;
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> web and vendor directory from composer install
             $message .= "\nDid you mean to call ".$candidates;
         }
 

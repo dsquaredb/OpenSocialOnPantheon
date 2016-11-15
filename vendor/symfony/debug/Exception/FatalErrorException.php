@@ -9,15 +9,43 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 namespace Symfony\Component\Debug\Exception;
+=======
+namespace Symfony\Component\HttpKernel\Exception;
+>>>>>>> web and vendor directory from composer install
+
+/**
+ * Fatal Error Exception.
+ *
+<<<<<<< HEAD
+ * @author Konstanton Myakshin <koc-dp@yandex.ru>
+ */
+class FatalErrorException extends \ErrorException
+{
+=======
+ * @author Fabien Potencier <fabien@symfony.com>
+ * @author Konstanton Myakshin <koc-dp@yandex.ru>
+ * @author Nicolas Grekas <p@tchwork.com>
+ *
+ * @deprecated Deprecated in 2.3, to be removed in 3.0. Use the same class from the Debug component instead.
+ */
+class FatalErrorException extends \ErrorException
+{
+}
+
+namespace Symfony\Component\Debug\Exception;
+
+use Symfony\Component\HttpKernel\Exception\FatalErrorException as LegacyFatalErrorException;
 
 /**
  * Fatal Error Exception.
  *
  * @author Konstanton Myakshin <koc-dp@yandex.ru>
  */
-class FatalErrorException extends \ErrorException
+class FatalErrorException extends LegacyFatalErrorException
 {
+>>>>>>> web and vendor directory from composer install
     public function __construct($message, $code, $severity, $filename, $lineno, $traceOffset = null, $traceArgs = true, array $trace = null)
     {
         parent::__construct($message, $code, $severity, $filename, $lineno);

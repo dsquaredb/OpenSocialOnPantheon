@@ -25,9 +25,15 @@ class ShopwareInstaller extends BaseInstaller
     {
         if ($vars['type'] === 'shopware-theme') {
             return $this->correctThemeName($vars);
+<<<<<<< HEAD
         }
 
         return $this->correctPluginName($vars);        
+=======
+        } else {
+            return $this->correctPluginName($vars);
+        }
+>>>>>>> web and vendor directory from composer install
     }
 
     /**

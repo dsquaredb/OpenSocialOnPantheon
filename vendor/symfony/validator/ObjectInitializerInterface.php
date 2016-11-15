@@ -14,7 +14,11 @@ namespace Symfony\Component\Validator;
 /**
  * Prepares an object for validation.
  *
+<<<<<<< HEAD
  * Concrete implementations of this interface are used by {@link Validator\ContextualValidatorInterface}
+=======
+ * Concrete implementations of this interface are used by {@link ValidationVisitorInterface}
+>>>>>>> web and vendor directory from composer install
  * to initialize objects just before validating them.
  *
  * @author Fabien Potencier <fabien@symfony.com>

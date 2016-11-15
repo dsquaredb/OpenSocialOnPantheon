@@ -23,6 +23,14 @@ trait ContainerAwareTrait
      */
     protected $container;
 
+<<<<<<< HEAD
+=======
+    /**
+     * Sets the container.
+     *
+     * @param ContainerInterface|null $container A ContainerInterface instance or null
+     */
+>>>>>>> web and vendor directory from composer install
     public function setContainer(ContainerInterface $container = null)
     {
         $this->container = $container;

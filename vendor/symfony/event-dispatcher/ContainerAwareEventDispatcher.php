@@ -20,20 +20,37 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Bernhard Schussek <bschussek@gmail.com>
  * @author Jordan Alliot <jordan.alliot@gmail.com>
+<<<<<<< HEAD
  *
  * @deprecated since 3.3, to be removed in 4.0. Use EventDispatcher with closure factories instead.
  */
 class ContainerAwareEventDispatcher extends EventDispatcher
 {
+=======
+ */
+class ContainerAwareEventDispatcher extends EventDispatcher
+{
+    /**
+     * The container from where services are loaded.
+     *
+     * @var ContainerInterface
+     */
+>>>>>>> web and vendor directory from composer install
     private $container;
 
     /**
      * The service IDs of the event listeners and subscribers.
+<<<<<<< HEAD
+=======
+     *
+     * @var array
+>>>>>>> web and vendor directory from composer install
      */
     private $listenerIds = array();
 
     /**
      * The services registered as listeners.
+<<<<<<< HEAD
      */
     private $listeners = array();
 
@@ -48,6 +65,21 @@ class ContainerAwareEventDispatcher extends EventDispatcher
         if (__CLASS__ !== $class) {
             @trigger_error(sprintf('The %s class is deprecated since Symfony 3.3 and will be removed in 4.0. Use EventDispatcher with closure factories instead.', __CLASS__), E_USER_DEPRECATED);
         }
+=======
+     *
+     * @var array
+     */
+    private $listeners = array();
+
+    /**
+     * Constructor.
+     *
+     * @param ContainerInterface $container A ContainerInterface instance
+     */
+    public function __construct(ContainerInterface $container)
+    {
+        $this->container = $container;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -64,8 +96,11 @@ class ContainerAwareEventDispatcher extends EventDispatcher
      */
     public function addListenerService($eventName, $callback, $priority = 0)
     {
+<<<<<<< HEAD
         @trigger_error(sprintf('The %s class is deprecated since Symfony 3.3 and will be removed in 4.0. Use EventDispatcher with closure factories instead.', __CLASS__), E_USER_DEPRECATED);
 
+=======
+>>>>>>> web and vendor directory from composer install
         if (!is_array($callback) || 2 !== count($callback)) {
             throw new \InvalidArgumentException('Expected an array("service", "method") argument');
         }
@@ -78,7 +113,12 @@ class ContainerAwareEventDispatcher extends EventDispatcher
         $this->lazyLoad($eventName);
 
         if (isset($this->listenerIds[$eventName])) {
+<<<<<<< HEAD
             foreach ($this->listenerIds[$eventName] as $i => list($serviceId, $method)) {
+=======
+            foreach ($this->listenerIds[$eventName] as $i => $args) {
+                list($serviceId, $method, $priority) = $args;
+>>>>>>> web and vendor directory from composer install
                 $key = $serviceId.'.'.$method;
                 if (isset($this->listeners[$eventName][$key]) && $listener === array($this->listeners[$eventName][$key], $method)) {
                     unset($this->listeners[$eventName][$key]);
@@ -102,7 +142,11 @@ class ContainerAwareEventDispatcher extends EventDispatcher
     public function hasListeners($eventName = null)
     {
         if (null === $eventName) {
+<<<<<<< HEAD
             return $this->listenerIds || $this->listeners || parent::hasListeners();
+=======
+            return (bool) count($this->listenerIds) || (bool) count($this->listeners);
+>>>>>>> web and vendor directory from composer install
         }
 
         if (isset($this->listenerIds[$eventName])) {
@@ -146,8 +190,11 @@ class ContainerAwareEventDispatcher extends EventDispatcher
      */
     public function addSubscriberService($serviceId, $class)
     {
+<<<<<<< HEAD
         @trigger_error(sprintf('The %s class is deprecated since Symfony 3.3 and will be removed in 4.0. Use EventDispatcher with closure factories instead.', __CLASS__), E_USER_DEPRECATED);
 
+=======
+>>>>>>> web and vendor directory from composer install
         foreach ($class::getSubscribedEvents() as $eventName => $params) {
             if (is_string($params)) {
                 $this->listenerIds[$eventName][] = array($serviceId, $params, 0);
@@ -163,8 +210,11 @@ class ContainerAwareEventDispatcher extends EventDispatcher
 
     public function getContainer()
     {
+<<<<<<< HEAD
         @trigger_error('The '.__METHOD__.'() method is deprecated since Symfony 3.3 as its class will be removed in 4.0. Inject the container or the services you need in your listeners/subscribers instead.', E_USER_DEPRECATED);
 
+=======
+>>>>>>> web and vendor directory from composer install
         return $this->container;
     }
 
@@ -179,13 +229,22 @@ class ContainerAwareEventDispatcher extends EventDispatcher
     protected function lazyLoad($eventName)
     {
         if (isset($this->listenerIds[$eventName])) {
+<<<<<<< HEAD
             foreach ($this->listenerIds[$eventName] as list($serviceId, $method, $priority)) {
+=======
+            foreach ($this->listenerIds[$eventName] as $args) {
+                list($serviceId, $method, $priority) = $args;
+>>>>>>> web and vendor directory from composer install
                 $listener = $this->container->get($serviceId);
 
                 $key = $serviceId.'.'.$method;
                 if (!isset($this->listeners[$eventName][$key])) {
                     $this->addListener($eventName, array($listener, $method), $priority);
+<<<<<<< HEAD
                 } elseif ($this->listeners[$eventName][$key] !== $listener) {
+=======
+                } elseif ($listener !== $this->listeners[$eventName][$key]) {
+>>>>>>> web and vendor directory from composer install
                     parent::removeListener($eventName, array($this->listeners[$eventName][$key], $method));
                     $this->addListener($eventName, array($listener, $method), $priority);
                 }

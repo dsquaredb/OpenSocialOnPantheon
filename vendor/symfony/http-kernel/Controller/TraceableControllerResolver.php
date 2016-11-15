@@ -15,6 +15,7 @@ use Symfony\Component\Stopwatch\Stopwatch;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
+<<<<<<< HEAD
  * @author Fabien Potencier <fabien@symfony.com>
  */
 class TraceableControllerResolver implements ControllerResolverInterface, ArgumentResolverInterface
@@ -37,6 +38,27 @@ class TraceableControllerResolver implements ControllerResolverInterface, Argume
         if (!$this->argumentResolver instanceof TraceableArgumentResolver) {
             $this->argumentResolver = new TraceableArgumentResolver($this->argumentResolver, $this->stopwatch);
         }
+=======
+ * TraceableControllerResolver.
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ */
+class TraceableControllerResolver implements ControllerResolverInterface
+{
+    private $resolver;
+    private $stopwatch;
+
+    /**
+     * Constructor.
+     *
+     * @param ControllerResolverInterface $resolver  A ControllerResolverInterface instance
+     * @param Stopwatch                   $stopwatch A Stopwatch instance
+     */
+    public function __construct(ControllerResolverInterface $resolver, Stopwatch $stopwatch)
+    {
+        $this->resolver = $resolver;
+        $this->stopwatch = $stopwatch;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -55,6 +77,7 @@ class TraceableControllerResolver implements ControllerResolverInterface, Argume
 
     /**
      * {@inheritdoc}
+<<<<<<< HEAD
      *
      * @deprecated This method is deprecated as of 3.1 and will be removed in 4.0.
      */
@@ -63,6 +86,16 @@ class TraceableControllerResolver implements ControllerResolverInterface, Argume
         @trigger_error(sprintf('The %s method is deprecated as of 3.1 and will be removed in 4.0. Please use the %s instead.', __METHOD__, TraceableArgumentResolver::class), E_USER_DEPRECATED);
 
         $ret = $this->argumentResolver->getArguments($request, $controller);
+=======
+     */
+    public function getArguments(Request $request, $controller)
+    {
+        $e = $this->stopwatch->start('controller.get_arguments');
+
+        $ret = $this->resolver->getArguments($request, $controller);
+
+        $e->stop();
+>>>>>>> web and vendor directory from composer install
 
         return $ret;
     }

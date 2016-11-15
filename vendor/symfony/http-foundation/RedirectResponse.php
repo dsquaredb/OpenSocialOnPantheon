@@ -41,6 +41,7 @@ class RedirectResponse extends Response
         if (!$this->isRedirect()) {
             throw new \InvalidArgumentException(sprintf('The HTTP status code is not a redirect ("%s" given).', $status));
         }
+<<<<<<< HEAD
 
         if (301 == $status && !array_key_exists('cache-control', $headers)) {
             $this->headers->remove('cache-control');
@@ -55,6 +56,12 @@ class RedirectResponse extends Response
      * @param array  $headers An array of response headers
      *
      * @return static
+=======
+    }
+
+    /**
+     * {@inheritdoc}
+>>>>>>> web and vendor directory from composer install
      */
     public static function create($url = '', $status = 302, $headers = array())
     {
@@ -76,7 +83,11 @@ class RedirectResponse extends Response
      *
      * @param string $url The URL to redirect to
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return RedirectResponse The current response
+>>>>>>> web and vendor directory from composer install
      *
      * @throws \InvalidArgumentException
      */
@@ -93,7 +104,11 @@ class RedirectResponse extends Response
 <html>
     <head>
         <meta charset="UTF-8" />
+<<<<<<< HEAD
         <meta http-equiv="refresh" content="0;url=%1$s" />
+=======
+        <meta http-equiv="refresh" content="1;url=%1$s" />
+>>>>>>> web and vendor directory from composer install
 
         <title>Redirecting to %1$s</title>
     </head>

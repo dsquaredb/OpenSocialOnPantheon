@@ -38,11 +38,27 @@ class ServiceReferenceGraphNode
         $this->value = $value;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Adds an in edge to this node.
+     *
+     * @param ServiceReferenceGraphEdge $edge
+     */
+>>>>>>> web and vendor directory from composer install
     public function addInEdge(ServiceReferenceGraphEdge $edge)
     {
         $this->inEdges[] = $edge;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Adds an out edge to this node.
+     *
+     * @param ServiceReferenceGraphEdge $edge
+     */
+>>>>>>> web and vendor directory from composer install
     public function addOutEdge(ServiceReferenceGraphEdge $edge)
     {
         $this->outEdges[] = $edge;
@@ -107,6 +123,7 @@ class ServiceReferenceGraphNode
     {
         return $this->value;
     }
+<<<<<<< HEAD
 
     /**
      * Clears all edges.
@@ -115,4 +132,6 @@ class ServiceReferenceGraphNode
     {
         $this->inEdges = $this->outEdges = array();
     }
+=======
+>>>>>>> web and vendor directory from composer install
 }

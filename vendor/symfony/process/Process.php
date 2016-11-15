@@ -27,7 +27,11 @@ use Symfony\Component\Process\Pipes\WindowsPipes;
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Romain Neutron <imprec@gmail.com>
  */
+<<<<<<< HEAD
 class Process implements \IteratorAggregate
+=======
+class Process
+>>>>>>> web and vendor directory from composer install
 {
     const ERR = 'err';
     const OUT = 'out';
@@ -43,6 +47,7 @@ class Process implements \IteratorAggregate
     // Timeout Precision in seconds.
     const TIMEOUT_PRECISION = 0.2;
 
+<<<<<<< HEAD
     const ITER_NON_BLOCKING = 1; // By default, iterating over outputs is a blocking call, use this flag to make it non-blocking
     const ITER_KEEP_OUTPUT = 2;  // By default, outputs are cleared while iterating, use this flag to keep them in memory
     const ITER_SKIP_OUT = 4;     // Use this flag to skip STDOUT while iterating
@@ -50,6 +55,9 @@ class Process implements \IteratorAggregate
 
     private $callback;
     private $hasCallback = false;
+=======
+    private $callback;
+>>>>>>> web and vendor directory from composer install
     private $commandline;
     private $cwd;
     private $env;
@@ -58,7 +66,11 @@ class Process implements \IteratorAggregate
     private $lastOutputTime;
     private $timeout;
     private $idleTimeout;
+<<<<<<< HEAD
     private $options = array('suppress_errors' => true);
+=======
+    private $options;
+>>>>>>> web and vendor directory from composer install
     private $exitcode;
     private $fallbackStatus = array();
     private $processInformation;
@@ -73,7 +85,10 @@ class Process implements \IteratorAggregate
     private $incrementalErrorOutputOffset = 0;
     private $tty;
     private $pty;
+<<<<<<< HEAD
     private $inheritEnv = false;
+=======
+>>>>>>> web and vendor directory from composer install
 
     private $useFileHandles = false;
     /** @var PipesInterface */
@@ -87,6 +102,11 @@ class Process implements \IteratorAggregate
      * Exit codes translation table.
      *
      * User-defined errors must use exit codes in the 64-113 range.
+<<<<<<< HEAD
+=======
+     *
+     * @var array
+>>>>>>> web and vendor directory from composer install
      */
     public static $exitCodes = array(
         0 => 'OK',
@@ -132,16 +152,29 @@ class Process implements \IteratorAggregate
     );
 
     /**
+<<<<<<< HEAD
      * @param string|array   $commandline The command line to run
      * @param string|null    $cwd         The working directory or null to use the working dir of the current PHP process
      * @param array|null     $env         The environment variables or null to use the same environment as the current PHP process
      * @param mixed|null     $input       The input as stream resource, scalar or \Traversable, or null for no input
+=======
+     * Constructor.
+     *
+     * @param string         $commandline The command line to run
+     * @param string|null    $cwd         The working directory or null to use the working dir of the current PHP process
+     * @param array|null     $env         The environment variables or null to use the same environment as the current PHP process
+     * @param string|null    $input       The input
+>>>>>>> web and vendor directory from composer install
      * @param int|float|null $timeout     The timeout in seconds or null to disable
      * @param array          $options     An array of options for proc_open
      *
      * @throws RuntimeException When proc_open is not installed
      */
+<<<<<<< HEAD
     public function __construct($commandline, $cwd = null, array $env = null, $input = null, $timeout = 60, array $options = null)
+=======
+    public function __construct($commandline, $cwd = null, array $env = null, $input = null, $timeout = 60, array $options = array())
+>>>>>>> web and vendor directory from composer install
     {
         if (!function_exists('proc_open')) {
             throw new RuntimeException('The Process class relies on proc_open, which is not available on your PHP installation.');
@@ -165,11 +198,17 @@ class Process implements \IteratorAggregate
         $this->setTimeout($timeout);
         $this->useFileHandles = '\\' === DIRECTORY_SEPARATOR;
         $this->pty = false;
+<<<<<<< HEAD
         $this->enhanceSigchildCompatibility = '\\' !== DIRECTORY_SEPARATOR && $this->isSigchildEnabled();
         if (null !== $options) {
             @trigger_error(sprintf('The $options parameter of the %s constructor is deprecated since Symfony 3.3 and will be removed in 4.0.', __CLASS__), E_USER_DEPRECATED);
             $this->options = array_replace($this->options, $options);
         }
+=======
+        $this->enhanceWindowsCompatibility = true;
+        $this->enhanceSigchildCompatibility = '\\' !== DIRECTORY_SEPARATOR && $this->isSigchildEnabled();
+        $this->options = array_replace(array('suppress_errors' => true, 'binary_pipes' => true), $options);
+>>>>>>> web and vendor directory from composer install
     }
 
     public function __destruct()
@@ -194,13 +233,17 @@ class Process implements \IteratorAggregate
      *
      * @param callable|null $callback A PHP callback to run whenever there is some
      *                                output available on STDOUT or STDERR
+<<<<<<< HEAD
      * @param array         $env      An array of additional env vars to set when running the process
+=======
+>>>>>>> web and vendor directory from composer install
      *
      * @return int The exit status code
      *
      * @throws RuntimeException When process can't be launched
      * @throws RuntimeException When process stopped after receiving signal
      * @throws LogicException   In case a callback is provided and output has been disabled
+<<<<<<< HEAD
      *
      * @final since version 3.3
      */
@@ -208,6 +251,12 @@ class Process implements \IteratorAggregate
     {
         $env = 1 < func_num_args() ? func_get_arg(1) : null;
         $this->start($callback, $env);
+=======
+     */
+    public function run($callback = null)
+    {
+        $this->start($callback);
+>>>>>>> web and vendor directory from composer install
 
         return $this->wait();
     }
@@ -219,23 +268,36 @@ class Process implements \IteratorAggregate
      * exits with a non-zero exit code.
      *
      * @param callable|null $callback
+<<<<<<< HEAD
      * @param array         $env      An array of additional env vars to set when running the process
+=======
+>>>>>>> web and vendor directory from composer install
      *
      * @return self
      *
      * @throws RuntimeException       if PHP was compiled with --enable-sigchild and the enhanced sigchild compatibility mode is not enabled
      * @throws ProcessFailedException if the process didn't terminate successfully
+<<<<<<< HEAD
      *
      * @final since version 3.3
      */
     public function mustRun(callable $callback = null/*, array $env = array()*/)
+=======
+     */
+    public function mustRun($callback = null)
+>>>>>>> web and vendor directory from composer install
     {
         if (!$this->enhanceSigchildCompatibility && $this->isSigchildEnabled()) {
             throw new RuntimeException('This PHP has been compiled with --enable-sigchild. You must use setEnhanceSigchildCompatibility() to use this method.');
         }
+<<<<<<< HEAD
         $env = 1 < func_num_args() ? func_get_arg(1) : null;
 
         if (0 !== $this->run($callback, $env)) {
+=======
+
+        if (0 !== $this->run($callback)) {
+>>>>>>> web and vendor directory from composer install
             throw new ProcessFailedException($this);
         }
 
@@ -256,17 +318,25 @@ class Process implements \IteratorAggregate
      *
      * @param callable|null $callback A PHP callback to run whenever there is some
      *                                output available on STDOUT or STDERR
+<<<<<<< HEAD
      * @param array         $env      An array of additional env vars to set when running the process
+=======
+>>>>>>> web and vendor directory from composer install
      *
      * @throws RuntimeException When process can't be launched
      * @throws RuntimeException When process is already running
      * @throws LogicException   In case a callback is provided and output has been disabled
      */
+<<<<<<< HEAD
     public function start(callable $callback = null/*, array $env = array()*/)
+=======
+    public function start($callback = null)
+>>>>>>> web and vendor directory from composer install
     {
         if ($this->isRunning()) {
             throw new RuntimeException('Process is already running');
         }
+<<<<<<< HEAD
         if (2 <= func_num_args()) {
             $env = func_get_arg(1);
         } else {
@@ -277,11 +347,16 @@ class Process implements \IteratorAggregate
                 }
             }
             $env = null;
+=======
+        if ($this->outputDisabled && null !== $callback) {
+            throw new LogicException('Output has been disabled, enable it to allow the use of a callback.');
+>>>>>>> web and vendor directory from composer install
         }
 
         $this->resetProcessData();
         $this->starttime = $this->lastOutputTime = microtime(true);
         $this->callback = $this->buildCallback($callback);
+<<<<<<< HEAD
         $this->hasCallback = null !== $callback;
         $descriptors = $this->getDescriptors();
         $inheritEnv = $this->inheritEnv;
@@ -314,18 +389,39 @@ class Process implements \IteratorAggregate
         if ('\\' === DIRECTORY_SEPARATOR && $this->enhanceWindowsCompatibility) {
             $this->options['bypass_shell'] = true;
             $commandline = $this->prepareWindowsCommandLine($commandline, $env);
+=======
+        $descriptors = $this->getDescriptors();
+
+        $commandline = $this->commandline;
+
+        if ('\\' === DIRECTORY_SEPARATOR && $this->enhanceWindowsCompatibility) {
+            $commandline = 'cmd /V:ON /E:ON /D /C "('.$commandline.')';
+            foreach ($this->processPipes->getFiles() as $offset => $filename) {
+                $commandline .= ' '.$offset.'>'.ProcessUtils::escapeArgument($filename);
+            }
+            $commandline .= '"';
+
+            if (!isset($this->options['bypass_shell'])) {
+                $this->options['bypass_shell'] = true;
+            }
+>>>>>>> web and vendor directory from composer install
         } elseif (!$this->useFileHandles && $this->enhanceSigchildCompatibility && $this->isSigchildEnabled()) {
             // last exit code is output on the fourth pipe and caught to work around --enable-sigchild
             $descriptors[3] = array('pipe', 'w');
 
             // See https://unix.stackexchange.com/questions/71205/background-process-pipe-input
+<<<<<<< HEAD
             $commandline = '{ ('.$commandline.') <&3 3<&- 3>/dev/null & } 3<&0;';
+=======
+            $commandline = '{ ('.$this->commandline.') <&3 3<&- 3>/dev/null & } 3<&0;';
+>>>>>>> web and vendor directory from composer install
             $commandline .= 'pid=$!; echo $pid >&3; wait $pid; code=$?; echo $code >&3; exit $code';
 
             // Workaround for the bug, when PTS functionality is enabled.
             // @see : https://bugs.php.net/69442
             $ptsWorkaround = fopen(__FILE__, 'r');
         }
+<<<<<<< HEAD
         if (defined('HHVM_VERSION')) {
             $envPairs = $env;
         } else {
@@ -342,6 +438,10 @@ class Process implements \IteratorAggregate
         }
 
         $this->process = proc_open($commandline, $descriptors, $this->processPipes->pipes, $this->cwd, $envPairs, $this->options);
+=======
+
+        $this->process = proc_open($commandline, $descriptors, $this->processPipes->pipes, $this->cwd, $this->env, $this->options);
+>>>>>>> web and vendor directory from composer install
 
         if (!is_resource($this->process)) {
             throw new RuntimeException('Unable to launch a new process.');
@@ -367,26 +467,42 @@ class Process implements \IteratorAggregate
      *
      * @param callable|null $callback A PHP callback to run whenever there is some
      *                                output available on STDOUT or STDERR
+<<<<<<< HEAD
      * @param array         $env      An array of additional env vars to set when running the process
      *
      * @return $this
+=======
+     *
+     * @return Process The new process
+>>>>>>> web and vendor directory from composer install
      *
      * @throws RuntimeException When process can't be launched
      * @throws RuntimeException When process is already running
      *
      * @see start()
+<<<<<<< HEAD
      *
      * @final since version 3.3
      */
     public function restart(callable $callback = null/*, array $env = array()*/)
+=======
+     */
+    public function restart($callback = null)
+>>>>>>> web and vendor directory from composer install
     {
         if ($this->isRunning()) {
             throw new RuntimeException('Process is already running');
         }
+<<<<<<< HEAD
         $env = 1 < func_num_args() ? func_get_arg(1) : null;
 
         $process = clone $this;
         $process->start($callback, $env);
+=======
+
+        $process = clone $this;
+        $process->start($callback);
+>>>>>>> web and vendor directory from composer install
 
         return $process;
     }
@@ -406,17 +522,25 @@ class Process implements \IteratorAggregate
      * @throws RuntimeException When process stopped after receiving signal
      * @throws LogicException   When process is not yet started
      */
+<<<<<<< HEAD
     public function wait(callable $callback = null)
+=======
+    public function wait($callback = null)
+>>>>>>> web and vendor directory from composer install
     {
         $this->requireProcessIsStarted(__FUNCTION__);
 
         $this->updateStatus(false);
+<<<<<<< HEAD
 
         if (null !== $callback) {
             if (!$this->processPipes->haveReadSupport()) {
                 $this->stop(0);
                 throw new \LogicException('Pass the callback to the Process::start method or enableOutput to use a callback with Process::wait');
             }
+=======
+        if (null !== $callback) {
+>>>>>>> web and vendor directory from composer install
             $this->callback = $this->buildCallback($callback);
         }
 
@@ -452,7 +576,11 @@ class Process implements \IteratorAggregate
      *
      * @param int $signal A valid POSIX signal (see http://www.php.net/manual/en/pcntl.constants.php)
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Process
+>>>>>>> web and vendor directory from composer install
      *
      * @throws LogicException   In case the process is not running
      * @throws RuntimeException In case --enable-sigchild is activated and the process can't be killed
@@ -468,7 +596,11 @@ class Process implements \IteratorAggregate
     /**
      * Disables fetching output and error output from the underlying process.
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Process
+>>>>>>> web and vendor directory from composer install
      *
      * @throws RuntimeException In case the process is already running
      * @throws LogicException   if an idle timeout is set
@@ -490,7 +622,11 @@ class Process implements \IteratorAggregate
     /**
      * Enables fetching output and error output from the underlying process.
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Process
+>>>>>>> web and vendor directory from composer install
      *
      * @throws RuntimeException In case the process is already running
      */
@@ -560,6 +696,7 @@ class Process implements \IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Returns an iterator to the output of the process, with the output type as keys (Process::OUT/ERR).
      *
      * @param int $flags A bit field of Process::ITER_* flags
@@ -620,6 +757,11 @@ class Process implements \IteratorAggregate
      * Clears the process output.
      *
      * @return $this
+=======
+     * Clears the process output.
+     *
+     * @return Process
+>>>>>>> web and vendor directory from composer install
      */
     public function clearOutput()
     {
@@ -678,7 +820,11 @@ class Process implements \IteratorAggregate
     /**
      * Clears the process output.
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Process
+>>>>>>> web and vendor directory from composer install
      */
     public function clearErrorOutput()
     {
@@ -834,7 +980,11 @@ class Process implements \IteratorAggregate
      */
     public function isStarted()
     {
+<<<<<<< HEAD
         return self::STATUS_READY != $this->status;
+=======
+        return $this->status != self::STATUS_READY;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -846,7 +996,11 @@ class Process implements \IteratorAggregate
     {
         $this->updateStatus(false);
 
+<<<<<<< HEAD
         return self::STATUS_TERMINATED == $this->status;
+=======
+        return $this->status == self::STATUS_TERMINATED;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -939,13 +1093,21 @@ class Process implements \IteratorAggregate
      */
     public function getCommandLine()
     {
+<<<<<<< HEAD
         return is_array($this->commandline) ? implode(' ', array_map(array($this, 'escapeArgument'), $this->commandline)) : $this->commandline;
+=======
+        return $this->commandline;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Sets the command line to be executed.
      *
+<<<<<<< HEAD
      * @param string|array $commandline The command to execute
+=======
+     * @param string $commandline The command to execute
+>>>>>>> web and vendor directory from composer install
      *
      * @return self The current Process instance
      */
@@ -1031,6 +1193,7 @@ class Process implements \IteratorAggregate
         if ('\\' === DIRECTORY_SEPARATOR && $tty) {
             throw new RuntimeException('TTY mode is not supported on Windows platform.');
         }
+<<<<<<< HEAD
         if ($tty) {
             static $isTtySupported;
 
@@ -1041,6 +1204,10 @@ class Process implements \IteratorAggregate
             if (!$isTtySupported) {
                 throw new RuntimeException('TTY mode requires /dev/tty to be read/writable.');
             }
+=======
+        if ($tty && (!file_exists('/dev/tty') || !is_readable('/dev/tty'))) {
+            throw new RuntimeException('TTY mode requires /dev/tty to be readable.');
+>>>>>>> web and vendor directory from composer install
         }
 
         $this->tty = (bool) $tty;
@@ -1125,10 +1292,15 @@ class Process implements \IteratorAggregate
     /**
      * Sets the environment variables.
      *
+<<<<<<< HEAD
      * Each environment variable value should be a string.
      * If it is an array, the variable is ignored.
      * If it is false or null, it will be removed when
      * env vars are otherwise inherited.
+=======
+     * An environment variable value should be a string.
+     * If it is an array, the variable is ignored.
+>>>>>>> web and vendor directory from composer install
      *
      * That happens in PHP when 'argv' is registered into
      * the $_ENV array for instance.
@@ -1144,15 +1316,44 @@ class Process implements \IteratorAggregate
             return !is_array($value);
         });
 
+<<<<<<< HEAD
         $this->env = $env;
+=======
+        $this->env = array();
+        foreach ($env as $key => $value) {
+            $this->env[$key] = (string) $value;
+        }
+>>>>>>> web and vendor directory from composer install
 
         return $this;
     }
 
     /**
+<<<<<<< HEAD
      * Gets the Process input.
      *
      * @return resource|string|\Iterator|null The Process input
+=======
+     * Gets the contents of STDIN.
+     *
+     * @return string|null The current contents
+     *
+     * @deprecated since version 2.5, to be removed in 3.0.
+     *             Use setInput() instead.
+     *             This method is deprecated in favor of getInput.
+     */
+    public function getStdin()
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 2.5 and will be removed in 3.0. Use the getInput() method instead.', E_USER_DEPRECATED);
+
+        return $this->getInput();
+    }
+
+    /**
+     * Gets the Process input.
+     *
+     * @return null|string The Process input
+>>>>>>> web and vendor directory from composer install
      */
     public function getInput()
     {
@@ -1160,15 +1361,47 @@ class Process implements \IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Sets the contents of STDIN.
+     *
+     * @param string|null $stdin The new contents
+     *
+     * @return self The current Process instance
+     *
+     * @deprecated since version 2.5, to be removed in 3.0.
+     *             Use setInput() instead.
+     *
+     * @throws LogicException           In case the process is running
+     * @throws InvalidArgumentException In case the argument is invalid
+     */
+    public function setStdin($stdin)
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 2.5 and will be removed in 3.0. Use the setInput() method instead.', E_USER_DEPRECATED);
+
+        return $this->setInput($stdin);
+    }
+
+    /**
+>>>>>>> web and vendor directory from composer install
      * Sets the input.
      *
      * This content will be passed to the underlying process standard input.
      *
+<<<<<<< HEAD
      * @param string|int|float|bool|resource|\Traversable|null $input The content
+=======
+     * @param mixed $input The content
+>>>>>>> web and vendor directory from composer install
      *
      * @return self The current Process instance
      *
      * @throws LogicException In case the process is running
+<<<<<<< HEAD
+=======
+     *
+     * Passing an object as an input is deprecated since version 2.5 and will be removed in 3.0.
+>>>>>>> web and vendor directory from composer install
      */
     public function setInput($input)
     {
@@ -1185,6 +1418,7 @@ class Process implements \IteratorAggregate
      * Gets the options for proc_open.
      *
      * @return array The current options
+<<<<<<< HEAD
      *
      * @deprecated since version 3.3, to be removed in 4.0.
      */
@@ -1192,6 +1426,11 @@ class Process implements \IteratorAggregate
     {
         @trigger_error(sprintf('The %s() method is deprecated since Symfony 3.3 and will be removed in 4.0.', __METHOD__), E_USER_DEPRECATED);
 
+=======
+     */
+    public function getOptions()
+    {
+>>>>>>> web and vendor directory from composer install
         return $this->options;
     }
 
@@ -1201,6 +1440,7 @@ class Process implements \IteratorAggregate
      * @param array $options The new options
      *
      * @return self The current Process instance
+<<<<<<< HEAD
      *
      * @deprecated since version 3.3, to be removed in 4.0.
      */
@@ -1208,6 +1448,11 @@ class Process implements \IteratorAggregate
     {
         @trigger_error(sprintf('The %s() method is deprecated since Symfony 3.3 and will be removed in 4.0.', __METHOD__), E_USER_DEPRECATED);
 
+=======
+     */
+    public function setOptions(array $options)
+    {
+>>>>>>> web and vendor directory from composer install
         $this->options = $options;
 
         return $this;
@@ -1219,6 +1464,7 @@ class Process implements \IteratorAggregate
      * This is true by default.
      *
      * @return bool
+<<<<<<< HEAD
      *
      * @deprecated since version 3.3, to be removed in 4.0. Enhanced Windows compatibility will always be enabled.
      */
@@ -1226,6 +1472,11 @@ class Process implements \IteratorAggregate
     {
         @trigger_error(sprintf('The %s() method is deprecated since Symfony 3.3 and will be removed in 4.0. Enhanced Windows compatibility will always be enabled.', __METHOD__), E_USER_DEPRECATED);
 
+=======
+     */
+    public function getEnhanceWindowsCompatibility()
+    {
+>>>>>>> web and vendor directory from composer install
         return $this->enhanceWindowsCompatibility;
     }
 
@@ -1235,6 +1486,7 @@ class Process implements \IteratorAggregate
      * @param bool $enhance
      *
      * @return self The current Process instance
+<<<<<<< HEAD
      *
      * @deprecated since version 3.3, to be removed in 4.0. Enhanced Windows compatibility will always be enabled.
      */
@@ -1242,6 +1494,11 @@ class Process implements \IteratorAggregate
     {
         @trigger_error(sprintf('The %s() method is deprecated since Symfony 3.3 and will be removed in 4.0. Enhanced Windows compatibility will always be enabled.', __METHOD__), E_USER_DEPRECATED);
 
+=======
+     */
+    public function setEnhanceWindowsCompatibility($enhance)
+    {
+>>>>>>> web and vendor directory from composer install
         $this->enhanceWindowsCompatibility = (bool) $enhance;
 
         return $this;
@@ -1251,6 +1508,7 @@ class Process implements \IteratorAggregate
      * Returns whether sigchild compatibility mode is activated or not.
      *
      * @return bool
+<<<<<<< HEAD
      *
      * @deprecated since version 3.3, to be removed in 4.0. Sigchild compatibility will always be enabled.
      */
@@ -1258,6 +1516,11 @@ class Process implements \IteratorAggregate
     {
         @trigger_error(sprintf('The %s() method is deprecated since Symfony 3.3 and will be removed in 4.0. Sigchild compatibility will always be enabled.', __METHOD__), E_USER_DEPRECATED);
 
+=======
+     */
+    public function getEnhanceSigchildCompatibility()
+    {
+>>>>>>> web and vendor directory from composer install
         return $this->enhanceSigchildCompatibility;
     }
 
@@ -1271,6 +1534,7 @@ class Process implements \IteratorAggregate
      * @param bool $enhance
      *
      * @return self The current Process instance
+<<<<<<< HEAD
      *
      * @deprecated since version 3.3, to be removed in 4.0.
      */
@@ -1278,12 +1542,18 @@ class Process implements \IteratorAggregate
     {
         @trigger_error(sprintf('The %s() method is deprecated since Symfony 3.3 and will be removed in 4.0. Sigchild compatibility will always be enabled.', __METHOD__), E_USER_DEPRECATED);
 
+=======
+     */
+    public function setEnhanceSigchildCompatibility($enhance)
+    {
+>>>>>>> web and vendor directory from composer install
         $this->enhanceSigchildCompatibility = (bool) $enhance;
 
         return $this;
     }
 
     /**
+<<<<<<< HEAD
      * Sets whether environment variables will be inherited or not.
      *
      * @param bool $inheritEnv
@@ -1316,6 +1586,8 @@ class Process implements \IteratorAggregate
     }
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * Performs a check between the timeout definition and the time the process started.
      *
      * In case you run a background process (with the start method), you should
@@ -1325,7 +1597,11 @@ class Process implements \IteratorAggregate
      */
     public function checkTimeout()
     {
+<<<<<<< HEAD
         if (self::STATUS_STARTED !== $this->status) {
+=======
+        if ($this->status !== self::STATUS_STARTED) {
+>>>>>>> web and vendor directory from composer install
             return;
         }
 
@@ -1359,7 +1635,11 @@ class Process implements \IteratorAggregate
             return $result = false;
         }
 
+<<<<<<< HEAD
         return $result = (bool) @proc_open('echo 1 >/dev/null', array(array('pty'), array('pty'), array('pty')), $pipes);
+=======
+        return $result = (bool) @proc_open('echo 1', array(array('pty'), array('pty'), array('pty')), $pipes);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -1369,6 +1649,7 @@ class Process implements \IteratorAggregate
      */
     private function getDescriptors()
     {
+<<<<<<< HEAD
         if ($this->input instanceof \Iterator) {
             $this->input->rewind();
         }
@@ -1376,6 +1657,12 @@ class Process implements \IteratorAggregate
             $this->processPipes = new WindowsPipes($this->input, !$this->outputDisabled || $this->hasCallback);
         } else {
             $this->processPipes = new UnixPipes($this->isTty(), $this->isPty(), $this->input, !$this->outputDisabled || $this->hasCallback);
+=======
+        if ('\\' === DIRECTORY_SEPARATOR) {
+            $this->processPipes = WindowsPipes::create($this, $this->input);
+        } else {
+            $this->processPipes = UnixPipes::create($this, $this->input);
+>>>>>>> web and vendor directory from composer install
         }
 
         return $this->processPipes->getDescriptors();
@@ -1391,6 +1678,7 @@ class Process implements \IteratorAggregate
      *
      * @return \Closure A PHP closure
      */
+<<<<<<< HEAD
     protected function buildCallback(callable $callback = null)
     {
         if ($this->outputDisabled) {
@@ -1408,12 +1696,28 @@ class Process implements \IteratorAggregate
                 $this->addOutput($data);
             } else {
                 $this->addErrorOutput($data);
+=======
+    protected function buildCallback($callback)
+    {
+        $that = $this;
+        $out = self::OUT;
+        $callback = function ($type, $data) use ($that, $callback, $out) {
+            if ($out == $type) {
+                $that->addOutput($data);
+            } else {
+                $that->addErrorOutput($data);
+>>>>>>> web and vendor directory from composer install
             }
 
             if (null !== $callback) {
                 call_user_func($callback, $type, $data);
             }
         };
+<<<<<<< HEAD
+=======
+
+        return $callback;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -1465,12 +1769,20 @@ class Process implements \IteratorAggregate
     /**
      * Reads pipes for the freshest output.
      *
+<<<<<<< HEAD
      * @param string $caller   The name of the method that needs fresh outputs
      * @param bool   $blocking Whether to use blocking calls or not
      *
      * @throws LogicException in case output has been disabled or process is not started
      */
     private function readPipesForOutput($caller, $blocking = false)
+=======
+     * @param $caller The name of the method that needs fresh outputs
+     *
+     * @throws LogicException in case output has been disabled or process is not started
+     */
+    private function readPipesForOutput($caller)
+>>>>>>> web and vendor directory from composer install
     {
         if ($this->outputDisabled) {
             throw new LogicException('Output has been disabled.');
@@ -1478,7 +1790,11 @@ class Process implements \IteratorAggregate
 
         $this->requireProcessIsStarted($caller);
 
+<<<<<<< HEAD
         $this->updateStatus($blocking);
+=======
+        $this->updateStatus(false);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -1516,7 +1832,11 @@ class Process implements \IteratorAggregate
         $callback = $this->callback;
         foreach ($result as $type => $data) {
             if (3 !== $type) {
+<<<<<<< HEAD
                 $callback(self::STDOUT === $type ? self::OUT : self::ERR, $data);
+=======
+                $callback($type === self::STDOUT ? self::OUT : self::ERR, $data);
+>>>>>>> web and vendor directory from composer install
             } elseif (!isset($this->fallbackStatus['signaled'])) {
                 $this->fallbackStatus['exitcode'] = (int) $data;
             }
@@ -1630,6 +1950,7 @@ class Process implements \IteratorAggregate
         return true;
     }
 
+<<<<<<< HEAD
     private function prepareWindowsCommandLine($cmd, array &$env)
     {
         $uid = uniqid('', true);
@@ -1676,12 +1997,18 @@ class Process implements \IteratorAggregate
         return $cmd;
     }
 
+=======
+>>>>>>> web and vendor directory from composer install
     /**
      * Ensures the process is running or terminated, throws a LogicException if the process has a not started.
      *
      * @param string $functionName The function name that was called
      *
+<<<<<<< HEAD
      * @throws LogicException if the process has not run
+=======
+     * @throws LogicException If the process has not run.
+>>>>>>> web and vendor directory from composer install
      */
     private function requireProcessIsStarted($functionName)
     {
@@ -1695,7 +2022,11 @@ class Process implements \IteratorAggregate
      *
      * @param string $functionName The function name that was called
      *
+<<<<<<< HEAD
      * @throws LogicException if the process is not yet terminated
+=======
+     * @throws LogicException If the process is not yet terminated.
+>>>>>>> web and vendor directory from composer install
      */
     private function requireProcessIsTerminated($functionName)
     {
@@ -1703,6 +2034,7 @@ class Process implements \IteratorAggregate
             throw new LogicException(sprintf('Process must be terminated before calling %s.', $functionName));
         }
     }
+<<<<<<< HEAD
 
     /**
      * Escapes a string to be used as a shell argument.
@@ -1748,4 +2080,6 @@ class Process implements \IteratorAggregate
 
         return $env;
     }
+=======
+>>>>>>> web and vendor directory from composer install
 }

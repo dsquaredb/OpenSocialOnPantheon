@@ -27,6 +27,12 @@ use Symfony\Component\Serializer\Mapping\ClassMetadataInterface;
  */
 class LoaderChain implements LoaderInterface
 {
+<<<<<<< HEAD
+=======
+    /**
+     * @var LoaderInterface[]
+     */
+>>>>>>> web and vendor directory from composer install
     private $loaders;
 
     /**
@@ -40,7 +46,11 @@ class LoaderChain implements LoaderInterface
     {
         foreach ($loaders as $loader) {
             if (!$loader instanceof LoaderInterface) {
+<<<<<<< HEAD
                 throw new MappingException(sprintf('Class %s is expected to implement LoaderInterface', \get_class($loader)));
+=======
+                throw new MappingException(sprintf('Class %s is expected to implement LoaderInterface', get_class($loader)));
+>>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -60,6 +70,7 @@ class LoaderChain implements LoaderInterface
 
         return $success;
     }
+<<<<<<< HEAD
 
     /**
      * @return LoaderInterface[]
@@ -68,4 +79,6 @@ class LoaderChain implements LoaderInterface
     {
         return $this->loaders;
     }
+=======
+>>>>>>> web and vendor directory from composer install
 }

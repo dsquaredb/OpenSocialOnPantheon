@@ -12,11 +12,21 @@
 namespace Symfony\Component\HttpKernel\Exception;
 
 /**
+<<<<<<< HEAD
+=======
+ * UnauthorizedHttpException.
+ *
+>>>>>>> web and vendor directory from composer install
  * @author Ben Ramsey <ben@benramsey.com>
  */
 class UnauthorizedHttpException extends HttpException
 {
     /**
+<<<<<<< HEAD
+=======
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param string     $challenge WWW-Authenticate challenge string
      * @param string     $message   The internal exception message
      * @param \Exception $previous  The previous exception

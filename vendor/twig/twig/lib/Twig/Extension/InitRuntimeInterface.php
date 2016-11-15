@@ -20,5 +20,8 @@
 interface Twig_Extension_InitRuntimeInterface
 {
 }
+<<<<<<< HEAD
 
 class_alias('Twig_Extension_InitRuntimeInterface', 'Twig\Extension\InitRuntimeInterface', false);
+=======
+>>>>>>> web and vendor directory from composer install

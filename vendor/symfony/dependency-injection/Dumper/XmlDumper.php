@@ -11,9 +11,12 @@
 
 namespace Symfony\Component\DependencyInjection\Dumper;
 
+<<<<<<< HEAD
 use Symfony\Component\DependencyInjection\Argument\IteratorArgument;
 use Symfony\Component\DependencyInjection\Argument\ServiceClosureArgument;
 use Symfony\Component\DependencyInjection\Argument\TaggedIteratorArgument;
+=======
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Parameter;
 use Symfony\Component\DependencyInjection\Reference;
@@ -38,6 +41,11 @@ class XmlDumper extends Dumper
     /**
      * Dumps the service container as an XML string.
      *
+<<<<<<< HEAD
+=======
+     * @param array $options An array of options
+     *
+>>>>>>> web and vendor directory from composer install
      * @return string An xml string representing of the service container
      */
     public function dump(array $options = array())
@@ -56,9 +64,20 @@ class XmlDumper extends Dumper
         $xml = $this->document->saveXML();
         $this->document = null;
 
+<<<<<<< HEAD
         return $this->container->resolveEnvPlaceholders($xml);
     }
 
+=======
+        return $xml;
+    }
+
+    /**
+     * Adds parameters.
+     *
+     * @param \DOMElement $parent
+     */
+>>>>>>> web and vendor directory from composer install
     private function addParameters(\DOMElement $parent)
     {
         $data = $this->container->getParameterBag()->all();
@@ -66,7 +85,11 @@ class XmlDumper extends Dumper
             return;
         }
 
+<<<<<<< HEAD
         if ($this->container->isCompiled()) {
+=======
+        if ($this->container->isFrozen()) {
+>>>>>>> web and vendor directory from composer install
             $data = $this->escape($data);
         }
 
@@ -75,6 +98,15 @@ class XmlDumper extends Dumper
         $this->convertParameters($data, 'parameter', $parameters);
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Adds method calls.
+     *
+     * @param array       $methodcalls
+     * @param \DOMElement $parent
+     */
+>>>>>>> web and vendor directory from composer install
     private function addMethodCalls(array $methodcalls, \DOMElement $parent)
     {
         foreach ($methodcalls as $methodcall) {
@@ -107,15 +139,41 @@ class XmlDumper extends Dumper
 
             $service->setAttribute('class', $class);
         }
+<<<<<<< HEAD
         if (!$definition->isShared()) {
             $service->setAttribute('shared', 'false');
         }
         if (!$definition->isPrivate()) {
             $service->setAttribute('public', $definition->isPublic() ? 'true' : 'false');
+=======
+        if ($definition->getFactoryMethod(false)) {
+            $service->setAttribute('factory-method', $definition->getFactoryMethod(false));
+        }
+        if ($definition->getFactoryClass(false)) {
+            $service->setAttribute('factory-class', $definition->getFactoryClass(false));
+        }
+        if ($definition->getFactoryService(false)) {
+            $service->setAttribute('factory-service', $definition->getFactoryService(false));
+        }
+        if (!$definition->isShared()) {
+            $service->setAttribute('shared', 'false');
+        }
+        if (ContainerInterface::SCOPE_CONTAINER !== $scope = $definition->getScope(false)) {
+            $service->setAttribute('scope', $scope);
+        }
+        if (!$definition->isPublic()) {
+            $service->setAttribute('public', 'false');
+>>>>>>> web and vendor directory from composer install
         }
         if ($definition->isSynthetic()) {
             $service->setAttribute('synthetic', 'true');
         }
+<<<<<<< HEAD
+=======
+        if ($definition->isSynchronized(false)) {
+            $service->setAttribute('synchronized', 'true');
+        }
+>>>>>>> web and vendor directory from composer install
         if ($definition->isLazy()) {
             $service->setAttribute('lazy', 'true');
         }
@@ -164,9 +222,13 @@ class XmlDumper extends Dumper
                 $this->addService($callable[0], null, $factory);
                 $factory->setAttribute('method', $callable[1]);
             } elseif (is_array($callable)) {
+<<<<<<< HEAD
                 if (null !== $callable[0]) {
                     $factory->setAttribute($callable[0] instanceof Reference ? 'service' : 'class', $callable[0]);
                 }
+=======
+                $factory->setAttribute($callable[0] instanceof Reference ? 'service' : 'class', $callable[0]);
+>>>>>>> web and vendor directory from composer install
                 $factory->setAttribute('method', $callable[1]);
             } else {
                 $factory->setAttribute('function', $callable);
@@ -185,13 +247,18 @@ class XmlDumper extends Dumper
             $service->setAttribute('autowire', 'true');
         }
 
+<<<<<<< HEAD
         foreach ($definition->getAutowiringTypes(false) as $autowiringTypeValue) {
+=======
+        foreach ($definition->getAutowiringTypes() as $autowiringTypeValue) {
+>>>>>>> web and vendor directory from composer install
             $autowiringType = $this->document->createElement('autowiring-type');
             $autowiringType->appendChild($this->document->createTextNode($autowiringTypeValue));
 
             $service->appendChild($autowiringType);
         }
 
+<<<<<<< HEAD
         if ($definition->isAutoconfigured()) {
             $service->setAttribute('autoconfigure', 'true');
         }
@@ -200,6 +267,8 @@ class XmlDumper extends Dumper
             $service->setAttribute('abstract', 'true');
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         if ($callable = $definition->getConfigurator()) {
             $configurator = $this->document->createElement('configurator');
 
@@ -230,12 +299,25 @@ class XmlDumper extends Dumper
         $service = $this->document->createElement('service');
         $service->setAttribute('id', $alias);
         $service->setAttribute('alias', $id);
+<<<<<<< HEAD
         if (!$id->isPrivate()) {
             $service->setAttribute('public', $id->isPublic() ? 'true' : 'false');
+=======
+        if (!$id->isPublic()) {
+            $service->setAttribute('public', 'false');
+>>>>>>> web and vendor directory from composer install
         }
         $parent->appendChild($service);
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Adds services.
+     *
+     * @param \DOMElement $parent
+     */
+>>>>>>> web and vendor directory from composer install
     private function addServices(\DOMElement $parent)
     {
         $definitions = $this->container->getDefinitions();
@@ -275,6 +357,7 @@ class XmlDumper extends Dumper
                 $element->setAttribute($keyAttribute, $key);
             }
 
+<<<<<<< HEAD
             if ($value instanceof ServiceClosureArgument) {
                 $value = $value->getValues()[0];
             }
@@ -287,16 +370,31 @@ class XmlDumper extends Dumper
             } elseif ($value instanceof IteratorArgument) {
                 $element->setAttribute('type', 'iterator');
                 $this->convertParameters($value->getValues(), $type, $element, 'key');
+=======
+            if (is_array($value)) {
+                $element->setAttribute('type', 'collection');
+                $this->convertParameters($value, $type, $element, 'key');
+>>>>>>> web and vendor directory from composer install
             } elseif ($value instanceof Reference) {
                 $element->setAttribute('type', 'service');
                 $element->setAttribute('id', (string) $value);
                 $behaviour = $value->getInvalidBehavior();
+<<<<<<< HEAD
                 if (ContainerInterface::NULL_ON_INVALID_REFERENCE == $behaviour) {
                     $element->setAttribute('on-invalid', 'null');
                 } elseif (ContainerInterface::IGNORE_ON_INVALID_REFERENCE == $behaviour) {
                     $element->setAttribute('on-invalid', 'ignore');
                 } elseif (ContainerInterface::IGNORE_ON_UNINITIALIZED_REFERENCE == $behaviour) {
                     $element->setAttribute('on-invalid', 'ignore_uninitialized');
+=======
+                if ($behaviour == ContainerInterface::NULL_ON_INVALID_REFERENCE) {
+                    $element->setAttribute('on-invalid', 'null');
+                } elseif ($behaviour == ContainerInterface::IGNORE_ON_INVALID_REFERENCE) {
+                    $element->setAttribute('on-invalid', 'ignore');
+                }
+                if (!$value->isStrict(false)) {
+                    $element->setAttribute('strict', 'false');
+>>>>>>> web and vendor directory from composer install
                 }
             } elseif ($value instanceof Definition) {
                 $element->setAttribute('type', 'service');
@@ -319,6 +417,11 @@ class XmlDumper extends Dumper
     /**
      * Escapes arguments.
      *
+<<<<<<< HEAD
+=======
+     * @param array $arguments
+     *
+>>>>>>> web and vendor directory from composer install
      * @return array
      */
     private function escape(array $arguments)

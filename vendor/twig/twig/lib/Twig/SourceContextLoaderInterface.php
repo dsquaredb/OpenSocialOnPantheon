@@ -3,7 +3,11 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
+=======
+ * (c) 2016 Fabien Potencier
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -29,5 +33,8 @@ interface Twig_SourceContextLoaderInterface
      */
     public function getSourceContext($name);
 }
+<<<<<<< HEAD
 
 class_alias('Twig_SourceContextLoaderInterface', 'Twig\Loader\SourceContextLoaderInterface', false);
+=======
+>>>>>>> web and vendor directory from composer install

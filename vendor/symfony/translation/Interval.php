@@ -11,8 +11,11 @@
 
 namespace Symfony\Component\Translation;
 
+<<<<<<< HEAD
 use Symfony\Component\Translation\Exception\InvalidArgumentException;
 
+=======
+>>>>>>> web and vendor directory from composer install
 /**
  * Tests if a given number belongs to a given math interval.
  *
@@ -43,14 +46,22 @@ class Interval
      *
      * @return bool
      *
+<<<<<<< HEAD
      * @throws InvalidArgumentException
+=======
+     * @throws \InvalidArgumentException
+>>>>>>> web and vendor directory from composer install
      */
     public static function test($number, $interval)
     {
         $interval = trim($interval);
 
         if (!preg_match('/^'.self::getIntervalRegexp().'$/x', $interval, $matches)) {
+<<<<<<< HEAD
             throw new InvalidArgumentException(sprintf('"%s" is not a valid interval.', $interval));
+=======
+            throw new \InvalidArgumentException(sprintf('"%s" is not a valid interval.', $interval));
+>>>>>>> web and vendor directory from composer install
         }
 
         if ($matches[1]) {

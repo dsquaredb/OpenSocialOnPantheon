@@ -1,6 +1,7 @@
 CHANGELOG
 =========
 
+<<<<<<< HEAD
 3.4.0
 -----
 
@@ -29,6 +30,8 @@ CHANGELOG
  * Added support for `bool`, `int`, `float`, `string`, `list` and `map` defaults in XML configurations.
  * Added support for UTF-8 requirements
 
+=======
+>>>>>>> web and vendor directory from composer install
 2.8.0
 -----
 

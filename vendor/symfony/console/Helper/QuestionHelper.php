@@ -13,12 +13,19 @@ namespace Symfony\Component\Console\Helper;
 
 use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Exception\RuntimeException;
+<<<<<<< HEAD
 use Symfony\Component\Console\Formatter\OutputFormatter;
 use Symfony\Component\Console\Formatter\OutputFormatterStyle;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\StreamableInputInterface;
 use Symfony\Component\Console\Output\ConsoleOutputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+=======
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\ConsoleOutputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Formatter\OutputFormatterStyle;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\Console\Question\Question;
 use Symfony\Component\Console\Question\ChoiceQuestion;
 
@@ -36,7 +43,15 @@ class QuestionHelper extends Helper
     /**
      * Asks a question to the user.
      *
+<<<<<<< HEAD
      * @return mixed The user answer
+=======
+     * @param InputInterface  $input    An InputInterface instance
+     * @param OutputInterface $output   An OutputInterface instance
+     * @param Question        $question The question to ask
+     *
+     * @return string The user answer
+>>>>>>> web and vendor directory from composer install
      *
      * @throws RuntimeException If there is no data to read in the input stream
      */
@@ -47,6 +62,7 @@ class QuestionHelper extends Helper
         }
 
         if (!$input->isInteractive()) {
+<<<<<<< HEAD
             if ($question instanceof ChoiceQuestion) {
                 $choices = $question->getChoices();
 
@@ -60,12 +76,24 @@ class QuestionHelper extends Helper
             $this->inputStream = $stream;
         }
 
+=======
+            return $question->getDefault();
+        }
+
+>>>>>>> web and vendor directory from composer install
         if (!$question->getValidator()) {
             return $this->doAsk($output, $question);
         }
 
+<<<<<<< HEAD
         $interviewer = function () use ($output, $question) {
             return $this->doAsk($output, $question);
+=======
+        $that = $this;
+
+        $interviewer = function () use ($output, $question, $that) {
+            return $that->doAsk($output, $question);
+>>>>>>> web and vendor directory from composer install
         };
 
         return $this->validateAttempts($interviewer, $output, $question);
@@ -76,17 +104,23 @@ class QuestionHelper extends Helper
      *
      * This is mainly useful for testing purpose.
      *
+<<<<<<< HEAD
      * @deprecated since version 3.2, to be removed in 4.0. Use
      *             StreamableInputInterface::setStream() instead.
      *
+=======
+>>>>>>> web and vendor directory from composer install
      * @param resource $stream The input stream
      *
      * @throws InvalidArgumentException In case the stream is not a resource
      */
     public function setInputStream($stream)
     {
+<<<<<<< HEAD
         @trigger_error(sprintf('The %s() method is deprecated since Symfony 3.2 and will be removed in 4.0. Use %s::setStream() instead.', __METHOD__, StreamableInputInterface::class), E_USER_DEPRECATED);
 
+=======
+>>>>>>> web and vendor directory from composer install
         if (!is_resource($stream)) {
             throw new InvalidArgumentException('Input stream must be a valid resource.');
         }
@@ -97,17 +131,23 @@ class QuestionHelper extends Helper
     /**
      * Returns the helper's input stream.
      *
+<<<<<<< HEAD
      * @deprecated since version 3.2, to be removed in 4.0. Use
      *             StreamableInputInterface::getStream() instead.
      *
+=======
+>>>>>>> web and vendor directory from composer install
      * @return resource
      */
     public function getInputStream()
     {
+<<<<<<< HEAD
         if (0 === func_num_args() || func_get_arg(0)) {
             @trigger_error(sprintf('The %s() method is deprecated since Symfony 3.2 and will be removed in 4.0. Use %s::getStream() instead.', __METHOD__, StreamableInputInterface::class), E_USER_DEPRECATED);
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         return $this->inputStream;
     }
 
@@ -120,6 +160,7 @@ class QuestionHelper extends Helper
     }
 
     /**
+<<<<<<< HEAD
      * Prevents usage of stty.
      */
     public static function disableStty()
@@ -135,6 +176,21 @@ class QuestionHelper extends Helper
      * @throws RuntimeException In case the fallback is deactivated and the response cannot be hidden
      */
     private function doAsk(OutputInterface $output, Question $question)
+=======
+     * Asks the question to the user.
+     *
+     * This method is public for PHP 5.3 compatibility, it should be private.
+     *
+     * @param OutputInterface $output
+     * @param Question        $question
+     *
+     * @return bool|mixed|null|string
+     *
+     * @throws \Exception
+     * @throws \RuntimeException
+     */
+    public function doAsk(OutputInterface $output, Question $question)
+>>>>>>> web and vendor directory from composer install
     {
         $this->writePrompt($output, $question);
 
@@ -146,7 +202,11 @@ class QuestionHelper extends Helper
             if ($question->isHidden()) {
                 try {
                     $ret = trim($this->getHiddenResponse($output, $inputStream));
+<<<<<<< HEAD
                 } catch (RuntimeException $e) {
+=======
+                } catch (\RuntimeException $e) {
+>>>>>>> web and vendor directory from composer install
                     if (!$question->isHiddenFallback()) {
                         throw $e;
                     }
@@ -156,12 +216,20 @@ class QuestionHelper extends Helper
             if (false === $ret) {
                 $ret = fgets($inputStream, 4096);
                 if (false === $ret) {
+<<<<<<< HEAD
                     throw new RuntimeException('Aborted');
+=======
+                    throw new \RuntimeException('Aborted');
+>>>>>>> web and vendor directory from composer install
                 }
                 $ret = trim($ret);
             }
         } else {
+<<<<<<< HEAD
             $ret = trim($this->autocomplete($output, $question, $inputStream, is_array($autocomplete) ? $autocomplete : iterator_to_array($autocomplete, false)));
+=======
+            $ret = trim($this->autocomplete($output, $question, $inputStream));
+>>>>>>> web and vendor directory from composer install
         }
 
         $ret = strlen($ret) > 0 ? $ret : $question->getDefault();
@@ -175,6 +243,12 @@ class QuestionHelper extends Helper
 
     /**
      * Outputs the question prompt.
+<<<<<<< HEAD
+=======
+     *
+     * @param OutputInterface $output
+     * @param Question        $question
+>>>>>>> web and vendor directory from composer install
      */
     protected function writePrompt(OutputInterface $output, Question $question)
     {
@@ -199,6 +273,12 @@ class QuestionHelper extends Helper
 
     /**
      * Outputs an error message.
+<<<<<<< HEAD
+=======
+     *
+     * @param OutputInterface $output
+     * @param \Exception      $error
+>>>>>>> web and vendor directory from composer install
      */
     protected function writeError(OutputInterface $output, \Exception $error)
     {
@@ -217,12 +297,21 @@ class QuestionHelper extends Helper
      * @param OutputInterface $output
      * @param Question        $question
      * @param resource        $inputStream
+<<<<<<< HEAD
      * @param array           $autocomplete
      *
      * @return string
      */
     private function autocomplete(OutputInterface $output, Question $question, $inputStream, array $autocomplete)
     {
+=======
+     *
+     * @return string
+     */
+    private function autocomplete(OutputInterface $output, Question $question, $inputStream)
+    {
+        $autocomplete = $question->getAutocompleterValues();
+>>>>>>> web and vendor directory from composer install
         $ret = '';
 
         $i = 0;
@@ -250,7 +339,11 @@ class QuestionHelper extends Helper
                     $output->write("\033[1D");
                 }
 
+<<<<<<< HEAD
                 if (0 === $i) {
+=======
+                if ($i === 0) {
+>>>>>>> web and vendor directory from composer install
                     $ofs = -1;
                     $matches = $autocomplete;
                     $numMatches = count($matches);
@@ -305,7 +398,11 @@ class QuestionHelper extends Helper
 
                 foreach ($autocomplete as $value) {
                     // If typed characters match the beginning chunk of value (e.g. [AcmeDe]moBundle)
+<<<<<<< HEAD
                     if (0 === strpos($value, $ret)) {
+=======
+                    if (0 === strpos($value, $ret) && $i !== strlen($value)) {
+>>>>>>> web and vendor directory from composer install
                         $matches[$numMatches++] = $value;
                     }
                 }
@@ -318,7 +415,11 @@ class QuestionHelper extends Helper
                 // Save cursor position
                 $output->write("\0337");
                 // Write highlighted text
+<<<<<<< HEAD
                 $output->write('<hl>'.OutputFormatter::escapeTrailingBackslash(substr($matches[$ofs], $i)).'</hl>');
+=======
+                $output->write('<hl>'.substr($matches[$ofs], $i).'</hl>');
+>>>>>>> web and vendor directory from composer install
                 // Restore cursor position
                 $output->write("\0338");
             }
@@ -380,7 +481,11 @@ class QuestionHelper extends Helper
         }
 
         if (false !== $shell = $this->getShell()) {
+<<<<<<< HEAD
             $readCmd = 'csh' === $shell ? 'set mypassword = $<' : 'read -r mypassword';
+=======
+            $readCmd = $shell === 'csh' ? 'set mypassword = $<' : 'read -r mypassword';
+>>>>>>> web and vendor directory from composer install
             $command = sprintf("/usr/bin/env %s -c 'stty -echo; %s; stty echo; echo \$mypassword'", $shell, $readCmd);
             $value = rtrim(shell_exec($command));
             $output->writeln('');
@@ -398,11 +503,19 @@ class QuestionHelper extends Helper
      * @param OutputInterface $output      An Output instance
      * @param Question        $question    A Question instance
      *
+<<<<<<< HEAD
      * @return mixed The validated response
      *
      * @throws \Exception In case the max number of attempts has been reached and no valid response has been given
      */
     private function validateAttempts(callable $interviewer, OutputInterface $output, Question $question)
+=======
+     * @return string The validated response
+     *
+     * @throws \Exception In case the max number of attempts has been reached and no valid response has been given
+     */
+    private function validateAttempts($interviewer, OutputInterface $output, Question $question)
+>>>>>>> web and vendor directory from composer install
     {
         $error = null;
         $attempts = $question->getMaxAttempts();
@@ -413,8 +526,11 @@ class QuestionHelper extends Helper
 
             try {
                 return call_user_func($question->getValidator(), $interviewer());
+<<<<<<< HEAD
             } catch (RuntimeException $e) {
                 throw $e;
+=======
+>>>>>>> web and vendor directory from composer install
             } catch (\Exception $error) {
             }
         }
@@ -462,6 +578,10 @@ class QuestionHelper extends Helper
 
         exec('stty 2>&1', $output, $exitcode);
 
+<<<<<<< HEAD
         return self::$stty = 0 === $exitcode;
+=======
+        return self::$stty = $exitcode === 0;
+>>>>>>> web and vendor directory from composer install
     }
 }

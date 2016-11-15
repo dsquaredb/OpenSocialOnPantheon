@@ -15,8 +15,11 @@ namespace Symfony\Component\Yaml;
  * Dumper dumps PHP variables to YAML strings.
  *
  * @author Fabien Potencier <fabien@symfony.com>
+<<<<<<< HEAD
  *
  * @final since version 3.4
+=======
+>>>>>>> web and vendor directory from composer install
  */
 class Dumper
 {
@@ -25,6 +28,7 @@ class Dumper
      *
      * @var int
      */
+<<<<<<< HEAD
     protected $indentation;
 
     /**
@@ -38,17 +42,29 @@ class Dumper
 
         $this->indentation = $indentation;
     }
+=======
+    protected $indentation = 4;
+>>>>>>> web and vendor directory from composer install
 
     /**
      * Sets the indentation.
      *
      * @param int $num The amount of spaces to use for indentation of nested nodes
+<<<<<<< HEAD
      *
      * @deprecated since version 3.1, to be removed in 4.0. Pass the indentation to the constructor instead.
      */
     public function setIndentation($num)
     {
         @trigger_error('The '.__METHOD__.' method is deprecated since Symfony 3.1 and will be removed in 4.0. Pass the indentation to the constructor instead.', E_USER_DEPRECATED);
+=======
+     */
+    public function setIndentation($num)
+    {
+        if ($num < 1) {
+            throw new \InvalidArgumentException('The indentation must be greater than zero.');
+        }
+>>>>>>> web and vendor directory from composer install
 
         $this->indentation = (int) $num;
     }
@@ -56,6 +72,7 @@ class Dumper
     /**
      * Dumps a PHP value to YAML.
      *
+<<<<<<< HEAD
      * @param mixed $input  The PHP value
      * @param int   $inline The level where you switch to inline YAML
      * @param int   $indent The level of indentation (used internally)
@@ -123,6 +140,34 @@ class Dumper
                     $dumpAsMap ? Inline::dump($key, $flags).':' : '-',
                     $willBeInlined ? ' ' : "\n",
                     $this->dump($value, $inline - 1, $willBeInlined ? 0 : $indent + $this->indentation, $flags)
+=======
+     * @param mixed $input                  The PHP value
+     * @param int   $inline                 The level where you switch to inline YAML
+     * @param int   $indent                 The level of indentation (used internally)
+     * @param bool  $exceptionOnInvalidType true if an exception must be thrown on invalid types (a PHP resource or object), false otherwise
+     * @param bool  $objectSupport          true if object support is enabled, false otherwise
+     *
+     * @return string The YAML representation of the PHP value
+     */
+    public function dump($input, $inline = 0, $indent = 0, $exceptionOnInvalidType = false, $objectSupport = false)
+    {
+        $output = '';
+        $prefix = $indent ? str_repeat(' ', $indent) : '';
+
+        if ($inline <= 0 || !is_array($input) || empty($input)) {
+            $output .= $prefix.Inline::dump($input, $exceptionOnInvalidType, $objectSupport);
+        } else {
+            $isAHash = Inline::isHash($input);
+
+            foreach ($input as $key => $value) {
+                $willBeInlined = $inline - 1 <= 0 || !is_array($value) || empty($value);
+
+                $output .= sprintf('%s%s%s%s',
+                    $prefix,
+                    $isAHash ? Inline::dump($key, $exceptionOnInvalidType, $objectSupport).':' : '-',
+                    $willBeInlined ? ' ' : "\n",
+                    $this->dump($value, $inline - 1, $willBeInlined ? 0 : $indent + $this->indentation, $exceptionOnInvalidType, $objectSupport)
+>>>>>>> web and vendor directory from composer install
                 ).($willBeInlined ? "\n" : '');
             }
         }

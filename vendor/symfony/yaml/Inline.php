@@ -13,12 +13,16 @@ namespace Symfony\Component\Yaml;
 
 use Symfony\Component\Yaml\Exception\ParseException;
 use Symfony\Component\Yaml\Exception\DumpException;
+<<<<<<< HEAD
 use Symfony\Component\Yaml\Tag\TaggedValue;
+=======
+>>>>>>> web and vendor directory from composer install
 
 /**
  * Inline implements a YAML parser/dumper for the YAML inline syntax.
  *
  * @author Fabien Potencier <fabien@symfony.com>
+<<<<<<< HEAD
  *
  * @internal
  */
@@ -28,10 +32,17 @@ class Inline
 
     public static $parsedLineNumber = -1;
     public static $parsedFilename;
+=======
+ */
+class Inline
+{
+    const REGEX_QUOTED_STRING = '(?:"([^"\\\\]*(?:\\\\.[^"\\\\]*)*)"|\'([^\']*(?:\'\'[^\']*)*)\')';
+>>>>>>> web and vendor directory from composer install
 
     private static $exceptionOnInvalidType = false;
     private static $objectSupport = false;
     private static $objectForMap = false;
+<<<<<<< HEAD
     private static $constantSupport = false;
 
     /**
@@ -98,6 +109,27 @@ class Inline
         }
 
         self::initialize($flags);
+=======
+
+    /**
+     * Converts a YAML string to a PHP array.
+     *
+     * @param string $value                  A YAML string
+     * @param bool   $exceptionOnInvalidType true if an exception must be thrown on invalid types (a PHP resource or object), false otherwise
+     * @param bool   $objectSupport          true if object support is enabled, false otherwise
+     * @param bool   $objectForMap           true if maps should return a stdClass instead of array()
+     * @param array  $references             Mapping of variable names to values
+     *
+     * @return array A PHP array representing the YAML string
+     *
+     * @throws ParseException
+     */
+    public static function parse($value, $exceptionOnInvalidType = false, $objectSupport = false, $objectForMap = false, $references = array())
+    {
+        self::$exceptionOnInvalidType = $exceptionOnInvalidType;
+        self::$objectSupport = $objectSupport;
+        self::$objectForMap = $objectForMap;
+>>>>>>> web and vendor directory from composer install
 
         $value = trim($value);
 
@@ -111,6 +143,7 @@ class Inline
         }
 
         $i = 0;
+<<<<<<< HEAD
         $tag = self::parseTag($value, $i, $flags);
         switch ($value[$i]) {
             case '[':
@@ -127,11 +160,28 @@ class Inline
 
         if (null !== $tag) {
             return new TaggedValue($tag, $result);
+=======
+        switch ($value[0]) {
+            case '[':
+                $result = self::parseSequence($value, $i, $references);
+                ++$i;
+                break;
+            case '{':
+                $result = self::parseMapping($value, $i, $references);
+                ++$i;
+                break;
+            default:
+                $result = self::parseScalar($value, null, array('"', "'"), $i, true, $references);
+>>>>>>> web and vendor directory from composer install
         }
 
         // some comments are allowed at the end
         if (preg_replace('/\s+#.*$/A', '', substr($value, $i))) {
+<<<<<<< HEAD
             throw new ParseException(sprintf('Unexpected characters near "%s".', substr($value, $i)), self::$parsedLineNumber + 1, $value, self::$parsedFilename);
+=======
+            throw new ParseException(sprintf('Unexpected characters near "%s".', substr($value, $i)));
+>>>>>>> web and vendor directory from composer install
         }
 
         if (isset($mbEncoding)) {
@@ -144,6 +194,7 @@ class Inline
     /**
      * Dumps a given PHP variable to a YAML string.
      *
+<<<<<<< HEAD
      * @param mixed $value The PHP variable to convert
      * @param int   $flags A bit field of Yaml::DUMP_* constants to customize the dumped YAML string
      *
@@ -174,10 +225,26 @@ class Inline
         switch (true) {
             case is_resource($value):
                 if (Yaml::DUMP_EXCEPTION_ON_INVALID_TYPE & $flags) {
+=======
+     * @param mixed $value                  The PHP variable to convert
+     * @param bool  $exceptionOnInvalidType true if an exception must be thrown on invalid types (a PHP resource or object), false otherwise
+     * @param bool  $objectSupport          true if object support is enabled, false otherwise
+     *
+     * @return string The YAML string representing the PHP array
+     *
+     * @throws DumpException When trying to dump PHP resource
+     */
+    public static function dump($value, $exceptionOnInvalidType = false, $objectSupport = false)
+    {
+        switch (true) {
+            case is_resource($value):
+                if ($exceptionOnInvalidType) {
+>>>>>>> web and vendor directory from composer install
                     throw new DumpException(sprintf('Unable to dump PHP resources in a YAML file ("%s").', get_resource_type($value)));
                 }
 
                 return 'null';
+<<<<<<< HEAD
             case $value instanceof \DateTimeInterface:
                 return $value->format('c');
             case is_object($value):
@@ -194,12 +261,24 @@ class Inline
                 }
 
                 if (Yaml::DUMP_EXCEPTION_ON_INVALID_TYPE & $flags) {
+=======
+            case is_object($value):
+                if ($objectSupport) {
+                    return '!php/object:'.serialize($value);
+                }
+
+                if ($exceptionOnInvalidType) {
+>>>>>>> web and vendor directory from composer install
                     throw new DumpException('Object support when dumping a YAML file has been disabled.');
                 }
 
                 return 'null';
             case is_array($value):
+<<<<<<< HEAD
                 return self::dumpArray($value, $flags);
+=======
+                return self::dumpArray($value, $exceptionOnInvalidType, $objectSupport);
+>>>>>>> web and vendor directory from composer install
             case null === $value:
                 return 'null';
             case true === $value:
@@ -231,6 +310,7 @@ class Inline
                 return $repr;
             case '' == $value:
                 return "''";
+<<<<<<< HEAD
             case self::isBinaryString($value):
                 return '!!binary '.base64_encode($value);
             case Escaper::requiresDoubleQuoting($value):
@@ -239,6 +319,13 @@ class Inline
             case Parser::preg_match('{^[0-9]+[_0-9]*$}', $value):
             case Parser::preg_match(self::getHexRegex(), $value):
             case Parser::preg_match(self::getTimestampRegex(), $value):
+=======
+            case Escaper::requiresDoubleQuoting($value):
+                return Escaper::escapeWithDoubleQuotes($value);
+            case Escaper::requiresSingleQuoting($value):
+            case preg_match(self::getHexRegex(), $value):
+            case preg_match(self::getTimestampRegex(), $value):
+>>>>>>> web and vendor directory from composer install
                 return Escaper::escapeWithSingleQuotes($value);
             default:
                 return $value;
@@ -250,6 +337,7 @@ class Inline
      *
      * @internal
      *
+<<<<<<< HEAD
      * @param array|\ArrayObject|\stdClass $value The PHP array or array-like object to check
      *
      * @return bool true if value is hash array, false otherwise
@@ -260,6 +348,14 @@ class Inline
             return true;
         }
 
+=======
+     * @param array $value The PHP array to check
+     *
+     * @return bool true if value is hash array, false otherwise
+     */
+    public static function isHash(array $value)
+    {
+>>>>>>> web and vendor directory from composer install
         $expectedKey = 0;
 
         foreach ($value as $key => $val) {
@@ -274,6 +370,7 @@ class Inline
     /**
      * Dumps a PHP array to a YAML string.
      *
+<<<<<<< HEAD
      * @param array $value The PHP array to dump
      * @param int   $flags A bit field of Yaml::DUMP_* constants to customize the dumped YAML string
      *
@@ -286,6 +383,21 @@ class Inline
             $output = array();
             foreach ($value as $val) {
                 $output[] = self::dump($val, $flags);
+=======
+     * @param array $value                  The PHP array to dump
+     * @param bool  $exceptionOnInvalidType true if an exception must be thrown on invalid types (a PHP resource or object), false otherwise
+     * @param bool  $objectSupport          true if object support is enabled, false otherwise
+     *
+     * @return string The YAML string representing the PHP array
+     */
+    private static function dumpArray($value, $exceptionOnInvalidType, $objectSupport)
+    {
+        // array
+        if ($value && !self::isHash($value)) {
+            $output = array();
+            foreach ($value as $val) {
+                $output[] = self::dump($val, $exceptionOnInvalidType, $objectSupport);
+>>>>>>> web and vendor directory from composer install
             }
 
             return sprintf('[%s]', implode(', ', $output));
@@ -294,13 +406,18 @@ class Inline
         // hash
         $output = array();
         foreach ($value as $key => $val) {
+<<<<<<< HEAD
             $output[] = sprintf('%s: %s', self::dump($key, $flags), self::dump($val, $flags));
+=======
+            $output[] = sprintf('%s: %s', self::dump($key, $exceptionOnInvalidType, $objectSupport), self::dump($val, $exceptionOnInvalidType, $objectSupport));
+>>>>>>> web and vendor directory from composer install
         }
 
         return sprintf('{ %s }', implode(', ', $output));
     }
 
     /**
+<<<<<<< HEAD
      * Parses a YAML scalar.
      *
      * @param string   $scalar
@@ -311,24 +428,47 @@ class Inline
      * @param array    $references
      *
      * @return string
+=======
+     * Parses a scalar to a YAML string.
+     *
+     * @param string $scalar
+     * @param string $delimiters
+     * @param array  $stringDelimiters
+     * @param int    &$i
+     * @param bool   $evaluate
+     * @param array  $references
+     *
+     * @return string A YAML string
+>>>>>>> web and vendor directory from composer install
      *
      * @throws ParseException When malformed inline YAML string is parsed
      *
      * @internal
      */
+<<<<<<< HEAD
     public static function parseScalar($scalar, $flags = 0, $delimiters = null, &$i = 0, $evaluate = true, $references = array(), $legacyOmittedKeySupport = false)
     {
         if (in_array($scalar[$i], array('"', "'"))) {
+=======
+    public static function parseScalar($scalar, $delimiters = null, $stringDelimiters = array('"', "'"), &$i = 0, $evaluate = true, $references = array())
+    {
+        if (in_array($scalar[$i], $stringDelimiters)) {
+>>>>>>> web and vendor directory from composer install
             // quoted scalar
             $output = self::parseQuotedScalar($scalar, $i);
 
             if (null !== $delimiters) {
                 $tmp = ltrim(substr($scalar, $i), ' ');
+<<<<<<< HEAD
                 if ('' === $tmp) {
                     throw new ParseException(sprintf('Unexpected end of line, expected one of "%s".', implode($delimiters)), self::$parsedLineNumber + 1, $scalar, self::$parsedFilename);
                 }
                 if (!in_array($tmp[0], $delimiters)) {
                     throw new ParseException(sprintf('Unexpected characters (%s).', substr($scalar, $i)), self::$parsedLineNumber + 1, $scalar, self::$parsedFilename);
+=======
+                if (!in_array($tmp[0], $delimiters)) {
+                    throw new ParseException(sprintf('Unexpected characters (%s).', substr($scalar, $i)));
+>>>>>>> web and vendor directory from composer install
                 }
             }
         } else {
@@ -338,6 +478,7 @@ class Inline
                 $i += strlen($output);
 
                 // remove comments
+<<<<<<< HEAD
                 if (Parser::preg_match('/[ \t]+#/', $output, $match, PREG_OFFSET_CAPTURE)) {
                     $output = substr($output, 0, $match[0][1]);
                 }
@@ -346,10 +487,21 @@ class Inline
                 $i += strlen($output);
             } else {
                 throw new ParseException(sprintf('Malformed inline YAML string: %s.', $scalar), self::$parsedLineNumber + 1, null, self::$parsedFilename);
+=======
+                if (preg_match('/[ \t]+#/', $output, $match, PREG_OFFSET_CAPTURE)) {
+                    $output = substr($output, 0, $match[0][1]);
+                }
+            } elseif (preg_match('/^(.+?)('.implode('|', $delimiters).')/', substr($scalar, $i), $match)) {
+                $output = $match[1];
+                $i += strlen($output);
+            } else {
+                throw new ParseException(sprintf('Malformed inline YAML string (%s).', $scalar));
+>>>>>>> web and vendor directory from composer install
             }
 
             // a non-quoted string cannot start with @ or ` (reserved) nor with a scalar indicator (| or >)
             if ($output && ('@' === $output[0] || '`' === $output[0] || '|' === $output[0] || '>' === $output[0])) {
+<<<<<<< HEAD
                 throw new ParseException(sprintf('The reserved indicator "%s" cannot start a plain scalar; you need to quote the scalar.', $output[0]), self::$parsedLineNumber + 1, $output, self::$parsedFilename);
             }
 
@@ -359,6 +511,16 @@ class Inline
 
             if ($evaluate) {
                 $output = self::evaluateScalar($output, $flags, $references);
+=======
+                @trigger_error(sprintf('Not quoting the scalar "%s" starting with "%s" is deprecated since Symfony 2.8 and will throw a ParseException in 3.0.', $output, $output[0]), E_USER_DEPRECATED);
+
+                // to be thrown in 3.0
+                // throw new ParseException(sprintf('The reserved indicator "%s" cannot start a plain scalar; you need to quote the scalar.', $output[0]));
+            }
+
+            if ($evaluate) {
+                $output = self::evaluateScalar($output, $references);
+>>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -366,19 +528,32 @@ class Inline
     }
 
     /**
+<<<<<<< HEAD
      * Parses a YAML quoted scalar.
+=======
+     * Parses a quoted scalar to YAML.
+>>>>>>> web and vendor directory from composer install
      *
      * @param string $scalar
      * @param int    &$i
      *
+<<<<<<< HEAD
      * @return string
+=======
+     * @return string A YAML string
+>>>>>>> web and vendor directory from composer install
      *
      * @throws ParseException When malformed inline YAML string is parsed
      */
     private static function parseQuotedScalar($scalar, &$i)
     {
+<<<<<<< HEAD
         if (!Parser::preg_match('/'.self::REGEX_QUOTED_STRING.'/Au', substr($scalar, $i), $match)) {
             throw new ParseException(sprintf('Malformed inline YAML string: %s.', substr($scalar, $i)), self::$parsedLineNumber + 1, $scalar, self::$parsedFilename);
+=======
+        if (!preg_match('/'.self::REGEX_QUOTED_STRING.'/Au', substr($scalar, $i), $match)) {
+            throw new ParseException(sprintf('Malformed inline YAML string (%s).', substr($scalar, $i)));
+>>>>>>> web and vendor directory from composer install
         }
 
         $output = substr($match[0], 1, strlen($match[0]) - 2);
@@ -396,6 +571,7 @@ class Inline
     }
 
     /**
+<<<<<<< HEAD
      * Parses a YAML sequence.
      *
      * @param string $sequence
@@ -408,6 +584,19 @@ class Inline
      * @throws ParseException When malformed inline YAML string is parsed
      */
     private static function parseSequence($sequence, $flags, &$i = 0, $references = array())
+=======
+     * Parses a sequence to a YAML string.
+     *
+     * @param string $sequence
+     * @param int    &$i
+     * @param array  $references
+     *
+     * @return string A YAML string
+     *
+     * @throws ParseException When malformed inline YAML string is parsed
+     */
+    private static function parseSequence($sequence, &$i = 0, $references = array())
+>>>>>>> web and vendor directory from composer install
     {
         $output = array();
         $len = strlen($sequence);
@@ -415,6 +604,7 @@ class Inline
 
         // [foo, bar, ...]
         while ($i < $len) {
+<<<<<<< HEAD
             if (']' === $sequence[$i]) {
                 return $output;
             }
@@ -444,11 +634,38 @@ class Inline
                         try {
                             $pos = 0;
                             $value = self::parseMapping('{'.$value.'}', $flags, $pos, $references);
+=======
+            switch ($sequence[$i]) {
+                case '[':
+                    // nested sequence
+                    $output[] = self::parseSequence($sequence, $i, $references);
+                    break;
+                case '{':
+                    // nested mapping
+                    $output[] = self::parseMapping($sequence, $i, $references);
+                    break;
+                case ']':
+                    return $output;
+                case ',':
+                case ' ':
+                    break;
+                default:
+                    $isQuoted = in_array($sequence[$i], array('"', "'"));
+                    $value = self::parseScalar($sequence, array(',', ']'), array('"', "'"), $i, true, $references);
+
+                    // the value can be an array if a reference has been resolved to an array var
+                    if (!is_array($value) && !$isQuoted && false !== strpos($value, ': ')) {
+                        // embedded mapping?
+                        try {
+                            $pos = 0;
+                            $value = self::parseMapping('{'.$value.'}', $pos, $references);
+>>>>>>> web and vendor directory from composer install
                         } catch (\InvalidArgumentException $e) {
                             // no, it's not
                         }
                     }
 
+<<<<<<< HEAD
                     --$i;
             }
 
@@ -477,11 +694,39 @@ class Inline
      * @throws ParseException When malformed inline YAML string is parsed
      */
     private static function parseMapping($mapping, $flags, &$i = 0, $references = array())
+=======
+                    $output[] = $value;
+
+                    --$i;
+            }
+
+            ++$i;
+        }
+
+        throw new ParseException(sprintf('Malformed inline YAML string %s', $sequence));
+    }
+
+    /**
+     * Parses a mapping to a YAML string.
+     *
+     * @param string $mapping
+     * @param int    &$i
+     * @param array  $references
+     *
+     * @return string A YAML string
+     *
+     * @throws ParseException When malformed inline YAML string is parsed
+     */
+    private static function parseMapping($mapping, &$i = 0, $references = array())
+>>>>>>> web and vendor directory from composer install
     {
         $output = array();
         $len = strlen($mapping);
         ++$i;
+<<<<<<< HEAD
         $allowOverwrite = false;
+=======
+>>>>>>> web and vendor directory from composer install
 
         // {foo: bar, bar:foo, ...}
         while ($i < $len) {
@@ -499,6 +744,7 @@ class Inline
             }
 
             // key
+<<<<<<< HEAD
             $isKeyQuoted = in_array($mapping[$i], array('"', "'"), true);
             $key = self::parseScalar($mapping, $flags, array(':', ' '), $i, false, array(), true);
 
@@ -601,12 +847,68 @@ class Inline
         }
 
         throw new ParseException(sprintf('Malformed inline YAML string: %s.', $mapping), self::$parsedLineNumber + 1, null, self::$parsedFilename);
+=======
+            $key = self::parseScalar($mapping, array(':', ' '), array('"', "'"), $i, false);
+
+            // value
+            $done = false;
+
+            while ($i < $len) {
+                switch ($mapping[$i]) {
+                    case '[':
+                        // nested sequence
+                        $value = self::parseSequence($mapping, $i, $references);
+                        // Spec: Keys MUST be unique; first one wins.
+                        // Parser cannot abort this mapping earlier, since lines
+                        // are processed sequentially.
+                        if (!isset($output[$key])) {
+                            $output[$key] = $value;
+                        }
+                        $done = true;
+                        break;
+                    case '{':
+                        // nested mapping
+                        $value = self::parseMapping($mapping, $i, $references);
+                        // Spec: Keys MUST be unique; first one wins.
+                        // Parser cannot abort this mapping earlier, since lines
+                        // are processed sequentially.
+                        if (!isset($output[$key])) {
+                            $output[$key] = $value;
+                        }
+                        $done = true;
+                        break;
+                    case ':':
+                    case ' ':
+                        break;
+                    default:
+                        $value = self::parseScalar($mapping, array(',', '}'), array('"', "'"), $i, true, $references);
+                        // Spec: Keys MUST be unique; first one wins.
+                        // Parser cannot abort this mapping earlier, since lines
+                        // are processed sequentially.
+                        if (!isset($output[$key])) {
+                            $output[$key] = $value;
+                        }
+                        $done = true;
+                        --$i;
+                }
+
+                ++$i;
+
+                if ($done) {
+                    continue 2;
+                }
+            }
+        }
+
+        throw new ParseException(sprintf('Malformed inline YAML string %s', $mapping));
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Evaluates scalars and replaces magic values.
      *
      * @param string $scalar
+<<<<<<< HEAD
      * @param int    $flags
      * @param array  $references
      *
@@ -615,6 +917,15 @@ class Inline
      * @throws ParseException when object parsing support was disabled and the parser detected a PHP object or when a reference could not be resolved
      */
     private static function evaluateScalar($scalar, $flags, $references = array())
+=======
+     * @param array  $references
+     *
+     * @return string A YAML string
+     *
+     * @throws ParseException when object parsing support was disabled and the parser detected a PHP object or when a reference could not be resolved
+     */
+    private static function evaluateScalar($scalar, $references = array())
+>>>>>>> web and vendor directory from composer install
     {
         $scalar = trim($scalar);
         $scalarLower = strtolower($scalar);
@@ -628,11 +939,19 @@ class Inline
 
             // an unquoted *
             if (false === $value || '' === $value) {
+<<<<<<< HEAD
                 throw new ParseException('A reference must contain at least one character.', self::$parsedLineNumber + 1, $value, self::$parsedFilename);
             }
 
             if (!array_key_exists($value, $references)) {
                 throw new ParseException(sprintf('Reference "%s" does not exist.', $value), self::$parsedLineNumber + 1, $value, self::$parsedFilename);
+=======
+                throw new ParseException('A reference must contain at least one character.');
+            }
+
+            if (!array_key_exists($value, $references)) {
+                throw new ParseException(sprintf('Reference "%s" does not exist.', $value));
+>>>>>>> web and vendor directory from composer install
             }
 
             return $references[$value];
@@ -647,6 +966,7 @@ class Inline
                 return true;
             case 'false' === $scalarLower:
                 return false;
+<<<<<<< HEAD
             case '!' === $scalar[0]:
                 switch (true) {
                     case 0 === strpos($scalar, '!str'):
@@ -663,22 +983,41 @@ class Inline
                         if (self::$objectSupport) {
                             @trigger_error(self::getDeprecationMessage('The !php/object: tag to indicate dumped PHP objects is deprecated since Symfony 3.4 and will be removed in 4.0. Use the !php/object (without the colon) tag instead.'), E_USER_DEPRECATED);
 
+=======
+            // Optimise for returning strings.
+            case $scalar[0] === '+' || $scalar[0] === '-' || $scalar[0] === '.' || $scalar[0] === '!' || is_numeric($scalar[0]):
+                switch (true) {
+                    case 0 === strpos($scalar, '!str'):
+                        return (string) substr($scalar, 5);
+                    case 0 === strpos($scalar, '! '):
+                        return (int) self::parseScalar(substr($scalar, 2));
+                    case 0 === strpos($scalar, '!php/object:'):
+                        if (self::$objectSupport) {
+>>>>>>> web and vendor directory from composer install
                             return unserialize(substr($scalar, 12));
                         }
 
                         if (self::$exceptionOnInvalidType) {
+<<<<<<< HEAD
                             throw new ParseException('Object support when parsing a YAML file has been disabled.', self::$parsedLineNumber + 1, $scalar, self::$parsedFilename);
+=======
+                            throw new ParseException('Object support when parsing a YAML file has been disabled.');
+>>>>>>> web and vendor directory from composer install
                         }
 
                         return;
                     case 0 === strpos($scalar, '!!php/object:'):
                         if (self::$objectSupport) {
+<<<<<<< HEAD
                             @trigger_error(self::getDeprecationMessage('The !!php/object: tag to indicate dumped PHP objects is deprecated since Symfony 3.1 and will be removed in 4.0. Use the !php/object (without the colon) tag instead.'), E_USER_DEPRECATED);
 
+=======
+>>>>>>> web and vendor directory from composer install
                             return unserialize(substr($scalar, 13));
                         }
 
                         if (self::$exceptionOnInvalidType) {
+<<<<<<< HEAD
                             throw new ParseException('Object support when parsing a YAML file has been disabled.', self::$parsedLineNumber + 1, $scalar, self::$parsedFilename);
                         }
 
@@ -719,11 +1058,15 @@ class Inline
                         }
                         if (self::$exceptionOnInvalidType) {
                             throw new ParseException(sprintf('The string "%s" could not be parsed as a constant. Have you forgotten to pass the "Yaml::PARSE_CONSTANT" flag to the parser?', $scalar), self::$parsedLineNumber + 1, $scalar, self::$parsedFilename);
+=======
+                            throw new ParseException('Object support when parsing a YAML file has been disabled.');
+>>>>>>> web and vendor directory from composer install
                         }
 
                         return;
                     case 0 === strpos($scalar, '!!float '):
                         return (float) substr($scalar, 8);
+<<<<<<< HEAD
                     case 0 === strpos($scalar, '!!binary '):
                         return self::evaluateBinaryScalar(substr($scalar, 9));
                     default:
@@ -738,6 +1081,8 @@ class Inline
                         $scalar = str_replace('_', '', (string) $scalar);
                         // omitting the break / return as integers are handled in the next case
                         // no break
+=======
+>>>>>>> web and vendor directory from composer install
                     case ctype_digit($scalar):
                         $raw = $scalar;
                         $cast = (int) $scalar;
@@ -749,15 +1094,20 @@ class Inline
 
                         return '0' == $scalar[1] ? octdec($scalar) : (((string) $raw === (string) $cast) ? $cast : $raw);
                     case is_numeric($scalar):
+<<<<<<< HEAD
                     case Parser::preg_match(self::getHexRegex(), $scalar):
                         $scalar = str_replace('_', '', $scalar);
 
+=======
+                    case preg_match(self::getHexRegex(), $scalar):
+>>>>>>> web and vendor directory from composer install
                         return '0x' === $scalar[0].$scalar[1] ? hexdec($scalar) : (float) $scalar;
                     case '.inf' === $scalarLower:
                     case '.nan' === $scalarLower:
                         return -log(0);
                     case '-.inf' === $scalarLower:
                         return log(0);
+<<<<<<< HEAD
                     case Parser::preg_match('/^(-|\+)?[0-9][0-9,]*(\.[0-9_]+)?$/', $scalar):
                     case Parser::preg_match('/^(-|\+)?[0-9][0-9_]*(\.[0-9_]+)?$/', $scalar):
                         if (false !== strpos($scalar, ',')) {
@@ -771,6 +1121,11 @@ class Inline
                             return new \DateTime($scalar, new \DateTimeZone('UTC'));
                         }
 
+=======
+                    case preg_match('/^(-|\+)?[0-9,]+(\.[0-9]+)?$/', $scalar):
+                        return (float) str_replace(',', '', $scalar);
+                    case preg_match(self::getTimestampRegex(), $scalar):
+>>>>>>> web and vendor directory from composer install
                         $timeZone = date_default_timezone_get();
                         date_default_timezone_set('UTC');
                         $time = strtotime($scalar);
@@ -778,6 +1133,7 @@ class Inline
 
                         return $time;
                 }
+<<<<<<< HEAD
         }
 
         return (string) $scalar;
@@ -847,6 +1203,11 @@ class Inline
     private static function isBinaryString($value)
     {
         return !preg_match('//u', $value) || preg_match('/[^\x00\x07-\x0d\x1B\x20-\xff]/', $value);
+=======
+            default:
+                return (string) $scalar;
+        }
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -881,6 +1242,7 @@ EOF;
      */
     private static function getHexRegex()
     {
+<<<<<<< HEAD
         return '~^0x[0-9a-f_]++$~i';
     }
 
@@ -897,5 +1259,8 @@ EOF;
         }
 
         return $message.'.';
+=======
+        return '~^0x[0-9a-f]++$~i';
+>>>>>>> web and vendor directory from composer install
     }
 }

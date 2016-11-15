@@ -12,7 +12,10 @@
 namespace Symfony\Component\HttpFoundation;
 
 use Symfony\Component\HttpFoundation\Exception\ConflictingHeadersException;
+<<<<<<< HEAD
 use Symfony\Component\HttpFoundation\Exception\SuspiciousOperationException;
+=======
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**
@@ -30,6 +33,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
  */
 class Request
 {
+<<<<<<< HEAD
     const HEADER_FORWARDED = 0b00001; // When using RFC 7239
     const HEADER_X_FORWARDED_FOR = 0b00010;
     const HEADER_X_FORWARDED_HOST = 0b00100;
@@ -46,6 +50,13 @@ class Request
     const HEADER_CLIENT_PROTO = self::HEADER_X_FORWARDED_PROTO;
     /** @deprecated since version 3.3, to be removed in 4.0 */
     const HEADER_CLIENT_PORT = self::HEADER_X_FORWARDED_PORT;
+=======
+    const HEADER_FORWARDED = 'forwarded';
+    const HEADER_CLIENT_IP = 'client_ip';
+    const HEADER_CLIENT_HOST = 'client_host';
+    const HEADER_CLIENT_PROTO = 'client_proto';
+    const HEADER_CLIENT_PORT = 'client_port';
+>>>>>>> web and vendor directory from composer install
 
     const METHOD_HEAD = 'HEAD';
     const METHOD_GET = 'GET';
@@ -81,8 +92,11 @@ class Request
      *
      * The other headers are non-standard, but widely used
      * by popular reverse proxies (like Apache mod_proxy or Amazon EC2).
+<<<<<<< HEAD
      *
      * @deprecated since version 3.3, to be removed in 4.0
+=======
+>>>>>>> web and vendor directory from composer install
      */
     protected static $trustedHeaders = array(
         self::HEADER_FORWARDED => 'FORWARDED',
@@ -144,7 +158,11 @@ class Request
     public $headers;
 
     /**
+<<<<<<< HEAD
      * @var string|resource|false|null
+=======
+     * @var string
+>>>>>>> web and vendor directory from composer install
      */
     protected $content;
 
@@ -220,6 +238,7 @@ class Request
 
     protected static $requestFactory;
 
+<<<<<<< HEAD
     private $isHostValid = true;
     private $isForwardedValid = true;
 
@@ -249,6 +268,18 @@ class Request
      * @param array                $files      The FILES parameters
      * @param array                $server     The SERVER parameters
      * @param string|resource|null $content    The raw body data
+=======
+    /**
+     * Constructor.
+     *
+     * @param array           $query      The GET parameters
+     * @param array           $request    The POST parameters
+     * @param array           $attributes The request attributes (parameters parsed from the PATH_INFO, ...)
+     * @param array           $cookies    The COOKIE parameters
+     * @param array           $files      The FILES parameters
+     * @param array           $server     The SERVER parameters
+     * @param string|resource $content    The raw body data
+>>>>>>> web and vendor directory from composer install
      */
     public function __construct(array $query = array(), array $request = array(), array $attributes = array(), array $cookies = array(), array $files = array(), array $server = array(), $content = null)
     {
@@ -260,6 +291,7 @@ class Request
      *
      * This method also re-initializes all properties.
      *
+<<<<<<< HEAD
      * @param array                $query      The GET parameters
      * @param array                $request    The POST parameters
      * @param array                $attributes The request attributes (parameters parsed from the PATH_INFO, ...)
@@ -267,6 +299,15 @@ class Request
      * @param array                $files      The FILES parameters
      * @param array                $server     The SERVER parameters
      * @param string|resource|null $content    The raw body data
+=======
+     * @param array           $query      The GET parameters
+     * @param array           $request    The POST parameters
+     * @param array           $attributes The request attributes (parameters parsed from the PATH_INFO, ...)
+     * @param array           $cookies    The COOKIE parameters
+     * @param array           $files      The FILES parameters
+     * @param array           $server     The SERVER parameters
+     * @param string|resource $content    The raw body data
+>>>>>>> web and vendor directory from composer install
      */
     public function initialize(array $query = array(), array $request = array(), array $attributes = array(), array $cookies = array(), array $files = array(), array $server = array(), $content = null)
     {
@@ -294,7 +335,11 @@ class Request
     /**
      * Creates a new request with values from PHP's super globals.
      *
+<<<<<<< HEAD
      * @return static
+=======
+     * @return Request A new request
+>>>>>>> web and vendor directory from composer install
      */
     public static function createFromGlobals()
     {
@@ -329,6 +374,7 @@ class Request
      * The information contained in the URI always take precedence
      * over the other information (server and parameters).
      *
+<<<<<<< HEAD
      * @param string               $uri        The URI
      * @param string               $method     The HTTP method
      * @param array                $parameters The query (GET) or request (POST) parameters
@@ -338,6 +384,17 @@ class Request
      * @param string|resource|null $content    The raw body data
      *
      * @return static
+=======
+     * @param string $uri        The URI
+     * @param string $method     The HTTP method
+     * @param array  $parameters The query (GET) or request (POST) parameters
+     * @param array  $cookies    The request cookies ($_COOKIE)
+     * @param array  $files      The request files ($_FILES)
+     * @param array  $server     The server parameters ($_SERVER)
+     * @param string $content    The raw body data
+     *
+     * @return Request A Request instance
+>>>>>>> web and vendor directory from composer install
      */
     public static function create($uri, $method = 'GET', $parameters = array(), $cookies = array(), $files = array(), $server = array(), $content = null)
     {
@@ -345,7 +402,11 @@ class Request
             'SERVER_NAME' => 'localhost',
             'SERVER_PORT' => 80,
             'HTTP_HOST' => 'localhost',
+<<<<<<< HEAD
             'HTTP_USER_AGENT' => 'Symfony/3.X',
+=======
+            'HTTP_USER_AGENT' => 'Symfony/2.X',
+>>>>>>> web and vendor directory from composer install
             'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
             'HTTP_ACCEPT_LANGUAGE' => 'en-us,en;q=0.5',
             'HTTP_ACCEPT_CHARSET' => 'ISO-8859-1,utf-8;q=0.7,*;q=0.7',
@@ -455,11 +516,16 @@ class Request
      * @param array $files      The FILES parameters
      * @param array $server     The SERVER parameters
      *
+<<<<<<< HEAD
      * @return static
+=======
+     * @return Request The duplicated request
+>>>>>>> web and vendor directory from composer install
      */
     public function duplicate(array $query = null, array $request = null, array $attributes = null, array $cookies = null, array $files = null, array $server = null)
     {
         $dup = clone $this;
+<<<<<<< HEAD
         if (null !== $query) {
             $dup->query = new ParameterBag($query);
         }
@@ -476,6 +542,24 @@ class Request
             $dup->files = new FileBag($files);
         }
         if (null !== $server) {
+=======
+        if ($query !== null) {
+            $dup->query = new ParameterBag($query);
+        }
+        if ($request !== null) {
+            $dup->request = new ParameterBag($request);
+        }
+        if ($attributes !== null) {
+            $dup->attributes = new ParameterBag($attributes);
+        }
+        if ($cookies !== null) {
+            $dup->cookies = new ParameterBag($cookies);
+        }
+        if ($files !== null) {
+            $dup->files = new FileBag($files);
+        }
+        if ($server !== null) {
+>>>>>>> web and vendor directory from composer install
             $dup->server = new ServerBag($server);
             $dup->headers = new HeaderBag($dup->server->getHeaders());
         }
@@ -531,6 +615,7 @@ class Request
             return trigger_error($e, E_USER_ERROR);
         }
 
+<<<<<<< HEAD
         $cookieHeader = '';
         $cookies = array();
 
@@ -546,6 +631,11 @@ class Request
             sprintf('%s %s %s', $this->getMethod(), $this->getRequestUri(), $this->server->get('SERVER_PROTOCOL'))."\r\n".
             $this->headers.
             $cookieHeader."\r\n".
+=======
+        return
+            sprintf('%s %s %s', $this->getMethod(), $this->getRequestUri(), $this->server->get('SERVER_PROTOCOL'))."\r\n".
+            $this->headers."\r\n".
+>>>>>>> web and vendor directory from composer install
             $content;
     }
 
@@ -557,7 +647,11 @@ class Request
      */
     public function overrideGlobals()
     {
+<<<<<<< HEAD
         $this->server->set('QUERY_STRING', static::normalizeQueryString(http_build_query($this->query->all(), '', '&')));
+=======
+        $this->server->set('QUERY_STRING', static::normalizeQueryString(http_build_query($this->query->all(), null, '&')));
+>>>>>>> web and vendor directory from composer install
 
         $_GET = $this->query->all();
         $_POST = $this->request->all();
@@ -589,6 +683,7 @@ class Request
      *
      * You should only list the reverse proxies that you manage directly.
      *
+<<<<<<< HEAD
      * @param array $proxies          A list of trusted proxies
      * @param int   $trustedHeaderSet A bit field of Request::HEADER_*, to set which headers to trust from your proxies
      *
@@ -609,6 +704,13 @@ class Request
             self::$trustedHeaders[$header] = $header & $trustedHeaderSet ? $name : null;
         }
         self::$trustedHeaderSet = $trustedHeaderSet;
+=======
+     * @param array $proxies A list of trusted proxies
+     */
+    public static function setTrustedProxies(array $proxies)
+    {
+        self::$trustedProxies = $proxies;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -622,6 +724,7 @@ class Request
     }
 
     /**
+<<<<<<< HEAD
      * Gets the set of trusted headers from trusted proxies.
      *
      * @return int A bit field of Request::HEADER_* that defines which headers are trusted from your proxies
@@ -632,6 +735,8 @@ class Request
     }
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * Sets a list of trusted host patterns.
      *
      * You should only list the hosts you manage using regexs.
@@ -641,7 +746,11 @@ class Request
     public static function setTrustedHosts(array $hostPatterns)
     {
         self::$trustedHostPatterns = array_map(function ($hostPattern) {
+<<<<<<< HEAD
             return sprintf('{%s}i', $hostPattern);
+=======
+            return sprintf('#%s#i', $hostPattern);
+>>>>>>> web and vendor directory from composer install
         }, $hostPatterns);
         // we need to reset trusted hosts on trusted host patterns change
         self::$trustedHosts = array();
@@ -666,7 +775,10 @@ class Request
      *  * Request::HEADER_CLIENT_HOST:  defaults to X-Forwarded-Host  (see getHost())
      *  * Request::HEADER_CLIENT_PORT:  defaults to X-Forwarded-Port  (see getPort())
      *  * Request::HEADER_CLIENT_PROTO: defaults to X-Forwarded-Proto (see getScheme() and isSecure())
+<<<<<<< HEAD
      *  * Request::HEADER_FORWARDED:    defaults to Forwarded         (see RFC 7239)
+=======
+>>>>>>> web and vendor directory from composer install
      *
      * Setting an empty value allows to disable the trusted header for the given key.
      *
@@ -674,6 +786,7 @@ class Request
      * @param string $value The header name
      *
      * @throws \InvalidArgumentException
+<<<<<<< HEAD
      *
      * @deprecated since version 3.3, to be removed in 4.0. Use the $trustedHeaderSet argument of the Request::setTrustedProxies() method instead.
      */
@@ -692,10 +805,17 @@ class Request
         } elseif ('client_port' === $key) {
             $key = self::HEADER_CLIENT_PORT;
         } elseif (!array_key_exists($key, self::$trustedHeaders)) {
+=======
+     */
+    public static function setTrustedHeaderName($key, $value)
+    {
+        if (!array_key_exists($key, self::$trustedHeaders)) {
+>>>>>>> web and vendor directory from composer install
             throw new \InvalidArgumentException(sprintf('Unable to set the trusted header name for key "%s".', $key));
         }
 
         self::$trustedHeaders[$key] = $value;
+<<<<<<< HEAD
 
         if (null !== $value) {
             self::$trustedHeaderNames[$key] = $value;
@@ -703,6 +823,8 @@ class Request
         } else {
             self::$trustedHeaderSet &= ~$key;
         }
+=======
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -713,6 +835,7 @@ class Request
      * @return string The header name
      *
      * @throws \InvalidArgumentException
+<<<<<<< HEAD
      *
      * @deprecated since version 3.3, to be removed in 4.0. Use the Request::getTrustedHeaderSet() method instead.
      */
@@ -722,6 +845,11 @@ class Request
             @trigger_error(sprintf('The "%s()" method is deprecated since Symfony 3.3 and will be removed in 4.0. Use the Request::getTrustedHeaderSet() method instead.', __METHOD__), E_USER_DEPRECATED);
         }
 
+=======
+     */
+    public static function getTrustedHeaderName($key)
+    {
+>>>>>>> web and vendor directory from composer install
         if (!array_key_exists($key, self::$trustedHeaders)) {
             throw new \InvalidArgumentException(sprintf('Unable to get the trusted header name for key "%s".', $key));
         }
@@ -799,6 +927,7 @@ class Request
     }
 
     /**
+<<<<<<< HEAD
      * Gets a "parameter" value from any bag.
      *
      * This method is mainly useful for libraries that want to provide some flexibility. If you don't need the
@@ -823,6 +952,45 @@ class Request
         }
 
         if ($this !== $result = $this->request->get($key, $this)) {
+=======
+     * Gets a "parameter" value.
+     *
+     * This method is mainly useful for libraries that want to provide some flexibility.
+     *
+     * Order of precedence: GET, PATH, POST
+     *
+     * Avoid using this method in controllers:
+     *
+     *  * slow
+     *  * prefer to get from a "named" source
+     *
+     * It is better to explicitly get request parameters from the appropriate
+     * public property instead (query, attributes, request).
+     *
+     * Note: Finding deep items is deprecated since version 2.8, to be removed in 3.0.
+     *
+     * @param string $key     the key
+     * @param mixed  $default the default value if the parameter key does not exist
+     * @param bool   $deep    is parameter deep in multidimensional array
+     *
+     * @return mixed
+     */
+    public function get($key, $default = null, $deep = false)
+    {
+        if ($deep) {
+            @trigger_error('Using paths to find deeper items in '.__METHOD__.' is deprecated since version 2.8 and will be removed in 3.0. Filter the returned value in your own code instead.', E_USER_DEPRECATED);
+        }
+
+        if ($this !== $result = $this->query->get($key, $this, $deep)) {
+            return $result;
+        }
+
+        if ($this !== $result = $this->attributes->get($key, $this, $deep)) {
+            return $result;
+        }
+
+        if ($this !== $result = $this->request->get($key, $this, $deep)) {
+>>>>>>> web and vendor directory from composer install
             return $result;
         }
 
@@ -890,13 +1058,48 @@ class Request
      */
     public function getClientIps()
     {
+<<<<<<< HEAD
+=======
+        $clientIps = array();
+>>>>>>> web and vendor directory from composer install
         $ip = $this->server->get('REMOTE_ADDR');
 
         if (!$this->isFromTrustedProxy()) {
             return array($ip);
         }
 
+<<<<<<< HEAD
         return $this->getTrustedValues(self::HEADER_CLIENT_IP, $ip) ?: array($ip);
+=======
+        $hasTrustedForwardedHeader = self::$trustedHeaders[self::HEADER_FORWARDED] && $this->headers->has(self::$trustedHeaders[self::HEADER_FORWARDED]);
+        $hasTrustedClientIpHeader = self::$trustedHeaders[self::HEADER_CLIENT_IP] && $this->headers->has(self::$trustedHeaders[self::HEADER_CLIENT_IP]);
+
+        if ($hasTrustedForwardedHeader) {
+            $forwardedHeader = $this->headers->get(self::$trustedHeaders[self::HEADER_FORWARDED]);
+            preg_match_all('{(for)=("?\[?)([a-z0-9\.:_\-/]*)}', $forwardedHeader, $matches);
+            $forwardedClientIps = $matches[3];
+
+            $forwardedClientIps = $this->normalizeAndFilterClientIps($forwardedClientIps, $ip);
+            $clientIps = $forwardedClientIps;
+        }
+
+        if ($hasTrustedClientIpHeader) {
+            $xForwardedForClientIps = array_map('trim', explode(',', $this->headers->get(self::$trustedHeaders[self::HEADER_CLIENT_IP])));
+
+            $xForwardedForClientIps = $this->normalizeAndFilterClientIps($xForwardedForClientIps, $ip);
+            $clientIps = $xForwardedForClientIps;
+        }
+
+        if ($hasTrustedForwardedHeader && $hasTrustedClientIpHeader && $forwardedClientIps !== $xForwardedForClientIps) {
+            throw new ConflictingHeadersException('The request has both a trusted Forwarded header and a trusted Client IP header, conflicting with each other with regards to the originating IP addresses of the request. This is the result of a misconfiguration. You should either configure your proxy only to send one of these headers, or configure Symfony to distrust one of them.');
+        }
+
+        if (!$hasTrustedForwardedHeader && !$hasTrustedClientIpHeader) {
+            return $this->normalizeAndFilterClientIps(array(), $ip);
+        }
+
+        return $clientIps;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -909,10 +1112,17 @@ class Request
      * adding the IP address where it received the request from.
      *
      * If your reverse proxy uses a different header name than "X-Forwarded-For",
+<<<<<<< HEAD
      * ("Client-Ip" for instance), configure it via the $trustedHeaderSet
      * argument of the Request::setTrustedProxies() method instead.
      *
      * @return string|null The client IP address
+=======
+     * ("Client-Ip" for instance), configure it via "setTrustedHeaderName()" with
+     * the "client-ip" key.
+     *
+     * @return string The client IP address
+>>>>>>> web and vendor directory from composer install
      *
      * @see getClientIps()
      * @see http://en.wikipedia.org/wiki/X-Forwarded-For
@@ -1016,6 +1226,7 @@ class Request
      * The "X-Forwarded-Port" header must contain the client port.
      *
      * If your reverse proxy uses a different header name than "X-Forwarded-Port",
+<<<<<<< HEAD
      * configure it via via the $trustedHeaderSet argument of the
      * Request::setTrustedProxies() method instead.
      *
@@ -1042,6 +1253,39 @@ class Request
         }
 
         return 'https' === $this->getScheme() ? 443 : 80;
+=======
+     * configure it via "setTrustedHeaderName()" with the "client-port" key.
+     *
+     * @return string
+     */
+    public function getPort()
+    {
+        if ($this->isFromTrustedProxy()) {
+            if (self::$trustedHeaders[self::HEADER_CLIENT_PORT] && $port = $this->headers->get(self::$trustedHeaders[self::HEADER_CLIENT_PORT])) {
+                return $port;
+            }
+
+            if (self::$trustedHeaders[self::HEADER_CLIENT_PROTO] && 'https' === $this->headers->get(self::$trustedHeaders[self::HEADER_CLIENT_PROTO], 'http')) {
+                return 443;
+            }
+        }
+
+        if ($host = $this->headers->get('HOST')) {
+            if ($host[0] === '[') {
+                $pos = strpos($host, ':', strrpos($host, ']'));
+            } else {
+                $pos = strrpos($host, ':');
+            }
+
+            if (false !== $pos) {
+                return (int) substr($host, $pos + 1);
+            }
+
+            return 'https' === $this->getScheme() ? 443 : 80;
+        }
+
+        return $this->server->get('SERVER_PORT');
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -1093,7 +1337,11 @@ class Request
         $scheme = $this->getScheme();
         $port = $this->getPort();
 
+<<<<<<< HEAD
         if (('http' == $scheme && 80 == $port) || ('https' == $scheme && 443 == $port)) {
+=======
+        if (('http' == $scheme && $port == 80) || ('https' == $scheme && $port == 443)) {
+>>>>>>> web and vendor directory from composer install
             return $this->getHost();
         }
 
@@ -1234,15 +1482,25 @@ class Request
      * The "X-Forwarded-Proto" header must contain the protocol: "https" or "http".
      *
      * If your reverse proxy uses a different header name than "X-Forwarded-Proto"
+<<<<<<< HEAD
      * ("SSL_HTTPS" for instance), configure it via the $trustedHeaderSet
      * argument of the Request::setTrustedProxies() method instead.
+=======
+     * ("SSL_HTTPS" for instance), configure it via "setTrustedHeaderName()" with
+     * the "client-proto" key.
+>>>>>>> web and vendor directory from composer install
      *
      * @return bool
      */
     public function isSecure()
     {
+<<<<<<< HEAD
         if ($this->isFromTrustedProxy() && $proto = $this->getTrustedValues(self::HEADER_CLIENT_PROTO)) {
             return in_array(strtolower($proto[0]), array('https', 'on', 'ssl', '1'), true);
+=======
+        if ($this->isFromTrustedProxy() && self::$trustedHeaders[self::HEADER_CLIENT_PROTO] && $proto = $this->headers->get(self::$trustedHeaders[self::HEADER_CLIENT_PROTO])) {
+            return in_array(strtolower(current(explode(',', $proto))), array('https', 'on', 'ssl', '1'));
+>>>>>>> web and vendor directory from composer install
         }
 
         $https = $this->server->get('HTTPS');
@@ -1259,6 +1517,7 @@ class Request
      * The "X-Forwarded-Host" header must contain the client host name.
      *
      * If your reverse proxy uses a different header name than "X-Forwarded-Host",
+<<<<<<< HEAD
      * configure it via the $trustedHeaderSet argument of the
      * Request::setTrustedProxies() method instead.
      *
@@ -1270,6 +1529,20 @@ class Request
     {
         if ($this->isFromTrustedProxy() && $host = $this->getTrustedValues(self::HEADER_CLIENT_HOST)) {
             $host = $host[0];
+=======
+     * configure it via "setTrustedHeaderName()" with the "client-host" key.
+     *
+     * @return string
+     *
+     * @throws \UnexpectedValueException when the host name is invalid
+     */
+    public function getHost()
+    {
+        if ($this->isFromTrustedProxy() && self::$trustedHeaders[self::HEADER_CLIENT_HOST] && $host = $this->headers->get(self::$trustedHeaders[self::HEADER_CLIENT_HOST])) {
+            $elements = explode(',', $host);
+
+            $host = $elements[count($elements) - 1];
+>>>>>>> web and vendor directory from composer install
         } elseif (!$host = $this->headers->get('HOST')) {
             if (!$host = $this->server->get('SERVER_NAME')) {
                 $host = $this->server->get('SERVER_ADDR', '');
@@ -1284,12 +1557,16 @@ class Request
         // check that it does not contain forbidden characters (see RFC 952 and RFC 2181)
         // use preg_replace() instead of preg_match() to prevent DoS attacks with long host names
         if ($host && '' !== preg_replace('/(?:^\[)?[a-zA-Z0-9-:\]_]+\.?/', '', $host)) {
+<<<<<<< HEAD
             if (!$this->isHostValid) {
                 return '';
             }
             $this->isHostValid = false;
 
             throw new SuspiciousOperationException(sprintf('Invalid Host "%s".', $host));
+=======
+            throw new \UnexpectedValueException(sprintf('Invalid Host "%s"', $host));
+>>>>>>> web and vendor directory from composer install
         }
 
         if (count(self::$trustedHostPatterns) > 0) {
@@ -1307,12 +1584,16 @@ class Request
                 }
             }
 
+<<<<<<< HEAD
             if (!$this->isHostValid) {
                 return '';
             }
             $this->isHostValid = false;
 
             throw new SuspiciousOperationException(sprintf('Untrusted Host "%s".', $host));
+=======
+            throw new \UnexpectedValueException(sprintf('Untrusted Host "%s"', $host));
+>>>>>>> web and vendor directory from composer install
         }
 
         return $host;
@@ -1378,7 +1659,11 @@ class Request
      *
      * @param string $format The format
      *
+<<<<<<< HEAD
      * @return string|null The associated mime type (null if not found)
+=======
+     * @return string The associated mime type (null if not found)
+>>>>>>> web and vendor directory from composer install
      */
     public function getMimeType($format)
     {
@@ -1390,6 +1675,7 @@ class Request
     }
 
     /**
+<<<<<<< HEAD
      * Gets the mime types associated with the format.
      *
      * @param string $format The format
@@ -1406,6 +1692,8 @@ class Request
     }
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * Gets the format associated with the mime type.
      *
      * @param string $mimeType The associated mime type
@@ -1454,7 +1742,11 @@ class Request
      * Here is the process to determine the format:
      *
      *  * format defined by the user (with setRequestFormat())
+<<<<<<< HEAD
      *  * _format request attribute
+=======
+     *  * _format request parameter
+>>>>>>> web and vendor directory from composer install
      *  * $default
      *
      * @param string $default The default format
@@ -1464,10 +1756,17 @@ class Request
     public function getRequestFormat($default = 'html')
     {
         if (null === $this->format) {
+<<<<<<< HEAD
             $this->format = $this->attributes->get('_format');
         }
 
         return null === $this->format ? $default : $this->format;
+=======
+            $this->format = $this->get('_format', $default);
+        }
+
+        return $this->format;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -1547,6 +1846,7 @@ class Request
     }
 
     /**
+<<<<<<< HEAD
      * Checks whether or not the method is safe.
      *
      * @see https://tools.ietf.org/html/rfc7231#section-4.2.1
@@ -1565,10 +1865,19 @@ class Request
             return in_array($this->getMethod(), array('GET', 'HEAD'));
         }
 
+=======
+     * Checks whether the method is safe or not.
+     *
+     * @return bool
+     */
+    public function isMethodSafe()
+    {
+>>>>>>> web and vendor directory from composer install
         return in_array($this->getMethod(), array('GET', 'HEAD', 'OPTIONS', 'TRACE'));
     }
 
     /**
+<<<<<<< HEAD
      * Checks whether or not the method is idempotent.
      *
      * @return bool
@@ -1583,6 +1892,10 @@ class Request
      *
      * @see https://tools.ietf.org/html/rfc7231#section-4.2.3
      *
+=======
+     * Checks whether the method is cacheable or not.
+     *
+>>>>>>> web and vendor directory from composer install
      * @return bool
      */
     public function isMethodCacheable()
@@ -1591,6 +1904,7 @@ class Request
     }
 
     /**
+<<<<<<< HEAD
      * Returns the protocol version.
      *
      * If the application is behind a proxy, the protocol version used in the
@@ -1615,6 +1929,8 @@ class Request
     }
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * Returns the request body content.
      *
      * @param bool $asResource If true, a resource will be returned
@@ -1626,7 +1942,11 @@ class Request
     public function getContent($asResource = false)
     {
         $currentContentIsResource = is_resource($this->content);
+<<<<<<< HEAD
         if (\PHP_VERSION_ID < 50600 && false === $this->content) {
+=======
+        if (PHP_VERSION_ID < 50600 && false === $this->content) {
+>>>>>>> web and vendor directory from composer install
             throw new \LogicException('getContent() can only be called once when using the resource return type and PHP below 5.6.');
         }
 
@@ -1742,7 +2062,11 @@ class Request
                     }
                 } else {
                     for ($i = 0, $max = count($codes); $i < $max; ++$i) {
+<<<<<<< HEAD
                         if (0 === $i) {
+=======
+                        if ($i === 0) {
+>>>>>>> web and vendor directory from composer install
                             $lang = strtolower($codes[0]);
                         } else {
                             $lang .= '_'.strtoupper($codes[$i]);
@@ -1805,7 +2129,11 @@ class Request
      * It works if your JavaScript library sets an X-Requested-With HTTP header.
      * It is known to work with common JavaScript frameworks:
      *
+<<<<<<< HEAD
      * @see http://en.wikipedia.org/wiki/List_of_Ajax_frameworks#JavaScript
+=======
+     * @link http://en.wikipedia.org/wiki/List_of_Ajax_frameworks#JavaScript
+>>>>>>> web and vendor directory from composer install
      *
      * @return bool true if the request is an XMLHttpRequest, false otherwise
      */
@@ -1837,7 +2165,11 @@ class Request
             // IIS with ISAPI_Rewrite
             $requestUri = $this->headers->get('X_REWRITE_URL');
             $this->headers->remove('X_REWRITE_URL');
+<<<<<<< HEAD
         } elseif ('1' == $this->server->get('IIS_WasUrlRewritten') && '' != $this->server->get('UNENCODED_URL')) {
+=======
+        } elseif ($this->server->get('IIS_WasUrlRewritten') == '1' && $this->server->get('UNENCODED_URL') != '') {
+>>>>>>> web and vendor directory from composer install
             // IIS7 with URL Rewrite: make sure we get the unencoded URL (double slash problem)
             $requestUri = $this->server->get('UNENCODED_URL');
             $this->server->remove('UNENCODED_URL');
@@ -1846,7 +2178,11 @@ class Request
             $requestUri = $this->server->get('REQUEST_URI');
             // HTTP proxy reqs setup request URI with scheme and host [and port] + the URL path, only use URL path
             $schemeAndHttpHost = $this->getSchemeAndHttpHost();
+<<<<<<< HEAD
             if (0 === strpos($requestUri, $schemeAndHttpHost)) {
+=======
+            if (strpos($requestUri, $schemeAndHttpHost) === 0) {
+>>>>>>> web and vendor directory from composer install
                 $requestUri = substr($requestUri, strlen($schemeAndHttpHost));
             }
         } elseif ($this->server->has('ORIG_PATH_INFO')) {
@@ -1898,9 +2234,12 @@ class Request
 
         // Does the baseUrl have anything in common with the request_uri?
         $requestUri = $this->getRequestUri();
+<<<<<<< HEAD
         if ('' !== $requestUri && '/' !== $requestUri[0]) {
             $requestUri = '/'.$requestUri;
         }
+=======
+>>>>>>> web and vendor directory from composer install
 
         if ($baseUrl && false !== $prefix = $this->getUrlencodedPrefix($requestUri, $baseUrl)) {
             // full $baseUrl matches
@@ -1926,7 +2265,11 @@ class Request
         // If using mod_rewrite or ISAPI_Rewrite strip the script filename
         // out of baseUrl. $pos !== 0 makes sure it is not matching a value
         // from PATH_INFO or QUERY_STRING
+<<<<<<< HEAD
         if (strlen($requestUri) >= strlen($baseUrl) && (false !== $pos = strpos($requestUri, $baseUrl)) && 0 !== $pos) {
+=======
+        if (strlen($requestUri) >= strlen($baseUrl) && (false !== $pos = strpos($requestUri, $baseUrl)) && $pos !== 0) {
+>>>>>>> web and vendor directory from composer install
             $baseUrl = substr($requestUri, 0, $pos + strlen($baseUrl));
         }
 
@@ -1940,12 +2283,19 @@ class Request
      */
     protected function prepareBasePath()
     {
+<<<<<<< HEAD
+=======
+        $filename = basename($this->server->get('SCRIPT_FILENAME'));
+>>>>>>> web and vendor directory from composer install
         $baseUrl = $this->getBaseUrl();
         if (empty($baseUrl)) {
             return '';
         }
 
+<<<<<<< HEAD
         $filename = basename($this->server->get('SCRIPT_FILENAME'));
+=======
+>>>>>>> web and vendor directory from composer install
         if (basename($baseUrl) === $filename) {
             $basePath = dirname($baseUrl);
         } else {
@@ -1966,11 +2316,17 @@ class Request
      */
     protected function preparePathInfo()
     {
+<<<<<<< HEAD
+=======
+        $baseUrl = $this->getBaseUrl();
+
+>>>>>>> web and vendor directory from composer install
         if (null === ($requestUri = $this->getRequestUri())) {
             return '/';
         }
 
         // Remove the query string from REQUEST_URI
+<<<<<<< HEAD
         if (false !== $pos = strpos($requestUri, '?')) {
             $requestUri = substr($requestUri, 0, $pos);
         }
@@ -1986,6 +2342,18 @@ class Request
         if (false === $pathInfo || '' === $pathInfo) {
             // If substr() returns false then PATH_INFO is set to an empty string
             return '/';
+=======
+        if ($pos = strpos($requestUri, '?')) {
+            $requestUri = substr($requestUri, 0, $pos);
+        }
+
+        $pathInfo = substr($requestUri, strlen($baseUrl));
+        if (null !== $baseUrl && (false === $pathInfo || '' === $pathInfo)) {
+            // If substr() returns false then PATH_INFO is set to an empty string
+            return '/';
+        } elseif (null === $baseUrl) {
+            return $requestUri;
+>>>>>>> web and vendor directory from composer install
         }
 
         return (string) $pathInfo;
@@ -2002,7 +2370,10 @@ class Request
             'js' => array('application/javascript', 'application/x-javascript', 'text/javascript'),
             'css' => array('text/css'),
             'json' => array('application/json', 'application/x-json'),
+<<<<<<< HEAD
             'jsonld' => array('application/ld+json'),
+=======
+>>>>>>> web and vendor directory from composer install
             'xml' => array('text/xml', 'application/xml', 'application/x-xml'),
             'rdf' => array('application/rdf+xml'),
             'atom' => array('application/atom+xml'),
@@ -2068,6 +2439,7 @@ class Request
         return new static($query, $request, $attributes, $cookies, $files, $server, $content);
     }
 
+<<<<<<< HEAD
     /**
      * Indicates whether this request originated from a trusted proxy.
      *
@@ -2077,10 +2449,14 @@ class Request
      * @return bool true if the request came from a trusted proxy, false otherwise
      */
     public function isFromTrustedProxy()
+=======
+    private function isFromTrustedProxy()
+>>>>>>> web and vendor directory from composer install
     {
         return self::$trustedProxies && IpUtils::checkIp($this->server->get('REMOTE_ADDR'), self::$trustedProxies);
     }
 
+<<<<<<< HEAD
     private function getTrustedValues($type, $ip = null)
     {
         $clientValues = array();
@@ -2123,6 +2499,10 @@ class Request
         if (!$clientIps) {
             return array();
         }
+=======
+    private function normalizeAndFilterClientIps(array $clientIps, $ip)
+    {
+>>>>>>> web and vendor directory from composer install
         $clientIps[] = $ip; // Complete the IP chain with the IP the request actually came from
         $firstTrustedIp = null;
 

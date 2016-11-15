@@ -19,5 +19,13 @@ namespace Symfony\Component\DependencyInjection\Compiler;
  */
 interface RepeatablePassInterface extends CompilerPassInterface
 {
+<<<<<<< HEAD
+=======
+    /**
+     * Sets the RepeatedPass interface.
+     *
+     * @param RepeatedPass $repeatedPass
+     */
+>>>>>>> web and vendor directory from composer install
     public function setRepeatedPass(RepeatedPass $repeatedPass);
 }

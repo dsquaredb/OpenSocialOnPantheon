@@ -12,12 +12,22 @@
 namespace Symfony\Component\HttpKernel\Exception;
 
 /**
+<<<<<<< HEAD
+=======
+ * AccessDeniedHttpException.
+ *
+>>>>>>> web and vendor directory from composer install
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Christophe Coevoet <stof@notk.org>
  */
 class AccessDeniedHttpException extends HttpException
 {
     /**
+<<<<<<< HEAD
+=======
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param string     $message  The internal exception message
      * @param \Exception $previous The previous exception
      * @param int        $code     The internal exception code

@@ -3,7 +3,11 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
+=======
+ * (c) 2010 Fabien Potencier
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,7 +16,11 @@ class Twig_Node_Expression_Function extends Twig_Node_Expression_Call
 {
     public function __construct($name, Twig_NodeInterface $arguments, $lineno)
     {
+<<<<<<< HEAD
         parent::__construct(array('arguments' => $arguments), array('name' => $name, 'is_defined_test' => false), $lineno);
+=======
+        parent::__construct(array('arguments' => $arguments), array('name' => $name), $lineno);
+>>>>>>> web and vendor directory from composer install
     }
 
     public function compile(Twig_Compiler $compiler)
@@ -27,12 +35,16 @@ class Twig_Node_Expression_Function extends Twig_Node_Expression_Call
         $this->setAttribute('needs_context', $function->needsContext());
         $this->setAttribute('arguments', $function->getArguments());
         if ($function instanceof Twig_FunctionCallableInterface || $function instanceof Twig_SimpleFunction) {
+<<<<<<< HEAD
             $callable = $function->getCallable();
             if ('constant' === $name && $this->getAttribute('is_defined_test')) {
                 $callable = 'twig_constant_is_defined';
             }
 
             $this->setAttribute('callable', $callable);
+=======
+            $this->setAttribute('callable', $function->getCallable());
+>>>>>>> web and vendor directory from composer install
         }
         if ($function instanceof Twig_SimpleFunction) {
             $this->setAttribute('is_variadic', $function->isVariadic());
@@ -41,5 +53,8 @@ class Twig_Node_Expression_Function extends Twig_Node_Expression_Call
         $this->compileCallable($compiler);
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_Node_Expression_Function', 'Twig\Node\Expression\FunctionExpression', false);
+=======
+>>>>>>> web and vendor directory from composer install

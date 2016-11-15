@@ -11,8 +11,11 @@
 
 namespace Symfony\Component\Translation\Extractor;
 
+<<<<<<< HEAD
 use Symfony\Component\Translation\Exception\InvalidArgumentException;
 
+=======
+>>>>>>> web and vendor directory from composer install
 /**
  * Base class used by classes that extract translation messages from files.
  *
@@ -21,7 +24,11 @@ use Symfony\Component\Translation\Exception\InvalidArgumentException;
 abstract class AbstractFileExtractor
 {
     /**
+<<<<<<< HEAD
      * @param string|array $resource Files, a file or a directory
+=======
+     * @param string|array $resource files, a file or a directory
+>>>>>>> web and vendor directory from composer install
      *
      * @return array
      */
@@ -58,12 +65,20 @@ abstract class AbstractFileExtractor
      *
      * @return bool
      *
+<<<<<<< HEAD
      * @throws InvalidArgumentException
+=======
+     * @throws \InvalidArgumentException
+>>>>>>> web and vendor directory from composer install
      */
     protected function isFile($file)
     {
         if (!is_file($file)) {
+<<<<<<< HEAD
             throw new InvalidArgumentException(sprintf('The "%s" file does not exist.', $file));
+=======
+            throw new \InvalidArgumentException(sprintf('The "%s" file does not exist.', $file));
+>>>>>>> web and vendor directory from composer install
         }
 
         return true;
@@ -77,7 +92,11 @@ abstract class AbstractFileExtractor
     abstract protected function canBeExtracted($file);
 
     /**
+<<<<<<< HEAD
      * @param string|array $resource Files, a file or a directory
+=======
+     * @param string|array $resource files, a file or a directory
+>>>>>>> web and vendor directory from composer install
      *
      * @return array files to be extracted
      */

@@ -36,6 +36,11 @@ class BinaryFileResponse extends Response
     protected $deleteFileAfterSend = false;
 
     /**
+<<<<<<< HEAD
+=======
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param \SplFileInfo|string $file               The file to stream
      * @param int                 $status             The response status code
      * @param array               $headers            An array of response headers
@@ -64,7 +69,11 @@ class BinaryFileResponse extends Response
      * @param bool                $autoEtag           Whether the ETag header should be automatically set
      * @param bool                $autoLastModified   Whether the Last-Modified header should be automatically set
      *
+<<<<<<< HEAD
      * @return static
+=======
+     * @return BinaryFileResponse The created response
+>>>>>>> web and vendor directory from composer install
      */
     public static function create($file = null, $status = 200, $headers = array(), $public = true, $contentDisposition = null, $autoEtag = false, $autoLastModified = true)
     {
@@ -79,7 +88,11 @@ class BinaryFileResponse extends Response
      * @param bool                $autoEtag
      * @param bool                $autoLastModified
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return BinaryFileResponse
+>>>>>>> web and vendor directory from composer install
      *
      * @throws FileException
      */
@@ -139,7 +152,11 @@ class BinaryFileResponse extends Response
      */
     public function setAutoEtag()
     {
+<<<<<<< HEAD
         $this->setEtag(base64_encode(hash_file('sha256', $this->file->getPathname(), true)));
+=======
+        $this->setEtag(sha1_file($this->file->getPathname()));
+>>>>>>> web and vendor directory from composer install
 
         return $this;
     }
@@ -148,6 +165,7 @@ class BinaryFileResponse extends Response
      * Sets the Content-Disposition header with the given filename.
      *
      * @param string $disposition      ResponseHeaderBag::DISPOSITION_INLINE or ResponseHeaderBag::DISPOSITION_ATTACHMENT
+<<<<<<< HEAD
      * @param string $filename         Optionally use this UTF-8 encoded filename instead of the real name of the file
      * @param string $filenameFallback A fallback filename, containing only ASCII characters. Defaults to an automatically encoded filename
      *
@@ -156,13 +174,29 @@ class BinaryFileResponse extends Response
     public function setContentDisposition($disposition, $filename = '', $filenameFallback = '')
     {
         if ('' === $filename) {
+=======
+     * @param string $filename         Optionally use this filename instead of the real name of the file
+     * @param string $filenameFallback A fallback filename, containing only ASCII characters. Defaults to an automatically encoded filename
+     *
+     * @return BinaryFileResponse
+     */
+    public function setContentDisposition($disposition, $filename = '', $filenameFallback = '')
+    {
+        if ($filename === '') {
+>>>>>>> web and vendor directory from composer install
             $filename = $this->file->getFilename();
         }
 
         if ('' === $filenameFallback && (!preg_match('/^[\x20-\x7e]*$/', $filename) || false !== strpos($filename, '%'))) {
+<<<<<<< HEAD
             $encoding = mb_detect_encoding($filename, null, true) ?: '8bit';
 
             for ($i = 0, $filenameLength = mb_strlen($filename, $encoding); $i < $filenameLength; ++$i) {
+=======
+            $encoding = mb_detect_encoding($filename, null, true);
+
+            for ($i = 0; $i < mb_strlen($filename, $encoding); ++$i) {
+>>>>>>> web and vendor directory from composer install
                 $char = mb_substr($filename, $i, 1, $encoding);
 
                 if ('%' === $char || ord($char) < 32 || ord($char) > 126) {
@@ -184,6 +218,16 @@ class BinaryFileResponse extends Response
      */
     public function prepare(Request $request)
     {
+<<<<<<< HEAD
+=======
+        $this->headers->set('Content-Length', $this->file->getSize());
+
+        if (!$this->headers->has('Accept-Ranges')) {
+            // Only accept ranges on safe HTTP methods
+            $this->headers->set('Accept-Ranges', $request->isMethodSafe() ? 'bytes' : 'none');
+        }
+
+>>>>>>> web and vendor directory from composer install
         if (!$this->headers->has('Content-Type')) {
             $this->headers->set('Content-Type', $this->file->getMimeType() ?: 'application/octet-stream');
         }
@@ -197,6 +241,7 @@ class BinaryFileResponse extends Response
         $this->offset = 0;
         $this->maxlen = -1;
 
+<<<<<<< HEAD
         if (false === $fileSize = $this->file->getSize()) {
             return $this;
         }
@@ -207,6 +252,8 @@ class BinaryFileResponse extends Response
             $this->headers->set('Accept-Ranges', $request->isMethodSafe(false) ? 'bytes' : 'none');
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         if (self::$trustXSendfileTypeHeader && $request->headers->has('X-Sendfile-Type')) {
             // Use X-Sendfile, do not send any content.
             $type = $request->headers->get('X-Sendfile-Type');
@@ -215,7 +262,11 @@ class BinaryFileResponse extends Response
             if (false === $path) {
                 $path = $this->file->getPathname();
             }
+<<<<<<< HEAD
             if ('x-accel-redirect' === strtolower($type)) {
+=======
+            if (strtolower($type) === 'x-accel-redirect') {
+>>>>>>> web and vendor directory from composer install
                 // Do X-Accel-Mapping substitutions.
                 // @link http://wiki.nginx.org/X-accel#X-Accel-Redirect
                 foreach (explode(',', $request->headers->get('X-Accel-Mapping', '')) as $mapping) {
@@ -238,6 +289,10 @@ class BinaryFileResponse extends Response
             // Process the range headers.
             if (!$request->headers->has('If-Range') || $this->hasValidIfRangeHeader($request->headers->get('If-Range'))) {
                 $range = $request->headers->get('Range');
+<<<<<<< HEAD
+=======
+                $fileSize = $this->file->getSize();
+>>>>>>> web and vendor directory from composer install
 
                 list($start, $end) = explode('-', substr($range, 6), 2) + array(0);
 
@@ -254,7 +309,11 @@ class BinaryFileResponse extends Response
                     if ($start < 0 || $end > $fileSize - 1) {
                         $this->setStatusCode(416);
                         $this->headers->set('Content-Range', sprintf('bytes */%s', $fileSize));
+<<<<<<< HEAD
                     } elseif (0 !== $start || $end !== $fileSize - 1) {
+=======
+                    } elseif ($start !== 0 || $end !== $fileSize - 1) {
+>>>>>>> web and vendor directory from composer install
                         $this->maxlen = $end < $fileSize ? $end - $start + 1 : -1;
                         $this->offset = $start;
 
@@ -348,7 +407,11 @@ class BinaryFileResponse extends Response
      *
      * @param bool $shouldDelete
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return BinaryFileResponse
+>>>>>>> web and vendor directory from composer install
      */
     public function deleteFileAfterSend($shouldDelete)
     {

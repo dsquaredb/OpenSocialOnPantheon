@@ -22,10 +22,26 @@ use Symfony\Component\Routing\Route;
  */
 class DumperRoute
 {
+<<<<<<< HEAD
     private $name;
     private $route;
 
     /**
+=======
+    /**
+     * @var string
+     */
+    private $name;
+
+    /**
+     * @var Route
+     */
+    private $route;
+
+    /**
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param string $name  The route name
      * @param Route  $route The route
      */

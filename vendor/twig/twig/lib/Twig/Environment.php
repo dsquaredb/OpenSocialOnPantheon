@@ -3,7 +3,11 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
+=======
+ * (c) 2009 Fabien Potencier
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -16,12 +20,16 @@
  */
 class Twig_Environment
 {
+<<<<<<< HEAD
     const VERSION = '1.35.3';
     const VERSION_ID = 13503;
     const MAJOR_VERSION = 1;
     const MINOR_VERSION = 35;
     const RELEASE_VERSION = 3;
     const EXTRA_VERSION = '';
+=======
+    const VERSION = '1.27.0';
+>>>>>>> web and vendor directory from composer install
 
     protected $charset;
     protected $loader;
@@ -58,7 +66,10 @@ class Twig_Environment
     private $runtimeLoaders = array();
     private $runtimes = array();
     private $optionsHash;
+<<<<<<< HEAD
     private $loading = array();
+=======
+>>>>>>> web and vendor directory from composer install
 
     /**
      * Constructor.
@@ -95,7 +106,11 @@ class Twig_Environment
      *                   (default to -1 which means that all optimizations are enabled;
      *                   set it to 0 to disable).
      *
+<<<<<<< HEAD
      * @param Twig_LoaderInterface $loader
+=======
+     * @param Twig_LoaderInterface $loader  A Twig_LoaderInterface instance
+>>>>>>> web and vendor directory from composer install
      * @param array                $options An array of options
      */
     public function __construct(Twig_LoaderInterface $loader = null, $options = array())
@@ -132,14 +147,22 @@ class Twig_Environment
         // For BC
         if (is_string($this->originalCache)) {
             $r = new ReflectionMethod($this, 'writeCacheFile');
+<<<<<<< HEAD
             if (__CLASS__ !== $r->getDeclaringClass()->getName()) {
+=======
+            if ($r->getDeclaringClass()->getName() !== __CLASS__) {
+>>>>>>> web and vendor directory from composer install
                 @trigger_error('The Twig_Environment::writeCacheFile method is deprecated since version 1.22 and will be removed in Twig 2.0.', E_USER_DEPRECATED);
 
                 $this->bcWriteCacheFile = true;
             }
 
             $r = new ReflectionMethod($this, 'getCacheFilename');
+<<<<<<< HEAD
             if (__CLASS__ !== $r->getDeclaringClass()->getName()) {
+=======
+            if ($r->getDeclaringClass()->getName() !== __CLASS__) {
+>>>>>>> web and vendor directory from composer install
                 @trigger_error('The Twig_Environment::getCacheFilename method is deprecated since version 1.22 and will be removed in Twig 2.0.', E_USER_DEPRECATED);
 
                 $this->bcGetCacheFilename = true;
@@ -379,6 +402,7 @@ class Twig_Environment
     }
 
     /**
+<<<<<<< HEAD
      * Loads a template.
      *
      * @param string|Twig_TemplateWrapper|Twig_Template $name The template name
@@ -407,12 +431,16 @@ class Twig_Environment
      *
      * This method is for internal use only and should never be called
      * directly.
+=======
+     * Loads a template by name.
+>>>>>>> web and vendor directory from composer install
      *
      * @param string $name  The template name
      * @param int    $index The index if it is an embedded template
      *
      * @return Twig_TemplateInterface A template instance representing the given template name
      *
+<<<<<<< HEAD
      * @throws Twig_Error_Loader  When the template cannot be found
      * @throws Twig_Error_Runtime When a previously generated cache is corrupted
      * @throws Twig_Error_Syntax  When an error occurred during compilation
@@ -425,6 +453,14 @@ class Twig_Environment
         if (null !== $index) {
             $cls .= '_'.$index;
         }
+=======
+     * @throws Twig_Error_Loader When the template cannot be found
+     * @throws Twig_Error_Syntax When an error occurred during compilation
+     */
+    public function loadTemplate($name, $index = null)
+    {
+        $cls = $this->getTemplateClass($name, $index);
+>>>>>>> web and vendor directory from composer install
 
         if (isset($this->loadedTemplates[$cls])) {
             return $this->loadedTemplates[$cls];
@@ -434,7 +470,11 @@ class Twig_Environment
             if ($this->bcGetCacheFilename) {
                 $key = $this->getCacheFilename($name);
             } else {
+<<<<<<< HEAD
                 $key = $this->cache->generateKey($name, $mainCls);
+=======
+                $key = $this->cache->generateKey($name, $cls);
+>>>>>>> web and vendor directory from composer install
             }
 
             if (!$this->isAutoReload() || $this->isTemplateFresh($name, $this->cache->getTimestamp($key))) {
@@ -455,6 +495,7 @@ class Twig_Environment
                     $this->writeCacheFile($key, $content);
                 } else {
                     $this->cache->write($key, $content);
+<<<<<<< HEAD
                     $this->cache->load($key);
                 }
 
@@ -470,6 +511,11 @@ class Twig_Environment
 
             if (!class_exists($cls, false)) {
                 throw new Twig_Error_Runtime(sprintf('Failed to load Twig template "%s", index "%s": cache is corrupted.', $name, $index), -1, $source);
+=======
+                }
+
+                eval('?>'.$content);
+>>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -477,6 +523,7 @@ class Twig_Environment
             $this->initRuntime();
         }
 
+<<<<<<< HEAD
         if (isset($this->loading[$cls])) {
             throw new Twig_Error_Runtime(sprintf('Circular reference detected for Twig template "%s", path: %s.', $name, implode(' -> ', array_merge($this->loading, array($name)))));
         }
@@ -493,6 +540,9 @@ class Twig_Environment
         }
 
         return $this->loadedTemplates[$cls];
+=======
+        return $this->loadedTemplates[$cls] = new $cls($this);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -509,7 +559,11 @@ class Twig_Environment
      */
     public function createTemplate($template)
     {
+<<<<<<< HEAD
         $name = sprintf('__string_template__%s', hash('sha256', $template, false));
+=======
+        $name = sprintf('__string_template__%s', hash('sha256', uniqid(mt_rand(), true), false));
+>>>>>>> web and vendor directory from composer install
 
         $loader = new Twig_Loader_Chain(array(
             new Twig_Loader_Array(array($name => $template)),
@@ -562,12 +616,21 @@ class Twig_Environment
     /**
      * Tries to load a template consecutively from an array.
      *
+<<<<<<< HEAD
      * Similar to loadTemplate() but it also accepts instances of Twig_Template and
      * Twig_TemplateWrapper, and an array of templates where each is tried to be loaded.
      *
      * @param string|Twig_Template|Twig_TemplateWrapper|array $names A template or an array of templates to try consecutively
      *
      * @return Twig_Template|Twig_TemplateWrapper
+=======
+     * Similar to loadTemplate() but it also accepts Twig_TemplateInterface instances and an array
+     * of templates where each is tried to be loaded.
+     *
+     * @param string|Twig_Template|array $names A template or an array of templates to try consecutively
+     *
+     * @return Twig_Template
+>>>>>>> web and vendor directory from composer install
      *
      * @throws Twig_Error_Loader When none of the templates can be found
      * @throws Twig_Error_Syntax When an error occurred during compilation
@@ -583,10 +646,13 @@ class Twig_Environment
                 return $name;
             }
 
+<<<<<<< HEAD
             if ($name instanceof Twig_TemplateWrapper) {
                 return $name;
             }
 
+=======
+>>>>>>> web and vendor directory from composer install
             try {
                 return $this->loadTemplate($name);
             } catch (Twig_Error_Loader $e) {
@@ -633,7 +699,11 @@ class Twig_Environment
     /**
      * Gets the Lexer instance.
      *
+<<<<<<< HEAD
      * @return Twig_LexerInterface
+=======
+     * @return Twig_LexerInterface A Twig_LexerInterface instance
+>>>>>>> web and vendor directory from composer install
      *
      * @deprecated since 1.25 (to be removed in 2.0)
      */
@@ -648,6 +718,14 @@ class Twig_Environment
         return $this->lexer;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Sets the Lexer instance.
+     *
+     * @param Twig_LexerInterface $lexer A Twig_LexerInterface instance
+     */
+>>>>>>> web and vendor directory from composer install
     public function setLexer(Twig_LexerInterface $lexer)
     {
         $this->lexer = $lexer;
@@ -659,7 +737,11 @@ class Twig_Environment
      * @param string|Twig_Source $source The template source code
      * @param string             $name   The template name (deprecated)
      *
+<<<<<<< HEAD
      * @return Twig_TokenStream
+=======
+     * @return Twig_TokenStream A Twig_TokenStream instance
+>>>>>>> web and vendor directory from composer install
      *
      * @throws Twig_Error_Syntax When the code is syntactically wrong
      */
@@ -680,7 +762,11 @@ class Twig_Environment
     /**
      * Gets the Parser instance.
      *
+<<<<<<< HEAD
      * @return Twig_ParserInterface
+=======
+     * @return Twig_ParserInterface A Twig_ParserInterface instance
+>>>>>>> web and vendor directory from composer install
      *
      * @deprecated since 1.25 (to be removed in 2.0)
      */
@@ -695,6 +781,14 @@ class Twig_Environment
         return $this->parser;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Sets the Parser instance.
+     *
+     * @param Twig_ParserInterface $parser A Twig_ParserInterface instance
+     */
+>>>>>>> web and vendor directory from composer install
     public function setParser(Twig_ParserInterface $parser)
     {
         $this->parser = $parser;
@@ -703,7 +797,13 @@ class Twig_Environment
     /**
      * Converts a token stream to a node tree.
      *
+<<<<<<< HEAD
      * @return Twig_Node_Module
+=======
+     * @param Twig_TokenStream $stream A token stream instance
+     *
+     * @return Twig_Node_Module A node tree
+>>>>>>> web and vendor directory from composer install
      *
      * @throws Twig_Error_Syntax When the token stream is syntactically or semantically wrong
      */
@@ -719,7 +819,11 @@ class Twig_Environment
     /**
      * Gets the Compiler instance.
      *
+<<<<<<< HEAD
      * @return Twig_CompilerInterface
+=======
+     * @return Twig_CompilerInterface A Twig_CompilerInterface instance
+>>>>>>> web and vendor directory from composer install
      *
      * @deprecated since 1.25 (to be removed in 2.0)
      */
@@ -734,6 +838,14 @@ class Twig_Environment
         return $this->compiler;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Sets the Compiler instance.
+     *
+     * @param Twig_CompilerInterface $compiler A Twig_CompilerInterface instance
+     */
+>>>>>>> web and vendor directory from composer install
     public function setCompiler(Twig_CompilerInterface $compiler)
     {
         $this->compiler = $compiler;
@@ -742,6 +854,11 @@ class Twig_Environment
     /**
      * Compiles a node and returns the PHP code.
      *
+<<<<<<< HEAD
+=======
+     * @param Twig_NodeInterface $node A Twig_NodeInterface instance
+     *
+>>>>>>> web and vendor directory from composer install
      * @return string The compiled PHP source code
      */
     public function compile(Twig_NodeInterface $node)
@@ -773,6 +890,7 @@ class Twig_Environment
         try {
             return $this->compile($this->parse($this->tokenize($source)));
         } catch (Twig_Error $e) {
+<<<<<<< HEAD
             $e->setSourceContext($source);
             throw $e;
         } catch (Exception $e) {
@@ -783,6 +901,23 @@ class Twig_Environment
     public function setLoader(Twig_LoaderInterface $loader)
     {
         if (!$loader instanceof Twig_SourceContextLoaderInterface && 0 !== strpos(get_class($loader), 'Mock_')) {
+=======
+            $e->setTemplateName($source->getName());
+            throw $e;
+        } catch (Exception $e) {
+            throw new Twig_Error_Syntax(sprintf('An exception has been thrown during the compilation of a template ("%s").', $e->getMessage()), -1, $source->getName(), $e);
+        }
+    }
+
+    /**
+     * Sets the Loader instance.
+     *
+     * @param Twig_LoaderInterface $loader A Twig_LoaderInterface instance
+     */
+    public function setLoader(Twig_LoaderInterface $loader)
+    {
+        if (!$loader instanceof Twig_SourceContextLoaderInterface && 0 !== strpos(get_class($loader), 'Mock_Twig_LoaderInterface')) {
+>>>>>>> web and vendor directory from composer install
             @trigger_error(sprintf('Twig loader "%s" should implement Twig_SourceContextLoaderInterface since version 1.27.', get_class($loader)), E_USER_DEPRECATED);
         }
 
@@ -792,7 +927,11 @@ class Twig_Environment
     /**
      * Gets the Loader instance.
      *
+<<<<<<< HEAD
      * @return Twig_LoaderInterface
+=======
+     * @return Twig_LoaderInterface A Twig_LoaderInterface instance
+>>>>>>> web and vendor directory from composer install
      */
     public function getLoader()
     {
@@ -855,12 +994,15 @@ class Twig_Environment
     public function hasExtension($class)
     {
         $class = ltrim($class, '\\');
+<<<<<<< HEAD
         if (!isset($this->extensionsByClass[$class]) && class_exists($class, false)) {
             // For BC/FC with namespaced aliases
             $class = new ReflectionClass($class);
             $class = $class->name;
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         if (isset($this->extensions[$class])) {
             if ($class !== get_class($this->extensions[$class])) {
                 @trigger_error(sprintf('Referencing the "%s" extension by its name (defined by getName()) is deprecated since 1.26 and will be removed in Twig 2.0. Use the Fully Qualified Extension Class Name instead.', $class), E_USER_DEPRECATED);
@@ -869,7 +1011,11 @@ class Twig_Environment
             return true;
         }
 
+<<<<<<< HEAD
         return isset($this->extensionsByClass[$class]);
+=======
+        return isset($this->extensionsByClass[ltrim($class, '\\')]);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -885,16 +1031,23 @@ class Twig_Environment
      *
      * @param string $class The extension class name
      *
+<<<<<<< HEAD
      * @return Twig_ExtensionInterface
+=======
+     * @return Twig_ExtensionInterface A Twig_ExtensionInterface instance
+>>>>>>> web and vendor directory from composer install
      */
     public function getExtension($class)
     {
         $class = ltrim($class, '\\');
+<<<<<<< HEAD
         if (!isset($this->extensionsByClass[$class]) && class_exists($class, false)) {
             // For BC/FC with namespaced aliases
             $class = new ReflectionClass($class);
             $class = $class->name;
         }
+=======
+>>>>>>> web and vendor directory from composer install
 
         if (isset($this->extensions[$class])) {
             if ($class !== get_class($this->extensions[$class])) {
@@ -935,6 +1088,14 @@ class Twig_Environment
         throw new Twig_Error_Runtime(sprintf('Unable to load the "%s" runtime.', $class));
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Registers an extension.
+     *
+     * @param Twig_ExtensionInterface $extension A Twig_ExtensionInterface instance
+     */
+>>>>>>> web and vendor directory from composer install
     public function addExtension(Twig_ExtensionInterface $extension)
     {
         if ($this->extensionInitialized) {
@@ -973,12 +1134,15 @@ class Twig_Environment
         }
 
         $class = ltrim($name, '\\');
+<<<<<<< HEAD
         if (!isset($this->extensionsByClass[$class]) && class_exists($class, false)) {
             // For BC/FC with namespaced aliases
             $class = new ReflectionClass($class);
             $class = $class->name;
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         if (isset($this->extensions[$class])) {
             if ($class !== get_class($this->extensions[$class])) {
                 @trigger_error(sprintf('Referencing the "%s" extension by its name (defined by getName()) is deprecated since 1.26 and will be removed in Twig 2.0. Use the Fully Qualified Extension Class Name instead.', $class), E_USER_DEPRECATED);
@@ -1013,6 +1177,14 @@ class Twig_Environment
         return $this->extensions;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Registers a Token Parser.
+     *
+     * @param Twig_TokenParserInterface $parser A Twig_TokenParserInterface instance
+     */
+>>>>>>> web and vendor directory from composer install
     public function addTokenParser(Twig_TokenParserInterface $parser)
     {
         if ($this->extensionInitialized) {
@@ -1025,7 +1197,11 @@ class Twig_Environment
     /**
      * Gets the registered Token Parsers.
      *
+<<<<<<< HEAD
      * @return Twig_TokenParserBrokerInterface
+=======
+     * @return Twig_TokenParserBrokerInterface A broker containing token parsers
+>>>>>>> web and vendor directory from composer install
      *
      * @internal
      */
@@ -1043,7 +1219,11 @@ class Twig_Environment
      *
      * Be warned that this method cannot return tags defined by Twig_TokenParserBrokerInterface classes.
      *
+<<<<<<< HEAD
      * @return Twig_TokenParserInterface[]
+=======
+     * @return Twig_TokenParserInterface[] An array of Twig_TokenParserInterface instances
+>>>>>>> web and vendor directory from composer install
      *
      * @internal
      */
@@ -1059,6 +1239,14 @@ class Twig_Environment
         return $tags;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Registers a Node Visitor.
+     *
+     * @param Twig_NodeVisitorInterface $visitor A Twig_NodeVisitorInterface instance
+     */
+>>>>>>> web and vendor directory from composer install
     public function addNodeVisitor(Twig_NodeVisitorInterface $visitor)
     {
         if ($this->extensionInitialized) {
@@ -1071,7 +1259,11 @@ class Twig_Environment
     /**
      * Gets the registered Node Visitors.
      *
+<<<<<<< HEAD
      * @return Twig_NodeVisitorInterface[]
+=======
+     * @return Twig_NodeVisitorInterface[] An array of Twig_NodeVisitorInterface instances
+>>>>>>> web and vendor directory from composer install
      *
      * @internal
      */
@@ -1088,7 +1280,11 @@ class Twig_Environment
      * Registers a Filter.
      *
      * @param string|Twig_SimpleFilter               $name   The filter name or a Twig_SimpleFilter instance
+<<<<<<< HEAD
      * @param Twig_FilterInterface|Twig_SimpleFilter $filter
+=======
+     * @param Twig_FilterInterface|Twig_SimpleFilter $filter A Twig_FilterInterface instance or a Twig_SimpleFilter instance
+>>>>>>> web and vendor directory from composer install
      */
     public function addFilter($name, $filter = null)
     {
@@ -1164,7 +1360,11 @@ class Twig_Environment
      *
      * Be warned that this method cannot return filters defined with registerUndefinedFilterCallback.
      *
+<<<<<<< HEAD
      * @return Twig_FilterInterface[]
+=======
+     * @return Twig_FilterInterface[] An array of Twig_FilterInterface instances
+>>>>>>> web and vendor directory from composer install
      *
      * @see registerUndefinedFilterCallback
      *
@@ -1208,7 +1408,11 @@ class Twig_Environment
     /**
      * Gets the registered Tests.
      *
+<<<<<<< HEAD
      * @return Twig_TestInterface[]
+=======
+     * @return Twig_TestInterface[] An array of Twig_TestInterface instances
+>>>>>>> web and vendor directory from composer install
      *
      * @internal
      */
@@ -1247,7 +1451,11 @@ class Twig_Environment
      * Registers a Function.
      *
      * @param string|Twig_SimpleFunction                 $name     The function name or a Twig_SimpleFunction instance
+<<<<<<< HEAD
      * @param Twig_FunctionInterface|Twig_SimpleFunction $function
+=======
+     * @param Twig_FunctionInterface|Twig_SimpleFunction $function A Twig_FunctionInterface instance or a Twig_SimpleFunction instance
+>>>>>>> web and vendor directory from composer install
      */
     public function addFunction($name, $function = null)
     {
@@ -1323,7 +1531,11 @@ class Twig_Environment
      *
      * Be warned that this method cannot return functions defined with registerUndefinedFunctionCallback.
      *
+<<<<<<< HEAD
      * @return Twig_FunctionInterface[]
+=======
+     * @return Twig_FunctionInterface[] An array of Twig_FunctionInterface instances
+>>>>>>> web and vendor directory from composer install
      *
      * @see registerUndefinedFunctionCallback
      *
@@ -1488,6 +1700,10 @@ class Twig_Environment
             return;
         }
 
+<<<<<<< HEAD
+=======
+        $this->extensionInitialized = true;
+>>>>>>> web and vendor directory from composer install
         $this->parsers = new Twig_TokenParserBroker(array(), array(), false);
         $this->filters = array();
         $this->functions = array();
@@ -1500,8 +1716,11 @@ class Twig_Environment
             $this->initExtension($extension);
         }
         $this->initExtension($this->staging);
+<<<<<<< HEAD
         // Done at the end only, so that an exception during initialization does not mark the environment as initialized when catching the exception
         $this->extensionInitialized = true;
+=======
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -1562,12 +1781,17 @@ class Twig_Environment
 
         // operators
         if ($operators = $extension->getOperators()) {
+<<<<<<< HEAD
             if (!is_array($operators)) {
                 throw new InvalidArgumentException(sprintf('"%s::getOperators()" must return an array with operators, got "%s".', get_class($extension), is_object($operators) ? get_class($operators) : gettype($operators).(is_resource($operators) ? '' : '#'.$operators)));
             }
 
             if (2 !== count($operators)) {
                 throw new InvalidArgumentException(sprintf('"%s::getOperators()" must return an array of 2 elements, got %d.', get_class($extension), count($operators)));
+=======
+            if (2 !== count($operators)) {
+                throw new InvalidArgumentException(sprintf('"%s::getOperators()" does not return a valid operators array.', get_class($extension)));
+>>>>>>> web and vendor directory from composer install
             }
 
             $this->unaryOperators = array_merge($this->unaryOperators, $operators[0]);
@@ -1600,5 +1824,8 @@ class Twig_Environment
         $this->optionsHash = implode(':', $hashParts);
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_Environment', 'Twig\Environment', false);
+=======
+>>>>>>> web and vendor directory from composer install

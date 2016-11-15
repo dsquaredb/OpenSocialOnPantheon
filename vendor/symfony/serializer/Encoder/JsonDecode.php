@@ -11,7 +11,11 @@
 
 namespace Symfony\Component\Serializer\Encoder;
 
+<<<<<<< HEAD
 use Symfony\Component\Serializer\Exception\NotEncodableValueException;
+=======
+use Symfony\Component\Serializer\Exception\UnexpectedValueException;
+>>>>>>> web and vendor directory from composer install
 
 /**
  * Decodes JSON data.
@@ -20,11 +24,32 @@ use Symfony\Component\Serializer\Exception\NotEncodableValueException;
  */
 class JsonDecode implements DecoderInterface
 {
+<<<<<<< HEAD
     protected $serializer;
 
     private $associative;
     private $recursionDepth;
 
+=======
+    /**
+     * Specifies if the returned result should be an associative array or a nested stdClass object hierarchy.
+     *
+     * @var bool
+     */
+    private $associative;
+
+    /**
+     * Specifies the recursion depth.
+     *
+     * @var int
+     */
+    private $recursionDepth;
+
+    private $lastError = JSON_ERROR_NONE;
+
+    protected $serializer;
+
+>>>>>>> web and vendor directory from composer install
     /**
      * Constructs a new JsonDecode instance.
      *
@@ -38,6 +63,25 @@ class JsonDecode implements DecoderInterface
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Returns the last decoding error (if any).
+     *
+     * @return int
+     *
+     * @deprecated since version 2.5, to be removed in 3.0.
+     *             The {@self decode()} method throws an exception if error found.
+     * @see http://php.net/manual/en/function.json-last-error.php json_last_error
+     */
+    public function getLastError()
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 2.5 and will be removed in 3.0. Catch the exception raised by the decode() method instead to get the last JSON decoding error.', E_USER_DEPRECATED);
+
+        return $this->lastError;
+    }
+
+    /**
+>>>>>>> web and vendor directory from composer install
      * Decodes data.
      *
      * @param string $data    The encoded JSON string to decode
@@ -60,7 +104,11 @@ class JsonDecode implements DecoderInterface
      *
      * @return mixed
      *
+<<<<<<< HEAD
      * @throws NotEncodableValueException
+=======
+     * @throws UnexpectedValueException
+>>>>>>> web and vendor directory from composer install
      *
      * @see http://php.net/json_decode json_decode
      */
@@ -72,10 +120,21 @@ class JsonDecode implements DecoderInterface
         $recursionDepth = $context['json_decode_recursion_depth'];
         $options = $context['json_decode_options'];
 
+<<<<<<< HEAD
         $decodedData = json_decode($data, $associative, $recursionDepth, $options);
 
         if (JSON_ERROR_NONE !== json_last_error()) {
             throw new NotEncodableValueException(json_last_error_msg());
+=======
+        if (PHP_VERSION_ID >= 50400) {
+            $decodedData = json_decode($data, $associative, $recursionDepth, $options);
+        } else {
+            $decodedData = json_decode($data, $associative, $recursionDepth);
+        }
+
+        if (JSON_ERROR_NONE !== $this->lastError = json_last_error()) {
+            throw new UnexpectedValueException(json_last_error_msg());
+>>>>>>> web and vendor directory from composer install
         }
 
         return $decodedData;
@@ -92,6 +151,11 @@ class JsonDecode implements DecoderInterface
     /**
      * Merges the default options of the Json Decoder with the passed context.
      *
+<<<<<<< HEAD
+=======
+     * @param array $context
+     *
+>>>>>>> web and vendor directory from composer install
      * @return array
      */
     private function resolveContext(array $context)

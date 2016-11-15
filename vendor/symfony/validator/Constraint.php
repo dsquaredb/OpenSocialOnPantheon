@@ -33,21 +33,41 @@ abstract class Constraint
 {
     /**
      * The name of the group given to all constraints with no explicit group.
+<<<<<<< HEAD
+=======
+     *
+     * @var string
+>>>>>>> web and vendor directory from composer install
      */
     const DEFAULT_GROUP = 'Default';
 
     /**
      * Marks a constraint that can be put onto classes.
+<<<<<<< HEAD
+=======
+     *
+     * @var string
+>>>>>>> web and vendor directory from composer install
      */
     const CLASS_CONSTRAINT = 'class';
 
     /**
      * Marks a constraint that can be put onto properties.
+<<<<<<< HEAD
+=======
+     *
+     * @var string
+>>>>>>> web and vendor directory from composer install
      */
     const PROPERTY_CONSTRAINT = 'property';
 
     /**
      * Maps error codes to the names of their constants.
+<<<<<<< HEAD
+=======
+     *
+     * @var array
+>>>>>>> web and vendor directory from composer install
      */
     protected static $errorNames = array();
 
@@ -133,7 +153,11 @@ abstract class Constraint
                     $invalidOptions[] = $option;
                 }
             }
+<<<<<<< HEAD
         } elseif (null !== $options && !(is_array($options) && 0 === count($options))) {
+=======
+        } elseif (null !== $options && !(is_array($options) && count($options) === 0)) {
+>>>>>>> web and vendor directory from composer install
             $option = $this->getDefaultOption();
 
             if (null === $option) {
@@ -201,7 +225,11 @@ abstract class Constraint
      *
      * @throws InvalidOptionsException If an invalid option name is given
      *
+<<<<<<< HEAD
      * @internal this method should not be used or overwritten in userland code
+=======
+     * @internal This method should not be used or overwritten in userland code.
+>>>>>>> web and vendor directory from composer install
      */
     public function __get($option)
     {
@@ -215,6 +243,7 @@ abstract class Constraint
     }
 
     /**
+<<<<<<< HEAD
      * @param string $option The option name
      *
      * @return bool
@@ -225,6 +254,8 @@ abstract class Constraint
     }
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * Adds the given group if this constraint is in the Default group.
      *
      * @param string $group

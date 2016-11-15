@@ -15,6 +15,11 @@ interface RequestContextAwareInterface
 {
     /**
      * Sets the request context.
+<<<<<<< HEAD
+=======
+     *
+     * @param RequestContext $context The context
+>>>>>>> web and vendor directory from composer install
      */
     public function setContext(RequestContext $context);
 

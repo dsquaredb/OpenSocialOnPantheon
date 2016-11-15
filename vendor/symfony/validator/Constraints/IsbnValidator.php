@@ -11,6 +11,10 @@
 
 namespace Symfony\Component\Validator\Constraints;
 
+<<<<<<< HEAD
+=======
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
@@ -46,6 +50,7 @@ class IsbnValidator extends ConstraintValidator
         $value = (string) $value;
         $canonical = str_replace('-', '', $value);
 
+<<<<<<< HEAD
         // Explicitly validate against ISBN-10
         if ('isbn10' === $constraint->type) {
             if (true !== ($code = $this->validateIsbn10($canonical))) {
@@ -53,6 +58,32 @@ class IsbnValidator extends ConstraintValidator
                     ->setParameter('{{ value }}', $this->formatValue($value))
                     ->setCode($code)
                     ->addViolation();
+=======
+        if (null === $constraint->type) {
+            if ($constraint->isbn10 && !$constraint->isbn13) {
+                @trigger_error('The "isbn10" option of the Isbn constraint is deprecated since version 2.5 and will be removed in 3.0. Use the "type" option instead.', E_USER_DEPRECATED);
+                $constraint->type = 'isbn10';
+            } elseif ($constraint->isbn13 && !$constraint->isbn10) {
+                @trigger_error('The "isbn13" option of the Isbn constraint is deprecated since version 2.5 and will be removed in 3.0. Use the "type" option instead.', E_USER_DEPRECATED);
+                $constraint->type = 'isbn13';
+            }
+        }
+
+        // Explicitly validate against ISBN-10
+        if ('isbn10' === $constraint->type) {
+            if (true !== ($code = $this->validateIsbn10($canonical))) {
+                if ($this->context instanceof ExecutionContextInterface) {
+                    $this->context->buildViolation($this->getMessage($constraint, $constraint->type))
+                        ->setParameter('{{ value }}', $this->formatValue($value))
+                        ->setCode($code)
+                        ->addViolation();
+                } else {
+                    $this->buildViolation($this->getMessage($constraint, $constraint->type))
+                        ->setParameter('{{ value }}', $this->formatValue($value))
+                        ->setCode($code)
+                        ->addViolation();
+                }
+>>>>>>> web and vendor directory from composer install
             }
 
             return;
@@ -61,10 +92,24 @@ class IsbnValidator extends ConstraintValidator
         // Explicitly validate against ISBN-13
         if ('isbn13' === $constraint->type) {
             if (true !== ($code = $this->validateIsbn13($canonical))) {
+<<<<<<< HEAD
                 $this->context->buildViolation($this->getMessage($constraint, $constraint->type))
                     ->setParameter('{{ value }}', $this->formatValue($value))
                     ->setCode($code)
                     ->addViolation();
+=======
+                if ($this->context instanceof ExecutionContextInterface) {
+                    $this->context->buildViolation($this->getMessage($constraint, $constraint->type))
+                        ->setParameter('{{ value }}', $this->formatValue($value))
+                        ->setCode($code)
+                        ->addViolation();
+                } else {
+                    $this->buildViolation($this->getMessage($constraint, $constraint->type))
+                        ->setParameter('{{ value }}', $this->formatValue($value))
+                        ->setCode($code)
+                        ->addViolation();
+                }
+>>>>>>> web and vendor directory from composer install
             }
 
             return;
@@ -87,10 +132,24 @@ class IsbnValidator extends ConstraintValidator
         }
 
         if (true !== $code) {
+<<<<<<< HEAD
             $this->context->buildViolation($this->getMessage($constraint))
                 ->setParameter('{{ value }}', $this->formatValue($value))
                 ->setCode($code)
                 ->addViolation();
+=======
+            if ($this->context instanceof ExecutionContextInterface) {
+                $this->context->buildViolation($this->getMessage($constraint))
+                    ->setParameter('{{ value }}', $this->formatValue($value))
+                    ->setCode($code)
+                    ->addViolation();
+            } else {
+                $this->buildViolation($this->getMessage($constraint))
+                    ->setParameter('{{ value }}', $this->formatValue($value))
+                    ->setCode($code)
+                    ->addViolation();
+            }
+>>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -112,6 +171,7 @@ class IsbnValidator extends ConstraintValidator
             // If we test the length before the loop, we get an ERROR_TOO_SHORT
             // when actually an ERROR_INVALID_CHARACTERS is wanted, e.g. for
             // "0-45122_5244" (typo)
+<<<<<<< HEAD
             if (!isset($isbn[$i])) {
                 return Isbn::TOO_SHORT_ERROR;
             }
@@ -120,6 +180,16 @@ class IsbnValidator extends ConstraintValidator
                 $digit = 10;
             } elseif (ctype_digit($isbn[$i])) {
                 $digit = $isbn[$i];
+=======
+            if (!isset($isbn{$i})) {
+                return Isbn::TOO_SHORT_ERROR;
+            }
+
+            if ('X' === $isbn{$i}) {
+                $digit = 10;
+            } elseif (ctype_digit($isbn{$i})) {
+                $digit = $isbn{$i};
+>>>>>>> web and vendor directory from composer install
             } else {
                 return Isbn::INVALID_CHARACTERS_ERROR;
             }
@@ -127,7 +197,11 @@ class IsbnValidator extends ConstraintValidator
             $checkSum += $digit * (10 - $i);
         }
 
+<<<<<<< HEAD
         if (isset($isbn[$i])) {
+=======
+        if (isset($isbn{$i})) {
+>>>>>>> web and vendor directory from composer install
             return Isbn::TOO_LONG_ERROR;
         }
 
@@ -158,11 +232,19 @@ class IsbnValidator extends ConstraintValidator
         $checkSum = 0;
 
         for ($i = 0; $i < 13; $i += 2) {
+<<<<<<< HEAD
             $checkSum += $isbn[$i];
         }
 
         for ($i = 1; $i < 12; $i += 2) {
             $checkSum += $isbn[$i]
+=======
+            $checkSum += $isbn{$i};
+        }
+
+        for ($i = 1; $i < 12; $i += 2) {
+            $checkSum += $isbn{$i}
+>>>>>>> web and vendor directory from composer install
             * 3;
         }
 

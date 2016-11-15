@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of asm89/stack-cors.
  *
@@ -9,6 +10,8 @@
  * file that was distributed with this source code.
  */
 
+=======
+>>>>>>> web and vendor directory from composer install
 namespace Asm89\Stack;
 
 use Symfony\Component\HttpKernel\HttpKernelInterface;
@@ -28,6 +31,7 @@ class Cors implements HttpKernelInterface
     private $cors;
 
     private $defaultOptions = array(
+<<<<<<< HEAD
         'allowedHeaders'         => array(),
         'allowedMethods'         => array(),
         'allowedOrigins'         => array(),
@@ -35,17 +39,33 @@ class Cors implements HttpKernelInterface
         'exposedHeaders'         => false,
         'maxAge'                 => false,
         'supportsCredentials'    => false,
+=======
+        'allowedHeaders'      => array(),
+        'allowedMethods'      => array(),
+        'allowedOrigins'      => array(),
+        'exposedHeaders'      => false,
+        'maxAge'              => false,
+        'supportsCredentials' => false,
+>>>>>>> web and vendor directory from composer install
     );
 
     public function __construct(HttpKernelInterface $app, array $options = array())
     {
         $this->app  = $app;
         $this->cors = new CorsService(array_merge($this->defaultOptions, $options));
+<<<<<<< HEAD
+=======
+
+>>>>>>> web and vendor directory from composer install
     }
 
     public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
     {
+<<<<<<< HEAD
         if (!$this->cors->isCorsRequest($request)) {
+=======
+        if ( ! $this->cors->isCorsRequest($request)) {
+>>>>>>> web and vendor directory from composer install
             return $this->app->handle($request, $type, $catch);
         }
 
@@ -53,7 +73,11 @@ class Cors implements HttpKernelInterface
             return $this->cors->handlePreflightRequest($request);
         }
 
+<<<<<<< HEAD
         if (!$this->cors->isActualRequestAllowed($request)) {
+=======
+        if ( ! $this->cors->isActualRequestAllowed($request)) {
+>>>>>>> web and vendor directory from composer install
             return new Response('Not allowed.', 403);
         }
 

@@ -11,13 +11,23 @@
 
 namespace Symfony\Component\DependencyInjection\Dumper;
 
+<<<<<<< HEAD
 use Symfony\Component\DependencyInjection\Argument\ArgumentInterface;
+=======
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\DependencyInjection\Parameter;
+<<<<<<< HEAD
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
+=======
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
+use Symfony\Component\DependencyInjection\Scope;
+>>>>>>> web and vendor directory from composer install
 
 /**
  * GraphvizDumper dumps a service container as a graphviz file.
@@ -53,6 +63,11 @@ class GraphvizDumper extends Dumper
      *  * node.definition: The default options for services that are defined via service definition instances
      *  * node.missing: The default options for missing services
      *
+<<<<<<< HEAD
+=======
+     * @param array $options An array of options
+     *
+>>>>>>> web and vendor directory from composer install
      * @return string The dot representation of the service container
      */
     public function dump(array $options = array())
@@ -80,7 +95,11 @@ class GraphvizDumper extends Dumper
             }
         }
 
+<<<<<<< HEAD
         return $this->container->resolveEnvPlaceholders($this->startDot().$this->addNodes().$this->addEdges().$this->endDot(), '__ENV_%s__');
+=======
+        return $this->startDot().$this->addNodes().$this->addEdges().$this->endDot();
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -110,7 +129,11 @@ class GraphvizDumper extends Dumper
         $code = '';
         foreach ($this->edges as $id => $edges) {
             foreach ($edges as $edge) {
+<<<<<<< HEAD
                 $code .= sprintf("  node_%s -> node_%s [label=\"%s\" style=\"%s\"%s];\n", $this->dotize($id), $this->dotize($edge['to']), $edge['name'], $edge['required'] ? 'filled' : 'dashed', $edge['lazy'] ? ' color="#9999ff"' : '');
+=======
+                $code .= sprintf("  node_%s -> node_%s [label=\"%s\" style=\"%s\"];\n", $this->dotize($id), $this->dotize($edge['to']), $edge['name'], $edge['required'] ? 'filled' : 'dashed');
+>>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -127,7 +150,11 @@ class GraphvizDumper extends Dumper
      *
      * @return array An array of edges
      */
+<<<<<<< HEAD
     private function findEdges($id, array $arguments, $required, $name, $lazy = false)
+=======
+    private function findEdges($id, array $arguments, $required, $name)
+>>>>>>> web and vendor directory from composer install
     {
         $edges = array();
         foreach ($arguments as $argument) {
@@ -138,6 +165,7 @@ class GraphvizDumper extends Dumper
             }
 
             if ($argument instanceof Reference) {
+<<<<<<< HEAD
                 $lazyEdge = $lazy;
 
                 if (!$this->container->has((string) $argument)) {
@@ -151,6 +179,15 @@ class GraphvizDumper extends Dumper
                 $edges = array_merge($edges, $this->findEdges($id, $argument->getValues(), $required, $name, true));
             } elseif (is_array($argument)) {
                 $edges = array_merge($edges, $this->findEdges($id, $argument, $required, $name, $lazy));
+=======
+                if (!$this->container->has((string) $argument)) {
+                    $this->nodes[(string) $argument] = array('name' => $name, 'required' => $required, 'class' => '', 'attributes' => $this->options['node.missing']);
+                }
+
+                $edges[] = array('name' => $name, 'required' => $required, 'to' => $argument);
+            } elseif (is_array($argument)) {
+                $edges = array_merge($edges, $this->findEdges($id, $argument, $required, $name));
+>>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -180,17 +217,31 @@ class GraphvizDumper extends Dumper
             } catch (ParameterNotFoundException $e) {
             }
 
+<<<<<<< HEAD
             $nodes[$id] = array('class' => str_replace('\\', '\\\\', $class), 'attributes' => array_merge($this->options['node.definition'], array('style' => $definition->isShared() ? 'filled' : 'dotted')));
+=======
+            $nodes[$id] = array('class' => str_replace('\\', '\\\\', $class), 'attributes' => array_merge($this->options['node.definition'], array('style' => $definition->isShared() && ContainerInterface::SCOPE_PROTOTYPE !== $definition->getScope(false) ? 'filled' : 'dotted')));
+>>>>>>> web and vendor directory from composer install
             $container->setDefinition($id, new Definition('stdClass'));
         }
 
         foreach ($container->getServiceIds() as $id) {
+<<<<<<< HEAD
+=======
+            $service = $container->get($id);
+
+>>>>>>> web and vendor directory from composer install
             if (array_key_exists($id, $container->getAliases())) {
                 continue;
             }
 
             if (!$container->hasDefinition($id)) {
+<<<<<<< HEAD
                 $nodes[$id] = array('class' => str_replace('\\', '\\\\', get_class($container->get($id))), 'attributes' => $this->options['node.instance']);
+=======
+                $class = ('service_container' === $id) ? get_class($this->container) : get_class($service);
+                $nodes[$id] = array('class' => str_replace('\\', '\\\\', $class), 'attributes' => $this->options['node.instance']);
+>>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -205,6 +256,12 @@ class GraphvizDumper extends Dumper
         $container->setDefinitions($this->container->getDefinitions());
         $container->setAliases($this->container->getAliases());
         $container->setResources($this->container->getResources());
+<<<<<<< HEAD
+=======
+        foreach ($this->container->getScopes(false) as $scope => $parentScope) {
+            $container->addScope(new Scope($scope, $parentScope));
+        }
+>>>>>>> web and vendor directory from composer install
         foreach ($this->container->getExtensions() as $extension) {
             $container->registerExtension($extension);
         }

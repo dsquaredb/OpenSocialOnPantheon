@@ -20,6 +20,7 @@ class RemoveAbstractDefinitionsPass implements CompilerPassInterface
 {
     /**
      * Removes abstract definitions from the ContainerBuilder.
+<<<<<<< HEAD
      */
     public function process(ContainerBuilder $container)
     {
@@ -27,6 +28,20 @@ class RemoveAbstractDefinitionsPass implements CompilerPassInterface
             if ($definition->isAbstract()) {
                 $container->removeDefinition($id);
                 $container->log($this, sprintf('Removed service "%s"; reason: abstract.', $id));
+=======
+     *
+     * @param ContainerBuilder $container
+     */
+    public function process(ContainerBuilder $container)
+    {
+        $compiler = $container->getCompiler();
+        $formatter = $compiler->getLoggingFormatter();
+
+        foreach ($container->getDefinitions() as $id => $definition) {
+            if ($definition->isAbstract()) {
+                $container->removeDefinition($id);
+                $compiler->addLogMessage($formatter->formatRemoveService($this, $id, 'abstract'));
+>>>>>>> web and vendor directory from composer install
             }
         }
     }

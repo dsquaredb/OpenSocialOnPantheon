@@ -11,6 +11,10 @@
 
 namespace Symfony\Component\Console\Style;
 
+<<<<<<< HEAD
+=======
+use Symfony\Component\Console\Application;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\Console\Exception\RuntimeException;
 use Symfony\Component\Console\Formatter\OutputFormatter;
 use Symfony\Component\Console\Helper\Helper;
@@ -23,7 +27,10 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ChoiceQuestion;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Console\Question\Question;
+<<<<<<< HEAD
 use Symfony\Component\Console\Terminal;
+=======
+>>>>>>> web and vendor directory from composer install
 
 /**
  * Output decorator helpers for the Symfony Style Guide.
@@ -40,13 +47,24 @@ class SymfonyStyle extends OutputStyle
     private $lineLength;
     private $bufferedOutput;
 
+<<<<<<< HEAD
+=======
+    /**
+     * @param InputInterface  $input
+     * @param OutputInterface $output
+     */
+>>>>>>> web and vendor directory from composer install
     public function __construct(InputInterface $input, OutputInterface $output)
     {
         $this->input = $input;
         $this->bufferedOutput = new BufferedOutput($output->getVerbosity(), false, clone $output->getFormatter());
         // Windows cmd wraps lines as soon as the terminal width is reached, whether there are following chars or not.
+<<<<<<< HEAD
         $width = (new Terminal())->getWidth() ?: self::MAX_LINE_LENGTH;
         $this->lineLength = min($width - (int) (DIRECTORY_SEPARATOR === '\\'), self::MAX_LINE_LENGTH);
+=======
+        $this->lineLength = min($this->getTerminalWidth() - (int) (DIRECTORY_SEPARATOR === '\\'), self::MAX_LINE_LENGTH);
+>>>>>>> web and vendor directory from composer install
 
         parent::__construct($output);
     }
@@ -59,14 +77,23 @@ class SymfonyStyle extends OutputStyle
      * @param string|null  $style    The style to apply to the whole block
      * @param string       $prefix   The prefix for the block
      * @param bool         $padding  Whether to add vertical padding
+<<<<<<< HEAD
      * @param bool         $escape   Whether to escape the message
      */
     public function block($messages, $type = null, $style = null, $prefix = ' ', $padding = false, $escape = true)
+=======
+     */
+    public function block($messages, $type = null, $style = null, $prefix = ' ', $padding = false)
+>>>>>>> web and vendor directory from composer install
     {
         $messages = is_array($messages) ? array_values($messages) : array($messages);
 
         $this->autoPrependBlock();
+<<<<<<< HEAD
         $this->writeln($this->createBlock($messages, $type, $style, $prefix, $padding, $escape));
+=======
+        $this->writeln($this->createBlock($messages, $type, $style, $prefix, $padding, true));
+>>>>>>> web and vendor directory from composer install
         $this->newLine();
     }
 
@@ -77,7 +104,11 @@ class SymfonyStyle extends OutputStyle
     {
         $this->autoPrependBlock();
         $this->writeln(array(
+<<<<<<< HEAD
             sprintf('<comment>%s</>', OutputFormatter::escapeTrailingBackslash($message)),
+=======
+            sprintf('<comment>%s</>', $message),
+>>>>>>> web and vendor directory from composer install
             sprintf('<comment>%s</>', str_repeat('=', Helper::strlenWithoutDecoration($this->getFormatter(), $message))),
         ));
         $this->newLine();
@@ -90,7 +121,11 @@ class SymfonyStyle extends OutputStyle
     {
         $this->autoPrependBlock();
         $this->writeln(array(
+<<<<<<< HEAD
             sprintf('<comment>%s</>', OutputFormatter::escapeTrailingBackslash($message)),
+=======
+            sprintf('<comment>%s</>', $message),
+>>>>>>> web and vendor directory from composer install
             sprintf('<comment>%s</>', str_repeat('-', Helper::strlenWithoutDecoration($this->getFormatter(), $message))),
         ));
         $this->newLine();
@@ -130,7 +165,15 @@ class SymfonyStyle extends OutputStyle
      */
     public function comment($message)
     {
+<<<<<<< HEAD
         $this->block($message, null, null, '<fg=default;bg=default> // </>', false, false);
+=======
+        $messages = is_array($message) ? array_values($message) : array($message);
+
+        $this->autoPrependBlock();
+        $this->writeln($this->createBlock($messages, null, null, '<fg=default;bg=default> // </>'));
+        $this->newLine();
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -279,7 +322,13 @@ class SymfonyStyle extends OutputStyle
     }
 
     /**
+<<<<<<< HEAD
      * @return mixed
+=======
+     * @param Question $question
+     *
+     * @return string
+>>>>>>> web and vendor directory from composer install
      */
     public function askQuestion(Question $question)
     {
@@ -329,6 +378,7 @@ class SymfonyStyle extends OutputStyle
     }
 
     /**
+<<<<<<< HEAD
      * Returns a new instance which makes use of stderr if available.
      *
      * @return self
@@ -339,6 +389,8 @@ class SymfonyStyle extends OutputStyle
     }
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * @return ProgressBar
      */
     private function getProgressBar()
@@ -350,6 +402,17 @@ class SymfonyStyle extends OutputStyle
         return $this->progressBar;
     }
 
+<<<<<<< HEAD
+=======
+    private function getTerminalWidth()
+    {
+        $application = new Application();
+        $dimensions = $application->getTerminalDimensions();
+
+        return $dimensions[0] ?: self::MAX_LINE_LENGTH;
+    }
+
+>>>>>>> web and vendor directory from composer install
     private function autoPrependBlock()
     {
         $chars = substr(str_replace(PHP_EOL, "\n", $this->bufferedOutput->fetch()), -2);

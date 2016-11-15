@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 Copyright (c) Nils Adermann, Jordi Boggiano
+=======
+Copyright (c) 2016 Nils Adermann, Jordi Boggiano
+>>>>>>> web and vendor directory from composer install
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

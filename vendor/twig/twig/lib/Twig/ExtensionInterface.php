@@ -3,7 +3,11 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
+=======
+ * (c) 2009 Fabien Potencier
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,6 +25,11 @@ interface Twig_ExtensionInterface
      *
      * This is where you can load some file that contains filter functions for instance.
      *
+<<<<<<< HEAD
+=======
+     * @param Twig_Environment $environment The current Twig_Environment instance
+     *
+>>>>>>> web and vendor directory from composer install
      * @deprecated since 1.23 (to be removed in 2.0), implement Twig_Extension_InitRuntimeInterface instead
      */
     public function initRuntime(Twig_Environment $environment);
@@ -35,7 +44,11 @@ interface Twig_ExtensionInterface
     /**
      * Returns the node visitor instances to add to the existing list.
      *
+<<<<<<< HEAD
      * @return Twig_NodeVisitorInterface[]
+=======
+     * @return Twig_NodeVisitorInterface[] An array of Twig_NodeVisitorInterface instances
+>>>>>>> web and vendor directory from composer install
      */
     public function getNodeVisitors();
 
@@ -63,7 +76,11 @@ interface Twig_ExtensionInterface
     /**
      * Returns a list of operators to add to the existing list.
      *
+<<<<<<< HEAD
      * @return array<array> First array of unary operators, second array of binary operators
+=======
+     * @return array An array of operators
+>>>>>>> web and vendor directory from composer install
      */
     public function getOperators();
 
@@ -85,6 +102,9 @@ interface Twig_ExtensionInterface
      */
     public function getName();
 }
+<<<<<<< HEAD
 
 class_alias('Twig_ExtensionInterface', 'Twig\Extension\ExtensionInterface', false);
 class_exists('Twig_Environment');
+=======
+>>>>>>> web and vendor directory from composer install

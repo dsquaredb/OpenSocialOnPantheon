@@ -102,7 +102,11 @@ final class Middleware
                             'error'    => $reason,
                             'options'  => $options
                         ];
+<<<<<<< HEAD
                         return \GuzzleHttp\Promise\rejection_for($reason);
+=======
+                        return new RejectedPromise($reason);
+>>>>>>> web and vendor directory from composer install
                     }
                 );
             };

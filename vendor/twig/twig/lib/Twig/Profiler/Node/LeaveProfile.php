@@ -3,7 +3,11 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
+=======
+ * (c) 2015 Fabien Potencier
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,6 +25,12 @@ class Twig_Profiler_Node_LeaveProfile extends Twig_Node
         parent::__construct(array(), array('var_name' => $varName));
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * {@inheritdoc}
+     */
+>>>>>>> web and vendor directory from composer install
     public function compile(Twig_Compiler $compiler)
     {
         $compiler
@@ -29,5 +39,8 @@ class Twig_Profiler_Node_LeaveProfile extends Twig_Node
         ;
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_Profiler_Node_LeaveProfile', 'Twig\Profiler\Node\LeaveProfileNode', false);
+=======
+>>>>>>> web and vendor directory from composer install

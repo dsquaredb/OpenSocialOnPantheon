@@ -19,6 +19,11 @@ namespace Symfony\Component\Serializer\Mapping;
 class ClassMetadata implements ClassMetadataInterface
 {
     /**
+<<<<<<< HEAD
+=======
+     * @var string
+     *
+>>>>>>> web and vendor directory from composer install
      * @internal This property is public in order to reduce the size of the
      *           class' serialized representation. Do not access it. Use
      *           {@link getName()} instead.

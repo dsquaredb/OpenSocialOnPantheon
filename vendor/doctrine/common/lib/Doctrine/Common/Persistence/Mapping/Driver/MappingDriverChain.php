@@ -39,12 +39,20 @@ class MappingDriverChain implements MappingDriver
      *
      * @var MappingDriver|null
      */
+<<<<<<< HEAD
     private $defaultDriver;
+=======
+    private $defaultDriver = null;
+>>>>>>> web and vendor directory from composer install
 
     /**
      * @var array
      */
+<<<<<<< HEAD
     private $drivers = [];
+=======
+    private $drivers = array();
+>>>>>>> web and vendor directory from composer install
 
     /**
      * Gets the default driver.
@@ -117,8 +125,13 @@ class MappingDriverChain implements MappingDriver
      */
     public function getAllClassNames()
     {
+<<<<<<< HEAD
         $classNames = [];
         $driverClasses = [];
+=======
+        $classNames = array();
+        $driverClasses = array();
+>>>>>>> web and vendor directory from composer install
 
         /* @var $driver MappingDriver */
         foreach ($this->drivers AS $namespace => $driver) {

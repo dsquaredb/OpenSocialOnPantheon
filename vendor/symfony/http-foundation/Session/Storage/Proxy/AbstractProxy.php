@@ -12,6 +12,11 @@
 namespace Symfony\Component\HttpFoundation\Session\Storage\Proxy;
 
 /**
+<<<<<<< HEAD
+=======
+ * AbstractProxy.
+ *
+>>>>>>> web and vendor directory from composer install
  * @author Drak <drak@zikula.org>
  */
 abstract class AbstractProxy
@@ -24,6 +29,14 @@ abstract class AbstractProxy
     protected $wrapper = false;
 
     /**
+<<<<<<< HEAD
+=======
+     * @var bool
+     */
+    protected $active = false;
+
+    /**
+>>>>>>> web and vendor directory from composer install
      * @var string
      */
     protected $saveHandlerName;
@@ -65,7 +78,36 @@ abstract class AbstractProxy
      */
     public function isActive()
     {
+<<<<<<< HEAD
         return \PHP_SESSION_ACTIVE === session_status();
+=======
+        if (PHP_VERSION_ID >= 50400) {
+            return $this->active = \PHP_SESSION_ACTIVE === session_status();
+        }
+
+        return $this->active;
+    }
+
+    /**
+     * Sets the active flag.
+     *
+     * Has no effect under PHP 5.4+ as status is detected
+     * automatically in isActive()
+     *
+     * @internal
+     *
+     * @param bool $flag
+     *
+     * @throws \LogicException
+     */
+    public function setActive($flag)
+    {
+        if (PHP_VERSION_ID >= 50400) {
+            throw new \LogicException('This method is disabled in PHP 5.4.0+');
+        }
+
+        $this->active = (bool) $flag;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**

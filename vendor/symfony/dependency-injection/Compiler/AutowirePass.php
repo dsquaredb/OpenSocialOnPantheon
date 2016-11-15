@@ -11,6 +11,7 @@
 
 namespace Symfony\Component\DependencyInjection\Compiler;
 
+<<<<<<< HEAD
 use Symfony\Component\Config\Resource\ClassExistenceResource;
 use Symfony\Component\DependencyInjection\Config\AutowireServiceResource;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -56,12 +57,32 @@ class AutowirePass extends AbstractRecursivePass
 
         return $this->autowiringExceptions;
     }
+=======
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Definition;
+use Symfony\Component\DependencyInjection\Exception\RuntimeException;
+use Symfony\Component\DependencyInjection\Reference;
+
+/**
+ * Guesses constructor arguments of services definitions and try to instantiate services if necessary.
+ *
+ * @author Kévin Dunglas <dunglas@gmail.com>
+ */
+class AutowirePass implements CompilerPassInterface
+{
+    private $container;
+    private $reflectionClasses = array();
+    private $definedTypes = array();
+    private $types;
+    private $notGuessableTypes = array();
+>>>>>>> web and vendor directory from composer install
 
     /**
      * {@inheritdoc}
      */
     public function process(ContainerBuilder $container)
     {
+<<<<<<< HEAD
         // clear out any possibly stored exceptions from before
         $this->autowiringExceptions = array();
         $this->strictMode = $container->hasParameter('container.autowiring.strict_mode') && $container->getParameter('container.autowiring.strict_mode');
@@ -214,10 +235,63 @@ class AutowirePass extends AbstractRecursivePass
         }
 
         foreach ($parameters as $index => $parameter) {
+=======
+        $throwingAutoloader = function ($class) { throw new \ReflectionException(sprintf('Class %s does not exist', $class)); };
+        spl_autoload_register($throwingAutoloader);
+
+        try {
+            $this->container = $container;
+            foreach ($container->getDefinitions() as $id => $definition) {
+                if ($definition->isAutowired()) {
+                    $this->completeDefinition($id, $definition);
+                }
+            }
+        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
+        }
+
+        spl_autoload_unregister($throwingAutoloader);
+
+        // Free memory and remove circular reference to container
+        $this->container = null;
+        $this->reflectionClasses = array();
+        $this->definedTypes = array();
+        $this->types = null;
+        $this->notGuessableTypes = array();
+
+        if (isset($e)) {
+            throw $e;
+        }
+    }
+
+    /**
+     * Wires the given definition.
+     *
+     * @param string     $id
+     * @param Definition $definition
+     *
+     * @throws RuntimeException
+     */
+    private function completeDefinition($id, Definition $definition)
+    {
+        if (!$reflectionClass = $this->getReflectionClass($id, $definition)) {
+            return;
+        }
+
+        $this->container->addClassResource($reflectionClass);
+
+        if (!$constructor = $reflectionClass->getConstructor()) {
+            return;
+        }
+
+        $arguments = $definition->getArguments();
+        foreach ($constructor->getParameters() as $index => $parameter) {
+>>>>>>> web and vendor directory from composer install
             if (array_key_exists($index, $arguments) && '' !== $arguments[$index]) {
                 continue;
             }
 
+<<<<<<< HEAD
             $type = ProxyHelper::getTypeHint($reflectionMethod, $parameter, true);
 
             if (!$type) {
@@ -254,11 +328,54 @@ class AutowirePass extends AbstractRecursivePass
                     throw new AutowiringFailedException($this->currentId, $failureMessage);
                 }
                 $this->container->log($this, $failureMessage);
+=======
+            try {
+                if (!$typeHint = $parameter->getClass()) {
+                    // no default value? Then fail
+                    if (!$parameter->isOptional()) {
+                        throw new RuntimeException(sprintf('Unable to autowire argument index %d ($%s) for the service "%s". If this is an object, give it a type-hint. Otherwise, specify this argument\'s value explicitly.', $index, $parameter->name, $id));
+                    }
+
+                    // specifically pass the default value
+                    $arguments[$index] = $parameter->getDefaultValue();
+
+                    continue;
+                }
+
+                if (null === $this->types) {
+                    $this->populateAvailableTypes();
+                }
+
+                if (isset($this->types[$typeHint->name]) && !isset($this->notGuessableTypes[$typeHint->name])) {
+                    $value = new Reference($this->types[$typeHint->name]);
+                } else {
+                    try {
+                        $value = $this->createAutowiredDefinition($typeHint, $id);
+                    } catch (RuntimeException $e) {
+                        if ($parameter->allowsNull()) {
+                            $value = null;
+                        } elseif ($parameter->isDefaultValueAvailable()) {
+                            $value = $parameter->getDefaultValue();
+                        } else {
+                            throw $e;
+                        }
+                    }
+                }
+            } catch (\ReflectionException $e) {
+                // Typehint against a non-existing class
+
+                if (!$parameter->isDefaultValueAvailable()) {
+                    throw new RuntimeException(sprintf('Cannot autowire argument %s for %s because the type-hinted class does not exist (%s).', $index + 1, $definition->getClass(), $e->getMessage()), 0, $e);
+                }
+
+                $value = $parameter->getDefaultValue();
+>>>>>>> web and vendor directory from composer install
             }
 
             $arguments[$index] = $value;
         }
 
+<<<<<<< HEAD
         if ($parameters && !isset($arguments[++$index])) {
             while (0 <= --$index) {
                 $parameter = $parameters[$index];
@@ -320,11 +437,18 @@ class AutowirePass extends AbstractRecursivePass
         if (!$this->strictMode) {
             return $this->createAutowiredDefinition($type);
         }
+=======
+        // it's possible index 1 was set, then index 0, then 2, etc
+        // make sure that we re-order so they're injected as expected
+        ksort($arguments);
+        $definition->setArguments($arguments);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Populates the list of available types.
      */
+<<<<<<< HEAD
     private function populateAvailableTypes($onlyAutowiringTypes = false)
     {
         $this->types = array();
@@ -334,6 +458,14 @@ class AutowirePass extends AbstractRecursivePass
 
         foreach ($this->container->getDefinitions() as $id => $definition) {
             $this->populateAvailableType($id, $definition, $onlyAutowiringTypes);
+=======
+    private function populateAvailableTypes()
+    {
+        $this->types = array();
+
+        foreach ($this->container->getDefinitions() as $id => $definition) {
+            $this->populateAvailableType($id, $definition);
+>>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -343,13 +475,18 @@ class AutowirePass extends AbstractRecursivePass
      * @param string     $id
      * @param Definition $definition
      */
+<<<<<<< HEAD
     private function populateAvailableType($id, Definition $definition, $onlyAutowiringTypes)
+=======
+    private function populateAvailableType($id, Definition $definition)
+>>>>>>> web and vendor directory from composer install
     {
         // Never use abstract services
         if ($definition->isAbstract()) {
             return;
         }
 
+<<<<<<< HEAD
         foreach ($definition->getAutowiringTypes(false) as $type) {
             $this->definedTypes[$type] = true;
             $this->types[$type] = $id;
@@ -361,6 +498,14 @@ class AutowirePass extends AbstractRecursivePass
         }
 
         if (preg_match('/^\d+_[^~]++~[._a-zA-Z\d]{7}$/', $id) || $definition->isDeprecated() || !$reflectionClass = $this->container->getReflectionClass($definition->getClass(), false)) {
+=======
+        foreach ($definition->getAutowiringTypes() as $type) {
+            $this->definedTypes[$type] = true;
+            $this->types[$type] = $id;
+        }
+
+        if (!$reflectionClass = $this->getReflectionClass($id, $definition)) {
+>>>>>>> web and vendor directory from composer install
             return;
         }
 
@@ -385,13 +530,19 @@ class AutowirePass extends AbstractRecursivePass
             return;
         }
 
+<<<<<<< HEAD
         // is this already a type/class that is known to match multiple services?
         if (isset($this->ambiguousServiceTypes[$type])) {
             $this->ambiguousServiceTypes[$type][] = $id;
+=======
+        if (!isset($this->types[$type])) {
+            $this->types[$type] = $id;
+>>>>>>> web and vendor directory from composer install
 
             return;
         }
 
+<<<<<<< HEAD
         // check to make sure the type doesn't match multiple services
         if (!isset($this->types[$type]) || $this->types[$type] === $id) {
             $this->types[$type] = $id;
@@ -405,11 +556,24 @@ class AutowirePass extends AbstractRecursivePass
             unset($this->types[$type]);
         }
         $this->ambiguousServiceTypes[$type][] = $id;
+=======
+        if ($this->types[$type] === $id) {
+            return;
+        }
+
+        if (!isset($this->notGuessableTypes[$type])) {
+            $this->notGuessableTypes[$type] = true;
+            $this->types[$type] = (array) $this->types[$type];
+        }
+
+        $this->types[$type][] = $id;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Registers a definition for the type if possible or throws an exception.
      *
+<<<<<<< HEAD
      * @param string $type
      *
      * @return TypedReference|null A reference to the registered definition
@@ -555,5 +719,74 @@ class AutowirePass extends AbstractRecursivePass
         if ($aliases) {
             return sprintf('Try changing the type-hint%s to "%s" instead.', $extraContext, $aliases[0]);
         }
+=======
+     * @param \ReflectionClass $typeHint
+     * @param string           $id
+     *
+     * @return Reference A reference to the registered definition
+     *
+     * @throws RuntimeException
+     */
+    private function createAutowiredDefinition(\ReflectionClass $typeHint, $id)
+    {
+        if (isset($this->notGuessableTypes[$typeHint->name])) {
+            $classOrInterface = $typeHint->isInterface() ? 'interface' : 'class';
+            $matchingServices = implode(', ', $this->types[$typeHint->name]);
+
+            throw new RuntimeException(sprintf('Unable to autowire argument of type "%s" for the service "%s". Multiple services exist for this %s (%s).', $typeHint->name, $id, $classOrInterface, $matchingServices));
+        }
+
+        if (!$typeHint->isInstantiable()) {
+            $classOrInterface = $typeHint->isInterface() ? 'interface' : 'class';
+            throw new RuntimeException(sprintf('Unable to autowire argument of type "%s" for the service "%s". No services were found matching this %s and it cannot be auto-registered.', $typeHint->name, $id, $classOrInterface));
+        }
+
+        $argumentId = sprintf('autowired.%s', $typeHint->name);
+
+        $argumentDefinition = $this->container->register($argumentId, $typeHint->name);
+        $argumentDefinition->setPublic(false);
+
+        $this->populateAvailableType($argumentId, $argumentDefinition);
+
+        try {
+            $this->completeDefinition($argumentId, $argumentDefinition);
+        } catch (RuntimeException $e) {
+            $classOrInterface = $typeHint->isInterface() ? 'interface' : 'class';
+            $message = sprintf('Unable to autowire argument of type "%s" for the service "%s". No services were found matching this %s and it cannot be auto-registered.', $typeHint->name, $id, $classOrInterface);
+            throw new RuntimeException($message, 0, $e);
+        }
+
+        return new Reference($argumentId);
+    }
+
+    /**
+     * Retrieves the reflection class associated with the given service.
+     *
+     * @param string     $id
+     * @param Definition $definition
+     *
+     * @return \ReflectionClass|false
+     */
+    private function getReflectionClass($id, Definition $definition)
+    {
+        if (isset($this->reflectionClasses[$id])) {
+            return $this->reflectionClasses[$id];
+        }
+
+        // Cannot use reflection if the class isn't set
+        if (!$class = $definition->getClass()) {
+            return false;
+        }
+
+        $class = $this->container->getParameterBag()->resolveValue($class);
+
+        try {
+            $reflector = new \ReflectionClass($class);
+        } catch (\ReflectionException $e) {
+            $reflector = false;
+        }
+
+        return $this->reflectionClasses[$id] = $reflector;
+>>>>>>> web and vendor directory from composer install
     }
 }

@@ -45,17 +45,29 @@ class DiactorosFactory implements HttpMessageFactoryInterface
         $server = DiactorosRequestFactory::normalizeServer($symfonyRequest->server->all());
         $headers = $symfonyRequest->headers->all();
 
+<<<<<<< HEAD
         if (PHP_VERSION_ID < 50600) {
             $body = new DiactorosStream('php://temp', 'wb+');
             $body->write($symfonyRequest->getContent());
         } else {
             $body = new DiactorosStream($symfonyRequest->getContent(true));
+=======
+        try {
+            $body = new DiactorosStream($symfonyRequest->getContent(true));
+        } catch (\LogicException $e) {
+            $body = new DiactorosStream('php://temp', 'wb+');
+            $body->write($symfonyRequest->getContent());
+>>>>>>> web and vendor directory from composer install
         }
 
         $request = new ServerRequest(
             $server,
             DiactorosRequestFactory::normalizeFiles($this->getFiles($symfonyRequest->files->all())),
+<<<<<<< HEAD
             $symfonyRequest->getSchemeAndHttpHost().$symfonyRequest->getRequestUri(),
+=======
+            $symfonyRequest->getUri(),
+>>>>>>> web and vendor directory from composer install
             $symfonyRequest->getMethod(),
             $body,
             $headers
@@ -65,7 +77,10 @@ class DiactorosFactory implements HttpMessageFactoryInterface
             ->withCookieParams($symfonyRequest->cookies->all())
             ->withQueryParams($symfonyRequest->query->all())
             ->withParsedBody($symfonyRequest->request->all())
+<<<<<<< HEAD
             ->withRequestTarget($symfonyRequest->getRequestUri())
+=======
+>>>>>>> web and vendor directory from composer install
         ;
 
         foreach ($symfonyRequest->attributes->all() as $key => $value) {
@@ -87,10 +102,13 @@ class DiactorosFactory implements HttpMessageFactoryInterface
         $files = array();
 
         foreach ($uploadedFiles as $key => $value) {
+<<<<<<< HEAD
             if (null === $value) {
                 $files[$key] = new DiactorosUploadedFile(null, 0, UPLOAD_ERR_NO_FILE, null, null);
                 continue;
             }
+=======
+>>>>>>> web and vendor directory from composer install
             if ($value instanceof UploadedFile) {
                 $files[$key] = $this->createUploadedFile($value);
             } else {
@@ -112,7 +130,11 @@ class DiactorosFactory implements HttpMessageFactoryInterface
     {
         return new DiactorosUploadedFile(
             $symfonyUploadedFile->getRealPath(),
+<<<<<<< HEAD
             $symfonyUploadedFile->getClientSize(),
+=======
+            $symfonyUploadedFile->getSize(),
+>>>>>>> web and vendor directory from composer install
             $symfonyUploadedFile->getError(),
             $symfonyUploadedFile->getClientOriginalName(),
             $symfonyUploadedFile->getClientMimeType()

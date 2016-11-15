@@ -16,6 +16,7 @@
         }
     ],
     "require": {
+<<<<<<< HEAD
         "php": "^5.5.9|>=7.0.8",
         "psr/container": "^1.0"
     },
@@ -23,10 +24,22 @@
         "symfony/yaml": "~3.4|~4.0",
         "symfony/config": "~3.3|~4.0",
         "symfony/expression-language": "~2.8|~3.0|~4.0"
+=======
+        "php": ">=5.3.9"
+    },
+    "require-dev": {
+        "symfony/yaml": "~2.3.42|~2.7.14|~2.8.7|~3.0.7",
+        "symfony/config": "~2.2|~3.0.0",
+        "symfony/expression-language": "~2.6|~3.0.0"
+    },
+    "conflict": {
+        "symfony/expression-language": "<2.6"
+>>>>>>> web and vendor directory from composer install
     },
     "suggest": {
         "symfony/yaml": "",
         "symfony/config": "",
+<<<<<<< HEAD
         "symfony/finder": "For using double-star glob patterns or when GLOB_BRACE portability is required",
         "symfony/expression-language": "For using expressions in service container configuration",
         "symfony/proxy-manager-bridge": "Generate service proxies to lazy load them"
@@ -40,6 +53,11 @@
     "provide": {
         "psr/container-implementation": "1.0"
     },
+=======
+        "symfony/expression-language": "For using expressions in service container configuration",
+        "symfony/proxy-manager-bridge": "Generate service proxies to lazy load them"
+    },
+>>>>>>> web and vendor directory from composer install
     "autoload": {
         "psr-4": { "Symfony\\Component\\DependencyInjection\\": "" },
         "exclude-from-classmap": [
@@ -49,7 +67,11 @@
     "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
+<<<<<<< HEAD
             "dev-master": "3.4-dev"
+=======
+            "dev-master": "2.8-dev"
+>>>>>>> web and vendor directory from composer install
         }
     }
 }

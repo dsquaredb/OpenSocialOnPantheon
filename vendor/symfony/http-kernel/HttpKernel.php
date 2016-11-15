@@ -11,10 +11,14 @@
 
 namespace Symfony\Component\HttpKernel;
 
+<<<<<<< HEAD
 use Symfony\Component\HttpKernel\Controller\ArgumentResolver;
 use Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface;
 use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
 use Symfony\Component\HttpKernel\Event\FilterControllerArgumentsEvent;
+=======
+use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
@@ -25,7 +29,11 @@ use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent;
 use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
 use Symfony\Component\HttpKernel\Event\PostResponseEvent;
+<<<<<<< HEAD
 use Symfony\Component\HttpFoundation\Exception\RequestExceptionInterface;
+=======
+use Symfony\Component\HttpFoundation\Exception\ConflictingHeadersException;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
@@ -41,13 +49,26 @@ class HttpKernel implements HttpKernelInterface, TerminableInterface
     protected $dispatcher;
     protected $resolver;
     protected $requestStack;
+<<<<<<< HEAD
     private $argumentResolver;
 
     public function __construct(EventDispatcherInterface $dispatcher, ControllerResolverInterface $resolver, RequestStack $requestStack = null, ArgumentResolverInterface $argumentResolver = null)
+=======
+
+    /**
+     * Constructor.
+     *
+     * @param EventDispatcherInterface    $dispatcher   An EventDispatcherInterface instance
+     * @param ControllerResolverInterface $resolver     A ControllerResolverInterface instance
+     * @param RequestStack                $requestStack A stack for master/sub requests
+     */
+    public function __construct(EventDispatcherInterface $dispatcher, ControllerResolverInterface $resolver, RequestStack $requestStack = null)
+>>>>>>> web and vendor directory from composer install
     {
         $this->dispatcher = $dispatcher;
         $this->resolver = $resolver;
         $this->requestStack = $requestStack ?: new RequestStack();
+<<<<<<< HEAD
         $this->argumentResolver = $argumentResolver;
 
         if (null === $this->argumentResolver) {
@@ -55,6 +76,8 @@ class HttpKernel implements HttpKernelInterface, TerminableInterface
             // fallback in case of deprecations
             $this->argumentResolver = $resolver;
         }
+=======
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -67,8 +90,13 @@ class HttpKernel implements HttpKernelInterface, TerminableInterface
         try {
             return $this->handleRaw($request, $type);
         } catch (\Exception $e) {
+<<<<<<< HEAD
             if ($e instanceof RequestExceptionInterface) {
                 $e = new BadRequestHttpException($e->getMessage(), $e);
+=======
+            if ($e instanceof ConflictingHeadersException) {
+                $e = new BadRequestHttpException('The request headers contain conflicting information regarding the origin of this request.', $e);
+>>>>>>> web and vendor directory from composer install
             }
             if (false === $catch) {
                 $this->finishRequest($request, $type);
@@ -89,12 +117,23 @@ class HttpKernel implements HttpKernelInterface, TerminableInterface
     }
 
     /**
+<<<<<<< HEAD
      * @internal
      */
     public function terminateWithException(\Exception $exception, Request $request = null)
     {
         if (!$request = $request ?: $this->requestStack->getMasterRequest()) {
             throw $exception;
+=======
+     * @throws \LogicException If the request stack is empty
+     *
+     * @internal
+     */
+    public function terminateWithException(\Exception $exception)
+    {
+        if (!$request = $this->requestStack->getMasterRequest()) {
+            throw new \LogicException('Request stack is empty', 0, $exception);
+>>>>>>> web and vendor directory from composer install
         }
 
         $response = $this->handleException($exception, $request, self::MASTER_REQUEST);
@@ -140,6 +179,7 @@ class HttpKernel implements HttpKernelInterface, TerminableInterface
         $controller = $event->getController();
 
         // controller arguments
+<<<<<<< HEAD
         $arguments = $this->argumentResolver->getArguments($request, $controller);
 
         $event = new FilterControllerArgumentsEvent($this, $controller, $arguments, $request, $type);
@@ -149,6 +189,12 @@ class HttpKernel implements HttpKernelInterface, TerminableInterface
 
         // call controller
         $response = \call_user_func_array($controller, $arguments);
+=======
+        $arguments = $this->resolver->getArguments($request, $controller);
+
+        // call controller
+        $response = call_user_func_array($controller, $arguments);
+>>>>>>> web and vendor directory from composer install
 
         // view
         if (!$response instanceof Response) {
@@ -240,12 +286,19 @@ class HttpKernel implements HttpKernelInterface, TerminableInterface
 
         // the developer asked for a specific status code
         if ($response->headers->has('X-Status-Code')) {
+<<<<<<< HEAD
             @trigger_error(sprintf('Using the X-Status-Code header is deprecated since Symfony 3.3 and will be removed in 4.0. Use %s::allowCustomResponseCode() instead.', GetResponseForExceptionEvent::class), E_USER_DEPRECATED);
 
             $response->setStatusCode($response->headers->get('X-Status-Code'));
 
             $response->headers->remove('X-Status-Code');
         } elseif (!$event->isAllowingCustomResponseCode() && !$response->isClientError() && !$response->isServerError() && !$response->isRedirect()) {
+=======
+            $response->setStatusCode($response->headers->get('X-Status-Code'));
+
+            $response->headers->remove('X-Status-Code');
+        } elseif (!$response->isClientError() && !$response->isServerError() && !$response->isRedirect()) {
+>>>>>>> web and vendor directory from composer install
             // ensure that we actually have an error response
             if ($e instanceof HttpExceptionInterface) {
                 // keep the HTTP status code and headers

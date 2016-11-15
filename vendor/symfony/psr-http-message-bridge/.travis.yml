@@ -2,6 +2,7 @@ language: php
 
 sudo: false
 
+<<<<<<< HEAD
 cache:
     directories:
         - $HOME/.composer/cache/files
@@ -11,10 +12,16 @@ matrix:
     include:
         - php: 5.3
           dist: 'precise'
+=======
+matrix:
+    include:
+        - php: 5.3
+>>>>>>> web and vendor directory from composer install
         - php: 5.4
         - php: 5.5
         - php: 5.6
         - php: 5.3
+<<<<<<< HEAD
           dist: 'precise'
           env: COMPOSER_OPTIONS="--prefer-lowest --prefer-stable" SYMFONY_DEPRECATIONS_HELPER=weak
         - php: 5.6
@@ -22,12 +29,22 @@ matrix:
         - php: 7.0
         - php: hhvm
     allow_failures:
+=======
+          env: deps=low
+        - php: 5.6
+          env: deps=high
+        - php: nightly
+        - php: hhvm
+    allow_failures:
+        - php: nightly
+>>>>>>> web and vendor directory from composer install
         - php: hhvm
     fast_finish: true
 
 env:
     global:
         - deps=no
+<<<<<<< HEAD
         - SYMFONY_DEPRECATIONS_HELPER=strict
         - SYMFONY_PHPUNIT_DIR="$HOME/symfony-bridge/.phpunit"
         - COMPOSER_OPTIONS="--prefer-stable"
@@ -35,15 +52,33 @@ env:
 before_install:
     - if [[ "$TRAVIS_PHP_VERSION" != "nightly" ]] && [[ "$TRAVIS_PHP_VERSION" != "hhvm" ]]; then phpenv config-rm xdebug.ini; fi;
     - composer self-update
+=======
+        - SYMFONY_DEPRECATIONS_HELPER=weak
+
+before_install:
+    - composer self-update
+    - if [[ "$TRAVIS_PHP_VERSION" != "nightly" ]] && [[ "$TRAVIS_PHP_VERSION" != "hhvm" ]]; then phpenv config-rm xdebug.ini; fi;
+>>>>>>> web and vendor directory from composer install
     - if [[ "$TRAVIS_PHP_VERSION" != "nightly" ]] && [[ "$TRAVIS_PHP_VERSION" != "hhvm" ]] && [ $(php -r "echo PHP_MINOR_VERSION;") -le 4 ]; then echo "extension = apc.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini; fi;
     - if [[ "$TRAVIS_PHP_VERSION" != "nightly" ]] && [[ "$TRAVIS_PHP_VERSION" != "hhvm" ]]; then php -i; fi;
     # Set the COMPOSER_ROOT_VERSION to the right version according to the branch being built
     - if [ "$TRAVIS_BRANCH" = "master" ]; then export COMPOSER_ROOT_VERSION=dev-master; else export COMPOSER_ROOT_VERSION="$TRAVIS_BRANCH".x-dev; fi;
 
 install:
+<<<<<<< HEAD
     - if [ "$TRAVIS_PHP_VERSION" != "5.3" ]; then composer require --no-update zendframework/zend-diactoros; fi;
     - composer update --prefer-source $COMPOSER_OPTIONS
     - vendor/bin/simple-phpunit install
 
 script:
     - vendor/bin/simple-phpunit
+=======
+    - if [[ "$TRAVIS_PHP_VERSION" != "5.3" ]] && [[ "$TRAVIS_PHP_VERSION" != "5.4" ]]; then composer require --no-update zendframework/zend-diactoros; fi;
+    - if [ "$deps" = "no" ]; then export SYMFONY_DEPRECATIONS_HELPER=strict; fi;
+    - if [ "$deps" = "no" ]; then composer --prefer-source install; fi;
+    - if [ "$deps" = "high" ]; then composer --prefer-source update; fi;
+    - if [ "$deps" = "low" ]; then composer --prefer-source --prefer-lowest --prefer-stable update; fi;
+
+script:
+    - phpunit
+>>>>>>> web and vendor directory from composer install

@@ -22,14 +22,28 @@ use Symfony\Component\Console\Output\ConsoleOutputInterface;
  *
  * @author Kévin Dunglas <dunglas@gmail.com>
  *
+<<<<<<< HEAD
  * @see http://www.php-fig.org/psr/psr-3/
+=======
+ * @link http://www.php-fig.org/psr/psr-3/
+>>>>>>> web and vendor directory from composer install
  */
 class ConsoleLogger extends AbstractLogger
 {
     const INFO = 'info';
     const ERROR = 'error';
 
+<<<<<<< HEAD
     private $output;
+=======
+    /**
+     * @var OutputInterface
+     */
+    private $output;
+    /**
+     * @var array
+     */
+>>>>>>> web and vendor directory from composer install
     private $verbosityLevelMap = array(
         LogLevel::EMERGENCY => OutputInterface::VERBOSITY_NORMAL,
         LogLevel::ALERT => OutputInterface::VERBOSITY_NORMAL,
@@ -40,6 +54,12 @@ class ConsoleLogger extends AbstractLogger
         LogLevel::INFO => OutputInterface::VERBOSITY_VERY_VERBOSE,
         LogLevel::DEBUG => OutputInterface::VERBOSITY_DEBUG,
     );
+<<<<<<< HEAD
+=======
+    /**
+     * @var array
+     */
+>>>>>>> web and vendor directory from composer install
     private $formatLevelMap = array(
         LogLevel::EMERGENCY => self::ERROR,
         LogLevel::ALERT => self::ERROR,
@@ -50,8 +70,17 @@ class ConsoleLogger extends AbstractLogger
         LogLevel::INFO => self::INFO,
         LogLevel::DEBUG => self::INFO,
     );
+<<<<<<< HEAD
     private $errored = false;
 
+=======
+
+    /**
+     * @param OutputInterface $output
+     * @param array           $verbosityLevelMap
+     * @param array           $formatLevelMap
+     */
+>>>>>>> web and vendor directory from composer install
     public function __construct(OutputInterface $output, array $verbosityLevelMap = array(), array $formatLevelMap = array())
     {
         $this->output = $output;
@@ -68,6 +97,7 @@ class ConsoleLogger extends AbstractLogger
             throw new InvalidArgumentException(sprintf('The log level "%s" does not exist.', $level));
         }
 
+<<<<<<< HEAD
         $output = $this->output;
 
         // Write to the error output if necessary and available
@@ -82,10 +112,22 @@ class ConsoleLogger extends AbstractLogger
         // We only do it for efficiency here as the message formatting is relatively expensive.
         if ($output->getVerbosity() >= $this->verbosityLevelMap[$level]) {
             $output->writeln(sprintf('<%1$s>[%2$s] %3$s</%1$s>', $this->formatLevelMap[$level], $level, $this->interpolate($message, $context)), $this->verbosityLevelMap[$level]);
+=======
+        // Write to the error output if necessary and available
+        if ($this->formatLevelMap[$level] === self::ERROR && $this->output instanceof ConsoleOutputInterface) {
+            $output = $this->output->getErrorOutput();
+        } else {
+            $output = $this->output;
+        }
+
+        if ($output->getVerbosity() >= $this->verbosityLevelMap[$level]) {
+            $output->writeln(sprintf('<%1$s>[%2$s] %3$s</%1$s>', $this->formatLevelMap[$level], $level, $this->interpolate($message, $context)));
+>>>>>>> web and vendor directory from composer install
         }
     }
 
     /**
+<<<<<<< HEAD
      * Returns true when any messages have been logged at error levels.
      *
      * @return bool
@@ -96,6 +138,8 @@ class ConsoleLogger extends AbstractLogger
     }
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * Interpolates context values into the message placeholders.
      *
      * @author PHP Framework Interoperability Group
@@ -107,6 +151,7 @@ class ConsoleLogger extends AbstractLogger
      */
     private function interpolate($message, array $context)
     {
+<<<<<<< HEAD
         if (false === strpos($message, '{')) {
             return $message;
         }
@@ -125,5 +170,17 @@ class ConsoleLogger extends AbstractLogger
         }
 
         return strtr($message, $replacements);
+=======
+        // build a replacement array with braces around the context keys
+        $replace = array();
+        foreach ($context as $key => $val) {
+            if (!is_array($val) && (!is_object($val) || method_exists($val, '__toString'))) {
+                $replace[sprintf('{%s}', $key)] = $val;
+            }
+        }
+
+        // interpolate replacement values into the message and return
+        return strtr($message, $replace);
+>>>>>>> web and vendor directory from composer install
     }
 }

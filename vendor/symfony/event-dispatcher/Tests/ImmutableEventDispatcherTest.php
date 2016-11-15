@@ -11,14 +11,21 @@
 
 namespace Symfony\Component\EventDispatcher\Tests;
 
+<<<<<<< HEAD
 use PHPUnit\Framework\TestCase;
+=======
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\EventDispatcher\ImmutableEventDispatcher;
 
 /**
  * @author Bernhard Schussek <bschussek@gmail.com>
  */
+<<<<<<< HEAD
 class ImmutableEventDispatcherTest extends TestCase
+=======
+class ImmutableEventDispatcherTest extends \PHPUnit_Framework_TestCase
+>>>>>>> web and vendor directory from composer install
 {
     /**
      * @var \PHPUnit_Framework_MockObject_MockObject
@@ -32,7 +39,11 @@ class ImmutableEventDispatcherTest extends TestCase
 
     protected function setUp()
     {
+<<<<<<< HEAD
         $this->innerDispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
+=======
+        $this->innerDispatcher = $this->getMock('Symfony\Component\EventDispatcher\EventDispatcherInterface');
+>>>>>>> web and vendor directory from composer install
         $this->dispatcher = new ImmutableEventDispatcher($this->innerDispatcher);
     }
 
@@ -81,7 +92,11 @@ class ImmutableEventDispatcherTest extends TestCase
      */
     public function testAddSubscriberDisallowed()
     {
+<<<<<<< HEAD
         $subscriber = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventSubscriberInterface')->getMock();
+=======
+        $subscriber = $this->getMock('Symfony\Component\EventDispatcher\EventSubscriberInterface');
+>>>>>>> web and vendor directory from composer install
 
         $this->dispatcher->addSubscriber($subscriber);
     }
@@ -99,7 +114,11 @@ class ImmutableEventDispatcherTest extends TestCase
      */
     public function testRemoveSubscriberDisallowed()
     {
+<<<<<<< HEAD
         $subscriber = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventSubscriberInterface')->getMock();
+=======
+        $subscriber = $this->getMock('Symfony\Component\EventDispatcher\EventSubscriberInterface');
+>>>>>>> web and vendor directory from composer install
 
         $this->dispatcher->removeSubscriber($subscriber);
     }

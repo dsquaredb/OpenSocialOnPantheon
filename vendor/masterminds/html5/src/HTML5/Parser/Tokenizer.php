@@ -83,8 +83,16 @@ class Tokenizer
      */
     public function parse()
     {
+<<<<<<< HEAD
         do {
             $this->consumeData();
+=======
+        $p = 0;
+        do {
+            $p = $this->scanner->position();
+            $this->consumeData();
+
+>>>>>>> web and vendor directory from composer install
             // FIXME: Add infinite loop protection.
         } while ($this->carryOn);
     }
@@ -142,8 +150,12 @@ class Tokenizer
      */
     protected function characterData()
     {
+<<<<<<< HEAD
         $tok = $this->scanner->current();
         if ($tok === false) {
+=======
+        if ($this->scanner->current() === false) {
+>>>>>>> web and vendor directory from composer install
             return false;
         }
         switch ($this->textMode) {
@@ -152,6 +164,10 @@ class Tokenizer
             case Elements::TEXT_RCDATA:
                 return $this->rcdata();
             default:
+<<<<<<< HEAD
+=======
+                $tok = $this->scanner->current();
+>>>>>>> web and vendor directory from composer install
                 if (strspn($tok, "<&")) {
                     return false;
                 }
@@ -405,6 +421,7 @@ class Tokenizer
         if ($tok == '/') {
             $this->scanner->next();
             $this->scanner->whitespace();
+<<<<<<< HEAD
             $tok = $this->scanner->current();
 
             if ($tok == '>') {
@@ -412,11 +429,19 @@ class Tokenizer
                 return true;
             }
             if ($tok === false) {
+=======
+            if ($this->scanner->current() == '>') {
+                $selfClose = true;
+                return true;
+            }
+            if ($this->scanner->current() === false) {
+>>>>>>> web and vendor directory from composer install
                 $this->parseError("Unexpected EOF inside of tag.");
                 return true;
             }
             // Basically, we skip the / token and go on.
             // See 8.2.4.43.
+<<<<<<< HEAD
             $this->parseError("Unexpected '%s' inside of a tag.", $tok);
             return false;
         }
@@ -425,6 +450,16 @@ class Tokenizer
             return true;
         }
         if ($tok === false) {
+=======
+            $this->parseError("Unexpected '%s' inside of a tag.", $this->scanner->current());
+            return false;
+        }
+
+        if ($this->scanner->current() == '>') {
+            return true;
+        }
+        if ($this->scanner->current() === false) {
+>>>>>>> web and vendor directory from composer install
             $this->parseError("Unexpected EOF inside of tag.");
             return true;
         }
@@ -540,6 +575,7 @@ class Tokenizer
     {
         $stoplist = "\f" . $quote;
         $val = '';
+<<<<<<< HEAD
 
         while (true) {
             $tokens = $this->scanner->charsUntil($stoplist.'&');
@@ -555,6 +591,17 @@ class Tokenizer
                 continue;
             }
             break;
+=======
+        $tok = $this->scanner->current();
+        while (strspn($tok, $stoplist) == 0 && $tok !== false) {
+            if ($tok == '&') {
+                $val .= $this->decodeCharacterReference(true);
+                $tok = $this->scanner->current();
+            } else {
+                $val .= $tok;
+                $tok = $this->scanner->next();
+            }
+>>>>>>> web and vendor directory from composer install
         }
         $this->scanner->next();
         return $val;
@@ -596,6 +643,7 @@ class Tokenizer
      */
     protected function bogusComment($leading = '')
     {
+<<<<<<< HEAD
         $comment = $leading;
         $tokens = $this->scanner->charsUntil('>');
         if ($tokens !== false) {
@@ -608,6 +656,20 @@ class Tokenizer
 
         $this->flushBuffer();
         $this->events->comment($comment);
+=======
+
+        // TODO: This can be done more efficiently when the
+        // scanner exposes a readUntil() method.
+        $comment = $leading;
+        $tok = $this->scanner->current();
+        do {
+            $comment .= $tok;
+            $tok = $this->scanner->next();
+        } while ($tok !== false && $tok != '>');
+
+        $this->flushBuffer();
+        $this->events->comment($comment . $tok);
+>>>>>>> web and vendor directory from composer install
         $this->scanner->next();
 
         return true;
@@ -651,17 +713,26 @@ class Tokenizer
      */
     protected function isCommentEnd()
     {
+<<<<<<< HEAD
         $tok = $this->scanner->current();
 
         // EOF
         if ($tok === false) {
+=======
+        // EOF
+        if ($this->scanner->current() === false) {
+>>>>>>> web and vendor directory from composer install
             // Hit the end.
             $this->parseError("Unexpected EOF in a comment.");
             return true;
         }
 
         // If it doesn't start with -, not the end.
+<<<<<<< HEAD
         if ($tok != '-') {
+=======
+        if ($this->scanner->current() != '-') {
+>>>>>>> web and vendor directory from composer install
             return false;
         }
 
@@ -744,6 +815,10 @@ class Tokenizer
 
         $pub = strtoupper($this->scanner->getAsciiAlpha());
         $white = strlen($this->scanner->whitespace());
+<<<<<<< HEAD
+=======
+        $tok = $this->scanner->current();
+>>>>>>> web and vendor directory from composer install
 
         // Get ID, and flag it as pub or system.
         if (($pub == 'PUBLIC' || $pub == 'SYSTEM') && $white > 0) {
@@ -944,11 +1019,18 @@ class Tokenizer
         $len = strlen($sequence);
         $buffer = '';
         for ($i = 0; $i < $len; ++ $i) {
+<<<<<<< HEAD
             $tok = $this->scanner->current();
             $buffer .= $tok;
 
             // EOF. Rewind and let the caller handle it.
             if ($tok === false) {
+=======
+            $buffer .= $this->scanner->current();
+
+            // EOF. Rewind and let the caller handle it.
+            if ($this->scanner->current() === false) {
+>>>>>>> web and vendor directory from composer install
                 $this->scanner->unconsume($i);
                 return false;
             }
@@ -1074,6 +1156,7 @@ class Tokenizer
                 }
                 $entity = CharacterReference::lookupDecimal($numeric);
             }
+<<<<<<< HEAD
         } elseif ($tok === '=' && $inAttribute) {
             return '&';
         } else { // String entity.
@@ -1081,15 +1164,26 @@ class Tokenizer
             // Attempt to consume a string up to a ';'.
             // [a-zA-Z0-9]+;
             $cname = $this->scanner->getAsciiAlphaNum();
+=======
+        }         // String entity.
+        else {
+            // Attempt to consume a string up to a ';'.
+            // [a-zA-Z0-9]+;
+            $cname = $this->scanner->getAsciiAlpha();
+>>>>>>> web and vendor directory from composer install
             $entity = CharacterReference::lookupName($cname);
 
             // When no entity is found provide the name of the unmatched string
             // and continue on as the & is not part of an entity. The & will
             // be converted to &amp; elsewhere.
             if ($entity == null) {
+<<<<<<< HEAD
                 if (!$inAttribute || strlen($cname) === 0) {
                     $this->parseError("No match in entity table for '%s'", $cname);
                 }
+=======
+                $this->parseError("No match in entity table for '%s'", $cname);
+>>>>>>> web and vendor directory from composer install
                 $this->scanner->unconsume($this->scanner->position() - $start);
                 return '&';
             }

@@ -13,6 +13,10 @@ use Traversable;
 
 abstract class AbstractOptions implements ParameterObjectInterface
 {
+<<<<<<< HEAD
+=======
+    // @codingStandardsIgnoreStart
+>>>>>>> web and vendor directory from composer install
     /**
      * We use the __ prefix to avoid collisions with properties in
      * user-implementations.
@@ -20,6 +24,10 @@ abstract class AbstractOptions implements ParameterObjectInterface
      * @var bool
      */
     protected $__strictMode__ = true;
+<<<<<<< HEAD
+=======
+    // @codingStandardsIgnoreEnd
+>>>>>>> web and vendor directory from composer install
 
     /**
      * Constructor
@@ -46,7 +54,11 @@ abstract class AbstractOptions implements ParameterObjectInterface
             $options = $options->toArray();
         }
 
+<<<<<<< HEAD
         if (!is_array($options) && !$options instanceof Traversable) {
+=======
+        if (! is_array($options) && ! $options instanceof Traversable) {
+>>>>>>> web and vendor directory from composer install
             throw new Exception\InvalidArgumentException(
                 sprintf(
                     'Parameter provided to %s must be an %s, %s or %s',

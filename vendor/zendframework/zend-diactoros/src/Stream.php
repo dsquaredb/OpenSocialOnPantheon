@@ -19,7 +19,11 @@ use Psr\Http\Message\StreamInterface;
 class Stream implements StreamInterface
 {
     /**
+<<<<<<< HEAD
      * @var resource|null
+=======
+     * @var resource
+>>>>>>> web and vendor directory from composer install
      */
     protected $resource;
 
@@ -48,10 +52,14 @@ class Stream implements StreamInterface
         }
 
         try {
+<<<<<<< HEAD
             if ($this->isSeekable()) {
                 $this->rewind();
             }
 
+=======
+            $this->rewind();
+>>>>>>> web and vendor directory from composer install
             return $this->getContents();
         } catch (RuntimeException $e) {
             return '';

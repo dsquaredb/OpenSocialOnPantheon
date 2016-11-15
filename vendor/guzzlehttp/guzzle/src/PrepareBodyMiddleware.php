@@ -14,6 +14,12 @@ class PrepareBodyMiddleware
     /** @var callable  */
     private $nextHandler;
 
+<<<<<<< HEAD
+=======
+    /** @var array */
+    private static $skipMethods = ['GET' => true, 'HEAD' => true];
+
+>>>>>>> web and vendor directory from composer install
     /**
      * @param callable $nextHandler Next handler to invoke.
      */
@@ -33,7 +39,13 @@ class PrepareBodyMiddleware
         $fn = $this->nextHandler;
 
         // Don't do anything if the request has no body.
+<<<<<<< HEAD
         if ($request->getBody()->getSize() === 0) {
+=======
+        if (isset(self::$skipMethods[$request->getMethod()])
+            || $request->getBody()->getSize() === 0
+        ) {
+>>>>>>> web and vendor directory from composer install
             return $fn($request, $options);
         }
 
@@ -49,7 +61,12 @@ class PrepareBodyMiddleware
         }
 
         // Add a default content-length or transfer-encoding header.
+<<<<<<< HEAD
         if (!$request->hasHeader('Content-Length')
+=======
+        if (!isset(self::$skipMethods[$request->getMethod()])
+            && !$request->hasHeader('Content-Length')
+>>>>>>> web and vendor directory from composer install
             && !$request->hasHeader('Transfer-Encoding')
         ) {
             $size = $request->getBody()->getSize();

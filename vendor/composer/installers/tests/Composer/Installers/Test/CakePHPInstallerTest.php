@@ -6,6 +6,10 @@ use Composer\Repository\RepositoryManager;
 use Composer\Repository\InstalledArrayRepository;
 use Composer\Package\Package;
 use Composer\Package\RootPackage;
+<<<<<<< HEAD
+=======
+use Composer\Package\Link;
+>>>>>>> web and vendor directory from composer install
 use Composer\Package\Version\VersionParser;
 use Composer\Composer;
 use Composer\Config;

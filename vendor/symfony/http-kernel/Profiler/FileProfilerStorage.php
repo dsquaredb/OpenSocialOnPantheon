@@ -49,7 +49,11 @@ class FileProfilerStorage implements ProfilerStorageInterface
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function find($ip, $url, $limit, $method, $start = null, $end = null, $statusCode = null)
+=======
+    public function find($ip, $url, $limit, $method, $start = null, $end = null)
+>>>>>>> web and vendor directory from composer install
     {
         $file = $this->getIndexFilename();
 
@@ -63,10 +67,19 @@ class FileProfilerStorage implements ProfilerStorageInterface
         $result = array();
         while (count($result) < $limit && $line = $this->readLineFromFile($file)) {
             $values = str_getcsv($line);
+<<<<<<< HEAD
             list($csvToken, $csvIp, $csvMethod, $csvUrl, $csvTime, $csvParent, $csvStatusCode) = $values;
             $csvTime = (int) $csvTime;
 
             if ($ip && false === strpos($csvIp, $ip) || $url && false === strpos($csvUrl, $url) || $method && false === strpos($csvMethod, $method) || $statusCode && false === strpos($csvStatusCode, $statusCode)) {
+=======
+            list($csvToken, $csvIp, $csvMethod, $csvUrl, $csvTime, $csvParent) = $values;
+            $csvStatusCode = isset($values[6]) ? $values[6] : null;
+
+            $csvTime = (int) $csvTime;
+
+            if ($ip && false === strpos($csvIp, $ip) || $url && false === strpos($csvUrl, $url) || $method && false === strpos($csvMethod, $method)) {
+>>>>>>> web and vendor directory from composer install
                 continue;
             }
 
@@ -142,6 +155,7 @@ class FileProfilerStorage implements ProfilerStorageInterface
             }
         }
 
+<<<<<<< HEAD
         $profileToken = $profile->getToken();
         // when there are errors in sub-requests, the parent and/or children tokens
         // may equal the profile token, resulting in infinite loops
@@ -155,12 +169,22 @@ class FileProfilerStorage implements ProfilerStorageInterface
             'token' => $profileToken,
             'parent' => $parentToken,
             'children' => $childrenToken,
+=======
+        // Store profile
+        $data = array(
+            'token' => $profile->getToken(),
+            'parent' => $profile->getParentToken(),
+            'children' => array_map(function ($p) { return $p->getToken(); }, $profile->getChildren()),
+>>>>>>> web and vendor directory from composer install
             'data' => $profile->getCollectors(),
             'ip' => $profile->getIp(),
             'method' => $profile->getMethod(),
             'url' => $profile->getUrl(),
             'time' => $profile->getTime(),
+<<<<<<< HEAD
             'status_code' => $profile->getStatusCode(),
+=======
+>>>>>>> web and vendor directory from composer install
         );
 
         if (false === file_put_contents($file, serialize($data))) {
@@ -268,7 +292,10 @@ class FileProfilerStorage implements ProfilerStorageInterface
         $profile->setMethod($data['method']);
         $profile->setUrl($data['url']);
         $profile->setTime($data['time']);
+<<<<<<< HEAD
         $profile->setStatusCode($data['status_code']);
+=======
+>>>>>>> web and vendor directory from composer install
         $profile->setCollectors($data['data']);
 
         if (!$parent && $data['parent']) {

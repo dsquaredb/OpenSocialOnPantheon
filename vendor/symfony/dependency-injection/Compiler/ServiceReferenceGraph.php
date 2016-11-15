@@ -20,8 +20,11 @@ use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
  * it themselves which improves performance quite a lot.
  *
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
+<<<<<<< HEAD
  *
  * @final since version 3.4
+=======
+>>>>>>> web and vendor directory from composer install
  */
 class ServiceReferenceGraph
 {
@@ -47,7 +50,11 @@ class ServiceReferenceGraph
      *
      * @param string $id The id to retrieve
      *
+<<<<<<< HEAD
      * @return ServiceReferenceGraphNode
+=======
+     * @return ServiceReferenceGraphNode The node matching the supplied identifier
+>>>>>>> web and vendor directory from composer install
      *
      * @throws InvalidArgumentException if no node matches the supplied identifier
      */
@@ -63,7 +70,11 @@ class ServiceReferenceGraph
     /**
      * Returns all nodes.
      *
+<<<<<<< HEAD
      * @return ServiceReferenceGraphNode[]
+=======
+     * @return ServiceReferenceGraphNode[] An array of all ServiceReferenceGraphNode objects
+>>>>>>> web and vendor directory from composer install
      */
     public function getNodes()
     {
@@ -75,9 +86,12 @@ class ServiceReferenceGraph
      */
     public function clear()
     {
+<<<<<<< HEAD
         foreach ($this->nodes as $node) {
             $node->clear();
         }
+=======
+>>>>>>> web and vendor directory from composer install
         $this->nodes = array();
     }
 
@@ -85,6 +99,7 @@ class ServiceReferenceGraph
      * Connects 2 nodes together in the Graph.
      *
      * @param string $sourceId
+<<<<<<< HEAD
      * @param mixed  $sourceValue
      * @param string $destId
      * @param mixed  $destValue
@@ -104,6 +119,18 @@ class ServiceReferenceGraph
         $sourceNode = $this->createNode($sourceId, $sourceValue);
         $destNode = $this->createNode($destId, $destValue);
         $edge = new ServiceReferenceGraphEdge($sourceNode, $destNode, $reference, $lazy, $weak);
+=======
+     * @param string $sourceValue
+     * @param string $destId
+     * @param string $destValue
+     * @param string $reference
+     */
+    public function connect($sourceId, $sourceValue, $destId, $destValue = null, $reference = null)
+    {
+        $sourceNode = $this->createNode($sourceId, $sourceValue);
+        $destNode = $this->createNode($destId, $destValue);
+        $edge = new ServiceReferenceGraphEdge($sourceNode, $destNode, $reference);
+>>>>>>> web and vendor directory from composer install
 
         $sourceNode->addOutEdge($edge);
         $destNode->addInEdge($edge);
@@ -113,7 +140,11 @@ class ServiceReferenceGraph
      * Creates a graph node.
      *
      * @param string $id
+<<<<<<< HEAD
      * @param mixed  $value
+=======
+     * @param string $value
+>>>>>>> web and vendor directory from composer install
      *
      * @return ServiceReferenceGraphNode
      */

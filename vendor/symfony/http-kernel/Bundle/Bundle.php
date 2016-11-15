@@ -11,7 +11,11 @@
 
 namespace Symfony\Component\HttpKernel\Bundle;
 
+<<<<<<< HEAD
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
+=======
+use Symfony\Component\DependencyInjection\ContainerInterface;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\Console\Application;
@@ -26,12 +30,22 @@ use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
  */
 abstract class Bundle implements BundleInterface
 {
+<<<<<<< HEAD
     use ContainerAwareTrait;
 
     protected $name;
     protected $extension;
     protected $path;
     private $namespace;
+=======
+    /**
+     * @var ContainerInterface
+     */
+    protected $container;
+    protected $name;
+    protected $extension;
+    protected $path;
+>>>>>>> web and vendor directory from composer install
 
     /**
      * Boots the Bundle.
@@ -54,12 +68,30 @@ abstract class Bundle implements BundleInterface
      *
      * This method can be overridden to register compilation passes,
      * other extensions, ...
+<<<<<<< HEAD
+=======
+     *
+     * @param ContainerBuilder $container A ContainerBuilder instance
+>>>>>>> web and vendor directory from composer install
      */
     public function build(ContainerBuilder $container)
     {
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Sets the container.
+     *
+     * @param ContainerInterface|null $container A ContainerInterface instance or null
+     */
+    public function setContainer(ContainerInterface $container = null)
+    {
+        $this->container = $container;
+    }
+
+    /**
+>>>>>>> web and vendor directory from composer install
      * Returns the bundle's container extension.
      *
      * @return ExtensionInterface|null The container extension
@@ -105,11 +137,17 @@ abstract class Bundle implements BundleInterface
      */
     public function getNamespace()
     {
+<<<<<<< HEAD
         if (null === $this->namespace) {
             $this->parseClassName();
         }
 
         return $this->namespace;
+=======
+        $class = get_class($this);
+
+        return substr($class, 0, strrpos($class, '\\'));
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -130,7 +168,11 @@ abstract class Bundle implements BundleInterface
     /**
      * Returns the bundle parent name.
      *
+<<<<<<< HEAD
      * @return string|null The Bundle parent name it overrides or null if no parent
+=======
+     * @return string The Bundle parent name it overrides or null if no parent
+>>>>>>> web and vendor directory from composer install
      */
     public function getParent()
     {
@@ -143,11 +185,22 @@ abstract class Bundle implements BundleInterface
      */
     final public function getName()
     {
+<<<<<<< HEAD
         if (null === $this->name) {
             $this->parseClassName();
         }
 
         return $this->name;
+=======
+        if (null !== $this->name) {
+            return $this->name;
+        }
+
+        $name = get_class($this);
+        $pos = strrpos($name, '\\');
+
+        return $this->name = false === $pos ? $name : substr($name, $pos + 1);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -157,6 +210,11 @@ abstract class Bundle implements BundleInterface
      *
      * * Commands are in the 'Command' sub-directory
      * * Commands extend Symfony\Component\Console\Command\Command
+<<<<<<< HEAD
+=======
+     *
+     * @param Application $application An Application instance
+>>>>>>> web and vendor directory from composer install
      */
     public function registerCommands(Application $application)
     {
@@ -179,16 +237,24 @@ abstract class Bundle implements BundleInterface
             }
             $class = $ns.'\\'.$file->getBasename('.php');
             if ($this->container) {
+<<<<<<< HEAD
                 $commandIds = $this->container->hasParameter('console.command.ids') ? $this->container->getParameter('console.command.ids') : array();
                 $alias = 'console.command.'.strtolower(str_replace('\\', '_', $class));
                 if (isset($commandIds[$alias]) || $this->container->has($alias)) {
+=======
+                $alias = 'console.command.'.strtolower(str_replace('\\', '_', $class));
+                if ($this->container->has($alias)) {
+>>>>>>> web and vendor directory from composer install
                     continue;
                 }
             }
             $r = new \ReflectionClass($class);
             if ($r->isSubclassOf('Symfony\\Component\\Console\\Command\\Command') && !$r->isAbstract() && !$r->getConstructor()->getNumberOfRequiredParameters()) {
+<<<<<<< HEAD
                 @trigger_error(sprintf('Auto-registration of the command "%s" is deprecated since Symfony 3.4 and won\'t be supported in 4.0. Use PSR-4 based service discovery instead.', $class), E_USER_DEPRECATED);
 
+=======
+>>>>>>> web and vendor directory from composer install
                 $application->add($r->newInstance());
             }
         }
@@ -217,6 +283,7 @@ abstract class Bundle implements BundleInterface
             return new $class();
         }
     }
+<<<<<<< HEAD
 
     private function parseClassName()
     {
@@ -226,4 +293,6 @@ abstract class Bundle implements BundleInterface
             $this->name = false === $pos ? static::class : substr(static::class, $pos + 1);
         }
     }
+=======
+>>>>>>> web and vendor directory from composer install
 }

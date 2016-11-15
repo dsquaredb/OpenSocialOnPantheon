@@ -11,8 +11,11 @@
 
 namespace Symfony\Component\Translation;
 
+<<<<<<< HEAD
 use Symfony\Component\Translation\Exception\InvalidArgumentException;
 
+=======
+>>>>>>> web and vendor directory from composer install
 /**
  * TranslatorInterface.
  *
@@ -30,7 +33,11 @@ interface TranslatorInterface
      *
      * @return string The translated string
      *
+<<<<<<< HEAD
      * @throws InvalidArgumentException If the locale contains invalid characters
+=======
+     * @throws \InvalidArgumentException If the locale contains invalid characters
+>>>>>>> web and vendor directory from composer install
      */
     public function trans($id, array $parameters = array(), $domain = null, $locale = null);
 
@@ -45,7 +52,11 @@ interface TranslatorInterface
      *
      * @return string The translated string
      *
+<<<<<<< HEAD
      * @throws InvalidArgumentException If the locale contains invalid characters
+=======
+     * @throws \InvalidArgumentException If the locale contains invalid characters
+>>>>>>> web and vendor directory from composer install
      */
     public function transChoice($id, $number, array $parameters = array(), $domain = null, $locale = null);
 
@@ -54,7 +65,11 @@ interface TranslatorInterface
      *
      * @param string $locale The locale
      *
+<<<<<<< HEAD
      * @throws InvalidArgumentException If the locale contains invalid characters
+=======
+     * @throws \InvalidArgumentException If the locale contains invalid characters
+>>>>>>> web and vendor directory from composer install
      */
     public function setLocale($locale);
 

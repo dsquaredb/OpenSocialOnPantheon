@@ -11,7 +11,11 @@
 
 namespace Symfony\Component\Routing\Loader\DependencyInjection;
 
+<<<<<<< HEAD
 use Psr\Container\ContainerInterface;
+=======
+use Symfony\Component\DependencyInjection\ContainerInterface;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\Routing\Loader\ObjectRouteLoader;
 
 /**

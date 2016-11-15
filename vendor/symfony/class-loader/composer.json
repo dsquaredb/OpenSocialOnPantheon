@@ -17,6 +17,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
+<<<<<<< HEAD
         "php": "^5.5.9|>=7.0.8"
     },
     "require-dev": {
@@ -25,6 +26,13 @@
     },
     "suggest": {
         "symfony/polyfill-apcu": "For using ApcClassLoader on HHVM"
+=======
+        "php": ">=5.3.9",
+        "symfony/polyfill-apcu": "~1.1"
+    },
+    "require-dev": {
+        "symfony/finder": "~2.0,>=2.0.5|~3.0.0"
+>>>>>>> web and vendor directory from composer install
     },
     "autoload": {
         "psr-4": { "Symfony\\Component\\ClassLoader\\": "" },
@@ -34,7 +42,11 @@
     },
     "extra": {
         "branch-alias": {
+<<<<<<< HEAD
             "dev-master": "3.4-dev"
+=======
+            "dev-master": "2.8-dev"
+>>>>>>> web and vendor directory from composer install
         }
     }
 }

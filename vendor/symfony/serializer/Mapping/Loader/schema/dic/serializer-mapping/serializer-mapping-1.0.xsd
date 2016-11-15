@@ -44,6 +44,7 @@
     <xsd:complexType name="attribute">
         <xsd:annotation>
             <xsd:documentation><![CDATA[
+<<<<<<< HEAD
         Contains serialization groups and max depth for attributes. The name of the attribute should be given in the "name" option.
       ]]></xsd:documentation>
         </xsd:annotation>
@@ -58,6 +59,15 @@
                 </xsd:restriction>
             </xsd:simpleType>
         </xsd:attribute>
+=======
+        Contains serialization groups for a attributes. The name of the attribute should be given in the "name" option.
+      ]]></xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="group" type="xsd:string" maxOccurs="unbounded" />
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string" use="required" />
+>>>>>>> web and vendor directory from composer install
     </xsd:complexType>
 
 </xsd:schema>

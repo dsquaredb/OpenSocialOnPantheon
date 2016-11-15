@@ -19,8 +19,11 @@ class RedirectMiddleware
 {
     const HISTORY_HEADER = 'X-Guzzle-Redirect-History';
 
+<<<<<<< HEAD
     const STATUS_HISTORY_HEADER = 'X-Guzzle-Redirect-Status-History';
 
+=======
+>>>>>>> web and vendor directory from composer install
     public static $defaultSettings = [
         'max'             => 5,
         'protocols'       => ['http', 'https'],
@@ -110,14 +113,19 @@ class RedirectMiddleware
         if (!empty($options['allow_redirects']['track_redirects'])) {
             return $this->withTracking(
                 $promise,
+<<<<<<< HEAD
                 (string) $nextRequest->getUri(),
                 $response->getStatusCode()
+=======
+                (string) $nextRequest->getUri()
+>>>>>>> web and vendor directory from composer install
             );
         }
 
         return $promise;
     }
 
+<<<<<<< HEAD
     private function withTracking(PromiseInterface $promise, $uri, $statusCode)
     {
         return $promise->then(
@@ -131,6 +139,18 @@ class RedirectMiddleware
                 array_unshift($statusHeader, $statusCode);
                 return $response->withHeader(self::HISTORY_HEADER, $historyHeader)
                                 ->withHeader(self::STATUS_HISTORY_HEADER, $statusHeader);
+=======
+    private function withTracking(PromiseInterface $promise, $uri)
+    {
+        return $promise->then(
+            function (ResponseInterface $response) use ($uri) {
+                // Note that we are pushing to the front of the list as this
+                // would be an earlier response than what is currently present
+                // in the history header.
+                $header = $response->getHeader(self::HISTORY_HEADER);
+                array_unshift($header, $uri);
+                return $response->withHeader(self::HISTORY_HEADER, $header);
+>>>>>>> web and vendor directory from composer install
             }
         );
     }
@@ -214,9 +234,15 @@ class RedirectMiddleware
         ResponseInterface $response,
         array $protocols
     ) {
+<<<<<<< HEAD
         $location = Psr7\UriResolver::resolve(
             $request->getUri(),
             new Psr7\Uri($response->getHeaderLine('Location'))
+=======
+        $location = Psr7\Uri::resolve(
+            $request->getUri(),
+            $response->getHeaderLine('Location')
+>>>>>>> web and vendor directory from composer install
         );
 
         // Ensure that the redirect URI is allowed based on the protocols.

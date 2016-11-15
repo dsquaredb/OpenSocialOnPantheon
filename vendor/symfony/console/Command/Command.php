@@ -11,11 +11,20 @@
 
 namespace Symfony\Component\Console\Command;
 
+<<<<<<< HEAD
+=======
+use Symfony\Component\Console\Descriptor\TextDescriptor;
+use Symfony\Component\Console\Descriptor\XmlDescriptor;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\Console\Exception\ExceptionInterface;
 use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
+<<<<<<< HEAD
+=======
+use Symfony\Component\Console\Output\BufferedOutput;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Helper\HelperSet;
@@ -29,17 +38,23 @@ use Symfony\Component\Console\Exception\LogicException;
  */
 class Command
 {
+<<<<<<< HEAD
     /**
      * @var string|null The default command name
      */
     protected static $defaultName;
 
+=======
+>>>>>>> web and vendor directory from composer install
     private $application;
     private $name;
     private $processTitle;
     private $aliases = array();
     private $definition;
+<<<<<<< HEAD
     private $hidden = false;
+=======
+>>>>>>> web and vendor directory from composer install
     private $help;
     private $description;
     private $ignoreValidationErrors = false;
@@ -51,6 +66,7 @@ class Command
     private $helperSet;
 
     /**
+<<<<<<< HEAD
      * @return string|null The default command name or null when no default name is set
      */
     public static function getDefaultName()
@@ -62,6 +78,10 @@ class Command
     }
 
     /**
+=======
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param string|null $name The name of the command; passing null means it must be set in configure()
      *
      * @throws LogicException When the command name is empty
@@ -70,11 +90,22 @@ class Command
     {
         $this->definition = new InputDefinition();
 
+<<<<<<< HEAD
         if (null !== $name || null !== $name = static::getDefaultName()) {
+=======
+        if (null !== $name) {
+>>>>>>> web and vendor directory from composer install
             $this->setName($name);
         }
 
         $this->configure();
+<<<<<<< HEAD
+=======
+
+        if (!$this->name) {
+            throw new LogicException(sprintf('The command defined in "%s" cannot have an empty name.', get_class($this)));
+        }
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -87,6 +118,14 @@ class Command
         $this->ignoreValidationErrors = true;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Sets the application instance for this command.
+     *
+     * @param Application $application An Application instance
+     */
+>>>>>>> web and vendor directory from composer install
     public function setApplication(Application $application = null)
     {
         $this->application = $application;
@@ -97,6 +136,14 @@ class Command
         }
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Sets the helper set.
+     *
+     * @param HelperSet $helperSet A HelperSet instance
+     */
+>>>>>>> web and vendor directory from composer install
     public function setHelperSet(HelperSet $helperSet)
     {
         $this->helperSet = $helperSet;
@@ -150,6 +197,12 @@ class Command
      * execute() method, you set the code to execute by passing
      * a Closure to the setCode() method.
      *
+<<<<<<< HEAD
+=======
+     * @param InputInterface  $input  An InputInterface instance
+     * @param OutputInterface $output An OutputInterface instance
+     *
+>>>>>>> web and vendor directory from composer install
      * @return null|int null or 0 if everything went fine, or an error code
      *
      * @throws LogicException When this abstract method is not implemented
@@ -167,6 +220,12 @@ class Command
      * This method is executed before the InputDefinition is validated.
      * This means that this is the only place where the command can
      * interactively ask for values of missing required arguments.
+<<<<<<< HEAD
+=======
+     *
+     * @param InputInterface  $input  An InputInterface instance
+     * @param OutputInterface $output An OutputInterface instance
+>>>>>>> web and vendor directory from composer install
      */
     protected function interact(InputInterface $input, OutputInterface $output)
     {
@@ -177,6 +236,12 @@ class Command
      *
      * This is mainly useful when a lot of commands extends one main command
      * where some things need to be initialized based on the input arguments and options.
+<<<<<<< HEAD
+=======
+     *
+     * @param InputInterface  $input  An InputInterface instance
+     * @param OutputInterface $output An OutputInterface instance
+>>>>>>> web and vendor directory from composer install
      */
     protected function initialize(InputInterface $input, OutputInterface $output)
     {
@@ -189,9 +254,18 @@ class Command
      * setCode() method or by overriding the execute() method
      * in a sub-class.
      *
+<<<<<<< HEAD
      * @return int The command exit code
      *
      * @throws \Exception When binding input fails. Bypass this by calling {@link ignoreValidationErrors()}.
+=======
+     * @param InputInterface  $input  An InputInterface instance
+     * @param OutputInterface $output An OutputInterface instance
+     *
+     * @return int The command exit code
+     *
+     * @throws \Exception
+>>>>>>> web and vendor directory from composer install
      *
      * @see setCode()
      * @see execute()
@@ -218,6 +292,7 @@ class Command
 
         if (null !== $this->processTitle) {
             if (function_exists('cli_set_process_title')) {
+<<<<<<< HEAD
                 if (!@cli_set_process_title($this->processTitle)) {
                     if ('Darwin' === PHP_OS) {
                         $output->writeln('<comment>Running "cli_get_process_title" as an unprivileged user is not supported on MacOS.</comment>');
@@ -225,6 +300,9 @@ class Command
                         cli_set_process_title($this->processTitle);
                     }
                 }
+=======
+                cli_set_process_title($this->processTitle);
+>>>>>>> web and vendor directory from composer install
             } elseif (function_exists('setproctitle')) {
                 setproctitle($this->processTitle);
             } elseif (OutputInterface::VERBOSITY_VERY_VERBOSE === $output->getVerbosity()) {
@@ -262,12 +340,17 @@ class Command
      *
      * @param callable $code A callable(InputInterface $input, OutputInterface $output)
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Command The current instance
+>>>>>>> web and vendor directory from composer install
      *
      * @throws InvalidArgumentException
      *
      * @see execute()
      */
+<<<<<<< HEAD
     public function setCode(callable $code)
     {
         if ($code instanceof \Closure) {
@@ -282,6 +365,18 @@ class Command
                 } else {
                     $code = \Closure::bind($code, $this);
                 }
+=======
+    public function setCode($code)
+    {
+        if (!is_callable($code)) {
+            throw new InvalidArgumentException('Invalid callable provided to Command::setCode.');
+        }
+
+        if (PHP_VERSION_ID >= 50400 && $code instanceof \Closure) {
+            $r = new \ReflectionFunction($code);
+            if (null === $r->getClosureThis()) {
+                $code = \Closure::bind($code, $this);
+>>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -322,7 +417,11 @@ class Command
      *
      * @param array|InputDefinition $definition An array of argument and option instances or a definition instance
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Command The current instance
+>>>>>>> web and vendor directory from composer install
      */
     public function setDefinition($definition)
     {
@@ -348,7 +447,11 @@ class Command
     }
 
     /**
+<<<<<<< HEAD
      * Gets the InputDefinition to be used to create representations of this Command.
+=======
+     * Gets the InputDefinition to be used to create XML and Text representations of this Command.
+>>>>>>> web and vendor directory from composer install
      *
      * Can be overridden to provide the original command representation when it would otherwise
      * be changed by merging with the application InputDefinition.
@@ -370,7 +473,11 @@ class Command
      * @param string $description A description text
      * @param mixed  $default     The default value (for InputArgument::OPTIONAL mode only)
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Command The current instance
+>>>>>>> web and vendor directory from composer install
      */
     public function addArgument($name, $mode = null, $description = '', $default = null)
     {
@@ -388,7 +495,11 @@ class Command
      * @param string $description A description text
      * @param mixed  $default     The default value (must be null for InputOption::VALUE_NONE)
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Command The current instance
+>>>>>>> web and vendor directory from composer install
      */
     public function addOption($name, $shortcut = null, $mode = null, $description = '', $default = null)
     {
@@ -407,7 +518,11 @@ class Command
      *
      * @param string $name The command name
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Command The current instance
+>>>>>>> web and vendor directory from composer install
      *
      * @throws InvalidArgumentException When the name is invalid
      */
@@ -430,7 +545,11 @@ class Command
      *
      * @param string $title The process title
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Command The current instance
+>>>>>>> web and vendor directory from composer install
      */
     public function setProcessTitle($title)
     {
@@ -450,6 +569,7 @@ class Command
     }
 
     /**
+<<<<<<< HEAD
      * @param bool $hidden Whether or not the command should be hidden from the list of commands
      *
      * @return Command The current instance
@@ -470,11 +590,17 @@ class Command
     }
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * Sets the description for the command.
      *
      * @param string $description The description for the command
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Command The current instance
+>>>>>>> web and vendor directory from composer install
      */
     public function setDescription($description)
     {
@@ -498,7 +624,11 @@ class Command
      *
      * @param string $help The help for the command
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Command The current instance
+>>>>>>> web and vendor directory from composer install
      */
     public function setHelp($help)
     {
@@ -544,7 +674,11 @@ class Command
      *
      * @param string[] $aliases An array of aliases for the command
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Command The current instance
+>>>>>>> web and vendor directory from composer install
      *
      * @throws InvalidArgumentException When an alias is invalid
      */
@@ -596,7 +730,11 @@ class Command
      *
      * @param string $usage The usage, it'll be prefixed with the command name
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Command The current instance
+>>>>>>> web and vendor directory from composer install
      */
     public function addUsage($usage)
     {
@@ -639,6 +777,52 @@ class Command
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Returns a text representation of the command.
+     *
+     * @return string A string representing the command
+     *
+     * @deprecated since version 2.3, to be removed in 3.0.
+     */
+    public function asText()
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 2.3 and will be removed in 3.0.', E_USER_DEPRECATED);
+
+        $descriptor = new TextDescriptor();
+        $output = new BufferedOutput(BufferedOutput::VERBOSITY_NORMAL, true);
+        $descriptor->describe($output, $this, array('raw_output' => true));
+
+        return $output->fetch();
+    }
+
+    /**
+     * Returns an XML representation of the command.
+     *
+     * @param bool $asDom Whether to return a DOM or an XML string
+     *
+     * @return string|\DOMDocument An XML string representing the command
+     *
+     * @deprecated since version 2.3, to be removed in 3.0.
+     */
+    public function asXml($asDom = false)
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 2.3 and will be removed in 3.0.', E_USER_DEPRECATED);
+
+        $descriptor = new XmlDescriptor();
+
+        if ($asDom) {
+            return $descriptor->getCommandDocument($this);
+        }
+
+        $output = new BufferedOutput();
+        $descriptor->describe($output, $this);
+
+        return $output->fetch();
+    }
+
+    /**
+>>>>>>> web and vendor directory from composer install
      * Validates a command name.
      *
      * It must be non-empty and parts can optionally be separated by ":".

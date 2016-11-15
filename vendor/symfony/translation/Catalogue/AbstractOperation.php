@@ -13,8 +13,11 @@ namespace Symfony\Component\Translation\Catalogue;
 
 use Symfony\Component\Translation\MessageCatalogue;
 use Symfony\Component\Translation\MessageCatalogueInterface;
+<<<<<<< HEAD
 use Symfony\Component\Translation\Exception\InvalidArgumentException;
 use Symfony\Component\Translation\Exception\LogicException;
+=======
+>>>>>>> web and vendor directory from composer install
 
 /**
  * Base catalogues binary operation class.
@@ -26,8 +29,24 @@ use Symfony\Component\Translation\Exception\LogicException;
  */
 abstract class AbstractOperation implements OperationInterface
 {
+<<<<<<< HEAD
     protected $source;
     protected $target;
+=======
+    /**
+     * @var MessageCatalogueInterface The source catalogue
+     */
+    protected $source;
+
+    /**
+     * @var MessageCatalogueInterface The target catalogue
+     */
+    protected $target;
+
+    /**
+     * @var MessageCatalogue The result catalogue
+     */
+>>>>>>> web and vendor directory from composer install
     protected $result;
 
     /**
@@ -60,17 +79,32 @@ abstract class AbstractOperation implements OperationInterface
     protected $messages;
 
     /**
+<<<<<<< HEAD
      * @throws LogicException
+=======
+     * @param MessageCatalogueInterface $source The source catalogue
+     * @param MessageCatalogueInterface $target The target catalogue
+     *
+     * @throws \LogicException
+>>>>>>> web and vendor directory from composer install
      */
     public function __construct(MessageCatalogueInterface $source, MessageCatalogueInterface $target)
     {
         if ($source->getLocale() !== $target->getLocale()) {
+<<<<<<< HEAD
             throw new LogicException('Operated catalogues must belong to the same locale.');
+=======
+            throw new \LogicException('Operated catalogues must belong to the same locale.');
+>>>>>>> web and vendor directory from composer install
         }
 
         $this->source = $source;
         $this->target = $target;
         $this->result = new MessageCatalogue($source->getLocale());
+<<<<<<< HEAD
+=======
+        $this->domains = null;
+>>>>>>> web and vendor directory from composer install
         $this->messages = array();
     }
 
@@ -92,7 +126,11 @@ abstract class AbstractOperation implements OperationInterface
     public function getMessages($domain)
     {
         if (!in_array($domain, $this->getDomains())) {
+<<<<<<< HEAD
             throw new InvalidArgumentException(sprintf('Invalid domain: %s.', $domain));
+=======
+            throw new \InvalidArgumentException(sprintf('Invalid domain: %s.', $domain));
+>>>>>>> web and vendor directory from composer install
         }
 
         if (!isset($this->messages[$domain]['all'])) {
@@ -108,7 +146,11 @@ abstract class AbstractOperation implements OperationInterface
     public function getNewMessages($domain)
     {
         if (!in_array($domain, $this->getDomains())) {
+<<<<<<< HEAD
             throw new InvalidArgumentException(sprintf('Invalid domain: %s.', $domain));
+=======
+            throw new \InvalidArgumentException(sprintf('Invalid domain: %s.', $domain));
+>>>>>>> web and vendor directory from composer install
         }
 
         if (!isset($this->messages[$domain]['new'])) {
@@ -124,7 +166,11 @@ abstract class AbstractOperation implements OperationInterface
     public function getObsoleteMessages($domain)
     {
         if (!in_array($domain, $this->getDomains())) {
+<<<<<<< HEAD
             throw new InvalidArgumentException(sprintf('Invalid domain: %s.', $domain));
+=======
+            throw new \InvalidArgumentException(sprintf('Invalid domain: %s.', $domain));
+>>>>>>> web and vendor directory from composer install
         }
 
         if (!isset($this->messages[$domain]['obsolete'])) {

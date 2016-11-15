@@ -23,6 +23,11 @@ class ExecutableFinder
 
     /**
      * Replaces default suffixes of executable.
+<<<<<<< HEAD
+=======
+     *
+     * @param array $suffixes
+>>>>>>> web and vendor directory from composer install
      */
     public function setSuffixes(array $suffixes)
     {
@@ -73,11 +78,19 @@ class ExecutableFinder
         $suffixes = array('');
         if ('\\' === DIRECTORY_SEPARATOR) {
             $pathExt = getenv('PATHEXT');
+<<<<<<< HEAD
             $suffixes = array_merge($suffixes, $pathExt ? explode(PATH_SEPARATOR, $pathExt) : $this->suffixes);
         }
         foreach ($suffixes as $suffix) {
             foreach ($dirs as $dir) {
                 if (@is_file($file = $dir.DIRECTORY_SEPARATOR.$name.$suffix) && ('\\' === DIRECTORY_SEPARATOR || @is_executable($file))) {
+=======
+            $suffixes = $pathExt ? explode(PATH_SEPARATOR, $pathExt) : $this->suffixes;
+        }
+        foreach ($suffixes as $suffix) {
+            foreach ($dirs as $dir) {
+                if (@is_file($file = $dir.DIRECTORY_SEPARATOR.$name.$suffix) && ('\\' === DIRECTORY_SEPARATOR || is_executable($file))) {
+>>>>>>> web and vendor directory from composer install
                     return $file;
                 }
             }

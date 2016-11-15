@@ -37,7 +37,11 @@ class PropertyPath
     public static function append($basePath, $subPath)
     {
         if ('' !== (string) $subPath) {
+<<<<<<< HEAD
             if ('[' === $subPath[0]) {
+=======
+            if ('[' === $subPath{0}) {
+>>>>>>> web and vendor directory from composer install
                 return $basePath.$subPath;
             }
 

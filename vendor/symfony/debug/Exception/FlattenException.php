@@ -9,9 +9,55 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 namespace Symfony\Component\Debug\Exception;
 
 use Symfony\Component\HttpFoundation\Exception\RequestExceptionInterface;
+=======
+namespace Symfony\Component\HttpKernel\Exception;
+
+use Symfony\Component\Debug\Exception\FlattenException as DebugFlattenException;
+
+/**
+ * FlattenException wraps a PHP Exception to be able to serialize it.
+ *
+ * Basically, this class removes all objects from the trace.
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ *
+ * @deprecated Deprecated in 2.3, to be removed in 3.0. Use the same class from the Debug component instead.
+ */
+class FlattenException
+{
+    private $handler;
+
+    public static function __callStatic($method, $args)
+    {
+        if (!method_exists('Symfony\Component\Debug\Exception\FlattenException', $method)) {
+            throw new \BadMethodCallException(sprintf('Call to undefined method %s::%s()', get_called_class(), $method));
+        }
+
+        return call_user_func_array(array('Symfony\Component\Debug\Exception\FlattenException', $method), $args);
+    }
+
+    public function __call($method, $args)
+    {
+        if (!isset($this->handler)) {
+            $this->handler = new DebugFlattenException();
+        }
+
+        if (!method_exists($this->handler, $method)) {
+            throw new \BadMethodCallException(sprintf('Call to undefined method %s::%s()', get_class($this), $method));
+        }
+
+        return call_user_func_array(array($this->handler, $method), $args);
+    }
+}
+
+namespace Symfony\Component\Debug\Exception;
+
+use Symfony\Component\HttpKernel\Exception\FlattenException as LegacyFlattenException;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 
 /**
@@ -21,7 +67,11 @@ use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
+<<<<<<< HEAD
 class FlattenException
+=======
+class FlattenException extends LegacyFlattenException
+>>>>>>> web and vendor directory from composer install
 {
     private $message;
     private $code;
@@ -42,8 +92,11 @@ class FlattenException
         if ($exception instanceof HttpExceptionInterface) {
             $statusCode = $exception->getStatusCode();
             $headers = array_merge($headers, $exception->getHeaders());
+<<<<<<< HEAD
         } elseif ($exception instanceof RequestExceptionInterface) {
             $statusCode = 400;
+=======
+>>>>>>> web and vendor directory from composer install
         }
 
         if (null === $statusCode) {
@@ -157,7 +210,11 @@ class FlattenException
         return $this->previous;
     }
 
+<<<<<<< HEAD
     public function setPrevious(self $previous)
+=======
+    public function setPrevious(FlattenException $previous)
+>>>>>>> web and vendor directory from composer install
     {
         $this->previous = $previous;
     }
@@ -240,10 +297,13 @@ class FlattenException
                 $result[$key] = array('null', null);
             } elseif (is_bool($value)) {
                 $result[$key] = array('boolean', $value);
+<<<<<<< HEAD
             } elseif (is_int($value)) {
                 $result[$key] = array('integer', $value);
             } elseif (is_float($value)) {
                 $result[$key] = array('float', $value);
+=======
+>>>>>>> web and vendor directory from composer install
             } elseif (is_resource($value)) {
                 $result[$key] = array('resource', get_resource_type($value));
             } else {

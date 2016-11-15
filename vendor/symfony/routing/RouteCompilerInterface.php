@@ -21,6 +21,11 @@ interface RouteCompilerInterface
     /**
      * Compiles the current route instance.
      *
+<<<<<<< HEAD
+=======
+     * @param Route $route A Route instance
+     *
+>>>>>>> web and vendor directory from composer install
      * @return CompiledRoute A CompiledRoute instance
      *
      * @throws \LogicException If the Route cannot be compiled because the

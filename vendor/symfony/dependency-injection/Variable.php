@@ -36,6 +36,14 @@ class Variable
         $this->name = $name;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Converts the object to a string.
+     *
+     * @return string
+     */
+>>>>>>> web and vendor directory from composer install
     public function __toString()
     {
         return $this->name;

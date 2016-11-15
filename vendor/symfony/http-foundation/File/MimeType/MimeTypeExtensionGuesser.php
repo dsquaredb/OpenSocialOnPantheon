@@ -23,6 +23,11 @@ class MimeTypeExtensionGuesser implements ExtensionGuesserInterface
      * This list has been updated from upstream on 2013-04-23.
      *
      * @see http://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types
+<<<<<<< HEAD
+=======
+     *
+     * @var array
+>>>>>>> web and vendor directory from composer install
      */
     protected $defaultExtensions = array(
         'application/andrew-inset' => 'ez',
@@ -599,7 +604,10 @@ class MimeTypeExtensionGuesser implements ExtensionGuesserInterface
         'application/x-xliff+xml' => 'xlf',
         'application/x-xpinstall' => 'xpi',
         'application/x-xz' => 'xz',
+<<<<<<< HEAD
         'application/x-zip-compressed' => 'zip',
+=======
+>>>>>>> web and vendor directory from composer install
         'application/x-zmachine' => 'z1',
         'application/xaml+xml' => 'xaml',
         'application/xcap-diff+xml' => 'xdf',
@@ -743,7 +751,10 @@ class MimeTypeExtensionGuesser implements ExtensionGuesserInterface
         'text/vnd.sun.j2me.app-descriptor' => 'jad',
         'text/vnd.wap.wml' => 'wml',
         'text/vnd.wap.wmlscript' => 'wmls',
+<<<<<<< HEAD
         'text/vtt' => 'vtt',
+=======
+>>>>>>> web and vendor directory from composer install
         'text/x-asm' => 's',
         'text/x-c' => 'c',
         'text/x-fortran' => 'f',

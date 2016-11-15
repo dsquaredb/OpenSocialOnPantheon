@@ -26,6 +26,12 @@ class RepeatedPass implements CompilerPassInterface
      */
     private $repeat = false;
 
+<<<<<<< HEAD
+=======
+    /**
+     * @var RepeatablePassInterface[]
+     */
+>>>>>>> web and vendor directory from composer install
     private $passes;
 
     /**
@@ -48,6 +54,11 @@ class RepeatedPass implements CompilerPassInterface
 
     /**
      * Process the repeatable passes that run more than once.
+<<<<<<< HEAD
+=======
+     *
+     * @param ContainerBuilder $container
+>>>>>>> web and vendor directory from composer install
      */
     public function process(ContainerBuilder $container)
     {

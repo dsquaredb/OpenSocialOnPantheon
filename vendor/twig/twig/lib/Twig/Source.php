@@ -3,7 +3,11 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
+=======
+ * (c) 2016 Fabien Potencier
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,8 +16,11 @@
 /**
  * Holds information about a non-compiled Twig template.
  *
+<<<<<<< HEAD
  * @final
  *
+=======
+>>>>>>> web and vendor directory from composer install
  * @author Fabien Potencier <fabien@symfony.com>
  */
 class Twig_Source
@@ -49,5 +56,8 @@ class Twig_Source
         return $this->path;
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_Source', 'Twig\Source', false);
+=======
+>>>>>>> web and vendor directory from composer install

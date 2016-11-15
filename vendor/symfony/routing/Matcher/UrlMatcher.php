@@ -12,7 +12,10 @@
 namespace Symfony\Component\Routing\Matcher;
 
 use Symfony\Component\Routing\Exception\MethodNotAllowedException;
+<<<<<<< HEAD
 use Symfony\Component\Routing\Exception\NoConfigurationException;
+=======
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\RequestContext;
@@ -32,9 +35,27 @@ class UrlMatcher implements UrlMatcherInterface, RequestMatcherInterface
     const REQUIREMENT_MISMATCH = 1;
     const ROUTE_MATCH = 2;
 
+<<<<<<< HEAD
     protected $context;
     protected $allow = array();
     protected $routes;
+=======
+    /**
+     * @var RequestContext
+     */
+    protected $context;
+
+    /**
+     * @var array
+     */
+    protected $allow = array();
+
+    /**
+     * @var RouteCollection
+     */
+    protected $routes;
+
+>>>>>>> web and vendor directory from composer install
     protected $request;
     protected $expressionLanguage;
 
@@ -43,6 +64,15 @@ class UrlMatcher implements UrlMatcherInterface, RequestMatcherInterface
      */
     protected $expressionLanguageProviders = array();
 
+<<<<<<< HEAD
+=======
+    /**
+     * Constructor.
+     *
+     * @param RouteCollection $routes  A RouteCollection instance
+     * @param RequestContext  $context The context
+     */
+>>>>>>> web and vendor directory from composer install
     public function __construct(RouteCollection $routes, RequestContext $context)
     {
         $this->routes = $routes;
@@ -76,10 +106,13 @@ class UrlMatcher implements UrlMatcherInterface, RequestMatcherInterface
             return $ret;
         }
 
+<<<<<<< HEAD
         if ('/' === $pathinfo && !$this->allow) {
             throw new NoConfigurationException();
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         throw 0 < count($this->allow)
             ? new MethodNotAllowedException(array_unique($this->allow))
             : new ResourceNotFoundException(sprintf('No routes found for "%s".', $pathinfo));
@@ -112,7 +145,10 @@ class UrlMatcher implements UrlMatcherInterface, RequestMatcherInterface
      *
      * @return array An array of parameters
      *
+<<<<<<< HEAD
      * @throws NoConfigurationException  If no routing configuration could be found
+=======
+>>>>>>> web and vendor directory from composer install
      * @throws ResourceNotFoundException If the resource could not be found
      * @throws MethodNotAllowedException If the resource was found but the request method is not allowed
      */
@@ -135,12 +171,15 @@ class UrlMatcher implements UrlMatcherInterface, RequestMatcherInterface
                 continue;
             }
 
+<<<<<<< HEAD
             $status = $this->handleRouteRequirements($pathinfo, $name, $route);
 
             if (self::REQUIREMENT_MISMATCH === $status[0]) {
                 continue;
             }
 
+=======
+>>>>>>> web and vendor directory from composer install
             // check HTTP method requirement
             if ($requiredMethods = $route->getMethods()) {
                 // HEAD and GET are equivalent as per RFC
@@ -149,15 +188,33 @@ class UrlMatcher implements UrlMatcherInterface, RequestMatcherInterface
                 }
 
                 if (!in_array($method, $requiredMethods)) {
+<<<<<<< HEAD
                     if (self::REQUIREMENT_MATCH === $status[0]) {
                         $this->allow = array_merge($this->allow, $requiredMethods);
                     }
+=======
+                    $this->allow = array_merge($this->allow, $requiredMethods);
+>>>>>>> web and vendor directory from composer install
 
                     continue;
                 }
             }
 
+<<<<<<< HEAD
             return $this->getAttributes($route, $name, array_replace($matches, $hostMatches, isset($status[1]) ? $status[1] : array()));
+=======
+            $status = $this->handleRouteRequirements($pathinfo, $name, $route);
+
+            if (self::ROUTE_MATCH === $status[0]) {
+                return $status[1];
+            }
+
+            if (self::REQUIREMENT_MISMATCH === $status[0]) {
+                continue;
+            }
+
+            return $this->getAttributes($route, $name, array_replace($matches, $hostMatches));
+>>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -193,7 +250,11 @@ class UrlMatcher implements UrlMatcherInterface, RequestMatcherInterface
     protected function handleRouteRequirements($pathinfo, $name, Route $route)
     {
         // expression condition
+<<<<<<< HEAD
         if ($route->getCondition() && !$this->getExpressionLanguage()->evaluate($route->getCondition(), array('context' => $this->context, 'request' => $this->request ?: $this->createRequest($pathinfo)))) {
+=======
+        if ($route->getCondition() && !$this->getExpressionLanguage()->evaluate($route->getCondition(), array('context' => $this->context, 'request' => $this->request))) {
+>>>>>>> web and vendor directory from composer install
             return array(self::REQUIREMENT_MISMATCH, null);
         }
 
@@ -234,6 +295,7 @@ class UrlMatcher implements UrlMatcherInterface, RequestMatcherInterface
 
         return $this->expressionLanguage;
     }
+<<<<<<< HEAD
 
     /**
      * @internal
@@ -249,4 +311,6 @@ class UrlMatcher implements UrlMatcherInterface, RequestMatcherInterface
             'SCRIPT_NAME' => $this->context->getBaseUrl(),
         ));
     }
+=======
+>>>>>>> web and vendor directory from composer install
 }

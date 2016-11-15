@@ -188,6 +188,7 @@ class ServerRequest extends Request implements ServerRequestInterface
     public static function getUriFromGlobals() {
         $uri = new Uri('');
 
+<<<<<<< HEAD
         $uri = $uri->withScheme(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 'http');
 
         $hasPort = false;
@@ -219,6 +220,27 @@ class ServerRequest extends Request implements ServerRequestInterface
         }
 
         if (!$hasQuery && isset($_SERVER['QUERY_STRING'])) {
+=======
+        if (isset($_SERVER['HTTPS'])) {
+            $uri = $uri->withScheme($_SERVER['HTTPS'] == 'on' ? 'https' : 'http');
+        }
+
+        if (isset($_SERVER['HTTP_HOST'])) {
+            $uri = $uri->withHost($_SERVER['HTTP_HOST']);
+        } elseif (isset($_SERVER['SERVER_NAME'])) {
+            $uri = $uri->withHost($_SERVER['SERVER_NAME']);
+        }
+
+        if (isset($_SERVER['SERVER_PORT'])) {
+            $uri = $uri->withPort($_SERVER['SERVER_PORT']);
+        }
+
+        if (isset($_SERVER['REQUEST_URI'])) {
+            $uri = $uri->withPath(current(explode('?', $_SERVER['REQUEST_URI'])));
+        }
+
+        if (isset($_SERVER['QUERY_STRING'])) {
+>>>>>>> web and vendor directory from composer install
             $uri = $uri->withQuery($_SERVER['QUERY_STRING']);
         }
 

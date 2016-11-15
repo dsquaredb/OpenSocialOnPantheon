@@ -38,6 +38,7 @@ class HttpException extends \RuntimeException implements HttpExceptionInterface
     {
         return $this->headers;
     }
+<<<<<<< HEAD
 
     /**
      * Set response headers.
@@ -48,4 +49,6 @@ class HttpException extends \RuntimeException implements HttpExceptionInterface
     {
         $this->headers = $headers;
     }
+=======
+>>>>>>> web and vendor directory from composer install
 }

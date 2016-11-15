@@ -11,6 +11,11 @@
 
 namespace Symfony\Component\DependencyInjection\Loader;
 
+<<<<<<< HEAD
+=======
+use Symfony\Component\Config\Resource\DirectoryResource;
+
+>>>>>>> web and vendor directory from composer install
 /**
  * DirectoryLoader is a recursive loader to go through directories.
  *
@@ -25,7 +30,11 @@ class DirectoryLoader extends FileLoader
     {
         $file = rtrim($file, '/');
         $path = $this->locator->locate($file);
+<<<<<<< HEAD
         $this->container->fileExists($path, false);
+=======
+        $this->container->addResource(new DirectoryResource($path));
+>>>>>>> web and vendor directory from composer install
 
         foreach (scandir($path) as $dir) {
             if ('.' !== $dir[0]) {

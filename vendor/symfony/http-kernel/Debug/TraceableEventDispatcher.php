@@ -12,6 +12,10 @@
 namespace Symfony\Component\HttpKernel\Debug;
 
 use Symfony\Component\EventDispatcher\Debug\TraceableEventDispatcher as BaseTraceableEventDispatcher;
+<<<<<<< HEAD
+=======
+use Symfony\Component\HttpKernel\Profiler\Profiler;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\EventDispatcher\Event;
 
@@ -25,6 +29,25 @@ use Symfony\Component\EventDispatcher\Event;
 class TraceableEventDispatcher extends BaseTraceableEventDispatcher
 {
     /**
+<<<<<<< HEAD
+=======
+     * Sets the profiler.
+     *
+     * The traceable event dispatcher does not use the profiler anymore.
+     * The job is now done directly by the Profiler listener and the
+     * data collectors themselves.
+     *
+     * @param Profiler|null $profiler A Profiler instance
+     *
+     * @deprecated since version 2.4, to be removed in 3.0.
+     */
+    public function setProfiler(Profiler $profiler = null)
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 2.4 and will be removed in 3.0.', E_USER_DEPRECATED);
+    }
+
+    /**
+>>>>>>> web and vendor directory from composer install
      * {@inheritdoc}
      */
     protected function preDispatch($eventName, Event $event)
@@ -61,7 +84,11 @@ class TraceableEventDispatcher extends BaseTraceableEventDispatcher
     protected function postDispatch($eventName, Event $event)
     {
         switch ($eventName) {
+<<<<<<< HEAD
             case KernelEvents::CONTROLLER_ARGUMENTS:
+=======
+            case KernelEvents::CONTROLLER:
+>>>>>>> web and vendor directory from composer install
                 $this->stopwatch->start('controller', 'section');
                 break;
             case KernelEvents::RESPONSE:

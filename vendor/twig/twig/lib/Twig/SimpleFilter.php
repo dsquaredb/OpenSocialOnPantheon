@@ -3,7 +3,11 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
+=======
+ * (c) 2009-2012 Fabien Potencier
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,8 +16,11 @@
 /**
  * Represents a template filter.
  *
+<<<<<<< HEAD
  * @final
  *
+=======
+>>>>>>> web and vendor directory from composer install
  * @author Fabien Potencier <fabien@symfony.com>
  */
 class Twig_SimpleFilter
@@ -117,5 +124,8 @@ class Twig_SimpleFilter
         return $this->options['alternative'];
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_SimpleFilter', 'Twig\TwigFilter', false);
+=======
+>>>>>>> web and vendor directory from composer install

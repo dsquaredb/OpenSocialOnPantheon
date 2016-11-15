@@ -67,7 +67,11 @@ class StreamHandler
             $e = RequestException::wrapException($request, $e);
             $this->invokeStats($options, $request, $startTime, null, $e);
 
+<<<<<<< HEAD
             return \GuzzleHttp\Promise\rejection_for($e);
+=======
+            return new RejectedPromise($e);
+>>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -119,7 +123,11 @@ class StreamHandler
             } catch (\Exception $e) {
                 $msg = 'An error was encountered during the on_headers event';
                 $ex = new RequestException($msg, $request, $response, $e);
+<<<<<<< HEAD
                 return \GuzzleHttp\Promise\rejection_for($ex);
+=======
+                return new RejectedPromise($ex);
+>>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -301,6 +309,7 @@ class StreamHandler
             );
         }
 
+<<<<<<< HEAD
         // Microsoft NTLM authentication only supported with curl handler
         if (isset($options['auth'])
             && is_array($options['auth'])
@@ -313,6 +322,8 @@ class StreamHandler
 
         $uri = $this->resolveHost($request, $options);
 
+=======
+>>>>>>> web and vendor directory from composer install
         $context = $this->createResource(
             function () use ($context, $params) {
                 return stream_context_create($context, $params);
@@ -320,6 +331,7 @@ class StreamHandler
         );
 
         return $this->createResource(
+<<<<<<< HEAD
             function () use ($uri, &$http_response_header, $context, $options) {
                 $resource = fopen((string) $uri, 'r', null, $context);
                 $this->lastHeaders = $http_response_header;
@@ -331,11 +343,17 @@ class StreamHandler
                     stream_set_timeout($resource, $sec, $usec);
                 }
 
+=======
+            function () use ($request, &$http_response_header, $context) {
+                $resource = fopen((string) $request->getUri()->withFragment(''), 'r', null, $context);
+                $this->lastHeaders = $http_response_header;
+>>>>>>> web and vendor directory from composer install
                 return $resource;
             }
         );
     }
 
+<<<<<<< HEAD
     private function resolveHost(RequestInterface $request, array $options)
     {
         $uri = $request->getUri();
@@ -359,6 +377,8 @@ class StreamHandler
         return $uri;
     }
 
+=======
+>>>>>>> web and vendor directory from composer install
     private function getDefaultContext(RequestInterface $request)
     {
         $headers = '';

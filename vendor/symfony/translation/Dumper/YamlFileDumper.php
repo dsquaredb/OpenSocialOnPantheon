@@ -14,7 +14,10 @@ namespace Symfony\Component\Translation\Dumper;
 use Symfony\Component\Translation\MessageCatalogue;
 use Symfony\Component\Translation\Util\ArrayConverter;
 use Symfony\Component\Yaml\Yaml;
+<<<<<<< HEAD
 use Symfony\Component\Translation\Exception\LogicException;
+=======
+>>>>>>> web and vendor directory from composer install
 
 /**
  * YamlFileDumper generates yaml files from a message catalogue.
@@ -23,6 +26,7 @@ use Symfony\Component\Translation\Exception\LogicException;
  */
 class YamlFileDumper extends FileDumper
 {
+<<<<<<< HEAD
     private $extension;
 
     public function __construct(/**string */$extension = 'yml')
@@ -30,13 +34,19 @@ class YamlFileDumper extends FileDumper
         $this->extension = $extension;
     }
 
+=======
+>>>>>>> web and vendor directory from composer install
     /**
      * {@inheritdoc}
      */
     public function formatCatalogue(MessageCatalogue $messages, $domain, array $options = array())
     {
         if (!class_exists('Symfony\Component\Yaml\Yaml')) {
+<<<<<<< HEAD
             throw new LogicException('Dumping translations in the YAML format requires the Symfony Yaml component.');
+=======
+            throw new \LogicException('Dumping translations in the YAML format requires the Symfony Yaml component.');
+>>>>>>> web and vendor directory from composer install
         }
 
         $data = $messages->all($domain);
@@ -55,8 +65,24 @@ class YamlFileDumper extends FileDumper
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     protected function getExtension()
     {
         return $this->extension;
+=======
+    protected function format(MessageCatalogue $messages, $domain)
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 2.8 and will be removed in 3.0. Use the formatCatalogue() method instead.', E_USER_DEPRECATED);
+
+        return $this->formatCatalogue($messages, $domain);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getExtension()
+    {
+        return 'yml';
+>>>>>>> web and vendor directory from composer install
     }
 }

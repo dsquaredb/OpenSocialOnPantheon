@@ -28,6 +28,11 @@ class HelperSet implements \IteratorAggregate
     private $command;
 
     /**
+<<<<<<< HEAD
+=======
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param Helper[] $helpers An array of helper
      */
     public function __construct(array $helpers = array())
@@ -80,9 +85,28 @@ class HelperSet implements \IteratorAggregate
             throw new InvalidArgumentException(sprintf('The helper "%s" is not defined.', $name));
         }
 
+<<<<<<< HEAD
         return $this->helpers[$name];
     }
 
+=======
+        if ('dialog' === $name && $this->helpers[$name] instanceof DialogHelper) {
+            @trigger_error('"Symfony\Component\Console\Helper\DialogHelper" is deprecated since version 2.5 and will be removed in 3.0. Use "Symfony\Component\Console\Helper\QuestionHelper" instead.', E_USER_DEPRECATED);
+        } elseif ('progress' === $name && $this->helpers[$name] instanceof ProgressHelper) {
+            @trigger_error('"Symfony\Component\Console\Helper\ProgressHelper" is deprecated since version 2.5 and will be removed in 3.0. Use "Symfony\Component\Console\Helper\ProgressBar" instead.', E_USER_DEPRECATED);
+        } elseif ('table' === $name && $this->helpers[$name] instanceof TableHelper) {
+            @trigger_error('"Symfony\Component\Console\Helper\TableHelper" is deprecated since version 2.5 and will be removed in 3.0. Use "Symfony\Component\Console\Helper\Table" instead.', E_USER_DEPRECATED);
+        }
+
+        return $this->helpers[$name];
+    }
+
+    /**
+     * Sets the command associated with this helper set.
+     *
+     * @param Command $command A Command instance
+     */
+>>>>>>> web and vendor directory from composer install
     public function setCommand(Command $command = null)
     {
         $this->command = $command;

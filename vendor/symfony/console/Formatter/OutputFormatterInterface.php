@@ -55,8 +55,11 @@ interface OutputFormatterInterface
      * @param string $name
      *
      * @return OutputFormatterStyleInterface
+<<<<<<< HEAD
      *
      * @throws \InvalidArgumentException When style isn't defined
+=======
+>>>>>>> web and vendor directory from composer install
      */
     public function getStyle($name);
 

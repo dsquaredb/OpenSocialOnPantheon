@@ -5,8 +5,11 @@
          backupGlobals="false"
          colors="true"
          bootstrap="vendor/autoload.php"
+<<<<<<< HEAD
          failOnRisky="true"
          failOnWarning="true"
+=======
+>>>>>>> web and vendor directory from composer install
 >
     <php>
         <ini name="error_reporting" value="-1" />

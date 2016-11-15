@@ -11,8 +11,13 @@
 
 namespace Symfony\Component\DependencyInjection\Compiler;
 
+<<<<<<< HEAD
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Exception\EnvParameterException;
+=======
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\DependencyInjection\Exception\RuntimeException;
 
 /**
@@ -24,6 +29,11 @@ use Symfony\Component\DependencyInjection\Exception\RuntimeException;
  *
  * - non synthetic, non abstract services always have a class set
  * - synthetic services are always public
+<<<<<<< HEAD
+=======
+ * - synthetic services are always of non-prototype scope
+ * - shared services are always of non-prototype scope
+>>>>>>> web and vendor directory from composer install
  *
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
  */
@@ -32,12 +42,18 @@ class CheckDefinitionValidityPass implements CompilerPassInterface
     /**
      * Processes the ContainerBuilder to validate the Definition.
      *
+<<<<<<< HEAD
+=======
+     * @param ContainerBuilder $container
+     *
+>>>>>>> web and vendor directory from composer install
      * @throws RuntimeException When the Definition is invalid
      */
     public function process(ContainerBuilder $container)
     {
         foreach ($container->getDefinitions() as $id => $definition) {
             // synthetic service is public
+<<<<<<< HEAD
             if ($definition->isSynthetic() && !($definition->isPublic() || $definition->isPrivate())) {
                 throw new RuntimeException(sprintf('A synthetic service ("%s") must be public.', $id));
             }
@@ -56,6 +72,31 @@ class CheckDefinitionValidityPass implements CompilerPassInterface
                         $id
                     ));
                 }
+=======
+            if ($definition->isSynthetic() && !$definition->isPublic()) {
+                throw new RuntimeException(sprintf('A synthetic service ("%s") must be public.', $id));
+            }
+
+            // synthetic service has non-prototype scope
+            if ($definition->isSynthetic() && ContainerInterface::SCOPE_PROTOTYPE === $definition->getScope(false)) {
+                throw new RuntimeException(sprintf('A synthetic service ("%s") cannot be of scope "prototype".', $id));
+            }
+
+            // shared service has non-prototype scope
+            if ($definition->isShared() && ContainerInterface::SCOPE_PROTOTYPE === $definition->getScope(false)) {
+                throw new RuntimeException(sprintf('A shared service ("%s") cannot be of scope "prototype".', $id));
+            }
+
+            if ($definition->getFactory() && ($definition->getFactoryClass(false) || $definition->getFactoryService(false) || $definition->getFactoryMethod(false))) {
+                throw new RuntimeException(sprintf('A service ("%s") can use either the old or the new factory syntax, not both.', $id));
+            }
+
+            // non-synthetic, non-abstract service has class
+            if (!$definition->isAbstract() && !$definition->isSynthetic() && !$definition->getClass()) {
+                if ($definition->getFactory() || $definition->getFactoryClass(false) || $definition->getFactoryService(false)) {
+                    throw new RuntimeException(sprintf('Please add the class to service "%s" even if it is constructed by a factory since we might need to add method calls based on compile-time checks.', $id));
+                }
+>>>>>>> web and vendor directory from composer install
 
                 throw new RuntimeException(sprintf(
                     'The definition for "%s" has no class. If you intend to inject '
@@ -76,6 +117,7 @@ class CheckDefinitionValidityPass implements CompilerPassInterface
                     }
                 }
             }
+<<<<<<< HEAD
 
             if ($definition->isPublic() && !$definition->isPrivate()) {
                 $resolvedId = $container->resolveEnvPlaceholders($id, null, $usedEnvs);
@@ -92,6 +134,8 @@ class CheckDefinitionValidityPass implements CompilerPassInterface
                     throw new EnvParameterException(array($resolvedId), null, 'An alias name ("%s") cannot contain dynamic values.');
                 }
             }
+=======
+>>>>>>> web and vendor directory from composer install
         }
     }
 }

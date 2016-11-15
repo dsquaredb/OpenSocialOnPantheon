@@ -11,7 +11,10 @@
 
 namespace Symfony\Component\HttpKernel\DataCollector;
 
+<<<<<<< HEAD
 use Symfony\Component\Debug\Exception\SilencedErrorContext;
+=======
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Log\DebugLoggerInterface;
@@ -23,6 +26,7 @@ use Symfony\Component\HttpKernel\Log\DebugLoggerInterface;
  */
 class LoggerDataCollector extends DataCollector implements LateDataCollectorInterface
 {
+<<<<<<< HEAD
     private $logger;
     private $containerPathPrefix;
 
@@ -37,6 +41,33 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
         }
 
         $this->containerPathPrefix = $containerPathPrefix;
+=======
+    private $errorNames = array(
+        E_DEPRECATED => 'E_DEPRECATED',
+        E_USER_DEPRECATED => 'E_USER_DEPRECATED',
+        E_NOTICE => 'E_NOTICE',
+        E_USER_NOTICE => 'E_USER_NOTICE',
+        E_STRICT => 'E_STRICT',
+        E_WARNING => 'E_WARNING',
+        E_USER_WARNING => 'E_USER_WARNING',
+        E_COMPILE_WARNING => 'E_COMPILE_WARNING',
+        E_CORE_WARNING => 'E_CORE_WARNING',
+        E_USER_ERROR => 'E_USER_ERROR',
+        E_RECOVERABLE_ERROR => 'E_RECOVERABLE_ERROR',
+        E_COMPILE_ERROR => 'E_COMPILE_ERROR',
+        E_PARSE => 'E_PARSE',
+        E_ERROR => 'E_ERROR',
+        E_CORE_ERROR => 'E_CORE_ERROR',
+    );
+
+    private $logger;
+
+    public function __construct($logger = null)
+    {
+        if (null !== $logger && $logger instanceof DebugLoggerInterface) {
+            $this->logger = $logger;
+        }
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -50,6 +81,7 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function reset()
     {
         if ($this->logger && method_exists($this->logger, 'clear')) {
@@ -69,6 +101,13 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
             $this->data['compiler_logs'] = $this->getContainerCompilerLogs();
             $this->data['logs'] = $this->sanitizeLogs(array_merge($this->logger->getLogs(), $containerDeprecationLogs));
             $this->data = $this->cloneVar($this->data);
+=======
+    public function lateCollect()
+    {
+        if (null !== $this->logger) {
+            $this->data = $this->computeErrorsCount();
+            $this->data['logs'] = $this->sanitizeLogs($this->logger->getLogs());
+>>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -97,21 +136,27 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
         return isset($this->data['deprecation_count']) ? $this->data['deprecation_count'] : 0;
     }
 
+<<<<<<< HEAD
     public function countWarnings()
     {
         return isset($this->data['warning_count']) ? $this->data['warning_count'] : 0;
     }
 
+=======
+>>>>>>> web and vendor directory from composer install
     public function countScreams()
     {
         return isset($this->data['scream_count']) ? $this->data['scream_count'] : 0;
     }
 
+<<<<<<< HEAD
     public function getCompilerLogs()
     {
         return isset($this->data['compiler_logs']) ? $this->data['compiler_logs'] : array();
     }
 
+=======
+>>>>>>> web and vendor directory from composer install
     /**
      * {@inheritdoc}
      */
@@ -120,6 +165,7 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
         return 'logger';
     }
 
+<<<<<<< HEAD
     private function getContainerDeprecationLogs()
     {
         if (null === $this->containerPathPrefix || !file_exists($file = $this->containerPathPrefix.'Deprecations.log')) {
@@ -236,6 +282,85 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
             'error_count' => $this->logger->countErrors(),
             'deprecation_count' => 0,
             'warning_count' => 0,
+=======
+    private function sanitizeLogs($logs)
+    {
+        $errorContextById = array();
+        $sanitizedLogs = array();
+
+        foreach ($logs as $log) {
+            $context = $this->sanitizeContext($log['context']);
+
+            if (isset($context['type'], $context['file'], $context['line'], $context['level'])) {
+                $errorId = md5("{$context['type']}/{$context['line']}/{$context['file']}\x00{$log['message']}", true);
+                $silenced = !($context['type'] & $context['level']);
+                if (isset($this->errorNames[$context['type']])) {
+                    $context = array_merge(array('name' => $this->errorNames[$context['type']]), $context);
+                }
+
+                if (isset($errorContextById[$errorId])) {
+                    if (isset($errorContextById[$errorId]['errorCount'])) {
+                        ++$errorContextById[$errorId]['errorCount'];
+                    } else {
+                        $errorContextById[$errorId]['errorCount'] = 2;
+                    }
+
+                    if (!$silenced && isset($errorContextById[$errorId]['scream'])) {
+                        unset($errorContextById[$errorId]['scream']);
+                        $errorContextById[$errorId]['level'] = $context['level'];
+                    }
+
+                    continue;
+                }
+
+                $errorContextById[$errorId] = &$context;
+                if ($silenced) {
+                    $context['scream'] = true;
+                }
+
+                $log['context'] = &$context;
+                unset($context);
+            } else {
+                $log['context'] = $context;
+            }
+
+            $sanitizedLogs[] = $log;
+        }
+
+        return $sanitizedLogs;
+    }
+
+    private function sanitizeContext($context)
+    {
+        if (is_array($context)) {
+            foreach ($context as $key => $value) {
+                $context[$key] = $this->sanitizeContext($value);
+            }
+
+            return $context;
+        }
+
+        if (is_resource($context)) {
+            return sprintf('Resource(%s)', get_resource_type($context));
+        }
+
+        if (is_object($context)) {
+            if ($context instanceof \Exception) {
+                return sprintf('Exception(%s): %s', get_class($context), $context->getMessage());
+            }
+
+            return sprintf('Object(%s)', get_class($context));
+        }
+
+        return $context;
+    }
+
+    private function computeErrorsCount()
+    {
+        $count = array(
+            'error_count' => $this->logger->countErrors(),
+            'deprecation_count' => 0,
+>>>>>>> web and vendor directory from composer install
             'scream_count' => 0,
             'priorities' => array(),
         );
@@ -249,6 +374,7 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
                     'name' => $log['priorityName'],
                 );
             }
+<<<<<<< HEAD
             if ('WARNING' === $log['priorityName']) {
                 ++$count['warning_count'];
             }
@@ -263,14 +389,25 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
                     $count['scream_count'] += $exception->count;
                 } else {
                     ++$count['deprecation_count'];
+=======
+
+            if (isset($log['context']['type'], $log['context']['level'])) {
+                if (E_DEPRECATED === $log['context']['type'] || E_USER_DEPRECATED === $log['context']['type']) {
+                    ++$count['deprecation_count'];
+                } elseif (!($log['context']['type'] & $log['context']['level'])) {
+                    ++$count['scream_count'];
+>>>>>>> web and vendor directory from composer install
                 }
             }
         }
 
+<<<<<<< HEAD
         foreach ($containerDeprecationLogs as $deprecationLog) {
             $count['deprecation_count'] += $deprecationLog['context']['exception']->count;
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         ksort($count['priorities']);
 
         return $count;

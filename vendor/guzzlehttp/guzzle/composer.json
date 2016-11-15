@@ -14,12 +14,20 @@
     ],
     "require": {
         "php": ">=5.5",
+<<<<<<< HEAD
         "guzzlehttp/psr7": "^1.4",
+=======
+        "guzzlehttp/psr7": "^1.3.1",
+>>>>>>> web and vendor directory from composer install
         "guzzlehttp/promises": "^1.0"
     },
     "require-dev": {
         "ext-curl": "*",
+<<<<<<< HEAD
         "phpunit/phpunit": "^4.0 || ^5.0",
+=======
+        "phpunit/phpunit": "^4.0",
+>>>>>>> web and vendor directory from composer install
         "psr/log": "^1.0"
     },
     "autoload": {
@@ -33,9 +41,12 @@
             "GuzzleHttp\\Tests\\": "tests/"
         }
     },
+<<<<<<< HEAD
     "suggest": {
         "psr/log": "Required for using the Log middleware"
     },
+=======
+>>>>>>> web and vendor directory from composer install
     "extra": {
         "branch-alias": {
             "dev-master": "6.2-dev"

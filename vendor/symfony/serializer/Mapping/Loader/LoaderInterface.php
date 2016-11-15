@@ -21,6 +21,13 @@ use Symfony\Component\Serializer\Mapping\ClassMetadataInterface;
 interface LoaderInterface
 {
     /**
+<<<<<<< HEAD
+=======
+     * Load class metadata.
+     *
+     * @param ClassMetadataInterface $classMetadata A metadata
+     *
+>>>>>>> web and vendor directory from composer install
      * @return bool
      */
     public function loadClassMetadata(ClassMetadataInterface $classMetadata);

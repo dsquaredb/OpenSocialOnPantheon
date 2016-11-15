@@ -11,22 +11,57 @@
 
 namespace Symfony\Component\Validator\Validator;
 
+<<<<<<< HEAD
 use Symfony\Component\Validator\ConstraintValidatorFactoryInterface;
 use Symfony\Component\Validator\Context\ExecutionContextFactoryInterface;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use Symfony\Component\Validator\Mapping\Factory\MetadataFactoryInterface;
 use Symfony\Component\Validator\ObjectInitializerInterface;
+=======
+use Symfony\Component\Validator\Constraint;
+use Symfony\Component\Validator\Constraints\GroupSequence;
+use Symfony\Component\Validator\Constraints\Valid;
+use Symfony\Component\Validator\ConstraintValidatorFactoryInterface;
+use Symfony\Component\Validator\Context\ExecutionContextFactoryInterface;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
+use Symfony\Component\Validator\MetadataFactoryInterface;
+use Symfony\Component\Validator\ObjectInitializerInterface;
+use Symfony\Component\Validator\ValidatorInterface as LegacyValidatorInterface;
+>>>>>>> web and vendor directory from composer install
 
 /**
  * Recursive implementation of {@link ValidatorInterface}.
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
  */
+<<<<<<< HEAD
 class RecursiveValidator implements ValidatorInterface
 {
     protected $contextFactory;
     protected $metadataFactory;
     protected $validatorFactory;
+=======
+class RecursiveValidator implements ValidatorInterface, LegacyValidatorInterface
+{
+    /**
+     * @var ExecutionContextFactoryInterface
+     */
+    protected $contextFactory;
+
+    /**
+     * @var MetadataFactoryInterface
+     */
+    protected $metadataFactory;
+
+    /**
+     * @var ConstraintValidatorFactoryInterface
+     */
+    protected $validatorFactory;
+
+    /**
+     * @var ObjectInitializerInterface[]
+     */
+>>>>>>> web and vendor directory from composer install
     protected $objectInitializers;
 
     /**
@@ -94,8 +129,26 @@ class RecursiveValidator implements ValidatorInterface
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function validate($value, $constraints = null, $groups = null)
     {
+=======
+    public function validate($value, $groups = null, $traverse = false, $deep = false)
+    {
+        $numArgs = func_num_args();
+
+        // Use new signature if constraints are given in the second argument
+        if (self::testConstraints($groups) && ($numArgs < 3 || 3 === $numArgs && self::testGroups($traverse))) {
+            // Rename to avoid total confusion ;)
+            $constraints = $groups;
+            $groups = $traverse;
+        } else {
+            @trigger_error('The Symfony\Component\Validator\ValidatorInterface::validate method is deprecated in version 2.5 and will be removed in version 3.0. Use the Symfony\Component\Validator\Validator\ValidatorInterface::validate method instead.', E_USER_DEPRECATED);
+
+            $constraints = new Valid(array('traverse' => $traverse, 'deep' => $deep));
+        }
+
+>>>>>>> web and vendor directory from composer install
         return $this->startContext($value)
             ->validate($value, $constraints, $groups)
             ->getViolations();
@@ -121,4 +174,37 @@ class RecursiveValidator implements ValidatorInterface
             ->validatePropertyValue($objectOrClass, $propertyName, $value, $groups)
             ->getViolations();
     }
+<<<<<<< HEAD
+=======
+
+    /**
+     * {@inheritdoc}
+     */
+    public function validateValue($value, $constraints, $groups = null)
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated in version 2.5 and will be removed in version 3.0. Use the Symfony\Component\Validator\Validator\ValidatorInterface::validate method instead.', E_USER_DEPRECATED);
+
+        return $this->validate($value, $constraints, $groups);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getMetadataFactory()
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated in version 2.5 and will be removed in version 3.0. Use the Symfony\Component\Validator\Validator\ValidatorInterface::getMetadataFor or Symfony\Component\Validator\Validator\ValidatorInterface::hasMetadataFor method instead.', E_USER_DEPRECATED);
+
+        return $this->metadataFactory;
+    }
+
+    private static function testConstraints($constraints)
+    {
+        return null === $constraints || $constraints instanceof Constraint || (is_array($constraints) && (0 === count($constraints) || current($constraints) instanceof Constraint));
+    }
+
+    private static function testGroups($groups)
+    {
+        return null === $groups || is_string($groups) || $groups instanceof GroupSequence || (is_array($groups) && (0 === count($groups) || is_string(current($groups)) || current($groups) instanceof GroupSequence));
+    }
+>>>>>>> web and vendor directory from composer install
 }

@@ -1,16 +1,25 @@
 --TEST--
 Test symfony_zval_info API
 --SKIPIF--
+<<<<<<< HEAD
 <?php if (!extension_loaded('symfony_debug')) {
     echo 'skip';
 } ?>
+=======
+<?php if (!extension_loaded("symfony_debug")) print "skip"; ?>
+>>>>>>> web and vendor directory from composer install
 --FILE--
 <?php
 
 $int = 42;
 $float = 42.42;
+<<<<<<< HEAD
 $str = 'foobar';
 $object = new StdClass();
+=======
+$str = "foobar";
+$object = new StdClass;
+>>>>>>> web and vendor directory from composer install
 $array = array('foo', 'bar');
 $resource = tmpfile();
 $null = null;
@@ -19,6 +28,7 @@ $bool = true;
 $anotherint = 42;
 $refcount2 = &$anotherint;
 
+<<<<<<< HEAD
 $var = array(
     'int' => $int,
     'float' => $float,
@@ -30,6 +40,17 @@ $var = array(
     'bool' => $bool,
     'refcount' => &$refcount2,
 );
+=======
+$var = array('int' => $int,
+			 'float' => $float,
+			 'str' => $str,
+			 'object' => $object,
+			 'array' => $array,
+			 'resource' => $resource,
+			 'null' => $null,
+			 'bool' => $bool,
+			 'refcount' => &$refcount2);
+>>>>>>> web and vendor directory from composer install
 
 var_dump(symfony_zval_info('int', $var));
 var_dump(symfony_zval_info('float', $var));

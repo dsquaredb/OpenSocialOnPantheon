@@ -1,5 +1,6 @@
 # CHANGELOG
 
+<<<<<<< HEAD
 ## 6.3.0 - 2017-06-22
 
 * Feature: force IP resolution (ipv4 or ipv6) [#1608](https://github.com/guzzle/guzzle/pull/1608), [#1659](https://github.com/guzzle/guzzle/pull/1659)
@@ -25,6 +26,8 @@
 
 * Fix deprecations with guzzle/psr7 version 1.4
 
+=======
+>>>>>>> web and vendor directory from composer install
 ## 6.2.2 - 2016-10-08
 
 * Allow to pass nullable Response to delay callable

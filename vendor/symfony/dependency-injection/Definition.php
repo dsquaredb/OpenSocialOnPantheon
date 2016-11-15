@@ -11,7 +11,10 @@
 
 namespace Symfony\Component\DependencyInjection;
 
+<<<<<<< HEAD
 use Symfony\Component\DependencyInjection\Argument\BoundArgument;
+=======
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
 use Symfony\Component\DependencyInjection\Exception\OutOfBoundsException;
 
@@ -25,6 +28,7 @@ class Definition
     private $class;
     private $file;
     private $factory;
+<<<<<<< HEAD
     private $shared = true;
     private $deprecated = false;
     private $deprecationTemplate;
@@ -38,10 +42,28 @@ class Definition
     private $private = true;
     private $synthetic = false;
     private $abstract = false;
+=======
+    private $factoryClass;
+    private $factoryMethod;
+    private $factoryService;
+    private $shared = true;
+    private $deprecated = false;
+    private $deprecationTemplate = 'The "%service_id%" service is deprecated. You should stop using it, as it will soon be removed.';
+    private $scope = ContainerInterface::SCOPE_CONTAINER;
+    private $properties = array();
+    private $calls = array();
+    private $configurator;
+    private $tags = array();
+    private $public = true;
+    private $synthetic = false;
+    private $abstract = false;
+    private $synchronized = false;
+>>>>>>> web and vendor directory from composer install
     private $lazy = false;
     private $decoratedService;
     private $autowired = false;
     private $autowiringTypes = array();
+<<<<<<< HEAD
     private $changes = array();
     private $bindings = array();
     private $errors = array();
@@ -49,6 +71,10 @@ class Definition
     protected $arguments = array();
 
     private static $defaultDeprecationTemplate = 'The "%service_id%" service is deprecated. You should stop using it, as it will soon be removed.';
+=======
+
+    protected $arguments;
+>>>>>>> web and vendor directory from composer install
 
     /**
      * @param string|null $class     The service class
@@ -56,13 +82,18 @@ class Definition
      */
     public function __construct($class = null, array $arguments = array())
     {
+<<<<<<< HEAD
         if (null !== $class) {
             $this->setClass($class);
         }
+=======
+        $this->class = $class;
+>>>>>>> web and vendor directory from composer install
         $this->arguments = $arguments;
     }
 
     /**
+<<<<<<< HEAD
      * Returns all changes tracked for the Definition object.
      *
      * @return array An array of changes for this Definition
@@ -82,11 +113,56 @@ class Definition
     public function setChanges(array $changes)
     {
         $this->changes = $changes;
+=======
+     * Sets a factory.
+     *
+     * @param string|array $factory A PHP function or an array containing a class/Reference and a method to call
+     *
+     * @return Definition The current instance
+     */
+    public function setFactory($factory)
+    {
+        if (is_string($factory) && strpos($factory, '::') !== false) {
+            $factory = explode('::', $factory, 2);
+        }
+
+        $this->factory = $factory;
 
         return $this;
     }
 
     /**
+     * Gets the factory.
+     *
+     * @return string|array The PHP function or an array containing a class/Reference and a method to call
+     */
+    public function getFactory()
+    {
+        return $this->factory;
+    }
+
+    /**
+     * Sets the name of the class that acts as a factory using the factory method,
+     * which will be invoked statically.
+     *
+     * @param string $factoryClass The factory class name
+     *
+     * @return Definition The current instance
+     *
+     * @deprecated since version 2.6, to be removed in 3.0.
+     */
+    public function setFactoryClass($factoryClass)
+    {
+        @trigger_error(sprintf('%s(%s) is deprecated since version 2.6 and will be removed in 3.0. Use Definition::setFactory() instead.', __METHOD__, $factoryClass), E_USER_DEPRECATED);
+
+        $this->factoryClass = $factoryClass;
+>>>>>>> web and vendor directory from composer install
+
+        return $this;
+    }
+
+    /**
+<<<<<<< HEAD
      * Sets a factory.
      *
      * @param string|array $factory A PHP function or an array containing a class/Reference and a method to call
@@ -114,6 +190,39 @@ class Definition
     public function getFactory()
     {
         return $this->factory;
+=======
+     * Gets the factory class.
+     *
+     * @return string|null The factory class name
+     *
+     * @deprecated since version 2.6, to be removed in 3.0.
+     */
+    public function getFactoryClass($triggerDeprecationError = true)
+    {
+        if ($triggerDeprecationError) {
+            @trigger_error('The '.__METHOD__.' method is deprecated since version 2.6 and will be removed in 3.0.', E_USER_DEPRECATED);
+        }
+
+        return $this->factoryClass;
+    }
+
+    /**
+     * Sets the factory method able to create an instance of this class.
+     *
+     * @param string $factoryMethod The factory method name
+     *
+     * @return Definition The current instance
+     *
+     * @deprecated since version 2.6, to be removed in 3.0.
+     */
+    public function setFactoryMethod($factoryMethod)
+    {
+        @trigger_error(sprintf('%s(%s) is deprecated since version 2.6 and will be removed in 3.0. Use Definition::setFactory() instead.', __METHOD__, $factoryMethod), E_USER_DEPRECATED);
+
+        $this->factoryMethod = $factoryMethod;
+
+        return $this;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -123,6 +232,7 @@ class Definition
      * @param null|string $renamedId The new decorated service id
      * @param int         $priority  The priority of decoration
      *
+<<<<<<< HEAD
      * @return $this
      *
      * @throws InvalidArgumentException in case the decorated service id and the new decorated service id are equals
@@ -135,6 +245,18 @@ class Definition
 
         $this->changes['decorated_service'] = true;
 
+=======
+     * @return Definition The current instance
+     *
+     * @throws InvalidArgumentException In case the decorated service id and the new decorated service id are equals.
+     */
+    public function setDecoratedService($id, $renamedId = null, $priority = 0)
+    {
+        if ($renamedId && $id == $renamedId) {
+            throw new \InvalidArgumentException(sprintf('The decorated service inner name for "%s" must be different than the service name itself.', $id));
+        }
+
+>>>>>>> web and vendor directory from composer install
         if (null === $id) {
             $this->decoratedService = null;
         } else {
@@ -145,7 +267,11 @@ class Definition
     }
 
     /**
+<<<<<<< HEAD
      * Gets the service that this service is decorating.
+=======
+     * Gets the service that decorates this service.
+>>>>>>> web and vendor directory from composer install
      *
      * @return null|array An array composed of the decorated service id, the new id for it and the priority of decoration, null if no service is decorated
      */
@@ -155,16 +281,78 @@ class Definition
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Gets the factory method.
+     *
+     * @return string|null The factory method name
+     *
+     * @deprecated since version 2.6, to be removed in 3.0.
+     */
+    public function getFactoryMethod($triggerDeprecationError = true)
+    {
+        if ($triggerDeprecationError) {
+            @trigger_error('The '.__METHOD__.' method is deprecated since version 2.6 and will be removed in 3.0.', E_USER_DEPRECATED);
+        }
+
+        return $this->factoryMethod;
+    }
+
+    /**
+     * Sets the name of the service that acts as a factory using the factory method.
+     *
+     * @param string $factoryService The factory service id
+     *
+     * @return Definition The current instance
+     *
+     * @deprecated since version 2.6, to be removed in 3.0.
+     */
+    public function setFactoryService($factoryService, $triggerDeprecationError = true)
+    {
+        if ($triggerDeprecationError) {
+            @trigger_error(sprintf('%s(%s) is deprecated since version 2.6 and will be removed in 3.0. Use Definition::setFactory() instead.', __METHOD__, $factoryService), E_USER_DEPRECATED);
+        }
+
+        $this->factoryService = $factoryService;
+
+        return $this;
+    }
+
+    /**
+     * Gets the factory service id.
+     *
+     * @return string|null The factory service id
+     *
+     * @deprecated since version 2.6, to be removed in 3.0.
+     */
+    public function getFactoryService($triggerDeprecationError = true)
+    {
+        if ($triggerDeprecationError) {
+            @trigger_error('The '.__METHOD__.' method is deprecated since version 2.6 and will be removed in 3.0.', E_USER_DEPRECATED);
+        }
+
+        return $this->factoryService;
+    }
+
+    /**
+>>>>>>> web and vendor directory from composer install
      * Sets the service class.
      *
      * @param string $class The service class
      *
+<<<<<<< HEAD
      * @return $this
      */
     public function setClass($class)
     {
         $this->changes['class'] = true;
 
+=======
+     * @return Definition The current instance
+     */
+    public function setClass($class)
+    {
+>>>>>>> web and vendor directory from composer install
         $this->class = $class;
 
         return $this;
@@ -183,7 +371,13 @@ class Definition
     /**
      * Sets the arguments to pass to the service constructor/factory method.
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @param array $arguments An array of arguments
+     *
+     * @return Definition The current instance
+>>>>>>> web and vendor directory from composer install
      */
     public function setArguments(array $arguments)
     {
@@ -192,11 +386,14 @@ class Definition
         return $this;
     }
 
+<<<<<<< HEAD
     /**
      * Sets the properties to define when creating the service.
      *
      * @return $this
      */
+=======
+>>>>>>> web and vendor directory from composer install
     public function setProperties(array $properties)
     {
         $this->properties = $properties;
@@ -204,16 +401,20 @@ class Definition
         return $this;
     }
 
+<<<<<<< HEAD
     /**
      * Gets the properties to define when creating the service.
      *
      * @return array
      */
+=======
+>>>>>>> web and vendor directory from composer install
     public function getProperties()
     {
         return $this->properties;
     }
 
+<<<<<<< HEAD
     /**
      * Sets a specific property.
      *
@@ -222,6 +423,8 @@ class Definition
      *
      * @return $this
      */
+=======
+>>>>>>> web and vendor directory from composer install
     public function setProperty($name, $value)
     {
         $this->properties[$name] = $value;
@@ -234,7 +437,11 @@ class Definition
      *
      * @param mixed $argument An argument
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Definition The current instance
+>>>>>>> web and vendor directory from composer install
      */
     public function addArgument($argument)
     {
@@ -244,17 +451,27 @@ class Definition
     }
 
     /**
+<<<<<<< HEAD
      * Replaces a specific argument.
      *
      * @param int|string $index
      * @param mixed      $argument
      *
      * @return $this
+=======
+     * Sets a specific argument.
+     *
+     * @param int   $index
+     * @param mixed $argument
+     *
+     * @return Definition The current instance
+>>>>>>> web and vendor directory from composer install
      *
      * @throws OutOfBoundsException When the replaced argument does not exist
      */
     public function replaceArgument($index, $argument)
     {
+<<<<<<< HEAD
         if (0 === count($this->arguments)) {
             throw new OutOfBoundsException('Cannot replace arguments if none have been configured yet.');
         }
@@ -267,12 +484,19 @@ class Definition
             throw new OutOfBoundsException(sprintf('The argument "%s" doesn\'t exist.', $index));
         }
 
+=======
+        if ($index < 0 || $index > count($this->arguments) - 1) {
+            throw new OutOfBoundsException(sprintf('The index "%d" is not in the range [0, %d].', $index, count($this->arguments) - 1));
+        }
+
+>>>>>>> web and vendor directory from composer install
         $this->arguments[$index] = $argument;
 
         return $this;
     }
 
     /**
+<<<<<<< HEAD
      * Sets a specific argument.
      *
      * @param int|string $key
@@ -288,6 +512,8 @@ class Definition
     }
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * Gets the arguments to pass to the service constructor/factory method.
      *
      * @return array The array of arguments
@@ -300,7 +526,11 @@ class Definition
     /**
      * Gets an argument to pass to the service constructor/factory method.
      *
+<<<<<<< HEAD
      * @param int|string $index
+=======
+     * @param int $index
+>>>>>>> web and vendor directory from composer install
      *
      * @return mixed The argument value
      *
@@ -308,8 +538,13 @@ class Definition
      */
     public function getArgument($index)
     {
+<<<<<<< HEAD
         if (!array_key_exists($index, $this->arguments)) {
             throw new OutOfBoundsException(sprintf('The argument "%s" doesn\'t exist.', $index));
+=======
+        if ($index < 0 || $index > count($this->arguments) - 1) {
+            throw new OutOfBoundsException(sprintf('The index "%d" is not in the range [0, %d].', $index, count($this->arguments) - 1));
+>>>>>>> web and vendor directory from composer install
         }
 
         return $this->arguments[$index];
@@ -318,7 +553,13 @@ class Definition
     /**
      * Sets the methods to call after service initialization.
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @param array $calls An array of method calls
+     *
+     * @return Definition The current instance
+>>>>>>> web and vendor directory from composer install
      */
     public function setMethodCalls(array $calls = array())
     {
@@ -336,14 +577,22 @@ class Definition
      * @param string $method    The method name to call
      * @param array  $arguments An array of arguments to pass to the method call
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Definition The current instance
+>>>>>>> web and vendor directory from composer install
      *
      * @throws InvalidArgumentException on empty $method param
      */
     public function addMethodCall($method, array $arguments = array())
     {
         if (empty($method)) {
+<<<<<<< HEAD
             throw new InvalidArgumentException('Method name cannot be empty.');
+=======
+            throw new InvalidArgumentException(sprintf('Method name cannot be empty.'));
+>>>>>>> web and vendor directory from composer install
         }
         $this->calls[] = array($method, $arguments);
 
@@ -355,7 +604,11 @@ class Definition
      *
      * @param string $method The method name to remove
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Definition The current instance
+>>>>>>> web and vendor directory from composer install
      */
     public function removeMethodCall($method)
     {
@@ -398,6 +651,7 @@ class Definition
     }
 
     /**
+<<<<<<< HEAD
      * Sets the definition templates to conditionally apply on the current definition, keyed by parent interface/class.
      *
      * @param $instanceof ChildDefinition[]
@@ -449,6 +703,13 @@ class Definition
      * Sets tags for this definition.
      *
      * @return $this
+=======
+     * Sets tags for this definition.
+     *
+     * @param array $tags
+     *
+     * @return Definition the current instance
+>>>>>>> web and vendor directory from composer install
      */
     public function setTags(array $tags)
     {
@@ -485,7 +746,11 @@ class Definition
      * @param string $name       The tag name
      * @param array  $attributes An array of attributes
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Definition The current instance
+>>>>>>> web and vendor directory from composer install
      */
     public function addTag($name, array $attributes = array())
     {
@@ -511,7 +776,11 @@ class Definition
      *
      * @param string $name The tag name
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Definition
+>>>>>>> web and vendor directory from composer install
      */
     public function clearTag($name)
     {
@@ -523,7 +792,11 @@ class Definition
     /**
      * Clears the tags for this definition.
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Definition The current instance
+>>>>>>> web and vendor directory from composer install
      */
     public function clearTags()
     {
@@ -537,12 +810,19 @@ class Definition
      *
      * @param string $file A full pathname to include
      *
+<<<<<<< HEAD
      * @return $this
      */
     public function setFile($file)
     {
         $this->changes['file'] = true;
 
+=======
+     * @return Definition The current instance
+     */
+    public function setFile($file)
+    {
+>>>>>>> web and vendor directory from composer install
         $this->file = $file;
 
         return $this;
@@ -563,12 +843,19 @@ class Definition
      *
      * @param bool $shared Whether the service must be shared or not
      *
+<<<<<<< HEAD
      * @return $this
      */
     public function setShared($shared)
     {
         $this->changes['shared'] = true;
 
+=======
+     * @return Definition The current instance
+     */
+    public function setShared($shared)
+    {
+>>>>>>> web and vendor directory from composer install
         $this->shared = (bool) $shared;
 
         return $this;
@@ -585,10 +872,54 @@ class Definition
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Sets the scope of the service.
+     *
+     * @param string $scope Whether the service must be shared or not
+     *
+     * @return Definition The current instance
+     *
+     * @deprecated since version 2.8, to be removed in 3.0.
+     */
+    public function setScope($scope, $triggerDeprecationError = true)
+    {
+        if ($triggerDeprecationError) {
+            @trigger_error('The '.__METHOD__.' method is deprecated since version 2.8 and will be removed in 3.0.', E_USER_DEPRECATED);
+        }
+
+        if (ContainerInterface::SCOPE_PROTOTYPE === $scope) {
+            $this->setShared(false);
+        }
+
+        $this->scope = $scope;
+
+        return $this;
+    }
+
+    /**
+     * Returns the scope of the service.
+     *
+     * @return string
+     *
+     * @deprecated since version 2.8, to be removed in 3.0.
+     */
+    public function getScope($triggerDeprecationError = true)
+    {
+        if ($triggerDeprecationError) {
+            @trigger_error('The '.__METHOD__.' method is deprecated since version 2.8 and will be removed in 3.0.', E_USER_DEPRECATED);
+        }
+
+        return $this->scope;
+    }
+
+    /**
+>>>>>>> web and vendor directory from composer install
      * Sets the visibility of this service.
      *
      * @param bool $boolean
      *
+<<<<<<< HEAD
      * @return $this
      */
     public function setPublic($boolean)
@@ -597,6 +928,13 @@ class Definition
 
         $this->public = (bool) $boolean;
         $this->private = false;
+=======
+     * @return Definition The current instance
+     */
+    public function setPublic($boolean)
+    {
+        $this->public = (bool) $boolean;
+>>>>>>> web and vendor directory from composer install
 
         return $this;
     }
@@ -612,6 +950,7 @@ class Definition
     }
 
     /**
+<<<<<<< HEAD
      * Sets if this service is private.
      *
      * When set, the "private" state has a higher precedence than "public".
@@ -626,11 +965,29 @@ class Definition
     public function setPrivate($boolean)
     {
         $this->private = (bool) $boolean;
+=======
+     * Sets the synchronized flag of this service.
+     *
+     * @param bool $boolean
+     *
+     * @return Definition The current instance
+     *
+     * @deprecated since version 2.7, will be removed in 3.0.
+     */
+    public function setSynchronized($boolean, $triggerDeprecationError = true)
+    {
+        if ($triggerDeprecationError) {
+            @trigger_error('The '.__METHOD__.' method is deprecated since version 2.7 and will be removed in 3.0.', E_USER_DEPRECATED);
+        }
+
+        $this->synchronized = (bool) $boolean;
+>>>>>>> web and vendor directory from composer install
 
         return $this;
     }
 
     /**
+<<<<<<< HEAD
      * Whether this service is private.
      *
      * @return bool
@@ -638,6 +995,21 @@ class Definition
     public function isPrivate()
     {
         return $this->private;
+=======
+     * Whether this service is synchronized.
+     *
+     * @return bool
+     *
+     * @deprecated since version 2.7, will be removed in 3.0.
+     */
+    public function isSynchronized($triggerDeprecationError = true)
+    {
+        if ($triggerDeprecationError) {
+            @trigger_error('The '.__METHOD__.' method is deprecated since version 2.7 and will be removed in 3.0.', E_USER_DEPRECATED);
+        }
+
+        return $this->synchronized;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -645,12 +1017,19 @@ class Definition
      *
      * @param bool $lazy
      *
+<<<<<<< HEAD
      * @return $this
      */
     public function setLazy($lazy)
     {
         $this->changes['lazy'] = true;
 
+=======
+     * @return Definition The current instance
+     */
+    public function setLazy($lazy)
+    {
+>>>>>>> web and vendor directory from composer install
         $this->lazy = (bool) $lazy;
 
         return $this;
@@ -672,7 +1051,11 @@ class Definition
      *
      * @param bool $boolean
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Definition the current instance
+>>>>>>> web and vendor directory from composer install
      */
     public function setSynthetic($boolean)
     {
@@ -698,7 +1081,11 @@ class Definition
      *
      * @param bool $boolean
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return Definition the current instance
+>>>>>>> web and vendor directory from composer install
      */
     public function setAbstract($boolean)
     {
@@ -725,9 +1112,15 @@ class Definition
      * @param bool   $status
      * @param string $template Template message to use if the definition is deprecated
      *
+<<<<<<< HEAD
      * @return $this
      *
      * @throws InvalidArgumentException when the message template is invalid
+=======
+     * @return Definition the current instance
+     *
+     * @throws InvalidArgumentException When the message template is invalid.
+>>>>>>> web and vendor directory from composer install
      */
     public function setDeprecated($status = true, $template = null)
     {
@@ -743,8 +1136,11 @@ class Definition
             $this->deprecationTemplate = $template;
         }
 
+<<<<<<< HEAD
         $this->changes['deprecated'] = true;
 
+=======
+>>>>>>> web and vendor directory from composer install
         $this->deprecated = (bool) $status;
 
         return $this;
@@ -770,12 +1166,17 @@ class Definition
      */
     public function getDeprecationMessage($id)
     {
+<<<<<<< HEAD
         return str_replace('%service_id%', $id, $this->deprecationTemplate ?: self::$defaultDeprecationTemplate);
+=======
+        return str_replace('%service_id%', $id, $this->deprecationTemplate);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Sets a configurator to call after the service is fully initialized.
      *
+<<<<<<< HEAD
      * @param string|array $configurator A PHP callable
      *
      * @return $this
@@ -789,6 +1190,15 @@ class Definition
         }
 
         $this->configurator = $configurator;
+=======
+     * @param callable $callable A PHP callable
+     *
+     * @return Definition The current instance
+     */
+    public function setConfigurator($callable)
+    {
+        $this->configurator = $callable;
+>>>>>>> web and vendor directory from composer install
 
         return $this;
     }
@@ -808,6 +1218,7 @@ class Definition
      *
      * @param string[] $types
      *
+<<<<<<< HEAD
      * @return $this
      *
      * @deprecated since version 3.3, to be removed in 4.0.
@@ -816,6 +1227,12 @@ class Definition
     {
         @trigger_error('Autowiring-types are deprecated since Symfony 3.3 and will be removed in 4.0. Use aliases instead.', E_USER_DEPRECATED);
 
+=======
+     * @return Definition The current instance
+     */
+    public function setAutowiringTypes(array $types)
+    {
+>>>>>>> web and vendor directory from composer install
         $this->autowiringTypes = array();
 
         foreach ($types as $type) {
@@ -836,6 +1253,7 @@ class Definition
     }
 
     /**
+<<<<<<< HEAD
      * Enables/disables autowiring.
      *
      * @param bool $autowired
@@ -847,6 +1265,17 @@ class Definition
         $this->changes['autowired'] = true;
 
         $this->autowired = (bool) $autowired;
+=======
+     * Sets autowired.
+     *
+     * @param bool $autowired
+     *
+     * @return Definition The current instance
+     */
+    public function setAutowired($autowired)
+    {
+        $this->autowired = $autowired;
+>>>>>>> web and vendor directory from composer install
 
         return $this;
     }
@@ -855,6 +1284,7 @@ class Definition
      * Gets autowiring types that will default to this definition.
      *
      * @return string[]
+<<<<<<< HEAD
      *
      * @deprecated since version 3.3, to be removed in 4.0.
      */
@@ -864,6 +1294,11 @@ class Definition
             @trigger_error('Autowiring-types are deprecated since Symfony 3.3 and will be removed in 4.0. Use aliases instead.', E_USER_DEPRECATED);
         }
 
+=======
+     */
+    public function getAutowiringTypes()
+    {
+>>>>>>> web and vendor directory from composer install
         return array_keys($this->autowiringTypes);
     }
 
@@ -872,6 +1307,7 @@ class Definition
      *
      * @param string $type
      *
+<<<<<<< HEAD
      * @return $this
      *
      * @deprecated since version 3.3, to be removed in 4.0.
@@ -880,6 +1316,12 @@ class Definition
     {
         @trigger_error(sprintf('Autowiring-types are deprecated since Symfony 3.3 and will be removed in 4.0. Use aliases instead for "%s".', $type), E_USER_DEPRECATED);
 
+=======
+     * @return Definition The current instance
+     */
+    public function addAutowiringType($type)
+    {
+>>>>>>> web and vendor directory from composer install
         $this->autowiringTypes[$type] = true;
 
         return $this;
@@ -890,6 +1332,7 @@ class Definition
      *
      * @param string $type
      *
+<<<<<<< HEAD
      * @return $this
      *
      * @deprecated since version 3.3, to be removed in 4.0.
@@ -898,6 +1341,12 @@ class Definition
     {
         @trigger_error(sprintf('Autowiring-types are deprecated since Symfony 3.3 and will be removed in 4.0. Use aliases instead for "%s".', $type), E_USER_DEPRECATED);
 
+=======
+     * @return Definition The current instance
+     */
+    public function removeAutowiringType($type)
+    {
+>>>>>>> web and vendor directory from composer install
         unset($this->autowiringTypes[$type]);
 
         return $this;
@@ -909,6 +1358,7 @@ class Definition
      * @param string $type
      *
      * @return bool
+<<<<<<< HEAD
      *
      * @deprecated since version 3.3, to be removed in 4.0.
      */
@@ -972,4 +1422,11 @@ class Definition
     {
         return $this->errors;
     }
+=======
+     */
+    public function hasAutowiringType($type)
+    {
+        return isset($this->autowiringTypes[$type]);
+    }
+>>>>>>> web and vendor directory from composer install
 }

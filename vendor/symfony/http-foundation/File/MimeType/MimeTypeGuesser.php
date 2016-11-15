@@ -56,7 +56,11 @@ class MimeTypeGuesser implements MimeTypeGuesserInterface
     /**
      * Returns the singleton instance.
      *
+<<<<<<< HEAD
      * @return self
+=======
+     * @return MimeTypeGuesser
+>>>>>>> web and vendor directory from composer install
      */
     public static function getInstance()
     {
@@ -80,14 +84,29 @@ class MimeTypeGuesser implements MimeTypeGuesserInterface
      */
     private function __construct()
     {
+<<<<<<< HEAD
         $this->register(new FileBinaryMimeTypeGuesser());
         $this->register(new FileinfoMimeTypeGuesser());
+=======
+        if (FileBinaryMimeTypeGuesser::isSupported()) {
+            $this->register(new FileBinaryMimeTypeGuesser());
+        }
+
+        if (FileinfoMimeTypeGuesser::isSupported()) {
+            $this->register(new FileinfoMimeTypeGuesser());
+        }
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Registers a new mime type guesser.
      *
      * When guessing, this guesser is preferred over previously registered ones.
+<<<<<<< HEAD
+=======
+     *
+     * @param MimeTypeGuesserInterface $guesser
+>>>>>>> web and vendor directory from composer install
      */
     public function register(MimeTypeGuesserInterface $guesser)
     {
@@ -120,14 +139,28 @@ class MimeTypeGuesser implements MimeTypeGuesserInterface
             throw new AccessDeniedException($path);
         }
 
+<<<<<<< HEAD
+=======
+        if (!$this->guessers) {
+            $msg = 'Unable to guess the mime type as no guessers are available';
+            if (!FileinfoMimeTypeGuesser::isSupported()) {
+                $msg .= ' (Did you enable the php_fileinfo extension?)';
+            }
+            throw new \LogicException($msg);
+        }
+
+>>>>>>> web and vendor directory from composer install
         foreach ($this->guessers as $guesser) {
             if (null !== $mimeType = $guesser->guess($path)) {
                 return $mimeType;
             }
         }
+<<<<<<< HEAD
 
         if (2 === \count($this->guessers) && !FileBinaryMimeTypeGuesser::isSupported() && !FileinfoMimeTypeGuesser::isSupported()) {
             throw new \LogicException('Unable to guess the mime type as no guessers are available (Did you enable the php_fileinfo extension?)');
         }
+=======
+>>>>>>> web and vendor directory from composer install
     }
 }

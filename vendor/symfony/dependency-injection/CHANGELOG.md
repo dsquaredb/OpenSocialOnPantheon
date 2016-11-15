@@ -1,6 +1,7 @@
 CHANGELOG
 =========
 
+<<<<<<< HEAD
 3.4.0
 -----
 
@@ -60,6 +61,8 @@ CHANGELOG
 
  * removed all deprecated codes from 2.x versions
 
+=======
+>>>>>>> web and vendor directory from composer install
 2.8.0
 -----
 

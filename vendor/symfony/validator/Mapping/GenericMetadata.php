@@ -14,7 +14,13 @@ namespace Symfony\Component\Validator\Mapping;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Constraints\Traverse;
 use Symfony\Component\Validator\Constraints\Valid;
+<<<<<<< HEAD
 use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
+=======
+use Symfony\Component\Validator\Exception\BadMethodCallException;
+use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
+use Symfony\Component\Validator\ValidationVisitorInterface;
+>>>>>>> web and vendor directory from composer install
 
 /**
  * A generic container of {@link Constraint} objects.
@@ -108,6 +114,7 @@ class GenericMetadata implements MetadataInterface
      *
      * If the constraint {@link Valid} is added, the cascading strategy will be
      * changed to {@link CascadingStrategy::CASCADE}. Depending on the
+<<<<<<< HEAD
      * $traverse property of that constraint, the traversal strategy
      * will be set to one of the following:
      *
@@ -115,6 +122,20 @@ class GenericMetadata implements MetadataInterface
      *  - {@link TraversalStrategy::NONE} if $traverse is disabled
      *
      * @return $this
+=======
+     * properties $traverse and $deep of that constraint, the traversal strategy
+     * will be set to one of the following:
+     *
+     *  - {@link TraversalStrategy::IMPLICIT} if $traverse is enabled and $deep
+     *    is enabled
+     *  - {@link TraversalStrategy::IMPLICIT} | {@link TraversalStrategy::STOP_RECURSION}
+     *    if $traverse is enabled, but $deep is disabled
+     *  - {@link TraversalStrategy::NONE} if $traverse is disabled
+     *
+     * @param Constraint $constraint The constraint to add
+     *
+     * @return GenericMetadata This object
+>>>>>>> web and vendor directory from composer install
      *
      * @throws ConstraintDefinitionException When trying to add the
      *                                       {@link Traverse} constraint
@@ -129,11 +150,24 @@ class GenericMetadata implements MetadataInterface
             ));
         }
 
+<<<<<<< HEAD
         if ($constraint instanceof Valid && null === $constraint->groups) {
             $this->cascadingStrategy = CascadingStrategy::CASCADE;
 
             if ($constraint->traverse) {
                 $this->traversalStrategy = TraversalStrategy::IMPLICIT;
+=======
+        if ($constraint instanceof Valid) {
+            $this->cascadingStrategy = CascadingStrategy::CASCADE;
+
+            if ($constraint->traverse) {
+                // Traverse unless the value is not traversable
+                $this->traversalStrategy = TraversalStrategy::IMPLICIT;
+
+                if (!$constraint->deep) {
+                    $this->traversalStrategy |= TraversalStrategy::STOP_RECURSION;
+                }
+>>>>>>> web and vendor directory from composer install
             } else {
                 $this->traversalStrategy = TraversalStrategy::NONE;
             }
@@ -155,7 +189,11 @@ class GenericMetadata implements MetadataInterface
      *
      * @param Constraint[] $constraints The constraints to add
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return GenericMetadata This object
+>>>>>>> web and vendor directory from composer install
      */
     public function addConstraints(array $constraints)
     {
@@ -211,4 +249,24 @@ class GenericMetadata implements MetadataInterface
     {
         return $this->traversalStrategy;
     }
+<<<<<<< HEAD
+=======
+
+    /**
+     * Exists for compatibility with the deprecated
+     * {@link Symfony\Component\Validator\MetadataInterface}.
+     *
+     * Should not be used.
+     *
+     * Implemented for backward compatibility with Symfony < 2.5.
+     *
+     * @throws BadMethodCallException
+     *
+     * @deprecated since version 2.5, to be removed in 3.0.
+     */
+    public function accept(ValidationVisitorInterface $visitor, $value, $group, $propertyPath)
+    {
+        throw new BadMethodCallException('Not supported.');
+    }
+>>>>>>> web and vendor directory from composer install
 }

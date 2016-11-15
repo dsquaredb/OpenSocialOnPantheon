@@ -11,6 +11,7 @@
 
 namespace Symfony\Component\Console;
 
+<<<<<<< HEAD
 use Symfony\Component\Console\CommandLoader\CommandLoaderInterface;
 use Symfony\Component\Console\Exception\ExceptionInterface;
 use Symfony\Component\Console\Formatter\OutputFormatter;
@@ -20,12 +21,25 @@ use Symfony\Component\Console\Helper\ProcessHelper;
 use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\StreamableInputInterface;
+=======
+use Symfony\Component\Console\Descriptor\TextDescriptor;
+use Symfony\Component\Console\Descriptor\XmlDescriptor;
+use Symfony\Component\Console\Exception\ExceptionInterface;
+use Symfony\Component\Console\Helper\DebugFormatterHelper;
+use Symfony\Component\Console\Helper\ProcessHelper;
+use Symfony\Component\Console\Helper\QuestionHelper;
+use Symfony\Component\Console\Input\InputInterface;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputAwareInterface;
+<<<<<<< HEAD
+=======
+use Symfony\Component\Console\Output\BufferedOutput;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\ConsoleOutputInterface;
@@ -34,13 +48,23 @@ use Symfony\Component\Console\Command\HelpCommand;
 use Symfony\Component\Console\Command\ListCommand;
 use Symfony\Component\Console\Helper\HelperSet;
 use Symfony\Component\Console\Helper\FormatterHelper;
+<<<<<<< HEAD
 use Symfony\Component\Console\Event\ConsoleCommandEvent;
 use Symfony\Component\Console\Event\ConsoleErrorEvent;
+=======
+use Symfony\Component\Console\Helper\DialogHelper;
+use Symfony\Component\Console\Helper\ProgressHelper;
+use Symfony\Component\Console\Helper\TableHelper;
+use Symfony\Component\Console\Event\ConsoleCommandEvent;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\Console\Event\ConsoleExceptionEvent;
 use Symfony\Component\Console\Event\ConsoleTerminateEvent;
 use Symfony\Component\Console\Exception\CommandNotFoundException;
 use Symfony\Component\Console\Exception\LogicException;
+<<<<<<< HEAD
 use Symfony\Component\Debug\ErrorHandler;
+=======
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\Debug\Exception\FatalThrowableError;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
@@ -66,18 +90,30 @@ class Application
     private $runningCommand;
     private $name;
     private $version;
+<<<<<<< HEAD
     private $commandLoader;
+=======
+>>>>>>> web and vendor directory from composer install
     private $catchExceptions = true;
     private $autoExit = true;
     private $definition;
     private $helperSet;
     private $dispatcher;
+<<<<<<< HEAD
     private $terminal;
     private $defaultCommand;
     private $singleCommand;
     private $initialized;
 
     /**
+=======
+    private $terminalDimensions;
+    private $defaultCommand;
+
+    /**
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param string $name    The name of the application
      * @param string $version The version of the application
      */
@@ -85,8 +121,18 @@ class Application
     {
         $this->name = $name;
         $this->version = $version;
+<<<<<<< HEAD
         $this->terminal = new Terminal();
         $this->defaultCommand = 'list';
+=======
+        $this->defaultCommand = 'list';
+        $this->helperSet = $this->getDefaultHelperSet();
+        $this->definition = $this->getDefaultInputDefinition();
+
+        foreach ($this->getDefaultCommands() as $command) {
+            $this->add($command);
+        }
+>>>>>>> web and vendor directory from composer install
     }
 
     public function setDispatcher(EventDispatcherInterface $dispatcher)
@@ -94,6 +140,7 @@ class Application
         $this->dispatcher = $dispatcher;
     }
 
+<<<<<<< HEAD
     public function setCommandLoader(CommandLoaderInterface $commandLoader)
     {
         $this->commandLoader = $commandLoader;
@@ -111,6 +158,20 @@ class Application
         putenv('LINES='.$this->terminal->getHeight());
         putenv('COLUMNS='.$this->terminal->getWidth());
 
+=======
+    /**
+     * Runs the current application.
+     *
+     * @param InputInterface  $input  An Input instance
+     * @param OutputInterface $output An Output instance
+     *
+     * @return int 0 if everything went fine, or an error code
+     *
+     * @throws \Exception When doRun returns Exception
+     */
+    public function run(InputInterface $input = null, OutputInterface $output = null)
+    {
+>>>>>>> web and vendor directory from composer install
         if (null === $input) {
             $input = new ArgvInput();
         }
@@ -119,6 +180,7 @@ class Application
             $output = new ConsoleOutput();
         }
 
+<<<<<<< HEAD
         $renderException = function ($e) use ($output) {
             if (!$e instanceof \Exception) {
                 $e = class_exists(FatalThrowableError::class) ? new FatalThrowableError($e) : new \ErrorException($e->getMessage(), $e->getCode(), E_ERROR, $e->getFile(), $e->getLine());
@@ -142,6 +204,8 @@ class Application
             @trigger_error(sprintf('The "ConsoleEvents::EXCEPTION" event is deprecated since Symfony 3.3 and will be removed in 4.0. Listen to the "ConsoleEvents::ERROR" event instead.'), E_USER_DEPRECATED);
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         $this->configureIO($input, $output);
 
         try {
@@ -151,7 +215,15 @@ class Application
                 throw $e;
             }
 
+<<<<<<< HEAD
             $renderException($e);
+=======
+            if ($output instanceof ConsoleOutputInterface) {
+                $this->renderException($e, $output->getErrorOutput());
+            } else {
+                $this->renderException($e, $output);
+            }
+>>>>>>> web and vendor directory from composer install
 
             $exitCode = $e->getCode();
             if (is_numeric($exitCode)) {
@@ -162,6 +234,7 @@ class Application
             } else {
                 $exitCode = 1;
             }
+<<<<<<< HEAD
         } finally {
             // if the exception handler changed, keep it
             // otherwise, unregister $renderException
@@ -176,6 +249,8 @@ class Application
                     $phpHandler[0]->setExceptionHandler($finalHandler);
                 }
             }
+=======
+>>>>>>> web and vendor directory from composer install
         }
 
         if ($this->autoExit) {
@@ -192,21 +267,38 @@ class Application
     /**
      * Runs the current application.
      *
+<<<<<<< HEAD
+=======
+     * @param InputInterface  $input  An Input instance
+     * @param OutputInterface $output An Output instance
+     *
+>>>>>>> web and vendor directory from composer install
      * @return int 0 if everything went fine, or an error code
      */
     public function doRun(InputInterface $input, OutputInterface $output)
     {
+<<<<<<< HEAD
         if (true === $input->hasParameterOption(array('--version', '-V'), true)) {
+=======
+        if (true === $input->hasParameterOption(array('--version', '-V'))) {
+>>>>>>> web and vendor directory from composer install
             $output->writeln($this->getLongVersion());
 
             return 0;
         }
 
         $name = $this->getCommandName($input);
+<<<<<<< HEAD
         if (true === $input->hasParameterOption(array('--help', '-h'), true)) {
             if (!$name) {
                 $name = 'help';
                 $input = new ArrayInput(array('command_name' => $this->defaultCommand));
+=======
+        if (true === $input->hasParameterOption(array('--help', '-h'))) {
+            if (!$name) {
+                $name = 'help';
+                $input = new ArrayInput(array('command' => 'help'));
+>>>>>>> web and vendor directory from composer install
             } else {
                 $this->wantHelps = true;
             }
@@ -214,6 +306,7 @@ class Application
 
         if (!$name) {
             $name = $this->defaultCommand;
+<<<<<<< HEAD
             $definition = $this->getDefinition();
             $definition->setArguments(array_merge(
                 $definition->getArguments(),
@@ -243,6 +336,13 @@ class Application
 
             throw $e;
         }
+=======
+            $input = new ArrayInput(array('command' => $this->defaultCommand));
+        }
+
+        // the command name MUST be the first element of the input
+        $command = $this->find($name);
+>>>>>>> web and vendor directory from composer install
 
         $this->runningCommand = $command;
         $exitCode = $this->doRunCommand($command, $input, $output);
@@ -251,6 +351,14 @@ class Application
         return $exitCode;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Set a helper set to be used with the command.
+     *
+     * @param HelperSet $helperSet The helper set
+     */
+>>>>>>> web and vendor directory from composer install
     public function setHelperSet(HelperSet $helperSet)
     {
         $this->helperSet = $helperSet;
@@ -263,6 +371,7 @@ class Application
      */
     public function getHelperSet()
     {
+<<<<<<< HEAD
         if (!$this->helperSet) {
             $this->helperSet = $this->getDefaultHelperSet();
         }
@@ -270,6 +379,16 @@ class Application
         return $this->helperSet;
     }
 
+=======
+        return $this->helperSet;
+    }
+
+    /**
+     * Set an input definition to be used with this application.
+     *
+     * @param InputDefinition $definition The input definition
+     */
+>>>>>>> web and vendor directory from composer install
     public function setDefinition(InputDefinition $definition)
     {
         $this->definition = $definition;
@@ -282,6 +401,7 @@ class Application
      */
     public function getDefinition()
     {
+<<<<<<< HEAD
         if (!$this->definition) {
             $this->definition = $this->getDefaultInputDefinition();
         }
@@ -293,6 +413,8 @@ class Application
             return $inputDefinition;
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         return $this->definition;
     }
 
@@ -307,6 +429,7 @@ class Application
     }
 
     /**
+<<<<<<< HEAD
      * Gets whether to catch exceptions or not during commands execution.
      *
      * @return bool Whether to catch exceptions or not during commands execution
@@ -317,6 +440,8 @@ class Application
     }
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * Sets whether to catch exceptions or not during commands execution.
      *
      * @param bool $boolean Whether to catch exceptions or not during commands execution
@@ -327,6 +452,7 @@ class Application
     }
 
     /**
+<<<<<<< HEAD
      * Gets whether to automatically exit after a command execution or not.
      *
      * @return bool Whether to automatically exit after a command execution or not
@@ -337,6 +463,8 @@ class Application
     }
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * Sets whether to automatically exit after a command execution or not.
      *
      * @param bool $boolean Whether to automatically exit after a command execution or not
@@ -395,6 +523,7 @@ class Application
     {
         if ('UNKNOWN' !== $this->getName()) {
             if ('UNKNOWN' !== $this->getVersion()) {
+<<<<<<< HEAD
                 return sprintf('%s <info>%s</info>', $this->getName(), $this->getVersion());
             }
 
@@ -402,6 +531,15 @@ class Application
         }
 
         return 'Console Tool';
+=======
+                return sprintf('<info>%s</info> version <comment>%s</comment>', $this->getName(), $this->getVersion());
+            }
+
+            return sprintf('<info>%s</info>', $this->getName());
+        }
+
+        return '<info>Console Tool</info>';
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -436,12 +574,20 @@ class Application
      * If a command with the same name already exists, it will be overridden.
      * If the command is not enabled it will not be added.
      *
+<<<<<<< HEAD
+=======
+     * @param Command $command A Command object
+     *
+>>>>>>> web and vendor directory from composer install
      * @return Command|null The registered command if enabled or null
      */
     public function add(Command $command)
     {
+<<<<<<< HEAD
         $this->init();
 
+=======
+>>>>>>> web and vendor directory from composer install
         $command->setApplication($this);
 
         if (!$command->isEnabled()) {
@@ -454,10 +600,13 @@ class Application
             throw new LogicException(sprintf('Command class "%s" is not correctly initialized. You probably forgot to call the parent constructor.', get_class($command)));
         }
 
+<<<<<<< HEAD
         if (!$command->getName()) {
             throw new LogicException(sprintf('The command defined in "%s" cannot have an empty name.', get_class($command)));
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         $this->commands[$command->getName()] = $command;
 
         foreach ($command->getAliases() as $alias) {
@@ -474,6 +623,7 @@ class Application
      *
      * @return Command A Command object
      *
+<<<<<<< HEAD
      * @throws CommandNotFoundException When given command name does not exist
      */
     public function get($name)
@@ -481,6 +631,13 @@ class Application
         $this->init();
 
         if (!$this->has($name)) {
+=======
+     * @throws CommandNotFoundException When command name given does not exist
+     */
+    public function get($name)
+    {
+        if (!isset($this->commands[$name])) {
+>>>>>>> web and vendor directory from composer install
             throw new CommandNotFoundException(sprintf('The command "%s" does not exist.', $name));
         }
 
@@ -507,9 +664,13 @@ class Application
      */
     public function has($name)
     {
+<<<<<<< HEAD
         $this->init();
 
         return isset($this->commands[$name]) || ($this->commandLoader && $this->commandLoader->has($name) && $this->add($this->commandLoader->get($name)));
+=======
+        return isset($this->commands[$name]);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -566,7 +727,11 @@ class Application
 
         $exact = in_array($namespace, $namespaces, true);
         if (count($namespaces) > 1 && !$exact) {
+<<<<<<< HEAD
             throw new CommandNotFoundException(sprintf("The namespace \"%s\" is ambiguous.\nDid you mean one of these?\n%s", $namespace, $this->getAbbreviationSuggestions(array_values($namespaces))), array_values($namespaces));
+=======
+            throw new CommandNotFoundException(sprintf('The namespace "%s" is ambiguous (%s).', $namespace, $this->getAbbreviationSuggestions(array_values($namespaces))), array_values($namespaces));
+>>>>>>> web and vendor directory from composer install
         }
 
         return $exact ? $namespace : reset($namespaces);
@@ -586,6 +751,7 @@ class Application
      */
     public function find($name)
     {
+<<<<<<< HEAD
         $this->init();
 
         $aliases = array();
@@ -599,6 +765,13 @@ class Application
 
         // if no commands matched or we just matched namespaces
         if (empty($commands) || count(preg_grep('{^'.$expr.'$}i', $commands)) < 1) {
+=======
+        $allCommands = array_keys($this->commands);
+        $expr = preg_replace_callback('{([^:]+|)}', function ($matches) { return preg_quote($matches[1]).'[^:]*'; }, $name);
+        $commands = preg_grep('{^'.$expr.'}', $allCommands);
+
+        if (empty($commands) || count(preg_grep('{^'.$expr.'$}', $commands)) < 1) {
+>>>>>>> web and vendor directory from composer install
             if (false !== $pos = strrpos($name, ':')) {
                 // check if a namespace exists and contains commands
                 $this->findNamespace(substr($name, 0, $pos));
@@ -620,6 +793,7 @@ class Application
 
         // filter out aliases for commands which are already on the list
         if (count($commands) > 1) {
+<<<<<<< HEAD
             $commandList = $this->commandLoader ? array_merge(array_flip($this->commandLoader->getNames()), $this->commands) : $this->commands;
             $commands = array_unique(array_filter($commands, function ($nameOrAlias) use ($commandList, $commands, &$aliases) {
                 $commandName = $commandList[$nameOrAlias] instanceof Command ? $commandList[$nameOrAlias]->getName() : $nameOrAlias;
@@ -648,6 +822,21 @@ class Application
             $suggestions = $this->getAbbreviationSuggestions($abbrevs);
 
             throw new CommandNotFoundException(sprintf("Command \"%s\" is ambiguous.\nDid you mean one of these?\n%s", $name, $suggestions), array_values($commands));
+=======
+            $commandList = $this->commands;
+            $commands = array_filter($commands, function ($nameOrAlias) use ($commandList, $commands) {
+                $commandName = $commandList[$nameOrAlias]->getName();
+
+                return $commandName === $nameOrAlias || !in_array($commandName, $commands);
+            });
+        }
+
+        $exact = in_array($name, $commands, true);
+        if (count($commands) > 1 && !$exact) {
+            $suggestions = $this->getAbbreviationSuggestions(array_values($commands));
+
+            throw new CommandNotFoundException(sprintf('Command "%s" is ambiguous (%s).', $name, $suggestions), array_values($commands));
+>>>>>>> web and vendor directory from composer install
         }
 
         return $this->get($exact ? $name : reset($commands));
@@ -664,6 +853,7 @@ class Application
      */
     public function all($namespace = null)
     {
+<<<<<<< HEAD
         $this->init();
 
         if (null === $namespace) {
@@ -679,6 +869,10 @@ class Application
             }
 
             return $commands;
+=======
+        if (null === $namespace) {
+            return $this->commands;
+>>>>>>> web and vendor directory from composer install
         }
 
         $commands = array();
@@ -688,6 +882,7 @@ class Application
             }
         }
 
+<<<<<<< HEAD
         if ($this->commandLoader) {
             foreach ($this->commandLoader->getNames() as $name) {
                 if (!isset($commands[$name]) && $namespace === $this->extractNamespace($name, substr_count($namespace, ':') + 1) && $this->has($name)) {
@@ -696,6 +891,8 @@ class Application
             }
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         return $commands;
     }
 
@@ -720,6 +917,7 @@ class Application
     }
 
     /**
+<<<<<<< HEAD
      * Renders a caught exception.
      */
     public function renderException(\Exception $e, OutputInterface $output)
@@ -746,15 +944,88 @@ class Application
             }
 
             $width = $this->terminal->getWidth() ? $this->terminal->getWidth() - 1 : PHP_INT_MAX;
+=======
+     * Returns a text representation of the Application.
+     *
+     * @param string $namespace An optional namespace name
+     * @param bool   $raw       Whether to return raw command list
+     *
+     * @return string A string representing the Application
+     *
+     * @deprecated since version 2.3, to be removed in 3.0.
+     */
+    public function asText($namespace = null, $raw = false)
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 2.3 and will be removed in 3.0.', E_USER_DEPRECATED);
+
+        $descriptor = new TextDescriptor();
+        $output = new BufferedOutput(BufferedOutput::VERBOSITY_NORMAL, !$raw);
+        $descriptor->describe($output, $this, array('namespace' => $namespace, 'raw_output' => true));
+
+        return $output->fetch();
+    }
+
+    /**
+     * Returns an XML representation of the Application.
+     *
+     * @param string $namespace An optional namespace name
+     * @param bool   $asDom     Whether to return a DOM or an XML string
+     *
+     * @return string|\DOMDocument An XML string representing the Application
+     *
+     * @deprecated since version 2.3, to be removed in 3.0.
+     */
+    public function asXml($namespace = null, $asDom = false)
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 2.3 and will be removed in 3.0.', E_USER_DEPRECATED);
+
+        $descriptor = new XmlDescriptor();
+
+        if ($asDom) {
+            return $descriptor->getApplicationDocument($this, $namespace);
+        }
+
+        $output = new BufferedOutput();
+        $descriptor->describe($output, $this, array('namespace' => $namespace));
+
+        return $output->fetch();
+    }
+
+    /**
+     * Renders a caught exception.
+     *
+     * @param \Exception      $e      An exception instance
+     * @param OutputInterface $output An OutputInterface instance
+     */
+    public function renderException($e, $output)
+    {
+        $output->writeln('', OutputInterface::VERBOSITY_QUIET);
+
+        do {
+            $title = sprintf('  [%s]  ', get_class($e));
+
+            $len = $this->stringWidth($title);
+
+            $width = $this->getTerminalWidth() ? $this->getTerminalWidth() - 1 : PHP_INT_MAX;
+>>>>>>> web and vendor directory from composer install
             // HHVM only accepts 32 bits integer in str_split, even when PHP_INT_MAX is a 64 bit integer: https://github.com/facebook/hhvm/issues/1327
             if (defined('HHVM_VERSION') && $width > 1 << 31) {
                 $width = 1 << 31;
             }
+<<<<<<< HEAD
             $lines = array();
             foreach ('' !== $message ? preg_split('/\r?\n/', $message) : array() as $line) {
                 foreach ($this->splitStringByWidth($line, $width - 4) as $line) {
                     // pre-format lines to get the right string length
                     $lineLength = Helper::strlen($line) + 4;
+=======
+            $formatter = $output->getFormatter();
+            $lines = array();
+            foreach (preg_split('/\r?\n/', $e->getMessage()) as $line) {
+                foreach ($this->splitStringByWidth($line, $width - 4) as $line) {
+                    // pre-format lines to get the right string length
+                    $lineLength = $this->stringWidth(preg_replace('/\[[^m]*m/', '', $formatter->format($line))) + 4;
+>>>>>>> web and vendor directory from composer install
                     $lines[] = array($line, $lineLength);
 
                     $len = max($lineLength, $len);
@@ -762,6 +1033,7 @@ class Application
             }
 
             $messages = array();
+<<<<<<< HEAD
             if (!$e instanceof ExceptionInterface || OutputInterface::VERBOSITY_VERBOSE <= $output->getVerbosity()) {
                 $messages[] = sprintf('<comment>%s</comment>', OutputFormatter::escape(sprintf('In %s line %s:', basename($e->getFile()) ?: 'n/a', $e->getLine() ?: 'n/a')));
             }
@@ -771,17 +1043,36 @@ class Application
             }
             foreach ($lines as $line) {
                 $messages[] = sprintf('<error>  %s  %s</error>', OutputFormatter::escape($line[0]), str_repeat(' ', $len - $line[1]));
+=======
+            $messages[] = $emptyLine = $formatter->format(sprintf('<error>%s</error>', str_repeat(' ', $len)));
+            $messages[] = $formatter->format(sprintf('<error>%s%s</error>', $title, str_repeat(' ', max(0, $len - $this->stringWidth($title)))));
+            foreach ($lines as $line) {
+                $messages[] = $formatter->format(sprintf('<error>  %s  %s</error>', $line[0], str_repeat(' ', $len - $line[1])));
+>>>>>>> web and vendor directory from composer install
             }
             $messages[] = $emptyLine;
             $messages[] = '';
 
+<<<<<<< HEAD
             $output->writeln($messages, OutputInterface::VERBOSITY_QUIET);
+=======
+            $output->writeln($messages, OutputInterface::OUTPUT_RAW | OutputInterface::VERBOSITY_QUIET);
+>>>>>>> web and vendor directory from composer install
 
             if (OutputInterface::VERBOSITY_VERBOSE <= $output->getVerbosity()) {
                 $output->writeln('<comment>Exception trace:</comment>', OutputInterface::VERBOSITY_QUIET);
 
                 // exception related properties
                 $trace = $e->getTrace();
+<<<<<<< HEAD
+=======
+                array_unshift($trace, array(
+                    'function' => '',
+                    'file' => $e->getFile() !== null ? $e->getFile() : 'n/a',
+                    'line' => $e->getLine() !== null ? $e->getLine() : 'n/a',
+                    'args' => array(),
+                ));
+>>>>>>> web and vendor directory from composer install
 
                 for ($i = 0, $count = count($trace); $i < $count; ++$i) {
                     $class = isset($trace[$i]['class']) ? $trace[$i]['class'] : '';
@@ -796,12 +1087,21 @@ class Application
                 $output->writeln('', OutputInterface::VERBOSITY_QUIET);
             }
         } while ($e = $e->getPrevious());
+<<<<<<< HEAD
+=======
+
+        if (null !== $this->runningCommand) {
+            $output->writeln(sprintf('<info>%s</info>', sprintf($this->runningCommand->getSynopsis(), $this->getName())), OutputInterface::VERBOSITY_QUIET);
+            $output->writeln('', OutputInterface::VERBOSITY_QUIET);
+        }
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Tries to figure out the terminal width in which this application runs.
      *
      * @return int|null
+<<<<<<< HEAD
      *
      * @deprecated since version 3.2, to be removed in 4.0. Create a Terminal instance instead.
      */
@@ -810,12 +1110,21 @@ class Application
         @trigger_error(sprintf('%s is deprecated as of 3.2 and will be removed in 4.0. Create a Terminal instance instead.', __METHOD__), E_USER_DEPRECATED);
 
         return $this->terminal->getWidth();
+=======
+     */
+    protected function getTerminalWidth()
+    {
+        $dimensions = $this->getTerminalDimensions();
+
+        return $dimensions[0];
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Tries to figure out the terminal height in which this application runs.
      *
      * @return int|null
+<<<<<<< HEAD
      *
      * @deprecated since version 3.2, to be removed in 4.0. Create a Terminal instance instead.
      */
@@ -824,12 +1133,21 @@ class Application
         @trigger_error(sprintf('%s is deprecated as of 3.2 and will be removed in 4.0. Create a Terminal instance instead.', __METHOD__), E_USER_DEPRECATED);
 
         return $this->terminal->getHeight();
+=======
+     */
+    protected function getTerminalHeight()
+    {
+        $dimensions = $this->getTerminalDimensions();
+
+        return $dimensions[1];
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Tries to figure out the terminal dimensions based on the current environment.
      *
      * @return array Array containing width and height
+<<<<<<< HEAD
      *
      * @deprecated since version 3.2, to be removed in 4.0. Create a Terminal instance instead.
      */
@@ -838,6 +1156,38 @@ class Application
         @trigger_error(sprintf('%s is deprecated as of 3.2 and will be removed in 4.0. Create a Terminal instance instead.', __METHOD__), E_USER_DEPRECATED);
 
         return array($this->terminal->getWidth(), $this->terminal->getHeight());
+=======
+     */
+    public function getTerminalDimensions()
+    {
+        if ($this->terminalDimensions) {
+            return $this->terminalDimensions;
+        }
+
+        if ('\\' === DIRECTORY_SEPARATOR) {
+            // extract [w, H] from "wxh (WxH)"
+            if (preg_match('/^(\d+)x\d+ \(\d+x(\d+)\)$/', trim(getenv('ANSICON')), $matches)) {
+                return array((int) $matches[1], (int) $matches[2]);
+            }
+            // extract [w, h] from "wxh"
+            if (preg_match('/^(\d+)x(\d+)$/', $this->getConsoleMode(), $matches)) {
+                return array((int) $matches[1], (int) $matches[2]);
+            }
+        }
+
+        if ($sttyString = $this->getSttyColumns()) {
+            // extract [w, h] from "rows h; columns w;"
+            if (preg_match('/rows.(\d+);.columns.(\d+);/i', $sttyString, $matches)) {
+                return array((int) $matches[2], (int) $matches[1]);
+            }
+            // extract [w, h] from "; h rows; w columns"
+            if (preg_match('/;.(\d+).rows;.(\d+).columns/i', $sttyString, $matches)) {
+                return array((int) $matches[2], (int) $matches[1]);
+            }
+        }
+
+        return array(null, null);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -848,6 +1198,7 @@ class Application
      * @param int $width  The width
      * @param int $height The height
      *
+<<<<<<< HEAD
      * @return $this
      *
      * @deprecated since version 3.2, to be removed in 4.0. Set the COLUMNS and LINES env vars instead.
@@ -858,12 +1209,20 @@ class Application
 
         putenv('COLUMNS='.$width);
         putenv('LINES='.$height);
+=======
+     * @return Application The current application
+     */
+    public function setTerminalDimensions($width, $height)
+    {
+        $this->terminalDimensions = array($width, $height);
+>>>>>>> web and vendor directory from composer install
 
         return $this;
     }
 
     /**
      * Configures the input and output instances based on the user arguments and options.
+<<<<<<< HEAD
      */
     protected function configureIO(InputInterface $input, OutputInterface $output)
     {
@@ -888,11 +1247,30 @@ class Application
                 $inputStream = $this->getHelperSet()->get('question')->getInputStream(false);
             }
 
+=======
+     *
+     * @param InputInterface  $input  An InputInterface instance
+     * @param OutputInterface $output An OutputInterface instance
+     */
+    protected function configureIO(InputInterface $input, OutputInterface $output)
+    {
+        if (true === $input->hasParameterOption(array('--ansi'))) {
+            $output->setDecorated(true);
+        } elseif (true === $input->hasParameterOption(array('--no-ansi'))) {
+            $output->setDecorated(false);
+        }
+
+        if (true === $input->hasParameterOption(array('--no-interaction', '-n'))) {
+            $input->setInteractive(false);
+        } elseif (function_exists('posix_isatty') && $this->getHelperSet()->has('question')) {
+            $inputStream = $this->getHelperSet()->get('question')->getInputStream();
+>>>>>>> web and vendor directory from composer install
             if (!@posix_isatty($inputStream) && false === getenv('SHELL_INTERACTIVE')) {
                 $input->setInteractive(false);
             }
         }
 
+<<<<<<< HEAD
         switch ($shellVerbosity = (int) getenv('SHELL_VERBOSITY')) {
             case -1: $output->setVerbosity(OutputInterface::VERBOSITY_QUIET); break;
             case 1: $output->setVerbosity(OutputInterface::VERBOSITY_VERBOSE); break;
@@ -924,6 +1302,20 @@ class Application
         putenv('SHELL_VERBOSITY='.$shellVerbosity);
         $_ENV['SHELL_VERBOSITY'] = $shellVerbosity;
         $_SERVER['SHELL_VERBOSITY'] = $shellVerbosity;
+=======
+        if (true === $input->hasParameterOption(array('--quiet', '-q'))) {
+            $output->setVerbosity(OutputInterface::VERBOSITY_QUIET);
+            $input->setInteractive(false);
+        } else {
+            if ($input->hasParameterOption('-vvv') || $input->hasParameterOption('--verbose=3') || $input->getParameterOption('--verbose') === 3) {
+                $output->setVerbosity(OutputInterface::VERBOSITY_DEBUG);
+            } elseif ($input->hasParameterOption('-vv') || $input->hasParameterOption('--verbose=2') || $input->getParameterOption('--verbose') === 2) {
+                $output->setVerbosity(OutputInterface::VERBOSITY_VERY_VERBOSE);
+            } elseif ($input->hasParameterOption('-v') || $input->hasParameterOption('--verbose=1') || $input->hasParameterOption('--verbose') || $input->getParameterOption('--verbose')) {
+                $output->setVerbosity(OutputInterface::VERBOSITY_VERBOSE);
+            }
+        }
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -932,7 +1324,17 @@ class Application
      * If an event dispatcher has been attached to the application,
      * events are also dispatched during the life-cycle of the command.
      *
+<<<<<<< HEAD
      * @return int 0 if everything went fine, or an error code
+=======
+     * @param Command         $command A Command instance
+     * @param InputInterface  $input   An Input instance
+     * @param OutputInterface $output  An Output instance
+     *
+     * @return int 0 if everything went fine, or an error code
+     *
+     * @throws \Exception when the command being run threw an exception
+>>>>>>> web and vendor directory from composer install
      */
     protected function doRunCommand(Command $command, InputInterface $input, OutputInterface $output)
     {
@@ -955,6 +1357,7 @@ class Application
         }
 
         $event = new ConsoleCommandEvent($command, $input, $output);
+<<<<<<< HEAD
         $e = null;
 
         try {
@@ -985,26 +1388,66 @@ class Application
             if (0 === $exitCode = $event->getExitCode()) {
                 $e = null;
             }
+=======
+        $this->dispatcher->dispatch(ConsoleEvents::COMMAND, $event);
+
+        if ($event->commandShouldRun()) {
+            try {
+                $e = null;
+                $exitCode = $command->run($input, $output);
+            } catch (\Exception $x) {
+                $e = $x;
+            } catch (\Throwable $x) {
+                $e = new FatalThrowableError($x);
+            }
+            if (null !== $e) {
+                $event = new ConsoleExceptionEvent($command, $input, $output, $e, $e->getCode());
+                $this->dispatcher->dispatch(ConsoleEvents::EXCEPTION, $event);
+
+                if ($e !== $event->getException()) {
+                    $x = $e = $event->getException();
+                }
+
+                $event = new ConsoleTerminateEvent($command, $input, $output, $e->getCode());
+                $this->dispatcher->dispatch(ConsoleEvents::TERMINATE, $event);
+
+                throw $x;
+            }
+        } else {
+            $exitCode = ConsoleCommandEvent::RETURN_CODE_DISABLED;
+>>>>>>> web and vendor directory from composer install
         }
 
         $event = new ConsoleTerminateEvent($command, $input, $output, $exitCode);
         $this->dispatcher->dispatch(ConsoleEvents::TERMINATE, $event);
 
+<<<<<<< HEAD
         if (null !== $e) {
             throw $e;
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         return $event->getExitCode();
     }
 
     /**
      * Gets the name of the command based on input.
      *
+<<<<<<< HEAD
+=======
+     * @param InputInterface $input The input interface
+     *
+>>>>>>> web and vendor directory from composer install
      * @return string The command name
      */
     protected function getCommandName(InputInterface $input)
     {
+<<<<<<< HEAD
         return $this->singleCommand ? $this->defaultCommand : $input->getFirstArgument();
+=======
+        return $input->getFirstArgument();
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -1046,6 +1489,12 @@ class Application
     {
         return new HelperSet(array(
             new FormatterHelper(),
+<<<<<<< HEAD
+=======
+            new DialogHelper(false),
+            new ProgressHelper(false),
+            new TableHelper(false),
+>>>>>>> web and vendor directory from composer install
             new DebugFormatterHelper(),
             new ProcessHelper(),
             new QuestionHelper(),
@@ -1053,6 +1502,57 @@ class Application
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Runs and parses stty -a if it's available, suppressing any error output.
+     *
+     * @return string
+     */
+    private function getSttyColumns()
+    {
+        if (!function_exists('proc_open')) {
+            return;
+        }
+
+        $descriptorspec = array(1 => array('pipe', 'w'), 2 => array('pipe', 'w'));
+        $process = proc_open('stty -a | grep columns', $descriptorspec, $pipes, null, null, array('suppress_errors' => true));
+        if (is_resource($process)) {
+            $info = stream_get_contents($pipes[1]);
+            fclose($pipes[1]);
+            fclose($pipes[2]);
+            proc_close($process);
+
+            return $info;
+        }
+    }
+
+    /**
+     * Runs and parses mode CON if it's available, suppressing any error output.
+     *
+     * @return string|null <width>x<height> or null if it could not be parsed
+     */
+    private function getConsoleMode()
+    {
+        if (!function_exists('proc_open')) {
+            return;
+        }
+
+        $descriptorspec = array(1 => array('pipe', 'w'), 2 => array('pipe', 'w'));
+        $process = proc_open('mode CON', $descriptorspec, $pipes, null, null, array('suppress_errors' => true));
+        if (is_resource($process)) {
+            $info = stream_get_contents($pipes[1]);
+            fclose($pipes[1]);
+            fclose($pipes[2]);
+            proc_close($process);
+
+            if (preg_match('/--------+\r?\n.+?(\d+)\r?\n.+?(\d+)\r?\n/', $info, $matches)) {
+                return $matches[2].'x'.$matches[1];
+            }
+        }
+    }
+
+    /**
+>>>>>>> web and vendor directory from composer install
      * Returns abbreviated suggestions in string format.
      *
      * @param array $abbrevs Abbreviated suggestions to convert
@@ -1061,7 +1561,11 @@ class Application
      */
     private function getAbbreviationSuggestions($abbrevs)
     {
+<<<<<<< HEAD
         return '    '.implode("\n    ", $abbrevs);
+=======
+        return sprintf('%s, %s%s', $abbrevs[0], $abbrevs[1], count($abbrevs) > 2 ? sprintf(' and %d more', count($abbrevs) - 2) : '');
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -1086,8 +1590,13 @@ class Application
      * Finds alternative of $name among $collection,
      * if nothing is found in $collection, try in $abbrevs.
      *
+<<<<<<< HEAD
      * @param string   $name       The string
      * @param iterable $collection The collection
+=======
+     * @param string             $name       The string
+     * @param array|\Traversable $collection The collection
+>>>>>>> web and vendor directory from composer install
      *
      * @return string[] A sorted array of similar string
      */
@@ -1128,7 +1637,11 @@ class Application
         }
 
         $alternatives = array_filter($alternatives, function ($lev) use ($threshold) { return $lev < 2 * $threshold; });
+<<<<<<< HEAD
         ksort($alternatives, SORT_NATURAL | SORT_FLAG_CASE);
+=======
+        asort($alternatives);
+>>>>>>> web and vendor directory from composer install
 
         return array_keys($alternatives);
     }
@@ -1136,6 +1649,7 @@ class Application
     /**
      * Sets the default Command name.
      *
+<<<<<<< HEAD
      * @param string $commandName     The Command name
      * @param bool   $isSingleCommand Set to true if there is only one command in this application
      *
@@ -1153,6 +1667,22 @@ class Application
         }
 
         return $this;
+=======
+     * @param string $commandName The Command name
+     */
+    public function setDefaultCommand($commandName)
+    {
+        $this->defaultCommand = $commandName;
+    }
+
+    private function stringWidth($string)
+    {
+        if (false === $encoding = mb_detect_encoding($string, null, true)) {
+            return strlen($string);
+        }
+
+        return mb_strwidth($string, $encoding);
+>>>>>>> web and vendor directory from composer install
     }
 
     private function splitStringByWidth($string, $width)
@@ -1177,8 +1707,14 @@ class Application
             $lines[] = str_pad($line, $width);
             $line = $char;
         }
+<<<<<<< HEAD
 
         $lines[] = count($lines) ? str_pad($line, $width) : $line;
+=======
+        if ('' !== $line) {
+            $lines[] = count($lines) ? str_pad($line, $width) : $line;
+        }
+>>>>>>> web and vendor directory from composer install
 
         mb_convert_variables($encoding, 'utf8', $lines);
 
@@ -1208,6 +1744,7 @@ class Application
 
         return $namespaces;
     }
+<<<<<<< HEAD
 
     private function init()
     {
@@ -1220,4 +1757,6 @@ class Application
             $this->add($command);
         }
     }
+=======
+>>>>>>> web and vendor directory from composer install
 }

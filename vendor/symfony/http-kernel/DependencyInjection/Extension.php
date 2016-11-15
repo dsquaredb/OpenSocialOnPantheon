@@ -21,12 +21,16 @@ use Symfony\Component\DependencyInjection\Extension\Extension as BaseExtension;
 abstract class Extension extends BaseExtension
 {
     private $classes = array();
+<<<<<<< HEAD
     private $annotatedClasses = array();
+=======
+>>>>>>> web and vendor directory from composer install
 
     /**
      * Gets the classes to cache.
      *
      * @return array An array of classes
+<<<<<<< HEAD
      *
      * @deprecated since version 3.3, to be removed in 4.0.
      */
@@ -36,10 +40,16 @@ abstract class Extension extends BaseExtension
             @trigger_error(__METHOD__.'() is deprecated since Symfony 3.3, to be removed in 4.0.', E_USER_DEPRECATED);
         }
 
+=======
+     */
+    public function getClassesToCompile()
+    {
+>>>>>>> web and vendor directory from composer install
         return $this->classes;
     }
 
     /**
+<<<<<<< HEAD
      * Gets the annotated classes to cache.
      *
      * @return array An array of classes
@@ -74,4 +84,14 @@ abstract class Extension extends BaseExtension
     {
         $this->annotatedClasses = array_merge($this->annotatedClasses, $annotatedClasses);
     }
+=======
+     * Adds classes to the class cache.
+     *
+     * @param array $classes An array of classes
+     */
+    public function addClassesToCompile(array $classes)
+    {
+        $this->classes = array_merge($this->classes, $classes);
+    }
+>>>>>>> web and vendor directory from composer install
 }

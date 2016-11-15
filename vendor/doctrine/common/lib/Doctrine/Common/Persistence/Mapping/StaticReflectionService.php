@@ -31,7 +31,11 @@ class StaticReflectionService implements ReflectionService
      */
     public function getParentClasses($class)
     {
+<<<<<<< HEAD
         return [];
+=======
+        return array();
+>>>>>>> web and vendor directory from composer install
     }
 
     /**

@@ -22,6 +22,7 @@ use Symfony\Component\EventDispatcher\Event;
  */
 class KernelEvent extends Event
 {
+<<<<<<< HEAD
     private $kernel;
     private $request;
     private $requestType;
@@ -32,6 +33,30 @@ class KernelEvent extends Event
      * @param int                 $requestType The request type the kernel is currently processing; one of
      *                                         HttpKernelInterface::MASTER_REQUEST or HttpKernelInterface::SUB_REQUEST
      */
+=======
+    /**
+     * The kernel in which this event was thrown.
+     *
+     * @var HttpKernelInterface
+     */
+    private $kernel;
+
+    /**
+     * The request the kernel is currently processing.
+     *
+     * @var Request
+     */
+    private $request;
+
+    /**
+     * The request type the kernel is currently processing.  One of
+     * HttpKernelInterface::MASTER_REQUEST and HttpKernelInterface::SUB_REQUEST.
+     *
+     * @var int
+     */
+    private $requestType;
+
+>>>>>>> web and vendor directory from composer install
     public function __construct(HttpKernelInterface $kernel, Request $request, $requestType)
     {
         $this->kernel = $kernel;

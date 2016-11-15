@@ -38,7 +38,11 @@ namespace Symfony\Component\HttpFoundation\Session\Storage\Handler;
  * @author Michael Williams <michael.williams@funsational.com>
  * @author Tobias Schultze <http://tobion.de>
  */
+<<<<<<< HEAD
 class PdoSessionHandler extends AbstractSessionHandler
+=======
+class PdoSessionHandler implements \SessionHandlerInterface
+>>>>>>> web and vendor directory from composer install
 {
     /**
      * No locking is done. This means sessions are prone to loss of data due to
@@ -148,6 +152,11 @@ class PdoSessionHandler extends AbstractSessionHandler
     private $gcCalled = false;
 
     /**
+<<<<<<< HEAD
+=======
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * You can either pass an existing database connection as PDO instance or
      * pass a DSN string that will be used to lazy-connect to the database
      * when the session is actually used. Furthermore it's possible to pass null
@@ -164,7 +173,11 @@ class PdoSessionHandler extends AbstractSessionHandler
      *  * db_connection_options: An array of driver-specific connection options [default: array()]
      *  * lock_mode: The strategy for locking, see constants [default: LOCK_TRANSACTIONAL]
      *
+<<<<<<< HEAD
      * @param \PDO|string|null $pdoOrDsn A \PDO instance or DSN string or URL string or null
+=======
+     * @param \PDO|string|null $pdoOrDsn A \PDO instance or DSN string or null
+>>>>>>> web and vendor directory from composer install
      * @param array            $options  An associative array of options
      *
      * @throws \InvalidArgumentException When PDO error mode is not PDO::ERRMODE_EXCEPTION
@@ -178,8 +191,11 @@ class PdoSessionHandler extends AbstractSessionHandler
 
             $this->pdo = $pdoOrDsn;
             $this->driver = $this->pdo->getAttribute(\PDO::ATTR_DRIVER_NAME);
+<<<<<<< HEAD
         } elseif (is_string($pdoOrDsn) && false !== strpos($pdoOrDsn, '://')) {
             $this->dsn = $this->buildDsnFromUrl($pdoOrDsn);
+=======
+>>>>>>> web and vendor directory from composer install
         } else {
             $this->dsn = $pdoOrDsn;
         }
@@ -262,13 +278,20 @@ class PdoSessionHandler extends AbstractSessionHandler
      */
     public function open($savePath, $sessionName)
     {
+<<<<<<< HEAD
         $this->sessionExpired = false;
 
+=======
+>>>>>>> web and vendor directory from composer install
         if (null === $this->pdo) {
             $this->connect($this->dsn ?: $savePath);
         }
 
+<<<<<<< HEAD
         return parent::open($savePath, $sessionName);
+=======
+        return true;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -277,7 +300,11 @@ class PdoSessionHandler extends AbstractSessionHandler
     public function read($sessionId)
     {
         try {
+<<<<<<< HEAD
             return parent::read($sessionId);
+=======
+            return $this->doRead($sessionId);
+>>>>>>> web and vendor directory from composer install
         } catch (\PDOException $e) {
             $this->rollback();
 
@@ -300,7 +327,11 @@ class PdoSessionHandler extends AbstractSessionHandler
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     protected function doDestroy($sessionId)
+=======
+    public function destroy($sessionId)
+>>>>>>> web and vendor directory from composer install
     {
         // delete the record associated with this id
         $sql = "DELETE FROM $this->table WHERE $this->idCol = :id";
@@ -321,7 +352,11 @@ class PdoSessionHandler extends AbstractSessionHandler
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     protected function doWrite($sessionId, $data)
+=======
+    public function write($sessionId, $data)
+>>>>>>> web and vendor directory from composer install
     {
         $maxlifetime = (int) ini_get('session.gc_maxlifetime');
 
@@ -334,7 +369,17 @@ class PdoSessionHandler extends AbstractSessionHandler
                 return true;
             }
 
+<<<<<<< HEAD
             $updateStmt = $this->getUpdateStatement($sessionId, $data, $maxlifetime);
+=======
+            $updateStmt = $this->pdo->prepare(
+                "UPDATE $this->table SET $this->dataCol = :data, $this->lifetimeCol = :lifetime, $this->timeCol = :time WHERE $this->idCol = :id"
+            );
+            $updateStmt->bindParam(':id', $sessionId, \PDO::PARAM_STR);
+            $updateStmt->bindParam(':data', $data, \PDO::PARAM_LOB);
+            $updateStmt->bindParam(':lifetime', $maxlifetime, \PDO::PARAM_INT);
+            $updateStmt->bindValue(':time', time(), \PDO::PARAM_INT);
+>>>>>>> web and vendor directory from composer install
             $updateStmt->execute();
 
             // When MERGE is not supported, like in Postgres < 9.5, we have to use this approach that can result in
@@ -344,7 +389,17 @@ class PdoSessionHandler extends AbstractSessionHandler
             // false positives due to longer gap locking.
             if (!$updateStmt->rowCount()) {
                 try {
+<<<<<<< HEAD
                     $insertStmt = $this->getInsertStatement($sessionId, $data, $maxlifetime);
+=======
+                    $insertStmt = $this->pdo->prepare(
+                        "INSERT INTO $this->table ($this->idCol, $this->dataCol, $this->lifetimeCol, $this->timeCol) VALUES (:id, :data, :lifetime, :time)"
+                    );
+                    $insertStmt->bindParam(':id', $sessionId, \PDO::PARAM_STR);
+                    $insertStmt->bindParam(':data', $data, \PDO::PARAM_LOB);
+                    $insertStmt->bindParam(':lifetime', $maxlifetime, \PDO::PARAM_INT);
+                    $insertStmt->bindValue(':time', time(), \PDO::PARAM_INT);
+>>>>>>> web and vendor directory from composer install
                     $insertStmt->execute();
                 } catch (\PDOException $e) {
                     // Handle integrity violation SQLSTATE 23000 (or a subclass like 23505 in Postgres) for duplicate keys
@@ -367,6 +422,7 @@ class PdoSessionHandler extends AbstractSessionHandler
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function updateTimestamp($sessionId, $data)
     {
         $maxlifetime = (int) ini_get('session.gc_maxlifetime');
@@ -391,6 +447,8 @@ class PdoSessionHandler extends AbstractSessionHandler
     /**
      * {@inheritdoc}
      */
+=======
+>>>>>>> web and vendor directory from composer install
     public function close()
     {
         $this->commit();
@@ -403,11 +461,15 @@ class PdoSessionHandler extends AbstractSessionHandler
             $this->gcCalled = false;
 
             // delete the session records that have expired
+<<<<<<< HEAD
             if ('mysql' === $this->driver) {
                 $sql = "DELETE FROM $this->table WHERE $this->lifetimeCol + $this->timeCol < :time";
             } else {
                 $sql = "DELETE FROM $this->table WHERE $this->lifetimeCol < :time - $this->timeCol";
             }
+=======
+            $sql = "DELETE FROM $this->table WHERE $this->lifetimeCol + $this->timeCol < :time";
+>>>>>>> web and vendor directory from composer install
 
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindValue(':time', time(), \PDO::PARAM_INT);
@@ -434,6 +496,7 @@ class PdoSessionHandler extends AbstractSessionHandler
     }
 
     /**
+<<<<<<< HEAD
      * Builds a PDO DSN from a URL-like connection string.
      *
      * @param string $dsnOrUrl
@@ -530,6 +593,8 @@ class PdoSessionHandler extends AbstractSessionHandler
     }
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * Helper method to begin a transaction.
      *
      * Since SQLite does not support row level locks, we have to acquire a reserved lock
@@ -607,8 +672,15 @@ class PdoSessionHandler extends AbstractSessionHandler
      *
      * @return string The session data
      */
+<<<<<<< HEAD
     protected function doRead($sessionId)
     {
+=======
+    private function doRead($sessionId)
+    {
+        $this->sessionExpired = false;
+
+>>>>>>> web and vendor directory from composer install
         if (self::LOCK_ADVISORY === $this->lockMode) {
             $this->unlockStatements[] = $this->doAdvisoryLock($sessionId);
         }
@@ -616,7 +688,10 @@ class PdoSessionHandler extends AbstractSessionHandler
         $selectSql = $this->getSelectSql();
         $selectStmt = $this->pdo->prepare($selectSql);
         $selectStmt->bindParam(':id', $sessionId, \PDO::PARAM_STR);
+<<<<<<< HEAD
         $insertStmt = null;
+=======
+>>>>>>> web and vendor directory from composer install
 
         do {
             $selectStmt->execute();
@@ -632,6 +707,7 @@ class PdoSessionHandler extends AbstractSessionHandler
                 return is_resource($sessionRows[0][0]) ? stream_get_contents($sessionRows[0][0]) : $sessionRows[0][0];
             }
 
+<<<<<<< HEAD
             if (null !== $insertStmt) {
                 $this->rollback();
                 throw new \RuntimeException('Failed to read session: INSERT reported a duplicate id but next SELECT did not return any data.');
@@ -644,6 +720,19 @@ class PdoSessionHandler extends AbstractSessionHandler
                 // until other connections to the session are committed.
                 try {
                     $insertStmt = $this->getInsertStatement($sessionId, '', 0);
+=======
+            if (self::LOCK_TRANSACTIONAL === $this->lockMode && 'sqlite' !== $this->driver) {
+                // Exclusive-reading of non-existent rows does not block, so we need to do an insert to block
+                // until other connections to the session are committed.
+                try {
+                    $insertStmt = $this->pdo->prepare(
+                        "INSERT INTO $this->table ($this->idCol, $this->dataCol, $this->lifetimeCol, $this->timeCol) VALUES (:id, :data, :lifetime, :time)"
+                    );
+                    $insertStmt->bindParam(':id', $sessionId, \PDO::PARAM_STR);
+                    $insertStmt->bindValue(':data', '', \PDO::PARAM_LOB);
+                    $insertStmt->bindValue(':lifetime', 0, \PDO::PARAM_INT);
+                    $insertStmt->bindValue(':time', time(), \PDO::PARAM_INT);
+>>>>>>> web and vendor directory from composer install
                     $insertStmt->execute();
                 } catch (\PDOException $e) {
                     // Catch duplicate key error because other connection created the session already.
@@ -682,6 +771,7 @@ class PdoSessionHandler extends AbstractSessionHandler
     {
         switch ($this->driver) {
             case 'mysql':
+<<<<<<< HEAD
                 // MySQL 5.7.5 and later enforces a maximum length on lock names of 64 characters. Previously, no limit was enforced.
                 $lockId = \substr($sessionId, 0, 64);
                 // should we handle the return value? 0 on timeout, null on error
@@ -692,15 +782,33 @@ class PdoSessionHandler extends AbstractSessionHandler
 
                 $releaseStmt = $this->pdo->prepare('DO RELEASE_LOCK(:key)');
                 $releaseStmt->bindValue(':key', $lockId, \PDO::PARAM_STR);
+=======
+                // should we handle the return value? 0 on timeout, null on error
+                // we use a timeout of 50 seconds which is also the default for innodb_lock_wait_timeout
+                $stmt = $this->pdo->prepare('SELECT GET_LOCK(:key, 50)');
+                $stmt->bindValue(':key', $sessionId, \PDO::PARAM_STR);
+                $stmt->execute();
+
+                $releaseStmt = $this->pdo->prepare('DO RELEASE_LOCK(:key)');
+                $releaseStmt->bindValue(':key', $sessionId, \PDO::PARAM_STR);
+>>>>>>> web and vendor directory from composer install
 
                 return $releaseStmt;
             case 'pgsql':
                 // Obtaining an exclusive session level advisory lock requires an integer key.
+<<<<<<< HEAD
                 // When session.sid_bits_per_character > 4, the session id can contain non-hex-characters.
                 // So we cannot just use hexdec().
                 if (4 === \PHP_INT_SIZE) {
                     $sessionInt1 = $this->convertStringToInt($sessionId);
                     $sessionInt2 = $this->convertStringToInt(substr($sessionId, 4, 4));
+=======
+                // So we convert the HEX representation of the session id to an integer.
+                // Since integers are signed, we have to skip one hex char to fit in the range.
+                if (4 === PHP_INT_SIZE) {
+                    $sessionInt1 = hexdec(substr($sessionId, 0, 7));
+                    $sessionInt2 = hexdec(substr($sessionId, 7, 7));
+>>>>>>> web and vendor directory from composer install
 
                     $stmt = $this->pdo->prepare('SELECT pg_advisory_lock(:key1, :key2)');
                     $stmt->bindValue(':key1', $sessionInt1, \PDO::PARAM_INT);
@@ -711,7 +819,11 @@ class PdoSessionHandler extends AbstractSessionHandler
                     $releaseStmt->bindValue(':key1', $sessionInt1, \PDO::PARAM_INT);
                     $releaseStmt->bindValue(':key2', $sessionInt2, \PDO::PARAM_INT);
                 } else {
+<<<<<<< HEAD
                     $sessionBigInt = $this->convertStringToInt($sessionId);
+=======
+                    $sessionBigInt = hexdec(substr($sessionId, 0, 15));
+>>>>>>> web and vendor directory from composer install
 
                     $stmt = $this->pdo->prepare('SELECT pg_advisory_lock(:key)');
                     $stmt->bindValue(':key', $sessionBigInt, \PDO::PARAM_INT);
@@ -730,6 +842,7 @@ class PdoSessionHandler extends AbstractSessionHandler
     }
 
     /**
+<<<<<<< HEAD
      * Encodes the first 4 (when PHP_INT_SIZE == 4) or 8 characters of the string as an integer.
      *
      * Keep in mind, PHP integers are signed.
@@ -751,6 +864,8 @@ class PdoSessionHandler extends AbstractSessionHandler
     }
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * Return a locking or nonlocking SQL query to read session information.
      *
      * @return string The SQL string
@@ -781,6 +896,7 @@ class PdoSessionHandler extends AbstractSessionHandler
     }
 
     /**
+<<<<<<< HEAD
      * Returns an insert statement supported by the database for writing session data.
      *
      * @param string $sessionId   Session ID
@@ -847,6 +963,8 @@ class PdoSessionHandler extends AbstractSessionHandler
     }
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * Returns a merge/upsert (i.e. insert or update) statement when supported by the database for writing session data.
      *
      * @param string $sessionId   Session ID
@@ -857,11 +975,24 @@ class PdoSessionHandler extends AbstractSessionHandler
      */
     private function getMergeStatement($sessionId, $data, $maxlifetime)
     {
+<<<<<<< HEAD
+=======
+        $mergeSql = null;
+>>>>>>> web and vendor directory from composer install
         switch (true) {
             case 'mysql' === $this->driver:
                 $mergeSql = "INSERT INTO $this->table ($this->idCol, $this->dataCol, $this->lifetimeCol, $this->timeCol) VALUES (:id, :data, :lifetime, :time) ".
                     "ON DUPLICATE KEY UPDATE $this->dataCol = VALUES($this->dataCol), $this->lifetimeCol = VALUES($this->lifetimeCol), $this->timeCol = VALUES($this->timeCol)";
                 break;
+<<<<<<< HEAD
+=======
+            case 'oci' === $this->driver:
+                // DUAL is Oracle specific dummy table
+                $mergeSql = "MERGE INTO $this->table USING DUAL ON ($this->idCol = ?) ".
+                    "WHEN NOT MATCHED THEN INSERT ($this->idCol, $this->dataCol, $this->lifetimeCol, $this->timeCol) VALUES (?, ?, ?, ?) ".
+                    "WHEN MATCHED THEN UPDATE SET $this->dataCol = ?, $this->lifetimeCol = ?, $this->timeCol = ?";
+                break;
+>>>>>>> web and vendor directory from composer install
             case 'sqlsrv' === $this->driver && version_compare($this->pdo->getAttribute(\PDO::ATTR_SERVER_VERSION), '10', '>='):
                 // MERGE is only available since SQL Server 2008 and must be terminated by semicolon
                 // It also requires HOLDLOCK according to http://weblogs.sqlteam.com/dang/archive/2009/01/31/UPSERT-Race-Condition-With-MERGE.aspx
@@ -876,6 +1007,7 @@ class PdoSessionHandler extends AbstractSessionHandler
                 $mergeSql = "INSERT INTO $this->table ($this->idCol, $this->dataCol, $this->lifetimeCol, $this->timeCol) VALUES (:id, :data, :lifetime, :time) ".
                     "ON CONFLICT ($this->idCol) DO UPDATE SET ($this->dataCol, $this->lifetimeCol, $this->timeCol) = (EXCLUDED.$this->dataCol, EXCLUDED.$this->lifetimeCol, EXCLUDED.$this->timeCol)";
                 break;
+<<<<<<< HEAD
             default:
                 // MERGE is not supported with LOBs: http://www.oracle.com/technetwork/articles/fuecks-lobs-095315.html
                 return null;
@@ -900,6 +1032,31 @@ class PdoSessionHandler extends AbstractSessionHandler
         }
 
         return $mergeStmt;
+=======
+        }
+
+        if (null !== $mergeSql) {
+            $mergeStmt = $this->pdo->prepare($mergeSql);
+
+            if ('sqlsrv' === $this->driver || 'oci' === $this->driver) {
+                $mergeStmt->bindParam(1, $sessionId, \PDO::PARAM_STR);
+                $mergeStmt->bindParam(2, $sessionId, \PDO::PARAM_STR);
+                $mergeStmt->bindParam(3, $data, \PDO::PARAM_LOB);
+                $mergeStmt->bindParam(4, $maxlifetime, \PDO::PARAM_INT);
+                $mergeStmt->bindValue(5, time(), \PDO::PARAM_INT);
+                $mergeStmt->bindParam(6, $data, \PDO::PARAM_LOB);
+                $mergeStmt->bindParam(7, $maxlifetime, \PDO::PARAM_INT);
+                $mergeStmt->bindValue(8, time(), \PDO::PARAM_INT);
+            } else {
+                $mergeStmt->bindParam(':id', $sessionId, \PDO::PARAM_STR);
+                $mergeStmt->bindParam(':data', $data, \PDO::PARAM_LOB);
+                $mergeStmt->bindParam(':lifetime', $maxlifetime, \PDO::PARAM_INT);
+                $mergeStmt->bindValue(':time', time(), \PDO::PARAM_INT);
+            }
+
+            return $mergeStmt;
+        }
+>>>>>>> web and vendor directory from composer install
     }
 
     /**

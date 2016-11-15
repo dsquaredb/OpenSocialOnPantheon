@@ -78,14 +78,22 @@ standards checks, and provides configuration for our selected checks.
 To run checks only:
 
 ```console
+<<<<<<< HEAD
 $ composer cs-check
+=======
+$ ./vendor/bin/phpcs --standard=PSR2 src test
+>>>>>>> web and vendor directory from composer install
 ```
 
 `phpcs` also installs a tool named `phpcbf` which can attempt to fix problems
 for you:
 
 ```console
+<<<<<<< HEAD
 $ composer cs-fix
+=======
+$ ./vendor/bin/phpcbf --standard=PSR2 src test
+>>>>>>> web and vendor directory from composer install
 ```
 
 If you allow phpcbf to fix CS issues, please re-run the tests to ensure

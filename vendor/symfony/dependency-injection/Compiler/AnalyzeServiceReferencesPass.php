@@ -11,6 +11,7 @@
 
 namespace Symfony\Component\DependencyInjection\Compiler;
 
+<<<<<<< HEAD
 use Symfony\Component\DependencyInjection\Argument\ArgumentInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Definition;
@@ -19,6 +20,11 @@ use Symfony\Component\DependencyInjection\ExpressionLanguage;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\ExpressionLanguage\Expression;
+=======
+use Symfony\Component\DependencyInjection\Definition;
+use Symfony\Component\DependencyInjection\Reference;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+>>>>>>> web and vendor directory from composer install
 
 /**
  * Run this pass before passes that need to know more about the relation of
@@ -29,6 +35,7 @@ use Symfony\Component\ExpressionLanguage\Expression;
  *
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
  */
+<<<<<<< HEAD
 class AnalyzeServiceReferencesPass extends AbstractRecursivePass implements RepeatablePassInterface
 {
     private $graph;
@@ -36,6 +43,16 @@ class AnalyzeServiceReferencesPass extends AbstractRecursivePass implements Repe
     private $onlyConstructorArguments;
     private $lazy;
     private $expressionLanguage;
+=======
+class AnalyzeServiceReferencesPass implements RepeatablePassInterface
+{
+    private $graph;
+    private $container;
+    private $currentId;
+    private $currentDefinition;
+    private $repeatedPass;
+    private $onlyConstructorArguments;
+>>>>>>> web and vendor directory from composer install
 
     /**
      * @param bool $onlyConstructorArguments Sets this Service Reference pass to ignore method calls
@@ -50,17 +67,27 @@ class AnalyzeServiceReferencesPass extends AbstractRecursivePass implements Repe
      */
     public function setRepeatedPass(RepeatedPass $repeatedPass)
     {
+<<<<<<< HEAD
         // no-op for BC
+=======
+        $this->repeatedPass = $repeatedPass;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Processes a ContainerBuilder object to populate the service reference graph.
+<<<<<<< HEAD
+=======
+     *
+     * @param ContainerBuilder $container
+>>>>>>> web and vendor directory from composer install
      */
     public function process(ContainerBuilder $container)
     {
         $this->container = $container;
         $this->graph = $container->getCompiler()->getServiceReferenceGraph();
         $this->graph->clear();
+<<<<<<< HEAD
         $this->lazy = false;
 
         foreach ($container->getAliases() as $id => $alias) {
@@ -125,6 +152,70 @@ class AnalyzeServiceReferencesPass extends AbstractRecursivePass implements Repe
         $this->lazy = $lazy;
 
         return $value;
+=======
+
+        foreach ($container->getDefinitions() as $id => $definition) {
+            if ($definition->isSynthetic() || $definition->isAbstract()) {
+                continue;
+            }
+
+            $this->currentId = $id;
+            $this->currentDefinition = $definition;
+
+            $this->processArguments($definition->getArguments());
+            if ($definition->getFactoryService(false)) {
+                $this->processArguments(array(new Reference($definition->getFactoryService(false))));
+            }
+            if (is_array($definition->getFactory())) {
+                $this->processArguments($definition->getFactory());
+            }
+
+            if (!$this->onlyConstructorArguments) {
+                $this->processArguments($definition->getMethodCalls());
+                $this->processArguments($definition->getProperties());
+                if ($definition->getConfigurator()) {
+                    $this->processArguments(array($definition->getConfigurator()));
+                }
+            }
+        }
+
+        foreach ($container->getAliases() as $id => $alias) {
+            $this->graph->connect($id, $alias, (string) $alias, $this->getDefinition((string) $alias), null);
+        }
+    }
+
+    /**
+     * Processes service definitions for arguments to find relationships for the service graph.
+     *
+     * @param array $arguments An array of Reference or Definition objects relating to service definitions
+     */
+    private function processArguments(array $arguments)
+    {
+        foreach ($arguments as $argument) {
+            if (is_array($argument)) {
+                $this->processArguments($argument);
+            } elseif ($argument instanceof Reference) {
+                $this->graph->connect(
+                    $this->currentId,
+                    $this->currentDefinition,
+                    $this->getDefinitionId((string) $argument),
+                    $this->getDefinition((string) $argument),
+                    $argument
+                );
+            } elseif ($argument instanceof Definition) {
+                $this->processArguments($argument->getArguments());
+                $this->processArguments($argument->getMethodCalls());
+                $this->processArguments($argument->getProperties());
+
+                if (is_array($argument->getFactory())) {
+                    $this->processArguments($argument->getFactory());
+                }
+                if ($argument->getFactoryService(false)) {
+                    $this->processArguments(array(new Reference($argument->getFactoryService(false))));
+                }
+            }
+        }
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -136,6 +227,11 @@ class AnalyzeServiceReferencesPass extends AbstractRecursivePass implements Repe
      */
     private function getDefinition($id)
     {
+<<<<<<< HEAD
+=======
+        $id = $this->getDefinitionId($id);
+
+>>>>>>> web and vendor directory from composer install
         return null === $id ? null : $this->container->getDefinition($id);
     }
 
@@ -149,6 +245,7 @@ class AnalyzeServiceReferencesPass extends AbstractRecursivePass implements Repe
             return;
         }
 
+<<<<<<< HEAD
         return $this->container->normalizeId($id);
     }
 
@@ -178,5 +275,8 @@ class AnalyzeServiceReferencesPass extends AbstractRecursivePass implements Repe
         }
 
         return $this->expressionLanguage;
+=======
+        return $id;
+>>>>>>> web and vendor directory from composer install
     }
 }

@@ -16,6 +16,10 @@ use Symfony\Component\Debug\Exception\FatalErrorException;
 use Symfony\Component\Debug\DebugClassLoader;
 use Composer\Autoload\ClassLoader as ComposerClassLoader;
 use Symfony\Component\ClassLoader\ClassLoader as SymfonyClassLoader;
+<<<<<<< HEAD
+=======
+use Symfony\Component\ClassLoader\UniversalClassLoader as SymfonyUniversalClassLoader;
+>>>>>>> web and vendor directory from composer install
 
 /**
  * ErrorHandler for classes that do not exist.
@@ -100,12 +104,24 @@ class ClassNotFoundFatalErrorHandler implements FatalErrorHandlerInterface
             if ($function[0] instanceof DebugClassLoader) {
                 $function = $function[0]->getClassLoader();
 
+<<<<<<< HEAD
+=======
+                // @deprecated since version 2.5. Returning an object from DebugClassLoader::getClassLoader() is deprecated.
+                if (is_object($function)) {
+                    $function = array($function);
+                }
+
+>>>>>>> web and vendor directory from composer install
                 if (!is_array($function)) {
                     continue;
                 }
             }
 
+<<<<<<< HEAD
             if ($function[0] instanceof ComposerClassLoader || $function[0] instanceof SymfonyClassLoader) {
+=======
+            if ($function[0] instanceof ComposerClassLoader || $function[0] instanceof SymfonyClassLoader || $function[0] instanceof SymfonyUniversalClassLoader) {
+>>>>>>> web and vendor directory from composer install
                 foreach ($function[0]->getPrefixes() as $prefix => $paths) {
                     foreach ($paths as $path) {
                         $classes = array_merge($classes, $this->findClassInPath($path, $class, $prefix));
@@ -173,7 +189,11 @@ class ClassNotFoundFatalErrorHandler implements FatalErrorHandlerInterface
         );
 
         if ($prefix) {
+<<<<<<< HEAD
             $candidates = array_filter($candidates, function ($candidate) use ($prefix) { return 0 === strpos($candidate, $prefix); });
+=======
+            $candidates = array_filter($candidates, function ($candidate) use ($prefix) {return 0 === strpos($candidate, $prefix);});
+>>>>>>> web and vendor directory from composer install
         }
 
         // We cannot use the autoloader here as most of them use require; but if the class
@@ -201,6 +221,10 @@ class ClassNotFoundFatalErrorHandler implements FatalErrorHandlerInterface
      */
     private function classExists($class)
     {
+<<<<<<< HEAD
         return class_exists($class, false) || interface_exists($class, false) || trait_exists($class, false);
+=======
+        return class_exists($class, false) || interface_exists($class, false) || (function_exists('trait_exists') && trait_exists($class, false));
+>>>>>>> web and vendor directory from composer install
     }
 }

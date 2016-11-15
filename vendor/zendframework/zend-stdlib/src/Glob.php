@@ -38,7 +38,11 @@ abstract class Glob
      */
     public static function glob($pattern, $flags = 0, $forceFallback = false)
     {
+<<<<<<< HEAD
         if (!defined('GLOB_BRACE') || $forceFallback) {
+=======
+        if (! defined('GLOB_BRACE') || $forceFallback) {
+>>>>>>> web and vendor directory from composer install
             return static::fallbackGlob($pattern, $flags);
         }
 
@@ -96,7 +100,11 @@ abstract class Glob
      */
     protected static function fallbackGlob($pattern, $flags)
     {
+<<<<<<< HEAD
         if (!$flags & self::GLOB_BRACE) {
+=======
+        if (! $flags & self::GLOB_BRACE) {
+>>>>>>> web and vendor directory from composer install
             return static::systemGlob($pattern, $flags);
         }
 
@@ -182,7 +190,11 @@ abstract class Glob
         $current = $begin;
 
         while ($current < $length) {
+<<<<<<< HEAD
             if (!$flags & self::GLOB_NOESCAPE && $pattern[$current] === '\\') {
+=======
+            if (! $flags & self::GLOB_NOESCAPE && $pattern[$current] === '\\') {
+>>>>>>> web and vendor directory from composer install
                 if (++$current === $length) {
                     break;
                 }

@@ -31,9 +31,21 @@ class RequestContext
     private $httpPort;
     private $httpsPort;
     private $queryString;
+<<<<<<< HEAD
     private $parameters = array();
 
     /**
+=======
+
+    /**
+     * @var array
+     */
+    private $parameters = array();
+
+    /**
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param string $baseUrl     The base URL
      * @param string $method      The HTTP method
      * @param string $host        The HTTP host name
@@ -58,7 +70,13 @@ class RequestContext
     /**
      * Updates the RequestContext information based on a HttpFoundation Request.
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @param Request $request A Request instance
+     *
+     * @return RequestContext The current instance, implementing a fluent interface
+>>>>>>> web and vendor directory from composer install
      */
     public function fromRequest(Request $request)
     {
@@ -89,7 +107,11 @@ class RequestContext
      *
      * @param string $baseUrl The base URL
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return RequestContext The current instance, implementing a fluent interface
+>>>>>>> web and vendor directory from composer install
      */
     public function setBaseUrl($baseUrl)
     {
@@ -113,7 +135,11 @@ class RequestContext
      *
      * @param string $pathInfo The path info
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return RequestContext The current instance, implementing a fluent interface
+>>>>>>> web and vendor directory from composer install
      */
     public function setPathInfo($pathInfo)
     {
@@ -139,7 +165,11 @@ class RequestContext
      *
      * @param string $method The HTTP method
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return RequestContext The current instance, implementing a fluent interface
+>>>>>>> web and vendor directory from composer install
      */
     public function setMethod($method)
     {
@@ -165,7 +195,11 @@ class RequestContext
      *
      * @param string $host The HTTP host
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return RequestContext The current instance, implementing a fluent interface
+>>>>>>> web and vendor directory from composer install
      */
     public function setHost($host)
     {
@@ -189,7 +223,11 @@ class RequestContext
      *
      * @param string $scheme The HTTP scheme
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return RequestContext The current instance, implementing a fluent interface
+>>>>>>> web and vendor directory from composer install
      */
     public function setScheme($scheme)
     {
@@ -213,7 +251,11 @@ class RequestContext
      *
      * @param int $httpPort The HTTP port
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return RequestContext The current instance, implementing a fluent interface
+>>>>>>> web and vendor directory from composer install
      */
     public function setHttpPort($httpPort)
     {
@@ -237,7 +279,11 @@ class RequestContext
      *
      * @param int $httpsPort The HTTPS port
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return RequestContext The current instance, implementing a fluent interface
+>>>>>>> web and vendor directory from composer install
      */
     public function setHttpsPort($httpsPort)
     {
@@ -261,7 +307,11 @@ class RequestContext
      *
      * @param string $queryString The query string (after "?")
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return RequestContext The current instance, implementing a fluent interface
+>>>>>>> web and vendor directory from composer install
      */
     public function setQueryString($queryString)
     {
@@ -286,7 +336,11 @@ class RequestContext
      *
      * @param array $parameters The parameters
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return RequestContext The current instance, implementing a fluent interface
+>>>>>>> web and vendor directory from composer install
      */
     public function setParameters(array $parameters)
     {
@@ -325,7 +379,11 @@ class RequestContext
      * @param string $name      A parameter name
      * @param mixed  $parameter The parameter value
      *
+<<<<<<< HEAD
      * @return $this
+=======
+     * @return RequestContext The current instance, implementing a fluent interface
+>>>>>>> web and vendor directory from composer install
      */
     public function setParameter($name, $parameter)
     {

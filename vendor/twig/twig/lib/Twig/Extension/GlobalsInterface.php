@@ -20,5 +20,8 @@
 interface Twig_Extension_GlobalsInterface
 {
 }
+<<<<<<< HEAD
 
 class_alias('Twig_Extension_GlobalsInterface', 'Twig\Extension\GlobalsInterface', false);
+=======
+>>>>>>> web and vendor directory from composer install

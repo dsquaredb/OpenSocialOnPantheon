@@ -11,16 +11,22 @@
 
 namespace Symfony\Component\ClassLoader;
 
+<<<<<<< HEAD
 if (\PHP_VERSION_ID >= 70000) {
     @trigger_error('The '.__NAMESPACE__.'\ClassCollectionLoader class is deprecated since Symfony 3.3 and will be removed in 4.0.', E_USER_DEPRECATED);
 }
 
+=======
+>>>>>>> web and vendor directory from composer install
 /**
  * ClassCollectionLoader.
  *
  * @author Fabien Potencier <fabien@symfony.com>
+<<<<<<< HEAD
  *
  * @deprecated since version 3.3, to be removed in 4.0.
+=======
+>>>>>>> web and vendor directory from composer install
  */
 class ClassCollectionLoader
 {
@@ -50,7 +56,14 @@ class ClassCollectionLoader
         self::$loaded[$name] = true;
 
         if ($adaptive) {
+<<<<<<< HEAD
             $declared = array_merge(get_declared_classes(), get_declared_interfaces(), get_declared_traits());
+=======
+            $declared = array_merge(get_declared_classes(), get_declared_interfaces());
+            if (function_exists('get_declared_traits')) {
+                $declared = array_merge($declared, get_declared_traits());
+            }
+>>>>>>> web and vendor directory from composer install
 
             // don't include already declared classes
             $classes = array_diff($classes, $declared);
@@ -65,8 +78,13 @@ class ClassCollectionLoader
         if (!is_dir($cacheDir) && !@mkdir($cacheDir, 0777, true) && !is_dir($cacheDir)) {
             throw new \RuntimeException(sprintf('Class Collection Loader was not able to create directory "%s"', $cacheDir));
         }
+<<<<<<< HEAD
         $cacheDir = rtrim(realpath($cacheDir) ?: $cacheDir, '/'.DIRECTORY_SEPARATOR);
         $cache = $cacheDir.'/'.$name.$extension;
+=======
+        $cacheDir = rtrim(realpath($cacheDir), '/'.DIRECTORY_SEPARATOR);
+        $cache = $cacheDir.DIRECTORY_SEPARATOR.$name.$extension;
+>>>>>>> web and vendor directory from composer install
 
         // auto-reload
         $reload = false;
@@ -101,6 +119,7 @@ class ClassCollectionLoader
             return;
         }
         if (!$adaptive) {
+<<<<<<< HEAD
             $declared = array_merge(get_declared_classes(), get_declared_interfaces(), get_declared_traits());
         }
 
@@ -160,6 +179,30 @@ REGEX;
 
             if (preg_match($dontInlineRegex, $c)) {
                 $file = explode('/', str_replace(DIRECTORY_SEPARATOR, '/', $file));
+=======
+            $declared = array_merge(get_declared_classes(), get_declared_interfaces());
+            if (function_exists('get_declared_traits')) {
+                $declared = array_merge($declared, get_declared_traits());
+            }
+        }
+
+        $c = '(?:\s*+(?:(?:#|//)[^\n]*+\n|/\*(?:(?<!\*/).)++)?+)*+';
+        $strictTypesRegex = str_replace('.', $c, "'^<\?php\s.declare.\(.strict_types.=.1.\).;'is");
+
+        $cacheDir = explode(DIRECTORY_SEPARATOR, $cacheDir);
+        $files = array();
+        $content = '';
+        foreach (self::getOrderedClasses($classes) as $class) {
+            if (in_array($class->getName(), $declared)) {
+                continue;
+            }
+
+            $files[] = $file = $class->getFileName();
+            $c = file_get_contents($file);
+
+            if (preg_match($strictTypesRegex, $c)) {
+                $file = explode(DIRECTORY_SEPARATOR, $file);
+>>>>>>> web and vendor directory from composer install
 
                 for ($i = 0; isset($file[$i], $cacheDir[$i]); ++$i) {
                     if ($file[$i] !== $cacheDir[$i]) {
@@ -167,11 +210,19 @@ REGEX;
                     }
                 }
                 if (1 >= $i) {
+<<<<<<< HEAD
                     $file = var_export(implode('/', $file), true);
                 } else {
                     $file = array_slice($file, $i);
                     $file = str_repeat('../', count($cacheDir) - $i).implode('/', $file);
                     $file = '__DIR__.'.var_export('/'.$file, true);
+=======
+                    $file = var_export(implode(DIRECTORY_SEPARATOR, $file), true);
+                } else {
+                    $file = array_slice($file, $i);
+                    $file = str_repeat('..'.DIRECTORY_SEPARATOR, count($cacheDir) - $i).implode(DIRECTORY_SEPARATOR, $file);
+                    $file = '__DIR__.'.var_export(DIRECTORY_SEPARATOR.$file, true);
+>>>>>>> web and vendor directory from composer install
                 }
 
                 $c = "\nnamespace {require $file;}";
@@ -191,7 +242,14 @@ REGEX;
         }
         self::writeCacheFile($cache, '<?php '.$content);
 
+<<<<<<< HEAD
         return $files;
+=======
+        if ($autoReload) {
+            // save the resources
+            self::writeCacheFile($metadata, serialize(array($files, $classes)));
+        }
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -245,7 +303,11 @@ REGEX;
                 do {
                     $token = $tokens[++$i];
                     $output .= isset($token[1]) && 'b"' !== $token ? $token[1] : $token;
+<<<<<<< HEAD
                 } while (T_END_HEREDOC !== $token[0]);
+=======
+                } while ($token[0] !== T_END_HEREDOC);
+>>>>>>> web and vendor directory from composer install
                 $output .= "\n";
                 $rawChunk = '';
             } elseif (T_CONSTANT_ENCAPSED_STRING === $token[0]) {
@@ -262,7 +324,11 @@ REGEX;
 
         $output .= self::compressCode($rawChunk);
 
+<<<<<<< HEAD
         if (\PHP_VERSION_ID >= 70000) {
+=======
+        if (PHP_VERSION_ID >= 70000) {
+>>>>>>> web and vendor directory from composer install
             // PHP 7 memory manager will not release after token_get_all(), see https://bugs.php.net/70098
             unset($tokens, $rawChunk);
             gc_mem_caches();
@@ -305,6 +371,7 @@ REGEX;
      */
     private static function writeCacheFile($file, $content)
     {
+<<<<<<< HEAD
         $dir = dirname($file);
         if (!is_writable($dir)) {
             throw new \RuntimeException(sprintf('Cache directory "%s" is not writable.', $dir));
@@ -312,6 +379,9 @@ REGEX;
 
         $tmpFile = tempnam($dir, basename($file));
 
+=======
+        $tmpFile = tempnam(dirname($file), basename($file));
+>>>>>>> web and vendor directory from composer install
         if (false !== @file_put_contents($tmpFile, $content) && @rename($tmpFile, $file)) {
             @chmod($file, 0666 & ~umask());
 
@@ -324,6 +394,11 @@ REGEX;
     /**
      * Gets an ordered array of passed classes including all their dependencies.
      *
+<<<<<<< HEAD
+=======
+     * @param array $classes
+     *
+>>>>>>> web and vendor directory from composer install
      * @return \ReflectionClass[] An array of sorted \ReflectionClass instances (dependencies added if needed)
      *
      * @throws \InvalidArgumentException When a class can't be loaded
@@ -363,10 +438,19 @@ REGEX;
 
         $traits = array();
 
+<<<<<<< HEAD
         foreach ($classes as $c) {
             foreach (self::resolveDependencies(self::computeTraitDeps($c), $c) as $trait) {
                 if ($trait !== $c) {
                     $traits[] = $trait;
+=======
+        if (method_exists('ReflectionClass', 'getTraits')) {
+            foreach ($classes as $c) {
+                foreach (self::resolveDependencies(self::computeTraitDeps($c), $c) as $trait) {
+                    if ($trait !== $c) {
+                        $traits[] = $trait;
+                    }
+>>>>>>> web and vendor directory from composer install
                 }
             }
         }

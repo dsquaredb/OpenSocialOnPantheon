@@ -1,6 +1,7 @@
 CHANGELOG
 =========
 
+<<<<<<< HEAD
 3.4.0
 -----
 
@@ -40,6 +41,8 @@ CHANGELOG
  * added truncate method to FormatterHelper
  * added setColumnWidth(s) method to Table 
 
+=======
+>>>>>>> web and vendor directory from composer install
 2.8.3
 -----
 

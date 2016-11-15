@@ -24,5 +24,8 @@ class Twig_Util_TemplateDirIterator extends IteratorIterator
         return (string) parent::key();
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_Util_TemplateDirIterator', 'Twig\Util\TemplateDirIterator', false);
+=======
+>>>>>>> web and vendor directory from composer install

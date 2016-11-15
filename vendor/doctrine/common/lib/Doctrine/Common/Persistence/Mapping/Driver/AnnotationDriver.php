@@ -45,14 +45,22 @@ abstract class AnnotationDriver implements MappingDriver
      *
      * @var array
      */
+<<<<<<< HEAD
     protected $paths = [];
+=======
+    protected $paths = array();
+>>>>>>> web and vendor directory from composer install
 
     /**
      * The paths excluded from path where to look for mapping files.
      *
      * @var array
      */
+<<<<<<< HEAD
     protected $excludePaths = [];
+=======
+    protected $excludePaths = array();
+>>>>>>> web and vendor directory from composer install
 
     /**
      * The file extension of mapping documents.
@@ -73,7 +81,11 @@ abstract class AnnotationDriver implements MappingDriver
      *
      * @var array
      */
+<<<<<<< HEAD
     protected $entityAnnotationClasses = [];
+=======
+    protected $entityAnnotationClasses = array();
+>>>>>>> web and vendor directory from composer install
 
     /**
      * Initializes a new AnnotationDriver that uses the given AnnotationReader for reading
@@ -200,8 +212,13 @@ abstract class AnnotationDriver implements MappingDriver
             throw MappingException::pathRequired();
         }
 
+<<<<<<< HEAD
         $classes = [];
         $includedFiles = [];
+=======
+        $classes = array();
+        $includedFiles = array();
+>>>>>>> web and vendor directory from composer install
 
         foreach ($this->paths as $path) {
             if ( ! is_dir($path)) {

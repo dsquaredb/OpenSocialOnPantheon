@@ -65,7 +65,11 @@ trait SapiEmitterTrait
     {
         foreach ($response->getHeaders() as $header => $values) {
             $name  = $this->filterHeader($header);
+<<<<<<< HEAD
             $first = $name === 'Set-Cookie' ? false : true;
+=======
+            $first = true;
+>>>>>>> web and vendor directory from composer install
             foreach ($values as $value) {
                 header(sprintf(
                     '%s: %s',

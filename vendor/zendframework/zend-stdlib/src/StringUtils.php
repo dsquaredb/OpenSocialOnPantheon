@@ -84,7 +84,11 @@ abstract class StringUtils
     public static function registerWrapper($wrapper)
     {
         $wrapper = (string) $wrapper;
+<<<<<<< HEAD
         if (!in_array($wrapper, static::$wrapperRegistry, true)) {
+=======
+        if (! in_array($wrapper, static::$wrapperRegistry, true)) {
+>>>>>>> web and vendor directory from composer install
             static::$wrapperRegistry[] = $wrapper;
         }
     }

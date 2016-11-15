@@ -34,15 +34,21 @@ class Installer extends LibraryInstaller
         'decibel'      => 'DecibelInstaller',
         'drupal'       => 'DrupalInstaller',
         'elgg'         => 'ElggInstaller',
+<<<<<<< HEAD
         'eliasis'      => 'EliasisInstaller',
         'ee3'          => 'ExpressionEngineInstaller',
         'ee2'          => 'ExpressionEngineInstaller',
         'ezplatform'   => 'EzPlatformInstaller',
+=======
+        'ee3'          => 'ExpressionEngineInstaller',
+        'ee2'          => 'ExpressionEngineInstaller',
+>>>>>>> web and vendor directory from composer install
         'fuel'         => 'FuelInstaller',
         'fuelphp'      => 'FuelphpInstaller',
         'grav'         => 'GravInstaller',
         'hurad'        => 'HuradInstaller',
         'imagecms'     => 'ImageCMSInstaller',
+<<<<<<< HEAD
         'itop'         => 'ItopInstaller',
         'joomla'       => 'JoomlaInstaller',
         'kanboard'     => 'KanboardInstaller',
@@ -57,10 +63,21 @@ class Installer extends LibraryInstaller
         'majima'       => 'MajimaInstaller',
         'mako'         => 'MakoInstaller',
         'maya'         => 'MayaInstaller',
+=======
+        'joomla'       => 'JoomlaInstaller',
+        'kirby'        => 'KirbyInstaller',
+        'kodicms'      => 'KodiCMSInstaller',
+        'kohana'       => 'KohanaInstaller',
+        'laravel'      => 'LaravelInstaller',
+        'lithium'      => 'LithiumInstaller',
+        'magento'      => 'MagentoInstaller',
+        'mako'         => 'MakoInstaller',
+>>>>>>> web and vendor directory from composer install
         'mautic'       => 'MauticInstaller',
         'mediawiki'    => 'MediaWikiInstaller',
         'microweber'   => 'MicroweberInstaller',
         'modulework'   => 'MODULEWorkInstaller',
+<<<<<<< HEAD
         'modx'         => 'ModxInstaller',
         'modxevo'      => 'MODXEvoInstaller',
         'moodle'       => 'MoodleInstaller',
@@ -69,6 +86,12 @@ class Installer extends LibraryInstaller
         'oxid'         => 'OxidInstaller',
         'osclass'         => 'OsclassInstaller',
         'pxcms'        => 'PxcmsInstaller',
+=======
+        'modxevo'      => 'MODXEvoInstaller',
+        'moodle'       => 'MoodleInstaller',
+        'october'      => 'OctoberInstaller',
+        'oxid'         => 'OxidInstaller',
+>>>>>>> web and vendor directory from composer install
         'phpbb'        => 'PhpBBInstaller',
         'pimcore'      => 'PimcoreInstaller',
         'piwik'        => 'PiwikInstaller',
@@ -77,21 +100,32 @@ class Installer extends LibraryInstaller
         'puppet'       => 'PuppetInstaller',
         'radphp'       => 'RadPHPInstaller',
         'phifty'       => 'PhiftyInstaller',
+<<<<<<< HEAD
         'porto'        => 'PortoInstaller',
+=======
+>>>>>>> web and vendor directory from composer install
         'redaxo'       => 'RedaxoInstaller',
         'reindex'      => 'ReIndexInstaller',
         'roundcube'    => 'RoundcubeInstaller',
         'shopware'     => 'ShopwareInstaller',
+<<<<<<< HEAD
         'sitedirect'   => 'SiteDirectInstaller',
         'silverstripe' => 'SilverStripeInstaller',
         'smf'          => 'SMFInstaller',
         'sydes'        => 'SyDESInstaller',
+=======
+        'silverstripe' => 'SilverStripeInstaller',
+        'smf'          => 'SMFInstaller',
+>>>>>>> web and vendor directory from composer install
         'symfony1'     => 'Symfony1Installer',
         'thelia'       => 'TheliaInstaller',
         'tusk'         => 'TuskInstaller',
         'typo3-cms'    => 'TYPO3CmsInstaller',
         'typo3-flow'   => 'TYPO3FlowInstaller',
+<<<<<<< HEAD
         'userfrosting' => 'UserFrostingInstaller',
+=======
+>>>>>>> web and vendor directory from composer install
         'vanilla'      => 'VanillaInstaller',
         'whmcs'        => 'WHMCSInstaller',
         'wolfcms'      => 'WolfCMSInstaller',
@@ -124,9 +158,20 @@ class Installer extends LibraryInstaller
 
     public function uninstall(InstalledRepositoryInterface $repo, PackageInterface $package)
     {
+<<<<<<< HEAD
         parent::uninstall($repo, $package);
         $installPath = $this->getPackageBasePath($package);
         $this->io->write(sprintf('Deleting %s - %s', $installPath, !file_exists($installPath) ? '<comment>deleted</comment>' : '<error>not deleted</error>'));
+=======
+        if (!$repo->hasPackage($package)) {
+            throw new \InvalidArgumentException('Package is not installed: '.$package);
+        }
+
+        $repo->removePackage($package);
+
+        $installPath = $this->getInstallPath($package);
+        $this->io->write(sprintf('Deleting %s - %s', $installPath, $this->filesystem->removeDirectory($installPath) ? '<comment>deleted</comment>' : '<error>not deleted</error>'));
+>>>>>>> web and vendor directory from composer install
     }
 
     /**

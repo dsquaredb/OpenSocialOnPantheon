@@ -25,6 +25,7 @@ class Cookie
     protected $path;
     protected $secure;
     protected $httpOnly;
+<<<<<<< HEAD
     private $raw;
     private $sameSite;
 
@@ -94,6 +95,23 @@ class Cookie
      * @throws \InvalidArgumentException
      */
     public function __construct($name, $value = null, $expire = 0, $path = '/', $domain = null, $secure = false, $httpOnly = true, $raw = false, $sameSite = null)
+=======
+
+    /**
+     * Constructor.
+     *
+     * @param string                                  $name     The name of the cookie
+     * @param string                                  $value    The value of the cookie
+     * @param int|string|\DateTime|\DateTimeInterface $expire   The time the cookie expires
+     * @param string                                  $path     The path on the server in which the cookie will be available on
+     * @param string                                  $domain   The domain that the cookie is available to
+     * @param bool                                    $secure   Whether the cookie should only be transmitted over a secure HTTPS connection from the client
+     * @param bool                                    $httpOnly Whether the cookie will be made accessible only through the HTTP protocol
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function __construct($name, $value = null, $expire = 0, $path = '/', $domain = null, $secure = false, $httpOnly = true)
+>>>>>>> web and vendor directory from composer install
     {
         // from PHP source code
         if (preg_match("/[=,; \t\r\n\013\014]/", $name)) {
@@ -105,12 +123,20 @@ class Cookie
         }
 
         // convert expiration time to a Unix timestamp
+<<<<<<< HEAD
         if ($expire instanceof \DateTimeInterface) {
+=======
+        if ($expire instanceof \DateTime || $expire instanceof \DateTimeInterface) {
+>>>>>>> web and vendor directory from composer install
             $expire = $expire->format('U');
         } elseif (!is_numeric($expire)) {
             $expire = strtotime($expire);
 
+<<<<<<< HEAD
             if (false === $expire) {
+=======
+            if (false === $expire || -1 === $expire) {
+>>>>>>> web and vendor directory from composer install
                 throw new \InvalidArgumentException('The cookie expiration time is not valid.');
             }
         }
@@ -118,6 +144,7 @@ class Cookie
         $this->name = $name;
         $this->value = $value;
         $this->domain = $domain;
+<<<<<<< HEAD
         $this->expire = 0 < $expire ? (int) $expire : 0;
         $this->path = empty($path) ? '/' : $path;
         $this->secure = (bool) $secure;
@@ -133,6 +160,12 @@ class Cookie
         }
 
         $this->sameSite = $sameSite;
+=======
+        $this->expire = $expire;
+        $this->path = empty($path) ? '/' : $path;
+        $this->secure = (bool) $secure;
+        $this->httpOnly = (bool) $httpOnly;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -142,6 +175,7 @@ class Cookie
      */
     public function __toString()
     {
+<<<<<<< HEAD
         $str = ($this->isRaw() ? $this->getName() : urlencode($this->getName())).'=';
 
         if ('' === (string) $this->getValue()) {
@@ -156,6 +190,22 @@ class Cookie
 
         if ($this->getPath()) {
             $str .= '; path='.$this->getPath();
+=======
+        $str = urlencode($this->getName()).'=';
+
+        if ('' === (string) $this->getValue()) {
+            $str .= 'deleted; expires='.gmdate('D, d-M-Y H:i:s T', time() - 31536001);
+        } else {
+            $str .= urlencode($this->getValue());
+
+            if ($this->getExpiresTime() !== 0) {
+                $str .= '; expires='.gmdate('D, d-M-Y H:i:s T', $this->getExpiresTime());
+            }
+        }
+
+        if ($this->path) {
+            $str .= '; path='.$this->path;
+>>>>>>> web and vendor directory from composer install
         }
 
         if ($this->getDomain()) {
@@ -170,10 +220,13 @@ class Cookie
             $str .= '; httponly';
         }
 
+<<<<<<< HEAD
         if (null !== $this->getSameSite()) {
             $str .= '; samesite='.$this->getSameSite();
         }
 
+=======
+>>>>>>> web and vendor directory from composer install
         return $str;
     }
 
@@ -190,7 +243,11 @@ class Cookie
     /**
      * Gets the value of the cookie.
      *
+<<<<<<< HEAD
      * @return string|null
+=======
+     * @return string
+>>>>>>> web and vendor directory from composer install
      */
     public function getValue()
     {
@@ -200,7 +257,11 @@ class Cookie
     /**
      * Gets the domain that the cookie is available to.
      *
+<<<<<<< HEAD
      * @return string|null
+=======
+     * @return string
+>>>>>>> web and vendor directory from composer install
      */
     public function getDomain()
     {
@@ -218,6 +279,7 @@ class Cookie
     }
 
     /**
+<<<<<<< HEAD
      * Gets the max-age attribute.
      *
      * @return int
@@ -230,6 +292,8 @@ class Cookie
     }
 
     /**
+=======
+>>>>>>> web and vendor directory from composer install
      * Gets the path on the server in which the cookie will be available on.
      *
      * @return string
@@ -268,6 +332,7 @@ class Cookie
     {
         return $this->expire < time();
     }
+<<<<<<< HEAD
 
     /**
      * Checks if the cookie value should be sent with no url encoding.
@@ -288,4 +353,6 @@ class Cookie
     {
         return $this->sameSite;
     }
+=======
+>>>>>>> web and vendor directory from composer install
 }

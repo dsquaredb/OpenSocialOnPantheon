@@ -33,7 +33,11 @@ class AutoAliasServicePass implements CompilerPassInterface
 
                 $aliasId = $container->getParameterBag()->resolveValue($tag['format']);
                 if ($container->hasDefinition($aliasId) || $container->hasAlias($aliasId)) {
+<<<<<<< HEAD
                     $container->setAlias($serviceId, new Alias($aliasId, true));
+=======
+                    $container->setAlias($serviceId, new Alias($aliasId));
+>>>>>>> web and vendor directory from composer install
                 }
             }
         }

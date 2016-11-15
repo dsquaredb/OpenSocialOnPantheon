@@ -14,6 +14,10 @@ namespace Symfony\Component\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\DependencyInjection\Exception\BadMethodCallException;
 use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
+<<<<<<< HEAD
+=======
+use Symfony\Component\Config\Resource\FileResource;
+>>>>>>> web and vendor directory from composer install
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -25,8 +29,11 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  */
 abstract class Extension implements ExtensionInterface, ConfigurationExtensionInterface
 {
+<<<<<<< HEAD
     private $processedConfigs = array();
 
+=======
+>>>>>>> web and vendor directory from composer install
     /**
      * {@inheritdoc}
      */
@@ -66,7 +73,11 @@ abstract class Extension implements ExtensionInterface, ConfigurationExtensionIn
     public function getAlias()
     {
         $className = get_class($this);
+<<<<<<< HEAD
         if ('Extension' != substr($className, -9)) {
+=======
+        if (substr($className, -9) != 'Extension') {
+>>>>>>> web and vendor directory from composer install
             throw new BadMethodCallException('This extension does not follow the naming convention; you must overwrite the getAlias() method.');
         }
         $classBaseName = substr(strrchr($className, '\\'), 1, -9);
@@ -79,6 +90,7 @@ abstract class Extension implements ExtensionInterface, ConfigurationExtensionIn
      */
     public function getConfiguration(array $config, ContainerBuilder $container)
     {
+<<<<<<< HEAD
         $class = get_class($this);
         $class = substr_replace($class, '\Configuration', strrpos($class, '\\'));
         $class = $container->getReflectionClass($class);
@@ -86,6 +98,19 @@ abstract class Extension implements ExtensionInterface, ConfigurationExtensionIn
 
         if ($class && (!$constructor || !$constructor->getNumberOfRequiredParameters())) {
             return $class->newInstance();
+=======
+        $reflected = new \ReflectionClass($this);
+        $namespace = $reflected->getNamespaceName();
+
+        $class = $namespace.'\\Configuration';
+        if (class_exists($class)) {
+            $r = new \ReflectionClass($class);
+            $container->addResource(new FileResource($r->getFileName()));
+
+            if (!method_exists($class, '__construct')) {
+                return new $class();
+            }
+>>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -93,6 +118,7 @@ abstract class Extension implements ExtensionInterface, ConfigurationExtensionIn
     {
         $processor = new Processor();
 
+<<<<<<< HEAD
         return $this->processedConfigs[] = $processor->processConfiguration($configuration, $configs);
     }
 
@@ -109,6 +135,15 @@ abstract class Extension implements ExtensionInterface, ConfigurationExtensionIn
     }
 
     /**
+=======
+        return $processor->processConfiguration($configuration, $configs);
+    }
+
+    /**
+     * @param ContainerBuilder $container
+     * @param array            $config
+     *
+>>>>>>> web and vendor directory from composer install
      * @return bool Whether the configuration is enabled
      *
      * @throws InvalidArgumentException When the config is not enableable

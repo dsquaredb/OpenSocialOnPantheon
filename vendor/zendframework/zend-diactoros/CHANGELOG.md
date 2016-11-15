@@ -2,6 +2,7 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+<<<<<<< HEAD
 ## 1.4.1 - 2017-08-17
 
 ### Added
@@ -177,6 +178,8 @@ All notable changes to this project will be documented in this file, in reverse 
   This allows using other range units, such as `items`, without incorrectly
   emitting truncated content.
 
+=======
+>>>>>>> web and vendor directory from composer install
 ## 1.3.7 - 2016-10-11
 
 ### Added

@@ -112,7 +112,11 @@ trait MessageTrait
      */
     public function hasHeader($header)
     {
+<<<<<<< HEAD
         return isset($this->headerNames[strtolower($header)]);
+=======
+        return array_key_exists(strtolower($header), $this->headerNames);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -136,8 +140,15 @@ trait MessageTrait
         }
 
         $header = $this->headerNames[strtolower($header)];
+<<<<<<< HEAD
 
         return $this->headers[$header];
+=======
+        $value  = $this->headers[$header];
+        $value  = is_array($value) ? $value : [$value];
+
+        return $value;
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -187,7 +198,22 @@ trait MessageTrait
      */
     public function withHeader($header, $value)
     {
+<<<<<<< HEAD
         $this->assertHeader($header);
+=======
+        if (is_string($value)) {
+            $value = [$value];
+        }
+
+        if (! is_array($value) || ! $this->arrayContainsOnlyStrings($value)) {
+            throw new InvalidArgumentException(
+                'Invalid header value; must be a string or array of strings'
+            );
+        }
+
+        HeaderSecurity::assertValidName($header);
+        self::assertValidHeaderValue($value);
+>>>>>>> web and vendor directory from composer install
 
         $normalized = strtolower($header);
 
@@ -195,9 +221,12 @@ trait MessageTrait
         if ($new->hasHeader($header)) {
             unset($new->headers[$new->headerNames[$normalized]]);
         }
+<<<<<<< HEAD
 
         $value = $this->filterHeaderValue($value);
 
+=======
+>>>>>>> web and vendor directory from composer install
         $new->headerNames[$normalized] = $header;
         $new->headers[$header]         = $value;
 
@@ -223,16 +252,38 @@ trait MessageTrait
      */
     public function withAddedHeader($header, $value)
     {
+<<<<<<< HEAD
         $this->assertHeader($header);
+=======
+        if (is_string($value)) {
+            $value = [ $value ];
+        }
+
+        if (! is_array($value) || ! $this->arrayContainsOnlyStrings($value)) {
+            throw new InvalidArgumentException(
+                'Invalid header value; must be a string or array of strings'
+            );
+        }
+
+        HeaderSecurity::assertValidName($header);
+        self::assertValidHeaderValue($value);
+>>>>>>> web and vendor directory from composer install
 
         if (! $this->hasHeader($header)) {
             return $this->withHeader($header, $value);
         }
 
+<<<<<<< HEAD
         $header = $this->headerNames[strtolower($header)];
 
         $new = clone $this;
         $value = $this->filterHeaderValue($value);
+=======
+        $normalized = strtolower($header);
+        $header     = $this->headerNames[$normalized];
+
+        $new = clone $this;
+>>>>>>> web and vendor directory from composer install
         $new->headers[$header] = array_merge($this->headers[$header], $value);
         return $new;
     }
@@ -311,11 +362,26 @@ trait MessageTrait
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Test that an array contains only strings
+     *
+     * @param array $array
+     * @return bool
+     */
+    private function arrayContainsOnlyStrings(array $array)
+    {
+        return array_reduce($array, [__CLASS__, 'filterStringValue'], true);
+    }
+
+    /**
+>>>>>>> web and vendor directory from composer install
      * Filter a set of headers to ensure they are in the correct internal format.
      *
      * Used by message constructors to allow setting all initial headers at once.
      *
      * @param array $originalHeaders Headers to filter.
+<<<<<<< HEAD
      */
     private function setHeaders(array $originalHeaders)
     {
@@ -325,13 +391,82 @@ trait MessageTrait
             $value = $this->filterHeaderValue($value);
 
             $this->assertHeader($header);
+=======
+     * @return array Filtered headers and names.
+     */
+    private function filterHeaders(array $originalHeaders)
+    {
+        $headerNames = $headers = [];
+        foreach ($originalHeaders as $header => $value) {
+            if (! is_string($header)) {
+                throw new InvalidArgumentException(sprintf(
+                    'Invalid header name; expected non-empty string, received %s',
+                    gettype($header)
+                ));
+            }
+
+            if (! is_array($value) && ! is_string($value) && ! is_numeric($value)) {
+                throw new InvalidArgumentException(sprintf(
+                    'Invalid header value type; expected number, string, or array; received %s',
+                    (is_object($value) ? get_class($value) : gettype($value))
+                ));
+            }
+
+            if (is_array($value)) {
+                array_walk($value, function ($item) {
+                    if (! is_string($item) && ! is_numeric($item)) {
+                        throw new InvalidArgumentException(sprintf(
+                            'Invalid header value type; expected number, string, or array; received %s',
+                            (is_object($item) ? get_class($item) : gettype($item))
+                        ));
+                    }
+                });
+            }
+
+            if (! is_array($value)) {
+                $value = [ $value ];
+            }
+>>>>>>> web and vendor directory from composer install
 
             $headerNames[strtolower($header)] = $header;
             $headers[$header] = $value;
         }
 
+<<<<<<< HEAD
         $this->headerNames = $headerNames;
         $this->headers = $headers;
+=======
+        return [$headerNames, $headers];
+    }
+
+    /**
+     * Test if a value is a string
+     *
+     * Used with array_reduce.
+     *
+     * @param bool $carry
+     * @param mixed $item
+     * @return bool
+     */
+    private static function filterStringValue($carry, $item)
+    {
+        if (! is_string($item)) {
+            return false;
+        }
+        return $carry;
+    }
+
+    /**
+     * Assert that the provided header values are valid.
+     *
+     * @see http://tools.ietf.org/html/rfc7230#section-3.2
+     * @param string[] $values
+     * @throws InvalidArgumentException
+     */
+    private static function assertValidHeaderValue(array $values)
+    {
+        array_walk($values, __NAMESPACE__ . '\HeaderSecurity::assertValid');
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -363,6 +498,7 @@ trait MessageTrait
             ));
         }
     }
+<<<<<<< HEAD
 
     /**
      * @param mixed $values
@@ -392,4 +528,6 @@ trait MessageTrait
     {
         HeaderSecurity::assertValidName($name);
     }
+=======
+>>>>>>> web and vendor directory from composer install
 }

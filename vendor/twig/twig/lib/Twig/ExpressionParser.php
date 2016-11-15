@@ -3,8 +3,13 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
  * (c) Armin Ronacher
+=======
+ * (c) 2009 Fabien Potencier
+ * (c) 2009 Armin Ronacher
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -33,7 +38,11 @@ class Twig_ExpressionParser
 
     private $env;
 
+<<<<<<< HEAD
     public function __construct(Twig_Parser $parser, $env = null)
+=======
+    public function __construct(Twig_Parser $parser, Twig_Environment $env = null)
+>>>>>>> web and vendor directory from composer install
     {
         $this->parser = $parser;
 
@@ -189,7 +198,11 @@ class Twig_ExpressionParser
                     $negClass = 'Twig_Node_Expression_Unary_Neg';
                     $posClass = 'Twig_Node_Expression_Unary_Pos';
                     if (!(in_array($ref->getName(), array($negClass, $posClass)) || $ref->isSubclassOf($negClass) || $ref->isSubclassOf($posClass))) {
+<<<<<<< HEAD
                         throw new Twig_Error_Syntax(sprintf('Unexpected unary operator "%s".', $token->getValue()), $token->getLine(), $this->parser->getStream()->getSourceContext());
+=======
+                        throw new Twig_Error_Syntax(sprintf('Unexpected unary operator "%s".', $token->getValue()), $token->getLine(), $this->parser->getStream()->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
                     }
 
                     $this->parser->getStream()->next();
@@ -199,16 +212,24 @@ class Twig_ExpressionParser
                     break;
                 }
 
+<<<<<<< HEAD
                 // no break
+=======
+>>>>>>> web and vendor directory from composer install
             default:
                 if ($token->test(Twig_Token::PUNCTUATION_TYPE, '[')) {
                     $node = $this->parseArrayExpression();
                 } elseif ($token->test(Twig_Token::PUNCTUATION_TYPE, '{')) {
                     $node = $this->parseHashExpression();
+<<<<<<< HEAD
                 } elseif ($token->test(Twig_Token::OPERATOR_TYPE, '=') && ('==' === $this->parser->getStream()->look(-1)->getValue() || '!=' === $this->parser->getStream()->look(-1)->getValue())) {
                     throw new Twig_Error_Syntax(sprintf('Unexpected operator of value "%s". Did you try to use "===" or "!==" for strict comparison? Use "is same as(value)" instead.', $token->getValue()), $token->getLine(), $this->parser->getStream()->getSourceContext());
                 } else {
                     throw new Twig_Error_Syntax(sprintf('Unexpected token "%s" of value "%s".', Twig_Token::typeToEnglish($token->getType()), $token->getValue()), $token->getLine(), $this->parser->getStream()->getSourceContext());
+=======
+                } else {
+                    throw new Twig_Error_Syntax(sprintf('Unexpected token "%s" of value "%s".', Twig_Token::typeToEnglish($token->getType()), $token->getValue()), $token->getLine(), $this->parser->getStream()->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
                 }
         }
 
@@ -299,7 +320,11 @@ class Twig_ExpressionParser
             } else {
                 $current = $stream->getCurrent();
 
+<<<<<<< HEAD
                 throw new Twig_Error_Syntax(sprintf('A hash key must be a quoted string, a number, a name, or an expression enclosed in parentheses (unexpected token "%s" of value "%s".', Twig_Token::typeToEnglish($current->getType()), $current->getValue()), $current->getLine(), $stream->getSourceContext());
+=======
+                throw new Twig_Error_Syntax(sprintf('A hash key must be a quoted string, a number, a name, or an expression enclosed in parentheses (unexpected token "%s" of value "%s".', Twig_Token::typeToEnglish($current->getType()), $current->getValue()), $current->getLine(), $stream->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
             }
 
             $stream->expect(Twig_Token::PUNCTUATION_TYPE, ':', 'A hash key must be followed by a colon (:)');
@@ -316,7 +341,11 @@ class Twig_ExpressionParser
     {
         while (true) {
             $token = $this->parser->getCurrentToken();
+<<<<<<< HEAD
             if (Twig_Token::PUNCTUATION_TYPE == $token->getType()) {
+=======
+            if ($token->getType() == Twig_Token::PUNCTUATION_TYPE) {
+>>>>>>> web and vendor directory from composer install
                 if ('.' == $token->getValue() || '[' == $token->getValue()) {
                     $node = $this->parseSubscriptExpression($node);
                 } elseif ('|' == $token->getValue()) {
@@ -338,15 +367,24 @@ class Twig_ExpressionParser
             case 'parent':
                 $this->parseArguments();
                 if (!count($this->parser->getBlockStack())) {
+<<<<<<< HEAD
                     throw new Twig_Error_Syntax('Calling "parent" outside a block is forbidden.', $line, $this->parser->getStream()->getSourceContext());
                 }
 
                 if (!$this->parser->getParent() && !$this->parser->hasTraits()) {
                     throw new Twig_Error_Syntax('Calling "parent" on a template that does not extend nor "use" another template is forbidden.', $line, $this->parser->getStream()->getSourceContext());
+=======
+                    throw new Twig_Error_Syntax('Calling "parent" outside a block is forbidden.', $line, $this->parser->getStream()->getSourceContext()->getName());
+                }
+
+                if (!$this->parser->getParent() && !$this->parser->hasTraits()) {
+                    throw new Twig_Error_Syntax('Calling "parent" on a template that does not extend nor "use" another template is forbidden.', $line, $this->parser->getStream()->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
                 }
 
                 return new Twig_Node_Expression_Parent($this->parser->peekBlockStack(), $line);
             case 'block':
+<<<<<<< HEAD
                 $args = $this->parseArguments();
                 if (count($args) < 1) {
                     throw new Twig_Error_Syntax('The "block" function takes one argument (the block name).', $line, $this->parser->getStream()->getSourceContext());
@@ -357,6 +395,13 @@ class Twig_ExpressionParser
                 $args = $this->parseArguments();
                 if (count($args) < 2) {
                     throw new Twig_Error_Syntax('The "attribute" function takes at least two arguments (the variable and the attributes).', $line, $this->parser->getStream()->getSourceContext());
+=======
+                return new Twig_Node_Expression_BlockReference($this->parseArguments()->getNode(0), false, $line);
+            case 'attribute':
+                $args = $this->parseArguments();
+                if (count($args) < 2) {
+                    throw new Twig_Error_Syntax('The "attribute" function takes at least two arguments (the variable and the attributes).', $line, $this->parser->getStream()->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
                 }
 
                 return new Twig_Node_Expression_GetAttr($args->getNode(0), $args->getNode(1), count($args) > 2 ? $args->getNode(2) : null, Twig_Template::ANY_CALL, $line);
@@ -387,6 +432,7 @@ class Twig_ExpressionParser
         $lineno = $token->getLine();
         $arguments = new Twig_Node_Expression_Array(array(), $lineno);
         $type = Twig_Template::ANY_CALL;
+<<<<<<< HEAD
         if ('.' == $token->getValue()) {
             $token = $stream->next();
             if (
@@ -395,6 +441,16 @@ class Twig_ExpressionParser
                 Twig_Token::NUMBER_TYPE == $token->getType()
                 ||
                 (Twig_Token::OPERATOR_TYPE == $token->getType() && preg_match(Twig_Lexer::REGEX_NAME, $token->getValue()))
+=======
+        if ($token->getValue() == '.') {
+            $token = $stream->next();
+            if (
+                $token->getType() == Twig_Token::NAME_TYPE
+                ||
+                $token->getType() == Twig_Token::NUMBER_TYPE
+                ||
+                ($token->getType() == Twig_Token::OPERATOR_TYPE && preg_match(Twig_Lexer::REGEX_NAME, $token->getValue()))
+>>>>>>> web and vendor directory from composer install
             ) {
                 $arg = new Twig_Node_Expression_Constant($token->getValue(), $lineno);
 
@@ -405,18 +461,30 @@ class Twig_ExpressionParser
                     }
                 }
             } else {
+<<<<<<< HEAD
                 throw new Twig_Error_Syntax('Expected name or number.', $lineno, $stream->getSourceContext());
+=======
+                throw new Twig_Error_Syntax('Expected name or number.', $lineno, $stream->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
             }
 
             if ($node instanceof Twig_Node_Expression_Name && null !== $this->parser->getImportedSymbol('template', $node->getAttribute('name'))) {
                 if (!$arg instanceof Twig_Node_Expression_Constant) {
+<<<<<<< HEAD
                     throw new Twig_Error_Syntax(sprintf('Dynamic macro names are not supported (called on "%s").', $node->getAttribute('name')), $token->getLine(), $stream->getSourceContext());
+=======
+                    throw new Twig_Error_Syntax(sprintf('Dynamic macro names are not supported (called on "%s").', $node->getAttribute('name')), $token->getLine(), $stream->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
                 }
 
                 $name = $arg->getAttribute('value');
 
                 if ($this->parser->isReservedMacroName($name)) {
+<<<<<<< HEAD
                     throw new Twig_Error_Syntax(sprintf('"%s" cannot be called as macro as it is a reserved keyword.', $name), $token->getLine(), $stream->getSourceContext());
+=======
+                    throw new Twig_Error_Syntax(sprintf('"%s" cannot be called as macro as it is a reserved keyword.', $name), $token->getLine(), $stream->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
                 }
 
                 $node = new Twig_Node_Expression_MethodCall($node, 'get'.$name, $arguments, $lineno);
@@ -526,7 +594,11 @@ class Twig_ExpressionParser
             $name = null;
             if ($namedArguments && $token = $stream->nextIf(Twig_Token::OPERATOR_TYPE, '=')) {
                 if (!$value instanceof Twig_Node_Expression_Name) {
+<<<<<<< HEAD
                     throw new Twig_Error_Syntax(sprintf('A parameter name must be a string, "%s" given.', get_class($value)), $token->getLine(), $stream->getSourceContext());
+=======
+                    throw new Twig_Error_Syntax(sprintf('A parameter name must be a string, "%s" given.', get_class($value)), $token->getLine(), $stream->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
                 }
                 $name = $value->getAttribute('name');
 
@@ -534,7 +606,11 @@ class Twig_ExpressionParser
                     $value = $this->parsePrimaryExpression();
 
                     if (!$this->checkConstantExpression($value)) {
+<<<<<<< HEAD
                         throw new Twig_Error_Syntax(sprintf('A default value for an argument must be a constant (a boolean, a string, a number, or an array).'), $token->getLine(), $stream->getSourceContext());
+=======
+                        throw new Twig_Error_Syntax(sprintf('A default value for an argument must be a constant (a boolean, a string, a number, or an array).'), $token->getLine(), $stream->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
                     }
                 } else {
                     $value = $this->parseExpression();
@@ -568,7 +644,11 @@ class Twig_ExpressionParser
             $token = $stream->expect(Twig_Token::NAME_TYPE, null, 'Only variables can be assigned to');
             $value = $token->getValue();
             if (in_array(strtolower($value), array('true', 'false', 'none', 'null'))) {
+<<<<<<< HEAD
                 throw new Twig_Error_Syntax(sprintf('You cannot assign a value to "%s".', $value), $token->getLine(), $stream->getSourceContext());
+=======
+                throw new Twig_Error_Syntax(sprintf('You cannot assign a value to "%s".', $value), $token->getLine(), $stream->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
             }
             $targets[] = new Twig_Node_Expression_AssignName($value, $token->getLine());
 
@@ -632,7 +712,11 @@ class Twig_ExpressionParser
             }
         }
 
+<<<<<<< HEAD
         $e = new Twig_Error_Syntax(sprintf('Unknown "%s" test.', $name), $line, $stream->getSourceContext());
+=======
+        $e = new Twig_Error_Syntax(sprintf('Unknown "%s" test.', $name), $line, $stream->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
         $e->addSuggestions($name, array_keys($this->env->getTests()));
 
         throw $e;
@@ -649,8 +733,12 @@ class Twig_ExpressionParser
             if ($test->getAlternative()) {
                 $message .= sprintf('. Use "%s" instead', $test->getAlternative());
             }
+<<<<<<< HEAD
             $src = $stream->getSourceContext();
             $message .= sprintf(' in %s at line %d.', $src->getPath() ? $src->getPath() : $src->getName(), $stream->getCurrent()->getLine());
+=======
+            $message .= sprintf(' in %s at line %d.', $stream->getSourceContext()->getName(), $stream->getCurrent()->getLine());
+>>>>>>> web and vendor directory from composer install
 
             @trigger_error($message, E_USER_DEPRECATED);
         }
@@ -665,7 +753,11 @@ class Twig_ExpressionParser
     protected function getFunctionNodeClass($name, $line)
     {
         if (false === $function = $this->env->getFunction($name)) {
+<<<<<<< HEAD
             $e = new Twig_Error_Syntax(sprintf('Unknown "%s" function.', $name), $line, $this->parser->getStream()->getSourceContext());
+=======
+            $e = new Twig_Error_Syntax(sprintf('Unknown "%s" function.', $name), $line, $this->parser->getStream()->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
             $e->addSuggestions($name, array_keys($this->env->getFunctions()));
 
             throw $e;
@@ -679,8 +771,12 @@ class Twig_ExpressionParser
             if ($function->getAlternative()) {
                 $message .= sprintf('. Use "%s" instead', $function->getAlternative());
             }
+<<<<<<< HEAD
             $src = $this->parser->getStream()->getSourceContext();
             $message .= sprintf(' in %s at line %d.', $src->getPath() ? $src->getPath() : $src->getName(), $line);
+=======
+            $message .= sprintf(' in %s at line %d.', $this->parser->getStream()->getSourceContext()->getName(), $line);
+>>>>>>> web and vendor directory from composer install
 
             @trigger_error($message, E_USER_DEPRECATED);
         }
@@ -695,7 +791,11 @@ class Twig_ExpressionParser
     protected function getFilterNodeClass($name, $line)
     {
         if (false === $filter = $this->env->getFilter($name)) {
+<<<<<<< HEAD
             $e = new Twig_Error_Syntax(sprintf('Unknown "%s" filter.', $name), $line, $this->parser->getStream()->getSourceContext());
+=======
+            $e = new Twig_Error_Syntax(sprintf('Unknown "%s" filter.', $name), $line, $this->parser->getStream()->getSourceContext()->getName());
+>>>>>>> web and vendor directory from composer install
             $e->addSuggestions($name, array_keys($this->env->getFilters()));
 
             throw $e;
@@ -709,8 +809,12 @@ class Twig_ExpressionParser
             if ($filter->getAlternative()) {
                 $message .= sprintf('. Use "%s" instead', $filter->getAlternative());
             }
+<<<<<<< HEAD
             $src = $this->parser->getStream()->getSourceContext();
             $message .= sprintf(' in %s at line %d.', $src->getPath() ? $src->getPath() : $src->getName(), $line);
+=======
+            $message .= sprintf(' in %s at line %d.', $this->parser->getStream()->getSourceContext()->getName(), $line);
+>>>>>>> web and vendor directory from composer install
 
             @trigger_error($message, E_USER_DEPRECATED);
         }
@@ -740,5 +844,8 @@ class Twig_ExpressionParser
         return true;
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_ExpressionParser', 'Twig\ExpressionParser', false);
+=======
+>>>>>>> web and vendor directory from composer install

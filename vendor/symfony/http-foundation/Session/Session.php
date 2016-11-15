@@ -19,11 +19,17 @@ use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 use Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage;
 
 /**
+<<<<<<< HEAD
+=======
+ * Session.
+ *
+>>>>>>> web and vendor directory from composer install
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Drak <drak@zikula.org>
  */
 class Session implements SessionInterface, \IteratorAggregate, \Countable
 {
+<<<<<<< HEAD
     protected $storage;
 
     private $flashName;
@@ -32,6 +38,28 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
     private $hasBeenStarted;
 
     /**
+=======
+    /**
+     * Storage driver.
+     *
+     * @var SessionStorageInterface
+     */
+    protected $storage;
+
+    /**
+     * @var string
+     */
+    private $flashName;
+
+    /**
+     * @var string
+     */
+    private $attributeName;
+
+    /**
+     * Constructor.
+     *
+>>>>>>> web and vendor directory from composer install
      * @param SessionStorageInterface $storage    A SessionStorageInterface instance
      * @param AttributeBagInterface   $attributes An AttributeBagInterface instance, (defaults null for default AttributeBag)
      * @param FlashBagInterface       $flashes    A FlashBagInterface instance (defaults null for default FlashBag)
@@ -62,7 +90,11 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      */
     public function has($name)
     {
+<<<<<<< HEAD
         return $this->getAttributeBag()->has($name);
+=======
+        return $this->storage->getBag($this->attributeName)->has($name);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -70,7 +102,11 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      */
     public function get($name, $default = null)
     {
+<<<<<<< HEAD
         return $this->getAttributeBag()->get($name, $default);
+=======
+        return $this->storage->getBag($this->attributeName)->get($name, $default);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -78,7 +114,11 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      */
     public function set($name, $value)
     {
+<<<<<<< HEAD
         $this->getAttributeBag()->set($name, $value);
+=======
+        $this->storage->getBag($this->attributeName)->set($name, $value);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -86,7 +126,11 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      */
     public function all()
     {
+<<<<<<< HEAD
         return $this->getAttributeBag()->all();
+=======
+        return $this->storage->getBag($this->attributeName)->all();
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -94,7 +138,11 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      */
     public function replace(array $attributes)
     {
+<<<<<<< HEAD
         $this->getAttributeBag()->replace($attributes);
+=======
+        $this->storage->getBag($this->attributeName)->replace($attributes);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -102,7 +150,11 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      */
     public function remove($name)
     {
+<<<<<<< HEAD
         return $this->getAttributeBag()->remove($name);
+=======
+        return $this->storage->getBag($this->attributeName)->remove($name);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -110,7 +162,11 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      */
     public function clear()
     {
+<<<<<<< HEAD
         $this->getAttributeBag()->clear();
+=======
+        $this->storage->getBag($this->attributeName)->clear();
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -128,7 +184,11 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      */
     public function getIterator()
     {
+<<<<<<< HEAD
         return new \ArrayIterator($this->getAttributeBag()->all());
+=======
+        return new \ArrayIterator($this->storage->getBag($this->attributeName)->all());
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -138,6 +198,7 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      */
     public function count()
     {
+<<<<<<< HEAD
         return count($this->getAttributeBag()->all());
     }
 
@@ -165,6 +226,9 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
         }
 
         return true;
+=======
+        return count($this->storage->getBag($this->attributeName)->all());
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -238,7 +302,11 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      */
     public function registerBag(SessionBagInterface $bag)
     {
+<<<<<<< HEAD
         $this->storage->registerBag(new SessionBagProxy($bag, $this->data, $this->hasBeenStarted));
+=======
+        $this->storage->registerBag($bag);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -246,7 +314,11 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      */
     public function getBag($name)
     {
+<<<<<<< HEAD
         return $this->storage->getBag($name)->getBag();
+=======
+        return $this->storage->getBag($name);
+>>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -258,6 +330,7 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
     {
         return $this->getBag($this->flashName);
     }
+<<<<<<< HEAD
 
     /**
      * Gets the attributebag interface.
@@ -270,4 +343,6 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
     {
         return $this->getBag($this->attributeName);
     }
+=======
+>>>>>>> web and vendor directory from composer install
 }

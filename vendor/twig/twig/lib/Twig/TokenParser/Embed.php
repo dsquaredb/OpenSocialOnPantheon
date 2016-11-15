@@ -3,7 +3,11 @@
 /*
  * This file is part of Twig.
  *
+<<<<<<< HEAD
  * (c) Fabien Potencier
+=======
+ * (c) 2012 Fabien Potencier
+>>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,8 +15,11 @@
 
 /**
  * Embeds a template.
+<<<<<<< HEAD
  *
  * @final
+=======
+>>>>>>> web and vendor directory from composer install
  */
 class Twig_TokenParser_Embed extends Twig_TokenParser_Include
 {
@@ -63,5 +70,8 @@ class Twig_TokenParser_Embed extends Twig_TokenParser_Include
         return 'embed';
     }
 }
+<<<<<<< HEAD
 
 class_alias('Twig_TokenParser_Embed', 'Twig\TokenParser\EmbedTokenParser', false);
+=======
+>>>>>>> web and vendor directory from composer install

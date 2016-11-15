@@ -19,11 +19,27 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
  *
+<<<<<<< HEAD
  * @internal version 2.5. Code against ExecutionContextFactoryInterface instead.
  */
 class ExecutionContextFactory implements ExecutionContextFactoryInterface
 {
     private $translator;
+=======
+ * @internal You should not instantiate or use this class. Code against
+ *           {@link ExecutionContextFactoryInterface} instead.
+ */
+class ExecutionContextFactory implements ExecutionContextFactoryInterface
+{
+    /**
+     * @var TranslatorInterface
+     */
+    private $translator;
+
+    /**
+     * @var string|null
+     */
+>>>>>>> web and vendor directory from composer install
     private $translationDomain;
 
     /**
