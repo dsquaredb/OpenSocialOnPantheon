@@ -29,7 +29,7 @@ Create a custom upstream for this project following the instructions in the [Pan
 
 Start off by creating a new Drupal 8 site; then, before installing Drupal, set your site to git mode and do the following from your local machine:
 ```
-$ git clone https://github.com/lquessenberry/OpenSocialOnPantheon.git my-site
+$ git clone https://github.com/dsquaredb/OpenSocialOnPantheon.git my-site
 $ cd my-site
 $ composer install
 $ composer drupal-scaffold
