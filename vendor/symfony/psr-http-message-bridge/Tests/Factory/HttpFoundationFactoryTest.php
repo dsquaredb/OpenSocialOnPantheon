@@ -11,19 +11,24 @@
 
 namespace Symfony\Bridge\PsrHttpMessage\Tests\Factory;
 
+use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\UploadedFileInterface;
 use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
 use Symfony\Bridge\PsrHttpMessage\Tests\Fixtures\Response;
 use Symfony\Bridge\PsrHttpMessage\Tests\Fixtures\ServerRequest;
 use Symfony\Bridge\PsrHttpMessage\Tests\Fixtures\Stream;
 use Symfony\Bridge\PsrHttpMessage\Tests\Fixtures\UploadedFile;
+use Symfony\Bridge\PsrHttpMessage\Tests\Fixtures\Uri;
 
 /**
  * @author Kévin Dunglas <dunglas@gmail.com>
  */
-class HttpFoundationFactoryTest extends \PHPUnit_Framework_TestCase
+class HttpFoundationFactoryTest extends TestCase
 {
+    /** @var HttpFoundationFactory */
     private $factory;
+
+    /** @var string */
     private $tmpDir;
 
     public function setup()
@@ -62,11 +67,12 @@ class HttpFoundationFactoryTest extends \PHPUnit_Framework_TestCase
         );
 
         $symfonyRequest = $this->factory->createRequest($serverRequest);
+        $files = $symfonyRequest->files->all();
 
         $this->assertEquals('http://les-tilleuls.coop', $symfonyRequest->query->get('url'));
-        $this->assertEquals('doc1.txt', $symfonyRequest->files->get('doc1')->getClientOriginalName());
-        $this->assertEquals('doc2.txt', $symfonyRequest->files->get('nested[docs][0]', null, true)->getClientOriginalName());
-        $this->assertEquals('doc3.txt', $symfonyRequest->files->get('nested[docs][1]', null, true)->getClientOriginalName());
+        $this->assertEquals('doc1.txt', $files['doc1']->getClientOriginalName());
+        $this->assertEquals('doc2.txt', $files['nested']['docs'][0]->getClientOriginalName());
+        $this->assertEquals('doc3.txt', $files['nested']['docs'][1]->getClientOriginalName());
         $this->assertEquals('http://dunglas.fr', $symfonyRequest->request->get('url'));
         $this->assertEquals($stdClass, $symfonyRequest->attributes->get('custom'));
         $this->assertEquals('Lille', $symfonyRequest->cookies->get('city'));
@@ -114,6 +120,26 @@ class HttpFoundationFactoryTest extends \PHPUnit_Framework_TestCase
         );
 
         $this->assertCount(0, $this->factory->createRequest($serverRequest)->request);
+    }
+
+    public function testCreateRequestWithUri()
+    {
+        $serverRequest = new ServerRequest(
+            '1.1',
+            array(),
+            new Stream(),
+            '/',
+            'GET',
+            new Uri('http://les-tilleuls.coop/about/kevin'),
+            array(),
+            array(),
+            array(),
+            array(),
+            null,
+            array()
+        );
+
+        $this->assertEquals('/about/kevin', $this->factory->createRequest($serverRequest)->getPathInfo());
     }
 
     public function testCreateUploadedFile()
@@ -173,7 +199,6 @@ class HttpFoundationFactoryTest extends \PHPUnit_Framework_TestCase
                     'theme=light',
                     'test',
                     'ABC=AeD; Domain=dunglas.fr; Path=/kevin; Expires=Wed, 13 Jan 2021 22:23:01 GMT; Secure; HttpOnly',
-
                 ),
             ),
             new Stream('The response body'),

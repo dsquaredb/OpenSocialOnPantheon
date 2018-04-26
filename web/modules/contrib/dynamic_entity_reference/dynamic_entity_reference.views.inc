@@ -15,16 +15,16 @@ use Drupal\Core\Entity\Sql\SqlEntityStorageInterface;
  */
 function dynamic_entity_reference_field_views_data(FieldStorageConfigInterface $field_storage) {
   $data = views_field_default_views_data($field_storage);
-  $entity_manager = \Drupal::entityManager();
-  $labels = $entity_manager->getEntityTypeLabels(TRUE);
+  $entity_manager = \Drupal::entityTypeManager();
+  $labels = \Drupal::service('entity_type.repository')->getEntityTypeLabels(TRUE);
   $options = array_keys($labels[(string) t('Content', [], ['context' => 'Entity type group'])]);
   $settings = $field_storage->getSettings();
   // Identify all the target entity type ids that can be referenced.
   if ($settings['exclude_entity_types']) {
-    $target_entity_type_ids = array_diff($options, $settings['entity_type_ids'] ?: array());
+    $target_entity_type_ids = array_diff($options, $settings['entity_type_ids'] ?: []);
   }
   else {
-    $target_entity_type_ids = array_intersect($options, $settings['entity_type_ids'] ?: array());
+    $target_entity_type_ids = array_intersect($options, $settings['entity_type_ids'] ?: []);
   }
   foreach ($data as $table_name => $table_data) {
     // Add a relationship to all the target entity types.
@@ -39,15 +39,15 @@ function dynamic_entity_reference_field_views_data(FieldStorageConfigInterface $
 
         // Provide a relationship for the entity type with the dynamic entity
         // reference field.
-        $args = array(
+        $args = [
           '@label' => $target_entity_type->getLabel(),
           '@field_name' => $field_name,
-        );
-        $data[$table_name][$target_entity_type_id . '__' . $field_name]['relationship'] = array(
+        ];
+        $data[$table_name][$target_entity_type_id . '__' . $field_name]['relationship'] = [
           'title' => t('@label referenced from @field_name', $args),
           'label' => t('@field_name: @label', $args),
           'group' => $entity_type->getLabel(),
-          'help' => t('Appears in: @bundles.', array('@bundles' => implode(', ', $field_storage->getBundles()))),
+          'help' => t('Appears in: @bundles.', ['@bundles' => implode(', ', $field_storage->getBundles())]),
           'id' => 'standard',
           'base' => $target_base_table,
           'entity type' => $target_entity_type_id,
@@ -56,13 +56,13 @@ function dynamic_entity_reference_field_views_data(FieldStorageConfigInterface $
           // Entity reference field only has one target type whereas dynamic
           // entity reference field can have multiple target types that is why
           // an extra join condition on target types is needed.
-          'extra' => array(
-            array(
+          'extra' => [
+            [
               'left_field' => $field_name . '_target_type',
               'value' => $target_entity_type_id,
-            ),
-          ),
-        );
+            ],
+          ],
+        ];
 
         // Provide a reverse relationship for the entity type that is referenced
         // by the field.
@@ -72,9 +72,9 @@ function dynamic_entity_reference_field_views_data(FieldStorageConfigInterface $
           ->getTableMapping();
         $args['@entity'] = $entity_type->getLabel();
         $args['@label'] = $target_entity_type->getLowercaseLabel();
-        $data[$target_base_table][$pseudo_field_name]['relationship'] = array(
+        $data[$target_base_table][$pseudo_field_name]['relationship'] = [
           'title' => t('@entity using @field_name', $args),
-          'label' => t('@field_name', array('@field_name' => $field_name)),
+          'label' => t('@field_name', ['@field_name' => $field_name]),
           'group' => $target_entity_type->getLabel(),
           'help' => t('Relate each @entity with a @field_name set to the @label.', $args),
           'id' => 'entity_reverse',
@@ -88,18 +88,18 @@ function dynamic_entity_reference_field_views_data(FieldStorageConfigInterface $
           // Entity reference field only has one target type whereas dynamic
           // entity reference field can have multiple target types that is why
           // an extra join condition on target types is needed.
-          'join_extra' => array(
-            array(
+          'join_extra' => [
+            [
               'field' => $field_name . '_target_type',
               'value' => $target_entity_type_id,
-            ),
-            array(
+            ],
+            [
               'field' => 'deleted',
               'value' => 0,
               'numeric' => TRUE,
-            ),
-          ),
-        );
+            ],
+          ],
+        ];
       }
     }
   }
@@ -115,7 +115,7 @@ function dynamic_entity_reference_field_views_data(FieldStorageConfigInterface $
  * @todo remove this when https://www.drupal.org/node/2337515 is in.
  */
 function dynamic_entity_reference_views_data() {
-  $entity_manager = \Drupal::entityManager();
+  $entity_manager = \Drupal::entityTypeManager();
 
   /** @var \Drupal\Core\Entity\EntityTypeInterface[] $entity_types */
   $entity_types = [];
@@ -130,7 +130,8 @@ function dynamic_entity_reference_views_data() {
       // Only fieldable entities have base fields.
       if ($entity_type->isSubclassOf(FieldableEntityInterface::class)) {
         $entity_types[$entity_type->id()] = $entity_type;
-        foreach ($entity_manager->getBaseFieldDefinitions($entity_type->id()) as $base_field) {
+        $entity_field_manager = \Drupal::service('entity_field.manager');
+        foreach ($entity_field_manager->getBaseFieldDefinitions($entity_type->id()) as $base_field) {
           if ($base_field->getType() == 'dynamic_entity_reference') {
             $fields_all[$entity_type->id()][] = $base_field;
           }

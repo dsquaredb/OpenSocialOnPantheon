@@ -11,15 +11,17 @@
 
 namespace Symfony\Component\HttpKernel\Tests\DataCollector;
 
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpKernel\DataCollector\DumpDataCollector;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\VarDumper\Cloner\Data;
+use Symfony\Component\VarDumper\Dumper\CliDumper;
 
 /**
  * @author Nicolas Grekas <p@tchwork.com>
  */
-class DumpDataCollectorTest extends \PHPUnit_Framework_TestCase
+class DumpDataCollectorTest extends TestCase
 {
     public function testDump()
     {
@@ -34,7 +36,7 @@ class DumpDataCollectorTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(1, $collector->getDumpsCount());
 
         $dump = $collector->getDumps('html');
-        $this->assertTrue(isset($dump[0]['data']));
+        $this->assertArrayHasKey('data', $dump[0]);
         $dump[0]['data'] = preg_replace('/^.*?<pre/', '<pre', $dump[0]['data']);
         $dump[0]['data'] = preg_replace('/sf-dump-\d+/', 'sf-dump', $dump[0]['data']);
 
@@ -67,7 +69,7 @@ class DumpDataCollectorTest extends \PHPUnit_Framework_TestCase
         $collector->collect(new Request(), new Response());
         $output = ob_get_clean();
 
-        if (PHP_VERSION_ID >= 50400) {
+        if (\PHP_VERSION_ID >= 50400) {
             $this->assertSame("DumpDataCollectorTest.php on line {$line}:\n123\n", $output);
         } else {
             $this->assertSame("\"DumpDataCollectorTest.php on line {$line}:\"\n123\n", $output);
@@ -85,7 +87,7 @@ class DumpDataCollectorTest extends \PHPUnit_Framework_TestCase
         $collector->dump($data);
         $line = __LINE__ - 1;
         $file = __FILE__;
-        if (PHP_VERSION_ID >= 50400) {
+        if (\PHP_VERSION_ID >= 50400) {
             $xOutput = <<<EOTXT
 <pre class=sf-dump id=sf-dump data-indent-pad="  "><a href="test://{$file}:{$line}" title="{$file}"><span class=sf-dump-meta>DumpDataCollectorTest.php</span></a> on line <span class=sf-dump-meta>{$line}</span>:
 <span class=sf-dump-num>123</span>
@@ -123,10 +125,30 @@ EOTXT;
 
         ob_start();
         $collector->__destruct();
-        if (PHP_VERSION_ID >= 50400) {
+        if (\PHP_VERSION_ID >= 50400) {
             $this->assertSame("DumpDataCollectorTest.php on line {$line}:\n456\n", ob_get_clean());
         } else {
             $this->assertSame("\"DumpDataCollectorTest.php on line {$line}:\"\n456\n", ob_get_clean());
         }
+    }
+
+    public function testFlushNothingWhenDataDumperIsProvided()
+    {
+        $data = new Data(array(array(456)));
+        $dumper = new CliDumper('php://output');
+        $collector = new DumpDataCollector(null, null, null, null, $dumper);
+
+        ob_start();
+        $collector->dump($data);
+        $line = __LINE__ - 1;
+        if (\PHP_VERSION_ID >= 50400) {
+            $this->assertSame("DumpDataCollectorTest.php on line {$line}:\n456\n", ob_get_clean());
+        } else {
+            $this->assertSame("\"DumpDataCollectorTest.php on line {$line}:\"\n456\n", ob_get_clean());
+        }
+
+        ob_start();
+        $collector->__destruct();
+        $this->assertEmpty(ob_get_clean());
     }
 }

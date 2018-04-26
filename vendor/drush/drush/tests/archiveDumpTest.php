@@ -2,6 +2,7 @@
 
 namespace Unish;
 
+require_once dirname(__FILE__) . '/../includes/context.inc';
 require_once dirname(__FILE__) . '/../includes/filesystem.inc';
 
 /**
@@ -22,7 +23,7 @@ class archiveDumpCase extends CommandUnishTestCase {
    */
   private function archiveDump($no_core) {
     $profile = UNISH_DRUPAL_MAJOR_VERSION >= 7 ? 'testing' : 'default';
-    $this->fetchInstallDrupal(self::uri, TRUE, UNISH_DRUPAL_MAJOR_VERSION, $profile);
+    $this->fetchInstallDrupal(self::uri, TRUE, NULL, $profile);
     $root = $this->webroot();
     $dump_dest = UNISH_SANDBOX . DIRECTORY_SEPARATOR . 'dump.tar.gz';
     $options = array(

@@ -26,16 +26,12 @@ use Symfony\Component\Process\Exception\RuntimeException;
  */
 class WindowsPipes extends AbstractPipes
 {
-    /** @var array */
     private $files = array();
-    /** @var array */
     private $fileHandles = array();
-    /** @var array */
     private $readBytes = array(
         Process::STDOUT => 0,
         Process::STDERR => 0,
     );
-    /** @var bool */
     private $disableOutput;
 
     public function __construct($disableOutput, $input)
@@ -183,7 +179,7 @@ class WindowsPipes extends AbstractPipes
      * @param Process $process The process
      * @param $input
      *
-     * @return WindowsPipes
+     * @return static
      */
     public static function create(Process $process, $input)
     {

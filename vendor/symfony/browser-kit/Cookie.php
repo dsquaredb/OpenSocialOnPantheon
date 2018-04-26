@@ -21,8 +21,6 @@ class Cookie
     /**
      * Handles dates as defined by RFC 2616 section 3.3.1, and also some other
      * non-standard, but common formats.
-     *
-     * @var array
      */
     private static $dateFormats = array(
         'D, d M Y H:i:s T',
@@ -46,14 +44,14 @@ class Cookie
     /**
      * Sets a cookie.
      *
-     * @param string $name         The cookie name
-     * @param string $value        The value of the cookie
-     * @param string $expires      The time the cookie expires
-     * @param string $path         The path on the server in which the cookie will be available on
-     * @param string $domain       The domain that the cookie is available
-     * @param bool   $secure       Indicates that the cookie should only be transmitted over a secure HTTPS connection from the client
-     * @param bool   $httponly     The cookie httponly flag
-     * @param bool   $encodedValue Whether the value is encoded or not
+     * @param string      $name         The cookie name
+     * @param string      $value        The value of the cookie
+     * @param string|null $expires      The time the cookie expires
+     * @param string|null $path         The path on the server in which the cookie will be available on
+     * @param string      $domain       The domain that the cookie is available
+     * @param bool        $secure       Indicates that the cookie should only be transmitted over a secure HTTPS connection from the client
+     * @param bool        $httponly     The cookie httponly flag
+     * @param bool        $encodedValue Whether the value is encoded or not
      */
     public function __construct($name, $value, $expires = null, $path = null, $domain = '', $secure = false, $httponly = true, $encodedValue = false)
     {
@@ -62,7 +60,7 @@ class Cookie
             $this->rawValue = $value;
         } else {
             $this->value = $value;
-            $this->rawValue = urlencode($value);
+            $this->rawValue = rawurlencode($value);
         }
         $this->name = $name;
         $this->path = empty($path) ? '/' : $path;
@@ -82,10 +80,6 @@ class Cookie
 
     /**
      * Returns the HTTP representation of the Cookie.
-     *
-     * @return string The HTTP representation of the Cookie
-     *
-     * @throws \UnexpectedValueException
      */
     public function __toString()
     {
@@ -118,10 +112,10 @@ class Cookie
     /**
      * Creates a Cookie instance from a Set-Cookie header value.
      *
-     * @param string $cookie A Set-Cookie header value
-     * @param string $url    The base URL
+     * @param string      $cookie A Set-Cookie header value
+     * @param string|null $url    The base URL
      *
-     * @return Cookie A Cookie instance
+     * @return static
      *
      * @throws \InvalidArgumentException
      */
@@ -213,8 +207,6 @@ class Cookie
         if (false !== $date = date_create($dateValue, new \DateTimeZone('GMT'))) {
             return $date->format('U');
         }
-
-        throw new \InvalidArgumentException(sprintf('Could not parse date "%s".', $dateValue));
     }
 
     /**
@@ -250,7 +242,7 @@ class Cookie
     /**
      * Gets the expires time of the cookie.
      *
-     * @return string The cookie expires time
+     * @return string|null The cookie expires time
      */
     public function getExpiresTime()
     {

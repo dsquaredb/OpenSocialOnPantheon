@@ -11,6 +11,7 @@
 
 namespace Symfony\Bridge\PsrHttpMessage\Tests\Factory;
 
+use PHPUnit\Framework\TestCase;
 use Symfony\Bridge\PsrHttpMessage\Factory\DiactorosFactory;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\Cookie;
@@ -22,7 +23,7 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 /**
  * @author Kévin Dunglas <dunglas@gmail.com>
  */
-class DiactorosFactoryTest extends \PHPUnit_Framework_TestCase
+class DiactorosFactoryTest extends TestCase
 {
     private $factory;
     private $tmpDir;
@@ -68,6 +69,8 @@ class DiactorosFactoryTest extends \PHPUnit_Framework_TestCase
                 'REQUEST_METHOD' => 'POST',
                 'HTTP_HOST' => 'dunglas.fr',
                 'HTTP_X_SYMFONY' => '2.8',
+                'REQUEST_URI' => '/testCreateRequest?foo=1&bar[baz]=42',
+                'QUERY_STRING' => 'foo=1&bar[baz]=42',
             ),
             'Content'
         );
@@ -79,6 +82,9 @@ class DiactorosFactoryTest extends \PHPUnit_Framework_TestCase
         $queryParams = $psrRequest->getQueryParams();
         $this->assertEquals('1', $queryParams['foo']);
         $this->assertEquals('42', $queryParams['bar']['baz']);
+
+        $requestTarget = $psrRequest->getRequestTarget();
+        $this->assertEquals('/testCreateRequest?foo=1&bar[baz]=42', $requestTarget);
 
         $parsedBody = $psrRequest->getParsedBody();
         $this->assertEquals('Kévin Dunglas', $parsedBody['twitter']['@dunglas']);
@@ -111,6 +117,17 @@ class DiactorosFactoryTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(array('2.8'), $psrRequest->getHeader('X-Symfony'));
     }
 
+    public function testGetContentCanBeCalledAfterRequestCreation()
+    {
+        $header = array('HTTP_HOST' => 'dunglas.fr');
+        $request = new Request(array(), array(), array(), array(), array(), $header, 'Content');
+
+        $psrRequest = $this->factory->createRequest($request);
+
+        $this->assertEquals('Content', $psrRequest->getBody()->__toString());
+        $this->assertEquals('Content', $request->getContent());
+    }
+
     private function createUploadedFile($content, $originalName, $mimeType, $error)
     {
         $path = tempnam($this->tmpDir, uniqid());
@@ -132,7 +149,11 @@ class DiactorosFactoryTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('Response content.', $psrResponse->getBody()->__toString());
         $this->assertEquals(202, $psrResponse->getStatusCode());
         $this->assertEquals(array('2.8'), $psrResponse->getHeader('X-Symfony'));
-        $this->assertEquals(array('city=Lille; expires=Wed, 13-Jan-2021 22:23:01 GMT; path=/; httponly'), $psrResponse->getHeader('Set-Cookie'));
+
+        $cookieHeader = $psrResponse->getHeader('Set-Cookie');
+        $this->assertInternalType('array', $cookieHeader);
+        $this->assertCount(1, $cookieHeader);
+        $this->assertRegExp('{city=Lille; expires=Wed, 13-Jan-2021 22:23:01 GMT;( max-age=\d+;)? path=/; httponly}', $cookieHeader[0]);
     }
 
     public function testCreateResponseFromStreamed()
@@ -160,5 +181,34 @@ class DiactorosFactoryTest extends \PHPUnit_Framework_TestCase
         $psrResponse = $this->factory->createResponse($response);
 
         $this->assertEquals('Binary', $psrResponse->getBody()->__toString());
+    }
+
+    public function testUploadErrNoFile()
+    {
+        $file = new UploadedFile('', '', null, 0, UPLOAD_ERR_NO_FILE, true);
+        $this->assertEquals(0, $file->getSize());
+        $this->assertEquals(UPLOAD_ERR_NO_FILE, $file->getError());
+        $this->assertFalse($file->getSize(), 'SplFile::getSize() returns false on error');
+        $this->assertInternalType('integer', $file->getClientSize());
+
+        $request = new Request(array(), array(), array(), array(),
+          array(
+            'f1' => $file,
+            'f2' => array('name' => null, 'type' => null, 'tmp_name' => null, 'error' => UPLOAD_ERR_NO_FILE, 'size' => 0),
+          ),
+          array(
+            'REQUEST_METHOD' => 'POST',
+            'HTTP_HOST' => 'dunglas.fr',
+            'HTTP_X_SYMFONY' => '2.8',
+          ),
+          'Content'
+        );
+
+        $psrRequest = $this->factory->createRequest($request);
+
+        $uploadedFiles = $psrRequest->getUploadedFiles();
+
+        $this->assertEquals(UPLOAD_ERR_NO_FILE, $uploadedFiles['f1']->getError());
+        $this->assertEquals(UPLOAD_ERR_NO_FILE, $uploadedFiles['f2']->getError());
     }
 }

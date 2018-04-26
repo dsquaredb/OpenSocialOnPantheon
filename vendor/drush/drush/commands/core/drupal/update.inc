@@ -102,6 +102,25 @@ function drush_update_do_one($module, $number, $dependency_map,  &$context) {
   $context['message'] = 'Performing ' . $function;
 }
 
+/**
+ * Clears caches and rebuilds the container.
+ *
+ * This is called in between regular updates and post updates. Do not use
+ * drush_drupal_cache_clear_all() as the cache clearing and container rebuild
+ * must happen in the same process that the updates are run in.
+ *
+ * Drupal core's update.php uses drupal_flush_all_caches() directly without
+ * explicitly rebuilding the container as the container is rebuilt on the next
+ * HTTP request of the batch.
+ *
+ * @see drush_drupal_cache_clear_all()
+ * @see \Drupal\system\Controller\DbUpdateController::triggerBatch()
+ */
+function drush_update_cache_rebuild() {
+  drupal_flush_all_caches();
+  \Drupal::service('kernel')->rebuildContainer();
+}
+
 function update_main() {
   // In D8, we expect to be in full bootstrap.
   drush_bootstrap_to_phase(DRUSH_BOOTSTRAP_DRUPAL_FULL);
@@ -110,6 +129,13 @@ function update_main() {
   require_once DRUPAL_ROOT . '/core/includes/update.inc';
   drupal_load_updates();
   update_fix_compatibility();
+
+  // Check requirements before updating.
+  if (!drush_update_check_requirements()) {
+    if (!drush_confirm(dt('Requirements check reports errors. Do you wish to continue?'))) {
+        return drush_user_abort();
+    }
+  }
 
   // Pending hook_update_N() implementations.
   $pending = update_get_update_list();
@@ -167,6 +193,36 @@ function update_main() {
   return count($pending) + count($change_summary) + count($post_updates);
 }
 
+/**
+ * Check update requirements and report any errors.
+ */
+function drush_update_check_requirements() {
+  $continue = TRUE;
+
+  \Drupal::moduleHandler()->resetImplementations();
+  $requirements = update_check_requirements();
+  $severity = drupal_requirements_severity($requirements);
+
+  // If there are issues, report them.
+  if ($severity != REQUIREMENT_OK) {
+    if ($severity === REQUIREMENT_ERROR) {
+      $continue = FALSE;
+    }
+    foreach ($requirements as $requirement) {
+      if (isset($requirement['severity']) && $requirement['severity'] != REQUIREMENT_OK) {
+        $message = isset($requirement['description']) ? $requirement['description'] : '';
+        if (isset($requirement['value']) && $requirement['value']) {
+          $message .= ' (Currently using '. $requirement['title'] .' '. $requirement['value'] .')';
+        }
+        $log_level = $requirement['severity'] === REQUIREMENT_ERROR ? LogLevel::ERROR : LogLevel::WARNING;
+        drush_log($message, $log_level);
+      }
+    }
+  }
+
+  return $continue;
+}
+
 function _update_batch_command($id) {
   // In D8, we expect to be in full bootstrap.
   drush_bootstrap_to_phase(DRUSH_BOOTSTRAP_DRUPAL_FULL);
@@ -212,7 +268,7 @@ function drush_update_batch() {
   // Apply post update hooks.
   $post_updates = \Drupal::service('update.post_update_registry')->getPendingUpdateFunctions();
   if ($post_updates) {
-    $operations[] = ['drush_drupal_cache_clear_all', []];
+    $operations[] = ['drush_update_cache_rebuild', []];
     foreach ($post_updates as $function) {
       $operations[] = ['update_invoke_post_update', [$function]];
     }

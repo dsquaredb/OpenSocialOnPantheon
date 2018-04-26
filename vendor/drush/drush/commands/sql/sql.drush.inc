@@ -158,15 +158,6 @@ function sql_drush_command() {
     ),
     'remote-tty' => TRUE,
   );
-  $items['sql-sanitize'] = array(
-    'description' => "Run sanitization operations on the current database.",
-    'bootstrap' => DRUSH_BOOTSTRAP_NONE,
-    'drush dependencies' => array('sqlsync'),
-    'options' => drupal_sanitize_options() + array(
-      'db-prefix' => 'Enable replacement of braces in sanitize queries.',
-    ) + $db_url,
-    'aliases' => array('sqlsan'),
-  );
   return $items;
 }
 
@@ -453,45 +444,11 @@ function drush_sql_drop() {
 function drush_sql_cli() {
   drush_sql_bootstrap_further();
   $sql = drush_sql_get_class();
-  return !(bool)drush_shell_proc_open($sql->connect());
-}
-
-/**
- * Command callback. Runs the sanitization operations on the current database.
- *
- * @see hook_drush_sql_sync_sanitize() for adding custom sanitize routines.
- */
-function drush_sql_sanitize() {
-  drush_sql_bootstrap_further();
-  if (drush_get_option('db-prefix')) {
-    drush_bootstrap_max(DRUSH_BOOTSTRAP_DRUPAL_DATABASE);
+  $result = !drush_shell_proc_open($sql->connect());
+  if (!$result) {
+    drush_set_error('DRUSH_SQL_CLI_ERROR', dt('SQL client error occurred.'));
   }
-
-  drush_command_invoke_all('drush_sql_sync_sanitize', 'default');
-  $operations = drush_get_context('post-sync-ops');
-  if (!empty($operations)) {
-    if (!drush_get_context('DRUSH_SIMULATE')) {
-      $messages = _drush_sql_get_post_sync_messages();
-      if ($messages) {
-        drush_print();
-        drush_print($messages);
-      }
-    }
-    $queries = array_column($operations, 'query');
-    $sanitize_query = implode(" ", $queries);
-  }
-  if (!drush_confirm(dt('Do you really want to sanitize the current database?'))) {
-    return drush_user_abort();
-  }
-
-  if ($sanitize_query) {
-    $sql = drush_sql_get_class();
-    $sanitize_query = $sql->query_prefix($sanitize_query);
-    $result = $sql->query($sanitize_query);
-    if (!$result) {
-      return drush_set_error('DRUSH_SQL_NO_QUERY', dt('Sanitize query failed.'));
-    }
-  }
+  return $result;
 }
 
 /**
@@ -625,7 +582,7 @@ function sql_drush_sql_sync_sanitize($site) {
   $message_list = array();
 
   // Sanitize passwords.
-  $newpassword = drush_get_option(array('sanitize-password', 'destination-sanitize-password'), 'password');
+  $newpassword = drush_get_option(array('sanitize-password', 'destination-sanitize-password'), drush_generate_password());
   if ($newpassword != 'no' && $newpassword !== 0) {
     $pw_op = "";
 
@@ -691,11 +648,6 @@ function sql_drush_sql_sync_sanitize($site) {
     drush_sql_register_post_sync_op('user-email', dt('Reset !message in !table table', array('!message' => implode(' and ', $message_list), '!table' => $table)), $sanitize_query);
   }
 
-  // Seems quite portable (SQLite?) - http://en.wikipedia.org/wiki/Truncate_(SQL)
-  $table = 'sessions';
-  if ($wrap_table_name) {
-    $table = "{{$table}}";
-  }
-  $sql_sessions = "TRUNCATE TABLE {$table};";
-  drush_sql_register_post_sync_op('sessions', dt('Truncate Drupal\'s sessions table'), $sql_sessions);
+  $sanitizer = new \Drush\Commands\core\SanitizeCommands();
+  $sanitizer->doSanitize($major_version);
 }

@@ -11,14 +11,22 @@
 
 namespace Symfony\Component\Validator\Tests\Resources;
 
-class TranslationFilesTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class TranslationFilesTest extends TestCase
 {
     /**
      * @dataProvider provideTranslationFiles
      */
     public function testTranslationFileIsValid($filePath)
     {
-        \PHPUnit_Util_XML::loadfile($filePath, false, false, true);
+        if (class_exists('PHPUnit_Util_XML')) {
+            \PHPUnit_Util_XML::loadfile($filePath, false, false, true);
+        } else {
+            \PHPUnit\Util\XML::loadfile($filePath, false, false, true);
+        }
+
+        $this->addToAssertionCount(1);
     }
 
     public function provideTranslationFiles()
@@ -26,6 +34,15 @@ class TranslationFilesTest extends \PHPUnit_Framework_TestCase
         return array_map(
             function ($filePath) { return (array) $filePath; },
             glob(dirname(dirname(__DIR__)).'/Resources/translations/*.xlf')
+        );
+    }
+
+    public function testNorwegianAlias()
+    {
+        $this->assertFileEquals(
+            dirname(dirname(__DIR__)).'/Resources/translations/validators.nb.xlf',
+            dirname(dirname(__DIR__)).'/Resources/translations/validators.no.xlf',
+            'The NO locale should be an alias for the NB variant of the Norwegian language.'
         );
     }
 }

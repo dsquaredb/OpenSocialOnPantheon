@@ -18,16 +18,20 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
+        'ddc0a4d7e61c0286f0f8593b1903e894' => __DIR__ . '/..' . '/clue/stream-filter/src/functions.php',
+        '8cff32064859f4559445b89279f3199c' => __DIR__ . '/..' . '/php-http/message/src/filters.php',
+        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
-        'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
-        '15a4f52ecde7234868b7009f6257de9a' => __DIR__ . '/..' . '/drupal/console-core/src/constants.php',
         '5a12a5271c58108e0aa33355e6ac54ea' => __DIR__ . '/..' . '/drupal/console-core/src/functions.php',
+        'c65d09b6820da036953a371c8c73a9b1' => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook/polyfills.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         'p' => 
         array (
             'phpseclib\\' => 10,
+            'phpDocumentor\\Reflection\\' => 25,
         ),
         'c' => 
         array (
@@ -51,12 +55,17 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             'Webmozart\\PathUtil\\' => 19,
             'Webmozart\\Assert\\' => 17,
         ),
+        'T' => 
+        array (
+            'Twig\\' => 5,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php55\\' => 23,
             'Symfony\\Polyfill\\Php54\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Iconv\\' => 23,
+            'Symfony\\Polyfill\\Apcu\\' => 22,
             'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\VarDumper\\' => 28,
             'Symfony\\Component\\Validator\\' => 28,
@@ -68,7 +77,6 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             'Symfony\\Component\\HttpFoundation\\' => 33,
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\Filesystem\\' => 29,
-            'Symfony\\Component\\ExpressionLanguage\\' => 37,
             'Symfony\\Component\\EventDispatcher\\' => 34,
             'Symfony\\Component\\DomCrawler\\' => 29,
             'Symfony\\Component\\DependencyInjection\\' => 38,
@@ -82,20 +90,37 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             'Symfony\\Bridge\\PsrHttpMessage\\' => 30,
             'Stecman\\Component\\Symfony\\Console\\BashCompletion\\' => 49,
         ),
-        'R' => 
-        array (
-            'RedBeanPHP\\' => 11,
-        ),
         'P' => 
         array (
             'Psy\\' => 4,
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
+            'Psr\\Container\\' => 14,
+            'Psr\\Cache\\' => 10,
             'PhpParser\\' => 10,
         ),
         'M' => 
         array (
+            'Monolog\\' => 8,
             'Masterminds\\' => 12,
+        ),
+        'L' => 
+        array (
+            'League\\Csv\\' => 11,
+        ),
+        'I' => 
+        array (
+            'Interop\\Container\\' => 18,
+        ),
+        'H' => 
+        array (
+            'Http\\Promise\\' => 13,
+            'Http\\Message\\' => 13,
+            'Http\\Discovery\\' => 15,
+            'Http\\Client\\Curl\\' => 17,
+            'Http\\Client\\' => 12,
+            'Html2Text\\' => 10,
+            'Happyr\\LinkedIn\\' => 16,
         ),
         'G' => 
         array (
@@ -103,16 +128,26 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
             'Goutte\\' => 7,
+            'Google\\Auth\\' => 12,
+        ),
+        'F' => 
+        array (
+            'Firebase\\JWT\\' => 13,
+            'Facebook\\' => 9,
         ),
         'D' => 
         array (
             'Drupal\\Driver\\' => 14,
             'Drupal\\Core\\' => 12,
+            'Drupal\\Console\\Core\\' => 20,
+            'Drupal\\Console\\Composer\\Plugin\\' => 31,
             'Drupal\\Console\\' => 15,
             'Drupal\\Component\\' => 17,
             'DrupalComposer\\DrupalScaffold\\' => 30,
             'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\Common\\Inflector\\' => 26,
             'Doctrine\\Common\\Cache\\' => 22,
+            'Doctrine\\Common\\' => 16,
         ),
         'C' => 
         array (
@@ -120,10 +155,9 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             'Consolidation\\AnnotatedCommand\\' => 31,
             'Composer\\Semver\\' => 16,
             'Composer\\Installers\\' => 20,
-            'CommerceGuys\\Zone\\' => 18,
             'CommerceGuys\\Intl\\' => 18,
-            'CommerceGuys\\Enum\\' => 18,
             'CommerceGuys\\Addressing\\' => 24,
+            'Clue\\StreamFilter\\' => 18,
         ),
         'B' => 
         array (
@@ -132,7 +166,9 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         ),
         'A' => 
         array (
+            'Asm89\\Stack\\' => 12,
             'Alchemy\\Zippy\\' => 14,
+            'Abraham\\TwitterOAuth\\' => 21,
         ),
     );
 
@@ -140,6 +176,12 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         'phpseclib\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib',
+        ),
+        'phpDocumentor\\Reflection\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
         ),
         'cweagans\\Composer\\' => 
         array (
@@ -181,6 +223,10 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
+        'Twig\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
         'Symfony\\Polyfill\\Php55\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php55',
@@ -196,6 +242,10 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         'Symfony\\Polyfill\\Iconv\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-iconv',
+        ),
+        'Symfony\\Polyfill\\Apcu\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-apcu',
         ),
         'Symfony\\Component\\Yaml\\' => 
         array (
@@ -240,10 +290,6 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         'Symfony\\Component\\Filesystem\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/filesystem',
-        ),
-        'Symfony\\Component\\ExpressionLanguage\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/expression-language',
         ),
         'Symfony\\Component\\EventDispatcher\\' => 
         array (
@@ -293,13 +339,9 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         array (
             0 => __DIR__ . '/..' . '/stecman/symfony-console-completion/src',
         ),
-        'RedBeanPHP\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/gabordemooij/redbean/RedBeanPHP',
-        ),
         'Psy\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psy/psysh/src/Psy',
+            0 => __DIR__ . '/..' . '/psy/psysh/src',
         ),
         'Psr\\Log\\' => 
         array (
@@ -309,13 +351,63 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'Psr\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/cache/src',
+        ),
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
+        'Monolog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
         'Masterminds\\' => 
         array (
             0 => __DIR__ . '/..' . '/masterminds/html5/src',
+        ),
+        'League\\Csv\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/csv/src',
+        ),
+        'Interop\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
+        ),
+        'Http\\Promise\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/promise/src',
+        ),
+        'Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/message-factory/src',
+            1 => __DIR__ . '/..' . '/php-http/message/src',
+        ),
+        'Http\\Discovery\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/discovery/src',
+        ),
+        'Http\\Client\\Curl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/curl-client/src',
+        ),
+        'Http\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/httplug/src',
+        ),
+        'Html2Text\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/html2text/html2text/src',
+            1 => __DIR__ . '/..' . '/html2text/html2text/test',
+        ),
+        'Happyr\\LinkedIn\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/happyr/linkedin-api-client/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
@@ -333,6 +425,18 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         array (
             0 => __DIR__ . '/..' . '/fabpot/goutte/Goutte',
         ),
+        'Google\\Auth\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/google/auth/src',
+        ),
+        'Firebase\\JWT\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
+        ),
+        'Facebook\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook',
+        ),
         'Drupal\\Driver\\' => 
         array (
             0 => __DIR__ . '/../..' . '/web/drivers/lib/Drupal/Driver',
@@ -341,10 +445,17 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         array (
             0 => __DIR__ . '/../..' . '/web/core/lib/Drupal/Core',
         ),
-        'Drupal\\Console\\' => 
+        'Drupal\\Console\\Core\\' => 
         array (
             0 => __DIR__ . '/..' . '/drupal/console-core/src',
-            1 => __DIR__ . '/..' . '/drupal/console/src',
+        ),
+        'Drupal\\Console\\Composer\\Plugin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/drupal/console-extend-plugin/src',
+        ),
+        'Drupal\\Console\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/drupal/console/src',
         ),
         'Drupal\\Component\\' => 
         array (
@@ -358,9 +469,17 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
+        'Doctrine\\Common\\Inflector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
+        ),
         'Doctrine\\Common\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
+        ),
+        'Doctrine\\Common\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
         ),
         'Consolidation\\OutputFormatters\\' => 
         array (
@@ -378,21 +497,17 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         array (
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),
-        'CommerceGuys\\Zone\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/commerceguys/zone/src',
-        ),
         'CommerceGuys\\Intl\\' => 
         array (
             0 => __DIR__ . '/..' . '/commerceguys/intl/src',
         ),
-        'CommerceGuys\\Enum\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/commerceguys/enum/src',
-        ),
         'CommerceGuys\\Addressing\\' => 
         array (
             0 => __DIR__ . '/..' . '/commerceguys/addressing/src',
+        ),
+        'Clue\\StreamFilter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/clue/stream-filter/src',
         ),
         'Behat\\Mink\\Driver\\' => 
         array (
@@ -404,20 +519,21 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         array (
             0 => __DIR__ . '/..' . '/behat/mink/src',
         ),
+        'Asm89\\Stack\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack',
+        ),
         'Alchemy\\Zippy\\' => 
         array (
             0 => __DIR__ . '/..' . '/alchemy/zippy/src',
         ),
+        'Abraham\\TwitterOAuth\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/abraham/twitteroauth/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
-        'p' => 
-        array (
-            'phpDocumentor' => 
-            array (
-                0 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            ),
-        ),
         'o' => 
         array (
             'org\\bovigo\\vfs\\' => 
@@ -452,10 +568,6 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
             ),
-            'PHPDocsMD' => 
-            array (
-                0 => __DIR__ . '/..' . '/victorjonsson/markdowndocs/src',
-            ),
         ),
         'J' => 
         array (
@@ -466,6 +578,17 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             'JakubOnderka\\PhpConsoleColor' => 
             array (
                 0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
+            ),
+        ),
+        'G' => 
+        array (
+            'Google_Service_' => 
+            array (
+                0 => __DIR__ . '/..' . '/google/apiclient-services/src',
+            ),
+            'Google_' => 
+            array (
+                0 => __DIR__ . '/..' . '/google/apiclient/src',
             ),
         ),
         'E' => 
@@ -513,10 +636,6 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             array (
                 0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
             ),
-            'Doctrine\\Common\\Inflector\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
-            ),
             'Doctrine\\Common\\Collections\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/collections/lib',
@@ -524,10 +643,6 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             'Doctrine\\Common\\Annotations\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/annotations/lib',
-            ),
-            'Doctrine\\Common\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/common/lib',
             ),
             'Dflydev\\PlaceholderResolver' => 
             array (
@@ -572,13 +687,6 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
                 0 => __DIR__ . '/..' . '/behat/behat/src',
             ),
         ),
-        'A' => 
-        array (
-            'Asm89\\Stack' => 
-            array (
-                0 => __DIR__ . '/..' . '/asm89/stack-cors/src',
-            ),
-        ),
     );
 
     public static $classMap = array (
@@ -596,6 +704,15 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
+        'Google_Service_Exception' => __DIR__ . '/..' . '/google/apiclient/src/Google/Service/Exception.php',
+        'Google_Service_Resource' => __DIR__ . '/..' . '/google/apiclient/src/Google/Service/Resource.php',
+        'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
+        'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/AssertionFailedError.php',
+        'PHPUnit\\Framework\\BaseTestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
+        'PHPUnit\\Framework\\Test' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Test.php',
+        'PHPUnit\\Framework\\TestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
+        'PHPUnit\\Framework\\TestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestListener.php',
+        'PHPUnit\\Framework\\TestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestSuite.php',
         'PHPUnit_Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit_Extensions_GroupTestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
         'PHPUnit_Extensions_PhptTestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/PhptTestCase.php',
@@ -923,6 +1040,7 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         'PHP_Token_NEW' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_NS_C' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_NS_SEPARATOR' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_NULLSAFE_OBJECT_OPERATOR' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_NUM_STRING' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_OBJECT_CAST' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_OBJECT_OPERATOR' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
@@ -960,6 +1078,7 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         'PHP_Token_STRING' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_STRING_CAST' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_STRING_VARNAME' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_SUPER' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_SWITCH' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_Stream' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token/Stream.php',
         'PHP_Token_Stream_CachingFactory' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token/Stream/CachingFactory.php',
@@ -974,6 +1093,7 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         'PHP_Token_UNSET' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_UNSET_CAST' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_USE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_USE_FUNCTION' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_VAR' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_VARIABLE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_WHERE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',

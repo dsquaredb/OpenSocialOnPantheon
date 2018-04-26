@@ -10,9 +10,10 @@ namespace DrupalComposer\DrupalScaffold;
 use Composer\Composer;
 use Composer\DependencyResolver\Operation\InstallOperation;
 use Composer\DependencyResolver\Operation\UpdateOperation;
+use Composer\EventDispatcher\EventDispatcher;
 use Composer\IO\IOInterface;
 use Composer\Package\PackageInterface;
-use Composer\EventDispatcher\EventDispatcher;
+use Composer\Semver\Semver;
 use Composer\Util\Filesystem;
 use Composer\Util\RemoteFilesystem;
 use Symfony\Component\Filesystem\Filesystem as SymfonyFilesystem;
@@ -113,7 +114,7 @@ class Handler {
 
     $remoteFs = new RemoteFilesystem($this->io);
 
-    $fetcher = new FileFetcher($remoteFs, $options['source'], $files);
+    $fetcher = new PrestissimoFileFetcher($remoteFs, $options['source'], $files, $this->io, $this->composer->getConfig());
     $fetcher->fetch($version, $webroot);
 
     $initialFileFetcher = new InitialFileFetcher($remoteFs, $options['source'], $this->getInitial());
@@ -327,7 +328,6 @@ EOF;
       '.csslintrc',
       '.editorconfig',
       '.eslintignore',
-      '.eslintrc.json',
       '.gitattributes',
       '.htaccess',
       'index.php',
@@ -342,13 +342,14 @@ EOF;
     ];
 
     // Version specific variations.
-    switch ($version) {
-      case '8.0':
-      case '8.1':
-      case '8.2':
-        $common[] = '.eslintrc';
-        $common = array_diff($common, ['.eslintrc.json']);
-        break;
+    if (Semver::satisfies($version, '<8.3')) {
+      $common[] = '.eslintrc';
+    }
+    if (Semver::satisfies($version, '>=8.3')) {
+      $common[] = '.eslintrc.json';
+    }
+    if (Semver::satisfies($version, '>=8.5')) {
+      $common[] = '.ht.router.php';
     }
 
     sort($common);

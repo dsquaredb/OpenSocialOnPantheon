@@ -281,7 +281,7 @@ function drush_get_global_options($brief = FALSE) {
 
   if (!$brief) {
     $options['version']            = array('description' => "Show drush version.");
-    $options['php']                = array('description' => "The absolute path to your PHP intepreter, if not 'php' in the path.", 'example-value' => '/path/to/file', 'never-propagate' => TRUE);
+    $options['php']                = array('description' => "The absolute path to your PHP interpreter, if not 'php' in the path.", 'example-value' => '/path/to/file', 'never-propagate' => TRUE);
     $options['interactive']        = array('short-form' => 'ia', 'description' => "Force interactive mode for commands run on multiple targets (e.g. `drush @site1,@site2 cc --ia`).", 'never-propagate' => TRUE);
     $options['tty']                = array('hidden' => TRUE, 'description' => "Force allocation of tty for remote commands", 'never-propagate' => TRUE);
     $options['quiet']               = array('short-form' => 'q', 'description' => 'Suppress non-error messages.');
@@ -328,6 +328,7 @@ function drush_get_global_options($brief = FALSE) {
     $options['redirect-port']       = array('hidden' => TRUE, 'never-propagate' => TRUE, 'description' => 'Used by the user-login command to specify the redirect port on the local machine; it therefore would not do to pass this to the remote machines.');
     $options['cache-clear']         = array('propagate' => TRUE, 'description' => 'If 0, Drush skips normal cache clearing; the caller should then clear if needed.', 'example-value' => '0', );
     $options['local']               = array('propagate' => TRUE, 'description' => 'Don\'t look in global locations for commandfiles, config, and site aliases');
+    $options['ignored-directories'] = array('propagate' => TRUE, 'description' => "Exclude directories when searching for files in drush_scan_directory().", 'example-value' => 'node_modules,bower_components');
 
     $command = array(
         'options' => $options,
@@ -1028,9 +1029,19 @@ function drush_tarball_extract($path, $destination = FALSE, $listing = FALSE, $t
       // Remove the header line.
       array_shift($output);
       // Remove the prefix verb from each line.
-      $output = array_map(create_function('$str', 'return substr($str, strpos($str, ":") + 3 + ' . strlen($destination) . ');'), $output);
+      $output = array_map(
+        function ($str) use ($destination) {
+          return substr($str, strpos($str, ":") + 3 + strlen($destination));
+        },
+        $output
+      );
       // Remove any remaining blank lines.
-      $return = array_filter($output, create_function('$str', 'return $str != "";'));
+      $return = array_filter(
+        $output,
+        function ($str) {
+          return $str != "";
+        }
+      );
     }
   }
   // Otherwise we have a possibly-compressed Tar file.

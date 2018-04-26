@@ -22,7 +22,7 @@ trait DynamicEntityReferenceFormatterTrait {
     // multiple "entity reference item lists" that are being displayed. We thus
     // cannot use
     // \Drupal\dynamic_entity_reference\Plugin\Field\FieldType\DynamicEntityReferenceFieldItemList::referencedEntities().
-    $ids = array();
+    $ids = [];
     foreach ($entities_items as $items) {
       /** @var \Drupal\dynamic_entity_reference\Plugin\Field\FieldType\DynamicEntityReferenceItem $item */
       foreach ($items as $item) {
@@ -38,7 +38,7 @@ trait DynamicEntityReferenceFormatterTrait {
     }
     if ($ids) {
       foreach (array_keys($ids) as $target_type) {
-        $target_entities[$target_type] = \Drupal::entityManager()->getStorage($target_type)->loadMultiple($ids[$target_type]);
+        $target_entities[$target_type] = \Drupal::entityTypeManager()->getStorage($target_type)->loadMultiple($ids[$target_type]);
       }
     }
 

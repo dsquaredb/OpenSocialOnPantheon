@@ -4,11 +4,9 @@ namespace Drush\Boot;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Psr\Log\LoggerInterface;
 use Drupal\Core\DrupalKernel;
 use Drush\Drupal\DrupalKernel as DrushDrupalKernel;
-use Drush\Drupal\DrushServiceModfier;
-use Symfony\Component\DependencyInjection\Reference;
+use Drush\Drupal\DrushServiceModifier;
 
 use Drush\Log\LogLevel;
 
@@ -128,7 +126,7 @@ class DrupalBoot8 extends DrupalBoot {
       $this->kernel = DrushDrupalKernel::createFromRequest($this->request, $classloader, 'prod');
     }
     // @see Drush\Drupal\DrupalKernel::addServiceModifier()
-    $this->kernel->addServiceModifier(new DrushServiceModfier());
+    $this->kernel->addServiceModifier(new DrushServiceModifier());
 
     // Unset drupal error handler and restore Drush's one.
     restore_error_handler();
@@ -145,7 +143,6 @@ class DrupalBoot8 extends DrupalBoot {
     if (!drush_get_context('DRUSH_QUIET', FALSE)) {
       ob_start();
     }
-    $this->kernel->invalidateContainer();
     $this->kernel->boot();
     $this->kernel->prepareLegacyRequest($this->request);
     if (!drush_get_context('DRUSH_QUIET', FALSE)) {
@@ -163,19 +160,23 @@ class DrupalBoot8 extends DrupalBoot {
     // The upshot is that the list of console commands is not available
     // until after $kernel->boot() is called.
     $container = \Drupal::getContainer();
-    $serviceCommandlist = $container->get('drush.service.consolecommands');
-    foreach ($serviceCommandlist->getCommandList() as $command) {
-      if (!$this->commandIgnored($command, $ignored_modules)) {
-        drush_log(dt('Add a command: !name', ['!name' => $command->getName()]), LogLevel::DEBUG);
-        annotationcommand_adapter_cache_module_console_commands($command);
+    if ($container->has('drush.service.consolecommands')) {
+      $serviceCommandlist = $container->get('drush.service.consolecommands');
+      foreach ($serviceCommandlist->getCommandList() as $command) {
+        if (!$this->commandIgnored($command, $ignored_modules)) {
+          drush_log(dt('Add a command: !name', ['!name' => $command->getName()]), LogLevel::DEBUG);
+          annotationcommand_adapter_cache_module_console_commands($command);
+        }
       }
     }
     // Do the same thing with the annotation commands.
-    $serviceCommandlist = $container->get('drush.service.consolidationcommands');
-    foreach ($serviceCommandlist->getCommandList() as $commandhandler) {
-      if (!$this->commandIgnored($commandhandler, $ignored_modules)) {
-        drush_log(dt('Add a commandhandler: !name', ['!name' => get_class($commandhandler)]), LogLevel::DEBUG);
-        annotationcommand_adapter_cache_module_service_commands($commandhandler);
+    if ($container->has('drush.service.consolidationcommands')) {
+      $serviceCommandlist = $container->get('drush.service.consolidationcommands');
+      foreach ($serviceCommandlist->getCommandList() as $commandhandler) {
+        if (!$this->commandIgnored($commandhandler, $ignored_modules)) {
+          drush_log(dt('Add a commandhandler: !name', ['!name' => get_class($commandhandler)]), LogLevel::DEBUG);
+          annotationcommand_adapter_cache_module_service_commands($commandhandler);
+        }
       }
     }
   }

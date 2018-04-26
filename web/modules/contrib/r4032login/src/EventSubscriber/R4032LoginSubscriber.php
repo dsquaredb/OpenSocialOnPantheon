@@ -1,27 +1,20 @@
 <?php
 
-/**
- * @file
- * Definition of Drupal\r4032login\EventSubscriber\R4032LoginSubscriber.
- */
-
 namespace Drupal\r4032login\EventSubscriber;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\EventSubscriber\HttpExceptionSubscriberBase;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Routing\RedirectDestinationInterface;
 use Drupal\Core\Url;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
-use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Drupal\Component\Utility\Xss;
 
 /**
  * Redirect 403 to User Login event subscriber.
  */
-class R4032LoginSubscriber implements EventSubscriberInterface {
+class R4032LoginSubscriber extends HttpExceptionSubscriberBase {
 
   /**
    * The configuration factory.
@@ -49,8 +42,6 @@ class R4032LoginSubscriber implements EventSubscriberInterface {
    *
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The configuration factory.
-   * @param \Drupal\Core\Routing\UrlGeneratorInterface $url_generator
-   *   The url generator service.
    * @param \Drupal\Core\Session\AccountInterface $current_user
    *   The current user.
    * @param \Drupal\Core\Routing\RedirectDestinationInterface $redirect_destination
@@ -63,19 +54,19 @@ class R4032LoginSubscriber implements EventSubscriberInterface {
   }
 
   /**
+   * {@inheritdoc}
+   */
+  protected function getHandledFormats() {
+    return ['html'];
+  }
+
+  /**
    * Redirects on 403 Access Denied kernel exceptions.
    *
    * @param \Symfony\Component\HttpKernel\Event\GetResponseEvent $event
    *   The Event to process.
-   *
-   * @throws \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException
-   *   Thrown when the access is denied and redirects to user login page.
    */
-  public function onKernelException(GetResponseEvent $event) {
-    $exception = $event->getException();
-    if (!($exception instanceof AccessDeniedHttpException)) {
-      return;
-    }
+  public function on403(GetResponseEvent $event) {
     $config = $this->configFactory->get('r4032login.settings');
     $options = array();
     $options['query'] = $this->redirectDestination->getAsArray();
@@ -99,26 +90,17 @@ class R4032LoginSubscriber implements EventSubscriberInterface {
       $redirect = $config->get('redirect_authenticated_users_to');
       if ($redirect) {
         // Custom access denied page for logged in users.
-        $url = Url::fromUserInput($redirect, $options)->toString();
+        if ($redirect === '<front>') {
+          $url = \Drupal::urlGenerator()->generate('<front>');
+        }
+        else {
+          $url = Url::fromUserInput($redirect, $options)->toString();
+        }
+
         $response = new RedirectResponse($url, $code);
         $event->setResponse($response);
       }
-      else {
-        // Display the default access denied page.
-        throw new AccessDeniedHttpException();
-      }
     }
-  }
-
-  /**
-   * {@inheritdoc}
-   *
-   * The priority for the exception must be as low as possible this subscriber
-   * to respond with AccessDeniedHttpException.
-   */
-  public static function getSubscribedEvents() {
-    $events[KernelEvents::EXCEPTION][] = array('onKernelException');
-    return $events;
   }
 
 }

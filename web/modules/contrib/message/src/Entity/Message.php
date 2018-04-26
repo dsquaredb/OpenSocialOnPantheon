@@ -39,6 +39,9 @@ use Drupal\user\UserInterface;
  *     "view_builder" = "Drupal\message\MessageViewBuilder",
  *     "list_builder" = "Drupal\message\MessageListBuilder",
  *     "views_data" = "Drupal\message\MessageViewsData",
+ *     "form" = {
+ *       "default" = "Drupal\Core\Entity\ContentEntityForm",
+ *     },
  *   },
  *   field_ui_base_route = "entity.message_template.edit_form"
  * )
@@ -194,12 +197,15 @@ class Message extends ContentEntityBase implements MessageInterface {
   /**
    * {@inheritdoc}
    */
-  public function getText($langcode = Language::LANGCODE_NOT_SPECIFIED, $delta = FALSE) {
+  public function getText($langcode = NULL, $delta = NULL) {
     if (!$message_template = $this->getTemplate()) {
       // Message template does not exist any more.
       // We don't throw an exception, to make sure we don't break sites that
       // removed the message template, so we silently ignore.
       return [];
+    }
+    if (!$langcode) {
+      $langcode = $this->language;
     }
 
     $message_arguments = $this->getArguments();
@@ -207,9 +213,8 @@ class Message extends ContentEntityBase implements MessageInterface {
 
     $output = $this->processArguments($message_arguments, $message_template_text);
 
-    $token_replace = $message_template->getSetting('token replace', TRUE);
-    $token_options = $message_template->getSetting('token options');
-    if (!empty($token_replace)) {
+    $token_options = $message_template->getSetting('token options', []);
+    if (!empty($token_options['token replace'])) {
       // Token should be processed.
       $output = $this->processTokens($output, !empty($token_options['clear']));
     }
@@ -226,7 +231,7 @@ class Message extends ContentEntityBase implements MessageInterface {
    *   Array with the templated text saved in the message template.
    *
    * @return array
-   *   The templated text, with the placehodlers replaced with the actual value,
+   *   The templated text, with the placeholders replaced with the actual value,
    *   if there are indeed arguments.
    */
   protected function processArguments(array $arguments, array $output) {
@@ -243,7 +248,7 @@ class Message extends ContentEntityBase implements MessageInterface {
 
         if ($value['pass message']) {
           // Pass the message object as-well.
-          $value['callback arguments']['message'] = $this;
+          $value['arguments']['message'] = $this;
         }
 
         $arguments[$key] = call_user_func_array($value['callback'], $value['arguments']);
@@ -385,7 +390,7 @@ class Message extends ContentEntityBase implements MessageInterface {
    *   An array of default values.
    */
   public static function getCurrentUserId() {
-    return array(\Drupal::currentUser()->id());
+    return [\Drupal::currentUser()->id()];
   }
 
 }

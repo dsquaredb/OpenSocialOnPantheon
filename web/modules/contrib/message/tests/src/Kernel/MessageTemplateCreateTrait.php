@@ -2,6 +2,7 @@
 
 namespace Drupal\Tests\message\Kernel;
 
+use Drupal\Component\Utility\Unicode;
 use Drupal\Core\Language\Language;
 use Drupal\message\Entity\MessageTemplate;
 
@@ -29,12 +30,31 @@ trait MessageTemplateCreateTrait {
    * @return \Drupal\message\MessageTemplateInterface
    *   A saved message template entity.
    */
-  protected function createMessageTemplate($template, $label, $description, array $text, array $settings = [], $langcode = Language::LANGCODE_NOT_SPECIFIED) {
+  protected function createMessageTemplate($template = NULL, $label = NULL, $description = NULL, array $text = [], array $settings = [], $langcode = Language::LANGCODE_NOT_SPECIFIED) {
     $settings += [
       'token options' => [
+        'token replace' => TRUE,
         'clear' => FALSE,
       ],
     ];
+    $template = $template ?: Unicode::strtolower($this->randomMachineName());
+    $label = $label ?: $this->randomString();
+    $description = $description ?: $this->randomString();
+    $text = $text ?: [$this->randomString()];
+
+    // If the $text array is simple text values, transform to text + format.
+    foreach ($text as $key => $detail) {
+      if (!is_array($detail)) {
+        $text[$key] = [
+          'value' => $detail,
+          'format' => filter_default_format(),
+        ];
+      }
+      elseif (!isset($detail['format'])) {
+        $text[$key]['format'] = 'plain_text';
+      }
+    }
+
     $message_template = MessageTemplate::Create([
       'template' => $template,
       'label' => $label,

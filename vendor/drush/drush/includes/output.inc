@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\Core\Render\Markup;
 use Drush\Log\LogLevel;
 
 /**
@@ -33,12 +34,15 @@ function drush_print($message = '', $indent = 0, $handle = NULL, $newline = TRUE
   if (($charset = drush_get_option('output_charset')) && function_exists('iconv')) {
     $msg = iconv('UTF-8', $charset, $msg);
   }
-  if (isset($handle)) {
-    fwrite($handle, $msg);
+  if (!isset($handle)) {
+    $handle = STDOUT;
+    // In the past, Drush would use `print` here; now that we are using
+    // fwrite (to avoid problems with php sending the http headers), we
+    // must explicitly capture the output, because ob_start() / ob_end()
+    // does not capture output written via fwrite to STDOUT.
+    drush_backend_output_collect($msg);
   }
-  else {
-    print $msg;
-  }
+  fwrite($handle, $msg);
 }
 
 /**
@@ -154,12 +158,7 @@ function dt($string, $args = array()) {
   else if (drush_drupal_major_version() >= 8 && \Drupal::hasService('string_translation')) {
     // Drupal 8 removes !var replacements, creating a user-level error when
     // these are used, so we'll pre-replace these before calling translate().
-    $legacy_args = find_legacy_dt_args($args);
-    $string = strtr($string, $legacy_args);
-    // Remove the legacy replacements.
-    foreach (array_keys($legacy_args) as $legacy_arg_key) {
-      unset($args[$legacy_arg_key]);
-    }
+    list($string, $args) = replace_legacy_dt_args($string, $args);
     $output = (string) \Drupal::translation()->translate($string, $args);
   }
   else if (function_exists('t') && drush_drupal_major_version() <= 7 && function_exists('theme')) {
@@ -179,21 +178,25 @@ function dt($string, $args = array()) {
 }
 
 /**
- * Return an array containing all of the items in the input
- * array that begin with a '!'.
- *
- * Since array_filter operates on the array value, and there
- * is no corresponding function that operates on the key, we
- * will flip the array twice to filter on the key.
+ * Replace placeholders that begin with a '!' with '@'.
  */
-function find_legacy_dt_args($args) {
-  $legacy_args = array();
-  foreach ($args as $arg => $replacement) {
-    if ($arg[0] == '!') {
-      $legacy_args[$arg] = $replacement;
+function replace_legacy_dt_args(&$string, &$legacy_args) {
+  $args = array();
+  $replace = array();
+  foreach ($legacy_args as $name => $argument) {
+    if ($name[0] == '!') {
+      $new_arg = '@' . substr($name, 1);
+      $replace[$name] = $new_arg;
+      $args[$new_arg] = Markup::create($argument);
+    }
+    else {
+      $args[$name] = $argument;
     }
   }
-  return $legacy_args;
+  return [
+    strtr($string, $replace),
+    $args
+  ];
 }
 
 /**
