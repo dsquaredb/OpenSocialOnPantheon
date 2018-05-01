@@ -9,9 +9,12 @@ use Drupal\Tests\BrowserTestBase;
  */
 class BulkFormTest extends BrowserTestBase {
 
+  /**
+   * {@inheritdoc}
+   */
   public static $modules = ['node', 'action_bulk_test', 'override_node_options'];
 
-  public function testBulkOperations() {
+  public function testUnpublishAction() {
     $this->drupalCreateContentType(['type' => 'article']);
 
     $account = $this->drupalCreateUser([

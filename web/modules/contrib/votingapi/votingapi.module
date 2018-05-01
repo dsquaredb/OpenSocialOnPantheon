@@ -67,6 +67,6 @@ function votingapi_cron() {
         $entity['type']
       );
     }
-    Drupal::state()->set('votingapi.last_cron', REQUEST_TIME);
+    Drupal::state()->set('votingapi.last_cron', \Drupal::time()->getRequestTime());
   }
 }

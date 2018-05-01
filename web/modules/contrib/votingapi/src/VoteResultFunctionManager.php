@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\votingapi\VoteResultFunctionManager.
- */
-
 namespace Drupal\votingapi;
 
 use Drupal\Core\Cache\CacheBackendInterface;
@@ -53,10 +48,10 @@ class VoteResultFunctionManager extends DefaultPluginManager {
    *   An nested array
    */
   public function getResults($entity_type_id, $entity_id) {
-    $results = array();
+    $results = [];
 
     $result = db_select('votingapi_result', 'v')
-      ->fields('v', array('type', 'function', 'value'))
+      ->fields('v', ['type', 'function', 'value'])
       ->condition('entity_type', $entity_type_id)
       ->condition('entity_id', $entity_id)
       ->execute();
@@ -70,10 +65,10 @@ class VoteResultFunctionManager extends DefaultPluginManager {
   /**
    * Recalculates the aggregate voting results of all votes for a given entity.
    *
-   * Loads all votes for a given piece of content, then calculates and caches the
-   * aggregate vote results. This is only intended for modules that have assumed
-   * responsibility for the full voting cycle: the votingapi_set_vote() function
-   * recalculates automatically.
+   * Loads all votes for a given piece of content, then calculates and caches
+   * the aggregate vote results. This is only intended for modules that have
+   * assumed responsibility for the full voting cycle: the votingapi_set_vote()
+   * function recalculates automatically.
    *
    *
    * @param string $entity_type_id
@@ -97,7 +92,7 @@ class VoteResultFunctionManager extends DefaultPluginManager {
       ->sort('type')
       ->execute();
     $vote_storage = \Drupal::entityManager()->getStorage('vote');
-    $votes = array();
+    $votes = [];
     $vote_type = '';
     if (!empty($vote_ids)) {
       foreach ($vote_ids as $vote_id) {
@@ -108,7 +103,7 @@ class VoteResultFunctionManager extends DefaultPluginManager {
         if (!empty($vote_type) && $vote_type != $vote->bundle()) {
           $this->performAndStore($votes);
           $vote_type = $vote->bundle();
-          $votes = array();
+          $votes = [];
         }
         $votes[] = $vote;
       }
@@ -133,14 +128,14 @@ class VoteResultFunctionManager extends DefaultPluginManager {
 
     foreach ($this->getDefinitions() as $plugin_id => $definition) {
       $plugin = $this->createInstance($plugin_id);
-      db_insert('votingapi_result')->fields(array(
+      db_insert('votingapi_result')->fields([
         'entity_id' => $entity_id,
         'entity_type' => $entity_type_id,
         'type' => $vote_type,
         'function' => $plugin_id,
         'value' => $plugin->calculateResult($votes),
-        'timestamp' => REQUEST_TIME,
-      ))->execute();
+        'timestamp' => \Drupal::time()->getRequestTime(),
+      ])->execute();
     }
   }
 }

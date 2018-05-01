@@ -1,7 +1,16 @@
-social_event.social_event_controller_redirectMyEvents:
-  path: 'my-events'
+social_event.my_events:
+  path: '/my-events'
   defaults:
     _controller: '\Drupal\social_event\Controller\SocialEventController::redirectMyEvents'
-    _title: 'redirectMyEvents'
   requirements:
       _user_is_logged_in: 'TRUE'
+
+social_event.settings:
+  path: '/admin/config/opensocial/event'
+  defaults:
+    _form: '\Drupal\social_event\Form\EventSettingsForm'
+    _title: 'Event settings'
+  requirements:
+    _permission: 'administer social_event settings'
+  options:
+    _admin_route: TRUE

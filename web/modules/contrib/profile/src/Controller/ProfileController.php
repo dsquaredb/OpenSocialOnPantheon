@@ -134,7 +134,7 @@ class ProfileController extends ControllerBase implements ContainerInjectionInte
       $build['add_profile'] = Link::createFromRoute(
         $this->t('Add new @type', ['@type' => $profile_type->label()]),
         'entity.profile.type.user_profile_form.add',
-        ['user' => $this->currentUser()->id(), 'profile_type' => $profile_type->id()])
+        ['user' => $user->id(), 'profile_type' => $profile_type->id()])
         ->toRenderable();
 
       // Render the active profiles.

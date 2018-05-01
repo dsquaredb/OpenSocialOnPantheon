@@ -45,6 +45,12 @@ class ProfileTypeForm extends BundleEntityFormBase {
         'source' => ['label'],
       ],
     ];
+    $form['description'] = [
+      '#title' => $this->t('Description'),
+      '#type' => 'textarea',
+      '#default_value' => $type->getDescription(),
+      '#description' => $this->t('This text will be displayed only for administrative purposes.'),
+    ];
     $form['registration'] = [
       '#type' => 'checkbox',
       '#title' => t('Include in user registration form'),

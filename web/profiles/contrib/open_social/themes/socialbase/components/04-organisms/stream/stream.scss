@@ -125,10 +125,6 @@
 
   }
 
-  .comment__content {
-    flex: 1;
-  }
-
 }
 
 
@@ -156,10 +152,4 @@
 
   }
 
-}
-
-.post-image {
-  display: inline-block;
-  @include z-depth-3;
-  margin-top: -0.5rem; // not too much space between text and image
 }

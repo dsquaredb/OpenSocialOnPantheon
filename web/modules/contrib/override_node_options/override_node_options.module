@@ -25,7 +25,8 @@ function override_node_options_form_alter(array &$form, FormStateInterface $form
 
     $node_type = $form_object->getEntity()->bundle();
 
-    $form['revision']['#access'] = $user->hasPermission("override $node_type revision option");
+    $form['revision']['#access'] = $user->hasPermission("override $node_type revision option")
+      || $user->hasPermission('override all revision option');
   }
 }
 
@@ -40,43 +41,70 @@ function override_node_options_entity_field_access_alter(array &$grants, array $
 
     switch ($context['field_definition']->getName()) {
       case 'promote':
-        $grants[':default'] = AccessResult::allowedIfHasPermission($context['account'], "override $bundle promote to front page option");
+        $grants[':default'] = AccessResult::allowedIfHasPermissions(
+          $context['account'],
+          [
+            'override all promote to front page option',
+            "override $bundle promote to front page option",
+          ],
+          'OR'
+        );
         break;
 
       case 'sticky':
-        $grants[':default'] = AccessResult::allowedIfHasPermission($context['account'], "override $bundle sticky option");
+        $grants[':default'] = AccessResult::allowedIfHasPermissions(
+          $context['account'],
+          [
+            'override all sticky option',
+            "override $bundle sticky option",
+          ],
+          'OR'
+        );
         break;
 
       case 'revision_log':
-        $grants[':default'] = AccessResult::allowedIfHasPermission($context['account'], "override $bundle revision log entry");
+        $grants[':default'] = AccessResult::allowedIfHasPermissions(
+          $context['account'],
+          [
+  //          'override all revision log entry',
+            "override $bundle revision log entry",
+          ],
+          'OR'
+        );
         break;
 
       case 'created':
-        $grants[':default'] = AccessResult::allowedIfHasPermission($context['account'], "override $bundle authored on option");
+        $grants[':default'] = AccessResult::allowedIfHasPermissions(
+          $context['account'],
+          [
+            'override all authored on option',
+            "override $bundle authored on option",
+          ],
+          'OR'
+        );
         break;
 
       case 'uid':
-        $grants[':default'] = AccessResult::allowedIfHasPermission($context['account'], "override $bundle authored by option");
+        $grants[':default'] = AccessResult::allowedIfHasPermissions(
+          $context['account'],
+          [
+            'override all authored by option',
+            "override $bundle authored by option",
+          ],
+          'OR'
+        );
         break;
 
       case 'status':
-        $grants[':default'] = AccessResult::allowedIfHasPermission($context['account'], "override $bundle published option");
+        $grants[':default'] = AccessResult::allowedIfHasPermissions(
+          $context['account'],
+          [
+            'override all published option',
+            "override $bundle published option",
+          ],
+          'OR'
+        );
         break;
     }
   }
-}
-
-/**
- * Implements hook_entity_type_alter().
- *
- * @see NodeForm::actions()
- *
- * @todo Remove when https://www.drupal.org/node/1901216 is fixed.
- */
-function override_node_options_entity_type_alter(array &$entity_types) {
-  // Set the node form class to OverrideNodeOptionsNodeForm so that we can
-  // override NodeForm::actions() and allow for overriding the publish option.
-  /** @var \Drupal\Core\Entity\EntityTypeInterface[] $entity_types */
-  $entity_types['node']->setFormClass('default', '\Drupal\override_node_options\Form\OverrideNodeOptionsNodeForm');
-  $entity_types['node']->setFormClass('edit', '\Drupal\override_node_options\Form\OverrideNodeOptionsNodeForm');
 }

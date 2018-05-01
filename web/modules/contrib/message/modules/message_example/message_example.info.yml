@@ -9,8 +9,8 @@ dependencies:
  - node
  - comment
 
-# Information added by Drupal.org packaging script on 2017-08-10
-version: '8.x-1.0-beta2'
+# Information added by Drupal.org packaging script on 2017-10-19
+version: '8.x-1.0-rc1'
 core: '8.x'
 project: 'message'
-datestamp: 1502381068
+datestamp: 1508449453

@@ -4,7 +4,7 @@
 *
 * @license http://opensource.org/licenses/MIT
 * @link https://github.com/thephpleague/csv/
-* @version 7.2.0
+* @version 8.2.3
 * @package League.csv
 *
 * For the full copyright and license information, please view the LICENSE
@@ -100,10 +100,17 @@ trait RowFilter
      */
     public function addValidator(callable $callable, $name)
     {
+        $name = $this->validateString($name);
+
         $this->validators[$name] = $callable;
 
         return $this;
     }
+
+    /**
+     * @inheritdoc
+     */
+    abstract protected function validateString($str);
 
     /**
      * Remove a validator from the collection
@@ -114,9 +121,8 @@ trait RowFilter
      */
     public function removeValidator($name)
     {
-        if (array_key_exists($name, $this->validators)) {
-            unset($this->validators[$name]);
-        }
+        $name = $this->validateString($name);
+        unset($this->validators[$name]);
 
         return $this;
     }
@@ -130,7 +136,9 @@ trait RowFilter
      */
     public function hasValidator($name)
     {
-        return array_key_exists($name, $this->validators);
+        $name = $this->validateString($name);
+
+        return isset($this->validators[$name]);
     }
 
     /**
@@ -148,7 +156,7 @@ trait RowFilter
     /**
      * Format the given row
      *
-     * @param array|string $row
+     * @param array $row
      *
      * @return array
      */
@@ -162,7 +170,7 @@ trait RowFilter
     }
 
     /**
-    * validate a row
+    * Validate a row
     *
     * @param array $row
     *

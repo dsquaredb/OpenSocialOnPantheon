@@ -4,7 +4,7 @@
 *
 * @license http://opensource.org/licenses/MIT
 * @link https://github.com/thephpleague/csv/
-* @version 7.2.0
+* @version 8.2.3
 * @package League.csv
 *
 * For the full copyright and license information, please view the LICENSE
@@ -46,13 +46,6 @@ trait Controls
      * @var string
      */
     protected $escape = '\\';
-
-    /**
-     * the \SplFileObject flags holder
-     *
-     * @var int
-     */
-    protected $flags;
 
     /**
      * newline character
@@ -103,33 +96,6 @@ trait Controls
     }
 
     /**
-     * Detects the CSV file delimiters
-     *
-     * Returns a associative array where each key represents
-     * the number of occurences and each value a delimiter with the
-     * given occurence
-     *
-     * This method returns incorrect informations when two delimiters
-     * have the same occurrence count
-     *
-     * DEPRECATION WARNING! This method will be removed in the next major point release
-     *
-     * @deprecated deprecated since version 7.2
-     *
-     * @param int      $nb_rows
-     * @param string[] $delimiters additional delimiters
-     *
-     * @return string[]
-     */
-    public function detectDelimiterList($nb_rows = 1, array $delimiters = [])
-    {
-        $delimiters = array_merge([$this->delimiter, ',', ';', "\t"], $delimiters);
-        $stats = $this->fetchDelimitersOccurrence($delimiters, $nb_rows);
-
-        return array_flip(array_filter($stats));
-    }
-
-    /**
      * Detect Delimiters occurences in the CSV
      *
      * Returns a associative array where each key represents
@@ -138,17 +104,12 @@ trait Controls
      * @param string[] $delimiters the delimiters to consider
      * @param int      $nb_rows    Detection is made using $nb_rows of the CSV
      *
-     * @throws InvalidArgumentException If $nb_rows value is invalid
-     *
      * @return array
      */
     public function fetchDelimitersOccurrence(array $delimiters, $nb_rows = 1)
     {
-        if (!($nb_rows = filter_var($nb_rows, FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]))) {
-            throw new InvalidArgumentException('The number of rows to consider must be a valid positive integer');
-        }
-
-        $filterRow = function ($row) {
+        $nb_rows = $this->validateInteger($nb_rows, 1, 'The number of rows to consider must be a valid positive integer');
+        $filter_row = function ($row) {
             return is_array($row) && count($row) > 1;
         };
         $delimiters = array_unique(array_filter($delimiters, [$this, 'isValidCsvControls']));
@@ -156,12 +117,31 @@ trait Controls
         $res = [];
         foreach ($delimiters as $delim) {
             $csv->setCsvControl($delim, $this->enclosure, $this->escape);
-            $iterator = new CallbackFilterIterator(new LimitIterator($csv, 0, $nb_rows), $filterRow);
+            $iterator = new CallbackFilterIterator(new LimitIterator($csv, 0, $nb_rows), $filter_row);
             $res[$delim] = count(iterator_to_array($iterator, false), COUNT_RECURSIVE);
         }
         arsort($res, SORT_NUMERIC);
 
         return $res;
+    }
+
+    /**
+     * Validate an integer
+     *
+     * @param int    $int
+     * @param int    $minValue
+     * @param string $errorMessage
+     *
+     * @throws InvalidArgumentException If the value is invalid
+     *
+     * @return int
+     */
+    protected function validateInteger($int, $minValue, $errorMessage)
+    {
+        if (false === ($int = filter_var($int, FILTER_VALIDATE_INT, ['options' => ['min_range' => $minValue]]))) {
+            throw new InvalidArgumentException($errorMessage);
+        }
+        return $int;
     }
 
     /**
@@ -228,39 +208,6 @@ trait Controls
     {
         return $this->escape;
     }
-
-    /**
-     * Sets the Flags associated to the CSV SplFileObject
-     *
-     * @param int $flags
-     *
-     * @throws InvalidArgumentException If the argument is not a valid integer
-     *
-     * @return $this
-     */
-    public function setFlags($flags)
-    {
-        $flags = $this->filterInteger($flags, 0, 'you should use a `SplFileObject` Constant');
-        $this->flags = $flags | SplFileObject::READ_CSV;
-
-        return $this;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    abstract protected function filterInteger($int, $minValue, $errorMessage);
-
-    /**
-     * Returns the file Flags
-     *
-     * @return int
-     */
-    public function getFlags()
-    {
-        return $this->flags;
-    }
-
 
     /**
      * Sets the newline sequence characters

@@ -1,4 +1,4 @@
-@api @group @DS-3801 @DS-3776 @DS-3976 @stability @stability-1
+@api @group @DS-3801 @DS-3776 @DS-3976 @DS-4211 @stability @stability-1
 Feature: Group access roles
   Benefit: As a CM+ I want to have full control over groups
   Role: As a CM+
@@ -27,8 +27,7 @@ Feature: Group access roles
     | Street address | Padangstraat 11 |
     | Postal code | 7556SP |
     And I press "Save"
-    And I should see "Test closed group 3" in the "Main content"
-    Then I click "Test closed group 3"
+    Then I should see "Test closed group 3" in the "Main content"
 
   # Create a topic inside the closed group
     When I am on "user"
@@ -41,7 +40,7 @@ Feature: Group access roles
       | Title | Test closed group 3 topic |
     And I fill in the "edit-body-0-value" WYSIWYG editor with "Body description text"
     And I click radio button "Discussion"
-    And I press "Save and publish"
+    And I press "Save"
     And I should see "Test closed group 3 topic"
 
   # As a outsider with the role CM+ I should be able to see and manage content from a closed group

@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains Drupal\votingapi\Entity\Vote.
- */
-
 namespace Drupal\votingapi\Entity;
 
 use Drupal\Core\Cache\Cache;
@@ -27,6 +22,7 @@ use Drupal\votingapi\VoteInterface;
  *   bundle_entity_type = "vote_type",
  *   handlers = {
  *     "storage" = "Drupal\votingapi\VoteStorage",
+ *     "access" = "Drupal\votingapi\VoteAccessControlHandler",
  *     "views_data" = "Drupal\votingapi\Entity\VoteViewsData",
  *   },
  *   base_table = "votingapi_vote",
@@ -180,9 +176,9 @@ class Vote extends ContentEntityBase implements VoteInterface {
       ->setLabel(t('Entity Type'))
       ->setDescription(t('The type from the voted entity.'))
       ->setDefaultValue('node')
-      ->setSettings(array(
-        'max_length' => 64
-      ))
+      ->setSettings([
+        'max_length' => 64,
+      ])
       ->setRequired(TRUE);
 
     $fields['entity_id'] = BaseFieldDefinition::create('entity_reference')
@@ -199,9 +195,9 @@ class Vote extends ContentEntityBase implements VoteInterface {
 
     $fields['value_type'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Value Type'))
-      ->setSettings(array(
-        'max_length' => 64
-      ))
+      ->setSettings([
+        'max_length' => 64,
+      ])
       ->setDefaultValue('percent');
 
     $fields['user_id'] = BaseFieldDefinition::create('entity_reference')
@@ -219,9 +215,9 @@ class Vote extends ContentEntityBase implements VoteInterface {
       ->setLabel(t('Vote Source'))
       ->setDescription(t('The IP from the user who submitted the vote.'))
       ->setDefaultValueCallback('Drupal\votingapi\Entity\Vote::getCurrentIp')
-      ->setSettings(array(
-        'max_length' => 255
-      ));
+      ->setSettings([
+        'max_length' => 255,
+      ]);
 
     return $fields;
   }
@@ -252,6 +248,7 @@ class Vote extends ContentEntityBase implements VoteInterface {
 
   /**
    * Update voting results when a new vote is cast.
+   *
    * @param \Drupal\Core\Entity\EntityStorageInterface $storage
    * @param bool|TRUE $update
    */
@@ -272,6 +269,7 @@ class Vote extends ContentEntityBase implements VoteInterface {
 
   /**
    * If a vote is deleted, the results needs to be updated.
+   *
    * @param \Drupal\Core\Entity\EntityStorageInterface $storage
    * @param array $entities
    */

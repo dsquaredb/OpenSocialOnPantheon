@@ -118,6 +118,7 @@ function _votingapi_cast_votes($etype, $eid, $timestamp = 0, $uids = array(), $s
   if (!isset($tags)) {
     $tags = explode(' ', devel_create_greeking(30));
   }
+  $request_time = \Drupal::time()->getRequestTime();
   foreach ($uids as $uid) {
     switch ($style) {
       case 'percent':
@@ -126,7 +127,7 @@ function _votingapi_cast_votes($etype, $eid, $timestamp = 0, $uids = array(), $s
           'entity_type' => $etype,
           'entity_id' => $eid,
           'value_type' => 'percent',
-          'timestamp' => REQUEST_TIME - mt_rand(0, $timestamp),
+          'timestamp' => $request_time - mt_rand(0, $timestamp),
           'value' => mt_rand(1, 5) * 20,
           'tag' => $tags[mt_rand(0, 30)],
         );
@@ -138,7 +139,7 @@ function _votingapi_cast_votes($etype, $eid, $timestamp = 0, $uids = array(), $s
             'entity_type' => $etype,
             'entity_id' => $eid,
             'value_type' => 'points',
-            'timestamp' => REQUEST_TIME - mt_rand(0, $timestamp),
+            'timestamp' => $request_time - mt_rand(0, $timestamp),
             'value' => rand(0, 1) ? 1 : -1,
           );
         }

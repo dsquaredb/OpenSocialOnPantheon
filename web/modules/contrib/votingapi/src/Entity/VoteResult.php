@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains Drupal\votingapi\Entity\VoteResult.
- */
-
 namespace Drupal\votingapi\Entity;
 
 use Drupal\Core\Field\BaseFieldDefinition;
@@ -23,6 +18,7 @@ use Drupal\votingapi\VoteResultInterface;
  *   label = @Translation("Vote Result"),
  *   handlers = {
  *     "storage" = "Drupal\votingapi\VoteResultStorage",
+ *     "access" = "Drupal\votingapi\VoteResultAccessControlHandler",
  *     "views_data" = "Drupal\votingapi\Entity\VoteResultViewsData",
  *   },
  *   base_table = "votingapi_result",
@@ -167,9 +163,9 @@ class VoteResult extends ContentEntityBase implements VoteResultInterface {
     $fields['entity_type'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Entity Type'))
       ->setDescription(t('The type from the voted entity.'))
-      ->setSettings(array(
-        'max_length' => 64
-      ))
+      ->setSettings([
+        'max_length' => 64,
+      ])
       ->setRequired(TRUE);
 
     $fields['entity_id'] = BaseFieldDefinition::create('entity_reference')
@@ -184,17 +180,17 @@ class VoteResult extends ContentEntityBase implements VoteResultInterface {
 
     $fields['value_type'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Value Type'))
-      ->setSettings(array(
-        'max_length' => 64
-      ))
+      ->setSettings([
+        'max_length' => 64,
+      ])
       ->setRequired(TRUE);
 
     $fields['function'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Function'))
       ->setDescription(t('Function to apply to the numbers.'))
-      ->setSettings(array(
-        'max_length' => 50
-      ))
+      ->setSettings([
+        'max_length' => 100,
+      ])
       ->setRequired(TRUE);
 
     $fields['timestamp'] = BaseFieldDefinition::create('created')

@@ -68,6 +68,36 @@ class RedirectableUrlMatcherTest extends UrlMatcherTest
         $matcher->match('/foo');
     }
 
+    public function testSchemeRedirectWithParams()
+    {
+        $coll = new RouteCollection();
+        $coll->add('foo', new Route('/foo/{bar}', array(), array(), array(), '', array('https')));
+
+        $matcher = $this->getUrlMatcher($coll);
+        $matcher
+            ->expects($this->once())
+            ->method('redirect')
+            ->with('/foo/baz', 'foo', 'https')
+            ->will($this->returnValue(array('redirect' => 'value')))
+        ;
+        $this->assertEquals(array('_route' => 'foo', 'bar' => 'baz', 'redirect' => 'value'), $matcher->match('/foo/baz'));
+    }
+
+    public function testSlashRedirectWithParams()
+    {
+        $coll = new RouteCollection();
+        $coll->add('foo', new Route('/foo/{bar}/'));
+
+        $matcher = $this->getUrlMatcher($coll);
+        $matcher
+            ->expects($this->once())
+            ->method('redirect')
+            ->with('/foo/baz/', 'foo', null)
+            ->will($this->returnValue(array('redirect' => 'value')))
+        ;
+        $this->assertEquals(array('_route' => 'foo', 'bar' => 'baz', 'redirect' => 'value'), $matcher->match('/foo/baz'));
+    }
+
     public function testRedirectPreservesUrlEncoding()
     {
         $coll = new RouteCollection();
@@ -83,7 +113,7 @@ class RedirectableUrlMatcherTest extends UrlMatcherTest
         $coll = new RouteCollection();
         $coll->add('foo', new Route('/foo', array(), array(), array(), '', array('https')));
         $matcher = $this->getUrlMatcher($coll, new RequestContext());
-        $matcher->expects($this->once())->method('redirect')->with('/foo', 'foo', 'https')->willReturn(array('_route' => 'foo'));
+        $matcher->expects($this->once())->method('redirect')->with('/foo', 'foo', 'https')->willReturn(array());
         $this->assertSame(array('_route' => 'foo'), $matcher->match('/foo'));
     }
 

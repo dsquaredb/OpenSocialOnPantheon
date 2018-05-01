@@ -21,9 +21,58 @@ class OverrideNodeOptionsPermissions {
   public function permissions() {
     $permissions = [];
 
-    /** @var Drupal\node\Entity\NodeType[] $node_types */
-    $node_types = NodeType::loadMultiple();
-    foreach ($node_types as $type) {
+    if (\Drupal::config('override_node_options.settings')->get('general_permissions')) {
+      $this->addGeneralPermissions($permissions);
+    }
+
+    if (\Drupal::config('override_node_options.settings')->get('specific_permissions')) {
+      $this->addSpecificPermissions($permissions);
+    }
+
+    return $permissions;
+  }
+
+  /**
+   * Add general permissions.
+   *
+   * @param array $permissions
+   *   The permissions array, passed by reference.
+   */
+  private function addGeneralPermissions(array &$permissions) {
+    $permissions['override all published option'] = [
+      'title' => $this->t('Override all published options.'),
+    ];
+
+    $permissions['override all promote to front page option'] = [
+      'title' => $this->t('Override all promote to front page options.'),
+    ];
+
+    $permissions['override all sticky option'] = [
+      'title' => $this->t('Override all sticky options.'),
+    ];
+
+    $permissions['override all revision option'] = [
+      'title' => $this->t('Override all revision option.'),
+    ];
+
+    $permissions['override all authored by option'] = [
+      'title' => $this->t('Override all authored by option.'),
+    ];
+
+    $permissions['override all authored on option'] = [
+      'title' => $this->t('Override all authored on option.'),
+    ];
+  }
+
+  /**
+   * Add node type specific permissions.
+   *
+   * @param array $permissions
+   *   The permissions array, passed by reference.
+   */
+  private function addSpecificPermissions(array &$permissions) {
+    /** @var \Drupal\node\Entity\NodeType $type */
+    foreach (NodeType::loadMultiple() as $type) {
       $id = $type->id();
       $name = $type->label();
 
@@ -55,8 +104,6 @@ class OverrideNodeOptionsPermissions {
         'title' => $this->t("Override %type_name authored by option.", ["%type_name" => $name]),
       ];
     }
-
-    return $permissions;
   }
 
 }

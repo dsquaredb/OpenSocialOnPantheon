@@ -2,6 +2,7 @@
 
 namespace Drupal\image_widget_crop\Element;
 
+use Drupal\Component\Serialization\Json;
 use Drupal\Core\Render\Element\FormElement;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
@@ -53,13 +54,22 @@ class ImageCrop extends FormElement {
 
   /**
    * Render API callback: Expands the image_crop element type.
+   *
+   * @param array $element
+   *   An associative array containing the properties and children of the
+   *   form actions container.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The current state of the form.
+   * @param array $complete_form
+   *   The complete form structure.
+   *
+   * @return array
+   *   The processed element.
    */
-  public static function processCrop(&$element, FormStateInterface $form_state, &$complete_form) {
+  public static function processCrop(array &$element, FormStateInterface $form_state, array &$complete_form) {
     /** @var \Drupal\file\Entity\File $file */
     $file = $element['#file'];
     if (!empty($file) && preg_match('/image/', $file->getMimeType())) {
-      $element['#attached']['drupalSettings']['crop_default'] = $element['#show_default_crop'];
-
       /** @var \Drupal\Core\Image\Image $image */
       $image = \Drupal::service('image.factory')->get($file->getFileUri());
       if (!$image->isValid()) {
@@ -80,15 +90,18 @@ class ImageCrop extends FormElement {
       $crop_type_list = $element['#crop_type_list'];
       // Display all crop types if none is selected.
       if (empty($crop_type_list)) {
-        /** @var \Drupal\image_widget_crop\ImageWidgetCropManager $image_widget_crop_manager */
-        $image_widget_crop_manager = \Drupal::service('image_widget_crop.manager');
-        $available_crop_types = $image_widget_crop_manager->getAvailableCropType(CropType::getCropTypeNames());
+        /** @var \Drupal\image_widget_crop\ImageWidgetCropInterface $iwc_manager */
+        $iwc_manager = \Drupal::service('image_widget_crop.manager');
+        $available_crop_types = $iwc_manager->getAvailableCropType(CropType::getCropTypeNames());
         $crop_type_list = array_keys($available_crop_types);
       }
       $element['crop_wrapper'] = [
         '#type' => 'details',
         '#title' => t('Crop image'),
-        '#attributes' => ['class' => ['image-data__crop-wrapper']],
+        '#attributes' => [
+          'class' => ['image-data__crop-wrapper'],
+          'data-drupal-iwc' => 'wrapper',
+        ],
         '#open' => $element['#show_crop_area'],
         '#weight' => 100,
       ];
@@ -113,108 +126,109 @@ class ImageCrop extends FormElement {
 
       $element['crop_wrapper'][$list_id] = [
         '#type' => 'vertical_tabs',
-        '#theme_wrappers' => ['vertical_tabs'],
         '#parents' => [$list_id],
       ];
 
       /** @var \Drupal\Core\Config\Entity\ConfigEntityStorage $crop_type_storage */
       $crop_type_storage = \Drupal::entityTypeManager()->getStorage('crop_type');
-      if (!empty($crop_type_storage->loadMultiple())) {
-        foreach ($crop_type_list as $crop_type) {
-          /** @var \Drupal\crop\Entity\CropType $crop_type */
-          $crop_type = $crop_type_storage->load($crop_type);
-          $ratio = $crop_type->getAspectRatio() ? $crop_type->getAspectRatio() : 'Nan';
 
-          $element['#attached']['drupalSettings']['image_widget_crop'][$crop_type->id()] = [
-            'soft_limit' => $crop_type->getSoftLimit(),
-            'hard_limit' => $crop_type->getHardLimit(),
-          ];
+      /** @var \Drupal\crop\Entity\CropType[] $crop_types */
+      if ($crop_types = $crop_type_storage->loadMultiple($crop_type_list)) {
+        foreach ($crop_types as $type => $crop_type) {
+          $ratio = $crop_type->getAspectRatio() ?: 'NaN';
 
-          $element['crop_wrapper'][$crop_type->id()] = [
+          $element['crop_wrapper'][$type] = [
             '#type' => 'details',
             '#title' => $crop_type->label(),
             '#group' => $list_id,
+            '#attributes' => [
+              'data-drupal-iwc' => 'type',
+              'data-drupal-iwc-id' => $type,
+              'data-drupal-iwc-ratio' => $ratio,
+              'data-drupal-iwc-show-default-crop' => $element['#show_default_crop'] ? 'true' : 'false',
+              'data-drupal-iwc-soft-limit' => Json::encode($crop_type->getSoftLimit()),
+              'data-drupal-iwc-hard-limit' => Json::encode($crop_type->getHardLimit()),
+              'data-drupal-iwc-original-width' => ($file instanceof FileEntity) ? $file->getMetadata('width') : getimagesize($file->getFileUri())[0],
+              'data-drupal-iwc-original-height' => ($file instanceof FileEntity) ? $file->getMetadata('height') : getimagesize($file->getFileUri())[1],
+            ],
           ];
 
           // Generation of html List with image & crop information.
-          $element['crop_wrapper'][$crop_type->id()]['crop_container'] = [
+          $element['crop_wrapper'][$type]['crop_container'] = [
+            '#id' => $type,
             '#type' => 'container',
-            '#attributes' => [
-              'class' => ['crop-preview-wrapper', $list_id],
-              'id' => [$crop_type->id()],
-              'data-ratio' => [$ratio],
-            ],
+            '#attributes' => ['class' => ['crop-preview-wrapper', $list_id]],
             '#weight' => -10,
           ];
 
-          $element['crop_wrapper'][$crop_type->id()]['crop_container']['image'] = [
+          $element['crop_wrapper'][$type]['crop_container']['image'] = [
             '#theme' => 'image_style',
             '#style_name' => $element['#crop_preview_image_style'],
             '#attributes' => [
               'class' => ['crop-preview-wrapper__preview-image'],
-              'data-ratio' => $ratio,
-              'data-name' => $crop_type->id(),
-              'data-original-width' => ($file instanceof FileEntity) ? $file->getMetadata('width') : getimagesize($file->getFileUri())[0],
-              'data-original-height' => ($file instanceof FileEntity) ? $file->getMetadata('height') : getimagesize($file->getFileUri())[1],
+              'data-drupal-iwc' => 'image',
             ],
             '#uri' => $file->getFileUri(),
             '#weight' => -10,
           ];
 
-          $element['crop_wrapper'][$crop_type->id()]['crop_container']['reset'] = [
+          $element['crop_wrapper'][$type]['crop_container']['reset'] = [
             '#type' => 'button',
             '#value' => t('Reset crop'),
-            '#attributes' => ['class' => ['crop-preview-wrapper__crop-reset']],
+            '#attributes' => [
+              'class' => ['crop-preview-wrapper__crop-reset'],
+              'data-drupal-iwc' => 'reset',
+            ],
             '#weight' => -10,
           ];
 
           // Generation of html List with image & crop information.
-          $element['crop_wrapper'][$crop_type->id()]['crop_container']['values'] = [
+          $element['crop_wrapper'][$type]['crop_container']['values'] = [
             '#type' => 'container',
             '#attributes' => ['class' => ['crop-preview-wrapper__value']],
             '#weight' => -9,
           ];
 
           // Element to track whether cropping is applied or not.
-          $element['crop_wrapper'][$crop_type->id()]['crop_container']['values']['crop_applied'] = [
+          $element['crop_wrapper'][$type]['crop_container']['values']['crop_applied'] = [
             '#type' => 'hidden',
-            '#attributes' => ['class' => ["crop-applied"]],
+            '#attributes' => ['data-drupal-iwc-value' => 'applied'],
             '#default_value' => 0,
           ];
           $edit = FALSE;
           $properties = [];
-          $form_state_element_values = $form_state->getValue($element['#parents']);
+          $form_state_values = $form_state->getValue($element['#parents']);
           // Check if form state has values.
-          if ($form_state_element_values) {
-            $form_state_properties = $form_state_element_values['crop_wrapper'][$crop_type->id()]['crop_container']['values'];
+          if ($form_state_values) {
+            $form_state_properties = $form_state_values['crop_wrapper'][$type]['crop_container']['values'];
             // If crop is applied by the form state we keep it that way.
             if ($form_state_properties['crop_applied'] == '1') {
-              $element['crop_wrapper'][$crop_type->id()]['crop_container']['values']['crop_applied']['#default_value'] = 1;
+              $element['crop_wrapper'][$type]['crop_container']['values']['crop_applied']['#default_value'] = 1;
               $edit = TRUE;
             }
             $properties = $form_state_properties;
           }
 
-          /** @var \Drupal\crop\Entity\Crop $crop */
-          $crop = Crop::findCrop($file->getFileUri(), $crop_type->id());
+          /** @var \Drupal\crop\CropInterface $crop */
+          $crop = Crop::findCrop($file->getFileUri(), $type);
           if ($crop) {
             $edit = TRUE;
-            /** @var \Drupal\image_widget_crop\ImageWidgetCropManager $image_widget_crop_manager */
-            $image_widget_crop_manager = \Drupal::service('image_widget_crop.manager');
-            $original_properties = $image_widget_crop_manager->getCropProperties($crop);
+            /** @var \Drupal\image_widget_crop\ImageWidgetCropInterface $iwc_manager */
+            $iwc_manager = \Drupal::service('image_widget_crop.manager');
+            $original_properties = $iwc_manager->getCropProperties($crop);
 
             // If form state values have the same values that were saved or if
             // form state has no values yet and there are saved values then we
             // use the saved values.
             $properties = $original_properties == $properties || empty($properties) ? $original_properties : $properties;
-            $element['crop_wrapper'][$crop_type->id()]['crop_container']['values']['crop_applied']['#default_value'] = 1;
+            $element['crop_wrapper'][$type]['crop_container']['values']['crop_applied']['#default_value'] = 1;
             // If the user edits an entity and while adding new images resets an
             // saved crop we keep it reset.
             if (isset($properties['crop_applied']) && $properties['crop_applied'] == '0') {
-              $element['crop_wrapper'][$crop_type->id()]['crop_container']['values']['crop_applied']['#default_value'] = 0;
+              $element['crop_wrapper'][$type]['crop_container']['values']['crop_applied']['#default_value'] = 0;
             }
           }
-          self::getCropFormElement($element, 'crop_container', $properties, $edit, $crop_type->id());
+          self::getCropFormElement($element, 'crop_container', $properties, $edit, $type);
         }
         // Stock Original File Values.
         $element['file-uri'] = [
@@ -275,9 +289,7 @@ class ImageCrop extends FormElement {
       $value_property = self::getCropFormPropertyValue($element, $crop_type_id, $edit, $value['value'], $property);
       $crop_element = [
         '#type' => 'hidden',
-        '#attributes' => [
-          'class' => ["crop-$property"],
-        ],
+        '#attributes' => ['data-drupal-iwc-value' => $property],
         '#crop_type' => $crop_type_id,
         '#element_name' => $property,
         '#default_value' => $value_property,
@@ -303,7 +315,7 @@ class ImageCrop extends FormElement {
    * @param bool $edit
    *   Context of this form.
    *
-   * @return array<string,array>
+   * @return arraystringarraystringstring|null
    *   Populate all crop elements into the form.
    */
   public static function getCropFormProperties(array $original_properties, $edit) {
@@ -366,7 +378,7 @@ class ImageCrop extends FormElement {
     $crop_values = $form_state->getValue($parents);
     $hard_limit = $crop_type->getHardLimit();
     $action_button = $form_state->getTriggeringElement()['#value'];
-    // @todo We need to add this test in multilingual context because,
+    // We need to add this test in multilingual context because,
     // the "#value" element are a simple string in translate form,
     // and an TranslatableMarkup object in other cases.
     $operation = ($action_button instanceof TranslatableMarkup) ? $action_button->getUntranslatedString() : $action_button;
@@ -378,7 +390,7 @@ class ImageCrop extends FormElement {
     $element_name = $element['#element_name'];
     if ($hard_limit[$element_name] !== 0 && !empty($hard_limit[$element_name])) {
       if ($hard_limit[$element_name] > (int) $crop_values[$element_name]) {
-        $form_state->setError($element, t('Crop @property is smaller then the allowed @hard_limitpx for @crop_name',
+        $form_state->setError($element, t('Crop @property is smaller than the allowed @hard_limitpx for @crop_name',
           [
             '@property' => $element_name,
             '@hard_limit' => $hard_limit[$element_name],
@@ -392,7 +404,7 @@ class ImageCrop extends FormElement {
   /**
    * Set All sizes properties of the crops.
    *
-   * @return array<string,array>
+   * @return arraystringarraystringstring|null
    *   Set all possible crop zone properties.
    */
   public static function setCoordinatesElement() {

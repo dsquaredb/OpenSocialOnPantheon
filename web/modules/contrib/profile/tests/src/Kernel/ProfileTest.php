@@ -309,8 +309,9 @@ class ProfileTest extends EntityKernelTestBase {
     $existing_profile_id = $profile2->id();
     $existing_revision_id = $profile2->getRevisionId();
 
-    // Changing field creates revision.
+    // Changing profiles support revisions.
     $profile2->get('profile_fullname')->setValue($this->randomMachineName());
+    $profile2->setNewRevision();
     $profile2->save();
 
     $profile2 = $this->reloadEntity($profile2);

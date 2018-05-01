@@ -19,7 +19,7 @@ class SocialEventTypeConfigOverride implements ConfigFactoryOverrideInterface {
    * Load overrides.
    */
   public function loadOverrides($names) {
-    $overrides = array();
+    $overrides = [];
     $config_factory = \Drupal::service('config.factory');
 
     // Override event form display.
@@ -104,7 +104,7 @@ class SocialEventTypeConfigOverride implements ConfigFactoryOverrideInterface {
           'exposed' => TRUE,
           'expose' => [
             'operator_id' => 'field_event_type_target_id_op',
-            'label' => 'What type of events do you want to see?',
+            'label' => t('What type of events do you want to see?'),
             'description' => '',
             'use_operator' => FALSE,
             'operator' => 'field_event_type_target_id_op',

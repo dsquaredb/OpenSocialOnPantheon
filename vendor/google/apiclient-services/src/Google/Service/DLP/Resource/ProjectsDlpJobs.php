@@ -93,6 +93,9 @@ class Google_Service_DLP_Resource_ProjectsDlpJobs extends Google_Service_Resourc
    * project-id.
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string pageToken The standard list page token.
+   * @opt_param int pageSize The standard list page size.
+   * @opt_param string type The type of job. Defaults to `DlpJobType.INSPECT`
    * @opt_param string filter Optional. Allows filtering.
    *
    * Supported syntax:
@@ -114,9 +117,6 @@ class Google_Service_DLP_Resource_ProjectsDlpJobs extends Google_Service_Resourc
    * cloud_storage AND (state = done OR state = canceled)
    *
    * The length of this field should be no more than 500 characters.
-   * @opt_param string pageToken The standard list page token.
-   * @opt_param int pageSize The standard list page size.
-   * @opt_param string type The type of job. Defaults to `DlpJobType.INSPECT`
    * @return Google_Service_DLP_GooglePrivacyDlpV2ListDlpJobsResponse
    */
   public function listProjectsDlpJobs($parent, $optParams = array())

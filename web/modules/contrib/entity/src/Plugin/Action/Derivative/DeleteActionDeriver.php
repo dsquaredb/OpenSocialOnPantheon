@@ -46,7 +46,7 @@ class DeleteActionDeriver extends DeriverBase implements ContainerDeriverInterfa
       $definitions = [];
       foreach ($this->getParticipatingEntityTypes() as $entity_type_id => $entity_type) {
         $definition = $base_plugin_definition;
-        $definition['label'] = t('Delete @entity_type', ['@entity_type' => $entity_type->getLowercaseLabel()]);
+        $definition['label'] = t('Delete @entity_type', ['@entity_type' => $entity_type->getSingularLabel()]);
         $definition['type'] = $entity_type_id;
         $definition['confirm_form_route_name'] = 'entity.' . $entity_type_id . '.delete_multiple_form';
         $definitions[$entity_type_id] = $definition;
@@ -69,7 +69,7 @@ class DeleteActionDeriver extends DeriverBase implements ContainerDeriverInterfa
   protected function getParticipatingEntityTypes() {
     $entity_types = $this->entityTypeManager->getDefinitions();
     $entity_types = array_filter($entity_types, function (EntityTypeInterface $entity_type) {
-      return $entity_type->isSubclassOf(ContentEntityInterface::class) && $entity_type->hasLinkTemplate('delete-multiple-form');
+      return $entity_type->entityClassImplements(ContentEntityInterface::class) && $entity_type->hasLinkTemplate('delete-multiple-form');
     });
 
     return $entity_types;

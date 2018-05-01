@@ -4,7 +4,7 @@
 *
 * @license http://opensource.org/licenses/MIT
 * @link https://github.com/thephpleague/csv/
-* @version 7.2.0
+* @version 8.2.3
 * @package League.csv
 *
 * For the full copyright and license information, please view the LICENSE
@@ -14,7 +14,10 @@ namespace League\Csv;
 
 use InvalidArgumentException;
 use League\Csv\Modifier\RowFilter;
+use League\Csv\Modifier\StreamIterator;
 use ReflectionMethod;
+use RuntimeException;
+use SplFileObject;
 use Traversable;
 
 /**
@@ -36,43 +39,23 @@ class Writer extends AbstractCsv
     /**
      * The CSV object holder
      *
-     * @var \SplFileObject
+     * @var SplFileObject|StreamIterator
      */
     protected $csv;
 
     /**
-     * fputcsv method from SplFileObject
+     * fputcsv method from SplFileObject or StreamIterator
      *
      * @var ReflectionMethod
      */
-    protected static $fputcsv;
+    protected $fputcsv;
 
     /**
      * Nb parameters for SplFileObject::fputcsv method
      *
      * @var integer
      */
-    protected static $fputcsv_param_count;
-
-    /**
-     * @inheritdoc
-     */
-    protected function __construct($path, $open_mode = 'r+')
-    {
-        parent::__construct($path, $open_mode);
-        static::initFputcsv();
-    }
-
-    /**
-     * initiate a SplFileObject::fputcsv method
-     */
-    protected static function initFputcsv()
-    {
-        if (is_null(static::$fputcsv)) {
-            static::$fputcsv  = new ReflectionMethod('\SplFileObject', 'fputcsv');
-            static::$fputcsv_param_count = static::$fputcsv->getNumberOfParameters();
-        }
-    }
+    protected $fputcsv_param_count;
 
     /**
      * Adds multiple lines to the CSV document
@@ -89,7 +72,7 @@ class Writer extends AbstractCsv
     {
         if (!is_array($rows) && !$rows instanceof Traversable) {
             throw new InvalidArgumentException(
-                'the provided data must be an array OR a \Traversable object'
+                'the provided data must be an array OR a `Traversable` object'
             );
         }
 
@@ -114,18 +97,41 @@ class Writer extends AbstractCsv
         }
         $row = $this->formatRow($row);
         $this->validateRow($row);
-
-        if (is_null($this->csv)) {
-            $this->csv = $this->getIterator();
-        }
-
-        static::$fputcsv->invokeArgs($this->csv, $this->getFputcsvParameters($row));
-        if ("\n" !== $this->newline) {
-            $this->csv->fseek(-1, SEEK_CUR);
-            $this->csv->fwrite($this->newline);
-        }
+        $this->addRow($row);
 
         return $this;
+    }
+
+    /**
+     * Add new record to the CSV document
+     *
+     * @param array $row record to add
+     */
+    protected function addRow(array $row)
+    {
+        $this->initCsv();
+        if (!$this->fputcsv->invokeArgs($this->csv, $this->getFputcsvParameters($row))) {
+            throw new RuntimeException('Unable to write record to the CSV document.');
+        }
+
+        if ("\n" !== $this->newline) {
+            $this->csv->fseek(-1, SEEK_CUR);
+            $this->csv->fwrite($this->newline, strlen($this->newline));
+        }
+    }
+
+    /**
+     * Initialize the CSV object and settings
+     */
+    protected function initCsv()
+    {
+        if (null !== $this->csv) {
+            return;
+        }
+
+        $this->csv = $this->getIterator();
+        $this->fputcsv = new ReflectionMethod(get_class($this->csv), 'fputcsv');
+        $this->fputcsv_param_count = $this->fputcsv->getNumberOfParameters();
     }
 
     /**
@@ -138,7 +144,7 @@ class Writer extends AbstractCsv
     protected function getFputcsvParameters(array $fields)
     {
         $parameters = [$fields, $this->delimiter, $this->enclosure];
-        if (4 == static::$fputcsv_param_count) {
+        if (4 == $this->fputcsv_param_count) {
             $parameters[] = $this->escape;
         }
 
@@ -150,7 +156,7 @@ class Writer extends AbstractCsv
      */
     public function isActiveStreamFilter()
     {
-        return parent::isActiveStreamFilter() && is_null($this->csv);
+        return parent::isActiveStreamFilter() && null === $this->csv;
     }
 
     /**

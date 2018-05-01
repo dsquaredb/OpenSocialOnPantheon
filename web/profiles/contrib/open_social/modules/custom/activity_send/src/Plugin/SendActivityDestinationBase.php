@@ -32,7 +32,7 @@ class SendActivityDestinationBase extends ActivityDestinationBase {
    */
   public static function getSendUserSettings($destination, $account) {
     $query = \Drupal::database()->select('user_activity_send', 'uas');
-    $query->fields('uas', ['message_template', 'status']);
+    $query->fields('uas', ['message_template', 'frequency']);
     $query->condition('uas.uid', $account->id());
     $query->condition('uas.destination', $destination);
     return $query->execute()->fetchAllKeyed();
@@ -43,13 +43,13 @@ class SendActivityDestinationBase extends ActivityDestinationBase {
    */
   public static function setSendUserSettings($destination, $account, $values) {
     if (is_object($account) && !empty($values)) {
-      foreach ($values as $message_template => $status) {
+      foreach ($values as $message_template => $frequency) {
         $query = \Drupal::database()->merge('user_activity_send');
         $query->fields([
           'uid' => $account->id(),
           'destination' => $destination,
           'message_template' => $message_template,
-          'status' => $status,
+          'frequency' => $frequency,
         ]);
         $query->keys([
           'uid' => $account->id(),
@@ -85,7 +85,7 @@ class SendActivityDestinationBase extends ActivityDestinationBase {
     $last_activity_time = $query->execute()->fetchField();
 
     $offline_window = \Drupal::config('activity_send.settings')->get('activity_send_offline_window');
-    $current_time = REQUEST_TIME - $offline_window;
+    $current_time = \Drupal::time()->getRequestTime() - $offline_window;
 
     return (empty($last_activity_time) || $last_activity_time < $current_time);
   }

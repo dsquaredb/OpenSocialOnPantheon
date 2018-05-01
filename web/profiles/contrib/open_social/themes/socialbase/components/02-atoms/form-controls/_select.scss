@@ -35,7 +35,11 @@
   select {
     appearance: none;
     line-height: 1;
-    padding-right: 20px;
+    padding-right: 30px;
+  }
+
+  select:disabled {
+    color: $input-disabled-color;
   }
 
   &:after {
@@ -49,7 +53,12 @@
     position: absolute;
     right: 0;
     top: 50%;
-    z-index: 10;
+    z-index: 2;
   }
 
+}
+
+
+.form-disabled .select-wrapper::after {
+  color: $btn-link-disabled-color;
 }

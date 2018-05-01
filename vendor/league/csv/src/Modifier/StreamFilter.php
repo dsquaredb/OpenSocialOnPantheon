@@ -4,7 +4,7 @@
 *
 * @license http://opensource.org/licenses/MIT
 * @link https://github.com/thephpleague/csv/
-* @version 7.2.0
+* @version 8.2.3
 * @package League.csv
 *
 * For the full copyright and license information, please view the LICENSE
@@ -14,6 +14,7 @@ namespace League\Csv\Modifier;
 
 use LogicException;
 use OutOfBoundsException;
+use SplFileObject;
 
 /**
  *  A Trait to ease PHP Stream Filters manipulation
@@ -66,24 +67,24 @@ trait StreamFilter
      * an object that implements the `__toString` method
      * a path to a file
      *
-     * @param \SplFileObject|string $path The file path
+     * @param StreamIterator|SplFileObject|string $path The file path
      */
     protected function initStreamFilter($path)
     {
         $this->stream_filters = [];
-        if (! is_string($path)) {
+        if (!is_string($path)) {
             $this->stream_uri = null;
 
             return;
         }
 
-        if (! preg_match($this->stream_regex, $path, $matches)) {
+        if (!preg_match($this->stream_regex, $path, $matches)) {
             $this->stream_uri = $path;
 
             return;
         }
         $this->stream_uri = $matches['resource'];
-        $this->stream_filters = explode('|', $matches['filters']);
+        $this->stream_filters = array_map('urldecode', explode('|', $matches['filters']));
         $this->stream_filter_mode = $this->fetchStreamModeAsInt($matches['mode']);
     }
 
@@ -207,9 +208,13 @@ trait StreamFilter
      */
     protected function sanitizeStreamFilter($filter_name)
     {
-        $this->assertStreamable();
-        return (string) $filter_name;
+        return urldecode($this->validateString($filter_name));
     }
+
+    /**
+     * @inheritdoc
+     */
+    abstract public function validateString($str);
 
     /**
      * Detect if the stream filter is already present
@@ -222,7 +227,7 @@ trait StreamFilter
     {
         $this->assertStreamable();
 
-        return false !== array_search($filter_name, $this->stream_filters, true);
+        return false !== array_search(urldecode($filter_name), $this->stream_filters, true);
     }
 
     /**
@@ -235,7 +240,7 @@ trait StreamFilter
     public function removeStreamFilter($filter_name)
     {
         $this->assertStreamable();
-        $res = array_search($filter_name, $this->stream_filters, true);
+        $res = array_search(urldecode($filter_name), $this->stream_filters, true);
         if (false !== $res) {
             unset($this->stream_filters[$res]);
         }
@@ -264,13 +269,13 @@ trait StreamFilter
     protected function getStreamFilterPath()
     {
         $this->assertStreamable();
-        if (! $this->stream_filters) {
+        if (!$this->stream_filters) {
             return $this->stream_uri;
         }
 
         return 'php://filter/'
             .$this->getStreamFilterPrefix()
-            .implode('|', $this->stream_filters)
+            .implode('|', array_map('urlencode', $this->stream_filters))
             .'/resource='.$this->stream_uri;
     }
 

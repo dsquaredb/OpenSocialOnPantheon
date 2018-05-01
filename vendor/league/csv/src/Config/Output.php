@@ -4,7 +4,7 @@
 *
 * @license http://opensource.org/licenses/MIT
 * @link https://github.com/thephpleague/csv/
-* @version 7.2.0
+* @version 8.2.3
 * @package League.csv
 *
 * For the full copyright and license information, please view the LICENSE
@@ -15,6 +15,7 @@ namespace League\Csv\Config;
 use DomDocument;
 use InvalidArgumentException;
 use Iterator;
+use League\Csv\AbstractCsv;
 use League\Csv\Modifier\MapIterator;
 use SplFileObject;
 
@@ -32,7 +33,7 @@ trait Output
      *
      * @var string
      */
-    protected $encodingFrom = 'UTF-8';
+    protected $input_encoding = 'UTF-8';
 
     /**
      * The Input file BOM character
@@ -44,21 +45,7 @@ trait Output
      * The Output file BOM character
      * @var string
      */
-    protected $output_bom;
-
-    /**
-     * Returns the CSV Iterator
-     *
-     * @return Iterator
-     */
-    abstract protected function getConversionIterator();
-
-    /**
-     * Returns the CSV Iterator
-     *
-     * @return Iterator
-     */
-    abstract public function getIterator();
+    protected $output_bom = '';
 
     /**
      * Sets the CSV encoding charset
@@ -67,16 +54,32 @@ trait Output
      *
      * @return static
      */
-    public function setEncodingFrom($str)
+    public function setInputEncoding($str)
     {
         $str = str_replace('_', '-', $str);
         $str = filter_var($str, FILTER_SANITIZE_STRING, ['flags' => FILTER_FLAG_STRIP_LOW | FILTER_FLAG_STRIP_HIGH]);
         if (empty($str)) {
             throw new InvalidArgumentException('you should use a valid charset');
         }
-        $this->encodingFrom = strtoupper($str);
+        $this->input_encoding = strtoupper($str);
 
         return $this;
+    }
+
+    /**
+     * Sets the CSV encoding charset
+     *
+     * DEPRECATION WARNING! This method will be removed in the next major point release
+     *
+     * @deprecated deprecated since version 8.1
+     *
+     * @param string $str
+     *
+     * @return static
+     */
+    public function setEncodingFrom($str)
+    {
+        return $this->setInputEncoding($str);
     }
 
     /**
@@ -84,9 +87,23 @@ trait Output
      *
      * @return string
      */
+    public function getInputEncoding()
+    {
+        return $this->input_encoding;
+    }
+
+    /**
+     * Gets the source CSV encoding charset
+     *
+     * DEPRECATION WARNING! This method will be removed in the next major point release
+     *
+     * @deprecated deprecated since version 8.1
+     *
+     * @return string
+     */
     public function getEncodingFrom()
     {
-        return $this->encodingFrom;
+        return $this->getInputEncoding();
     }
 
     /**
@@ -96,10 +113,10 @@ trait Output
      *
      * @return static
      */
-    public function setOutputBOM($str = null)
+    public function setOutputBOM($str)
     {
         if (empty($str)) {
-            $this->output_bom = null;
+            $this->output_bom = '';
 
             return $this;
         }
@@ -126,10 +143,10 @@ trait Output
      */
     public function getInputBOM()
     {
-        if (! $this->input_bom) {
+        if (null === $this->input_bom) {
             $bom = [
-                self::BOM_UTF32_BE, self::BOM_UTF32_LE,
-                self::BOM_UTF16_BE, self::BOM_UTF16_LE, self::BOM_UTF8,
+                AbstractCsv::BOM_UTF32_BE, AbstractCsv::BOM_UTF32_LE,
+                AbstractCsv::BOM_UTF16_BE, AbstractCsv::BOM_UTF16_LE, AbstractCsv::BOM_UTF8,
             ];
             $csv = $this->getIterator();
             $csv->setFlags(SplFileObject::READ_CSV);
@@ -139,11 +156,16 @@ trait Output
                 return strpos($line, $sequence) === 0;
             });
 
-            $this->input_bom = array_shift($res);
+            $this->input_bom = (string) array_shift($res);
         }
 
         return $this->input_bom;
     }
+
+    /**
+     * @inheritdoc
+     */
+    abstract public function getIterator();
 
     /**
      * Outputs all data on the CSV file
@@ -155,9 +177,9 @@ trait Output
      */
     public function output($filename = null)
     {
-        if (!is_null($filename)) {
+        if (null !== $filename) {
             $filename = filter_var($filename, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
-            header('Content-Type: application/octet-stream');
+            header('Content-Type: text/csv');
             header('Content-Transfer-Encoding: binary');
             header("Content-Disposition: attachment; filename=\"$filename\"");
         }
@@ -204,14 +226,19 @@ trait Output
     }
 
     /**
-     * JsonSerializable Interface
-     *
-     * @return array
+     * @inheritdoc
      */
     public function jsonSerialize()
     {
-        return iterator_to_array($this->convertToUtf8($this->getConversionIterator()), false);
+        return iterator_to_array($this->convertToUtf8($this->getQueryIterator()), false);
     }
+
+    /**
+     * Returns the CSV Iterator
+     *
+     * @return Iterator
+     */
+    abstract protected function getQueryIterator();
 
     /**
      * Convert Csv file into UTF-8
@@ -222,31 +249,32 @@ trait Output
      */
     protected function convertToUtf8(Iterator $iterator)
     {
-        if (strpos($this->encodingFrom, 'UTF-8') !== false) {
+        if (stripos($this->input_encoding, 'UTF-8') !== false) {
             return $iterator;
         }
 
-        return new MapIterator($iterator, function ($row) {
-            foreach ($row as &$value) {
-                $value = mb_convert_encoding($value, 'UTF-8', $this->encodingFrom);
-            }
-            unset($value);
+        $convert_cell = function ($value) {
+            return mb_convert_encoding($value, 'UTF-8', $this->input_encoding);
+        };
 
-            return $row;
-        });
+        $convert_row = function (array $row) use ($convert_cell) {
+            return array_map($convert_cell, $row);
+        };
+
+        return new MapIterator($iterator, $convert_row);
     }
 
     /**
      * Returns a HTML table representation of the CSV Table
      *
-     * @param string $class_name optional classname
+     * @param string $class_attr optional classname
      *
      * @return string
      */
-    public function toHTML($class_name = 'table-csv-data')
+    public function toHTML($class_attr = 'table-csv-data')
     {
         $doc = $this->toXML('table', 'tr', 'td');
-        $doc->documentElement->setAttribute('class', $class_name);
+        $doc->documentElement->setAttribute('class', $class_attr);
 
         return $doc->saveHTML($doc->documentElement);
     }
@@ -264,16 +292,15 @@ trait Output
     {
         $doc = new DomDocument('1.0', 'UTF-8');
         $root = $doc->createElement($root_name);
-        $iterator = $this->convertToUtf8($this->getConversionIterator());
-        foreach ($iterator as $row) {
-            $item = $doc->createElement($row_name);
-            array_walk($row, function ($value) use (&$item, $doc, $cell_name) {
+        foreach ($this->convertToUtf8($this->getQueryIterator()) as $row) {
+            $rowElement = $doc->createElement($row_name);
+            array_walk($row, function ($value) use (&$rowElement, $doc, $cell_name) {
                 $content = $doc->createTextNode($value);
                 $cell = $doc->createElement($cell_name);
                 $cell->appendChild($content);
-                $item->appendChild($cell);
+                $rowElement->appendChild($cell);
             });
-            $root->appendChild($item);
+            $root->appendChild($rowElement);
         }
         $doc->appendChild($root);
 

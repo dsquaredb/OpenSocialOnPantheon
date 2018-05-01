@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\votingapi\VoteTypeInterface.
- */
-
 namespace Drupal\votingapi;
 
 use Drupal\Core\Config\Entity\ConfigEntityInterface;

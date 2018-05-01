@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\votingapi\Plugin\VoteResultFunction\Average.
- */
-
 namespace Drupal\votingapi\Plugin\VoteResultFunction;
 
 use Drupal\votingapi\VoteResultFunctionBase;

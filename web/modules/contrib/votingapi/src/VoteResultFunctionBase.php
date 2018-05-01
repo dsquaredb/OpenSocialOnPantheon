@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\votingapi\VoteResultFunctionBase.
- */
-
 namespace Drupal\votingapi;
 
 use Drupal\Core\Plugin\PluginBase;

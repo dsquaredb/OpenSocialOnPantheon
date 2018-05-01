@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\votingapi\Annotation\VoteResultFunction.
- */
-
 namespace Drupal\votingapi\Annotation;
 
 use Drupal\Component\Annotation\Plugin;

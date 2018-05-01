@@ -1,4 +1,4 @@
-@api @group @DS-811 @DS-816 @stability @stability-1
+@api @group @DS-811 @DS-816 @DS-4211 @stability @stability-1
 Feature: Create Open Group
   Benefit: So I can work together with others in a relative small circle
   Role: As a LU
@@ -13,7 +13,7 @@ Feature: Create Open Group
     And I am on "user"
     And I click "Groups"
     And I click "Add a group"
-    Then I click radio button "Open group This is an open group. Users may join without approval and all content added in this group will be visible for non members as well." with the id "edit-group-type-open-group"
+    Then I click radio button "Open group This is an open group. Users may join without approval and all content added in this group will be visible to all community members." with the id "edit-group-type-open-group"
     And I press "Continue"
     When I fill in "Title" with "Test open group"
     And I fill in the "edit-field-group-description-0-value" WYSIWYG editor with "Description text"
@@ -31,10 +31,9 @@ Feature: Create Open Group
     And I should see "Technopark"
     And I should see "1 member"
     And I should see "Joined"
-    And I should see the link "Read more"
+    And I should not see the link "Read more"
 
   # DS-761 As a LU I want to view the hero area of a group
-    And I click "Test open group"
     And I should see "Test open group" in the "Hero block"
     And I should see the button "Joined"
     And I click the xth "4" element with the css ".dropdown-toggle"
@@ -65,7 +64,6 @@ Feature: Create Open Group
   # And I should see "Newest members" in the "Sidebar second"
   # And I should see "Group User One" in the "Sidebar second"
     And I click "Members"
-    And I should see "Members of Test open group"
     And I should see "Group User One"
 
   # DS-647 As a LU I want to join a group
@@ -92,7 +90,7 @@ Feature: Create Open Group
     And I fill in the "edit-body-0-value" WYSIWYG editor with "Body description text."
   # TODO: Change title of this button when we will have one step
     And I click radio button "Community - visible only to logged in members" with the id "edit-field-content-visibility-community"
-    And I press "Save and publish"
+    And I press "Save"
     And I should see "Test group event"
     And I should see "Body description text" in the "Main content"
     And I should see the button "Enroll"
@@ -115,7 +113,7 @@ Feature: Create Open Group
     And I fill in the "edit-body-0-value" WYSIWYG editor with "Body description text"
     And I click radio button "Discussion"
     And I click radio button "Community - visible only to logged in members" with the id "edit-field-content-visibility-community"
-    And I press "Save and publish"
+    And I press "Save"
     And I should see "Test group topic"
     And I should see "Body description text" in the "Main content"
    # DS-639 As a LU I want to see which group the content belongs to, on the detail page

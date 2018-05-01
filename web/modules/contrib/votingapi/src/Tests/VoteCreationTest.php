@@ -23,16 +23,18 @@ class VoteCreationTest extends WebTestBase {
    *
    * @var array
    */
-  public static $modules = array('node', 'votingapi', 'votingapi_test');
+  public static $modules = ['node', 'votingapi', 'votingapi_test'];
 
   /**
    * A simple user with basic node and vote permissions
+   *
    * @var \Drupal\user\Entity\User
    */
   protected $logged_user;
 
   /**
    * A simple user vote permission
+   *
    * @var \Drupal\user\Entity\User
    */
   protected $anonymous_user;
@@ -52,11 +54,11 @@ class VoteCreationTest extends WebTestBase {
 
     // Create Basic page and Article node types.
     if ($this->profile != 'standard') {
-      $node_type = $this->drupalCreateContentType(array(
+      $node_type = $this->drupalCreateContentType([
         'type' => 'page',
         'name' => 'Basic page',
         'display_submitted' => FALSE,
-      ));
+      ]);
       node_add_body_field($node_type);
     }
 
@@ -83,7 +85,7 @@ class VoteCreationTest extends WebTestBase {
 
 
     $this->vote = Vote::create(['type' => 'vote']);
-//    $this->vote = Vote::create(['type' => 'fake_vote_type']);
+    //    $this->vote = Vote::create(['type' => 'fake_vote_type']);
     $this->vote->setVotedEntityId($this->node->id());
     $this->vote->setVotedEntityType($this->node->getEntityTypeId());
     $this->vote->setValue(50);
@@ -91,21 +93,4 @@ class VoteCreationTest extends WebTestBase {
     $this->assertTrue($this->vote, 'A "fake_vote_type" vote was successfully cast on a node.');
   }
 
-  /**
-   * Test voting with non-existent Vote Type Id
-   */
-//  public function testVoteCreationWithValidVoteType() {
-//    $this->vote = Vote::create(['type' => 'vote']);
-//    $this->vote->setVotedEntityId($this->node->id());
-//    $this->vote->setVotedEntityType($this->node->getEntityTypeId());
-//    $this->vote->setValue(50);
-//    $this->vote->save();
-//    $this->assertTrue($this->vote, 'A "Vote" vote was successfully cast on a node.');
-//  }
-
-  //  public function testUserWithoutPermissionVoteOnANode() {
-  //    $this->createNodePage();
-  //        $this->assertTrue(FALSE, 'Cast a vote on the created user.');
-  //        $this->assertTrue(FALSE, 'Process results for the vote on the created user.');
-  //  }
 }

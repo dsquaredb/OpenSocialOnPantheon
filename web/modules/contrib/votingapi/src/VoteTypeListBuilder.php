@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\votingapi\VoteTypeListBuilder.
- */
-
 namespace Drupal\votingapi;
 
 use Drupal\Core\Config\Entity\ConfigEntityListBuilder;
@@ -25,10 +20,10 @@ class VoteTypeListBuilder extends ConfigEntityListBuilder {
     $header['id'] = t('Id');
     $header['label'] = t('Label');
     $header['value_type'] = t('Value type');
-    $header['description'] = array(
+    $header['description'] = [
       'data' => t('Description'),
-      'class' => array(RESPONSIVE_PRIORITY_MEDIUM),
-    );
+      'class' => [RESPONSIVE_PRIORITY_MEDIUM],
+    ];
     return $header + parent::buildHeader();
   }
 
@@ -37,10 +32,10 @@ class VoteTypeListBuilder extends ConfigEntityListBuilder {
    */
   public function buildRow(EntityInterface $entity) {
     $row['id']['data'] = ['#markup' => $entity->id()];
-    $row['label'] = array(
+    $row['label'] = [
       'data' => $entity->label(),
-      'class' => array('menu-label'),
-    );
+      'class' => ['menu-label'],
+    ];
     $row['value_type']['data'] = ['#markup' => $entity->getValueType()];
     $row['description']['data'] = ['#markup' => $entity->getDescription()];
     return $row + parent::buildRow($entity);
@@ -65,7 +60,7 @@ class VoteTypeListBuilder extends ConfigEntityListBuilder {
   public function render() {
     $build = parent::render();
     $build['table']['#empty'] = $this->t('No vote types available. <a href="@link">Add vote type</a>.', [
-      '@link' => Url::fromRoute('votingapi.type_add')->toString()
+      '@link' => Url::fromRoute('votingapi.type_add')->toString(),
     ]);
     return $build;
   }

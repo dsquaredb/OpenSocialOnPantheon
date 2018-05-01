@@ -4,7 +4,7 @@
 *
 * @license http://opensource.org/licenses/MIT
 * @link https://github.com/thephpleague/csv/
-* @version 7.2.0
+* @version 8.2.3
 * @package League.csv
 *
 * For the full copyright and license information, please view the LICENSE
@@ -89,10 +89,12 @@ class ColumnConsistencyValidator
             $this->detect_columns_count = false;
 
             return true;
-        } elseif (-1 == $this->columns_count) {
+        }
+
+        if (-1 == $this->columns_count) {
             return true;
         }
 
-        return count($row) == $this->columns_count;
+        return count($row) === $this->columns_count;
     }
 }

@@ -43,15 +43,21 @@
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token|raw }}">
     <js-placeholder token="{{ placeholder_token|raw }}">
+    {% block custom_css %} {% endblock %}
   </head>
   <body{{ attributes.addClass(body_classes) }}>
     <a href="#main-content" class="sr-only sr-only-focusable">
       {{ 'Skip to main content'|t }}
     </a>
+    {% if is_front %}
+      <h1 class="visually-hidden">{{ head_title|safe_join(' | ') }}</h1>
+    {% endif %}
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
     <js-bottom-placeholder token="{{ placeholder_token|raw }}">
-    {{ svg_icons|raw }}
+    {% block svg_icons %}
+      {{ svg_icons|raw }}
+    {% endblock %}
   </body>
 </html>

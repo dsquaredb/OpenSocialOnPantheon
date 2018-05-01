@@ -62,6 +62,21 @@ class ProfileForm extends ContentEntityForm {
   /**
    * {@inheritdoc}
    */
+  public function buildEntity(array $form, FormStateInterface $form_state) {
+    /** @var \Drupal\profile\Entity\ProfileInterface $entity */
+    $entity = parent::buildEntity($form, $form_state);
+
+    // Mark a new revision if the profile type enforces revisions.
+    /** @var \Drupal\profile\Entity\ProfileTypeInterface $profile_type */
+    $profile_type = $this->entityTypeManager->getStorage('profile_type')->load($entity->bundle());
+    $entity->setNewRevision($profile_type->shouldCreateNewRevision());
+
+    return $entity;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function save(array $form, FormStateInterface $form_state) {
     switch ($this->entity->save()) {
       case SAVED_NEW:

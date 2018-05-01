@@ -24,7 +24,7 @@
  *
  * <p>
  * For more information about this service, see the API
- * <a href="http://cloud.google.com/speech/text-to-speech/" target="_blank">Documentation</a>
+ * <a href="http://cloud.google.com/text-to-speech/" target="_blank">Documentation</a>
  * </p>
  *
  * @author Google, Inc.

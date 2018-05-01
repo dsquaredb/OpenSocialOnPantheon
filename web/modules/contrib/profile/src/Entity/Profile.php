@@ -219,15 +219,6 @@ class Profile extends ContentEntityBase implements ProfileInterface {
         $this->setDefault(FALSE);
       }
     }
-
-    // Mark a new revision if the profile type supports revisions, and if there
-    // has been field data changes.
-    if ($this->hasTranslationChanges()) {
-      /** @var \Drupal\profile\Entity\ProfileTypeInterface $profile_type */
-      $profile_type = \Drupal::entityTypeManager()->getStorage('profile_type')->load($this->bundle());
-      $this->setNewRevision($profile_type->shouldCreateNewRevision());
-    }
-
   }
 
   /**

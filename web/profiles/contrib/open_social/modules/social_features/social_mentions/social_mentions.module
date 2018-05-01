@@ -10,20 +10,17 @@ use Drupal\comment\CommentInterface;
 use Drupal\Core\Url;
 use Drupal\Component\Serialization\Json;
 use Drupal\mentions\Entity\MentionsType;
-
-define('SOCIAL_MENTIONS_SUGGESTIONS_USERNAME', 'username');
-define('SOCIAL_MENTIONS_SUGGESTIONS_FULL_NAME', 'full_name');
-define('SOCIAL_MENTIONS_SUGGESTIONS_ALL', 'all');
+use Drupal\Core\Asset\AttachedAssetsInterface;
 
 /**
  * Implements hook_form_alter().
  */
 function social_mentions_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $mentions_forms = array(
+  $mentions_forms = [
     'social_post_entity_form',
     'comment_post_comment_form',
     'comment_comment_form',
-  );
+  ];
 
   if (in_array($form_id, $mentions_forms)) {
     // Initialize variables.
@@ -48,7 +45,6 @@ function social_mentions_form_alter(&$form, FormStateInterface $form_state, $for
     }
 
     $form['#attached']['library'][] = 'social_mentions/social_mentions';
-    $form['#attached']['library'][] = 'socialbase/mention';
     $form['#attached']['drupalSettings']['socialMentions'] = [
       'suggestionsFormat' => $config->get('suggestions_format'),
       'prefix' => $prefix,
@@ -163,11 +159,11 @@ function social_mentions_form_comment_form_alter(&$form, FormStateInterface $for
 function social_mentions_form_mentions_settings_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $config = \Drupal::config('mentions.settings');
 
-  $form['display'] = array(
+  $form['display'] = [
     '#type' => 'details',
     '#title' => t('Display settings'),
     '#open' => TRUE,
-  );
+  ];
 
   $options = [
     SOCIAL_MENTIONS_SUGGESTIONS_USERNAME => t('Only username'),
@@ -175,13 +171,13 @@ function social_mentions_form_mentions_settings_form_alter(&$form, FormStateInte
     SOCIAL_MENTIONS_SUGGESTIONS_ALL => t('Both (username and full name)'),
   ];
 
-  $form['display']['suggestions_format'] = array(
+  $form['display']['suggestions_format'] = [
     '#type' => 'radios',
     '#required' => TRUE,
     '#options' => $options,
     '#title' => t('Suggestions format'),
     '#default_value' => $config->get('suggestions_format'),
-  );
+  ];
 
   $form['#submit'][] = 'social_mentions_form_mentions_settings_form_submit';
 }
@@ -194,4 +190,15 @@ function social_mentions_form_mentions_settings_form_submit($form, FormStateInte
   $config = \Drupal::configFactory()->getEditable('mentions.settings');
   $config->set('suggestions_format', $form_state->getValue('suggestions_format'));
   $config->save();
+}
+
+/**
+ * Implements hook_js_alter().
+ */
+function social_mentions_js_alter(&$javascript, AttachedAssetsInterface $assets) {
+  $path = drupal_get_path('module', 'social_mentions') . '/js/social_mentions.js';
+
+  if (isset($javascript[$path]) && isset($javascript['core/assets/vendor/ckeditor/ckeditor.js'])) {
+    $javascript[$path]['weight'] += $javascript['core/assets/vendor/ckeditor/ckeditor.js']['weight'];
+  }
 }

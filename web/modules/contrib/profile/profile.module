@@ -88,7 +88,7 @@ function template_preprocess_profile(array &$variables) {
   $profile = $variables['elements']['#profile'];
 
   $variables['profile'] = $profile;
-  $variables['url'] = $profile->toUrl();
+  $variables['url'] = $profile->id() ? $profile->toUrl() : FALSE;
   // Helpful $content variable for templates.
   $variables['content'] = [];
   foreach (Element::children($variables['elements']) as $key) {
@@ -311,7 +311,9 @@ function profile_views_add_title_pre_render($element) {
   /** @var \Drupal\views\ViewExecutable $view */
   if (isset($element['#title'])) {
     $view = $element['view_build']['#view'];
-    $view->setTitle($element['#title']);
+    if (!empty($view->result)) {
+      $view->setTitle($element['#title']);
+    }
   }
 
   return $element;
@@ -347,6 +349,16 @@ function profile_views_data_alter(&$data) {
     'group' => 'User',
     'help' => t('Reference to the profile of a user.'),
     'id' => 'standard',
+    'base' => 'profile',
+    'base field' => 'uid',
+    'field' => 'uid',
+  ];
+  $data['users_field_data']['profile_type']['relationship'] = [
+    'title' => t('Profile Type'),
+    'label' => t('Profile Type'),
+    'group' => 'User',
+    'help' => t('Reference to a specific profile type of a user.'),
+    'id' => 'profile_relationship',
     'base' => 'profile',
     'base field' => 'uid',
     'field' => 'uid',

@@ -34,6 +34,9 @@ profile.type.*:
     use_revisions:
       type: boolean
       label: 'User revisions'
+    description:
+      type: text
+      label: 'Description'
 
 field.field.*.*.*.third_party.profile:
   type: mapping
