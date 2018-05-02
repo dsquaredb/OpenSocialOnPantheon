@@ -1,5 +1,3 @@
-## ***NOTE: This is a work in progress and still has a few bugs I am actively working to solve.***
-
 # OpenSocial on Pantheon
 
 This repository can be used to set up a Composer-Managed OpenSocial Profile Drupal 8 site on [Pantheon](https://pantheon.io). This is an update of the [lquessenberry/OpenSocialOnPantheon](https://github.com/lquessenberry/OpenSocialOnPantheon) repository.
@@ -29,7 +27,7 @@ Create a custom upstream for this project following the instructions in the [Pan
 
 ### Manual Setup
 
-Start off by creating a new Drupal 8 site through the Pantheon dashboard.  Then, on the site dashboard, click "install later" instead of installing Drupal. Set your site to git mode and then do the following from your local machine:
+Start off by creating a new Drupal 8 site through the Pantheon dashboard (using the Pantheon standard Drupal 8). Then, navigate to the new site's dashboard and click "install later" instead of installing Drupal. Set your site to git mode and then do the following from your local machine:
 ```
 $ git clone https://github.com/dsquaredb/OpenSocialOnPantheon.git my-site
 $ cd my-site
@@ -57,3 +55,5 @@ Other commands will work as well; for example, you may install new modules using
 ### Update on your local machine
 
 You may also place your site in Git mode, clone it locally, and then run composer commands from there.  Commit and push your files back up to Pantheon as usual.
+
+### If you find bugs with this repository, please create an issue.  
