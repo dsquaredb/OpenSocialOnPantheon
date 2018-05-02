@@ -19,7 +19,15 @@
     "drupal/console": "^1.0.0-rc8",
     "drush/drush": "~8",
     "drupal/address": "~1.0",
+<<<<<<< HEAD
     "goalgorilla/open_social": "~1.0"
+=======
+    "goalgorilla/open_social": "~1.16",
+    "doctrine/cache": "1.6.1",
+    "doctrine/collections": "1.4.0",
+    "doctrine/common": "2.7.2",
+    "doctrine/inflector": "1.1.0"
+>>>>>>> update composer.json to require doctrin/*
   },
   "require-dev": {
     "mikey179/vfsstream": "~1.2",
@@ -57,11 +65,26 @@
     ]
   },
   "extra": {
+    "installer-types": [
+      "bower-asset",
+      "npm-asset"
+    ],
     "installer-paths": {
       "web/core": ["type:drupal-core"],
       "web/modules/contrib/{$name}": ["type:drupal-module"],
       "web/profiles/contrib/{$name}": ["type:drupal-profile"],
       "web/themes/contrib/{$name}": ["type:drupal-theme"],
+<<<<<<< HEAD
+=======
+      "web/profiles/contrib/social": [
+        "goalgorilla/open_social"
+      ],
+      "web/libraries/{$name}": [
+        "type:drupal-library",
+        "type:bower-asset",
+        "type:npm-asset"
+      ],
+>>>>>>> update composer.json to require doctrin/*
       "drush/contrib/{$name}": ["type:drupal-drush"]
     },
     "drupal-scaffold": {
