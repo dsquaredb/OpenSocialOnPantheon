@@ -11,15 +11,13 @@
     {
     "type": "composer",
     "url": "https://asset-packagist.org"
-}
+    }
   ],
   "require": {
     "composer/installers": "^1.0.20",
     "drupal-composer/drupal-scaffold": "^2.0.1",
     "cweagans/composer-patches": "~1.0",
-
-
-
+    "drupal/core": "~8",
     "drupal/console": "^1.0.0-rc8",
     "drush/drush": "~8",
     "drupal/address": "~1.0",
@@ -66,6 +64,9 @@
       "web/modules/contrib/{$name}": ["type:drupal-module"],
       "web/profiles/contrib/{$name}": ["type:drupal-profile"],
       "web/themes/contrib/{$name}": ["type:drupal-theme"],
+      "profiles/contrib/social": [
+        "goalgorilla/open_social"
+      ],
       "drush/contrib/{$name}": ["type:drupal-drush"]
     },
     "drupal-scaffold": {
