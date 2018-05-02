@@ -75,6 +75,7 @@
         "sites/default/default.services.pantheon.preproduction.yml",
         "sites/default/settings.pantheon.php"
       ]
-    }
+    },
+    "enable-patching": true
   }
 }
