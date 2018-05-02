@@ -1,6 +1,8 @@
-# OpenSocial on Pantheon using Example Drops 8 Composer
+# OpenSocial on Pantheon
 
-This repository can be used to set up a Composer-Managed OpenSocial Profile Drupal 8 site on [Pantheon](https://pantheon.io). This is an update of [lquessenberry/OpenSocialOnPantheon](https://github.com/lquessenberry/OpenSocialOnPantheon) repository. It has been tested on Pantheon as a custom upstream.
+This repository can be used to set up a Composer-Managed OpenSocial Profile Drupal 8 site on [Pantheon](https://pantheon.io). This is an update of the [lquessenberry/OpenSocialOnPantheon](https://github.com/lquessenberry/OpenSocialOnPantheon) repository. It has been tested on Pantheon as a custom upstream.
+
+This repository does not set up CircleCI and does not require Terminus for initial setup.
 
 ## ***NOTE: ONLY WORKS FOR ENGLISH INSTALLATIONS AT THIS TIME***
 
