@@ -1,8 +1,6 @@
 # OpenSocial on Pantheon using Example Drops 8 Composer
 
-This repository can be used to set up a Composer-Managed OpenSocial Profile Drupal 8 site on [Pantheon](https://pantheon.io).
-
-[![CircleCI](https://circleci.com/gh/pantheon-systems/example-drops-8-composer.svg?style=svg)](https://circleci.com/gh/pantheon-systems/example-drops-8-composer)
+This repository can be used to set up a Composer-Managed OpenSocial Profile Drupal 8 site on [Pantheon](https://pantheon.io). This is an update of [lquessenberry/OpenSocialOnPantheon](https://github.com/lquessenberry/OpenSocialOnPantheon) repository. It has been tested on Pantheon as a custom upstream.
 
 ## ***NOTE: ONLY WORKS FOR ENGLISH INSTALLATIONS AT THIS TIME***
 
@@ -27,7 +25,7 @@ Create a custom upstream for this project following the instructions in the [Pan
 
 ### Manual Setup
 
-Start off by creating a new Drupal 8 site; then, before installing Drupal, set your site to git mode and do the following from your local machine:
+Start off by creating a new Drupal 8 site through the Pantheon dashboard.  Then, on the site dashboard, click "install later" instead of installing Drupal. Set your site to git mode and then do the following from your local machine:
 ```
 $ git clone https://github.com/dsquaredb/OpenSocialOnPantheon.git my-site
 $ cd my-site
@@ -39,10 +37,6 @@ $ git remote set-url origin ssh://ID@ID.drush.in:2222/~/repository.git
 $ git push --force origin master
 ```
 Replace my-site with the name that you gave your Pantheon site, and replace ssh://ID@ID.drush.in:2222/~/repository.git with the URL from the middle of the SSH clone URL from the Connection Info popup dialog on your dashboard.
-
-### Installing Drupal
-
-Note that this example repository sets the installation profile to 'standard' in settings.php, so that the installer will not need to modify the settings file. If you would like to install a different profile, modify settings.php appropriately before installing your site.
 
 ## Updating Your Site
 
