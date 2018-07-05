@@ -39,6 +39,13 @@ class LikeDislikeVoteBuilder implements LikeDislikeVoteBuilderInterface {
    * {@inheritdoc}
    */
   public function build($entity_type_id, $entity_id) {
+
+    // If either the entity type or the entity id is not set,
+    // return and empty array.
+    if (empty($entity_type_id) || empty($entity_id)) {
+      return [];
+    }
+
     $account = \Drupal::currentUser();
     // Load the entity for which like and dislikes icons should be shown.
     $entity = $this->entityTypeManager->getStorage($entity_type_id)->load($entity_id);

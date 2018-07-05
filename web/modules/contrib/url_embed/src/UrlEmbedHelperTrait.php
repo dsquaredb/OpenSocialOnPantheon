@@ -29,7 +29,7 @@ trait UrlEmbedHelperTrait {
   /**
    * The URL embed service.
    *
-   * @var \Drupal\url_embed\UrlEmbedService.
+   * @var \Drupal\url_embed\UrlEmbed.
    */
   protected $url_embed;
 

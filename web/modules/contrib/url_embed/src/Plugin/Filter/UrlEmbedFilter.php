@@ -28,7 +28,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class UrlEmbedFilter extends FilterBase implements ContainerFactoryPluginInterface {
   use DomHelperTrait;
-  use UrlEmbedHelperTrait;
+
+  /**
+   * \Drupal\url_embed\UrlEmbedInterface definition.
+   *
+   * @var \Drupal\url_embed\UrlEmbedInterface
+   */
+  protected $url_embed;
 
   /**
    * Constructs a UrlEmbedFilter object.
@@ -44,7 +50,7 @@ class UrlEmbedFilter extends FilterBase implements ContainerFactoryPluginInterfa
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, UrlEmbedInterface $url_embed) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->setUrlEmbed($url_embed);
+    $this->url_embed = $url_embed;
   }
 
   /**
@@ -73,9 +79,7 @@ class UrlEmbedFilter extends FilterBase implements ContainerFactoryPluginInterfa
         $url = $node->getAttribute('data-embed-url');
         $url_output = '';
         try {
-          if ($info = $this->urlEmbed()->getEmbed($url)) {
-            $url_output = $info->getCode();
-          }
+          $url_output = $this->url_embed->getUrlCode($url);
         }
         catch (\Exception $e) {
           watchdog_exception('url_embed', $e);

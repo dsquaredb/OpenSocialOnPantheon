@@ -136,7 +136,7 @@ class Google_Service_Compute_Resource_Subnetworks extends Google_Service_Resourc
     return $this->call('expandIpCidrRange', array($params), "Google_Service_Compute_Operation");
   }
   /**
-   * Returns the specified subnetwork. Get a list of available subnetworks list()
+   * Returns the specified subnetwork. Gets a list of available subnetworks list()
    * request. (subnetworks.get)
    *
    * @param string $project Project ID for this request.

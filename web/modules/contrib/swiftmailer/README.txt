@@ -20,15 +20,14 @@ responsible for actually making the Swift Mailer module available to Drupal.
 
 1.0 Configuration
 
-Please go to 'admin/config/people/swiftmailer' to configure the Swift Mailer
+Please go to 'admin/config/swiftmailer/transport' to configure the Swift Mailer
 module.
 
-The module requires you to download the Swift Mailer library separately to a
-directory of your choice (relative to the Drupal installation). However, it is
-advised that libraries are kept in the 'sites/all/libraries' directory. If you
-keep the Swift Mailer library in 'sites/all/libraries/swiftmailer', then you
-need to configure the module to look for the Swift Mailer library in that
-directory.
+The module requires you to download the Swift Mailer library with composer. You
+should require the module itself with composer. Please the the documentation on
+Drupal.org for further information on this topic.
+
+https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies#managing-contributed
 
 After the module has been configured with the Swift Mailer library you are
 advised to make sure that the Swift Mailer library sends e-mails using the
@@ -93,7 +92,7 @@ $language
   The language used to compose the e-mail.
 $params
   An array of parameters. This is the $params optionally provided to
-  drupal_mail().
+  \Drupal\Core\Mail\MailManagerInterface::mail
 $subject
   The subject.
 $body
@@ -303,13 +302,13 @@ example demonstrates how this can be achieved.
 function test() {
 
   // Define message format.
-  $p = array(
+  $p = [
     'format' => 'text/html',
     'charset' => 'UTF-8',
-    );
+  ];
 
   // Send message.
-  drupal_mail('mymodule', 'key', 'test@test.com', language_default(), $p);
+  \Drupal::service('plugin.manager.mail')->mail('mymodule', 'key', 'test@test.com', \Drupal::languageManager()->getDefaultLanguage()->getId(), $p);
 
 }
 
@@ -338,3 +337,9 @@ simply provide the HTML version in $message['body'] and the plain text version
 in $message['plain']. Please make sure you set $message['params']['format'] to
 'text/html'. The Swift Mailer module will not attempt to generate a plain text
 version if one is already available.
+
+5.0 Custom settings/behavior
+
+If you want to add custom settings or behavior to the mailer or the message,
+before the it is sent, you can implement hook_swiftmailer_alter().
+See swiftmailer.api.php for an example.

@@ -255,6 +255,12 @@ abstract class AbstractObjectNormalizer extends AbstractNormalizer
                 $builtinType = Type::BUILTIN_TYPE_OBJECT;
                 $class = $collectionValueType->getClassName().'[]';
 
+                // Fix a collection that contains the only one element
+                // This is special to xml format only
+                if ('xml' === $format && !is_int(key($data))) {
+                    $data = array($data);
+                }
+
                 if (null !== $collectionKeyType = $type->getCollectionKeyType()) {
                     $context['key_type'] = $collectionKeyType;
                 }
@@ -301,7 +307,6 @@ abstract class AbstractObjectNormalizer extends AbstractNormalizer
     /**
      * Sets an attribute and apply the name converter if necessary.
      *
-     * @param array  $data
      * @param string $attribute
      * @param mixed  $attributeValue
      *
@@ -332,6 +337,7 @@ abstract class AbstractObjectNormalizer extends AbstractNormalizer
     {
         if (
             !isset($context[static::ENABLE_MAX_DEPTH]) ||
+            !$context[static::ENABLE_MAX_DEPTH] ||
             !isset($attributesMetadata[$attribute]) ||
             null === $maxDepth = $attributesMetadata[$attribute]->getMaxDepth()
         ) {
