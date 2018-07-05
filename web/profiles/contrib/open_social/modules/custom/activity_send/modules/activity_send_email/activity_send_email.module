@@ -9,8 +9,103 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\activity_creator\ActivityInterface;
 use Drupal\message\Entity\Message;
 use Drupal\activity_send_email\Plugin\ActivityDestination\EmailActivityDestination;
+<<<<<<< HEAD
 use Drupal\Core\Url;
 use Drupal\Core\Link;
+=======
+
+/**
+ * Implements hook_cron().
+ *
+ * This cronjob handles creating digest queue items to process.
+ */
+function activity_send_email_cron() {
+  // Get plugins and their intervals.
+  $emailfrequencymanager = \Drupal::service('plugin.manager.emailfrequency');
+  $plugins = $emailfrequencymanager->getDefinitions();
+
+  // Fill a sortable array with the data about the email frequency.
+  foreach ($plugins as $frequency) {
+    $instance = $emailfrequencymanager->createInstance($frequency['id']);
+    /* @var \Drupal\activity_send_email\EmailFrequencyInterface $instance */
+    $interval = $instance->getInterval();
+
+    // If the interval of the EmailFrequency plugin is more than 0, we should
+    // consider it to be a digest email.
+    if ($interval > 0) {
+      // Get last run time.
+      $last_run = \Drupal::state()
+        ->get('digest.' . $frequency['id'] . '.last_run', 0);
+
+      // If interval of frequency passed since last time, try to create queue
+      // items.
+      if ((time() - $last_run) > $interval) {
+        // Query to get the data to process per user per frequency. And we make
+        // sure to check only for items that need to be sent.
+        $db = Database::getConnection();
+        $query = $db->select('user_activity_digest', 'uad')
+          ->fields('uad', ['uid', 'activity'])
+          ->condition('uad.frequency', $frequency['id'])
+          ->orderBy('uad.timestamp', 'DESC');
+        $activitities = $query->execute()->fetchAll();
+
+        if (!empty($activitities)) {
+          $queue_items = [];
+
+          // Fill the queue items.
+          foreach ($activitities as $activitity) {
+            $queue_items[$activitity->uid]['uid'] = $activitity->uid;
+            $queue_items[$activitity->uid]['frequency'] = $frequency['id'];
+            $queue_items[$activitity->uid]['activities'][] = $activitity->activity;
+          }
+
+          // Add queue items to the queue worker.
+          foreach ($queue_items as $queue_item) {
+            // Add the item to the queue.
+            $queue = \Drupal::queue('activity_digest_worker');
+            $queue->createItem($queue_item);
+
+            // Remove activities from digest table that we just put it in the
+            // queue.
+            $db->delete('user_activity_digest')
+              ->condition('uid', $queue_item['uid'])
+              ->condition('activity', $queue_item['activities'], 'IN')
+              ->execute();
+          }
+        }
+
+        // Update last run.
+        \Drupal::state()
+          ->set('digest.' . $frequency['id'] . '.last_run', time());
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function activity_send_email_theme() {
+  $items = [
+    'digestmail' => [
+      'template' => 'digestmail',
+      'variables' => [
+        'notification_count' => NULL,
+        'notifications' => NULL,
+        'notification_settings' => NULL,
+      ],
+    ],
+    'directmail' => [
+      'template' => 'directmail',
+      'variables' => [
+        'notification' => NULL,
+        'notification_settings' => NULL,
+      ],
+    ],
+  ];
+  return $items;
+}
+>>>>>>> Update Open Social to 8.x-2.1
 
 /**
  * Implements hook_form_FORM_ID_alter() for user_form().

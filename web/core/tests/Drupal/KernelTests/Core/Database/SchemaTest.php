@@ -499,6 +499,7 @@ class SchemaTest extends KernelTestBase {
         $base_field_spec = array(
           'type' => $type,
           'size' => $size,
+<<<<<<< HEAD
         );
         $variations = array(
           array('not null' => FALSE),
@@ -507,6 +508,21 @@ class SchemaTest extends KernelTestBase {
           array('not null' => TRUE, 'initial' => 1, 'default' => 7),
           array('not null' => TRUE, 'initial_from_field' => 'serial_column'),
         );
+=======
+        ];
+        $variations = [
+          ['not null' => FALSE],
+          ['not null' => FALSE, 'default' => 7],
+          ['not null' => TRUE, 'initial' => 1],
+          ['not null' => TRUE, 'initial' => 1, 'default' => 7],
+          ['not null' => TRUE, 'initial_from_field' => 'serial_column'],
+          [
+            'not null' => TRUE,
+            'initial_from_field' => 'test_nullable_field',
+            'initial'  => 100,
+          ],
+        ];
+>>>>>>> Update Open Social to 8.x-2.1
 
         foreach ($variations as $variation) {
           $field_spec = $variation + $base_field_spec;
@@ -556,9 +572,16 @@ class SchemaTest extends KernelTestBase {
   protected function assertFieldAdditionRemoval($field_spec) {
     // Try creating the field on a new table.
     $table_name = 'test_table_' . ($this->counter++);
+<<<<<<< HEAD
     $table_spec = array(
       'fields' => array(
         'serial_column' => array('type' => 'serial', 'unsigned' => TRUE, 'not null' => TRUE),
+=======
+    $table_spec = [
+      'fields' => [
+        'serial_column' => ['type' => 'serial', 'unsigned' => TRUE, 'not null' => TRUE],
+        'test_nullable_field' => ['type' => 'int', 'not null' => FALSE],
+>>>>>>> Update Open Social to 8.x-2.1
         'test_field' => $field_spec,
       ),
       'primary key' => array('serial_column'),
@@ -574,21 +597,41 @@ class SchemaTest extends KernelTestBase {
 
     // Try adding a field to an existing table.
     $table_name = 'test_table_' . ($this->counter++);
+<<<<<<< HEAD
     $table_spec = array(
       'fields' => array(
         'serial_column' => array('type' => 'serial', 'unsigned' => TRUE, 'not null' => TRUE),
       ),
       'primary key' => array('serial_column'),
     );
+=======
+    $table_spec = [
+      'fields' => [
+        'serial_column' => ['type' => 'serial', 'unsigned' => TRUE, 'not null' => TRUE],
+        'test_nullable_field' => ['type' => 'int', 'not null' => FALSE],
+      ],
+      'primary key' => ['serial_column'],
+    ];
+>>>>>>> Update Open Social to 8.x-2.1
     db_create_table($table_name, $table_spec);
     $this->pass(format_string('Table %table created.', array('%table' => $table_name)));
 
     // Insert some rows to the table to test the handling of initial values.
     for ($i = 0; $i < 3; $i++) {
       db_insert($table_name)
+<<<<<<< HEAD
         ->useDefaults(array('serial_column'))
+=======
+        ->useDefaults(['serial_column'])
+        ->fields(['test_nullable_field' => 100])
+>>>>>>> Update Open Social to 8.x-2.1
         ->execute();
     }
+
+    // Add another row with no value for the 'test_nullable_field' column.
+    db_insert($table_name)
+      ->useDefaults(['serial_column'])
+      ->execute();
 
     db_add_field($table_name, 'test_field', $field_spec);
     $this->pass(format_string('Column %column created.', array('%column' => 'test_field')));
@@ -623,7 +666,7 @@ class SchemaTest extends KernelTestBase {
     }
 
     // Check that the initial value from another field has been registered.
-    if (isset($field_spec['initial_from_field'])) {
+    if (isset($field_spec['initial_from_field']) && !isset($field_spec['initial'])) {
       // There should be no row with a value different than
       // $field_spec['initial_from_field'].
       $count = db_select($table_name)
@@ -633,6 +676,16 @@ class SchemaTest extends KernelTestBase {
         ->execute()
         ->fetchField();
       $this->assertEqual($count, 0, 'Initial values from another field filled out.');
+    }
+    elseif (isset($field_spec['initial_from_field']) && isset($field_spec['initial'])) {
+      // There should be no row with a value different than '100'.
+      $count = db_select($table_name)
+        ->fields($table_name, ['serial_column'])
+        ->condition($field_name, 100, '<>')
+        ->countQuery()
+        ->execute()
+        ->fetchField();
+      $this->assertEqual($count, 0, 'Initial values from another field or a default value filled out.');
     }
 
     // Check that the default value has been registered.

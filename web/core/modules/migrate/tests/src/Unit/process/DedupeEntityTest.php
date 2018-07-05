@@ -158,7 +158,56 @@ class DedupeEntityTest extends MigrateProcessTestCase {
       ->will($this->returnValue($this->entityQuery));
     $this->entityQuery->expects($this->exactly($count + 1))
       ->method('execute')
+<<<<<<< HEAD
       ->will($this->returnCallback(function () use (&$count) { return $count--;}));
+=======
+      ->will($this->returnCallback(function () use (&$count) {
+        return $count--;
+      }));
+  }
+
+  /**
+   * Test deduplicating only migrated entities.
+   */
+  public function testDedupeMigrated() {
+    $configuration = [
+      'entity_type' => 'test_entity_type',
+      'field' => 'test_field',
+      'migrated' => TRUE,
+    ];
+    $plugin = new DedupeEntity($configuration, 'dedupe_entity', [], $this->getMigration(), $this->entityTypeManager);
+
+    // Setup the entityQuery used in DedupeEntity::exists. The map, $map, is
+    // an array consisting of the four input parameters to the query condition
+    // method and then the query to return. Both 'forum' and
+    // 'test_vocab' are existing entities. There is no 'test_vocab1'.
+    $map = [];
+    foreach (['forums', 'test_vocab', 'test_vocab1'] as $id) {
+      $query = $this->prophesize(QueryInterface::class);
+      $query->willBeConstructedWith([]);
+      $query->execute()->willReturn($id === 'test_vocab1' ? [] : [$id]);
+      $map[] = ['test_field', $id, NULL, NULL, $query->reveal()];
+    }
+    $this->entityQuery
+      ->method('condition')
+      ->will($this->returnValueMap($map));
+
+    // Entity 'forums' is pre-existing, entity 'test_vocab' was migrated.
+    $this->idMap
+      ->method('lookupSourceId')
+      ->will($this->returnValueMap([
+        [['test_field' => 'forums'], FALSE],
+        [['test_field' => 'test_vocab'], ['source_id' => 42]],
+      ]));
+
+    // Existing entity 'forums' was not migrated, it should not be deduplicated.
+    $actual = $plugin->transform('forums', $this->migrateExecutable, $this->row, 'testproperty');
+    $this->assertEquals('forums', $actual, 'Pre-existing name is re-used');
+
+    // Entity 'test_vocab' was migrated, should be deduplicated.
+    $actual = $plugin->transform('test_vocab', $this->migrateExecutable, $this->row, 'testproperty');
+    $this->assertEquals('test_vocab1', $actual, 'Migrated name is deduplicated');
+>>>>>>> Update Open Social to 8.x-2.1
   }
 
 }

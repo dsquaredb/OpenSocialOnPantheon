@@ -6,11 +6,15 @@
  * The MIT License (MIT)
 <<<<<<< HEAD
  *
+<<<<<<< HEAD
  * Copyright (c) 2015 - 2017 Paragon Initiative Enterprises
 =======
  * 
  * Copyright (c) 2015 Paragon Initiative Enterprises
 >>>>>>> web and vendor directory from composer install
+=======
+ * Copyright (c) 2015 - 2018 Paragon Initiative Enterprises
+>>>>>>> Update Open Social to 8.x-2.1
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -49,6 +53,7 @@ if (!is_callable('random_bytes')) {
     function random_bytes($bytes)
     {
         try {
+            /** @var int $bytes */
             $bytes = RandomCompat_intval($bytes);
         } catch (TypeError $ex) {
             throw new TypeError(
@@ -66,6 +71,7 @@ if (!is_callable('random_bytes')) {
          * \Sodium\randombytes_buf() doesn't allow more than 2147483647 bytes to be
          * generated in one invocation.
          */
+        /** @var string|bool $buf */
         if ($bytes > 2147483647) {
             $buf = '';
             for ($i = 0; $i < $bytes; $i += 1073741824) {
@@ -75,10 +81,11 @@ if (!is_callable('random_bytes')) {
                 $buf .= \Sodium\randombytes_buf($n);
             }
         } else {
+            /** @var string|bool $buf */
             $buf = \Sodium\randombytes_buf($bytes);
         }
 
-        if ($buf !== false) {
+        if (is_string($buf)) {
             if (RandomCompat_strlen($buf) === $bytes) {
                 return $buf;
             }

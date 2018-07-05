@@ -472,6 +472,249 @@ class ContainerBuilderTest extends \PHPUnit_Framework_TestCase
         $config->setDefinition('foo', new Definition('BazClass'));
         $container->merge($config);
         $this->assertEquals('BazClass', $container->getDefinition('foo')->getClass(), '->merge() overrides already defined services');
+<<<<<<< HEAD
+=======
+
+        $container = new ContainerBuilder();
+        $bag = new EnvPlaceholderParameterBag();
+        $bag->get('env(Foo)');
+        $config = new ContainerBuilder($bag);
+        $this->assertSame(array('%env(Bar)%'), $config->resolveEnvPlaceholders(array($bag->get('env(Bar)'))));
+        $container->merge($config);
+        $this->assertEquals(array('Foo' => 0, 'Bar' => 1), $container->getEnvCounters());
+
+        $container = new ContainerBuilder();
+        $config = new ContainerBuilder();
+        $childDefA = $container->registerForAutoconfiguration('AInterface');
+        $childDefB = $config->registerForAutoconfiguration('BInterface');
+        $container->merge($config);
+        $this->assertSame(array('AInterface' => $childDefA, 'BInterface' => $childDefB), $container->getAutoconfiguredInstanceof());
+    }
+
+    /**
+     * @expectedException \Symfony\Component\DependencyInjection\Exception\InvalidArgumentException
+     * @expectedExceptionMessage "AInterface" has already been autoconfigured and merge() does not support merging autoconfiguration for the same class/interface.
+     */
+    public function testMergeThrowsExceptionForDuplicateAutomaticInstanceofDefinitions()
+    {
+        $container = new ContainerBuilder();
+        $config = new ContainerBuilder();
+        $container->registerForAutoconfiguration('AInterface');
+        $config->registerForAutoconfiguration('AInterface');
+        $container->merge($config);
+    }
+
+    public function testResolveEnvValues()
+    {
+        $_ENV['DUMMY_ENV_VAR'] = 'du%%y';
+        $_SERVER['DUMMY_SERVER_VAR'] = 'ABC';
+        $_SERVER['HTTP_DUMMY_VAR'] = 'DEF';
+
+        $container = new ContainerBuilder();
+        $container->setParameter('bar', '%% %env(DUMMY_ENV_VAR)% %env(DUMMY_SERVER_VAR)% %env(HTTP_DUMMY_VAR)%');
+        $container->setParameter('env(HTTP_DUMMY_VAR)', '123');
+
+        $this->assertSame('%% du%%%%y ABC 123', $container->resolveEnvPlaceholders('%bar%', true));
+
+        unset($_ENV['DUMMY_ENV_VAR'], $_SERVER['DUMMY_SERVER_VAR'], $_SERVER['HTTP_DUMMY_VAR']);
+    }
+
+    public function testResolveEnvValuesWithArray()
+    {
+        $_ENV['ANOTHER_DUMMY_ENV_VAR'] = 'dummy';
+
+        $dummyArray = array('1' => 'one', '2' => 'two');
+
+        $container = new ContainerBuilder();
+        $container->setParameter('dummy', '%env(ANOTHER_DUMMY_ENV_VAR)%');
+        $container->setParameter('dummy2', $dummyArray);
+
+        $container->resolveEnvPlaceholders('%dummy%', true);
+        $container->resolveEnvPlaceholders('%dummy2%', true);
+
+        $this->assertInternalType('array', $container->resolveEnvPlaceholders('%dummy2%', true));
+
+        foreach ($dummyArray as $key => $value) {
+            $this->assertArrayHasKey($key, $container->resolveEnvPlaceholders('%dummy2%', true));
+        }
+
+        unset($_ENV['ANOTHER_DUMMY_ENV_VAR']);
+    }
+
+    public function testCompileWithResolveEnv()
+    {
+        putenv('DUMMY_ENV_VAR=du%%y');
+        $_SERVER['DUMMY_SERVER_VAR'] = 'ABC';
+        $_SERVER['HTTP_DUMMY_VAR'] = 'DEF';
+
+        $container = new ContainerBuilder();
+        $container->setParameter('env(FOO)', 'Foo');
+        $container->setParameter('env(DUMMY_ENV_VAR)', 'GHI');
+        $container->setParameter('bar', '%% %env(DUMMY_ENV_VAR)% %env(DUMMY_SERVER_VAR)% %env(HTTP_DUMMY_VAR)%');
+        $container->setParameter('foo', '%env(FOO)%');
+        $container->setParameter('baz', '%foo%');
+        $container->setParameter('env(HTTP_DUMMY_VAR)', '123');
+        $container->register('teatime', 'stdClass')
+            ->setProperty('foo', '%env(DUMMY_ENV_VAR)%')
+            ->setPublic(true)
+        ;
+        $container->compile(true);
+
+        $this->assertSame('% du%%y ABC 123', $container->getParameter('bar'));
+        $this->assertSame('Foo', $container->getParameter('baz'));
+        $this->assertSame('du%%y', $container->get('teatime')->foo);
+
+        unset($_SERVER['DUMMY_SERVER_VAR'], $_SERVER['HTTP_DUMMY_VAR']);
+        putenv('DUMMY_ENV_VAR');
+    }
+
+    public function testCompileWithArrayResolveEnv()
+    {
+        putenv('ARRAY={"foo":"bar"}');
+
+        $container = new ContainerBuilder();
+        $container->setParameter('foo', '%env(json:ARRAY)%');
+        $container->compile(true);
+
+        $this->assertSame(array('foo' => 'bar'), $container->getParameter('foo'));
+
+        putenv('ARRAY');
+    }
+
+    public function testCompileWithArrayAndAnotherResolveEnv()
+    {
+        putenv('DUMMY_ENV_VAR=abc');
+        putenv('ARRAY={"foo":"bar"}');
+
+        $container = new ContainerBuilder();
+        $container->setParameter('foo', '%env(json:ARRAY)%');
+        $container->setParameter('bar', '%env(DUMMY_ENV_VAR)%');
+        $container->compile(true);
+
+        $this->assertSame(array('foo' => 'bar'), $container->getParameter('foo'));
+        $this->assertSame('abc', $container->getParameter('bar'));
+
+        putenv('DUMMY_ENV_VAR');
+        putenv('ARRAY');
+    }
+
+    /**
+     * @expectedException \Symfony\Component\DependencyInjection\Exception\RuntimeException
+     * @expectedExceptionMessage A string value must be composed of strings and/or numbers, but found parameter "env(json:ARRAY)" of type array inside string value "ABC %env(json:ARRAY)%".
+     */
+    public function testCompileWithArrayInStringResolveEnv()
+    {
+        putenv('ARRAY={"foo":"bar"}');
+
+        $container = new ContainerBuilder();
+        $container->setParameter('foo', 'ABC %env(json:ARRAY)%');
+        $container->compile(true);
+
+        putenv('ARRAY');
+    }
+
+    /**
+     * @expectedException \Symfony\Component\DependencyInjection\Exception\EnvNotFoundException
+     * @expectedExceptionMessage Environment variable not found: "FOO".
+     */
+    public function testCompileWithResolveMissingEnv()
+    {
+        $container = new ContainerBuilder();
+        $container->setParameter('foo', '%env(FOO)%');
+        $container->compile(true);
+    }
+
+    public function testDynamicEnv()
+    {
+        putenv('DUMMY_FOO=some%foo%');
+        putenv('DUMMY_BAR=%bar%');
+
+        $container = new ContainerBuilder();
+        $container->setParameter('foo', 'Foo%env(resolve:DUMMY_BAR)%');
+        $container->setParameter('bar', 'Bar');
+        $container->setParameter('baz', '%env(resolve:DUMMY_FOO)%');
+
+        $container->compile(true);
+        putenv('DUMMY_FOO');
+        putenv('DUMMY_BAR');
+
+        $this->assertSame('someFooBar', $container->getParameter('baz'));
+    }
+
+    public function testCastEnv()
+    {
+        $container = new ContainerBuilder();
+        $container->setParameter('env(FAKE)', '123');
+
+        $container->register('foo', 'stdClass')
+            ->setPublic(true)
+            ->setProperties(array(
+                'fake' => '%env(int:FAKE)%',
+            ));
+
+        $container->compile(true);
+
+        $this->assertSame(123, $container->get('foo')->fake);
+    }
+
+    public function testEnvAreNullable()
+    {
+        $container = new ContainerBuilder();
+        $container->setParameter('env(FAKE)', null);
+
+        $container->register('foo', 'stdClass')
+            ->setPublic(true)
+            ->setProperties(array(
+            'fake' => '%env(int:FAKE)%',
+        ));
+
+        $container->compile(true);
+
+        $this->assertNull($container->get('foo')->fake);
+    }
+
+    public function testEnvInId()
+    {
+        $container = include __DIR__.'/Fixtures/containers/container_env_in_id.php';
+        $container->compile(true);
+
+        $expected = array(
+            'service_container',
+            'foo',
+            'bar',
+            'bar_%env(BAR)%',
+        );
+        $this->assertSame($expected, array_keys($container->getDefinitions()));
+
+        $expected = array(
+            PsrContainerInterface::class => true,
+            ContainerInterface::class => true,
+            'baz_%env(BAR)%' => true,
+            'bar_%env(BAR)%' => true,
+        );
+        $this->assertSame($expected, $container->getRemovedIds());
+
+        $this->assertSame(array('baz_bar'), array_keys($container->getDefinition('foo')->getArgument(1)));
+    }
+
+    /**
+     * @expectedException \Symfony\Component\DependencyInjection\Exception\ParameterCircularReferenceException
+     * @expectedExceptionMessage Circular reference detected for parameter "env(resolve:DUMMY_ENV_VAR)" ("env(resolve:DUMMY_ENV_VAR)" > "env(resolve:DUMMY_ENV_VAR)").
+     */
+    public function testCircularDynamicEnv()
+    {
+        putenv('DUMMY_ENV_VAR=some%foo%');
+
+        $container = new ContainerBuilder();
+        $container->setParameter('foo', '%bar%');
+        $container->setParameter('bar', '%env(resolve:DUMMY_ENV_VAR)%');
+
+        try {
+            $container->compile(true);
+        } finally {
+            putenv('DUMMY_ENV_VAR');
+        }
+>>>>>>> Update Open Social to 8.x-2.1
     }
 
     /**
@@ -852,6 +1095,7 @@ class ProjectContainer extends ContainerBuilder
 class A
 {
 }
+<<<<<<< HEAD
 
 class B
 {
@@ -859,3 +1103,5 @@ class B
     {
     }
 }
+=======
+>>>>>>> Update Open Social to 8.x-2.1

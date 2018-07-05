@@ -15,10 +15,14 @@ namespace Symfony\Component\Validator;
  * Prepares an object for validation.
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Concrete implementations of this interface are used by {@link Validator\ContextualValidatorInterface}
 =======
  * Concrete implementations of this interface are used by {@link ValidationVisitorInterface}
 >>>>>>> web and vendor directory from composer install
+=======
+ * Concrete implementations of this interface are used by {@link Validator\ContextualValidatorInterface}
+>>>>>>> Update Open Social to 8.x-2.1
  * to initialize objects just before validating them.
  *
  * @author Fabien Potencier <fabien@symfony.com>

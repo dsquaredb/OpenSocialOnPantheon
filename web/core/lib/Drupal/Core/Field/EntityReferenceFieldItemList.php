@@ -24,8 +24,13 @@ class EntityReferenceFieldItemList extends FieldItemList implements EntityRefere
    * {@inheritdoc}
    */
   public function referencedEntities() {
+<<<<<<< HEAD
     if (empty($this->list)) {
       return array();
+=======
+    if ($this->isEmpty()) {
+      return [];
+>>>>>>> Update Open Social to 8.x-2.1
     }
 
     // Collect the IDs of existing entities to load, and directly grab the

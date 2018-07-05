@@ -139,12 +139,20 @@ class EmailAction extends ConfigurableActionBase implements ContainerFactoryPlug
     }
     $params = array('context' => $this->configuration);
 
+<<<<<<< HEAD
     if ($this->mailManager->mail('system', 'action_send_email', $recipient, $langcode, $params)) {
       $this->logger->notice('Sent email to %recipient', array('%recipient' => $recipient));
     }
     else {
       $this->logger->error('Unable to send email to %recipient', array('%recipient' => $recipient));
     }
+=======
+    $message = $this->mailManager->mail('system', 'action_send_email', $recipient, $langcode, $params);
+    // Error logging is handled by \Drupal\Core\Mail\MailManager::mail().
+    if ($message['result']) {
+      $this->logger->notice('Sent email to %recipient', ['%recipient' => $recipient]);
+    }
+>>>>>>> Update Open Social to 8.x-2.1
   }
 
   /**

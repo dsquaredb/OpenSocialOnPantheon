@@ -8,7 +8,8 @@ namespace Drupal\migrate\Plugin\migrate\source;
  * This is generally useful when needing to create a field using a migration..
  *
  * @MigrateSource(
- *   id = "empty"
+ *   id = "empty",
+ *   source_module = "migrate"
  * )
  */
 class EmptySource extends SourcePluginBase {

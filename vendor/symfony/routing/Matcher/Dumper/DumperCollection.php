@@ -124,8 +124,12 @@ class DumperCollection implements \IteratorAggregate
      *
      * @param DumperCollection $parent The parent collection
      */
+<<<<<<< HEAD
     protected function setParent(DumperCollection $parent)
 >>>>>>> web and vendor directory from composer install
+=======
+    protected function setParent(self $parent)
+>>>>>>> Update Open Social to 8.x-2.1
     {
         $this->parent = $parent;
     }

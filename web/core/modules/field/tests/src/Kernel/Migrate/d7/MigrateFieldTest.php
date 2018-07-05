@@ -78,6 +78,7 @@ class MigrateFieldTest extends MigrateDrupal7TestBase {
    * Tests migrating D7 fields to field_storage_config entities.
    */
   public function testFields() {
+<<<<<<< HEAD
     $this->assertEntity('node.body', 'text_with_summary', FALSE, 1);
     $this->assertEntity('node.field_long_text', 'text_with_summary', FALSE, 1);
     $this->assertEntity('comment.comment_body', 'text_long', FALSE, 1);
@@ -100,6 +101,36 @@ class MigrateFieldTest extends MigrateDrupal7TestBase {
     $this->assertEntity('node.field_phone', 'telephone', FALSE, 1);
     $this->assertEntity('node.field_date', 'datetime', FALSE, 1);
     $this->assertEntity('node.field_date_with_end_time', 'datetime', FALSE, 1);
+=======
+    $this->assertEntity('node.body', 'text_with_summary', TRUE, 1);
+    $this->assertEntity('node.field_long_text', 'text_with_summary', TRUE, 1);
+    $this->assertEntity('comment.comment_body', 'text_long', TRUE, 1);
+    $this->assertEntity('node.field_file', 'file', TRUE, 1);
+    $this->assertEntity('user.field_file', 'file', TRUE, 1);
+    $this->assertEntity('node.field_float', 'float', TRUE, 1);
+    $this->assertEntity('node.field_image', 'image', TRUE, 1);
+    $this->assertEntity('node.field_images', 'image', TRUE, 1);
+    $this->assertEntity('node.field_integer', 'integer', TRUE, 1);
+    $this->assertEntity('comment.field_integer', 'integer', TRUE, 1);
+    $this->assertEntity('node.field_integer_list', 'list_integer', TRUE, 1);
+    $this->assertEntity('node.field_link', 'link', TRUE, 1);
+    $this->assertEntity('node.field_tags', 'entity_reference', TRUE, -1);
+    $this->assertEntity('node.field_term_reference', 'entity_reference', TRUE, 1);
+    $this->assertEntity('node.taxonomy_forums', 'entity_reference', TRUE, 1);
+    $this->assertEntity('node.field_text', 'string', TRUE, 1);
+    $this->assertEntity('node.field_text_list', 'list_string', TRUE, 3);
+    $this->assertEntity('node.field_float_list', 'list_float', TRUE, 1);
+    $this->assertEntity('node.field_boolean', 'boolean', TRUE, 1);
+    $this->assertEntity('node.field_email', 'email', TRUE, -1);
+    $this->assertEntity('node.field_phone', 'telephone', TRUE, 1);
+    $this->assertEntity('node.field_date', 'datetime', TRUE, 1);
+    $this->assertEntity('node.field_date_with_end_time', 'timestamp', TRUE, 1);
+    $this->assertEntity('node.field_node_entityreference', 'entity_reference', TRUE, -1);
+    $this->assertEntity('node.field_user_entityreference', 'entity_reference', TRUE, 1);
+    $this->assertEntity('node.field_term_entityreference', 'entity_reference', TRUE, -1);
+    $this->assertEntity('node.field_date_without_time', 'datetime', TRUE, 1);
+    $this->assertEntity('node.field_datetime_without_time', 'datetime', TRUE, 1);
+>>>>>>> Update Open Social to 8.x-2.1
 
     // Assert that the taxonomy term reference fields are referencing the
     // correct entity type.

@@ -49,6 +49,19 @@ class ContentTypeHeaderMatcherTest extends UnitTestCase {
     $this->assertEquals(count($routes), 7, 'The correct number of routes was found.');
   }
 
+<<<<<<< HEAD
+=======
+  public function providerTestSafeRequestFilter() {
+    return [
+      ['GET'],
+      ['HEAD'],
+      ['OPTIONS'],
+      ['TRACE'],
+      ['DELETE'],
+    ];
+  }
+
+>>>>>>> Update Open Social to 8.x-2.1
   /**
    * Tests that XML-restricted routes get filtered out on JSON requests.
    */

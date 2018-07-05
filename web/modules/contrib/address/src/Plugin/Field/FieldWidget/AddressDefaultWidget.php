@@ -310,9 +310,18 @@ class AddressDefaultWidget extends WidgetBase implements ContainerFactoryPluginI
       // Pass the id along to other methods.
       '#wrapper_id' => $wrapper_id,
     ];
+<<<<<<< HEAD
     $element['langcode'] = [
       '#type' => 'hidden',
       '#value' => $langcode,
+=======
+    $element['address'] = [
+      '#type' => 'address',
+      '#default_value' => $value,
+      '#required' => $this->fieldDefinition->isRequired(),
+      '#available_countries' => $item->getAvailableCountries(),
+      '#field_overrides' => $item->getFieldOverrides(),
+>>>>>>> Update Open Social to 8.x-2.1
     ];
     // Hide the country dropdown when there is only one possible value.
     if (count($country_list) == 1 && $this->fieldDefinition->isRequired()) {

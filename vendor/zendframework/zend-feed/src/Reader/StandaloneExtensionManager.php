@@ -12,6 +12,7 @@ namespace Zend\Feed\Reader;
 class StandaloneExtensionManager implements ExtensionManagerInterface
 {
     private $extensions = [
+<<<<<<< HEAD
         'Atom\Entry'            => 'Zend\Feed\Reader\Extension\Atom\Entry',
         'Atom\Feed'             => 'Zend\Feed\Reader\Extension\Atom\Feed',
         'Content\Entry'         => 'Zend\Feed\Reader\Extension\Content\Entry',
@@ -25,6 +26,23 @@ class StandaloneExtensionManager implements ExtensionManagerInterface
         'Syndication\Feed'      => 'Zend\Feed\Reader\Extension\Syndication\Feed',
         'Thread\Entry'          => 'Zend\Feed\Reader\Extension\Thread\Entry',
         'WellFormedWeb\Entry'   => 'Zend\Feed\Reader\Extension\WellFormedWeb\Entry',
+=======
+        'Atom\Entry'            => Extension\Atom\Entry::class,
+        'Atom\Feed'             => Extension\Atom\Feed::class,
+        'Content\Entry'         => Extension\Content\Entry::class,
+        'CreativeCommons\Entry' => Extension\CreativeCommons\Entry::class,
+        'CreativeCommons\Feed'  => Extension\CreativeCommons\Feed::class,
+        'DublinCore\Entry'      => Extension\DublinCore\Entry::class,
+        'DublinCore\Feed'       => Extension\DublinCore\Feed::class,
+        'GooglePlayPodcast\Entry' => Extension\GooglePlayPodcast\Entry::class,
+        'GooglePlayPodcast\Feed'  => Extension\GooglePlayPodcast\Feed::class,
+        'Podcast\Entry'         => Extension\Podcast\Entry::class,
+        'Podcast\Feed'          => Extension\Podcast\Feed::class,
+        'Slash\Entry'           => Extension\Slash\Entry::class,
+        'Syndication\Feed'      => Extension\Syndication\Feed::class,
+        'Thread\Entry'          => Extension\Thread\Entry::class,
+        'WellFormedWeb\Entry'   => Extension\WellFormedWeb\Entry::class,
+>>>>>>> Update Open Social to 8.x-2.1
     ];
 
     /**

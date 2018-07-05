@@ -221,6 +221,13 @@ class EntityManager implements EntityManagerInterface, ContainerAwareInterface {
    * {@inheritdoc}
    *
    * @deprecated in Drupal 8.0.0, will be removed before Drupal 9.0.0.
+<<<<<<< HEAD
+=======
+   *   Use \Drupal\Core\Entity\EntityTypeBundleInfoInterface::clearCachedBundles()
+   *   instead.
+   *
+   * @see https://www.drupal.org/node/2549139
+>>>>>>> Update Open Social to 8.x-2.1
    */
   public function clearCachedBundles() {
     $this->container->get('entity_type.bundle.info')->clearCachedBundles();
@@ -230,6 +237,13 @@ class EntityManager implements EntityManagerInterface, ContainerAwareInterface {
    * {@inheritdoc}
    *
    * @deprecated in Drupal 8.0.0, will be removed before Drupal 9.0.0.
+<<<<<<< HEAD
+=======
+   *   Use \Drupal\Core\Entity\EntityTypeBundleInfoInterface::getBundleInfo()
+   *   instead.
+   *
+   * @see https://www.drupal.org/node/2549139
+>>>>>>> Update Open Social to 8.x-2.1
    */
   public function getBundleInfo($entity_type) {
     return $this->container->get('entity_type.bundle.info')->getBundleInfo($entity_type);
@@ -239,6 +253,13 @@ class EntityManager implements EntityManagerInterface, ContainerAwareInterface {
    * {@inheritdoc}
    *
    * @deprecated in Drupal 8.0.0, will be removed before Drupal 9.0.0.
+<<<<<<< HEAD
+=======
+   *   Use \Drupal\Core\Entity\EntityTypeBundleInfoInterface::getAllBundleInfo()
+   *   instead.
+   *
+   * @see https://www.drupal.org/node/2549139
+>>>>>>> Update Open Social to 8.x-2.1
    */
   public function getAllBundleInfo() {
     return $this->container->get('entity_type.bundle.info')->getAllBundleInfo();

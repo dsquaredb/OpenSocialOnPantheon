@@ -79,6 +79,7 @@ abstract class AbstractPipes implements PipesInterface
     protected function hasSystemCallBeenInterrupted()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         $lastError = $this->lastError;
         $this->lastError = null;
 
@@ -90,6 +91,13 @@ abstract class AbstractPipes implements PipesInterface
         // stream_select returns false when the `select` system call is interrupted by an incoming signal
         return isset($lastError['message']) && false !== stripos($lastError['message'], 'interrupted system call');
 >>>>>>> web and vendor directory from composer install
+=======
+        $lastError = $this->lastError;
+        $this->lastError = null;
+
+        // stream_select returns false when the `select` system call is interrupted by an incoming signal
+        return null !== $lastError && false !== stripos($lastError, 'interrupted system call');
+>>>>>>> Update Open Social to 8.x-2.1
     }
 
     /**
@@ -218,6 +226,9 @@ abstract class AbstractPipes implements PipesInterface
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Update Open Social to 8.x-2.1
 
     /**
      * @internal
@@ -226,6 +237,9 @@ abstract class AbstractPipes implements PipesInterface
     {
         $this->lastError = $msg;
     }
+<<<<<<< HEAD
 =======
 >>>>>>> web and vendor directory from composer install
+=======
+>>>>>>> Update Open Social to 8.x-2.1
 }

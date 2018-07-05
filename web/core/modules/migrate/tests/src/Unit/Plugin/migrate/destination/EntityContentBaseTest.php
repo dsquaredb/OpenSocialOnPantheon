@@ -49,6 +49,15 @@ class EntityContentBaseTest extends UnitTestCase {
 
     $this->migration = $this->prophesize(MigrationInterface::class);
     $this->storage = $this->prophesize(EntityStorageInterface::class);
+<<<<<<< HEAD
+=======
+
+    $this->entityType = $this->prophesize(EntityTypeInterface::class);
+    $this->entityType->getPluralLabel()->willReturn('wonkiness');
+    $this->storage->getEntityType()->willReturn($this->entityType->reveal());
+    $this->storage->getEntityTypeId()->willReturn('foo');
+
+>>>>>>> Update Open Social to 8.x-2.1
     $this->entityManager = $this->prophesize(EntityManagerInterface::class);
   }
 
@@ -122,6 +131,10 @@ class EntityContentBaseTest extends UnitTestCase {
       $this->entityManager->reveal(),
       $this->prophesize(FieldTypePluginManagerInterface::class)->reveal()
     );
+<<<<<<< HEAD
+=======
+    $this->setExpectedException(MigrateException::class, 'The "foo" entity type does not support translations.');
+>>>>>>> Update Open Social to 8.x-2.1
     $destination->getIds();
   }
 

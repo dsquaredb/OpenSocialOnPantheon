@@ -13,6 +13,11 @@ use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
+<<<<<<< HEAD
+=======
+use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
+use Symfony\Component\Routing\Exception\RouteNotFoundException;
+>>>>>>> Update Open Social to 8.x-2.1
 
 /**
  * Defines a base entity class.
@@ -323,7 +328,26 @@ abstract class Entity implements EntityInterface {
    * {@inheritdoc}
    */
   public function uriRelationships() {
+<<<<<<< HEAD
     return array_keys($this->linkTemplates());
+=======
+    return array_filter(array_keys($this->linkTemplates()), function ($link_relation_type) {
+      // It's not guaranteed that every link relation type also has a
+      // corresponding route. For some, additional modules or configuration may
+      // be necessary. The interface demands that we only return supported URI
+      // relationships.
+      try {
+        $this->toUrl($link_relation_type)->toString(TRUE)->getGeneratedUrl();
+      }
+      catch (RouteNotFoundException $e) {
+        return FALSE;
+      }
+      catch (MissingMandatoryParametersException $e) {
+        return FALSE;
+      }
+      return TRUE;
+    });
+>>>>>>> Update Open Social to 8.x-2.1
   }
 
   /**

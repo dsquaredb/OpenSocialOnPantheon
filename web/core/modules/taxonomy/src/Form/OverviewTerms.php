@@ -201,13 +201,28 @@ class OverviewTerms extends FormBase {
     // Build the actual form.
     $form['terms'] = array(
       '#type' => 'table',
+<<<<<<< HEAD
       '#header' => array($this->t('Name'), $this->t('Weight'), $this->t('Operations')),
       '#empty' => $this->t('No terms available. <a href=":link">Add term</a>.', array(':link' => $this->url('entity.taxonomy_term.add_form', array('taxonomy_vocabulary' => $taxonomy_vocabulary->id())))),
       '#attributes' => array(
+=======
+      '#empty' => $empty,
+      '#header' => [
+        'term' => $this->t('Name'),
+        'operations' => $this->t('Operations'),
+        'weight' => $this->t('Weight'),
+      ],
+      '#attributes' => [
+>>>>>>> Update Open Social to 8.x-2.1
         'id' => 'taxonomy',
       ),
     );
     foreach ($current_page as $key => $term) {
+      $form['terms'][$key] = [
+        'term' => [],
+        'operations' => [],
+        'weight' => [],
+      ];
       /** @var $term \Drupal\Core\Entity\EntityInterface */
       $form['terms'][$key]['#term'] = $term;
       $indentation = array();
@@ -313,6 +328,7 @@ class OverviewTerms extends FormBase {
       $row_position++;
     }
 
+<<<<<<< HEAD
     if ($parent_fields) {
       $form['terms']['#tabledrag'][] = array(
         'action' => 'match',
@@ -332,6 +348,35 @@ class OverviewTerms extends FormBase {
       $form['terms']['#attached']['drupalSettings']['taxonomy'] = [
         'backStep' => $back_step,
         'forwardStep' => $forward_step,
+=======
+    $this->renderer->addCacheableDependency($form['terms'], $change_weight_access);
+    if ($change_weight_access->isAllowed()) {
+      if ($parent_fields) {
+        $form['terms']['#tabledrag'][] = [
+          'action' => 'match',
+          'relationship' => 'parent',
+          'group' => 'term-parent',
+          'subgroup' => 'term-parent',
+          'source' => 'term-id',
+          'hidden' => FALSE,
+        ];
+        $form['terms']['#tabledrag'][] = [
+          'action' => 'depth',
+          'relationship' => 'group',
+          'group' => 'term-depth',
+          'hidden' => FALSE,
+        ];
+        $form['terms']['#attached']['library'][] = 'taxonomy/drupal.taxonomy';
+        $form['terms']['#attached']['drupalSettings']['taxonomy'] = [
+          'backStep' => $back_step,
+          'forwardStep' => $forward_step,
+        ];
+      }
+      $form['terms']['#tabledrag'][] = [
+        'action' => 'order',
+        'relationship' => 'sibling',
+        'group' => 'term-weight',
+>>>>>>> Update Open Social to 8.x-2.1
       ];
     }
     $form['terms']['#tabledrag'][] = array(
@@ -340,9 +385,15 @@ class OverviewTerms extends FormBase {
       'group' => 'term-weight',
     );
 
+<<<<<<< HEAD
     if ($taxonomy_vocabulary->getHierarchy() != TAXONOMY_HIERARCHY_MULTIPLE && count($tree) > 1) {
       $form['actions'] = array('#type' => 'actions', '#tree' => FALSE);
       $form['actions']['submit'] = array(
+=======
+    if (($taxonomy_vocabulary->getHierarchy() !== VocabularyInterface::HIERARCHY_MULTIPLE && count($tree) > 1) && $change_weight_access->isAllowed()) {
+      $form['actions'] = ['#type' => 'actions', '#tree' => FALSE];
+      $form['actions']['submit'] = [
+>>>>>>> Update Open Social to 8.x-2.1
         '#type' => 'submit',
         '#value' => $this->t('Save'),
         '#button_type' => 'primary',

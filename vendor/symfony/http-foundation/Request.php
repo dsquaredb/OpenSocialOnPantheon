@@ -747,10 +747,14 @@ class Request
     {
         self::$trustedHostPatterns = array_map(function ($hostPattern) {
 <<<<<<< HEAD
+<<<<<<< HEAD
             return sprintf('{%s}i', $hostPattern);
 =======
             return sprintf('#%s#i', $hostPattern);
 >>>>>>> web and vendor directory from composer install
+=======
+            return sprintf('{%s}i', $hostPattern);
+>>>>>>> Update Open Social to 8.x-2.1
         }, $hostPatterns);
         // we need to reset trusted hosts on trusted host patterns change
         self::$trustedHosts = array();
@@ -1660,10 +1664,14 @@ class Request
      * @param string $format The format
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @return string|null The associated mime type (null if not found)
 =======
      * @return string The associated mime type (null if not found)
 >>>>>>> web and vendor directory from composer install
+=======
+     * @return string|null The associated mime type (null if not found)
+>>>>>>> Update Open Social to 8.x-2.1
      */
     public function getMimeType($format)
     {

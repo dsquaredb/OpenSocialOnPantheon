@@ -114,6 +114,12 @@ class NodeRevisionRevertForm extends ConfirmFormBase {
 
     $this->revision = $this->prepareRevertedRevision($this->revision, $form_state);
     $this->revision->revision_log = t('Copy of the revision from %date.', ['%date' => $this->dateFormatter->format($original_revision_timestamp)]);
+<<<<<<< HEAD
+=======
+    $this->revision->setRevisionUserId($this->currentUser()->id());
+    $this->revision->setRevisionCreationTime($this->time->getRequestTime());
+    $this->revision->setChangedTime($this->time->getRequestTime());
+>>>>>>> Update Open Social to 8.x-2.1
     $this->revision->save();
 
     $this->logger('content')->notice('@type: reverted %title revision %revision.', ['@type' => $this->revision->bundle(), '%title' => $this->revision->label(), '%revision' => $this->revision->getRevisionId()]);

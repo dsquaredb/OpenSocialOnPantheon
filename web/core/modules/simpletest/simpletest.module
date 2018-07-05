@@ -388,15 +388,25 @@ function simpletest_phpunit_command() {
   $reflector = new ReflectionClass($autoloader);
   $vendor_dir = dirname(dirname($reflector->getFileName()));
 
+<<<<<<< HEAD
   // Don't use the committed version in composer's bin dir if running on
   // windows.
+=======
+  // The file in Composer's bin dir is a *nix link, which does not work when
+  // extracted from a tarball and generally not on Windows.
+  $command = escapeshellarg($vendor_dir . '/phpunit/phpunit/phpunit');
+>>>>>>> Update Open Social to 8.x-2.1
   if (substr(PHP_OS, 0, 3) == 'WIN') {
     $php_executable_finder = new PhpExecutableFinder();
     $php = $php_executable_finder->find();
+<<<<<<< HEAD
     $phpunit_bin = escapeshellarg($php) . ' -f ' . escapeshellarg($vendor_dir . '/phpunit/phpunit/composer/bin/phpunit') . ' --';
   }
   else {
     $phpunit_bin = $vendor_dir . '/phpunit/phpunit/phpunit';
+=======
+    $command = $php . ' -f ' . $command . ' --';
+>>>>>>> Update Open Social to 8.x-2.1
   }
   return $phpunit_bin;
 }

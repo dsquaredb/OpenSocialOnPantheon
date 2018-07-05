@@ -6,10 +6,14 @@
  * The MIT License (MIT)
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2015 - 2017 Paragon Initiative Enterprises
 =======
  * Copyright (c) 2015 Paragon Initiative Enterprises
 >>>>>>> web and vendor directory from composer install
+=======
+ * Copyright (c) 2015 - 2018 Paragon Initiative Enterprises
+>>>>>>> Update Open Social to 8.x-2.1
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -36,8 +40,9 @@ if (!is_callable('RandomCompat_strlen')) {
 if (!function_exists('RandomCompat_strlen')) {
 >>>>>>> web and vendor directory from composer install
     if (
-        defined('MB_OVERLOAD_STRING') &&
-        ini_get('mbstring.func_overload') & MB_OVERLOAD_STRING
+        defined('MB_OVERLOAD_STRING')
+            &&
+        ((int) ini_get('mbstring.func_overload')) & MB_OVERLOAD_STRING
     ) {
         /**
          * strlen() implementation that isn't brittle to mbstring.func_overload
@@ -102,8 +107,8 @@ if (!function_exists('RandomCompat_substr')) {
 
     if (
         defined('MB_OVERLOAD_STRING')
-        &&
-        ini_get('mbstring.func_overload') & MB_OVERLOAD_STRING
+            &&
+        ((int) ini_get('mbstring.func_overload')) & MB_OVERLOAD_STRING
     ) {
         /**
          * substr() implementation that isn't brittle to mbstring.func_overload
@@ -113,7 +118,7 @@ if (!function_exists('RandomCompat_substr')) {
          *
          * @param string $binary_string
          * @param int $start
-         * @param int $length (optional)
+         * @param int|null $length (optional)
          *
          * @throws TypeError
          *
@@ -139,6 +144,10 @@ if (!function_exists('RandomCompat_substr')) {
                  * PHP 5.3, so we have to find the length ourselves.
                  */
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                /** @var int $length */
+>>>>>>> Update Open Social to 8.x-2.1
                 $length = RandomCompat_strlen($binary_string) - $start;
 =======
                 $length = RandomCompat_strlen($length) - $start;
@@ -158,10 +167,19 @@ if (!function_exists('RandomCompat_substr')) {
                 return '';
             }
 
+<<<<<<< HEAD
             return (string) mb_substr($binary_string, $start, $length, '8bit');
 =======
             return mb_substr($binary_string, $start, $length, '8bit');
 >>>>>>> web and vendor directory from composer install
+=======
+            return (string) mb_substr(
+                (string) $binary_string,
+                (int) $start,
+                (int) $length,
+                '8bit'
+            );
+>>>>>>> Update Open Social to 8.x-2.1
         }
 
     } else {
@@ -173,7 +191,7 @@ if (!function_exists('RandomCompat_substr')) {
          *
          * @param string $binary_string
          * @param int $start
-         * @param int $length (optional)
+         * @param int|null $length (optional)
          *
          * @throws TypeError
          *
@@ -201,6 +219,7 @@ if (!function_exists('RandomCompat_substr')) {
                 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 return (string) substr($binary_string, $start, $length);
             }
 
@@ -211,6 +230,19 @@ if (!function_exists('RandomCompat_substr')) {
 
             return substr($binary_string, $start);
 >>>>>>> web and vendor directory from composer install
+=======
+                return (string) substr(
+                    (string )$binary_string,
+                    (int) $start,
+                    (int) $length
+                );
+            }
+
+            return (string) substr(
+                (string) $binary_string,
+                (int) $start
+            );
+>>>>>>> Update Open Social to 8.x-2.1
         }
     }
 }

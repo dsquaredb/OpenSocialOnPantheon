@@ -211,10 +211,14 @@ class FlattenException extends LegacyFlattenException
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function setPrevious(self $previous)
 =======
     public function setPrevious(FlattenException $previous)
 >>>>>>> web and vendor directory from composer install
+=======
+    public function setPrevious(self $previous)
+>>>>>>> Update Open Social to 8.x-2.1
     {
         $this->previous = $previous;
     }

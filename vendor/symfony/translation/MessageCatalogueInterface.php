@@ -111,8 +111,12 @@ interface MessageCatalogueInterface
      *
      * @param MessageCatalogueInterface $catalogue A MessageCatalogueInterface instance
      */
+<<<<<<< HEAD
     public function addCatalogue(MessageCatalogueInterface $catalogue);
 >>>>>>> web and vendor directory from composer install
+=======
+    public function addCatalogue(self $catalogue);
+>>>>>>> Update Open Social to 8.x-2.1
 
     /**
      * Merges translations from the given Catalogue into the current one
@@ -126,8 +130,12 @@ interface MessageCatalogueInterface
      *
      * @param MessageCatalogueInterface $catalogue A MessageCatalogueInterface instance
      */
+<<<<<<< HEAD
     public function addFallbackCatalogue(MessageCatalogueInterface $catalogue);
 >>>>>>> web and vendor directory from composer install
+=======
+    public function addFallbackCatalogue(self $catalogue);
+>>>>>>> Update Open Social to 8.x-2.1
 
     /**
      * Gets the fallback catalogue.

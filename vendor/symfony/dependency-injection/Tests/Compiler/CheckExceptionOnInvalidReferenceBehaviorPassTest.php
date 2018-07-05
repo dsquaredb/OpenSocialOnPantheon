@@ -62,6 +62,23 @@ class CheckExceptionOnInvalidReferenceBehaviorPassTest extends \PHPUnit_Framewor
         $this->process($container);
     }
 
+<<<<<<< HEAD
+=======
+    public function testProcessDefinitionWithBindings()
+    {
+        $container = new ContainerBuilder();
+
+        $container
+            ->register('b')
+            ->setBindings(array(new BoundArgument(new Reference('a'))))
+        ;
+
+        $this->process($container);
+
+        $this->addToAssertionCount(1);
+    }
+
+>>>>>>> Update Open Social to 8.x-2.1
     private function process(ContainerBuilder $container)
     {
         $pass = new CheckExceptionOnInvalidReferenceBehaviorPass();

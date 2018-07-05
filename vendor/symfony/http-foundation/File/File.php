@@ -98,16 +98,22 @@ class File extends \SplFileInfo
         $target = $this->getTargetFile($directory, $name);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Update Open Social to 8.x-2.1
         set_error_handler(function ($type, $msg) use (&$error) { $error = $msg; });
         $renamed = rename($this->getPathname(), $target);
         restore_error_handler();
         if (!$renamed) {
             throw new FileException(sprintf('Could not move the file "%s" to "%s" (%s)', $this->getPathname(), $target, strip_tags($error)));
+<<<<<<< HEAD
 =======
         if (!@rename($this->getPathname(), $target)) {
             $error = error_get_last();
             throw new FileException(sprintf('Could not move the file "%s" to "%s" (%s)', $this->getPathname(), $target, strip_tags($error['message'])));
 >>>>>>> web and vendor directory from composer install
+=======
+>>>>>>> Update Open Social to 8.x-2.1
         }
 
         @chmod($target, 0666 & ~umask());

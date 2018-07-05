@@ -71,12 +71,75 @@ class ModerationStateFieldItemList extends EntityReferenceFieldItemList {
     if ($index !== 0) {
       throw new \InvalidArgumentException('An entity can not have multiple moderation states at the same time.');
     }
+<<<<<<< HEAD
     // Compute the value of the moderation state.
     if (!isset($this->list[$index]) || $this->list[$index]->isEmpty()) {
       $moderation_state = $this->getModerationState();
       // Do not store NULL values in the static cache.
       if ($moderation_state) {
         $this->list[$index] = $this->createItem($index, ['entity' => $moderation_state]);
+=======
+    return $this->traitGet($index);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function onChange($delta) {
+    $this->updateModeratedEntity($this->list[$delta]->value);
+
+    parent::onChange($delta);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setValue($values, $notify = TRUE) {
+    parent::setValue($values, $notify);
+
+    if (isset($this->list[0])) {
+      $this->valueComputed = TRUE;
+    }
+    // If the parent created a field item and if the parent should be notified
+    // about the change (e.g. this is not initialized with the current value),
+    // update the moderated entity.
+    if (isset($this->list[0]) && $notify) {
+      $this->updateModeratedEntity($this->list[0]->value);
+    }
+  }
+
+  /**
+   * Updates the default revision flag and the publishing status of the entity.
+   *
+   * @param string $moderation_state_id
+   *   The ID of the new moderation state.
+   */
+  protected function updateModeratedEntity($moderation_state_id) {
+    $entity = $this->getEntity();
+
+    /** @var \Drupal\content_moderation\ModerationInformationInterface $content_moderation_info */
+    $content_moderation_info = \Drupal::service('content_moderation.moderation_information');
+    $workflow = $content_moderation_info->getWorkflowForEntity($entity);
+
+    // Change the entity's default revision flag and the publishing status only
+    // if the new workflow state is a valid one.
+    if ($workflow && $workflow->getTypePlugin()->hasState($moderation_state_id)) {
+      /** @var \Drupal\content_moderation\ContentModerationState $current_state */
+      $current_state = $workflow->getTypePlugin()->getState($moderation_state_id);
+
+      // This entity is default if it is new, the default revision state, or the
+      // default revision is not published.
+      $update_default_revision = $entity->isNew()
+        || $current_state->isDefaultRevisionState()
+        || !$content_moderation_info->isDefaultRevisionPublished($entity);
+
+      $entity->isDefaultRevision($update_default_revision);
+
+      // Update publishing status if it can be updated and if it needs updating.
+      $published_state = $current_state->isPublishedState();
+      if (($entity instanceof EntityPublishedInterface) && $entity->isPublished() !== $published_state) {
+        $published_state ? $entity->setPublished() : $entity->setUnpublished();
+>>>>>>> Update Open Social to 8.x-2.1
       }
     }
 

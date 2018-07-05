@@ -13,14 +13,20 @@ class Param extends NodeAbstract
     public $byRef;
     /** @var bool Whether this is a variadic argument */
     public $variadic;
+<<<<<<< HEAD
     /** @var string Name */
     public $name;
+=======
+    /** @var Expr\Variable|Expr\Error Parameter variable */
+    public $var;
+>>>>>>> Update Open Social to 8.x-2.1
     /** @var null|Expr Default value */
     public $default;
 
     /**
      * Constructs a parameter node.
      *
+<<<<<<< HEAD
      * @param string           $name       Name
      * @param null|Expr        $default    Default value
      * @param null|string|Name $type       Typehint
@@ -29,6 +35,19 @@ class Param extends NodeAbstract
      * @param array            $attributes Additional attributes
      */
     public function __construct($name, Expr $default = null, $type = null, $byRef = false, $variadic = false, array $attributes = array()) {
+=======
+     * @param Expr\Variable|Expr\Error      $var        Parameter variable
+     * @param null|Expr                     $default    Default value
+     * @param null|string|Name|NullableType $type       Typehint
+     * @param bool                          $byRef      Whether is passed by reference
+     * @param bool                          $variadic   Whether this is a variadic argument
+     * @param array                         $attributes Additional attributes
+     */
+    public function __construct(
+        $var, Expr $default = null, $type = null,
+        bool $byRef = false, bool $variadic = false, array $attributes = []
+    ) {
+>>>>>>> Update Open Social to 8.x-2.1
         parent::__construct($attributes);
         $this->type = $type;
         $this->byRef = $byRef;

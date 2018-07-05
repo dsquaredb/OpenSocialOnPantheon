@@ -13,11 +13,13 @@ namespace Symfony\Component\HttpKernel\EventListener;
 
 use Psr\Log\LoggerInterface;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Symfony\Component\Debug\ExceptionHandler;
+=======
+>>>>>>> Update Open Social to 8.x-2.1
 use Symfony\Component\Debug\Exception\FlattenException;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 =======
 use Symfony\Component\Debug\Exception\FlattenException;
@@ -41,13 +43,13 @@ class ExceptionListener implements EventSubscriberInterface
     protected $logger;
 <<<<<<< HEAD
     protected $debug;
-    private $charset;
 
-    public function __construct($controller, LoggerInterface $logger = null, $debug = false, $charset = null)
+    public function __construct($controller, LoggerInterface $logger = null, $debug = false)
     {
         $this->controller = $controller;
         $this->logger = $logger;
         $this->debug = $debug;
+<<<<<<< HEAD
         $this->charset = $charset;
 =======
 
@@ -56,6 +58,8 @@ class ExceptionListener implements EventSubscriberInterface
         $this->controller = $controller;
         $this->logger = $logger;
 >>>>>>> web and vendor directory from composer install
+=======
+>>>>>>> Update Open Social to 8.x-2.1
     }
 
     public function onKernelException(GetResponseForExceptionEvent $event)
@@ -84,7 +88,7 @@ class ExceptionListener implements EventSubscriberInterface
                 }
             }
 
-            $prev = new \ReflectionProperty('Exception', 'previous');
+            $prev = new \ReflectionProperty($wrapper instanceof \Exception ? \Exception::class : \Error::class, 'previous');
             $prev->setAccessible(true);
             $prev->setValue($wrapper, $exception);
 
@@ -141,12 +145,17 @@ class ExceptionListener implements EventSubscriberInterface
     {
         $attributes = array(
 <<<<<<< HEAD
+<<<<<<< HEAD
             'exception' => $exception = FlattenException::create($exception),
             '_controller' => $this->controller ?: function () use ($exception) {
                 $handler = new ExceptionHandler($this->debug, $this->charset);
 
                 return new Response($handler->getHtml($exception), $exception->getStatusCode(), $exception->getHeaders());
             },
+=======
+            '_controller' => $this->controller,
+            'exception' => FlattenException::create($exception),
+>>>>>>> Update Open Social to 8.x-2.1
             'logger' => $this->logger instanceof DebugLoggerInterface ? $this->logger : null,
 =======
             '_controller' => $this->controller,

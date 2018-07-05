@@ -34,7 +34,11 @@ class MigrateVocabularyEntityFormDisplayTest extends MigrateDrupal6TestBase {
     $this->assertIdentical('options_select', $component['type']);
     $this->assertIdentical(20, $component['weight']);
     // Test the Id map.
+<<<<<<< HEAD
     $this->assertIdentical(array('node', 'article', 'default', 'tags'), $this->getMigration('d6_vocabulary_entity_form_display')->getIdMap()->lookupDestinationID(array(4, 'article')));
+=======
+    $this->assertSame(['node', 'article', 'default', 'field_tags'], $this->getMigration('d6_vocabulary_entity_form_display')->getIdMap()->lookupDestinationId([4, 'article']));
+>>>>>>> Update Open Social to 8.x-2.1
 
     // Test the term widget tags setting.
     $entity_form_display = EntityFormDisplay::load('node.story.default');

@@ -19,7 +19,11 @@ class FieldRdfaDatatypeCallbackTest extends FieldRdfaTestBase {
   /**
    * {@inheritdoc}
    */
+<<<<<<< HEAD
   public static $modules = array('text', 'filter');
+=======
+  public static $modules = ['text', 'filter', 'rdf_test'];
+>>>>>>> Update Open Social to 8.x-2.1
 
   protected function setUp() {
     parent::setUp();
@@ -30,12 +34,21 @@ class FieldRdfaDatatypeCallbackTest extends FieldRdfaTestBase {
 
     // Add the mapping.
     $mapping = rdf_get_mapping('entity_test', 'entity_test');
+<<<<<<< HEAD
     $mapping->setFieldMapping($this->fieldName, array(
       'properties' => array('schema:interactionCount'),
       'datatype_callback' => array(
         'callable' => 'Drupal\rdf\Tests\Field\TestDataConverter::convertFoo',
       ),
     ))->save();
+=======
+    $mapping->setFieldMapping($this->fieldName, [
+      'properties' => ['schema:interactionCount'],
+      'datatype_callback' => [
+        'callable' => 'Drupal\rdf_test\TestDataConverter::convertFoo',
+      ],
+    ])->save();
+>>>>>>> Update Open Social to 8.x-2.1
 
     // Set up test values.
     $this->testValue = $this->randomMachineName();

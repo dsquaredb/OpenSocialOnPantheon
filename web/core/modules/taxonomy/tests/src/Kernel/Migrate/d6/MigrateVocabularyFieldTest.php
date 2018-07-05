@@ -39,7 +39,16 @@ class MigrateVocabularyFieldTest extends MigrateDrupal6TestBase {
     $this->assertIdentical('taxonomy_term', $settings['target_type'], "Target type is correct.");
     $this->assertIdentical(1, $field_storage->getCardinality(), "Field cardinality in 1.");
 
+<<<<<<< HEAD
     $this->assertIdentical(array('node', 'tags'), $this->getMigration('d6_vocabulary_field')->getIdMap()->lookupDestinationID(array(4)), "Test IdMap");
+=======
+    $this->assertSame(['node', 'field_tags'], $this->getMigration('d6_vocabulary_field')->getIdMap()->lookupDestinationId([4]), "Test IdMap");
+
+    // Tests that a vocabulary named like a D8 base field will be migrated and
+    // prefixed with 'field_' to avoid conflicts.
+    $field_type = FieldStorageConfig::load('node.field_type');
+    $this->assertInstanceOf(FieldStorageConfig::class, $field_type);
+>>>>>>> Update Open Social to 8.x-2.1
   }
 
 }

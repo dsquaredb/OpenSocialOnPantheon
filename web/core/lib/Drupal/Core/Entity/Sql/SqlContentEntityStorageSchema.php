@@ -1400,7 +1400,7 @@ class SqlContentEntityStorageSchema implements DynamicallyFieldableEntityStorage
                 }
                 $column_schema = $original_schema[$table_name]['fields'][$column_name];
                 $column_schema['not null'] = $not_null;
-                $schema_handler->changeField($table_name, $field_name, $field_name, $column_schema);
+                $schema_handler->changeField($table_name, $column_name, $column_name, $column_schema);
               }
             }
 
@@ -1617,6 +1617,17 @@ class SqlContentEntityStorageSchema implements DynamicallyFieldableEntityStorage
 
       $schema['fields'][$schema_field_name] = $column_schema;
       $schema['fields'][$schema_field_name]['not null'] = in_array($field_name, $not_null_keys);
+<<<<<<< HEAD
+=======
+
+      // Use the initial value of the field storage, if available.
+      if ($initial_value && isset($initial_value[$field_column_name])) {
+        $schema['fields'][$schema_field_name]['initial'] = drupal_schema_get_field_value($column_schema, $initial_value[$field_column_name]);
+      }
+      if (!empty($initial_value_from_field)) {
+        $schema['fields'][$schema_field_name]['initial_from_field'] = $initial_value_from_field[$field_column_name];
+      }
+>>>>>>> Update Open Social to 8.x-2.1
     }
 
     if (!empty($field_schema['indexes'])) {

@@ -2,8 +2,7 @@
 
 namespace Drupal\address\Repository;
 
-use CommerceGuys\Intl\Country\CountryRepository as ExternalCountryRepository;
-use CommerceGuys\Addressing\Country\CountryRepositoryInterface as ExternalCountryRepositoryInterface;
+use CommerceGuys\Addressing\Country\CountryRepository as ExternalCountryRepository;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Locale\CountryManagerInterface;
@@ -13,7 +12,11 @@ use Drupal\Core\Locale\CountryManagerInterface;
  *
  * Countries are stored on disk in JSON and cached inside Drupal.
  */
+<<<<<<< HEAD
 class CountryRepository extends ExternalCountryRepository implements ExternalCountryRepositoryInterface, CountryManagerInterface {
+=======
+class CountryRepository extends ExternalCountryRepository {
+>>>>>>> Update Open Social to 8.x-2.1
 
   /**
    * The cache backend.
@@ -54,17 +57,13 @@ class CountryRepository extends ExternalCountryRepository implements ExternalCou
     else {
       $filename = $this->definitionPath . $locale . '.json';
       $this->definitions[$locale] = json_decode(file_get_contents($filename), TRUE);
-      // Merge-in base definitions.
-      $base_definitions = $this->loadBaseDefinitions();
-      foreach ($this->definitions[$locale] as $countryCode => $definition) {
-        $this->definitions[$locale][$countryCode] += $base_definitions[$countryCode];
-      }
       $this->cache->set($cache_key, $this->definitions[$locale], CacheBackendInterface::CACHE_PERMANENT, ['countries']);
     }
 
     return $this->definitions[$locale];
   }
 
+<<<<<<< HEAD
   /**
    * Loads the base country definitions.
    *
@@ -87,4 +86,6 @@ class CountryRepository extends ExternalCountryRepository implements ExternalCou
     return $this->baseDefinitions;
   }
 
+=======
+>>>>>>> Update Open Social to 8.x-2.1
 }

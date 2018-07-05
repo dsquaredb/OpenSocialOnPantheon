@@ -50,6 +50,40 @@ field_settings:
     dependencies:
       config:
         - field.storage.profile.field_profile_profile_tag
+<<<<<<< HEAD
+=======
+  uid:
+    label: Owner
+    datasource_id: 'entity:profile'
+    property_path: uid
+    type: integer
+  name:
+    label: 'Owner » User » Name'
+    datasource_id: 'entity:profile'
+    property_path: 'uid:entity:name'
+    type: text
+    dependencies:
+      module:
+        - user
+  user_status:
+    label: 'Owner » User » User status'
+    datasource_id: 'entity:profile'
+    property_path: 'uid:entity:status'
+    type: boolean
+    dependencies:
+      module:
+        - user
+datasource_settings:
+  'entity:profile':
+    plugin_id: 'entity:profile'
+    settings:
+      bundles:
+        default: true
+        selected: {  }
+    bundles:
+      default: true
+      selected: {  }
+>>>>>>> Update Open Social to 8.x-2.1
 processor_settings:
   add_url:
     plugin_id: add_url
@@ -154,6 +188,7 @@ processor_settings:
       weights:
         preprocess_index: -10
         preprocess_query: -10
+<<<<<<< HEAD
 options:
   index_directly: true
   cron_limit: 50
@@ -164,6 +199,15 @@ datasource_settings:
       bundles:
         default: true
         selected: {  }
+=======
+    all_fields: false
+  super_user:
+    weights:
+      preprocess_query: 30
+  blocked_users:
+    weights:
+      preprocess_query: -30
+>>>>>>> Update Open Social to 8.x-2.1
 tracker_settings:
   default:
     plugin_id: default

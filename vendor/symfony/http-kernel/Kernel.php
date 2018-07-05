@@ -88,11 +88,19 @@ abstract class Kernel implements KernelInterface, TerminableInterface
     private $requestStackSize = 0;
     private $resetServices = false;
 
+<<<<<<< HEAD
     const VERSION = '3.4.11';
     const VERSION_ID = 30411;
     const MAJOR_VERSION = 3;
     const MINOR_VERSION = 4;
     const RELEASE_VERSION = 11;
+=======
+    const VERSION = '3.4.12';
+    const VERSION_ID = 30412;
+    const MAJOR_VERSION = 3;
+    const MINOR_VERSION = 4;
+    const RELEASE_VERSION = 12;
+>>>>>>> Update Open Social to 8.x-2.1
     const EXTRA_VERSION = '';
 
     const END_OF_MAINTENANCE = '11/2020';
@@ -123,6 +131,7 @@ abstract class Kernel implements KernelInterface, TerminableInterface
         $this->debug = (bool) $debug;
         $this->rootDir = $this->getRootDir();
         $this->name = $this->getName();
+<<<<<<< HEAD
 
         if ($this->debug) {
             $this->startTime = microtime(true);
@@ -146,14 +155,12 @@ abstract class Kernel implements KernelInterface, TerminableInterface
     {
         @trigger_error('The '.__METHOD__.' method is deprecated since version 2.3 and will be removed in 3.0. Move your logic to the constructor method instead.', E_USER_DEPRECATED);
 >>>>>>> web and vendor directory from composer install
+=======
+>>>>>>> Update Open Social to 8.x-2.1
     }
 
     public function __clone()
     {
-        if ($this->debug) {
-            $this->startTime = microtime(true);
-        }
-
         $this->booted = false;
         $this->container = null;
 <<<<<<< HEAD
@@ -175,9 +182,15 @@ abstract class Kernel implements KernelInterface, TerminableInterface
                     $this->container->get('services_resetter')->reset();
                 }
                 $this->resetServices = false;
+                if ($this->debug) {
+                    $this->startTime = microtime(true);
+                }
             }
 
             return;
+        }
+        if ($this->debug) {
+            $this->startTime = microtime(true);
         }
         if ($this->debug && !isset($_ENV['SHELL_VERBOSITY']) && !isset($_SERVER['SHELL_VERBOSITY'])) {
             putenv('SHELL_VERBOSITY=3');

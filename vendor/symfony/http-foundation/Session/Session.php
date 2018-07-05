@@ -35,7 +35,7 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
     private $flashName;
     private $attributeName;
     private $data = array();
-    private $hasBeenStarted;
+    private $usageIndex = 0;
 
     /**
 =======
@@ -82,6 +82,8 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      */
     public function start()
     {
+        ++$this->usageIndex;
+
         return $this->storage->start();
     }
 
@@ -203,13 +205,13 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
     }
 
     /**
-     * @return bool
+     * @return int
      *
      * @internal
      */
-    public function hasBeenStarted()
+    public function getUsageIndex()
     {
-        return $this->hasBeenStarted;
+        return $this->usageIndex;
     }
 
     /**
@@ -219,6 +221,7 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      */
     public function isEmpty()
     {
+        ++$this->usageIndex;
         foreach ($this->data as &$data) {
             if (!empty($data)) {
                 return false;
@@ -246,6 +249,8 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      */
     public function migrate($destroy = false, $lifetime = null)
     {
+        ++$this->usageIndex;
+
         return $this->storage->regenerate($destroy, $lifetime);
     }
 
@@ -254,6 +259,8 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      */
     public function save()
     {
+        ++$this->usageIndex;
+
         $this->storage->save();
     }
 
@@ -294,6 +301,8 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      */
     public function getMetadataBag()
     {
+        ++$this->usageIndex;
+
         return $this->storage->getMetadataBag();
     }
 
@@ -303,10 +312,14 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
     public function registerBag(SessionBagInterface $bag)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->storage->registerBag(new SessionBagProxy($bag, $this->data, $this->hasBeenStarted));
 =======
         $this->storage->registerBag($bag);
 >>>>>>> web and vendor directory from composer install
+=======
+        $this->storage->registerBag(new SessionBagProxy($bag, $this->data, $this->usageIndex));
+>>>>>>> Update Open Social to 8.x-2.1
     }
 
     /**

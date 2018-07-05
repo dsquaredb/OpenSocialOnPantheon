@@ -84,9 +84,36 @@ class RendererTest extends RendererTestBase {
       '#pre_render' => [[new TestCallables(), 'preRenderPrinted']]
     ], ''];
     // Basic #markup based renderable array.
+<<<<<<< HEAD
     $data[] = [[
       '#markup' => 'foo',
     ], 'foo'];
+=======
+    $data[] = [
+      ['#markup' => 'foo'],
+      'foo',
+    ];
+    // Basic #markup based renderable array with value '0'.
+    $data[] = [
+      ['#markup' => '0'],
+      '0',
+    ];
+    // Basic #markup based renderable array with value 0.
+    $data[] = [
+      ['#markup' => 0],
+      '0',
+    ];
+    // Basic #markup based renderable array with value ''.
+    $data[] = [
+      ['#markup' => ''],
+      '',
+    ];
+    // Basic #markup based renderable array with value NULL.
+    $data[] = [
+      ['#markup' => NULL],
+      '',
+    ];
+>>>>>>> Update Open Social to 8.x-2.1
     // Basic #plain_text based renderable array.
     $data[] = [[
       '#plain_text' => 'foo',
@@ -97,9 +124,36 @@ class RendererTest extends RendererTestBase {
       '#markup' => 'bar',
     ], '&lt;em&gt;foo&lt;/em&gt;'];
     // Safe strings in #plain_text are still escaped.
+<<<<<<< HEAD
     $data[] = [[
       '#plain_text' => Markup::create('<em>foo</em>'),
     ], '&lt;em&gt;foo&lt;/em&gt;'];
+=======
+    $data[] = [
+      ['#plain_text' => Markup::create('<em>foo</em>')],
+      '&lt;em&gt;foo&lt;/em&gt;',
+    ];
+    // #plain_text based renderable array with value '0'.
+    $data[] = [
+      ['#plain_text' => '0'],
+      '0',
+    ];
+    // #plain_text based renderable array with value 0.
+    $data[] = [
+      ['#plain_text' => 0],
+      '0',
+    ];
+    // #plain_text based renderable array with value ''.
+    $data[] = [
+      ['#plain_text' => ''],
+      '',
+    ];
+    // #plain_text based renderable array with value NULL.
+    $data[] = [
+      ['#plain_text' => NULL],
+      '',
+    ];
+>>>>>>> Update Open Social to 8.x-2.1
     // Renderable child element.
     $data[] = [[
       'child' => ['#markup' => 'bar'],

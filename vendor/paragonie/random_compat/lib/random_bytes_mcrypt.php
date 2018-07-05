@@ -6,11 +6,15 @@
  * The MIT License (MIT)
 <<<<<<< HEAD
  *
+<<<<<<< HEAD
  * Copyright (c) 2015 - 2017 Paragon Initiative Enterprises
 =======
  * 
  * Copyright (c) 2015 Paragon Initiative Enterprises
 >>>>>>> web and vendor directory from composer install
+=======
+ * Copyright (c) 2015 - 2018 Paragon Initiative Enterprises
+>>>>>>> Update Open Social to 8.x-2.1
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -48,6 +52,7 @@ if (!is_callable('random_bytes')) {
     function random_bytes($bytes)
     {
         try {
+            /** @var int $bytes */
             $bytes = RandomCompat_intval($bytes);
         } catch (TypeError $ex) {
             throw new TypeError(
@@ -61,10 +66,11 @@ if (!is_callable('random_bytes')) {
             );
         }
 
-        $buf = @mcrypt_create_iv($bytes, MCRYPT_DEV_URANDOM);
+        /** @var string|bool $buf */
+        $buf = @mcrypt_create_iv((int) $bytes, (int) MCRYPT_DEV_URANDOM);
         if (
-            $buf !== false
-            &&
+            is_string($buf)
+                &&
             RandomCompat_strlen($buf) === $bytes
         ) {
             /**

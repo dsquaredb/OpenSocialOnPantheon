@@ -163,7 +163,15 @@ class ModerationStateWidget extends OptionsSelectWidget implements ContainerFact
     $target_states = [];
     /** @var \Drupal\content_moderation\Entity\ModerationStateTransition $transition */
     foreach ($transitions as $transition) {
+<<<<<<< HEAD
       $target_states[$transition->getToState()] = $transition->label();
+=======
+      $transition_to_state = $transition->to();
+      $transition_labels[$transition_to_state->id()] = $transition_to_state->label();
+      if ($default->id() === $transition_to_state->id()) {
+        $default_value = $default->id();
+      }
+>>>>>>> Update Open Social to 8.x-2.1
     }
 
     // @todo https://www.drupal.org/node/2779933 write a test for this.

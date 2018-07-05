@@ -1919,7 +1919,7 @@ class ContainerBuilder extends Container implements TaggedContainerInterface
      */
     public function log(CompilerPassInterface $pass, $message)
     {
-        $this->getCompiler()->log($pass, $message);
+        $this->getCompiler()->log($pass, $this->resolveEnvPlaceholders($message));
     }
 
     /**

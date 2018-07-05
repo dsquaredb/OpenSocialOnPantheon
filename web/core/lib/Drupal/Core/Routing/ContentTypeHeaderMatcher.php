@@ -16,9 +16,16 @@ class ContentTypeHeaderMatcher implements RouteFilterInterface {
    * {@inheritdoc}
    */
   public function filter(RouteCollection $collection, Request $request) {
+<<<<<<< HEAD
     // The Content-type header does not make sense on GET requests, because GET
     // requests do not carry any content. Nothing to filter in this case.
     if ($request->isMethod('GET')) {
+=======
+    // The Content-type header does not make sense on GET or DELETE requests,
+    // because they do not carry any content. Nothing to filter in this case.
+    // Same for all other safe methods.
+    if ($request->isMethodSafe(FALSE) || $request->isMethod('DELETE')) {
+>>>>>>> Update Open Social to 8.x-2.1
       return $collection;
     }
 

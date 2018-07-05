@@ -3,6 +3,7 @@ type: module
 description: 'Share buttons by AddToAny, including the AddToAny universal sharing button, Facebook, Twitter, Google+, Pinterest, and over 100 more on the <a href="https://www.addtoany.com/" target="_blank">AddToAny</a> platform.'
 package: Other
 # core: 8.x
+<<<<<<< HEAD
 configure: addtoany.admin_settings
 
 # Information added by Drupal.org packaging script on 2016-10-15
@@ -10,3 +11,14 @@ version: '8.x-1.6'
 core: '8.x'
 project: 'addtoany'
 datestamp: 1476496757
+=======
+dependencies:
+  - drupal:node
+configure: addtoany.admin_settings
+
+# Information added by Drupal.org packaging script on 2018-03-07
+version: '8.x-1.9'
+core: '8.x'
+project: 'addtoany'
+datestamp: 1520385667
+>>>>>>> Update Open Social to 8.x-2.1

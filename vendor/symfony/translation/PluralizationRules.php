@@ -112,9 +112,13 @@ class PluralizationRules
             case 'nn':
             case 'no':
 <<<<<<< HEAD
+<<<<<<< HEAD
             case 'oc':
 =======
 >>>>>>> web and vendor directory from composer install
+=======
+            case 'oc':
+>>>>>>> Update Open Social to 8.x-2.1
             case 'om':
             case 'or':
             case 'pa':

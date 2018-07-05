@@ -38,7 +38,11 @@ class ViewExecutableTest extends ViewsKernelTestBase {
    *
    * @var array
    */
+<<<<<<< HEAD
   public static $testViews = array('test_destroy', 'test_executable_displays');
+=======
+  public static $testViews = ['test_destroy', 'test_executable_displays', 'test_argument_dependency'];
+>>>>>>> Update Open Social to 8.x-2.1
 
   /**
    * Properties that should be stored in the configuration.
@@ -487,6 +491,21 @@ class ViewExecutableTest extends ViewsKernelTestBase {
     $this->assertIdentical($unserialized->current_display, 'page_1', 'The expected display was set on the unserialized view.');
     $this->assertIdentical($unserialized->args, ['test'], 'The expected argument was set on the unserialized view.');
     $this->assertIdentical($unserialized->getCurrentPage(), 2, 'The expected current page was set on the unserialized view.');
+  }
+
+  /**
+   * Tests if argument overrides by validators are propagated to tokens.
+   */
+  public function testArgumentValidatorValueOverride() {
+    $view = Views::getView('test_argument_dependency');
+    $view->setDisplay('page_1');
+    $view->setArguments(['1', 'this value should be replaced']);
+    $view->execute();
+    $expected = [
+      '{{ arguments.uid }}' => '1',
+      '{{ raw_arguments.uid }}' => '1',
+    ];
+    $this->assertEquals($expected, $view->build_info['substitutions']);
   }
 
 }

@@ -35,6 +35,7 @@ class NodeModerationHandler extends ModerationHandler {
    * {@inheritdoc}
    */
   public function enforceRevisionsBundleFormAlter(array &$form, FormStateInterface $form_state, $form_id) {
+<<<<<<< HEAD
     /* @var \Drupal\node\Entity\NodeType $entity */
     $entity = $form_state->getFormObject()->getEntity();
 
@@ -61,6 +62,11 @@ class NodeModerationHandler extends ModerationHandler {
     // First condition is needed so you can add a translation.
     // Second condition checks to see if the published status has changed.
     return $entity->isDefaultTranslation() || $entity->isPublished() !== $published_state;
+=======
+    // Force the revision checkbox on.
+    $form['workflow']['options']['#value']['revision'] = 'revision';
+    $form['workflow']['options']['revision']['#disabled'] = TRUE;
+>>>>>>> Update Open Social to 8.x-2.1
   }
 
 }

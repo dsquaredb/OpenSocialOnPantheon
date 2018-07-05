@@ -13,12 +13,17 @@ Bug reports, feature suggestions and latest developments:
 http://drupal.org/project/issues/admin_toolbar
 
 
+<<<<<<< HEAD
 ---REQUIREMENTS---
 
 *Admin Toolbar.
 
 
 ---INSTALLATION---
+=======
+INSTALLATION
+------------
+>>>>>>> Update Open Social to 8.x-2.1
 
 Install as usual.
 

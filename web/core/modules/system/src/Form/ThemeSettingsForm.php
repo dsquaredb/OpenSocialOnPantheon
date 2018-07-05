@@ -345,6 +345,7 @@ class ThemeSettingsForm extends ConfigFormBase {
     parent::validateForm($form, $form_state);
 
     if ($this->moduleHandler->moduleExists('file')) {
+<<<<<<< HEAD
       // Handle file uploads.
       $validators = array('file_validate_is_image' => array());
 
@@ -352,10 +353,17 @@ class ThemeSettingsForm extends ConfigFormBase {
       $file = file_save_upload('logo_upload', $validators, FALSE, 0);
       if (isset($file)) {
         // File upload was attempted.
+=======
+
+      // Check for a new uploaded logo.
+      if (isset($form['logo'])) {
+        $file = _file_save_upload_from_form($form['logo']['settings']['logo_upload'], $form_state, 0);
+>>>>>>> Update Open Social to 8.x-2.1
         if ($file) {
           // Put the temporary file in form_values so we can save it on submit.
           $form_state->setValue('logo_upload', $file);
         }
+<<<<<<< HEAD
         else {
           // File upload failed.
           $form_state->setErrorByName('logo_upload', $this->t('The logo could not be uploaded.'));
@@ -368,14 +376,24 @@ class ThemeSettingsForm extends ConfigFormBase {
       $file = file_save_upload('favicon_upload', $validators, FALSE, 0);
       if (isset($file)) {
         // File upload was attempted.
+=======
+      }
+
+      // Check for a new uploaded favicon.
+      if (isset($form['favicon'])) {
+        $file = _file_save_upload_from_form($form['favicon']['settings']['favicon_upload'], $form_state, 0);
+>>>>>>> Update Open Social to 8.x-2.1
         if ($file) {
           // Put the temporary file in form_values so we can save it on submit.
           $form_state->setValue('favicon_upload', $file);
         }
+<<<<<<< HEAD
         else {
           // File upload failed.
           $form_state->setErrorByName('favicon_upload', $this->t('The favicon could not be uploaded.'));
         }
+=======
+>>>>>>> Update Open Social to 8.x-2.1
       }
 
       // When intending to use the default logo, unset the logo_path.

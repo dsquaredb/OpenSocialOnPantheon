@@ -147,10 +147,14 @@ class RouteCollectionBuilder
      * @param RouteCollectionBuilder $builder
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function mount($prefix, self $builder)
 =======
     public function mount($prefix, RouteCollectionBuilder $builder)
 >>>>>>> web and vendor directory from composer install
+=======
+    public function mount($prefix, self $builder)
+>>>>>>> Update Open Social to 8.x-2.1
     {
         $builder->prefix = trim(trim($prefix), '/');
         $this->routes[] = $builder;
@@ -288,10 +292,13 @@ class RouteCollectionBuilder
      * Adds a resource for this collection.
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      * @param ResourceInterface $resource
      *
 >>>>>>> web and vendor directory from composer install
+=======
+>>>>>>> Update Open Social to 8.x-2.1
      * @return $this
      */
     private function addResource(ResourceInterface $resource)

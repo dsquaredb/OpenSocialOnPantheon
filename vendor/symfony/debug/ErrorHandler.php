@@ -492,17 +492,23 @@ class ErrorHandler
         $silenced = 0 === ($level & $type);
         // Strong errors are not authorized to be silenced.
         $level |= E_RECOVERABLE_ERROR | E_USER_ERROR | E_DEPRECATED | E_USER_DEPRECATED;
+<<<<<<< HEAD
 =======
     public function handleError($type, $message, $file, $line, array $context, array $backtrace = null)
     {
         $level = error_reporting() | E_RECOVERABLE_ERROR | E_USER_ERROR | E_DEPRECATED | E_USER_DEPRECATED;
 >>>>>>> web and vendor directory from composer install
+=======
+>>>>>>> Update Open Social to 8.x-2.1
         $log = $this->loggedErrors & $type;
         $throw = $this->thrownErrors & $type & $level;
         $type &= $level | $this->screamedErrors;
 
         if (!$type || (!$log && !$throw)) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Update Open Social to 8.x-2.1
             return !$silenced && $type && $log;
         }
         $scope = $this->scopedErrors & $type;
@@ -712,6 +718,7 @@ class ErrorHandler
         }
 
         return !$silenced && $type && $log;
+<<<<<<< HEAD
 =======
             self::$stackedErrors[] = array($this->loggers[$type][0], ($type & $level) ? $this->loggers[$type][1] : LogLevel::DEBUG, $message, $e);
         } else {
@@ -732,6 +739,8 @@ class ErrorHandler
 
         return $type && $log;
 >>>>>>> web and vendor directory from composer install
+=======
+>>>>>>> Update Open Social to 8.x-2.1
     }
 
     /**

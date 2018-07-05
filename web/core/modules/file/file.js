@@ -172,6 +172,7 @@
     triggerUploadButton: function (event) {
       $(event.target).closest('.js-form-managed-file').find('.js-form-submit').trigger('mousedown');
     },
+<<<<<<< HEAD
 
     /**
      * Prevent file uploads when using buttons not intended to upload.
@@ -188,6 +189,10 @@
       if (!$clickedButton.length) {
         return;
       }
+=======
+    disableFields: function disableFields(event) {
+      var $clickedButton = $(this);
+>>>>>>> Update Open Social to 8.x-2.1
 
       // Check if we're working with an "Upload" button.
       var $enabledFields = [];

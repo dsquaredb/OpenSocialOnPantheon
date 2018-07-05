@@ -21,8 +21,12 @@ class AccountHeaderBlock extends BlockBase {
   public function build() {
     $account = \Drupal::currentUser();
     if ($account->id() !== 0) {
+<<<<<<< HEAD
       $account_name = $account->getAccountName();
       $account_uid = $account->id();
+=======
+      $account_name = $account->getDisplayName();
+>>>>>>> Update Open Social to 8.x-2.1
 
       $links = [
         'add' => array(

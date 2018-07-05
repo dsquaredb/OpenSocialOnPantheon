@@ -52,9 +52,6 @@ class EntityReference extends DisplayPluginBase {
     $options['row']['contains']['type'] = array('default' => 'entity_reference');
     $options['defaults']['default']['row'] = FALSE;
 
-    // Make sure the query is not cached.
-    $options['defaults']['default']['cache'] = FALSE;
-
     // Set the display title to an empty string (not used in this display type).
     $options['title']['default'] = '';
     $options['defaults']['default']['title'] = FALSE;
@@ -63,13 +60,12 @@ class EntityReference extends DisplayPluginBase {
   }
 
   /**
-   * Overrides \Drupal\views\Plugin\views\display\DisplayPluginBase::optionsSummary().
-   *
-   * Disable 'cache' and 'title' so it won't be changed.
+   * {@inheritdoc}
    */
   public function optionsSummary(&$categories, &$options) {
     parent::optionsSummary($categories, $options);
-    unset($options['query']);
+    // Disable 'title' so it won't be changed from the default set in
+    // \Drupal\views\Plugin\views\display\EntityReference::defineOptions.
     unset($options['title']);
   }
 

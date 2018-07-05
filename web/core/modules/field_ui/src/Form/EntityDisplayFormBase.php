@@ -203,7 +203,12 @@ abstract class EntityDisplayFormBase extends EntityForm {
         if ($enabled_displays = array_filter($this->getDisplayStatuses())) {
           $default = array_keys(array_intersect_key($display_mode_options, $enabled_displays));
         }
+<<<<<<< HEAD
         $form['modes']['display_modes_custom'] = array(
+=======
+        natcasesort($display_mode_options);
+        $form['modes']['display_modes_custom'] = [
+>>>>>>> Update Open Social to 8.x-2.1
           '#type' => 'checkboxes',
           '#title' => $this->t('Use custom display settings for the following @display_context modes', ['@display_context' => $this->displayContext]),
           '#options' => $display_mode_options,
@@ -680,7 +685,7 @@ abstract class EntityDisplayFormBase extends EntityForm {
    *
    * @return array
    *
-   * @see drupal_render()
+   * @see \Drupal\Core\Render\RendererInterface::render()
    * @see \Drupal\Core\Render\Element\Table::preRenderTable()
    *
    * @deprecated in Drupal 8.0.0, will be removed before Drupal 9.0.0.

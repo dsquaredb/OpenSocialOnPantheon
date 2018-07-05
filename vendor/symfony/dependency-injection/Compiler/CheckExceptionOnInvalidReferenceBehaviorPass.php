@@ -12,6 +12,9 @@
 namespace Symfony\Component\DependencyInjection\Compiler;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Update Open Social to 8.x-2.1
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Reference;

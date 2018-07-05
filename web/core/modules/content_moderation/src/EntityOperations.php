@@ -209,6 +209,15 @@ class EntityOperations implements ContainerInjectionInterface {
     }
 
     // Create the ContentModerationState entity for the inserted entity.
+<<<<<<< HEAD
+=======
+    $moderation_state = $entity->moderation_state->value;
+    /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
+    if (!$moderation_state) {
+      $moderation_state = $workflow->getTypePlugin()->getInitialState($entity)->id();
+    }
+
+>>>>>>> Update Open Social to 8.x-2.1
     $content_moderation_state->set('content_entity_revision_id', $entity_revision_id);
     $content_moderation_state->set('moderation_state', $moderation_state);
     ContentModerationState::updateOrCreateFromEntity($content_moderation_state);

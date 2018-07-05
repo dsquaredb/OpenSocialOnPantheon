@@ -2,7 +2,11 @@
   "name": "cweagans/composer-patches",
   "description": "Provides a way to patch Composer packages.",
   "minimum-stability": "dev",
+<<<<<<< HEAD
   "license": "BSD",
+=======
+  "license": "BSD-3-Clause",
+>>>>>>> Update Open Social to 8.x-2.1
   "type": "composer-plugin",
   "extra": {
     "class": "cweagans\\Composer\\Patches"

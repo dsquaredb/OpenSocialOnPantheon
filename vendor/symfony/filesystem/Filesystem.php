@@ -21,6 +21,8 @@ use Symfony\Component\Filesystem\Exception\FileNotFoundException;
  */
 class Filesystem
 {
+    private static $lastError;
+
     /**
      * Copies a file.
      *
@@ -92,12 +94,11 @@ class Filesystem
                 continue;
             }
 
-            if (true !== @mkdir($dir, $mode, true)) {
-                $error = error_get_last();
+            if (!self::box('mkdir', $dir, $mode, true)) {
                 if (!is_dir($dir)) {
                     // The directory was not created by a concurrent process. Let's throw an exception with a developer friendly error message if we have one
-                    if ($error) {
-                        throw new IOException(sprintf('Failed to create "%s": %s.', $dir, $error['message']), 0, null, $dir);
+                    if (self::$lastError) {
+                        throw new IOException(sprintf('Failed to create "%s": %s.', $dir, self::$lastError), 0, null, $dir);
                     }
                     throw new IOException(sprintf('Failed to create "%s"', $dir), 0, null, $dir);
                 }
@@ -164,20 +165,17 @@ class Filesystem
         foreach ($files as $file) {
             if (is_link($file)) {
                 // See https://bugs.php.net/52176
-                if (!@(unlink($file) || '\\' !== DIRECTORY_SEPARATOR || rmdir($file)) && file_exists($file)) {
-                    $error = error_get_last();
-                    throw new IOException(sprintf('Failed to remove symlink "%s": %s.', $file, $error['message']));
+                if (!(self::box('unlink', $file) || '\\' !== DIRECTORY_SEPARATOR || self::box('rmdir', $file)) && file_exists($file)) {
+                    throw new IOException(sprintf('Failed to remove symlink "%s": %s.', $file, self::$lastError));
                 }
             } elseif (is_dir($file)) {
                 $this->remove(new \FilesystemIterator($file, \FilesystemIterator::CURRENT_AS_PATHNAME | \FilesystemIterator::SKIP_DOTS));
 
-                if (!@rmdir($file) && file_exists($file)) {
-                    $error = error_get_last();
-                    throw new IOException(sprintf('Failed to remove directory "%s": %s.', $file, $error['message']));
+                if (!self::box('rmdir', $file) && file_exists($file)) {
+                    throw new IOException(sprintf('Failed to remove directory "%s": %s.', $file, self::$lastError));
                 }
-            } elseif (!@unlink($file) && file_exists($file)) {
-                $error = error_get_last();
-                throw new IOException(sprintf('Failed to remove file "%s": %s.', $file, $error['message']));
+            } elseif (!self::box('unlink', $file) && file_exists($file)) {
+                throw new IOException(sprintf('Failed to remove file "%s": %s.', $file, self::$lastError));
             }
         }
     }
@@ -322,21 +320,104 @@ class Filesystem
 
         $this->mkdir(dirname($targetDir));
 
-        $ok = false;
         if (is_link($targetDir)) {
-            if (readlink($targetDir) != $originDir) {
-                $this->remove($targetDir);
-            } else {
-                $ok = true;
+            if (readlink($targetDir) === $originDir) {
+                return;
             }
+            $this->remove($targetDir);
         }
 
+<<<<<<< HEAD
         if (!$ok && true !== @symlink($originDir, $targetDir)) {
             $report = error_get_last();
             if (is_array($report)) {
                 if ('\\' === DIRECTORY_SEPARATOR && false !== strpos($report['message'], 'error code(1314)')) {
                     throw new IOException('Unable to create symlink due to error code 1314: \'A required privilege is not held by the client\'. Do you have the required Administrator-rights?', 0, null, $targetDir);
                 }
+=======
+        if (!self::box('symlink', $originDir, $targetDir)) {
+            $this->linkException($originDir, $targetDir, 'symbolic');
+        }
+    }
+
+    /**
+     * Creates a hard link, or several hard links to a file.
+     *
+     * @param string          $originFile  The original file
+     * @param string|string[] $targetFiles The target file(s)
+     *
+     * @throws FileNotFoundException When original file is missing or not a file
+     * @throws IOException           When link fails, including if link already exists
+     */
+    public function hardlink($originFile, $targetFiles)
+    {
+        if (!$this->exists($originFile)) {
+            throw new FileNotFoundException(null, 0, null, $originFile);
+        }
+
+        if (!is_file($originFile)) {
+            throw new FileNotFoundException(sprintf('Origin file "%s" is not a file', $originFile));
+        }
+
+        foreach ($this->toIterable($targetFiles) as $targetFile) {
+            if (is_file($targetFile)) {
+                if (fileinode($originFile) === fileinode($targetFile)) {
+                    continue;
+                }
+                $this->remove($targetFile);
+            }
+
+            if (!self::box('link', $originFile, $targetFile)) {
+                $this->linkException($originFile, $targetFile, 'hard');
+            }
+        }
+    }
+
+    /**
+     * @param string $origin
+     * @param string $target
+     * @param string $linkType Name of the link type, typically 'symbolic' or 'hard'
+     */
+    private function linkException($origin, $target, $linkType)
+    {
+        if (self::$lastError) {
+            if ('\\' === DIRECTORY_SEPARATOR && false !== strpos(self::$lastError, 'error code(1314)')) {
+                throw new IOException(sprintf('Unable to create %s link due to error code 1314: \'A required privilege is not held by the client\'. Do you have the required Administrator-rights?', $linkType), 0, null, $target);
+            }
+        }
+        throw new IOException(sprintf('Failed to create %s link from "%s" to "%s".', $linkType, $origin, $target), 0, null, $target);
+    }
+
+    /**
+     * Resolves links in paths.
+     *
+     * With $canonicalize = false (default)
+     *      - if $path does not exist or is not a link, returns null
+     *      - if $path is a link, returns the next direct target of the link without considering the existence of the target
+     *
+     * With $canonicalize = true
+     *      - if $path does not exist, returns null
+     *      - if $path exists, returns its absolute fully resolved final version
+     *
+     * @param string $path         A filesystem path
+     * @param bool   $canonicalize Whether or not to return a canonicalized path
+     *
+     * @return string|null
+     */
+    public function readlink($path, $canonicalize = false)
+    {
+        if (!$canonicalize && !is_link($path)) {
+            return;
+        }
+
+        if ($canonicalize) {
+            if (!$this->exists($path)) {
+                return;
+            }
+
+            if ('\\' === DIRECTORY_SEPARATOR) {
+                $path = readlink($path);
+>>>>>>> Update Open Social to 8.x-2.1
             }
             throw new IOException(sprintf('Failed to create symbolic link from "%s" to "%s".', $originDir, $targetDir), 0, null, $targetDir);
         }
@@ -596,5 +677,30 @@ class Filesystem
         $components = explode('://', $filename, 2);
 
         return 2 === count($components) ? array($components[0], $components[1]) : array(null, $components[0]);
+    }
+
+    private static function box($func)
+    {
+        self::$lastError = null;
+        \set_error_handler(__CLASS__.'::handleError');
+        try {
+            $result = \call_user_func_array($func, \array_slice(\func_get_args(), 1));
+            \restore_error_handler();
+
+            return $result;
+        } catch (\Throwable $e) {
+        } catch (\Exception $e) {
+        }
+        \restore_error_handler();
+
+        throw $e;
+    }
+
+    /**
+     * @internal
+     */
+    public static function handleError($type, $msg)
+    {
+        self::$lastError = $msg;
     }
 }

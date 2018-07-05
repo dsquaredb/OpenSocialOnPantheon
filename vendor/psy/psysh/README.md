@@ -148,6 +148,7 @@ return array(
 
 The PsySH `doc` command is great for documenting source code, but you'll need a little something extra for PHP core documentation. Download one of the following PHP Manual files and drop it in `~/.local/share/psysh/`, `/usr/local/share/psysh/` or `C:\Users\{USER}\AppData\Roaming\PsySH\` on Windows:
 
+<<<<<<< HEAD
  * **[English](http://psysh.org/manual/en/php_manual.sqlite)**
  * [Brazilian Portuguese](http://psysh.org/manual/pt_BR/php_manual.sqlite)
  * [Chinese (Simplified)](http://psysh.org/manual/zh/php_manual.sqlite)
@@ -161,6 +162,11 @@ The PsySH `doc` command is great for documenting source code, but you'll need a 
  * [Persian](http://psysh.org/manual/fa/php_manual.sqlite)
  * [Spanish](http://psysh.org/manual/es/php_manual.sqlite)
  * [Turkish](http://psysh.org/manual/tr/php_manual.sqlite)
+=======
+### [💾 Installation](https://github.com/bobthecow/psysh/wiki/Installation)
+ * [📕 PHP manual installation](https://github.com/bobthecow/psysh/wiki/PHP-manual)
+ * <a class="internal present" href="https://github.com/bobthecow/psysh/wiki/Windows"><img src="https://user-images.githubusercontent.com/53660/40878809-407e8368-664b-11e8-8455-f11602c41dfe.png" width="18"> Windows</a>
+>>>>>>> Update Open Social to 8.x-2.1
 
 
 

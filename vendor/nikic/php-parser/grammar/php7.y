@@ -173,6 +173,8 @@ non_empty_statement:
           { $$ = Stmt\Foreach_[$3, $5[0], ['keyVar' => null, 'byRef' => $5[1], 'stmts' => $7]]; }
     | T_FOREACH '(' expr T_AS variable T_DOUBLE_ARROW foreach_variable ')' foreach_statement
           { $$ = Stmt\Foreach_[$3, $7[0], ['keyVar' => $5, 'byRef' => $7[1], 'stmts' => $9]]; }
+    | T_FOREACH '(' expr error ')' foreach_statement
+          { $$ = Stmt\Foreach_[$3, new Expr\Error(stackAttributes(#4)), ['stmts' => $6]]; }
     | T_DECLARE '(' declare_list ')' declare_statement      { $$ = Stmt\Declare_[$3, $5]; }
     | T_TRY '{' inner_statement_list '}' catches optional_finally
           { $$ = Stmt\TryCatch[$3, $5, $6]; }
@@ -220,9 +222,19 @@ optional_ellipsis:
     | T_ELLIPSIS                                            { $$ = true; }
 ;
 
+block_or_error:
+      '{' inner_statement_list '}'                          { $$ = $2; }
+    | error                                                 { $$ = []; }
+;
+
 function_declaration_statement:
+<<<<<<< HEAD
     T_FUNCTION optional_ref T_STRING '(' parameter_list ')' optional_return_type '{' inner_statement_list '}'
         { $$ = Stmt\Function_[$3, ['byRef' => $2, 'params' => $5, 'returnType' => $7, 'stmts' => $9]]; }
+=======
+    T_FUNCTION optional_ref identifier '(' parameter_list ')' optional_return_type block_or_error
+        { $$ = Stmt\Function_[$3, ['byRef' => $2, 'params' => $5, 'returnType' => $7, 'stmts' => $8]]; }
+>>>>>>> Update Open Social to 8.x-2.1
 ;
 
 class_declaration_statement:
@@ -357,10 +369,24 @@ non_empty_parameter_list:
 ;
 
 parameter:
+<<<<<<< HEAD
       optional_param_type optional_ref optional_ellipsis T_VARIABLE
           { $$ = Node\Param[parseVar($4), null, $1, $2, $3]; }
     | optional_param_type optional_ref optional_ellipsis T_VARIABLE '=' expr
           { $$ = Node\Param[parseVar($4), $6, $1, $2, $3]; }
+=======
+      optional_param_type optional_ref optional_ellipsis plain_variable
+          { $$ = Node\Param[$4, null, $1, $2, $3]; $this->checkParam($$); }
+    | optional_param_type optional_ref optional_ellipsis plain_variable '=' expr
+          { $$ = Node\Param[$4, $6, $1, $2, $3]; $this->checkParam($$); }
+    | optional_param_type optional_ref optional_ellipsis error
+          { $$ = Node\Param[Expr\Error[], null, $1, $2, $3]; }
+;
+
+type_expr:
+      type                                                  { $$ = $1; }
+    | '?' type                                              { $$ = Node\NullableType[$2]; }
+>>>>>>> Update Open Social to 8.x-2.1
 ;
 
 type:
@@ -415,16 +441,28 @@ static_var:
 ;
 
 class_statement_list:
-      class_statement_list class_statement                  { push($1, $2); }
+      class_statement_list class_statement                  { if ($2 !== null) { push($1, $2); } }
     | /* empty */                                           { init(); }
 ;
 
 class_statement:
+<<<<<<< HEAD
       variable_modifiers property_declaration_list ';'      { $$ = Stmt\Property[$1, $2]; }
     | T_CONST class_const_list ';'                          { $$ = Stmt\ClassConst[$2]; }
     | method_modifiers T_FUNCTION optional_ref identifier '(' parameter_list ')' optional_return_type method_body
           { $$ = Stmt\ClassMethod[$4, ['type' => $1, 'byRef' => $3, 'params' => $6, 'returnType' => $8, 'stmts' => $9]]; }
     | T_USE name_list trait_adaptations                     { $$ = Stmt\TraitUse[$2, $3]; }
+=======
+      variable_modifiers property_declaration_list ';'
+          { $$ = Stmt\Property[$1, $2]; $this->checkProperty($$, #1); }
+    | method_modifiers T_CONST class_const_list ';'
+          { $$ = Stmt\ClassConst[$3, $1]; $this->checkClassConst($$, #1); }
+    | method_modifiers T_FUNCTION optional_ref identifier_ex '(' parameter_list ')' optional_return_type method_body
+          { $$ = Stmt\ClassMethod[$4, ['type' => $1, 'byRef' => $3, 'params' => $6, 'returnType' => $8, 'stmts' => $9]];
+            $this->checkClassMethod($$, #1); }
+    | T_USE class_name_list trait_adaptations               { $$ = Stmt\TraitUse[$2, $3]; }
+    | error                                                 { $$ = null; /* will be skipped */ }
+>>>>>>> Update Open Social to 8.x-2.1
 ;
 
 trait_adaptations:
@@ -460,7 +498,7 @@ trait_method_reference:
 
 method_body:
       ';' /* abstract method */                             { $$ = null; }
-    | '{' inner_statement_list '}'                          { $$ = $2; }
+    | block_or_error                                        { $$ = $1; }
 ;
 
 variable_modifiers:
@@ -592,11 +630,11 @@ expr:
     | T_YIELD expr T_DOUBLE_ARROW expr                      { $$ = Expr\Yield_[$4, $2]; }
     | T_YIELD_FROM expr                                     { $$ = Expr\YieldFrom[$2]; }
     | T_FUNCTION optional_ref '(' parameter_list ')' lexical_vars optional_return_type
-      '{' inner_statement_list '}'
-          { $$ = Expr\Closure[['static' => false, 'byRef' => $2, 'params' => $4, 'uses' => $6, 'returnType' => $7, 'stmts' => $9]]; }
+      block_or_error
+          { $$ = Expr\Closure[['static' => false, 'byRef' => $2, 'params' => $4, 'uses' => $6, 'returnType' => $7, 'stmts' => $8]]; }
     | T_STATIC T_FUNCTION optional_ref '(' parameter_list ')' lexical_vars optional_return_type
-      '{' inner_statement_list '}'
-          { $$ = Expr\Closure[['static' => true, 'byRef' => $3, 'params' => $5, 'uses' => $7, 'returnType' => $8, 'stmts' => $10]]; }
+      block_or_error
+          { $$ = Expr\Closure[['static' => true, 'byRef' => $3, 'params' => $5, 'uses' => $7, 'returnType' => $8, 'stmts' => $9]]; }
 ;
 
 anonymous_class:

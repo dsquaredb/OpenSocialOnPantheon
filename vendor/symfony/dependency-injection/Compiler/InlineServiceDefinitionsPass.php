@@ -189,11 +189,15 @@ class InlineServiceDefinitionsPass implements RepeatablePassInterface
      */
     private function isInlineableDefinition($id, Definition $definition, ServiceReferenceGraph $graph)
     {
+        if ($definition->getErrors() || $definition->isDeprecated() || $definition->isLazy() || $definition->isSynthetic()) {
+            return false;
+        }
+
         if (!$definition->isShared()) {
             return true;
         }
 
-        if ($definition->isDeprecated() || $definition->isPublic() || $definition->isPrivate() || $definition->isLazy()) {
+        if ($definition->isPublic() || $definition->isPrivate()) {
             return false;
         }
 
@@ -245,6 +249,7 @@ class InlineServiceDefinitionsPass implements RepeatablePassInterface
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         return !$ids || $this->container->getDefinition($ids[0])->isShared();
 =======
         if (count($ids) > 1 && $definition->getFactoryService(false)) {
@@ -253,5 +258,8 @@ class InlineServiceDefinitionsPass implements RepeatablePassInterface
 
         return $container->getDefinition(reset($ids))->getScope(false) === $definition->getScope(false);
 >>>>>>> web and vendor directory from composer install
+=======
+        return !$ids || $this->container->getDefinition($ids[0])->isShared();
+>>>>>>> Update Open Social to 8.x-2.1
     }
 }

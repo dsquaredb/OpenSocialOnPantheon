@@ -56,6 +56,15 @@ class VocabularyListBuilder extends DraggableListBuilder {
    */
   public function buildHeader() {
     $header['label'] = t('Vocabulary name');
+<<<<<<< HEAD
+=======
+    $header['description'] = t('Description');
+
+    if ($this->currentUser->hasPermission('administer vocabularies') && !empty($this->weightKey)) {
+      $header['weight'] = t('Weight');
+    }
+
+>>>>>>> Update Open Social to 8.x-2.1
     return $header + parent::buildHeader();
   }
 

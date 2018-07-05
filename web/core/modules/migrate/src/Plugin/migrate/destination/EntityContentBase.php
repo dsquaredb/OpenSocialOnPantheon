@@ -88,7 +88,7 @@ class EntityContentBase extends Entity {
     }
 
     $ids = $this->save($entity, $old_destination_id_values);
-    if (!empty($this->configuration['translations'])) {
+    if ($this->isTranslationDestination()) {
       $ids[] = $entity->language()->getId();
     }
     return $ids;
@@ -124,15 +124,23 @@ class EntityContentBase extends Entity {
    * {@inheritdoc}
    */
   public function getIds() {
+    $ids = [];
+
     $id_key = $this->getKey('id');
     $ids[$id_key]['type'] = 'integer';
 
     if ($this->isTranslationDestination()) {
+<<<<<<< HEAD
       if ($key = $this->getKey('langcode')) {
         $ids[$key]['type'] = 'string';
       }
       else {
         throw new MigrateException('This entity type does not support translation.');
+=======
+      $langcode_key = $this->getKey('langcode');
+      if (!$langcode_key) {
+        throw new MigrateException(sprintf('The "%s" entity type does not support translations.', $this->storage->getEntityTypeId()));
+>>>>>>> Update Open Social to 8.x-2.1
       }
     }
 
@@ -147,8 +155,8 @@ class EntityContentBase extends Entity {
    * @param \Drupal\migrate\Row $row
    *   The row object to update from.
    *
-   * @return \Drupal\Core\Entity\EntityInterface|null
-   *   An updated entity, or NULL if it's the same as the one passed in.
+   * @return \Drupal\Core\Entity\EntityInterface
+   *   An updated entity from row values.
    */
   protected function updateEntity(EntityInterface $entity, Row $row) {
     // By default, an update will be preserved.

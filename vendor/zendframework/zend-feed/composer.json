@@ -47,5 +47,27 @@
         "psr-4": {
             "ZendTest\\Feed\\": "test/"
         }
+<<<<<<< HEAD
+=======
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.10.x-dev",
+            "dev-develop": "2.11.x-dev"
+        }
+    },
+    "scripts": {
+        "check": [
+            "@cs-check",
+            "@test"
+        ],
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "test": "phpunit --colors=always",
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
+>>>>>>> Update Open Social to 8.x-2.1
     }
 }

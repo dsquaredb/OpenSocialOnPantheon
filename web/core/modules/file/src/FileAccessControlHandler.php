@@ -40,8 +40,25 @@ class FileAccessControlHandler extends EntityAccessControlHandler {
       }
       elseif ($entity->getOwnerId() == $account->id()) {
         // This case handles new nodes, or detached files. The user who uploaded
+<<<<<<< HEAD
         // the file can always access if it's not yet used.
         return AccessResult::allowed();
+=======
+        // the file can access it even if it's not yet used.
+        if ($account->isAnonymous()) {
+          // For anonymous users, only the browser session that uploaded the
+          // file is positively allowed access to it. See file_save_upload().
+          // @todo Implement \Drupal\Core\Entity\EntityHandlerInterface so that
+          //   services can be more properly injected.
+          $allowed_fids = \Drupal::service('session')->get('anonymous_allowed_file_ids', []);
+          if (!empty($allowed_fids[$entity->id()])) {
+            return AccessResult::allowed()->addCacheContexts(['session', 'user']);
+          }
+        }
+        else {
+          return AccessResult::allowed()->addCacheContexts(['user']);
+        }
+>>>>>>> Update Open Social to 8.x-2.1
       }
     }
 

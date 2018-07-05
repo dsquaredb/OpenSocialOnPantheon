@@ -109,9 +109,17 @@ class EntityTypeInfo implements ContainerInjectionInterface {
    * @see hook_entity_type_alter()
    */
   public function entityTypeAlter(array &$entity_types) {
+<<<<<<< HEAD
     foreach ($this->filterNonRevisionableEntityTypes($entity_types) as $type_name => $type) {
       $entity_types[$type_name] = $this->addModerationToEntityType($type);
       $entity_types[$type->get('bundle_of')] = $this->addModerationToEntity($entity_types[$type->get('bundle_of')]);
+=======
+    foreach ($entity_types as $entity_type_id => $entity_type) {
+      // The ContentModerationState entity type should never be moderated.
+      if ($entity_type->isRevisionable() && !$entity_type->isInternal()) {
+        $entity_types[$entity_type_id] = $this->addModerationToEntityType($entity_type);
+      }
+>>>>>>> Update Open Social to 8.x-2.1
     }
   }
 

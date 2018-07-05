@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "drupal/address",
   "type": "drupal-module",
   "description": "Provides functionality for storing, validating and displaying international postal addresses.",
@@ -10,4 +11,15 @@
     "commerceguys/zone": "~1.0"
   },
   "minimum-stability": "dev"
+=======
+    "name": "drupal/address",
+    "type": "drupal-module",
+    "description": "Provides functionality for storing, validating and displaying international postal addresses.",
+    "homepage": "http://drupal.org/project/address",
+    "license": "GPL-2.0+",
+    "require": {
+        "commerceguys/addressing": "^1.0.0"
+    },
+    "minimum-stability": "dev"
+>>>>>>> Update Open Social to 8.x-2.1
 }

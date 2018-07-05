@@ -8,10 +8,6 @@ branches:
     - 5.x
     - /^[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+.*$/
 language: php
-php:
-#  See master-fulltest branch for broader PHP version testing.
-  - 5.4
-  - 7.0
 
 # Cache Composer & Unish directories.
 cache:
@@ -23,6 +19,7 @@ cache:
 sudo: false
 
 env:
+<<<<<<< HEAD
   matrix:
 #D6
     - UNISH_DRUPAL_MAJOR_VERSION=6 PHPUNIT_ARGS=--group=base
@@ -56,6 +53,8 @@ env:
     # - UNISH_DB_URL=pgsql://postgres:@localhost PHPUNIT_ARGS=--group=pm
     # - UNISH_DB_URL=pgsql://postgres:@localhost PHPUNIT_ARGS=--group=quick-drupal
     # - UNISH_DB_URL=pgsql://postgres:@localhost PHPUNIT_ARGS=--exclude-group=base,make,commands,pm,quick-drupal
+=======
+>>>>>>> Update Open Social to 8.x-2.1
   global:
     # Github deploy
     - secure: VfYokT2CchfuBRJp9/gSwfVGPfsVfkZdDVEuNWEqxww3z4vq+5aLKqoCtPL54E5EIMjhyCE3GVo+biG35Gab1KOVgUs8zD1hAUWA1FPKfMFhoPDfI3ZJC2rX2T1iWK4ZR90pBtcPzS+2OObzTYz8go0PfeSTT6eq69Na1KcNLaE=
@@ -63,29 +62,94 @@ env:
     - UNISH_DB_URL=mysql://root:@127.0.0.1
 
 matrix:
-  exclude:
-    # Drupal 6 does not work with php 7, so skip all of the Drupal 6 tests with this php.
+  include:
+    # D8.5.x
     - php: 7.0
-      env: UNISH_DRUPAL_MAJOR_VERSION=6 PHPUNIT_ARGS=--group=base
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=8 UNISH_DRUPAL_MINOR_VERSION=5.0-rc1 PHPUNIT_ARGS=--group=base'
     - php: 7.0
-      env: UNISH_DRUPAL_MAJOR_VERSION=6 PHPUNIT_ARGS=--group=commands
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=8 UNISH_DRUPAL_MINOR_VERSION=5.0-rc1 PHPUNIT_ARGS=--group=commands'
     - php: 7.0
-      env: UNISH_DRUPAL_MAJOR_VERSION=6 PHPUNIT_ARGS=--group=pm
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=8 UNISH_DRUPAL_MINOR_VERSION=5.0-rc1 PHPUNIT_ARGS=--group=pm'
     - php: 7.0
+<<<<<<< HEAD
       env: UNISH_DRUPAL_MAJOR_VERSION=6 PHPUNIT_ARGS=--exclude-group=base,make,commands,pm,quick-drupal
     # Drupal 8 requires a minimum php of 5.5, so skip all of the Drupal 8 tests with this php.
     - php: 5.4
       env: UNISH_DRUPAL_MAJOR_VERSION=8 PHPUNIT_ARGS=--group=make
     - php: 5.4
       env: UNISH_DRUPAL_MAJOR_VERSION=8 PHPUNIT_ARGS=--group=base
+=======
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=8 UNISH_DRUPAL_MINOR_VERSION=5.0-rc1 PHPUNIT_ARGS=--group=quick-drupal'
+    - php: 7.0
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=8 UNISH_DRUPAL_MINOR_VERSION=5.0-rc1 PHPUNIT_ARGS=--group=make'
+    - php: 7.0
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=8 UNISH_DRUPAL_MINOR_VERSION=5.0-rc1 PHPUNIT_ARGS=--exclude-group=base,make,commands,pm,quick-drupal TEST_CHILDREN="drush-ops/config-extra"'
+
+    # D8.4.x
+    - php: 7.0
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=8 UNISH_DRUPAL_MINOR_VERSION=4.5 PHPUNIT_ARGS=--group=base'
+    - php: 7.0
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=8 UNISH_DRUPAL_MINOR_VERSION=4.5 PHPUNIT_ARGS=--group=commands'
+    - php: 7.0
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=8 UNISH_DRUPAL_MINOR_VERSION=4.5 PHPUNIT_ARGS=--group=pm'
+    - php: 7.0
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=8 UNISH_DRUPAL_MINOR_VERSION=4.5 PHPUNIT_ARGS=--group=quick-drupal'
+    - php: 7.0
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=8 UNISH_DRUPAL_MINOR_VERSION=4.5 PHPUNIT_ARGS=--group=make'
+    - php: 7.0
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=8 UNISH_DRUPAL_MINOR_VERSION=4.5 PHPUNIT_ARGS=--exclude-group=base,make,commands,pm,quick-drupal TEST_CHILDREN="drush-ops/config-extra"'
+
+    # D8.3.x
+    - php: 7.0
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=8 UNISH_DRUPAL_MINOR_VERSION=3.7 PHPUNIT_ARGS=--group=commands'
+
+    # D8.2.x
+    - php: 7.0
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=8 UNISH_DRUPAL_MINOR_VERSION=2.8 PHPUNIT_ARGS=--group=commands'
+
+    # D7
+    - php: 7.0
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--group=base'
+    - php: 7.0
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--group=commands'
+    - php: 7.0
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--group=pm'
+    - php: 7.0
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--group=quick-drupal'
+    - php: 7.0
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--group=make'
+    - php: 7.0
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--exclude-group=base,make,commands,pm,quick-drupal TEST_CHILDREN="drush-ops/config-extra"'
+
+    # D7
+    - php: 5.6
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--group=base'
+    - php: 5.6
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--group=commands'
+    - php: 5.6
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--group=pm'
+    - php: 5.6
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--group=quick-drupal'
+    - php: 5.6
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--group=make'
+    - php: 5.6
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--exclude-group=base,make,commands,pm,quick-drupal TEST_CHILDREN="drush-ops/config-extra"'
+
+    # D6
+    # Note that Drupal 6 does not work with PHP 7
+>>>>>>> Update Open Social to 8.x-2.1
     - php: 5.4
-      env: UNISH_DRUPAL_MAJOR_VERSION=8 PHPUNIT_ARGS=--group=commands
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--group=base'
     - php: 5.4
-      env: UNISH_DRUPAL_MAJOR_VERSION=8 PHPUNIT_ARGS=--group=pm
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--group=commands'
     - php: 5.4
-      env: UNISH_DRUPAL_MAJOR_VERSION=8 PHPUNIT_ARGS=--group=quick-drupal
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--group=pm'
     - php: 5.4
+<<<<<<< HEAD
       env: UNISH_DRUPAL_MAJOR_VERSION=8 PHPUNIT_ARGS=--exclude-group=base,make,commands,pm,quick-drupal TEST_CHILDREN="drush-ops/config-extra"
+=======
+      env: 'UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--exclude-group=base,make,commands,pm,quick-drupal TEST_CHILDREN="drush-ops/config-extra"'
+>>>>>>> Update Open Social to 8.x-2.1
 
 before_install:
   - echo 'mbstring.http_input = pass' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini

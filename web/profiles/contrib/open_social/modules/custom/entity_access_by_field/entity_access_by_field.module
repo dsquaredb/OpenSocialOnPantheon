@@ -8,10 +8,18 @@ use Drupal\entity_access_by_field\EntityAccessHelper;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Cache\Cache;
+<<<<<<< HEAD
 use \Drupal\node\Entity\Node;
 
 // @TODO Prevent creating multiple visibility fields on one node.
 // @TODO Add support for multiple entity types.
+=======
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityFormInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\social_post\Entity\PostInterface;
+use Drupal\field\Entity\FieldConfig;
+>>>>>>> Update Open Social to 8.x-2.1
 
 /**
  * Here we define a constant for our node access grant ID.
@@ -156,6 +164,7 @@ function entity_access_by_field_node_presave(NodeInterface $node) {
 /**
  * Implements hook_form_alter().
  */
+<<<<<<< HEAD
 function entity_access_by_field_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
 
   if (isset($form['field_content_visibility']) || isset($form['field_visibility'])) {
@@ -175,6 +184,57 @@ function entity_access_by_field_form_alter(&$form, \Drupal\Core\Form\FormStateIn
       // Overwrite user.
       $account = $node->getOwner();
       $roles = $account->getRoles();
+=======
+function entity_access_by_field_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+  $field_definition = $context['items']->getFieldDefinition();
+
+  if ($field_definition->getType() != 'entity_access_field' && $field_definition->getName() != 'field_visibility') {
+    return;
+  }
+
+  $form_object = $form_state->getFormObject();
+
+  if (!$form_object instanceof EntityFormInterface) {
+
+    return;
+  }
+
+  $config = \Drupal::config('entity_access_by_field.settings');
+  // Load the current user.
+  $account = \Drupal::currentUser();
+
+  // Set public visibility by default.
+  $entity = $form_object->getEntity();
+  $field_name = $field_definition->getName();
+
+  if (($entity instanceof FieldConfig) || !$entity->hasField($field_name)) {
+    return;
+  }
+
+  // Do not check if visibility already set and user has access to override
+  // this option because SM can change the visibility.
+  if (!$entity->get($field_name) || (!$entity->get($field_name)->isEmpty() && $account->hasPermission('override disabled public visibility'))) {
+    return;
+  }
+
+  $element['#default_value'] = _entity_access_by_field_get_default_visibility($entity);
+
+  // Check if the option is enabled and the current user has no permission
+  // to override disabled public visibility.
+  if ($config->get('disable_public_visibility') === 1 && !$account->hasPermission('override disabled public visibility')) {
+    switch ($entity->getEntityTypeId()) {
+      case 'node':
+        if ($entity->get($field_name)->getString() !== 'public') {
+          $element['public']['#disabled'] = TRUE;
+          $element['#description'] = t('The public visibility setting has been disabled. In order to change the visibility to public, please contact a site manager.')->render();
+        }
+        break;
+
+      case 'post':
+        // Remove the public option.
+        unset($element['#options'][1]);
+        break;
+>>>>>>> Update Open Social to 8.x-2.1
     }
 
     // Check if this user is auth user only.

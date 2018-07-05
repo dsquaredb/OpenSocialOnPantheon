@@ -15,6 +15,15 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class JsonResponseTest extends \PHPUnit_Framework_TestCase
 {
+    protected function setUp()
+    {
+        parent::setUp();
+
+        if (!defined('HHVM_VERSION')) {
+            $this->iniSet('serialize_precision', 14);
+        }
+    }
+
     public function testConstructorEmptyCreatesJsonObject()
     {
         $response = new JsonResponse();

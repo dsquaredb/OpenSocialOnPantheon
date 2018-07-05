@@ -35,7 +35,24 @@ class ProfilerTest extends \PHPUnit_Framework_TestCase
 
         $this->assertSame(204, $profile->getStatusCode());
         $this->assertSame('GET', $profile->getMethod());
+<<<<<<< HEAD
         $this->assertEquals(array('foo' => 'bar'), $profiler->get('request')->getRequestQuery()->all());
+=======
+        $this->assertSame('bar', $profile->getCollector('request')->getRequestQuery()->all()['foo']->getValue());
+    }
+
+    public function testReset()
+    {
+        $collector = $this->getMockBuilder(DataCollectorInterface::class)
+            ->setMethods(array('collect', 'getName', 'reset'))
+            ->getMock();
+        $collector->expects($this->any())->method('getName')->willReturn('mock');
+        $collector->expects($this->once())->method('reset');
+
+        $profiler = new Profiler($this->storage);
+        $profiler->add($collector);
+        $profiler->reset();
+>>>>>>> Update Open Social to 8.x-2.1
     }
 
     public function testFindWorksWithDates()

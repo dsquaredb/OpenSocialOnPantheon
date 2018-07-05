@@ -256,6 +256,9 @@ class RouterListener implements EventSubscriberInterface
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Update Open Social to 8.x-2.1
     public function onKernelException(GetResponseForExceptionEvent $event)
     {
         if (!$this->debug || !($e = $event->getException()) instanceof NotFoundHttpException) {
@@ -267,14 +270,20 @@ class RouterListener implements EventSubscriberInterface
         }
     }
 
+<<<<<<< HEAD
 =======
 >>>>>>> web and vendor directory from composer install
+=======
+>>>>>>> Update Open Social to 8.x-2.1
     public static function getSubscribedEvents()
     {
         return array(
             KernelEvents::REQUEST => array(array('onKernelRequest', 32)),
             KernelEvents::FINISH_REQUEST => array(array('onKernelFinishRequest', 0)),
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Update Open Social to 8.x-2.1
             KernelEvents::EXCEPTION => array('onKernelException', -64),
         );
     }

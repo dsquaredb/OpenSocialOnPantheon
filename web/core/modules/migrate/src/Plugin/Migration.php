@@ -607,19 +607,26 @@ class Migration extends PluginBase implements MigrationInterface, RequirementsIn
   }
 
   /**
-   * Find migration dependencies from the migration and the iterator plugins.
+   * Find migration dependencies from migration_lookup and sub_process plugins.
    *
-   * @param $process
+   * @param array $process
+   *   A process configuration array.
+   *
    * @return array
+   *   The migration dependencies.
    */
   protected function findMigrationDependencies($process) {
     $return = [];
     foreach ($this->getProcessNormalized($process) as $process_pipeline) {
       foreach ($process_pipeline as $plugin_configuration) {
-        if ($plugin_configuration['plugin'] == 'migration') {
+        if (in_array($plugin_configuration['plugin'], ['migration', 'migration_lookup'], TRUE)) {
           $return = array_merge($return, (array) $plugin_configuration['migration']);
         }
+<<<<<<< HEAD
         if ($plugin_configuration['plugin'] == 'iterator') {
+=======
+        if (in_array($plugin_configuration['plugin'], ['iterator', 'sub_process'], TRUE)) {
+>>>>>>> Update Open Social to 8.x-2.1
           $return = array_merge($return, $this->findMigrationDependencies($plugin_configuration['process']));
         }
       }

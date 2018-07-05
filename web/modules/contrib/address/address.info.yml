@@ -6,9 +6,19 @@ package: Field types
 config: entity.address_format.collection
 dependencies:
   - drupal:field
+test_dependencies:
+ - token:token
 
+<<<<<<< HEAD
 # Information added by Drupal.org packaging script on 2016-10-27
 version: '8.x-1.0-rc3'
 core: '8.x'
 project: 'address'
 datestamp: 1477581251
+=======
+# Information added by Drupal.org packaging script on 2018-05-23
+version: '8.x-1.4'
+core: '8.x'
+project: 'address'
+datestamp: 1527081787
+>>>>>>> Update Open Social to 8.x-2.1

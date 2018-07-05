@@ -30,6 +30,7 @@ r4032login.settings:
     default_redirect_code:
       type: mapping
       label: 'HTTP redirect code'
+<<<<<<< HEAD
       mapping:
         302:
           type: integer
@@ -37,6 +38,17 @@ r4032login.settings:
         301:
           type: integer
           label: '301 Moved Permanently'
+=======
+    destination_parameter_override:
+      type: string
+      label: 'Custom final destination parameter'
+>>>>>>> Update Open Social to 8.x-2.1
     match_noredirect_pages:
       type: string
       label: 'Only the listed pages'
+    redirect_to_destination:
+      type: boolean
+      label: 'Redirect user to the page they tried to access after login'
+    langcode:
+      type: string
+      label: 'Language code'

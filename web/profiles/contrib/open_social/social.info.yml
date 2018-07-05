@@ -3,7 +3,12 @@ type: profile
 description: 'Open Social install profile.'
 project: 'social'
 core: '8.x'
+<<<<<<< HEAD
 version: '8.x-1.0-beta5'
+=======
+version: '8.x-1.18'
+project: social
+>>>>>>> Update Open Social to 8.x-2.1
 
 dependencies:
   - config

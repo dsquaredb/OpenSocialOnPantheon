@@ -10,6 +10,10 @@ third_party_settings:
     activity_action: create_entitiy_action
     activity_context: group_activity_context
     activity_destinations:
+<<<<<<< HEAD
+=======
+      stream_explore: stream_explore
+>>>>>>> Update Open Social to 8.x-2.1
       stream_group: stream_group
       stream_home: stream_home
       stream_profile: stream_profile

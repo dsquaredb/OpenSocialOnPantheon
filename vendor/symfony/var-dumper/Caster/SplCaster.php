@@ -29,6 +29,7 @@ class SplCaster
 
     public static function castArrayObject(\ArrayObject $c, array $a, Stub $stub, $isNested)
     {
+<<<<<<< HEAD
         $prefix = Caster::PREFIX_VIRTUAL;
         $class = $stub->class;
         $flags = $c->getFlags();
@@ -51,8 +52,14 @@ class SplCaster
 
             $a += $b;
         }
+=======
+        return self::castSplArray($c, $a, $stub, $isNested);
+    }
+>>>>>>> Update Open Social to 8.x-2.1
 
-        return $a;
+    public static function castArrayIterator(\ArrayIterator $c, array $a, Stub $stub, $isNested)
+    {
+        return self::castSplArray($c, $a, $stub, $isNested);
     }
 
     public static function castHeap(\Iterator $c, array $a, Stub $stub, $isNested)
@@ -180,8 +187,14 @@ class SplCaster
         $storage = array();
         unset($a[Caster::PREFIX_DYNAMIC."\0gcdata"]); // Don't hit https://bugs.php.net/65967
 
+<<<<<<< HEAD
         foreach ($c as $obj) {
             $storage[spl_object_hash($obj)] = array(
+=======
+        $clone = clone $c;
+        foreach ($clone as $obj) {
+            $storage[] = array(
+>>>>>>> Update Open Social to 8.x-2.1
                 'object' => $obj,
                 'info' => $c->getInfo(),
              );
@@ -197,6 +210,29 @@ class SplCaster
     public static function castOuterIterator(\OuterIterator $c, array $a, Stub $stub, $isNested)
     {
         $a[Caster::PREFIX_VIRTUAL.'innerIterator'] = $c->getInnerIterator();
+
+        return $a;
+    }
+
+    private static function castSplArray($c, array $a, Stub $stub, $isNested)
+    {
+        $prefix = Caster::PREFIX_VIRTUAL;
+        $class = $stub->class;
+        $flags = $c->getFlags();
+
+        if (!($flags & \ArrayObject::STD_PROP_LIST)) {
+            $c->setFlags(\ArrayObject::STD_PROP_LIST);
+            $a = Caster::castObject($c, $class);
+            $c->setFlags($flags);
+        }
+        $a += array(
+            $prefix.'flag::STD_PROP_LIST' => (bool) ($flags & \ArrayObject::STD_PROP_LIST),
+            $prefix.'flag::ARRAY_AS_PROPS' => (bool) ($flags & \ArrayObject::ARRAY_AS_PROPS),
+        );
+        if ($c instanceof \ArrayObject) {
+            $a[$prefix.'iteratorClass'] = new ClassStub($c->getIteratorClass());
+        }
+        $a[$prefix.'storage'] = $c->getArrayCopy();
 
         return $a;
     }

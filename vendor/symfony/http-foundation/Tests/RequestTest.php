@@ -17,6 +17,15 @@ use Symfony\Component\HttpFoundation\Request;
 
 class RequestTest extends \PHPUnit_Framework_TestCase
 {
+<<<<<<< HEAD
+=======
+    protected function tearDown()
+    {
+        Request::setTrustedProxies(array(), -1);
+        Request::setTrustedHosts(array());
+    }
+
+>>>>>>> Update Open Social to 8.x-2.1
     public function testInitialize()
     {
         $request = new Request();
@@ -1854,9 +1863,15 @@ class RequestTest extends \PHPUnit_Framework_TestCase
 
         $request->headers->set('host', 'subdomain.trusted.com');
         $this->assertEquals('subdomain.trusted.com', $request->getHost());
+    }
 
-        // reset request for following tests
-        Request::setTrustedHosts(array());
+    public function testSetTrustedHostsDoesNotBreakOnSpecialCharacters()
+    {
+        Request::setTrustedHosts(array('localhost(\.local){0,1}#,example.com', 'localhost'));
+
+        $request = Request::create('/');
+        $request->headers->set('host', 'localhost');
+        $this->assertSame('localhost', $request->getHost());
     }
 
     public function testFactory()

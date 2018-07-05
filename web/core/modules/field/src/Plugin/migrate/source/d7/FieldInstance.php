@@ -21,7 +21,11 @@ class FieldInstance extends DrupalSqlBase {
   public function query() {
     $query = $this->select('field_config_instance', 'fci')
       ->fields('fci')
+<<<<<<< HEAD
       ->condition('fci.deleted', 0)
+=======
+      ->fields('fc', ['type', 'translatable'])
+>>>>>>> Update Open Social to 8.x-2.1
       ->condition('fc.active', 1)
       ->condition('fc.deleted', 0)
       ->condition('fc.storage_active', 1)
@@ -62,6 +66,7 @@ class FieldInstance extends DrupalSqlBase {
   public function prepareRow(Row $row) {
     $data = unserialize($row->getSourceProperty('data'));
 
+<<<<<<< HEAD
     $row->setSourceProperty('label', $data['label']);
     $row->setSourceProperty('description', $data['description']);
     $row->setSourceProperty('required', $data['required']);
@@ -70,6 +75,32 @@ class FieldInstance extends DrupalSqlBase {
     if ($data['widget']['type'] == 'email_textfield' && $default_value) {
       $default_value[0]['value'] = $default_value[0]['email'];
       unset($default_value[0]['email']);
+=======
+    $field_definition = $this->select('field_config', 'fc')
+      ->fields('fc')
+      ->condition('id', $row->getSourceProperty('field_id'))
+      ->execute()
+      ->fetch();
+    $row->setSourceProperty('field_definition', $field_definition);
+
+    $translatable = FALSE;
+    if ($row->getSourceProperty('entity_type') == 'node') {
+      $language_content_type_bundle = (int) $this->variableGet('language_content_type_' . $row->getSourceProperty('bundle'), 0);
+      // language_content_type_[bundle] may be
+      //   - 0: no language support
+      //   - 1: language assignment support
+      //   - 2: node translation support
+      //   - 4: entity translation support
+      if ($language_content_type_bundle === 2 || ($language_content_type_bundle === 4 && $row->getSourceProperty('translatable'))) {
+        $translatable = TRUE;
+      }
+    }
+    else {
+      // This is not a node entity. Get the translatable value from the source
+      // field_config table.
+      $field_data = unserialize($field_definition['data']);
+      $translatable = $field_data['translatable'];
+>>>>>>> Update Open Social to 8.x-2.1
     }
     $row->setSourceProperty('default_value', $default_value);
 

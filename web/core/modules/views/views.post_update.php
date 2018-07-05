@@ -237,5 +237,73 @@ function views_post_update_boolean_filter_values() {
 }
 
 /**
+<<<<<<< HEAD
  * @} End of "addtogroup updates-8.2.x".
+=======
+ * Rebuild caches to ensure schema changes are read in.
+ */
+function views_post_update_grouped_filters() {
+  // Empty update to cause a cache rebuild so that the schema changes are read.
+}
+
+/**
+ * Fix table names for revision metadata fields.
+ *
+ * @see https://www.drupal.org/node/2831499
+ */
+function views_post_update_revision_metadata_fields() {
+  // The table names are fixed automatically in
+  // \Drupal\views\Entity\View::preSave(), so we just need to re-save all views.
+  $views = View::loadMultiple();
+  array_walk($views, function (View $view) {
+    $view->save();
+  });
+}
+
+/**
+ * Add additional settings to the entity link field and convert node_path usage
+ * to entity_link.
+ */
+function views_post_update_entity_link_url() {
+  // Load all views.
+  $views = \Drupal::entityTypeManager()->getStorage('view')->loadMultiple();
+
+  /* @var \Drupal\views\Entity\View[] $views */
+  foreach ($views as $view) {
+    $displays = $view->get('display');
+    $changed = FALSE;
+    foreach ($displays as $display_name => &$display) {
+      if (isset($display['display_options']['fields'])) {
+        foreach ($display['display_options']['fields'] as $field_name => &$field) {
+          if (isset($field['plugin_id']) && $field['plugin_id'] === 'entity_link') {
+            // Add any missing settings for entity_link.
+            if (!isset($field['output_url_as_text'])) {
+              $field['output_url_as_text'] = FALSE;
+              $changed = TRUE;
+            }
+            if (!isset($field['absolute'])) {
+              $field['absolute'] = FALSE;
+              $changed = TRUE;
+            }
+          }
+          elseif (isset($field['plugin_id']) && $field['plugin_id'] === 'node_path') {
+            // Convert the use of node_path to entity_link.
+            $field['plugin_id'] = 'entity_link';
+            $field['field'] = 'view_node';
+            $field['output_url_as_text'] = TRUE;
+            $changed = TRUE;
+          }
+        }
+      }
+    }
+    if ($changed) {
+      $view->set('display', $displays);
+      $view->save();
+    }
+  }
+}
+
+/**
+ * Update dependencies for moved bulk field plugin.
+>>>>>>> Update Open Social to 8.x-2.1
  */

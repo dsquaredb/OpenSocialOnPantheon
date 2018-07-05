@@ -111,11 +111,20 @@ class Result extends AreaPluginBase {
     // Send the output.
     if (!empty($total)) {
       $output .= Xss::filterAdmin(str_replace(array_keys($replacements), array_values($replacements), $format));
+      // Return as render array.
+      return [
+        '#markup' => $output,
+      ];
     }
+<<<<<<< HEAD
     // Return as render array.
     return array(
       '#markup' => $output,
     );
+=======
+
+    return [];
+>>>>>>> Update Open Social to 8.x-2.1
   }
 
 }

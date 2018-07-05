@@ -689,9 +689,13 @@ class PdoSessionHandler implements \SessionHandlerInterface
         $selectStmt = $this->pdo->prepare($selectSql);
         $selectStmt->bindParam(':id', $sessionId, \PDO::PARAM_STR);
 <<<<<<< HEAD
+<<<<<<< HEAD
         $insertStmt = null;
 =======
 >>>>>>> web and vendor directory from composer install
+=======
+        $insertStmt = null;
+>>>>>>> Update Open Social to 8.x-2.1
 
         do {
             $selectStmt->execute();
@@ -708,6 +712,9 @@ class PdoSessionHandler implements \SessionHandlerInterface
             }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Update Open Social to 8.x-2.1
             if (null !== $insertStmt) {
                 $this->rollback();
                 throw new \RuntimeException('Failed to read session: INSERT reported a duplicate id but next SELECT did not return any data.');
@@ -772,6 +779,7 @@ class PdoSessionHandler implements \SessionHandlerInterface
         switch ($this->driver) {
             case 'mysql':
 <<<<<<< HEAD
+<<<<<<< HEAD
                 // MySQL 5.7.5 and later enforces a maximum length on lock names of 64 characters. Previously, no limit was enforced.
                 $lockId = \substr($sessionId, 0, 64);
                 // should we handle the return value? 0 on timeout, null on error
@@ -783,15 +791,23 @@ class PdoSessionHandler implements \SessionHandlerInterface
                 $releaseStmt = $this->pdo->prepare('DO RELEASE_LOCK(:key)');
                 $releaseStmt->bindValue(':key', $lockId, \PDO::PARAM_STR);
 =======
+=======
+                // MySQL 5.7.5 and later enforces a maximum length on lock names of 64 characters. Previously, no limit was enforced.
+                $lockId = \substr($sessionId, 0, 64);
+>>>>>>> Update Open Social to 8.x-2.1
                 // should we handle the return value? 0 on timeout, null on error
                 // we use a timeout of 50 seconds which is also the default for innodb_lock_wait_timeout
                 $stmt = $this->pdo->prepare('SELECT GET_LOCK(:key, 50)');
-                $stmt->bindValue(':key', $sessionId, \PDO::PARAM_STR);
+                $stmt->bindValue(':key', $lockId, \PDO::PARAM_STR);
                 $stmt->execute();
 
                 $releaseStmt = $this->pdo->prepare('DO RELEASE_LOCK(:key)');
+<<<<<<< HEAD
                 $releaseStmt->bindValue(':key', $sessionId, \PDO::PARAM_STR);
 >>>>>>> web and vendor directory from composer install
+=======
+                $releaseStmt->bindValue(':key', $lockId, \PDO::PARAM_STR);
+>>>>>>> Update Open Social to 8.x-2.1
 
                 return $releaseStmt;
             case 'pgsql':
