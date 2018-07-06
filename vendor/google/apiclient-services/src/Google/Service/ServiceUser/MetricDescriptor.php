@@ -22,8 +22,6 @@ class Google_Service_ServiceUser_MetricDescriptor extends Google_Collection
   public $displayName;
   protected $labelsType = 'Google_Service_ServiceUser_LabelDescriptor';
   protected $labelsDataType = 'array';
-  protected $metadataType = 'Google_Service_ServiceUser_MetricDescriptorMetadata';
-  protected $metadataDataType = '';
   public $metricKind;
   public $name;
   public $type;
@@ -59,20 +57,6 @@ class Google_Service_ServiceUser_MetricDescriptor extends Google_Collection
   public function getLabels()
   {
     return $this->labels;
-  }
-  /**
-   * @param Google_Service_ServiceUser_MetricDescriptorMetadata
-   */
-  public function setMetadata(Google_Service_ServiceUser_MetricDescriptorMetadata $metadata)
-  {
-    $this->metadata = $metadata;
-  }
-  /**
-   * @return Google_Service_ServiceUser_MetricDescriptorMetadata
-   */
-  public function getMetadata()
-  {
-    return $this->metadata;
   }
   public function setMetricKind($metricKind)
   {

@@ -20,11 +20,9 @@ function sitewide_js_page_attachments(array &$attachments) {
       // Attach the JS.
       $attachments['#attached']['html_head'][] = [
         [
-          '#type' => 'inline_template',
-          '#template' => '{{ js|raw }}',
-          '#context' => [
-            'js' => '<script>' . $config->get('swjs_javascript') . '</script>',
-          ],
+          '#type' => 'html_tag',
+          '#tag' => 'script',
+          '#value' => $config->get('swjs_javascript'),
         ],
         'sitewide_js',
       ];
@@ -45,11 +43,9 @@ function sitewide_js_preprocess_html(&$variables) {
     if ($config->get('swjs_location') === '1' && !empty($config->get('swjs_footer_region'))) {
       // Attach the JS.
       $variables[$config->get('swjs_footer_region')][9999] = [
-        '#type' => 'inline_template',
-        '#template' => '{{ js|raw }}',
-        '#context' => [
-          'js' => '<script>' . $config->get('swjs_javascript') . '</script>',
-        ],
+        '#type' => 'html_tag',
+        '#tag' => 'script',
+        '#value' => $config->get('swjs_javascript'),
       ];
     }
   }

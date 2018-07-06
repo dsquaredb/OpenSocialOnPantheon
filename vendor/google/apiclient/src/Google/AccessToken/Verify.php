@@ -178,7 +178,7 @@ class Google_AccessToken_Verify
   {
     $certs = null;
     if ($cache = $this->getCache()) {
-      $cacheItem = $cache->getItem('federated_signon_certs_v3');
+      $cacheItem = $cache->getItem('federated_signon_certs_v3', 3600);
       $certs = $cacheItem->get();
     }
 
@@ -189,7 +189,6 @@ class Google_AccessToken_Verify
       );
 
       if ($cache) {
-        $cacheItem->expiresAt(new DateTime('+1 hour'));
         $cacheItem->set($certs);
         $cache->save($cacheItem);
       }
@@ -211,8 +210,8 @@ class Google_AccessToken_Verify
       $jwtClass = 'Firebase\JWT\JWT';
     }
 
-    if (property_exists($jwtClass, 'leeway') && $jwtClass::$leeway < 1) {
-      // Ensures JWT leeway is at least 1
+    if (property_exists($jwtClass, 'leeway')) {
+      // adds 1 second to JWT leeway
       // @see https://github.com/google/google-api-php-client/issues/827
       $jwtClass::$leeway = 1;
     }

@@ -1093,10 +1093,6 @@ class Google_Service_Storage extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'includeTrailingDelimiter' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
                 'maxResults' => array(
                   'location' => 'query',
                   'type' => 'integer',
@@ -1365,10 +1361,6 @@ class Google_Service_Storage extends Google_Service
                 'delimiter' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
-                'includeTrailingDelimiter' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ),
                 'maxResults' => array(
                   'location' => 'query',

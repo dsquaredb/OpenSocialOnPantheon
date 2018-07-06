@@ -293,22 +293,7 @@ class Google_Service_SQLAdmin extends Google_Service
         'instances',
         array(
           'methods' => array(
-            'addServerCa' => array(
-              'path' => 'projects/{project}/instances/{instance}/addServerCa',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'project' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'instance' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'clone' => array(
+            'clone' => array(
               'path' => 'projects/{project}/instances/{instance}/clone',
               'httpMethod' => 'POST',
               'parameters' => array(
@@ -445,21 +430,6 @@ class Google_Service_SQLAdmin extends Google_Service
                   'type' => 'string',
                 ),
               ),
-            ),'listServerCas' => array(
-              'path' => 'projects/{project}/instances/{instance}/listServerCas',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'project' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'instance' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
             ),'patch' => array(
               'path' => 'projects/{project}/instances/{instance}',
               'httpMethod' => 'PATCH',
@@ -522,21 +492,6 @@ class Google_Service_SQLAdmin extends Google_Service
               ),
             ),'restoreBackup' => array(
               'path' => 'projects/{project}/instances/{instance}/restoreBackup',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'project' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'instance' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'rotateServerCa' => array(
-              'path' => 'projects/{project}/instances/{instance}/rotateServerCa',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'project' => array(

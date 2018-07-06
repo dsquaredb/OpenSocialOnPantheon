@@ -15,9 +15,8 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_LiasettingsCustomBatchResponseEntry extends Google_Collection
+class Google_Service_ShoppingContent_LiasettingsCustomBatchResponseEntry extends Google_Model
 {
-  protected $collection_key = 'posDataProviders';
   public $batchId;
   protected $errorsType = 'Google_Service_ShoppingContent_Errors';
   protected $errorsDataType = '';
@@ -26,8 +25,6 @@ class Google_Service_ShoppingContent_LiasettingsCustomBatchResponseEntry extends
   public $kind;
   protected $liaSettingsType = 'Google_Service_ShoppingContent_LiaSettings';
   protected $liaSettingsDataType = '';
-  protected $posDataProvidersType = 'Google_Service_ShoppingContent_PosDataProviders';
-  protected $posDataProvidersDataType = 'array';
 
   public function setBatchId($batchId)
   {
@@ -86,19 +83,5 @@ class Google_Service_ShoppingContent_LiasettingsCustomBatchResponseEntry extends
   public function getLiaSettings()
   {
     return $this->liaSettings;
-  }
-  /**
-   * @param Google_Service_ShoppingContent_PosDataProviders
-   */
-  public function setPosDataProviders($posDataProviders)
-  {
-    $this->posDataProviders = $posDataProviders;
-  }
-  /**
-   * @return Google_Service_ShoppingContent_PosDataProviders
-   */
-  public function getPosDataProviders()
-  {
-    return $this->posDataProviders;
   }
 }

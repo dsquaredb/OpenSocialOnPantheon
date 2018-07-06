@@ -3,31 +3,29 @@ addressing
 
 [![Build Status](https://travis-ci.org/commerceguys/addressing.svg?branch=master)](https://travis-ci.org/commerceguys/addressing)
 
-A PHP 5.5+ addressing library, powered by CLDR and Google's address data.
+A PHP 5.5+ addressing library, powered by Google's dataset.
 
-Manipulates postal addresses, meant to identify a precise recipient location for shipping or billing purposes.
+Stores and manipulates postal addresses, meant to identify a precise recipient location for shipping or billing purposes.
 
 Features:
-- Countries, with translations for over 250 locales
-- Address formats for over 200 countries
-- Subdivisions (administrative areas, localities, dependent localities) for 44 countries
-- Both latin and local subdivision names, when relevant (e.g: Okinawa / 沖縄県)
-- Formatting, in HTML or plain text.
+- Address formats for 200 countries
+- Subdivisions (administrative areas, localities, dependent localities) for 40 countries
+- Subdivision translations for all of the parent country's (i.e Canada, Switzerland) official languages.
 - Validation via symfony/validator
+- Postal formatting
 - Zones
 
-The dataset is [stored locally](https://github.com/commerceguys/addressing/tree/master/resources) in JSON format.
-Countries are generated from [CLDR](http://cldr.unicode.org) v33. Address formats and subdivisions are generated from Google's [Address Data Service](https://chromium-i18n.appspot.com/ssl-address).
+The dataset is [stored locally](https://github.com/commerceguys/addressing/tree/master/resources) in JSON format, [generated](https://github.com/commerceguys/addressing/blob/master/scripts/generate.php) from Google's [Address Data Service](https://i18napis.appspot.com/address).
+
+The CLDR country list is used (via [symfony/intl](https://github.com/symfony/intl) or [commerceguys/intl](https://github.com/commerceguys/intl)), because it includes additional countries for addressing purposes, such as Canary Islands (IC).
 
 Further backstory can be found in [this blog post](https://drupalcommerce.org/blog/16864/commerce-2x-stories-addressing).
-
-Also check out [commerceguys/intl](https://github.com/commerceguys/intl) for CLDR-powered languages/currencies/number formatting.
 
 # Data model
 
 The [address interface](https://github.com/commerceguys/addressing/blob/master/src/AddressInterface.php) represents a postal adddress, with getters for the following fields:
 
-- Country code
+- Country
 - Administrative area
 - Locality (City)
 - Dependent Locality
@@ -46,7 +44,7 @@ The interface makes no assumptions about mutability.
 The implementing application can extend the interface to provide setters, or implement a value object that uses either [PSR-7 style with* mutators](https://github.com/commerceguys/addressing/blob/master/src/ImmutableAddressInterface) or relies on an AddressBuilder.
 A default [address value object](https://github.com/commerceguys/addressing/blob/master/src/Address.php) is provided that can be used as an example, or mapped by Doctrine (preferably as an embeddable).
 
-The [address format](https://github.com/commerceguys/addressing/blob/master/src/AddressFormat/AddressFormat.php) provides the following information:
+The [address format](https://github.com/commerceguys/addressing/blob/master/src/AddressFormat/AddressFormat.php) has getters for the following country-specific metadata:
 
 - Which fields are used, and in which order
 - Which fields are required
@@ -54,14 +52,7 @@ The [address format](https://github.com/commerceguys/addressing/blob/master/src/
 - The labels for the administrative area (state, province, parish, etc.), locality (city/post town/district, etc.), dependent locality (neighborhood, suburb, district, etc) and the postal code (postal code or ZIP code)
 - The regular expression pattern for validating postal codes
 
-The [country](https://github.com/commerceguys/addressing/blob/master/src/Country/Country.php) provides the following information:
-
-- The country name.
-- The numeric and three-letter country codes.
-- The official currency code, when known.
-- The timezones which the country spans.
-
-The [subdivision](https://github.com/commerceguys/addressing/blob/master/src/Subdivision/Subdivision.php) provides the following information:
+The [subdivision](https://github.com/commerceguys/addressing/blob/master/src/Subdivision/Subdivision.php) has getters for the following data:
 
 - The subdivision code (used to represent the subdivison on a parcel/envelope, e.g. CA for California)
 - The subdivison name (shown to the user in a dropdown)
@@ -73,25 +64,10 @@ Administrative Area -> Locality -> Dependent Locality.
 
 ```php
 use CommerceGuys\Addressing\AddressFormat\AddressFormatRepository;
-use CommerceGuys\Addressing\Country\CountryRepository;
 use CommerceGuys\Addressing\Subdivision\SubdivisionRepository;
 
-$countryRepository = new CountryRepository();
 $addressFormatRepository = new AddressFormatRepository();
 $subdivisionRepository = new SubdivisionRepository();
-
-// Get the country list (countryCode => name), in French.
-$countryList = $countryRepository->getList('fr-FR');
-
-// Get the country object for Brazil.
-$brazil = $countryRepository->get('BR');
-echo $brazil->getThreeLetterCode(); // BRA
-echo $brazil->getName(); // Brazil
-echo $brazil->getCurrencyCode(); // BRL
-print_r($brazil->getTimezones());
-
-// Get all country objects.
-$countries = $countryRepository->getAll();
 
 // Get the address format for Brazil.
 $addressFormat = $addressFormatRepository->get('BR');
@@ -128,8 +104,8 @@ $addressFormatRepository = new AddressFormatRepository();
 $countryRepository = new CountryRepository();
 $subdivisionRepository = new SubdivisionRepository();
 $formatter = new DefaultFormatter($addressFormatRepository, $countryRepository, $subdivisionRepository);
-// Options passed to the constructor or format() allow turning off
-// html rendering, customizing the wrapper element and its attributes.
+// Options passed to the constructor or setOption / setOptions allow turning
+// off html rendering, customizing the wrapper element and its attributes.
 
 $address = new Address();
 $address = $address
@@ -151,7 +127,7 @@ echo $formatter->format($address);
 
 ## PostalLabelFormatter
 
-Takes care of uppercasing fields where required by the format (to facilitate automated mail sorting).
+Takes care of uppercasing fields where required by the format (to faciliate automated mail sorting).
 
 Requires specifying the origin country code, allowing it to differentiate between domestic and international mail.
 In case of domestic mail, the country name is not displayed at all.
@@ -159,7 +135,7 @@ In case of international mail:
 
 1. The postal code is prefixed with the destination's postal code prefix.
 2. The country name is added to the formatted address, in both the current locale and English.
-This matches the recommendation given by the Universal Postal Union, to avoid difficulties in countries of transit.
+This matches the recommandation given by the Universal Postal Union, to avoid difficulties in countries of transit.
 
 ```php
 use CommerceGuys\Addressing\Address;
@@ -171,9 +147,9 @@ use CommerceGuys\Addressing\Subdivision\SubdivisionRepository;
 $addressFormatRepository = new AddressFormatRepository();
 $countryRepository = new CountryRepository();
 $subdivisionRepository = new SubdivisionRepository();
-// Defaults to text rendering. Requires passing the "origin_country"
-// (e.g. 'FR') to the constructor or to format().
-$formatter = new PostalLabelFormatter($addressFormatRepository, $countryRepository, $subdivisionRepository, ['locale' => 'fr]);
+// Defaults to text rendering. Requires setting the origin country code
+// (e.g. 'FR') through the constructor or the setter, before calling format().
+$formatter = new PostalLabelFormatter($addressFormatRepository, $countryRepository, $subdivisionRepository, 'FR', 'fr');
 
 $address = new Address();
 $address = $address
@@ -182,7 +158,7 @@ $address = $address
     ->withLocality('Mountain View')
     ->withAddressLine1('1098 Alta Ave');
 
-echo $formatter->format($address, ['origin_country' => 'FR']);
+echo $formatter->format($address);
 
 /** Output:
 1098 Alta Ave

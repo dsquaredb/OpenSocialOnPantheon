@@ -38,7 +38,7 @@
 		},
 		"CDMX": {
 			"name": "Ciudad de México",
-			"iso_code": "MX-CMX",
+			"iso_code": "MX-DIF",
 			"postal_code_pattern": "0|1[0-6]"
 		},
 		"COAH": {
@@ -117,12 +117,12 @@
 			"postal_code_pattern": "77"
 		},
 		"SLP": {
-			"name": "San Luis Potosí",
+			"name": "San Luís Potosí",
 			"iso_code": "MX-SLP",
 			"postal_code_pattern": "7[89]"
 		},
 		"SIN": {
-			"name": "Sinaloa",
+			"name": "Sinalóa",
 			"iso_code": "MX-SIN",
 			"postal_code_pattern": "8[0-2]"
 		},

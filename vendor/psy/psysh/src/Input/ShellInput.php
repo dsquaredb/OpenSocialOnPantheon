@@ -105,9 +105,7 @@ class ShellInput extends StringInput
                 ];
             } else {
                 // should never happen
-                // @codeCoverageIgnoreStart
                 throw new \InvalidArgumentException(sprintf('Unable to parse input near "... %s ..."', substr($input, $cursor, 10)));
-                // @codeCoverageIgnoreEnd
             }
 
             $cursor += strlen($match[0]);
@@ -170,10 +168,6 @@ class ShellInput extends StringInput
             return;
         }
 
-        // (copypasta)
-        //
-        // @codeCoverageIgnoreStart
-
         // if last argument isArray(), append token to last argument
         if ($this->definition->hasArgument($c - 1) && $this->definition->getArgument($c - 1)->isArray()) {
             $arg = $this->definition->getArgument($c - 1);
@@ -189,11 +183,9 @@ class ShellInput extends StringInput
         }
 
         throw new \RuntimeException(sprintf('No arguments expected, got "%s".', $token));
-        // @codeCoverageIgnoreEnd
     }
 
     // Everything below this is copypasta from ArgvInput private methods
-    // @codeCoverageIgnoreStart
 
     /**
      * Parses a short option.
@@ -331,6 +323,4 @@ class ShellInput extends StringInput
             $this->options[$name] = $value;
         }
     }
-
-    // @codeCoverageIgnoreEnd
 }

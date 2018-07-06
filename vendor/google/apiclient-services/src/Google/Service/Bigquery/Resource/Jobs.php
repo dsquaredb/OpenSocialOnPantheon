@@ -35,9 +35,7 @@ class Google_Service_Bigquery_Resource_Jobs extends Google_Service_Resource
    * @param array $optParams Optional parameters.
    *
    * @opt_param string location [Experimental] The geographic location of the job.
-   * Required except for US and EU. See details at
-   * https://cloud.google.com/bigquery/docs/dataset-
-   * locations#specifying_your_location.
+   * Required except for US and EU.
    * @return Google_Service_Bigquery_JobCancelResponse
    */
   public function cancel($projectId, $jobId, $optParams = array())
@@ -56,9 +54,7 @@ class Google_Service_Bigquery_Resource_Jobs extends Google_Service_Resource
    * @param array $optParams Optional parameters.
    *
    * @opt_param string location [Experimental] The geographic location of the job.
-   * Required except for US and EU. See details at
-   * https://cloud.google.com/bigquery/docs/dataset-
-   * locations#specifying_your_location.
+   * Required except for US and EU.
    * @return Google_Service_Bigquery_Job
    */
   public function get($projectId, $jobId, $optParams = array())
@@ -75,9 +71,7 @@ class Google_Service_Bigquery_Resource_Jobs extends Google_Service_Resource
    * @param array $optParams Optional parameters.
    *
    * @opt_param string location [Experimental] The geographic location where the
-   * job should run. Required except for US and EU. See details at
-   * https://cloud.google.com/bigquery/docs/dataset-
-   * locations#specifying_your_location.
+   * job should run. Required except for US and EU.
    * @opt_param string maxResults Maximum number of results to read
    * @opt_param string pageToken Page token, returned by a previous call, to
    * request the next page of results

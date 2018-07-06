@@ -8,8 +8,6 @@
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Entity\EntityTypeInterface;
-use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Form\FormStateInterface;
@@ -193,60 +191,6 @@ function group_form_block_form_alter(&$form, FormStateInterface $form_state, $fo
     $form['visibility']['group_type']['negate']['#title_display'] = 'invisible';
     $form['visibility']['group_type']['negate']['#value'] = $form['visibility']['group_type']['negate']['#default_value'];
   }
-}
-
-/**
- * Implements hook_entity_base_field_info().
- *
- * Creates computed fields to get the groups related to a entity. There will be
- * a field containing all groups. Each group type will also get a separate
- * field.
- *
- * We currently only use this for nodes and users since they can be installed
- * as group content.
- */
-function group_entity_base_field_info(EntityTypeInterface $entity_type) {
-  $fields = [];
-
-  $entity_types = ['node', 'user'];
-  if (in_array($entity_type->id(), $entity_types)) {
-    $fields['groups'] = BaseFieldDefinition::create('entity_reference')
-      ->setName('groups')
-      ->setTargetEntityTypeId($entity_type->id())
-      ->setSetting('target_type', 'group')
-      ->setLabel(t('Get the related groups for this entity.'))
-      ->setDescription(t('A list of all the groups referencing this entity.'))
-      ->setTranslatable(FALSE)
-      ->setComputed(TRUE)
-      ->setClass('\Drupal\group\Fields\GroupGroupReferenceItemList')
-      ->setDisplayConfigurable('view', TRUE)
-      ->setDisplayOptions('view', [
-        'label' => 'above',
-        'weight' => -5,
-      ]);
-
-    foreach (\Drupal::service('entity_type.manager')->getStorage('group_type')->loadMultiple() as $group_type) {
-      /** @var \Drupal\group\Entity\GroupType $group_type */
-      $field_name = 'groups_type_' . $group_type->id();
-      $fields[$field_name] = BaseFieldDefinition::create('entity_reference')
-        ->setName($field_name)
-        ->setTargetEntityTypeId($entity_type->id())
-        ->setSetting('target_type', 'group')
-        ->setSetting('handler_settings', ['target_bundles' => [$group_type->id() => $group_type->id()]])
-        ->setLabel(t('Get the related @type groups for this entity.', ['@type' => $group_type->label()]))
-        ->setDescription(t('A list of all the groups referencing this entity.'))
-        ->setTranslatable(FALSE)
-        ->setComputed(TRUE)
-        ->setClass('\Drupal\group\Fields\GroupGroupReferenceItemList')
-        ->setDisplayConfigurable('view', TRUE)
-        ->setDisplayOptions('view', [
-          'label' => 'above',
-          'weight' => -5,
-        ]);
-    }
-  }
-
-  return $fields;
 }
 
 /**

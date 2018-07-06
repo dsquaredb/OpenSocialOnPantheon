@@ -18,8 +18,6 @@
 class Google_Service_Appengine_SslSettings extends Google_Model
 {
   public $certificateId;
-  public $pendingManagedCertificateId;
-  public $sslManagementType;
 
   public function setCertificateId($certificateId)
   {
@@ -28,21 +26,5 @@ class Google_Service_Appengine_SslSettings extends Google_Model
   public function getCertificateId()
   {
     return $this->certificateId;
-  }
-  public function setPendingManagedCertificateId($pendingManagedCertificateId)
-  {
-    $this->pendingManagedCertificateId = $pendingManagedCertificateId;
-  }
-  public function getPendingManagedCertificateId()
-  {
-    return $this->pendingManagedCertificateId;
-  }
-  public function setSslManagementType($sslManagementType)
-  {
-    $this->sslManagementType = $sslManagementType;
-  }
-  public function getSslManagementType()
-  {
-    return $this->sslManagementType;
   }
 }

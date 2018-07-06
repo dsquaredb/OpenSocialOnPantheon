@@ -20,7 +20,6 @@ class Google_Service_AndroidPublisher_InAppProduct extends Google_Model
   public $defaultLanguage;
   protected $defaultPriceType = 'Google_Service_AndroidPublisher_Price';
   protected $defaultPriceDataType = '';
-  public $gracePeriod;
   protected $listingsType = 'Google_Service_AndroidPublisher_InAppProductListing';
   protected $listingsDataType = 'map';
   public $packageName;
@@ -55,14 +54,6 @@ class Google_Service_AndroidPublisher_InAppProduct extends Google_Model
   public function getDefaultPrice()
   {
     return $this->defaultPrice;
-  }
-  public function setGracePeriod($gracePeriod)
-  {
-    $this->gracePeriod = $gracePeriod;
-  }
-  public function getGracePeriod()
-  {
-    return $this->gracePeriod;
   }
   /**
    * @param Google_Service_AndroidPublisher_InAppProductListing

@@ -30,20 +30,6 @@ URL Embed can be installed via the [standard Drupal installation process](http:/
 * Enter the URL that you want to embed.
 * Optionally, choose to align left, center or right.
 
-## Cache
-URL Embed may cache the HTML markup downloaded for each URL. This prevent to request each URL again when a content is edited and re-saved.
-Drupal will cache content with external content permanently by default.
-
-* HTML markup downloaded for each url embed are cached by default for 1 hour.
-* You can override this setting by adding in your settings.php : $config['url_embed.settings']['cache_expiration'] = VALUE;
-* VALUE must be an integer and is the cache expiration time in seconds.
-* Set VALUE to 0 to disable the cache.
-* Set VALUE to -1 to have a permanent cache for the markup of URL embed.
-* Examples :
-  * $config['url_embed.settings']['cache_expiration'] = -1; # Permanent cache.
-  * $config['url_embed.settings']['cache_expiration'] = 0; # No cache.
-  * $config['url_embed.settings']['cache_expiration'] = 7200; # Markup cached during 2 hours.
-
 ## Embedding URLs without WYSIWYG
 
 Users should be embedding URLs using the CKEditor WYSIWYG button as described above. This section is more technical about the HTML markup that is used to embed the actual URL.

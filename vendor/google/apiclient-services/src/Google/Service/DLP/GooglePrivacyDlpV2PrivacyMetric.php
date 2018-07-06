@@ -19,8 +19,6 @@ class Google_Service_DLP_GooglePrivacyDlpV2PrivacyMetric extends Google_Model
 {
   protected $categoricalStatsConfigType = 'Google_Service_DLP_GooglePrivacyDlpV2CategoricalStatsConfig';
   protected $categoricalStatsConfigDataType = '';
-  protected $deltaPresenceEstimationConfigType = 'Google_Service_DLP_GooglePrivacyDlpV2DeltaPresenceEstimationConfig';
-  protected $deltaPresenceEstimationConfigDataType = '';
   protected $kAnonymityConfigType = 'Google_Service_DLP_GooglePrivacyDlpV2KAnonymityConfig';
   protected $kAnonymityConfigDataType = '';
   protected $kMapEstimationConfigType = 'Google_Service_DLP_GooglePrivacyDlpV2KMapEstimationConfig';
@@ -43,20 +41,6 @@ class Google_Service_DLP_GooglePrivacyDlpV2PrivacyMetric extends Google_Model
   public function getCategoricalStatsConfig()
   {
     return $this->categoricalStatsConfig;
-  }
-  /**
-   * @param Google_Service_DLP_GooglePrivacyDlpV2DeltaPresenceEstimationConfig
-   */
-  public function setDeltaPresenceEstimationConfig(Google_Service_DLP_GooglePrivacyDlpV2DeltaPresenceEstimationConfig $deltaPresenceEstimationConfig)
-  {
-    $this->deltaPresenceEstimationConfig = $deltaPresenceEstimationConfig;
-  }
-  /**
-   * @return Google_Service_DLP_GooglePrivacyDlpV2DeltaPresenceEstimationConfig
-   */
-  public function getDeltaPresenceEstimationConfig()
-  {
-    return $this->deltaPresenceEstimationConfig;
   }
   /**
    * @param Google_Service_DLP_GooglePrivacyDlpV2KAnonymityConfig

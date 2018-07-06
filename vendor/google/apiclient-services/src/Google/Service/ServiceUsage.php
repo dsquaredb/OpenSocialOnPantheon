@@ -16,7 +16,7 @@
  */
 
 /**
- * Service definition for ServiceUsage (v1).
+ * Service definition for ServiceUsage (v1beta1).
  *
  * <p>
  * Enables services that service consumers want to use on Google Cloud Platform,
@@ -35,11 +35,15 @@ class Google_Service_ServiceUsage extends Google_Service
   /** View and manage your data across Google Cloud Platform services. */
   const CLOUD_PLATFORM =
       "https://www.googleapis.com/auth/cloud-platform";
+  /** View your data across Google Cloud Platform services. */
+  const CLOUD_PLATFORM_READ_ONLY =
+      "https://www.googleapis.com/auth/cloud-platform.read-only";
   /** Manage your Google API service configuration. */
   const SERVICE_MANAGEMENT =
       "https://www.googleapis.com/auth/service.management";
 
   public $operations;
+  public $services;
   
   /**
    * Constructs the internal representation of the ServiceUsage service.
@@ -51,7 +55,7 @@ class Google_Service_ServiceUsage extends Google_Service
     parent::__construct($client);
     $this->rootUrl = 'https://serviceusage.googleapis.com/';
     $this->servicePath = '';
-    $this->version = 'v1';
+    $this->version = 'v1beta1';
     $this->serviceName = 'serviceusage';
 
     $this->operations = new Google_Service_ServiceUsage_Resource_Operations(
@@ -60,28 +64,8 @@ class Google_Service_ServiceUsage extends Google_Service
         'operations',
         array(
           'methods' => array(
-            'cancel' => array(
-              'path' => 'v1/{+name}:cancel',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'delete' => array(
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'DELETE',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'get' => array(
-              'path' => 'v1/{+name}',
+            'get' => array(
+              'path' => 'v1beta1/{+name}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'name' => array(
@@ -91,7 +75,7 @@ class Google_Service_ServiceUsage extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => 'v1/operations',
+              'path' => 'v1beta1/operations',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'filter' => array(
@@ -109,6 +93,78 @@ class Google_Service_ServiceUsage extends Google_Service
                 'pageSize' => array(
                   'location' => 'query',
                   'type' => 'integer',
+                ),
+              ),
+            ),
+          )
+        )
+    );
+    $this->services = new Google_Service_ServiceUsage_Resource_Services(
+        $this,
+        $this->serviceName,
+        'services',
+        array(
+          'methods' => array(
+            'batchEnable' => array(
+              'path' => 'v1beta1/{+parent}/services:batchEnable',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'parent' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'disable' => array(
+              'path' => 'v1beta1/{+name}:disable',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'name' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'enable' => array(
+              'path' => 'v1beta1/{+name}:enable',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'name' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'get' => array(
+              'path' => 'v1beta1/{+name}',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'name' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'list' => array(
+              'path' => 'v1beta1/{+parent}/services',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'parent' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'pageSize' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
+                'filter' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
               ),
             ),

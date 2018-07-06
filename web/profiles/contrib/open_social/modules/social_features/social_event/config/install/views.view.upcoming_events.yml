@@ -683,7 +683,7 @@ display:
         groups:
           1: AND
       exposed_block: true
-      title: 'All events'
+      title: 'Community events'
       sorts:
         event_passed_upcoming_sort:
           id: event_passed_upcoming_sort

@@ -2,7 +2,6 @@
 
 namespace CommerceGuys\Addressing\Validator\Constraints;
 
-use CommerceGuys\Addressing\AddressFormat\AddressFormatHelper;
 use CommerceGuys\Addressing\AddressInterface;
 use CommerceGuys\Addressing\AddressFormat\AddressField;
 use CommerceGuys\Addressing\AddressFormat\AddressFormat;
@@ -51,64 +50,69 @@ class AddressFormatConstraintValidator extends ConstraintValidator
         if (!($value instanceof AddressInterface)) {
             throw new UnexpectedTypeException($value, 'AddressInterface');
         }
+
         $address = $value;
         $countryCode = $address->getCountryCode();
         if ($countryCode === null || $countryCode === '') {
             return;
         }
 
-        /** @var AddressFormatConstraint $constraint */
-        $fieldOverrides = $constraint->fieldOverrides;
-        $addressFormat = $this->addressFormatRepository->get($countryCode);
-        $usedFields = array_diff($addressFormat->getUsedFields(), $fieldOverrides->getHiddenFields());
         $values = $this->extractAddressValues($address);
+        $addressFormat = $this->addressFormatRepository->get($address->getCountryCode());
 
+        $this->validateFields($values, $addressFormat, $constraint);
+        $subdivisions = $this->validateSubdivisions($values, $addressFormat, $constraint);
+        $this->validatePostalCode($address->getPostalCode(), $subdivisions, $addressFormat, $constraint);
+    }
+
+    /**
+     * Validates the provided field values.
+     *
+     * @param array         $values        The field values, keyed by field constants.
+     * @param AddressFormat $addressFormat The address format.
+     * @param Constraint    $constraint    The constraint.
+     */
+    protected function validateFields($values, AddressFormat $addressFormat, $constraint)
+    {
         // Validate the presence of required fields.
-        $requiredFields = AddressFormatHelper::getRequiredFields($addressFormat, $fieldOverrides);
+        $requiredFields = $addressFormat->getRequiredFields();
         foreach ($requiredFields as $field) {
-            if (empty($values[$field])) {
+            if (empty($values[$field]) && in_array($field, $constraint->fields)) {
                 $this->addViolation($field, $constraint->notBlankMessage, $values[$field], $addressFormat);
             }
         }
 
         // Validate the absence of unused fields.
-        $unusedFields = array_diff(AddressField::getAll(), $usedFields);
+        $unusedFields = array_diff(AddressField::getAll(), $addressFormat->getUsedFields());
         foreach ($unusedFields as $field) {
-            if (!empty($values[$field])) {
+            if (!empty($values[$field]) && in_array($field, $constraint->fields)) {
                 $this->addViolation($field, $constraint->blankMessage, $values[$field], $addressFormat);
             }
-        }
-
-        // Validate subdivisions and the postal code.
-        $subdivisions = $this->validateSubdivisions($values, $addressFormat, $constraint);
-        if (in_array(AddressField::POSTAL_CODE, $usedFields)) {
-            $this->validatePostalCode($address->getPostalCode(), $subdivisions, $addressFormat, $constraint);
         }
     }
 
     /**
      * Validates the provided subdivision values.
      *
-     * @param array                   $values        The field values, keyed by field constants.
-     * @param AddressFormat           $addressFormat The address format.
-     * @param AddressFormatConstraint $constraint    The constraint.
+     * @param array         $values        The field values, keyed by field constants.
+     * @param AddressFormat $addressFormat The address format.
+     * @param Constraint    $constraint    The constraint.
      *
      * @return array An array of found valid subdivisions.
      */
     protected function validateSubdivisions($values, AddressFormat $addressFormat, $constraint)
     {
+        $countryCode = $addressFormat->getCountryCode();
         if ($addressFormat->getSubdivisionDepth() < 1) {
             // No predefined subdivisions exist, nothing to validate against.
             return [];
         }
 
-        $countryCode = $addressFormat->getCountryCode();
         $subdivisionFields = $addressFormat->getUsedSubdivisionFields();
-        $hiddenFields = $constraint->fieldOverrides->getHiddenFields();
         $parents = [];
         $subdivisions = [];
         foreach ($subdivisionFields as $index => $field) {
-            if (empty($values[$field]) || in_array($field, $hiddenFields)) {
+            if (empty($values[$field]) || !in_array($field, $constraint->fields)) {
                 // The field is empty or validation is disabled.
                 break;
             }
@@ -132,14 +136,14 @@ class AddressFormatConstraintValidator extends ConstraintValidator
     /**
      * Validates the provided postal code.
      *
-     * @param string                  $postalCode    The postal code.
-     * @param array                   $subdivisions  An array of found valid subdivisions.
-     * @param AddressFormat           $addressFormat The address format.
-     * @param AddressFormatConstraint $constraint    The constraint.
+     * @param string        $postalCode    The postal code.
+     * @param array         $subdivisions  An array of found valid subdivisions.
+     * @param AddressFormat $addressFormat The address format.
+     * @param Constraint    $constraint    The constraint.
      */
     protected function validatePostalCode($postalCode, array $subdivisions, AddressFormat $addressFormat, $constraint)
     {
-        if (empty($postalCode)) {
+        if (empty($postalCode) || !in_array(AddressField::POSTAL_CODE, $constraint->fields)) {
             // Nothing to validate.
             return;
         }
@@ -163,7 +167,7 @@ class AddressFormatConstraintValidator extends ConstraintValidator
         if ($fullPattern) {
             // The pattern must match the provided value completely.
             preg_match('/' . $fullPattern . '/i', $postalCode, $matches);
-            if (!isset($matches[0]) || $matches[0] !== $postalCode) {
+            if (!isset($matches[0]) || $matches[0] != $postalCode) {
                 $this->addViolation(AddressField::POSTAL_CODE, $constraint->invalidMessage, $postalCode, $addressFormat);
 
                 return;

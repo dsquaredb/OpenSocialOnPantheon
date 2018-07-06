@@ -20,8 +20,6 @@ class Google_Service_ServiceControl_RequestMetadata extends Google_Model
   public $callerIp;
   public $callerNetwork;
   public $callerSuppliedUserAgent;
-  protected $requestAttributesType = 'Google_Service_ServiceControl_Request';
-  protected $requestAttributesDataType = '';
 
   public function setCallerIp($callerIp)
   {
@@ -46,19 +44,5 @@ class Google_Service_ServiceControl_RequestMetadata extends Google_Model
   public function getCallerSuppliedUserAgent()
   {
     return $this->callerSuppliedUserAgent;
-  }
-  /**
-   * @param Google_Service_ServiceControl_Request
-   */
-  public function setRequestAttributes(Google_Service_ServiceControl_Request $requestAttributes)
-  {
-    $this->requestAttributes = $requestAttributes;
-  }
-  /**
-   * @return Google_Service_ServiceControl_Request
-   */
-  public function getRequestAttributes()
-  {
-    return $this->requestAttributes;
   }
 }

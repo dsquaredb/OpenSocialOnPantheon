@@ -5,9 +5,7 @@ namespace Drupal\address\Element;
 use CommerceGuys\Addressing\AddressFormat\AddressField;
 use CommerceGuys\Addressing\AddressFormat\AddressFormat;
 use CommerceGuys\Addressing\AddressFormat\AddressFormatHelper;
-use CommerceGuys\Addressing\AddressFormat\FieldOverride;
-use CommerceGuys\Addressing\AddressFormat\FieldOverrides;
-use CommerceGuys\Addressing\Locale;
+use CommerceGuys\Addressing\LocaleHelper;
 use Drupal\address\FieldHelper;
 use Drupal\address\LabelHelper;
 use Drupal\Component\Utility\Html;
@@ -19,9 +17,6 @@ use Drupal\Core\Render\Element\FormElement;
 
 /**
  * Provides an address form element.
- *
- * Use #field_overrides to override the country-specific address format,
- * forcing specific fields to be hidden, optional, or required.
  *
  * Usage example:
  * @code
@@ -37,11 +32,6 @@ use Drupal\Core\Render\Element\FormElement;
  *     'administrative_area' => 'CA',
  *     'country_code' => 'US',
  *     'langcode' => 'en',
- *   ],
- *   '@field_overrides' => [
- *     AddressField::ORGANIZATION => FieldOverride::REQUIRED,
- *     AddressField::ADDRESS_LINE2 => FieldOverride::HIDDEN,
- *     AddressField::POSTAL_CODE => FieldOverride::OPTIONAL,
  *   ],
  *   '#available_countries' => ['DE', 'FR'],
  * ];
@@ -59,9 +49,7 @@ class Address extends FormElement {
     return [
       // List of country codes. If empty, all countries will be available.
       '#available_countries' => [],
-      // FieldOverride constants keyed by AddressField constants.
-      '#field_overrides' => [],
-      // Deprecated. Use #field_overrides instead.
+      // List of AddressField constants. If empty, all fields will be used.
       '#used_fields' => [],
 
       '#input' => TRUE,
@@ -148,21 +136,9 @@ class Address extends FormElement {
    *   Thrown when #used_fields is malformed.
    */
   public static function processAddress(array &$element, FormStateInterface $form_state, array &$complete_form) {
-    // Convert #used_fields into #field_overrides.
-    if (!empty($element['#used_fields']) && is_array($element['#used_fields'])) {
-      $unused_fields = array_diff(AddressField::getAll(), $element['#used_fields']);
-      $element['#field_overrides'] = [];
-      foreach ($unused_fields as $field) {
-        $element['#field_overrides'][$field] = FieldOverride::HIDDEN;
-      }
-      unset($element['#used_fields']);
+    if (isset($element['#used_fields']) && !is_array($element['#used_fields'])) {
+      throw new \InvalidArgumentException('The #used_fields property must be an array.');
     }
-    // Validate and parse #field_overrides.
-    if (!is_array($element['#field_overrides'])) {
-      throw new \InvalidArgumentException('The #field_overrides property must be an array.');
-    }
-    $element['#parsed_field_overrides'] = new FieldOverrides($element['#field_overrides']);
-
     $id_prefix = implode('-', $element['#parents']);
     $wrapper_id = Html::getUniqueId($id_prefix . '-ajax-wrapper');
     // The #value has the new values on #ajax, the #default_value otherwise.
@@ -221,19 +197,18 @@ class Address extends FormElement {
       AddressField::ADDITIONAL_NAME => 25,
       AddressField::FAMILY_NAME => 25,
     ];
-    $field_overrides = $element['#parsed_field_overrides'];
     /** @var \CommerceGuys\Addressing\AddressFormat\AddressFormat $address_format */
     $address_format = \Drupal::service('address.address_format_repository')->get($value['country_code']);
-    $required_fields = AddressFormatHelper::getRequiredFields($address_format, $field_overrides);
+    $required_fields = $address_format->getRequiredFields();
     $labels = LabelHelper::getFieldLabels($address_format);
     $locale = \Drupal::languageManager()->getConfigOverrideLanguage()->getId();
-    if (Locale::matchCandidates($address_format->getLocale(), $locale)) {
+    if (LocaleHelper::match($address_format->getLocale(), $locale)) {
       $format_string = $address_format->getLocalFormat();
     }
     else {
       $format_string = $address_format->getFormat();
     }
-    $grouped_fields = AddressFormatHelper::getGroupedFields($format_string, $field_overrides);
+    $grouped_fields = AddressFormatHelper::getGroupedFields($format_string);
     foreach ($grouped_fields as $line_index => $line_fields) {
       if (count($line_fields) > 1) {
         // Used by the #pre_render callback to group fields inline.
@@ -268,6 +243,15 @@ class Address extends FormElement {
     // Hide the label for the second address line.
     if (isset($element['address_line2'])) {
       $element['address_line2']['#title_display'] = 'invisible';
+    }
+    // Hide unused fields.
+    if (!empty($element['#used_fields'])) {
+      $used_fields = $element['#used_fields'];
+      $unused_fields = array_diff(AddressField::getAll(), $used_fields);
+      foreach ($unused_fields as $field) {
+        $property = FieldHelper::getPropertyName($field);
+        $element[$property]['#access'] = FALSE;
+      }
     }
     // Add predefined options to the created subdivision elements.
     $element = static::processSubdivisionElements($element, $value, $address_format);

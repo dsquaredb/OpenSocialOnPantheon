@@ -5,7 +5,8 @@
     "homepage": "http://drupal.org/project/address",
     "license": "GPL-2.0+",
     "require": {
-        "commerceguys/addressing": "^1.0.0"
+        "commerceguys/intl": "~0.7",
+        "commerceguys/addressing": "~1.0"
     },
     "minimum-stability": "dev"
 }

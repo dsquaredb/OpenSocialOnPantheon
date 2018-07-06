@@ -12,7 +12,7 @@ use CommerceGuys\Addressing\Subdivision\SubdivisionRepositoryInterface;
 /**
  * Formats an address for a postal/shipping label.
  *
- * Takes care of uppercasing fields where required by the format (to facilitate
+ * Takes care of uppercasing fields where required by the format (to faciliate
  * automated mail sorting).
  *
  * Requires specifying the origin country code, allowing it
@@ -21,23 +21,17 @@ use CommerceGuys\Addressing\Subdivision\SubdivisionRepositoryInterface;
  * In case of international mail:
  * 1. The postal code is prefixed with the destination's postal code prefix.
  * 2. The country name is added to the formatted address, in both the
- *    current locale and English. This matches the recommendation given by
+ *    current locale and English. This matches the recommandation given by
  *    the Universal Postal Union, to avoid difficulties in countries of transit.
  */
 class PostalLabelFormatter extends DefaultFormatter implements PostalLabelFormatterInterface
 {
     /**
-     * The default options.
+     * The origin country code.
      *
-     * @var array
+     * @var string
      */
-    protected $defaultOptions = [
-        'locale' => 'en',
-        'html' => false,
-        'html_tag' => 'p',
-        'html_attributes' => ['translate' => 'no'],
-        'origin_country' => '',
-    ];
+    protected $originCountryCode;
 
     /**
      * Creates a PostalFormatter instance.
@@ -45,27 +39,65 @@ class PostalLabelFormatter extends DefaultFormatter implements PostalLabelFormat
      * @param AddressFormatRepositoryInterface $addressFormatRepository
      * @param CountryRepositoryInterface       $countryRepository
      * @param SubdivisionRepositoryInterface   $subdivisionRepository
-     * @param array                            $defaultOptions
+     * @param string                           $originCountryCode
+     * @param string                           $locale
+     * @param array                            $options
      */
-    public function __construct(AddressFormatRepositoryInterface $addressFormatRepository, CountryRepositoryInterface $countryRepository, SubdivisionRepositoryInterface $subdivisionRepository, array $defaultOptions = [])
+    public function __construct(AddressFormatRepositoryInterface $addressFormatRepository, CountryRepositoryInterface $countryRepository, SubdivisionRepositoryInterface $subdivisionRepository, $originCountryCode = null, $locale = null, array $options = [])
     {
-        parent::__construct($addressFormatRepository, $countryRepository, $subdivisionRepository, $defaultOptions);
-
         if (!function_exists('mb_strtoupper')) {
             throw new \RuntimeException('The "mbstring" extension is required by this class.');
         }
+
+        $this->originCountryCode = $originCountryCode;
+        parent::__construct($addressFormatRepository, $countryRepository, $subdivisionRepository, $locale, $options);
     }
 
     /**
      * {@inheritdoc}
      */
-    protected function buildView(AddressInterface $address, AddressFormat $addressFormat, array $options)
+    public function getOriginCountryCode()
     {
-        if (empty($options['origin_country'])) {
-            throw new \InvalidArgumentException("The origin_country option can't be empty.");
+        return $this->originCountryCode;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setOriginCountryCode($originCountryCode)
+    {
+        $this->originCountryCode = $originCountryCode;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getDefaultOptions()
+    {
+        return ['html' => false] + parent::getDefaultOptions();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function format(AddressInterface $address)
+    {
+        if (empty($this->originCountryCode)) {
+            throw new \RuntimeException("The originCountryCode can't be null.");
         }
 
-        $view = parent::buildView($address, $addressFormat, $options);
+        return parent::format($address);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function buildView(AddressInterface $address, AddressFormat $addressFormat)
+    {
+        $view = parent::buildView($address, $addressFormat);
+
         // Uppercase fields where required by the format.
         $uppercaseFields = $addressFormat->getUppercaseFields();
         foreach ($uppercaseFields as $uppercaseField) {
@@ -74,7 +106,7 @@ class PostalLabelFormatter extends DefaultFormatter implements PostalLabelFormat
             }
         }
         // Handle international mailing.
-        if ($address->getCountryCode() != $options['origin_country']) {
+        if ($address->getCountryCode() != $this->originCountryCode) {
             // Prefix the postal code.
             $field = AddressField::POSTAL_CODE;
             if (isset($view[$field])) {

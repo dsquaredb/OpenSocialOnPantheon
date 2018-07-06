@@ -3,14 +3,12 @@
 namespace Drupal\mentions\Form;
 
 use Drupal\Core\Entity\EntityForm;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Entity\EntityTypeRepositoryInterface;
-use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Form\ConfigFormBaseTrait;
 use Drupal\mentions\MentionsPluginManager;
+use Drupal\Core\Entity\EntityManagerInterface;
 use Drupal\Core\Entity\ContentEntityType;
 
 /**
@@ -22,42 +20,15 @@ class MentionsTypeForm extends EntityForm implements ContainerInjectionInterface
 
   use ConfigFormBaseTrait;
 
-  /**
-   * The mentions plugin manager.
-   *
-   * @var \Drupal\mentions\MentionsPluginManager
-   */
   protected $mentionsManager;
-
-  /**
-   * The entity type manager service.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-   */
-  protected $entityTypeManager;
-
-  /**
-   * The entity type repository service.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeRepositoryInterface
-   */
-  protected $entityTypeRepository;
-
-  /**
-   * The module handler service.
-   *
-   * @var \Drupal\Core\Extension\ModuleHandlerInterface
-   */
-  protected $moduleHandler;
+  protected $entityManager;
 
   /**
    * {@inheritdoc}
    */
-  public function __construct(MentionsPluginManager $mentions_manager, EntityTypeManagerInterface $entity_type_manager, EntityTypeRepositoryInterface $entity_type_repository, ModuleHandlerInterface $module_handler) {
+  public function __construct(MentionsPluginManager $mentions_manager, EntityManagerInterface $entity_manager) {
     $this->mentionsManager = $mentions_manager;
-    $this->entityTypeManager = $entity_type_manager;
-    $this->entityTypeRepository = $entity_type_repository;
-    $this->moduleHandler = $module_handler;
+    $this->entityManager = $entity_manager;
   }
 
   /**
@@ -66,9 +37,7 @@ class MentionsTypeForm extends EntityForm implements ContainerInjectionInterface
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('plugin.manager.mentions'),
-      $container->get('entity_type.manager'),
-      $container->get('entity_type.repository'),
-      $container->get('module_handler')
+      $container->get('entity.manager')
     );
   }
 
@@ -96,10 +65,10 @@ class MentionsTypeForm extends EntityForm implements ContainerInjectionInterface
     $entity = $this->entity;
     $inputsettings = $entity->get('input');
     $entity_id = isset($entity) ? $entity->id() : '';
-    $all_entitytypes = array_keys($this->entityTypeRepository->getEntityTypeLabels());
+    $all_entitytypes = array_keys($this->entityManager->getEntityTypeLabels());
     $candidate_entitytypes = [];
     foreach ($all_entitytypes as $entity_type) {
-      $entitytype_info = $this->entityTypeManager->getDefinition($entity_type);
+      $entitytype_info = $this->entityManager->getDefinition($entity_type);
       $configentityclassname = ContentEntityType::class;
       $entitytype_type = get_class($entitytype_info);
       if ($entitytype_type == $configentityclassname) {
@@ -148,7 +117,7 @@ class MentionsTypeForm extends EntityForm implements ContainerInjectionInterface
 
     $form['input']['prefix'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Prefix'),
+      '#title' => t('Prefix'),
       '#default_value' => $config->get('input.prefix'),
       '#size' => 2,
     ];
@@ -231,7 +200,7 @@ class MentionsTypeForm extends EntityForm implements ContainerInjectionInterface
       ],
     ];
 
-    if ($this->moduleHandler->moduleExists('token')) {
+    if (\Drupal::moduleHandler()->moduleExists('token')) {
       $form['output']['tokens'] = [
         '#theme' => 'token_tree_link',
         '#token_types' => 'all',
@@ -265,7 +234,7 @@ class MentionsTypeForm extends EntityForm implements ContainerInjectionInterface
    */
   public function changeEntityTypeInForm(array &$form, FormStateInterface $form_state) {
     $entitytype_state = $form_state->getValue(['input', 'entity_type']);
-    $entitytype_info = $this->entityTypeManager->getDefinition($entitytype_state);
+    $entitytype_info = $this->entityManager->getDefinition($entitytype_state);
     $id = $entitytype_info->getKey('id');
     $label = $entitytype_info->getKey('label');
     if ($entitytype_state == 'user') {

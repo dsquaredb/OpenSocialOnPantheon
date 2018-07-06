@@ -3,8 +3,6 @@
 namespace CommerceGuys\Addressing\Validator\Constraints;
 
 use CommerceGuys\Addressing\AddressFormat\AddressField;
-use CommerceGuys\Addressing\AddressFormat\FieldOverride;
-use CommerceGuys\Addressing\AddressFormat\FieldOverrides;
 use Symfony\Component\Validator\Constraint;
 
 /**
@@ -14,35 +12,9 @@ use Symfony\Component\Validator\Constraint;
  */
 class AddressFormatConstraint extends Constraint
 {
-    /**
-     * Used fields.
-     *
-     * @deprecated Use $fieldOverrides instead.
-     *
-     * @var array
-     */
-    public $fields = [];
-
-    /**
-     * Field overrides.
-     *
-     * @var FieldOverrides
-     */
-    public $fieldOverrides;
-
-    /**
-     * @var string
-     */
+    public $fields;
     public $blankMessage = 'This value should be blank';
-
-    /**
-     * @var string
-     */
     public $notBlankMessage = 'This value should not be blank';
-
-    /**
-     * @var string
-     */
     public $invalidMessage = 'This value is invalid.';
 
     /**
@@ -52,18 +24,10 @@ class AddressFormatConstraint extends Constraint
     {
         parent::__construct($options);
 
-        // Convert used fields into field overrides.
-        if (!empty($this->fields)) {
-            $unusedFields = array_diff(AddressField::getAll(), $this->fields);
-            $definition = [];
-            foreach ($unusedFields as $field) {
-                $definition[$field] = FieldOverride::HIDDEN;
-            }
-            $this->fieldOverrides = new FieldOverrides($definition);
+        // Validate all fields by default.
+        if (empty($this->fields)) {
+            $this->fields = AddressField::getAll();
         }
-
-        // Ensure there's always a FieldOverrides object.
-        $this->fieldOverrides = $this->fieldOverrides ?: new FieldOverrides([]);
     }
 
     /**

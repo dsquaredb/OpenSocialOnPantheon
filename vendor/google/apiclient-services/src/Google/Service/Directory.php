@@ -19,8 +19,9 @@
  * Service definition for Directory (directory_v1).
  *
  * <p>
- * Manages enterprise resources such as users and groups, administrative
- * notifications, security features, and more.</p>
+ * The Admin SDK Directory API lets you view and manage enterprise resources
+ * such as users and groups, administrative notifications, security features,
+ * and more.</p>
  *
  * <p>
  * For more information about this service, see the API
@@ -561,19 +562,7 @@ class Google_Service_Directory extends Google_Service
                   'location' => 'query',
                   'type' => 'integer',
                 ),
-                'orderBy' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'query' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'sortOrder' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -720,10 +709,6 @@ class Google_Service_Directory extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
-                'includeDerivedMembership' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ),
                 'maxResults' => array(
                   'location' => 'query',

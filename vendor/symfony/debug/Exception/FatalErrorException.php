@@ -18,9 +18,9 @@ namespace Symfony\Component\Debug\Exception;
  */
 class FatalErrorException extends \ErrorException
 {
-    public function __construct($message, $code, $severity, $filename, $lineno, $traceOffset = null, $traceArgs = true, array $trace = null, $previous = null)
+    public function __construct($message, $code, $severity, $filename, $lineno, $traceOffset = null, $traceArgs = true, array $trace = null)
     {
-        parent::__construct($message, $code, $severity, $filename, $lineno, $previous);
+        parent::__construct($message, $code, $severity, $filename, $lineno);
 
         if (null !== $trace) {
             if (!$traceArgs) {

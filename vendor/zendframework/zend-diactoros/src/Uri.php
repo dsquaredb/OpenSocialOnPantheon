@@ -10,26 +10,6 @@ namespace Zend\Diactoros;
 use InvalidArgumentException;
 use Psr\Http\Message\UriInterface;
 
-use function array_key_exists;
-use function array_keys;
-use function count;
-use function explode;
-use function get_class;
-use function gettype;
-use function implode;
-use function is_numeric;
-use function is_object;
-use function is_string;
-use function ltrim;
-use function parse_url;
-use function preg_replace;
-use function preg_replace_callback;
-use function rawurlencode;
-use function sprintf;
-use function strpos;
-use function strtolower;
-use function substr;
-
 /**
  * Implementation of Psr\Http\UriInterface.
  *
@@ -118,7 +98,7 @@ class Uri implements UriInterface
             ));
         }
 
-        if ('' !== $uri) {
+        if (! empty($uri)) {
             $this->parseUri($uri);
         }
     }
@@ -167,12 +147,12 @@ class Uri implements UriInterface
      */
     public function getAuthority()
     {
-        if ('' === $this->host) {
+        if (empty($this->host)) {
             return '';
         }
 
         $authority = $this->host;
-        if ('' !== $this->userInfo) {
+        if (! empty($this->userInfo)) {
             $authority = $this->userInfo . '@' . $authority;
         }
 
@@ -496,26 +476,27 @@ class Uri implements UriInterface
     {
         $uri = '';
 
-        if ('' !== $scheme) {
+        if (! empty($scheme)) {
             $uri .= sprintf('%s:', $scheme);
         }
 
-        if ('' !== $authority) {
+        if (! empty($authority)) {
             $uri .= '//' . $authority;
         }
 
-        if ('' !== $path && '/' !== substr($path, 0, 1)) {
-            $path = '/' . $path;
+        if ($path) {
+            if (empty($path) || '/' !== substr($path, 0, 1)) {
+                $path = '/' . $path;
+            }
+
+            $uri .= $path;
         }
 
-        $uri .= $path;
-
-
-        if ('' !== $query) {
+        if ($query) {
             $uri .= sprintf('?%s', $query);
         }
 
-        if ('' !== $fragment) {
+        if ($fragment) {
             $uri .= sprintf('#%s', $fragment);
         }
 
@@ -532,11 +513,14 @@ class Uri implements UriInterface
      */
     private function isNonStandardPort($scheme, $host, $port)
     {
-        if ('' === $scheme) {
-            return '' === $host || null !== $port;
+        if (! $scheme) {
+            if ($host && ! $port) {
+                return false;
+            }
+            return true;
         }
 
-        if ('' === $host || null === $port) {
+        if (! $host || ! $port) {
             return false;
         }
 
@@ -555,7 +539,7 @@ class Uri implements UriInterface
         $scheme = strtolower($scheme);
         $scheme = preg_replace('#:(//)?$#', '', $scheme);
 
-        if ('' === $scheme) {
+        if (empty($scheme)) {
             return '';
         }
 
@@ -601,7 +585,7 @@ class Uri implements UriInterface
             $path
         );
 
-        if ('' === $path) {
+        if (empty($path)) {
             // No path
             return $path;
         }
@@ -625,7 +609,7 @@ class Uri implements UriInterface
      */
     private function filterQuery($query)
     {
-        if ('' !== $query && strpos($query, '?') === 0) {
+        if (! empty($query) && strpos($query, '?') === 0) {
             $query = substr($query, 1);
         }
 
@@ -669,7 +653,7 @@ class Uri implements UriInterface
      */
     private function filterFragment($fragment)
     {
-        if ('' !== $fragment && strpos($fragment, '#') === 0) {
+        if (! empty($fragment) && strpos($fragment, '#') === 0) {
             $fragment = '%23' . substr($fragment, 1);
         }
 

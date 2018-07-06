@@ -33,10 +33,7 @@ class SocialDrupalContext extends DrupalContext {
    * @Given I am viewing my :type( content):
    */
   public function assertViewingMyNode($type, TableNode $fields) {
-
-    $user_manager = $this->getUserManager();
-    $user = $user_manager->getCurrentUser();
-    if (!$user) {
+    if (!isset($this->user->uid)) {
       throw new \Exception(sprintf('There is no current logged in user to create a node for.'));
     }
 
@@ -50,7 +47,7 @@ class SocialDrupalContext extends DrupalContext {
       $node->{$field} = $value;
     }
 
-    $node->uid = $user->uid;
+    $node->uid = $this->user->uid;
 
     $saved = $this->nodeCreate($node);
 

@@ -17,19 +17,10 @@
 
 class Google_Service_PolyService_PresentationParams extends Google_Model
 {
-  public $backgroundColor;
   public $colorSpace;
   protected $orientingRotationType = 'Google_Service_PolyService_Quaternion';
   protected $orientingRotationDataType = '';
 
-  public function setBackgroundColor($backgroundColor)
-  {
-    $this->backgroundColor = $backgroundColor;
-  }
-  public function getBackgroundColor()
-  {
-    return $this->backgroundColor;
-  }
   public function setColorSpace($colorSpace)
   {
     $this->colorSpace = $colorSpace;

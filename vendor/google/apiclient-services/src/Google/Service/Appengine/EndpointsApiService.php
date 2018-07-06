@@ -19,7 +19,6 @@ class Google_Service_Appengine_EndpointsApiService extends Google_Model
 {
   public $configId;
   public $name;
-  public $rolloutStrategy;
 
   public function setConfigId($configId)
   {
@@ -36,13 +35,5 @@ class Google_Service_Appengine_EndpointsApiService extends Google_Model
   public function getName()
   {
     return $this->name;
-  }
-  public function setRolloutStrategy($rolloutStrategy)
-  {
-    $this->rolloutStrategy = $rolloutStrategy;
-  }
-  public function getRolloutStrategy()
-  {
-    return $this->rolloutStrategy;
   }
 }
