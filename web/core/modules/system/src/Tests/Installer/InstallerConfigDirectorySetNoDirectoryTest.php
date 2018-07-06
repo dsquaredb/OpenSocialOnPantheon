@@ -24,6 +24,7 @@ class InstallerConfigDirectorySetNoDirectoryTest extends InstallerTestBase {
    */
   protected function setUp() {
     $this->syncDirectory = $this->publicFilesDirectory . '/config_' . Crypt::randomBytesBase64() . '/sync';
+<<<<<<< HEAD
     $this->settings['config_directories'][CONFIG_SYNC_DIRECTORY] = (object) array(
       'value' => $this->syncDirectory,
       'required' => TRUE,
@@ -33,6 +34,17 @@ class InstallerConfigDirectorySetNoDirectoryTest extends InstallerTestBase {
       'value' => $this->publicFilesDirectory . '/config_custom',
       'required' => TRUE,
     );
+=======
+    $this->settings['config_directories'][CONFIG_SYNC_DIRECTORY] = (object) [
+      'value' => $this->syncDirectory,
+      'required' => TRUE,
+    ];
+    // Other directories will be created too.
+    $this->settings['config_directories']['custom'] = (object) [
+      'value' => $this->publicFilesDirectory . '/config_custom',
+      'required' => TRUE,
+    ];
+>>>>>>> revert Open Social update
     parent::setUp();
   }
 

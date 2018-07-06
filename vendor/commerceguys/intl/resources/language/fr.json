@@ -20,6 +20,12 @@
 	"de-CH": {
 		"name": "allemand suisse"
 	},
+<<<<<<< HEAD
+=======
+	"tzm": {
+		"name": "amazighe de l’Atlas central"
+	},
+>>>>>>> revert Open Social update
 	"zgh": {
 		"name": "amazighe standard marocain"
 	},
@@ -104,9 +110,12 @@
 	"bg": {
 		"name": "bulgare"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "cantonais"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kea": {
 		"name": "capverdien"
 	},
@@ -524,6 +533,12 @@
 	"sn": {
 		"name": "shona"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindhi"
+	},
+>>>>>>> revert Open Social update
 	"cu": {
 		"name": "slavon d’église"
 	},
@@ -554,18 +569,33 @@
 	"sw-CD": {
 		"name": "swahili du Congo"
 	},
+<<<<<<< HEAD
 	"dav": {
 		"name": "taita"
 	},
 	"tzm": {
 		"name": "tamazight du Maroc central"
 	},
+=======
+	"tg": {
+		"name": "tadjik"
+	},
+	"dav": {
+		"name": "taita"
+	},
+>>>>>>> revert Open Social update
 	"ta": {
 		"name": "tamoul"
 	},
 	"twq": {
 		"name": "tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tatar"
+	},
+>>>>>>> revert Open Social update
 	"cs": {
 		"name": "tchèque"
 	},
@@ -614,6 +644,12 @@
 	"wae": {
 		"name": "walser"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "yangben"
 	},

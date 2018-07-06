@@ -33,6 +33,7 @@ class MigrateTaxonomyVocabularyTest extends MigrateDrupal6TestBase {
       $j = $i + 1;
       $vocabulary = Vocabulary::load("vocabulary_{$j}_i_{$i}_");
 <<<<<<< HEAD
+<<<<<<< HEAD
       $this->assertIdentical($this->getMigration('d6_taxonomy_vocabulary')->getIdMap()->lookupDestinationID(array($j)), array($vocabulary->id()));
       $this->assertIdentical("vocabulary $j (i=$i)", $vocabulary->label());
       $this->assertIdentical("description of vocabulary $j (i=$i)", $vocabulary->getDescription());
@@ -40,6 +41,9 @@ class MigrateTaxonomyVocabularyTest extends MigrateDrupal6TestBase {
       $this->assertIdentical(4 + $i, $vocabulary->get('weight'));
 =======
       $this->assertSame($this->getMigration('d6_taxonomy_vocabulary')->getIdMap()->lookupDestinationId([$j]), [$vocabulary->id()]);
+=======
+      $this->assertSame($this->getMigration('d6_taxonomy_vocabulary')->getIdMap()->lookupDestinationID([$j]), [$vocabulary->id()]);
+>>>>>>> revert Open Social update
       $this->assertSame("vocabulary $j (i=$i)", $vocabulary->label());
       $this->assertSame("description of vocabulary $j (i=$i)", $vocabulary->getDescription());
       $this->assertSame($i, $vocabulary->getHierarchy());

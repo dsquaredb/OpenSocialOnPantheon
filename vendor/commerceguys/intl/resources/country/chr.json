@@ -599,6 +599,12 @@
 	"TW": {
 		"name": "ᏔᎢᏩᏂ"
 	},
+<<<<<<< HEAD
+=======
+	"TO": {
+		"name": "ᏔᏂᎪ"
+	},
+>>>>>>> revert Open Social update
 	"TJ": {
 		"name": "ᏔᏥᎩᏍᏕᏂ"
 	},
@@ -629,9 +635,12 @@
 	"DO": {
 		"name": "ᏙᎻᏂᎧᏂ ᏍᎦᏚᎩ"
 	},
+<<<<<<< HEAD
 	"TO": {
 		"name": "ᏙᏅᎦ"
 	},
+=======
+>>>>>>> revert Open Social update
 	"TN": {
 		"name": "ᏚᏂᏏᏍᎠ"
 	},
@@ -660,7 +669,11 @@
 		"name": "ᏣᏩᏂᏏ"
 	},
 	"CZ": {
+<<<<<<< HEAD
 		"name": "ᏤᎩ ᏍᎦᏚᎩ"
+=======
+		"name": "ᏤᎩᎠ"
+>>>>>>> revert Open Social update
 	},
 	"CL": {
 		"name": "ᏥᎵ"

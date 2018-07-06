@@ -84,7 +84,11 @@
 		"name": "加彭"
 	},
 	"MP": {
+<<<<<<< HEAD
 		"name": "北馬里亞納群島"
+=======
+		"name": "北馬利安納群島"
+>>>>>>> revert Open Social update
 	},
 	"KP": {
 		"name": "北韓"
@@ -179,12 +183,21 @@
 	"TG": {
 		"name": "多哥"
 	},
+<<<<<<< HEAD
 	"AI": {
 		"name": "安圭拉"
 	},
 	"AG": {
 		"name": "安地卡及巴布達"
 	},
+=======
+	"AG": {
+		"name": "安地卡及巴布達"
+	},
+	"AI": {
+		"name": "安奎拉"
+	},
+>>>>>>> revert Open Social update
 	"AO": {
 		"name": "安哥拉"
 	},
@@ -209,9 +222,12 @@
 	"HR": {
 		"name": "克羅埃西亞"
 	},
+<<<<<<< HEAD
 	"SJ": {
 		"name": "冷岸及央棉"
 	},
+=======
+>>>>>>> revert Open Social update
 	"LY": {
 		"name": "利比亞"
 	},
@@ -282,7 +298,11 @@
 		"name": "法屬圭亞那"
 	},
 	"TF": {
+<<<<<<< HEAD
 		"name": "法屬南方屬地"
+=======
+		"name": "法屬南部屬地"
+>>>>>>> revert Open Social update
 	},
 	"PF": {
 		"name": "法屬玻里尼西亞"
@@ -318,7 +338,11 @@
 		"name": "阿根廷"
 	},
 	"OM": {
+<<<<<<< HEAD
 		"name": "阿曼王國"
+=======
+		"name": "阿曼"
+>>>>>>> revert Open Social update
 	},
 	"AF": {
 		"name": "阿富汗"
@@ -365,12 +389,21 @@
 	"BO": {
 		"name": "玻利維亞"
 	},
+<<<<<<< HEAD
 	"KW": {
 		"name": "科威特"
 	},
 	"CC": {
 		"name": "科科斯（基林）群島"
 	},
+=======
+	"CC": {
+		"name": "科克斯（基靈）群島"
+	},
+	"KW": {
+		"name": "科威特"
+	},
+>>>>>>> revert Open Social update
 	"XK": {
 		"name": "科索沃"
 	},
@@ -434,6 +467,12 @@
 	"NO": {
 		"name": "挪威"
 	},
+<<<<<<< HEAD
+=======
+	"SJ": {
+		"name": "挪威屬斯瓦巴及尖棉"
+	},
+>>>>>>> revert Open Social update
 	"GG": {
 		"name": "根息"
 	},
@@ -486,7 +525,11 @@
 		"name": "索羅門群島"
 	},
 	"MQ": {
+<<<<<<< HEAD
 		"name": "馬丁尼克島"
+=======
+		"name": "馬丁尼克"
+>>>>>>> revert Open Social update
 	},
 	"ML": {
 		"name": "馬利"
@@ -501,7 +544,11 @@
 		"name": "馬拉威"
 	},
 	"YT": {
+<<<<<<< HEAD
 		"name": "馬約特"
+=======
+		"name": "馬約特島"
+>>>>>>> revert Open Social update
 	},
 	"MH": {
 		"name": "馬紹爾群島"
@@ -516,10 +563,17 @@
 		"name": "馬爾地夫"
 	},
 	"FM": {
+<<<<<<< HEAD
 		"name": "密克羅尼西亞群島"
 	},
 	"CZ": {
 		"name": "捷克共和國"
+=======
+		"name": "密克羅尼西亞"
+	},
+	"CZ": {
+		"name": "捷克"
+>>>>>>> revert Open Social update
 	},
 	"SY": {
 		"name": "敘利亞"
@@ -636,7 +690,11 @@
 		"name": "聖文森及格瑞那丁"
 	},
 	"PM": {
+<<<<<<< HEAD
 		"name": "聖皮埃爾和密克隆群島"
+=======
+		"name": "聖皮埃與密克隆群島"
+>>>>>>> revert Open Social update
 	},
 	"ST": {
 		"name": "聖多美普林西比"

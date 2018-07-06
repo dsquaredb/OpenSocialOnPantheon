@@ -33,16 +33,26 @@ class User extends DrupalSqlBase {
     $fields['roles'] = $this->t('Roles');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     // Profile fields.
     if ($this->moduleExists('profile')) {
       $fields += $this->select('profile_fields', 'pf')
         ->fields('pf', array('name', 'title'))
+=======
+    // Profile fields.
+    if ($this->moduleExists('profile')) {
+      $fields += $this->select('profile_fields', 'pf')
+        ->fields('pf', ['name', 'title'])
+>>>>>>> revert Open Social update
         ->execute()
         ->fetchAllKeyed();
     }
 
+<<<<<<< HEAD
 =======
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
     return $fields;
   }
 

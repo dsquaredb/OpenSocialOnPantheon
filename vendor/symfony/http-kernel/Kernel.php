@@ -89,6 +89,7 @@ abstract class Kernel implements KernelInterface, TerminableInterface
     private $resetServices = false;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     const VERSION = '3.4.11';
     const VERSION_ID = 30411;
     const MAJOR_VERSION = 3;
@@ -101,6 +102,13 @@ abstract class Kernel implements KernelInterface, TerminableInterface
     const MINOR_VERSION = 4;
     const RELEASE_VERSION = 12;
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+    const VERSION = '3.4.9';
+    const VERSION_ID = 30409;
+    const MAJOR_VERSION = 3;
+    const MINOR_VERSION = 4;
+    const RELEASE_VERSION = 9;
+>>>>>>> revert Open Social update
     const EXTRA_VERSION = '';
 
     const END_OF_MAINTENANCE = '11/2020';
@@ -132,10 +140,14 @@ abstract class Kernel implements KernelInterface, TerminableInterface
         $this->rootDir = $this->getRootDir();
         $this->name = $this->getName();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> revert Open Social update
 
         if ($this->debug) {
             $this->startTime = microtime(true);
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -157,10 +169,16 @@ abstract class Kernel implements KernelInterface, TerminableInterface
 >>>>>>> web and vendor directory from composer install
 =======
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
     }
 
     public function __clone()
     {
+        if ($this->debug) {
+            $this->startTime = microtime(true);
+        }
+
         $this->booted = false;
         $this->container = null;
 <<<<<<< HEAD
@@ -182,15 +200,9 @@ abstract class Kernel implements KernelInterface, TerminableInterface
                     $this->container->get('services_resetter')->reset();
                 }
                 $this->resetServices = false;
-                if ($this->debug) {
-                    $this->startTime = microtime(true);
-                }
             }
 
             return;
-        }
-        if ($this->debug) {
-            $this->startTime = microtime(true);
         }
         if ($this->debug && !isset($_ENV['SHELL_VERBOSITY']) && !isset($_SERVER['SHELL_VERBOSITY'])) {
             putenv('SHELL_VERBOSITY=3');
@@ -739,7 +751,7 @@ abstract class Kernel implements KernelInterface, TerminableInterface
             $errorLevel = error_reporting(\E_ALL ^ \E_WARNING);
             $fresh = $oldContainer = false;
             try {
-                if (file_exists($cache->getPath()) && \is_object($this->container = include $cache->getPath())) {
+                if (\is_object($this->container = include $cache->getPath())) {
                     $this->container->set('kernel', $this);
                     $oldContainer = $this->container;
                     $fresh = true;
@@ -802,7 +814,7 @@ abstract class Kernel implements KernelInterface, TerminableInterface
             }
         }
 
-        if (null === $oldContainer && file_exists($cache->getPath())) {
+        if (null === $oldContainer) {
             $errorLevel = error_reporting(\E_ALL ^ \E_WARNING);
             try {
                 $oldContainer = include $cache->getPath();

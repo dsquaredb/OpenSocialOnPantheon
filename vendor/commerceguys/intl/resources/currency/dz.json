@@ -29,9 +29,12 @@
 	"BYN": {
 		"name": "Belarusian Ruble"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "Belarusian Ruble (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"BZD": {
 		"name": "Belize Dollar"
 	},
@@ -82,7 +85,11 @@
 		"name": "Cuban Convertible Peso"
 	},
 	"CZK": {
+<<<<<<< HEAD
 		"name": "Czech Republic Koruna"
+=======
+		"name": "Czech Koruna"
+>>>>>>> revert Open Social update
 	},
 	"DJF": {
 		"name": "Djiboutian Franc"

@@ -70,9 +70,6 @@ class VoteStorage extends SqlContentEntityStorage implements VoteStorageInterfac
       ->condition('entity_type', $entity_type_id)
       ->condition('entity_id', $entity_id)
       ->execute();
-    if ($entity_type_id == 'user' && \Drupal::config('votingapi.settings')->get('delete_everywhere')) {
-      $this->deleteUserVotes($entity_id);
-    }
   }
 
 }

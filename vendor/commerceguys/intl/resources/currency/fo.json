@@ -154,9 +154,12 @@
 	"BYN": {
 		"name": "Hvítarussland ruble"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "Hvítarussland ruble (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"INR": {
 		"name": "indiskir rupis",
 		"symbol": "₹"
@@ -346,7 +349,11 @@
 		"name": "Paraguai guarani"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "Peru nuevo sol"
+=======
+		"name": "Peru sol"
+>>>>>>> revert Open Social update
 	},
 	"PLN": {
 		"name": "Pólland zloty"

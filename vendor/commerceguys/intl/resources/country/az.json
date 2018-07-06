@@ -144,7 +144,11 @@
 		"name": "Çad"
 	},
 	"CZ": {
+<<<<<<< HEAD
 		"name": "Çex Respublikası"
+=======
+		"name": "Çexiya"
+>>>>>>> revert Open Social update
 	},
 	"CL": {
 		"name": "Çili"

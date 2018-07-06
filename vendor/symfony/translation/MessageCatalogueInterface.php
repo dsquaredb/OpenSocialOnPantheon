@@ -106,6 +106,7 @@ interface MessageCatalogueInterface
      * The two catalogues must have the same locale.
 <<<<<<< HEAD
      */
+<<<<<<< HEAD
     public function addCatalogue(self $catalogue);
 =======
      *
@@ -117,6 +118,9 @@ interface MessageCatalogueInterface
 =======
     public function addCatalogue(self $catalogue);
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+    public function addCatalogue(MessageCatalogueInterface $catalogue);
+>>>>>>> revert Open Social update
 
     /**
      * Merges translations from the given Catalogue into the current one
@@ -125,6 +129,7 @@ interface MessageCatalogueInterface
      * This is used to provide default translations when they do not exist for the current locale.
 <<<<<<< HEAD
      */
+<<<<<<< HEAD
     public function addFallbackCatalogue(self $catalogue);
 =======
      *
@@ -136,6 +141,9 @@ interface MessageCatalogueInterface
 =======
     public function addFallbackCatalogue(self $catalogue);
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+    public function addFallbackCatalogue(MessageCatalogueInterface $catalogue);
+>>>>>>> revert Open Social update
 
     /**
      * Gets the fallback catalogue.

@@ -195,7 +195,11 @@
 		"name": "hebrejski"
 	},
 	"hi": {
+<<<<<<< HEAD
 		"name": "hindu"
+=======
+		"name": "hindi"
+>>>>>>> revert Open Social update
 	},
 	"nl": {
 		"name": "holandski"
@@ -254,9 +258,12 @@
 	"kn": {
 		"name": "kanada"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "kantonski"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ks": {
 		"name": "kašmirski"
 	},
@@ -264,7 +271,11 @@
 		"name": "katalonski"
 	},
 	"kk": {
+<<<<<<< HEAD
 		"name": "kazački"
+=======
+		"name": "kazaški"
+>>>>>>> revert Open Social update
 	},
 	"qu": {
 		"name": "kečua"
@@ -285,7 +296,11 @@
 		"name": "kineski (tradicionalni)"
 	},
 	"rw": {
+<<<<<<< HEAD
 		"name": "kinjarvanda"
+=======
+		"name": "kinjaruanda"
+>>>>>>> revert Open Social update
 	},
 	"ky": {
 		"name": "kirgiški"
@@ -318,7 +333,11 @@
 		"name": "langi"
 	},
 	"lo": {
+<<<<<<< HEAD
 		"name": "laoški"
+=======
+		"name": "laoski"
+>>>>>>> revert Open Social update
 	},
 	"lv": {
 		"name": "latvijski"
@@ -356,15 +375,24 @@
 	"mgh": {
 		"name": "makuva-meto"
 	},
+<<<<<<< HEAD
 	"mg": {
 		"name": "malagaški"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ml": {
 		"name": "malajalam"
 	},
 	"ms": {
 		"name": "malajski"
 	},
+<<<<<<< HEAD
+=======
+	"mg": {
+		"name": "malgaški"
+	},
+>>>>>>> revert Open Social update
 	"mt": {
 		"name": "malteški"
 	},
@@ -462,7 +490,11 @@
 		"name": "pruski"
 	},
 	"rm": {
+<<<<<<< HEAD
 		"name": "reto-romanski"
+=======
+		"name": "retoromanski"
+>>>>>>> revert Open Social update
 	},
 	"rof": {
 		"name": "rombo"
@@ -494,6 +526,12 @@
 	"ii": {
 		"name": "sičuan ji"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "sinhaleški"
 	},
@@ -551,6 +589,12 @@
 	"sv": {
 		"name": "švedski"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tadžički"
+	},
+>>>>>>> revert Open Social update
 	"shi": {
 		"name": "tahelhit"
 	},
@@ -569,6 +613,12 @@
 	"twq": {
 		"name": "tasavak"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tatarski"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telugu"
 	},
@@ -617,6 +667,12 @@
 	"vo": {
 		"name": "volapuk"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "volof"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "vunjo"
 	},

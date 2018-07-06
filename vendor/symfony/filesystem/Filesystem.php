@@ -21,8 +21,6 @@ use Symfony\Component\Filesystem\Exception\FileNotFoundException;
  */
 class Filesystem
 {
-    private static $lastError;
-
     /**
      * Copies a file.
      *
@@ -94,11 +92,12 @@ class Filesystem
                 continue;
             }
 
-            if (!self::box('mkdir', $dir, $mode, true)) {
+            if (true !== @mkdir($dir, $mode, true)) {
+                $error = error_get_last();
                 if (!is_dir($dir)) {
                     // The directory was not created by a concurrent process. Let's throw an exception with a developer friendly error message if we have one
-                    if (self::$lastError) {
-                        throw new IOException(sprintf('Failed to create "%s": %s.', $dir, self::$lastError), 0, null, $dir);
+                    if ($error) {
+                        throw new IOException(sprintf('Failed to create "%s": %s.', $dir, $error['message']), 0, null, $dir);
                     }
                     throw new IOException(sprintf('Failed to create "%s"', $dir), 0, null, $dir);
                 }
@@ -165,17 +164,20 @@ class Filesystem
         foreach ($files as $file) {
             if (is_link($file)) {
                 // See https://bugs.php.net/52176
-                if (!(self::box('unlink', $file) || '\\' !== DIRECTORY_SEPARATOR || self::box('rmdir', $file)) && file_exists($file)) {
-                    throw new IOException(sprintf('Failed to remove symlink "%s": %s.', $file, self::$lastError));
+                if (!@(unlink($file) || '\\' !== DIRECTORY_SEPARATOR || rmdir($file)) && file_exists($file)) {
+                    $error = error_get_last();
+                    throw new IOException(sprintf('Failed to remove symlink "%s": %s.', $file, $error['message']));
                 }
             } elseif (is_dir($file)) {
                 $this->remove(new \FilesystemIterator($file, \FilesystemIterator::CURRENT_AS_PATHNAME | \FilesystemIterator::SKIP_DOTS));
 
-                if (!self::box('rmdir', $file) && file_exists($file)) {
-                    throw new IOException(sprintf('Failed to remove directory "%s": %s.', $file, self::$lastError));
+                if (!@rmdir($file) && file_exists($file)) {
+                    $error = error_get_last();
+                    throw new IOException(sprintf('Failed to remove directory "%s": %s.', $file, $error['message']));
                 }
-            } elseif (!self::box('unlink', $file) && file_exists($file)) {
-                throw new IOException(sprintf('Failed to remove file "%s": %s.', $file, self::$lastError));
+            } elseif (!@unlink($file) && file_exists($file)) {
+                $error = error_get_last();
+                throw new IOException(sprintf('Failed to remove file "%s": %s.', $file, $error['message']));
             }
         }
     }
@@ -320,13 +322,16 @@ class Filesystem
 
         $this->mkdir(dirname($targetDir));
 
+        $ok = false;
         if (is_link($targetDir)) {
-            if (readlink($targetDir) === $originDir) {
-                return;
+            if (readlink($targetDir) != $originDir) {
+                $this->remove($targetDir);
+            } else {
+                $ok = true;
             }
-            $this->remove($targetDir);
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         if (!$ok && true !== @symlink($originDir, $targetDir)) {
             $report = error_get_last();
@@ -336,6 +341,9 @@ class Filesystem
                 }
 =======
         if (!self::box('symlink', $originDir, $targetDir)) {
+=======
+        if (!$ok && true !== @symlink($originDir, $targetDir)) {
+>>>>>>> revert Open Social update
             $this->linkException($originDir, $targetDir, 'symbolic');
         }
     }
@@ -367,7 +375,7 @@ class Filesystem
                 $this->remove($targetFile);
             }
 
-            if (!self::box('link', $originFile, $targetFile)) {
+            if (true !== @link($originFile, $targetFile)) {
                 $this->linkException($originFile, $targetFile, 'hard');
             }
         }
@@ -380,8 +388,9 @@ class Filesystem
      */
     private function linkException($origin, $target, $linkType)
     {
-        if (self::$lastError) {
-            if ('\\' === DIRECTORY_SEPARATOR && false !== strpos(self::$lastError, 'error code(1314)')) {
+        $report = error_get_last();
+        if (is_array($report)) {
+            if ('\\' === DIRECTORY_SEPARATOR && false !== strpos($report['message'], 'error code(1314)')) {
                 throw new IOException(sprintf('Unable to create %s link due to error code 1314: \'A required privilege is not held by the client\'. Do you have the required Administrator-rights?', $linkType), 0, null, $target);
             }
         }
@@ -677,30 +686,5 @@ class Filesystem
         $components = explode('://', $filename, 2);
 
         return 2 === count($components) ? array($components[0], $components[1]) : array(null, $components[0]);
-    }
-
-    private static function box($func)
-    {
-        self::$lastError = null;
-        \set_error_handler(__CLASS__.'::handleError');
-        try {
-            $result = \call_user_func_array($func, \array_slice(\func_get_args(), 1));
-            \restore_error_handler();
-
-            return $result;
-        } catch (\Throwable $e) {
-        } catch (\Exception $e) {
-        }
-        \restore_error_handler();
-
-        throw $e;
-    }
-
-    /**
-     * @internal
-     */
-    public static function handleError($type, $msg)
-    {
-        self::$lastError = $msg;
     }
 }

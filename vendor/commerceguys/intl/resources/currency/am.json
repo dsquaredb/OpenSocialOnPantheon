@@ -27,12 +27,21 @@
 	"AWG": {
 		"name": "አሩባን ፍሎሪን"
 	},
+<<<<<<< HEAD
 	"HUF": {
 		"name": "የሁንጋሪ ፎሪንት"
 	},
 	"HNL": {
 		"name": "የሃንዱራ ሌምፓአይራ"
 	},
+=======
+	"HNL": {
+		"name": "የሃንዱራ ሌምፓአይራ"
+	},
+	"HUF": {
+		"name": "የሃንጋሪያን ፎሪንት"
+	},
+>>>>>>> revert Open Social update
 	"HTG": {
 		"name": "የሃያቲ ጓርዴ"
 	},
@@ -148,7 +157,11 @@
 		"name": "የሲንጋፖር ዶላር"
 	},
 	"STD": {
+<<<<<<< HEAD
 		"name": "የሳኦ ቶመ እና ፕሪንሲፐ ዶብራ"
+=======
+		"name": "የሳኦ ቶሜ እና ፕሪንሲፔ ዶብራ"
+>>>>>>> revert Open Social update
 	},
 	"SAR": {
 		"name": "የሳውዲ ሪያል"
@@ -192,9 +205,12 @@
 	"BYN": {
 		"name": "የቤላሩስያ ሩብል"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "የቤላሩስያ ሩብል (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"BMD": {
 		"name": "የቤርሙዳ ዶላር"
 	},
@@ -228,7 +244,11 @@
 		"symbol": "₫"
 	},
 	"AED": {
+<<<<<<< HEAD
 		"name": "የተባበሩት የአረብ ኤምረትስ ዲርሀም"
+=======
+		"name": "የተባበሩት የአረብ ኤምሬትስ ድርሀም"
+>>>>>>> revert Open Social update
 	},
 	"TRY": {
 		"name": "የቱርክ ሊራ"
@@ -375,9 +395,12 @@
 	"CVE": {
 		"name": "የኬፕ ቫርዲ ኤስኩዶ"
 	},
+<<<<<<< HEAD
 	"HRK": {
 		"name": "የክሮሽያ ኩና"
 	},
+=======
+>>>>>>> revert Open Social update
 	"COP": {
 		"name": "የኮሎምቢያ ፔሶ"
 	},
@@ -471,7 +494,11 @@
 		"name": "የፓፕዋ ኒው ጊኒ ኪና"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "የፔሩቪያ ኑኤቮ ሶል"
+=======
+		"name": "የፔሩቪያ ሶል"
+>>>>>>> revert Open Social update
 	},
 	"PLN": {
 		"name": "የፖላንድ ዝሎቲ"
@@ -489,6 +516,12 @@
 	"PAB": {
 		"name": "ፓናማኒአን ባልቦአ"
 	},
+<<<<<<< HEAD
+=======
+	"HRK": {
+		"name": "Croatian Kuna"
+	},
+>>>>>>> revert Open Social update
 	"SVC": {
 		"name": "Salvadoran Colón"
 	},

@@ -262,13 +262,14 @@ class AccessResultTest extends UnitTestCase {
     $forbidden = AccessResult::forbidden();
 =======
     $neutral = AccessResult::neutral('neutral message');
-    $neutral_other = AccessResult::neutral('other neutral message');
-    $neutral_reasonless = AccessResult::neutral();
     $allowed = AccessResult::allowed();
     $forbidden = AccessResult::forbidden('forbidden message');
+<<<<<<< HEAD
     $forbidden_other = AccessResult::forbidden('other forbidden message');
     $forbidden_reasonless = AccessResult::forbidden();
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
     $unused_access_result_due_to_lazy_evaluation = $this->getMock('\Drupal\Core\Access\AccessResultInterface');
     $unused_access_result_due_to_lazy_evaluation->expects($this->never())
       ->method($this->anything());
@@ -300,18 +301,6 @@ class AccessResultTest extends UnitTestCase {
     $this->assertFalse($access->isForbidden());
     $this->assertTrue($access->isNeutral());
     $this->assertDefaultCacheability($access);
-    // Reason inheritance edge case: first reason is kept.
-    $access = $neutral->orIf($neutral_other);
-    $this->assertEquals('neutral message', $access->getReason());
-    $access = $neutral_other->orIf($neutral);
-    $this->assertEquals('other neutral message', $access->getReason());
-    // Reason inheritance edge case: one of the operands is reasonless.
-    $access = $neutral->orIf($neutral_reasonless);
-    $this->assertEquals('neutral message', $access->getReason());
-    $access = $neutral_reasonless->orIf($neutral);
-    $this->assertEquals('neutral message', $access->getReason());
-    $access = $neutral_reasonless->orIf($neutral_reasonless);
-    $this->assertNull($access->getReason());
 
     // NEUTRAL || ALLOWED === ALLOWED.
     $access = $neutral->orIf($allowed);
@@ -335,30 +324,18 @@ class AccessResultTest extends UnitTestCase {
     $this->assertDefaultCacheability($access);
 
     // FORBIDDEN || NEUTRAL === FORBIDDEN.
-    $access = $forbidden->orIf($neutral);
+    $access = $forbidden->orIf($allowed);
     $this->assertFalse($access->isAllowed());
     $this->assertTrue($access->isForbidden());
     $this->assertFalse($access->isNeutral());
     $this->assertDefaultCacheability($access);
 
     // FORBIDDEN || FORBIDDEN === FORBIDDEN.
-    $access = $forbidden->orIf($forbidden);
+    $access = $forbidden->orIf($allowed);
     $this->assertFalse($access->isAllowed());
     $this->assertTrue($access->isForbidden());
     $this->assertFalse($access->isNeutral());
     $this->assertDefaultCacheability($access);
-    // Reason inheritance edge case: first reason is kept.
-    $access = $forbidden->orIf($forbidden_other);
-    $this->assertEquals('forbidden message', $access->getReason());
-    $access = $forbidden_other->orIf($forbidden);
-    $this->assertEquals('other forbidden message', $access->getReason());
-    // Reason inheritance edge case: one of the operands is reasonless.
-    $access = $forbidden->orIf($forbidden_reasonless);
-    $this->assertEquals('forbidden message', $access->getReason());
-    $access = $forbidden_reasonless->orIf($forbidden);
-    $this->assertEquals('forbidden message', $access->getReason());
-    $access = $forbidden_reasonless->orIf($forbidden_reasonless);
-    $this->assertNull($access->getReason());
 
     // FORBIDDEN || * === FORBIDDEN.
     $access = $forbidden->orIf($unused_access_result_due_to_lazy_evaluation);

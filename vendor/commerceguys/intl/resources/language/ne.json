@@ -20,15 +20,24 @@
 	"ast": {
 		"name": "अस्टुरियाली"
 	},
+<<<<<<< HEAD
 	"de-AT": {
 		"name": "अस्ट्रियाली जर्मन"
 	},
+=======
+>>>>>>> revert Open Social update
 	"en-AU": {
 		"name": "अस्ट्रेलियाली अङ्ग्रेजी"
 	},
 	"os": {
 		"name": "अोस्सेटिक"
 	},
+<<<<<<< HEAD
+=======
+	"ga": {
+		"name": "आइरिस"
+	},
+>>>>>>> revert Open Social update
 	"is": {
 		"name": "आइसल्यान्डियाली"
 	},
@@ -38,9 +47,12 @@
 	"agq": {
 		"name": "आघेम"
 	},
+<<<<<<< HEAD
 	"ga": {
 		"name": "आयरिस"
 	},
+=======
+>>>>>>> revert Open Social update
 	"hy": {
 		"name": "आर्मेनियाली"
 	},
@@ -69,7 +81,11 @@
 		"name": "इवोन्डो"
 	},
 	"et": {
+<<<<<<< HEAD
 		"name": "इस्टोनियाली"
+=======
+		"name": "इस्टोनियन"
+>>>>>>> revert Open Social update
 	},
 	"ug": {
 		"name": "उइघुर"
@@ -113,9 +129,12 @@
 	"kk": {
 		"name": "काजाख"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "कान्टोनियाली"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kab": {
 		"name": "काबिल"
 	},
@@ -227,6 +246,12 @@
 	"de": {
 		"name": "जर्मन"
 	},
+<<<<<<< HEAD
+=======
+	"de-AT": {
+		"name": "जर्मन (अष्ट्रिया)"
+	},
+>>>>>>> revert Open Social update
 	"dje": {
 		"name": "जर्मा"
 	},
@@ -278,6 +303,15 @@
 	"dav": {
 		"name": "ताइता"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "ताजिक"
+	},
+	"tt": {
+		"name": "तातार"
+	},
+>>>>>>> revert Open Social update
 	"ta": {
 		"name": "तामिल"
 	},
@@ -326,6 +360,12 @@
 	"zh-Hant": {
 		"name": "परम्परागत चिनियाँ"
 	},
+<<<<<<< HEAD
+=======
+	"fy": {
+		"name": "पश्चिमी फ्रिसियन"
+	},
+>>>>>>> revert Open Social update
 	"ps": {
 		"name": "पास्तो"
 	},
@@ -362,9 +402,12 @@
 	"fur": {
 		"name": "फ्रिउलियाली"
 	},
+<<<<<<< HEAD
 	"fy": {
 		"name": "फ्रिजियन"
 	},
+=======
+>>>>>>> revert Open Social update
 	"nl-BE": {
 		"name": "फ्लेमिस"
 	},
@@ -479,8 +522,16 @@
 	"mfe": {
 		"name": "मोरिसेन"
 	},
+<<<<<<< HEAD
 	"mk": {
 		"name": "म्यासेडोनियाली"
+=======
+	"ro-MD": {
+		"name": "मोल्डाभियाली"
+	},
+	"mk": {
+		"name": "म्यासेडोनियन"
+>>>>>>> revert Open Social update
 	},
 	"yav": {
 		"name": "याङ्बेन"
@@ -506,9 +557,12 @@
 	"ro": {
 		"name": "रोमानियाली"
 	},
+<<<<<<< HEAD
 	"ro-MD": {
 		"name": "रोमानियाली (माल्डोभा)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"rm": {
 		"name": "रोमानिस"
 	},
@@ -551,6 +605,12 @@
 	"wae": {
 		"name": "वाल्सर"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "वुलुफ"
+	},
+>>>>>>> revert Open Social update
 	"cy": {
 		"name": "वेल्श"
 	},
@@ -581,6 +641,12 @@
 	"ii": {
 		"name": "सिचुआन यि"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "सिन्धी"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "सिन्हाली"
 	},

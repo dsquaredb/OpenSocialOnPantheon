@@ -411,7 +411,7 @@ class ClassMetadata extends ElementMetadata implements ClassMetadataInterface
     /**
      * Merges the constraints of the given metadata into this object.
      */
-    public function mergeConstraints(self $source)
+    public function mergeConstraints(ClassMetadata $source)
     {
         if ($source->isGroupSequenceProvider()) {
             $this->setGroupSequenceProvider(true);

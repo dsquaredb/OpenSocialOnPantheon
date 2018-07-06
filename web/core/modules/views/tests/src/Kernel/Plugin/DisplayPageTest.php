@@ -30,10 +30,14 @@ class DisplayPageTest extends ViewsKernelTestBase {
    * @var array
    */
 <<<<<<< HEAD
+<<<<<<< HEAD
   public static $modules = array('system', 'user', 'field');
 =======
   public static $modules = ['system', 'user', 'field', 'views_test_data'];
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+  public static $modules = ['system', 'user', 'field'];
+>>>>>>> revert Open Social update
 
   /**
    * The router dumper to get all routes.
@@ -222,6 +226,7 @@ class DisplayPageTest extends ViewsKernelTestBase {
     $this->assertTrue($view->getDisplay()->getOption('use_more_always'), 'Always display the more link by default.');
   }
 
+<<<<<<< HEAD
   /**
    * Tests the templates with empty rows.
    */
@@ -259,4 +264,6 @@ class DisplayPageTest extends ViewsKernelTestBase {
   }
 
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
 }

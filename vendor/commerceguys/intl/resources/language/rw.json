@@ -32,9 +32,12 @@
 	"my": {
 		"name": "Burmese"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Cantonese"
 	},
+=======
+>>>>>>> revert Open Social update
 	"tzm": {
 		"name": "Central Atlas Tamazight"
 	},
@@ -191,6 +194,12 @@
 	"sk": {
 		"name": "Igisilovaki"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "Igisindi"
+	},
+>>>>>>> revert Open Social update
 	"so": {
 		"name": "Igisomali"
 	},
@@ -270,7 +279,11 @@
 		"name": "Ikimarati"
 	},
 	"mk": {
+<<<<<<< HEAD
 		"name": "Ikimasedoniyani"
+=======
+		"name": "Ikimasedoniya"
+>>>>>>> revert Open Social update
 	},
 	"mn": {
 		"name": "Ikimongoli"
@@ -584,9 +597,21 @@
 	"dav": {
 		"name": "Taita"
 	},
+<<<<<<< HEAD
 	"twq": {
 		"name": "Tasawaq"
 	},
+=======
+	"tg": {
+		"name": "Tajik"
+	},
+	"twq": {
+		"name": "Tasawaq"
+	},
+	"tt": {
+		"name": "Tatar"
+	},
+>>>>>>> revert Open Social update
 	"teo": {
 		"name": "Teso"
 	},
@@ -614,6 +639,12 @@
 	"wae": {
 		"name": "Walser"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "Wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "Yangben"
 	},

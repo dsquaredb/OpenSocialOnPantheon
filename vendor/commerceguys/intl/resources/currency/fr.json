@@ -341,9 +341,12 @@
 		"name": "nouveau shekel israélien",
 		"symbol": "₪"
 	},
+<<<<<<< HEAD
 	"PEN": {
 		"name": "nouveau sol péruvien"
 	},
+=======
+>>>>>>> revert Open Social update
 	"MRO": {
 		"name": "ouguiya mauritanien"
 	},
@@ -398,6 +401,7 @@
 		"name": "réal brésilien",
 		"symbol": "R$"
 	},
+<<<<<<< HEAD
 	"IRR": {
 		"name": "rial iranien"
 	},
@@ -418,13 +422,38 @@
 	},
 	"MYR": {
 		"name": "ringgit malais"
+=======
+	"KHR": {
+		"name": "riel cambodgien"
+	},
+	"MYR": {
+		"name": "ringgit malais"
+	},
+	"IRR": {
+		"name": "riyal iranien"
+	},
+	"OMR": {
+		"name": "riyal omanais"
+	},
+	"QAR": {
+		"name": "riyal qatari"
+	},
+	"SAR": {
+		"name": "riyal saoudien"
+	},
+	"YER": {
+		"name": "riyal yéménite"
+>>>>>>> revert Open Social update
 	},
 	"BYN": {
 		"name": "rouble biélorusse"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "rouble biélorusse (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"RUB": {
 		"name": "rouble russe"
 	},
@@ -465,6 +494,12 @@
 	"TZS": {
 		"name": "shilling tanzanien"
 	},
+<<<<<<< HEAD
+=======
+	"PEN": {
+		"name": "sol péruvien"
+	},
+>>>>>>> revert Open Social update
 	"KGS": {
 		"name": "som kirghize"
 	},

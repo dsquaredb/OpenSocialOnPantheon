@@ -55,7 +55,11 @@
 		"name": "Bhutan-Ngultrum"
 	},
 	"BOB": {
+<<<<<<< HEAD
 		"name": "Bolivanischer Boliviano"
+=======
+		"name": "Bolivianischer Boliviano"
+>>>>>>> revert Open Social update
 	},
 	"BAM": {
 		"name": "Bosnien und Herzegowina Konvertierbare Mark"
@@ -490,8 +494,11 @@
 	},
 	"BYN": {
 		"name": "Weißrussischer Rubel"
+<<<<<<< HEAD
 	},
 	"BYR": {
 		"name": "Weißrussischer Rubel (2000–2016)"
+=======
+>>>>>>> revert Open Social update
 	}
 }

@@ -91,7 +91,7 @@ abstract class ControllerBase implements ContainerInjectionInterface {
   /**
    * The state service.
    *
-   * @var \Drupal\Core\State\StateInterface
+   * @var \Drupal\Core\KeyValueStore\KeyValueStoreInterface
    */
   protected $stateService;
 
@@ -220,7 +220,7 @@ abstract class ControllerBase implements ContainerInjectionInterface {
    * needs to be the same across development, production, etc. environments
    * (for example, the system maintenance message) should use config() instead.
    *
-   * @return \Drupal\Core\State\StateInterface
+   * @return \Drupal\Core\KeyValueStore\KeyValueStoreInterface
    */
   protected function state() {
     if (!$this->stateService) {

@@ -55,6 +55,7 @@ class PhpExecutableFinder
         if ($php = getenv('PHP_PATH')) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (!@is_executable($php)) {
 =======
             if (!is_executable($php)) {
@@ -62,6 +63,9 @@ class PhpExecutableFinder
 =======
             if (!@is_executable($php)) {
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+            if (!is_executable($php)) {
+>>>>>>> revert Open Social update
                 return false;
             }
 
@@ -71,6 +75,7 @@ class PhpExecutableFinder
         if ($php = getenv('PHP_PEAR_PHP_BIN')) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (@is_executable($php)) {
 =======
             if (is_executable($php)) {
@@ -78,15 +83,22 @@ class PhpExecutableFinder
 =======
             if (@is_executable($php)) {
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+            if (is_executable($php)) {
+>>>>>>> revert Open Social update
                 return $php;
             }
         }
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> Update Open Social to 8.x-2.1
         if (@is_executable($php = PHP_BINDIR.('\\' === DIRECTORY_SEPARATOR ? '\\php.exe' : '/php'))) {
+=======
+        if (is_executable($php = PHP_BINDIR.('\\' === DIRECTORY_SEPARATOR ? '\\php.exe' : '/php'))) {
+>>>>>>> revert Open Social update
             return $php;
         }
 

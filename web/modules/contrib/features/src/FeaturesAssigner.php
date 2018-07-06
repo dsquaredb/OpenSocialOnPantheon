@@ -364,7 +364,8 @@ class FeaturesAssigner implements FeaturesAssignerInterface {
       }
     }
     foreach ($new_bundles as $new_bundle) {
-      $this->createBundleFromDefault($new_bundle['machine_name'], $new_bundle['name'], $new_bundle['description'], $new_bundle['is_profile']);
+      $new_bundle = $this->createBundleFromDefault($new_bundle['machine_name'], $new_bundle['name'], $new_bundle['description'], $new_bundle['is_profile']);
+      drupal_set_message($this->t('Features bundle @name automatically created.', ['@name' => $new_bundle->getName()]));
     }
 
   }

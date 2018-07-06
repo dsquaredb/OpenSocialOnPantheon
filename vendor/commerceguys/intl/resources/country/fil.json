@@ -24,7 +24,11 @@
 		"name": "Antarctica"
 	},
 	"AG": {
+<<<<<<< HEAD
 		"name": "Antigua and Barbuda"
+=======
+		"name": "Antigua & Barbuda"
+>>>>>>> revert Open Social update
 	},
 	"AO": {
 		"name": "Angola"
@@ -135,7 +139,11 @@
 		"name": "Central African Republic"
 	},
 	"EA": {
+<<<<<<< HEAD
 		"name": "Ceuta and Melilla"
+=======
+		"name": "Ceuta & Melilla"
+>>>>>>> revert Open Social update
 	},
 	"TD": {
 		"name": "Chad"
@@ -186,7 +194,11 @@
 		"name": "Cyprus"
 	},
 	"CZ": {
+<<<<<<< HEAD
 		"name": "Czech Republic"
+=======
+		"name": "Czechia"
+>>>>>>> revert Open Social update
 	},
 	"DK": {
 		"name": "Denmark"
@@ -563,6 +575,7 @@
 	"RW": {
 		"name": "Rwanda"
 	},
+<<<<<<< HEAD
 	"BL": {
 		"name": "Saint Barthélemy"
 	},
@@ -572,18 +585,23 @@
 	"KN": {
 		"name": "Saint Kitts and Nevis"
 	},
+=======
+>>>>>>> revert Open Social update
 	"LC": {
 		"name": "Saint Lucia"
 	},
 	"MF": {
 		"name": "Saint Martin"
 	},
+<<<<<<< HEAD
 	"PM": {
 		"name": "Saint Pierre and Miquelon"
 	},
 	"VC": {
 		"name": "Saint Vincent and the Grenadines"
 	},
+=======
+>>>>>>> revert Open Social update
 	"WS": {
 		"name": "Samoa"
 	},
@@ -591,7 +609,11 @@
 		"name": "San Marino"
 	},
 	"ST": {
+<<<<<<< HEAD
 		"name": "São Tomé and Príncipe"
+=======
+		"name": "São Tomé & Príncipe"
+>>>>>>> revert Open Social update
 	},
 	"SA": {
 		"name": "Saudi Arabia"
@@ -630,7 +652,11 @@
 		"name": "South Africa"
 	},
 	"GS": {
+<<<<<<< HEAD
 		"name": "South Georgia and the South Sandwich Islands"
+=======
+		"name": "South Georgia & South Sandwich Islands"
+>>>>>>> revert Open Social update
 	},
 	"ES": {
 		"name": "Spain"
@@ -638,6 +664,24 @@
 	"LK": {
 		"name": "Sri Lanka"
 	},
+<<<<<<< HEAD
+=======
+	"BL": {
+		"name": "St. Barthélemy"
+	},
+	"SH": {
+		"name": "St. Helena"
+	},
+	"KN": {
+		"name": "St. Kitts & Nevis"
+	},
+	"PM": {
+		"name": "St. Pierre & Miquelon"
+	},
+	"VC": {
+		"name": "St. Vincent & Grenadines"
+	},
+>>>>>>> revert Open Social update
 	"SD": {
 		"name": "Sudan"
 	},
@@ -645,7 +689,11 @@
 		"name": "Suriname"
 	},
 	"SJ": {
+<<<<<<< HEAD
 		"name": "Svalbard and Jan Mayen"
+=======
+		"name": "Svalbard & Jan Mayen"
+>>>>>>> revert Open Social update
 	},
 	"SZ": {
 		"name": "Swaziland"
@@ -690,7 +738,11 @@
 		"name": "Tonga"
 	},
 	"TT": {
+<<<<<<< HEAD
 		"name": "Trinidad and Tobago"
+=======
+		"name": "Trinidad & Tobago"
+>>>>>>> revert Open Social update
 	},
 	"TA": {
 		"name": "Tristan de Cunha"
@@ -705,7 +757,11 @@
 		"name": "Turkmenistan"
 	},
 	"TC": {
+<<<<<<< HEAD
 		"name": "Turks and Caicos Islands"
+=======
+		"name": "Turks & Caicos Islands"
+>>>>>>> revert Open Social update
 	},
 	"TV": {
 		"name": "Tuvalu"
@@ -747,7 +803,11 @@
 		"name": "Vietnam"
 	},
 	"WF": {
+<<<<<<< HEAD
 		"name": "Wallis and Futuna"
+=======
+		"name": "Wallis & Futuna"
+>>>>>>> revert Open Social update
 	},
 	"YE": {
 		"name": "Yemen"

@@ -3,13 +3,21 @@
 		"name": "acerbaixano"
 	},
 	"af": {
+<<<<<<< HEAD
 		"name": "africáner"
+=======
+		"name": "afrikaans"
+>>>>>>> revert Open Social update
 	},
 	"agq": {
 		"name": "aghem"
 	},
 	"ak": {
+<<<<<<< HEAD
 		"name": "akán"
+=======
+		"name": "akan"
+>>>>>>> revert Open Social update
 	},
 	"sq": {
 		"name": "albanés"
@@ -30,7 +38,11 @@
 		"name": "alto sorbio"
 	},
 	"am": {
+<<<<<<< HEAD
 		"name": "amárico"
+=======
+		"name": "amhárico"
+>>>>>>> revert Open Social update
 	},
 	"ar": {
 		"name": "árabe"
@@ -39,7 +51,11 @@
 		"name": "armenio"
 	},
 	"as": {
+<<<<<<< HEAD
 		"name": "asamés"
+=======
+		"name": "assamés"
+>>>>>>> revert Open Social update
 	},
 	"ast": {
 		"name": "asturiano"
@@ -57,7 +73,11 @@
 		"name": "baixo saxón"
 	},
 	"dsb": {
+<<<<<<< HEAD
 		"name": "baixo sorabio"
+=======
+		"name": "baixo sorbio"
+>>>>>>> revert Open Social update
 	},
 	"bm": {
 		"name": "bambaro"
@@ -92,6 +112,12 @@
 	"bg": {
 		"name": "búlgaro"
 	},
+<<<<<<< HEAD
+=======
+	"kab": {
+		"name": "cabila"
+	},
+>>>>>>> revert Open Social update
 	"kea": {
 		"name": "caboverdiano"
 	},
@@ -101,9 +127,12 @@
 	"kn": {
 		"name": "canarés"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "cantonés"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kk": {
 		"name": "casaco"
 	},
@@ -117,7 +146,11 @@
 		"name": "checo"
 	},
 	"chr": {
+<<<<<<< HEAD
 		"name": "cheroqui"
+=======
+		"name": "cherokee"
+>>>>>>> revert Open Social update
 	},
 	"zh": {
 		"name": "chinés"
@@ -195,22 +228,37 @@
 		"name": "finés"
 	},
 	"nl-BE": {
+<<<<<<< HEAD
 		"name": "flamenco"
+=======
+		"name": "flamengo"
+>>>>>>> revert Open Social update
 	},
 	"fr": {
 		"name": "francés"
 	},
 	"fr-CA": {
+<<<<<<< HEAD
 		"name": "francés canadiano"
+=======
+		"name": "francés canadense"
+>>>>>>> revert Open Social update
 	},
 	"fr-CH": {
 		"name": "francés suízo"
 	},
 	"fy": {
+<<<<<<< HEAD
 		"name": "frisón"
 	},
 	"fur": {
 		"name": "friuliano"
+=======
+		"name": "frisón occidental"
+	},
+	"fur": {
+		"name": "friulano"
+>>>>>>> revert Open Social update
 	},
 	"ff": {
 		"name": "fula"
@@ -231,7 +279,11 @@
 		"name": "grego"
 	},
 	"kl": {
+<<<<<<< HEAD
 		"name": "groenlandés occidental"
+=======
+		"name": "groenlandés"
+>>>>>>> revert Open Social update
 	},
 	"guz": {
 		"name": "gusii"
@@ -251,9 +303,12 @@
 	"hi": {
 		"name": "hindi"
 	},
+<<<<<<< HEAD
 	"nl": {
 		"name": "holandés"
 	},
+=======
+>>>>>>> revert Open Social update
 	"hu": {
 		"name": "húngaro"
 	},
@@ -273,7 +328,11 @@
 		"name": "inglés británico"
 	},
 	"en-CA": {
+<<<<<<< HEAD
 		"name": "inglés canadiano"
+=======
+		"name": "inglés canadense"
+>>>>>>> revert Open Social update
 	},
 	"ga": {
 		"name": "irlandés"
@@ -287,9 +346,12 @@
 	"dyo": {
 		"name": "jola-fonyi"
 	},
+<<<<<<< HEAD
 	"kab": {
 		"name": "kabile"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kkj": {
 		"name": "kako"
 	},
@@ -308,6 +370,12 @@
 	"ki": {
 		"name": "kikuyu"
 	},
+<<<<<<< HEAD
+=======
+	"ky": {
+		"name": "kirguiz"
+	},
+>>>>>>> revert Open Social update
 	"ksh": {
 		"name": "kölsch"
 	},
@@ -351,7 +419,11 @@
 		"name": "Luo"
 	},
 	"lrc": {
+<<<<<<< HEAD
 		"name": "luri do norte"
+=======
+		"name": "luri setentrional"
+>>>>>>> revert Open Social update
 	},
 	"lb": {
 		"name": "luxemburgués"
@@ -414,7 +486,14 @@
 		"name": "nama"
 	},
 	"nd": {
+<<<<<<< HEAD
 		"name": "ndebele do norte"
+=======
+		"name": "ndebele setentrional"
+	},
+	"nl": {
+		"name": "neerlandés"
+>>>>>>> revert Open Social update
 	},
 	"ne": {
 		"name": "nepalí"
@@ -426,7 +505,11 @@
 		"name": "ngomba"
 	},
 	"nb": {
+<<<<<<< HEAD
 		"name": "noruegués bokmal"
+=======
+		"name": "noruegués bokmål"
+>>>>>>> revert Open Social update
 	},
 	"nn": {
 		"name": "noruegués nynorsk"
@@ -444,13 +527,21 @@
 		"name": "oromo"
 	},
 	"os": {
+<<<<<<< HEAD
 		"name": "osetio"
+=======
+		"name": "ossetio"
+>>>>>>> revert Open Social update
 	},
 	"pa": {
 		"name": "panxabiano"
 	},
 	"ps": {
+<<<<<<< HEAD
 		"name": "pashtu"
+=======
+		"name": "paxto"
+>>>>>>> revert Open Social update
 	},
 	"fa": {
 		"name": "persa"
@@ -462,7 +553,11 @@
 		"name": "portugués"
 	},
 	"pt-PT": {
+<<<<<<< HEAD
 		"name": "portugués europeo"
+=======
+		"name": "portugués de Portugal"
+>>>>>>> revert Open Social update
 	},
 	"prg": {
 		"name": "prusiano"
@@ -470,9 +565,12 @@
 	"qu": {
 		"name": "quechua"
 	},
+<<<<<<< HEAD
 	"ky": {
 		"name": "quirguiz"
 	},
+=======
+>>>>>>> revert Open Social update
 	"rm": {
 		"name": "romanche"
 	},
@@ -498,7 +596,11 @@
 		"name": "saami de Inari"
 	},
 	"se": {
+<<<<<<< HEAD
 		"name": "saami do norte"
+=======
+		"name": "saami setentrional"
+>>>>>>> revert Open Social update
 	},
 	"sah": {
 		"name": "sakha"
@@ -524,6 +626,12 @@
 	"sn": {
 		"name": "shona"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindhi"
+	},
+>>>>>>> revert Open Social update
 	"xog": {
 		"name": "soga"
 	},
@@ -548,20 +656,42 @@
 	"dav": {
 		"name": "taita"
 	},
+<<<<<<< HEAD
 	"zgh": {
 		"name": "tamazight de Marrocos estándar"
 	},
 	"tzm": {
 		"name": "tamazight do Marrocos Central"
+=======
+	"tzm": {
+		"name": "tamazight de Marrocos central"
+	},
+	"zgh": {
+		"name": "tamazight marroquí estándar"
+>>>>>>> revert Open Social update
 	},
 	"ta": {
 		"name": "támil"
 	},
+<<<<<<< HEAD
 	"twq": {
 		"name": "tasawaq"
 	},
 	"te": {
 		"name": "telugú"
+=======
+	"tt": {
+		"name": "tártaro"
+	},
+	"twq": {
+		"name": "tasawaq"
+	},
+	"tg": {
+		"name": "taxico"
+	},
+	"te": {
+		"name": "telugu"
+>>>>>>> revert Open Social update
 	},
 	"teo": {
 		"name": "teso"
@@ -573,7 +703,11 @@
 		"name": "tigriña"
 	},
 	"to": {
+<<<<<<< HEAD
 		"name": "tonganés"
+=======
+		"name": "tongano"
+>>>>>>> revert Open Social update
 	},
 	"tr": {
 		"name": "turco"
@@ -608,6 +742,12 @@
 	"wae": {
 		"name": "walser"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "wólof"
+	},
+>>>>>>> revert Open Social update
 	"ja": {
 		"name": "xaponés"
 	},

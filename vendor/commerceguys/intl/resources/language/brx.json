@@ -14,9 +14,12 @@
 	"bez": {
 		"name": "Bena"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Cantonese"
 	},
+=======
+>>>>>>> revert Open Social update
 	"tzm": {
 		"name": "Central Atlas Tamazight"
 	},
@@ -350,6 +353,12 @@
 	"ka": {
 		"name": "जॉर्जियन्"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "टाटर्"
+	},
+>>>>>>> revert Open Social update
 	"to": {
 		"name": "टॉंगा"
 	},
@@ -365,6 +374,12 @@
 	"ta": {
 		"name": "तमिळ"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "ताजिक्"
+	},
+>>>>>>> revert Open Social update
 	"ti": {
 		"name": "तिग्रीन्या"
 	},
@@ -569,6 +584,12 @@
 	"vo": {
 		"name": "वोलापोक"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "वोलोफ"
+	},
+>>>>>>> revert Open Social update
 	"sn": {
 		"name": "शोना"
 	},
@@ -578,6 +599,12 @@
 	"sg": {
 		"name": "सांग्रो"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "सिंधी"
+	},
+>>>>>>> revert Open Social update
 	"ii": {
 		"name": "सीचुआन् यी"
 	},

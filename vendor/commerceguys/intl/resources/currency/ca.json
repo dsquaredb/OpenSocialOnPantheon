@@ -333,9 +333,12 @@
 		"name": "nou dòlar de Taiwan",
 		"symbol": "NT$"
 	},
+<<<<<<< HEAD
 	"PEN": {
 		"name": "nou sol peruà"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ILS": {
 		"name": "nou xéquel israelià",
 		"symbol": "₪"
@@ -412,9 +415,12 @@
 	"BYN": {
 		"name": "ruble bielorús"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "ruble bielorús (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"RUB": {
 		"name": "ruble rus"
 	},
@@ -443,6 +449,12 @@
 	"PKR": {
 		"name": "rupia pakistanesa"
 	},
+<<<<<<< HEAD
+=======
+	"PEN": {
+		"name": "sol peruà"
+	},
+>>>>>>> revert Open Social update
 	"KGS": {
 		"name": "som kirguís"
 	},

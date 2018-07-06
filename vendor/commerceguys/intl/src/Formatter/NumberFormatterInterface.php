@@ -45,10 +45,26 @@ interface NumberFormatterInterface
     public function formatCurrency($value, CurrencyInterface $currency);
 
     /**
+<<<<<<< HEAD
      * Parses a formatted currency value.
      *
      * Commonly used in price input widgets where the end-user might
      * input a value using digits and symbols common to their locale.
+=======
+     * Parses a number.
+     *
+     * Commonly used in input widgets where the end-user might input
+     * a value using digits and symbols common to their locale.
+     *
+     * @param string $value The value to parse.
+     *
+     * @return string|false The parsed numeric value or FALSE on error.
+     */
+    public function parse($value);
+
+    /**
+     * Parses a formatted currency value.
+>>>>>>> revert Open Social update
      *
      * @param string            $value    The value to parse.
      * @param CurrencyInterface $currency The currency.

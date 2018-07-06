@@ -92,9 +92,12 @@
 	"kam": {
 		"name": "Camba"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Cantoneeg"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kk": {
 		"name": "Casacheg"
 	},
@@ -417,7 +420,11 @@
 		"name": "Nwosw"
 	},
 	"or": {
+<<<<<<< HEAD
 		"name": "Oriya"
+=======
+		"name": "Odia"
+>>>>>>> revert Open Social update
 	},
 	"om": {
 		"name": "Oromo"
@@ -500,6 +507,12 @@
 	"smn": {
 		"name": "Sami Inari"
 	},
+<<<<<<< HEAD
+=======
+	"dje": {
+		"name": "Sarmaeg"
+	},
+>>>>>>> revert Open Social update
 	"es": {
 		"name": "Sbaeneg"
 	},
@@ -518,6 +531,12 @@
 	"sn": {
 		"name": "Shona"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "Sindhi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "Sinhaleg"
 	},
@@ -557,6 +576,12 @@
 	"dav": {
 		"name": "Taita"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "Tajiceg"
+	},
+>>>>>>> revert Open Social update
 	"tzm": {
 		"name": "Tamaseit Canolbarth Moroco"
 	},
@@ -569,6 +594,12 @@
 	"twq": {
 		"name": "Tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "Tatareg"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "Telugu"
 	},
@@ -623,13 +654,22 @@
 	"uk": {
 		"name": "Wcreineg"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "Woloff"
+	},
+>>>>>>> revert Open Social update
 	"ur": {
 		"name": "Wrdw"
 	},
 	"uz": {
 		"name": "Wsbeceg"
+<<<<<<< HEAD
 	},
 	"dje": {
 		"name": "Zarmaeg"
+=======
+>>>>>>> revert Open Social update
 	}
 }

@@ -10,7 +10,11 @@
 		"symbol": "฿"
 	},
 	"PAB": {
+<<<<<<< HEAD
 		"name": "Balboa panamenha"
+=======
+		"name": "Balboa panamenho"
+>>>>>>> revert Open Social update
 	},
 	"ETB": {
 		"name": "Birr etíope"
@@ -78,12 +82,21 @@
 	"TND": {
 		"name": "Dinar tunisiano"
 	},
+<<<<<<< HEAD
 	"AED": {
 		"name": "Dirrã dos Emirados Árabes Unidos"
 	},
 	"MAD": {
 		"name": "Dirrã marroquino"
 	},
+=======
+	"MAD": {
+		"name": "Dirham marroquino"
+	},
+	"AED": {
+		"name": "Dirrã dos Emirados Árabes Unidos"
+	},
+>>>>>>> revert Open Social update
 	"STD": {
 		"name": "Dobra de São Tomé e Príncipe"
 	},
@@ -115,7 +128,11 @@
 		"symbol": "CA$"
 	},
 	"KYD": {
+<<<<<<< HEAD
 		"name": "Dólar das Ilhas Caiman"
+=======
+		"name": "Dólar das Ilhas Cayman"
+>>>>>>> revert Open Social update
 	},
 	"SBD": {
 		"name": "Dólar das Ilhas Salomão"
@@ -180,7 +197,11 @@
 		"name": "Florim das Antilhas Holandesas"
 	},
 	"HUF": {
+<<<<<<< HEAD
 		"name": "Forint húngaro"
+=======
+		"name": "Florim húngaro"
+>>>>>>> revert Open Social update
 	},
 	"BIF": {
 		"name": "Franco burundiano"
@@ -198,13 +219,21 @@
 		"symbol": "CFPF"
 	},
 	"KMF": {
+<<<<<<< HEAD
 		"name": "Franco comorense"
+=======
+		"name": "Franco comoriano"
+>>>>>>> revert Open Social update
 	},
 	"CDF": {
 		"name": "Franco congolês"
 	},
 	"DJF": {
+<<<<<<< HEAD
 		"name": "Franco djibutiense"
+=======
+		"name": "Franco djiboutiano"
+>>>>>>> revert Open Social update
 	},
 	"GNF": {
 		"name": "Franco guineano"
@@ -238,7 +267,11 @@
 		"name": "Kuna croata"
 	},
 	"MWK": {
+<<<<<<< HEAD
 		"name": "Kwacha malawiana"
+=======
+		"name": "Kwacha malauiana"
+>>>>>>> revert Open Social update
 	},
 	"ZMW": {
 		"name": "Kwacha zambiano"
@@ -270,10 +303,13 @@
 	"BGN": {
 		"name": "Lev búlgaro"
 	},
+<<<<<<< HEAD
 	"GBP": {
 		"name": "Libra britânica",
 		"symbol": "£"
 	},
+=======
+>>>>>>> revert Open Social update
 	"GIP": {
 		"name": "Libra de Gibraltar"
 	},
@@ -283,6 +319,13 @@
 	"EGP": {
 		"name": "Libra egípcia"
 	},
+<<<<<<< HEAD
+=======
+	"GBP": {
+		"name": "Libra esterlina",
+		"symbol": "£"
+	},
+>>>>>>> revert Open Social update
 	"LBP": {
 		"name": "Libra libanesa"
 	},
@@ -314,7 +357,11 @@
 		"name": "Manat turcomeno"
 	},
 	"BAM": {
+<<<<<<< HEAD
 		"name": "Marco bósnio-herzegovino conversível"
+=======
+		"name": "Marco conversível da Bósnia e Herzegovina"
+>>>>>>> revert Open Social update
 	},
 	"MZN": {
 		"name": "Metical moçambicano"
@@ -332,9 +379,12 @@
 		"name": "Novo dólar taiwanês",
 		"symbol": "NT$"
 	},
+<<<<<<< HEAD
 	"PEN": {
 		"name": "Novo sol peruano"
 	},
+=======
+>>>>>>> revert Open Social update
 	"MRO": {
 		"name": "Ouguiya mauritana"
 	},
@@ -376,7 +426,11 @@
 		"name": "Pula botsuanesa"
 	},
 	"GTQ": {
+<<<<<<< HEAD
 		"name": "Quetzal guatemalense"
+=======
+		"name": "Quetzal guatemalteco"
+>>>>>>> revert Open Social update
 	},
 	"ZAR": {
 		"name": "Rand sul-africano"
@@ -409,9 +463,12 @@
 	"BYN": {
 		"name": "Rublo bielorrusso"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "Rublo bielorrusso (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"RUB": {
 		"name": "Rublo russo"
 	},
@@ -444,6 +501,12 @@
 		"name": "Sheqel novo israelita",
 		"symbol": "₪"
 	},
+<<<<<<< HEAD
+=======
+	"PEN": {
+		"name": "Sol peruano"
+	},
+>>>>>>> revert Open Social update
 	"KGS": {
 		"name": "Som quirguiz"
 	},

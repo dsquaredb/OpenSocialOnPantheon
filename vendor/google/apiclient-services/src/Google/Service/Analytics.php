@@ -48,9 +48,6 @@ class Google_Service_Analytics extends Google_Service
   /** View your Google Analytics data. */
   const ANALYTICS_READONLY =
       "https://www.googleapis.com/auth/analytics.readonly";
-  /** Manage Google Analytics user deletion requests. */
-  const ANALYTICS_USER_DELETION =
-      "https://www.googleapis.com/auth/analytics.user.deletion";
 
   public $data_ga;
   public $data_mcf;
@@ -76,7 +73,6 @@ class Google_Service_Analytics extends Google_Service
   public $management_webpropertyUserLinks;
   public $metadata_columns;
   public $provisioning;
-  public $userDeletion_userDeletionRequest;
   
   /**
    * Constructs the internal representation of the Analytics service.
@@ -2121,20 +2117,6 @@ class Google_Service_Analytics extends Google_Service
               'parameters' => array(),
             ),'createAccountTree' => array(
               'path' => 'provisioning/createAccountTree',
-              'httpMethod' => 'POST',
-              'parameters' => array(),
-            ),
-          )
-        )
-    );
-    $this->userDeletion_userDeletionRequest = new Google_Service_Analytics_Resource_UserDeletionUserDeletionRequest(
-        $this,
-        $this->serviceName,
-        'userDeletionRequest',
-        array(
-          'methods' => array(
-            'upsert' => array(
-              'path' => 'userDeletion/userDeletionRequests:upsert',
               'httpMethod' => 'POST',
               'parameters' => array(),
             ),

@@ -1,10 +1,13 @@
 {
+<<<<<<< HEAD
 	"CN": {
 		"name": "A China"
 	},
 	"IN": {
 		"name": "A India"
 	},
+=======
+>>>>>>> revert Open Social update
 	"AZ": {
 		"name": "Acerbaixán"
 	},
@@ -60,13 +63,21 @@
 		"name": "Bahrain"
 	},
 	"BD": {
+<<<<<<< HEAD
 		"name": "Bangladés"
+=======
+		"name": "Bangladesh"
+>>>>>>> revert Open Social update
 	},
 	"BB": {
 		"name": "Barbados"
 	},
 	"BZ": {
+<<<<<<< HEAD
 		"name": "Belice"
+=======
+		"name": "Belize"
+>>>>>>> revert Open Social update
 	},
 	"BE": {
 		"name": "Bélxica"
@@ -84,10 +95,17 @@
 		"name": "Bolivia"
 	},
 	"BA": {
+<<<<<<< HEAD
 		"name": "Bosnia-Hercegovina"
 	},
 	"BW": {
 		"name": "Botsuana"
+=======
+		"name": "Bosnia e Hercegovina"
+	},
+	"BW": {
+		"name": "Botswana"
+>>>>>>> revert Open Social update
 	},
 	"BR": {
 		"name": "Brasil"
@@ -111,7 +129,11 @@
 		"name": "Cabo Verde"
 	},
 	"KH": {
+<<<<<<< HEAD
 		"name": "Camboxa"
+=======
+		"name": "Cambodja"
+>>>>>>> revert Open Social update
 	},
 	"CM": {
 		"name": "Camerún"
@@ -131,18 +153,33 @@
 	"TD": {
 		"name": "Chad"
 	},
+<<<<<<< HEAD
 	"CL": {
 		"name": "Chile"
 	},
+=======
+	"CZ": {
+		"name": "Chequia"
+	},
+	"CL": {
+		"name": "Chile"
+	},
+	"CN": {
+		"name": "China"
+	},
+>>>>>>> revert Open Social update
 	"CY": {
 		"name": "Chipre"
 	},
 	"VA": {
 		"name": "Cidade do Vaticano"
 	},
+<<<<<<< HEAD
 	"ZW": {
 		"name": "Cimbabue"
 	},
+=======
+>>>>>>> revert Open Social update
 	"CO": {
 		"name": "Colombia"
 	},
@@ -267,7 +304,11 @@
 		"name": "Guinea Ecuatorial"
 	},
 	"GW": {
+<<<<<<< HEAD
 		"name": "Guinea-Bisau"
+=======
+		"name": "Guinea-Bissau"
+>>>>>>> revert Open Social update
 	},
 	"HT": {
 		"name": "Haití"
@@ -276,7 +317,11 @@
 		"name": "Honduras"
 	},
 	"HK": {
+<<<<<<< HEAD
 		"name": "Hong Kong RAE de China"
+=======
+		"name": "Hong Kong RAE da China"
+>>>>>>> revert Open Social update
 	},
 	"HU": {
 		"name": "Hungría"
@@ -344,6 +389,12 @@
 	"GS": {
 		"name": "Illas Xeorxia do Sur e Sandwich do Sur"
 	},
+<<<<<<< HEAD
+=======
+	"IN": {
+		"name": "India"
+	},
+>>>>>>> revert Open Social update
 	"ID": {
 		"name": "Indonesia"
 	},
@@ -371,6 +422,12 @@
 	"KE": {
 		"name": "Kenya"
 	},
+<<<<<<< HEAD
+=======
+	"KG": {
+		"name": "Kirguizistán"
+	},
+>>>>>>> revert Open Social update
 	"KI": {
 		"name": "Kiribati"
 	},
@@ -408,7 +465,11 @@
 		"name": "Luxemburgo"
 	},
 	"MO": {
+<<<<<<< HEAD
 		"name": "Macau RAE de China"
+=======
+		"name": "Macau RAE da China"
+>>>>>>> revert Open Social update
 	},
 	"MK": {
 		"name": "Macedonia"
@@ -420,7 +481,11 @@
 		"name": "Malaisia"
 	},
 	"MW": {
+<<<<<<< HEAD
 		"name": "Malaui"
+=======
+		"name": "Malawi"
+>>>>>>> revert Open Social update
 	},
 	"MV": {
 		"name": "Maldivas"
@@ -506,9 +571,12 @@
 	"SV": {
 		"name": "O Salvador"
 	},
+<<<<<<< HEAD
 	"JP": {
 		"name": "O Xapón"
 	},
+=======
+>>>>>>> revert Open Social update
 	"OM": {
 		"name": "Omán"
 	},
@@ -548,18 +616,24 @@
 	"QA": {
 		"name": "Qatar"
 	},
+<<<<<<< HEAD
 	"KG": {
 		"name": "Quirguicistán"
 	},
+=======
+>>>>>>> revert Open Social update
 	"GB": {
 		"name": "Reino Unido"
 	},
 	"CF": {
 		"name": "República Centroafricana"
 	},
+<<<<<<< HEAD
 	"CZ": {
 		"name": "República Checa"
 	},
+=======
+>>>>>>> revert Open Social update
 	"CD": {
 		"name": "República Democrática do Congo"
 	},
@@ -587,15 +661,24 @@
 	"KN": {
 		"name": "Saint Kitts e Nevis"
 	},
+<<<<<<< HEAD
 	"PM": {
 		"name": "Saint Pierre e Miquelon"
 	},
+=======
+>>>>>>> revert Open Social update
 	"BL": {
 		"name": "Saint-Barthélemy"
 	},
 	"MF": {
 		"name": "Saint-Martin"
 	},
+<<<<<<< HEAD
+=======
+	"PM": {
+		"name": "Saint-Pierre-et-Miquelon"
+	},
+>>>>>>> revert Open Social update
 	"WS": {
 		"name": "Samoa"
 	},
@@ -609,7 +692,11 @@
 		"name": "San Tomé e Príncipe"
 	},
 	"VC": {
+<<<<<<< HEAD
 		"name": "San Vicente e as Granadinas"
+=======
+		"name": "San Vicente e As Granadinas"
+>>>>>>> revert Open Social update
 	},
 	"SH": {
 		"name": "Santa Helena"
@@ -617,9 +704,12 @@
 	"LC": {
 		"name": "Santa Lucía"
 	},
+<<<<<<< HEAD
 	"SC": {
 		"name": "Seixeles"
 	},
+=======
+>>>>>>> revert Open Social update
 	"SN": {
 		"name": "Senegal"
 	},
@@ -629,6 +719,12 @@
 	"SL": {
 		"name": "Serra Leoa"
 	},
+<<<<<<< HEAD
+=======
+	"SC": {
+		"name": "Seychelles"
+	},
+>>>>>>> revert Open Social update
 	"SG": {
 		"name": "Singapur"
 	},
@@ -644,14 +740,21 @@
 	"LK": {
 		"name": "Sri Lanka"
 	},
+<<<<<<< HEAD
 	"SZ": {
 		"name": "Suacilandia"
 	},
+=======
+>>>>>>> revert Open Social update
 	"SD": {
 		"name": "Sudán"
 	},
 	"SS": {
+<<<<<<< HEAD
 		"name": "Sudán do sur"
+=======
+		"name": "Sudán do Sur"
+>>>>>>> revert Open Social update
 	},
 	"SE": {
 		"name": "Suecia"
@@ -668,6 +771,12 @@
 	"SJ": {
 		"name": "Svalbard e Jan Mayen"
 	},
+<<<<<<< HEAD
+=======
+	"SZ": {
+		"name": "Swazilandia"
+	},
+>>>>>>> revert Open Social update
 	"TH": {
 		"name": "Tailandia"
 	},
@@ -687,7 +796,11 @@
 		"name": "Territorios Austrais Franceses"
 	},
 	"PS": {
+<<<<<<< HEAD
 		"name": "Territorios palestinos"
+=======
+		"name": "Territorios Palestinos"
+>>>>>>> revert Open Social update
 	},
 	"TL": {
 		"name": "Timor Leste"
@@ -695,12 +808,21 @@
 	"TG": {
 		"name": "Togo"
 	},
+<<<<<<< HEAD
 	"TO": {
 		"name": "Tonga"
 	},
 	"TK": {
 		"name": "Toquelau"
 	},
+=======
+	"TK": {
+		"name": "Tokelau"
+	},
+	"TO": {
+		"name": "Tonga"
+	},
+>>>>>>> revert Open Social update
 	"TT": {
 		"name": "Trinidad e Tobago"
 	},
@@ -729,7 +851,11 @@
 		"name": "Uruguai"
 	},
 	"UZ": {
+<<<<<<< HEAD
 		"name": "Uzbekistán"
+=======
+		"name": "Uzbequistán"
+>>>>>>> revert Open Social update
 	},
 	"VU": {
 		"name": "Vanuatu"
@@ -746,6 +872,12 @@
 	"JM": {
 		"name": "Xamaica"
 	},
+<<<<<<< HEAD
+=======
+	"JP": {
+		"name": "Xapón"
+	},
+>>>>>>> revert Open Social update
 	"GE": {
 		"name": "Xeorxia"
 	},
@@ -757,5 +889,11 @@
 	},
 	"ZM": {
 		"name": "Zambia"
+<<<<<<< HEAD
+=======
+	},
+	"ZW": {
+		"name": "Zimbabwe"
+>>>>>>> revert Open Social update
 	}
 }

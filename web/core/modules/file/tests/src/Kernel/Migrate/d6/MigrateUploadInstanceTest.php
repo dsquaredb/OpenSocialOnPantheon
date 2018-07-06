@@ -39,10 +39,14 @@ class MigrateUploadInstanceTest extends MigrateDrupal6TestBase {
     $this->assertTrue(is_null($field));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     $this->assertIdentical(array('node', 'page', 'upload'), $this->getMigration('d6_upload_field_instance')->getIdMap()->lookupDestinationID(array('page')));
 =======
     $this->assertIdentical(['node', 'page', 'upload'], $this->getMigration('d6_upload_field_instance')->getIdMap()->lookupDestinationId(['page']));
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+    $this->assertIdentical(['node', 'page', 'upload'], $this->getMigration('d6_upload_field_instance')->getIdMap()->lookupDestinationID(['page']));
+>>>>>>> revert Open Social update
   }
 
 }

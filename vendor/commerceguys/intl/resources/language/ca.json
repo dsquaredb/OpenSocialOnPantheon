@@ -60,7 +60,11 @@
 		"name": "asturià"
 	},
 	"az": {
+<<<<<<< HEAD
 		"name": "azerbaidjanès"
+=======
+		"name": "àzeri"
+>>>>>>> revert Open Social update
 	},
 	"ksf": {
 		"name": "bafia"
@@ -119,9 +123,12 @@
 	"ks": {
 		"name": "caixmiri"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "cantonès"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ca": {
 		"name": "català"
 	},
@@ -131,9 +138,12 @@
 	"cgg": {
 		"name": "chiga"
 	},
+<<<<<<< HEAD
 	"ksh": {
 		"name": "colognian"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kok": {
 		"name": "concani"
 	},
@@ -314,11 +324,21 @@
 	"ky": {
 		"name": "kirguís"
 	},
+<<<<<<< HEAD
+=======
+	"ksh": {
+		"name": "kölsch"
+	},
+>>>>>>> revert Open Social update
 	"khq": {
 		"name": "koyra chiini"
 	},
 	"ckb": {
+<<<<<<< HEAD
 		"name": "kurd sorani"
+=======
+		"name": "kurd central"
+>>>>>>> revert Open Social update
 	},
 	"lkt": {
 		"name": "lakota"
@@ -369,7 +389,11 @@
 		"name": "malai"
 	},
 	"ml": {
+<<<<<<< HEAD
 		"name": "malaiàlam"
+=======
+		"name": "malaialam"
+>>>>>>> revert Open Social update
 	},
 	"mg": {
 		"name": "malgaix"
@@ -521,6 +545,12 @@
 	"sn": {
 		"name": "shona"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "singalès"
 	},
@@ -542,8 +572,16 @@
 	"sv": {
 		"name": "suec"
 	},
+<<<<<<< HEAD
 	"th": {
 		"name": "tailandès"
+=======
+	"tg": {
+		"name": "tadjik"
+	},
+	"th": {
+		"name": "tai"
+>>>>>>> revert Open Social update
 	},
 	"dav": {
 		"name": "taita"
@@ -557,6 +595,12 @@
 	"twq": {
 		"name": "tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tàtar"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telugu"
 	},
@@ -611,6 +655,12 @@
 	"wae": {
 		"name": "walser"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "wòlof"
+	},
+>>>>>>> revert Open Social update
 	"zh": {
 		"name": "xinès"
 	},

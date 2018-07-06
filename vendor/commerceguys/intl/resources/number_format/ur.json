@@ -1,9 +1,15 @@
 {
 	"numbering_system": "latn",
 	"decimal_pattern": "#,##0.###",
+<<<<<<< HEAD
 	"percent_pattern": "#,##,##0%",
 	"currency_pattern": "¤ #,##,##0.00",
 	"accounting_currency_pattern": "¤ #,##,##0.00",
+=======
+	"percent_pattern": "#,##0%",
+	"currency_pattern": "¤ #,##0.00",
+	"accounting_currency_pattern": "¤#,##0.00;(¤#,##0.00)",
+>>>>>>> revert Open Social update
 	"plus_sign": "‎+",
 	"minus_sign": "‎-"
 }

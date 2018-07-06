@@ -1,12 +1,21 @@
 {
 	"numbering_system": "arabext",
 	"decimal_pattern": "#,##0.###",
+<<<<<<< HEAD
 	"percent_pattern": "% #,##0;% -#,##0",
 	"currency_pattern": "#,##0.00 ؜¤;؜-#,##0.00 ؜¤",
+=======
+	"percent_pattern": "#,##0%",
+	"currency_pattern": "‎¤#,##0.00",
+>>>>>>> revert Open Social update
 	"accounting_currency_pattern": "‎¤ #,##0.00;‎(¤ #,##0.00)",
 	"decimal_separator": "٫",
 	"grouping_separator": "٬",
 	"plus_sign": "‎+",
 	"minus_sign": "‎−",
+<<<<<<< HEAD
 	"percent_sign": "‎٪"
+=======
+	"percent_sign": "٪"
+>>>>>>> revert Open Social update
 }

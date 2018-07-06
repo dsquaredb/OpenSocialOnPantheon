@@ -330,7 +330,11 @@
 		"symbol": "MX$"
 	},
 	"PHP": {
+<<<<<<< HEAD
 		"name": "Philippine Peso"
+=======
+		"name": "Philippine Piso"
+>>>>>>> revert Open Social update
 	},
 	"QAR": {
 		"name": "Qatari Rial"
@@ -354,9 +358,12 @@
 	"BYN": {
 		"name": "Rubli bielorùs"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "Rubli bielorùs (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"RUB": {
 		"name": "rubli rus"
 	},

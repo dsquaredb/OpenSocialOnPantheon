@@ -8,7 +8,6 @@ use Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactoryInterface;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Tests\Fixtures\AbstractNormalizerDummy;
-use Symfony\Component\Serializer\Tests\Fixtures\NullableConstructorArgumentDummy;
 use Symfony\Component\Serializer\Tests\Fixtures\ProxyDummy;
 
 /**
@@ -116,6 +115,7 @@ class AbstractNormalizerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('baz', $dummy->quz);
         $this->assertNull($dummy->foo);
     }
+<<<<<<< HEAD
 
     /**
      * @requires PHP 7.1
@@ -128,4 +128,6 @@ class AbstractNormalizerTest extends \PHPUnit_Framework_TestCase
         $this->assertNull($dummy->getFoo());
     }
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
 }

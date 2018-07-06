@@ -491,9 +491,12 @@
 	"AT": {
 		"name": "Österreich"
 	},
+<<<<<<< HEAD
 	"TL": {
 		"name": "Osttimor"
 	},
+=======
+>>>>>>> revert Open Social update
 	"PK": {
 		"name": "Pakistan"
 	},
@@ -599,17 +602,30 @@
 	"SO": {
 		"name": "Somalia"
 	},
+<<<<<<< HEAD
 	"MO": {
 		"name": "Sonderverwaltungsregion Macau"
 	},
 	"HK": {
 		"name": "Sonderverwaltungszone Hongkong"
 	},
+=======
+	"HK": {
+		"name": "Sonderverwaltungsregion Hongkong"
+	},
+	"MO": {
+		"name": "Sonderverwaltungsregion Macau"
+	},
+>>>>>>> revert Open Social update
 	"ES": {
 		"name": "Spanien"
 	},
 	"SJ": {
+<<<<<<< HEAD
 		"name": "Spitzbergen"
+=======
+		"name": "Spitzbergen und Jan Mayen"
+>>>>>>> revert Open Social update
 	},
 	"LK": {
 		"name": "Sri Lanka"
@@ -671,6 +687,12 @@
 	"TH": {
 		"name": "Thailand"
 	},
+<<<<<<< HEAD
+=======
+	"TL": {
+		"name": "Timor-Leste"
+	},
+>>>>>>> revert Open Social update
 	"TG": {
 		"name": "Togo"
 	},
@@ -690,7 +712,11 @@
 		"name": "Tschad"
 	},
 	"CZ": {
+<<<<<<< HEAD
 		"name": "Tschechische Republik"
+=======
+		"name": "Tschechien"
+>>>>>>> revert Open Social update
 	},
 	"TN": {
 		"name": "Tunesien"

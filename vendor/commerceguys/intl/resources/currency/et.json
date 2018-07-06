@@ -339,7 +339,11 @@
 		"name": "Paraguay guaranii"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "Peruu uus soll"
+=======
+		"name": "Peruu soll"
+>>>>>>> revert Open Social update
 	},
 	"PLN": {
 		"name": "Poola zlott"
@@ -424,10 +428,13 @@
 		"name": "Tai baat",
 		"symbol": "฿"
 	},
+<<<<<<< HEAD
 	"TWD": {
 		"name": "Taiwani dollar",
 		"symbol": "NT$"
 	},
+=======
+>>>>>>> revert Open Social update
 	"TZS": {
 		"name": "Tansaania šilling"
 	},
@@ -471,6 +478,13 @@
 	"UZS": {
 		"name": "Usbekistani somm"
 	},
+<<<<<<< HEAD
+=======
+	"TWD": {
+		"name": "uus Taiwani dollar",
+		"symbol": "NT$"
+	},
+>>>>>>> revert Open Social update
 	"NZD": {
 		"name": "Uus-Meremaa dollar",
 		"symbol": "NZ$"
@@ -478,9 +492,12 @@
 	"BYN": {
 		"name": "Valgevene rubla"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "Valgevene rubla (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"VUV": {
 		"name": "Vanuatu vatu"
 	},

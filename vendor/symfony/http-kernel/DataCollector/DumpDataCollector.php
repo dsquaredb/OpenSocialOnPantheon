@@ -199,7 +199,7 @@ class DumpDataCollector extends DataCollector implements DataDumperInterface
         }
         $this->data = array();
         $this->dataCount = 0;
-        $this->isCollected = true;
+        $this->isCollected = false;
         $this->clonesCount = 0;
         $this->clonesIndex = 0;
     }

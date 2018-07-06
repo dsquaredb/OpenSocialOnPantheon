@@ -104,6 +104,12 @@
 	"TD": {
 		"name": "Çad"
 	},
+<<<<<<< HEAD
+=======
+	"CZ": {
+		"name": "Çeki"
+	},
+>>>>>>> revert Open Social update
 	"DK": {
 		"name": "Danimarkë"
 	},
@@ -185,6 +191,12 @@
 	"GW": {
 		"name": "Guine-Bisau"
 	},
+<<<<<<< HEAD
+=======
+	"PG": {
+		"name": "Guineja e Re-Papua"
+	},
+>>>>>>> revert Open Social update
 	"GQ": {
 		"name": "Guineja Ekuatoriale"
 	},
@@ -233,12 +245,21 @@
 	"MP": {
 		"name": "Ishujt e Marianës Veriore"
 	},
+<<<<<<< HEAD
 	"VI": {
 		"name": "Ishujt e Virgjër Amerikanë"
 	},
 	"VG": {
 		"name": "Ishujt e Virgjër Britanikë"
 	},
+=======
+	"VG": {
+		"name": "Ishujt e Virgjër Britanikë"
+	},
+	"VI": {
+		"name": "Ishujt e Virgjër të SHBA-së"
+	},
+>>>>>>> revert Open Social update
 	"FK": {
 		"name": "Ishujt Falkland"
 	},
@@ -261,7 +282,11 @@
 		"name": "Ishujt Marshall"
 	},
 	"UM": {
+<<<<<<< HEAD
 		"name": "Ishujt periferikë të SHBA-së"
+=======
+		"name": "Ishujt Periferikë të SHBA-së"
+>>>>>>> revert Open Social update
 	},
 	"PN": {
 		"name": "Ishujt Pitkern"
@@ -503,9 +528,12 @@
 	"PA": {
 		"name": "Panama"
 	},
+<<<<<<< HEAD
 	"PG": {
 		"name": "Papua Guineja e Re"
 	},
+=======
+>>>>>>> revert Open Social update
 	"PY": {
 		"name": "Paraguai"
 	},
@@ -527,6 +555,7 @@
 	"CY": {
 		"name": "Qipro"
 	},
+<<<<<<< HEAD
 	"CF": {
 		"name": "Repubika e Afrikës Qendrore"
 	},
@@ -539,6 +568,23 @@
 	"RE": {
 		"name": "Reunion"
 	},
+=======
+	"DO": {
+		"name": "Republika Dominikane"
+	},
+	"CF": {
+		"name": "Republika e Afrikës Qendrore"
+	},
+	"RE": {
+		"name": "Reunion"
+	},
+	"HK": {
+		"name": "RPA i Hong-Kongut"
+	},
+	"MO": {
+		"name": "RPA i Makaos"
+	},
+>>>>>>> revert Open Social update
 	"RW": {
 		"name": "Ruandë"
 	},
@@ -548,12 +594,15 @@
 	"RU": {
 		"name": "Rusi"
 	},
+<<<<<<< HEAD
 	"HK": {
 		"name": "RVAK i Hong Kongut"
 	},
 	"MO": {
 		"name": "RVAK i Makaos"
 	},
+=======
+>>>>>>> revert Open Social update
 	"EH": {
 		"name": "Saharaja Perëndimore"
 	},
@@ -570,7 +619,11 @@
 		"name": "San-Marino"
 	},
 	"ST": {
+<<<<<<< HEAD
 		"name": "Sao-Tome e Prinsipe"
+=======
+		"name": "Sao Tome dhe Principe"
+>>>>>>> revert Open Social update
 	},
 	"SC": {
 		"name": "Sejshelle"
@@ -588,7 +641,11 @@
 		"name": "Singapor"
 	},
 	"SX": {
+<<<<<<< HEAD
 		"name": "Sint Marten"
+=======
+		"name": "Sint-Marten"
+>>>>>>> revert Open Social update
 	},
 	"SY": {
 		"name": "Siri"
@@ -621,7 +678,11 @@
 		"name": "Surinami"
 	},
 	"SJ": {
+<<<<<<< HEAD
 		"name": "Svalbard e Jan-Majen"
+=======
+		"name": "Svalbard dhe Jan-Majen"
+>>>>>>> revert Open Social update
 	},
 	"SZ": {
 		"name": "Svazilandë"
@@ -629,6 +690,7 @@
 	"BL": {
 		"name": "Shën Bartolomeu"
 	},
+<<<<<<< HEAD
 	"KN": {
 		"name": "Shën Kits dhe Nevis"
 	},
@@ -641,12 +703,29 @@
 	"SH": {
 		"name": "Shën-Helenë"
 	},
+=======
+	"PM": {
+		"name": "Shën Pier dhe Mikelon"
+	},
+	"SH": {
+		"name": "Shën-Helenë"
+	},
+	"KN": {
+		"name": "Shën-Kits dhe Nevis"
+	},
+>>>>>>> revert Open Social update
 	"LC": {
 		"name": "Shën-Luçia"
 	},
 	"MF": {
 		"name": "Shën-Martin"
 	},
+<<<<<<< HEAD
+=======
+	"VC": {
+		"name": "Shën-Vincent dhe Grenadine"
+	},
+>>>>>>> revert Open Social update
 	"AL": {
 		"name": "Shqipëri"
 	},

@@ -146,9 +146,12 @@
 	"CF": {
 		"name": "Den sentralafrikanske republikk"
 	},
+<<<<<<< HEAD
 	"CZ": {
 		"name": "Den tsjekkiske republikk"
 	},
+=======
+>>>>>>> revert Open Social update
 	"IO": {
 		"name": "Det britiske territoriet i Indiahavet"
 	},
@@ -560,6 +563,12 @@
 	"MF": {
 		"name": "Saint-Martin"
 	},
+<<<<<<< HEAD
+=======
+	"PM": {
+		"name": "Saint-Pierre-et-Miquelon"
+	},
+>>>>>>> revert Open Social update
 	"SB": {
 		"name": "Salomonøyene"
 	},
@@ -614,9 +623,12 @@
 	"LC": {
 		"name": "St. Lucia"
 	},
+<<<<<<< HEAD
 	"PM": {
 		"name": "St. Pierre og Miquelon"
 	},
+=======
+>>>>>>> revert Open Social update
 	"VC": {
 		"name": "St. Vincent og Grenadinene"
 	},
@@ -686,6 +698,12 @@
 	"TD": {
 		"name": "Tsjad"
 	},
+<<<<<<< HEAD
+=======
+	"CZ": {
+		"name": "Tsjekkia"
+	},
+>>>>>>> revert Open Social update
 	"TN": {
 		"name": "Tunisia"
 	},

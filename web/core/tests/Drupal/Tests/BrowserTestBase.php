@@ -358,27 +358,18 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
     $this->mink->setDefaultSessionName('default');
     $this->registerSessions();
 
-    $this->initFrontPage();
-
-    return $session;
-  }
-
-  /**
-   * Visits the front page when initializing Mink.
-   *
-   * According to the W3C WebDriver specification a cookie can only be set if
-   * the cookie domain is equal to the domain of the active document. When the
-   * browser starts up the active document is not our domain but 'about:blank'
-   * or similar. To be able to set our User-Agent and Xdebug cookies at the
-   * start of the test we now do a request to the front page so the active
-   * document matches the domain.
-   *
-   * @see https://w3c.github.io/webdriver/webdriver-spec.html#add-cookie
-   * @see https://www.w3.org/Bugs/Public/show_bug.cgi?id=20975
-   */
-  protected function initFrontPage() {
+    // According to the W3C WebDriver specification a cookie can only be set if
+    // the cookie domain is equal to the domain of the active document. When the
+    // browser starts up the active document is not our domain but 'about:blank'
+    // or similar. To be able to set our User-Agent and Xdebug cookies at the
+    // start of the test we now do a request to the front page so the active
+    // document matches the domain.
+    // @see https://w3c.github.io/webdriver/webdriver-spec.html#add-cookie
+    // @see https://www.w3.org/Bugs/Public/show_bug.cgi?id=20975
     $session = $this->getSession();
     $session->visit($this->baseUrl);
+
+    return $session;
   }
 
   /**
@@ -605,33 +596,6 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
   }
 
   /**
-   * Obtain the HTTP client for the system under test.
-   *
-   * Use this method for arbitrary HTTP requests to the site under test. For
-   * most tests, you should not get the HTTP client and instead use navigation
-   * methods such as drupalGet() and clickLink() in order to benefit from
-   * assertions.
-   *
-   * Subclasses which substitute a different Mink driver should override this
-   * method and provide a Guzzle client if the Mink driver provides one.
-   *
-   * @return \GuzzleHttp\ClientInterface
-   *   The client with BrowserTestBase configuration.
-   *
-   * @throws \RuntimeException
-   *   If the Mink driver does not support a Guzzle HTTP client, throw an
-   *   exception.
-   */
-  protected function getHttpClient() {
-    /* @var $mink_driver \Behat\Mink\Driver\DriverInterface */
-    $mink_driver = $this->getSession()->getDriver();
-    if ($mink_driver instanceof GoutteDriver) {
-      return $mink_driver->getClient()->getClient();
-    }
-    throw new \RuntimeException('The Mink client type ' . get_class($mink_driver) . ' does not support getHttpClient().');
-  }
-
-  /**
    * Returns WebAssert object.
    *
    * @param string $name
@@ -641,7 +605,6 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
    *   A new web-assert option for asserting the presence of elements with.
    */
   public function assertSession($name = NULL) {
-    $this->addToAssertionCount(1);
     return new WebAssert($this->getSession($name), $this->baseUrl);
   }
 
@@ -711,13 +674,11 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
    *   to set for example the "Accept-Language" header for requesting the page
    *   in a different language. Note that not all headers are supported, for
    *   example the "Accept" header is always overridden by the browser. For
-   *   testing REST APIs it is recommended to obtain a separate HTTP client
-   *   using getHttpClient() and performing requests that way.
+   *   testing REST APIs it is recommended to directly use an HTTP client such
+   *   as Guzzle instead.
    *
    * @return string
    *   The retrieved HTML string, also available as $this->getRawContent()
-   *
-   * @see \Drupal\Tests\BrowserTestBase::getHttpClient()
    */
   protected function drupalGet($path, array $options = array(), array $headers = array()) {
     $options['absolute'] = TRUE;
@@ -1669,7 +1630,6 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
   protected function clickLink($label, $index = 0) {
     $label = (string) $label;
     $links = $this->getSession()->getPage()->findAll('named', ['link', $label]);
-    $this->assertArrayHasKey($index, $links, 'The link ' . $label . ' was not found on the page.');
     $links[$index]->click();
   }
 
@@ -1789,6 +1749,7 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
 
   /**
 <<<<<<< HEAD
+<<<<<<< HEAD
    * Gets the config schema exclusions for this test.
 =======
    * Transforms a nested array into a flat array suitable for drupalPostForm().
@@ -1813,6 +1774,8 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
   }
 
   /**
+=======
+>>>>>>> revert Open Social update
    * Checks for meta refresh tag and if found call drupalGet() recursively.
    *
    * This function looks for the http-equiv attribute to be set to "Refresh" and

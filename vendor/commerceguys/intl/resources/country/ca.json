@@ -569,9 +569,12 @@
 	"DO": {
 		"name": "República Dominicana"
 	},
+<<<<<<< HEAD
 	"CZ": {
 		"name": "República Txeca"
 	},
+=======
+>>>>>>> revert Open Social update
 	"RO": {
 		"name": "Romania"
 	},
@@ -681,7 +684,11 @@
 		"name": "Territori Britànic de l’Oceà Índic"
 	},
 	"TF": {
+<<<<<<< HEAD
 		"name": "Territoris Francesos del Sud"
+=======
+		"name": "Territoris Australs Francesos"
+>>>>>>> revert Open Social update
 	},
 	"PS": {
 		"name": "territoris palestins"
@@ -719,6 +726,12 @@
 	"TD": {
 		"name": "Txad"
 	},
+<<<<<<< HEAD
+=======
+	"CZ": {
+		"name": "Txèquia"
+	},
+>>>>>>> revert Open Social update
 	"UA": {
 		"name": "Ucraïna"
 	},

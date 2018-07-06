@@ -119,6 +119,7 @@ class DumperCollection implements \IteratorAggregate
      * Sets the parent collection.
 <<<<<<< HEAD
      */
+<<<<<<< HEAD
     protected function setParent(self $parent)
 =======
      *
@@ -130,6 +131,9 @@ class DumperCollection implements \IteratorAggregate
 =======
     protected function setParent(self $parent)
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+    protected function setParent(DumperCollection $parent)
+>>>>>>> revert Open Social update
     {
         $this->parent = $parent;
     }

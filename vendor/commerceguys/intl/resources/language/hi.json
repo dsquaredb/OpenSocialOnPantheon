@@ -146,9 +146,12 @@
 	"ky": {
 		"name": "किर्गीज़"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "कैंटोनीज़"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kok": {
 		"name": "कोंकणी"
 	},
@@ -206,6 +209,12 @@
 	"ce": {
 		"name": "चेचन"
 	},
+<<<<<<< HEAD
+=======
+	"chr": {
+		"name": "चेरोकी"
+	},
+>>>>>>> revert Open Social update
 	"de": {
 		"name": "जर्मन"
 	},
@@ -245,6 +254,15 @@
 	"ta": {
 		"name": "तमिल"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "ताजिक"
+	},
+	"tt": {
+		"name": "तातार"
+	},
+>>>>>>> revert Open Social update
 	"ti": {
 		"name": "तिग्रीन्या"
 	},
@@ -395,6 +413,12 @@
 	"mn": {
 		"name": "मंगोलियाई"
 	},
+<<<<<<< HEAD
+=======
+	"mk": {
+		"name": "मकदूनियाई"
+	},
+>>>>>>> revert Open Social update
 	"tzm": {
 		"name": "मध्य एटलस तमाज़ित"
 	},
@@ -446,9 +470,12 @@
 	"mgh": {
 		"name": "मैखुवा-मीट्टो"
 	},
+<<<<<<< HEAD
 	"mk": {
 		"name": "मैसिडोनियाई"
 	},
+=======
+>>>>>>> revert Open Social update
 	"mfe": {
 		"name": "मोरीस्येन"
 	},
@@ -545,15 +572,24 @@
 	"vo": {
 		"name": "वोलापुक"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "वोलोफ़"
+	},
+>>>>>>> revert Open Social update
 	"ksb": {
 		"name": "शम्बाला"
 	},
 	"cgg": {
 		"name": "शिगा"
 	},
+<<<<<<< HEAD
 	"chr": {
 		"name": "शेरोकी"
 	},
+=======
+>>>>>>> revert Open Social update
 	"sn": {
 		"name": "शोणा"
 	},
@@ -566,6 +602,12 @@
 	"sg": {
 		"name": "सांगो"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "सिंधी"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "सिंहली"
 	},

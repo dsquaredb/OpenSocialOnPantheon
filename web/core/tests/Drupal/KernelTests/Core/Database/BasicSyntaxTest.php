@@ -28,11 +28,6 @@ class BasicSyntaxTest extends DatabaseTestBase {
 
   /**
    * Tests string concatenation with field values.
-   *
-   * We use 'job' and 'age' fields from the {test} table. Using the 'name' field
-   * for concatenation causes issues with custom or contrib database drivers,
-   * since its type 'varchar_ascii' may lead to using field-level collations not
-   * compatible with the other fields.
    */
 <<<<<<< HEAD
   function testConcatFields() {
@@ -45,6 +40,7 @@ class BasicSyntaxTest extends DatabaseTestBase {
     $this->assertIdentical($result->fetchField(), 'The age of John is 25.', 'Field CONCAT works.');
 =======
   public function testConcatFields() {
+<<<<<<< HEAD
     $result = $this->connection->query(
       'SELECT CONCAT(:a1, CONCAT(job, CONCAT(:a2, CONCAT(age, :a3)))) FROM {test} WHERE age = :age', [
         ':a1' => 'The age of ',
@@ -55,6 +51,15 @@ class BasicSyntaxTest extends DatabaseTestBase {
     );
     $this->assertSame('The age of Singer is 25.', $result->fetchField(), 'Field CONCAT works.');
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+    $result = db_query('SELECT CONCAT(:a1, CONCAT(name, CONCAT(:a2, CONCAT(age, :a3)))) FROM {test} WHERE age = :age', [
+      ':a1' => 'The age of ',
+      ':a2' => ' is ',
+      ':a3' => '.',
+      ':age' => 25,
+    ]);
+    $this->assertIdentical($result->fetchField(), 'The age of John is 25.', 'Field CONCAT works.');
+>>>>>>> revert Open Social update
   }
 
   /**

@@ -90,7 +90,11 @@
 		"name": "Botswana"
 	},
 	"BR": {
+<<<<<<< HEAD
 		"name": "Brasila"
+=======
+		"name": "Brasilia"
+>>>>>>> revert Open Social update
 	},
 	"BN": {
 		"name": "Brunei"
@@ -327,10 +331,17 @@
 		"name": "Inslas Turks e Caicos"
 	},
 	"VI": {
+<<<<<<< HEAD
 		"name": "Inslas Verginas Americanas"
 	},
 	"VG": {
 		"name": "Inslas Verginas Britannicas"
+=======
+		"name": "Inslas Virginas Americanas"
+	},
+	"VG": {
+		"name": "Inslas Virginas Britannicas"
+>>>>>>> revert Open Social update
 	},
 	"IQ": {
 		"name": "Irac"

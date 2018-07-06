@@ -22,10 +22,14 @@ class FieldInstance extends DrupalSqlBase {
     $query = $this->select('field_config_instance', 'fci')
       ->fields('fci')
 <<<<<<< HEAD
+<<<<<<< HEAD
       ->condition('fci.deleted', 0)
 =======
       ->fields('fc', ['type', 'translatable'])
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+      ->fields('fc', ['type'])
+>>>>>>> revert Open Social update
       ->condition('fc.active', 1)
       ->condition('fc.deleted', 0)
       ->condition('fc.storage_active', 1)
@@ -85,13 +89,12 @@ class FieldInstance extends DrupalSqlBase {
 
     $translatable = FALSE;
     if ($row->getSourceProperty('entity_type') == 'node') {
-      $language_content_type_bundle = (int) $this->variableGet('language_content_type_' . $row->getSourceProperty('bundle'), 0);
       // language_content_type_[bundle] may be
       //   - 0: no language support
       //   - 1: language assignment support
       //   - 2: node translation support
       //   - 4: entity translation support
-      if ($language_content_type_bundle === 2 || ($language_content_type_bundle === 4 && $row->getSourceProperty('translatable'))) {
+      if ($this->variableGet('language_content_type_' . $row->getSourceProperty('bundle'), 0) == 2) {
         $translatable = TRUE;
       }
     }

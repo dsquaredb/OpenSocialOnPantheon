@@ -69,7 +69,11 @@
 		"name": "Bolifia"
 	},
 	"BA": {
+<<<<<<< HEAD
 		"name": "Bosnia a Hercegovina"
+=======
+		"name": "Bosnia a Herzegovina"
+>>>>>>> revert Open Social update
 	},
 	"BW": {
 		"name": "Botswana"
@@ -239,9 +243,12 @@
 	"DO": {
 		"name": "Gweriniaeth Dominica"
 	},
+<<<<<<< HEAD
 	"CZ": {
 		"name": "Gweriniaeth Tsiec"
 	},
+=======
+>>>>>>> revert Open Social update
 	"BE": {
 		"name": "Gwlad Belg"
 	},
@@ -605,6 +612,12 @@
 	"TA": {
 		"name": "Tristan da Cunha"
 	},
+<<<<<<< HEAD
+=======
+	"CZ": {
+		"name": "Tsiecia"
+	},
+>>>>>>> revert Open Social update
 	"CN": {
 		"name": "Tsieina"
 	},

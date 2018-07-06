@@ -569,9 +569,13 @@ display:
           1: AND
       exposed_block: true
 <<<<<<< HEAD
+<<<<<<< HEAD
       title: 'Community events'
 =======
       title: 'All events'
+=======
+      title: 'Community events'
+>>>>>>> revert Open Social update
       sorts:
         event_passed_upcoming_sort:
           id: event_passed_upcoming_sort

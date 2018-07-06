@@ -49,9 +49,12 @@
 	"BYN": {
 		"name": "Belo-Russiese roebel"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "Belo-Russiese roebel (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"BMD": {
 		"name": "Bermuda-dollar"
 	},
@@ -355,7 +358,11 @@
 		"name": "Paraguaanse guarani"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "Peruaanse nuwe sol"
+=======
+		"name": "Peruaanse sol"
+>>>>>>> revert Open Social update
 	},
 	"PLN": {
 		"name": "Poolse zloty"

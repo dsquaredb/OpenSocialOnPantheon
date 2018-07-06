@@ -35,9 +35,12 @@
 	"my": {
 		"name": "Burmese"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Cantonese"
 	},
+=======
+>>>>>>> revert Open Social update
 	"tzm": {
 		"name": "Central Atlas Tamazight"
 	},
@@ -323,6 +326,12 @@
 	"twq": {
 		"name": "Tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "Tatar"
+	},
+>>>>>>> revert Open Social update
 	"teo": {
 		"name": "Teso"
 	},
@@ -347,6 +356,12 @@
 	"wae": {
 		"name": "Walser"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "Wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "Yangben"
 	},
@@ -365,9 +380,12 @@
 	"as": {
 		"name": "ئاسامی"
 	},
+<<<<<<< HEAD
 	"sq": {
 		"name": "ئاڵبانی"
 	},
+=======
+>>>>>>> revert Open Social update
 	"de": {
 		"name": "ئاڵمانی"
 	},
@@ -380,6 +398,12 @@
 	"hy": {
 		"name": "ئەرمەنی"
 	},
+<<<<<<< HEAD
+=======
+	"sq": {
+		"name": "ئەڵبانی"
+	},
+>>>>>>> revert Open Social update
 	"am": {
 		"name": "ئەمهەرینجی"
 	},
@@ -450,7 +474,11 @@
 		"name": "بۆلگاری"
 	},
 	"be": {
+<<<<<<< HEAD
 		"name": "بێلاڕووسی"
+=======
+		"name": "بیلاڕووسی"
+>>>>>>> revert Open Social update
 	},
 	"ps": {
 		"name": "پەشتوو"
@@ -462,11 +490,21 @@
 		"name": "پورتوگالی"
 	},
 	"pt-PT": {
+<<<<<<< HEAD
 		"name": "پورتوگاڵی (پورتوگاڵ)"
+=======
+		"name": "پورتوگالی (پورتوگال)"
+>>>>>>> revert Open Social update
 	},
 	"pl": {
 		"name": "پۆڵۆنیایی (لەهستانی)"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "تاجیکی"
+	},
+>>>>>>> revert Open Social update
 	"ta": {
 		"name": "تامیلی"
 	},
@@ -530,6 +568,12 @@
 	"so": {
 		"name": "سۆمالی"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "سيندی"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "سینهەلی"
 	},

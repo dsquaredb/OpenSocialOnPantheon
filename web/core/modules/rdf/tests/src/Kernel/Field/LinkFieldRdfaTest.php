@@ -43,10 +43,14 @@ class LinkFieldRdfaTest extends FieldRdfaTestBase {
   public function testAllFormattersExternal() {
     // Set up test values.
 <<<<<<< HEAD
+<<<<<<< HEAD
     $this->testValue = 'http://test.me/foo/bar/neque/porro/quisquam/est/qui-dolorem?foo/bar/neque/porro/quisquam/est/qui-dolorem';
     $this->entity = EntityTest::create(array());
 =======
     $this->testValue = 'http://test.me/foo/bar/neque/porro/quisquam/est/qui-dolorem?path=foo/bar/neque/porro/quisquam/est/qui-dolorem';
+=======
+    $this->testValue = 'http://test.me/foo/bar/neque/porro/quisquam/est/qui-dolorem?foo/bar/neque/porro/quisquam/est/qui-dolorem';
+>>>>>>> revert Open Social update
     $this->entity = EntityTest::create([]);
 >>>>>>> Update Open Social to 8.x-2.1
     $this->entity->{$this->fieldName}->uri = $this->testValue;

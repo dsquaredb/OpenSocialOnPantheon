@@ -104,9 +104,12 @@
 	"bg": {
 		"name": "bulgare"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "cantonais"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kea": {
 		"name": "capverdien"
 	},
@@ -527,6 +530,12 @@
 	"sn": {
 		"name": "shona"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindhi"
+	},
+>>>>>>> revert Open Social update
 	"cu": {
 		"name": "slavon d’église"
 	},
@@ -554,6 +563,12 @@
 	"sw-CD": {
 		"name": "swahili congolais"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tadjik"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "taita"
 	},
@@ -566,6 +581,12 @@
 	"twq": {
 		"name": "tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tatar"
+	},
+>>>>>>> revert Open Social update
 	"cs": {
 		"name": "tchèque"
 	},
@@ -614,11 +635,21 @@
 	"wae": {
 		"name": "walser"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "yangben"
 	},
 	"ii": {
+<<<<<<< HEAD
 		"name": "yi du Sichuan"
+=======
+		"name": "yi de Sichuan"
+>>>>>>> revert Open Social update
 	},
 	"yi": {
 		"name": "yiddish"

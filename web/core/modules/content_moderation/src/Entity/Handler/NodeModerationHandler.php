@@ -64,7 +64,7 @@ class NodeModerationHandler extends ModerationHandler {
     return $entity->isDefaultTranslation() || $entity->isPublished() !== $published_state;
 =======
     // Force the revision checkbox on.
-    $form['workflow']['options']['#value']['revision'] = 'revision';
+    $form['workflow']['options']['#default_value']['revision'] = 'revision';
     $form['workflow']['options']['revision']['#disabled'] = TRUE;
 >>>>>>> Update Open Social to 8.x-2.1
   }

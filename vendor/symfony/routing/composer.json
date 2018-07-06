@@ -35,6 +35,7 @@
         "symfony/expression-language": "~2.4|~3.0.0",
 >>>>>>> web and vendor directory from composer install
         "doctrine/annotations": "~1.0",
+        "doctrine/common": "~2.2",
         "psr/log": "~1.0"
     },
     "conflict": {

@@ -125,6 +125,12 @@
 	"TD": {
 		"name": "Chad"
 	},
+<<<<<<< HEAD
+=======
+	"CZ": {
+		"name": "Chequia"
+	},
+>>>>>>> revert Open Social update
 	"CL": {
 		"name": "Chile"
 	},
@@ -294,7 +300,11 @@
 		"name": "Irlanda"
 	},
 	"AC": {
+<<<<<<< HEAD
 		"name": "Isla de la Ascensión"
+=======
+		"name": "Isla Ascensión"
+>>>>>>> revert Open Social update
 	},
 	"IM": {
 		"name": "Isla de Man"
@@ -354,7 +364,11 @@
 		"name": "Islas Vírgenes Británicas"
 	},
 	"VI": {
+<<<<<<< HEAD
 		"name": "Islas Vírgenes de EE. UU."
+=======
+		"name": "Islas Vírgenes de los Estados Unidos"
+>>>>>>> revert Open Social update
 	},
 	"IL": {
 		"name": "Israel"
@@ -560,9 +574,12 @@
 	"CF": {
 		"name": "República Centroafricana"
 	},
+<<<<<<< HEAD
 	"CZ": {
 		"name": "República Checa"
 	},
+=======
+>>>>>>> revert Open Social update
 	"CG": {
 		"name": "República del Congo"
 	},

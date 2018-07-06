@@ -119,6 +119,7 @@
 	"GB": {
 		"name": "Buyuk Britaniya"
 	},
+<<<<<<< HEAD
 	"TD": {
 		"name": "Chad"
 	},
@@ -131,6 +132,8 @@
 	"CL": {
 		"name": "Chili"
 	},
+=======
+>>>>>>> revert Open Social update
 	"DK": {
 		"name": "Daniya"
 	},
@@ -162,7 +165,11 @@
 		"name": "Estoniya"
 	},
 	"PS": {
+<<<<<<< HEAD
 		"name": "Falastin hududi"
+=======
+		"name": "Falastin hududlari"
+>>>>>>> revert Open Social update
 	},
 	"FO": {
 		"name": "Farer orollari"
@@ -191,9 +198,12 @@
 	"PF": {
 		"name": "Fransuz Polineziyasi"
 	},
+<<<<<<< HEAD
 	"EH": {
 		"name": "G‘arbiy Sahroi Kabir"
 	},
+=======
+>>>>>>> revert Open Social update
 	"GA": {
 		"name": "Gabon"
 	},
@@ -416,12 +426,21 @@
 	"MA": {
 		"name": "Marokash"
 	},
+<<<<<<< HEAD
 	"MH": {
 		"name": "Marshall orollari"
 	},
 	"MQ": {
 		"name": "Martinika"
 	},
+=======
+	"MQ": {
+		"name": "Martinika"
+	},
+	"MH": {
+		"name": "Marshall orollari"
+	},
+>>>>>>> revert Open Social update
 	"MU": {
 		"name": "Mavrikiy"
 	},
@@ -497,9 +516,12 @@
 	"NO": {
 		"name": "Norvegiya"
 	},
+<<<<<<< HEAD
 	"UZ": {
 		"name": "Oʻzbekiston"
 	},
+=======
+>>>>>>> revert Open Social update
 	"AZ": {
 		"name": "Ozarbayjon"
 	},
@@ -605,6 +627,7 @@
 	"SC": {
 		"name": "Seyshel orollari"
 	},
+<<<<<<< HEAD
 	"KP": {
 		"name": "Shimoliy Koreya"
 	},
@@ -620,6 +643,8 @@
 	"CH": {
 		"name": "Shveytsariya"
 	},
+=======
+>>>>>>> revert Open Social update
 	"SG": {
 		"name": "Singapur"
 	},
@@ -647,9 +672,12 @@
 	"SY": {
 		"name": "Suriya"
 	},
+<<<<<<< HEAD
 	"SJ": {
 		"name": "Svalbard va Yan-Mayen"
 	},
+=======
+>>>>>>> revert Open Social update
 	"SZ": {
 		"name": "Svazilend"
 	},
@@ -757,5 +785,44 @@
 	},
 	"ZW": {
 		"name": "Zimbabve"
+<<<<<<< HEAD
+=======
+	},
+	"UZ": {
+		"name": "Oʻzbekiston"
+	},
+	"EH": {
+		"name": "G‘arbiy Sahroi Kabir"
+	},
+	"KP": {
+		"name": "Shimoliy Koreya"
+	},
+	"MP": {
+		"name": "Shimoliy Mariana orollari"
+	},
+	"SJ": {
+		"name": "Shpitsbergen va Yan-Mayen"
+	},
+	"LK": {
+		"name": "Shri-Lanka"
+	},
+	"SE": {
+		"name": "Shvetsiya"
+	},
+	"CH": {
+		"name": "Shveytsariya"
+	},
+	"TD": {
+		"name": "Chad"
+	},
+	"ME": {
+		"name": "Chernogoriya"
+	},
+	"CZ": {
+		"name": "Chexiya"
+	},
+	"CL": {
+		"name": "Chili"
+>>>>>>> revert Open Social update
 	}
 }

@@ -16,7 +16,11 @@ class TestDataConverter {
    * @return string
    *   Returns the data.
    */
+<<<<<<< HEAD
   static function convertFoo($data) {
+=======
+  public static function convertFoo($data) {
+>>>>>>> revert Open Social update
     return 'foo' . $data['value'];
   }
 

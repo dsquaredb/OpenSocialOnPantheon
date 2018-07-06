@@ -230,9 +230,12 @@
 	"kn": {
 		"name": "kannada"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "kantonesiskt"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ks": {
 		"name": "kashmiri"
 	},
@@ -503,6 +506,12 @@
 	"ii": {
 		"name": "sichuan yi"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindhi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "singalesiskt"
 	},
@@ -545,12 +554,24 @@
 	"dav": {
 		"name": "taita"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tajik"
+	},
+>>>>>>> revert Open Social update
 	"ta": {
 		"name": "tamilskt"
 	},
 	"twq": {
 		"name": "tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tatar"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telugu"
 	},
@@ -626,6 +647,12 @@
 	"wae": {
 		"name": "walser"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "yangben"
 	},

@@ -227,9 +227,12 @@
 	"kn": {
 		"name": "kanareg"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "kantoneg"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ks": {
 		"name": "kashmiri"
 	},
@@ -506,6 +509,12 @@
 	"zh-Hant": {
 		"name": "sinaeg hengounel"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindhi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "singhaleg"
 	},
@@ -545,6 +554,12 @@
 	"shi": {
 		"name": "tacheliteg"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tadjik"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "Taita"
 	},
@@ -560,6 +575,12 @@
 	"twq": {
 		"name": "Tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tatar"
+	},
+>>>>>>> revert Open Social update
 	"cs": {
 		"name": "tchekeg"
 	},
@@ -611,6 +632,12 @@
 	"wae": {
 		"name": "walser"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "wolof"
+	},
+>>>>>>> revert Open Social update
 	"sah": {
 		"name": "yakouteg"
 	},

@@ -536,9 +536,12 @@
 	"PT": {
 		"name": "Putúlugɛsi"
 	},
+<<<<<<< HEAD
 	"CZ": {
 		"name": "Repibiki Tsekɛ"
 	},
+=======
+>>>>>>> revert Open Social update
 	"CF": {
 		"name": "Repibiki ya Afríka ya Káti"
 	},
@@ -596,6 +599,12 @@
 	"SC": {
 		"name": "Sɛshɛlɛ"
 	},
+<<<<<<< HEAD
+=======
+	"CZ": {
+		"name": "Shekia"
+	},
+>>>>>>> revert Open Social update
 	"SL": {
 		"name": "Siera Leonɛ"
 	},

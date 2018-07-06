@@ -230,9 +230,12 @@
 	"kn": {
 		"name": "kannada"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "kantoneska"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kk": {
 		"name": "kasakska"
 	},
@@ -491,6 +494,12 @@
 	"sn": {
 		"name": "shona"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindí"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "singalíska"
 	},
@@ -545,6 +554,12 @@
 	"shi": {
 		"name": "tachelhit"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tadsjikska"
+	},
+>>>>>>> revert Open Social update
 	"th": {
 		"name": "taílenska"
 	},
@@ -560,6 +575,12 @@
 	"twq": {
 		"name": "tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tatarska"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telúgú"
 	},
@@ -620,6 +641,12 @@
 	"vo": {
 		"name": "volapyk"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "volof"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "vunjó"
 	},

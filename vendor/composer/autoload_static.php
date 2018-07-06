@@ -8,7 +8,6 @@ namespace Composer\Autoload;
 class ComposerStaticInitDrupal8
 {
     public static $files = array (
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
@@ -38,6 +37,7 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
 =======
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+<<<<<<< HEAD
         'cf97c57bfe0f23854afd2f3818abb7a0' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/create_uploaded_file.php',
         '9bf37a3d0dad93e29cb4e1b1bfab04e9' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/marshal_headers_from_sapi.php',
         'ce70dccb4bcc2efc6e94d2ee526e6972' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/marshal_method_from_sapi.php',
@@ -47,6 +47,8 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         '1ca3bc274755662169f9629d5412a1da' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/normalize_uploaded_files.php',
         '40360c0b9b437e69bcbb7f1349ce029e' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/parse_cookie_header.php',
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
@@ -106,7 +108,6 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             'Symfony\\Polyfill\\Php54\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Iconv\\' => 23,
-            'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\VarDumper\\' => 28,
 >>>>>>> web and vendor directory from composer install
@@ -220,6 +221,7 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             'Drupal\\Component\\' => 17,
             'DrupalComposer\\DrupalScaffold\\' => 30,
             'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\Common\\Inflector\\' => 26,
             'Doctrine\\Common\\Cache\\' => 22,
         ),
         'C' => 
@@ -229,11 +231,15 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             'Composer\\Semver\\' => 16,
             'Composer\\Installers\\' => 20,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'CommerceGuys\\Zone\\' => 18,
             'CommerceGuys\\Intl\\' => 18,
             'CommerceGuys\\Enum\\' => 18,
 =======
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+            'CommerceGuys\\Intl\\' => 18,
+>>>>>>> revert Open Social update
             'CommerceGuys\\Addressing\\' => 24,
         ),
         'B' => 
@@ -328,6 +334,7 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         ),
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> Update Open Social to 8.x-2.1
         'Symfony\\Polyfill\\Ctype\\' => 
@@ -339,6 +346,8 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
 >>>>>>> web and vendor directory from composer install
 =======
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
         'Symfony\\Component\\Yaml\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/yaml',
@@ -656,6 +665,10 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
+        'Doctrine\\Common\\Inflector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
+        ),
         'Doctrine\\Common\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
@@ -677,16 +690,22 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),
 <<<<<<< HEAD
+<<<<<<< HEAD
         'CommerceGuys\\Zone\\' => 
         array (
             0 => __DIR__ . '/..' . '/commerceguys/zone/src',
         ),
+=======
+>>>>>>> revert Open Social update
         'CommerceGuys\\Intl\\' => 
         array (
             0 => __DIR__ . '/..' . '/commerceguys/intl/src',
         ),
+<<<<<<< HEAD
         'CommerceGuys\\Enum\\' => 
 =======
+=======
+>>>>>>> revert Open Social update
         'CommerceGuys\\Addressing\\' => 
 >>>>>>> Update Open Social to 8.x-2.1
         array (
@@ -821,10 +840,6 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             'Doctrine\\Common\\Lexer\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
-            ),
-            'Doctrine\\Common\\Inflector\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
             ),
             'Doctrine\\Common\\Collections\\' => 
             array (

@@ -111,7 +111,11 @@
 		"name": "Ca-ri-bê Hà Lan"
 	},
 	"UM": {
+<<<<<<< HEAD
 		"name": "Các đảo xa thuộc Hoa Kỳ"
+=======
+		"name": "Các tiểu đảo xa của Hoa Kỳ"
+>>>>>>> revert Open Social update
 	},
 	"AE": {
 		"name": "Các Tiểu Vương quốc Ả Rập Thống nhất"
@@ -155,9 +159,12 @@
 	"DO": {
 		"name": "Cộng hòa Dominica"
 	},
+<<<<<<< HEAD
 	"CZ": {
 		"name": "Cộng hòa Séc"
 	},
+=======
+>>>>>>> revert Open Social update
 	"CF": {
 		"name": "Cộng hòa Trung Phi"
 	},
@@ -314,6 +321,12 @@
 	"IL": {
 		"name": "Israel"
 	},
+<<<<<<< HEAD
+=======
+	"IT": {
+		"name": "Italy"
+	},
+>>>>>>> revert Open Social update
 	"JM": {
 		"name": "Jamaica"
 	},
@@ -342,7 +355,11 @@
 		"name": "Kyrgyzstan"
 	},
 	"IO": {
+<<<<<<< HEAD
 		"name": "Lãnh thổ Anh tại Ấn Độ Dương"
+=======
+		"name": "Lãnh thổ Ấn độ dương thuộc Anh"
+>>>>>>> revert Open Social update
 	},
 	"PS": {
 		"name": "Lãnh thổ Palestine"
@@ -449,6 +466,12 @@
 	"AQ": {
 		"name": "Nam Cực"
 	},
+<<<<<<< HEAD
+=======
+	"GS": {
+		"name": "Nam Georgia & Quần đảo Nam Sandwich"
+	},
+>>>>>>> revert Open Social update
 	"ZA": {
 		"name": "Nam Phi"
 	},
@@ -554,9 +577,12 @@
 	"MH": {
 		"name": "Quần đảo Marshall"
 	},
+<<<<<<< HEAD
 	"GS": {
 		"name": "Quần đảo Nam Georgia và Nam Sandwich"
 	},
+=======
+>>>>>>> revert Open Social update
 	"PN": {
 		"name": "Quần đảo Pitcairn"
 	},
@@ -564,7 +590,11 @@
 		"name": "Quần đảo Solomon"
 	},
 	"TC": {
+<<<<<<< HEAD
 		"name": "Quần đảo Turk và Caicos"
+=======
+		"name": "Quần đảo Turks và Caicos"
+>>>>>>> revert Open Social update
 	},
 	"VG": {
 		"name": "Quần đảo Virgin thuộc Anh"
@@ -593,6 +623,12 @@
 	"ST": {
 		"name": "São Tomé và Príncipe"
 	},
+<<<<<<< HEAD
+=======
+	"CZ": {
+		"name": "Séc"
+	},
+>>>>>>> revert Open Social update
 	"SN": {
 		"name": "Senegal"
 	},
@@ -746,9 +782,12 @@
 	"WF": {
 		"name": "Wallis và Futuna"
 	},
+<<<<<<< HEAD
 	"IT": {
 		"name": "Ý"
 	},
+=======
+>>>>>>> revert Open Social update
 	"YE": {
 		"name": "Yemen"
 	},

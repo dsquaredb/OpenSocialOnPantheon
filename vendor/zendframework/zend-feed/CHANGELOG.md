@@ -3,6 +3,7 @@
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 ## 2.10.2 - 2018-06-18
 
@@ -179,6 +180,8 @@ All notable changes to this project will be documented in this file, in reverse 
 - [#68](https://github.com/zendframework/zend-feed/pull/68) updates both `Zend\Feed\Writer\AbstractFeed` and `Zend\Feed\Writer\Entry`
   to no longer throw an exception for entry titles which have a string value of `0`.
 
+=======
+>>>>>>> revert Open Social update
 ## 2.9.0 - 2017-12-04
 
 ### Added

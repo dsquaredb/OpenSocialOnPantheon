@@ -350,10 +350,14 @@ class Entry
     public function setTitle($title)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (empty($title) || !is_string($title)) {
 =======
         if ((empty($title) && ! is_numeric($title)) || ! is_string($title)) {
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+        if (empty($title) || ! is_string($title)) {
+>>>>>>> revert Open Social update
             throw new Exception\InvalidArgumentException('Invalid parameter: parameter must be a non-empty string');
         }
         $this->data['title'] = $title;

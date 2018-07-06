@@ -134,9 +134,12 @@
 	"sw": {
 		"name": "ਸਵਾਹਿਲੀ"
 	},
+<<<<<<< HEAD
 	"sw-CD": {
 		"name": "ਸਵਾਹਿਲੀ (ਕਾਂਗੋ - ਕਿੰਸ਼ਾਸਾ)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"sv": {
 		"name": "ਸਵੀਡਿਸ਼"
 	},
@@ -152,6 +155,12 @@
 	"ii": {
 		"name": "ਸਿਚੁਆਨ ਯੀ"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "ਸਿੰਧੀ"
+	},
+>>>>>>> revert Open Social update
 	"sbp": {
 		"name": "ਸੇਂਗੋ"
 	},
@@ -218,6 +227,12 @@
 	"kkj": {
 		"name": "ਕਾਕੋ"
 	},
+<<<<<<< HEAD
+=======
+	"sw-CD": {
+		"name": "ਕਾਂਗੋ ਸਵਾਇਲੀ"
+	},
+>>>>>>> revert Open Social update
 	"kea": {
 		"name": "ਕਾਬੁਵੇਰਦਿਆਨੂ"
 	},
@@ -236,9 +251,12 @@
 	"ca": {
 		"name": "ਕੈਟਾਲਾਨ"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "ਕੈਂਟੋਨੀਜ਼"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ses": {
 		"name": "ਕੋਇਰਾਬੋਰੋ ਸੇਂਨੀ"
 	},
@@ -344,12 +362,24 @@
 	"da": {
 		"name": "ਡੈਨਿਸ਼"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "ਤਤਾਰ"
+	},
+>>>>>>> revert Open Social update
 	"ta": {
 		"name": "ਤਮਿਲ"
 	},
 	"twq": {
 		"name": "ਤਾਸਾਵਿਕ"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "ਤਾਜਿਕ"
+	},
+>>>>>>> revert Open Social update
 	"ti": {
 		"name": "ਤਿਗ੍ਰੀਨਿਆ"
 	},
@@ -631,5 +661,11 @@
 	},
 	"vo": {
 		"name": "ਵੋਲਾਪੂਕ"
+<<<<<<< HEAD
+=======
+	},
+	"wo": {
+		"name": "ਵੋਲੋਫ"
+>>>>>>> revert Open Social update
 	}
 }

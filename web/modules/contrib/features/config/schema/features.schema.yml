@@ -38,7 +38,7 @@ features.bundle.*:
       type: boolean
       label: "Is install profile"
 
-features.assignment.settings:
+features.assignment.*:
   type: mapping
   label: "Assignment settings"
   mapping:
@@ -49,13 +49,16 @@ features.assignment.settings:
       type: integer
       label: "Weight"
 
-features.assignment.*:
-  type: features.assignment.settings
-
 features.assignment.base:
-  type: features.assignment.settings
+  type: mapping
   label: "Base type"
   mapping:
+    enabled:
+      type: boolean
+      label: "Enabled"
+    weight:
+      type: integer
+      label: "Weight"
     types:
       type: mapping
       label: "Types"
@@ -72,9 +75,15 @@ features.assignment.base:
             type: string
 
 features.assignment.core:
-  type: features.assignment.settings
+  type: mapping
   label: "Core type"
   mapping:
+    enabled:
+      type: boolean
+      label: "Enabled"
+    weight:
+      type: integer
+      label: "Weight"
     types:
       type: mapping
       label: "Types"
@@ -86,9 +95,15 @@ features.assignment.core:
             type: string
 
 features.assignment.exclude:
-  type: features.assignment.settings
+  type: mapping
   label: "Exclude"
   mapping:
+    enabled:
+      type: boolean
+      label: "Enabled"
+    weight:
+      type: integer
+      label: "Weight"
     types:
       type: mapping
       label: "Types"
@@ -119,9 +134,15 @@ features.assignment.exclude:
           label: "Don't exclude ANY configuration by namespace"
 
 features.assignment.optional:
-  type: features.assignment.settings
+  type: mapping
   label: "Optional"
   mapping:
+    enabled:
+      type: boolean
+      label: "Enabled"
+    weight:
+      type: integer
+      label: "Weight"
     types:
       type: mapping
       label: "Types"
@@ -133,9 +154,15 @@ features.assignment.optional:
             type: string
 
 features.assignment.profile:
-  type: features.assignment.settings
+  type: mapping
   label: "Profile"
   mapping:
+    enabled:
+      type: boolean
+      label: "Enabled"
+    weight:
+      type: integer
+      label: "Weight"
     curated:
       type: boolean
       label: "Add commonly-needed configuration"
@@ -160,9 +187,15 @@ features.assignment.profile:
             type: string
 
 features.assignment.site:
-  type: features.assignment.settings
+  type: mapping
   label: "Site"
   mapping:
+    enabled:
+      type: boolean
+      label: "Enabled"
+    weight:
+      type: integer
+      label: "Weight"
     types:
       type: mapping
       label: "Types"
@@ -172,17 +205,3 @@ features.assignment.site:
           label: "Configuration Types"
           sequence:
             type: string
-
-features.assignment.alter:
-  type: features.assignment.settings
-  label: "Alter"
-  mapping:
-    core:
-      type: boolean
-      label: "Core"
-    uuid:
-      type: boolean
-      label: "UUID"
-    user_permissions:
-      type: boolean
-      label: "User permissions"

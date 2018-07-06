@@ -20,8 +20,11 @@
         "php": ">=5.3.9",
 =======
         "php": "^5.5.9|>=7.0.8",
+<<<<<<< HEAD
         "symfony/polyfill-ctype": "~1.8",
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
         "symfony/polyfill-mbstring": "~1.0"
     },
     "require-dev": {

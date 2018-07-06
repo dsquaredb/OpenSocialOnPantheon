@@ -49,10 +49,14 @@ class MigrateVocabularyFieldInstanceTest extends MigrateDrupal6TestBase {
     $this->assertIdentical(TRUE, $settings['handler_settings']['auto_create'], 'The "auto_create" setting is correct.');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     $this->assertIdentical(array('node', 'article', 'tags'), $this->getMigration('d6_vocabulary_field_instance')->getIdMap()->lookupDestinationID(array(4, 'article')));
 =======
     $this->assertSame(['node', 'article', 'field_tags'], $this->getMigration('d6_vocabulary_field_instance')->getIdMap()->lookupDestinationId([4, 'article']));
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+    $this->assertSame(['node', 'article', 'field_tags'], $this->getMigration('d6_vocabulary_field_instance')->getIdMap()->lookupDestinationID([4, 'article']));
+>>>>>>> revert Open Social update
 
     // Test the the field vocabulary_1_i_0_
     $field_id = 'node.story.vocabulary_1_i_0_';

@@ -3,8 +3,11 @@
 namespace Drupal\Tests\migrate\Unit\process;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use Drupal\Component\Utility\Variable;
+=======
+>>>>>>> revert Open Social update
 use Drupal\migrate\MigrateException;
 use Drupal\migrate\MigrateSkipRowException;
 >>>>>>> Update Open Social to 8.x-2.1
@@ -58,9 +61,13 @@ class StaticMapTest extends MigrateProcessTestCase {
    */
   public function testMapwithInvalidSource() {
 <<<<<<< HEAD
+<<<<<<< HEAD
     $this->plugin->transform(array('bar'), $this->migrateExecutable, $this->row, 'destinationproperty');
 =======
     $this->setExpectedException(MigrateSkipRowException::class, sprintf("No static mapping found for '%s' and no default value provided for destination '%s'.", Variable::export(['bar']), 'destinationproperty'));
+=======
+    $this->setExpectedException(MigrateSkipRowException::class);
+>>>>>>> revert Open Social update
     $this->plugin->transform(['bar'], $this->migrateExecutable, $this->row, 'destinationproperty');
 >>>>>>> Update Open Social to 8.x-2.1
   }

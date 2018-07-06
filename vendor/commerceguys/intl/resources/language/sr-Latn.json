@@ -218,9 +218,12 @@
 	"it": {
 		"name": "italijanski"
 	},
+<<<<<<< HEAD
 	"sah": {
 		"name": "jakutski"
 	},
+=======
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "jangben"
 	},
@@ -251,9 +254,12 @@
 	"kn": {
 		"name": "kanada"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "kantonski"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ks": {
 		"name": "kašmirski"
 	},
@@ -404,6 +410,12 @@
 	"de-AT": {
 		"name": "nemački (Austrija)"
 	},
+<<<<<<< HEAD
+=======
+	"gsw": {
+		"name": "nemački (Švajcarska)"
+	},
+>>>>>>> revert Open Social update
 	"ne": {
 		"name": "nepalski"
 	},
@@ -479,6 +491,12 @@
 	"ru": {
 		"name": "ruski"
 	},
+<<<<<<< HEAD
+=======
+	"sah": {
+		"name": "saha"
+	},
+>>>>>>> revert Open Social update
 	"saq": {
 		"name": "samburu"
 	},
@@ -503,6 +521,12 @@
 	"se": {
 		"name": "severni sami"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "sinhaleški"
 	},
@@ -542,15 +566,24 @@
 	"es-MX": {
 		"name": "španski (Meksiko)"
 	},
+<<<<<<< HEAD
 	"gsw": {
 		"name": "Švajcarski nemački"
 	},
+=======
+>>>>>>> revert Open Social update
 	"de-CH": {
 		"name": "švajcarski visoki nemački"
 	},
 	"sv": {
 		"name": "švedski"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tadžički"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "taita"
 	},
@@ -566,6 +599,12 @@
 	"shi": {
 		"name": "tašelhit"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tatarski"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telugu"
 	},
@@ -617,6 +656,12 @@
 	"vo": {
 		"name": "volapik"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "volof"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "vundžo"
 	},

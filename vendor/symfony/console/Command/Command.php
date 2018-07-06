@@ -294,13 +294,18 @@ class Command
             if (function_exists('cli_set_process_title')) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> Update Open Social to 8.x-2.1
                 if (!@cli_set_process_title($this->processTitle)) {
+=======
+                if (false === @cli_set_process_title($this->processTitle)) {
+>>>>>>> revert Open Social update
                     if ('Darwin' === PHP_OS) {
                         $output->writeln('<comment>Running "cli_get_process_title" as an unprivileged user is not supported on MacOS.</comment>');
                     } else {
-                        cli_set_process_title($this->processTitle);
+                        $error = error_get_last();
+                        trigger_error($error['message'], E_USER_WARNING);
                     }
                 }
 =======

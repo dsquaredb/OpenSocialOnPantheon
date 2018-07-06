@@ -27,9 +27,7 @@ class Google_Service_DLP_Resource_ProjectsDeidentifyTemplates extends Google_Ser
 {
   /**
    * Creates a DeidentifyTemplate for re-using frequently used configuration for
-   * de-identifying content, images, and storage. See
-   * https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.
-   * (deidentifyTemplates.create)
+   * de-identifying content, images, and storage. (deidentifyTemplates.create)
    *
    * @param string $parent The parent resource name, for example projects/my-
    * project-id or organizations/my-org-id.
@@ -44,8 +42,7 @@ class Google_Service_DLP_Resource_ProjectsDeidentifyTemplates extends Google_Ser
     return $this->call('create', array($params), "Google_Service_DLP_GooglePrivacyDlpV2DeidentifyTemplate");
   }
   /**
-   * Deletes a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-
-   * templates-deid to learn more. (deidentifyTemplates.delete)
+   * Deletes a DeidentifyTemplate. (deidentifyTemplates.delete)
    *
    * @param string $name Resource name of the organization and deidentify template
    * to be deleted, for example
@@ -61,8 +58,7 @@ class Google_Service_DLP_Resource_ProjectsDeidentifyTemplates extends Google_Ser
     return $this->call('delete', array($params), "Google_Service_DLP_GoogleProtobufEmpty");
   }
   /**
-   * Gets a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-
-   * templates-deid to learn more. (deidentifyTemplates.get)
+   * Gets a DeidentifyTemplate. (deidentifyTemplates.get)
    *
    * @param string $name Resource name of the organization and deidentify template
    * to be read, for example
@@ -78,8 +74,7 @@ class Google_Service_DLP_Resource_ProjectsDeidentifyTemplates extends Google_Ser
     return $this->call('get', array($params), "Google_Service_DLP_GooglePrivacyDlpV2DeidentifyTemplate");
   }
   /**
-   * Lists DeidentifyTemplates. See https://cloud.google.com/dlp/docs/creating-
-   * templates-deid to learn more.
+   * Lists DeidentifyTemplates.
    * (deidentifyTemplates.listProjectsDeidentifyTemplates)
    *
    * @param string $parent The parent resource name, for example projects/my-
@@ -99,8 +94,7 @@ class Google_Service_DLP_Resource_ProjectsDeidentifyTemplates extends Google_Ser
     return $this->call('list', array($params), "Google_Service_DLP_GooglePrivacyDlpV2ListDeidentifyTemplatesResponse");
   }
   /**
-   * Updates the DeidentifyTemplate. See https://cloud.google.com/dlp/docs
-   * /creating-templates-deid to learn more. (deidentifyTemplates.patch)
+   * Updates the DeidentifyTemplate. (deidentifyTemplates.patch)
    *
    * @param string $name Resource name of organization and deidentify template to
    * be updated, for example

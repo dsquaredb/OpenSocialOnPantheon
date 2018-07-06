@@ -40,15 +40,15 @@ class Google_Service_Firestore_Resource_ProjectsDatabasesIndexes extends Google_
    *
    * @param string $parent The name of the database this index will apply to. For
    * example: `projects/{project_id}/databases/{database_id}`
-   * @param Google_Service_Firestore_GoogleFirestoreAdminV1beta1Index $postBody
+   * @param Google_Service_Firestore_Index $postBody
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Firestore_GoogleLongrunningOperation
+   * @return Google_Service_Firestore_Operation
    */
-  public function create($parent, Google_Service_Firestore_GoogleFirestoreAdminV1beta1Index $postBody, $optParams = array())
+  public function create($parent, Google_Service_Firestore_Index $postBody, $optParams = array())
   {
     $params = array('parent' => $parent, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
-    return $this->call('create', array($params), "Google_Service_Firestore_GoogleLongrunningOperation");
+    return $this->call('create', array($params), "Google_Service_Firestore_Operation");
   }
   /**
    * Deletes an index. (indexes.delete)
@@ -70,13 +70,13 @@ class Google_Service_Firestore_Resource_ProjectsDatabasesIndexes extends Google_
    * @param string $name The name of the index. For example:
    * `projects/{project_id}/databases/{database_id}/indexes/{index_id}`
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Firestore_GoogleFirestoreAdminV1beta1Index
+   * @return Google_Service_Firestore_Index
    */
   public function get($name, $optParams = array())
   {
     $params = array('name' => $name);
     $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_Firestore_GoogleFirestoreAdminV1beta1Index");
+    return $this->call('get', array($params), "Google_Service_Firestore_Index");
   }
   /**
    * Lists the indexes that match the specified filters.
@@ -89,12 +89,12 @@ class Google_Service_Firestore_Resource_ProjectsDatabasesIndexes extends Google_
    * @opt_param string filter
    * @opt_param string pageToken The standard List page token.
    * @opt_param int pageSize The standard List page size.
-   * @return Google_Service_Firestore_GoogleFirestoreAdminV1beta1ListIndexesResponse
+   * @return Google_Service_Firestore_ListIndexesResponse
    */
   public function listProjectsDatabasesIndexes($parent, $optParams = array())
   {
     $params = array('parent' => $parent);
     $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_Firestore_GoogleFirestoreAdminV1beta1ListIndexesResponse");
+    return $this->call('list', array($params), "Google_Service_Firestore_ListIndexesResponse");
   }
 }

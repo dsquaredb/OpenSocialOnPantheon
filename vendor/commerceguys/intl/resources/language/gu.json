@@ -12,7 +12,11 @@
 		"name": "અઝરબૈજાની"
 	},
 	"hsb": {
+<<<<<<< HEAD
 		"name": "અપ્પર સોર્બિયન"
+=======
+		"name": "અપર સોર્બિયન"
+>>>>>>> revert Open Social update
 	},
 	"ar": {
 		"name": "અરબી"
@@ -72,10 +76,17 @@
 		"name": "ઉત્તર દેબેલ"
 	},
 	"lrc": {
+<<<<<<< HEAD
 		"name": "ઉત્તરીય લુરી"
 	},
 	"se": {
 		"name": "ઉત્તરીય સામી"
+=======
+		"name": "ઉત્તરી લુરી"
+	},
+	"se": {
+		"name": "ઉત્તરી સામી"
+>>>>>>> revert Open Social update
 	},
 	"ur": {
 		"name": "ઉર્દૂ"
@@ -143,9 +154,12 @@
 	"ky": {
 		"name": "કિર્ગીઝ"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "કેંટોનીઝ"
 	},
+=======
+>>>>>>> revert Open Social update
 	"en-CA": {
 		"name": "કેનેડિયન અંગ્રેજી"
 	},
@@ -225,7 +239,11 @@
 		"name": "જોલા-ફોન્યી"
 	},
 	"ka": {
+<<<<<<< HEAD
 		"name": "જ્યોર્જિઅન"
+=======
+		"name": "જ્યોર્જિયન"
+>>>>>>> revert Open Social update
 	},
 	"dje": {
 		"name": "ઝર્મા"
@@ -234,7 +252,11 @@
 		"name": "ઝુલુ"
 	},
 	"tr": {
+<<<<<<< HEAD
 		"name": "ટર્કીશ"
+=======
+		"name": "ટર્કિશ"
+>>>>>>> revert Open Social update
 	},
 	"ti": {
 		"name": "ટાઇગ્રિનિયા"
@@ -251,12 +273,24 @@
 	"dz": {
 		"name": "ડ્ઝોંગ્ખા"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "તતાર"
+	},
+>>>>>>> revert Open Social update
 	"ta": {
 		"name": "તમિલ"
 	},
 	"twq": {
 		"name": "તસાવાક"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "તાજીક"
+	},
+>>>>>>> revert Open Social update
 	"bo": {
 		"name": "તિબેટીયન"
 	},
@@ -287,9 +321,12 @@
 	"naq": {
 		"name": "નમા"
 	},
+<<<<<<< HEAD
 	"dsb": {
 		"name": "નિમ્ન સોર્બિયન"
 	},
+=======
+>>>>>>> revert Open Social update
 	"nnh": {
 		"name": "નીએમબુન"
 	},
@@ -300,10 +337,17 @@
 		"name": "નેપાળી"
 	},
 	"nn": {
+<<<<<<< HEAD
 		"name": "નૉર્વેજીયન નાયનૉર્સ્ક"
 	},
 	"nb": {
 		"name": "નોર્વેજીયન બોકમાલ"
+=======
+		"name": "નોર્વેજિયન નાયનૉર્સ્ક"
+	},
+	"nb": {
+		"name": "નોર્વેજિયન બોકમાલ"
+>>>>>>> revert Open Social update
 	},
 	"nyn": {
 		"name": "ન્યાનકોલ"
@@ -326,9 +370,12 @@
 	"pl": {
 		"name": "પોલીશ"
 	},
+<<<<<<< HEAD
 	"zgh": {
 		"name": "પ્રમાણભૂત મોરોક્કન તામાઝિગ્ટ"
 	},
+=======
+>>>>>>> revert Open Social update
 	"prg": {
 		"name": "પ્રુસ્સીયન"
 	},
@@ -356,9 +403,12 @@
 	"nl-BE": {
 		"name": "ફ્લેમિશ"
 	},
+<<<<<<< HEAD
 	"bn": {
 		"name": "બંગાળી"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ksf": {
 		"name": "બફિયા"
 	},
@@ -371,6 +421,12 @@
 	"bas": {
 		"name": "બસા"
 	},
+<<<<<<< HEAD
+=======
+	"bn": {
+		"name": "બાંગ્લા"
+	},
+>>>>>>> revert Open Social update
 	"bm": {
 		"name": "બામ્બારા"
 	},
@@ -428,6 +484,12 @@
 	"mgh": {
 		"name": "માખુવા-મીટ્ટુ"
 	},
+<<<<<<< HEAD
+=======
+	"zgh": {
+		"name": "માનક મોરોક્કન તામાઝિટ"
+	},
+>>>>>>> revert Open Social update
 	"mt": {
 		"name": "માલ્ટિઝ"
 	},
@@ -495,7 +557,11 @@
 		"name": "લક્ઝેમબર્ગિશ"
 	},
 	"lo": {
+<<<<<<< HEAD
 		"name": "લાઓથિયન"
+=======
+		"name": "લાઓ"
+>>>>>>> revert Open Social update
 	},
 	"lkt": {
 		"name": "લાકોટા"
@@ -507,7 +573,11 @@
 		"name": "લિંગાલા"
 	},
 	"lt": {
+<<<<<<< HEAD
 		"name": "લિથુનિયન"
+=======
+		"name": "લિથુઆનિયન"
+>>>>>>> revert Open Social update
 	},
 	"luy": {
 		"name": "લુઈયા"
@@ -521,6 +591,12 @@
 	"nds-NL": {
 		"name": "લો સેક્સોન"
 	},
+<<<<<<< HEAD
+=======
+	"dsb": {
+		"name": "લોઅર સોર્બિયન"
+	},
+>>>>>>> revert Open Social update
 	"luo": {
 		"name": "લ્યુઓ"
 	},
@@ -542,6 +618,12 @@
 	"vo": {
 		"name": "વોલાપુક"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "વોલોફ"
+	},
+>>>>>>> revert Open Social update
 	"ksb": {
 		"name": "શમ્બાલા"
 	},
@@ -569,6 +651,12 @@
 	"sg": {
 		"name": "સાંગો"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "સિંધી"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "સિંહાલી"
 	},
@@ -579,7 +667,11 @@
 		"name": "સેના"
 	},
 	"tzm": {
+<<<<<<< HEAD
 		"name": "સેન્ટ્રલ ઍટ્લસ તામાઝિગ્ટ"
+=======
+		"name": "સેન્ટ્રલ એટલાસ તામાઝિટ"
+>>>>>>> revert Open Social update
 	},
 	"ckb": {
 		"name": "સેન્ટ્રલ કુર્દિશ"
@@ -621,7 +713,11 @@
 		"name": "હંગેરિયન"
 	},
 	"haw": {
+<<<<<<< HEAD
 		"name": "હાવાઇયન"
+=======
+		"name": "હવાઇયન"
+>>>>>>> revert Open Social update
 	},
 	"hi": {
 		"name": "હિન્દી"

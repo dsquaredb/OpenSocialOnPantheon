@@ -154,12 +154,15 @@
 	"HKD": {
 		"name": "Hongkong-dollar"
 	},
+<<<<<<< HEAD
 	"BYN": {
 		"name": "hviterussiske rubler"
 	},
 	"BYR": {
 		"name": "hviterussiske rubler (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"INR": {
 		"name": "indiske rupier"
 	},
@@ -308,6 +311,12 @@
 		"name": "norske kroner",
 		"symbol": "kr"
 	},
+<<<<<<< HEAD
+=======
+	"BYN": {
+		"name": "nye hviterussiske rubler"
+	},
+>>>>>>> revert Open Social update
 	"ILS": {
 		"name": "nye israelske shekler"
 	},
@@ -330,7 +339,11 @@
 		"name": "paraguayanske guarani"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "peruanske nuevo sol"
+=======
+		"name": "peruanske sol"
+>>>>>>> revert Open Social update
 	},
 	"PLN": {
 		"name": "polske zloty"
@@ -360,7 +373,11 @@
 		"name": "sankthelenske pund"
 	},
 	"STD": {
+<<<<<<< HEAD
 		"name": "São Tomé og Príncipe-dobra"
+=======
+		"name": "saotomesiske dobra"
+>>>>>>> revert Open Social update
 	},
 	"SAR": {
 		"name": "saudiarabiske riyaler"

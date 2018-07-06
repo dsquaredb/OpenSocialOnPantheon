@@ -107,6 +107,12 @@
 	"CV": {
 		"name": "Cabo Verde"
 	},
+<<<<<<< HEAD
+=======
+	"CM": {
+		"name": "Camarões"
+	},
+>>>>>>> revert Open Social update
 	"KH": {
 		"name": "Camboja"
 	},
@@ -137,9 +143,12 @@
 	"VA": {
 		"name": "Cidade do Vaticano"
 	},
+<<<<<<< HEAD
 	"SG": {
 		"name": "Cingapura"
 	},
+=======
+>>>>>>> revert Open Social update
 	"CO": {
 		"name": "Colômbia"
 	},
@@ -312,7 +321,11 @@
 		"name": "Ilha Norfolk"
 	},
 	"AX": {
+<<<<<<< HEAD
 		"name": "Ilhas Åland"
+=======
+		"name": "Ilhas Aland"
+>>>>>>> revert Open Social update
 	},
 	"IC": {
 		"name": "Ilhas Canárias"
@@ -353,12 +366,21 @@
 	"TC": {
 		"name": "Ilhas Turks e Caicos"
 	},
+<<<<<<< HEAD
 	"VG": {
 		"name": "Ilhas Virgens Britânicas"
 	},
 	"VI": {
 		"name": "Ilhas Virgens dos EUA"
 	},
+=======
+	"VI": {
+		"name": "Ilhas Virgens Americanas"
+	},
+	"VG": {
+		"name": "Ilhas Virgens Britânicas"
+	},
+>>>>>>> revert Open Social update
 	"IN": {
 		"name": "Índia"
 	},
@@ -441,7 +463,11 @@
 		"name": "Malásia"
 	},
 	"MW": {
+<<<<<<< HEAD
 		"name": "Malawi"
+=======
+		"name": "Malaui"
+>>>>>>> revert Open Social update
 	},
 	"MV": {
 		"name": "Maldivas"
@@ -578,12 +604,15 @@
 	"DO": {
 		"name": "República Dominicana"
 	},
+<<<<<<< HEAD
 	"CM": {
 		"name": "República dos Camarões"
 	},
 	"CZ": {
 		"name": "República Tcheca"
 	},
+=======
+>>>>>>> revert Open Social update
 	"RE": {
 		"name": "Reunião"
 	},
@@ -599,9 +628,12 @@
 	"EH": {
 		"name": "Saara Ocidental"
 	},
+<<<<<<< HEAD
 	"PM": {
 		"name": "Saint Pierre e Miquelon"
 	},
+=======
+>>>>>>> revert Open Social update
 	"WS": {
 		"name": "Samoa"
 	},
@@ -621,11 +653,21 @@
 		"name": "São Bartolomeu"
 	},
 	"KN": {
+<<<<<<< HEAD
 		"name": "São Cristóvão e Nevis"
+=======
+		"name": "São Cristóvão e Névis"
+>>>>>>> revert Open Social update
 	},
 	"MF": {
 		"name": "São Martinho"
 	},
+<<<<<<< HEAD
+=======
+	"PM": {
+		"name": "São Pedro e Miquelão"
+	},
+>>>>>>> revert Open Social update
 	"ST": {
 		"name": "São Tomé e Príncipe"
 	},
@@ -644,6 +686,12 @@
 	"RS": {
 		"name": "Sérvia"
 	},
+<<<<<<< HEAD
+=======
+	"SG": {
+		"name": "Singapura"
+	},
+>>>>>>> revert Open Social update
 	"SX": {
 		"name": "Sint Maarten"
 	},
@@ -677,18 +725,33 @@
 	"SJ": {
 		"name": "Svalbard e Jan Mayen"
 	},
+<<<<<<< HEAD
+=======
+	"TJ": {
+		"name": "Tadjiquistão"
+	},
+>>>>>>> revert Open Social update
 	"TH": {
 		"name": "Tailândia"
 	},
 	"TW": {
 		"name": "Taiwan"
 	},
+<<<<<<< HEAD
 	"TJ": {
 		"name": "Tajiquistão"
 	},
 	"TZ": {
 		"name": "Tanzânia"
 	},
+=======
+	"TZ": {
+		"name": "Tanzânia"
+	},
+	"CZ": {
+		"name": "Tchéquia"
+	},
+>>>>>>> revert Open Social update
 	"IO": {
 		"name": "Território Britânico do Oceano Índico"
 	},

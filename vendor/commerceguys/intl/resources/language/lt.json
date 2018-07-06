@@ -263,9 +263,12 @@
 	"zh": {
 		"name": "kinų"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "kinų kalbos Kantono tarmė"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ky": {
 		"name": "kirgizų"
 	},
@@ -476,6 +479,12 @@
 	"ii": {
 		"name": "sičuan ji"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindų"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "sinhalų"
 	},
@@ -539,6 +548,12 @@
 	"shi": {
 		"name": "tachelhitų"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tadžikų"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "taitų"
 	},
@@ -566,6 +581,12 @@
 	"to": {
 		"name": "tonganų"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "totorių"
+	},
+>>>>>>> revert Open Social update
 	"zh-Hant": {
 		"name": "tradicinė kinų"
 	},
@@ -611,6 +632,12 @@
 	"vo": {
 		"name": "volapiuko"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "volofų"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "vunjo"
 	},

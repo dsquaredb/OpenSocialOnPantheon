@@ -101,6 +101,12 @@
 	"vo": {
 		"name": "волапюк"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "волофча"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "вунжо"
 	},
@@ -215,9 +221,12 @@
 	"kn": {
 		"name": "каннада"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "кантонча"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ca": {
 		"name": "каталонча"
 	},
@@ -449,6 +458,12 @@
 	"si": {
 		"name": "сингалча"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "синдҳи"
+	},
+>>>>>>> revert Open Social update
 	"cu": {
 		"name": "славянча (черков)"
 	},
@@ -488,6 +503,12 @@
 	"twq": {
 		"name": "тасавак"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "татарча"
+	},
+>>>>>>> revert Open Social update
 	"shi": {
 		"name": "ташелхит"
 	},
@@ -503,6 +524,12 @@
 	"ti": {
 		"name": "тигриняча"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "тожикча"
+	},
+>>>>>>> revert Open Social update
 	"to": {
 		"name": "тонганча"
 	},

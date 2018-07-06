@@ -155,9 +155,12 @@
 	"BYN": {
 		"name": "벨라루스 루블"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "벨라루스 루블 (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"BZD": {
 		"name": "벨리즈 달러"
 	},
@@ -461,7 +464,11 @@
 		"name": "파푸아뉴기니 키나"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "페루 누에보 솔"
+=======
+		"name": "페루 솔"
+>>>>>>> revert Open Social update
 	},
 	"FKP": {
 		"name": "포클랜드제도 파운드"

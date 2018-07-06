@@ -297,9 +297,12 @@
 	"BTN": {
 		"name": "Ngultrum na Bútáine"
 	},
+<<<<<<< HEAD
 	"PEN": {
 		"name": "Nuevo Sol Pheiriú"
 	},
+=======
+>>>>>>> revert Open Social update
 	"MRO": {
 		"name": "Ouguiya na Máratáine"
 	},
@@ -402,9 +405,12 @@
 	"BYN": {
 		"name": "Rúbal na Bealarúise"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "Rúbal na Bealarúise (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"RUB": {
 		"name": "Rúbal na Rúise"
 	},
@@ -449,6 +455,12 @@
 		"name": "Seiceal Nua Iosrael",
 		"symbol": "₪"
 	},
+<<<<<<< HEAD
+=======
+	"PEN": {
+		"name": "Sol Pheiriú"
+	},
+>>>>>>> revert Open Social update
 	"KGS": {
 		"name": "Som na Cirgeastáine"
 	},

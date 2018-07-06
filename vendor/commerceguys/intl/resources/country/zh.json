@@ -185,6 +185,12 @@
 	"TF": {
 		"name": "法属南部领地"
 	},
+<<<<<<< HEAD
+=======
+	"MF": {
+		"name": "法属圣马丁"
+	},
+>>>>>>> revert Open Social update
 	"VA": {
 		"name": "梵蒂冈"
 	},
@@ -218,9 +224,12 @@
 	"CR": {
 		"name": "哥斯达黎加"
 	},
+<<<<<<< HEAD
 	"GG": {
 		"name": "格恩西岛"
 	},
+=======
+>>>>>>> revert Open Social update
 	"GD": {
 		"name": "格林纳达"
 	},
@@ -230,6 +239,12 @@
 	"GE": {
 		"name": "格鲁吉亚"
 	},
+<<<<<<< HEAD
+=======
+	"GG": {
+		"name": "根西岛"
+	},
+>>>>>>> revert Open Social update
 	"CU": {
 		"name": "古巴"
 	},
@@ -297,7 +312,11 @@
 		"name": "柬埔寨"
 	},
 	"CZ": {
+<<<<<<< HEAD
 		"name": "捷克共和国"
+=======
+		"name": "捷克"
+>>>>>>> revert Open Social update
 	},
 	"ZW": {
 		"name": "津巴布韦"
@@ -557,9 +576,12 @@
 	"LC": {
 		"name": "圣卢西亚"
 	},
+<<<<<<< HEAD
 	"MF": {
 		"name": "圣马丁岛"
 	},
+=======
+>>>>>>> revert Open Social update
 	"SM": {
 		"name": "圣马力诺"
 	},
@@ -662,15 +684,24 @@
 	"UZ": {
 		"name": "乌兹别克斯坦"
 	},
+<<<<<<< HEAD
 	"GR": {
 		"name": "希腊"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ES": {
 		"name": "西班牙"
 	},
 	"EH": {
 		"name": "西撒哈拉"
 	},
+<<<<<<< HEAD
+=======
+	"GR": {
+		"name": "希腊"
+	},
+>>>>>>> revert Open Social update
 	"SG": {
 		"name": "新加坡"
 	},

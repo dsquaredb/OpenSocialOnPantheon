@@ -1,7 +1,11 @@
 {
 	"numbering_system": "latn",
 	"decimal_pattern": "#,##0.###",
+<<<<<<< HEAD
 	"percent_pattern": "#,##0%",
+=======
+	"percent_pattern": "#,##0 %",
+>>>>>>> revert Open Social update
 	"currency_pattern": "¤#,##0.00",
 	"accounting_currency_pattern": "¤#,##0.00"
 }

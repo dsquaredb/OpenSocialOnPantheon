@@ -92,9 +92,12 @@
 	"br": {
 		"name": "Breton"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Cantonese"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ca": {
 		"name": "Catalan"
 	},
@@ -503,6 +506,12 @@
 	"ii": {
 		"name": "Sichuan Yi"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "Sindhi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "Sinhala"
 	},
@@ -548,12 +557,24 @@
 	"dav": {
 		"name": "Taita"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "Tajik"
+	},
+>>>>>>> revert Open Social update
 	"ta": {
 		"name": "tamoul"
 	},
 	"twq": {
 		"name": "Tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "Tatar"
+	},
+>>>>>>> revert Open Social update
 	"cs": {
 		"name": "tchek"
 	},
@@ -611,6 +632,12 @@
 	"fy": {
 		"name": "Western Frisian"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "Wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "Yangben"
 	},

@@ -31,8 +31,12 @@ class Statement extends StatementPrefetch implements StatementInterface {
     if (count($args)) {
 =======
   protected function getStatement($query, &$args = []) {
+<<<<<<< HEAD
     if (is_array($args) && !empty($args)) {
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+    if (count($args)) {
+>>>>>>> revert Open Social update
       // Check if $args is a simple numeric array.
       if (range(0, count($args) - 1) === array_keys($args)) {
         // In that case, we have unnamed placeholders.

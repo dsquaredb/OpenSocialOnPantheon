@@ -75,7 +75,11 @@
 		"name": "ایکواڈور"
 	},
 	"AZ": {
+<<<<<<< HEAD
 		"name": "آذر بائیجان"
+=======
+		"name": "آذربائیجان"
+>>>>>>> revert Open Social update
 	},
 	"AM": {
 		"name": "آرمینیا"
@@ -290,6 +294,12 @@
 	"JM": {
 		"name": "جمائیکا"
 	},
+<<<<<<< HEAD
+=======
+	"DO": {
+		"name": "جمہوریہ ڈومينيکن"
+	},
+>>>>>>> revert Open Social update
 	"ZA": {
 		"name": "جنوبی افریقہ"
 	},
@@ -309,7 +319,11 @@
 		"name": "چلی"
 	},
 	"CZ": {
+<<<<<<< HEAD
 		"name": "چیک جمہوریہ"
+=======
+		"name": "چیکیا"
+>>>>>>> revert Open Social update
 	},
 	"CN": {
 		"name": "چین"
@@ -320,9 +334,12 @@
 	"DM": {
 		"name": "ڈومنیکا"
 	},
+<<<<<<< HEAD
 	"DO": {
 		"name": "ڈومنیکن جمہوریہ"
 	},
+=======
+>>>>>>> revert Open Social update
 	"DG": {
 		"name": "ڈیگو گارشیا"
 	},
@@ -401,6 +418,12 @@
 	"SE": {
 		"name": "سویڈن"
 	},
+<<<<<<< HEAD
+=======
+	"SL": {
+		"name": "سیرالیون"
+	},
+>>>>>>> revert Open Social update
 	"BL": {
 		"name": "سینٹ برتھلیمی"
 	},
@@ -425,9 +448,12 @@
 	"SN": {
 		"name": "سینیگل"
 	},
+<<<<<<< HEAD
 	"SL": {
 		"name": "سیئر لیون"
 	},
+=======
+>>>>>>> revert Open Social update
 	"EA": {
 		"name": "سیئوٹا اور میلیلا"
 	},
@@ -470,12 +496,21 @@
 	"FI": {
 		"name": "فن لینڈ"
 	},
+<<<<<<< HEAD
 	"KZ": {
 		"name": "قازقستان"
 	},
 	"CY": {
 		"name": "قبرص"
 	},
+=======
+	"CY": {
+		"name": "قبرص"
+	},
+	"KZ": {
+		"name": "قزاخستان"
+	},
+>>>>>>> revert Open Social update
 	"QA": {
 		"name": "قطر"
 	},
@@ -710,15 +745,24 @@
 	"NU": {
 		"name": "نیئو"
 	},
+<<<<<<< HEAD
 	"VA": {
 		"name": "واٹیکن سٹی"
 	},
+=======
+>>>>>>> revert Open Social update
 	"CF": {
 		"name": "وسط افریقی جمہوریہ"
 	},
 	"VN": {
 		"name": "ویتنام"
 	},
+<<<<<<< HEAD
+=======
+	"VA": {
+		"name": "ویٹیکن سٹی"
+	},
+>>>>>>> revert Open Social update
 	"WF": {
 		"name": "ویلیز اور فیوٹیونا"
 	},

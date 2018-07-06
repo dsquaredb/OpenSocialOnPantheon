@@ -116,9 +116,12 @@
 	"my": {
 		"name": "isi-Burmese"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "isi-Cantonese"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ca": {
 		"name": "isi-Catalan"
 	},
@@ -515,6 +518,12 @@
 	"ii": {
 		"name": "isi-Sichuan Yi"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "isi-Sindhi"
+	},
+>>>>>>> revert Open Social update
 	"sk": {
 		"name": "isi-Slovak"
 	},
@@ -542,12 +551,24 @@
 	"dav": {
 		"name": "isi-Taita"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "isi-Tajik"
+	},
+>>>>>>> revert Open Social update
 	"ta": {
 		"name": "isi-Tamil"
 	},
 	"twq": {
 		"name": "isi-Tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "isi-Tatar"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "isi-Telugu"
 	},
@@ -605,6 +626,12 @@
 	"fy": {
 		"name": "isi-Western Frisian"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "isi-Wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "isi-Yangben"
 	},

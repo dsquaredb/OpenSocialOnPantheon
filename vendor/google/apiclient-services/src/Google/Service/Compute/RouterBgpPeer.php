@@ -25,7 +25,6 @@ class Google_Service_Compute_RouterBgpPeer extends Google_Collection
   public $advertisedRoutePriority;
   public $interfaceName;
   public $ipAddress;
-  public $managementType;
   public $name;
   public $peerAsn;
   public $peerIpAddress;
@@ -83,14 +82,6 @@ class Google_Service_Compute_RouterBgpPeer extends Google_Collection
   public function getIpAddress()
   {
     return $this->ipAddress;
-  }
-  public function setManagementType($managementType)
-  {
-    $this->managementType = $managementType;
-  }
-  public function getManagementType()
-  {
-    return $this->managementType;
   }
   public function setName($name)
   {

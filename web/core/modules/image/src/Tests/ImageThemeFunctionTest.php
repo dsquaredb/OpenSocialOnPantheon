@@ -23,7 +23,11 @@ class ImageThemeFunctionTest extends WebTestBase {
    *
    * @var array
    */
+<<<<<<< HEAD
   public static $modules = array('image', 'entity_test');
+=======
+  public static $modules = ['image', 'entity_test'];
+>>>>>>> revert Open Social update
 
   /**
    * Created file entity.
@@ -40,12 +44,20 @@ class ImageThemeFunctionTest extends WebTestBase {
   protected function setUp() {
     parent::setUp();
 
+<<<<<<< HEAD
     FieldStorageConfig::create(array(
+=======
+    FieldStorageConfig::create([
+>>>>>>> revert Open Social update
       'entity_type' => 'entity_test',
       'field_name' => 'image_test',
       'type' => 'image',
       'cardinality' => FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED,
+<<<<<<< HEAD
     ))->save();
+=======
+    ])->save();
+>>>>>>> revert Open Social update
     FieldConfig::create([
       'entity_type' => 'entity_test',
       'field_name' => 'image_test',
@@ -62,7 +74,11 @@ class ImageThemeFunctionTest extends WebTestBase {
   /**
    * Tests usage of the image field formatters.
    */
+<<<<<<< HEAD
   function testImageFormatterTheme() {
+=======
+  public function testImageFormatterTheme() {
+>>>>>>> revert Open Social update
     /** @var \Drupal\Core\Render\RendererInterface $renderer */
     $renderer = $this->container->get('renderer');
 
@@ -72,7 +88,11 @@ class ImageThemeFunctionTest extends WebTestBase {
     $original_uri = file_unmanaged_copy($file->uri, 'public://', FILE_EXISTS_RENAME);
 
     // Create a style.
+<<<<<<< HEAD
     $style = ImageStyle::create(array('name' => 'test', 'label' => 'Test'));
+=======
+    $style = ImageStyle::create(['name' => 'test', 'label' => 'Test']);
+>>>>>>> revert Open Social update
     $style->save();
     $url = file_url_transform_relative($style->buildUrl($original_uri));
 
@@ -86,17 +106,29 @@ class ImageThemeFunctionTest extends WebTestBase {
 
     // Create the base element that we'll use in the tests below.
     $path = $this->randomMachineName();
+<<<<<<< HEAD
     $base_element = array(
+=======
+    $base_element = [
+>>>>>>> revert Open Social update
       '#theme' => 'image_formatter',
       '#image_style' => 'test',
       '#item' => $entity->image_test,
       '#url' => Url::fromUri('base:' . $path),
+<<<<<<< HEAD
     );
+=======
+    ];
+>>>>>>> revert Open Social update
 
     // Test using theme_image_formatter() with a NULL value for the alt option.
     $element = $base_element;
     $this->setRawContent($renderer->renderRoot($element));
+<<<<<<< HEAD
     $elements = $this->xpath('//a[@href=:path]/img[@class="image-style-test" and @src=:url and @width=:width and @height=:height]', array(':path' => base_path() . $path, ':url' => $url, ':width' => $image->getWidth(), ':height' => $image->getHeight()));
+=======
+    $elements = $this->xpath('//a[@href=:path]/img[@class="image-style-test" and @src=:url and @width=:width and @height=:height]', [':path' => base_path() . $path, ':url' => $url, ':width' => $image->getWidth(), ':height' => $image->getHeight()]);
+>>>>>>> revert Open Social update
     $this->assertEqual(count($elements), 1, 'theme_image_formatter() correctly renders with a NULL value for the alt option.');
 
     // Test using theme_image_formatter() without an image title, alt text, or
@@ -104,7 +136,11 @@ class ImageThemeFunctionTest extends WebTestBase {
     $element = $base_element;
     $element['#item']->alt = '';
     $this->setRawContent($renderer->renderRoot($element));
+<<<<<<< HEAD
     $elements = $this->xpath('//a[@href=:path]/img[@class="image-style-test" and @src=:url and @width=:width and @height=:height and @alt=""]', array(':path' => base_path() . $path, ':url' => $url, ':width' => $image->getWidth(), ':height' => $image->getHeight()));
+=======
+    $elements = $this->xpath('//a[@href=:path]/img[@class="image-style-test" and @src=:url and @width=:width and @height=:height and @alt=""]', [':path' => base_path() . $path, ':url' => $url, ':width' => $image->getWidth(), ':height' => $image->getHeight()]);
+>>>>>>> revert Open Social update
     $this->assertEqual(count($elements), 1, 'theme_image_formatter() correctly renders without title, alt, or path options.');
 
     // Link the image to a fragment on the page, and not a full URL.
@@ -112,19 +148,31 @@ class ImageThemeFunctionTest extends WebTestBase {
     $element = $base_element;
     $element['#url'] = Url::fromRoute('<none>', [], ['fragment' => $fragment]);
     $this->setRawContent($renderer->renderRoot($element));
+<<<<<<< HEAD
     $elements = $this->xpath('//a[@href=:fragment]/img[@class="image-style-test" and @src=:url and @width=:width and @height=:height and @alt=""]', array(
+=======
+    $elements = $this->xpath('//a[@href=:fragment]/img[@class="image-style-test" and @src=:url and @width=:width and @height=:height and @alt=""]', [
+>>>>>>> revert Open Social update
       ':fragment' => '#' . $fragment,
       ':url' => $url,
       ':width' => $image->getWidth(),
       ':height' => $image->getHeight()
+<<<<<<< HEAD
     ));
+=======
+    ]);
+>>>>>>> revert Open Social update
     $this->assertEqual(count($elements), 1, 'theme_image_formatter() correctly renders a link fragment.');
   }
 
   /**
    * Tests usage of the image style theme function.
    */
+<<<<<<< HEAD
   function testImageStyleTheme() {
+=======
+  public function testImageStyleTheme() {
+>>>>>>> revert Open Social update
     /** @var \Drupal\Core\Render\RendererInterface $renderer */
     $renderer = $this->container->get('renderer');
 
@@ -134,11 +182,16 @@ class ImageThemeFunctionTest extends WebTestBase {
     $original_uri = file_unmanaged_copy($file->uri, 'public://', FILE_EXISTS_RENAME);
 
     // Create a style.
+<<<<<<< HEAD
     $style = ImageStyle::create(array('name' => 'image_test', 'label' => 'Test'));
+=======
+    $style = ImageStyle::create(['name' => 'image_test', 'label' => 'Test']);
+>>>>>>> revert Open Social update
     $style->save();
     $url = file_url_transform_relative($style->buildUrl($original_uri));
 
     // Create the base element that we'll use in the tests below.
+<<<<<<< HEAD
     $base_element = array(
       '#theme' => 'image_style',
       '#style_name' => 'image_test',
@@ -148,31 +201,55 @@ class ImageThemeFunctionTest extends WebTestBase {
     $element = $base_element;
     $this->setRawContent($renderer->renderRoot($element));
     $elements = $this->xpath('//img[@class="image-style-image-test" and @src=:url and @alt=""]', array(':url' => $url));
+=======
+    $base_element = [
+      '#theme' => 'image_style',
+      '#style_name' => 'image_test',
+      '#uri' => $original_uri,
+    ];
+
+    $element = $base_element;
+    $this->setRawContent($renderer->renderRoot($element));
+    $elements = $this->xpath('//img[@class="image-style-image-test" and @src=:url and @alt=""]', [':url' => $url]);
+>>>>>>> revert Open Social update
     $this->assertEqual(count($elements), 1, 'theme_image_style() renders an image correctly.');
 
     // Test using theme_image_style() with a NULL value for the alt option.
     $element = $base_element;
     $element['#alt'] = NULL;
     $this->setRawContent($renderer->renderRoot($element));
+<<<<<<< HEAD
     $elements = $this->xpath('//img[@class="image-style-image-test" and @src=:url]', array(':url' => $url));
+=======
+    $elements = $this->xpath('//img[@class="image-style-image-test" and @src=:url]', [':url' => $url]);
+>>>>>>> revert Open Social update
     $this->assertEqual(count($elements), 1, 'theme_image_style() renders an image correctly with a NULL value for the alt option.');
   }
 
   /**
    * Tests image alt attribute functionality.
    */
+<<<<<<< HEAD
   function testImageAltFunctionality() {
+=======
+  public function testImageAltFunctionality() {
+>>>>>>> revert Open Social update
     /** @var \Drupal\Core\Render\RendererInterface $renderer */
     $renderer = $this->container->get('renderer');
 
     // Test using alt directly with alt attribute.
+<<<<<<< HEAD
     $image_with_alt_property = array(
+=======
+    $image_with_alt_property = [
+>>>>>>> revert Open Social update
       '#theme' => 'image',
       '#uri' => '/core/themes/bartik/logo.svg',
       '#alt' => 'Regular alt',
       '#title' => 'Test title',
       '#width' => '50%',
       '#height' => '50%',
+<<<<<<< HEAD
       '#attributes' => array('class' => 'image-with-regular-alt', 'id' => 'my-img'),
     );
 
@@ -182,15 +259,31 @@ class ImageThemeFunctionTest extends WebTestBase {
 
     // Test using alt attribute inside attributes.
     $image_with_alt_attribute_alt_attribute = array(
+=======
+      '#attributes' => ['class' => 'image-with-regular-alt', 'id' => 'my-img'],
+    ];
+
+    $this->setRawContent($renderer->renderRoot($image_with_alt_property));
+    $elements = $this->xpath('//img[contains(@class, class) and contains(@alt, :alt)]', [":class" => "image-with-regular-alt", ":alt" => "Regular alt"]);
+    $this->assertEqual(count($elements), 1, 'Regular alt displays correctly');
+
+    // Test using alt attribute inside attributes.
+    $image_with_alt_attribute_alt_attribute = [
+>>>>>>> revert Open Social update
       '#theme' => 'image',
       '#uri' => '/core/themes/bartik/logo.svg',
       '#width' => '50%',
       '#height' => '50%',
+<<<<<<< HEAD
       '#attributes' => array(
+=======
+      '#attributes' => [
+>>>>>>> revert Open Social update
         'class' => 'image-with-attribute-alt',
         'id' => 'my-img',
         'title' => 'New test title',
         'alt' => 'Attribute alt',
+<<<<<<< HEAD
       ),
     );
 
@@ -200,21 +293,44 @@ class ImageThemeFunctionTest extends WebTestBase {
 
     // Test using alt attribute as property and inside attributes.
     $image_with_alt_attribute_both = array(
+=======
+      ],
+    ];
+
+    $this->setRawContent($renderer->renderRoot($image_with_alt_attribute_alt_attribute));
+    $elements = $this->xpath('//img[contains(@class, class) and contains(@alt, :alt)]', [":class" => "image-with-attribute-alt", ":alt" => "Attribute alt"]);
+    $this->assertEqual(count($elements), 1, 'Attribute alt displays correctly');
+
+    // Test using alt attribute as property and inside attributes.
+    $image_with_alt_attribute_both = [
+>>>>>>> revert Open Social update
       '#theme' => 'image',
       '#uri' => '/core/themes/bartik/logo.svg',
       '#width' => '50%',
       '#height' => '50%',
       '#alt' => 'Kitten sustainable',
+<<<<<<< HEAD
       '#attributes' => array(
+=======
+      '#attributes' => [
+>>>>>>> revert Open Social update
         'class' => 'image-with-attribute-alt',
         'id' => 'my-img',
         'title' => 'New test title',
         'alt' => 'Attribute alt',
+<<<<<<< HEAD
       ),
     );
 
     $this->setRawContent($renderer->renderRoot($image_with_alt_attribute_both));
     $elements = $this->xpath('//img[contains(@class, class) and contains(@alt, :alt)]', array(":class" => "image-with-attribute-alt", ":alt" => "Attribute alt"));
+=======
+      ],
+    ];
+
+    $this->setRawContent($renderer->renderRoot($image_with_alt_attribute_both));
+    $elements = $this->xpath('//img[contains(@class, class) and contains(@alt, :alt)]', [":class" => "image-with-attribute-alt", ":alt" => "Attribute alt"]);
+>>>>>>> revert Open Social update
     $this->assertEqual(count($elements), 1, 'Attribute alt overrides alt property if both set.');
   }
 

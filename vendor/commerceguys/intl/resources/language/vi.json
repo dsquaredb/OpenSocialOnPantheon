@@ -125,9 +125,12 @@
 	"dua": {
 		"name": "Tiếng Duala"
 	},
+<<<<<<< HEAD
 	"ug": {
 		"name": "Tiếng Duy Ngô Nhĩ"
 	},
+=======
+>>>>>>> revert Open Social update
 	"dz": {
 		"name": "Tiếng Dzongkha"
 	},
@@ -180,7 +183,11 @@
 		"name": "Tiếng Ganda"
 	},
 	"ka": {
+<<<<<<< HEAD
 		"name": "Tiếng Gruzia"
+=======
+		"name": "Tiếng Georgia"
+>>>>>>> revert Open Social update
 	},
 	"gu": {
 		"name": "Tiếng Gujarati"
@@ -233,6 +240,12 @@
 	"ga": {
 		"name": "Tiếng Ireland"
 	},
+<<<<<<< HEAD
+=======
+	"it": {
+		"name": "Tiếng Italy"
+	},
+>>>>>>> revert Open Social update
 	"dyo": {
 		"name": "Tiếng Jola-Fonyi"
 	},
@@ -264,7 +277,11 @@
 		"name": "Tiếng Kazakh"
 	},
 	"km": {
+<<<<<<< HEAD
 		"name": "Tiếng Khơ-me"
+=======
+		"name": "Tiếng Khmer"
+>>>>>>> revert Open Social update
 	},
 	"ki": {
 		"name": "Tiếng Kikuyu"
@@ -443,9 +460,12 @@
 	"pa": {
 		"name": "Tiếng Punjab"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Tiếng Quảng Đông"
 	},
+=======
+>>>>>>> revert Open Social update
 	"qu": {
 		"name": "Tiếng Quechua"
 	},
@@ -497,6 +517,12 @@
 	"sn": {
 		"name": "Tiếng Shona"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "Tiếng Sindhi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "Tiếng Sinhala"
 	},
@@ -527,6 +553,12 @@
 	"dav": {
 		"name": "Tiếng Taita"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "Tiếng Tajik"
+	},
+>>>>>>> revert Open Social update
 	"zgh": {
 		"name": "Tiếng Tamazight Chuẩn của Ma-rốc"
 	},
@@ -539,6 +571,12 @@
 	"twq": {
 		"name": "Tiếng Tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "Tiếng Tatar"
+	},
+>>>>>>> revert Open Social update
 	"es": {
 		"name": "Tiếng Tây Ban Nha"
 	},
@@ -593,6 +631,12 @@
 	"ur": {
 		"name": "Tiếng Urdu"
 	},
+<<<<<<< HEAD
+=======
+	"ug": {
+		"name": "Tiếng Uyghur"
+	},
+>>>>>>> revert Open Social update
 	"uz": {
 		"name": "Tiếng Uzbek"
 	},
@@ -614,8 +658,13 @@
 	"wae": {
 		"name": "Tiếng Walser"
 	},
+<<<<<<< HEAD
 	"it": {
 		"name": "Tiếng Ý"
+=======
+	"wo": {
+		"name": "Tiếng Wolof"
+>>>>>>> revert Open Social update
 	},
 	"yav": {
 		"name": "Tiếng Yangben"

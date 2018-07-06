@@ -39,9 +39,12 @@
 	"BYN": {
 		"name": "Belarus Rublu"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "Belarus Rublu (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"BZD": {
 		"name": "Beliz Dolları"
 	},
@@ -364,7 +367,11 @@
 		"name": "Paraqvay Quaranisi"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "Peru Nuevo Solu"
+=======
+		"name": "Peru Solu"
+>>>>>>> revert Open Social update
 	},
 	"PLN": {
 		"name": "Polşa Zlotısı"

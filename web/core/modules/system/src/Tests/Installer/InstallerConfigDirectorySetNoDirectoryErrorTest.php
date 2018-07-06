@@ -24,10 +24,17 @@ class InstallerConfigDirectorySetNoDirectoryErrorTest extends InstallerTestBase 
    */
   protected function setUp() {
     $this->configDirectory = $this->publicFilesDirectory . '/config_' . Crypt::randomBytesBase64();
+<<<<<<< HEAD
     $this->settings['config_directories'][CONFIG_SYNC_DIRECTORY] = (object) array(
       'value' => $this->configDirectory . '/sync',
       'required' => TRUE,
     );
+=======
+    $this->settings['config_directories'][CONFIG_SYNC_DIRECTORY] = (object) [
+      'value' => $this->configDirectory . '/sync',
+      'required' => TRUE,
+    ];
+>>>>>>> revert Open Social update
     // Create the files directory early so we can test the error case.
     mkdir($this->publicFilesDirectory);
     // Create a file so the directory can not be created.
@@ -44,7 +51,11 @@ class InstallerConfigDirectorySetNoDirectoryErrorTest extends InstallerTestBase 
   }
 
   /**
+<<<<<<< HEAD
    * @{inheritdoc}
+=======
+   * {@inheritdoc}
+>>>>>>> revert Open Social update
    */
   protected function setUpSite() {
     // This step should not appear as we had a failure prior to the settings

@@ -1906,34 +1906,6 @@ $connection->schema()->createTable('book', array(
   'mysql_character_set' => 'utf8',
 ));
 
-$connection->insert('book')
-  ->fields(array(
-    'mlid',
-    'nid',
-    'bid',
-  ))
-  ->values(array(
-    'mlid' => '480',
-    'nid' => '4',
-    'bid' => '4',
-  ))
-  ->values(array(
-    'mlid' => '481',
-    'nid' => '6',
-    'bid' => '4',
-  ))
-  ->values(array(
-    'mlid' => '482',
-    'nid' => '2',
-    'bid' => '4',
-  ))
-  ->values(array(
-    'mlid' => '483',
-    'nid' => '1',
-    'bid' => '8',
-  ))
-  ->execute();
-
 $connection->schema()->createTable('cache', array(
   'fields' => array(
     'cid' => array(
@@ -3011,180 +2983,6 @@ $connection->insert('date_formats')
 ))
 ->execute();
 
-$connection->schema()->createTable('entity_translation', array(
-  'fields' => array(
-    'entity_type' => array(
-      'type' => 'varchar',
-      'not null' => TRUE,
-      'length' => '128',
-      'default' => '',
-    ),
-    'entity_id' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-    'revision_id' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-    'language' => array(
-      'type' => 'varchar',
-      'not null' => TRUE,
-      'length' => '32',
-      'default' => '',
-    ),
-    'source' => array(
-      'type' => 'varchar',
-      'not null' => TRUE,
-      'length' => '32',
-      'default' => '',
-    ),
-    'uid' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'default' => '0',
-    ),
-    'status' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'default' => '1',
-    ),
-    'translate' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'default' => '0',
-    ),
-    'created' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'default' => '0',
-    ),
-    'changed' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'default' => '0',
-    ),
-  ),
-  'primary key' => array(
-    'entity_type',
-    'entity_id',
-    'language',
-  ),
-  'mysql_character_set' => 'utf8',
-));
-
-$connection->insert('entity_translation')
-->fields(array(
-  'entity_type',
-  'entity_id',
-  'revision_id',
-  'language',
-  'source',
-  'uid',
-  'status',
-  'translate',
-  'created',
-  'changed',
-))
-->values(array(
-  'entity_type' => 'user',
-  'entity_id' => '2',
-  'revision_id' => '2',
-  'language' => 'en',
-  'source' => '',
-  'uid' => '1',
-  'status' => '1',
-  'translate' => '0',
-  'created' => '1527594929',
-  'changed' => '1527594929',
-))
-->execute();
-
-$connection->schema()->createTable('entity_translation_revision', array(
-  'fields' => array(
-    'entity_type' => array(
-      'type' => 'varchar',
-      'not null' => TRUE,
-      'length' => '128',
-      'default' => '',
-    ),
-    'entity_id' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-    'revision_id' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-    'language' => array(
-      'type' => 'varchar',
-      'not null' => TRUE,
-      'length' => '32',
-      'default' => '',
-    ),
-    'source' => array(
-      'type' => 'varchar',
-      'not null' => TRUE,
-      'length' => '32',
-      'default' => '',
-    ),
-    'uid' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'default' => '0',
-    ),
-    'status' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'default' => '1',
-    ),
-    'translate' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'default' => '0',
-    ),
-    'created' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'default' => '0',
-    ),
-    'changed' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'default' => '0',
-    ),
-  ),
-  'primary key' => array(
-    'entity_type',
-    'revision_id',
-    'language',
-  ),
-  'indexes' => array(
-    'revision_id' => array(
-      'revision_id',
-    ),
-  ),
-  'mysql_character_set' => 'utf8',
-));
-
 $connection->schema()->createTable('field_config', array(
   'fields' => array(
     'id' => array(
@@ -3488,9 +3286,9 @@ $connection->insert('field_config')
   'storage_module' => 'field_sql_storage',
   'storage_active' => '1',
   'locked' => '0',
-  'data' => 'a:7:{s:12:"translatable";b:1;s:12:"entity_types";a:0:{}s:8:"settings";a:1:{s:23:"entity_translation_sync";b:0;}s:7:"storage";a:5:{s:4:"type";s:17:"field_sql_storage";s:8:"settings";a:0:{}s:6:"module";s:17:"field_sql_storage";s:6:"active";s:1:"1";s:7:"details";a:1:{s:3:"sql";a:2:{s:18:"FIELD_LOAD_CURRENT";a:1:{s:24:"field_data_field_integer";a:1:{s:5:"value";s:19:"field_integer_value";}}s:19:"FIELD_LOAD_REVISION";a:1:{s:28:"field_revision_field_integer";a:1:{s:5:"value";s:19:"field_integer_value";}}}}}s:12:"foreign keys";a:0:{}s:7:"indexes";a:0:{}s:2:"id";s:2:"14";}',
+  'data' => 'a:7:{s:12:"translatable";s:1:"0";s:12:"entity_types";a:0:{}s:8:"settings";a:0:{}s:7:"storage";a:5:{s:4:"type";s:17:"field_sql_storage";s:8:"settings";a:0:{}s:6:"module";s:17:"field_sql_storage";s:6:"active";s:1:"1";s:7:"details";a:1:{s:3:"sql";a:2:{s:18:"FIELD_LOAD_CURRENT";a:1:{s:24:"field_data_field_integer";a:1:{s:5:"value";s:19:"field_integer_value";}}s:19:"FIELD_LOAD_REVISION";a:1:{s:28:"field_revision_field_integer";a:1:{s:5:"value";s:19:"field_integer_value";}}}}}s:12:"foreign keys";a:0:{}s:7:"indexes";a:0:{}s:2:"id";s:2:"14";}',
   'cardinality' => '1',
-  'translatable' => '1',
+  'translatable' => '0',
   'deleted' => '0',
 ))
 ->values(array(
@@ -3810,6 +3608,7 @@ $connection->insert('field_config')
   'translatable' => '0',
   'deleted' => '0',
 ))
+<<<<<<< HEAD
 ->values(array(
   'id' => '37',
   'field_name' => 'field_float_list',
@@ -3856,6 +3655,8 @@ $connection->insert('field_config')
   'deleted' => '0',
 ))
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
 ->execute();
 
 $connection->schema()->createTable('field_config_instance', array(
@@ -4458,6 +4259,7 @@ $connection->insert('field_config_instance')
   'data' => 'a:6:{s:5:"label";s:17:"Date without time";s:6:"widget";a:5:{s:6:"weight";s:1:"2";s:4:"type";s:11:"date_select";s:6:"module";s:4:"date";s:6:"active";i:1;s:8:"settings";a:6:{s:12:"input_format";s:13:"m/d/Y - H:i:s";s:19:"input_format_custom";s:0:"";s:10:"year_range";s:5:"-3:+3";s:9:"increment";s:2:"15";s:14:"label_position";s:5:"above";s:10:"text_parts";a:0:{}}}s:8:"settings";a:5:{s:13:"default_value";s:3:"now";s:18:"default_value_code";s:0:"";s:14:"default_value2";s:4:"same";s:19:"default_value_code2";s:0:"";s:18:"user_register_form";b:0;}s:7:"display";a:1:{s:7:"default";a:5:{s:5:"label";s:5:"above";s:4:"type";s:12:"date_default";s:6:"weight";s:1:"3";s:8:"settings";a:5:{s:11:"format_type";s:4:"long";s:15:"multiple_number";s:0:"";s:13:"multiple_from";s:0:"";s:11:"multiple_to";s:0:"";s:6:"fromto";s:4:"both";}s:6:"module";s:4:"date";}}s:8:"required";i:0;s:11:"description";s:0:"";}',
   'deleted' => '0',
 ))
+<<<<<<< HEAD
 ->values(array(
   'id' => '63',
   'field_id' => '37',
@@ -4486,6 +4288,8 @@ $connection->insert('field_config_instance')
   'deleted' => '0',
 ))
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
 ->execute();
 
 $connection->schema()->createTable('field_data_body', array(
@@ -5409,6 +5213,115 @@ $connection->schema()->createTable('field_data_field_image', array(
   'mysql_character_set' => 'utf8',
 ));
 
+<<<<<<< HEAD
+=======
+$connection->insert('field_data_field_float')
+->fields(array(
+  'entity_type',
+  'bundle',
+  'deleted',
+  'entity_id',
+  'revision_id',
+  'language',
+  'delta',
+  'field_float_value',
+))
+->values(array(
+  'entity_type' => 'node',
+  'bundle' => 'test_content_type',
+  'deleted' => '0',
+  'entity_id' => '1',
+  'revision_id' => '1',
+  'language' => 'und',
+  'delta' => '0',
+  'field_float_value' => '1',
+))
+->execute();
+
+$connection->schema()->createTable('field_data_field_image', array(
+  'fields' => array(
+    'entity_type' => array(
+      'type' => 'varchar',
+      'not null' => TRUE,
+      'length' => '128',
+      'default' => '',
+    ),
+    'bundle' => array(
+      'type' => 'varchar',
+      'not null' => TRUE,
+      'length' => '128',
+      'default' => '',
+    ),
+    'deleted' => array(
+      'type' => 'int',
+      'not null' => TRUE,
+      'size' => 'normal',
+      'default' => '0',
+    ),
+    'entity_id' => array(
+      'type' => 'int',
+      'not null' => TRUE,
+      'size' => 'normal',
+      'unsigned' => TRUE,
+    ),
+    'revision_id' => array(
+      'type' => 'int',
+      'not null' => FALSE,
+      'size' => 'normal',
+      'unsigned' => TRUE,
+    ),
+    'language' => array(
+      'type' => 'varchar',
+      'not null' => TRUE,
+      'length' => '32',
+      'default' => '',
+    ),
+    'delta' => array(
+      'type' => 'int',
+      'not null' => TRUE,
+      'size' => 'normal',
+      'unsigned' => TRUE,
+    ),
+    'field_image_fid' => array(
+      'type' => 'int',
+      'not null' => FALSE,
+      'size' => 'normal',
+      'unsigned' => TRUE,
+    ),
+    'field_image_alt' => array(
+      'type' => 'varchar',
+      'not null' => FALSE,
+      'length' => '512',
+    ),
+    'field_image_title' => array(
+      'type' => 'varchar',
+      'not null' => FALSE,
+      'length' => '1024',
+    ),
+    'field_image_width' => array(
+      'type' => 'int',
+      'not null' => FALSE,
+      'size' => 'normal',
+      'unsigned' => TRUE,
+    ),
+    'field_image_height' => array(
+      'type' => 'int',
+      'not null' => FALSE,
+      'size' => 'normal',
+      'unsigned' => TRUE,
+    ),
+  ),
+  'primary key' => array(
+    'entity_type',
+    'deleted',
+    'entity_id',
+    'language',
+    'delta',
+  ),
+  'mysql_character_set' => 'utf8',
+));
+
+>>>>>>> revert Open Social update
 $connection->schema()->createTable('field_data_field_images', array(
   'fields' => array(
     'entity_type' => array(
@@ -5600,7 +5513,7 @@ $connection->insert('field_data_field_integer')
   'deleted' => '0',
   'entity_id' => '1',
   'revision_id' => '1',
-  'language' => 'en',
+  'language' => 'und',
   'delta' => '0',
   'field_integer_value' => '5',
 ))
@@ -5610,7 +5523,7 @@ $connection->insert('field_data_field_integer')
   'deleted' => '0',
   'entity_id' => '2',
   'revision_id' => '2',
-  'language' => 'en',
+  'language' => 'und',
   'delta' => '0',
   'field_integer_value' => '99',
 ))
@@ -5622,7 +5535,7 @@ $connection->insert('field_data_field_integer')
   'deleted' => '0',
   'entity_id' => '4',
   'revision_id' => '4',
-  'language' => 'en',
+  'language' => 'und',
   'delta' => '0',
   'field_integer_value' => '6',
 ))
@@ -5903,7 +5816,37 @@ $connection->schema()->createTable('field_data_field_long_text', array(
   'mysql_character_set' => 'utf8',
 ));
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+$connection->schema()->createTable('field_data_field_phone', array(
+=======
+$connection->insert('field_data_field_phone')
+->fields(array(
+  'entity_type',
+  'bundle',
+  'deleted',
+  'entity_id',
+  'revision_id',
+  'language',
+  'delta',
+  'field_phone_value',
+))
+->values(array(
+  'entity_type' => 'node',
+  'bundle' => 'test_content_type',
+  'deleted' => '0',
+  'entity_id' => '1',
+  'revision_id' => '6',
+  'language' => 'und',
+  'delta' => '0',
+  'field_phone_value' => '99-99-99-99',
+))
+->execute();
+
+$connection->schema()->createTable('field_data_field_private_file', array(
+=======
 $connection->schema()->createTable('field_data_field_node_entityreference', array(
+>>>>>>> revert Open Social update
   'fields' => array(
     'entity_type' => array(
       'type' => 'varchar',
@@ -6010,7 +5953,12 @@ $connection->insert('field_data_field_node_entityreference')
 ))
 ->execute();
 
+<<<<<<< HEAD
+$connection->schema()->createTable('field_data_field_reference', array(
+>>>>>>> Update Open Social to 8.x-2.1
+=======
 $connection->schema()->createTable('field_data_field_phone', array(
+>>>>>>> revert Open Social update
   'fields' => array(
     'entity_type' => array(
       'type' => 'varchar',
@@ -6070,9 +6018,6 @@ $connection->schema()->createTable('field_data_field_phone', array(
   'mysql_character_set' => 'utf8',
 ));
 
-<<<<<<< HEAD
-$connection->schema()->createTable('field_data_field_phone', array(
-=======
 $connection->insert('field_data_field_phone')
 ->fields(array(
   'entity_type',
@@ -6082,7 +6027,46 @@ $connection->insert('field_data_field_phone')
   'revision_id',
   'language',
   'delta',
+<<<<<<< HEAD
+  'field_reference_target_id',
+))
+->values(array(
+  'entity_type' => 'node',
+  'bundle' => 'article',
+  'deleted' => '0',
+<<<<<<< HEAD
+  'entity_id' => '1',
+  'revision_id' => '1',
+=======
+  'entity_id' => '2',
+  'revision_id' => '2',
+>>>>>>> Update Open Social to 8.x-2.1
+  'language' => 'und',
+  'delta' => '0',
+  'field_reference_target_id' => '5',
+))
+->values(array(
+  'entity_type' => 'node',
+  'bundle' => 'article',
+  'deleted' => '0',
+  'entity_id' => '3',
+  'revision_id' => '3',
+  'language' => 'und',
+  'delta' => '0',
+  'field_reference_target_id' => '4',
+))
+->values(array(
+  'entity_type' => 'node',
+  'bundle' => 'article',
+  'deleted' => '0',
+  'entity_id' => '4',
+  'revision_id' => '4',
+  'language' => 'und',
+  'delta' => '0',
+  'field_reference_target_id' => '3',
+=======
   'field_phone_value',
+>>>>>>> revert Open Social update
 ))
 ->values(array(
   'entity_type' => 'node',
@@ -6096,7 +6080,13 @@ $connection->insert('field_data_field_phone')
 ))
 ->execute();
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+$connection->schema()->createTable('field_data_field_reference_2', array(
+=======
 $connection->schema()->createTable('field_data_field_private_file', array(
+>>>>>>> revert Open Social update
   'fields' => array(
     'entity_type' => array(
       'type' => 'varchar',
@@ -6216,288 +6206,6 @@ $connection->insert('field_data_field_private_file')
   'field_private_file_fid' => '4',
   'field_private_file_display' => '1',
   'field_private_file_description' => '',
-))
-->execute();
-
-$connection->schema()->createTable('field_data_field_reference', array(
->>>>>>> Update Open Social to 8.x-2.1
-  'fields' => array(
-    'entity_type' => array(
-      'type' => 'varchar',
-      'not null' => TRUE,
-      'length' => '128',
-      'default' => '',
-    ),
-    'bundle' => array(
-      'type' => 'varchar',
-      'not null' => TRUE,
-      'length' => '128',
-      'default' => '',
-    ),
-    'deleted' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'tiny',
-      'default' => '0',
-    ),
-    'entity_id' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-    'revision_id' => array(
-      'type' => 'int',
-      'not null' => FALSE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-    'language' => array(
-      'type' => 'varchar',
-      'not null' => TRUE,
-      'length' => '32',
-      'default' => '',
-    ),
-    'delta' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-    'field_reference_target_id' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-  ),
-  'primary key' => array(
-    'entity_type',
-    'entity_id',
-    'deleted',
-    'delta',
-    'language',
-  ),
-  'indexes' => array(
-    'entity_type' => array(
-      'entity_type',
-    ),
-    'bundle' => array(
-      'bundle',
-    ),
-    'deleted' => array(
-      'deleted',
-    ),
-    'entity_id' => array(
-      'entity_id',
-    ),
-    'revision_id' => array(
-      'revision_id',
-    ),
-    'language' => array(
-      'language',
-    ),
-    'field_reference_target_id' => array(
-      'field_reference_target_id',
-    ),
-  ),
-  'mysql_character_set' => 'utf8',
-));
-
-$connection->insert('field_data_field_reference')
-->fields(array(
-  'entity_type',
-  'bundle',
-  'deleted',
-  'entity_id',
-  'revision_id',
-  'language',
-  'delta',
-  'field_reference_target_id',
-))
-->values(array(
-  'entity_type' => 'node',
-  'bundle' => 'article',
-  'deleted' => '0',
-<<<<<<< HEAD
-  'entity_id' => '1',
-  'revision_id' => '1',
-=======
-  'entity_id' => '2',
-  'revision_id' => '2',
->>>>>>> Update Open Social to 8.x-2.1
-  'language' => 'und',
-  'delta' => '0',
-  'field_reference_target_id' => '5',
-))
-->values(array(
-  'entity_type' => 'node',
-  'bundle' => 'article',
-  'deleted' => '0',
-  'entity_id' => '3',
-  'revision_id' => '3',
-  'language' => 'und',
-  'delta' => '0',
-  'field_reference_target_id' => '4',
-))
-->values(array(
-  'entity_type' => 'node',
-  'bundle' => 'article',
-  'deleted' => '0',
-  'entity_id' => '4',
-  'revision_id' => '4',
-  'language' => 'und',
-  'delta' => '0',
-  'field_reference_target_id' => '3',
-))
-->values(array(
-  'entity_type' => 'node',
-  'bundle' => 'article',
-  'deleted' => '0',
-  'entity_id' => '5',
-  'revision_id' => '5',
-  'language' => 'und',
-  'delta' => '0',
-  'field_reference_target_id' => '2',
-))
-->execute();
-
-<<<<<<< HEAD
-=======
-$connection->schema()->createTable('field_data_field_reference_2', array(
-  'fields' => array(
-    'entity_type' => array(
-      'type' => 'varchar',
-      'not null' => TRUE,
-      'length' => '128',
-      'default' => '',
-    ),
-    'bundle' => array(
-      'type' => 'varchar',
-      'not null' => TRUE,
-      'length' => '128',
-      'default' => '',
-    ),
-    'deleted' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'tiny',
-      'default' => '0',
-    ),
-    'entity_id' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-    'revision_id' => array(
-      'type' => 'int',
-      'not null' => FALSE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-    'language' => array(
-      'type' => 'varchar',
-      'not null' => TRUE,
-      'length' => '32',
-      'default' => '',
-    ),
-    'delta' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-    'field_reference_2_target_id' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-  ),
-  'primary key' => array(
-    'entity_type',
-    'entity_id',
-    'deleted',
-    'delta',
-    'language',
-  ),
-  'indexes' => array(
-    'entity_type' => array(
-      'entity_type',
-    ),
-    'bundle' => array(
-      'bundle',
-    ),
-    'deleted' => array(
-      'deleted',
-    ),
-    'entity_id' => array(
-      'entity_id',
-    ),
-    'revision_id' => array(
-      'revision_id',
-    ),
-    'language' => array(
-      'language',
-    ),
-    'field_reference_2_target_id' => array(
-      'field_reference_2_target_id',
-    ),
-  ),
-  'mysql_character_set' => 'utf8',
-));
-
-$connection->insert('field_data_field_reference_2')
-->fields(array(
-  'entity_type',
-  'bundle',
-  'deleted',
-  'entity_id',
-  'revision_id',
-  'language',
-  'delta',
-  'field_reference_2_target_id',
-))
-->values(array(
-  'entity_type' => 'node',
-  'bundle' => 'article',
-  'deleted' => '0',
-  'entity_id' => '2',
-  'revision_id' => '2',
-  'language' => 'und',
-  'delta' => '0',
-  'field_reference_2_target_id' => '5',
-))
-->values(array(
-  'entity_type' => 'node',
-  'bundle' => 'article',
-  'deleted' => '0',
-  'entity_id' => '3',
-  'revision_id' => '3',
-  'language' => 'und',
-  'delta' => '0',
-  'field_reference_2_target_id' => '4',
-))
-->values(array(
-  'entity_type' => 'node',
-  'bundle' => 'article',
-  'deleted' => '0',
-  'entity_id' => '4',
-  'revision_id' => '4',
-  'language' => 'und',
-  'delta' => '0',
-  'field_reference_2_target_id' => '3',
-))
-->values(array(
-  'entity_type' => 'node',
-  'bundle' => 'article',
-  'deleted' => '0',
-  'entity_id' => '5',
-  'revision_id' => '5',
-  'language' => 'und',
-  'delta' => '0',
-  'field_reference_2_target_id' => '2',
 ))
 ->execute();
 
@@ -8550,115 +8258,12 @@ $connection->insert('field_revision_field_float')
   'revision_id',
   'language',
   'delta',
-  'field_float_value',
-))
-->values(array(
-  'entity_type' => 'node',
-  'bundle' => 'test_content_type',
-  'deleted' => '0',
-  'entity_id' => '1',
-  'revision_id' => '1',
-  'language' => 'und',
-  'delta' => '0',
-  'field_float_value' => '1',
-))
-->execute();
-
-$connection->schema()->createTable('field_revision_field_float_list', array(
-  'fields' => array(
-    'entity_type' => array(
-      'type' => 'varchar',
-      'not null' => TRUE,
-      'length' => '128',
-      'default' => '',
-    ),
-    'bundle' => array(
-      'type' => 'varchar',
-      'not null' => TRUE,
-      'length' => '128',
-      'default' => '',
-    ),
-    'deleted' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'tiny',
-      'default' => '0',
-    ),
-    'entity_id' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-    'revision_id' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-    'language' => array(
-      'type' => 'varchar',
-      'not null' => TRUE,
-      'length' => '32',
-      'default' => '',
-    ),
-    'delta' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-    'field_float_list_value' => array(
-      'type' => 'float',
-      'not null' => FALSE,
-      'size' => 'normal',
-    ),
-  ),
-  'primary key' => array(
-    'entity_type',
-    'entity_id',
-    'revision_id',
-    'deleted',
-    'delta',
-    'language',
-  ),
-  'indexes' => array(
-    'entity_type' => array(
-      'entity_type',
-    ),
-    'bundle' => array(
-      'bundle',
-    ),
-    'deleted' => array(
-      'deleted',
-    ),
-    'entity_id' => array(
-      'entity_id',
-    ),
-    'revision_id' => array(
-      'revision_id',
-    ),
-    'language' => array(
-      'language',
-    ),
-    'field_float_list_value' => array(
-      'field_float_list_value',
-    ),
-  ),
-  'mysql_character_set' => 'utf8',
-));
-
-$connection->insert('field_revision_field_float_list')
-->fields(array(
-  'entity_type',
-  'bundle',
-  'deleted',
-  'entity_id',
-  'revision_id',
-  'language',
-  'delta',
+<<<<<<< HEAD
   'field_float_list_value',
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+  'field_float_value',
+>>>>>>> revert Open Social update
 ))
 ->values(array(
   'entity_type' => 'node',
@@ -8672,8 +8277,12 @@ $connection->insert('field_revision_field_float_list')
   'field_tags_tid' => '17',
 =======
   'delta' => '0',
+<<<<<<< HEAD
   'field_float_list_value' => '3.1416',
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+  'field_float_value' => '1',
+>>>>>>> revert Open Social update
 ))
 ->execute();
 
@@ -8874,7 +8483,7 @@ $connection->insert('field_revision_field_integer')
   'deleted' => '0',
   'entity_id' => '1',
   'revision_id' => '1',
-  'language' => 'en',
+  'language' => 'und',
   'delta' => '0',
   'field_integer_value' => '5',
 ))
@@ -8884,7 +8493,7 @@ $connection->insert('field_revision_field_integer')
   'deleted' => '0',
   'entity_id' => '2',
   'revision_id' => '2',
-  'language' => 'en',
+  'language' => 'und',
   'delta' => '0',
   'field_integer_value' => '99',
 ))
@@ -8894,7 +8503,7 @@ $connection->insert('field_revision_field_integer')
   'deleted' => '0',
   'entity_id' => '4',
   'revision_id' => '4',
-  'language' => 'en',
+  'language' => 'und',
   'delta' => '0',
   'field_integer_value' => '6',
 ))
@@ -9500,282 +9109,6 @@ $connection->insert('field_revision_field_private_file')
   'field_private_file_fid' => '4',
   'field_private_file_display' => '1',
   'field_private_file_description' => '',
-))
-->execute();
-
-$connection->schema()->createTable('field_revision_field_reference', array(
-  'fields' => array(
-    'entity_type' => array(
-      'type' => 'varchar',
-      'not null' => TRUE,
-      'length' => '128',
-      'default' => '',
-    ),
-    'bundle' => array(
-      'type' => 'varchar',
-      'not null' => TRUE,
-      'length' => '128',
-      'default' => '',
-    ),
-    'deleted' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'tiny',
-      'default' => '0',
-    ),
-    'entity_id' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-    'revision_id' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-    'language' => array(
-      'type' => 'varchar',
-      'not null' => TRUE,
-      'length' => '32',
-      'default' => '',
-    ),
-    'delta' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-    'field_reference_target_id' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-  ),
-  'primary key' => array(
-    'entity_type',
-    'entity_id',
-    'revision_id',
-    'deleted',
-    'delta',
-    'language',
-  ),
-  'indexes' => array(
-    'entity_type' => array(
-      'entity_type',
-    ),
-    'bundle' => array(
-      'bundle',
-    ),
-    'deleted' => array(
-      'deleted',
-    ),
-    'entity_id' => array(
-      'entity_id',
-    ),
-    'revision_id' => array(
-      'revision_id',
-    ),
-    'language' => array(
-      'language',
-    ),
-    'field_reference_target_id' => array(
-      'field_reference_target_id',
-    ),
-  ),
-  'mysql_character_set' => 'utf8',
-));
-
-$connection->insert('field_revision_field_reference')
-->fields(array(
-  'entity_type',
-  'bundle',
-  'deleted',
-  'entity_id',
-  'revision_id',
-  'language',
-  'delta',
-  'field_reference_target_id',
-))
-->values(array(
-  'entity_type' => 'node',
-  'bundle' => 'article',
-  'deleted' => '0',
-  'entity_id' => '2',
-  'revision_id' => '2',
-  'language' => 'und',
-  'delta' => '0',
-  'field_reference_target_id' => '5',
-))
-->values(array(
-  'entity_type' => 'node',
-  'bundle' => 'article',
-  'deleted' => '0',
-  'entity_id' => '3',
-  'revision_id' => '3',
-  'language' => 'und',
-  'delta' => '0',
-  'field_reference_target_id' => '4',
-))
-->values(array(
-  'entity_type' => 'node',
-  'bundle' => 'article',
-  'deleted' => '0',
-  'entity_id' => '4',
-  'revision_id' => '4',
-  'language' => 'und',
-  'delta' => '0',
-  'field_reference_target_id' => '3',
-))
-->values(array(
-  'entity_type' => 'node',
-  'bundle' => 'article',
-  'deleted' => '0',
-  'entity_id' => '5',
-  'revision_id' => '5',
-  'language' => 'und',
-  'delta' => '0',
-  'field_reference_target_id' => '2',
-))
-->execute();
-
-$connection->schema()->createTable('field_revision_field_reference_2', array(
-  'fields' => array(
-    'entity_type' => array(
-      'type' => 'varchar',
-      'not null' => TRUE,
-      'length' => '128',
-      'default' => '',
-    ),
-    'bundle' => array(
-      'type' => 'varchar',
-      'not null' => TRUE,
-      'length' => '128',
-      'default' => '',
-    ),
-    'deleted' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'tiny',
-      'default' => '0',
-    ),
-    'entity_id' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-    'revision_id' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-    'language' => array(
-      'type' => 'varchar',
-      'not null' => TRUE,
-      'length' => '32',
-      'default' => '',
-    ),
-    'delta' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-    'field_reference_2_target_id' => array(
-      'type' => 'int',
-      'not null' => TRUE,
-      'size' => 'normal',
-      'unsigned' => TRUE,
-    ),
-  ),
-  'primary key' => array(
-    'entity_type',
-    'entity_id',
-    'revision_id',
-    'deleted',
-    'delta',
-    'language',
-  ),
-  'indexes' => array(
-    'entity_type' => array(
-      'entity_type',
-    ),
-    'bundle' => array(
-      'bundle',
-    ),
-    'deleted' => array(
-      'deleted',
-    ),
-    'entity_id' => array(
-      'entity_id',
-    ),
-    'revision_id' => array(
-      'revision_id',
-    ),
-    'language' => array(
-      'language',
-    ),
-    'field_reference_2_target_id' => array(
-      'field_reference_2_target_id',
-    ),
-  ),
-  'mysql_character_set' => 'utf8',
-));
-
-$connection->insert('field_revision_field_reference_2')
-->fields(array(
-  'entity_type',
-  'bundle',
-  'deleted',
-  'entity_id',
-  'revision_id',
-  'language',
-  'delta',
-  'field_reference_2_target_id',
-))
-->values(array(
-  'entity_type' => 'node',
-  'bundle' => 'article',
-  'deleted' => '0',
-  'entity_id' => '2',
-  'revision_id' => '2',
-  'language' => 'und',
-  'delta' => '0',
-  'field_reference_2_target_id' => '5',
-))
-->values(array(
-  'entity_type' => 'node',
-  'bundle' => 'article',
-  'deleted' => '0',
-  'entity_id' => '3',
-  'revision_id' => '3',
-  'language' => 'und',
-  'delta' => '0',
-  'field_reference_2_target_id' => '4',
-))
-->values(array(
-  'entity_type' => 'node',
-  'bundle' => 'article',
-  'deleted' => '0',
-  'entity_id' => '4',
-  'revision_id' => '4',
-  'language' => 'und',
-  'delta' => '0',
-  'field_reference_2_target_id' => '3',
-))
-->values(array(
-  'entity_type' => 'node',
-  'bundle' => 'article',
-  'deleted' => '0',
-  'entity_id' => '5',
-  'revision_id' => '5',
-  'language' => 'und',
-  'delta' => '0',
-  'field_reference_2_target_id' => '2',
 ))
 ->execute();
 
@@ -23186,6 +22519,7 @@ $connection->insert('menu_links')
   'p9' => '0',
   'updated' => '0',
 ))
+<<<<<<< HEAD
   ->values(array(
     'menu_name' => 'book-toc-1',
     'mlid' => '480',
@@ -23430,6 +22764,8 @@ $connection->insert('menu_links')
   'updated' => '0',
 ))
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
 ->execute();
 
 $connection->schema()->createTable('menu_router', array(
@@ -25373,31 +24709,6 @@ $connection->insert('menu_router')
   'position' => '',
   'weight' => '-10',
   'include_file' => 'modules/system/system.admin.inc',
-))
-->values(array(
-  'path' => 'admin/config/regional/entity_translation',
-  'load_functions' => '',
-  'to_arg_functions' => '',
-  'access_callback' => 'user_access',
-  'access_arguments' => 'a:1:{i:0;s:29:"administer entity translation";}',
-  'page_callback' => 'drupal_get_form',
-  'page_arguments' => 'a:1:{i:0;s:29:"entity_translation_admin_form";}',
-  'delivery_callback' => '',
-  'fit' => '15',
-  'number_parts' => '4',
-  'context' => '0',
-  'tab_parent' => '',
-  'tab_root' => 'admin/config/regional/entity_translation',
-  'title' => 'Entity translation',
-  'title_callback' => 't',
-  'title_arguments' => '',
-  'theme_callback' => '',
-  'theme_arguments' => 'a:0:{}',
-  'type' => '6',
-  'description' => 'Configure which entities can be translated and enable or disable language fallback.',
-  'position' => '',
-  'weight' => '0',
-  'include_file' => 'sites/all/modules/entity_translation/entity_translation.admin.inc',
 ))
 ->values(array(
   'path' => 'admin/config/regional/language',
@@ -36389,55 +35700,6 @@ $connection->insert('registry')
   'weight' => '0',
 ))
 ->values(array(
-  'name' => 'EntityTranslationCommentHandler',
-  'type' => 'class',
-  'filename' => 'sites/all/modules/entity_translation/includes/translation.handler.comment.inc',
-  'module' => 'entity_translation',
-  'weight' => '11',
-))
-->values(array(
-  'name' => 'EntityTranslationDefaultHandler',
-  'type' => 'class',
-  'filename' => 'sites/all/modules/entity_translation/includes/translation.handler.inc',
-  'module' => 'entity_translation',
-  'weight' => '11',
-))
-->values(array(
-  'name' => 'EntityTranslationHandlerFactory',
-  'type' => 'class',
-  'filename' => 'sites/all/modules/entity_translation/includes/translation.handler_factory.inc',
-  'module' => 'entity_translation',
-  'weight' => '11',
-))
-->values(array(
-  'name' => 'EntityTranslationHandlerInterface',
-  'type' => 'interface',
-  'filename' => 'sites/all/modules/entity_translation/includes/translation.handler.inc',
-  'module' => 'entity_translation',
-  'weight' => '11',
-))
-->values(array(
-  'name' => 'EntityTranslationNodeHandler',
-  'type' => 'class',
-  'filename' => 'sites/all/modules/entity_translation/includes/translation.handler.node.inc',
-  'module' => 'entity_translation',
-  'weight' => '11',
-))
-->values(array(
-  'name' => 'EntityTranslationTaxonomyTermHandler',
-  'type' => 'class',
-  'filename' => 'sites/all/modules/entity_translation/includes/translation.handler.taxonomy_term.inc',
-  'module' => 'entity_translation',
-  'weight' => '11',
-))
-->values(array(
-  'name' => 'EntityTranslationUserHandler',
-  'type' => 'class',
-  'filename' => 'sites/all/modules/entity_translation/includes/translation.handler.user.inc',
-  'module' => 'entity_translation',
-  'weight' => '11',
-))
-->values(array(
   'name' => 'EntityValueWrapper',
   'type' => 'class',
   'filename' => 'sites/all/modules/entity/includes/entity.wrapper.inc',
@@ -36450,55 +35712,6 @@ $connection->insert('registry')
   'filename' => 'sites/all/modules/entity/entity.test',
   'module' => 'entity',
   'weight' => '0',
-))
-->values(array(
-  'name' => 'entity_translation_handler_field_field',
-  'type' => 'class',
-  'filename' => 'sites/all/modules/entity_translation/views/entity_translation_handler_field_field.inc',
-  'module' => 'entity_translation',
-  'weight' => '11',
-))
-->values(array(
-  'name' => 'entity_translation_handler_field_label',
-  'type' => 'class',
-  'filename' => 'sites/all/modules/entity_translation/views/entity_translation_handler_field_label.inc',
-  'module' => 'entity_translation',
-  'weight' => '11',
-))
-->values(array(
-  'name' => 'entity_translation_handler_field_translate_link',
-  'type' => 'class',
-  'filename' => 'sites/all/modules/entity_translation/views/entity_translation_handler_field_translate_link.inc',
-  'module' => 'entity_translation',
-  'weight' => '11',
-))
-->values(array(
-  'name' => 'entity_translation_handler_filter_entity_type',
-  'type' => 'class',
-  'filename' => 'sites/all/modules/entity_translation/views/entity_translation_handler_filter_entity_type.inc',
-  'module' => 'entity_translation',
-  'weight' => '11',
-))
-->values(array(
-  'name' => 'entity_translation_handler_filter_language',
-  'type' => 'class',
-  'filename' => 'sites/all/modules/entity_translation/views/entity_translation_handler_filter_language.inc',
-  'module' => 'entity_translation',
-  'weight' => '11',
-))
-->values(array(
-  'name' => 'entity_translation_handler_filter_translation_exists',
-  'type' => 'class',
-  'filename' => 'sites/all/modules/entity_translation/views/entity_translation_handler_filter_translation_exists.inc',
-  'module' => 'entity_translation',
-  'weight' => '11',
-))
-->values(array(
-  'name' => 'entity_translation_handler_relationship',
-  'type' => 'class',
-  'filename' => 'sites/all/modules/entity_translation/views/entity_translation_handler_relationship.inc',
-  'module' => 'entity_translation',
-  'weight' => '11',
 ))
 ->values(array(
   'name' => 'entity_views_handler_area_entity',
@@ -44482,7 +43695,7 @@ $connection->insert('system')
   'name' => 'ctools',
   'type' => 'module',
   'owner' => '',
-  'status' => '1',
+  'status' => '0',
   'bootstrap' => '0',
   'schema_version' => '6008',
   'weight' => '0',
@@ -44711,6 +43924,7 @@ $connection->insert('system')
   'info' => 'a:13:{s:4:"name";s:41:"Entityreference - Feeds integration tests";s:11:"description";s:65:"Support module for the Entityreference - Feeds integration tests.";s:7:"package";s:7:"Testing";s:4:"core";s:3:"7.x";s:6:"hidden";b:1;s:12:"dependencies";a:3:{i:0;s:5:"feeds";i:1;s:8:"feeds_ui";i:2;s:15:"entityreference";}s:7:"version";s:7:"7.x-1.1";s:7:"project";s:15:"entityreference";s:9:"datestamp";s:10:"1384973110";s:5:"mtime";i:1384973110;s:3:"php";s:5:"5.2.4";s:5:"files";a:0:{}s:9:"bootstrap";i:0;}',
 ))
 ->values(array(
+<<<<<<< HEAD
   'filename' => 'sites/all/modules/entity_translation/entity_translation.module',
   'name' => 'entity_translation',
   'type' => 'module',
@@ -44723,6 +43937,8 @@ $connection->insert('system')
 ))
 ->values(array(
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
   'filename' => 'sites/all/modules/link/link.module',
   'name' => 'link',
   'type' => 'module',
@@ -45778,10 +44994,6 @@ $connection->insert('variable')
   'value' => 'a:1:{i:0;s:4:"book";}',
 ))
 ->values(array(
-  'name' => 'book_block_mode',
-  'value' => 's:9:"all pages";',
-))
-->values(array(
   'name' => 'book_child_type',
   'value' => 's:4:"book";',
 ))
@@ -45832,46 +45044,6 @@ $connection->insert('variable')
 ->values(array(
   'name' => 'clean_url',
   'value' => 's:1:"1";',
-))
-->values(array(
-  'name' => 'color_bartik_files',
-  'value' => 'a:2:{i:0;s:39:"public://color/bartik-e0e23ad7/logo.png";i:1;s:41:"public://color/bartik-e0e23ad7/colors.css";}',
-))
-->values(array(
-  'name' => 'color_bartik_logo',
-  'value' => 's:39:"public://color/bartik-e0e23ad7/logo.png";',
-))
-->values(array(
-  'name' => 'color_bartik_palette',
-  'value' => 'a:9:{s:3:"top";s:7:"#d0d0d0";s:6:"bottom";s:7:"#c2c4c5";s:2:"bg";s:7:"#ffffff";s:7:"sidebar";s:7:"#ffffff";s:14:"sidebarborders";s:7:"#cccccc";s:6:"footer";s:7:"#24272c";s:11:"titleslogan";s:7:"#000000";s:4:"text";s:7:"#4a4a4a";s:4:"link";s:7:"#019dbf";}',
-))
-->values(array(
-  'name' => 'color_bartik_stylesheets',
-  'value' => 'a:1:{i:0;s:41:"public://color/bartik-e0e23ad7/colors.css";}',
-))
-->values(array(
-  'name' => 'color_bartik_screenshot',
-  'value' => 's:72:"/var/www/drupal/sites/default/files/color/bartik-b69cfcec/screenshot.png";'
-))
-->values(array(
-  'name' => 'color_garland_files',
-  'value' => 'a:19:{i:0;s:50:"public://color/garland-b69cfcec/menu-collapsed.gif";i:1;s:54:"public://color/garland-b69cfcec/menu-collapsed-rtl.gif";i:2;s:49:"public://color/garland-b69cfcec/menu-expanded.gif";i:3;s:45:"public://color/garland-b69cfcec/menu-leaf.gif";i:4;s:67:"/var/www/drupal/sites/default/files/color/garland-b69cfcec/body.png";i:5;s:69:"/var/www/drupal/sites/default/files/color/garland-b69cfcec/bg-bar.png";i:6;s:75:"/var/www/drupal/sites/default/files/color/garland-b69cfcec/bg-bar-white.png";i:7;s:69:"/var/www/drupal/sites/default/files/color/garland-b69cfcec/bg-tab.png";i:8;s:76:"/var/www/drupal/sites/default/files/color/garland-b69cfcec/bg-navigation.png";i:9;s:78:"/var/www/drupal/sites/default/files/color/garland-b69cfcec/bg-content-left.png";i:10;s:79:"/var/www/drupal/sites/default/files/color/garland-b69cfcec/bg-content-right.png";i:11;s:73:"/var/www/drupal/sites/default/files/color/garland-b69cfcec/bg-content.png";i:12;s:81:"/var/www/drupal/sites/default/files/color/garland-b69cfcec/bg-navigation-item.png";i:13;s:87:"/var/www/drupal/sites/default/files/color/garland-b69cfcec/bg-navigation-item-hover.png";i:14;s:77:"/var/www/drupal/sites/default/files/color/garland-b69cfcec/gradient-inner.png";i:15;s:67:"/var/www/drupal/sites/default/files/color/garland-b69cfcec/logo.png";i:16;s:73:"/var/www/drupal/sites/default/files/color/garland-b69cfcec/screenshot.png";i:17;s:41:"public://color/garland-b69cfcec/style.css";i:18;s:45:"public://color/garland-b69cfcec/style-rtl.css";}',
-))
-->values(array(
-  'name' => 'color_garland_logo',
-  'value' => 's:40:"public://color/garland-b69cfcec/logo.png";'
-))
-->values(array(
-  'name' => 'color_garland_palette',
-  'value' => 'a:5:{s:4:"base";s:7:"#d0cb9a";s:4:"link";s:7:"#917803";s:3:"top";s:7:"#efde01";s:6:"bottom";s:7:"#e6fb2d";s:4:"text";s:7:"#494949";}',
-))
-->values(array(
-  'name' => 'color_garland_screenshot',
-  'value' => 's:73:"/var/www/drupal/sites/default/files/color/garland-b69cfcec/screenshot.png";'
-))
-->values(array(
-  'name' => 'color_garland_stylesheets',
-  'value' => 'a:2:{i:0;s:41:"public://color/garland-b69cfcec/style.css";i:1;s:45:"public://color/garland-b69cfcec/style-rtl.css";}',
 ))
 ->values(array(
   'name' => 'comment_anonymous_article',
@@ -46130,30 +45302,6 @@ $connection->insert('variable')
   'value' => 'b:1;',
 ))
 ->values(array(
-  'name' => 'entity_translation_entity_types',
-  'value' => 'a:4:{s:7:"comment";s:7:"comment";s:4:"node";s:4:"node";s:13:"taxonomy_term";s:13:"taxonomy_term";s:4:"user";s:4:"user";}',
-))
-->values(array(
-  'name' => 'entity_translation_settings_comment__comment_node_test_content_type',
-  'value' => 'a:5:{s:16:"default_language";s:13:"xx-et-current";s:22:"hide_language_selector";i:1;s:21:"exclude_language_none";i:0;s:13:"lock_language";i:0;s:27:"shared_fields_original_only";i:0;}',
-))
-->values(array(
-  'name' => 'entity_translation_settings_node__test_content_type',
-  'value' => 'a:5:{s:16:"default_language";s:3:"und";s:22:"hide_language_selector";i:0;s:21:"exclude_language_none";i:0;s:13:"lock_language";i:0;s:27:"shared_fields_original_only";i:0;}',
-))
-->values(array(
-  'name' => 'entity_translation_settings_taxonomy_term__test_vocabulary',
-  'value' => 'a:5:{s:16:"default_language";s:13:"xx-et-default";s:22:"hide_language_selector";i:1;s:21:"exclude_language_none";i:0;s:13:"lock_language";i:0;s:27:"shared_fields_original_only";i:0;}',
-))
-->values(array(
-  'name' => 'entity_translation_settings_user__user',
-  'value' => 'a:5:{s:16:"default_language";s:13:"xx-et-default";s:22:"hide_language_selector";i:1;s:21:"exclude_language_none";i:0;s:13:"lock_language";i:0;s:27:"shared_fields_original_only";i:0;}',
-))
-->values(array(
-  'name' => 'entity_translation_taxonomy',
-  'value' => 'a:1:{s:15:"test_vocabulary";b:1;}',
-))
-->values(array(
   'name' => 'error_level',
   'value' => 'i:1;',
 ))
@@ -46291,7 +45439,7 @@ $connection->insert('variable')
 ))
 ->values(array(
   'name' => 'language_content_type_test_content_type',
-  'value' => 's:1:"4";',
+  'value' => 's:1:"0";',
 ))
 ->values(array(
   'name' => 'i18n_node_options_blog',

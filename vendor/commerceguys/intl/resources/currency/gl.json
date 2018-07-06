@@ -89,14 +89,22 @@
 	},
 	"AUD": {
 		"name": "Dólar australiano",
+<<<<<<< HEAD
 		"symbol": "$A"
+=======
+		"symbol": "A$"
+>>>>>>> revert Open Social update
 	},
 	"BZD": {
 		"name": "Dólar belizense"
 	},
 	"CAD": {
 		"name": "Dólar canadense",
+<<<<<<< HEAD
 		"symbol": "$CA"
+=======
+		"symbol": "CA$"
+>>>>>>> revert Open Social update
 	},
 	"BSD": {
 		"name": "Dólar das Bahamas"
@@ -385,7 +393,11 @@
 	},
 	"BRL": {
 		"name": "Real brasileiro",
+<<<<<<< HEAD
 		"symbol": "$R"
+=======
+		"symbol": "R$"
+>>>>>>> revert Open Social update
 	},
 	"YER": {
 		"name": "Rial iemení"
@@ -411,9 +423,12 @@
 	"BYN": {
 		"name": "Rublo bielorruso"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "Rublo bielorruso (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"RUB": {
 		"name": "Rublo ruso"
 	},

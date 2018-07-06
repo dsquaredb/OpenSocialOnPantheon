@@ -2,7 +2,8 @@
 
 namespace Drupal\address\Repository;
 
-use CommerceGuys\Addressing\Country\CountryRepository as ExternalCountryRepository;
+use CommerceGuys\Intl\Country\CountryRepository as ExternalCountryRepository;
+use CommerceGuys\Addressing\Country\CountryRepositoryInterface as ExternalCountryRepositoryInterface;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Locale\CountryManagerInterface;
@@ -13,10 +14,14 @@ use Drupal\Core\Locale\CountryManagerInterface;
  * Countries are stored on disk in JSON and cached inside Drupal.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 class CountryRepository extends ExternalCountryRepository implements ExternalCountryRepositoryInterface, CountryManagerInterface {
 =======
 class CountryRepository extends ExternalCountryRepository {
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+class CountryRepository extends ExternalCountryRepository implements ExternalCountryRepositoryInterface {
+>>>>>>> revert Open Social update
 
   /**
    * The cache backend.
@@ -57,6 +62,11 @@ class CountryRepository extends ExternalCountryRepository {
     else {
       $filename = $this->definitionPath . $locale . '.json';
       $this->definitions[$locale] = json_decode(file_get_contents($filename), TRUE);
+      // Merge-in base definitions.
+      $base_definitions = $this->loadBaseDefinitions();
+      foreach ($this->definitions[$locale] as $countryCode => $definition) {
+        $this->definitions[$locale][$countryCode] += $base_definitions[$countryCode];
+      }
       $this->cache->set($cache_key, $this->definitions[$locale], CacheBackendInterface::CACHE_PERMANENT, ['countries']);
     }
 
@@ -64,10 +74,17 @@ class CountryRepository extends ExternalCountryRepository {
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> revert Open Social update
   /**
    * Loads the base country definitions.
    *
    * @return array
+<<<<<<< HEAD
+=======
+   *   The base country definitions.
+>>>>>>> revert Open Social update
    */
   protected function loadBaseDefinitions() {
     if (!empty($this->baseDefinitions)) {
@@ -86,6 +103,9 @@ class CountryRepository extends ExternalCountryRepository {
     return $this->baseDefinitions;
   }
 
+<<<<<<< HEAD
 =======
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
 }

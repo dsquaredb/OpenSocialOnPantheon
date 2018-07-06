@@ -1,15 +1,20 @@
 name: Admin Toolbar
 <<<<<<< HEAD
+<<<<<<< HEAD
 # core: 8.x
 description: Provides a drop-down menu interface to the core Drupal Toolbar.
 =======
 description: Provides a drop-down menu interface to the site Toolbar.
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+description: Provides a drop-down menu interface to the core Drupal Toolbar.
+>>>>>>> revert Open Social update
 package: Administration
 type: module
 dependencies:
   - toolbar
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # Information added by Drupal.org packaging script on 2016-08-30
 version: '8.x-1.17'
@@ -23,3 +28,10 @@ core: '8.x'
 project: 'admin_toolbar'
 datestamp: 1527522484
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+# Information added by Drupal.org packaging script on 2018-02-06
+version: '8.x-1.23'
+core: '8.x'
+project: 'admin_toolbar'
+datestamp: 1517936588
+>>>>>>> revert Open Social update

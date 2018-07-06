@@ -149,6 +149,12 @@
 	"vo": {
 		"name": "ვოლაპუკი"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "ვოლოფური"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "ვუნჯო"
 	},
@@ -161,6 +167,12 @@
 	"zu": {
 		"name": "ზულუ"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "თათრული"
+	},
+>>>>>>> revert Open Social update
 	"tk": {
 		"name": "თურქმენული"
 	},
@@ -227,9 +239,12 @@
 	"fr-CA": {
 		"name": "კანადური ფრანგული"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "კანტონური"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ca": {
 		"name": "კატალანური"
 	},
@@ -440,6 +455,12 @@
 	"sr": {
 		"name": "სერბული"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "სინდჰური"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "სინჰალური"
 	},
@@ -461,9 +482,12 @@
 	"hy": {
 		"name": "სომხური"
 	},
+<<<<<<< HEAD
 	"ckb": {
 		"name": "სორანი ქურთული"
 	},
+=======
+>>>>>>> revert Open Social update
 	"fa": {
 		"name": "სპარსული"
 	},
@@ -485,6 +509,12 @@
 	"twq": {
 		"name": "ტასავაქი"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "ტაჯიკური"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "ტელუგუ"
 	},
@@ -617,6 +647,12 @@
 	"tzm": {
 		"name": "ცენტრალური მოროკოს ტამაზიგხტი"
 	},
+<<<<<<< HEAD
+=======
+	"ckb": {
+		"name": "ცენტრალური ქურთული"
+	},
+>>>>>>> revert Open Social update
 	"dz": {
 		"name": "ძონგკხა"
 	},

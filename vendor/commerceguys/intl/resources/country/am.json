@@ -116,15 +116,24 @@
 	"MZ": {
 		"name": "ሞዛምቢክ"
 	},
+<<<<<<< HEAD
+=======
+	"RU": {
+		"name": "ሩስያ"
+	},
+>>>>>>> revert Open Social update
 	"RW": {
 		"name": "ሩዋንዳ"
 	},
 	"RE": {
 		"name": "ሪዩኒየን"
 	},
+<<<<<<< HEAD
 	"RU": {
 		"name": "ራሽያ"
 	},
+=======
+>>>>>>> revert Open Social update
 	"RO": {
 		"name": "ሮሜኒያ"
 	},
@@ -227,6 +236,12 @@
 	"PM": {
 		"name": "ቅዱስ ፒዬር እና ሚኩኤሎን"
 	},
+<<<<<<< HEAD
+=======
+	"BZ": {
+		"name": "በሊዝ"
+	},
+>>>>>>> revert Open Social update
 	"BT": {
 		"name": "ቡህታን"
 	},
@@ -248,9 +263,12 @@
 	"BD": {
 		"name": "ባንግላዲሽ"
 	},
+<<<<<<< HEAD
 	"BZ": {
 		"name": "ቤሊዘ"
 	},
+=======
+>>>>>>> revert Open Social update
 	"BY": {
 		"name": "ቤላሩስ"
 	},
@@ -342,7 +360,11 @@
 		"name": "ቻድ"
 	},
 	"CZ": {
+<<<<<<< HEAD
 		"name": "ቼክ ሪፑብሊክ"
+=======
+		"name": "ቼችኒያ"
+>>>>>>> revert Open Social update
 	},
 	"NU": {
 		"name": "ኒኡይ"
@@ -408,7 +430,11 @@
 		"name": "አንዶራ"
 	},
 	"AI": {
+<<<<<<< HEAD
 		"name": "አንጉኢላ"
+=======
+		"name": "አንጉይላ"
+>>>>>>> revert Open Social update
 	},
 	"AO": {
 		"name": "አንጐላ"
@@ -467,9 +493,12 @@
 	"IL": {
 		"name": "እስራኤል"
 	},
+<<<<<<< HEAD
 	"GB": {
 		"name": "እንግሊዝ"
 	},
+=======
+>>>>>>> revert Open Social update
 	"OM": {
 		"name": "ኦማን"
 	},
@@ -525,7 +554,11 @@
 		"name": "ኮሞሮስ"
 	},
 	"CR": {
+<<<<<<< HEAD
 		"name": "ኮስታ ሪካ"
+=======
+		"name": "ኮስታሪካ"
+>>>>>>> revert Open Social update
 	},
 	"XK": {
 		"name": "ኮሶቮ"
@@ -617,6 +650,12 @@
 	"US": {
 		"name": "ዩናይትድ ስቴትስ"
 	},
+<<<<<<< HEAD
+=======
+	"GB": {
+		"name": "ዩናይትድ ኪንግደም"
+	},
+>>>>>>> revert Open Social update
 	"UA": {
 		"name": "ዩክሬን"
 	},
@@ -641,12 +680,21 @@
 	"DK": {
 		"name": "ዴንማርክ"
 	},
+<<<<<<< HEAD
 	"DM": {
 		"name": "ዶሚኒካ"
 	},
 	"DO": {
 		"name": "ዶሚኒክ ሪፑብሊክ"
 	},
+=======
+	"DO": {
+		"name": "ዶመኒካን ሪፑብሊክ"
+	},
+	"DM": {
+		"name": "ዶሚኒካ"
+	},
+>>>>>>> revert Open Social update
 	"DE": {
 		"name": "ጀርመን"
 	},

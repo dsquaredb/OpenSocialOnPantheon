@@ -4,12 +4,15 @@ namespace Drupal\address\Plugin\Field\FieldType;
 
 use CommerceGuys\Addressing\AddressFormat\AddressField;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Drupal\address\Event\AddressEvents;
 use Drupal\address\Event\AvailableCountriesEvent;
 =======
 use CommerceGuys\Addressing\AddressFormat\FieldOverride;
 use CommerceGuys\Addressing\AddressFormat\FieldOverrides;
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
 use Drupal\address\AddressInterface;
 use Drupal\address\LabelHelper;
 use Drupal\Core\Field\FieldItemBase;
@@ -147,10 +150,8 @@ class AddressItem extends FieldItemBase implements AddressInterface {
     ] + parent::defaultFieldSettings();
 =======
     return self::defaultCountrySettings() + [
+      'fields' => array_values(AddressField::getAll()),
       'langcode_override' => '',
-      'field_overrides' => [],
-      // Replaced by field_overrides.
-      'fields' => [],
     ];
 >>>>>>> Update Open Social to 8.x-2.1
   }
@@ -189,7 +190,18 @@ class AddressItem extends FieldItemBase implements AddressInterface {
     ];
 =======
     $element = $this->countrySettingsForm($form, $form_state);
+<<<<<<< HEAD
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+    $element['fields'] = [
+      '#type' => 'checkboxes',
+      '#title' => $this->t('Used fields'),
+      '#description' => $this->t('Note: an address used for postal purposes needs all of the above fields.'),
+      '#default_value' => $this->getSetting('fields'),
+      '#options' => LabelHelper::getGenericFieldLabels(),
+      '#required' => TRUE,
+    ];
+>>>>>>> revert Open Social update
     $element['langcode_override'] = [
       '#type' => 'select',
       '#title' => $this->t('Language override'),
@@ -200,45 +212,11 @@ class AddressItem extends FieldItemBase implements AddressInterface {
       '#access' => \Drupal::languageManager()->isMultilingual(),
     ];
 
-    $element['field_overrides_title'] = [
-      '#type' => 'item',
-      '#title' => $this->t('Field overrides'),
-      '#description' => $this->t('Use field overrides to override the country-specific address format, forcing specific fields to always be hidden, optional, or required.'),
-    ];
-    $element['field_overrides'] = [
-      '#type' => 'table',
-      '#header' => [
-        $this->t('Field'),
-        $this->t('Override'),
-      ],
-      '#element_validate' => [[get_class($this), 'fieldOverridesValidate']],
-    ];
-    $field_overrides = $this->getFieldOverrides();
-    foreach (LabelHelper::getGenericFieldLabels() as $field_name => $label) {
-      $override = isset($field_overrides[$field_name]) ? $field_overrides[$field_name] : '';
-
-      $element['field_overrides'][$field_name] = [
-        'field_label' => [
-          '#type' => 'markup',
-          '#markup' => $label,
-        ],
-        'override' => [
-          '#type' => 'select',
-          '#options' => [
-            FieldOverride::HIDDEN => t('Hidden'),
-            FieldOverride::OPTIONAL => t('Optional'),
-            FieldOverride::REQUIRED => t('Required'),
-          ],
-          '#default_value' => $override,
-          '#empty_option' => $this->t('- No override -'),
-        ],
-      ];
-    }
-
     return $element;
   }
 
   /**
+<<<<<<< HEAD
 <<<<<<< HEAD
    * Gets the available countries for the current field.
    *
@@ -299,6 +277,8 @@ class AddressItem extends FieldItemBase implements AddressInterface {
   }
 
   /**
+=======
+>>>>>>> revert Open Social update
    * Initializes and returns the langcode property for the current field.
    *
    * Some countries use separate address formats for the local language VS
@@ -355,7 +335,7 @@ class AddressItem extends FieldItemBase implements AddressInterface {
     $constraints[] = $manager->create('AddressFormat', ['fields' => $enabled_fields]);
 =======
     $constraint_manager = \Drupal::typedDataManager()->getValidationConstraintManager();
-    $field_overrides = new FieldOverrides($this->getFieldOverrides());
+    $enabled_fields = array_filter($this->getSetting('fields'));
     $constraints[] = $constraint_manager->create('ComplexData', [
       'country_code' => [
         'Country' => [
@@ -363,8 +343,12 @@ class AddressItem extends FieldItemBase implements AddressInterface {
         ],
       ],
     ]);
+<<<<<<< HEAD
     $constraints[] = $constraint_manager->create('AddressFormat', ['fieldOverrides' => $field_overrides]);
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+    $constraints[] = $constraint_manager->create('AddressFormat', ['fields' => $enabled_fields]);
+>>>>>>> revert Open Social update
 
     return $constraints;
   }

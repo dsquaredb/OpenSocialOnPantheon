@@ -209,6 +209,12 @@
 	"ig": {
 		"name": "igboština"
 	},
+<<<<<<< HEAD
+=======
+	"smn": {
+		"name": "inarijská saamčina"
+	},
+>>>>>>> revert Open Social update
 	"id": {
 		"name": "indonézština"
 	},
@@ -251,9 +257,12 @@
 	"kn": {
 		"name": "kannadčina"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "kantončina"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kea": {
 		"name": "kapverdčina"
 	},
@@ -311,9 +320,12 @@
 	"lo": {
 		"name": "laoština"
 	},
+<<<<<<< HEAD
 	"smn": {
 		"name": "lapončina (inarijská)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ln": {
 		"name": "lingalčina"
 	},
@@ -491,6 +503,7 @@
 	"seh": {
 		"name": "sena"
 	},
+<<<<<<< HEAD
 	"se": {
 		"name": "severná lapončina"
 	},
@@ -500,6 +513,20 @@
 	"lrc": {
 		"name": "severné luri"
 	},
+=======
+	"nd": {
+		"name": "severná ndebelčina"
+	},
+	"se": {
+		"name": "severná saamčina"
+	},
+	"lrc": {
+		"name": "severné luri"
+	},
+	"sd": {
+		"name": "sindhčina"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "sinhalčina"
 	},
@@ -545,6 +572,12 @@
 	"sv": {
 		"name": "švédčina"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tadžičtina"
+	},
+>>>>>>> revert Open Social update
 	"shi": {
 		"name": "tachelhit"
 	},
@@ -560,6 +593,12 @@
 	"twq": {
 		"name": "tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tatárčina"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telugčina"
 	},
@@ -620,6 +659,12 @@
 	"wae": {
 		"name": "walserčina"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "wolofčina"
+	},
+>>>>>>> revert Open Social update
 	"fy": {
 		"name": "západná frízština"
 	},

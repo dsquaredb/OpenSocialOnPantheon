@@ -55,7 +55,11 @@
 		"name": "Bhutan-Ngultrum"
 	},
 	"BOB": {
+<<<<<<< HEAD
 		"name": "Bolivanischer Boliviano"
+=======
+		"name": "Bolivianischer Boliviano"
+>>>>>>> revert Open Social update
 	},
 	"BAM": {
 		"name": "Bosnien und Herzegowina Konvertierbare Mark"
@@ -117,8 +121,12 @@
 		"name": "Eritreischer Nakfa"
 	},
 	"EUR": {
+<<<<<<< HEAD
 		"name": "Euro",
 		"symbol": "€"
+=======
+		"name": "Euro"
+>>>>>>> revert Open Social update
 	},
 	"FKP": {
 		"name": "Falkland-Pfund"
@@ -343,7 +351,11 @@
 		"name": "Paraguayischer Guaraní"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "Peruanischer Sol"
+=======
+		"name": "Peruanischer Neuer Sol"
+>>>>>>> revert Open Social update
 	},
 	"PHP": {
 		"name": "Philippinischer Peso"
@@ -490,8 +502,11 @@
 	},
 	"BYN": {
 		"name": "Weissrussischer Rubel"
+<<<<<<< HEAD
 	},
 	"BYR": {
 		"name": "Weissrussischer Rubel (2000–2016)"
+=======
+>>>>>>> revert Open Social update
 	}
 }

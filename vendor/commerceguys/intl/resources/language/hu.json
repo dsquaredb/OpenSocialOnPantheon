@@ -257,9 +257,12 @@
 	"kn": {
 		"name": "kannada"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "kantoni"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ks": {
 		"name": "kasmíri"
 	},
@@ -432,10 +435,17 @@
 		"name": "ngumba"
 	},
 	"nb": {
+<<<<<<< HEAD
 		"name": "norvég (bokmál)"
 	},
 	"nn": {
 		"name": "norvég (nynrosk)"
+=======
+		"name": "norvég (bokmål)"
+	},
+	"nn": {
+		"name": "norvég (nynorsk)"
+>>>>>>> revert Open Social update
 	},
 	"nus": {
 		"name": "nuer"
@@ -545,6 +555,12 @@
 	"sr": {
 		"name": "szerb"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "szindhi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "szingaléz"
 	},
@@ -566,12 +582,24 @@
 	"shi": {
 		"name": "tachelhit"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tadzsik"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "taita"
 	},
 	"ta": {
 		"name": "tamil"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tatár"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telugu"
 	},
@@ -617,6 +645,12 @@
 	"vo": {
 		"name": "volapük"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "volof"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "vunjo"
 	},

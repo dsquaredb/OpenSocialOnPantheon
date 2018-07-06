@@ -1,6 +1,10 @@
 {
 	"UM": {
+<<<<<<< HEAD
 		"name": "ABD Uzak Adaları"
+=======
+		"name": "ABD Küçük Harici Adaları"
+>>>>>>> revert Open Social update
 	},
 	"VI": {
 		"name": "ABD Virjin Adaları"
@@ -156,7 +160,11 @@
 		"name": "Çad"
 	},
 	"CZ": {
+<<<<<<< HEAD
 		"name": "Çek Cumhuriyeti"
+=======
+		"name": "Çekya"
+>>>>>>> revert Open Social update
 	},
 	"CN": {
 		"name": "Çin"
@@ -261,7 +269,11 @@
 		"name": "Grönland"
 	},
 	"GP": {
+<<<<<<< HEAD
 		"name": "Guadalupe"
+=======
+		"name": "Guadeloupe"
+>>>>>>> revert Open Social update
 	},
 	"GU": {
 		"name": "Guam"
@@ -357,7 +369,11 @@
 		"name": "Karadağ"
 	},
 	"BQ": {
+<<<<<<< HEAD
 		"name": "Karayip Hollanda"
+=======
+		"name": "Karayip Hollandası"
+>>>>>>> revert Open Social update
 	},
 	"QA": {
 		"name": "Katar"

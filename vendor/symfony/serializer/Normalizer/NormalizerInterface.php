@@ -30,10 +30,14 @@ interface NormalizerInterface
      *
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @param object $object  Object to normalize
 =======
      * @param mixed  $object  Object to normalize
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+     * @param object $object  Object to normalize
+>>>>>>> revert Open Social update
      * @param string $format  Format the normalization result will be encoded as
      * @param array  $context Context options for the normalizer
      *

@@ -122,6 +122,12 @@
 	"ewo": {
 		"name": "evondovščina"
 	},
+<<<<<<< HEAD
+=======
+	"pt-PT": {
+		"name": "evropska portugalščina"
+	},
+>>>>>>> revert Open Social update
 	"fo": {
 		"name": "ferščina"
 	},
@@ -182,9 +188,12 @@
 	"hr": {
 		"name": "hrvaščina"
 	},
+<<<<<<< HEAD
 	"pt-PT": {
 		"name": "iberska portugalščina"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ig": {
 		"name": "igboščina"
 	},
@@ -233,17 +242,25 @@
 	"kam": {
 		"name": "kambaščina"
 	},
+<<<<<<< HEAD
 	"kn": {
 		"name": "kanada"
 	},
+=======
+>>>>>>> revert Open Social update
 	"en-CA": {
 		"name": "kanadska angleščina"
 	},
 	"fr-CA": {
 		"name": "kanadska francoščina"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "kantonščina"
+=======
+	"kn": {
+		"name": "kanareščina"
+>>>>>>> revert Open Social update
 	},
 	"ks": {
 		"name": "kašmirščina"
@@ -278,9 +295,12 @@
 	"ksh": {
 		"name": "kölnsko narečje"
 	},
+<<<<<<< HEAD
 	"sw-CD": {
 		"name": "kongoška svahilščina"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kok": {
 		"name": "konkanščina"
 	},
@@ -374,9 +394,12 @@
 	"mgo": {
 		"name": "meta"
 	},
+<<<<<<< HEAD
 	"ro-MD": {
 		"name": "moldavščina"
 	},
+=======
+>>>>>>> revert Open Social update
 	"mn": {
 		"name": "mongolščina"
 	},
@@ -455,6 +478,12 @@
 	"ro": {
 		"name": "romunščina"
 	},
+<<<<<<< HEAD
+=======
+	"ro-MD": {
+		"name": "romunščina (Moldavija)"
+	},
+>>>>>>> revert Open Social update
 	"rw": {
 		"name": "ruandščina"
 	},
@@ -482,14 +511,25 @@
 	"seh": {
 		"name": "sena"
 	},
+<<<<<<< HEAD
+=======
+	"lrc": {
+		"name": "severna lurijščina"
+	},
+>>>>>>> revert Open Social update
 	"nd": {
 		"name": "severna ndebelščina"
 	},
 	"se": {
 		"name": "severna samijščina"
 	},
+<<<<<<< HEAD
 	"lrc": {
 		"name": "severnolurijščina"
+=======
+	"sd": {
+		"name": "sindščina"
+>>>>>>> revert Open Social update
 	},
 	"si": {
 		"name": "sinhalščina"
@@ -524,6 +564,12 @@
 	"sw": {
 		"name": "svahili"
 	},
+<<<<<<< HEAD
+=======
+	"sw-CD": {
+		"name": "svahili (Demokratična republika Kongo)"
+	},
+>>>>>>> revert Open Social update
 	"ksb": {
 		"name": "šambala"
 	},
@@ -545,6 +591,12 @@
 	"fr-CH": {
 		"name": "švicarska francoščina"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tadžiščina"
+	},
+>>>>>>> revert Open Social update
 	"shi": {
 		"name": "tahelitska berberščina"
 	},
@@ -563,6 +615,12 @@
 	"twq": {
 		"name": "tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tatarščina"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telugijščina"
 	},
@@ -614,6 +672,12 @@
 	"vo": {
 		"name": "volapuk"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "volofščina"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "vunjo"
 	},

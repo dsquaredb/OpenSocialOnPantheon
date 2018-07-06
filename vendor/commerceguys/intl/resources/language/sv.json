@@ -65,9 +65,12 @@
 	"brx": {
 		"name": "bodo"
 	},
+<<<<<<< HEAD
 	"nb": {
 		"name": "bokmål"
 	},
+=======
+>>>>>>> revert Open Social update
 	"bs": {
 		"name": "bosniska"
 	},
@@ -236,9 +239,12 @@
 	"kn": {
 		"name": "kannada"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "kantonesiska"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kea": {
 		"name": "kapverdiska"
 	},
@@ -419,6 +425,12 @@
 	"se": {
 		"name": "nordsamiska"
 	},
+<<<<<<< HEAD
+=======
+	"nb": {
+		"name": "norskt bokmål"
+	},
+>>>>>>> revert Open Social update
 	"nus": {
 		"name": "nuer"
 	},
@@ -497,6 +509,12 @@
 	"sn": {
 		"name": "shona"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindhi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "singalesiska"
 	},
@@ -530,6 +548,12 @@
 	"shi": {
 		"name": "tachelhit"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tadzjikiska"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "taita"
 	},
@@ -539,6 +563,12 @@
 	"twq": {
 		"name": "tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tatariska"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telugu"
 	},
@@ -617,6 +647,12 @@
 	"wae": {
 		"name": "walsertyska"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "yangben"
 	},

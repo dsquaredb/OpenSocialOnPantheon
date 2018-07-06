@@ -71,12 +71,12 @@ class LockHandler
         // Silence error reporting
         set_error_handler(function () {});
 
-        if (!$this->handle = fopen($this->file, 'r+') ?: fopen($this->file, 'r')) {
+        if (!$this->handle = fopen($this->file, 'r')) {
             if ($this->handle = fopen($this->file, 'x')) {
                 chmod($this->file, 0444);
-            } elseif (!$this->handle = fopen($this->file, 'r+') ?: fopen($this->file, 'r')) {
+            } elseif (!$this->handle = fopen($this->file, 'r')) {
                 usleep(100); // Give some time for chmod() to complete
-                $this->handle = fopen($this->file, 'r+') ?: fopen($this->file, 'r');
+                $this->handle = fopen($this->file, 'r');
             }
         }
         restore_error_handler();

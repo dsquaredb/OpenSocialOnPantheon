@@ -242,9 +242,12 @@
 	"kn": {
 		"name": "Kannada"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Kanton"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ks": {
 		"name": "Kashmir"
 	},
@@ -269,9 +272,12 @@
 	"ky": {
 		"name": "Kirgiz"
 	},
+<<<<<<< HEAD
 	"sw-CD": {
 		"name": "Kongo Swahili"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kok": {
 		"name": "Konkani"
 	},
@@ -486,7 +492,11 @@
 		"name": "Sena"
 	},
 	"sr": {
+<<<<<<< HEAD
 		"name": "Serb"
+=======
+		"name": "Serbia"
+>>>>>>> revert Open Social update
 	},
 	"ksb": {
 		"name": "Shambala"
@@ -497,6 +507,12 @@
 	"ii": {
 		"name": "Sichuan Yi"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "Sindhi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "Sinhala"
 	},
@@ -510,6 +526,7 @@
 		"name": "Soga"
 	},
 	"so": {
+<<<<<<< HEAD
 		"name": "Somali"
 	},
 	"hsb": {
@@ -517,6 +534,15 @@
 	},
 	"dsb": {
 		"name": "Sorbia Rendah"
+=======
+		"name": "Somalia"
+	},
+	"dsb": {
+		"name": "Sorbia Hilir"
+	},
+	"hsb": {
+		"name": "Sorbia Hulu"
+>>>>>>> revert Open Social update
 	},
 	"es": {
 		"name": "Spanyol"
@@ -530,6 +556,12 @@
 	"sw": {
 		"name": "Swahili"
 	},
+<<<<<<< HEAD
+=======
+	"sw-CD": {
+		"name": "Swahili (Kongo)"
+	},
+>>>>>>> revert Open Social update
 	"sv": {
 		"name": "Swedia"
 	},
@@ -539,6 +571,12 @@
 	"dav": {
 		"name": "Taita"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "Tajik"
+	},
+>>>>>>> revert Open Social update
 	"zgh": {
 		"name": "Tamazight Maroko Standar"
 	},
@@ -551,6 +589,12 @@
 	"twq": {
 		"name": "Tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "Tatar"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "Telugu"
 	},
@@ -614,6 +658,12 @@
 	"cy": {
 		"name": "Welsh"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "Wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "Yangben"
 	},

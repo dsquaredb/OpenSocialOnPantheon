@@ -252,7 +252,11 @@
 		"name": "Honduras"
 	},
 	"HK": {
+<<<<<<< HEAD
 		"name": "Hongkong, S.A.R. Kina"
+=======
+		"name": "Hongkong"
+>>>>>>> revert Open Social update
 	},
 	"IN": {
 		"name": "Indien"
@@ -384,7 +388,11 @@
 		"name": "Luxemburg"
 	},
 	"MO": {
+<<<<<<< HEAD
 		"name": "Macao, S.A.R. Kina"
+=======
+		"name": "Macao"
+>>>>>>> revert Open Social update
 	},
 	"MG": {
 		"name": "Madagaskar"

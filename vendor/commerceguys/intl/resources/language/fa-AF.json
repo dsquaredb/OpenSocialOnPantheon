@@ -191,6 +191,15 @@
 	"pl": {
 		"name": "پولندی"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "تاتاری"
+	},
+	"tg": {
+		"name": "تاجکی"
+	},
+>>>>>>> revert Open Social update
 	"shi": {
 		"name": "تاچل‌هیت"
 	},
@@ -314,6 +323,12 @@
 	"seh": {
 		"name": "سنا"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "سندی"
+	},
+>>>>>>> revert Open Social update
 	"sw": {
 		"name": "سواحلی"
 	},
@@ -413,9 +428,12 @@
 	"kn": {
 		"name": "کانارا"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "کانتونی"
 	},
+=======
+>>>>>>> revert Open Social update
 	"qu": {
 		"name": "کچوایی"
 	},
@@ -608,6 +626,12 @@
 	"cy": {
 		"name": "ولزی"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "ولوفی"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "ونجو"
 	},

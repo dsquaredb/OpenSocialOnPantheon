@@ -38,11 +38,13 @@ class ValidClassNamePass extends NamespaceAwarePass
     const INTERFACE_TYPE = 'interface';
     const TRAIT_TYPE     = 'trait';
 
+    protected $checkTraits;
     private $conditionalScopes = 0;
     private $atLeastPhp55;
 
     public function __construct()
     {
+        $this->checkTraits = function_exists('trait_exists');
         $this->atLeastPhp55 = version_compare(PHP_VERSION, '5.5', '>=');
     }
 
@@ -115,7 +117,7 @@ class ValidClassNamePass extends NamespaceAwarePass
      */
     protected function validateClassStatement(Class_ $stmt)
     {
-        $this->ensureCanDefine($stmt, self::CLASS_TYPE);
+        $this->ensureCanDefine($stmt);
         if (isset($stmt->extends)) {
             $this->ensureClassExists($this->getFullyQualifiedName($stmt->extends), $stmt);
         }
@@ -129,7 +131,7 @@ class ValidClassNamePass extends NamespaceAwarePass
      */
     protected function validateInterfaceStatement(Interface_ $stmt)
     {
-        $this->ensureCanDefine($stmt, self::INTERFACE_TYPE);
+        $this->ensureCanDefine($stmt);
         $this->ensureInterfacesExist($stmt->extends, $stmt);
     }
 
@@ -140,7 +142,7 @@ class ValidClassNamePass extends NamespaceAwarePass
      */
     protected function validateTraitStatement(Trait_ $stmt)
     {
-        $this->ensureCanDefine($stmt, self::TRAIT_TYPE);
+        $this->ensureCanDefine($stmt);
     }
 
     /**
@@ -192,10 +194,9 @@ class ValidClassNamePass extends NamespaceAwarePass
      *
      * @throws FatalErrorException
      *
-     * @param Stmt   $stmt
-     * @param string $scopeType
+     * @param Stmt $stmt
      */
-    protected function ensureCanDefine(Stmt $stmt, $scopeType = self::CLASS_TYPE)
+    protected function ensureCanDefine(Stmt $stmt)
     {
         $name = $this->getFullyQualifiedName($stmt->name);
 
@@ -215,7 +216,7 @@ class ValidClassNamePass extends NamespaceAwarePass
 
         // Store creation for the rest of this code snippet so we can find local
         // issue too
-        $this->currentScope[strtolower($name)] = $scopeType;
+        $this->currentScope[strtolower($name)] = $this->getScopeType($stmt);
     }
 
     /**
@@ -303,9 +304,6 @@ class ValidClassNamePass extends NamespaceAwarePass
     /**
      * Get a symbol type key for storing in the scope name cache.
      *
-     * @deprecated No longer used. Scope type should be passed into ensureCanDefine directly.
-     * @codeCoverageIgnore
-     *
      * @param Stmt $stmt
      *
      * @return string
@@ -363,7 +361,7 @@ class ValidClassNamePass extends NamespaceAwarePass
      */
     protected function traitExists($name)
     {
-        return trait_exists($name) || $this->findInScope($name) === self::TRAIT_TYPE;
+        return $this->checkTraits && (trait_exists($name) || $this->findInScope($name) === self::TRAIT_TYPE);
     }
 
     /**

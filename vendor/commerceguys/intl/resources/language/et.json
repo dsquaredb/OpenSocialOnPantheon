@@ -51,7 +51,11 @@
 		"name": "bambara"
 	},
 	"bas": {
+<<<<<<< HEAD
 		"name": "basa"
+=======
+		"name": "basaa"
+>>>>>>> revert Open Social update
 	},
 	"eu": {
 		"name": "baski"
@@ -161,12 +165,15 @@
 	"zh": {
 		"name": "hiina"
 	},
+<<<<<<< HEAD
 	"zh-Hans": {
 		"name": "hiina (lihtsustatud)"
 	},
 	"zh-Hant": {
 		"name": "hiina (traditsiooniline)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"hi": {
 		"name": "hindi"
 	},
@@ -239,9 +246,12 @@
 	"kn": {
 		"name": "kannada"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "kantoni"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kk": {
 		"name": "kasahhi"
 	},
@@ -311,6 +321,12 @@
 	"lb": {
 		"name": "letseburgi"
 	},
+<<<<<<< HEAD
+=======
+	"zh-Hans": {
+		"name": "lihtsustatud hiina"
+	},
+>>>>>>> revert Open Social update
 	"ln": {
 		"name": "lingala"
 	},
@@ -488,6 +504,12 @@
 	"ii": {
 		"name": "Sichuani jii"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindhi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "singali"
 	},
@@ -539,6 +561,12 @@
 	"da": {
 		"name": "taani"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tadžiki"
+	},
+>>>>>>> revert Open Social update
 	"th": {
 		"name": "tai"
 	},
@@ -554,6 +582,12 @@
 	"twq": {
 		"name": "taswaqi"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tatari"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telugu"
 	},
@@ -569,6 +603,12 @@
 	"to": {
 		"name": "tonga"
 	},
+<<<<<<< HEAD
+=======
+	"zh-Hant": {
+		"name": "traditsiooniline hiina"
+	},
+>>>>>>> revert Open Social update
 	"cs": {
 		"name": "tšehhi"
 	},
@@ -620,6 +660,12 @@
 	"vo": {
 		"name": "volapüki"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "volofi"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "vundžo"
 	},

@@ -690,12 +690,15 @@ class PdoSessionHandler implements \SessionHandlerInterface
         $selectStmt->bindParam(':id', $sessionId, \PDO::PARAM_STR);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         $insertStmt = null;
 =======
 >>>>>>> web and vendor directory from composer install
 =======
         $insertStmt = null;
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
 
         do {
             $selectStmt->execute();
@@ -713,6 +716,7 @@ class PdoSessionHandler implements \SessionHandlerInterface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> Update Open Social to 8.x-2.1
             if (null !== $insertStmt) {
@@ -720,6 +724,8 @@ class PdoSessionHandler implements \SessionHandlerInterface
                 throw new \RuntimeException('Failed to read session: INSERT reported a duplicate id but next SELECT did not return any data.');
             }
 
+=======
+>>>>>>> revert Open Social update
             if (!ini_get('session.use_strict_mode') && self::LOCK_TRANSACTIONAL === $this->lockMode && 'sqlite' !== $this->driver) {
                 // In strict mode, session fixation is not possible: new sessions always start with a unique
                 // random id, so that concurrency is not possible and this code path can be skipped.
@@ -780,6 +786,7 @@ class PdoSessionHandler implements \SessionHandlerInterface
             case 'mysql':
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 // MySQL 5.7.5 and later enforces a maximum length on lock names of 64 characters. Previously, no limit was enforced.
                 $lockId = \substr($sessionId, 0, 64);
                 // should we handle the return value? 0 on timeout, null on error
@@ -795,19 +802,25 @@ class PdoSessionHandler implements \SessionHandlerInterface
                 // MySQL 5.7.5 and later enforces a maximum length on lock names of 64 characters. Previously, no limit was enforced.
                 $lockId = \substr($sessionId, 0, 64);
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
                 // should we handle the return value? 0 on timeout, null on error
                 // we use a timeout of 50 seconds which is also the default for innodb_lock_wait_timeout
                 $stmt = $this->pdo->prepare('SELECT GET_LOCK(:key, 50)');
-                $stmt->bindValue(':key', $lockId, \PDO::PARAM_STR);
+                $stmt->bindValue(':key', $sessionId, \PDO::PARAM_STR);
                 $stmt->execute();
 
                 $releaseStmt = $this->pdo->prepare('DO RELEASE_LOCK(:key)');
+<<<<<<< HEAD
 <<<<<<< HEAD
                 $releaseStmt->bindValue(':key', $sessionId, \PDO::PARAM_STR);
 >>>>>>> web and vendor directory from composer install
 =======
                 $releaseStmt->bindValue(':key', $lockId, \PDO::PARAM_STR);
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+                $releaseStmt->bindValue(':key', $sessionId, \PDO::PARAM_STR);
+>>>>>>> revert Open Social update
 
                 return $releaseStmt;
             case 'pgsql':

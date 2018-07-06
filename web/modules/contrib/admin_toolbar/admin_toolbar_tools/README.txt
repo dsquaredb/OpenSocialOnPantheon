@@ -19,8 +19,20 @@ http://drupal.org/project/issues/admin_toolbar
 *Admin Toolbar.
 
 
+<<<<<<< HEAD
 ---INSTALLATION---
 =======
+=======
+RECOMMENDED MODULES
+-------------------
+
+ * Admin Toolbar (https://www.drupal.org/project/admin_toolbar):
+   Improve the default Drupal Toolbar (the administration menu at the top of
+   your site) to transform it into a drop-down menu, providing a fast access to
+   all administration pages.
+
+
+>>>>>>> revert Open Social update
 INSTALLATION
 ------------
 >>>>>>> Update Open Social to 8.x-2.1

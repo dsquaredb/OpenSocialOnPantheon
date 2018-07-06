@@ -2,9 +2,12 @@
 	"AFN": {
 		"name": "afghanistanga afghani"
 	},
+<<<<<<< HEAD
 	"ISK": {
 		"name": "aiselandga króna"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ALL": {
 		"name": "albaniaga lek"
 	},
@@ -31,7 +34,11 @@
 		"name": "azerbaidzanga manat"
 	},
 	"BSD": {
+<<<<<<< HEAD
 		"name": "bahamiaga dollar"
+=======
+		"name": "bahamasga dollar"
+>>>>>>> revert Open Social update
 	},
 	"BHD": {
 		"name": "bahrainga dinar"
@@ -40,14 +47,21 @@
 		"name": "bangladeshga taka"
 	},
 	"BBD": {
+<<<<<<< HEAD
 		"name": "barbadiaga dollar"
+=======
+		"name": "barbadosga dollar"
+>>>>>>> revert Open Social update
 	},
 	"BYN": {
 		"name": "belarusiaga ruble"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "belarusiaga ruble (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"BZD": {
 		"name": "belizega dollar"
 	},
@@ -67,11 +81,19 @@
 		"name": "botswanaga pula"
 	},
 	"BRL": {
+<<<<<<< HEAD
 		"name": "Braziliaga real",
 		"symbol": "R$"
 	},
 	"GBP": {
 		"name": "Britishga pound",
+=======
+		"name": "braziliaga real",
+		"symbol": "R$"
+	},
+	"GBP": {
+		"name": "britainga pound",
+>>>>>>> revert Open Social update
 		"symbol": "£"
 	},
 	"BND": {
@@ -84,26 +106,67 @@
 		"name": "burundiga franc"
 	},
 	"CAD": {
+<<<<<<< HEAD
 		"name": "Canadaga dollar",
 		"symbol": "CA$"
 	},
+=======
+		"name": "canadaga dollar",
+		"symbol": "CA$"
+	},
+	"KYD": {
+		"name": "cayman islandsga dollar"
+	},
+>>>>>>> revert Open Social update
 	"XPF": {
 		"name": "CFP ga franc",
 		"symbol": "CFPF"
 	},
+<<<<<<< HEAD
+=======
+	"CLP": {
+		"name": "chilega peso"
+	},
+>>>>>>> revert Open Social update
 	"CNY": {
 		"name": "Chinesega yuan",
 		"symbol": "CN¥"
 	},
+<<<<<<< HEAD
 	"DKK": {
 		"name": "Denmarkga krone"
+=======
+	"COP": {
+		"name": "colombiaga peso"
+	},
+	"CRC": {
+		"name": "costa ricaga colón"
+	},
+	"HRK": {
+		"name": "croatiaga kuna"
+	},
+	"CUC": {
+		"name": "cubaga convertible peso"
+	},
+	"CUP": {
+		"name": "cubaga peso"
+	},
+	"CZK": {
+		"name": "czechga koruna"
+	},
+	"DKK": {
+		"name": "denmarkga krone"
+>>>>>>> revert Open Social update
 	},
 	"DOP": {
 		"name": "dominicaga peso"
 	},
+<<<<<<< HEAD
 	"JMD": {
 		"name": "dzamaikaga dollar"
 	},
+=======
+>>>>>>> revert Open Social update
 	"DJF": {
 		"name": "dziboutiga franc"
 	},
@@ -113,6 +176,13 @@
 	"GEL": {
 		"name": "dzɔdziaga lari"
 	},
+<<<<<<< HEAD
+=======
+	"XCD": {
+		"name": "east caribbeanga dollar",
+		"symbol": "EC$"
+	},
+>>>>>>> revert Open Social update
 	"EGP": {
 		"name": "egyptega pound"
 	},
@@ -127,7 +197,11 @@
 		"symbol": "€"
 	},
 	"FKP": {
+<<<<<<< HEAD
 		"name": "falklanɖ ƒudomekpo dukɔwo ƒe ga pound"
+=======
+		"name": "falkland islands pound"
+>>>>>>> revert Open Social update
 	},
 	"FJD": {
 		"name": "fidziga dollar"
@@ -143,7 +217,11 @@
 		"symbol": "GH₵"
 	},
 	"GIP": {
+<<<<<<< HEAD
 		"name": "gilbrataga pound"
+=======
+		"name": "gilbratarga pound"
+>>>>>>> revert Open Social update
 	},
 	"GNF": {
 		"name": "giniga franc"
@@ -154,10 +232,13 @@
 	"GYD": {
 		"name": "guyanaga dollar"
 	},
+<<<<<<< HEAD
 	"XCD": {
 		"name": "ɣedzeƒe caribbeaga dollar",
 		"symbol": "EC$"
 	},
+=======
+>>>>>>> revert Open Social update
 	"XOF": {
 		"name": "ɣetoɖofe afrikaga CFA franc BCEAO",
 		"symbol": "CFA"
@@ -179,6 +260,12 @@
 	"HUF": {
 		"name": "hungariaga forint"
 	},
+<<<<<<< HEAD
+=======
+	"ISK": {
+		"name": "icelandga króna"
+	},
+>>>>>>> revert Open Social update
 	"INR": {
 		"name": "Indiaga rupee",
 		"symbol": "₹"
@@ -196,6 +283,12 @@
 		"name": "israelga yeyetɔ sheqel",
 		"symbol": "₪"
 	},
+<<<<<<< HEAD
+=======
+	"JMD": {
+		"name": "jamaicaga dollar"
+	},
+>>>>>>> revert Open Social update
 	"JPY": {
 		"name": "Japanesega yen",
 		"symbol": "JP¥"
@@ -209,9 +302,12 @@
 	"QAR": {
 		"name": "katarga rial"
 	},
+<<<<<<< HEAD
 	"KYD": {
 		"name": "kayman ƒudomekpoga dollar"
 	},
+=======
+>>>>>>> revert Open Social update
 	"KZT": {
 		"name": "kazakhstanga tenge"
 	},
@@ -221,15 +317,19 @@
 	"KGS": {
 		"name": "kirgistanga som"
 	},
+<<<<<<< HEAD
 	"COP": {
 		"name": "kolombiaga peso"
 	},
+=======
+>>>>>>> revert Open Social update
 	"KMF": {
 		"name": "komoroga franc"
 	},
 	"CDF": {
 		"name": "kongoga franc"
 	},
+<<<<<<< HEAD
 	"CRC": {
 		"name": "kosta rikaga kolón"
 	},
@@ -242,6 +342,8 @@
 	"CUP": {
 		"name": "kubaga peso"
 	},
+=======
+>>>>>>> revert Open Social update
 	"KWD": {
 		"name": "kuwaitga dinar"
 	},
@@ -263,9 +365,12 @@
 	"MOP": {
 		"name": "makanesega pataca"
 	},
+<<<<<<< HEAD
 	"MKD": {
 		"name": "makedoniaga denar"
 	},
+=======
+>>>>>>> revert Open Social update
 	"MGA": {
 		"name": "malagasega ariary"
 	},
@@ -278,8 +383,16 @@
 	"MVR": {
 		"name": "maldiviaga rufiyaa"
 	},
+<<<<<<< HEAD
 	"MXN": {
 		"name": "Mexicoga peso",
+=======
+	"MKD": {
+		"name": "marcedoniaga denar"
+	},
+	"MXN": {
+		"name": "mexicoga peso",
+>>>>>>> revert Open Social update
 		"symbol": "MX$"
 	},
 	"MDL": {
@@ -309,21 +422,37 @@
 	"NAD": {
 		"name": "Namibian Dollar"
 	},
+<<<<<<< HEAD
 	"ANG": {
 		"name": "nedalands antilleaga guilder"
 	},
 	"NPR": {
 		"name": "nepalga rupee"
 	},
+=======
+	"NPR": {
+		"name": "nepalga rupee"
+	},
+	"ANG": {
+		"name": "netherlands antilleaga guilder"
+	},
+>>>>>>> revert Open Social update
 	"NZD": {
 		"name": "new zealanɖga dollar",
 		"symbol": "NZ$"
 	},
 	"NIO": {
+<<<<<<< HEAD
 		"name": "nikaraguaga córdoba"
 	},
 	"NOK": {
 		"name": "Norwayga krone"
+=======
+		"name": "nicaraguaga córdoba"
+	},
+	"NOK": {
+		"name": "norwayga krone"
+>>>>>>> revert Open Social update
 	},
 	"OMR": {
 		"name": "omanga rial"
@@ -341,16 +470,27 @@
 		"name": "paraguayga guarani"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "peruga nuevo sol"
 	},
 	"PLN": {
 		"name": "polanɖga zloty"
+=======
+		"name": "peruga sol"
+	},
+	"PLN": {
+		"name": "polandga zloty"
+>>>>>>> revert Open Social update
 	},
 	"RON": {
 		"name": "romaniaga leu"
 	},
 	"RUB": {
+<<<<<<< HEAD
 		"name": "Russiaga ruble"
+=======
+		"name": "russiaga ruble"
+>>>>>>> revert Open Social update
 	},
 	"RWF": {
 		"name": "rwandaga franc"
@@ -411,10 +551,17 @@
 		"name": "swaziga lilangeni"
 	},
 	"SEK": {
+<<<<<<< HEAD
 		"name": "Swedishga krone"
 	},
 	"CHF": {
 		"name": "Swissga franc"
+=======
+		"name": "swedenga krone"
+	},
+	"CHF": {
+		"name": "switzerlandga franc"
+>>>>>>> revert Open Social update
 	},
 	"SYP": {
 		"name": "syriaga pound"
@@ -437,7 +584,11 @@
 		"name": "tonagaga pa’anga"
 	},
 	"TTD": {
+<<<<<<< HEAD
 		"name": "trinidad kple tobagoga dollar"
+=======
+		"name": "trinidad & tobagoga dollar"
+>>>>>>> revert Open Social update
 	},
 	"TND": {
 		"name": "tunisiaga dinar"
@@ -448,12 +599,15 @@
 	"TMT": {
 		"name": "turkmenistanga manat"
 	},
+<<<<<<< HEAD
 	"CZK": {
 		"name": "tsɛk repɔblikga koruna"
 	},
 	"CLP": {
 		"name": "tsilega peso"
 	},
+=======
+>>>>>>> revert Open Social update
 	"UGX": {
 		"name": "ugandaga shilling"
 	},
@@ -467,7 +621,11 @@
 		"name": "uruguayga peso"
 	},
 	"USD": {
+<<<<<<< HEAD
 		"name": "US ga dollar",
+=======
+		"name": "us ga dollar",
+>>>>>>> revert Open Social update
 		"symbol": "US$"
 	},
 	"UZS": {

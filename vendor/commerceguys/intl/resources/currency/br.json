@@ -324,9 +324,12 @@
 	"BTN": {
 		"name": "ngultrum Bhoutan"
 	},
+<<<<<<< HEAD
 	"PEN": {
 		"name": "nuevo sol Perou"
 	},
+=======
+>>>>>>> revert Open Social update
 	"MRO": {
 		"name": "ouguiya Maouritania"
 	},
@@ -400,9 +403,12 @@
 	"BYN": {
 		"name": "roubl Belarus"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "roubl Belarus (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"RUB": {
 		"name": "roubl Rusia"
 	},
@@ -446,6 +452,12 @@
 	"TZS": {
 		"name": "shilling Tanzania"
 	},
+<<<<<<< HEAD
+=======
+	"PEN": {
+		"name": "sol Perou"
+	},
+>>>>>>> revert Open Social update
 	"KGS": {
 		"name": "som Kyrgyzstan"
 	},

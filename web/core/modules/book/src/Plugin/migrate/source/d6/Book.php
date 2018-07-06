@@ -2,9 +2,7 @@
 
 namespace Drupal\book\Plugin\migrate\source\d6;
 
-use Drupal\book\Plugin\migrate\source\Book as BookGeneral;
-
-@trigger_error('Book is deprecated in Drupal 8.6.x and will be removed before Drupal 9.0.x. Use \Drupal\book\Plugin\migrate\source\Book instead. See https://www.drupal.org/node/2947487 for more information.', E_USER_DEPRECATED);
+use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
 
 /**
  * Drupal 6 book source.
@@ -12,21 +10,26 @@ use Drupal\book\Plugin\migrate\source\Book as BookGeneral;
  * @MigrateSource(
  *   id = "d6_book"
  * )
- *
- * @deprecated in Drupal 8.6.x, to be removed before Drupal 9.0.x. Use
- * \Drupal\book\Plugin\migrate\source\Book instead. See
- * https://www.drupal.org/node/2947487 for more information.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> revert Open Social update
 class Book extends DrupalSqlBase {
 
   /**
    * {@inheritdoc}
    */
   public function query() {
+<<<<<<< HEAD
     $query = $this->select('book', 'b')->fields('b', array('nid', 'bid'));
     $query->join('menu_links', 'ml', 'b.mlid = ml.mlid');
     $ml_fields = array('mlid', 'plid', 'weight', 'has_children', 'depth');
+=======
+    $query = $this->select('book', 'b')->fields('b', ['nid', 'bid']);
+    $query->join('menu_links', 'ml', 'b.mlid = ml.mlid');
+    $ml_fields = ['mlid', 'plid', 'weight', 'has_children', 'depth'];
+>>>>>>> revert Open Social update
     for ($i = 1; $i <= 9; $i++) {
       $field = "p$i";
       $ml_fields[] = $field;
@@ -49,7 +52,11 @@ class Book extends DrupalSqlBase {
    * {@inheritdoc}
    */
   public function fields() {
+<<<<<<< HEAD
     return array(
+=======
+    return [
+>>>>>>> revert Open Social update
       'nid' => $this->t('Node ID'),
       'bid' => $this->t('Book ID'),
       'mlid' => $this->t('Menu link ID'),
@@ -64,6 +71,7 @@ class Book extends DrupalSqlBase {
       'p7' => $this->t('The seventh mlid in the materialized path. See p1.'),
       'p8' => $this->t('The eighth mlid in the materialized path. See p1.'),
       'p9' => $this->t('The ninth mlid in the materialized path. See p1.'),
+<<<<<<< HEAD
     );
   }
 
@@ -71,3 +79,9 @@ class Book extends DrupalSqlBase {
 =======
 class Book extends BookGeneral {}
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+    ];
+  }
+
+}
+>>>>>>> revert Open Social update

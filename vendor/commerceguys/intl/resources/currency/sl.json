@@ -25,8 +25,12 @@
 		"name": "arubski florin"
 	},
 	"AUD": {
+<<<<<<< HEAD
 		"name": "avstralski dolar",
 		"symbol": "A$"
+=======
+		"name": "avstralski dolar"
+>>>>>>> revert Open Social update
 	},
 	"AZN": {
 		"name": "azerbajdžanski manat"
@@ -49,9 +53,12 @@
 	"BYN": {
 		"name": "beloruski rubelj"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "beloruski rubelj (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"BMD": {
 		"name": "bermudski dolar"
 	},
@@ -68,12 +75,19 @@
 		"name": "bosansko-hercegovska konvertibilna marka"
 	},
 	"BRL": {
+<<<<<<< HEAD
 		"name": "brazilski real",
 		"symbol": "R$"
 	},
 	"GBP": {
 		"name": "britanski funt",
 		"symbol": "£"
+=======
+		"name": "brazilski real"
+	},
+	"GBP": {
+		"name": "britanski funt"
+>>>>>>> revert Open Social update
 	},
 	"BND": {
 		"name": "brunejski dolar"
@@ -310,8 +324,12 @@
 		"name": "mavricijska rupija"
 	},
 	"MXN": {
+<<<<<<< HEAD
 		"name": "mehiški peso",
 		"symbol": "MX$"
+=======
+		"name": "mehiški peso"
+>>>>>>> revert Open Social update
 	},
 	"MMK": {
 		"name": "mjanmarski kjat"
@@ -347,12 +365,19 @@
 		"name": "nova turška lira"
 	},
 	"TWD": {
+<<<<<<< HEAD
 		"name": "novi tajvanski dolar",
 		"symbol": "NT$"
 	},
 	"NZD": {
 		"name": "novozelandski dolar",
 		"symbol": "NZ$"
+=======
+		"name": "novi tajvanski dolar"
+	},
+	"NZD": {
+		"name": "novozelandski dolar"
+>>>>>>> revert Open Social update
 	},
 	"OMR": {
 		"name": "omanski rial"
@@ -367,7 +392,11 @@
 		"name": "paragvajski gvarani"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "perujski novi sol"
+=======
+		"name": "perujski sol"
+>>>>>>> revert Open Social update
 	},
 	"PLN": {
 		"name": "poljski novi zlot"
@@ -439,8 +468,12 @@
 		"name": "tadžikistanski somoni"
 	},
 	"THB": {
+<<<<<<< HEAD
 		"name": "tajski baht",
 		"symbol": "฿"
+=======
+		"name": "tajski baht"
+>>>>>>> revert Open Social update
 	},
 	"TZS": {
 		"name": "tanzanijski šiling"
@@ -477,8 +510,12 @@
 		"symbol": "₫"
 	},
 	"XCD": {
+<<<<<<< HEAD
 		"name": "vzhodnokaribski dolar",
 		"symbol": "EC$"
+=======
+		"name": "vzhodnokaribski dolar"
+>>>>>>> revert Open Social update
 	},
 	"XOF": {
 		"name": "zahodnoafriški frank CFA",

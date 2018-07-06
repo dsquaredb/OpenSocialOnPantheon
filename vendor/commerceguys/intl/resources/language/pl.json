@@ -263,9 +263,12 @@
 	"kn": {
 		"name": "kannada"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "kantoński"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ks": {
 		"name": "kaszmirski"
 	},
@@ -509,6 +512,12 @@
 	"sn": {
 		"name": "shona"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindhi"
+	},
+>>>>>>> revert Open Social update
 	"sk": {
 		"name": "słowacki"
 	},
@@ -545,9 +554,21 @@
 	"gsw": {
 		"name": "szwajcarski niemiecki"
 	},
+<<<<<<< HEAD
 	"sv": {
 		"name": "szwedzki"
 	},
+=======
+	"de-CH": {
+		"name": "szwajcarski wysokoniemiecki"
+	},
+	"sv": {
+		"name": "szwedzki"
+	},
+	"tg": {
+		"name": "tadżycki"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "taita"
 	},
@@ -566,6 +587,12 @@
 	"shi": {
 		"name": "tashelhiyt"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tatarski"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telugu"
 	},
@@ -620,8 +647,13 @@
 	"vo": {
 		"name": "wolapik"
 	},
+<<<<<<< HEAD
 	"de-CH": {
 		"name": "wysokoniemiecki (Szwajcaria)"
+=======
+	"wo": {
+		"name": "wolof"
+>>>>>>> revert Open Social update
 	},
 	"yav": {
 		"name": "yangben"

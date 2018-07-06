@@ -81,7 +81,11 @@
 		"name": "болгарча"
 	},
 	"tzm": {
+<<<<<<< HEAD
 		"name": "Борбордук Атлас тамазитче"
+=======
+		"name": "борбордук Атлас тамазигтче"
+>>>>>>> revert Open Social update
 	},
 	"ckb": {
 		"name": "борбордук курдча"
@@ -156,13 +160,21 @@
 		"name": "жонгуча"
 	},
 	"dje": {
+<<<<<<< HEAD
 		"name": "замрача"
+=======
+		"name": "зармача"
+>>>>>>> revert Open Social update
 	},
 	"zu": {
 		"name": "зулуча"
 	},
 	"he": {
+<<<<<<< HEAD
 		"name": "ивритте"
+=======
+		"name": "ивритче"
+>>>>>>> revert Open Social update
 	},
 	"ig": {
 		"name": "игбочо"
@@ -174,7 +186,11 @@
 		"name": "инари саамиче"
 	},
 	"id": {
+<<<<<<< HEAD
 		"name": "индонезче"
+=======
+		"name": "индонезияча"
+>>>>>>> revert Open Social update
 	},
 	"ga": {
 		"name": "ирландча"
@@ -218,11 +234,16 @@
 	"kn": {
 		"name": "каннадача"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "кантончо"
 	},
 	"ca": {
 		"name": "каталанча"
+=======
+	"ca": {
+		"name": "каталонча"
+>>>>>>> revert Open Social update
 	},
 	"ks": {
 		"name": "кашмирче"
@@ -230,9 +251,12 @@
 	"nmg": {
 		"name": "квасиочо"
 	},
+<<<<<<< HEAD
 	"gd": {
 		"name": "кельтче"
 	},
+=======
+>>>>>>> revert Open Social update
 	"qu": {
 		"name": "кечуача"
 	},
@@ -329,9 +353,12 @@
 	"mt": {
 		"name": "малтизче"
 	},
+<<<<<<< HEAD
 	"gv": {
 		"name": "манксыча"
 	},
+=======
+>>>>>>> revert Open Social update
 	"mr": {
 		"name": "маратиче"
 	},
@@ -362,6 +389,12 @@
 	"mua": {
 		"name": "мундангча"
 	},
+<<<<<<< HEAD
+=======
+	"gv": {
+		"name": "мэнксыча"
+	},
+>>>>>>> revert Open Social update
 	"naq": {
 		"name": "намача"
 	},
@@ -387,7 +420,11 @@
 		"name": "норвежче (Букмал)"
 	},
 	"nn": {
+<<<<<<< HEAD
 		"name": "норвежче (Нинорск)"
+=======
+		"name": "норвежче (нинорск)"
+>>>>>>> revert Open Social update
 	},
 	"nus": {
 		"name": "нуерче"
@@ -467,6 +504,12 @@
 	"si": {
 		"name": "сингалача"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "синдхиче"
+	},
+>>>>>>> revert Open Social update
 	"sk": {
 		"name": "словакча"
 	},
@@ -485,6 +528,12 @@
 	"ii": {
 		"name": "сычуань йиче"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "тажикче"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "таитача"
 	},
@@ -497,6 +546,12 @@
 	"twq": {
 		"name": "тасабакча"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "татарча"
+	},
+>>>>>>> revert Open Social update
 	"shi": {
 		"name": "ташелитче"
 	},
@@ -531,7 +586,11 @@
 		"name": "түндүк ндыбелче"
 	},
 	"se": {
+<<<<<<< HEAD
 		"name": "түндүк самиче"
+=======
+		"name": "түндүк саамиче"
+>>>>>>> revert Open Social update
 	},
 	"tk": {
 		"name": "түркмөнчө"
@@ -548,11 +607,21 @@
 	"uk": {
 		"name": "украинче"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "уолофчо"
+	},
+>>>>>>> revert Open Social update
 	"ur": {
 		"name": "урдуча"
 	},
 	"fo": {
+<<<<<<< HEAD
 		"name": "фароэче"
+=======
+		"name": "фарерче"
+>>>>>>> revert Open Social update
 	},
 	"fa": {
 		"name": "фарсча"
@@ -614,6 +683,12 @@
 	"sn": {
 		"name": "шонача"
 	},
+<<<<<<< HEAD
+=======
+	"gd": {
+		"name": "шотладиялык гелча"
+	},
+>>>>>>> revert Open Social update
 	"ee": {
 		"name": "эбече"
 	},

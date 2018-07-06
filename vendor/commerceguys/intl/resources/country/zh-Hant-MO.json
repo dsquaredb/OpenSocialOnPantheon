@@ -96,7 +96,11 @@
 		"name": "加蓬"
 	},
 	"MP": {
+<<<<<<< HEAD
 		"name": "北馬里亞納群島"
+=======
+		"name": "北馬利安納群島"
+>>>>>>> revert Open Social update
 	},
 	"KP": {
 		"name": "北韓"
@@ -198,7 +202,11 @@
 		"name": "多哥共和國"
 	},
 	"AI": {
+<<<<<<< HEAD
 		"name": "安圭拉"
+=======
+		"name": "安奎拉"
+>>>>>>> revert Open Social update
 	},
 	"AO": {
 		"name": "安哥拉"
@@ -276,7 +284,11 @@
 		"name": "所羅門群島"
 	},
 	"LV": {
+<<<<<<< HEAD
 		"name": "拉脫維亞"
+=======
+		"name": "拉脱維亞"
+>>>>>>> revert Open Social update
 	},
 	"TL": {
 		"name": "東帝汶"
@@ -504,7 +516,11 @@
 		"name": "索馬里"
 	},
 	"MQ": {
+<<<<<<< HEAD
 		"name": "馬丁尼克島"
+=======
+		"name": "馬丁尼克"
+>>>>>>> revert Open Social update
 	},
 	"MT": {
 		"name": "馬耳他"
@@ -537,6 +553,7 @@
 		"name": "馬爾代夫"
 	},
 	"FM": {
+<<<<<<< HEAD
 		"name": "密克羅尼西亞群島"
 	},
 	"CZ": {
@@ -544,6 +561,15 @@
 	},
 	"SY": {
 		"name": "敍利亞"
+=======
+		"name": "密克羅尼西亞"
+	},
+	"CZ": {
+		"name": "捷克"
+	},
+	"SY": {
+		"name": "敘利亞"
+>>>>>>> revert Open Social update
 	},
 	"VA": {
 		"name": "梵蒂岡"
@@ -599,9 +625,12 @@
 	"PH": {
 		"name": "菲律賓"
 	},
+<<<<<<< HEAD
 	"LS": {
 		"name": "萊索托"
 	},
+=======
+>>>>>>> revert Open Social update
 	"VN": {
 		"name": "越南"
 	},
@@ -666,7 +695,11 @@
 		"name": "聖文森特和格林納丁斯"
 	},
 	"PM": {
+<<<<<<< HEAD
 		"name": "聖皮埃爾和密克隆群島"
+=======
+		"name": "聖皮埃與密克隆群島"
+>>>>>>> revert Open Social update
 	},
 	"ST": {
 		"name": "聖多美和普林西比"
@@ -737,6 +770,12 @@
 	"NF": {
 		"name": "諾福克島"
 	},
+<<<<<<< HEAD
+=======
+	"LS": {
+		"name": "賴索托"
+	},
+>>>>>>> revert Open Social update
 	"SV": {
 		"name": "薩爾瓦多"
 	},

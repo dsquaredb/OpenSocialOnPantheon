@@ -42,9 +42,12 @@
 	"BYN": {
 		"name": "i-Belarusian Ruble"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "i-Belarusian Ruble (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"BZD": {
 		"name": "i-Belize Dollar"
 	},

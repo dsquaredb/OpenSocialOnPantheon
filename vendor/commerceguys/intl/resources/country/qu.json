@@ -189,7 +189,11 @@
 		"name": "Curazao"
 	},
 	"CZ": {
+<<<<<<< HEAD
 		"name": "Czech Republic"
+=======
+		"name": "Czechia"
+>>>>>>> revert Open Social update
 	},
 	"DG": {
 		"name": "Diego Garcia"

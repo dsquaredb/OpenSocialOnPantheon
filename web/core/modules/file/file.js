@@ -191,8 +191,16 @@
       }
 =======
     disableFields: function disableFields(event) {
+<<<<<<< HEAD
       var $clickedButton = $(this);
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+      var $clickedButton = $(this).findOnce('ajax');
+
+      if (!$clickedButton.length) {
+        return;
+      }
+>>>>>>> revert Open Social update
 
       // Check if we're working with an "Upload" button.
       var $enabledFields = [];

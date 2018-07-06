@@ -1,7 +1,17 @@
 #!/usr/bin/env bash
 
+<<<<<<< HEAD
+=======
+set -e
+
+>>>>>>> revert Open Social update
 cd "${BASH_SOURCE%/*}/.."
 
 rm -rf build-vendor
 
+<<<<<<< HEAD
 COMPOSER_VENDOR_DIR=build-vendor composer install --ignore-platform-reqs --no-dev --no-progress --classmap-authoritative
+=======
+COMPOSER_VENDOR_DIR=build-vendor composer update \
+  --prefer-stable --no-dev --no-progress --classmap-authoritative --no-interaction --verbose
+>>>>>>> revert Open Social update

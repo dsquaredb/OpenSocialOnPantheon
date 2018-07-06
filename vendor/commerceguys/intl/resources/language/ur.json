@@ -11,9 +11,12 @@
 	"ur": {
 		"name": "اردو"
 	},
+<<<<<<< HEAD
 	"hy": {
 		"name": "ارمینی"
 	},
+=======
+>>>>>>> revert Open Social update
 	"or": {
 		"name": "اڑیہ"
 	},
@@ -35,6 +38,12 @@
 	"agq": {
 		"name": "اغم"
 	},
+<<<<<<< HEAD
+=======
+	"af": {
+		"name": "افریقی"
+	},
+>>>>>>> revert Open Social update
 	"ak": {
 		"name": "اکان"
 	},
@@ -68,9 +77,12 @@
 	"eo": {
 		"name": "ایسپرانٹو"
 	},
+<<<<<<< HEAD
 	"af": {
 		"name": "ایفریکانز"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ee": {
 		"name": "ایو"
 	},
@@ -80,6 +92,12 @@
 	"az": {
 		"name": "آذربائیجانی"
 	},
+<<<<<<< HEAD
+=======
+	"hy": {
+		"name": "آرمینیائی"
+	},
+>>>>>>> revert Open Social update
 	"as": {
 		"name": "آسامی"
 	},
@@ -155,6 +173,15 @@
 	"pl": {
 		"name": "پولش"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "تاتار"
+	},
+	"tg": {
+		"name": "تاجک"
+	},
+>>>>>>> revert Open Social update
 	"twq": {
 		"name": "تاساواق"
 	},
@@ -195,7 +222,11 @@
 		"name": "جاپانی"
 	},
 	"ka": {
+<<<<<<< HEAD
 		"name": "جارجی"
+=======
+		"name": "جارجیائی"
+>>>>>>> revert Open Social update
 	},
 	"de": {
 		"name": "جرمن"
@@ -204,7 +235,11 @@
 		"name": "جولا فونيا"
 	},
 	"cu": {
+<<<<<<< HEAD
 		"name": "چرچ سلاؤ"
+=======
+		"name": "چرچ سلاوک"
+>>>>>>> revert Open Social update
 	},
 	"ce": {
 		"name": "چیچن"
@@ -288,7 +323,11 @@
 		"name": "سربین"
 	},
 	"gd": {
+<<<<<<< HEAD
 		"name": "سکاٹ گیلِک"
+=======
+		"name": "سکاٹش گیلک"
+>>>>>>> revert Open Social update
 	},
 	"sk": {
 		"name": "سلوواک"
@@ -296,15 +335,24 @@
 	"sl": {
 		"name": "سلووینیائی"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "سندھی"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "سنہالا"
 	},
 	"sw": {
 		"name": "سواحلی"
 	},
+<<<<<<< HEAD
 	"ckb": {
 		"name": "سورانی کردش"
 	},
+=======
+>>>>>>> revert Open Social update
 	"xog": {
 		"name": "سوگا"
 	},
@@ -326,6 +374,12 @@
 	"tzm": {
 		"name": "سینٹرل ایٹلس ٹمازائٹ"
 	},
+<<<<<<< HEAD
+=======
+	"ckb": {
+		"name": "سینٹرل کردش"
+	},
+>>>>>>> revert Open Social update
 	"ksb": {
 		"name": "شامبالا"
 	},
@@ -422,9 +476,12 @@
 	"ki": {
 		"name": "کیکویو"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "کینٹونیز"
 	},
+=======
+>>>>>>> revert Open Social update
 	"rw": {
 		"name": "کینیاروانڈا"
 	},
@@ -479,9 +536,12 @@
 	"mgh": {
 		"name": "ماخاوا-ميتو"
 	},
+<<<<<<< HEAD
 	"mas": {
 		"name": "ماسای"
 	},
+=======
+>>>>>>> revert Open Social update
 	"jmc": {
 		"name": "ماشیم"
 	},
@@ -506,6 +566,12 @@
 	"mzn": {
 		"name": "مزندرانی"
 	},
+<<<<<<< HEAD
+=======
+	"mas": {
+		"name": "مسائی"
+	},
+>>>>>>> revert Open Social update
 	"fy": {
 		"name": "مغربی فریسیئن"
 	},
@@ -539,6 +605,12 @@
 	"nb": {
 		"name": "نارویجین بوکمل"
 	},
+<<<<<<< HEAD
+=======
+	"nn": {
+		"name": "نارویجین نینورسک"
+	},
+>>>>>>> revert Open Social update
 	"naq": {
 		"name": "ناما"
 	},
@@ -548,9 +620,12 @@
 	"nnh": {
 		"name": "نگیمبون"
 	},
+<<<<<<< HEAD
 	"nn": {
 		"name": "نورویجینی نینورسک"
 	},
+=======
+>>>>>>> revert Open Social update
 	"nus": {
 		"name": "نویر"
 	},
@@ -572,6 +647,12 @@
 	"vo": {
 		"name": "وولاپوک"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "وولوف"
+	},
+>>>>>>> revert Open Social update
 	"vi": {
 		"name": "ویتنامی"
 	},

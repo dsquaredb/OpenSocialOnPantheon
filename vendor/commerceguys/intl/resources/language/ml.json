@@ -36,10 +36,17 @@
 		"name": "ഇഗ്ബോ"
 	},
 	"smn": {
+<<<<<<< HEAD
 		"name": "ഇനാരി സാമി"
 	},
 	"id": {
 		"name": "ഇൻഡോനേഷ്യൻ"
+=======
+		"name": "ഇനാരി സമി"
+	},
+	"id": {
+		"name": "ഇന്തോനേഷ്യൻ"
+>>>>>>> revert Open Social update
 	},
 	"en": {
 		"name": "ഇംഗ്ലീഷ്"
@@ -128,9 +135,12 @@
 	"kkj": {
 		"name": "കാകോ"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "കാന്റണീസ്"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ks": {
 		"name": "കാശ്‌മീരി"
 	},
@@ -227,6 +237,12 @@
 	"twq": {
 		"name": "ടസവാക്ക്"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "ടാട്ടർ"
+	},
+>>>>>>> revert Open Social update
 	"bo": {
 		"name": "ടിബറ്റൻ"
 	},
@@ -251,6 +267,12 @@
 	"shi": {
 		"name": "താച്ചലിറ്റ്"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "താജിക്"
+	},
+>>>>>>> revert Open Social update
 	"th": {
 		"name": "തായ്"
 	},
@@ -515,6 +537,12 @@
 	"vai": {
 		"name": "വൈ"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "വൊളോഫ്"
+	},
+>>>>>>> revert Open Social update
 	"vo": {
 		"name": "വോളാപുക്"
 	},
@@ -545,21 +573,36 @@
 	"dje": {
 		"name": "സാർമ്മ"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "സിന്ധി"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "സിംഹള"
 	},
 	"zu": {
 		"name": "സുലു"
 	},
+<<<<<<< HEAD
+=======
+	"ckb": {
+		"name": "സെൻട്രൽ കുർദിഷ്"
+	},
+>>>>>>> revert Open Social update
 	"sr": {
 		"name": "സെർബിയൻ"
 	},
 	"seh": {
 		"name": "സേന"
 	},
+<<<<<<< HEAD
 	"ckb": {
 		"name": "സൊറാനി കുർദിഷ്"
 	},
+=======
+>>>>>>> revert Open Social update
 	"xog": {
 		"name": "സോഗോ"
 	},

@@ -18,7 +18,11 @@
 		"name": "Anguilla"
 	},
 	"AQ": {
+<<<<<<< HEAD
 		"name": "Antarktyka"
+=======
+		"name": "Antarktyda"
+>>>>>>> revert Open Social update
 	},
 	"AG": {
 		"name": "Antigua i Barbuda"

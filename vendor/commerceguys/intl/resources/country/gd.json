@@ -140,6 +140,12 @@
 	"JP": {
 		"name": "An t-Seapan"
 	},
+<<<<<<< HEAD
+=======
+	"CZ": {
+		"name": "An t-Seic"
+	},
+>>>>>>> revert Open Social update
 	"RS": {
 		"name": "An t-Sèirb"
 	},
@@ -216,7 +222,11 @@
 		"name": "Boilibhia"
 	},
 	"BA": {
+<<<<<<< HEAD
 		"name": "Bosna agus Hearsagobhana"
+=======
+		"name": "Bosna is Hearsagobhana"
+>>>>>>> revert Open Social update
 	},
 	"BW": {
 		"name": "Botsuana"
@@ -363,7 +373,11 @@
 		"name": "Eileanan na Maighdinn aig na SA"
 	},
 	"PN": {
+<<<<<<< HEAD
 		"name": "Eileanan Peit a’ Chàirn"
+=======
+		"name": "Eileanan Pheit a’ Chàirn"
+>>>>>>> revert Open Social update
 	},
 	"SB": {
 		"name": "Eileanan Sholaimh"
@@ -623,9 +637,12 @@
 	"CF": {
 		"name": "Poblachd Meadhan Afraga"
 	},
+<<<<<<< HEAD
 	"CZ": {
 		"name": "Poblachd na Seice"
 	},
+=======
+>>>>>>> revert Open Social update
 	"PF": {
 		"name": "Poilinèis na Frainge"
 	},

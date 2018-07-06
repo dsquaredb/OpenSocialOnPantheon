@@ -1045,7 +1045,11 @@
 	"ST": {
 		"three_letter_code": "STP",
 		"numeric_code": "678",
+<<<<<<< HEAD
 		"currency_code": "STD"
+=======
+		"currency_code": "STN"
+>>>>>>> revert Open Social update
 	},
 	"SV": {
 		"three_letter_code": "SLV",
@@ -1199,7 +1203,11 @@
 	"VG": {
 		"three_letter_code": "VGB",
 		"numeric_code": "092",
+<<<<<<< HEAD
 		"currency_code": "USD"
+=======
+		"currency_code": "GBP"
+>>>>>>> revert Open Social update
 	},
 	"VI": {
 		"three_letter_code": "VIR",

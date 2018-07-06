@@ -17,6 +17,7 @@
     "branch-alias": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       "dev-master": "1.4-dev",
       "dev-develop": "1.5-dev"
 =======
@@ -28,6 +29,10 @@
       "dev-develop": "1.9.x-dev",
       "dev-release-2.0": "2.0.x-dev"
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+      "dev-master": "1.7.x-dev",
+      "dev-develop": "1.8.x-dev"
+>>>>>>> revert Open Social update
     }
   },
   "require": {
@@ -51,16 +56,6 @@
 >>>>>>> web and vendor directory from composer install
   },
   "autoload": {
-    "files": [
-        "src/functions/create_uploaded_file.php",
-        "src/functions/marshal_headers_from_sapi.php",
-        "src/functions/marshal_method_from_sapi.php",
-        "src/functions/marshal_protocol_version_from_sapi.php",
-        "src/functions/marshal_uri_from_sapi.php",
-        "src/functions/normalize_server.php",
-        "src/functions/normalize_uploaded_files.php",
-        "src/functions/parse_cookie_header.php"
-    ],
     "psr-4": {
       "Zend\\Diactoros\\": "src/"
     }

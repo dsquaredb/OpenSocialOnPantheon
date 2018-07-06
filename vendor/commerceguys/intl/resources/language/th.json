@@ -5,9 +5,12 @@
 	"kl": {
 		"name": "กรีนแลนด์"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "กวางตุ้ง"
 	},
+=======
+>>>>>>> revert Open Social update
 	"nmg": {
 		"name": "กวาซิโอ"
 	},
@@ -35,15 +38,24 @@
 	"guz": {
 		"name": "กุซซี"
 	},
+<<<<<<< HEAD
+=======
+	"gd": {
+		"name": "เกลิกสกอต"
+	},
+>>>>>>> revert Open Social update
 	"ko": {
 		"name": "เกาหลี"
 	},
 	"km": {
 		"name": "เขมร"
 	},
+<<<<<<< HEAD
 	"qu": {
 		"name": "ควิชัว"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kw": {
 		"name": "คอร์นิช"
 	},
@@ -71,6 +83,12 @@
 	"gu": {
 		"name": "คุชราต"
 	},
+<<<<<<< HEAD
+=======
+	"qu": {
+		"name": "เคชวา"
+	},
+>>>>>>> revert Open Social update
 	"ckb": {
 		"name": "เคิร์ดโซรานี"
 	},
@@ -125,12 +143,27 @@
 	"dz": {
 		"name": "ซองคา"
 	},
+<<<<<<< HEAD
 	"hsb": {
 		"name": "ซอร์บส์ตอนบน"
 	},
 	"dsb": {
 		"name": "ซอร์บส์ตอนล่าง"
 	},
+=======
+	"dsb": {
+		"name": "ซอร์บส์ตอนล่าง"
+	},
+	"hsb": {
+		"name": "ซอร์เบียตอนบน"
+	},
+	"sg": {
+		"name": "ซันโก"
+	},
+	"sah": {
+		"name": "ซาคา"
+	},
+>>>>>>> revert Open Social update
 	"se": {
 		"name": "ซามิเหนือ"
 	},
@@ -140,9 +173,12 @@
 	"dje": {
 		"name": "ซาร์มา"
 	},
+<<<<<<< HEAD
 	"sah": {
 		"name": "ซาฮา"
 	},
+=======
+>>>>>>> revert Open Social update
 	"zu": {
 		"name": "ซูลู"
 	},
@@ -158,9 +194,12 @@
 	"sbp": {
 		"name": "แซงกู"
 	},
+<<<<<<< HEAD
 	"sg": {
 		"name": "แซงโก"
 	},
+=======
+>>>>>>> revert Open Social update
 	"saq": {
 		"name": "แซมบูรู"
 	},
@@ -188,6 +227,12 @@
 	"twq": {
 		"name": "ตัสซาวัค"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "ตาตาร์"
+	},
+>>>>>>> revert Open Social update
 	"ti": {
 		"name": "ติกริญญา"
 	},
@@ -201,11 +246,21 @@
 		"name": "เตลูกู"
 	},
 	"tk": {
+<<<<<<< HEAD
 		"name": "เติร์กเมนิสถาน"
+=======
+		"name": "เติร์กเมน"
+>>>>>>> revert Open Social update
 	},
 	"ta": {
 		"name": "ทมิฬ"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "ทาจิก"
+	},
+>>>>>>> revert Open Social update
 	"shi": {
 		"name": "ทาเชลีห์ท"
 	},
@@ -251,12 +306,21 @@
 	"bg": {
 		"name": "บัลแกเรีย"
 	},
+<<<<<<< HEAD
 	"eu": {
 		"name": "บัสเก"
 	},
 	"ksf": {
 		"name": "บาเฟีย"
 	},
+=======
+	"ksf": {
+		"name": "บาเฟีย"
+	},
+	"eu": {
+		"name": "บาสก์"
+	},
+>>>>>>> revert Open Social update
 	"bas": {
 		"name": "บาสา"
 	},
@@ -309,7 +373,11 @@
 		"name": "พม่า"
 	},
 	"ps": {
+<<<<<<< HEAD
 		"name": "พาชตู"
+=======
+		"name": "พัชโต"
+>>>>>>> revert Open Social update
 	},
 	"brx": {
 		"name": "โพโฑ"
@@ -327,7 +395,11 @@
 		"name": "ฟิลิปปินส์"
 	},
 	"ff": {
+<<<<<<< HEAD
 		"name": "ฟูลาฮ์"
+=======
+		"name": "ฟูลาห์"
+>>>>>>> revert Open Social update
 	},
 	"nl-BE": {
 		"name": "เฟลมิช"
@@ -390,7 +462,11 @@
 		"name": "เมรู"
 	},
 	"yi": {
+<<<<<<< HEAD
 		"name": "ยิว"
+=======
+		"name": "ยิดดิช"
+>>>>>>> revert Open Social update
 	},
 	"lg": {
 		"name": "ยูกันดา"
@@ -482,15 +558,24 @@
 	"vi": {
 		"name": "เวียดนาม"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "โวลอฟ"
+	},
+>>>>>>> revert Open Social update
 	"vo": {
 		"name": "โวลาพึค"
 	},
 	"vai": {
 		"name": "ไว"
 	},
+<<<<<<< HEAD
 	"gd": {
 		"name": "สกอตส์กาลิก"
 	},
+=======
+>>>>>>> revert Open Social update
 	"es": {
 		"name": "สเปน"
 	},
@@ -507,7 +592,11 @@
 		"name": "สวาฮีลี"
 	},
 	"sw-CD": {
+<<<<<<< HEAD
 		"name": "สวาฮีลี-คองโก"
+=======
+		"name": "สวาฮีลี - คองโก"
+>>>>>>> revert Open Social update
 	},
 	"sv": {
 		"name": "สวีเดน"
@@ -515,6 +604,12 @@
 	"si": {
 		"name": "สิงหล"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "สินธิ"
+	},
+>>>>>>> revert Open Social update
 	"ii": {
 		"name": "เสฉวนยิ"
 	},
@@ -546,7 +641,11 @@
 		"name": "อัสสัม"
 	},
 	"ak": {
+<<<<<<< HEAD
 		"name": "อาคัน"
+=======
+		"name": "อาคาน"
+>>>>>>> revert Open Social update
 	},
 	"asa": {
 		"name": "อาซู"
@@ -567,7 +666,11 @@
 		"name": "อิตาลี"
 	},
 	"id": {
+<<<<<<< HEAD
 		"name": "อินโดนีเชีย"
+=======
+		"name": "อินโดนีเซีย"
+>>>>>>> revert Open Social update
 	},
 	"ewo": {
 		"name": "อีวันโด"
@@ -579,7 +682,11 @@
 		"name": "อุซเบก"
 	},
 	"ug": {
+<<<<<<< HEAD
 		"name": "อุยกัว"
+=======
+		"name": "อุยกูร์"
+>>>>>>> revert Open Social update
 	},
 	"ur": {
 		"name": "อูรดู"
@@ -597,7 +704,11 @@
 		"name": "เอสโตเนีย"
 	},
 	"eo": {
+<<<<<<< HEAD
 		"name": "เอสเปอรันโต"
+=======
+		"name": "เอสเปรันโต"
+>>>>>>> revert Open Social update
 	},
 	"af": {
 		"name": "แอฟริกานส์"
@@ -630,6 +741,10 @@
 		"name": "ฮิบรู"
 	},
 	"ha": {
+<<<<<<< HEAD
 		"name": "เฮาชา"
+=======
+		"name": "เฮาซา"
+>>>>>>> revert Open Social update
 	}
 }

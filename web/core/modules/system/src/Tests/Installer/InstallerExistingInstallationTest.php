@@ -32,6 +32,10 @@ class InstallerExistingInstallationTest extends InstallerTestBase {
     $this->visitInstaller();
     $this->setUpLanguage();
     $this->setUpProfile();
+<<<<<<< HEAD
+=======
+    $this->setUpRequirementsProblem();
+>>>>>>> revert Open Social update
     $this->setUpSettings();
     $this->assertRaw('Drupal already installed');
   }

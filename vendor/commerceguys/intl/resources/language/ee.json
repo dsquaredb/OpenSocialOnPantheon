@@ -74,9 +74,12 @@
 	"my": {
 		"name": "burmagbe"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "cantongbe"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kea": {
 		"name": "cape verdegbe"
 	},
@@ -488,6 +491,12 @@
 	"ii": {
 		"name": "Sichuan Yi"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindhgbe"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "sinhalgbe"
 	},
@@ -527,6 +536,12 @@
 	"shi": {
 		"name": "Tachelhit"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tadzikistangbe"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "Taita"
 	},
@@ -536,6 +551,12 @@
 	"twq": {
 		"name": "Tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "Tatar"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telegugbe"
 	},
@@ -602,6 +623,12 @@
 	"fy": {
 		"name": "Western Frisian"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "wolofgbe"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "Yangben"
 	},

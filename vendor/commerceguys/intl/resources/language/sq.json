@@ -245,9 +245,12 @@
 	"kn": {
 		"name": "kanadisht"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "kantonezisht"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ks": {
 		"name": "kashmirisht"
 	},
@@ -344,15 +347,24 @@
 	"jmc": {
 		"name": "maçamisht"
 	},
+<<<<<<< HEAD
+=======
+	"mg": {
+		"name": "madagaskarisht"
+	},
+>>>>>>> revert Open Social update
 	"kde": {
 		"name": "makondisht"
 	},
 	"mgh": {
 		"name": "makua-mitoisht"
 	},
+<<<<<<< HEAD
 	"mg": {
 		"name": "malagezisht"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ml": {
 		"name": "malajalamisht"
 	},
@@ -431,9 +443,12 @@
 	"os": {
 		"name": "osetisht"
 	},
+<<<<<<< HEAD
 	"pa": {
 		"name": "panxhabisht"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ps": {
 		"name": "pashtoisht"
 	},
@@ -452,6 +467,12 @@
 	"prg": {
 		"name": "prusisht"
 	},
+<<<<<<< HEAD
+=======
+	"pa": {
+		"name": "punxhabisht"
+	},
+>>>>>>> revert Open Social update
 	"rm": {
 		"name": "retoromanisht"
 	},
@@ -497,6 +518,12 @@
 	"sr": {
 		"name": "serbisht"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindisht"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "sinhalisht"
 	},
@@ -504,7 +531,11 @@
 		"name": "sishuanisht"
 	},
 	"cu": {
+<<<<<<< HEAD
 		"name": "sllavishte kishe"
+=======
+		"name": "sllavishte kishtare"
+>>>>>>> revert Open Social update
 	},
 	"sk": {
 		"name": "sllovakisht"
@@ -534,7 +565,11 @@
 		"name": "suahilisht"
 	},
 	"sw-CD": {
+<<<<<<< HEAD
 		"name": "suahilishte kongoje"
+=======
+		"name": "suahilishte kongoleze"
+>>>>>>> revert Open Social update
 	},
 	"sv": {
 		"name": "suedisht"
@@ -558,7 +593,11 @@
 		"name": "tajtaisht"
 	},
 	"tzm": {
+<<<<<<< HEAD
 		"name": "tamaziatishte atlase qendrore"
+=======
+		"name": "tamazajtisht e Atlasit Qendror"
+>>>>>>> revert Open Social update
 	},
 	"zgh": {
 		"name": "tamaziatishte standarde marokene"
@@ -569,6 +608,15 @@
 	"twq": {
 		"name": "tasavakisht"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tatarisht"
+	},
+	"tg": {
+		"name": "taxhikisht"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "teluguisht"
 	},
@@ -602,6 +650,12 @@
 	"uk": {
 		"name": "ukrainisht"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "uolofisht"
+	},
+>>>>>>> revert Open Social update
 	"ur": {
 		"name": "urduisht"
 	},

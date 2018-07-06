@@ -78,7 +78,11 @@
 		"name": "Bolivia"
 	},
 	"BA": {
+<<<<<<< HEAD
 		"name": "Bosnia-Herzegovina"
+=======
+		"name": "Bosnia y Herzegovina"
+>>>>>>> revert Open Social update
 	},
 	"BW": {
 		"name": "Botsuana"
@@ -128,6 +132,12 @@
 	"TD": {
 		"name": "Chad"
 	},
+<<<<<<< HEAD
+=======
+	"CZ": {
+		"name": "Chequia"
+	},
+>>>>>>> revert Open Social update
 	"CL": {
 		"name": "Chile"
 	},
@@ -258,7 +268,11 @@
 		"name": "Guayana Francesa"
 	},
 	"GG": {
+<<<<<<< HEAD
 		"name": "Guernesey"
+=======
+		"name": "Guernsey"
+>>>>>>> revert Open Social update
 	},
 	"GN": {
 		"name": "Guinea"
@@ -560,9 +574,12 @@
 	"CF": {
 		"name": "República Centroafricana"
 	},
+<<<<<<< HEAD
 	"CZ": {
 		"name": "República Checa"
 	},
+=======
+>>>>>>> revert Open Social update
 	"CG": {
 		"name": "República del Congo"
 	},

@@ -203,6 +203,12 @@
 	"vo": {
 		"name": "沃拉普克文"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "沃洛夫文"
+	},
+>>>>>>> revert Open Social update
 	"bez": {
 		"name": "貝納文"
 	},
@@ -305,6 +311,12 @@
 	"bg": {
 		"name": "保加利亞文"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "信德文"
+	},
+>>>>>>> revert Open Social update
 	"af": {
 		"name": "南非荷蘭文"
 	},
@@ -425,15 +437,24 @@
 	"mk": {
 		"name": "馬其頓文"
 	},
+<<<<<<< HEAD
 	"mg": {
 		"name": "馬拉加什文"
 	},
+=======
+>>>>>>> revert Open Social update
 	"mr": {
 		"name": "馬拉地文"
 	},
 	"jmc": {
 		"name": "馬恰美文"
 	},
+<<<<<<< HEAD
+=======
+	"mg": {
+		"name": "馬達加斯加文"
+	},
+>>>>>>> revert Open Social update
 	"mt": {
 		"name": "馬爾他文"
 	},
@@ -506,6 +527,12 @@
 	"sah": {
 		"name": "雅庫特文"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "塔吉克文"
+	},
+>>>>>>> revert Open Social update
 	"sr": {
 		"name": "塞爾維亞文"
 	},
@@ -530,9 +557,12 @@
 	"sv": {
 		"name": "瑞典文"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "粵語"
 	},
+=======
+>>>>>>> revert Open Social update
 	"it": {
 		"name": "義大利文"
 	},
@@ -631,5 +661,11 @@
 	},
 	"rof": {
 		"name": "蘭博文"
+<<<<<<< HEAD
+=======
+	},
+	"tt": {
+		"name": "韃靼文"
+>>>>>>> revert Open Social update
 	}
 }

@@ -48,7 +48,11 @@
 		"name": "Ausztria"
 	},
 	"UM": {
+<<<<<<< HEAD
 		"name": "Az Amerikai Egyesült Államok lakatlan külbirtokai"
+=======
+		"name": "Az USA lakatlan külbirtokai"
+>>>>>>> revert Open Social update
 	},
 	"AZ": {
 		"name": "Azerbajdzsán"
@@ -609,7 +613,11 @@
 		"name": "San Marino"
 	},
 	"ST": {
+<<<<<<< HEAD
 		"name": "Sao Tomé és Príncipe"
+=======
+		"name": "São Tomé és Príncipe"
+>>>>>>> revert Open Social update
 	},
 	"SC": {
 		"name": "Seychelle-szigetek"

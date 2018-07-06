@@ -38,9 +38,12 @@
 	"my": {
 		"name": "Burmese"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Cantonese"
 	},
+=======
+>>>>>>> revert Open Social update
 	"tzm": {
 		"name": "Central Atlas Tamazight"
 	},
@@ -353,6 +356,12 @@
 	"ii": {
 		"name": "Sichuan Yi"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "Sindhi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "Sinhala"
 	},
@@ -434,6 +443,12 @@
 	"fy": {
 		"name": "Western Frisian"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "Wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "Yangben"
 	},
@@ -587,9 +602,21 @@
 	"sk": {
 		"name": "Словаактыы"
 	},
+<<<<<<< HEAD
 	"ta": {
 		"name": "Тамыллыы"
 	},
+=======
+	"tg": {
+		"name": "Тадьыыктыы"
+	},
+	"ta": {
+		"name": "Тамыллыы"
+	},
+	"tt": {
+		"name": "Татаардыы"
+	},
+>>>>>>> revert Open Social update
 	"bo": {
 		"name": "Тибиэттии"
 	},

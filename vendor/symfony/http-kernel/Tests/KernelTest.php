@@ -762,21 +762,6 @@ EOF;
     }
 
     /**
-     * @group time-sensitive
-     */
-    public function testKernelStartTimeIsResetWhileBootingAlreadyBootedKernel()
-    {
-        $kernel = $this->getKernelForTest(array('initializeBundles'), true);
-        $kernel->boot();
-        $preReBoot = $kernel->getStartTime();
-
-        sleep(3600); //Intentionally large value to detect if ClockMock ever breaks
-        $kernel->reboot(null);
-
-        $this->assertGreaterThan($preReBoot, $kernel->getStartTime());
-    }
-
-    /**
      * Returns a mock for the BundleInterface.
      *
      * @return BundleInterface
@@ -845,10 +830,10 @@ EOF;
         return $kernel;
     }
 
-    protected function getKernelForTest(array $methods = array(), $debug = false)
+    protected function getKernelForTest(array $methods = array())
     {
         $kernel = $this->getMockBuilder('Symfony\Component\HttpKernel\Tests\Fixtures\KernelForTest')
-            ->setConstructorArgs(array('test', $debug))
+            ->setConstructorArgs(array('test', false))
             ->setMethods($methods)
             ->getMock();
         $p = new \ReflectionProperty($kernel, 'rootDir');

@@ -104,9 +104,12 @@
 	"th": {
 		"name": "Cànan nan Tàidh"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Cantonais"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kk": {
 		"name": "Casachais"
 	},
@@ -512,6 +515,12 @@
 	"sn": {
 		"name": "Shona"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "Sindhi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "Sinhala"
 	},
@@ -557,6 +566,12 @@
 	"shi": {
 		"name": "Tachelhit"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "Taidigis"
+	},
+>>>>>>> revert Open Social update
 	"ta": {
 		"name": "Taimilis"
 	},
@@ -572,6 +587,12 @@
 	"twq": {
 		"name": "Tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "Tatarais"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "Telugu"
 	},
@@ -617,6 +638,12 @@
 	"vun": {
 		"name": "Vunjo"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "Wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "Yangben"
 	},

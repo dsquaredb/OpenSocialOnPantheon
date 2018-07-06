@@ -593,6 +593,15 @@
 	"SC": {
 		"name": "Seychelles-eyjar"
 	},
+<<<<<<< HEAD
+=======
+	"HK": {
+		"name": "sérstjórnarsvæðið Hong Kong"
+	},
+	"MO": {
+		"name": "sérstjórnarsvæðið Makaó"
+	},
+>>>>>>> revert Open Social update
 	"ZW": {
 		"name": "Simbabve"
 	},
@@ -605,12 +614,15 @@
 	"CL": {
 		"name": "Síle"
 	},
+<<<<<<< HEAD
 	"HK": {
 		"name": "Sjálfstjórnarsvæðið Hong Kong"
 	},
 	"MO": {
 		"name": "Sjálfstjórnarsvæðið Makaó"
 	},
+=======
+>>>>>>> revert Open Social update
 	"SK": {
 		"name": "Slóvakía"
 	},

@@ -32,6 +32,7 @@ class AddToAnyBlock extends BlockBase {
     if (is_numeric($node)) {
       $node = Node::load($node);
     }
+<<<<<<< HEAD
     $data = addtoany_create_entity_data($node);
     return [
       '#addtoany_html'              => \Drupal::token()->replace($data['addtoany_html'], ['node' => $node]),
@@ -47,6 +48,15 @@ class AddToAnyBlock extends BlockBase {
       ],
     ];
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+    return array(
+      '#addtoany_html' => addtoany_create_node_buttons($node),
+      '#theme' => 'addtoany_standard',
+      '#cache' => array(
+        'contexts' => array('url'),
+      ),
+    );
+>>>>>>> revert Open Social update
   }
 
 }

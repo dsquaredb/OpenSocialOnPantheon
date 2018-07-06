@@ -78,7 +78,11 @@
 		"name": "Bolivia"
 	},
 	"BA": {
+<<<<<<< HEAD
 		"name": "Bosnia og Hercegovina"
+=======
+		"name": "Bosnia-Hercegovina"
+>>>>>>> revert Open Social update
 	},
 	"BW": {
 		"name": "Botswana"
@@ -86,9 +90,12 @@
 	"BR": {
 		"name": "Brasil"
 	},
+<<<<<<< HEAD
 	"IO": {
 		"name": "Britiske område i Det indiske hav"
 	},
+=======
+>>>>>>> revert Open Social update
 	"BN": {
 		"name": "Brunei"
 	},
@@ -104,9 +111,12 @@
 	"CA": {
 		"name": "Canada"
 	},
+<<<<<<< HEAD
 	"BQ": {
 		"name": "Caribbean Netherlands"
 	},
+=======
+>>>>>>> revert Open Social update
 	"KY": {
 		"name": "Caymanøyane"
 	},
@@ -138,10 +148,20 @@
 		"name": "Danmark"
 	},
 	"VI": {
+<<<<<<< HEAD
 		"name": "Dei amerikanske jomfruøyane"
 	},
 	"VG": {
 		"name": "Dei britiske jomfruøyane"
+=======
+		"name": "Dei amerikanske Jomfruøyane"
+	},
+	"VG": {
+		"name": "Dei britiske Jomfruøyane"
+	},
+	"TF": {
+		"name": "Dei franske sørterritoria"
+>>>>>>> revert Open Social update
 	},
 	"AE": {
 		"name": "Dei sameinte arabiske emirata"
@@ -152,6 +172,12 @@
 	"CF": {
 		"name": "Den sentralafrikanske republikken"
 	},
+<<<<<<< HEAD
+=======
+	"IO": {
+		"name": "Det britiske territoriet I Indiahavet"
+	},
+>>>>>>> revert Open Social update
 	"DG": {
 		"name": "Diego Garcia"
 	},
@@ -206,9 +232,12 @@
 	"PF": {
 		"name": "Fransk Polynesia"
 	},
+<<<<<<< HEAD
 	"TF": {
 		"name": "Franske sørområde"
 	},
+=======
+>>>>>>> revert Open Social update
 	"FO": {
 		"name": "Færøyane"
 	},
@@ -317,6 +346,12 @@
 	"CV": {
 		"name": "Kapp Verde"
 	},
+<<<<<<< HEAD
+=======
+	"BQ": {
+		"name": "Karibisk Nederland"
+	},
+>>>>>>> revert Open Social update
 	"KZ": {
 		"name": "Kasakhstan"
 	},
@@ -495,7 +530,11 @@
 		"name": "Noreg"
 	},
 	"NF": {
+<<<<<<< HEAD
 		"name": "Norfolkøyane"
+=======
+		"name": "Norfolkøya"
+>>>>>>> revert Open Social update
 	},
 	"NC": {
 		"name": "Ny-Caledonia"
@@ -557,9 +596,21 @@
 	"SH": {
 		"name": "Saint Helena"
 	},
+<<<<<<< HEAD
 	"MF": {
 		"name": "Saint Martin"
 	},
+=======
+	"KN": {
+		"name": "Saint Kitts og Nevis"
+	},
+	"MF": {
+		"name": "Saint Martin"
+	},
+	"PM": {
+		"name": "Saint-Pierre-et-Miquelon"
+	},
+>>>>>>> revert Open Social update
 	"SB": {
 		"name": "Salomonøyane"
 	},
@@ -608,6 +659,7 @@
 	"LK": {
 		"name": "Sri Lanka"
 	},
+<<<<<<< HEAD
 	"KN": {
 		"name": "St. Christopher og Nevis"
 	},
@@ -617,6 +669,11 @@
 	"PM": {
 		"name": "St. Pierre og Miquelon"
 	},
+=======
+	"LC": {
+		"name": "St. Lucia"
+	},
+>>>>>>> revert Open Social update
 	"VC": {
 		"name": "St. Vincent og Grenadinane"
 	},
@@ -648,7 +705,11 @@
 		"name": "Sør-Afrika"
 	},
 	"GS": {
+<<<<<<< HEAD
 		"name": "Sør-Georgia og Sør-Sandwich-øyane"
+=======
+		"name": "Sør-Georgia og Sør-Sandwichøyene"
+>>>>>>> revert Open Social update
 	},
 	"KR": {
 		"name": "Sør-Korea"

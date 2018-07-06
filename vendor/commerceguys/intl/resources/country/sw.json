@@ -18,7 +18,11 @@
 		"name": "Aljeria"
 	},
 	"AD": {
+<<<<<<< HEAD
 		"name": "Andora"
+=======
+		"name": "Andorra"
+>>>>>>> revert Open Social update
 	},
 	"AO": {
 		"name": "Angola"
@@ -27,7 +31,11 @@
 		"name": "Anguilla"
 	},
 	"AQ": {
+<<<<<<< HEAD
 		"name": "Antaktika"
+=======
+		"name": "Antaktiki"
+>>>>>>> revert Open Social update
 	},
 	"AG": {
 		"name": "Antigua na Barbuda"
@@ -63,7 +71,11 @@
 		"name": "Bangladeshi"
 	},
 	"BY": {
+<<<<<<< HEAD
 		"name": "Belarusi"
+=======
+		"name": "Belarus"
+>>>>>>> revert Open Social update
 	},
 	"BZ": {
 		"name": "Belize"
@@ -87,7 +99,11 @@
 		"name": "Botswana"
 	},
 	"BR": {
+<<<<<<< HEAD
 		"name": "Brazili"
+=======
+		"name": "Brazil"
+>>>>>>> revert Open Social update
 	},
 	"BN": {
 		"name": "Brunei"
@@ -110,6 +126,7 @@
 	"TD": {
 		"name": "Chad"
 	},
+<<<<<<< HEAD
 	"CL": {
 		"name": "Chile"
 	},
@@ -118,6 +135,25 @@
 	},
 	"CI": {
 		"name": "Côte d’Ivoire"
+=======
+	"CZ": {
+		"name": "Chechia"
+	},
+	"CL": {
+		"name": "Chile"
+	},
+	"CI": {
+		"name": "Cote d’Ivoire"
+	},
+	"HR": {
+		"name": "Croatia"
+	},
+	"CU": {
+		"name": "Cuba"
+	},
+	"CW": {
+		"name": "Curacao"
+>>>>>>> revert Open Social update
 	},
 	"CY": {
 		"name": "Cyprus"
@@ -132,10 +168,17 @@
 		"name": "Dominika"
 	},
 	"EC": {
+<<<<<<< HEAD
 		"name": "Ekwado"
 	},
 	"SV": {
 		"name": "Elsavado"
+=======
+		"name": "Ecuador"
+	},
+	"SV": {
+		"name": "El Salvador"
+>>>>>>> revert Open Social update
 	},
 	"IO": {
 		"name": "Eneo la Uingereza katika Bahari Hindi"
@@ -161,24 +204,44 @@
 	"GM": {
 		"name": "Gambia"
 	},
+<<<<<<< HEAD
 	"GH": {
 		"name": "Ghana"
 	},
+=======
+	"GS": {
+		"name": "Georgia Kusini na Visiwa vya Sandwich Kusini"
+	},
+	"GH": {
+		"name": "Ghana"
+	},
+	"GI": {
+		"name": "Gibraltar"
+	},
+>>>>>>> revert Open Social update
 	"GN": {
 		"name": "Gine"
 	},
 	"GW": {
 		"name": "Ginebisau"
 	},
+<<<<<<< HEAD
 	"GQ": {
 		"name": "Ginekweta"
+=======
+	"GL": {
+		"name": "Greenland"
+>>>>>>> revert Open Social update
 	},
 	"GD": {
 		"name": "Grenada"
 	},
+<<<<<<< HEAD
 	"GL": {
 		"name": "Grinlandi"
 	},
+=======
+>>>>>>> revert Open Social update
 	"GP": {
 		"name": "Guadeloupe"
 	},
@@ -191,6 +254,7 @@
 	"GG": {
 		"name": "Guernsey"
 	},
+<<<<<<< HEAD
 	"GY": {
 		"name": "Guyana"
 	},
@@ -205,6 +269,22 @@
 	},
 	"HN": {
 		"name": "Hondurasi"
+=======
+	"GF": {
+		"name": "Guiana ya Ufaransa"
+	},
+	"GQ": {
+		"name": "Guinea ya Ikweta"
+	},
+	"GY": {
+		"name": "Guyana"
+	},
+	"HT": {
+		"name": "Haiti"
+	},
+	"HN": {
+		"name": "Honduras"
+>>>>>>> revert Open Social update
 	},
 	"HK": {
 		"name": "Hong Kong SAR China"
@@ -239,9 +319,12 @@
 	"CF": {
 		"name": "Jamhuri ya Afrika ya Kati"
 	},
+<<<<<<< HEAD
 	"CZ": {
 		"name": "Jamhuri ya Cheki"
 	},
+=======
+>>>>>>> revert Open Social update
 	"DO": {
 		"name": "Jamhuri ya Dominika"
 	},
@@ -254,18 +337,24 @@
 	"JE": {
 		"name": "Jersey"
 	},
+<<<<<<< HEAD
 	"GI": {
 		"name": "Jibralta"
 	},
+=======
+>>>>>>> revert Open Social update
 	"DJ": {
 		"name": "Jibuti"
 	},
 	"GE": {
 		"name": "Jojia"
 	},
+<<<<<<< HEAD
 	"GS": {
 		"name": "Jojia Kusini na Visiwa vya Sandwich Kusini"
 	},
+=======
+>>>>>>> revert Open Social update
 	"JO": {
 		"name": "Jordan"
 	},
@@ -308,9 +397,12 @@
 	"CG": {
 		"name": "Kongo - Brazzaville"
 	},
+<<<<<<< HEAD
 	"HR": {
 		"name": "Korasia"
 	},
+=======
+>>>>>>> revert Open Social update
 	"KP": {
 		"name": "Korea Kaskazini"
 	},
@@ -323,17 +415,24 @@
 	"CR": {
 		"name": "Kostarika"
 	},
+<<<<<<< HEAD
 	"CU": {
 		"name": "Kuba"
 	},
 	"CW": {
 		"name": "Kurakao"
 	},
+=======
+>>>>>>> revert Open Social update
 	"KW": {
 		"name": "Kuwait"
 	},
 	"LA": {
+<<<<<<< HEAD
 		"name": "Laosi"
+=======
+		"name": "Laos"
+>>>>>>> revert Open Social update
 	},
 	"LV": {
 		"name": "Latvia"
@@ -393,7 +492,11 @@
 		"name": "Marekani"
 	},
 	"MQ": {
+<<<<<<< HEAD
 		"name": "Martiniki"
+=======
+		"name": "Martinique"
+>>>>>>> revert Open Social update
 	},
 	"YT": {
 		"name": "Mayotte"
@@ -402,16 +505,30 @@
 		"name": "Meksiko"
 	},
 	"FM": {
+<<<<<<< HEAD
 		"name": "Mikronesia"
+=======
+		"name": "Micronesia"
+>>>>>>> revert Open Social update
 	},
 	"EG": {
 		"name": "Misri"
 	},
+<<<<<<< HEAD
+=======
+	"VA": {
+		"name": "Mji wa Vatican"
+	},
+>>>>>>> revert Open Social update
 	"MD": {
 		"name": "Moldova"
 	},
 	"MC": {
+<<<<<<< HEAD
 		"name": "Monako"
+=======
+		"name": "Monaco"
+>>>>>>> revert Open Social update
 	},
 	"MN": {
 		"name": "Mongolia"
@@ -420,7 +537,11 @@
 		"name": "Montenegro"
 	},
 	"MS": {
+<<<<<<< HEAD
 		"name": "Montserrati"
+=======
+		"name": "Montserrat"
+>>>>>>> revert Open Social update
 	},
 	"MU": {
 		"name": "Morisi"
@@ -446,6 +567,12 @@
 	"NP": {
 		"name": "Nepal"
 	},
+<<<<<<< HEAD
+=======
+	"NC": {
+		"name": "New Caledonia"
+	},
+>>>>>>> revert Open Social update
 	"NE": {
 		"name": "Niger"
 	},
@@ -461,9 +588,12 @@
 	"NO": {
 		"name": "Norway"
 	},
+<<<<<<< HEAD
 	"NC": {
 		"name": "Nyukaledonia"
 	},
+=======
+>>>>>>> revert Open Social update
 	"NZ": {
 		"name": "Nyuzilandi"
 	},
@@ -483,16 +613,27 @@
 		"name": "Papua New Guinea"
 	},
 	"PY": {
+<<<<<<< HEAD
 		"name": "Paragwai"
+=======
+		"name": "Paraguay"
+>>>>>>> revert Open Social update
 	},
 	"PE": {
 		"name": "Peru"
 	},
 	"PL": {
+<<<<<<< HEAD
 		"name": "Polandi"
 	},
 	"PF": {
 		"name": "Polinesia ya Ufaransa"
+=======
+		"name": "Poland"
+	},
+	"PF": {
+		"name": "Polynesia ya Ufaransa"
+>>>>>>> revert Open Social update
 	},
 	"PR": {
 		"name": "Puerto Rico"
@@ -501,7 +642,11 @@
 		"name": "Qatar"
 	},
 	"RE": {
+<<<<<<< HEAD
 		"name": "Riyunioni"
+=======
+		"name": "Reunion"
+>>>>>>> revert Open Social update
 	},
 	"RO": {
 		"name": "Romania"
@@ -512,9 +657,12 @@
 	"EH": {
 		"name": "Sahara Magharibi"
 	},
+<<<<<<< HEAD
 	"MF": {
 		"name": "Saint Martin"
 	},
+=======
+>>>>>>> revert Open Social update
 	"WS": {
 		"name": "Samoa"
 	},
@@ -524,6 +672,7 @@
 	"SM": {
 		"name": "San Marino"
 	},
+<<<<<<< HEAD
 	"BL": {
 		"name": "Santabathelemi"
 	},
@@ -542,6 +691,11 @@
 	"VC": {
 		"name": "Santavisenti na Grenadini"
 	},
+=======
+	"PM": {
+		"name": "Santapierre na Miquelon"
+	},
+>>>>>>> revert Open Social update
 	"ST": {
 		"name": "São Tomé na Príncipe"
 	},
@@ -575,6 +729,27 @@
 	"LK": {
 		"name": "Sri Lanka"
 	},
+<<<<<<< HEAD
+=======
+	"BL": {
+		"name": "St. Barthelemy"
+	},
+	"SH": {
+		"name": "St. Helena"
+	},
+	"KN": {
+		"name": "St. Kitts na Nevis"
+	},
+	"LC": {
+		"name": "St. Lucia"
+	},
+	"MF": {
+		"name": "St. Martin"
+	},
+	"VC": {
+		"name": "St. Vincent na Grenadines"
+	},
+>>>>>>> revert Open Social update
 	"SD": {
 		"name": "Sudan"
 	},
@@ -582,7 +757,11 @@
 		"name": "Sudan Kusini"
 	},
 	"SR": {
+<<<<<<< HEAD
 		"name": "Surinamu"
+=======
+		"name": "Suriname"
+>>>>>>> revert Open Social update
 	},
 	"SJ": {
 		"name": "Svalbard na Jan Mayen"
@@ -624,7 +803,11 @@
 		"name": "Tunisia"
 	},
 	"TM": {
+<<<<<<< HEAD
 		"name": "Turukimenistani"
+=======
+		"name": "Turkmenistan"
+>>>>>>> revert Open Social update
 	},
 	"TV": {
 		"name": "Tuvalu"
@@ -632,6 +815,12 @@
 	"BE": {
 		"name": "Ubelgiji"
 	},
+<<<<<<< HEAD
+=======
+	"CN": {
+		"name": "Uchina"
+	},
+>>>>>>> revert Open Social update
 	"FR": {
 		"name": "Ufaransa"
 	},
@@ -647,6 +836,12 @@
 	"GR": {
 		"name": "Ugiriki"
 	},
+<<<<<<< HEAD
+=======
+	"ES": {
+		"name": "Uhispania"
+	},
+>>>>>>> revert Open Social update
 	"NL": {
 		"name": "Uholanzi"
 	},
@@ -666,7 +861,11 @@
 		"name": "Ureno"
 	},
 	"UY": {
+<<<<<<< HEAD
 		"name": "Urugwai"
+=======
+		"name": "Uruguay"
+>>>>>>> revert Open Social update
 	},
 	"RU": {
 		"name": "Urusi"
@@ -692,9 +891,12 @@
 	"VU": {
 		"name": "Vanuatu"
 	},
+<<<<<<< HEAD
 	"VA": {
 		"name": "Vatikani"
 	},
+=======
+>>>>>>> revert Open Social update
 	"VE": {
 		"name": "Venezuela"
 	},
@@ -705,7 +907,14 @@
 		"name": "Visiwa Vidogo vya Nje vya Marekani"
 	},
 	"AX": {
+<<<<<<< HEAD
 		"name": "Visiwa vya Alandi"
+=======
+		"name": "Visiwa vya Aland"
+	},
+	"KY": {
+		"name": "Visiwa vya Cayman"
+>>>>>>> revert Open Social update
 	},
 	"CC": {
 		"name": "Visiwa vya Cocos (Keeling)"
@@ -722,9 +931,12 @@
 	"IC": {
 		"name": "Visiwa vya Kanari"
 	},
+<<<<<<< HEAD
 	"KY": {
 		"name": "Visiwa vya Kayman"
 	},
+=======
+>>>>>>> revert Open Social update
 	"MP": {
 		"name": "Visiwa vya Mariana vya Kaskazini"
 	},
@@ -738,6 +950,7 @@
 		"name": "Visiwa vya Solomon"
 	},
 	"TC": {
+<<<<<<< HEAD
 		"name": "Visiwa vya Turki na Kaiko"
 	},
 	"VI": {
@@ -748,6 +961,18 @@
 	},
 	"WF": {
 		"name": "Walis na Futuna"
+=======
+		"name": "Visiwa vya Turks na Caicos"
+	},
+	"VI": {
+		"name": "Visiwa vya Virgin, Marekani"
+	},
+	"VG": {
+		"name": "Visiwa vya Virgin, Uingereza"
+	},
+	"WF": {
+		"name": "Wallis na Futuna"
+>>>>>>> revert Open Social update
 	},
 	"YE": {
 		"name": "Yemeni"

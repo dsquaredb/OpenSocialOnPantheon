@@ -311,10 +311,10 @@ abstract class AccessResult implements AccessResultInterface, RefinableCacheable
 <<<<<<< HEAD
 =======
 
-      if ($this->isForbidden() && $this instanceof AccessResultReasonInterface && !is_null($this->getReason())) {
+      if ($this->isForbidden() && $this instanceof AccessResultReasonInterface) {
         $result->setReason($this->getReason());
       }
-      elseif ($other->isForbidden() && $other instanceof AccessResultReasonInterface && !is_null($other->getReason())) {
+      elseif ($other->isForbidden() && $other instanceof AccessResultReasonInterface) {
         $result->setReason($other->getReason());
       }
 >>>>>>> Update Open Social to 8.x-2.1
@@ -330,6 +330,7 @@ abstract class AccessResult implements AccessResultInterface, RefinableCacheable
       if (!$this->isNeutral() || ($this->getCacheMaxAge() === 0 && $other->isNeutral()) || ($this->getCacheMaxAge() !== 0 && $other instanceof CacheableDependencyInterface && $other->getCacheMaxAge() !== 0)) {
         $merge_other = TRUE;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       }
 
@@ -339,6 +340,16 @@ abstract class AccessResult implements AccessResultInterface, RefinableCacheable
       elseif ($other instanceof AccessResultReasonInterface && !is_null($other->getReason())) {
         $result->setReason($other->getReason());
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+        if ($other instanceof AccessResultReasonInterface) {
+          $result->setReason($other->getReason());
+        }
+      }
+      else {
+        if ($this instanceof AccessResultReasonInterface) {
+          $result->setReason($this->getReason());
+        }
+>>>>>>> revert Open Social update
       }
     }
     $result->inheritCacheability($this);

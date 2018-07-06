@@ -120,6 +120,7 @@ class UnixPipes extends AbstractPipes
         // let's have a look if something changed in streams
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         set_error_handler(array($this, 'handleError'));
         if (($r || $w) && false === stream_select($r, $w, $e, 0, $blocking ? Process::TIMEOUT_PRECISION * 1E6 : 0)) {
             restore_error_handler();
@@ -131,6 +132,9 @@ class UnixPipes extends AbstractPipes
         if (($r || $w) && false === stream_select($r, $w, $e, 0, $blocking ? Process::TIMEOUT_PRECISION * 1E6 : 0)) {
             restore_error_handler();
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+        if (($r || $w) && false === @stream_select($r, $w, $e, 0, $blocking ? Process::TIMEOUT_PRECISION * 1E6 : 0)) {
+>>>>>>> revert Open Social update
             // if a system call has been interrupted, forget about it, let's try again
             // otherwise, an error occurred, let's reset pipes
             if (!$this->hasSystemCallBeenInterrupted()) {
@@ -141,12 +145,15 @@ class UnixPipes extends AbstractPipes
         }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         restore_error_handler();
 =======
 >>>>>>> web and vendor directory from composer install
 =======
         restore_error_handler();
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
 
         foreach ($r as $pipe) {
             // prior PHP 5.4 the array passed to stream_select is modified and

@@ -13,12 +13,16 @@ project: 'addtoany'
 datestamp: 1476496757
 =======
 dependencies:
-  - drupal:node
+  - node
 configure: addtoany.admin_settings
 
-# Information added by Drupal.org packaging script on 2018-03-07
-version: '8.x-1.9'
+# Information added by Drupal.org packaging script on 2017-04-28
+version: '8.x-1.8'
 core: '8.x'
 project: 'addtoany'
+<<<<<<< HEAD
 datestamp: 1520385667
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+datestamp: 1493344445
+>>>>>>> revert Open Social update

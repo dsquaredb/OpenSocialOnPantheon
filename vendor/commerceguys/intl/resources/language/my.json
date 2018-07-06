@@ -65,9 +65,12 @@
 	"sw-CD": {
 		"name": "ကွန်ဂို ဆွာဟီလီ"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "ကွမ်တုံ"
 	},
+=======
+>>>>>>> revert Open Social update
 	"km": {
 		"name": "ခမာ"
 	},
@@ -140,24 +143,42 @@
 	"es-MX": {
 		"name": "စပိန် (မက္ကဆီကို)"
 	},
+<<<<<<< HEAD
 	"sl": {
 		"name": "စလိုဗေးနီးယား"
 	},
 	"sk": {
 		"name": "စလိုဗက်"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ii": {
 		"name": "စီချွမ် ရီ"
 	},
 	"seh": {
 		"name": "စီနာ"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "စင်ဒီ"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "စင်ဟာလာ"
 	},
 	"sah": {
 		"name": "ဆခါ"
 	},
+<<<<<<< HEAD
+=======
+	"sl": {
+		"name": "ဆလိုဗေးနီးယား"
+	},
+	"sk": {
+		"name": "ဆလိုဗက်"
+	},
+>>>>>>> revert Open Social update
 	"sr": {
 		"name": "ဆားဘီးယား"
 	},
@@ -215,9 +236,21 @@
 	"shi": {
 		"name": "တာချယ်လ်ဟစ်"
 	},
+<<<<<<< HEAD
 	"twq": {
 		"name": "တာဆာဝါခ်"
 	},
+=======
+	"tg": {
+		"name": "တာဂျစ်"
+	},
+	"twq": {
+		"name": "တာဆာဝါခ်"
+	},
+	"tt": {
+		"name": "တာတာ"
+	},
+>>>>>>> revert Open Social update
 	"tk": {
 		"name": "တာ့ခ်မင်နစ္စတန်"
 	},
@@ -231,14 +264,21 @@
 		"name": "တီလီဂူ"
 	},
 	"ti": {
+<<<<<<< HEAD
 		"name": "တီဂ်ရင်ရာ"
+=======
+		"name": "တီဂ်ရင်ယာ"
+>>>>>>> revert Open Social update
 	},
 	"tr": {
 		"name": "တူရကီ"
 	},
+<<<<<<< HEAD
 	"nd": {
 		"name": "တောင် အွန်န်ဒီဘီလီ"
 	},
+=======
+>>>>>>> revert Open Social update
 	"af": {
 		"name": "တောင်အာဖရိက"
 	},
@@ -258,7 +298,11 @@
 		"name": "ဒူအလာ"
 	},
 	"nl": {
+<<<<<<< HEAD
 		"name": "ဒတ်ချ်"
+=======
+		"name": "ဒတ်ခ်ျ"
+>>>>>>> revert Open Social update
 	},
 	"da": {
 		"name": "ဒိန်းမတ်"
@@ -276,10 +320,17 @@
 		"name": "နူအာ"
 	},
 	"nn": {
+<<<<<<< HEAD
 		"name": "နော်ဝေး နီးနောစ်"
 	},
 	"nb": {
 		"name": "နော်ဝေး ဘွတ်ခ်မော်လ်"
+=======
+		"name": "နော်ဝေ နီးနောစ်"
+	},
+	"nb": {
+		"name": "နော်ဝေ ဘွတ်ခ်မော်လ်"
+>>>>>>> revert Open Social update
 	},
 	"prg": {
 		"name": "ပရူရှန်"
@@ -351,7 +402,11 @@
 		"name": "ဘီနာ"
 	},
 	"be": {
+<<<<<<< HEAD
 		"name": "ဘီလာရုဇ်"
+=======
+		"name": "ဘီလာရုစ်"
+>>>>>>> revert Open Social update
 	},
 	"bg": {
 		"name": "ဘူလ်ဂေးရီးယား"
@@ -374,12 +429,21 @@
 	"jmc": {
 		"name": "မချာမီ"
 	},
+<<<<<<< HEAD
 	"ms": {
 		"name": "မလေး"
 	},
 	"ml": {
 		"name": "မလေးရာလမ်"
 	},
+=======
+	"ml": {
+		"name": "မလေယာလမ်"
+	},
+	"ms": {
+		"name": "မလေး"
+	},
+>>>>>>> revert Open Social update
 	"mgh": {
 		"name": "မာခူဝါ-မီအီတို"
 	},
@@ -417,7 +481,11 @@
 		"name": "မိုရိုကို တမဇိုက်"
 	},
 	"mk": {
+<<<<<<< HEAD
 		"name": "မက်စီဒိုးနီးယား"
+=======
+		"name": "မက်ဆီဒိုးနီးယား"
+>>>>>>> revert Open Social update
 	},
 	"gv": {
 		"name": "မန်းဇ်"
@@ -425,6 +493,12 @@
 	"se": {
 		"name": "မြောက် ဆာမိ"
 	},
+<<<<<<< HEAD
+=======
+	"nd": {
+		"name": "မြောက် အွန်န်ဒီဘီလီ"
+	},
+>>>>>>> revert Open Social update
 	"lrc": {
 		"name": "မြောက်လူရီ"
 	},
@@ -503,6 +577,12 @@
 	"ug": {
 		"name": "ဝီဂါ"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "ဝူလိုဖ်"
+	},
+>>>>>>> revert Open Social update
 	"cy": {
 		"name": "ဝေလ"
 	},
@@ -569,15 +649,24 @@
 	"ewo": {
 		"name": "အီဝန်ဒို"
 	},
+<<<<<<< HEAD
+=======
+	"uz": {
+		"name": "ဥဇဘတ်"
+	},
+>>>>>>> revert Open Social update
 	"pt-PT": {
 		"name": "ဥရောပ ပေါ်တူဂီ"
 	},
 	"ur": {
 		"name": "အူရ်ဒူ"
 	},
+<<<<<<< HEAD
 	"uz": {
 		"name": "ဦးဇ်ဘက်"
 	},
+=======
+>>>>>>> revert Open Social update
 	"de-AT": {
 		"name": "ဩစတြီးယား ဂျာမန်"
 	},

@@ -18,7 +18,11 @@
 		"name": "ሉኦ"
 	},
 	"lb": {
+<<<<<<< HEAD
 		"name": "ሉክዘምበርገርኛ"
+=======
+		"name": "ሉክዘምበርኛ"
+>>>>>>> revert Open Social update
 	},
 	"luy": {
 		"name": "ሉዪያ"
@@ -33,7 +37,11 @@
 		"name": "ላንጊ"
 	},
 	"lo": {
+<<<<<<< HEAD
 		"name": "ላኦስኛ"
+=======
+		"name": "ላኦኛ"
+>>>>>>> revert Open Social update
 	},
 	"lkt": {
 		"name": "ላኮታ"
@@ -92,6 +100,12 @@
 	"mgo": {
 		"name": "ሜታ"
 	},
+<<<<<<< HEAD
+=======
+	"fy": {
+		"name": "ምዕራባዊ ፍሪሲኛ"
+	},
+>>>>>>> revert Open Social update
 	"ro-MD": {
 		"name": "ሞልዳቪያንኛ"
 	},
@@ -140,6 +154,12 @@
 	"si": {
 		"name": "ሲንሃልኛ"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "ሲንድሂኛ"
+	},
+>>>>>>> revert Open Social update
 	"saq": {
 		"name": "ሳምቡሩ"
 	},
@@ -254,6 +274,12 @@
 	"twq": {
 		"name": "ታሳዋቅ"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "ታታርኛ"
+	},
+>>>>>>> revert Open Social update
 	"shi": {
 		"name": "ታቼልሂት"
 	},
@@ -263,6 +289,12 @@
 	"th": {
 		"name": "ታይኛ"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "ታጂኪኛ"
+	},
+>>>>>>> revert Open Social update
 	"teo": {
 		"name": "ቴሶ"
 	},
@@ -422,9 +454,12 @@
 	"kn": {
 		"name": "ካናዳኛ"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "ካንቶኒዝ"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kkj": {
 		"name": "ካኮ"
 	},
@@ -470,11 +505,21 @@
 	"wae": {
 		"name": "ዋልሰር"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "ዎሎፍኛ"
+	},
+>>>>>>> revert Open Social update
 	"ar": {
 		"name": "ዓረብኛ"
 	},
 	"he": {
+<<<<<<< HEAD
 		"name": "ዕብራስጥ"
+=======
+		"name": "ዕብራይስጥ﻿"
+>>>>>>> revert Open Social update
 	},
 	"zu": {
 		"name": "ዙሉኛ"
@@ -488,9 +533,12 @@
 	"es-MX": {
 		"name": "የሜክሲኮ ስፓንሽኛ"
 	},
+<<<<<<< HEAD
 	"fy": {
 		"name": "የምዕራብ ፍሪስኛ"
 	},
+=======
+>>>>>>> revert Open Social update
 	"gd": {
 		"name": "የስኮቲሽ ጌልክኛ"
 	},

@@ -7,15 +7,14 @@
 
 namespace Drupal\url_embed;
 
-use Drupal\Core\Cache\DatabaseBackend;
-use Drupal\Component\Datetime\TimeInterface;
-
 /**
  * A service class for handling URL embeds.
  *
  * @todo Add more documentation.
  */
 interface UrlEmbedInterface {
+
+  public function __construct(array $config = []);
 
   public function getConfig();
 
@@ -36,16 +35,5 @@ interface UrlEmbedInterface {
    * @return \Embed\Adapters\AdapterInterface
    */
   public function getEmbed($request, array $config = []);
-
-  /**
-   * Get the HTML code for an URL embed.
-   *
-   * @param string $url
-   *   The URL to embed.
-   *
-   * @return null|string
-   *   the HTML code of the URL embed.
-   */
-  public function getUrlCode($url);
 
 }

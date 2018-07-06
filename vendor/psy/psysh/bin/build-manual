@@ -4,7 +4,11 @@
 /*
  * This file is part of Psy Shell.
  *
+<<<<<<< HEAD
  * (c) 2012-2015 Justin Hileman
+=======
+ * (c) 2012-2017 Justin Hileman
+>>>>>>> revert Open Social update
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -27,7 +31,11 @@ function htmlwrap($text, $width = null)
 
     $len = strlen($text);
 
+<<<<<<< HEAD
     $return = array();
+=======
+    $return = [];
+>>>>>>> revert Open Social update
     $lastSpace = null;
     $inTag = false;
     $i = $tagWidth = 0;
@@ -53,8 +61,12 @@ function htmlwrap($text, $width = null)
 
             case '>':
                 $inTag = false;
+<<<<<<< HEAD
 
             default:
+=======
+                break;
+>>>>>>> revert Open Social update
         }
 
         if ($inTag) {
@@ -81,11 +93,19 @@ function htmlwrap($text, $width = null)
 
 function extract_paragraphs($element)
 {
+<<<<<<< HEAD
     $paragraphs = array();
     foreach ($element->getElementsByTagName('para') as $p) {
         $text = '';
         foreach ($p->childNodes as $child) {
             // @todo: figure out if there's something we can do with tables.
+=======
+    $paragraphs = [];
+    foreach ($element->getElementsByTagName('para') as $p) {
+        $text = '';
+        foreach ($p->childNodes as $child) {
+            // @todo figure out if there's something we can do with tables.
+>>>>>>> revert Open Social update
             if ($child instanceof DOMElement && $child->tagName === 'table') {
                 continue;
             }
@@ -108,7 +128,11 @@ function extract_paragraphs($element)
 
 function format_doc($doc)
 {
+<<<<<<< HEAD
     $chunks   = array();
+=======
+    $chunks   = [];
+>>>>>>> revert Open Social update
 
     if (!empty($doc['description'])) {
         $chunks[] = '<comment>Description:</comment>';
@@ -162,20 +186,34 @@ function format_doc($doc)
 
 function thunk_tags($text)
 {
+<<<<<<< HEAD
     $tagMap = array(
+=======
+    $tagMap = [
+>>>>>>> revert Open Social update
         'parameter>' => 'strong>',
         'function>'  => 'strong>',
         'literal>'   => 'return>',
         'type>'      => 'info>',
         'constant>'  => 'info>',
+<<<<<<< HEAD
     );
 
     $andBack = array(
+=======
+    ];
+
+    $andBack = [
+>>>>>>> revert Open Social update
         '&amp;'       => '&',
         '&amp;true;'  => '<return>true</return>',
         '&amp;false;' => '<return>false</return>',
         '&amp;null;'  => '<return>null</return>',
+<<<<<<< HEAD
     );
+=======
+    ];
+>>>>>>> revert Open Social update
 
     return strtr(strip_tags(strtr($text, $tagMap), '<strong><return><info>'), $andBack);
 }
@@ -198,6 +236,7 @@ function find_type($xml, $paramName)
     }
 }
 
+<<<<<<< HEAD
 $docs = array();
 foreach (glob($argv[1] . '/*/*/*.xml') as $function) {
     $funcname = basename($function);
@@ -216,6 +255,11 @@ foreach (glob($argv[1] . '/*/*/*.xml') as $function) {
     }
 
     $doc = array();
+=======
+function format_function_doc($xml)
+{
+    $doc = [];
+>>>>>>> revert Open Social update
     $refsect1s = $xml->getElementsByTagName('refsect1');
     foreach ($refsect1s as $refsect1) {
         $role = $refsect1->getAttribute('role');
@@ -239,6 +283,7 @@ foreach (glob($argv[1] . '/*/*/*.xml') as $function) {
                 break;
 
             case 'parameters':
+<<<<<<< HEAD
                 $params = array();
                 $vars = $refsect1->getElementsByTagName('varlistentry');
                 foreach ($vars as $var) {
@@ -248,6 +293,17 @@ foreach (glob($argv[1] . '/*/*/*.xml') as $function) {
                             'type'        => find_type($xml, $name->textContent),
                             'description' => extract_paragraphs($var),
                         );
+=======
+                $params = [];
+                $vars = $refsect1->getElementsByTagName('varlistentry');
+                foreach ($vars as $var) {
+                    if ($name = $var->getElementsByTagName('parameter')->item(0)) {
+                        $params[] = [
+                            'name'        => '$' . $name->textContent,
+                            'type'        => find_type($xml, $name->textContent),
+                            'description' => extract_paragraphs($var),
+                        ];
+>>>>>>> revert Open Social update
                     }
                 }
 
@@ -266,9 +322,58 @@ foreach (glob($argv[1] . '/*/*/*.xml') as $function) {
         $doc['description'] = trim($desc);
     }
 
+<<<<<<< HEAD
     $formatted = format_doc($doc);
     foreach ($xml->getElementsByTagName('refname') as $ref) {
         $docs[$ref->textContent] = $formatted;
+=======
+    $ids = [];
+    foreach ($xml->getElementsByTagName('refname') as $ref) {
+        $ids[] = $ref->textContent;
+    }
+
+    return [$ids, format_doc($doc)];
+}
+
+function format_class_doc($xml)
+{
+    // @todo implement this
+    return [[], null];
+}
+
+$dir = new RecursiveDirectoryIterator($argv[1]);
+$filter = new RecursiveCallbackFilterIterator($dir, function ($current, $key, $iterator) {
+    return $current->getFilename()[0] !== '.' &&
+        ($current->isDir() || $current->getExtension() === 'xml') &&
+        strpos($current->getFilename(), 'entities.') !== 0 &&
+        $current->getFilename() !== 'pdo_4d'; // Temporarily blacklist this one, the docs are weird.
+});
+$iterator = new RecursiveIteratorIterator($filter);
+
+$docs = [];
+foreach ($iterator as $file) {
+    $xmlstr = str_replace('&', '&amp;', file_get_contents($file));
+
+    $xml = new DOMDocument();
+    $xml->preserveWhiteSpace = false;
+
+    if (!@$xml->loadXml($xmlstr)) {
+        echo "XML Parse Error: $file\n";
+        continue;
+    }
+
+    if ($xml->getElementsByTagName('refentry')->length !== 0) {
+        list($ids, $doc) = format_function_doc($xml);
+    } elseif ($xml->getElementsByTagName('classref')->length !== 0) {
+        list($ids, $doc) = format_class_doc($xml);
+    } else {
+        $ids = [];
+        $doc = null;
+    }
+
+    foreach ($ids as $id) {
+        $docs[$id] = $doc;
+>>>>>>> revert Open Social update
     }
 }
 
@@ -281,5 +386,9 @@ $db = new PDO('sqlite:' . $argv[2]);
 $db->query('CREATE TABLE php_manual (id char(256) PRIMARY KEY, doc TEXT)');
 $cmd = $db->prepare('INSERT INTO php_manual (id, doc) VALUES (?, ?)');
 foreach ($docs as $id => $doc) {
+<<<<<<< HEAD
     $cmd->execute(array($id, $doc));
+=======
+    $cmd->execute([$id, $doc]);
+>>>>>>> revert Open Social update
 }

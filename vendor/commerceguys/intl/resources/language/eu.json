@@ -20,6 +20,12 @@
 	"gsw": {
 		"name": "alemana (Suitza)"
 	},
+<<<<<<< HEAD
+=======
+	"zgh": {
+		"name": "amazigera estandarra"
+	},
+>>>>>>> revert Open Social update
 	"am": {
 		"name": "amharera"
 	},
@@ -77,6 +83,12 @@
 	"be": {
 		"name": "bielorrusiera"
 	},
+<<<<<<< HEAD
+=======
+	"my": {
+		"name": "birmaniera"
+	},
+>>>>>>> revert Open Social update
 	"brx": {
 		"name": "bodoera"
 	},
@@ -95,9 +107,12 @@
 	"bg": {
 		"name": "bulgariera"
 	},
+<<<<<<< HEAD
 	"my": {
 		"name": "burmatarra"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kea": {
 		"name": "Cabo Verdeko kreola"
 	},
@@ -119,8 +134,16 @@
 	"ebu": {
 		"name": "embua"
 	},
+<<<<<<< HEAD
 	"rm": {
 		"name": "erromantxera"
+=======
+	"tzm": {
+		"name": "Erdialdeko Atlaseko amazigera"
+	},
+	"rm": {
+		"name": "erretorromaniera"
+>>>>>>> revert Open Social update
 	},
 	"ro": {
 		"name": "errumaniera"
@@ -129,7 +152,11 @@
 		"name": "errusiera"
 	},
 	"gd": {
+<<<<<<< HEAD
 		"name": "eskoziako gaelikoa"
+=======
+		"name": "Eskoziako gaelikoa"
+>>>>>>> revert Open Social update
 	},
 	"sk": {
 		"name": "eslovakiera"
@@ -158,6 +185,12 @@
 	"fo": {
 		"name": "faroera"
 	},
+<<<<<<< HEAD
+=======
+	"fil": {
+		"name": "filipinera"
+	},
+>>>>>>> revert Open Social update
 	"fi": {
 		"name": "finlandiera"
 	},
@@ -183,7 +216,11 @@
 		"name": "gaelikoa"
 	},
 	"cy": {
+<<<<<<< HEAD
 		"name": "galesera"
+=======
+		"name": "galesa"
+>>>>>>> revert Open Social update
 	},
 	"gl": {
 		"name": "galiziera"
@@ -200,6 +237,12 @@
 	"el": {
 		"name": "greziera"
 	},
+<<<<<<< HEAD
+=======
+	"kl": {
+		"name": "groenlandiera"
+	},
+>>>>>>> revert Open Social update
 	"gu": {
 		"name": "gujaratera"
 	},
@@ -254,15 +297,24 @@
 	"ja": {
 		"name": "japoniera"
 	},
+<<<<<<< HEAD
+=======
+	"yo": {
+		"name": "jorubera"
+	},
+>>>>>>> revert Open Social update
 	"kab": {
 		"name": "kabilera"
 	},
 	"kkj": {
 		"name": "kakoa"
 	},
+<<<<<<< HEAD
 	"kl": {
 		"name": "kalaallisutera"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kln": {
 		"name": "kalenjinera"
 	},
@@ -276,6 +328,7 @@
 		"name": "Kanadako ingelesa"
 	},
 	"kn": {
+<<<<<<< HEAD
 		"name": "kannadera"
 	},
 	"yue": {
@@ -283,10 +336,19 @@
 	},
 	"ks": {
 		"name": "kashmirera"
+=======
+		"name": "kannada"
+>>>>>>> revert Open Social update
 	},
 	"ca": {
 		"name": "katalana"
 	},
+<<<<<<< HEAD
+=======
+	"ks": {
+		"name": "kaxmirera"
+	},
+>>>>>>> revert Open Social update
 	"kk": {
 		"name": "kazakhera"
 	},
@@ -302,6 +364,12 @@
 	"ky": {
 		"name": "kirgizera"
 	},
+<<<<<<< HEAD
+=======
+	"qu": {
+		"name": "kitxua"
+	},
+>>>>>>> revert Open Social update
 	"ksh": {
 		"name": "koloniera"
 	},
@@ -309,7 +377,11 @@
 		"name": "Kongoko swahilia"
 	},
 	"kok": {
+<<<<<<< HEAD
 		"name": "konkaniera"
+=======
+		"name": "konkanera"
+>>>>>>> revert Open Social update
 	},
 	"ko": {
 		"name": "koreera"
@@ -368,15 +440,26 @@
 	"kde": {
 		"name": "makondera"
 	},
+<<<<<<< HEAD
 	"mg": {
 		"name": "malagasyera"
 	},
 	"ml": {
 		"name": "malayalamera"
+=======
+	"ml": {
+		"name": "malabarera"
+>>>>>>> revert Open Social update
 	},
 	"ms": {
 		"name": "malaysiera"
 	},
+<<<<<<< HEAD
+=======
+	"mg": {
+		"name": "malgaxea"
+	},
+>>>>>>> revert Open Social update
 	"mt": {
 		"name": "maltera"
 	},
@@ -386,9 +469,12 @@
 	"mr": {
 		"name": "marathera"
 	},
+<<<<<<< HEAD
 	"tzm": {
 		"name": "Maroko erdialdeko tamazighta"
 	},
+=======
+>>>>>>> revert Open Social update
 	"mas": {
 		"name": "masaiera"
 	},
@@ -470,9 +556,12 @@
 	"pa": {
 		"name": "punjabera"
 	},
+<<<<<<< HEAD
 	"qu": {
 		"name": "quechuera"
 	},
+=======
+>>>>>>> revert Open Social update
 	"rof": {
 		"name": "romboera"
 	},
@@ -489,7 +578,11 @@
 		"name": "samburuera"
 	},
 	"sg": {
+<<<<<<< HEAD
 		"name": "sangoera"
+=======
+		"name": "sangoa"
+>>>>>>> revert Open Social update
 	},
 	"sbp": {
 		"name": "sanguera"
@@ -507,7 +600,14 @@
 		"name": "shonera"
 	},
 	"ii": {
+<<<<<<< HEAD
 		"name": "sichuan yia"
+=======
+		"name": "Sichuango yiera"
+	},
+	"sd": {
+		"name": "sindhia"
+>>>>>>> revert Open Social update
 	},
 	"si": {
 		"name": "sinhala"
@@ -528,11 +628,16 @@
 		"name": "Suitzako frantsesa"
 	},
 	"sw": {
+<<<<<<< HEAD
 		"name": "swahili"
+=======
+		"name": "swahilia"
+>>>>>>> revert Open Social update
 	},
 	"shi": {
 		"name": "tachelhita"
 	},
+<<<<<<< HEAD
 	"fil": {
 		"name": "tagaloga"
 	},
@@ -541,6 +646,13 @@
 	},
 	"zgh": {
 		"name": "tamazight estandarra"
+=======
+	"dav": {
+		"name": "taitera"
+	},
+	"tg": {
+		"name": "tajikera"
+>>>>>>> revert Open Social update
 	},
 	"ta": {
 		"name": "tamilera"
@@ -548,8 +660,16 @@
 	"twq": {
 		"name": "tasawaqa"
 	},
+<<<<<<< HEAD
 	"te": {
 		"name": "teluguera"
+=======
+	"tt": {
+		"name": "tatarera"
+	},
+	"te": {
+		"name": "telugua"
+>>>>>>> revert Open Social update
 	},
 	"teo": {
 		"name": "tesoera"
@@ -570,7 +690,11 @@
 		"name": "turkiera"
 	},
 	"tk": {
+<<<<<<< HEAD
 		"name": "turkmeniera"
+=======
+		"name": "turkmenera"
+>>>>>>> revert Open Social update
 	},
 	"cs": {
 		"name": "txekiera"
@@ -617,6 +741,7 @@
 	"wae": {
 		"name": "walserera"
 	},
+<<<<<<< HEAD
 	"yi": {
 		"name": "yiddisha"
 	},
@@ -625,6 +750,16 @@
 	},
 	"dje": {
 		"name": "zarmera"
+=======
+	"wo": {
+		"name": "wolofera"
+	},
+	"yi": {
+		"name": "yiddisha"
+	},
+	"dje": {
+		"name": "zarma"
+>>>>>>> revert Open Social update
 	},
 	"zu": {
 		"name": "zuluera"

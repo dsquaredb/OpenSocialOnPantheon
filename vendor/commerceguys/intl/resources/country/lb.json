@@ -738,7 +738,11 @@
 		"name": "Vereenegt Arabesch Emirater"
 	},
 	"US": {
+<<<<<<< HEAD
 		"name": "Vereenegt Staate vun Amerika"
+=======
+		"name": "Vereenegt Staaten"
+>>>>>>> revert Open Social update
 	},
 	"VN": {
 		"name": "Vietnam"

@@ -33,6 +33,7 @@ Framework managers
 
   Frontend
   - Lauri Eskola 'lauriii' https://www.drupal.org/u/lauriii
+  - Scott Reeves 'Cottser' https://www.drupal.org/u/cottser
 
 Release managers
 >>>>>>> Update Open Social to 8.x-2.1
@@ -66,6 +67,7 @@ The Drupal Core subsystem maintainers oversee the development of Drupal
 subsystems. See https://www.drupal.org/contribute/core-maintainers for more
 information on their responsibilities, and to find out how to become a subsystem
 maintainer. Current subsystem maintainers for Drupal 8:
+
 
 Actions
 - ?
@@ -132,7 +134,6 @@ Cache
 - Mark Sonnabaum 'msonnabaum' https://www.drupal.org/u/msonnabaum
 
 CKEditor
-- Henrik Danielsson 'TwoD' https://www.drupal.org/u/TwoD
 - Wim Leers 'Wim Leers' https://www.drupal.org/u/wim-leers
 - Marek 'mlewand' Lewandowski https://www.drupal.org/u/mlewand
 
@@ -219,7 +220,6 @@ Dynamic Page Cache
 - Wim Leers 'Wim Leers' https://www.drupal.org/u/wim-leers
 
 Editor
-- Henrik Danielsson 'TwoD' https://www.drupal.org/u/TwoD
 - Wim Leers 'Wim Leers' https://www.drupal.org/u/wim-leers
 
 Entity API
@@ -392,7 +392,7 @@ Simpletest
 - Alex Pott 'alexpott' https://www.drupal.org/u/alexpott
 
 Stable
-- ?
+- Scott Reeves 'Cottser' https://www.drupal.org/u/cottser
 
 Stark
 - John Albin Wilkins 'JohnAlbin' https://www.drupal.org/u/johnalbin
@@ -464,7 +464,6 @@ Views UI
 - Damian Lee 'damiankloip' https://www.drupal.org/u/damiankloip
 - Len Swaneveld 'Lendude' https://www.drupal.org/u/lendude
 
-
 Topic maintainers
 -----------------
 
@@ -488,9 +487,8 @@ Usability
 
 Provisional membership: None at this time.
 
-
 Security team
--------------
+-----------------
 
 To report a security issue, see:
 https://www.drupal.org/security-team/report-issue
@@ -501,7 +499,6 @@ documentation. See https://www.drupal.org/security-team for more information.
 The security team lead is:
 
 - Michael Hess 'mlhess' https://www.drupal.org/u/mlhess
-
 
 Initiative coordinators
 -----------------------
@@ -524,6 +521,7 @@ Multi-lingual
 - Gábor Hojtsy 'Gábor Hojtsy' https://www.drupal.org/u/gábor-hojtsy
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Web services
 - Larry Garfield 'Crell' https://www.drupal.org/u/crell
 =======
@@ -538,15 +536,22 @@ PHPUnit Initiative
 - (provisional) Michiel Nugter 'michielnugter' https://www.drupal.org/u/michielnugter
 - (provisional) Len Swaneveld 'Lendude' https://www.drupal.org/u/lendude
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+PHPUnit Initiative
+- Daniel Wehner 'dawehner' https://www.drupal.org/u/dawehner
+  - (provisional) Michiel Nugter 'michielnugter' https://www.drupal.org/u/michielnugter
+  - (provisional) Len Swaneveld 'Lendude' https://www.drupal.org/u/lendude
+>>>>>>> revert Open Social update
 
 Workflow Initiative
 - Dick Olsson 'dixon_' https://www.drupal.org/u/dixon_
+
 
 Provisional membership: None at this time.
 
 
 Core mentoring coordinators
----------------------------
+---------------------
 
 The Drupal Core mentors inspire, enable, and encourage new core contributors.
 See https://www.drupal.org/core-mentoring for more information about mentoring.

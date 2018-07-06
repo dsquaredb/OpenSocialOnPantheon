@@ -9,7 +9,11 @@
 		"name": "Alžir"
 	},
 	"VI": {
+<<<<<<< HEAD
 		"name": "Američka Djevičanska Ostrva"
+=======
+		"name": "Američka Djevičanska ostrva"
+>>>>>>> revert Open Social update
 	},
 	"AS": {
 		"name": "Američka Samoa"
@@ -87,13 +91,21 @@
 		"name": "Bosna i Hercegovina"
 	},
 	"CX": {
+<<<<<<< HEAD
 		"name": "Božićna Ostrva"
+=======
+		"name": "Božićno ostrvo"
+>>>>>>> revert Open Social update
 	},
 	"BR": {
 		"name": "Brazil"
 	},
 	"VG": {
+<<<<<<< HEAD
 		"name": "Britanska Djevičanska Ostrva"
+=======
+		"name": "Britanska Djevičanska ostrva"
+>>>>>>> revert Open Social update
 	},
 	"IO": {
 		"name": "Britanska Teritorija u Indijskom Okeanu"
@@ -123,7 +135,11 @@
 		"name": "Čad"
 	},
 	"CZ": {
+<<<<<<< HEAD
 		"name": "Češka Republika"
+=======
+		"name": "Češka"
+>>>>>>> revert Open Social update
 	},
 	"CL": {
 		"name": "Čile"
@@ -143,9 +159,12 @@
 	"DO": {
 		"name": "Dominikanska Republika"
 	},
+<<<<<<< HEAD
 	"JE": {
 		"name": "Džerzi"
 	},
+=======
+>>>>>>> revert Open Social update
 	"DJ": {
 		"name": "Džibuti"
 	},
@@ -168,7 +187,11 @@
 		"name": "Etiopija"
 	},
 	"FO": {
+<<<<<<< HEAD
 		"name": "Farska Ostrva"
+=======
+		"name": "Farska ostrva"
+>>>>>>> revert Open Social update
 	},
 	"FJ": {
 		"name": "Fidži"
@@ -180,7 +203,11 @@
 		"name": "Finska"
 	},
 	"FK": {
+<<<<<<< HEAD
 		"name": "Folklandska Ostrva"
+=======
+		"name": "Folklandska ostrva"
+>>>>>>> revert Open Social update
 	},
 	"FR": {
 		"name": "Francuska"
@@ -290,11 +317,21 @@
 	"YE": {
 		"name": "Jemen"
 	},
+<<<<<<< HEAD
+=======
+	"JE": {
+		"name": "Jersey"
+	},
+>>>>>>> revert Open Social update
 	"JO": {
 		"name": "Jordan"
 	},
 	"GS": {
+<<<<<<< HEAD
 		"name": "Južna Džordžija i Južna Sendvička Ostrva"
+=======
+		"name": "Južna Džordžija i Južna Sendvič ostrva"
+>>>>>>> revert Open Social update
 	},
 	"KR": {
 		"name": "Južna Koreja"
@@ -306,7 +343,11 @@
 		"name": "Južnoafrička Republika"
 	},
 	"KY": {
+<<<<<<< HEAD
 		"name": "Kajmanska Ostrva"
+=======
+		"name": "Kajmanska ostrva"
+>>>>>>> revert Open Social update
 	},
 	"KH": {
 		"name": "Kambodža"
@@ -318,7 +359,11 @@
 		"name": "Kanada"
 	},
 	"IC": {
+<<<<<<< HEAD
 		"name": "Kanarska Ostrva"
+=======
+		"name": "Kanarska ostrva"
+>>>>>>> revert Open Social update
 	},
 	"CV": {
 		"name": "Kape Verde"
@@ -348,13 +393,21 @@
 		"name": "Kiribati"
 	},
 	"CC": {
+<<<<<<< HEAD
 		"name": "Kokosova (Kilingova) Ostrva"
+=======
+		"name": "Kokosova (Keelingova) ostrva"
+>>>>>>> revert Open Social update
 	},
 	"CO": {
 		"name": "Kolumbija"
 	},
 	"KM": {
+<<<<<<< HEAD
 		"name": "Komorska Ostrva"
+=======
+		"name": "Komori"
+>>>>>>> revert Open Social update
 	},
 	"CG": {
 		"name": "Kongo"
@@ -369,7 +422,11 @@
 		"name": "Kuba"
 	},
 	"CK": {
+<<<<<<< HEAD
 		"name": "Kukova Ostrva"
+=======
+		"name": "Kukova ostrva"
+>>>>>>> revert Open Social update
 	},
 	"CW": {
 		"name": "Kurasao"
@@ -438,7 +495,11 @@
 		"name": "Maroko"
 	},
 	"MH": {
+<<<<<<< HEAD
 		"name": "Maršalova Ostrva"
+=======
+		"name": "Maršalova ostrva"
+>>>>>>> revert Open Social update
 	},
 	"MQ": {
 		"name": "Martinik"
@@ -452,12 +513,21 @@
 	"MX": {
 		"name": "Meksiko"
 	},
+<<<<<<< HEAD
 	"MM": {
 		"name": "Mijanmar"
 	},
 	"FM": {
 		"name": "Mikronezija"
 	},
+=======
+	"FM": {
+		"name": "Mikronezija"
+	},
+	"MM": {
+		"name": "Mjanmar"
+	},
+>>>>>>> revert Open Social update
 	"MD": {
 		"name": "Moldavija"
 	},
@@ -510,7 +580,11 @@
 		"name": "Obala Slonovače"
 	},
 	"AX": {
+<<<<<<< HEAD
 		"name": "Olandska Ostrva"
+=======
+		"name": "Olandska ostrva"
+>>>>>>> revert Open Social update
 	},
 	"OM": {
 		"name": "Oman"
@@ -522,7 +596,11 @@
 		"name": "Ostrva Valis i Futuna"
 	},
 	"AC": {
+<<<<<<< HEAD
 		"name": "Ostrvo Asension"
+=======
+		"name": "Ostrvo Ascension"
+>>>>>>> revert Open Social update
 	},
 	"IM": {
 		"name": "Ostrvo Man"
@@ -618,7 +696,11 @@
 		"name": "Sjeverna Koreja"
 	},
 	"MP": {
+<<<<<<< HEAD
 		"name": "Sjeverna Marijanska Ostrva"
+=======
+		"name": "Sjeverna Marijanska ostrva"
+>>>>>>> revert Open Social update
 	},
 	"SK": {
 		"name": "Slovačka"
@@ -641,9 +723,12 @@
 	"SR": {
 		"name": "Surinam"
 	},
+<<<<<<< HEAD
 	"MF": {
 		"name": "Sv. Martin"
 	},
+=======
+>>>>>>> revert Open Social update
 	"SJ": {
 		"name": "Svalbard i Jan Majen"
 	},
@@ -662,6 +747,12 @@
 	"KN": {
 		"name": "Sveti Kits i Nevis"
 	},
+<<<<<<< HEAD
+=======
+	"MF": {
+		"name": "Sveti Martin"
+	},
+>>>>>>> revert Open Social update
 	"PM": {
 		"name": "Sveti Petar i Mikelon"
 	},
@@ -705,7 +796,11 @@
 		"name": "Trinidad i Tobago"
 	},
 	"TA": {
+<<<<<<< HEAD
 		"name": "Tristan da Kunja"
+=======
+		"name": "Tristan da Cunha"
+>>>>>>> revert Open Social update
 	},
 	"TN": {
 		"name": "Tunis"

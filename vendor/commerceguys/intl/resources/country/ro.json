@@ -113,6 +113,12 @@
 	"CV": {
 		"name": "Capul Verde"
 	},
+<<<<<<< HEAD
+=======
+	"CZ": {
+		"name": "Cehia"
+	},
+>>>>>>> revert Open Social update
 	"EA": {
 		"name": "Ceuta și Melilla"
 	},
@@ -545,9 +551,12 @@
 	"GB": {
 		"name": "Regatul Unit"
 	},
+<<<<<<< HEAD
 	"CZ": {
 		"name": "Republica Cehă"
 	},
+=======
+>>>>>>> revert Open Social update
 	"CF": {
 		"name": "Republica Centrafricană"
 	},
@@ -581,6 +590,12 @@
 	"VC": {
 		"name": "Saint Vincent și Grenadinele"
 	},
+<<<<<<< HEAD
+=======
+	"BL": {
+		"name": "Saint-Barthélemy"
+	},
+>>>>>>> revert Open Social update
 	"PM": {
 		"name": "Saint-Pierre și Miquelon"
 	},
@@ -594,7 +609,11 @@
 		"name": "San Marino"
 	},
 	"ST": {
+<<<<<<< HEAD
 		"name": "Sao Tomé și Príncipe"
+=======
+		"name": "Sao Tome și Principe"
+>>>>>>> revert Open Social update
 	},
 	"SN": {
 		"name": "Senegal"
@@ -611,9 +630,12 @@
 	"LC": {
 		"name": "Sfânta Lucia"
 	},
+<<<<<<< HEAD
 	"BL": {
 		"name": "Sfântul Bartolomeu"
 	},
+=======
+>>>>>>> revert Open Social update
 	"MF": {
 		"name": "Sfântul Martin"
 	},

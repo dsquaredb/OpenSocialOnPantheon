@@ -36,7 +36,11 @@
 		"name": "bambara"
 	},
 	"bas": {
+<<<<<<< HEAD
 		"name": "Basaa"
+=======
+		"name": "basa"
+>>>>>>> revert Open Social update
 	},
 	"eu": {
 		"name": "bask"
@@ -68,6 +72,7 @@
 	"br": {
 		"name": "breton"
 	},
+<<<<<<< HEAD
 	"ce": {
 		"name": "chechen"
 	},
@@ -82,6 +87,10 @@
 	},
 	"da": {
 		"name": "dat"
+=======
+	"da": {
+		"name": "dan"
+>>>>>>> revert Open Social update
 	},
 	"dyo": {
 		"name": "diola-fogni"
@@ -105,7 +114,11 @@
 		"name": "eve"
 	},
 	"ewo": {
+<<<<<<< HEAD
 		"name": "Ewondo"
+=======
+		"name": "evondo"
+>>>>>>> revert Open Social update
 	},
 	"fo": {
 		"name": "farercha"
@@ -132,6 +145,7 @@
 		"name": "fransuzcha"
 	},
 	"fur": {
+<<<<<<< HEAD
 		"name": "Friulian"
 	},
 	"ff": {
@@ -139,6 +153,12 @@
 	},
 	"fy": {
 		"name": "g‘arbiy friz"
+=======
+		"name": "friul"
+	},
+	"ff": {
+		"name": "fula"
+>>>>>>> revert Open Social update
 	},
 	"gl": {
 		"name": "galisiy"
@@ -170,9 +190,12 @@
 	"hi": {
 		"name": "hind"
 	},
+<<<<<<< HEAD
 	"he": {
 		"name": "ibroniy"
 	},
+=======
+>>>>>>> revert Open Social update
 	"yi": {
 		"name": "idish"
 	},
@@ -212,6 +235,12 @@
 	"it": {
 		"name": "italyan"
 	},
+<<<<<<< HEAD
+=======
+	"he": {
+		"name": "ivrit"
+	},
+>>>>>>> revert Open Social update
 	"kab": {
 		"name": "kabil"
 	},
@@ -230,15 +259,23 @@
 	"kn": {
 		"name": "kannada"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "kanton"
+=======
+	"ca": {
+		"name": "katalan"
+>>>>>>> revert Open Social update
 	},
 	"ks": {
 		"name": "kashmircha"
 	},
+<<<<<<< HEAD
 	"ca": {
 		"name": "katalan"
 	},
+=======
+>>>>>>> revert Open Social update
 	"qu": {
 		"name": "kechua"
 	},
@@ -299,9 +336,12 @@
 	"lb": {
 		"name": "lyuksemburgcha"
 	},
+<<<<<<< HEAD
 	"jmc": {
 		"name": "machame"
 	},
+=======
+>>>>>>> revert Open Social update
 	"mk": {
 		"name": "makedon"
 	},
@@ -332,6 +372,12 @@
 	"mgh": {
 		"name": "maxuva-mitto"
 	},
+<<<<<<< HEAD
+=======
+	"jmc": {
+		"name": "machame"
+	},
+>>>>>>> revert Open Social update
 	"gv": {
 		"name": "men"
 	},
@@ -341,9 +387,12 @@
 	"mgo": {
 		"name": "meta"
 	},
+<<<<<<< HEAD
 	"mn": {
 		"name": "mo‘g‘ul"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ro-MD": {
 		"name": "moldovan"
 	},
@@ -356,6 +405,12 @@
 	"mua": {
 		"name": "mundang"
 	},
+<<<<<<< HEAD
+=======
+	"mn": {
+		"name": "mo‘g‘ul"
+	},
+>>>>>>> revert Open Social update
 	"naq": {
 		"name": "nama"
 	},
@@ -389,9 +444,12 @@
 	"nyn": {
 		"name": "nyankole"
 	},
+<<<<<<< HEAD
 	"uz": {
 		"name": "o‘zbek"
 	},
+=======
+>>>>>>> revert Open Social update
 	"or": {
 		"name": "oriya"
 	},
@@ -467,15 +525,19 @@
 	"sah": {
 		"name": "saxa"
 	},
+<<<<<<< HEAD
 	"gd": {
 		"name": "Scottish Gaelic"
 	},
+=======
+>>>>>>> revert Open Social update
 	"seh": {
 		"name": "sena"
 	},
 	"sr": {
 		"name": "serbcha"
 	},
+<<<<<<< HEAD
 	"ksb": {
 		"name": "shambala"
 	},
@@ -493,13 +555,23 @@
 	},
 	"sv": {
 		"name": "shved"
+=======
+	"sd": {
+		"name": "sindxi"
+	},
+	"si": {
+		"name": "singal"
+>>>>>>> revert Open Social update
 	},
 	"ii": {
 		"name": "sichuan"
 	},
+<<<<<<< HEAD
 	"si": {
 		"name": "singal"
 	},
+=======
+>>>>>>> revert Open Social update
 	"cu": {
 		"name": "slavyan (cherkov)"
 	},
@@ -536,12 +608,23 @@
 	"twq": {
 		"name": "tasavak"
 	},
+<<<<<<< HEAD
 	"shi": {
 		"name": "tashelxit"
+=======
+	"tt": {
+		"name": "tatar"
+>>>>>>> revert Open Social update
 	},
 	"th": {
 		"name": "tay"
 	},
+<<<<<<< HEAD
+=======
+	"shi": {
+		"name": "tashelxit"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telugu"
 	},
@@ -554,6 +637,12 @@
 	"ti": {
 		"name": "tigrinya"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tojik"
+	},
+>>>>>>> revert Open Social update
 	"to": {
 		"name": "tongan"
 	},
@@ -575,6 +664,12 @@
 	"vai": {
 		"name": "Vai"
 	},
+<<<<<<< HEAD
+=======
+	"wae": {
+		"name": "valis"
+	},
+>>>>>>> revert Open Social update
 	"cy": {
 		"name": "valliy"
 	},
@@ -584,15 +679,24 @@
 	"vo": {
 		"name": "volapyuk"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "volof"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "vunjo"
 	},
 	"vi": {
 		"name": "vyetnam"
 	},
+<<<<<<< HEAD
 	"wae": {
 		"name": "Walser"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ha": {
 		"name": "xausa"
 	},
@@ -606,7 +710,11 @@
 		"name": "xitoy (soddalashgan)"
 	},
 	"km": {
+<<<<<<< HEAD
 		"name": "xmercha"
+=======
+		"name": "xmer"
+>>>>>>> revert Open Social update
 	},
 	"hr": {
 		"name": "xorvat"
@@ -631,5 +739,47 @@
 	},
 	"zu": {
 		"name": "zulu"
+<<<<<<< HEAD
+=======
+	},
+	"uz": {
+		"name": "o‘zbek"
+	},
+	"fy": {
+		"name": "g‘arbiy friz"
+	},
+	"ksb": {
+		"name": "shambala"
+	},
+	"lrc": {
+		"name": "shimoliy luri"
+	},
+	"nd": {
+		"name": "shimoliy ndebele"
+	},
+	"se": {
+		"name": "shimoliy saam"
+	},
+	"sn": {
+		"name": "shona"
+	},
+	"gd": {
+		"name": "shotland-gel"
+	},
+	"sv": {
+		"name": "shved"
+	},
+	"chr": {
+		"name": "cheroki"
+	},
+	"cs": {
+		"name": "chex"
+	},
+	"ce": {
+		"name": "chechen"
+	},
+	"cgg": {
+		"name": "chiga"
+>>>>>>> revert Open Social update
 	}
 }

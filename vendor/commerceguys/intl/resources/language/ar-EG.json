@@ -6,7 +6,11 @@
 		"name": "الأذربيجانية"
 	},
 	"hy": {
+<<<<<<< HEAD
 		"name": "الأرمينية"
+=======
+		"name": "الأرمنية"
+>>>>>>> revert Open Social update
 	},
 	"as": {
 		"name": "الأسامية"
@@ -80,6 +84,12 @@
 	"om": {
 		"name": "الأورومية"
 	},
+<<<<<<< HEAD
+=======
+	"or": {
+		"name": "الأورية"
+	},
+>>>>>>> revert Open Social update
 	"uz": {
 		"name": "الأوزبكية"
 	},
@@ -116,6 +126,12 @@
 	"bas": {
 		"name": "الباسا"
 	},
+<<<<<<< HEAD
+=======
+	"eu": {
+		"name": "الباسكية"
+	},
+>>>>>>> revert Open Social update
 	"bm": {
 		"name": "البامبارا"
 	},
@@ -132,7 +148,11 @@
 		"name": "البريتونية"
 	},
 	"ps": {
+<<<<<<< HEAD
 		"name": "البشتونية"
+=======
+		"name": "البشتو"
+>>>>>>> revert Open Social update
 	},
 	"bg": {
 		"name": "البلغارية"
@@ -170,6 +190,12 @@
 	"bo": {
 		"name": "التبتية"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "التترية"
+	},
+>>>>>>> revert Open Social update
 	"tk": {
 		"name": "التركمانية"
 	},
@@ -189,14 +215,21 @@
 		"name": "التونغية"
 	},
 	"te": {
+<<<<<<< HEAD
 		"name": "التيلوجو"
+=======
+		"name": "التيلوغوية"
+>>>>>>> revert Open Social update
 	},
 	"gl": {
 		"name": "الجاليكية"
 	},
+<<<<<<< HEAD
 	"lg": {
 		"name": "الجاندا"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ka": {
 		"name": "الجورجية"
 	},
@@ -239,9 +272,12 @@
 	"sah": {
 		"name": "الساخية"
 	},
+<<<<<<< HEAD
 	"se": {
 		"name": "السامي الشمالية"
 	},
+=======
+>>>>>>> revert Open Social update
 	"sg": {
 		"name": "السانجو"
 	},
@@ -254,6 +290,12 @@
 	"sl": {
 		"name": "السلوفانية"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "السندية"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "السنهالية"
 	},
@@ -299,12 +341,24 @@
 	"zh-Hans": {
 		"name": "الصينية المبسطة"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "الطاجيكية"
+	},
+>>>>>>> revert Open Social update
 	"he": {
 		"name": "العبرية"
 	},
 	"ar": {
 		"name": "العربية"
 	},
+<<<<<<< HEAD
+=======
+	"lg": {
+		"name": "الغاندا"
+	},
+>>>>>>> revert Open Social update
 	"gu": {
 		"name": "الغوجاراتية"
 	},
@@ -383,9 +437,12 @@
 	"ks": {
 		"name": "الكشميرية"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "الكَنْتُونية"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kw": {
 		"name": "الكورنية"
 	},
@@ -413,6 +470,7 @@
 	"lo": {
 		"name": "اللاوية"
 	},
+<<<<<<< HEAD
 	"lu": {
 		"name": "اللبا-كاتانجا"
 	},
@@ -422,12 +480,23 @@
 	"or": {
 		"name": "اللغة الأورية"
 	},
+=======
+	"lrc": {
+		"name": "اللرية الشمالية"
+	},
+>>>>>>> revert Open Social update
 	"lb": {
 		"name": "اللكسمبورغية"
 	},
 	"luo": {
 		"name": "اللو"
 	},
+<<<<<<< HEAD
+=======
+	"lu": {
+		"name": "اللوبا كاتانغا"
+	},
+>>>>>>> revert Open Social update
 	"lt": {
 		"name": "الليتوانية"
 	},
@@ -447,7 +516,11 @@
 		"name": "الماساي"
 	},
 	"mg": {
+<<<<<<< HEAD
 		"name": "المالاجاشية"
+=======
+		"name": "المالاغاشية"
+>>>>>>> revert Open Social update
 	},
 	"ml": {
 		"name": "المالايالامية"
@@ -479,9 +552,12 @@
 	"nd": {
 		"name": "النديبيل الشمالية"
 	},
+<<<<<<< HEAD
 	"nb": {
 		"name": "النرويجية بوكمال"
 	},
+=======
+>>>>>>> revert Open Social update
 	"nn": {
 		"name": "النرويجية نينورسك"
 	},
@@ -509,6 +585,12 @@
 	"wae": {
 		"name": "الوالسر"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "الولوفية"
+	},
+>>>>>>> revert Open Social update
 	"cy": {
 		"name": "الويلزية"
 	},
@@ -519,7 +601,11 @@
 		"name": "اليديشية"
 	},
 	"yo": {
+<<<<<<< HEAD
 		"name": "اليوروبية"
+=======
+		"name": "اليوروبا"
+>>>>>>> revert Open Social update
 	},
 	"el": {
 		"name": "اليونانية"
@@ -527,6 +613,12 @@
 	"ebu": {
 		"name": "إمبو"
 	},
+<<<<<<< HEAD
+=======
+	"nb": {
+		"name": "بوكمول النرويجية"
+	},
+>>>>>>> revert Open Social update
 	"bez": {
 		"name": "بينا"
 	},
@@ -551,6 +643,12 @@
 	"saq": {
 		"name": "سامبورو"
 	},
+<<<<<<< HEAD
+=======
+	"se": {
+		"name": "سامي الشمالية"
+	},
+>>>>>>> revert Open Social update
 	"sbp": {
 		"name": "سانغو"
 	},
@@ -587,9 +685,12 @@
 	"lag": {
 		"name": "لانجي"
 	},
+<<<<<<< HEAD
 	"eu": {
 		"name": "لغة الباسك"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ksf": {
 		"name": "لغة البافيا"
 	},

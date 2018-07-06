@@ -131,6 +131,12 @@
 	"TD": {
 		"name": "Chade"
 	},
+<<<<<<< HEAD
+=======
+	"CZ": {
+		"name": "Chéquia"
+	},
+>>>>>>> revert Open Social update
 	"CL": {
 		"name": "Chile"
 	},
@@ -161,12 +167,21 @@
 	"KR": {
 		"name": "Coreia do Sul"
 	},
+<<<<<<< HEAD
 	"CI": {
 		"name": "Costa do Marfim"
 	},
 	"CR": {
 		"name": "Costa Rica"
 	},
+=======
+	"CR": {
+		"name": "Costa Rica"
+	},
+	"CI": {
+		"name": "Côte d’Ivoire (Costa do Marfim)"
+	},
+>>>>>>> revert Open Social update
 	"HR": {
 		"name": "Croácia"
 	},
@@ -393,7 +408,11 @@
 		"name": "Kosovo"
 	},
 	"KW": {
+<<<<<<< HEAD
 		"name": "Kuwait"
+=======
+		"name": "Koweit"
+>>>>>>> revert Open Social update
 	},
 	"LA": {
 		"name": "Laos"
@@ -507,7 +526,11 @@
 		"name": "Nigéria"
 	},
 	"NU": {
+<<<<<<< HEAD
 		"name": "Niue"
+=======
+		"name": "Niuê"
+>>>>>>> revert Open Social update
 	},
 	"NO": {
 		"name": "Noruega"
@@ -564,7 +587,11 @@
 		"name": "Quirguistão"
 	},
 	"KI": {
+<<<<<<< HEAD
 		"name": "Quiribati"
+=======
+		"name": "Quiribáti"
+>>>>>>> revert Open Social update
 	},
 	"GB": {
 		"name": "Reino Unido"
@@ -572,9 +599,12 @@
 	"CF": {
 		"name": "República Centro-Africana"
 	},
+<<<<<<< HEAD
 	"CZ": {
 		"name": "República Checa"
 	},
+=======
+>>>>>>> revert Open Social update
 	"DO": {
 		"name": "República Dominicana"
 	},
@@ -590,9 +620,12 @@
 	"RU": {
 		"name": "Rússia"
 	},
+<<<<<<< HEAD
 	"EH": {
 		"name": "Saara Ocidental"
 	},
+=======
+>>>>>>> revert Open Social update
 	"SV": {
 		"name": "Salvador"
 	},
@@ -620,6 +653,12 @@
 	"MF": {
 		"name": "São Martinho"
 	},
+<<<<<<< HEAD
+=======
+	"SX": {
+		"name": "São Martinho (Sint Maarten)"
+	},
+>>>>>>> revert Open Social update
 	"PM": {
 		"name": "São Pedro e Miquelão"
 	},
@@ -629,6 +668,12 @@
 	"VC": {
 		"name": "São Vicente e Granadinas"
 	},
+<<<<<<< HEAD
+=======
+	"EH": {
+		"name": "Sara Ocidental"
+	},
+>>>>>>> revert Open Social update
 	"SC": {
 		"name": "Seicheles"
 	},
@@ -644,9 +689,12 @@
 	"SG": {
 		"name": "Singapura"
 	},
+<<<<<<< HEAD
 	"SX": {
 		"name": "Sint Maarten"
 	},
+=======
+>>>>>>> revert Open Social update
 	"SY": {
 		"name": "Síria"
 	},

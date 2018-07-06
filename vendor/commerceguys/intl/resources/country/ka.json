@@ -720,7 +720,11 @@
 		"name": "ჩადი"
 	},
 	"CZ": {
+<<<<<<< HEAD
 		"name": "ჩეხეთის რესპუბლიკა"
+=======
+		"name": "ჩეხეთი"
+>>>>>>> revert Open Social update
 	},
 	"CL": {
 		"name": "ჩილე"

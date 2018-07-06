@@ -183,7 +183,11 @@
 		"name": "i-Cyprus"
 	},
 	"CZ": {
+<<<<<<< HEAD
 		"name": "i-Czech Republic"
+=======
+		"name": "i-Czechia"
+>>>>>>> revert Open Social update
 	},
 	"DK": {
 		"name": "i-Denmark"
@@ -602,9 +606,12 @@
 	"SO": {
 		"name": "i-Somalia"
 	},
+<<<<<<< HEAD
 	"ZA": {
 		"name": "i-South Africa"
 	},
+=======
+>>>>>>> revert Open Social update
 	"GS": {
 		"name": "i-South Georgia ne-South Sandwich Islands"
 	},
@@ -752,6 +759,12 @@
 	"ML": {
 		"name": "iMali"
 	},
+<<<<<<< HEAD
+=======
+	"ZA": {
+		"name": "iNingizimu Afrika"
+	},
+>>>>>>> revert Open Social update
 	"ZW": {
 		"name": "iZimbabwe"
 	},

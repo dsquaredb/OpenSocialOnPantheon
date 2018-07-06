@@ -4,11 +4,12 @@
  * for using the new PHP 7 random_* API in PHP 5 projects
 <<<<<<< HEAD
  *
- * @version 2.0.17
- * @released 2018-07-04
+ * @version 2.0.10
+ * @released 2017-03-13
  *
  * The MIT License (MIT)
  *
+<<<<<<< HEAD
 <<<<<<< HEAD
  * Copyright (c) 2015 - 2017 Paragon Initiative Enterprises
 =======
@@ -23,6 +24,9 @@
 =======
  * Copyright (c) 2015 - 2018 Paragon Initiative Enterprises
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+ * Copyright (c) 2015 - 2017 Paragon Initiative Enterprises
+>>>>>>> revert Open Social update
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -73,9 +77,9 @@ if (!defined('RANDOM_COMPAT_READ_BUFFER')) {
 
 $RandomCompatDIR = dirname(__FILE__);
 
-require_once $RandomCompatDIR . DIRECTORY_SEPARATOR . 'byte_safe_strings.php';
-require_once $RandomCompatDIR . DIRECTORY_SEPARATOR . 'cast_to_int.php';
-require_once $RandomCompatDIR . DIRECTORY_SEPARATOR . 'error_polyfill.php';
+require_once $RandomCompatDIR . '/byte_safe_strings.php';
+require_once $RandomCompatDIR . '/cast_to_int.php';
+require_once $RandomCompatDIR . '/error_polyfill.php';
 
 if (!is_callable('random_bytes')) {
     /**
@@ -95,9 +99,9 @@ if (!is_callable('random_bytes')) {
     if (extension_loaded('libsodium')) {
         // See random_bytes_libsodium.php
         if (PHP_VERSION_ID >= 50300 && is_callable('\\Sodium\\randombytes_buf')) {
-            require_once $RandomCompatDIR . DIRECTORY_SEPARATOR . 'random_bytes_libsodium.php';
+            require_once $RandomCompatDIR . '/random_bytes_libsodium.php';
         } elseif (method_exists('Sodium', 'randombytes_buf')) {
-            require_once $RandomCompatDIR . DIRECTORY_SEPARATOR . 'random_bytes_libsodium_legacy.php';
+            require_once $RandomCompatDIR . '/random_bytes_libsodium_legacy.php';
         }
     }
 
@@ -136,7 +140,7 @@ if (!is_callable('random_bytes')) {
             // place, that is not helpful to us here.
 
             // See random_bytes_dev_urandom.php
-            require_once $RandomCompatDIR . DIRECTORY_SEPARATOR . 'random_bytes_dev_urandom.php';
+            require_once $RandomCompatDIR . '/random_bytes_dev_urandom.php';
         }
         // Unset variables after use
         $RandomCompat_basedir = null;
@@ -178,7 +182,7 @@ if (!is_callable('random_bytes')) {
         extension_loaded('mcrypt')
     ) {
         // See random_bytes_mcrypt.php
-        require_once $RandomCompatDIR . DIRECTORY_SEPARATOR . 'random_bytes_mcrypt.php';
+        require_once $RandomCompatDIR . '/random_bytes_mcrypt.php';
     }
     $RandomCompatUrandom = null;
 
@@ -203,7 +207,7 @@ if (!is_callable('random_bytes')) {
                 $RandomCompatCOMtest = new COM('CAPICOM.Utilities.1');
                 if (method_exists($RandomCompatCOMtest, 'GetRandom')) {
                     // See random_bytes_com_dotnet.php
-                    require_once $RandomCompatDIR . DIRECTORY_SEPARATOR . 'random_bytes_com_dotnet.php';
+                    require_once $RandomCompatDIR . '/random_bytes_com_dotnet.php';
                 }
             } catch (com_exception $e) {
                 // Don't try to use it.
@@ -223,10 +227,14 @@ if (!is_callable('random_bytes')) {
          *
          * @param mixed $length
 <<<<<<< HEAD
+<<<<<<< HEAD
          * @return void
 =======
          * @psalm-suppress InvalidReturnType
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+         * @psalm-suppress MissingReturnType
+>>>>>>> revert Open Social update
          * @throws Exception
          */
         function random_bytes($length)
@@ -240,7 +248,7 @@ if (!is_callable('random_bytes')) {
 }
 
 if (!is_callable('random_int')) {
-    require_once $RandomCompatDIR . DIRECTORY_SEPARATOR . 'random_int.php';
+    require_once $RandomCompatDIR . '/random_int.php';
 }
 
 $RandomCompatDIR = null;

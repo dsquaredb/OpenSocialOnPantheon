@@ -260,9 +260,12 @@
 	"IS": {
 		"name": "Island"
 	},
+<<<<<<< HEAD
 	"TL": {
 		"name": "Istočni Timor"
 	},
+=======
+>>>>>>> revert Open Social update
 	"IT": {
 		"name": "Italija"
 	},
@@ -495,7 +498,11 @@
 		"name": "Novi Zeland"
 	},
 	"CI": {
+<<<<<<< HEAD
 		"name": "Obala Slonovače"
+=======
+		"name": "Obala Slonovače (Kot d’Ivoar)"
+>>>>>>> revert Open Social update
 	},
 	"AX": {
 		"name": "Olandska Ostrva"
@@ -584,9 +591,12 @@
 	"SC": {
 		"name": "Sejšeli"
 	},
+<<<<<<< HEAD
 	"BL": {
 		"name": "Sen Bartelemi"
 	},
+=======
+>>>>>>> revert Open Social update
 	"PM": {
 		"name": "Sen Pjer i Mikelon"
 	},
@@ -653,6 +663,12 @@
 	"LC": {
 		"name": "Sveta Lucija"
 	},
+<<<<<<< HEAD
+=======
+	"BL": {
+		"name": "Sveti Bartolomej"
+	},
+>>>>>>> revert Open Social update
 	"MF": {
 		"name": "Sveti Martin (Francuska)"
 	},
@@ -683,6 +699,12 @@
 	"TZ": {
 		"name": "Tanzanija"
 	},
+<<<<<<< HEAD
+=======
+	"TL": {
+		"name": "Timor-Leste (Istočni Timor)"
+	},
+>>>>>>> revert Open Social update
 	"TG": {
 		"name": "Togo"
 	},

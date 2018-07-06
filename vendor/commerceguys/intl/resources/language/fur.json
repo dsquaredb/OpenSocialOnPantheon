@@ -80,9 +80,12 @@
 	"my": {
 		"name": "Burmese"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Cantonese"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ca": {
 		"name": "catalan"
 	},
@@ -509,6 +512,12 @@
 	"si": {
 		"name": "sinalês"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindhi"
+	},
+>>>>>>> revert Open Social update
 	"sk": {
 		"name": "slovac"
 	},
@@ -545,6 +554,12 @@
 	"shi": {
 		"name": "Tachelhit"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tagic"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "Taita"
 	},
@@ -554,6 +569,12 @@
 	"ta": {
 		"name": "tamil"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tartar"
+	},
+>>>>>>> revert Open Social update
 	"twq": {
 		"name": "Tasawaq"
 	},
@@ -617,6 +638,12 @@
 	"wae": {
 		"name": "Walser"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "Yangben"
 	},

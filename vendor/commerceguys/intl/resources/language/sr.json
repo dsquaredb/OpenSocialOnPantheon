@@ -83,6 +83,12 @@
 	"vo": {
 		"name": "волапик"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "волоф"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "вунџо"
 	},
@@ -176,9 +182,12 @@
 	"it": {
 		"name": "италијански"
 	},
+<<<<<<< HEAD
 	"sah": {
 		"name": "јакутски"
 	},
+=======
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "јангбен"
 	},
@@ -212,9 +221,12 @@
 	"kn": {
 		"name": "канада"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "кантонски"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ca": {
 		"name": "каталонски"
 	},
@@ -368,6 +380,12 @@
 	"de-AT": {
 		"name": "немачки (Аустрија)"
 	},
+<<<<<<< HEAD
+=======
+	"gsw": {
+		"name": "немачки (Швајцарска)"
+	},
+>>>>>>> revert Open Social update
 	"ne": {
 		"name": "непалски"
 	},
@@ -446,6 +464,12 @@
 	"sbp": {
 		"name": "сангу"
 	},
+<<<<<<< HEAD
+=======
+	"sah": {
+		"name": "саха"
+	},
+>>>>>>> revert Open Social update
 	"sw": {
 		"name": "свахили"
 	},
@@ -464,6 +488,12 @@
 	"ii": {
 		"name": "сечуански ји"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "синди"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "синхалешки"
 	},
@@ -497,6 +527,15 @@
 	"twq": {
 		"name": "тасавак"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "татарски"
+	},
+	"tg": {
+		"name": "таџички"
+	},
+>>>>>>> revert Open Social update
 	"shi": {
 		"name": "ташелхит"
 	},
@@ -614,9 +653,12 @@
 	"de-CH": {
 		"name": "швајцарски високи немачки"
 	},
+<<<<<<< HEAD
 	"gsw": {
 		"name": "Швајцарски немачки"
 	},
+=======
+>>>>>>> revert Open Social update
 	"sv": {
 		"name": "шведски"
 	},

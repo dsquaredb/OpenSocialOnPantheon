@@ -110,6 +110,12 @@
 	"vo": {
 		"name": "ஒலாபூக்"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "ஓலோஃப்"
+	},
+>>>>>>> revert Open Social update
 	"fur": {
 		"name": "ஃப்ரியூலியன்"
 	},
@@ -167,9 +173,12 @@
 	"sw-CD": {
 		"name": "காங்கோ ஸ்வாஹிலி"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "காண்டோனீஸ்"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kw": {
 		"name": "கார்னிஷ்"
 	},
@@ -248,6 +257,12 @@
 	"ii": {
 		"name": "சிசுவான் ஈ"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "சிந்தி"
+	},
+>>>>>>> revert Open Social update
 	"zh": {
 		"name": "சீனம்"
 	},
@@ -278,6 +293,12 @@
 	"twq": {
 		"name": "டசவாக்"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "டாடர்"
+	},
+>>>>>>> revert Open Social update
 	"ti": {
 		"name": "டிக்ரின்யா"
 	},
@@ -302,6 +323,12 @@
 	"ta": {
 		"name": "தமிழ்"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "தஜிக்"
+	},
+>>>>>>> revert Open Social update
 	"th": {
 		"name": "தாய்"
 	},

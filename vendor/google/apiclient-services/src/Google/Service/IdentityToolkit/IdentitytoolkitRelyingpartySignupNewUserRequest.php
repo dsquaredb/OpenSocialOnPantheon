@@ -29,8 +29,6 @@ class Google_Service_IdentityToolkit_IdentitytoolkitRelyingpartySignupNewUserReq
   public $password;
   public $phoneNumber;
   public $photoUrl;
-  public $tenantId;
-  public $tenantProjectNumber;
 
   public function setCaptchaChallenge($captchaChallenge)
   {
@@ -127,21 +125,5 @@ class Google_Service_IdentityToolkit_IdentitytoolkitRelyingpartySignupNewUserReq
   public function getPhotoUrl()
   {
     return $this->photoUrl;
-  }
-  public function setTenantId($tenantId)
-  {
-    $this->tenantId = $tenantId;
-  }
-  public function getTenantId()
-  {
-    return $this->tenantId;
-  }
-  public function setTenantProjectNumber($tenantProjectNumber)
-  {
-    $this->tenantProjectNumber = $tenantProjectNumber;
-  }
-  public function getTenantProjectNumber()
-  {
-    return $this->tenantProjectNumber;
   }
 }

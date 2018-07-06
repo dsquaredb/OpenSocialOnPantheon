@@ -99,10 +99,14 @@
 		"name": "búlgaro"
 	},
 	"kn": {
+<<<<<<< HEAD
 		"name": "canarês"
 	},
 	"yue": {
 		"name": "cantonês"
+=======
+		"name": "canarim"
+>>>>>>> revert Open Social update
 	},
 	"ca": {
 		"name": "catalão"
@@ -146,6 +150,12 @@
 	"hr": {
 		"name": "croata"
 	},
+<<<<<<< HEAD
+=======
+	"ckb": {
+		"name": "curdo central"
+	},
+>>>>>>> revert Open Social update
 	"da": {
 		"name": "dinamarquês"
 	},
@@ -257,11 +267,16 @@
 	"hu": {
 		"name": "húngaro"
 	},
+<<<<<<< HEAD
 	"sah": {
 		"name": "iacuto"
 	},
 	"ig": {
 		"name": "ibo"
+=======
+	"ig": {
+		"name": "igbo"
+>>>>>>> revert Open Social update
 	},
 	"yi": {
 		"name": "iídiche"
@@ -396,7 +411,11 @@
 		"name": "manx"
 	},
 	"mr": {
+<<<<<<< HEAD
 		"name": "marata"
+=======
+		"name": "marati"
+>>>>>>> revert Open Social update
 	},
 	"mas": {
 		"name": "massai"
@@ -429,7 +448,11 @@
 		"name": "ndebele do norte"
 	},
 	"ne": {
+<<<<<<< HEAD
 		"name": "nepali"
+=======
+		"name": "nepalês"
+>>>>>>> revert Open Social update
 	},
 	"nnh": {
 		"name": "ngiemboon"
@@ -447,7 +470,11 @@
 		"name": "nynorsk norueguês"
 	},
 	"or": {
+<<<<<<< HEAD
 		"name": "oriya"
+=======
+		"name": "oriá"
+>>>>>>> revert Open Social update
 	},
 	"om": {
 		"name": "oromo"
@@ -506,6 +533,12 @@
 	"rwk": {
 		"name": "rwa"
 	},
+<<<<<<< HEAD
+=======
+	"sah": {
+		"name": "sakha"
+	},
+>>>>>>> revert Open Social update
 	"saq": {
 		"name": "samburu"
 	},
@@ -530,6 +563,7 @@
 	"ksb": {
 		"name": "shambala"
 	},
+<<<<<<< HEAD
 	"sn": {
 		"name": "shona"
 	},
@@ -542,6 +576,17 @@
 	"ckb": {
 		"name": "sorâni curdo"
 	},
+=======
+	"ii": {
+		"name": "sichuan yi"
+	},
+	"sd": {
+		"name": "sindi"
+	},
+	"so": {
+		"name": "somali"
+	},
+>>>>>>> revert Open Social update
 	"sw": {
 		"name": "suaíli"
 	},
@@ -554,6 +599,12 @@
 	"shi": {
 		"name": "tachelhit"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tadjique"
+	},
+>>>>>>> revert Open Social update
 	"th": {
 		"name": "tailandês"
 	},
@@ -561,14 +612,27 @@
 		"name": "taita"
 	},
 	"tzm": {
+<<<<<<< HEAD
 		"name": "tamazight do Atlas Central"
 	},
 	"zgh": {
 		"name": "tamazight marroquino padrão"
+=======
+		"name": "tamazirte do Atlas Central"
+	},
+	"zgh": {
+		"name": "tamazirte marroqino padrão"
+>>>>>>> revert Open Social update
 	},
 	"ta": {
 		"name": "tâmil"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tártaro"
+	},
+>>>>>>> revert Open Social update
 	"twq": {
 		"name": "tasawaq"
 	},
@@ -576,7 +640,11 @@
 		"name": "tcheco"
 	},
 	"te": {
+<<<<<<< HEAD
 		"name": "telugu"
+=======
+		"name": "télugo"
+>>>>>>> revert Open Social update
 	},
 	"teo": {
 		"name": "teso"
@@ -585,7 +653,11 @@
 		"name": "tibetano"
 	},
 	"ti": {
+<<<<<<< HEAD
 		"name": "tigrínio"
+=======
+		"name": "tigrínia"
+>>>>>>> revert Open Social update
 	},
 	"to": {
 		"name": "tonganês"
@@ -602,11 +674,21 @@
 	"ug": {
 		"name": "uigur"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "uolofe"
+	},
+>>>>>>> revert Open Social update
 	"ur": {
 		"name": "urdu"
 	},
 	"uz": {
+<<<<<<< HEAD
 		"name": "usbeque"
+=======
+		"name": "uzbeque"
+>>>>>>> revert Open Social update
 	},
 	"vai": {
 		"name": "Vai"
@@ -623,6 +705,12 @@
 	"wae": {
 		"name": "walser"
 	},
+<<<<<<< HEAD
+=======
+	"sn": {
+		"name": "xona"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "yangben"
 	},

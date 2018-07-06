@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file, in reverse 
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 ## 1.8.0 - 2018-06-27
 
@@ -105,6 +106,8 @@ All notable changes to this project will be documented in this file, in reverse 
 - [#301](https://github.com/zendframework/zend-diactoros/pull/301) adds stricter comparisons within the `uri` class to ensure non-empty
   values are not treated as empty.
 
+=======
+>>>>>>> revert Open Social update
 ## 1.7.1 - 2018-02-26
 
 ### Added

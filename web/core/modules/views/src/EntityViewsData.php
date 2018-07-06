@@ -239,9 +239,6 @@ class EntityViewsData implements EntityHandlerInterface, EntityViewsDataInterfac
     }
 
     $this->addEntityLinks($data[$base_table]);
-    if ($views_revision_base_table) {
-      $this->addEntityLinks($data[$views_revision_base_table]);
-    }
 
     // Load all typed data definitions of all fields. This should cover each of
     // the entity base, revision, data tables.

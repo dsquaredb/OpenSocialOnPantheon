@@ -317,16 +317,8 @@ class Schema extends DatabaseSchema {
           ->execute();
       }
       if (isset($specification['initial_from_field'])) {
-        if (isset($specification['initial'])) {
-          $expression = 'COALESCE(' . $specification['initial_from_field'] . ', :default_initial_value)';
-          $arguments = [':default_initial_value' => $specification['initial']];
-        }
-        else {
-          $expression = $specification['initial_from_field'];
-          $arguments = [];
-        }
         $this->connection->update($table)
-          ->expression($field, $expression, $arguments)
+          ->expression($field, $specification['initial_from_field'])
           ->execute();
       }
     }
@@ -351,6 +343,7 @@ class Schema extends DatabaseSchema {
       elseif (isset($specification['initial_from_field'])) {
         // If we have a initial value, copy it over.
 <<<<<<< HEAD
+<<<<<<< HEAD
         $mapping[$field] = array(
           'expression' => $specification['initial_from_field'],
           'arguments' => [],
@@ -364,9 +357,11 @@ class Schema extends DatabaseSchema {
           $expression = $specification['initial_from_field'];
           $arguments = [];
         }
+=======
+>>>>>>> revert Open Social update
         $mapping[$field] = [
-          'expression' => $expression,
-          'arguments' => $arguments,
+          'expression' => $specification['initial_from_field'],
+          'arguments' => [],
         ];
 >>>>>>> Update Open Social to 8.x-2.1
       }

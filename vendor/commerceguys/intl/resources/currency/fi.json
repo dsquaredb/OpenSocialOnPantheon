@@ -92,7 +92,11 @@
 		"name": "Chilen peso"
 	},
 	"CRC": {
+<<<<<<< HEAD
 		"name": "Costa Rican colon"
+=======
+		"name": "Costa Rican colón"
+>>>>>>> revert Open Social update
 	},
 	"DJF": {
 		"name": "Djiboutin frangi"
@@ -104,7 +108,11 @@
 		"name": "Egyptin punta"
 	},
 	"SVC": {
+<<<<<<< HEAD
 		"name": "El Salvadorin colon"
+=======
+		"name": "El Salvadorin colón"
+>>>>>>> revert Open Social update
 	},
 	"GBP": {
 		"name": "Englannin punta",
@@ -332,13 +340,21 @@
 		"name": "Paraguayn guarani"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "Perun uusi sol"
+=======
+		"name": "Perun sol"
+>>>>>>> revert Open Social update
 	},
 	"KPW": {
 		"name": "Pohjois-Korean won"
 	},
 	"PLN": {
+<<<<<<< HEAD
 		"name": "Puolan zloty"
+=======
+		"name": "Puolan złoty"
+>>>>>>> revert Open Social update
 	},
 	"QAR": {
 		"name": "Qatarin rial"
@@ -457,9 +473,12 @@
 	"BYN": {
 		"name": "Valko-Venäjän rupla"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "Valko-Venäjän rupla (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"VUV": {
 		"name": "Vanuatun vatu"
 	},

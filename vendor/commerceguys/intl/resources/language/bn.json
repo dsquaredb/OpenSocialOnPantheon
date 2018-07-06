@@ -77,9 +77,24 @@
 	"id": {
 		"name": "ইন্দোনেশীয়"
 	},
+<<<<<<< HEAD
 	"ug": {
 		"name": "উইঘুর"
 	},
+=======
+	"yav": {
+		"name": "ইয়াঙ্গবেন"
+	},
+	"yi": {
+		"name": "ইয়েদ্দিশ"
+	},
+	"ug": {
+		"name": "উইঘুর"
+	},
+	"wo": {
+		"name": "উওলোফ"
+	},
+>>>>>>> revert Open Social update
 	"hsb": {
 		"name": "উচ্চ সোর্বিয়ান"
 	},
@@ -194,9 +209,12 @@
 	"ko": {
 		"name": "কোরিয়ান"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "ক্যানটোনীজ"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kl": {
 		"name": "ক্যালাল্লিসুট"
 	},
@@ -245,9 +263,12 @@
 	"ka": {
 		"name": "জর্জিয়ান"
 	},
+<<<<<<< HEAD
 	"dyo": {
 		"name": "জলা-ফনী"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ja": {
 		"name": "জাপানি"
 	},
@@ -263,6 +284,12 @@
 	"dz": {
 		"name": "জোঙ্গা"
 	},
+<<<<<<< HEAD
+=======
+	"dyo": {
+		"name": "জোলা-ফনী"
+	},
+>>>>>>> revert Open Social update
 	"to": {
 		"name": "টোঙ্গান"
 	},
@@ -278,6 +305,15 @@
 	"shi": {
 		"name": "তাচেলহিত"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "তাজিক"
+	},
+	"tt": {
+		"name": "তাতার"
+	},
+>>>>>>> revert Open Social update
 	"ta": {
 		"name": "তামিল"
 	},
@@ -345,7 +381,11 @@
 		"name": "পাঞ্জাবী"
 	},
 	"ps": {
+<<<<<<< HEAD
 		"name": "পাশ্তু"
+=======
+		"name": "পুশতু"
+>>>>>>> revert Open Social update
 	},
 	"pl": {
 		"name": "পোলিশ"
@@ -491,12 +531,15 @@
 	"mk": {
 		"name": "ম্যাসিডোনীয়"
 	},
+<<<<<<< HEAD
 	"yav": {
 		"name": "য়াঙ্গবেন"
 	},
 	"yi": {
 		"name": "য়িদ্দিশ"
 	},
+=======
+>>>>>>> revert Open Social update
 	"rof": {
 		"name": "রম্বো"
 	},
@@ -578,6 +621,12 @@
 	"ii": {
 		"name": "সিচুয়ান য়ি"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "সিন্ধি"
+	},
+>>>>>>> revert Open Social update
 	"sv": {
 		"name": "সুইডিশ"
 	},

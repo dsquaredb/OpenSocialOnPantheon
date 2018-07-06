@@ -122,6 +122,12 @@
 	"dyo": {
 		"name": "זשאלא־פֿאני"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "טאָטעריש"
+	},
+>>>>>>> revert Open Social update
 	"ta": {
 		"name": "טאַמיל"
 	},
@@ -203,6 +209,12 @@
 	"sw": {
 		"name": "סוואַהיליש"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "סינדהי"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "סינהאַליש"
 	},
@@ -353,9 +365,12 @@
 	"brx": {
 		"name": "Bodo"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Cantonese"
 	},
+=======
+>>>>>>> revert Open Social update
 	"tzm": {
 		"name": "Central Atlas Tamazight"
 	},
@@ -590,6 +605,12 @@
 	"dav": {
 		"name": "Taita"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "Tajik"
+	},
+>>>>>>> revert Open Social update
 	"twq": {
 		"name": "Tasawaq"
 	},
@@ -623,6 +644,12 @@
 	"wae": {
 		"name": "Walser"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "Wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "Yangben"
 	},

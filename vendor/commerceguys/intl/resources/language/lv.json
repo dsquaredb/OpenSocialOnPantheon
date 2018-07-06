@@ -17,6 +17,18 @@
 	"en": {
 		"name": "angļu"
 	},
+<<<<<<< HEAD
+=======
+	"en-AU": {
+		"name": "angļu (Austrālija)"
+	},
+	"en-CA": {
+		"name": "angļu (Kanāda)"
+	},
+	"en-GB": {
+		"name": "angļu (Lielbritānija)"
+	},
+>>>>>>> revert Open Social update
 	"ar": {
 		"name": "arābu"
 	},
@@ -35,12 +47,15 @@
 	"hsb": {
 		"name": "augšsorbu"
 	},
+<<<<<<< HEAD
 	"en-AU": {
 		"name": "Austrālijas angļu"
 	},
 	"de-AT": {
 		"name": "Austrijas vācu"
 	},
+=======
+>>>>>>> revert Open Social update
 	"az": {
 		"name": "azerbaidžāņu"
 	},
@@ -113,9 +128,12 @@
 	"dz": {
 		"name": "dzongke"
 	},
+<<<<<<< HEAD
 	"pt-PT": {
 		"name": "Eiropas portugāļu"
 	},
+=======
+>>>>>>> revert Open Social update
 	"eo": {
 		"name": "esperanto"
 	},
@@ -137,6 +155,15 @@
 	"fr": {
 		"name": "franču"
 	},
+<<<<<<< HEAD
+=======
+	"fr-CA": {
+		"name": "franču (Kanāda)"
+	},
+	"fr-CH": {
+		"name": "franču (Šveice)"
+	},
+>>>>>>> revert Open Social update
 	"fur": {
 		"name": "friūlu"
 	},
@@ -198,7 +225,11 @@
 		"name": "īru"
 	},
 	"is": {
+<<<<<<< HEAD
 		"name": "īslandiešu"
+=======
+		"name": "islandiešu"
+>>>>>>> revert Open Social update
 	},
 	"it": {
 		"name": "itāļu"
@@ -239,6 +270,7 @@
 	"kam": {
 		"name": "kambu"
 	},
+<<<<<<< HEAD
 	"en-CA": {
 		"name": "Kanādas angļu"
 	},
@@ -251,6 +283,11 @@
 	"yue": {
 		"name": "kantoniešu"
 	},
+=======
+	"kn": {
+		"name": "kannadu"
+	},
+>>>>>>> revert Open Social update
 	"ks": {
 		"name": "kašmiriešu"
 	},
@@ -338,9 +375,12 @@
 	"nds": {
 		"name": "lejasvācu"
 	},
+<<<<<<< HEAD
 	"en-GB": {
 		"name": "Lielbritānijas angļu"
 	},
+=======
+>>>>>>> revert Open Social update
 	"lt": {
 		"name": "lietuviešu"
 	},
@@ -366,7 +406,11 @@
 		"name": "makonde"
 	},
 	"mgh": {
+<<<<<<< HEAD
 		"name": "makua-meetto"
+=======
+		"name": "makua"
+>>>>>>> revert Open Social update
 	},
 	"mk": {
 		"name": "maķedoniešu"
@@ -384,7 +428,11 @@
 		"name": "maltiešu"
 	},
 	"mr": {
+<<<<<<< HEAD
 		"name": "maratu"
+=======
+		"name": "marathu"
+>>>>>>> revert Open Social update
 	},
 	"mas": {
 		"name": "masaju"
@@ -395,9 +443,12 @@
 	"mzn": {
 		"name": "mazanderāņu"
 	},
+<<<<<<< HEAD
 	"es-MX": {
 		"name": "Meksikas spāņu"
 	},
+=======
+>>>>>>> revert Open Social update
 	"gv": {
 		"name": "meniešu"
 	},
@@ -458,6 +509,12 @@
 	"pt": {
 		"name": "portugāļu"
 	},
+<<<<<<< HEAD
+=======
+	"pt-PT": {
+		"name": "portugāļu (Portugāle)"
+	},
+>>>>>>> revert Open Social update
 	"prg": {
 		"name": "prūšu"
 	},
@@ -500,6 +557,12 @@
 	"ii": {
 		"name": "Sičuaņas ji"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindhu"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "singāļu"
 	},
@@ -521,6 +584,12 @@
 	"es": {
 		"name": "spāņu"
 	},
+<<<<<<< HEAD
+=======
+	"es-MX": {
+		"name": "spāņu (Meksika)"
+	},
+>>>>>>> revert Open Social update
 	"zgh": {
 		"name": "standarta marokāņu berberu"
 	},
@@ -539,12 +608,21 @@
 	"de-CH": {
 		"name": "Šveices augšvācu"
 	},
+<<<<<<< HEAD
 	"fr-CH": {
 		"name": "Šveices franču"
 	},
 	"gsw": {
 		"name": "Šveices vācu"
 	},
+=======
+	"gsw": {
+		"name": "Šveices vācu"
+	},
+	"tg": {
+		"name": "tadžiku"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "taitu"
 	},
@@ -557,6 +635,12 @@
 	"twq": {
 		"name": "tasavaku"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tatāru"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telugu"
 	},
@@ -596,6 +680,12 @@
 	"de": {
 		"name": "vācu"
 	},
+<<<<<<< HEAD
+=======
+	"de-AT": {
+		"name": "vācu (Austrija)"
+	},
+>>>>>>> revert Open Social update
 	"vai": {
 		"name": "vaju"
 	},
@@ -611,6 +701,12 @@
 	"vo": {
 		"name": "volapiks"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "volofu"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "vundžo"
 	},

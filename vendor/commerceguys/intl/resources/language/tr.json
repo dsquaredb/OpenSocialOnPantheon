@@ -80,6 +80,12 @@
 	"bn": {
 		"name": "Bengalce"
 	},
+<<<<<<< HEAD
+=======
+	"my": {
+		"name": "Birman dili"
+	},
+>>>>>>> revert Open Social update
 	"brx": {
 		"name": "Bodo"
 	},
@@ -92,9 +98,12 @@
 	"bg": {
 		"name": "Bulgarca"
 	},
+<<<<<<< HEAD
 	"my": {
 		"name": "Burmaca"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ce": {
 		"name": "Çeçence"
 	},
@@ -272,9 +281,12 @@
 	"kn": {
 		"name": "Kannada dili"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Kantonca"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ca": {
 		"name": "Katalanca"
 	},
@@ -290,6 +302,12 @@
 	"ks": {
 		"name": "Keşmir dili"
 	},
+<<<<<<< HEAD
+=======
+	"km": {
+		"name": "Khmer dili"
+	},
+>>>>>>> revert Open Social update
 	"ky": {
 		"name": "Kırgızca"
 	},
@@ -308,9 +326,12 @@
 	"rn": {
 		"name": "Kirundi"
 	},
+<<<<<<< HEAD
 	"km": {
 		"name": "Kmerce"
 	},
+=======
+>>>>>>> revert Open Social update
 	"sw-CD": {
 		"name": "Kongo Svahili"
 	},
@@ -402,10 +423,17 @@
 		"name": "Maltaca"
 	},
 	"gv": {
+<<<<<<< HEAD
 		"name": "Manks"
 	},
 	"mr": {
 		"name": "Marathi"
+=======
+		"name": "Man dili"
+	},
+	"mr": {
+		"name": "Marathi dili"
+>>>>>>> revert Open Social update
 	},
 	"mas": {
 		"name": "Masai"
@@ -515,9 +543,12 @@
 	"seh": {
 		"name": "Sena"
 	},
+<<<<<<< HEAD
 	"si": {
 		"name": "Seylanca"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ksb": {
 		"name": "Shambala"
 	},
@@ -530,6 +561,15 @@
 	"ii": {
 		"name": "Sichuan Yi"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "Sindhi dili"
+	},
+	"si": {
+		"name": "Sinhali dili"
+	},
+>>>>>>> revert Open Social update
 	"sk": {
 		"name": "Slovakça"
 	},
@@ -546,7 +586,14 @@
 		"name": "Standart Fas Tamazigti"
 	},
 	"sw": {
+<<<<<<< HEAD
 		"name": "Svahili"
+=======
+		"name": "Svahili dili"
+	},
+	"tg": {
+		"name": "Tacikçe"
+>>>>>>> revert Open Social update
 	},
 	"dav": {
 		"name": "Taita"
@@ -560,6 +607,12 @@
 	"shi": {
 		"name": "Taşelhit"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "Tatarca"
+	},
+>>>>>>> revert Open Social update
 	"th": {
 		"name": "Tayca"
 	},
@@ -573,7 +626,11 @@
 		"name": "Tibetçe"
 	},
 	"ti": {
+<<<<<<< HEAD
 		"name": "Tigrinya"
+=======
+		"name": "Tigrinya dili"
+>>>>>>> revert Open Social update
 	},
 	"to": {
 		"name": "Tonga dili"
@@ -602,6 +659,12 @@
 	"vo": {
 		"name": "Volapük"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "Volofça"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "Vunjo"
 	},

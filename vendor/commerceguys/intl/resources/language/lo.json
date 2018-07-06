@@ -5,9 +5,12 @@
 	"kl": {
 		"name": "ກຣີນແລນລິດ"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "ກວາງຕຸ້ງ"
 	},
+=======
+>>>>>>> revert Open Social update
 	"nmg": {
 		"name": "ກວາຊີໂອ"
 	},
@@ -131,6 +134,12 @@
 	"sv": {
 		"name": "ສະວີດິຊ"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "ສິນທິ"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "ສິນຫາລາ"
 	},
@@ -239,9 +248,21 @@
 	"to": {
 		"name": "ທອງການ"
 	},
+<<<<<<< HEAD
 	"shi": {
 		"name": "ທາເຊວຫິດ"
 	},
+=======
+	"tg": {
+		"name": "ທາຈິກ"
+	},
+	"shi": {
+		"name": "ທາເຊວຫິດ"
+	},
+	"tt": {
+		"name": "ທາທາ"
+	},
+>>>>>>> revert Open Social update
 	"ta": {
 		"name": "ທາມິລ"
 	},
@@ -491,6 +512,12 @@
 	"lag": {
 		"name": "ແລນກິ"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "ວໍລອບ"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "ວັນໂຈ"
 	},
@@ -515,15 +542,24 @@
 	"en": {
 		"name": "ອັງກິດ"
 	},
+<<<<<<< HEAD
 	"en-CA": {
 		"name": "ອັງກິດ (ແຄນາດາ)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"en-GB": {
 		"name": "ອັງກິດ (ບຣິດທິຊ)"
 	},
 	"en-AU": {
 		"name": "ອັງກິດ (ໂອດສະຕາລີ)"
 	},
+<<<<<<< HEAD
+=======
+	"en-CA": {
+		"name": "ອັງກິດແຄນາດາ"
+	},
+>>>>>>> revert Open Social update
 	"as": {
 		"name": "ອັສຊາມີສ"
 	},

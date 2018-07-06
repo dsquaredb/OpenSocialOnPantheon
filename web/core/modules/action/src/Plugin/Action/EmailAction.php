@@ -140,6 +140,7 @@ class EmailAction extends ConfigurableActionBase implements ContainerFactoryPlug
     $params = array('context' => $this->configuration);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if ($this->mailManager->mail('system', 'action_send_email', $recipient, $langcode, $params)) {
       $this->logger->notice('Sent email to %recipient', array('%recipient' => $recipient));
     }
@@ -153,6 +154,14 @@ class EmailAction extends ConfigurableActionBase implements ContainerFactoryPlug
       $this->logger->notice('Sent email to %recipient', ['%recipient' => $recipient]);
     }
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+    if ($this->mailManager->mail('system', 'action_send_email', $recipient, $langcode, $params)) {
+      $this->logger->notice('Sent email to %recipient', ['%recipient' => $recipient]);
+    }
+    else {
+      $this->logger->error('Unable to send email to %recipient', ['%recipient' => $recipient]);
+    }
+>>>>>>> revert Open Social update
   }
 
   /**

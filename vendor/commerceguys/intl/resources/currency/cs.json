@@ -49,9 +49,12 @@
 	"BYN": {
 		"name": "běloruský rubl"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "běloruský rubl (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"BMD": {
 		"name": "bermudský dolar"
 	},
@@ -79,7 +82,11 @@
 		"name": "brunejský dolar"
 	},
 	"BGN": {
+<<<<<<< HEAD
 		"name": "bulharský lev"
+=======
+		"name": "bulharský leva"
+>>>>>>> revert Open Social update
 	},
 	"BIF": {
 		"name": "burundský frank"
@@ -358,7 +365,11 @@
 		"name": "paraguajské guarani"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "peruánský nový sol"
+=======
+		"name": "peruánský sol"
+>>>>>>> revert Open Social update
 	},
 	"PLN": {
 		"name": "polský zlotý"

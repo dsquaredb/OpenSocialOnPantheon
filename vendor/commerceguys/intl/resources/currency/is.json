@@ -157,9 +157,12 @@
 	"BYN": {
 		"name": "hvítrússnesk rúbla"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "hvítrússnesk rúbla (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"IDR": {
 		"name": "indónesísk rúpía"
 	},

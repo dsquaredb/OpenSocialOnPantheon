@@ -125,6 +125,12 @@
 	"TD": {
 		"name": "Chad"
 	},
+<<<<<<< HEAD
+=======
+	"CZ": {
+		"name": "Chequia"
+	},
+>>>>>>> revert Open Social update
 	"CL": {
 		"name": "Chile"
 	},
@@ -149,12 +155,21 @@
 	"KR": {
 		"name": "Corea del Sur"
 	},
+<<<<<<< HEAD
 	"CI": {
 		"name": "Costa de Marfil"
 	},
 	"CR": {
 		"name": "Costa Rica"
 	},
+=======
+	"CR": {
+		"name": "Costa Rica"
+	},
+	"CI": {
+		"name": "Côte d’Ivoire"
+	},
+>>>>>>> revert Open Social update
 	"HR": {
 		"name": "Croacia"
 	},
@@ -255,7 +270,11 @@
 		"name": "Guayana Francesa"
 	},
 	"GG": {
+<<<<<<< HEAD
 		"name": "Guernesey"
+=======
+		"name": "Guernsey"
+>>>>>>> revert Open Social update
 	},
 	"GN": {
 		"name": "Guinea"
@@ -294,7 +313,11 @@
 		"name": "Irlanda"
 	},
 	"AC": {
+<<<<<<< HEAD
 		"name": "Isla de la Ascensión"
+=======
+		"name": "Isla Ascensión"
+>>>>>>> revert Open Social update
 	},
 	"IM": {
 		"name": "Isla de Man"
@@ -338,6 +361,12 @@
 	"MH": {
 		"name": "Islas Marshall"
 	},
+<<<<<<< HEAD
+=======
+	"UM": {
+		"name": "Islas menores alejadas de EE. UU."
+	},
+>>>>>>> revert Open Social update
 	"PN": {
 		"name": "Islas Pitcairn"
 	},
@@ -347,9 +376,12 @@
 	"TC": {
 		"name": "Islas Turcas y Caicos"
 	},
+<<<<<<< HEAD
 	"UM": {
 		"name": "Islas Ultramarinas Menores de Estados Unidos"
 	},
+=======
+>>>>>>> revert Open Social update
 	"VG": {
 		"name": "Islas Vírgenes Británicas"
 	},
@@ -560,9 +592,12 @@
 	"CF": {
 		"name": "República Centroafricana"
 	},
+<<<<<<< HEAD
 	"CZ": {
 		"name": "República Checa"
 	},
+=======
+>>>>>>> revert Open Social update
 	"CG": {
 		"name": "República del Congo"
 	},

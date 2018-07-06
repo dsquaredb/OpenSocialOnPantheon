@@ -24,6 +24,7 @@ namespace Symfony\Component\HttpKernel\Exception;
 class FatalErrorException extends \ErrorException
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Konstanton Myakshin <koc-dp@yandex.ru>
@@ -51,8 +52,11 @@ class FatalErrorException extends LegacyFatalErrorException
 =======
     public function __construct($message, $code, $severity, $filename, $lineno, $traceOffset = null, $traceArgs = true, array $trace = null, $previous = null)
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+    public function __construct($message, $code, $severity, $filename, $lineno, $traceOffset = null, $traceArgs = true, array $trace = null)
+>>>>>>> revert Open Social update
     {
-        parent::__construct($message, $code, $severity, $filename, $lineno, $previous);
+        parent::__construct($message, $code, $severity, $filename, $lineno);
 
         if (null !== $trace) {
             if (!$traceArgs) {

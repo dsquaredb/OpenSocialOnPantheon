@@ -639,15 +639,16 @@ class FeaturesEditForm extends FormBase {
     foreach (array('excluded', 'required') as $constraint) {
       $this->{$constraint} = array();
       $info = !empty($this->package->{'get' . $constraint}()) ? $this->package->{'get' . $constraint}() : array();
-      // $info may be boolean.
-      if (is_array($info)) {
-        foreach ($info as $item_name) {
-          if (!isset($config[$item_name])) {
-            continue;
-          }
-          $item = $config[$item_name];
-          $this->{$constraint}[$item->getType()][$item->getShortName()] = $item->getLabel();
+      if (($constraint == 'required') && (empty($info) || !is_array($info))) {
+        // If required is True or empty array, add all config as required
+        $info = $this->package->getConfigOrig();
+      }
+      foreach ($info as $item_name) {
+        if (!isset($config[$item_name])) {
+          continue;
         }
+        $item = $config[$item_name];
+        $this->{$constraint}[$item->getType()][$item->getShortName()] = $item->getLabel();
       }
     }
 

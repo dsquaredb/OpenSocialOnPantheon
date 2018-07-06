@@ -176,9 +176,12 @@
 	"EG": {
 		"name": "Égypte"
 	},
+<<<<<<< HEAD
 	"SV": {
 		"name": "El Salvador"
 	},
+=======
+>>>>>>> revert Open Social update
 	"AE": {
 		"name": "Émirats arabes unis"
 	},
@@ -572,9 +575,12 @@
 	"DO": {
 		"name": "République dominicaine"
 	},
+<<<<<<< HEAD
 	"CZ": {
 		"name": "République tchèque"
 	},
+=======
+>>>>>>> revert Open Social update
 	"RO": {
 		"name": "Roumanie"
 	},
@@ -617,6 +623,12 @@
 	"LC": {
 		"name": "Sainte-Lucie"
 	},
+<<<<<<< HEAD
+=======
+	"SV": {
+		"name": "Salvador"
+	},
+>>>>>>> revert Open Social update
 	"WS": {
 		"name": "Samoa"
 	},
@@ -689,6 +701,12 @@
 	"TD": {
 		"name": "Tchad"
 	},
+<<<<<<< HEAD
+=======
+	"CZ": {
+		"name": "Tchéquie"
+	},
+>>>>>>> revert Open Social update
 	"TF": {
 		"name": "Terres australes françaises"
 	},

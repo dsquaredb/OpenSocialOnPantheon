@@ -98,9 +98,12 @@
 	"kn": {
 		"name": "canarim"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "cantonês"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ca": {
 		"name": "catalão"
 	},
@@ -320,9 +323,12 @@
 	"km": {
 		"name": "khmer"
 	},
+<<<<<<< HEAD
 	"rw": {
 		"name": "kinyarwanda"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ksh": {
 		"name": "kölsch"
 	},
@@ -485,6 +491,12 @@
 	"ki": {
 		"name": "quicuio"
 	},
+<<<<<<< HEAD
+=======
+	"rw": {
+		"name": "quiniaruanda"
+	},
+>>>>>>> revert Open Social update
 	"ky": {
 		"name": "quirguiz"
 	},
@@ -536,6 +548,12 @@
 	"ii": {
 		"name": "sichuan yi"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindi"
+	},
+>>>>>>> revert Open Social update
 	"xog": {
 		"name": "soga"
 	},
@@ -563,6 +581,12 @@
 	"dav": {
 		"name": "taita"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tajique"
+	},
+>>>>>>> revert Open Social update
 	"tzm": {
 		"name": "tamazight do Atlas Central"
 	},
@@ -575,6 +599,12 @@
 	"twq": {
 		"name": "tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tatar"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telugu"
 	},
@@ -602,6 +632,12 @@
 	"ug": {
 		"name": "uigur"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "uólofe"
+	},
+>>>>>>> revert Open Social update
 	"ur": {
 		"name": "urdu"
 	},

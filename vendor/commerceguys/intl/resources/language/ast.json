@@ -101,9 +101,12 @@
 	"kn": {
 		"name": "canarés"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "cantonés"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ca": {
 		"name": "catalán"
 	},
@@ -521,6 +524,12 @@
 	"sn": {
 		"name": "shona"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindhi"
+	},
+>>>>>>> revert Open Social update
 	"xog": {
 		"name": "soga"
 	},
@@ -554,9 +563,21 @@
 	"ta": {
 		"name": "tamil"
 	},
+<<<<<<< HEAD
 	"twq": {
 		"name": "tasawaq"
 	},
+=======
+	"tt": {
+		"name": "tártaru"
+	},
+	"twq": {
+		"name": "tasawaq"
+	},
+	"tg": {
+		"name": "taxiquistanín"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telugu"
 	},
@@ -608,6 +629,12 @@
 	"wae": {
 		"name": "walser"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "wolof"
+	},
+>>>>>>> revert Open Social update
 	"ja": {
 		"name": "xaponés"
 	},

@@ -152,8 +152,12 @@
 		"symbol": "NZ$"
 	},
 	"USD": {
+<<<<<<< HEAD
 		"name": "dollaro statunitense",
 		"symbol": "US$"
+=======
+		"name": "dollaro statunitense"
+>>>>>>> revert Open Social update
 	},
 	"ZWL": {
 		"name": "dollaro zimbabwiano (2009)"
@@ -308,9 +312,12 @@
 		"name": "nuovo siclo israeliano",
 		"symbol": "₪"
 	},
+<<<<<<< HEAD
 	"PEN": {
 		"name": "nuovo sol peruviano"
 	},
+=======
+>>>>>>> revert Open Social update
 	"MRO": {
 		"name": "ouguiya della Mauritania"
 	},
@@ -387,9 +394,12 @@
 	"BYN": {
 		"name": "rublo bielorusso"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "rublo bielorusso (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"RUB": {
 		"name": "rublo russo"
 	},
@@ -430,6 +440,12 @@
 	"UGX": {
 		"name": "scellino ugandese"
 	},
+<<<<<<< HEAD
+=======
+	"PEN": {
+		"name": "sol peruviano"
+	},
+>>>>>>> revert Open Social update
 	"KGS": {
 		"name": "som kirghiso"
 	},

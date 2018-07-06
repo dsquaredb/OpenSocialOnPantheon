@@ -164,6 +164,15 @@
 	"LB": {
 		"name": "Lepanoni"
 	},
+<<<<<<< HEAD
+=======
+	"DO": {
+		"name": "Lepupelika Tominika"
+	},
+	"CF": {
+		"name": "Lepupelika ʻAfilika Lotoloto"
+	},
+>>>>>>> revert Open Social update
 	"LS": {
 		"name": "Lesoto"
 	},
@@ -173,6 +182,7 @@
 	"LI": {
 		"name": "Likitenisiteini"
 	},
+<<<<<<< HEAD
 	"CZ": {
 		"name": "Lipapilika Seki"
 	},
@@ -182,6 +192,8 @@
 	"CF": {
 		"name": "Lipapilika ʻAfilika Lotoloto"
 	},
+=======
+>>>>>>> revert Open Social update
 	"LY": {
 		"name": "Līpia"
 	},
@@ -228,7 +240,11 @@
 		"name": "Matakasika"
 	},
 	"MQ": {
+<<<<<<< HEAD
 		"name": "Māteniki"
+=======
+		"name": "Mātiniki"
+>>>>>>> revert Open Social update
 	},
 	"MR": {
 		"name": "Maulitenia"
@@ -455,6 +471,12 @@
 	"SA": {
 		"name": "Saute ʻAlepea"
 	},
+<<<<<<< HEAD
+=======
+	"CZ": {
+		"name": "Sēkia"
+	},
+>>>>>>> revert Open Social update
 	"JE": {
 		"name": "Selusī"
 	},
@@ -614,15 +636,24 @@
 	"IS": {
 		"name": "ʻAisilani"
 	},
+<<<<<<< HEAD
 	"DZ": {
 		"name": "ʻAisilia"
 	},
+=======
+>>>>>>> revert Open Social update
 	"AE": {
 		"name": "ʻAlepea Fakatahataha"
 	},
 	"AL": {
 		"name": "ʻAlipania"
 	},
+<<<<<<< HEAD
+=======
+	"DZ": {
+		"name": "ʻAlisilia"
+	},
+>>>>>>> revert Open Social update
 	"AW": {
 		"name": "ʻAlupa"
 	},

@@ -8,30 +8,11 @@ namespace CommerceGuys\Addressing\Country;
 interface CountryRepositoryInterface
 {
     /**
-     * Gets a country matching the provided country code.
+     * Returns a list of countries.
      *
-     * @param string $countryCode The country code.
-     * @param string $locale      The locale (i.e. fr-FR).
+     * @param string $locale The locale (e.g. fr-FR).
      *
-     * @return Country
-     */
-    public function get($countryCode, $locale = null);
-
-    /**
-     * Gets all countries.
-     *
-     * @param string $locale The locale (i.e. fr-FR).
-     *
-     * @return Country[] An array of countries, keyed by country code.
-     */
-    public function getAll($locale = null);
-
-    /**
-     * Gets a list of countries.
-     *
-     * @param string $locale The locale (i.e. fr-FR).
-     *
-     * @return string[] An array of country names, keyed by country code.
+     * @return array An array of country names, keyed by country code.
      */
     public function getList($locale = null);
 }

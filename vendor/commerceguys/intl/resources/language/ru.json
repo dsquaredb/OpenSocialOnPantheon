@@ -6,7 +6,11 @@
 		"name": "австрийский немецкий"
 	},
 	"agq": {
+<<<<<<< HEAD
 		"name": "агхем"
+=======
+		"name": "агем"
+>>>>>>> revert Open Social update
 	},
 	"az": {
 		"name": "азербайджанский"
@@ -101,6 +105,12 @@
 	"vo": {
 		"name": "волапюк"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "волоф"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "вунджо"
 	},
@@ -153,7 +163,11 @@
 		"name": "европейский португальский"
 	},
 	"fy": {
+<<<<<<< HEAD
 		"name": "западный фризский"
+=======
+		"name": "западнофризский"
+>>>>>>> revert Open Social update
 	},
 	"zu": {
 		"name": "зулу"
@@ -215,9 +229,12 @@
 	"kn": {
 		"name": "каннада"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "кантонский"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ca": {
 		"name": "каталанский"
 	},
@@ -461,6 +478,12 @@
 	"sbp": {
 		"name": "сангу"
 	},
+<<<<<<< HEAD
+=======
+	"sah": {
+		"name": "саха"
+	},
+>>>>>>> revert Open Social update
 	"lrc": {
 		"name": "севернолурский"
 	},
@@ -479,6 +502,12 @@
 	"si": {
 		"name": "сингальский"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "синдхи"
+	},
+>>>>>>> revert Open Social update
 	"sk": {
 		"name": "словацкий"
 	},
@@ -500,6 +529,12 @@
 	"sw": {
 		"name": "суахили"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "таджикский"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "таита"
 	},
@@ -515,6 +550,12 @@
 	"twq": {
 		"name": "тасавак"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "татарский"
+	},
+>>>>>>> revert Open Social update
 	"shi": {
 		"name": "ташельхит"
 	},
@@ -623,9 +664,12 @@
 	"et": {
 		"name": "эстонский"
 	},
+<<<<<<< HEAD
 	"sah": {
 		"name": "якутский"
 	},
+=======
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "янгбен"
 	},

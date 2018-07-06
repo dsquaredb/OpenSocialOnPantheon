@@ -4,5 +4,9 @@
 	"percent_pattern": "#,##0%",
 	"currency_pattern": "¤ #,##0.00",
 	"accounting_currency_pattern": "#,##0.00 ¤",
+<<<<<<< HEAD
 	"grouping_separator": "'"
+=======
+	"grouping_separator": "’"
+>>>>>>> revert Open Social update
 }

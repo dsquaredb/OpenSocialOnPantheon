@@ -68,6 +68,12 @@
 	"bn": {
 		"name": "Kibengali"
 	},
+<<<<<<< HEAD
+=======
+	"zgh": {
+		"name": "Kiberber Sanifu cha Moroko"
+	},
+>>>>>>> revert Open Social update
 	"brx": {
 		"name": "Kibodo"
 	},
@@ -213,7 +219,11 @@
 		"name": "Kiingereza (Australia)"
 	},
 	"en-CA": {
+<<<<<<< HEAD
 		"name": "Kiingereza (Kanada)"
+=======
+		"name": "Kiingereza (Canada)"
+>>>>>>> revert Open Social update
 	},
 	"en-GB": {
 		"name": "Kiingereza (Uingereza)"
@@ -266,9 +276,12 @@
 	"kn": {
 		"name": "Kikannada"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Kikantoni"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ks": {
 		"name": "Kikashmiri"
 	},
@@ -399,7 +412,11 @@
 		"name": "Kingwana"
 	},
 	"nb": {
+<<<<<<< HEAD
 		"name": "Kinorwe cha Bokmål"
+=======
+		"name": "Kinorwe cha Bokmal"
+>>>>>>> revert Open Social update
 	},
 	"nn": {
 		"name": "Kinorwe cha Nynorsk"
@@ -464,9 +481,12 @@
 	"ru": {
 		"name": "Kirusi"
 	},
+<<<<<<< HEAD
 	"rwk": {
 		"name": "Kirwa"
 	},
+=======
+>>>>>>> revert Open Social update
 	"sah": {
 		"name": "Kisakha"
 	},
@@ -503,6 +523,12 @@
 	"sn": {
 		"name": "Kishona"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "Kisindhi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "Kisinhala"
 	},
@@ -539,12 +565,24 @@
 	"dav": {
 		"name": "Kitaita"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "Kitajiki"
+	},
+>>>>>>> revert Open Social update
 	"ta": {
 		"name": "Kitamil"
 	},
 	"twq": {
 		"name": "Kitasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "Kitatari"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "Kitelugu"
 	},
@@ -585,7 +623,11 @@
 		"name": "Kivietinamu"
 	},
 	"vo": {
+<<<<<<< HEAD
 		"name": "Kivolapük"
+=======
+		"name": "Kivolapuk"
+>>>>>>> revert Open Social update
 	},
 	"vun": {
 		"name": "Kivunjo"
@@ -623,12 +665,24 @@
 	"nnh": {
 		"name": "Lugha ya Ngiemboon"
 	},
+<<<<<<< HEAD
 	"ii": {
 		"name": "Sichuan Yi"
 	},
 	"zgh": {
 		"name": "Tamaziti Sanifu ya Kimoroko"
 	},
+=======
+	"rwk": {
+		"name": "Lugha ya Rwa"
+	},
+	"wo": {
+		"name": "Lugha ya Wolof"
+	},
+	"ii": {
+		"name": "Sichuan Yi"
+	},
+>>>>>>> revert Open Social update
 	"wae": {
 		"name": "Walser"
 	}

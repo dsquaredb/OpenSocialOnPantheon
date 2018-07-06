@@ -245,9 +245,12 @@
 	"fr-CA": {
 		"name": "kanadski francuski"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "kantonski"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kn": {
 		"name": "karnatački"
 	},
@@ -492,7 +495,14 @@
 		"name": "shona"
 	},
 	"ii": {
+<<<<<<< HEAD
 		"name": "sichuan yi"
+=======
+		"name": "sichuan ji"
+	},
+	"sd": {
+		"name": "sindski"
+>>>>>>> revert Open Social update
 	},
 	"si": {
 		"name": "sinhaleški"
@@ -548,6 +558,12 @@
 	"shi": {
 		"name": "tachelhit"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tadžički"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "taita"
 	},
@@ -566,6 +582,12 @@
 	"twq": {
 		"name": "tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tatarski"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "teluški"
 	},
@@ -611,6 +633,12 @@
 	"vo": {
 		"name": "volapük"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "volof"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "vunjo"
 	},

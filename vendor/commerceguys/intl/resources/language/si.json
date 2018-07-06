@@ -2,9 +2,12 @@
 	"ak": {
 		"name": "අකාන්"
 	},
+<<<<<<< HEAD
 	"af": {
 		"name": "අප්‍රිකානු"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ga": {
 		"name": "අයර්ලන්ත"
 	},
@@ -20,6 +23,12 @@
 	"asa": {
 		"name": "අසු"
 	},
+<<<<<<< HEAD
+=======
+	"af": {
+		"name": "අෆ්රිකාන්ස්"
+	},
+>>>>>>> revert Open Social update
 	"hy": {
 		"name": "ආර්මේනියානු"
 	},
@@ -33,7 +42,11 @@
 		"name": "ඇල්බේනියානු"
 	},
 	"as": {
+<<<<<<< HEAD
 		"name": "ඇසමියානු"
+=======
+		"name": "ඇසෑම්"
+>>>>>>> revert Open Social update
 	},
 	"ast": {
 		"name": "ඇස්ටියුරියන්"
@@ -111,7 +124,11 @@
 		"name": "කණ්ණඩ"
 	},
 	"kea": {
+<<<<<<< HEAD
 		"name": "කබුවෙර්ඩියානෝ"
+=======
+		"name": "කබුවෙර්ඩියානු"
+>>>>>>> revert Open Social update
 	},
 	"km": {
 		"name": "කමර්"
@@ -125,6 +142,12 @@
 	"kk": {
 		"name": "කසාඛ්"
 	},
+<<<<<<< HEAD
+=======
+	"kab": {
+		"name": "කාබිල්"
+	},
+>>>>>>> revert Open Social update
 	"ks": {
 		"name": "කාෂ්මීර්"
 	},
@@ -137,12 +160,15 @@
 	"fr-CA": {
 		"name": "කැනේඩියානු ප්‍රංශ"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "කැන්ටොනීස්"
 	},
 	"kab": {
 		"name": "කැබලා"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kam": {
 		"name": "කැම්බා"
 	},
@@ -158,6 +184,12 @@
 	"nmg": {
 		"name": "කුවාසිඔ"
 	},
+<<<<<<< HEAD
+=======
+	"sw-CD": {
+		"name": "කොංගෝ ස්වාහිලි"
+	},
+>>>>>>> revert Open Social update
 	"kok": {
 		"name": "කොන්කනි"
 	},
@@ -170,15 +202,24 @@
 	"ksh": {
 		"name": "කොලොග්නියන්"
 	},
+<<<<<<< HEAD
+=======
+	"hr": {
+		"name": "කෝඒෂියානු"
+	},
+>>>>>>> revert Open Social update
 	"kw": {
 		"name": "කෝනීසියානු"
 	},
 	"ses": {
 		"name": "කෝයිරාබොරො සෙන්නි"
 	},
+<<<<<<< HEAD
 	"hr": {
 		"name": "ක්‍රෝයේශියානු"
 	},
+=======
+>>>>>>> revert Open Social update
 	"qu": {
 		"name": "ක්වීචුවා"
 	},
@@ -206,12 +247,21 @@
 	"zh": {
 		"name": "චීන"
 	},
+<<<<<<< HEAD
 	"ce": {
 		"name": "චෙච්නියානු"
 	},
 	"cs": {
 		"name": "චෙත්"
 	},
+=======
+	"cs": {
+		"name": "චෙක්"
+	},
+	"ce": {
+		"name": "චෙච්නියානු"
+	},
+>>>>>>> revert Open Social update
 	"chr": {
 		"name": "චෙරොකී"
 	},
@@ -230,6 +280,12 @@
 	"shi": {
 		"name": "ටචේල්හිට්"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "ටජික්"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "ටයිටා"
 	},
@@ -239,6 +295,12 @@
 	"twq": {
 		"name": "ටසවාක්"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "ටාටර්"
+	},
+>>>>>>> revert Open Social update
 	"ti": {
 		"name": "ටිග්‍රින්යා"
 	},
@@ -273,7 +335,11 @@
 		"name": "දෙමළ"
 	},
 	"nyn": {
+<<<<<<< HEAD
 		"name": "නයන්කොළේ"
+=======
+		"name": "නයන්කෝලෙ"
+>>>>>>> revert Open Social update
 	},
 	"naq": {
 		"name": "නාමා"
@@ -288,10 +354,17 @@
 		"name": "නොයර්"
 	},
 	"nn": {
+<<<<<<< HEAD
 		"name": "නොවේර්ජියානු නයිනෝර්ස්ක්"
 	},
 	"nb": {
 		"name": "නෝවේජියානු බොක්මාල්"
+=======
+		"name": "නෝර්වීජියානු නයිනෝර්ස්ක්"
+	},
+	"nb": {
+		"name": "නෝර්වීජියානු බොක්මල්"
+>>>>>>> revert Open Social update
 	},
 	"nnh": {
 		"name": "න්ගියාම්බූන්"
@@ -341,6 +414,12 @@
 	"bas": {
 		"name": "බසා"
 	},
+<<<<<<< HEAD
+=======
+	"eu": {
+		"name": "බාස්ක්"
+	},
+>>>>>>> revert Open Social update
 	"ksf": {
 		"name": "බාෆියා"
 	},
@@ -362,9 +441,12 @@
 	"brx": {
 		"name": "බොඩො"
 	},
+<<<<<<< HEAD
 	"eu": {
 		"name": "බොස්කෝ"
 	},
+=======
+>>>>>>> revert Open Social update
 	"bs": {
 		"name": "බොස්නියානු"
 	},
@@ -491,12 +573,21 @@
 	"ln": {
 		"name": "ලින්ගලා"
 	},
+<<<<<<< HEAD
 	"lu": {
 		"name": "ලු"
 	},
 	"luo": {
 		"name": "ලුඔ"
 	},
+=======
+	"luo": {
+		"name": "ලුඔ"
+	},
+	"lu": {
+		"name": "ලුබා-කටන්ගා"
+	},
+>>>>>>> revert Open Social update
 	"luy": {
 		"name": "ලුයියා"
 	},
@@ -510,11 +601,21 @@
 		"name": "වුන්ජෝ"
 	},
 	"cy": {
+<<<<<<< HEAD
 		"name": "වේල්ස්"
+=======
+		"name": "වෙල්ෂ්"
+>>>>>>> revert Open Social update
 	},
 	"vo": {
 		"name": "වොලපූක්"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "වොලොෆ්"
+	},
+>>>>>>> revert Open Social update
 	"wae": {
 		"name": "වොල්සර්"
 	},
@@ -539,6 +640,12 @@
 	"zgh": {
 		"name": "සම්මත මොරොක්කෝ ටමසිග්ත්"
 	},
+<<<<<<< HEAD
+=======
+	"zh-Hans": {
+		"name": "සරල චීන"
+	},
+>>>>>>> revert Open Social update
 	"sr": {
 		"name": "සර්බියානු"
 	},
@@ -554,12 +661,21 @@
 	"ii": {
 		"name": "සිචුආන් යී"
 	},
+<<<<<<< HEAD
 	"zu": {
 		"name": "සුලු"
 	},
 	"zh-Hans": {
 		"name": "සුළුකළ චීන"
 	},
+=======
+	"sd": {
+		"name": "සින්ධි"
+	},
+	"zu": {
+		"name": "සුලු"
+	},
+>>>>>>> revert Open Social update
 	"seh": {
 		"name": "සෙනා"
 	},
@@ -587,9 +703,12 @@
 	"sw": {
 		"name": "ස්වාහිලි"
 	},
+<<<<<<< HEAD
 	"sw-CD": {
 		"name": "ස්වාහිලි (කොංගො - කින්ශාසා)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"de-CH": {
 		"name": "ස්විස් උසස් ජර්මන්"
 	},

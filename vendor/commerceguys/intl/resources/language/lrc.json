@@ -5,9 +5,12 @@
 	"bas": {
 		"name": "Basaa"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Cantonese"
 	},
+=======
+>>>>>>> revert Open Social update
 	"cu": {
 		"name": "Church Slavic"
 	},
@@ -233,6 +236,15 @@
 	"te": {
 		"name": "تئلئگو"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "تاتار"
+	},
+	"tg": {
+		"name": "تاجیکی"
+	},
+>>>>>>> revert Open Social update
 	"shi": {
 		"name": "تاچئلھیت"
 	},
@@ -341,6 +353,12 @@
 	"seh": {
 		"name": "سئنا"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "سئندی"
+	},
+>>>>>>> revert Open Social update
 	"saq": {
 		"name": "سامبوٙروٙ"
 	},
@@ -416,6 +434,12 @@
 	"vai": {
 		"name": "ڤای"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "ڤولوف"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "ڤوٙنجوٙ"
 	},

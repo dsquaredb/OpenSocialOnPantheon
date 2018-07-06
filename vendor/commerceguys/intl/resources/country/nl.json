@@ -93,7 +93,11 @@
 		"name": "Brazilië"
 	},
 	"IO": {
+<<<<<<< HEAD
 		"name": "Britse Gebieden in de Indische Oceaan"
+=======
+		"name": "Brits Indische Oceaanterritorium"
+>>>>>>> revert Open Social update
 	},
 	"VG": {
 		"name": "Britse Maagdeneilanden"

@@ -5,6 +5,7 @@ package: Testing
 # core: 8.x
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Information added by Drupal.org packaging script on 2016-10-27
 version: '8.x-1.0-rc3'
 core: '8.x'
@@ -17,3 +18,10 @@ core: '8.x'
 project: 'address'
 datestamp: 1527081787
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+# Information added by Drupal.org packaging script on 2017-11-22
+version: '8.x-1.3'
+core: '8.x'
+project: 'address'
+datestamp: 1511382787
+>>>>>>> revert Open Social update

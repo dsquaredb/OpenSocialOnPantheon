@@ -63,7 +63,31 @@ class CheckExceptionOnInvalidReferenceBehaviorPassTest extends \PHPUnit_Framewor
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+    /**
+     * @expectedException \Symfony\Component\DependencyInjection\Exception\InvalidArgumentException
+     * @expectedExceptionMessage Invalid ignore-on-uninitialized reference found in service
+     */
+    public function testProcessThrowsExceptionOnNonSharedUninitializedReference()
+    {
+        $container = new ContainerBuilder();
+
+        $container
+            ->register('a', 'stdClass')
+            ->addArgument(new Reference('b', $container::IGNORE_ON_UNINITIALIZED_REFERENCE))
+        ;
+
+        $container
+            ->register('b', 'stdClass')
+            ->setShared(false)
+        ;
+
+        $this->process($container);
+    }
+
+>>>>>>> revert Open Social update
     public function testProcessDefinitionWithBindings()
     {
         $container = new ContainerBuilder();

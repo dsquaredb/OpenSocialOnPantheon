@@ -11,9 +11,12 @@
 	"ur": {
 		"name": "اردو"
 	},
+<<<<<<< HEAD
 	"hy": {
 		"name": "ارمینی"
 	},
+=======
+>>>>>>> revert Open Social update
 	"or": {
 		"name": "اڑیہ"
 	},
@@ -77,6 +80,12 @@
 	"az": {
 		"name": "آذربائیجانی"
 	},
+<<<<<<< HEAD
+=======
+	"hy": {
+		"name": "آرمینیائی"
+	},
+>>>>>>> revert Open Social update
 	"as": {
 		"name": "آسامی"
 	},
@@ -155,6 +164,15 @@
 	"pl": {
 		"name": "پولش"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "تاتار"
+	},
+	"tg": {
+		"name": "تاجک"
+	},
+>>>>>>> revert Open Social update
 	"twq": {
 		"name": "تاساواق"
 	},
@@ -204,7 +222,11 @@
 		"name": "جولا فونيا"
 	},
 	"cu": {
+<<<<<<< HEAD
 		"name": "چرچ سلاؤ"
+=======
+		"name": "چرچ سلاوک"
+>>>>>>> revert Open Social update
 	},
 	"ce": {
 		"name": "چیچن"
@@ -285,7 +307,11 @@
 		"name": "سربین"
 	},
 	"gd": {
+<<<<<<< HEAD
 		"name": "سکاٹ گیلِک"
+=======
+		"name": "سکاٹش گیلک"
+>>>>>>> revert Open Social update
 	},
 	"sk": {
 		"name": "سلوواک"
@@ -293,6 +319,12 @@
 	"sl": {
 		"name": "سلووینیائی"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "سندھی"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "سنہالا"
 	},
@@ -422,9 +454,12 @@
 	"ki": {
 		"name": "کیکویو"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "کینٹونیز"
 	},
+=======
+>>>>>>> revert Open Social update
 	"rw": {
 		"name": "کینیاروانڈا"
 	},
@@ -542,6 +577,12 @@
 	"nb": {
 		"name": "نارویجین بوکمل"
 	},
+<<<<<<< HEAD
+=======
+	"nn": {
+		"name": "نارویجین نینورسک"
+	},
+>>>>>>> revert Open Social update
 	"naq": {
 		"name": "ناما"
 	},
@@ -551,9 +592,12 @@
 	"nnh": {
 		"name": "نگیمبون"
 	},
+<<<<<<< HEAD
 	"nn": {
 		"name": "نورویجینی نینورسک"
 	},
+=======
+>>>>>>> revert Open Social update
 	"nus": {
 		"name": "نویر"
 	},
@@ -575,6 +619,12 @@
 	"vo": {
 		"name": "وولاپوک"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "وولوف"
+	},
+>>>>>>> revert Open Social update
 	"vi": {
 		"name": "ویتنامی"
 	},

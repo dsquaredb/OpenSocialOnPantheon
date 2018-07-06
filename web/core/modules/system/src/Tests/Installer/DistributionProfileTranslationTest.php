@@ -30,6 +30,7 @@ class DistributionProfileTranslationTest extends InstallerTestBase {
    * {@inheritdoc}
    */
   protected function setUp() {
+<<<<<<< HEAD
     $this->info = array(
       'type' => 'profile',
       'core' => \Drupal::CORE_COMPATIBILITY,
@@ -42,6 +43,20 @@ class DistributionProfileTranslationTest extends InstallerTestBase {
         ),
       ),
     );
+=======
+    $this->info = [
+      'type' => 'profile',
+      'core' => \Drupal::CORE_COMPATIBILITY,
+      'name' => 'Distribution profile',
+      'distribution' => [
+        'name' => 'My Distribution',
+        'langcode' => $this->langcode,
+        'install' => [
+          'theme' => 'bartik',
+        ],
+      ],
+    ];
+>>>>>>> revert Open Social update
     // File API functions are not available yet.
     $path = $this->siteDirectory . '/profiles/mydistro';
     mkdir($path, 0777, TRUE);
@@ -59,23 +74,9 @@ class DistributionProfileTranslationTest extends InstallerTestBase {
     file_put_contents(\Drupal::root() . '/' . $this->siteDirectory . '/files/translations/drupal-8.0.0.de.po', $this->getPo('de'));
 
     parent::visitInstaller();
+<<<<<<< HEAD
 
-    // The language should have been automatically detected, all following
-    // screens should be translated already.
-    $elements = $this->xpath('//input[@type="submit"]/@value');
-    $this->assertEqual((string) current($elements), 'Save and continue de');
-    $this->translations['Save and continue'] = 'Save and continue de';
-
-    // Check the language direction.
-    $direction = (string) current($this->xpath('/html/@dir'));
-    $this->assertEqual($direction, 'ltr');
-
-    // Verify that the distribution name appears.
-    $this->assertRaw($this->info['distribution']['name']);
-    // Verify that the requested theme is used.
-    $this->assertRaw($this->info['distribution']['install']['theme']);
-    // Verify that the "Choose profile" step does not appear.
-    $this->assertNoText('profile');
+=======
   }
 
   /**
@@ -92,6 +93,51 @@ class DistributionProfileTranslationTest extends InstallerTestBase {
   protected function setUpProfile() {
     // This step is skipped, because there is a distribution profile.
   }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function setUpSettings() {
+>>>>>>> revert Open Social update
+    // The language should have been automatically detected, all following
+    // screens should be translated already.
+    $elements = $this->xpath('//input[@type="submit"]/@value');
+    $this->assertEqual((string) current($elements), 'Save and continue de');
+    $this->translations['Save and continue'] = 'Save and continue de';
+
+    // Check the language direction.
+    $direction = (string) current($this->xpath('/html/@dir'));
+    $this->assertEqual($direction, 'ltr');
+
+    // Verify that the distribution name appears.
+    $this->assertRaw($this->info['distribution']['name']);
+    // Verify that the requested theme is used.
+    $this->assertRaw($this->info['distribution']['install']['theme']);
+    // Verify that the "Choose profile" step does not appear.
+    $this->assertNoText('profile');
+<<<<<<< HEAD
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function setUpLanguage() {
+    // This step is skipped, because the distribution profile uses a fixed
+    // language.
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function setUpProfile() {
+    // This step is skipped, because there is a distribution profile.
+  }
+=======
+
+    parent::setUpSettings();
+  }
+
+>>>>>>> revert Open Social update
 
   /**
    * Confirms that the installation succeeded.

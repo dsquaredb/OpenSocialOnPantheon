@@ -138,19 +138,10 @@ class ConvertUrlToEmbedFilter extends FilterBase {
           $chunks[$i] = preg_replace_callback(
             $pattern,
             function ($match) {
-              try {
-                $embed = \Drupal::service('url_embed')->getEmbed(Html::decodeEntities($match[1]));
-                if ($embed) {
-                  return '<drupal-url data-embed-url="' . $match[1] . '"></drupal-url>';
-                }
-                else {
-                  return $match[1];
-                }
+              if (\Drupal::service('url_embed')->getEmbed(Html::decodeEntities($match[1]))) {
+                return '<drupal-url data-embed-url="' . $match[1] . '"></drupal-url>';
               }
-              catch (\Exception $e) {
-                // If anything goes wrong while retrieving remote data, catch
-                // the exception to avoid a WSOD and leave the URL as is.
-                watchdog_exception('url_embed', $e);
+              else {
                 return $match[1];
               }
             },

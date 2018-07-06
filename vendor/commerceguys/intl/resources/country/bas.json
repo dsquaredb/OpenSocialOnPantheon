@@ -165,7 +165,11 @@
 		"name": "Curaçao"
 	},
 	"CZ": {
+<<<<<<< HEAD
 		"name": "Czech Republic"
+=======
+		"name": "Czechia"
+>>>>>>> revert Open Social update
 	},
 	"DK": {
 		"name": "Dànmârk"

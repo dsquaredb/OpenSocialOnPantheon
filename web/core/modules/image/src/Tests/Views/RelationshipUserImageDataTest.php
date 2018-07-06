@@ -21,13 +21,18 @@ class RelationshipUserImageDataTest extends ViewTestBase {
    *
    * @var array
    */
+<<<<<<< HEAD
   public static $modules = array('image', 'image_test_views', 'user');
+=======
+  public static $modules = ['image', 'image_test_views', 'user'];
+>>>>>>> revert Open Social update
 
   /**
    * Views used by this test.
    *
    * @var array
    */
+<<<<<<< HEAD
   public static $testViews = array('test_image_user_image_data');
 
   protected function setUp() {
@@ -35,11 +40,24 @@ class RelationshipUserImageDataTest extends ViewTestBase {
 
     // Create the user profile field and instance.
     FieldStorageConfig::create(array(
+=======
+  public static $testViews = ['test_image_user_image_data'];
+
+  protected function setUp($import_test_views = TRUE) {
+    parent::setUp($import_test_views);
+
+    // Create the user profile field and instance.
+    FieldStorageConfig::create([
+>>>>>>> revert Open Social update
       'entity_type' => 'user',
       'field_name' => 'user_picture',
       'type' => 'image',
       'translatable' => '0',
+<<<<<<< HEAD
     ))->save();
+=======
+    ])->save();
+>>>>>>> revert Open Social update
     FieldConfig::create([
       'label' => 'User Picture',
       'description' => '',
@@ -49,7 +67,11 @@ class RelationshipUserImageDataTest extends ViewTestBase {
       'required' => 0,
     ])->save();
 
+<<<<<<< HEAD
     ViewTestData::createTestViews(get_class($this), array('image_test_views'));
+=======
+    ViewTestData::createTestViews(get_class($this), ['image_test_views']);
+>>>>>>> revert Open Social update
   }
 
   /**
@@ -84,12 +106,21 @@ class RelationshipUserImageDataTest extends ViewTestBase {
     ];
     $this->assertIdentical($expected, $view->getDependencies());
     $this->executeView($view);
+<<<<<<< HEAD
     $expected_result = array(
       array(
         'file_managed_user__user_picture_fid' => '2',
       ),
     );
     $column_map = array('file_managed_user__user_picture_fid' => 'file_managed_user__user_picture_fid');
+=======
+    $expected_result = [
+      [
+        'file_managed_user__user_picture_fid' => '2',
+      ],
+    ];
+    $column_map = ['file_managed_user__user_picture_fid' => 'file_managed_user__user_picture_fid'];
+>>>>>>> revert Open Social update
     $this->assertIdenticalResultset($view, $expected_result, $column_map);
   }
 

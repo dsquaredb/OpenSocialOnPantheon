@@ -227,15 +227,24 @@
 	"GE": {
 		"name": "Gruzija"
 	},
+<<<<<<< HEAD
+=======
+	"GP": {
+		"name": "Guadeloupe"
+	},
+>>>>>>> revert Open Social update
 	"GU": {
 		"name": "Guam"
 	},
 	"GG": {
 		"name": "Guernsey"
 	},
+<<<<<<< HEAD
 	"GP": {
 		"name": "Gvadalupe"
 	},
+=======
+>>>>>>> revert Open Social update
 	"GY": {
 		"name": "Gvajana"
 	},

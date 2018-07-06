@@ -27,8 +27,6 @@ class Google_Service_Dataflow_Job extends Google_Collection
   protected $executionInfoType = 'Google_Service_Dataflow_JobExecutionInfo';
   protected $executionInfoDataType = '';
   public $id;
-  protected $jobMetadataType = 'Google_Service_Dataflow_JobMetadata';
-  protected $jobMetadataDataType = '';
   public $labels;
   public $location;
   public $name;
@@ -113,20 +111,6 @@ class Google_Service_Dataflow_Job extends Google_Collection
   public function getId()
   {
     return $this->id;
-  }
-  /**
-   * @param Google_Service_Dataflow_JobMetadata
-   */
-  public function setJobMetadata(Google_Service_Dataflow_JobMetadata $jobMetadata)
-  {
-    $this->jobMetadata = $jobMetadata;
-  }
-  /**
-   * @return Google_Service_Dataflow_JobMetadata
-   */
-  public function getJobMetadata()
-  {
-    return $this->jobMetadata;
   }
   public function setLabels($labels)
   {

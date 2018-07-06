@@ -1,7 +1,10 @@
 {
+<<<<<<< HEAD
 	"yue": {
 		"name": "កន្តាំង"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kkj": {
 		"name": "កាកូ"
 	},
@@ -75,7 +78,11 @@
 		"name": "គុយរ៉ាបូរ៉ុស៊ីនី"
 	},
 	"ckb": {
+<<<<<<< HEAD
 		"name": "ឃឺដកណ្ដាល"
+=======
+		"name": "ឃើដភាគកណ្តាល"
+>>>>>>> revert Open Social update
 	},
 	"nnh": {
 		"name": "ងៀមប៊ូន"
@@ -95,12 +102,21 @@
 	"dyo": {
 		"name": "ចូឡាហ៊្វុនយី"
 	},
+<<<<<<< HEAD
 	"cs": {
 		"name": "ឆេក"
 	},
 	"chr": {
 		"name": "ឆេរូគី"
 	},
+=======
+	"chr": {
+		"name": "ឆេរូគី"
+	},
+	"cs": {
+		"name": "ឆែក"
+	},
+>>>>>>> revert Open Social update
 	"ja": {
 		"name": "ជប៉ុន"
 	},
@@ -131,6 +147,12 @@
 	"shi": {
 		"name": "តាឈីលហ៊ីត"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "តាតា"
+	},
+>>>>>>> revert Open Social update
 	"tzm": {
 		"name": "តាម៉ាសាយអាត្លាសកណ្តាល"
 	},
@@ -143,6 +165,12 @@
 	"twq": {
 		"name": "តាសាវ៉ាក់"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "តាហ្ស៊ីគ"
+	},
+>>>>>>> revert Open Social update
 	"to": {
 		"name": "តុងហ្គា"
 	},
@@ -234,7 +262,11 @@
 		"name": "បេមបា"
 	},
 	"be": {
+<<<<<<< HEAD
 		"name": "បេឡារុស្ស"
+=======
+		"name": "បេឡារុស"
+>>>>>>> revert Open Social update
 	},
 	"br": {
 		"name": "ប្រីស្តុន"
@@ -318,7 +350,14 @@
 		"name": "យ៉ាងបេន"
 	},
 	"yi": {
+<<<<<<< HEAD
 		"name": "យីឌីហ្ស"
+=======
+		"name": "យ៉ីឌីស"
+	},
+	"rn": {
+		"name": "រុណ្ឌី"
+>>>>>>> revert Open Social update
 	},
 	"rof": {
 		"name": "រុមបូ"
@@ -326,9 +365,12 @@
 	"ru": {
 		"name": "រុស្ស៊ី"
 	},
+<<<<<<< HEAD
 	"rn": {
 		"name": "រូន្ឌី"
 	},
+=======
+>>>>>>> revert Open Social update
 	"rm": {
 		"name": "រ៉ូម៉ង់"
 	},
@@ -345,7 +387,11 @@
 		"name": "លីនកាឡា"
 	},
 	"lb": {
+<<<<<<< HEAD
 		"name": "លុចហ្សំបួរ"
+=======
+		"name": "លុចសំបួ"
+>>>>>>> revert Open Social update
 	},
 	"lu": {
 		"name": "លូបាកាតានហ្គា"
@@ -365,6 +411,12 @@
 	"vo": {
 		"name": "វូឡាពូក"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "វូឡុហ្វ"
+	},
+>>>>>>> revert Open Social update
 	"vi": {
 		"name": "វៀតណាម"
 	},
@@ -401,6 +453,12 @@
 	"seh": {
 		"name": "ស៊ីណា"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "ស៊ីនឌី"
+	},
+>>>>>>> revert Open Social update
 	"sv": {
 		"name": "ស៊ុយអែត"
 	},
@@ -416,9 +474,12 @@
 	"so": {
 		"name": "សូម៉ាលី"
 	},
+<<<<<<< HEAD
 	"zu": {
 		"name": "សូលូ"
 	},
+=======
+>>>>>>> revert Open Social update
 	"xog": {
 		"name": "សូហ្គា"
 	},
@@ -455,6 +516,12 @@
 	"nl": {
 		"name": "ហូឡង់"
 	},
+<<<<<<< HEAD
+=======
+	"he": {
+		"name": "ហេប្រឺ"
+	},
+>>>>>>> revert Open Social update
 	"gu": {
 		"name": "ហ្កុយ៉ារាទី"
 	},
@@ -497,6 +564,12 @@
 	"dje": {
 		"name": "ហ្សាម៉ា"
 	},
+<<<<<<< HEAD
+=======
+	"zu": {
+		"name": "ហ្សូលូ"
+	},
+>>>>>>> revert Open Social update
 	"lkt": {
 		"name": "ឡាកូតា"
 	},
@@ -584,9 +657,12 @@
 	"ewo": {
 		"name": "អ៊ីវ៉ុនដូ"
 	},
+<<<<<<< HEAD
 	"he": {
 		"name": "អ៊ីស្រាអែល"
 	},
+=======
+>>>>>>> revert Open Social update
 	"is": {
 		"name": "អ៊ីស្លង់"
 	},
@@ -630,6 +706,10 @@
 		"name": "អេស្ពេរ៉ាន់តូ"
 	},
 	"am": {
+<<<<<<< HEAD
 		"name": "អំហារិក"
+=======
+		"name": "អាំហារិក"
+>>>>>>> revert Open Social update
 	}
 }

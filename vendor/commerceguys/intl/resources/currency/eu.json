@@ -69,9 +69,12 @@
 	"BYN": {
 		"name": "Bielorrusiako errubloa"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "Bielorrusiako errubloa (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"BOB": {
 		"name": "Boliviako bolivianoa"
 	},
@@ -358,7 +361,11 @@
 		"name": "Paraguaiko guarania"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "Peruko sol berria"
+=======
+		"name": "Peruko sol"
+>>>>>>> revert Open Social update
 	},
 	"PLN": {
 		"name": "Poloniako zlotya"

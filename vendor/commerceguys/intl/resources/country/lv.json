@@ -123,7 +123,11 @@
 		"name": "Čada"
 	},
 	"CZ": {
+<<<<<<< HEAD
 		"name": "Čehijas Republika"
+=======
+		"name": "Čehija"
+>>>>>>> revert Open Social update
 	},
 	"CL": {
 		"name": "Čīle"
@@ -276,7 +280,11 @@
 		"name": "Īrija"
 	},
 	"IS": {
+<<<<<<< HEAD
 		"name": "Īslande"
+=======
+		"name": "Islande"
+>>>>>>> revert Open Social update
 	},
 	"IT": {
 		"name": "Itālija"

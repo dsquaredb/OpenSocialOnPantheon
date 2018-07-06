@@ -71,6 +71,12 @@
 	"vo": {
 		"name": "ヴォラピュク語"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "ウォロフ語"
+	},
+>>>>>>> revert Open Social update
 	"uk": {
 		"name": "ウクライナ語"
 	},
@@ -173,9 +179,12 @@
 	"kl": {
 		"name": "グリーンランド語"
 	},
+<<<<<<< HEAD
 	"ckb": {
 		"name": "クルド語(ソラニー)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"hr": {
 		"name": "クロアチア語"
 	},
@@ -230,6 +239,12 @@
 	"dyo": {
 		"name": "ジョラ＝フォニィ語"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "シンド語"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "シンハラ語"
 	},
@@ -284,9 +299,21 @@
 	"twq": {
 		"name": "タサワク語"
 	},
+<<<<<<< HEAD
 	"shi": {
 		"name": "タシルハイト語"
 	},
+=======
+	"tg": {
+		"name": "タジク語"
+	},
+	"shi": {
+		"name": "タシルハイト語"
+	},
+	"tt": {
+		"name": "タタール語"
+	},
+>>>>>>> revert Open Social update
 	"ta": {
 		"name": "タミル語"
 	},
@@ -584,9 +611,12 @@
 	"cu": {
 		"name": "教会スラブ語"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "広東語"
 	},
+=======
+>>>>>>> revert Open Social update
 	"hsb": {
 		"name": "高地ソルブ語"
 	},
@@ -599,6 +629,12 @@
 	"tzm": {
 		"name": "中央アトラス・タマジクト語"
 	},
+<<<<<<< HEAD
+=======
+	"ckb": {
+		"name": "中央クルド語"
+	},
+>>>>>>> revert Open Social update
 	"zh": {
 		"name": "中国語"
 	},

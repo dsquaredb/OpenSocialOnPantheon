@@ -4,9 +4,13 @@ description: 'Open Social install profile.'
 project: 'social'
 core: '8.x'
 <<<<<<< HEAD
+<<<<<<< HEAD
 version: '8.x-1.0-beta5'
 =======
 version: '8.x-1.18'
+=======
+version: '8.x-1.16'
+>>>>>>> revert Open Social update
 project: social
 >>>>>>> Update Open Social to 8.x-2.1
 

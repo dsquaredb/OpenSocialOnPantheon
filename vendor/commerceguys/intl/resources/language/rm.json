@@ -86,9 +86,12 @@
 	"km": {
 		"name": "cambodschan"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Cantonese"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kk": {
 		"name": "casac"
 	},
@@ -497,6 +500,12 @@
 	"ii": {
 		"name": "sichuan yi"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindhi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "singalais"
 	},
@@ -536,6 +545,12 @@
 	"shi": {
 		"name": "Tachelhit"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tadjik"
+	},
+>>>>>>> revert Open Social update
 	"th": {
 		"name": "tailandais"
 	},
@@ -551,6 +566,12 @@
 	"twq": {
 		"name": "Tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tatar"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telugu"
 	},
@@ -620,6 +641,12 @@
 	"wae": {
 		"name": "Walser"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "Yangben"
 	},

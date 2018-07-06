@@ -100,7 +100,7 @@ class LinkWidget extends WidgetBase {
    */
   protected static function getUserEnteredStringAsUri($string) {
     // By default, assume the entered string is an URI.
-    $uri = trim($string);
+    $uri = $string;
 
     // Detect entity autocomplete string, map to 'entity:' URI.
     $entity_id = EntityAutocomplete::extractEntityIdFromAutocompleteInput($string);
@@ -154,17 +154,6 @@ class LinkWidget extends WidgetBase {
       // We expect the field name placeholder value to be wrapped in t() here,
       // so it won't be escaped again as it's already marked safe.
       $form_state->setError($element['title'], t('@name field is required.', array('@name' => $element['title']['#title'])));
-    }
-  }
-
-  /**
-   * Form element validation handler for the 'title' element.
-   *
-   * Requires the URL value if a link title was filled in.
-   */
-  public static function validateTitleNoLink(&$element, FormStateInterface $form_state, $form) {
-    if ($element['uri']['#value'] === '' && $element['title']['#value'] !== '') {
-      $form_state->setError($element['uri'], t('The @uri field is required when the @title field is specified.', ['@title' => $element['title']['#title'], '@uri' => $element['uri']['#title']]));
     }
   }
 
@@ -231,15 +220,17 @@ class LinkWidget extends WidgetBase {
     // non-empty. Omit the validation on the field edit form, since the field
     // settings cannot be saved otherwise.
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (!$this->isDefaultValueWidget($form_state) && $this->getFieldSetting('title') == DRUPAL_REQUIRED) {
       $element['#element_validate'][] = array(get_called_class(), 'validateTitleElement');
 =======
     //
     // Validate that title field is filled out (regardless of uri) when it is a
     // required field.
+=======
+>>>>>>> revert Open Social update
     if (!$this->isDefaultValueWidget($form_state) && $this->getFieldSetting('title') === DRUPAL_REQUIRED) {
       $element['#element_validate'][] = [get_called_class(), 'validateTitleElement'];
-      $element['#element_validate'][] = [get_called_class(), 'validateTitleNoLink'];
 
       if (!$element['title']['#required']) {
         // Make title required on the front-end when URI filled-in.
@@ -257,12 +248,6 @@ class LinkWidget extends WidgetBase {
         ];
       }
 >>>>>>> Update Open Social to 8.x-2.1
-    }
-
-    // Ensure that a URI is always entered when an optional title field is
-    // submitted.
-    if (!$this->isDefaultValueWidget($form_state) && $this->getFieldSetting('title') == DRUPAL_OPTIONAL) {
-      $element['#element_validate'][] = [get_called_class(), 'validateTitleNoLink'];
     }
 
     // Exposing the attributes array in the widget is left for alternate and more

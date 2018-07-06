@@ -77,9 +77,12 @@
 	"my": {
 		"name": "burmašćina"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Cantonese"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ksh": {
 		"name": "Colognian"
 	},
@@ -506,6 +509,12 @@
 	"ii": {
 		"name": "sichuan yi"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindhišćina"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "singhalšćina"
 	},
@@ -551,6 +560,12 @@
 	"de-CH": {
 		"name": "šwicarska wysokoněmčina"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tadźikšćina"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "taita"
 	},
@@ -569,6 +584,12 @@
 	"shi": {
 		"name": "tašelhit"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tataršćina"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telugu"
 	},
@@ -623,6 +644,12 @@
 	"wae": {
 		"name": "Walser"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "Yangben"
 	},

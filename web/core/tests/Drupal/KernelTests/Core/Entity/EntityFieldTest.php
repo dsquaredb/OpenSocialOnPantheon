@@ -16,8 +16,11 @@ use Drupal\Core\TypedData\ListInterface;
 use Drupal\Core\TypedData\Type\StringInterface;
 use Drupal\Core\TypedData\TypedDataInterface;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use Drupal\entity_test\Entity\EntityTest;
+=======
+>>>>>>> revert Open Social update
 use Drupal\entity_test\Entity\EntityTestComputedField;
 >>>>>>> Update Open Social to 8.x-2.1
 use Drupal\node\Entity\Node;
@@ -870,6 +873,7 @@ class EntityFieldTest extends EntityKernelTestBase {
   }
 
   /**
+<<<<<<< HEAD
    * Tests an entity reference computed field.
    */
   public function testEntityReferenceComputedField() {
@@ -897,6 +901,8 @@ class EntityFieldTest extends EntityKernelTestBase {
 
   /**
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
    * Executes the computed properties tests for the given entity type.
    *
    * @param string $entity_type

@@ -1,9 +1,16 @@
 {
 	"en-AU": {
+<<<<<<< HEAD
 		"name": "австрали англи"
 	},
 	"de-AT": {
 		"name": "австри герман"
+=======
+		"name": "австрали-англи"
+	},
+	"de-AT": {
+		"name": "австри-герман"
+>>>>>>> revert Open Social update
 	},
 	"agq": {
 		"name": "агем"
@@ -33,7 +40,11 @@
 		"name": "ассам"
 	},
 	"ast": {
+<<<<<<< HEAD
 		"name": "астури хэл"
+=======
+		"name": "астури"
+>>>>>>> revert Open Social update
 	},
 	"asa": {
 		"name": "асу"
@@ -51,10 +62,17 @@
 		"name": "бамбара"
 	},
 	"fy": {
+<<<<<<< HEAD
 		"name": "баруун фризын"
 	},
 	"bas": {
 		"name": "басаа хэл"
+=======
+		"name": "баруун фриз"
+	},
+	"bas": {
+		"name": "басаа"
+>>>>>>> revert Open Social update
 	},
 	"eu": {
 		"name": "баск"
@@ -90,7 +108,11 @@
 		"name": "бретон"
 	},
 	"en-GB": {
+<<<<<<< HEAD
 		"name": "британийн англи"
+=======
+		"name": "британи-англи"
+>>>>>>> revert Open Social update
 	},
 	"vai": {
 		"name": "вай"
@@ -98,6 +120,12 @@
 	"vo": {
 		"name": "волапюк"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "волоф"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "вунжо"
 	},
@@ -105,7 +133,11 @@
 		"name": "вьетнам"
 	},
 	"gl": {
+<<<<<<< HEAD
 		"name": "галик"
+=======
+		"name": "галего"
+>>>>>>> revert Open Social update
 	},
 	"lg": {
 		"name": "ганда"
@@ -113,9 +145,12 @@
 	"de": {
 		"name": "герман"
 	},
+<<<<<<< HEAD
 	"nl": {
 		"name": "голланд"
 	},
+=======
+>>>>>>> revert Open Social update
 	"el": {
 		"name": "грек"
 	},
@@ -131,6 +166,12 @@
 	"da": {
 		"name": "дани"
 	},
+<<<<<<< HEAD
+=======
+	"dsb": {
+		"name": "доод сорби"
+	},
+>>>>>>> revert Open Social update
 	"dua": {
 		"name": "дуала"
 	},
@@ -140,21 +181,33 @@
 	"he": {
 		"name": "еврей"
 	},
+<<<<<<< HEAD
 	"pt-PT": {
 		"name": "европын португаль"
 	},
+=======
+>>>>>>> revert Open Social update
 	"yo": {
 		"name": "ёруба"
 	},
 	"dyo": {
 		"name": "жола-фони"
 	},
+<<<<<<< HEAD
 	"dz": {
 		"name": "жонха"
 	},
 	"dje": {
 		"name": "зарма"
 	},
+=======
+	"dje": {
+		"name": "зарма"
+	},
+	"dz": {
+		"name": "зонха"
+	},
+>>>>>>> revert Open Social update
 	"zu": {
 		"name": "зулу"
 	},
@@ -179,6 +232,12 @@
 	"es": {
 		"name": "испани"
 	},
+<<<<<<< HEAD
+=======
+	"es-MX": {
+		"name": "испани (Мексик)"
+	},
+>>>>>>> revert Open Social update
 	"it": {
 		"name": "итали"
 	},
@@ -189,7 +248,11 @@
 		"name": "кабүвердиану"
 	},
 	"kkj": {
+<<<<<<< HEAD
 		"name": "како хэл"
+=======
+		"name": "како"
+>>>>>>> revert Open Social update
 	},
 	"kl": {
 		"name": "калалисут"
@@ -200,6 +263,7 @@
 	"kam": {
 		"name": "камба"
 	},
+<<<<<<< HEAD
 	"km": {
 		"name": "камбож"
 	},
@@ -208,13 +272,23 @@
 	},
 	"fr-CA": {
 		"name": "канад франц"
+=======
+	"en-CA": {
+		"name": "канад-англи"
+	},
+	"fr-CA": {
+		"name": "канад-франц"
+>>>>>>> revert Open Social update
 	},
 	"kn": {
 		"name": "каннада"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "кантон хэл"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ca": {
 		"name": "каталан"
 	},
@@ -225,7 +299,11 @@
 		"name": "квазио"
 	},
 	"ksh": {
+<<<<<<< HEAD
 		"name": "кёльш хэл"
+=======
+		"name": "кёльш"
+>>>>>>> revert Open Social update
 	},
 	"ses": {
 		"name": "кёраборо сени"
@@ -237,22 +315,40 @@
 		"name": "кикуюү"
 	},
 	"rw": {
+<<<<<<< HEAD
 		"name": "кинярванда"
+=======
+		"name": "киньяруанда"
+	},
+	"ky": {
+		"name": "киргиз"
+>>>>>>> revert Open Social update
 	},
 	"khq": {
 		"name": "койра чини"
 	},
 	"sw-CD": {
+<<<<<<< HEAD
 		"name": "конго свахили"
+=======
+		"name": "конгогийн свахили"
+>>>>>>> revert Open Social update
 	},
 	"kok": {
 		"name": "конкани"
 	},
 	"kw": {
+<<<<<<< HEAD
 		"name": "корны"
 	},
 	"ky": {
 		"name": "кыргыз"
+=======
+		"name": "корн"
+	},
+	"km": {
+		"name": "кхмер"
+>>>>>>> revert Open Social update
 	},
 	"lkt": {
 		"name": "лакота"
@@ -272,9 +368,12 @@
 	"lt": {
 		"name": "литва"
 	},
+<<<<<<< HEAD
 	"dsb": {
 		"name": "ловер-сорби"
 	},
+=======
+>>>>>>> revert Open Social update
 	"lu": {
 		"name": "луба-катанга"
 	},
@@ -306,10 +405,17 @@
 		"name": "малай"
 	},
 	"ml": {
+<<<<<<< HEAD
 		"name": "малайлам"
 	},
 	"mt": {
 		"name": "малти"
+=======
+		"name": "малаялам"
+	},
+	"mt": {
+		"name": "малта"
+>>>>>>> revert Open Social update
 	},
 	"gv": {
 		"name": "манкс"
@@ -323,9 +429,12 @@
 	"jmc": {
 		"name": "мачамэ"
 	},
+<<<<<<< HEAD
 	"es-MX": {
 		"name": "мексикийн испани"
 	},
+=======
+>>>>>>> revert Open Social update
 	"mer": {
 		"name": "меру"
 	},
@@ -353,6 +462,12 @@
 	"jgo": {
 		"name": "нгомба"
 	},
+<<<<<<< HEAD
+=======
+	"nl": {
+		"name": "нидерланд"
+	},
+>>>>>>> revert Open Social update
 	"nb": {
 		"name": "норвегийн букмол"
 	},
@@ -375,10 +490,17 @@
 		"name": "орос"
 	},
 	"os": {
+<<<<<<< HEAD
 		"name": "оссетийн"
 	},
 	"pa": {
 		"name": "панжаб"
+=======
+		"name": "оссетин"
+	},
+	"pa": {
+		"name": "панжаби"
+>>>>>>> revert Open Social update
 	},
 	"ps": {
 		"name": "пашто"
@@ -390,10 +512,20 @@
 		"name": "польш"
 	},
 	"pt": {
+<<<<<<< HEAD
 		"name": "португаль"
 	},
 	"prg": {
 		"name": "пруссийн"
+=======
+		"name": "португал"
+	},
+	"pt-PT": {
+		"name": "португал (Португал)"
+	},
+	"prg": {
+		"name": "прусс"
+>>>>>>> revert Open Social update
 	},
 	"rwk": {
 		"name": "рва"
@@ -431,6 +563,12 @@
 	"sr": {
 		"name": "серб"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "синдхи"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "синхала"
 	},
@@ -449,15 +587,26 @@
 	"so": {
 		"name": "сомали"
 	},
+<<<<<<< HEAD
 	"ckb": {
 		"name": "сорани күрд"
 	},
 	"cu": {
 		"name": "сүмийн славян хэл"
+=======
+	"cu": {
+		"name": "сүмийн славян"
+>>>>>>> revert Open Social update
 	},
 	"ii": {
 		"name": "сычуань и"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "тажик"
+	},
+>>>>>>> revert Open Social update
 	"th": {
 		"name": "тай"
 	},
@@ -473,11 +622,21 @@
 	"twq": {
 		"name": "тасавак"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "татар"
+	},
+>>>>>>> revert Open Social update
 	"shi": {
 		"name": "тачелхит"
 	},
 	"ti": {
+<<<<<<< HEAD
 		"name": "тигрина"
+=======
+		"name": "тигринья"
+>>>>>>> revert Open Social update
 	},
 	"to": {
 		"name": "тонга"
@@ -485,6 +644,12 @@
 	"tzm": {
 		"name": "төв атласын тамазайт"
 	},
+<<<<<<< HEAD
+=======
+	"ckb": {
+		"name": "төв курд"
+	},
+>>>>>>> revert Open Social update
 	"bo": {
 		"name": "төвд"
 	},
@@ -504,7 +669,11 @@
 		"name": "узбек"
 	},
 	"ug": {
+<<<<<<< HEAD
 		"name": "уйгар"
+=======
+		"name": "уйгур"
+>>>>>>> revert Open Social update
 	},
 	"uk": {
 		"name": "украин"
@@ -540,7 +709,11 @@
 		"name": "франц"
 	},
 	"fur": {
+<<<<<<< HEAD
 		"name": "фриулийн"
+=======
+		"name": "фриулан"
+>>>>>>> revert Open Social update
 	},
 	"ff": {
 		"name": "фула"
@@ -593,6 +766,7 @@
 	"sv": {
 		"name": "швед"
 	},
+<<<<<<< HEAD
 	"gsw": {
 		"name": "швейцари герман"
 	},
@@ -601,12 +775,26 @@
 	},
 	"fr-CH": {
 		"name": "швейцари франц"
+=======
+	"de-CH": {
+		"name": "швейцари дээр герман"
+	},
+	"gsw": {
+		"name": "швейцари-герман"
+	},
+	"fr-CH": {
+		"name": "швейцари-франц"
+>>>>>>> revert Open Social update
 	},
 	"sn": {
 		"name": "шона"
 	},
 	"gd": {
+<<<<<<< HEAD
 		"name": "шотланд келт"
+=======
+		"name": "шотландын гел"
+>>>>>>> revert Open Social update
 	},
 	"ewo": {
 		"name": "эвондо"

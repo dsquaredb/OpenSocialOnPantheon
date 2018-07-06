@@ -600,7 +600,7 @@ function drupal_process_states(&$elements) {
  *     'id' => 'my-module-table',
  *   ),
  * );
- * return \Drupal::service('renderer')->render($table);
+ * return drupal_render($table);
  * @endcode
  *
  * In the theme function for the form, a special class must be added to each
@@ -888,9 +888,13 @@ function drupal_render(&$elements, $is_recursive_call = FALSE) {
  *   they are available.
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @see drupal_render()
 =======
  * @see \Drupal\Core\Render\RendererInterface::render()
+=======
+ * @see drupal_render()
+>>>>>>> revert Open Social update
  * @see https://www.drupal.org/node/2912757
 >>>>>>> Update Open Social to 8.x-2.1
  */

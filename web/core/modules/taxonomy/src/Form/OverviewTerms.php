@@ -207,22 +207,12 @@ class OverviewTerms extends FormBase {
       '#attributes' => array(
 =======
       '#empty' => $empty,
-      '#header' => [
-        'term' => $this->t('Name'),
-        'operations' => $this->t('Operations'),
-        'weight' => $this->t('Weight'),
-      ],
       '#attributes' => [
 >>>>>>> Update Open Social to 8.x-2.1
         'id' => 'taxonomy',
       ),
     );
     foreach ($current_page as $key => $term) {
-      $form['terms'][$key] = [
-        'term' => [],
-        'operations' => [],
-        'weight' => [],
-      ];
       /** @var $term \Drupal\Core\Entity\EntityInterface */
       $form['terms'][$key]['#term'] = $term;
       $indentation = array();
@@ -329,6 +319,7 @@ class OverviewTerms extends FormBase {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if ($parent_fields) {
       $form['terms']['#tabledrag'][] = array(
         'action' => 'match',
@@ -349,8 +340,13 @@ class OverviewTerms extends FormBase {
         'backStep' => $back_step,
         'forwardStep' => $forward_step,
 =======
+=======
+    $form['terms']['#header'] = [$this->t('Name')];
+
+>>>>>>> revert Open Social update
     $this->renderer->addCacheableDependency($form['terms'], $change_weight_access);
     if ($change_weight_access->isAllowed()) {
+      $form['terms']['#header'][] = $this->t('Weight');
       if ($parent_fields) {
         $form['terms']['#tabledrag'][] = [
           'action' => 'match',
@@ -386,10 +382,15 @@ class OverviewTerms extends FormBase {
     );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if ($taxonomy_vocabulary->getHierarchy() != TAXONOMY_HIERARCHY_MULTIPLE && count($tree) > 1) {
       $form['actions'] = array('#type' => 'actions', '#tree' => FALSE);
       $form['actions']['submit'] = array(
 =======
+=======
+    $form['terms']['#header'][] = $this->t('Operations');
+
+>>>>>>> revert Open Social update
     if (($taxonomy_vocabulary->getHierarchy() !== VocabularyInterface::HIERARCHY_MULTIPLE && count($tree) > 1) && $change_weight_access->isAllowed()) {
       $form['actions'] = ['#type' => 'actions', '#tree' => FALSE];
       $form['actions']['submit'] = [

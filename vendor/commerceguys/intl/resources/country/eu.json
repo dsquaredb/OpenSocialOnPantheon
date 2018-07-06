@@ -5,6 +5,12 @@
 	"CF": {
 		"name": "Afrika Erdiko Errepublika"
 	},
+<<<<<<< HEAD
+=======
+	"AI": {
+		"name": "Aingira"
+	},
+>>>>>>> revert Open Social update
 	"AX": {
 		"name": "Aland uharteak"
 	},
@@ -17,9 +23,12 @@
 	"DZ": {
 		"name": "Aljeria"
 	},
+<<<<<<< HEAD
 	"AS": {
 		"name": "Amerikar Samoa"
 	},
+=======
+>>>>>>> revert Open Social update
 	"US": {
 		"name": "Ameriketako Estatu Batuak"
 	},
@@ -29,9 +38,12 @@
 	"AD": {
 		"name": "Andorra"
 	},
+<<<<<<< HEAD
 	"AI": {
 		"name": "Angila"
 	},
+=======
+>>>>>>> revert Open Social update
 	"AO": {
 		"name": "Angola"
 	},
@@ -153,7 +165,11 @@
 		"name": "Danimarka"
 	},
 	"DG": {
+<<<<<<< HEAD
 		"name": "Diego Garcia"
+=======
+		"name": "Diego García"
+>>>>>>> revert Open Social update
 	},
 	"DJ": {
 		"name": "Djibuti"
@@ -240,7 +256,11 @@
 		"name": "Ginea"
 	},
 	"GW": {
+<<<<<<< HEAD
 		"name": "Ginea-Bissau"
+=======
+		"name": "Ginea Bissau"
+>>>>>>> revert Open Social update
 	},
 	"GD": {
 		"name": "Grenada"
@@ -294,7 +314,11 @@
 		"name": "Honduras"
 	},
 	"HK": {
+<<<<<<< HEAD
 		"name": "Hong Kong AEB Txina"
+=======
+		"name": "Hong Kong Txinako AEB"
+>>>>>>> revert Open Social update
 	},
 	"HU": {
 		"name": "Hungaria"
@@ -312,7 +336,11 @@
 		"name": "Ipar Korea"
 	},
 	"MP": {
+<<<<<<< HEAD
 		"name": "Iparraldeko Mariana uharteak"
+=======
+		"name": "Ipar Mariana uharteak"
+>>>>>>> revert Open Social update
 	},
 	"IQ": {
 		"name": "Irak"
@@ -384,7 +412,11 @@
 		"name": "Komoreak"
 	},
 	"CG": {
+<<<<<<< HEAD
 		"name": "Kongo (Brazzaville)"
+=======
+		"name": "Kongo"
+>>>>>>> revert Open Social update
 	},
 	"CD": {
 		"name": "Kongoko Errepublika Demokratikoa"
@@ -429,7 +461,11 @@
 		"name": "Luxenburgo"
 	},
 	"MO": {
+<<<<<<< HEAD
 		"name": "Macau AEB Txina"
+=======
+		"name": "Macau Txinako AEB"
+>>>>>>> revert Open Social update
 	},
 	"MG": {
 		"name": "Madagaskar"
@@ -459,7 +495,11 @@
 		"name": "Maroko"
 	},
 	"MH": {
+<<<<<<< HEAD
 		"name": "Marshall uharteak"
+=======
+		"name": "Marshall Uharteak"
+>>>>>>> revert Open Social update
 	},
 	"MQ": {
 		"name": "Martinika"
@@ -594,11 +634,21 @@
 		"name": "Saint-Pierre eta Mikelune"
 	},
 	"SB": {
+<<<<<<< HEAD
 		"name": "Salomon uharteak"
+=======
+		"name": "Salomon Uharteak"
+>>>>>>> revert Open Social update
 	},
 	"WS": {
 		"name": "Samoa"
 	},
+<<<<<<< HEAD
+=======
+	"AS": {
+		"name": "Samoa Estatubatuarra"
+	},
+>>>>>>> revert Open Social update
 	"SM": {
 		"name": "San Marino"
 	},
@@ -708,7 +758,11 @@
 		"name": "Txad"
 	},
 	"CZ": {
+<<<<<<< HEAD
 		"name": "Txekiar Errepublika"
+=======
+		"name": "Txekia"
+>>>>>>> revert Open Social update
 	},
 	"CL": {
 		"name": "Txile"

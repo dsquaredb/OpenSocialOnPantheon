@@ -116,9 +116,12 @@
 	"ewo": {
 		"name": "ewondo"
 	},
+<<<<<<< HEAD
 	"fa": {
 		"name": "farsi"
 	},
+=======
+>>>>>>> revert Open Social update
 	"fil": {
 		"name": "filipino"
 	},
@@ -227,9 +230,12 @@
 	"kn": {
 		"name": "kannada"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "kantoninkiina"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kea": {
 		"name": "kapverdenkreoli"
 	},
@@ -434,6 +440,12 @@
 	"zh-Hant": {
 		"name": "perinteinen kiina"
 	},
+<<<<<<< HEAD
+=======
+	"fa": {
+		"name": "persia"
+	},
+>>>>>>> revert Open Social update
 	"nd": {
 		"name": "pohjois-ndebele"
 	},
@@ -497,6 +509,12 @@
 	"ii": {
 		"name": "sichuanin-yi"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindhi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "sinhala"
 	},
@@ -533,6 +551,12 @@
 	"sw": {
 		"name": "swahili"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tadžikki"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "taita"
 	},
@@ -548,6 +572,12 @@
 	"shi": {
 		"name": "tašelhit"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tataari"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telugu"
 	},
@@ -620,6 +650,12 @@
 	"wae": {
 		"name": "walser"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "yangben"
 	},

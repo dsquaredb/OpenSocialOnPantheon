@@ -348,7 +348,11 @@
 		"name": "ਚੀਨ"
 	},
 	"CZ": {
+<<<<<<< HEAD
 		"name": "ਚੈੱਕ ਗਣਰਾਜ"
+=======
+		"name": "ਚੈਕੀਆ"
+>>>>>>> revert Open Social update
 	},
 	"JP": {
 		"name": "ਜਪਾਨ"
@@ -437,15 +441,24 @@
 	"TH": {
 		"name": "ਥਾਈਲੈਂਡ"
 	},
+<<<<<<< HEAD
 	"ZA": {
 		"name": "ਦੱਖਣ ਅਫਰੀਕਾ"
 	},
+=======
+>>>>>>> revert Open Social update
 	"SS": {
 		"name": "ਦੱਖਣ ਸੁਡਾਨ"
 	},
 	"KR": {
 		"name": "ਦੱਖਣ ਕੋਰੀਆ"
 	},
+<<<<<<< HEAD
+=======
+	"ZA": {
+		"name": "ਦੱਖਣੀ ਅਫਰੀਕਾ"
+	},
+>>>>>>> revert Open Social update
 	"GS": {
 		"name": "ਦੱਖਣੀ ਜਾਰਜੀਆ ਅਤੇ ਦੱਖਣੀ ਸੈਂਡਵਿਚ ਟਾਪੂ"
 	},
@@ -684,7 +697,11 @@
 		"name": "ਮੋਲਡੋਵਾ"
 	},
 	"MU": {
+<<<<<<< HEAD
 		"name": "ਮੌਰਿਸ਼ਸ"
+=======
+		"name": "ਮੌਰੀਸ਼ਸ"
+>>>>>>> revert Open Social update
 	},
 	"YE": {
 		"name": "ਯਮਨ"

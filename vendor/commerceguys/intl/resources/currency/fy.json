@@ -357,7 +357,11 @@
 		"name": "Paraguayaanske guarani"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "Peruaanske nieuwe sol"
+=======
+		"name": "Peruaanske sol"
+>>>>>>> revert Open Social update
 	},
 	"PLN": {
 		"name": "Poalske zloty"
@@ -486,9 +490,12 @@
 	"BYN": {
 		"name": "Wit-Russyske roebel"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "Wit-Russyske roebel (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ISK": {
 		"name": "Yslânske kroon"
 	},

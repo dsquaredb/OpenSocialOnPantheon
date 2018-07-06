@@ -95,9 +95,12 @@
 	"kn": {
 		"name": "Cannadais"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Cantainis"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kk": {
 		"name": "Casaicis"
 	},
@@ -107,12 +110,15 @@
 	"qu": {
 		"name": "Ceatsuais"
 	},
+<<<<<<< HEAD
 	"tzm": {
 		"name": "Central Atlas Tamazight"
 	},
 	"ckb": {
 		"name": "Central Kurdish"
 	},
+=======
+>>>>>>> revert Open Social update
 	"cgg": {
 		"name": "Chiga"
 	},
@@ -128,6 +134,12 @@
 	"ky": {
 		"name": "Cirgisis"
 	},
+<<<<<<< HEAD
+=======
+	"ckb": {
+		"name": "Coirdis Lárnach"
+	},
+>>>>>>> revert Open Social update
 	"ko": {
 		"name": "Cóiréis"
 	},
@@ -239,9 +251,12 @@
 	"yo": {
 		"name": "Iarúibis"
 	},
+<<<<<<< HEAD
 	"smn": {
 		"name": "Inari Sami"
 	},
+=======
+>>>>>>> revert Open Social update
 	"id": {
 		"name": "Indinéisis"
 	},
@@ -461,6 +476,12 @@
 	"nds-NL": {
 		"name": "Sacsainis Íochtarach"
 	},
+<<<<<<< HEAD
+=======
+	"smn": {
+		"name": "Sáimis Inari"
+	},
+>>>>>>> revert Open Social update
 	"se": {
 		"name": "Sáimis Thuaidh"
 	},
@@ -506,6 +527,12 @@
 	"ii": {
 		"name": "Sichuan Yi"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "Sindis"
+	},
+>>>>>>> revert Open Social update
 	"zh": {
 		"name": "Sínis"
 	},
@@ -545,9 +572,12 @@
 	"es-MX": {
 		"name": "Spáinnis Mheicsiceach"
 	},
+<<<<<<< HEAD
 	"zgh": {
 		"name": "Standard Moroccan Tamazight"
 	},
+=======
+>>>>>>> revert Open Social update
 	"sv": {
 		"name": "Sualainnis"
 	},
@@ -563,15 +593,36 @@
 	"shi": {
 		"name": "Tachelhit"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "Táidsícis"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "Taita"
 	},
 	"ta": {
 		"name": "Tamailis"
 	},
+<<<<<<< HEAD
 	"twq": {
 		"name": "Tasawaq"
 	},
+=======
+	"tzm": {
+		"name": "Tamazight Atlais Láir"
+	},
+	"zgh": {
+		"name": "Tamazight Caighdeánach Mharacó"
+	},
+	"twq": {
+		"name": "Tasawaq"
+	},
+	"tt": {
+		"name": "Tatairis"
+	},
+>>>>>>> revert Open Social update
 	"th": {
 		"name": "Téalainnis"
 	},
@@ -617,6 +668,12 @@
 	"vi": {
 		"name": "Vítneaimis"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "Volaifis"
+	},
+>>>>>>> revert Open Social update
 	"vo": {
 		"name": "Volapük"
 	},

@@ -1,10 +1,17 @@
 {
 	"AFN": {
+<<<<<<< HEAD
 		"name": "afgani afgano",
 		"symbol": "Af"
 	},
 	"MGA": {
 		"name": "ariary malgache"
+=======
+		"name": "afgani"
+	},
+	"MGA": {
+		"name": "ariari"
+>>>>>>> revert Open Social update
 	},
 	"THB": {
 		"name": "baht tailandés"
@@ -13,7 +20,11 @@
 		"name": "balboa panameño"
 	},
 	"ETB": {
+<<<<<<< HEAD
 		"name": "birr etíope"
+=======
+		"name": "bir"
+>>>>>>> revert Open Social update
 	},
 	"VEF": {
 		"name": "bolívar venezolano"
@@ -22,7 +33,11 @@
 		"name": "boliviano"
 	},
 	"GHS": {
+<<<<<<< HEAD
 		"name": "cedi ghanés"
+=======
+		"name": "cedi"
+>>>>>>> revert Open Social update
 	},
 	"KES": {
 		"name": "chelín keniano"
@@ -61,7 +76,11 @@
 		"name": "corona sueca"
 	},
 	"GMD": {
+<<<<<<< HEAD
 		"name": "dalasi gambiano"
+=======
+		"name": "dalasi"
+>>>>>>> revert Open Social update
 	},
 	"DZD": {
 		"name": "dinar argelino"
@@ -97,11 +116,18 @@
 		"name": "dírham marroquí"
 	},
 	"STD": {
+<<<<<<< HEAD
 		"name": "dobra de Santo Tomé y Príncipe"
 	},
 	"AUD": {
 		"name": "dólar australiano",
 		"symbol": "AU$"
+=======
+		"name": "dobra"
+	},
+	"AUD": {
+		"name": "dólar australiano"
+>>>>>>> revert Open Social update
 	},
 	"BSD": {
 		"name": "dólar bahameño"
@@ -112,12 +138,19 @@
 	"BZD": {
 		"name": "dólar beliceño"
 	},
+<<<<<<< HEAD
+=======
+	"BND": {
+		"name": "dólar bruneano"
+	},
+>>>>>>> revert Open Social update
 	"CAD": {
 		"name": "dólar canadiense"
 	},
 	"BMD": {
 		"name": "dólar de Bermudas"
 	},
+<<<<<<< HEAD
 	"BND": {
 		"name": "dólar de Brunéi"
 	},
@@ -130,6 +163,11 @@
 	"SBD": {
 		"name": "dólar de las Islas Salomón"
 	},
+=======
+	"KYD": {
+		"name": "dólar de las Islas Caimán"
+	},
+>>>>>>> revert Open Social update
 	"TTD": {
 		"name": "dólar de Trinidad y Tobago"
 	},
@@ -145,6 +183,12 @@
 	"GYD": {
 		"name": "dólar guyanés"
 	},
+<<<<<<< HEAD
+=======
+	"HKD": {
+		"name": "dólar hongkonés"
+	},
+>>>>>>> revert Open Social update
 	"JMD": {
 		"name": "dólar jamaicano"
 	},
@@ -157,6 +201,12 @@
 	"NZD": {
 		"name": "dólar neozelandés"
 	},
+<<<<<<< HEAD
+=======
+	"SBD": {
+		"name": "dólar salomonense"
+	},
+>>>>>>> revert Open Social update
 	"SGD": {
 		"name": "dólar singapurense"
 	},
@@ -167,7 +217,11 @@
 		"name": "dólar zimbabuense"
 	},
 	"VND": {
+<<<<<<< HEAD
 		"name": "dong vietnamita"
+=======
+		"name": "dong"
+>>>>>>> revert Open Social update
 	},
 	"AMD": {
 		"name": "dram armenio"
@@ -175,16 +229,29 @@
 	"CVE": {
 		"name": "escudo de Cabo Verde"
 	},
+<<<<<<< HEAD
+=======
+	"PLN": {
+		"name": "esloti"
+	},
+>>>>>>> revert Open Social update
 	"EUR": {
 		"name": "euro"
 	},
 	"AWG": {
+<<<<<<< HEAD
 		"name": "florín arubeño",
 		"symbol": "Afl."
 	},
 	"ANG": {
 		"name": "florín de las Antillas Neerlandesas",
 		"symbol": "Naf"
+=======
+		"name": "florín arubeño"
+	},
+	"ANG": {
+		"name": "florín de las Antillas Neerlandesas"
+>>>>>>> revert Open Social update
 	},
 	"HUF": {
 		"name": "forinto húngaro"
@@ -192,6 +259,7 @@
 	"BIF": {
 		"name": "franco burundés"
 	},
+<<<<<<< HEAD
 	"XOF": {
 		"name": "franco CFA BCEAO"
 	},
@@ -200,6 +268,17 @@
 	},
 	"XPF": {
 		"name": "franco CFP"
+=======
+	"XAF": {
+		"name": "franco CFA de África Central"
+	},
+	"XOF": {
+		"name": "franco CFA de África Occidental"
+	},
+	"XPF": {
+		"name": "franco CFP",
+		"symbol": "CFPF"
+>>>>>>> revert Open Social update
 	},
 	"KMF": {
 		"name": "franco comorense"
@@ -223,11 +302,16 @@
 		"name": "gourde haitiano"
 	},
 	"UAH": {
+<<<<<<< HEAD
 		"name": "grivna ucraniana"
+=======
+		"name": "grivna"
+>>>>>>> revert Open Social update
 	},
 	"PYG": {
 		"name": "guaraní paraguayo"
 	},
+<<<<<<< HEAD
 	"PGK": {
 		"name": "kina de Papúa Nueva Guinea"
 	},
@@ -236,6 +320,25 @@
 	},
 	"HRK": {
 		"name": "kuna croata"
+=======
+	"BTN": {
+		"name": "gultrum"
+	},
+	"MMK": {
+		"name": "kiat"
+	},
+	"PGK": {
+		"name": "kina"
+	},
+	"LAK": {
+		"name": "kip"
+	},
+	"AOA": {
+		"name": "kuanza"
+	},
+	"HRK": {
+		"name": "kuna"
+>>>>>>> revert Open Social update
 	},
 	"MWK": {
 		"name": "kwacha malauí"
@@ -243,6 +346,7 @@
 	"ZMW": {
 		"name": "kwacha zambiano"
 	},
+<<<<<<< HEAD
 	"AOA": {
 		"name": "kwanza angoleño",
 		"symbol": "Kz"
@@ -255,12 +359,23 @@
 	},
 	"ALL": {
 		"name": "lek albanés"
+=======
+	"GEL": {
+		"name": "lari"
+	},
+	"ALL": {
+		"name": "lek"
+>>>>>>> revert Open Social update
 	},
 	"HNL": {
 		"name": "lempira hondureño"
 	},
 	"SLL": {
+<<<<<<< HEAD
 		"name": "leone de Sierra Leona"
+=======
+		"name": "leona"
+>>>>>>> revert Open Social update
 	},
 	"MDL": {
 		"name": "leu moldavo"
@@ -271,15 +386,24 @@
 	"BGN": {
 		"name": "lev búlgaro"
 	},
+<<<<<<< HEAD
 	"GBP": {
 		"name": "libra británica"
 	},
+=======
+>>>>>>> revert Open Social update
 	"SHP": {
 		"name": "libra de Santa Elena"
 	},
 	"EGP": {
 		"name": "libra egipcia"
 	},
+<<<<<<< HEAD
+=======
+	"GBP": {
+		"name": "libra esterlina"
+	},
+>>>>>>> revert Open Social update
 	"GIP": {
 		"name": "libra gibraltareña"
 	},
@@ -299,7 +423,11 @@
 		"name": "libra sursudanesa"
 	},
 	"SZL": {
+<<<<<<< HEAD
 		"name": "lilangeni suazi"
+=======
+		"name": "lilangeni"
+>>>>>>> revert Open Social update
 	},
 	"TRY": {
 		"name": "lira turca"
@@ -308,6 +436,7 @@
 		"name": "loti lesothense"
 	},
 	"AZN": {
+<<<<<<< HEAD
 		"name": "manat azerí"
 	},
 	"TMT": {
@@ -327,11 +456,30 @@
 	},
 	"BTN": {
 		"name": "ngultrum butanés"
+=======
+		"name": "manat azerbaiyano"
+	},
+	"TMT": {
+		"name": "manat turcomano"
+	},
+	"BAM": {
+		"name": "marco convertible de Bosnia y Herzegovina"
+	},
+	"MZN": {
+		"name": "metical"
+	},
+	"NGN": {
+		"name": "naira"
+	},
+	"ERN": {
+		"name": "nakfa"
+>>>>>>> revert Open Social update
 	},
 	"TWD": {
 		"name": "nuevo dólar taiwanés"
 	},
 	"ILS": {
+<<<<<<< HEAD
 		"name": "nuevo shéquel israelí"
 	},
 	"PEN": {
@@ -342,13 +490,23 @@
 	},
 	"TOP": {
 		"name": "paʻanga tongano"
+=======
+		"name": "nuevo séquel israelí"
+	},
+	"TOP": {
+		"name": "paanga"
+>>>>>>> revert Open Social update
 	},
 	"MOP": {
 		"name": "pataca de Macao"
 	},
 	"ARS": {
+<<<<<<< HEAD
 		"name": "peso argentino",
 		"symbol": "$a"
+=======
+		"name": "peso argentino"
+>>>>>>> revert Open Social update
 	},
 	"CLP": {
 		"name": "peso chileno"
@@ -376,27 +534,48 @@
 		"name": "peso uruguayo"
 	},
 	"BWP": {
+<<<<<<< HEAD
 		"name": "pula botsuano"
+=======
+		"name": "pula"
+>>>>>>> revert Open Social update
 	},
 	"GTQ": {
 		"name": "quetzal guatemalteco"
 	},
 	"ZAR": {
+<<<<<<< HEAD
 		"name": "rand sudafricano"
+=======
+		"name": "rand"
+>>>>>>> revert Open Social update
 	},
 	"BRL": {
 		"name": "real brasileño"
 	},
+<<<<<<< HEAD
+=======
+	"QAR": {
+		"name": "rial catarí"
+	},
+>>>>>>> revert Open Social update
 	"IRR": {
 		"name": "rial iraní"
 	},
 	"OMR": {
 		"name": "rial omaní"
 	},
+<<<<<<< HEAD
+=======
+	"SAR": {
+		"name": "rial saudí"
+	},
+>>>>>>> revert Open Social update
 	"YER": {
 		"name": "rial yemení"
 	},
 	"KHR": {
+<<<<<<< HEAD
 		"name": "riel camboyano"
 	},
 	"MYR": {
@@ -407,17 +586,27 @@
 	},
 	"SAR": {
 		"name": "riyal saudí"
+=======
+		"name": "riel"
+	},
+	"MYR": {
+		"name": "ringit"
+>>>>>>> revert Open Social update
 	},
 	"BYN": {
 		"name": "rublo bielorruso"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "rublo bielorruso (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"RUB": {
 		"name": "rublo ruso"
 	},
 	"MVR": {
+<<<<<<< HEAD
 		"name": "rufiyaa de Maldivas"
 	},
 	"SCR": {
@@ -425,6 +614,12 @@
 	},
 	"LKR": {
 		"name": "rupia de Sri Lanka"
+=======
+		"name": "rufiya"
+	},
+	"LKR": {
+		"name": "rupia esrilanquesa"
+>>>>>>> revert Open Social update
 	},
 	"INR": {
 		"name": "rupia india"
@@ -441,15 +636,27 @@
 	"PKR": {
 		"name": "rupia pakistaní"
 	},
+<<<<<<< HEAD
 	"KGS": {
 		"name": "som kirguís"
 	},
 	"UZS": {
 		"name": "som uzbeko"
+=======
+	"SCR": {
+		"name": "rupia seychellense"
+	},
+	"PEN": {
+		"name": "sol peruano"
+	},
+	"KGS": {
+		"name": "som"
+>>>>>>> revert Open Social update
 	},
 	"TJS": {
 		"name": "somoni tayiko"
 	},
+<<<<<<< HEAD
 	"BDT": {
 		"name": "taka de Bangladesh"
 	},
@@ -464,6 +671,28 @@
 	},
 	"VUV": {
 		"name": "vatu vanuatuense"
+=======
+	"UZS": {
+		"name": "sum"
+	},
+	"BDT": {
+		"name": "taka"
+	},
+	"WST": {
+		"name": "tala"
+	},
+	"KZT": {
+		"name": "tenge kazako"
+	},
+	"MNT": {
+		"name": "tugrik"
+	},
+	"MRO": {
+		"name": "uguiya"
+	},
+	"VUV": {
+		"name": "vatu"
+>>>>>>> revert Open Social update
 	},
 	"KPW": {
 		"name": "won norcoreano"
@@ -472,6 +701,7 @@
 		"name": "won surcoreano"
 	},
 	"JPY": {
+<<<<<<< HEAD
 		"name": "yen japonés"
 	},
 	"CNY": {
@@ -480,5 +710,11 @@
 	},
 	"PLN": {
 		"name": "zloty polaco"
+=======
+		"name": "yen"
+	},
+	"CNY": {
+		"name": "yuan"
+>>>>>>> revert Open Social update
 	}
 }

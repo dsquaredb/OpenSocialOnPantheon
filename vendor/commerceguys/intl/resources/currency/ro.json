@@ -389,9 +389,12 @@
 	"BYN": {
 		"name": "rublă belarusă"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "rublă belarusă (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"RUB": {
 		"name": "rublă rusească"
 	},
@@ -420,7 +423,11 @@
 		"name": "rupie srilankeză"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "sol nou peruvian"
+=======
+		"name": "sol peruvian"
+>>>>>>> revert Open Social update
 	},
 	"KGS": {
 		"name": "som kârgâz"

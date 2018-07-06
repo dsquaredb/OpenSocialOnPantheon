@@ -25,15 +25,29 @@
 		"name": "Cedi ya Ghana"
 	},
 	"CRC": {
+<<<<<<< HEAD
 		"name": "Colon ya Kostarika"
 	},
 	"NIO": {
 		"name": "Cordoba ya Nikaragua"
+=======
+		"name": "Colon ya Costa Rica"
+	},
+	"BAM": {
+		"name": "Convertible Mark ya Bosnia na Hezegovina"
+	},
+	"NIO": {
+		"name": "Cordoba ya Nicaragua"
+	},
+	"CZK": {
+		"name": "Czech Koruna"
+>>>>>>> revert Open Social update
 	},
 	"GMD": {
 		"name": "Dalasi ya Gambia"
 	},
 	"MKD": {
+<<<<<<< HEAD
 		"name": "Denar ya Masedonia"
 	},
 	"BHD": {
@@ -44,16 +58,37 @@
 	},
 	"KWD": {
 		"name": "Dinar ya Kuwaiti"
+=======
+		"name": "Denar ya Macedonia"
+	},
+	"DZD": {
+		"name": "Dinar ya Algeria"
+	},
+	"BHD": {
+		"name": "Dinar ya Bahrain"
+	},
+	"IQD": {
+		"name": "Dinar ya Iraq"
+	},
+	"JOD": {
+		"name": "Dinar ya Jordan"
+	},
+	"KWD": {
+		"name": "Dinar ya Kuwait"
+>>>>>>> revert Open Social update
 	},
 	"RSD": {
 		"name": "Dinar ya Serbia"
 	},
+<<<<<<< HEAD
 	"JOD": {
 		"name": "Dinar ya Yordani"
 	},
 	"DZD": {
 		"name": "Dinari ya Aljeria"
 	},
+=======
+>>>>>>> revert Open Social update
 	"LYD": {
 		"name": "Dinari ya Libya"
 	},
@@ -64,7 +99,11 @@
 		"name": "Dirham ya Falme za Kiarabu"
 	},
 	"MAD": {
+<<<<<<< HEAD
 		"name": "Dirham ya Moroko"
+=======
+		"name": "Dirham ya Morocco"
+>>>>>>> revert Open Social update
 	},
 	"STD": {
 		"name": "Dobra ya Sao Tome na Principe"
@@ -88,6 +127,17 @@
 	"BND": {
 		"name": "Dola ya Brunei"
 	},
+<<<<<<< HEAD
+=======
+	"CAD": {
+		"name": "Dola ya Canada",
+		"symbol": "CA$"
+	},
+	"XCD": {
+		"name": "Dola ya Caribbean Mashariki",
+		"symbol": "EC$"
+	},
+>>>>>>> revert Open Social update
 	"FJD": {
 		"name": "Dola ya Fiji"
 	},
@@ -101,6 +151,7 @@
 	"JMD": {
 		"name": "Dola ya Jamaica"
 	},
+<<<<<<< HEAD
 	"CAD": {
 		"name": "Dola ya Kanada",
 		"symbol": "CA$"
@@ -109,6 +160,8 @@
 		"name": "Dola ya Karibea ya Mashariki",
 		"symbol": "EC$"
 	},
+=======
+>>>>>>> revert Open Social update
 	"LRD": {
 		"name": "Dola ya Liberia"
 	},
@@ -120,7 +173,11 @@
 		"name": "Dola ya Namibia"
 	},
 	"NZD": {
+<<<<<<< HEAD
 		"name": "Dola ya Nyuzilandi",
+=======
+		"name": "Dola ya New Zealand",
+>>>>>>> revert Open Social update
 		"symbol": "NZ$"
 	},
 	"SGD": {
@@ -167,6 +224,7 @@
 		"name": "Faranga ya CFP",
 		"symbol": "CFPF"
 	},
+<<<<<<< HEAD
 	"GNF": {
 		"name": "Faranga ya Guinea"
 	},
@@ -175,6 +233,16 @@
 	},
 	"KMF": {
 		"name": "Faranga ya Komoro"
+=======
+	"KMF": {
+		"name": "Faranga ya Comoros"
+	},
+	"DJF": {
+		"name": "Faranga ya Djibouti"
+	},
+	"GNF": {
+		"name": "Faranga ya Guinea"
+>>>>>>> revert Open Social update
 	},
 	"CDF": {
 		"name": "Faranga ya Kongo",
@@ -196,13 +264,21 @@
 		"name": "Gourde ya Haiti"
 	},
 	"PYG": {
+<<<<<<< HEAD
 		"name": "Guarani ya Paragwai"
+=======
+		"name": "Guarani ya Paraguay"
+>>>>>>> revert Open Social update
 	},
 	"ANG": {
 		"name": "Guilder ya Antili za Kiholanzi"
 	},
 	"UAH": {
+<<<<<<< HEAD
 		"name": "Hryvnia ya Ukrania"
+=======
+		"name": "Hryvnia ya Ukraine"
+>>>>>>> revert Open Social update
 	},
 	"PGK": {
 		"name": "Kina ya Papua New Guinea"
@@ -210,9 +286,12 @@
 	"LAK": {
 		"name": "Kip ya Laosi"
 	},
+<<<<<<< HEAD
 	"CZK": {
 		"name": "Koruna ya Jamhuri ya Cheki"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ISK": {
 		"name": "Krona ya Aisilandi"
 	},
@@ -220,6 +299,7 @@
 		"name": "Krona ya Uswidi"
 	},
 	"DKK": {
+<<<<<<< HEAD
 		"name": "Krone ya Denmaki"
 	},
 	"NOK": {
@@ -227,6 +307,15 @@
 	},
 	"HRK": {
 		"name": "Kuna ya Kroeshia"
+=======
+		"name": "Krone ya Denmark"
+	},
+	"NOK": {
+		"name": "Krone ya Norway"
+	},
+	"HRK": {
+		"name": "Kuna ya Croatia"
+>>>>>>> revert Open Social update
 	},
 	"MWK": {
 		"name": "Kwacha ya Malawi"
@@ -238,7 +327,11 @@
 		"name": "Kwanza ya Angola"
 	},
 	"MMK": {
+<<<<<<< HEAD
 		"name": "Kyat ya Myama"
+=======
+		"name": "Kyat ya Myanmar"
+>>>>>>> revert Open Social update
 	},
 	"GEL": {
 		"name": "Lari ya Georgia"
@@ -271,6 +364,7 @@
 		"name": "Loti ya Lesoto"
 	},
 	"AZN": {
+<<<<<<< HEAD
 		"name": "Manat ya Azebaijani"
 	},
 	"TMT": {
@@ -278,12 +372,22 @@
 	},
 	"BAM": {
 		"name": "Mark Inayoweza Kubadilishwa ya Bosnia na Hezegovina"
+=======
+		"name": "Manat ya Azerbaijan"
+	},
+	"TMT": {
+		"name": "Manat ya Turkmenistan"
+>>>>>>> revert Open Social update
 	},
 	"MZN": {
 		"name": "Metikali ya Msumbiji"
 	},
 	"NGN": {
+<<<<<<< HEAD
 		"name": "Naira ya Nijeria"
+=======
+		"name": "Naira ya Nigeria"
+>>>>>>> revert Open Social update
 	},
 	"ERN": {
 		"name": "Nakfa ya Eritrea"
@@ -291,9 +395,12 @@
 	"BTN": {
 		"name": "Ngultrum ya Bhutan"
 	},
+<<<<<<< HEAD
 	"PEN": {
 		"name": "Nuevo Sol ya Peru"
 	},
+=======
+>>>>>>> revert Open Social update
 	"TOP": {
 		"name": "Paʻanga ya Tonga"
 	},
@@ -310,6 +417,7 @@
 		"name": "Pauni ya Misri"
 	},
 	"SHP": {
+<<<<<<< HEAD
 		"name": "Pauni ya Santahelena"
 	},
 	"SDG": {
@@ -317,6 +425,15 @@
 	},
 	"SSP": {
 		"name": "Pauni ya Sudani Kusini"
+=======
+		"name": "Pauni ya St. Helena"
+	},
+	"SDG": {
+		"name": "Pauni ya Sudan"
+	},
+	"SSP": {
+		"name": "Pauni ya Sudan Kusini"
+>>>>>>> revert Open Social update
 	},
 	"SYP": {
 		"name": "Pauni ya Syria"
@@ -329,11 +446,21 @@
 		"name": "Pauni ya Visiwa vya Falkland"
 	},
 	"ARS": {
+<<<<<<< HEAD
 		"name": "Peso ya Ajentina"
+=======
+		"name": "Peso ya Argentina"
+>>>>>>> revert Open Social update
 	},
 	"CLP": {
 		"name": "Peso ya Chile"
 	},
+<<<<<<< HEAD
+=======
+	"COP": {
+		"name": "Peso ya Colombia"
+	},
+>>>>>>> revert Open Social update
 	"CUP": {
 		"name": "Peso ya Cuba"
 	},
@@ -341,6 +468,7 @@
 		"name": "Peso ya Cuba Inayoweza Kubadilishwa"
 	},
 	"DOP": {
+<<<<<<< HEAD
 		"name": "Peso ya Dominika"
 	},
 	"COP": {
@@ -348,13 +476,23 @@
 	},
 	"MXN": {
 		"name": "Peso ya Meksiko",
+=======
+		"name": "Peso ya Dominica"
+	},
+	"MXN": {
+		"name": "Peso ya Mexico",
+>>>>>>> revert Open Social update
 		"symbol": "MX$"
 	},
 	"PHP": {
 		"name": "Peso ya Ufilipino"
 	},
 	"UYU": {
+<<<<<<< HEAD
 		"name": "Peso ya Urugwai"
+=======
+		"name": "Peso ya Uruguay"
+>>>>>>> revert Open Social update
 	},
 	"BWP": {
 		"name": "Pula ya Botswana"
@@ -376,6 +514,7 @@
 		"name": "Rial ya Omani"
 	},
 	"QAR": {
+<<<<<<< HEAD
 		"name": "Rial ya Qatari"
 	},
 	"YER": {
@@ -383,6 +522,15 @@
 	},
 	"KHR": {
 		"name": "Riel ya Kambodia"
+=======
+		"name": "Rial ya Qatar"
+	},
+	"YER": {
+		"name": "Rial ya Yemen"
+	},
+	"KHR": {
+		"name": "Riel ya Cambodia"
+>>>>>>> revert Open Social update
 	},
 	"MYR": {
 		"name": "Ringgit ya Malaysia"
@@ -391,22 +539,31 @@
 		"name": "Riyal ya Saudia"
 	},
 	"BYN": {
+<<<<<<< HEAD
 		"name": "Ruble ya Belarusi"
 	},
 	"BYR": {
 		"name": "Ruble ya Belarusi (2000–2016)"
+=======
+		"name": "Ruble ya Belarus"
+>>>>>>> revert Open Social update
 	},
 	"RUB": {
 		"name": "Ruble ya Urusi"
 	},
 	"MVR": {
+<<<<<<< HEAD
 		"name": "Rufiyaa ya Maldivi"
+=======
+		"name": "Rufiyaa ya Maldives"
+>>>>>>> revert Open Social update
 	},
 	"INR": {
 		"name": "Rupia ya India",
 		"symbol": "₹"
 	},
 	"MUR": {
+<<<<<<< HEAD
 		"name": "Rupia ya Morisi"
 	},
 	"NPR": {
@@ -414,6 +571,15 @@
 	},
 	"PKR": {
 		"name": "Rupia ya Pakistani"
+=======
+		"name": "Rupia ya Mauritius"
+	},
+	"NPR": {
+		"name": "Rupia ya Nepal"
+	},
+	"PKR": {
+		"name": "Rupia ya Pakistan"
+>>>>>>> revert Open Social update
 	},
 	"SCR": {
 		"name": "Rupia ya Shelisheli"
@@ -449,6 +615,7 @@
 	"UGX": {
 		"name": "Shilingi ya Uganda"
 	},
+<<<<<<< HEAD
 	"KGS": {
 		"name": "Som ya Kyrgystani"
 	},
@@ -460,12 +627,32 @@
 	},
 	"BDT": {
 		"name": "Taka ya Bangladeshi"
+=======
+	"PEN": {
+		"name": "Sol ya Peru"
+	},
+	"KGS": {
+		"name": "Som ya Kyrgystan"
+	},
+	"UZS": {
+		"name": "Som ya Uzbekistan"
+	},
+	"TJS": {
+		"name": "Somoni ya Tajikistan"
+	},
+	"BDT": {
+		"name": "Taka ya Bangladesh"
+>>>>>>> revert Open Social update
 	},
 	"WST": {
 		"name": "Tala ya Samoa"
 	},
 	"KZT": {
+<<<<<<< HEAD
 		"name": "Tenge ya Kazakistani"
+=======
+		"name": "Tenge ya Kazakhstan"
+>>>>>>> revert Open Social update
 	},
 	"MNT": {
 		"name": "Tugrik ya Mongolia"
@@ -495,6 +682,10 @@
 		"name": "Zimbabwean Dollar (2009)"
 	},
 	"PLN": {
+<<<<<<< HEAD
 		"name": "Zloty ya Polandi"
+=======
+		"name": "Zloty ya Poland"
+>>>>>>> revert Open Social update
 	}
 }

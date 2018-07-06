@@ -223,7 +223,11 @@
 		"name": "Kip Laos"
 	},
 	"CZK": {
+<<<<<<< HEAD
 		"name": "Koruna Tsiec"
+=======
+		"name": "Koruna’r Weriniaeth Tsiec"
+>>>>>>> revert Open Social update
 	},
 	"ISK": {
 		"name": "Króna Gwlad yr Iâ"
@@ -300,9 +304,12 @@
 	"ERN": {
 		"name": "Nakfa Eritrea"
 	},
+<<<<<<< HEAD
 	"PEN": {
 		"name": "Nuevo Sol Periw"
 	},
+=======
+>>>>>>> revert Open Social update
 	"MRO": {
 		"name": "Ouguiya Mauritania"
 	},
@@ -357,7 +364,11 @@
 		"symbol": "£"
 	},
 	"SHP": {
+<<<<<<< HEAD
 		"name": "Punt Saint Helena"
+=======
+		"name": "Punt St Helena"
+>>>>>>> revert Open Social update
 	},
 	"SDG": {
 		"name": "Punt Sudan"
@@ -411,9 +422,12 @@
 	"BYN": {
 		"name": "Rwbl Belarws"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "Rwbl Belarws (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"RUB": {
 		"name": "Rwbl Rwsia"
 	},
@@ -440,6 +454,12 @@
 		"name": "Shegel Newydd Israel",
 		"symbol": "₪"
 	},
+<<<<<<< HEAD
+=======
+	"PEN": {
+		"name": "Sol Periw"
+	},
+>>>>>>> revert Open Social update
 	"KGS": {
 		"name": "Som Kyrgyzstan"
 	},

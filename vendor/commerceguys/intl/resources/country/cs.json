@@ -126,7 +126,11 @@
 		"name": "Černá Hora"
 	},
 	"CZ": {
+<<<<<<< HEAD
 		"name": "Česká republika"
+=======
+		"name": "Česko"
+>>>>>>> revert Open Social update
 	},
 	"CN": {
 		"name": "Čína"

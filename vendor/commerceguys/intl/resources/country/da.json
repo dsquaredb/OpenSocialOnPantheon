@@ -429,7 +429,11 @@
 		"name": "Mexico"
 	},
 	"FM": {
+<<<<<<< HEAD
 		"name": "Mikronesiens Forenede Stater"
+=======
+		"name": "Mikronesien"
+>>>>>>> revert Open Social update
 	},
 	"MD": {
 		"name": "Moldova"

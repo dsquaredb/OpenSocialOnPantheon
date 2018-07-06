@@ -1,8 +1,11 @@
 {
+<<<<<<< HEAD
 	"XAF": {
 		"name": "[CFA] फ़्रैंक [BEAC]",
 		"symbol": "FCFA"
 	},
+=======
+>>>>>>> revert Open Social update
 	"XPF": {
 		"name": "[CFP] फ़्रैंक",
 		"symbol": "CFPF"
@@ -88,6 +91,13 @@
 	"KWD": {
 		"name": "कुवैती दिनार"
 	},
+<<<<<<< HEAD
+=======
+	"XAF": {
+		"name": "केंद्रीय अफ़्रीकी CFA फ़्रैंक",
+		"symbol": "FCFA"
+	},
+>>>>>>> revert Open Social update
 	"KES": {
 		"name": "केन्याई शिलिंग"
 	},
@@ -236,7 +246,11 @@
 		"name": "पनामेनियन बैल्बोआ"
 	},
 	"XOF": {
+<<<<<<< HEAD
 		"name": "पश्चिमी अफ़्रीकी CFA फ्रैंक",
+=======
+		"name": "पश्चिमी अफ़्रीकी CFA फ़्रैंक",
+>>>>>>> revert Open Social update
 		"symbol": "CFA"
 	},
 	"PKR": {
@@ -250,7 +264,11 @@
 		"symbol": "EC$"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "पेरूवियन नुएवो सोल"
+=======
+		"name": "पेरूवियन सोल"
+>>>>>>> revert Open Social update
 	},
 	"PYG": {
 		"name": "पैराग्वियन गुआरानी"
@@ -291,9 +309,12 @@
 	"BYN": {
 		"name": "बेलारूसी रूबल"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "बेलारूसी रूबल (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"BZD": {
 		"name": "बेलीज़ डॉलर"
 	},

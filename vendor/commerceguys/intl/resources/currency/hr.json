@@ -50,9 +50,12 @@
 	"BYN": {
 		"name": "bjeloruska rublja"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "bjeloruska rublja (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"BWP": {
 		"name": "bocvanska pula"
 	},
@@ -350,7 +353,11 @@
 		"name": "paragvajski gvarani"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "peruanski novi sol"
+=======
+		"name": "peruanski sol"
+>>>>>>> revert Open Social update
 	},
 	"PLN": {
 		"name": "poljska zlota"

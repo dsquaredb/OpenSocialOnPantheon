@@ -19,8 +19,12 @@ class Error extends \RuntimeException
         $this->rawMessage = (string) $message;
 =======
     public function __construct(string $message, $attributes = []) {
+<<<<<<< HEAD
         $this->rawMessage = $message;
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+        $this->rawMessage = (string) $message;
+>>>>>>> revert Open Social update
         if (is_array($attributes)) {
             $this->attributes = $attributes;
         } else {
@@ -76,8 +80,12 @@ class Error extends \RuntimeException
         $this->rawMessage = (string) $message;
 =======
     public function setRawMessage(string $message) {
+<<<<<<< HEAD
         $this->rawMessage = $message;
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+        $this->rawMessage = (string) $message;
+>>>>>>> revert Open Social update
         $this->updateMessage();
     }
 
@@ -91,8 +99,12 @@ class Error extends \RuntimeException
         $this->attributes['startLine'] = (int) $line;
 =======
     public function setStartLine(int $line) {
+<<<<<<< HEAD
         $this->attributes['startLine'] = $line;
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+        $this->attributes['startLine'] = (int) $line;
+>>>>>>> revert Open Social update
         $this->updateMessage();
     }
 

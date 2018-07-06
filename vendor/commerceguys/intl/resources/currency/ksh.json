@@ -337,7 +337,11 @@
 		"name": "parajuaanesche Juarani"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "perruaanesche Nuevo Sol"
+=======
+		"name": "perruaanesche Sol"
+>>>>>>> revert Open Social update
 	},
 	"IRR": {
 		"name": "persesche Rial"
@@ -487,9 +491,12 @@
 	"BYN": {
 		"name": "wiißrußesche Rubel"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "wiißrußesche Rubel (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"SHP": {
 		"name": "Zint-Hellena-Pongk"
 	}

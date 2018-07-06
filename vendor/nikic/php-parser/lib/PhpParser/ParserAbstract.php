@@ -99,6 +99,8 @@ abstract class ParserAbstract implements Parser
 =======
     /** @var ErrorHandler Error handler */
     protected $errorHandler;
+    /** @var Error[] Errors collected during last parse */
+    protected $errors;
     /** @var int Error state, used to avoid error floods */
     protected $errorState;
 
@@ -119,10 +121,14 @@ abstract class ParserAbstract implements Parser
     public function __construct(Lexer $lexer, array $options = array()) {
         $this->lexer = $lexer;
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->errors = array();
         $this->throwOnError = isset($options['throwOnError']) ? $options['throwOnError'] : true;
     }
 =======
+=======
+        $this->errors = [];
+>>>>>>> revert Open Social update
 
         if (isset($options['throwOnError'])) {
             throw new \LogicException(

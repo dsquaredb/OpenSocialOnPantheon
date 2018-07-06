@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"AX": {
 		"name": "Åland Islands"
 	},
@@ -89,6 +90,14 @@
 	"EH": {
 		"name": "Western Sahara"
 	},
+=======
+	"HK": {
+		"name": "Hong Kong SAR China"
+	},
+	"MO": {
+		"name": "Macau SAR China"
+	},
+>>>>>>> revert Open Social update
 	"ER": {
 		"name": "ꔀꔸꔳꕟ"
 	},
@@ -134,6 +143,12 @@
 	"CV": {
 		"name": "ꔞꔪ ꗲꔵ ꔳꘋꗣ"
 	},
+<<<<<<< HEAD
+=======
+	"CX": {
+		"name": "ꔞꔻꕮꔻ ꔳꘋꗣ"
+	},
+>>>>>>> revert Open Social update
 	"KE": {
 		"name": "ꔞꕰ"
 	},
@@ -167,9 +182,24 @@
 	"FJ": {
 		"name": "ꔱꔤꕀ"
 	},
+<<<<<<< HEAD
 	"FI": {
 		"name": "ꔱꘋ ꖨꕮꕊ"
 	},
+=======
+	"TF": {
+		"name": "ꔱꗷꘋꔻ ꗛꔤ ꔒꘋꗣ ꗏ ꕸꖃꔀ ꖸ"
+	},
+	"FI": {
+		"name": "ꔱꘋ ꖨꕮꕊ"
+	},
+	"TA": {
+		"name": "ꔳꔻꕚꘋ ꕜ ꖴꕯ"
+	},
+	"DG": {
+		"name": "ꔵꔀꖑ ꔳꘋꗣ"
+	},
+>>>>>>> revert Open Social update
 	"LS": {
 		"name": "ꔷꖇꕿ"
 	},
@@ -182,6 +212,12 @@
 	"SN": {
 		"name": "ꔻꕇꕭꕌ"
 	},
+<<<<<<< HEAD
+=======
+	"SJ": {
+		"name": "ꔻꕙꕒꔵ ꗪ ꕧꘋ ꕮꘂꘋ"
+	},
+>>>>>>> revert Open Social update
 	"SY": {
 		"name": "ꔻꕩꘋ"
 	},
@@ -209,6 +245,12 @@
 	"SH": {
 		"name": "ꔻꘋ ꗥꔷꕯ"
 	},
+<<<<<<< HEAD
+=======
+	"SX": {
+		"name": "ꔻꘋꔳ ꕮꕊꗳꘋ"
+	},
+>>>>>>> revert Open Social update
 	"NZ": {
 		"name": "ꔽꔤ ꖨꕮ ꕯꕮꕊ"
 	},
@@ -278,6 +320,12 @@
 	"AM": {
 		"name": "ꕉꕆꕯ"
 	},
+<<<<<<< HEAD
+=======
+	"AX": {
+		"name": "ꕉꕞꔺ"
+	},
+>>>>>>> revert Open Social update
 	"AZ": {
 		"name": "ꕉꕤꕑꔤꕧꘋ"
 	},
@@ -296,6 +344,12 @@
 	"AG": {
 		"name": "ꕉꘋꔳꖶꕎ ꗪ ꕑꖜꕜ"
 	},
+<<<<<<< HEAD
+=======
+	"AQ": {
+		"name": "ꕉꘋꕚꔳꕪ"
+	},
+>>>>>>> revert Open Social update
 	"HT": {
 		"name": "ꕌꔤꔳ"
 	},
@@ -341,6 +395,15 @@
 	"FK": {
 		"name": "ꕘꔷꕃ ꖨꕮ ꔳꘋꗣ"
 	},
+<<<<<<< HEAD
+=======
+	"FO": {
+		"name": "ꕘꖄ ꔳꘋꗣ"
+	},
+	"VA": {
+		"name": "ꕙꔳꕪꘋ ꕢꕨꕌ"
+	},
+>>>>>>> revert Open Social update
 	"VE": {
 		"name": "ꕙꔳꕪꘋ ꕸꖃꔀ"
 	},
@@ -380,6 +443,12 @@
 	"RW": {
 		"name": "ꕟꖙꕡ"
 	},
+<<<<<<< HEAD
+=======
+	"EH": {
+		"name": "ꕢꕌꕟ ꔎꔒ ꕀꔤ"
+	},
+>>>>>>> revert Open Social update
 	"ST": {
 		"name": "ꕢꕴ ꕿꔈ ꗪ ꕉ ꕮꔧ ꕗꕴꔀ"
 	},
@@ -410,6 +479,12 @@
 	"CM": {
 		"name": "ꕪꔈꖩꘋ"
 	},
+<<<<<<< HEAD
+=======
+	"BQ": {
+		"name": "ꕪꔓꔬꘂꘋ ꖨꕮ ꗨꗳꗣ"
+	},
+>>>>>>> revert Open Social update
 	"NC": {
 		"name": "ꕪꔷꖁꕇꕰ ꕯꕮꕊ"
 	},
@@ -425,6 +500,15 @@
 	"KH": {
 		"name": "ꕪꕹꔵꕩ"
 	},
+<<<<<<< HEAD
+=======
+	"BL": {
+		"name": "ꕪꘋꕓ ꗞꗢ ꕒꕚꕞꕆ"
+	},
+	"MF": {
+		"name": "ꕪꘋꕓ ꗞꗢ ꕮꕊꔳꘋ"
+	},
+>>>>>>> revert Open Social update
 	"GM": {
 		"name": "ꕭꔭꕩ"
 	},
@@ -467,6 +551,12 @@
 	"YT": {
 		"name": "ꕮꗚꔎ"
 	},
+<<<<<<< HEAD
+=======
+	"IM": {
+		"name": "ꕮꘋ ꔳꘋꗣ"
+	},
+>>>>>>> revert Open Social update
 	"NG": {
 		"name": "ꕯꔤꕀꔸꕩ"
 	},
@@ -485,6 +575,12 @@
 	"AS": {
 		"name": "ꕶꕱ ꕢꕹꕎ"
 	},
+<<<<<<< HEAD
+=======
+	"UM": {
+		"name": "ꕶꕱ ꕪꘋ ꗅꘋ ꔳꘋꗣ ꖸ"
+	},
+>>>>>>> revert Open Social update
 	"VI": {
 		"name": "ꕶꕱ ꗩꗡ ꗏ ꖷꖬ ꔳꘋꗣ"
 	},
@@ -551,6 +647,15 @@
 	"KM": {
 		"name": "ꖏꕹꖄꔻ"
 	},
+<<<<<<< HEAD
+=======
+	"XK": {
+		"name": "ꖏꖇꕾ"
+	},
+	"CC": {
+		"name": "ꖏꖏꔻ (ꔞꔀꔷꘋ) ꔳꘋꗣ"
+	},
+>>>>>>> revert Open Social update
 	"CG": {
 		"name": "ꖏꖐ"
 	},
@@ -602,6 +707,12 @@
 	"SZ": {
 		"name": "ꖬꕎꔽ ꖨꕮꕊ"
 	},
+<<<<<<< HEAD
+=======
+	"SS": {
+		"name": "ꖬꕜꘋ ꗛꔤ ꔒꘋꗣ ꗏ"
+	},
+>>>>>>> revert Open Social update
 	"SB": {
 		"name": "ꖬꕞꔤꕮꕊꕯ ꔳꘋꗣ"
 	},
@@ -626,6 +737,12 @@
 	"KW": {
 		"name": "ꖴꔃꔳ"
 	},
+<<<<<<< HEAD
+=======
+	"CW": {
+		"name": "ꖴꕟꖇꕱ"
+	},
+>>>>>>> revert Open Social update
 	"GT": {
 		"name": "ꖶꕎꔎꕮꕞ"
 	},
@@ -641,6 +758,12 @@
 	"GY": {
 		"name": "ꖶꕩꕯ"
 	},
+<<<<<<< HEAD
+=======
+	"GG": {
+		"name": "ꖶꗦꘋꔻ"
+	},
+>>>>>>> revert Open Social update
 	"NU": {
 		"name": "ꖸꔃꔤ"
 	},
@@ -680,12 +803,24 @@
 	"GE": {
 		"name": "ꗘꖺꕀꕩ"
 	},
+<<<<<<< HEAD
+=======
+	"GS": {
+		"name": "ꗘꖺꕀꕩ ꗛꔤ ꔒꘋꗣ ꗏ ꗪ ꗇꖢ ꔳꘋꗣ ꗛꔤ ꔒꘋꗣ ꗏ"
+	},
+>>>>>>> revert Open Social update
 	"JO": {
 		"name": "ꗘꖺꗵꘋ"
 	},
 	"MP": {
 		"name": "ꗛꔤ ꕪꘋꗒ ꕮꔸꕩꕯ ꔳꘋꗣ"
 	},
+<<<<<<< HEAD
+=======
+	"IC": {
+		"name": "ꗛꖺꔻꕩ ꔳꘋꗣ"
+	},
+>>>>>>> revert Open Social update
 	"CO": {
 		"name": "ꗛꗏꔭꕩ"
 	},
@@ -695,6 +830,12 @@
 	"MU": {
 		"name": "ꗞꔓꗔ"
 	},
+<<<<<<< HEAD
+=======
+	"ME": {
+		"name": "ꗞꔳꕇꖶꖄ"
+	},
+>>>>>>> revert Open Social update
 	"MA": {
 		"name": "ꗞꕟꖏ"
 	},
@@ -749,9 +890,27 @@
 	"VN": {
 		"name": "ꗲꕇꖮꔃꕞ"
 	},
+<<<<<<< HEAD
 	"CZ": {
 		"name": "ꗿꕃ ꕸꖃꔀ"
 	},
+=======
+	"EA": {
+		"name": "ꗻꕚ ꗪ ꔡꔷꕞ"
+	},
+	"AC": {
+		"name": "ꗻꗡ ꕒꕡꕌ ꗏ ꔳꘋꗣ"
+	},
+	"RS": {
+		"name": "ꗻꗡꔬꕩ"
+	},
+	"CZ": {
+		"name": "ꗿꕃ ꕸꖃꔀ"
+	},
+	"JE": {
+		"name": "ꘀꗡꔘ"
+	},
+>>>>>>> revert Open Social update
 	"MX": {
 		"name": "ꘈꔻꖏ"
 	},

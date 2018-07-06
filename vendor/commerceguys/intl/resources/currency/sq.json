@@ -87,7 +87,11 @@
 		"name": "Dollari i Fixhit"
 	},
 	"HKD": {
+<<<<<<< HEAD
 		"name": "Dollari i Hong Kongut",
+=======
+		"name": "Dollari i Hong-Kongut",
+>>>>>>> revert Open Social update
 		"symbol": "HK$"
 	},
 	"BZD": {
@@ -207,7 +211,11 @@
 		"name": "Kiata e Mianmarit"
 	},
 	"PGK": {
+<<<<<<< HEAD
 		"name": "Kina e Papua-Guineas së Re"
+=======
+		"name": "Kina e Guinesë së Re-Papua"
+>>>>>>> revert Open Social update
 	},
 	"LAK": {
 		"name": "Kipa e Laosit"
@@ -265,10 +273,17 @@
 		"name": "Lesotho Loti"
 	},
 	"MDL": {
+<<<<<<< HEAD
 		"name": "Leu moldav"
 	},
 	"RON": {
 		"name": "Leu rumun"
+=======
+		"name": "Leuja moldave"
+	},
+	"RON": {
+		"name": "Leuja rumune"
+>>>>>>> revert Open Social update
 	},
 	"BGN": {
 		"name": "Leva bullgare"
@@ -371,9 +386,12 @@
 	"BYN": {
 		"name": "Rubla bjelloruse"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "Rubla bjelloruse (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"RUB": {
 		"name": "Rubla ruse"
 	},
@@ -409,7 +427,11 @@
 		"name": "Sejda ganeze"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "Sola nuevo-peruane"
+=======
+		"name": "Sola peruane"
+>>>>>>> revert Open Social update
 	},
 	"KGS": {
 		"name": "Soma kirgize"

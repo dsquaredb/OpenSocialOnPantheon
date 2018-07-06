@@ -18,12 +18,20 @@ class FileMoveTest extends WebTestBase {
    *
    * @var array
    */
+<<<<<<< HEAD
   public static $modules = array('image');
+=======
+  public static $modules = ['image'];
+>>>>>>> revert Open Social update
 
   /**
    * Tests moving a randomly generated image.
    */
+<<<<<<< HEAD
   function testNormal() {
+=======
+  public function testNormal() {
+>>>>>>> revert Open Social update
     // Pick a file for testing.
     $file = File::create((array) current($this->drupalGetTestFiles('image')));
 

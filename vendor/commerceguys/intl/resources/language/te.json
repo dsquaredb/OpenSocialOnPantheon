@@ -23,9 +23,12 @@
 	"asa": {
 		"name": "అసు"
 	},
+<<<<<<< HEAD
 	"ast": {
 		"name": "అస్టురియాన్"
 	},
+=======
+>>>>>>> revert Open Social update
 	"as": {
 		"name": "అస్సామీస్"
 	},
@@ -38,11 +41,22 @@
 	"hy": {
 		"name": "ఆర్మేనియన్"
 	},
+<<<<<<< HEAD
 	"en-AU": {
 		"name": "ఆస్ట్రేలియన్ ఇంగ్లీష్"
 	},
 	"de-AT": {
 		"name": "ఆస్ట్రేలియన్ జర్మన్"
+=======
+	"ast": {
+		"name": "ఆస్టూరియన్"
+	},
+	"de-AT": {
+		"name": "ఆస్ట్రియన్ జర్మన్"
+	},
+	"en-AU": {
+		"name": "ఆస్ట్రేలియన్ ఇంగ్లీష్"
+>>>>>>> revert Open Social update
 	},
 	"id": {
 		"name": "ఇండోనేషియన్"
@@ -62,12 +76,15 @@
 	"smn": {
 		"name": "ఇనారి సామి"
 	},
+<<<<<<< HEAD
 	"ee": {
 		"name": "ఈవీ"
 	},
 	"et": {
 		"name": "ఈస్టోనియన్"
 	},
+=======
+>>>>>>> revert Open Social update
 	"uk": {
 		"name": "ఉక్రేనియన్"
 	},
@@ -92,6 +109,12 @@
 	"ewo": {
 		"name": "ఎవోండొ"
 	},
+<<<<<<< HEAD
+=======
+	"et": {
+		"name": "ఎస్టోనియన్"
+	},
+>>>>>>> revert Open Social update
 	"eo": {
 		"name": "ఎస్పెరాంటో"
 	},
@@ -128,12 +151,21 @@
 	"sw-CD": {
 		"name": "కాంగో స్వాహిలి"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "కాంటనీస్"
 	},
 	"kkj": {
 		"name": "కాకో"
 	},
+=======
+	"kkj": {
+		"name": "కాకో"
+	},
+	"ca": {
+		"name": "కాటలాన్"
+	},
+>>>>>>> revert Open Social update
 	"kab": {
 		"name": "కాబిల్"
 	},
@@ -152,8 +184,13 @@
 	"ky": {
 		"name": "కిర్గిజ్"
 	},
+<<<<<<< HEAD
 	"ca": {
 		"name": "కెటలాన్"
+=======
+	"qu": {
+		"name": "కెచువా"
+>>>>>>> revert Open Social update
 	},
 	"en-CA": {
 		"name": "కెనడియన్ ఇంగ్లీష్"
@@ -161,9 +198,12 @@
 	"fr-CA": {
 		"name": "కెనడియెన్ ఫ్రెంచ్"
 	},
+<<<<<<< HEAD
 	"qu": {
 		"name": "కెషుయా"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kok": {
 		"name": "కొంకణి"
 	},
@@ -174,7 +214,11 @@
 		"name": "కొరియన్"
 	},
 	"ksh": {
+<<<<<<< HEAD
 		"name": "కొలొజీయన్"
+=======
+		"name": "కొలోనియన్"
+>>>>>>> revert Open Social update
 	},
 	"ses": {
 		"name": "కోయోరాబోరో సెన్నీ"
@@ -198,7 +242,11 @@
 		"name": "గాలిషియన్"
 	},
 	"nnh": {
+<<<<<<< HEAD
 		"name": "గింబోన్"
+=======
+		"name": "గింబూన్"
+>>>>>>> revert Open Social update
 	},
 	"gu": {
 		"name": "గుజరాతి"
@@ -213,7 +261,11 @@
 		"name": "గ్రీక్"
 	},
 	"cu": {
+<<<<<<< HEAD
 		"name": "చర్చ స్లావిక్"
+=======
+		"name": "చర్చ్ స్లావిక్"
+>>>>>>> revert Open Social update
 	},
 	"cs": {
 		"name": "చెక్"
@@ -263,6 +315,12 @@
 	"shi": {
 		"name": "టాచెల్‌హిట్"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "టాటర్"
+	},
+>>>>>>> revert Open Social update
 	"bo": {
 		"name": "టిబెటన్"
 	},
@@ -278,6 +336,15 @@
 	"da": {
 		"name": "డానిష్"
 	},
+<<<<<<< HEAD
+=======
+	"dua": {
+		"name": "డ్యూలా"
+	},
+	"tg": {
+		"name": "తజిక్"
+	},
+>>>>>>> revert Open Social update
 	"ta": {
 		"name": "తమిళము"
 	},
@@ -285,7 +352,11 @@
 		"name": "తిగ్రిన్యా"
 	},
 	"tk": {
+<<<<<<< HEAD
 		"name": "తుర్కమెన్"
+=======
+		"name": "తుర్క్‌మెన్"
+>>>>>>> revert Open Social update
 	},
 	"te": {
 		"name": "తెలుగు"
@@ -293,9 +364,12 @@
 	"th": {
 		"name": "థాయ్"
 	},
+<<<<<<< HEAD
 	"dua": {
 		"name": "దుఆలా"
 	},
+=======
+>>>>>>> revert Open Social update
 	"naq": {
 		"name": "నమ"
 	},
@@ -336,7 +410,11 @@
 		"name": "ప్రష్యన్"
 	},
 	"zgh": {
+<<<<<<< HEAD
 		"name": "ప్రామాణిక మొరొకన్ తమజియట్"
+=======
+		"name": "ప్రామాణిక మొరొకన్ టామజైట్"
+>>>>>>> revert Open Social update
 	},
 	"fo": {
 		"name": "ఫారోయీజ్"
@@ -380,12 +458,21 @@
 	"eu": {
 		"name": "బాస్క్యూ"
 	},
+<<<<<<< HEAD
 	"bez": {
 		"name": "బీనా"
 	},
 	"bem": {
 		"name": "బెంబా"
 	},
+=======
+	"bem": {
+		"name": "బెంబా"
+	},
+	"bez": {
+		"name": "బెనా"
+	},
+>>>>>>> revert Open Social update
 	"be": {
 		"name": "బెలరుషియన్"
 	},
@@ -401,12 +488,21 @@
 	"br": {
 		"name": "బ్రెటన్"
 	},
+<<<<<<< HEAD
 	"gv": {
 		"name": "మంకస్"
 	},
 	"mn": {
 		"name": "మంగోలియన్"
 	},
+=======
+	"mn": {
+		"name": "మంగోలియన్"
+	},
+	"mua": {
+		"name": "మండాంగ్"
+	},
+>>>>>>> revert Open Social update
 	"kde": {
 		"name": "మకొండే"
 	},
@@ -423,11 +519,21 @@
 		"name": "మలయాళం"
 	},
 	"ms": {
+<<<<<<< HEAD
 		"name": "మలేయ్"
+=======
+		"name": "మలాయ్"
+>>>>>>> revert Open Social update
 	},
 	"mk": {
 		"name": "మసడోనియన్"
 	},
+<<<<<<< HEAD
+=======
+	"gv": {
+		"name": "మాంక్స్"
+	},
+>>>>>>> revert Open Social update
 	"mg": {
 		"name": "మాలాగసి"
 	},
@@ -438,10 +544,14 @@
 		"name": "మాసన్‌దెరాని"
 	},
 	"mas": {
+<<<<<<< HEAD
 		"name": "మాసాయి"
 	},
 	"mua": {
 		"name": "ముదాంగ్"
+=======
+		"name": "మాసై"
+>>>>>>> revert Open Social update
 	},
 	"es-MX": {
 		"name": "మెక్సికన్ స్పానిష్"
@@ -461,18 +571,33 @@
 	"yav": {
 		"name": "యాంగ్‌బెన్"
 	},
+<<<<<<< HEAD
+=======
+	"ee": {
+		"name": "యూ"
+	},
+>>>>>>> revert Open Social update
 	"pt-PT": {
 		"name": "యూరోపియన్ పోర్చుగీస్"
 	},
 	"yo": {
 		"name": "యోరుబా"
 	},
+<<<<<<< HEAD
 	"rn": {
 		"name": "రండి"
 	},
 	"ru": {
 		"name": "రష్యన్"
 	},
+=======
+	"ru": {
+		"name": "రష్యన్"
+	},
+	"rn": {
+		"name": "రుండి"
+	},
+>>>>>>> revert Open Social update
 	"rof": {
 		"name": "రోంబో"
 	},
@@ -488,6 +613,12 @@
 	"lkt": {
 		"name": "లకొటా"
 	},
+<<<<<<< HEAD
+=======
+	"lb": {
+		"name": "లక్సెంబర్గిష్"
+	},
+>>>>>>> revert Open Social update
 	"lag": {
 		"name": "లాంగీ"
 	},
@@ -501,10 +632,14 @@
 		"name": "లింగాల"
 	},
 	"lt": {
+<<<<<<< HEAD
 		"name": "లిథుయేనియన్"
 	},
 	"lb": {
 		"name": "లుక్సంబర్గిష్"
+=======
+		"name": "లిథువేనియన్"
+>>>>>>> revert Open Social update
 	},
 	"luy": {
 		"name": "లుయియ"
@@ -522,7 +657,11 @@
 		"name": "లో సాక్సన్"
 	},
 	"dsb": {
+<<<<<<< HEAD
 		"name": "లోవర్ సోర్బియన్"
+=======
+		"name": "లోయర్ సోర్బియన్"
+>>>>>>> revert Open Social update
 	},
 	"vai": {
 		"name": "వాయి"
@@ -539,6 +678,12 @@
 	"cy": {
 		"name": "వెల్ష్"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "వొలాఫ్"
+	},
+>>>>>>> revert Open Social update
 	"vo": {
 		"name": "వోలాపుక్"
 	},
@@ -569,6 +714,12 @@
 	"zh-Hant": {
 		"name": "సాంప్రదాయక చైనీస్"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "సింధీ"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "సింహళం"
 	},
@@ -576,7 +727,11 @@
 		"name": "సెంట్రల్ అట్లాస్ టామాజైట్"
 	},
 	"ckb": {
+<<<<<<< HEAD
 		"name": "సెంట్రల్ కుర్దిష్"
+=======
+		"name": "సెంట్రల్ కర్డిష్"
+>>>>>>> revert Open Social update
 	},
 	"seh": {
 		"name": "సెనా"
@@ -600,7 +755,11 @@
 		"name": "స్లోవాక్"
 	},
 	"sl": {
+<<<<<<< HEAD
 		"name": "స్లోవేనియాన్"
+=======
+		"name": "స్లోవేనియన్"
+>>>>>>> revert Open Social update
 	},
 	"sw": {
 		"name": "స్వాహిలి"

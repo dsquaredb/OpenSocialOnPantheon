@@ -26,9 +26,12 @@
 	"brx": {
 		"name": "Bodo"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Cantonese"
 	},
+=======
+>>>>>>> revert Open Social update
 	"tzm": {
 		"name": "Central Atlas Tamazight"
 	},
@@ -128,6 +131,12 @@
 	"fo": {
 		"name": "Èdè Faroesi"
 	},
+<<<<<<< HEAD
+=======
+	"fil": {
+		"name": "Èdè Filipino"
+	},
+>>>>>>> revert Open Social update
 	"fi": {
 		"name": "Èdè Finisi"
 	},
@@ -287,6 +296,12 @@
 	"zu": {
 		"name": "Èdè Shulu"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "Èdè Sindhi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "Èdè Sinhalese"
 	},
@@ -311,9 +326,12 @@
 	"sw-CD": {
 		"name": "Èdè Swahili (Orilɛ́ède Kóngò)"
 	},
+<<<<<<< HEAD
 	"fil": {
 		"name": "Èdè Tagalogi"
 	},
+=======
+>>>>>>> revert Open Social update
 	"th": {
 		"name": "Èdè Tai"
 	},
@@ -590,9 +608,21 @@
 	"dav": {
 		"name": "Taita"
 	},
+<<<<<<< HEAD
 	"twq": {
 		"name": "Tasawaq"
 	},
+=======
+	"tg": {
+		"name": "Tajik"
+	},
+	"twq": {
+		"name": "Tasawaq"
+	},
+	"tt": {
+		"name": "Tatar"
+	},
+>>>>>>> revert Open Social update
 	"teo": {
 		"name": "Teso"
 	},
@@ -623,6 +653,12 @@
 	"wae": {
 		"name": "Walser"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "Wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "Yangben"
 	},

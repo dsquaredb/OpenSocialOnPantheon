@@ -248,9 +248,12 @@
 	"kn": {
 		"name": "kannadština"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "kantonština"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kea": {
 		"name": "kapverdština"
 	},
@@ -506,6 +509,12 @@
 	"seh": {
 		"name": "sena"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindhština"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "sinhálština"
 	},
@@ -551,6 +560,12 @@
 	"sv": {
 		"name": "švédština"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tádžičtina"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "taita"
 	},
@@ -569,6 +584,12 @@
 	"shi": {
 		"name": "tašelhit"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tatarština"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telugština"
 	},
@@ -626,6 +647,12 @@
 	"vun": {
 		"name": "vunjo"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "wolofština"
+	},
+>>>>>>> revert Open Social update
 	"dje": {
 		"name": "zarmština"
 	},

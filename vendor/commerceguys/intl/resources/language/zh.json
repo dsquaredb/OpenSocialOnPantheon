@@ -1,23 +1,38 @@
 {
 	"sq": {
+<<<<<<< HEAD
 		"name": "阿尔巴尼亚文"
 	},
 	"ak": {
 		"name": "阿肯文"
+=======
+		"name": "阿尔巴尼亚语"
+	},
+	"ak": {
+		"name": "阿肯语"
+>>>>>>> revert Open Social update
 	},
 	"ar": {
 		"name": "阿拉伯语"
 	},
 	"am": {
+<<<<<<< HEAD
 		"name": "阿姆哈拉文"
 	},
 	"as": {
 		"name": "阿萨姆文"
+=======
+		"name": "阿姆哈拉语"
+	},
+	"as": {
+		"name": "阿萨姆语"
+>>>>>>> revert Open Social update
 	},
 	"az": {
 		"name": "阿塞拜疆语"
 	},
 	"ast": {
+<<<<<<< HEAD
 		"name": "阿斯图里亚斯文"
 	},
 	"asa": {
@@ -25,6 +40,12 @@
 	},
 	"ee": {
 		"name": "埃维文"
+=======
+		"name": "阿斯图里亚斯语"
+	},
+	"ee": {
+		"name": "埃维语"
+>>>>>>> revert Open Social update
 	},
 	"ga": {
 		"name": "爱尔兰语"
@@ -33,6 +54,7 @@
 		"name": "爱沙尼亚语"
 	},
 	"de-AT": {
+<<<<<<< HEAD
 		"name": "奥地利德文"
 	},
 	"or": {
@@ -52,17 +74,46 @@
 	},
 	"eu": {
 		"name": "巴斯克文"
+=======
+		"name": "奥地利德语"
+	},
+	"or": {
+		"name": "奥里亚语"
+	},
+	"om": {
+		"name": "奥罗莫语"
+	},
+	"os": {
+		"name": "奥塞梯语"
+	},
+	"en-AU": {
+		"name": "澳大利亚英语"
+	},
+	"ksf": {
+		"name": "巴菲亚语"
+	},
+	"bas": {
+		"name": "巴萨语"
+	},
+	"eu": {
+		"name": "巴斯克语"
+>>>>>>> revert Open Social update
 	},
 	"be": {
 		"name": "白俄罗斯语"
 	},
 	"bm": {
+<<<<<<< HEAD
 		"name": "班巴拉文"
+=======
+		"name": "班巴拉语"
+>>>>>>> revert Open Social update
 	},
 	"bg": {
 		"name": "保加利亚语"
 	},
 	"nd": {
+<<<<<<< HEAD
 		"name": "北恩德贝勒文"
 	},
 	"lrc": {
@@ -82,17 +133,43 @@
 	},
 	"bem": {
 		"name": "别姆巴文"
+=======
+		"name": "北恩德贝勒语"
+	},
+	"se": {
+		"name": "北方萨米语"
+	},
+	"lrc": {
+		"name": "北卢尔语"
+	},
+	"twq": {
+		"name": "北桑海语"
+	},
+	"bez": {
+		"name": "贝纳语"
+	},
+	"bem": {
+		"name": "本巴语"
+	},
+	"zgh": {
+		"name": "标准摩洛哥塔马塞特语"
+>>>>>>> revert Open Social update
 	},
 	"is": {
 		"name": "冰岛语"
 	},
 	"pl": {
+<<<<<<< HEAD
 		"name": "波兰文"
+=======
+		"name": "波兰语"
+>>>>>>> revert Open Social update
 	},
 	"bs": {
 		"name": "波斯尼亚语"
 	},
 	"fa": {
+<<<<<<< HEAD
 		"name": "波斯文"
 	},
 	"brx": {
@@ -100,20 +177,37 @@
 	},
 	"br": {
 		"name": "布列塔尼文"
+=======
+		"name": "波斯语"
+	},
+	"brx": {
+		"name": "博多语"
+	},
+	"br": {
+		"name": "布列塔尼语"
+>>>>>>> revert Open Social update
 	},
 	"bo": {
 		"name": "藏语"
 	},
 	"ce": {
+<<<<<<< HEAD
 		"name": "车臣文"
 	},
 	"chr": {
 		"name": "彻罗基文"
+=======
+		"name": "车臣语"
+	},
+	"tt": {
+		"name": "鞑靼语"
+>>>>>>> revert Open Social update
 	},
 	"da": {
 		"name": "丹麦语"
 	},
 	"de": {
+<<<<<<< HEAD
 		"name": "德文"
 	},
 	"gsw": {
@@ -145,16 +239,49 @@
 	},
 	"fo": {
 		"name": "法罗文"
+=======
+		"name": "德语"
+	},
+	"nds": {
+		"name": "低地德语"
+	},
+	"nds-NL": {
+		"name": "低萨克森语"
+	},
+	"ses": {
+		"name": "东桑海语"
+	},
+	"dua": {
+		"name": "都阿拉语"
+	},
+	"ru": {
+		"name": "俄语"
+	},
+	"ebu": {
+		"name": "恩布语"
+	},
+	"nnh": {
+		"name": "恩甘澎语"
+	},
+	"jgo": {
+		"name": "恩艮巴语"
+	},
+	"fo": {
+		"name": "法罗语"
+>>>>>>> revert Open Social update
 	},
 	"fr": {
 		"name": "法语"
 	},
+<<<<<<< HEAD
 	"fr-CA": {
 		"name": "法语（加拿大）"
 	},
 	"fr-CH": {
 		"name": "法语（瑞士）"
 	},
+=======
+>>>>>>> revert Open Social update
 	"zh-Hant": {
 		"name": "繁体中文"
 	},
@@ -164,6 +291,7 @@
 	"fi": {
 		"name": "芬兰语"
 	},
+<<<<<<< HEAD
 	"fur": {
 		"name": "弗留利文"
 	},
@@ -187,6 +315,25 @@
 	},
 	"kl": {
 		"name": "格陵兰文"
+=======
+	"nl-BE": {
+		"name": "弗拉芒语"
+	},
+	"fur": {
+		"name": "弗留利语"
+	},
+	"ff": {
+		"name": "富拉语"
+	},
+	"sw-CD": {
+		"name": "刚果斯瓦希里语"
+	},
+	"km": {
+		"name": "高棉语"
+	},
+	"kl": {
+		"name": "格陵兰语"
+>>>>>>> revert Open Social update
 	},
 	"ka": {
 		"name": "格鲁吉亚语"
@@ -195,29 +342,54 @@
 		"name": "古吉拉特语"
 	},
 	"guz": {
+<<<<<<< HEAD
 		"name": "古西文"
+=======
+		"name": "古西语"
+>>>>>>> revert Open Social update
 	},
 	"kk": {
 		"name": "哈萨克语"
 	},
 	"ko": {
+<<<<<<< HEAD
 		"name": "韩文"
 	},
 	"ha": {
 		"name": "豪萨文"
+=======
+		"name": "韩语"
+	},
+	"ha": {
+		"name": "豪萨语"
+>>>>>>> revert Open Social update
 	},
 	"nl": {
 		"name": "荷兰语"
 	},
+<<<<<<< HEAD
 	"ky": {
 		"name": "吉尔吉斯文"
 	},
 	"ki": {
 		"name": "吉库尤文"
+=======
+	"ki": {
+		"name": "吉库尤语"
+>>>>>>> revert Open Social update
 	},
 	"gl": {
 		"name": "加利西亚语"
 	},
+<<<<<<< HEAD
+=======
+	"fr-CA": {
+		"name": "加拿大法语"
+	},
+	"en-CA": {
+		"name": "加拿大英语"
+	},
+>>>>>>> revert Open Social update
 	"ca": {
 		"name": "加泰罗尼亚语"
 	},
@@ -225,12 +397,17 @@
 		"name": "简体中文"
 	},
 	"cu": {
+<<<<<<< HEAD
 		"name": "教会斯拉夫文"
+=======
+		"name": "教会斯拉夫语"
+>>>>>>> revert Open Social update
 	},
 	"cs": {
 		"name": "捷克语"
 	},
 	"kab": {
+<<<<<<< HEAD
 		"name": "卡比尔文"
 	},
 	"kea": {
@@ -253,10 +430,38 @@
 	},
 	"ksh": {
 		"name": "科隆文"
+=======
+		"name": "卡拜尔语"
+	},
+	"kea": {
+		"name": "卡布佛得鲁语"
+	},
+	"kkj": {
+		"name": "卡库语"
+	},
+	"kln": {
+		"name": "卡伦金语"
+	},
+	"kam": {
+		"name": "卡姆巴语"
+	},
+	"kn": {
+		"name": "卡纳达语"
+	},
+	"kw": {
+		"name": "康沃尔语"
+	},
+	"ky": {
+		"name": "柯尔克孜语"
+	},
+	"ksh": {
+		"name": "科隆语"
+>>>>>>> revert Open Social update
 	},
 	"hr": {
 		"name": "克罗地亚语"
 	},
+<<<<<<< HEAD
 	"ks": {
 		"name": "克什米尔文"
 	},
@@ -265,15 +470,38 @@
 	},
 	"lkt": {
 		"name": "拉科塔文"
+=======
+	"qu": {
+		"name": "克丘亚语"
+	},
+	"ks": {
+		"name": "克什米尔语"
+	},
+	"kok": {
+		"name": "孔卡尼语"
+	},
+	"nmg": {
+		"name": "夸西奥语"
+	},
+	"lkt": {
+		"name": "拉科塔语"
+>>>>>>> revert Open Social update
 	},
 	"lv": {
 		"name": "拉脱维亚语"
 	},
 	"rof": {
+<<<<<<< HEAD
 		"name": "兰博文"
 	},
 	"lag": {
 		"name": "朗吉文"
+=======
+		"name": "兰博语"
+	},
+	"lag": {
+		"name": "朗吉语"
+>>>>>>> revert Open Social update
 	},
 	"lo": {
 		"name": "老挝语"
@@ -282,6 +510,7 @@
 		"name": "立陶宛语"
 	},
 	"ln": {
+<<<<<<< HEAD
 		"name": "林加拉文"
 	},
 	"rn": {
@@ -292,6 +521,18 @@
 	},
 	"lg": {
 		"name": "卢干达文"
+=======
+		"name": "林加拉语"
+	},
+	"rn": {
+		"name": "隆迪语"
+	},
+	"lg": {
+		"name": "卢干达语"
+	},
+	"luo": {
+		"name": "卢欧语"
+>>>>>>> revert Open Social update
 	},
 	"lb": {
 		"name": "卢森堡语"
@@ -300,6 +541,7 @@
 		"name": "卢旺达语"
 	},
 	"luy": {
+<<<<<<< HEAD
 		"name": "卢雅文"
 	},
 	"lu": {
@@ -331,6 +573,39 @@
 	},
 	"mr": {
 		"name": "马拉地文"
+=======
+		"name": "卢雅语"
+	},
+	"lu": {
+		"name": "鲁巴加丹加语"
+	},
+	"ro": {
+		"name": "罗马尼亚语"
+	},
+	"rm": {
+		"name": "罗曼什语"
+	},
+	"rwk": {
+		"name": "罗瓦语"
+	},
+	"gv": {
+		"name": "马恩语"
+	},
+	"mt": {
+		"name": "马耳他语"
+	},
+	"kde": {
+		"name": "马孔德语"
+	},
+	"mgh": {
+		"name": "马库阿语"
+	},
+	"mr": {
+		"name": "马拉地语"
+	},
+	"mg": {
+		"name": "马拉加斯语"
+>>>>>>> revert Open Social update
 	},
 	"ml": {
 		"name": "马拉雅拉姆语"
@@ -339,6 +614,7 @@
 		"name": "马来语"
 	},
 	"mk": {
+<<<<<<< HEAD
 		"name": "马其顿文"
 	},
 	"jmc": {
@@ -361,6 +637,33 @@
 	},
 	"mn": {
 		"name": "蒙古文"
+=======
+		"name": "马其顿语"
+	},
+	"jmc": {
+		"name": "马切姆语"
+	},
+	"mas": {
+		"name": "马赛语"
+	},
+	"mzn": {
+		"name": "马赞德兰语"
+	},
+	"mfe": {
+		"name": "毛里求斯克里奥尔语"
+	},
+	"mer": {
+		"name": "梅鲁语"
+	},
+	"mgo": {
+		"name": "梅塔语"
+	},
+	"mua": {
+		"name": "蒙当语"
+	},
+	"mn": {
+		"name": "蒙古语"
+>>>>>>> revert Open Social update
 	},
 	"bn": {
 		"name": "孟加拉语"
@@ -369,6 +672,7 @@
 		"name": "缅甸语"
 	},
 	"ro-MD": {
+<<<<<<< HEAD
 		"name": "摩尔多瓦文"
 	},
 	"es-MX": {
@@ -376,17 +680,31 @@
 	},
 	"naq": {
 		"name": "纳马文"
+=======
+		"name": "摩尔多瓦语"
+	},
+	"es-MX": {
+		"name": "墨西哥西班牙语"
+	},
+	"naq": {
+		"name": "纳马语"
+>>>>>>> revert Open Social update
 	},
 	"af": {
 		"name": "南非荷兰语"
 	},
 	"nyn": {
+<<<<<<< HEAD
 		"name": "尼昂科勒文"
+=======
+		"name": "尼昂科勒语"
+>>>>>>> revert Open Social update
 	},
 	"ne": {
 		"name": "尼泊尔语"
 	},
 	"nus": {
+<<<<<<< HEAD
 		"name": "努埃尔文"
 	},
 	"nb": {
@@ -412,6 +730,36 @@
 	},
 	"cgg": {
 		"name": "奇加文"
+=======
+		"name": "努埃尔语"
+	},
+	"nn": {
+		"name": "挪威尼诺斯克语"
+	},
+	"pt-PT": {
+		"name": "欧洲葡萄牙语"
+	},
+	"asa": {
+		"name": "帕雷语"
+	},
+	"pa": {
+		"name": "旁遮普语"
+	},
+	"pt": {
+		"name": "葡萄牙语"
+	},
+	"prg": {
+		"name": "普鲁士语"
+	},
+	"ps": {
+		"name": "普什图语"
+	},
+	"cgg": {
+		"name": "奇加语"
+	},
+	"chr": {
+		"name": "切罗基语"
+>>>>>>> revert Open Social update
 	},
 	"ja": {
 		"name": "日语"
@@ -419,6 +767,7 @@
 	"sv": {
 		"name": "瑞典语"
 	},
+<<<<<<< HEAD
 	"de-CH": {
 		"name": "瑞士高地德文"
 	},
@@ -451,10 +800,48 @@
 	},
 	"sn": {
 		"name": "绍纳文"
+=======
+	"gsw": {
+		"name": "瑞士德语"
+	},
+	"fr-CH": {
+		"name": "瑞士法语"
+	},
+	"de-CH": {
+		"name": "瑞士高地德语"
+	},
+	"sah": {
+		"name": "萨哈语"
+	},
+	"sr": {
+		"name": "塞尔维亚语"
+	},
+	"seh": {
+		"name": "塞纳语"
+	},
+	"saq": {
+		"name": "桑布鲁语"
+	},
+	"sg": {
+		"name": "桑戈语"
+	},
+	"sbp": {
+		"name": "桑古语"
+	},
+	"si": {
+		"name": "僧伽罗语"
+	},
+	"hsb": {
+		"name": "上索布语"
+	},
+	"sn": {
+		"name": "绍纳语"
+>>>>>>> revert Open Social update
 	},
 	"eo": {
 		"name": "世界语"
 	},
+<<<<<<< HEAD
 	"sk": {
 		"name": "斯洛伐克文"
 	},
@@ -481,6 +868,40 @@
 	},
 	"dav": {
 		"name": "台塔文"
+=======
+	"nb": {
+		"name": "书面挪威语"
+	},
+	"sk": {
+		"name": "斯洛伐克语"
+	},
+	"sl": {
+		"name": "斯洛文尼亚语"
+	},
+	"sw": {
+		"name": "斯瓦希里语"
+	},
+	"ii": {
+		"name": "四川彝语"
+	},
+	"gd": {
+		"name": "苏格兰盖尔语"
+	},
+	"xog": {
+		"name": "索加语"
+	},
+	"so": {
+		"name": "索马里语"
+	},
+	"tg": {
+		"name": "塔吉克语"
+	},
+	"tzm": {
+		"name": "塔马齐格特语"
+	},
+	"dav": {
+		"name": "台塔语"
+>>>>>>> revert Open Social update
 	},
 	"te": {
 		"name": "泰卢固语"
@@ -492,6 +913,7 @@
 		"name": "泰语"
 	},
 	"to": {
+<<<<<<< HEAD
 		"name": "汤加文"
 	},
 	"teo": {
@@ -514,6 +936,30 @@
 	},
 	"ewo": {
 		"name": "旺杜文"
+=======
+		"name": "汤加语"
+	},
+	"teo": {
+		"name": "特索语"
+	},
+	"ti": {
+		"name": "提格利尼亚语"
+	},
+	"tr": {
+		"name": "土耳其语"
+	},
+	"tk": {
+		"name": "土库曼语"
+	},
+	"wae": {
+		"name": "瓦尔瑟语"
+	},
+	"vai": {
+		"name": "瓦伊语"
+	},
+	"ewo": {
+		"name": "旺杜语"
+>>>>>>> revert Open Social update
 	},
 	"cy": {
 		"name": "威尔士语"
@@ -522,10 +968,20 @@
 		"name": "维吾尔语"
 	},
 	"vun": {
+<<<<<<< HEAD
 		"name": "温旧文"
 	},
 	"vo": {
 		"name": "沃拉普克文"
+=======
+		"name": "温旧语"
+	},
+	"vo": {
+		"name": "沃拉普克语"
+	},
+	"wo": {
+		"name": "沃洛夫语"
+>>>>>>> revert Open Social update
 	},
 	"ur": {
 		"name": "乌尔都语"
@@ -536,15 +992,32 @@
 	"uz": {
 		"name": "乌兹别克语"
 	},
+<<<<<<< HEAD
+=======
+	"es": {
+		"name": "西班牙语"
+	},
+	"fy": {
+		"name": "西弗里西亚语"
+	},
+	"khq": {
+		"name": "西桑海语"
+	},
+>>>>>>> revert Open Social update
 	"he": {
 		"name": "希伯来语"
 	},
 	"shi": {
+<<<<<<< HEAD
 		"name": "希尔哈文"
+=======
+		"name": "希尔哈语"
+>>>>>>> revert Open Social update
 	},
 	"el": {
 		"name": "希腊语"
 	},
+<<<<<<< HEAD
 	"es": {
 		"name": "西班牙文"
 	},
@@ -562,17 +1035,35 @@
 	},
 	"ksb": {
 		"name": "香巴拉文"
+=======
+	"dsb": {
+		"name": "下索布语"
+	},
+	"haw": {
+		"name": "夏威夷语"
+	},
+	"ksb": {
+		"name": "香巴拉语"
+	},
+	"sd": {
+		"name": "信德语"
+>>>>>>> revert Open Social update
 	},
 	"hu": {
 		"name": "匈牙利语"
 	},
 	"agq": {
+<<<<<<< HEAD
 		"name": "亚罕文"
+=======
+		"name": "亚罕语"
+>>>>>>> revert Open Social update
 	},
 	"hy": {
 		"name": "亚美尼亚语"
 	},
 	"yav": {
+<<<<<<< HEAD
 		"name": "洋卞文"
 	},
 	"ig": {
@@ -580,12 +1071,25 @@
 	},
 	"smn": {
 		"name": "伊纳里萨米文"
+=======
+		"name": "洋卞语"
+	},
+	"ig": {
+		"name": "伊博语"
+	},
+	"smn": {
+		"name": "伊纳里萨米语"
+>>>>>>> revert Open Social update
 	},
 	"it": {
 		"name": "意大利语"
 	},
 	"yi": {
+<<<<<<< HEAD
 		"name": "意第绪文"
+=======
+		"name": "意第绪语"
+>>>>>>> revert Open Social update
 	},
 	"hi": {
 		"name": "印地语"
@@ -593,6 +1097,7 @@
 	"id": {
 		"name": "印度尼西亚语"
 	},
+<<<<<<< HEAD
 	"en": {
 		"name": "英语"
 	},
@@ -610,24 +1115,48 @@
 	},
 	"yue": {
 		"name": "粤语"
+=======
+	"en-GB": {
+		"name": "英国英语"
+	},
+	"en": {
+		"name": "英语"
+	},
+	"yo": {
+		"name": "约鲁巴语"
+>>>>>>> revert Open Social update
 	},
 	"vi": {
 		"name": "越南语"
 	},
 	"dje": {
+<<<<<<< HEAD
 		"name": "哲尔马文"
 	},
 	"ckb": {
 		"name": "中库尔德文"
+=======
+		"name": "哲尔马语"
+	},
+	"ckb": {
+		"name": "中库尔德语"
+>>>>>>> revert Open Social update
 	},
 	"zh": {
 		"name": "中文"
 	},
 	"dyo": {
+<<<<<<< HEAD
 		"name": "朱拉文"
 	},
 	"dz": {
 		"name": "宗卡文"
+=======
+		"name": "朱拉语"
+	},
+	"dz": {
+		"name": "宗卡语"
+>>>>>>> revert Open Social update
 	},
 	"zu": {
 		"name": "祖鲁语"

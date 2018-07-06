@@ -25,8 +25,6 @@ class Google_Service_Appengine_AuthorizedCertificate extends Google_Collection
   public $domainNames;
   public $expireTime;
   public $id;
-  protected $managedCertificateType = 'Google_Service_Appengine_ManagedCertificate';
-  protected $managedCertificateDataType = '';
   public $name;
   public $visibleDomainMappings;
 
@@ -83,20 +81,6 @@ class Google_Service_Appengine_AuthorizedCertificate extends Google_Collection
   public function getId()
   {
     return $this->id;
-  }
-  /**
-   * @param Google_Service_Appengine_ManagedCertificate
-   */
-  public function setManagedCertificate(Google_Service_Appengine_ManagedCertificate $managedCertificate)
-  {
-    $this->managedCertificate = $managedCertificate;
-  }
-  /**
-   * @return Google_Service_Appengine_ManagedCertificate
-   */
-  public function getManagedCertificate()
-  {
-    return $this->managedCertificate;
   }
   public function setName($name)
   {

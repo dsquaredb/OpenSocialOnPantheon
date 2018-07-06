@@ -27,9 +27,12 @@
 	"BYN": {
 		"name": "Belarusian Ruble"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "Belarusian Ruble (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"BTN": {
 		"name": "Bhutanese Ngultrum"
 	},
@@ -72,7 +75,11 @@
 		"name": "Croatian Kuna"
 	},
 	"CZK": {
+<<<<<<< HEAD
 		"name": "Czech Republic Koruna"
+=======
+		"name": "Czech Koruna"
+>>>>>>> revert Open Social update
 	},
 	"DKK": {
 		"name": "Danish Krone"
@@ -223,7 +230,11 @@
 		"name": "Papua New Guinean Kina"
 	},
 	"PHP": {
+<<<<<<< HEAD
 		"name": "Philippine Peso"
+=======
+		"name": "Philippine Piso"
+>>>>>>> revert Open Social update
 	},
 	"PLN": {
 		"name": "Polish Zloty"
@@ -452,7 +463,11 @@
 		"name": "Парагвай гуарани"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "Перу нуево сол"
+=======
+		"name": "Перу сол"
+>>>>>>> revert Open Social update
 	},
 	"RUB": {
 		"name": "Рус рубли"

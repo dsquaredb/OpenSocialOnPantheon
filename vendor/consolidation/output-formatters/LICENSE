@@ -14,7 +14,13 @@ DEPENDENCY LICENSES:
 Name                       Version  License  
 psr/log                    1.0.2    MIT      
 symfony/console            v3.2.3   MIT      
+<<<<<<< HEAD
 symfony/debug              v3.4.11  MIT      
 symfony/finder             v3.4.11  MIT      
 symfony/polyfill-mbstring  v1.8.0   MIT      
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+symfony/debug              v3.4.6   MIT      
+symfony/finder             v3.4.6   MIT      
+symfony/polyfill-mbstring  v1.7.0   MIT      
+>>>>>>> revert Open Social update

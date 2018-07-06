@@ -16,15 +16,15 @@
  */
 
 /**
- * Service definition for Replicapool (v1beta1).
+ * Service definition for Replicapool (v1beta2).
  *
  * <p>
- * The Replica Pool API allows users to declaratively provision and manage
- * groups of Google Compute Engine instances based on a common template.</p>
+ * [Deprecated. Please use Instance Group Manager in Compute API] Provides
+ * groups of homogenous Compute Engine instances.</p>
  *
  * <p>
  * For more information about this service, see the API
- * <a href="https://developers.google.com/compute/docs/replica-pool/" target="_blank">Documentation</a>
+ * <a href="https://developers.google.com/compute/docs/instance-groups/manager/v1beta2" target="_blank">Documentation</a>
  * </p>
  *
  * @author Google, Inc.
@@ -37,21 +37,15 @@ class Google_Service_Replicapool extends Google_Service
   /** View your data across Google Cloud Platform services. */
   const CLOUD_PLATFORM_READ_ONLY =
       "https://www.googleapis.com/auth/cloud-platform.read-only";
-  /** View and manage your Google Cloud Platform management resources and deployment status information. */
-  const NDEV_CLOUDMAN =
-      "https://www.googleapis.com/auth/ndev.cloudman";
-  /** View your Google Cloud Platform management resources and deployment status information. */
-  const NDEV_CLOUDMAN_READONLY =
-      "https://www.googleapis.com/auth/ndev.cloudman.readonly";
-  /** View and manage replica pools. */
-  const REPLICAPOOL =
-      "https://www.googleapis.com/auth/replicapool";
-  /** View replica pools. */
-  const REPLICAPOOL_READONLY =
-      "https://www.googleapis.com/auth/replicapool.readonly";
+  /** View and manage your Google Compute Engine resources. */
+  const COMPUTE =
+      "https://www.googleapis.com/auth/compute";
+  /** View your Google Compute Engine resources. */
+  const COMPUTE_READONLY =
+      "https://www.googleapis.com/auth/compute.readonly";
 
-  public $pools;
-  public $replicas;
+  public $instanceGroupManagers;
+  public $zoneOperations;
   
   /**
    * Constructs the internal representation of the Replicapool service.
@@ -62,21 +56,21 @@ class Google_Service_Replicapool extends Google_Service
   {
     parent::__construct($client);
     $this->rootUrl = 'https://www.googleapis.com/';
-    $this->servicePath = 'replicapool/v1beta1/projects/';
-    $this->version = 'v1beta1';
+    $this->servicePath = 'replicapool/v1beta2/projects/';
+    $this->version = 'v1beta2';
     $this->serviceName = 'replicapool';
 
-    $this->pools = new Google_Service_Replicapool_Resource_Pools(
+    $this->instanceGroupManagers = new Google_Service_Replicapool_Resource_InstanceGroupManagers(
         $this,
         $this->serviceName,
-        'pools',
+        'instanceGroupManagers',
         array(
           'methods' => array(
-            'delete' => array(
-              'path' => '{projectName}/zones/{zone}/pools/{poolName}',
+            'abandonInstances' => array(
+              'path' => '{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/abandonInstances',
               'httpMethod' => 'POST',
               'parameters' => array(
-                'projectName' => array(
+                'project' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -86,17 +80,57 @@ class Google_Service_Replicapool extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'poolName' => array(
+                'instanceGroupManager' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'delete' => array(
+              'path' => '{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}',
+              'httpMethod' => 'DELETE',
+              'parameters' => array(
+                'project' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'zone' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'instanceGroupManager' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'deleteInstances' => array(
+              'path' => '{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/deleteInstances',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'project' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'zone' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'instanceGroupManager' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
               ),
             ),'get' => array(
-              'path' => '{projectName}/zones/{zone}/pools/{poolName}',
+              'path' => '{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'projectName' => array(
+                'project' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -106,17 +140,17 @@ class Google_Service_Replicapool extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'poolName' => array(
+                'instanceGroupManager' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
               ),
             ),'insert' => array(
-              'path' => '{projectName}/zones/{zone}/pools',
+              'path' => '{project}/zones/{zone}/instanceGroupManagers',
               'httpMethod' => 'POST',
               'parameters' => array(
-                'projectName' => array(
+                'project' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -124,14 +158,19 @@ class Google_Service_Replicapool extends Google_Service
                 'zone' => array(
                   'location' => 'path',
                   'type' => 'string',
+                  'required' => true,
+                ),
+                'size' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
                   'required' => true,
                 ),
               ),
             ),'list' => array(
-              'path' => '{projectName}/zones/{zone}/pools',
+              'path' => '{project}/zones/{zone}/instanceGroupManagers',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'projectName' => array(
+                'project' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -140,6 +179,10 @@ class Google_Service_Replicapool extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
+                ),
+                'filter' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
                 'maxResults' => array(
                   'location' => 'query',
@@ -150,11 +193,11 @@ class Google_Service_Replicapool extends Google_Service
                   'type' => 'string',
                 ),
               ),
-            ),'resize' => array(
-              'path' => '{projectName}/zones/{zone}/pools/{poolName}/resize',
+            ),'recreateInstances' => array(
+              'path' => '{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/recreateInstances',
               'httpMethod' => 'POST',
               'parameters' => array(
-                'projectName' => array(
+                'project' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -164,21 +207,17 @@ class Google_Service_Replicapool extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'poolName' => array(
+                'instanceGroupManager' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
-                'numReplicas' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
                 ),
               ),
-            ),'updatetemplate' => array(
-              'path' => '{projectName}/zones/{zone}/pools/{poolName}/updateTemplate',
+            ),'resize' => array(
+              'path' => '{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/resize',
               'httpMethod' => 'POST',
               'parameters' => array(
-                'projectName' => array(
+                'project' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -188,7 +227,52 @@ class Google_Service_Replicapool extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'poolName' => array(
+                'instanceGroupManager' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'size' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                  'required' => true,
+                ),
+              ),
+            ),'setInstanceTemplate' => array(
+              'path' => '{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/setInstanceTemplate',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'project' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'zone' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'instanceGroupManager' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'setTargetPools' => array(
+              'path' => '{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}/setTargetPools',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'project' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'zone' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'instanceGroupManager' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -198,42 +282,17 @@ class Google_Service_Replicapool extends Google_Service
           )
         )
     );
-    $this->replicas = new Google_Service_Replicapool_Resource_Replicas(
+    $this->zoneOperations = new Google_Service_Replicapool_Resource_ZoneOperations(
         $this,
         $this->serviceName,
-        'replicas',
+        'zoneOperations',
         array(
           'methods' => array(
-            'delete' => array(
-              'path' => '{projectName}/zones/{zone}/pools/{poolName}/replicas/{replicaName}',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'projectName' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'zone' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'poolName' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'replicaName' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'get' => array(
-              'path' => '{projectName}/zones/{zone}/pools/{poolName}/replicas/{replicaName}',
+            'get' => array(
+              'path' => '{project}/zones/{zone}/operations/{operation}',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'projectName' => array(
+                'project' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -243,22 +302,17 @@ class Google_Service_Replicapool extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'poolName' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'replicaName' => array(
+                'operation' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
               ),
             ),'list' => array(
-              'path' => '{projectName}/zones/{zone}/pools/{poolName}/replicas',
+              'path' => '{project}/zones/{zone}/operations',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'projectName' => array(
+                'project' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -268,10 +322,9 @@ class Google_Service_Replicapool extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'poolName' => array(
-                  'location' => 'path',
+                'filter' => array(
+                  'location' => 'query',
                   'type' => 'string',
-                  'required' => true,
                 ),
                 'maxResults' => array(
                   'location' => 'query',
@@ -280,31 +333,6 @@ class Google_Service_Replicapool extends Google_Service
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
-              ),
-            ),'restart' => array(
-              'path' => '{projectName}/zones/{zone}/pools/{poolName}/replicas/{replicaName}/restart',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'projectName' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'zone' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'poolName' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'replicaName' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
                 ),
               ),
             ),

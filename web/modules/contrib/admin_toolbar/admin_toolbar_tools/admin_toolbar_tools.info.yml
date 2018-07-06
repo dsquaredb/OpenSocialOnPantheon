@@ -14,11 +14,14 @@ project: 'admin_toolbar'
 datestamp: 1472585040
 =======
   - admin_toolbar:admin_toolbar
-  - drupal:system (>=8.3)
 
-# Information added by Drupal.org packaging script on 2018-05-28
-version: '8.x-1.24'
+# Information added by Drupal.org packaging script on 2018-02-06
+version: '8.x-1.23'
 core: '8.x'
 project: 'admin_toolbar'
+<<<<<<< HEAD
 datestamp: 1527522484
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+datestamp: 1517936588
+>>>>>>> revert Open Social update

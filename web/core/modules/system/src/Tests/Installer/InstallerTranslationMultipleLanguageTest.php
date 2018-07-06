@@ -51,13 +51,38 @@ msgstr "Anonymous $langcode"
 
 msgid "Language"
 msgstr "Language $langcode"
+<<<<<<< HEAD
+=======
+
+#: Testing site name configuration during the installer.
+msgid "Drupal"
+msgstr "Drupal"
+>>>>>>> revert Open Social update
 ENDPO;
+  }
+
+  /**
+<<<<<<< HEAD
+   * Tests that translations ended up at the expected places.
+   */
+  public function testTranslationsLoaded() {
+=======
+   * {@inheritdoc}
+   */
+  protected function installParameters() {
+    $params = parent::installParameters();
+    $params['forms']['install_configure_form']['site_name'] = 'SITE_NAME_' . $this->langcode;
+    return $params;
   }
 
   /**
    * Tests that translations ended up at the expected places.
    */
   public function testTranslationsLoaded() {
+    // Ensure the title is correct.
+    $this->assertEqual('SITE_NAME_' . $this->langcode, \Drupal::config('system.site')->get('name'));
+
+>>>>>>> revert Open Social update
     // Verify German and Spanish were configured.
     $this->drupalGet('admin/config/regional/language');
     $this->assertText('German');
@@ -116,10 +141,17 @@ ENDPO;
 
       // Activate a module, to make sure that config is not overridden by module
       // installation.
+<<<<<<< HEAD
       $edit = array(
         'modules[Core][views][enable]' => TRUE,
         'modules[Core][filter][enable]' => TRUE,
       );
+=======
+      $edit = [
+        'modules[views][enable]' => TRUE,
+        'modules[filter][enable]' => TRUE,
+      ];
+>>>>>>> revert Open Social update
       $this->drupalPostForm('admin/modules', $edit, t('Install'));
 
       // Verify the strings from the translation are still as expected.
@@ -149,7 +181,11 @@ ENDPO;
 
     foreach ($test_samples as $sample) {
       foreach ($langcodes as $langcode) {
+<<<<<<< HEAD
         $edit = array();
+=======
+        $edit = [];
+>>>>>>> revert Open Social update
         $edit['langcode'] = $langcode;
         $edit['translation'] = 'translated';
         $edit['string'] = $sample;

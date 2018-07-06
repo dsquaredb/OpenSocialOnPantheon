@@ -38,9 +38,12 @@
 	"my": {
 		"name": "Burmese"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Cantonese"
 	},
+=======
+>>>>>>> revert Open Social update
 	"tzm": {
 		"name": "Central Atlas Tamazight"
 	},
@@ -222,7 +225,11 @@
 		"name": "Nama"
 	},
 	"nds-NL": {
+<<<<<<< HEAD
 		"name": "nds (NL)"
+=======
+		"name": "nds (ኔዘርላንድስ)"
+>>>>>>> revert Open Social update
 	},
 	"nnh": {
 		"name": "Ngiemboon"
@@ -296,6 +303,12 @@
 	"ii": {
 		"name": "Sichuan Yi"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "Sindhi"
+	},
+>>>>>>> revert Open Social update
 	"xog": {
 		"name": "Soga"
 	},
@@ -314,9 +327,21 @@
 	"dav": {
 		"name": "Taita"
 	},
+<<<<<<< HEAD
 	"twq": {
 		"name": "Tasawaq"
 	},
+=======
+	"tg": {
+		"name": "Tajik"
+	},
+	"twq": {
+		"name": "Tasawaq"
+	},
+	"tt": {
+		"name": "Tatar"
+	},
+>>>>>>> revert Open Social update
 	"teo": {
 		"name": "Teso"
 	},
@@ -344,6 +369,12 @@
 	"wae": {
 		"name": "Walser"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "Wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "Yangben"
 	},
@@ -393,7 +424,11 @@
 		"name": "ሮማኒያን"
 	},
 	"ro-MD": {
+<<<<<<< HEAD
 		"name": "ሮማኒያን (MD)"
+=======
+		"name": "ሮማኒያን (ሞልዶቫ)"
+>>>>>>> revert Open Social update
 	},
 	"sr": {
 		"name": "ሰርቢኛ"
@@ -402,7 +437,11 @@
 		"name": "ሰዋሂሊኛ"
 	},
 	"sw-CD": {
+<<<<<<< HEAD
 		"name": "ሰዋሂሊኛ (CD)"
+=======
+		"name": "ሰዋሂሊኛ (ኮንጎ)"
+>>>>>>> revert Open Social update
 	},
 	"sk": {
 		"name": "ስሎቨክኛ"
@@ -420,7 +459,11 @@
 		"name": "ስፓኒሽ"
 	},
 	"es-MX": {
+<<<<<<< HEAD
 		"name": "ስፓኒሽ (MX)"
+=======
+		"name": "ስፓኒሽ (ሜክሲኮ)"
+>>>>>>> revert Open Social update
 	},
 	"bn": {
 		"name": "በንጋሊኛ"
@@ -513,6 +556,7 @@
 		"name": "እንግሊዝኛ"
 	},
 	"en-AU": {
+<<<<<<< HEAD
 		"name": "እንግሊዝኛ (AU)"
 	},
 	"en-CA": {
@@ -520,6 +564,15 @@
 	},
 	"en-GB": {
 		"name": "እንግሊዝኛ (GB)"
+=======
+		"name": "እንግሊዝኛ (አውስትሬሊያ)"
+	},
+	"en-GB": {
+		"name": "እንግሊዝኛ (እንግሊዝ)"
+	},
+	"en-CA": {
+		"name": "እንግሊዝኛ (ካናዳ)"
+>>>>>>> revert Open Social update
 	},
 	"or": {
 		"name": "ኦሪያ"
@@ -561,7 +614,11 @@
 		"name": "ደች"
 	},
 	"nl-BE": {
+<<<<<<< HEAD
 		"name": "ደች (BE)"
+=======
+		"name": "ደች (ቤልጄም)"
+>>>>>>> revert Open Social update
 	},
 	"da": {
 		"name": "ዴኒሽ"
@@ -569,11 +626,19 @@
 	"de": {
 		"name": "ጀርመን"
 	},
+<<<<<<< HEAD
 	"de-AT": {
 		"name": "ጀርመን (AT)"
 	},
 	"de-CH": {
 		"name": "ጀርመን (CH)"
+=======
+	"de-CH": {
+		"name": "ጀርመን (ስዊዘርላንድ)"
+	},
+	"de-AT": {
+		"name": "ጀርመን (ኦስትሪያ)"
+>>>>>>> revert Open Social update
 	},
 	"ja": {
 		"name": "ጃፓንኛ"
@@ -596,11 +661,19 @@
 	"fr": {
 		"name": "ፈረንሳይኛ"
 	},
+<<<<<<< HEAD
 	"fr-CA": {
 		"name": "ፈረንሳይኛ (CA)"
 	},
 	"fr-CH": {
 		"name": "ፈረንሳይኛ (CH)"
+=======
+	"fr-CH": {
+		"name": "ፈረንሳይኛ (ስዊዘርላንድ)"
+	},
+	"fr-CA": {
+		"name": "ፈረንሳይኛ (ካናዳ)"
+>>>>>>> revert Open Social update
 	},
 	"fi": {
 		"name": "ፊኒሽ"

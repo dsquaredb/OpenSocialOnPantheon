@@ -72,7 +72,11 @@
 		"name": "Бенин"
 	},
 	"BM": {
+<<<<<<< HEAD
 		"name": "Бермуда"
+=======
+		"name": "Бермудски острови"
+>>>>>>> revert Open Social update
 	},
 	"BO": {
 		"name": "Боливия"
@@ -726,7 +730,11 @@
 		"name": "Черна гора"
 	},
 	"CZ": {
+<<<<<<< HEAD
 		"name": "Чешка република"
+=======
+		"name": "Чехия"
+>>>>>>> revert Open Social update
 	},
 	"CL": {
 		"name": "Чили"

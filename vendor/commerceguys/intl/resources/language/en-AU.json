@@ -44,9 +44,12 @@
 	"bm": {
 		"name": "Bambara"
 	},
+<<<<<<< HEAD
 	"bn": {
 		"name": "Bangla"
 	},
+=======
+>>>>>>> revert Open Social update
 	"bas": {
 		"name": "Basaa"
 	},
@@ -62,6 +65,12 @@
 	"bez": {
 		"name": "Bena"
 	},
+<<<<<<< HEAD
+=======
+	"bn": {
+		"name": "Bengali"
+	},
+>>>>>>> revert Open Social update
 	"brx": {
 		"name": "Bodo"
 	},
@@ -86,9 +95,12 @@
 	"fr-CA": {
 		"name": "Canadian French"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Cantonese"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ca": {
 		"name": "Catalan"
 	},
@@ -98,6 +110,12 @@
 	"ckb": {
 		"name": "Central Kurdish"
 	},
+<<<<<<< HEAD
+=======
+	"ccp": {
+		"name": "Chakma"
+	},
+>>>>>>> revert Open Social update
 	"ce": {
 		"name": "Chechen"
 	},
@@ -509,6 +527,12 @@
 	"zh-Hans": {
 		"name": "Simplified Chinese"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "Sindhi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "Sinhala"
 	},
@@ -551,12 +575,24 @@
 	"dav": {
 		"name": "Taita"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "Tajik"
+	},
+>>>>>>> revert Open Social update
 	"ta": {
 		"name": "Tamil"
 	},
 	"twq": {
 		"name": "Tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "Tatar"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "Telugu"
 	},
@@ -620,6 +656,12 @@
 	"fy": {
 		"name": "Western Frisian"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "Wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "Yangben"
 	},

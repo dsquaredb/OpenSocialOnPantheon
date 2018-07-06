@@ -65,6 +65,12 @@
 	"NL": {
 		"name": "Belanda"
 	},
+<<<<<<< HEAD
+=======
+	"BQ": {
+		"name": "Belanda Karibia"
+	},
+>>>>>>> revert Open Social update
 	"BY": {
 		"name": "Belarus"
 	},
@@ -110,15 +116,24 @@
 	"TD": {
 		"name": "Cad"
 	},
+<<<<<<< HEAD
+=======
+	"CZ": {
+		"name": "Ceko"
+	},
+>>>>>>> revert Open Social update
 	"EA": {
 		"name": "Ceuta dan Melilla"
 	},
 	"CL": {
 		"name": "Cile"
 	},
+<<<<<<< HEAD
 	"CI": {
 		"name": "Cote d’Ivoire"
 	},
+=======
+>>>>>>> revert Open Social update
 	"CW": {
 		"name": "Curaçao"
 	},
@@ -272,9 +287,12 @@
 	"CA": {
 		"name": "Kanada"
 	},
+<<<<<<< HEAD
 	"BQ": {
 		"name": "Karibia Belanda"
 	},
+=======
+>>>>>>> revert Open Social update
 	"KZ": {
 		"name": "Kazakstan"
 	},
@@ -506,6 +524,12 @@
 	"PA": {
 		"name": "Panama"
 	},
+<<<<<<< HEAD
+=======
+	"CI": {
+		"name": "Pantai Gading"
+	},
+>>>>>>> revert Open Social update
 	"PG": {
 		"name": "Papua Nugini"
 	},
@@ -545,9 +569,12 @@
 	"CF": {
 		"name": "Republik Afrika Tengah"
 	},
+<<<<<<< HEAD
 	"CZ": {
 		"name": "Republik Cheska"
 	},
+=======
+>>>>>>> revert Open Social update
 	"DO": {
 		"name": "Republik Dominika"
 	},

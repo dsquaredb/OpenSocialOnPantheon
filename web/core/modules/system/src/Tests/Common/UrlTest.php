@@ -20,19 +20,31 @@ use Drupal\simpletest\WebTestBase;
  */
 class UrlTest extends WebTestBase {
 
+<<<<<<< HEAD
   public static $modules = array('common_test', 'url_alter_test');
+=======
+  public static $modules = ['common_test', 'url_alter_test'];
+>>>>>>> revert Open Social update
 
   /**
    * Confirms that invalid URLs are filtered in link generating functions.
    */
+<<<<<<< HEAD
   function testLinkXSS() {
+=======
+  public function testLinkXSS() {
+>>>>>>> revert Open Social update
     // Test \Drupal::l().
     $text = $this->randomMachineName();
     $path = "<SCRIPT>alert('XSS')</SCRIPT>";
     $encoded_path = "3CSCRIPT%3Ealert%28%27XSS%27%29%3C/SCRIPT%3E";
 
     $link = \Drupal::l($text, Url::fromUserInput('/' . $path));
+<<<<<<< HEAD
     $this->assertTrue(strpos($link, $encoded_path) !== FALSE && strpos($link, $path) === FALSE, format_string('XSS attack @path was filtered by \Drupal\Core\Utility\LinkGeneratorInterface::generate().', array('@path' => $path)));
+=======
+    $this->assertTrue(strpos($link, $encoded_path) !== FALSE && strpos($link, $path) === FALSE, format_string('XSS attack @path was filtered by \Drupal\Core\Utility\LinkGeneratorInterface::generate().', ['@path' => $path]));
+>>>>>>> revert Open Social update
 
     // Test \Drupal\Core\Url.
     $link = Url::fromUri('base:' . $path)->toString();
@@ -42,7 +54,11 @@ class UrlTest extends WebTestBase {
   /**
    * Tests that #type=link bubbles outbound route/path processors' metadata.
    */
+<<<<<<< HEAD
   function testLinkBubbleableMetadata() {
+=======
+  public function testLinkBubbleableMetadata() {
+>>>>>>> revert Open Social update
     $cases = [
       ['Regular link', 'internal:/user', [], ['contexts' => [], 'tags' => [], 'max-age' => Cache::PERMANENT], []],
       ['Regular link, absolute', 'internal:/user', ['absolute' => TRUE], ['contexts' => ['url.site'], 'tags' => [], 'max-age' => Cache::PERMANENT], []],
@@ -71,11 +87,16 @@ class UrlTest extends WebTestBase {
   /**
    * Tests that default and custom attributes are handled correctly on links.
    */
+<<<<<<< HEAD
   function testLinkAttributes() {
+=======
+  public function testLinkAttributes() {
+>>>>>>> revert Open Social update
     /** @var \Drupal\Core\Render\RendererInterface $renderer */
     $renderer = $this->container->get('renderer');
 
     // Test that hreflang is added when a link has a known language.
+<<<<<<< HEAD
     $language = new Language(array('id' => 'fr', 'name' => 'French'));
     $hreflang_link = array(
       '#type' => 'link',
@@ -85,6 +106,17 @@ class UrlTest extends WebTestBase {
       '#url' => Url::fromUri('https://www.drupal.org'),
       '#title' => 'bar',
     );
+=======
+    $language = new Language(['id' => 'fr', 'name' => 'French']);
+    $hreflang_link = [
+      '#type' => 'link',
+      '#options' => [
+        'language' => $language,
+      ],
+      '#url' => Url::fromUri('https://www.drupal.org'),
+      '#title' => 'bar',
+    ];
+>>>>>>> revert Open Social update
     $langcode = $language->getId();
 
     // Test that the default hreflang handling for links does not override a
@@ -93,6 +125,7 @@ class UrlTest extends WebTestBase {
     $hreflang_override_link['#options']['attributes']['hreflang'] = 'foo';
 
     $rendered = $renderer->renderRoot($hreflang_link);
+<<<<<<< HEAD
     $this->assertTrue($this->hasAttribute('hreflang', $rendered, $langcode), format_string('hreflang attribute with value @langcode is present on a rendered link when langcode is provided in the render array.', array('@langcode' => $langcode)));
 
     $rendered = $renderer->renderRoot($hreflang_override_link);
@@ -113,11 +146,34 @@ class UrlTest extends WebTestBase {
         'foo' => 'bar',
       ),
     );
+=======
+    $this->assertTrue($this->hasAttribute('hreflang', $rendered, $langcode), format_string('hreflang attribute with value @langcode is present on a rendered link when langcode is provided in the render array.', ['@langcode' => $langcode]));
+
+    $rendered = $renderer->renderRoot($hreflang_override_link);
+    $this->assertTrue($this->hasAttribute('hreflang', $rendered, 'foo'), format_string('hreflang attribute with value @hreflang is present on a rendered link when @hreflang is provided in the render array.', ['@hreflang' => 'foo']));
+
+    // Test the active class in links produced by
+    // \Drupal\Core\Utility\LinkGeneratorInterface::generate() and #type 'link'.
+    $options_no_query = [];
+    $options_query = [
+      'query' => [
+        'foo' => 'bar',
+        'one' => 'two',
+      ],
+    ];
+    $options_query_reverse = [
+      'query' => [
+        'one' => 'two',
+        'foo' => 'bar',
+      ],
+    ];
+>>>>>>> revert Open Social update
 
     // Test #type link.
     $path = 'common-test/type-link-active-class';
 
     $this->drupalGet($path, $options_no_query);
+<<<<<<< HEAD
     $links = $this->xpath('//a[@href = :href and contains(@class, :class)]', array(':href' => Url::fromRoute('common_test.l_active_class', [], $options_no_query)->toString(), ':class' => 'is-active'));
     $this->assertTrue(isset($links[0]), 'A link generated by the link generator to the current page is marked active.');
 
@@ -132,6 +188,22 @@ class UrlTest extends WebTestBase {
     $this->assertTrue(isset($links[0]), 'A link generated by the link generator to the current page with a query string that has matching parameters to the current query string but in a different order is marked active.');
 
     $links = $this->xpath('//a[@href = :href and not(contains(@class, :class))]', array(':href' => Url::fromRoute('common_test.l_active_class', [], $options_no_query)->toString(), ':class' => 'is-active'));
+=======
+    $links = $this->xpath('//a[@href = :href and contains(@class, :class)]', [':href' => Url::fromRoute('common_test.l_active_class', [], $options_no_query)->toString(), ':class' => 'is-active']);
+    $this->assertTrue(isset($links[0]), 'A link generated by the link generator to the current page is marked active.');
+
+    $links = $this->xpath('//a[@href = :href and not(contains(@class, :class))]', [':href' => Url::fromRoute('common_test.l_active_class', [], $options_query)->toString(), ':class' => 'is-active']);
+    $this->assertTrue(isset($links[0]), 'A link generated by the link generator to the current page with a query string when the current page has no query string is not marked active.');
+
+    $this->drupalGet($path, $options_query);
+    $links = $this->xpath('//a[@href = :href and contains(@class, :class)]', [':href' => Url::fromRoute('common_test.l_active_class', [], $options_query)->toString(), ':class' => 'is-active']);
+    $this->assertTrue(isset($links[0]), 'A link generated by the link generator to the current page with a query string that matches the current query string is marked active.');
+
+    $links = $this->xpath('//a[@href = :href and contains(@class, :class)]', [':href' => Url::fromRoute('common_test.l_active_class', [], $options_query_reverse)->toString(), ':class' => 'is-active']);
+    $this->assertTrue(isset($links[0]), 'A link generated by the link generator to the current page with a query string that has matching parameters to the current query string but in a different order is marked active.');
+
+    $links = $this->xpath('//a[@href = :href and not(contains(@class, :class))]', [':href' => Url::fromRoute('common_test.l_active_class', [], $options_no_query)->toString(), ':class' => 'is-active']);
+>>>>>>> revert Open Social update
     $this->assertTrue(isset($links[0]), 'A link generated by the link generator to the current page without a query string when the current page has a query string is not marked active.');
 
     // Test adding a custom class in links produced by
@@ -139,6 +211,7 @@ class UrlTest extends WebTestBase {
     // Test the link generator.
     $class_l = $this->randomMachineName();
     $link_l = \Drupal::l($this->randomMachineName(), new Url('<current>', [], ['attributes' => ['class' => [$class_l]]]));
+<<<<<<< HEAD
     $this->assertTrue($this->hasAttribute('class', $link_l, $class_l), format_string('Custom class @class is present on link when requested by l()', array('@class' => $class_l)));
 
     // Test #type.
@@ -155,12 +228,34 @@ class UrlTest extends WebTestBase {
     );
     $link_theme = $renderer->renderRoot($type_link);
     $this->assertTrue($this->hasAttribute('class', $link_theme, $class_theme), format_string('Custom class @class is present on link when requested by #type', array('@class' => $class_theme)));
+=======
+    $this->assertTrue($this->hasAttribute('class', $link_l, $class_l), format_string('Custom class @class is present on link when requested by l()', ['@class' => $class_l]));
+
+    // Test #type.
+    $class_theme = $this->randomMachineName();
+    $type_link = [
+      '#type' => 'link',
+      '#title' => $this->randomMachineName(),
+      '#url' => Url::fromRoute('<current>'),
+      '#options' => [
+        'attributes' => [
+          'class' => [$class_theme],
+        ],
+      ],
+    ];
+    $link_theme = $renderer->renderRoot($type_link);
+    $this->assertTrue($this->hasAttribute('class', $link_theme, $class_theme), format_string('Custom class @class is present on link when requested by #type', ['@class' => $class_theme]));
+>>>>>>> revert Open Social update
   }
 
   /**
    * Tests that link functions support render arrays as 'text'.
    */
+<<<<<<< HEAD
   function testLinkRenderArrayText() {
+=======
+  public function testLinkRenderArrayText() {
+>>>>>>> revert Open Social update
     /** @var \Drupal\Core\Render\RendererInterface $renderer */
     $renderer = $this->container->get('renderer');
 
@@ -168,27 +263,48 @@ class UrlTest extends WebTestBase {
     $l = \Drupal::l('foo', Url::fromUri('https://www.drupal.org'));
 
     // Test a renderable array passed to the link generator.
+<<<<<<< HEAD
     $renderer->executeInRenderContext(new RenderContext(), function() use ($renderer, $l) {
       $renderable_text = array('#markup' => 'foo');
+=======
+    $renderer->executeInRenderContext(new RenderContext(), function () use ($renderer, $l) {
+      $renderable_text = ['#markup' => 'foo'];
+>>>>>>> revert Open Social update
       $l_renderable_text = \Drupal::l($renderable_text, Url::fromUri('https://www.drupal.org'));
       $this->assertEqual($l_renderable_text, $l);
     });
 
     // Test a themed link with plain text 'text'.
+<<<<<<< HEAD
     $type_link_plain_array = array(
       '#type' => 'link',
       '#title' => 'foo',
       '#url' => Url::fromUri('https://www.drupal.org'),
     );
+=======
+    $type_link_plain_array = [
+      '#type' => 'link',
+      '#title' => 'foo',
+      '#url' => Url::fromUri('https://www.drupal.org'),
+    ];
+>>>>>>> revert Open Social update
     $type_link_plain = $renderer->renderRoot($type_link_plain_array);
     $this->assertEqual($type_link_plain, $l);
 
     // Build a themed link with renderable 'text'.
+<<<<<<< HEAD
     $type_link_nested_array = array(
       '#type' => 'link',
       '#title' => array('#markup' => 'foo'),
       '#url' => Url::fromUri('https://www.drupal.org'),
     );
+=======
+    $type_link_nested_array = [
+      '#type' => 'link',
+      '#title' => ['#markup' => 'foo'],
+      '#url' => Url::fromUri('https://www.drupal.org'),
+    ];
+>>>>>>> revert Open Social update
     $type_link_nested = $renderer->renderRoot($type_link_nested_array);
     $this->assertEqual($type_link_nested, $l);
   }
@@ -211,6 +327,7 @@ class UrlTest extends WebTestBase {
   /**
    * Tests UrlHelper::filterQueryParameters().
    */
+<<<<<<< HEAD
   function testDrupalGetQueryParameters() {
     $original = array(
       'a' => 1,
@@ -222,31 +339,61 @@ class UrlTest extends WebTestBase {
       ),
       'c' => 3,
     );
+=======
+  public function testDrupalGetQueryParameters() {
+    $original = [
+      'a' => 1,
+      'b' => [
+        'd' => 4,
+        'e' => [
+          'f' => 5,
+        ],
+      ],
+      'c' => 3,
+    ];
+>>>>>>> revert Open Social update
 
     // First-level exclusion.
     $result = $original;
     unset($result['b']);
+<<<<<<< HEAD
     $this->assertEqual(UrlHelper::filterQueryParameters($original, array('b')), $result, "'b' was removed.");
+=======
+    $this->assertEqual(UrlHelper::filterQueryParameters($original, ['b']), $result, "'b' was removed.");
+>>>>>>> revert Open Social update
 
     // Second-level exclusion.
     $result = $original;
     unset($result['b']['d']);
+<<<<<<< HEAD
     $this->assertEqual(UrlHelper::filterQueryParameters($original, array('b[d]')), $result, "'b[d]' was removed.");
+=======
+    $this->assertEqual(UrlHelper::filterQueryParameters($original, ['b[d]']), $result, "'b[d]' was removed.");
+>>>>>>> revert Open Social update
 
     // Third-level exclusion.
     $result = $original;
     unset($result['b']['e']['f']);
+<<<<<<< HEAD
     $this->assertEqual(UrlHelper::filterQueryParameters($original, array('b[e][f]')), $result, "'b[e][f]' was removed.");
+=======
+    $this->assertEqual(UrlHelper::filterQueryParameters($original, ['b[e][f]']), $result, "'b[e][f]' was removed.");
+>>>>>>> revert Open Social update
 
     // Multiple exclusions.
     $result = $original;
     unset($result['a'], $result['b']['e'], $result['c']);
+<<<<<<< HEAD
     $this->assertEqual(UrlHelper::filterQueryParameters($original, array('a', 'b[e]', 'c')), $result, "'a', 'b[e]', 'c' were removed.");
+=======
+    $this->assertEqual(UrlHelper::filterQueryParameters($original, ['a', 'b[e]', 'c']), $result, "'a', 'b[e]', 'c' were removed.");
+>>>>>>> revert Open Social update
   }
 
   /**
    * Tests UrlHelper::parse().
    */
+<<<<<<< HEAD
   function testDrupalParseUrl() {
     // Relative, absolute, and external URLs, without/with explicit script path,
     // without/with Drupal path.
@@ -259,6 +406,20 @@ class UrlTest extends WebTestBase {
             'query' => array('foo' => 'bar', 'bar' => 'baz', 'baz' => ''),
             'fragment' => 'foo',
           );
+=======
+  public function testDrupalParseUrl() {
+    // Relative, absolute, and external URLs, without/with explicit script path,
+    // without/with Drupal path.
+    foreach (['', '/', 'https://www.drupal.org/'] as $absolute) {
+      foreach (['', 'index.php/'] as $script) {
+        foreach (['', 'foo/bar'] as $path) {
+          $url = $absolute . $script . $path . '?foo=bar&bar=baz&baz#foo';
+          $expected = [
+            'path' => $absolute . $script . $path,
+            'query' => ['foo' => 'bar', 'bar' => 'baz', 'baz' => ''],
+            'fragment' => 'foo',
+          ];
+>>>>>>> revert Open Social update
           $this->assertEqual(UrlHelper::parse($url), $expected, 'URL parsed correctly.');
         }
       }
@@ -266,11 +427,19 @@ class UrlTest extends WebTestBase {
 
     // Relative URL that is known to confuse parse_url().
     $url = 'foo/bar:1';
+<<<<<<< HEAD
     $result = array(
       'path' => 'foo/bar:1',
       'query' => array(),
       'fragment' => '',
     );
+=======
+    $result = [
+      'path' => 'foo/bar:1',
+      'query' => [],
+      'fragment' => '',
+    ];
+>>>>>>> revert Open Social update
     $this->assertEqual(UrlHelper::parse($url), $result, 'Relative URL parsed correctly.');
 
     // Test that drupal can recognize an absolute URL. Used to prevent attack vectors.
@@ -285,7 +454,11 @@ class UrlTest extends WebTestBase {
   /**
    * Tests external URL handling.
    */
+<<<<<<< HEAD
   function testExternalUrls() {
+=======
+  public function testExternalUrls() {
+>>>>>>> revert Open Social update
     $test_url = 'https://www.drupal.org/';
 
     // Verify external URL can contain a fragment.
@@ -296,7 +469,11 @@ class UrlTest extends WebTestBase {
     // Verify fragment can be overridden in an external URL.
     $url = $test_url . '#drupal';
     $fragment = $this->randomMachineName(10);
+<<<<<<< HEAD
     $result = Url::fromUri($url, array('fragment' => $fragment))->toString();
+=======
+    $result = Url::fromUri($url, ['fragment' => $fragment])->toString();
+>>>>>>> revert Open Social update
     $this->assertEqual($test_url . '#' . $fragment, $result, 'External URL fragment is overridden with a custom fragment in $options.');
 
     // Verify external URL can contain a query string.
@@ -306,14 +483,24 @@ class UrlTest extends WebTestBase {
 
     // Verify external URL can be extended with a query string.
     $url = $test_url;
+<<<<<<< HEAD
     $query = array($this->randomMachineName(5) => $this->randomMachineName(5));
     $result = Url::fromUri($url, array('query' => $query))->toString();
+=======
+    $query = [$this->randomMachineName(5) => $this->randomMachineName(5)];
+    $result = Url::fromUri($url, ['query' => $query])->toString();
+>>>>>>> revert Open Social update
     $this->assertEqual($url . '?' . http_build_query($query, '', '&'), $result, 'External URL can be extended with a query string in $options.');
 
     // Verify query string can be extended in an external URL.
     $url = $test_url . '?drupal=awesome';
+<<<<<<< HEAD
     $query = array($this->randomMachineName(5) => $this->randomMachineName(5));
     $result = Url::fromUri($url, array('query' => $query))->toString();
+=======
+    $query = [$this->randomMachineName(5) => $this->randomMachineName(5)];
+    $result = Url::fromUri($url, ['query' => $query])->toString();
+>>>>>>> revert Open Social update
     $this->assertEqual($url . '&' . http_build_query($query, '', '&'), $result);
   }
 

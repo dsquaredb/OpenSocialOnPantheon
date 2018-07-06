@@ -71,9 +71,12 @@
 	"bg": {
 		"name": "bulgară"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "cantoneză"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ks": {
 		"name": "cașmiră"
 	},
@@ -389,9 +392,12 @@
 	"mgo": {
 		"name": "meta’"
 	},
+<<<<<<< HEAD
 	"ro-MD": {
 		"name": "moldovenească"
 	},
+=======
+>>>>>>> revert Open Social update
 	"mn": {
 		"name": "mongolă"
 	},
@@ -432,7 +438,11 @@
 		"name": "nyankole"
 	},
 	"or": {
+<<<<<<< HEAD
 		"name": "oriya"
+=======
+		"name": "odia"
+>>>>>>> revert Open Social update
 	},
 	"om": {
 		"name": "oromo"
@@ -470,6 +480,12 @@
 	"ro": {
 		"name": "română"
 	},
+<<<<<<< HEAD
+=======
+	"ro-MD": {
+		"name": "română (Republica Moldova)"
+	},
+>>>>>>> revert Open Social update
 	"rof": {
 		"name": "rombo"
 	},
@@ -512,8 +528,16 @@
 	"ii": {
 		"name": "sichuan yi"
 	},
+<<<<<<< HEAD
 	"si": {
 		"name": "singaleză"
+=======
+	"sd": {
+		"name": "sindhi"
+	},
+	"si": {
+		"name": "singhaleză"
+>>>>>>> revert Open Social update
 	},
 	"cu": {
 		"name": "slavonă"
@@ -554,6 +578,12 @@
 	"shi": {
 		"name": "tachelhit"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tadjică"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "taita"
 	},
@@ -569,6 +599,12 @@
 	"twq": {
 		"name": "tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tătară"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telugu"
 	},
@@ -620,6 +656,12 @@
 	"wae": {
 		"name": "walser"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "yangben"
 	},

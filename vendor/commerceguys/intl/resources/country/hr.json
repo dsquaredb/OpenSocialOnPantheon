@@ -132,7 +132,11 @@
 		"name": "Čad"
 	},
 	"CZ": {
+<<<<<<< HEAD
 		"name": "Češka Republika"
+=======
+		"name": "Češka"
+>>>>>>> revert Open Social update
 	},
 	"CL": {
 		"name": "Čile"
@@ -572,9 +576,12 @@
 	"MF": {
 		"name": "Saint Martin"
 	},
+<<<<<<< HEAD
 	"PM": {
 		"name": "Saint-Pierre-et-Miquelon"
 	},
+=======
+>>>>>>> revert Open Social update
 	"SB": {
 		"name": "Salomonski Otoci"
 	},
@@ -653,6 +660,12 @@
 	"KN": {
 		"name": "Sveti Kristofor i Nevis"
 	},
+<<<<<<< HEAD
+=======
+	"PM": {
+		"name": "Sveti Petar i Mikelon"
+	},
+>>>>>>> revert Open Social update
 	"ST": {
 		"name": "Sveti Toma i Princip"
 	},

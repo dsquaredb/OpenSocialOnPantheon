@@ -38,7 +38,6 @@ class MigrationPluginListTest extends KernelTestBase {
     'menu_link_content',
     'menu_ui',
     'node',
-    'options',
     'path',
     'search',
     'shortcut',

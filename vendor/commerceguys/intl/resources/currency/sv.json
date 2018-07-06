@@ -335,7 +335,11 @@
 		"name": "paraguayansk guarani"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "peruansk nuevo sol"
+=======
+		"name": "peruansk sol"
+>>>>>>> revert Open Social update
 	},
 	"PLN": {
 		"name": "polsk zloty"
@@ -474,9 +478,12 @@
 	"BYN": {
 		"name": "vitrysk rubel"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "vitrysk rubel (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"XOF": {
 		"name": "västafrikansk franc",
 		"symbol": "CFA"

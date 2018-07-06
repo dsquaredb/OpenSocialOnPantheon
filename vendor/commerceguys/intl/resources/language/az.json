@@ -81,7 +81,11 @@
 		"name": "bolqar"
 	},
 	"bs": {
+<<<<<<< HEAD
 		"name": "bosniak"
+=======
+		"name": "bosniya"
+>>>>>>> revert Open Social update
 	},
 	"br": {
 		"name": "breton"
@@ -114,7 +118,11 @@
 		"name": "duala"
 	},
 	"dz": {
+<<<<<<< HEAD
 		"name": "dzonqa"
+=======
+		"name": "dzonqxa"
+>>>>>>> revert Open Social update
 	},
 	"ebu": {
 		"name": "embu"
@@ -251,9 +259,12 @@
 	"kn": {
 		"name": "kannada"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "kanton"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ca": {
 		"name": "katalan"
 	},
@@ -456,7 +467,11 @@
 		"name": "Portuqaliya portuqalcası"
 	},
 	"prg": {
+<<<<<<< HEAD
 		"name": "Prussian"
+=======
+		"name": "pruss"
+>>>>>>> revert Open Social update
 	},
 	"ps": {
 		"name": "puştu"
@@ -503,6 +518,12 @@
 	"ii": {
 		"name": "siçuan yi"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindhi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "sinhala"
 	},
@@ -545,6 +566,12 @@
 	"gd": {
 		"name": "Şotlandiya keltcəsi"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tacik"
+	},
+>>>>>>> revert Open Social update
 	"shi": {
 		"name": "taçelit"
 	},
@@ -560,6 +587,12 @@
 	"twq": {
 		"name": "tasavaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tatar"
+	},
+>>>>>>> revert Open Social update
 	"th": {
 		"name": "tay"
 	},
@@ -605,6 +638,12 @@
 	"vo": {
 		"name": "volapük"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "volof"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "vunyo"
 	},

@@ -56,12 +56,21 @@
 	"BYN": {
 		"name": "bieloruský rubeľ"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "bieloruský rubeľ (2000–2016)"
 	},
 	"BOB": {
 		"name": "bolívijské boliviano"
 	},
+=======
+	"BOB": {
+		"name": "bolívijské boliviano"
+	},
+	"BAM": {
+		"name": "bosniansko-hercegovinská konvertibilná marka"
+	},
+>>>>>>> revert Open Social update
 	"BWP": {
 		"name": "botswanská pula"
 	},
@@ -227,9 +236,12 @@
 	"KMF": {
 		"name": "komorský frank"
 	},
+<<<<<<< HEAD
 	"BAM": {
 		"name": "konvertibilná marka"
 	},
+=======
+>>>>>>> revert Open Social update
 	"CDF": {
 		"name": "konžský frank"
 	},
@@ -249,7 +261,11 @@
 		"name": "laoský kip"
 	},
 	"LSL": {
+<<<<<<< HEAD
 		"name": "Lesothský loti"
+=======
+		"name": "lesothský loti"
+>>>>>>> revert Open Social update
 	},
 	"LBP": {
 		"name": "libanonská libra"
@@ -343,7 +359,11 @@
 		"name": "paraguajské guaraní"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "peruánsky nový sol"
+=======
+		"name": "peruánsky sol"
+>>>>>>> revert Open Social update
 	},
 	"PLN": {
 		"name": "poľský zlotý"
@@ -361,7 +381,11 @@
 		"name": "SAE dirham"
 	},
 	"SVC": {
+<<<<<<< HEAD
 		"name": "Salvádorský colón"
+=======
+		"name": "salvádorský colón"
+>>>>>>> revert Open Social update
 	},
 	"WST": {
 		"name": "samojská tala"
@@ -478,6 +502,10 @@
 		"symbol": "CFA"
 	},
 	"ZWL": {
+<<<<<<< HEAD
 		"name": "Zimbabwiansky dolár (2009)"
+=======
+		"name": "zimbabwiansky dolár (2009)"
+>>>>>>> revert Open Social update
 	}
 }

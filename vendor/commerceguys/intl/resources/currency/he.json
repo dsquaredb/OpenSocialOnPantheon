@@ -1,6 +1,10 @@
 {
 	"MRO": {
+<<<<<<< HEAD
 		"name": "אוגוויה מאוריטני"
+=======
+		"name": "אואוגויה מאוריטני"
+>>>>>>> revert Open Social update
 	},
 	"EUR": {
 		"name": "אירו",
@@ -32,7 +36,11 @@
 		"name": "בלבואה פנמי"
 	},
 	"PYG": {
+<<<<<<< HEAD
 		"name": "גוורני פראגוואי"
+=======
+		"name": "גוארני פרגוואי"
+>>>>>>> revert Open Social update
 	},
 	"HTG": {
 		"name": "גורד האיטי"
@@ -40,9 +48,12 @@
 	"ANG": {
 		"name": "גילדר של האנטילים ההולנדיים"
 	},
+<<<<<<< HEAD
 	"UAH": {
 		"name": "גריבנה אוקראיני"
 	},
+=======
+>>>>>>> revert Open Social update
 	"STD": {
 		"name": "דוברה של סן טומה ופרינסיפה"
 	},
@@ -113,7 +124,11 @@
 		"name": "דולר פיג׳י"
 	},
 	"KYD": {
+<<<<<<< HEAD
 		"name": "דולר קיימאני"
+=======
+		"name": "דולר קיימני"
+>>>>>>> revert Open Social update
 	},
 	"CAD": {
 		"name": "דולר קנדי",
@@ -157,11 +172,21 @@
 		"name": "דירהם של איחוד הנסיכויות הערביות"
 	},
 	"GMD": {
+<<<<<<< HEAD
 		"name": "דלאסי גמבי"
+=======
+		"name": "דלסי גמבי"
+>>>>>>> revert Open Social update
 	},
 	"AMD": {
 		"name": "דראם ארמני"
 	},
+<<<<<<< HEAD
+=======
+	"UAH": {
+		"name": "הריבנה אוקראיני"
+	},
+>>>>>>> revert Open Social update
 	"VUV": {
 		"name": "ואטו של ונואטו"
 	},
@@ -207,23 +232,42 @@
 	"SEK": {
 		"name": "כתר שוודי"
 	},
+<<<<<<< HEAD
 	"RON": {
 		"name": "לאו רומני"
 	},
+=======
+	"MDL": {
+		"name": "לאו מולדובני"
+	},
+	"RON": {
+		"name": "לאו רומני"
+	},
+	"GEL": {
+		"name": "לארי גאורגי"
+	},
+>>>>>>> revert Open Social update
 	"BGN": {
 		"name": "לב בולגרי"
 	},
 	"LSL": {
 		"name": "לוטי לסותי"
 	},
+<<<<<<< HEAD
 	"MDL": {
 		"name": "ליאו מולדובני"
 	},
+=======
+>>>>>>> revert Open Social update
 	"SLL": {
 		"name": "ליאון סיירה לאוני"
 	},
 	"SZL": {
+<<<<<<< HEAD
 		"name": "לילנגני סווזי"
+=======
+		"name": "לילנגני סווזילנדי"
+>>>>>>> revert Open Social update
 	},
 	"SSP": {
 		"name": "לירה דרום-סודנית"
@@ -256,17 +300,26 @@
 	"ALL": {
 		"name": "לק אלבני"
 	},
+<<<<<<< HEAD
 	"GEL": {
 		"name": "לרי גאורגי"
 	},
 	"AZN": {
 		"name": "מאנאט אזרביג׳ני"
+=======
+	"AZN": {
+		"name": "מאנאט אזרבייג׳ני"
+>>>>>>> revert Open Social update
 	},
 	"TMT": {
 		"name": "מאנאט טורקמני"
 	},
 	"BAM": {
+<<<<<<< HEAD
 		"name": "מארק בר המרה של בוסניה־הרצגובינה"
+=======
+		"name": "מארק סחיר של בוסניה והרצגובינה"
+>>>>>>> revert Open Social update
 	},
 	"MZN": {
 		"name": "מטיקל מוזמביני"
@@ -284,7 +337,11 @@
 		"name": "סדי גאני"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "סול פרואני חדש"
+=======
+		"name": "סול פרואני"
+>>>>>>> revert Open Social update
 	},
 	"UZS": {
 		"name": "סום אוזבקי"
@@ -305,7 +362,11 @@
 		"name": "פאנגה טונגי"
 	},
 	"BWP": {
+<<<<<<< HEAD
 		"name": "פולה בוצוואני"
+=======
+		"name": "פולה בוטסואני"
+>>>>>>> revert Open Social update
 	},
 	"HUF": {
 		"name": "פורינט הונגרי"
@@ -370,21 +431,36 @@
 		"name": "פרנק שוויצרי"
 	},
 	"XOF": {
+<<<<<<< HEAD
 		"name": "פרנק CFA BCEAO",
 		"symbol": "CFA"
 	},
 	"XAF": {
 		"name": "פרנק CFA BEAC",
+=======
+		"name": "פרנק CFA מערב אפריקני",
+		"symbol": "CFA"
+	},
+	"XAF": {
+		"name": "פרנק CFA מרכז אפריקני",
+>>>>>>> revert Open Social update
 		"symbol": "FCFA"
 	},
 	"AOA": {
 		"name": "קואנזה אנגולי"
 	},
 	"MWK": {
+<<<<<<< HEAD
 		"name": "קואצ׳ה מלאוי"
 	},
 	"ZMW": {
 		"name": "קוואצ׳ה זמבית"
+=======
+		"name": "קואצ׳ה מלאווי"
+	},
+	"ZMW": {
+		"name": "קוואצ׳ה זמבי"
+>>>>>>> revert Open Social update
 	},
 	"SVC": {
 		"name": "קולון סלבדורי"
@@ -411,7 +487,11 @@
 		"name": "קיפ לאי"
 	},
 	"GTQ": {
+<<<<<<< HEAD
 		"name": "קצל גואטמלי"
+=======
+		"name": "קצאל גואטמלי"
+>>>>>>> revert Open Social update
 	},
 	"ZAR": {
 		"name": "ראנד דרום אפריקאי"
@@ -419,9 +499,12 @@
 	"BYN": {
 		"name": "רובל בלרוסי"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "רובל בלרוסי (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"RUB": {
 		"name": "רובל רוסי"
 	},
@@ -482,10 +565,17 @@
 		"name": "שילינג טנזני"
 	},
 	"SOS": {
+<<<<<<< HEAD
 		"name": "שילינג סומאלי"
 	},
 	"KES": {
 		"name": "שילינג קנייאתי"
+=======
+		"name": "שילינג סומלי"
+	},
+	"KES": {
+		"name": "שילינג קנייתי"
+>>>>>>> revert Open Social update
 	},
 	"ILS": {
 		"name": "שקל חדש",

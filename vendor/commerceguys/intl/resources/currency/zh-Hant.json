@@ -59,10 +59,14 @@
 		"symbol": "CA$"
 	},
 	"KPW": {
+<<<<<<< HEAD
 		"name": "北韓圓"
 	},
 	"KZT": {
 		"name": "卡扎克斯坦坦吉"
+=======
+		"name": "北韓元"
+>>>>>>> revert Open Social update
 	},
 	"QAR": {
 		"name": "卡達里亞爾"
@@ -91,9 +95,12 @@
 	"BYN": {
 		"name": "白俄羅斯盧布"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "白俄羅斯盧布 (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"IQD": {
 		"name": "伊拉克第納爾"
 	},
@@ -239,6 +246,12 @@
 	"SSP": {
 		"name": "南蘇丹鎊"
 	},
+<<<<<<< HEAD
+=======
+	"KZT": {
+		"name": "哈薩克堅戈"
+	},
+>>>>>>> revert Open Social update
 	"KHR": {
 		"name": "柬埔寨瑞爾"
 	},
@@ -312,7 +325,11 @@
 		"name": "烏茲別克索姆"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "秘魯新太陽幣"
+=======
+		"name": "秘魯太陽幣"
+>>>>>>> revert Open Social update
 	},
 	"NAD": {
 		"name": "納米比亞元"
@@ -478,7 +495,11 @@
 		"name": "賴索托洛蒂"
 	},
 	"KRW": {
+<<<<<<< HEAD
 		"name": "韓圓",
+=======
+		"name": "韓元",
+>>>>>>> revert Open Social update
 		"symbol": "￦"
 	},
 	"SVC": {

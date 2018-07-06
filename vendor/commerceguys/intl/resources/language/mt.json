@@ -251,9 +251,12 @@
 	"kn": {
 		"name": "Kannada"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Kantoniż"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ks": {
 		"name": "Kashmiri"
 	},
@@ -500,6 +503,12 @@
 	"ii": {
 		"name": "Sichuan Yi"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "Sindhi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "Sinhala"
 	},
@@ -542,6 +551,12 @@
 	"dav": {
 		"name": "Taita"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "Tajik"
+	},
+>>>>>>> revert Open Social update
 	"th": {
 		"name": "Tajlandiż"
 	},
@@ -560,6 +575,12 @@
 	"twq": {
 		"name": "Tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "Tatar"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "Telugu"
 	},
@@ -614,6 +635,12 @@
 	"cy": {
 		"name": "Welsh"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "Wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "Yangben"
 	},
@@ -624,7 +651,11 @@
 		"name": "Yoruba"
 	},
 	"sv": {
+<<<<<<< HEAD
 		"name": "Żvezja"
+=======
+		"name": "Żvediż"
+>>>>>>> revert Open Social update
 	},
 	"dje": {
 		"name": "Zarma"

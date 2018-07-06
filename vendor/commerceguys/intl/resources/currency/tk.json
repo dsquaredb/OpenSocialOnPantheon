@@ -7,7 +7,11 @@
 		"name": "Alban leki"
 	},
 	"DZD": {
+<<<<<<< HEAD
 		"name": "Aljir dinary"
+=======
+		"name": "Alžir dinary"
+>>>>>>> revert Open Social update
 	},
 	"AOA": {
 		"name": "Angol kwanzasy"
@@ -23,7 +27,11 @@
 		"symbol": "A$"
 	},
 	"AZN": {
+<<<<<<< HEAD
 		"name": "Azerbaýjan manaty"
+=======
+		"name": "Azerbaýjan manady"
+>>>>>>> revert Open Social update
 	},
 	"AED": {
 		"name": "BAE dirhemi"
@@ -40,6 +48,7 @@
 	"BBD": {
 		"name": "Barbados dollary"
 	},
+<<<<<<< HEAD
 	"BZD": {
 		"name": "Beliz dollary"
 	},
@@ -48,12 +57,23 @@
 	},
 	"BYR": {
 		"name": "Belorus rubly (2000–2016)"
+=======
+	"BYN": {
+		"name": "Belarus rubly"
+	},
+	"BZD": {
+		"name": "Beliz dollary"
+>>>>>>> revert Open Social update
 	},
 	"BMD": {
 		"name": "Bermuda dollary"
 	},
 	"BGN": {
+<<<<<<< HEAD
 		"name": "Bolgar lewy"
+=======
+		"name": "Bolgar lewi"
+>>>>>>> revert Open Social update
 	},
 	"BOB": {
 		"name": "Boliwiýa boliwianosy"
@@ -65,11 +85,21 @@
 		"name": "Brazil realy",
 		"symbol": "R$"
 	},
+<<<<<<< HEAD
+=======
+	"GBP": {
+		"name": "Britan funt sterlingi"
+	},
+>>>>>>> revert Open Social update
 	"BND": {
 		"name": "Bruneý dollary"
 	},
 	"BIF": {
+<<<<<<< HEAD
 		"name": "Burundiý franky"
+=======
+		"name": "Burundi franky"
+>>>>>>> revert Open Social update
 	},
 	"BTN": {
 		"name": "Butan ngultrumy"
@@ -84,7 +114,11 @@
 		"name": "Daniýa kronasy"
 	},
 	"KPW": {
+<<<<<<< HEAD
 		"name": "Demirgazyk Koreýa wony"
+=======
+		"name": "Demirgazyk Koreý wony"
+>>>>>>> revert Open Social update
 	},
 	"DOP": {
 		"name": "Dominikan pesosy"
@@ -115,16 +149,27 @@
 		"symbol": "CFPF"
 	},
 	"HTG": {
+<<<<<<< HEAD
 		"name": "Gaitýan gurdy"
 	},
 	"GMD": {
 		"name": "Gambiýa dalasy"
+=======
+		"name": "Gaiti gurdy"
+	},
+	"GMD": {
+		"name": "Gambiýa dalasisi"
+>>>>>>> revert Open Social update
 	},
 	"GHS": {
 		"name": "Gano sedisi"
 	},
 	"GYD": {
+<<<<<<< HEAD
 		"name": "Gaýan dollary"
+=======
+		"name": "Gaýana dollary"
+>>>>>>> revert Open Social update
 	},
 	"KZT": {
 		"name": "Gazak teňňesi"
@@ -140,7 +185,11 @@
 		"symbol": "HK$"
 	},
 	"GEL": {
+<<<<<<< HEAD
 		"name": "Gruzin lari"
+=======
+		"name": "Gruzin larisi"
+>>>>>>> revert Open Social update
 	},
 	"XCD": {
 		"name": "Gündogar karib dollary",
@@ -150,11 +199,19 @@
 		"name": "Günorta Afrika rendi"
 	},
 	"KRW": {
+<<<<<<< HEAD
 		"name": "Günorta Koreýa wony",
 		"symbol": "₩"
 	},
 	"SSP": {
 		"name": "Günorta sudan funty"
+=======
+		"name": "Günorta Koreý wony",
+		"symbol": "₩"
+	},
+	"SSP": {
+		"name": "Günorta Sudan funty"
+>>>>>>> revert Open Social update
 	},
 	"GTQ": {
 		"name": "Gwatemala ketsaly"
@@ -179,11 +236,16 @@
 	"IDR": {
 		"name": "Indoneziýa rupiýasy"
 	},
+<<<<<<< HEAD
 	"GBP": {
 		"name": "Iňlis funt sterlingi"
 	},
 	"JOD": {
 		"name": "Iordaniýa dinary"
+=======
+	"JOD": {
+		"name": "Iordan dinary"
+>>>>>>> revert Open Social update
 	},
 	"ISK": {
 		"name": "Islandiýa kronasy"
@@ -225,6 +287,7 @@
 		"name": "Kolumbiýa pesosy"
 	},
 	"KMF": {
+<<<<<<< HEAD
 		"name": "Komor adalar franky"
 	},
 	"CDF": {
@@ -232,6 +295,15 @@
 	},
 	"BAM": {
 		"name": "Konwertirlenýän bosniýa we gersogowina markasy"
+=======
+		"name": "Komor adalarynyň franky"
+	},
+	"CDF": {
+		"name": "Kongo franky"
+	},
+	"BAM": {
+		"name": "Konwertirlenýän Bosniýa we Gersogowina markasy"
+>>>>>>> revert Open Social update
 	},
 	"CUC": {
 		"name": "Konwertirlenýän kuba pesosy"
@@ -248,9 +320,12 @@
 	"LAK": {
 		"name": "Laos kipi"
 	},
+<<<<<<< HEAD
 	"SLL": {
 		"name": "Leon"
 	},
+=======
+>>>>>>> revert Open Social update
 	"LSL": {
 		"name": "Lesotho Loti"
 	},
@@ -282,7 +357,11 @@
 		"name": "Maldiw rufiýasy"
 	},
 	"MAD": {
+<<<<<<< HEAD
 		"name": "Marokka dirhamy"
+=======
+		"name": "Marokko dirhamy"
+>>>>>>> revert Open Social update
 	},
 	"MUR": {
 		"name": "Mawrikiý rupiýasy"
@@ -301,7 +380,11 @@
 		"name": "Mongol tugrigi"
 	},
 	"MZN": {
+<<<<<<< HEAD
 		"name": "Mozambik metikal"
+=======
+		"name": "Mozambik metikaly"
+>>>>>>> revert Open Social update
 	},
 	"EGP": {
 		"name": "Müsür funty"
@@ -343,6 +426,7 @@
 		"name": "Panama balboasy"
 	},
 	"PGK": {
+<<<<<<< HEAD
 		"name": "Papua — Täze Gwineýa kinasy"
 	},
 	"PYG": {
@@ -350,6 +434,21 @@
 	},
 	"PLN": {
 		"name": "Polýak zloty"
+=======
+		"name": "Papua - Täze Gwineýa kinasy"
+	},
+	"PYG": {
+		"name": "Paragwaý guaranisi"
+	},
+	"PEN": {
+		"name": "Peru soly"
+	},
+	"PLN": {
+		"name": "Polýak zlotysy"
+	},
+	"RWF": {
+		"name": "Ruanda franky"
+>>>>>>> revert Open Social update
 	},
 	"RON": {
 		"name": "Rumyn leýi"
@@ -357,9 +456,12 @@
 	"RUB": {
 		"name": "Rus rubly"
 	},
+<<<<<<< HEAD
 	"RWF": {
 		"name": "Rwanda franky"
 	},
+=======
+>>>>>>> revert Open Social update
 	"SVC": {
 		"name": "Salvadoran Colón"
 	},
@@ -388,7 +490,11 @@
 		"name": "Solomon adalarynyň dollary"
 	},
 	"SOS": {
+<<<<<<< HEAD
 		"name": "Somali şilingi"
+=======
+		"name": "Somali şillingi"
+>>>>>>> revert Open Social update
 	},
 	"LKR": {
 		"name": "Şri-Lanka rupiýasy"
@@ -408,18 +514,31 @@
 	"CHF": {
 		"name": "Şweýsar franky"
 	},
+<<<<<<< HEAD
+=======
+	"SLL": {
+		"name": "Sýerra-Leone leony"
+	},
+>>>>>>> revert Open Social update
 	"TJS": {
 		"name": "Täjik somonisy"
 	},
 	"TZS": {
+<<<<<<< HEAD
 		"name": "Tanzaniýa şilingi"
+=======
+		"name": "Tanzaniýa şillingi"
+>>>>>>> revert Open Social update
 	},
 	"THB": {
 		"name": "Taýland baty"
 	},
+<<<<<<< HEAD
 	"PEN": {
 		"name": "Täze peru soly"
 	},
+=======
+>>>>>>> revert Open Social update
 	"TWD": {
 		"name": "Täze Taýwan dollary",
 		"symbol": "NT$"
@@ -445,10 +564,17 @@
 		"name": "Türk lirasy"
 	},
 	"TMT": {
+<<<<<<< HEAD
 		"name": "Türkmen manaty"
 	},
 	"UGX": {
 		"name": "Uganda şilingi"
+=======
+		"name": "Türkmen manady"
+	},
+	"UGX": {
+		"name": "Uganda şillingi"
+>>>>>>> revert Open Social update
 	},
 	"UAH": {
 		"name": "Ukrain griwnasy"
@@ -460,10 +586,17 @@
 		"name": "Wanuatu watusy"
 	},
 	"VEF": {
+<<<<<<< HEAD
 		"name": "Wenezuela boliwary"
 	},
 	"HUF": {
 		"name": "Wenger forinty"
+=======
+		"name": "Wenesuela boliwary"
+	},
+	"HUF": {
+		"name": "Wenger forinti"
+>>>>>>> revert Open Social update
 	},
 	"VND": {
 		"name": "Wýetnam dongy",

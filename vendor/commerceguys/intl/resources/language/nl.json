@@ -248,9 +248,12 @@
 	"kn": {
 		"name": "Kannada"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Kantonees"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ks": {
 		"name": "Kasjmiri"
 	},
@@ -377,6 +380,12 @@
 	"naq": {
 		"name": "Nama"
 	},
+<<<<<<< HEAD
+=======
+	"nds-NL": {
+		"name": "Nederduits"
+	},
+>>>>>>> revert Open Social update
 	"nl": {
 		"name": "Nederlands"
 	},
@@ -386,9 +395,12 @@
 	"nds": {
 		"name": "Nedersaksisch"
 	},
+<<<<<<< HEAD
 	"nds-NL": {
 		"name": "Nedersaksisch (Nederland)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"dsb": {
 		"name": "Nedersorbisch"
 	},
@@ -509,6 +521,12 @@
 	"sn": {
 		"name": "Shona"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "Sindhi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "Singalees"
 	},
@@ -542,6 +560,12 @@
 	"sw-CD": {
 		"name": "Swahili (Congo-Kinshasa)"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "Tadzjieks"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "Taita"
 	},
@@ -557,6 +581,12 @@
 	"shi": {
 		"name": "Tashelhiyt"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "Tataars"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "Telugu"
 	},
@@ -611,6 +641,12 @@
 	"be": {
 		"name": "Wit-Russisch"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "Wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "Yangben"
 	},

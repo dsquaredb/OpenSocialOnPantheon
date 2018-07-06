@@ -212,6 +212,7 @@ class FlattenException extends LegacyFlattenException
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function setPrevious(self $previous)
 =======
     public function setPrevious(FlattenException $previous)
@@ -219,6 +220,9 @@ class FlattenException extends LegacyFlattenException
 =======
     public function setPrevious(self $previous)
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+    public function setPrevious(FlattenException $previous)
+>>>>>>> revert Open Social update
     {
         $this->previous = $previous;
     }

@@ -666,8 +666,12 @@ class ContentTranslationHandler implements ContentTranslationHandlerInterface, E
     $form_object = $form_state->getFormObject()->getEntity();
 =======
   public function entityFormDelete($form, FormStateInterface $form_state) {
+<<<<<<< HEAD
     $form_object = $form_state->getFormObject();
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+    $form_object = $form_state->getFormObject()->getEntity();
+>>>>>>> revert Open Social update
     $entity = $form_object->getEntity();
     if (count($entity->getTranslationLanguages()) > 1) {
       drupal_set_message(t('This will delete all the translations of %label.', array('%label' => $entity->label())), 'warning');

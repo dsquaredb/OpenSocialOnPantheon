@@ -25,10 +25,14 @@ class EntityReferenceFieldItemList extends FieldItemList implements EntityRefere
    */
   public function referencedEntities() {
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (empty($this->list)) {
       return array();
 =======
     if ($this->isEmpty()) {
+=======
+    if (empty($this->list)) {
+>>>>>>> revert Open Social update
       return [];
 >>>>>>> Update Open Social to 8.x-2.1
     }

@@ -3,19 +3,19 @@
 namespace Drupal\Tests\menu_link_content\Kernel\Migrate\d6;
 
 use Drupal\menu_link_content\Entity\MenuLinkContent;
-use Drupal\menu_link_content\MenuLinkContentInterface;
-use Drupal\Tests\node\Kernel\Migrate\d6\MigrateNodeTestBase;
+use Drupal\Tests\migrate_drupal\Kernel\d6\MigrateDrupal6TestBase;
 
 /**
  * Menu link migration.
  *
  * @group migrate_drupal_6
  */
-class MigrateMenuLinkTest extends MigrateNodeTestBase {
+class MigrateMenuLinkTest extends MigrateDrupal6TestBase {
 
   /**
    * {@inheritdoc}
    */
+<<<<<<< HEAD
 <<<<<<< HEAD
   public static $modules = array('menu_ui', 'menu_link_content');
 =======
@@ -26,6 +26,9 @@ class MigrateMenuLinkTest extends MigrateNodeTestBase {
     'menu_ui',
   ];
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+  public static $modules = ['menu_ui', 'menu_link_content'];
+>>>>>>> revert Open Social update
 
   /**
    * {@inheritdoc}
@@ -33,6 +36,7 @@ class MigrateMenuLinkTest extends MigrateNodeTestBase {
   protected function setUp() {
     parent::setUp();
     $this->installEntitySchema('menu_link_content');
+<<<<<<< HEAD
 <<<<<<< HEAD
     $this->executeMigrations(['menu', 'menu_links']);
 =======
@@ -86,27 +90,55 @@ class MigrateMenuLinkTest extends MigrateNodeTestBase {
     $this->assertSame($weight, $menu_link->getWeight());
     return $menu_link;
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+    $this->executeMigrations(['d6_menu', 'd6_menu_links']);
+>>>>>>> revert Open Social update
   }
 
   /**
    * Tests migration of menu links.
    */
   public function testMenuLinks() {
-    $this->assertEntity('138', 'Test 1', 'secondary-links', 'Test menu link 1', TRUE, FALSE, ['attributes' => ['title' => 'Test menu link 1'], 'langcode' => 'en'], 'internal:/user/login', -50);
-    $this->assertEntity('139', 'Test 2', 'secondary-links', 'Test menu link 2', TRUE, TRUE, ['query' => 'foo=bar', 'attributes' => ['title' => 'Test menu link 2']], 'internal:/admin', -49);
-    $this->assertEntity('140', 'Drupal.org', 'secondary-links', NULL, TRUE, FALSE, ['attributes' => ['title' => '']], 'https://www.drupal.org', -50);
+    $menu_link = MenuLinkContent::load(138);
+    $this->assertIdentical('Test 1', $menu_link->getTitle());
+    $this->assertIdentical('secondary-links', $menu_link->getMenuName());
+    $this->assertIdentical('Test menu link 1', $menu_link->getDescription());
+    $this->assertIdentical(TRUE, $menu_link->isEnabled());
+    $this->assertIdentical(FALSE, $menu_link->isExpanded());
+    $this->assertIdentical(['attributes' => ['title' => 'Test menu link 1']], $menu_link->link->options);
+    $this->assertIdentical('internal:/user/login', $menu_link->link->uri);
+    $this->assertIdentical(-50, $menu_link->getWeight());
 
-    // Assert that missing title attributes don't stop or break migration.
-    $this->assertEntity('393', 'Test 3', 'secondary-links', NULL, TRUE, FALSE, [], 'internal:/user/login', -47);
+    $menu_link = MenuLinkContent::load(139);
+    $this->assertIdentical('Test 2', $menu_link->getTitle());
+    $this->assertIdentical('secondary-links', $menu_link->getMenuName());
+    $this->assertIdentical('Test menu link 2', $menu_link->getDescription());
+    $this->assertIdentical(TRUE, $menu_link->isEnabled());
+    $this->assertIdentical(TRUE, $menu_link->isExpanded());
+    $this->assertIdentical(['query' => 'foo=bar', 'attributes' => ['title' => 'Test menu link 2']], $menu_link->link->options);
+    $this->assertIdentical('internal:/admin', $menu_link->link->uri);
+    $this->assertIdentical(-49, $menu_link->getWeight());
 
-    // Test the migration of menu links for translated nodes.
-    $this->assertEntity('459', 'The Real McCoy', 'primary-links', NULL, TRUE, FALSE, ['attributes' => ['title' => ''], 'alter' => TRUE], 'entity:node/10', 0);
-    $this->assertEntity('460', 'Le Vrai McCoy', 'primary-links', NULL, TRUE, FALSE, ['attributes' => ['title' => ''], 'alter' => TRUE], 'entity:node/10', 0);
-    $this->assertEntity('461', 'Abantu zulu', 'primary-links', NULL, TRUE, FALSE, ['attributes' => ['title' => ''], 'alter' => TRUE], 'entity:node/12', 0);
-    $this->assertEntity('462', 'The Zulu People', 'primary-links', NULL, TRUE, FALSE, ['attributes' => ['title' => ''], 'alter' => TRUE], 'entity:node/12', 0);
+    $menu_link = MenuLinkContent::load(140);
+    $this->assertIdentical('Drupal.org', $menu_link->getTitle());
+    $this->assertIdentical('secondary-links', $menu_link->getMenuName());
+    $this->assertIdentical(NULL, $menu_link->getDescription());
+    $this->assertIdentical(TRUE, $menu_link->isEnabled());
+    $this->assertIdentical(FALSE, $menu_link->isExpanded());
+    $this->assertIdentical(['attributes' => ['title' => '']], $menu_link->link->options);
+    $this->assertIdentical('https://www.drupal.org', $menu_link->link->uri);
+    $this->assertIdentical(-50, $menu_link->getWeight());
 
-    // Test the migration of menu links translation.
-    $this->assertEntity('463', 'fr - Test 1', 'secondary-links', 'fr - Test menu link 1', TRUE, FALSE, ['attributes' => ['title' => 'fr - Test menu link 1'], 'langcode' => 'fr', 'alter' => TRUE], 'internal:/user/login', -49);
+    // assert that missing title attributes don't stop or break migration.
+    $menu_link = MenuLinkContent::load(393);
+    $this->assertIdentical('Test 3', $menu_link->getTitle());
+    $this->assertIdentical('secondary-links', $menu_link->getMenuName());
+    $this->assertIdentical(NULL, $menu_link->getDescription());
+    $this->assertIdentical(TRUE, $menu_link->isEnabled());
+    $this->assertIdentical(FALSE, $menu_link->isExpanded());
+    $this->assertIdentical([], $menu_link->link->options);
+    $this->assertIdentical('internal:/user/login', $menu_link->link->uri);
+    $this->assertIdentical(-47, $menu_link->getWeight());
   }
 
 }

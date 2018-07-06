@@ -402,9 +402,12 @@
 	"BYN": {
 		"name": "Rublu bielorrusu"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "Rublu bielorrusu (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"RUB": {
 		"name": "Rublu rusu"
 	},
@@ -446,7 +449,11 @@
 		"name": "Shilling ugandés"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "sol nuevu peruanu"
+=======
+		"name": "Sol peruanu"
+>>>>>>> revert Open Social update
 	},
 	"KGS": {
 		"name": "Som kirguistanín"

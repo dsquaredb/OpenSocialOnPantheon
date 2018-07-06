@@ -14,9 +14,12 @@
 	"brx": {
 		"name": "Bodo"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Cantonese"
 	},
+=======
+>>>>>>> revert Open Social update
 	"tzm": {
 		"name": "Central Atlas Tamazight"
 	},
@@ -290,9 +293,21 @@
 	"pa": {
 		"name": "پَنجٲبۍ"
 	},
+<<<<<<< HEAD
 	"bo": {
 		"name": "تِبتی"
 	},
+=======
+	"tg": {
+		"name": "تاجِک"
+	},
+	"bo": {
+		"name": "تِبتی"
+	},
+	"tt": {
+		"name": "تَتار"
+	},
+>>>>>>> revert Open Social update
 	"tr": {
 		"name": "تُرکِش"
 	},
@@ -392,6 +407,12 @@
 	"sl": {
 		"name": "سلووینیَن"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "سِندی"
+	},
+>>>>>>> revert Open Social update
 	"sg": {
 		"name": "سَنگو"
 	},
@@ -611,6 +632,12 @@
 	"vo": {
 		"name": "وولَپُک"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "وولوف"
+	},
+>>>>>>> revert Open Social update
 	"vi": {
 		"name": "وِیَتنَمیٖز"
 	},

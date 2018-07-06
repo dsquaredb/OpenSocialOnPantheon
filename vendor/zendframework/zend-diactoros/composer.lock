@@ -1,9 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     "hash": "287996fa611f46eb393c625c762f709f",
@@ -15,6 +16,9 @@
 =======
     "content-hash": "6a979d48e42840de5442a250eb48ea3c",
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+    "content-hash": "de254758c5d28198ad8441fb154fc7f3",
+>>>>>>> revert Open Social update
     "packages": [
         {
             "name": "psr/http-message",

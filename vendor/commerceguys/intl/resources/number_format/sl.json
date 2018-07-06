@@ -6,5 +6,9 @@
 	"accounting_currency_pattern": "#,##0.00 ¤;(#,##0.00 ¤)",
 	"decimal_separator": ",",
 	"grouping_separator": ".",
+<<<<<<< HEAD
 	"minus_sign": "–"
+=======
+	"minus_sign": "−"
+>>>>>>> revert Open Social update
 }

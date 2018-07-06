@@ -33,8 +33,6 @@ class Google_Service_Appengine_Version extends Google_Collection
   public $diskUsageBytes;
   protected $endpointsApiServiceType = 'Google_Service_Appengine_EndpointsApiService';
   protected $endpointsApiServiceDataType = '';
-  protected $entrypointType = 'Google_Service_Appengine_Entrypoint';
-  protected $entrypointDataType = '';
   public $env;
   public $envVariables;
   protected $errorHandlersType = 'Google_Service_Appengine_ErrorHandler';
@@ -178,20 +176,6 @@ class Google_Service_Appengine_Version extends Google_Collection
   public function getEndpointsApiService()
   {
     return $this->endpointsApiService;
-  }
-  /**
-   * @param Google_Service_Appengine_Entrypoint
-   */
-  public function setEntrypoint(Google_Service_Appengine_Entrypoint $entrypoint)
-  {
-    $this->entrypoint = $entrypoint;
-  }
-  /**
-   * @return Google_Service_Appengine_Entrypoint
-   */
-  public function getEntrypoint()
-  {
-    return $this->entrypoint;
   }
   public function setEnv($env)
   {

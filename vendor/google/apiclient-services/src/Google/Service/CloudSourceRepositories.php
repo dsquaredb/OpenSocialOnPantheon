@@ -43,7 +43,6 @@ class Google_Service_CloudSourceRepositories extends Google_Service
   const SOURCE_READ_WRITE =
       "https://www.googleapis.com/auth/source.read_write";
 
-  public $projects;
   public $projects_repos;
   
   /**
@@ -60,36 +59,6 @@ class Google_Service_CloudSourceRepositories extends Google_Service
     $this->version = 'v1';
     $this->serviceName = 'sourcerepo';
 
-    $this->projects = new Google_Service_CloudSourceRepositories_Resource_Projects(
-        $this,
-        $this->serviceName,
-        'projects',
-        array(
-          'methods' => array(
-            'getConfig' => array(
-              'path' => 'v1/{+name}/config',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'updateConfig' => array(
-              'path' => 'v1/{+name}/config',
-              'httpMethod' => 'PATCH',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),
-          )
-        )
-    );
     $this->projects_repos = new Google_Service_CloudSourceRepositories_Resource_ProjectsRepos(
         $this,
         $this->serviceName,
@@ -145,23 +114,13 @@ class Google_Service_CloudSourceRepositories extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'pageSize' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-              ),
-            ),'patch' => array(
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'PATCH',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
+                'pageSize' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
                 ),
               ),
             ),'setIamPolicy' => array(

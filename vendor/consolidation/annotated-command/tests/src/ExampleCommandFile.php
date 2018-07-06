@@ -7,6 +7,10 @@ use Consolidation\AnnotatedCommand\CommandError;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Event\ConsoleCommandEvent;
 use Symfony\Component\Console\Input\InputInterface;
+<<<<<<< HEAD
+=======
+use Symfony\Component\Console\Input\InputOption;
+>>>>>>> revert Open Social update
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -33,6 +37,68 @@ class ExampleCommandFile
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Import config from a config directory.
+     *
+     * @command config:import
+     * @param $label A config directory label (i.e. a key in \$config_directories array in settings.php).
+     * @interact-config-label
+     * @option preview Format for displaying proposed changes. Recognized values: list, diff.
+     * @option source An arbitrary directory that holds the configuration files. An alternative to label argument
+     * @option partial Allows for partial config imports from the source directory. Only updates and new configs will be processed with this flag (missing configs will not be deleted).
+     * @aliases cim,config-import
+     */
+    public function import($label = null, $options = ['preview' => 'list', 'source' => InputOption::VALUE_REQUIRED, 'partial' => false])
+    {
+    }
+
+    /**
+     * Calculate the fibonacci sequence between two numbers.
+     *
+     * Graphic output will look like
+     *     +----+---+-------------+
+     *     |    |   |             |
+     *     |    |-+-|             |
+     *     |----+-+-+             |
+     *     |        |             |
+     *     |        |             |
+     *     |        |             |
+     *     +--------+-------------+
+     *
+     * @param int $start Number to start from
+     * @param int $steps Number of steps to perform
+     * @param array $opts
+     * @option $graphic Display the sequence graphically using cube
+     *   representation
+     */
+    public function fibonacci($start, $steps, $opts = ['graphic' => false])
+    {
+    }
+
+    /**
+     * Code sniffer.
+     *
+     * Run the PHP Codesniffer on a file or directory.
+     *
+     * @param string $file
+     *    A file or directory to analyze.
+     * @option $autofix Whether to run the automatic fixer or not.
+     * @option $strict Show warnings as well as errors.
+     *    Default is to show only errors.
+     */
+    public function sniff(
+        $file = 'src',
+        array $options = [
+            'autofix' => false,
+            'strict' => false,
+        ]
+    ) {
+        return var_export($options, true);
+    }
+
+    /**
+>>>>>>> revert Open Social update
      * This is the my:cat command
      *
      * This command will concatenate two parameters. If the --flip flag
@@ -46,7 +112,11 @@ class ExampleCommandFile
      *   Concatenate "alpha" and "bet".
      * @arbitrary This annotation is here merely as a marker used in testing.
      */
+<<<<<<< HEAD
     public function myCat($one, $two = '', $options = ['flip' => false])
+=======
+    public function myCat($one, $two = '', array $options = ['flip' => false])
+>>>>>>> revert Open Social update
     {
         if ($options['flip']) {
             return "{$two}{$one}";
@@ -57,15 +127,33 @@ class ExampleCommandFile
     /**
      * @command my:repeat
      */
+<<<<<<< HEAD
     public function myRepeat($one, $two = '', $options = ['repeat' => 1])
+=======
+    public function myRepeat($one, $two = '', array $options = ['repeat' => 1])
+>>>>>>> revert Open Social update
     {
         return str_repeat("{$one}{$two}", $options['repeat']);
     }
 
     /**
+<<<<<<< HEAD
      * @command my:join
      */
     public function myJoin(array $args, $options = ['flip' => false, 'repeat' => 1])
+=======
+     * This is the my:join command
+     *
+     * This command will join its parameters together. It can also reverse and repeat its arguments.
+     *
+     * @command my:join
+     * @usage a b
+     *   Join a and b to produce "a,b"
+     * @usage
+     *   Example with no parameters or options
+     */
+    public function myJoin(array $args, array $options = ['flip' => false, 'repeat' => 1])
+>>>>>>> revert Open Social update
     {
         if ($options['flip']) {
             $args = array_reverse($args);
@@ -91,13 +179,30 @@ class ExampleCommandFile
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * This command work with app's input and output
+     *
+     * @command command:with-io-parameters
+     */
+    public function commandWithIOParameters(InputInterface $input, OutputInterface $output)
+    {
+        return $input->getFirstArgument();
+    }
+
+    /**
+>>>>>>> revert Open Social update
      * This command has no arguments--only options
      *
      * Return a result only if not silent.
      *
      * @option silent Supress output.
      */
+<<<<<<< HEAD
     public function commandWithNoArguments($opts = ['silent|s' => false])
+=======
+    public function commandWithNoArguments(array $opts = ['silent|s' => false])
+>>>>>>> revert Open Social update
     {
         if (!$opts['silent']) {
             return "Hello, world";
@@ -112,7 +217,11 @@ class ExampleCommandFile
      * @param $opts The options
      * @option silent|s Supress output.
      */
+<<<<<<< HEAD
     public function shortcutOnAnnotation($opts = ['silent' => false])
+=======
+    public function shortcutOnAnnotation(array $opts = ['silent' => false])
+>>>>>>> revert Open Social update
     {
         if (!$opts['silent']) {
             return "Hello, world";
@@ -133,8 +242,15 @@ class ExampleCommandFile
      * @usage 2 2 --negate
      *   Add two plus two and then negate.
      * @custom
+<<<<<<< HEAD
      */
     public function testArithmatic($one, $two, $options = ['negate' => false])
+=======
+     * @dup one
+     * @dup two
+     */
+    public function testArithmatic($one, $two = 2, array $options = ['negate' => false, 'unused' => 'bob'])
+>>>>>>> revert Open Social update
     {
         $result = $one + $two;
         if ($options['negate']) {
@@ -247,6 +363,25 @@ class ExampleCommandFile
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * @command test:replace-command
+     */
+    public function testReplaceCommand($value)
+    {
+        $this->output->writeln($value);
+    }
+
+    /**
+     * @hook replace-command test:replace-command
+     */
+    public function hookTestReplaceCommandHook($value)
+    {
+        $this->output->writeln("bar");
+    }
+
+    /**
+>>>>>>> revert Open Social update
      * @hook pre-command test:post-command
      */
     public function hookTestPreCommandHook(CommandData $commandData)
@@ -348,4 +483,81 @@ class ExampleCommandFile
         }
         return "nothing provided";
     }
+<<<<<<< HEAD
+=======
+
+    /**
+     * @return string
+     */
+    public function defaultOptionOne(array $options = ['foo' => '1'])
+    {
+        return "Foo is " . $options['foo'];
+    }
+
+    /**
+     * @return string
+     */
+    public function defaultOptionTwo(array $options = ['foo' => '2'])
+    {
+        return "Foo is " . $options['foo'];
+    }
+
+    /**
+     * @return string
+     */
+    public function defaultOptionNone(array $options = ['foo' => InputOption::VALUE_REQUIRED])
+    {
+        return "Foo is " . $options['foo'];
+    }
+
+    /**
+     * @return string
+     */
+    public function defaultOptionalValue(array $options = ['foo' => InputOption::VALUE_OPTIONAL])
+    {
+        return "Foo is " . var_export($options['foo'], true);
+    }
+
+    /**
+     * @return string
+     */
+    public function defaultOptionDefaultsToTrue(array $options = ['foo' => true])
+    {
+        return "Foo is " . var_export($options['foo'], true);
+    }
+
+    /**
+     * This is the test:required-array-option command
+     *
+     * This command will print all the valused of passed option
+     *
+     * @param array $opts
+     * @return string
+     */
+    public function testRequiredArrayOption(array $opts = ['arr|a' => []])
+    {
+        return implode(' ', $opts['arr']);
+    }
+
+    /**
+     * This is the test:array-option command
+     *
+     * This command will print all the valused of passed option
+     *
+     * @param array $opts
+     * @return string
+     */
+    public function testArrayOption(array $opts = ['arr|a' => ['1', '2', '3']])
+    {
+        return implode(' ', $opts['arr']);
+    }
+
+    /**
+     * @command global-options-only
+     */
+    public function globalOptionsOnly($arg, array $options = [])
+    {
+        return "Arg is $arg, options[help] is " . var_export($options['help'], true) . "\n";
+    }
+>>>>>>> revert Open Social update
 }

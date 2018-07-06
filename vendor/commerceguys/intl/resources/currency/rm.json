@@ -318,9 +318,12 @@
 	"BGN": {
 		"name": "nov lev bulgar"
 	},
+<<<<<<< HEAD
 	"PEN": {
 		"name": "nov sol peruan"
 	},
+=======
+>>>>>>> revert Open Social update
 	"TRY": {
 		"name": "nova lira tirca"
 	},
@@ -395,9 +398,12 @@
 	"BYN": {
 		"name": "rubel bieloruss"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "rubel bieloruss (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"RUB": {
 		"name": "rubel russ (nov)"
 	},
@@ -442,6 +448,12 @@
 		"name": "sheqel",
 		"symbol": "₪"
 	},
+<<<<<<< HEAD
+=======
+	"PEN": {
+		"name": "sol peruan"
+	},
+>>>>>>> revert Open Social update
 	"KGS": {
 		"name": "som kirghis"
 	},

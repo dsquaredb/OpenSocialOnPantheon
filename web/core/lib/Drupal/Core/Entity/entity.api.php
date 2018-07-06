@@ -489,7 +489,7 @@ use Drupal\node\Entity\NodeType;
  * // rules will be used.
  * $build = $view_builder->view($entity, 'view_mode_name', $language->getId());
  * // $build is a render array.
- * $rendered = \Drupal::service('renderer')->render($build);
+ * $rendered = drupal_render($build);
  * @endcode
  *
  * @section sec_access Access checking on entities
@@ -1258,8 +1258,7 @@ function hook_ENTITY_TYPE_revision_delete(Drupal\Core\Entity\EntityInterface $en
  * @param &$build
  *   A renderable array representing the entity content. The module may add
  *   elements to $build prior to rendering. The structure of $build is a
- *   renderable array as expected by
- *   \Drupal\Core\Render\RendererInterface::render().
+ *   renderable array as expected by drupal_render().
  * @param \Drupal\Core\Entity\EntityInterface $entity
  *   The entity object.
  * @param \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display
@@ -1291,8 +1290,7 @@ function hook_entity_view(array &$build, \Drupal\Core\Entity\EntityInterface $en
  * @param &$build
  *   A renderable array representing the entity content. The module may add
  *   elements to $build prior to rendering. The structure of $build is a
- *   renderable array as expected by
- *   \Drupal\Core\Render\RendererInterface::render().
+ *   renderable array as expected by drupal_render().
  * @param \Drupal\Core\Entity\EntityInterface $entity
  *   The entity object.
  * @param \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display
@@ -1470,7 +1468,7 @@ function hook_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity\EntityInter
  * @param string $view_mode
  *   The view_mode that is to be used to display the entity.
  *
- * @see \Drupal\Core\Render\RendererInterface::render()
+ * @see drupal_render()
  * @see \Drupal\Core\Entity\EntityViewBuilder
  * @see hook_entity_build_defaults_alter()
  *
@@ -1494,7 +1492,7 @@ function hook_ENTITY_TYPE_build_defaults_alter(array &$build, \Drupal\Core\Entit
  * @param string $view_mode
  *   The view_mode that is to be used to display the entity.
  *
- * @see \Drupal\Core\Render\RendererInterface::render()
+ * @see drupal_render()
  * @see \Drupal\Core\Entity\EntityViewBuilder
  * @see hook_ENTITY_TYPE_build_defaults_alter()
  *
@@ -1854,9 +1852,8 @@ function hook_entity_operation_alter(array &$operations, \Drupal\Core\Entity\Ent
  * @param \Drupal\Core\Session\AccountInterface $account
  *   The user account to check.
  * @param \Drupal\Core\Field\FieldItemListInterface $items
- *   (optional) The entity field object for which to check access, or NULL if
- *   access is checked for the field definition, without any specific value
- *   available. Defaults to NULL.
+ *   (optional) The entity field object on which the operation is to be
+ *   performed.
  *
  * @return \Drupal\Core\Access\AccessResultInterface
  *   The access result.

@@ -18,12 +18,10 @@
 class Google_Service_Sheets_GridProperties extends Google_Model
 {
   public $columnCount;
-  public $columnGroupControlAfter;
   public $frozenColumnCount;
   public $frozenRowCount;
   public $hideGridlines;
   public $rowCount;
-  public $rowGroupControlAfter;
 
   public function setColumnCount($columnCount)
   {
@@ -32,14 +30,6 @@ class Google_Service_Sheets_GridProperties extends Google_Model
   public function getColumnCount()
   {
     return $this->columnCount;
-  }
-  public function setColumnGroupControlAfter($columnGroupControlAfter)
-  {
-    $this->columnGroupControlAfter = $columnGroupControlAfter;
-  }
-  public function getColumnGroupControlAfter()
-  {
-    return $this->columnGroupControlAfter;
   }
   public function setFrozenColumnCount($frozenColumnCount)
   {
@@ -72,13 +62,5 @@ class Google_Service_Sheets_GridProperties extends Google_Model
   public function getRowCount()
   {
     return $this->rowCount;
-  }
-  public function setRowGroupControlAfter($rowGroupControlAfter)
-  {
-    $this->rowGroupControlAfter = $rowGroupControlAfter;
-  }
-  public function getRowGroupControlAfter()
-  {
-    return $this->rowGroupControlAfter;
   }
 }

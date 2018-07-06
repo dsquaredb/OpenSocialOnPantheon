@@ -14,16 +14,6 @@ use Psr\Http\Message\UploadedFileInterface;
 use stdClass;
 use UnexpectedValueException;
 
-use function array_change_key_case;
-use function array_key_exists;
-use function explode;
-use function implode;
-use function is_array;
-use function is_callable;
-use function strtolower;
-
-use const CASE_LOWER;
-
 /**
  * Class for marshaling a request object from the current PHP environment.
  *
@@ -66,16 +56,13 @@ abstract class ServerRequestFactory
         array $cookies = null,
         array $files = null
     ) {
-        $server = normalizeServer(
-            $server ?: $_SERVER,
-            is_callable(self::$apacheRequestHeaders) ? self::$apacheRequestHeaders : null
-        );
-        $files   = normalizeUploadedFiles($files ?: $_FILES);
-        $headers = marshalHeadersFromSapi($server);
+        $server  = static::normalizeServer($server ?: $_SERVER);
+        $files   = static::normalizeFiles($files ?: $_FILES);
+        $headers = static::marshalHeaders($server);
 
 <<<<<<< HEAD
         if (null === $cookies && array_key_exists('cookie', $headers)) {
-            $cookies = parseCookieHeader($headers['cookie']);
+            $cookies = self::parseCookieHeader($headers['cookie']);
         }
 
 =======
@@ -83,21 +70,22 @@ abstract class ServerRequestFactory
         return new ServerRequest(
             $server,
             $files,
-            marshalUriFromSapi($server, $headers),
-            marshalMethodFromSapi($server),
+            static::marshalUriFromServer($server, $headers),
+            static::get('REQUEST_METHOD', $server, 'GET'),
             'php://input',
             $headers,
             $cookies ?: $_COOKIE,
             $query ?: $_GET,
             $body ?: $_POST,
-            marshalProtocolVersionFromSapi($server)
+            static::marshalProtocolVersion($server)
         );
     }
 
     /**
      * Access a value in an array, returning a default value if not found
      *
-     * @deprecated since 1.8.0; no longer used internally.
+     * Will also do a case-insensitive search if a case sensitive search fails.
+     *
      * @param string $key
      * @param array $values
      * @param mixed $default
@@ -121,7 +109,6 @@ abstract class ServerRequestFactory
      *
      * If not, the $default is returned.
      *
-     * @deprecated since 1.8.0; no longer used internally.
      * @param string $header
      * @param array $headers
      * @param mixed $default
@@ -129,7 +116,7 @@ abstract class ServerRequestFactory
      */
     public static function getHeader($header, array $headers, $default = null)
     {
-        $header  = strtolower($name);
+        $header  = strtolower($header);
         $headers = array_change_key_case($headers, CASE_LOWER);
         if (array_key_exists($header, $headers)) {
             $value = is_array($headers[$header]) ? implode(', ', $headers[$header]) : $headers[$header];
@@ -144,16 +131,31 @@ abstract class ServerRequestFactory
      *
      * Pre-processes and returns the $_SERVER superglobal.
      *
-     * @deprected since 1.8.0; use Zend\Diactoros\normalizeServer() instead.
      * @param array $server
      * @return array
      */
     public static function normalizeServer(array $server)
     {
-        return normalizeServer(
-            $server ?: $_SERVER,
-            is_callable(self::$apacheRequestHeaders) ? self::$apacheRequestHeaders : null
-        );
+        // This seems to be the only way to get the Authorization header on Apache
+        $apacheRequestHeaders = self::$apacheRequestHeaders;
+        if (isset($server['HTTP_AUTHORIZATION'])
+            || ! is_callable($apacheRequestHeaders)
+        ) {
+            return $server;
+        }
+
+        $apacheRequestHeaders = $apacheRequestHeaders();
+        if (isset($apacheRequestHeaders['Authorization'])) {
+            $server['HTTP_AUTHORIZATION'] = $apacheRequestHeaders['Authorization'];
+            return $server;
+        }
+
+        if (isset($apacheRequestHeaders['authorization'])) {
+            $server['HTTP_AUTHORIZATION'] = $apacheRequestHeaders['authorization'];
+            return $server;
+        }
+
+        return $server;
     }
 
     /**
@@ -162,32 +164,75 @@ abstract class ServerRequestFactory
      * Transforms each value into an UploadedFileInterface instance, and ensures
      * that nested arrays are normalized.
      *
-     * @deprecated since 1.8.0; use \Zend\Diactoros\normalizeUploadedFiles instead.
      * @param array $files
      * @return array
      * @throws InvalidArgumentException for unrecognized values
      */
     public static function normalizeFiles(array $files)
     {
-        return normalizeUploadedFiles($files);
+        $normalized = [];
+        foreach ($files as $key => $value) {
+            if ($value instanceof UploadedFileInterface) {
+                $normalized[$key] = $value;
+                continue;
+            }
+
+            if (is_array($value) && isset($value['tmp_name'])) {
+                $normalized[$key] = self::createUploadedFileFromSpec($value);
+                continue;
+            }
+
+            if (is_array($value)) {
+                $normalized[$key] = self::normalizeFiles($value);
+                continue;
+            }
+
+            throw new InvalidArgumentException('Invalid value in files specification');
+        }
+        return $normalized;
     }
 
     /**
      * Marshal headers from $_SERVER
      *
-     * @deprecated since 1.8.0; use Zend\Diactoros\marshalHeadersFromSapi().
      * @param array $server
      * @return array
      */
     public static function marshalHeaders(array $server)
     {
-        return marshalHeadersFromSapi($server);
+        $headers = [];
+        foreach ($server as $key => $value) {
+            // Apache prefixes environment variables with REDIRECT_
+            // if they are added by rewrite rules
+            if (strpos($key, 'REDIRECT_') === 0) {
+                $key = substr($key, 9);
+
+                // We will not overwrite existing variables with the
+                // prefixed versions, though
+                if (array_key_exists($key, $server)) {
+                    continue;
+                }
+            }
+
+            if ($value && strpos($key, 'HTTP_') === 0) {
+                $name = strtr(strtolower(substr($key, 5)), '_', '-');
+                $headers[$name] = $value;
+                continue;
+            }
+
+            if ($value && strpos($key, 'CONTENT_') === 0) {
+                $name = 'content-' . strtolower(substr($key, 8));
+                $headers[$name] = $value;
+                continue;
+            }
+        }
+
+        return $headers;
     }
 
     /**
      * Marshal the URI from the $_SERVER array and headers
      *
-     * @deprecated since 1.8.0; use Zend\Diactoros\marshalUriFromSapi() instead.
      * @param array $server
      * @param array $headers
      * @return Uri
@@ -195,6 +240,9 @@ abstract class ServerRequestFactory
     public static function marshalUriFromServer(array $server, array $headers)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> revert Open Social update
         $uri = new Uri('');
 
         // URI scheme
@@ -205,9 +253,13 @@ abstract class ServerRequestFactory
         ) {
             $scheme = 'https';
         }
+<<<<<<< HEAD
         if (! empty($scheme)) {
             $uri = $uri->withScheme($scheme);
         }
+=======
+        $uri = $uri->withScheme($scheme);
+>>>>>>> revert Open Social update
 
         // Set the host
         $accumulator = (object) ['host' => '', 'port' => null];
@@ -241,26 +293,44 @@ abstract class ServerRequestFactory
             ->withPath($path)
             ->withFragment($fragment)
             ->withQuery($query);
+<<<<<<< HEAD
 =======
         return marshalUriFromSapi($server, $headers);
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
     }
 
     /**
      * Marshal the host and port from HTTP headers and/or the PHP environment
      *
-     * @deprecated since 1.8.0; use Zend\Diactoros\marshalUriFromSapi() instead,
-     *     and pull the host and port from the Uri instance that function
-     *     returns.
      * @param stdClass $accumulator
      * @param array $server
      * @param array $headers
      */
     public static function marshalHostAndPortFromHeaders(stdClass $accumulator, array $server, array $headers)
     {
-        $uri = marshalUriFromSapi($server, $headers);
-        $accumulator->host = $uri->getHost();
-        $accumulator->port = $uri->getPort();
+        if (self::getHeader('host', $headers, false)) {
+            self::marshalHostAndPortFromHeader($accumulator, self::getHeader('host', $headers));
+            return;
+        }
+
+        if (! isset($server['SERVER_NAME'])) {
+            return;
+        }
+
+        $accumulator->host = $server['SERVER_NAME'];
+        if (isset($server['SERVER_PORT'])) {
+            $accumulator->port = (int) $server['SERVER_PORT'];
+        }
+
+        if (! isset($server['SERVER_ADDR']) || ! preg_match('/^\[[0-9a-fA-F\:]+\]$/', $accumulator->host)) {
+            return;
+        }
+
+        // Misinterpreted IPv6-Address
+        // Reported for Safari on Windows
+        self::marshalIpv6HostAndPort($accumulator, $server);
     }
 
     /**
@@ -269,27 +339,61 @@ abstract class ServerRequestFactory
      * Looks at a variety of criteria in order to attempt to autodetect a base
      * URI, including rewrite URIs, proxy URIs, etc.
      *
-     * @deprecated since 1.8.0; use Zend\Diactoros\marshalUriFromSapi() instead,
-     *     and pull the path from the Uri instance that function returns.
+     * From ZF2's Zend\Http\PhpEnvironment\Request class
+     * @copyright Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
+     * @license   http://framework.zend.com/license/new-bsd New BSD License
+     *
      * @param array $server
      * @return string
      */
     public static function marshalRequestUri(array $server)
     {
-        $uri = marshalUriFromSapi($server, []);
-        return $uri->getPath();
+        // IIS7 with URL Rewrite: make sure we get the unencoded url
+        // (double slash problem).
+        $iisUrlRewritten = self::get('IIS_WasUrlRewritten', $server);
+        $unencodedUrl    = self::get('UNENCODED_URL', $server, '');
+        if ('1' == $iisUrlRewritten && ! empty($unencodedUrl)) {
+            return $unencodedUrl;
+        }
+
+        $requestUri = self::get('REQUEST_URI', $server);
+
+        // Check this first so IIS will catch.
+        $httpXRewriteUrl = self::get('HTTP_X_REWRITE_URL', $server);
+        if ($httpXRewriteUrl !== null) {
+            $requestUri = $httpXRewriteUrl;
+        }
+
+        // Check for IIS 7.0 or later with ISAPI_Rewrite
+        $httpXOriginalUrl = self::get('HTTP_X_ORIGINAL_URL', $server);
+        if ($httpXOriginalUrl !== null) {
+            $requestUri = $httpXOriginalUrl;
+        }
+
+        if ($requestUri !== null) {
+            return preg_replace('#^[^/:]+://[^/]+#', '', $requestUri);
+        }
+
+        $origPathInfo = self::get('ORIG_PATH_INFO', $server);
+        if (empty($origPathInfo)) {
+            return '/';
+        }
+
+        return $origPathInfo;
     }
 
     /**
      * Strip the query string from a path
      *
-     * @deprecated since 1.8.0; no longer used internally.
      * @param mixed $path
      * @return string
      */
     public static function stripQueryString($path)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> revert Open Social update
         if (($qpos = strpos($path, '?')) !== false) {
             return substr($path, 0, $qpos);
         }
@@ -407,6 +511,9 @@ abstract class ServerRequestFactory
         return $matches['version'];
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> revert Open Social update
 
     /**
      * Parse a cookie header according to RFC 6265.
@@ -436,9 +543,12 @@ abstract class ServerRequestFactory
         }
 
         return $cookies;
+<<<<<<< HEAD
 =======
         return explode('?', $path, 2)[0];
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
     }
 =======
 >>>>>>> web and vendor directory from composer install

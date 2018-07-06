@@ -500,19 +500,6 @@ class FeaturesAssignTest extends KernelTestBase {
   public function testAssignPackages() {
     $method_id = 'packages';
 
-    // A configuration item that will be excluded.
-    $this->addConfigurationItem('system.theme', [], [
-      'type' => FeaturesManagerInterface::SYSTEM_SIMPLE_CONFIG,
-    ]);
-    // A configuration item that will be required.
-    $this->addConfigurationItem('core.date_format.long', [], [
-      'type' => 'date_format',
-    ]);
-    // A configuration item that will be neither excluded nor required.
-    $this->addConfigurationItem('system.theme', [], [
-      'type' => FeaturesManagerInterface::SYSTEM_SIMPLE_CONFIG,
-    ]);
-
     // Enable the method.
     $this->enableAssignmentMethod($method_id);
 
@@ -521,14 +508,6 @@ class FeaturesAssignTest extends KernelTestBase {
     $packages = $this->featuresManager->getPackages();
 
     $this->assertNotEmpty($packages[self::TEST_INSTALLED_PACKAGE], 'Expected package not created.');
-
-    $config = $this->featuresManager->getConfigCollection();
-
-    $this->assertTrue(in_array(self::TEST_INSTALLED_PACKAGE, $config['system.theme']->getPackageExcluded()), 'Configuration item not excluded from package.');
-    $this->assertFalse(in_array(self::TEST_INSTALLED_PACKAGE, $config['system.site']->getPackageExcluded()), 'Configuration item excluded from package.');
-
-    $this->assertEquals(self::TEST_INSTALLED_PACKAGE, $config['core.date_format.long']->getPackage(), 'Required item not assigned to package.');
-    $this->assertNotEquals(self::TEST_INSTALLED_PACKAGE, $config['system.site']->getPackage(), 'Unrequired item assigned to package.');
   }
 
   /**
@@ -551,7 +530,7 @@ class FeaturesAssignTest extends KernelTestBase {
       'type' => 'image_style',
     ]);
     $this->addConfigurationItem('system.cron', [], [
-      'type' => FeaturesManagerInterface::SYSTEM_SIMPLE_CONFIG,
+      'type' => 'simple',
     ]);
     $this->bundle = $this->assigner->createBundleFromDefault('myprofile');
     $this->bundle->setProfileName('myprofile');

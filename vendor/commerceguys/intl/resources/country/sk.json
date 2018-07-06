@@ -126,7 +126,11 @@
 		"name": "Čad"
 	},
 	"CZ": {
+<<<<<<< HEAD
 		"name": "Česká republika"
+=======
+		"name": "Česko"
+>>>>>>> revert Open Social update
 	},
 	"ME": {
 		"name": "Čierna Hora"
@@ -183,7 +187,11 @@
 		"name": "Fínsko"
 	},
 	"GF": {
+<<<<<<< HEAD
 		"name": "Francúzska Guayana"
+=======
+		"name": "Francúzska Guyana"
+>>>>>>> revert Open Social update
 	},
 	"PF": {
 		"name": "Francúzska Polynézia"
@@ -227,9 +235,12 @@
 	"GT": {
 		"name": "Guatemala"
 	},
+<<<<<<< HEAD
 	"GY": {
 		"name": "Guayana"
 	},
+=======
+>>>>>>> revert Open Social update
 	"GG": {
 		"name": "Guernsey"
 	},
@@ -239,6 +250,12 @@
 	"GW": {
 		"name": "Guinea-Bissau"
 	},
+<<<<<<< HEAD
+=======
+	"GY": {
+		"name": "Guyana"
+	},
+>>>>>>> revert Open Social update
 	"HT": {
 		"name": "Haiti"
 	},
@@ -519,7 +536,11 @@
 		"name": "Panama"
 	},
 	"PG": {
+<<<<<<< HEAD
 		"name": "Papua Nová Guinea"
+=======
+		"name": "Papua-Nová Guinea"
+>>>>>>> revert Open Social update
 	},
 	"PY": {
 		"name": "Paraguaj"

@@ -548,9 +548,12 @@
 	"CF": {
 		"name": "Republika Sentru-Afrikanu"
 	},
+<<<<<<< HEAD
 	"CZ": {
 		"name": "Repúblika Txeka"
 	},
+=======
+>>>>>>> revert Open Social update
 	"RW": {
 		"name": "Ruanda"
 	},
@@ -713,6 +716,12 @@
 	"TD": {
 		"name": "Txadi"
 	},
+<<<<<<< HEAD
+=======
+	"CZ": {
+		"name": "Txékia"
+	},
+>>>>>>> revert Open Social update
 	"WF": {
 		"name": "Ualis i Futuna"
 	},

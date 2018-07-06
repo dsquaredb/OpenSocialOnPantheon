@@ -158,6 +158,12 @@
 	"CY": {
 		"name": "Cyprus"
 	},
+<<<<<<< HEAD
+=======
+	"CZ": {
+		"name": "Czechia"
+	},
+>>>>>>> revert Open Social update
 	"DK": {
 		"name": "Denmark"
 	},
@@ -560,9 +566,12 @@
 	"CF": {
 		"name": "Republik Afrika Tengah"
 	},
+<<<<<<< HEAD
 	"CZ": {
 		"name": "Republik Czech"
 	},
+=======
+>>>>>>> revert Open Social update
 	"DO": {
 		"name": "Republik Dominica"
 	},

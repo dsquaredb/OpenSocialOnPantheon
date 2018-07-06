@@ -16,8 +16,11 @@ use Drupal\Core\Cache\Cache;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\Core\Block\BlockPluginInterface;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use Drupal\user\Entity\Role;
+=======
+>>>>>>> revert Open Social update
 use Drupal\user\Entity\User;
 use Drupal\profile\Entity\Profile;
 use Drupal\Core\Entity\EntityTypeInterface;
@@ -70,6 +73,7 @@ function _social_group_group_open_group_edit_form_submit($form, FormStateInterfa
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  * Implements hook_form_FORM_ID_alter().
  */
@@ -108,6 +112,8 @@ function _social_group_visibility_settings_submit(array $form, FormStateInterfac
 }
 
 /**
+=======
+>>>>>>> revert Open Social update
  * Load group content label and group label.
  *
  * @return array

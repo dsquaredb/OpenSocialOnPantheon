@@ -29,8 +29,12 @@ matrix:
   - env: TEST_SUITE=install_stability_3-4-5
   - env: TEST_SUITE=install_update
   - env: TEST_SUITE=drush_make
+<<<<<<< HEAD
 #  - env: TEST_SUITE=accessibility
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+  - env: TEST_SUITE=accessibility
+>>>>>>> revert Open Social update
 
 services:
   - docker

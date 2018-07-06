@@ -42,6 +42,7 @@ class ExtensionPluginManager extends AbstractPluginManager
 =======
         'DublinCoreRenderer\Feed'    => Extension\DublinCore\Renderer\Feed::class,
         'DublinCore\Renderer\Feed'   => Extension\DublinCore\Renderer\Feed::class,
+<<<<<<< HEAD
         'googleplaypodcastentry'           => Extension\GooglePlayPodcast\Entry::class,
         'googleplaypodcastEntry'           => Extension\GooglePlayPodcast\Entry::class,
         'googlePlayPodcastEntry'           => Extension\GooglePlayPodcast\Entry::class,
@@ -67,6 +68,8 @@ class ExtensionPluginManager extends AbstractPluginManager
         'GoogleplaypodcastRenderer\Feed'   => Extension\GooglePlayPodcast\Renderer\Feed::class,
         'GooglePlayPodcast\Renderer\Feed'  => Extension\GooglePlayPodcast\Renderer\Feed::class,
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
         'itunesentry'                => Extension\ITunes\Entry::class,
         'itunesEntry'                => Extension\ITunes\Entry::class,
         'iTunesEntry'                => Extension\ITunes\Entry::class,
@@ -104,10 +107,6 @@ class ExtensionPluginManager extends AbstractPluginManager
         Extension\Content\Renderer\Entry::class       => InvokableFactory::class,
         Extension\DublinCore\Renderer\Entry::class    => InvokableFactory::class,
         Extension\DublinCore\Renderer\Feed::class     => InvokableFactory::class,
-        Extension\GooglePlayPodcast\Entry::class          => InvokableFactory::class,
-        Extension\GooglePlayPodcast\Feed::class           => InvokableFactory::class,
-        Extension\GooglePlayPodcast\Renderer\Entry::class => InvokableFactory::class,
-        Extension\GooglePlayPodcast\Renderer\Feed::class  => InvokableFactory::class,
         Extension\ITunes\Entry::class                 => InvokableFactory::class,
         Extension\ITunes\Feed::class                  => InvokableFactory::class,
         Extension\ITunes\Renderer\Entry::class        => InvokableFactory::class,
@@ -122,11 +121,6 @@ class ExtensionPluginManager extends AbstractPluginManager
         'zendfeedwriterextensioncontentrendererentry'       => InvokableFactory::class,
         'zendfeedwriterextensiondublincorerendererentry'    => InvokableFactory::class,
         'zendfeedwriterextensiondublincorerendererfeed'     => InvokableFactory::class,
-        'zendfeedwriterextensiongoogleplaypodcastentry'         => InvokableFactory::class,
-        'zendfeedwriterextensiongoogleplaypodcastfeed'          => InvokableFactory::class,
-        'zendfeedwriterextensiongoogleplaypodcastrendererentry' => InvokableFactory::class,
-        'zendfeedwriterextensiongoogleplaypodcastrendererfeed'  => InvokableFactory::class,
-
         'zendfeedwriterextensionitunesentry'                => InvokableFactory::class,
         'zendfeedwriterextensionitunesfeed'                 => InvokableFactory::class,
         'zendfeedwriterextensionitunesrendererentry'        => InvokableFactory::class,

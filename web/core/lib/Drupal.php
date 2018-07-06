@@ -82,10 +82,14 @@ class Drupal {
    * The current system version.
    */
 <<<<<<< HEAD
+<<<<<<< HEAD
   const VERSION = '8.2.1';
 =======
   const VERSION = '8.5.5';
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+  const VERSION = '8.5.3';
+>>>>>>> revert Open Social update
 
   /**
    * Core API compatibility.

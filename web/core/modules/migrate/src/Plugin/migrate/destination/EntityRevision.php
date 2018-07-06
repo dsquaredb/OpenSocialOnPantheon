@@ -55,9 +55,7 @@ class EntityRevision extends EntityContentBase {
       $entity->enforceIsNew(FALSE);
       $entity->setNewRevision(TRUE);
     }
-    // We need to update the entity, so that the destination row IDs are
-    // correct.
-    $entity = $this->updateEntity($entity, $row);
+    $this->updateEntity($entity, $row);
     $entity->isDefaultRevision(FALSE);
     return $entity;
   }
@@ -75,6 +73,7 @@ class EntityRevision extends EntityContentBase {
    */
   public function getIds() {
 <<<<<<< HEAD
+<<<<<<< HEAD
     if ($key = $this->getKey('revision')) {
       $ids[$key]['type'] = 'integer';
       return $ids;
@@ -85,18 +84,12 @@ class EntityRevision extends EntityContentBase {
     if (!$revision_key) {
       throw new MigrateException(sprintf('The "%s" entity type does not support revisions.', $this->storage->getEntityTypeId()));
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+    if ($key = $this->getKey('revision')) {
+      return [$key => $this->getDefinitionFromEntity($key)];
+>>>>>>> revert Open Social update
     }
-    $ids[$revision_key] = $this->getDefinitionFromEntity($revision_key);
-
-    if ($this->isTranslationDestination()) {
-      $langcode_key = $this->getKey('langcode');
-      if (!$langcode_key) {
-        throw new MigrateException(sprintf('The "%s" entity type does not support translations.', $this->storage->getEntityTypeId()));
-      }
-      $ids[$langcode_key] = $this->getDefinitionFromEntity($langcode_key);
-    }
-
-    return $ids;
+    throw new MigrateException('This entity type does not support revisions.');
   }
 
 }

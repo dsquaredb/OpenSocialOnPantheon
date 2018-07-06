@@ -113,6 +113,12 @@
 	"GB": {
 		"name": "بریتانیا"
 	},
+<<<<<<< HEAD
+=======
+	"BY": {
+		"name": "بلاروس"
+	},
+>>>>>>> revert Open Social update
 	"BE": {
 		"name": "بلجیم"
 	},
@@ -335,9 +341,12 @@
 	"RU": {
 		"name": "روسیه"
 	},
+<<<<<<< HEAD
 	"BY": {
 		"name": "روسیهٔ سفید"
 	},
+=======
+>>>>>>> revert Open Social update
 	"RO": {
 		"name": "رومانیا"
 	},

@@ -22,10 +22,17 @@ class InstallerExistingDatabaseSettingsTest extends InstallerTestBase {
     unset($connection_info['default']['pdo']);
     unset($connection_info['default']['init_commands']);
 
+<<<<<<< HEAD
     $this->settings['databases']['default'] = (object) array(
       'value' => $connection_info,
       'required' => TRUE,
     );
+=======
+    $this->settings['databases']['default'] = (object) [
+      'value' => $connection_info,
+      'required' => TRUE,
+    ];
+>>>>>>> revert Open Social update
     parent::setUp();
   }
 
@@ -40,6 +47,7 @@ class InstallerExistingDatabaseSettingsTest extends InstallerTestBase {
     // All database settings should be pre-configured, except password.
     $values = $this->parameters['forms']['install_settings_form'];
     $driver = $values['driver'];
+<<<<<<< HEAD
     $edit = array();
     if (isset($values[$driver]['password']) && $values[$driver]['password'] !== '') {
       $edit = $this->translatePostValues(array(
@@ -47,6 +55,15 @@ class InstallerExistingDatabaseSettingsTest extends InstallerTestBase {
           'password' => $values[$driver]['password'],
         ),
       ));
+=======
+    $edit = [];
+    if (isset($values[$driver]['password']) && $values[$driver]['password'] !== '') {
+      $edit = $this->translatePostValues([
+        $driver => [
+          'password' => $values[$driver]['password'],
+        ],
+      ]);
+>>>>>>> revert Open Social update
     }
     $this->drupalPostForm(NULL, $edit, $this->translations['Save and continue']);
   }

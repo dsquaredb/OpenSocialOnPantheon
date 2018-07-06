@@ -101,9 +101,12 @@
 	"kn": {
 		"name": "canarés"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "cantonés"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ca": {
 		"name": "catalán"
 	},
@@ -237,7 +240,11 @@
 		"name": "groenlandés"
 	},
 	"gu": {
+<<<<<<< HEAD
 		"name": "gujarati"
+=======
+		"name": "gurayatí"
+>>>>>>> revert Open Social update
 	},
 	"guz": {
 		"name": "gusii"
@@ -483,7 +490,11 @@
 		"name": "quechua"
 	},
 	"rm": {
+<<<<<<< HEAD
 		"name": "retorrománico"
+=======
+		"name": "romanche"
+>>>>>>> revert Open Social update
 	},
 	"rof": {
 		"name": "rombo"
@@ -527,6 +538,12 @@
 	"sn": {
 		"name": "shona"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindhi"
+	},
+>>>>>>> revert Open Social update
 	"xog": {
 		"name": "soga"
 	},
@@ -557,12 +574,24 @@
 	"ta": {
 		"name": "tamil"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tártaro"
+	},
+>>>>>>> revert Open Social update
 	"twq": {
 		"name": "tasawaq"
 	},
 	"shi": {
 		"name": "tashelhit"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tayiko"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telugu"
 	},
@@ -614,6 +643,12 @@
 	"wae": {
 		"name": "walser"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "yangben"
 	},
@@ -621,7 +656,11 @@
 		"name": "yi de Sichuán"
 	},
 	"yi": {
+<<<<<<< HEAD
 		"name": "yídish"
+=======
+		"name": "yidis"
+>>>>>>> revert Open Social update
 	},
 	"yo": {
 		"name": "yoruba"

@@ -35,7 +35,7 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
     private $flashName;
     private $attributeName;
     private $data = array();
-    private $usageIndex = 0;
+    private $hasBeenStarted;
 
     /**
 =======
@@ -82,8 +82,6 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      */
     public function start()
     {
-        ++$this->usageIndex;
-
         return $this->storage->start();
     }
 
@@ -205,13 +203,13 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
     }
 
     /**
-     * @return int
+     * @return bool
      *
      * @internal
      */
-    public function getUsageIndex()
+    public function hasBeenStarted()
     {
-        return $this->usageIndex;
+        return $this->hasBeenStarted;
     }
 
     /**
@@ -221,7 +219,6 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      */
     public function isEmpty()
     {
-        ++$this->usageIndex;
         foreach ($this->data as &$data) {
             if (!empty($data)) {
                 return false;
@@ -249,8 +246,6 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      */
     public function migrate($destroy = false, $lifetime = null)
     {
-        ++$this->usageIndex;
-
         return $this->storage->regenerate($destroy, $lifetime);
     }
 
@@ -259,8 +254,6 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      */
     public function save()
     {
-        ++$this->usageIndex;
-
         $this->storage->save();
     }
 
@@ -301,8 +294,6 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      */
     public function getMetadataBag()
     {
-        ++$this->usageIndex;
-
         return $this->storage->getMetadataBag();
     }
 
@@ -313,6 +304,7 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->storage->registerBag(new SessionBagProxy($bag, $this->data, $this->hasBeenStarted));
 =======
         $this->storage->registerBag($bag);
@@ -320,6 +312,9 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
 =======
         $this->storage->registerBag(new SessionBagProxy($bag, $this->data, $this->usageIndex));
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+        $this->storage->registerBag(new SessionBagProxy($bag, $this->data, $this->hasBeenStarted));
+>>>>>>> revert Open Social update
     }
 
     /**

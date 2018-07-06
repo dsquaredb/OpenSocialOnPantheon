@@ -41,7 +41,6 @@ class Google_Service_Compute_Interconnect extends Google_Collection
   public $provisionedLinkCount;
   public $requestedLinkCount;
   public $selfLink;
-  public $state;
 
   public function setAdminEnabled($adminEnabled)
   {
@@ -222,13 +221,5 @@ class Google_Service_Compute_Interconnect extends Google_Collection
   public function getSelfLink()
   {
     return $this->selfLink;
-  }
-  public function setState($state)
-  {
-    $this->state = $state;
-  }
-  public function getState()
-  {
-    return $this->state;
   }
 }

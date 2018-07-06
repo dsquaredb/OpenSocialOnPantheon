@@ -131,9 +131,12 @@
 	"kw": {
 		"name": "lea fakakoniuali"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "lea fakakuangitongi"
 	},
+=======
+>>>>>>> revert Open Social update
 	"nmg": {
 		"name": "lea fakakuasio"
 	},
@@ -293,6 +296,12 @@
 	"bm": {
 		"name": "lea fakapamipala"
 	},
+<<<<<<< HEAD
+=======
+	"bn": {
+		"name": "lea fakapāngilā"
+	},
+>>>>>>> revert Open Social update
 	"bas": {
 		"name": "lea fakapasaʻa"
 	},
@@ -317,9 +326,12 @@
 	"bez": {
 		"name": "lea fakapena"
 	},
+<<<<<<< HEAD
 	"bn": {
 		"name": "lea fakapengikali"
 	},
+=======
+>>>>>>> revert Open Social update
 	"fa": {
 		"name": "lea fakapēsia"
 	},
@@ -422,6 +434,12 @@
 	"cu": {
 		"name": "lea fakasilavia-fakasiasi"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "lea fakasīniti"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "lea fakasingihala"
 	},
@@ -488,6 +506,15 @@
 	"shi": {
 		"name": "lea fakataselihiti"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "lea fakatāsiki"
+	},
+	"tt": {
+		"name": "lea fakatatale"
+	},
+>>>>>>> revert Open Social update
 	"tk": {
 		"name": "lea fakatēkimeni"
 	},
@@ -623,6 +650,12 @@
 	"uk": {
 		"name": "lea fakaʻūkalaʻine"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "lea fakaʻuolofo"
+	},
+>>>>>>> revert Open Social update
 	"uz": {
 		"name": "lea fakaʻusipeki"
 	},

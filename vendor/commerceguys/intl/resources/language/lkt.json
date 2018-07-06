@@ -71,9 +71,12 @@
 	"my": {
 		"name": "Burmese Iyápi"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Cantonese"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ca": {
 		"name": "Catalan Iyápi"
 	},
@@ -485,6 +488,12 @@
 	"ii": {
 		"name": "Sichuan Yi"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "Sindhi Iyápi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "Sinhala Iyápi"
 	},
@@ -530,12 +539,24 @@
 	"dav": {
 		"name": "Taita"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "Tajik Iyápi"
+	},
+>>>>>>> revert Open Social update
 	"ta": {
 		"name": "Tamil Iyápi"
 	},
 	"twq": {
 		"name": "Tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "Tatar Iyápi"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "Telugu Iyápi"
 	},
@@ -614,6 +635,12 @@
 	"fy": {
 		"name": "Western Frisian"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "Wolof Iyápi"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "Yangben"
 	},

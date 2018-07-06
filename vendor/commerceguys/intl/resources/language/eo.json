@@ -83,9 +83,12 @@
 	"rn": {
 		"name": "burunda"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Cantonese"
 	},
+=======
+>>>>>>> revert Open Social update
 	"tzm": {
 		"name": "Central Atlas Tamazight"
 	},
@@ -521,6 +524,12 @@
 	"ii": {
 		"name": "Sichuan Yi"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sinda"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "sinhala"
 	},
@@ -557,6 +566,12 @@
 	"shi": {
 		"name": "Tachelhit"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "taĝika"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "Taita"
 	},
@@ -569,6 +584,12 @@
 	"twq": {
 		"name": "Tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tatara"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telugua"
 	},
@@ -614,6 +635,12 @@
 	"vo": {
 		"name": "volapuko"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "volofa"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "Vunjo"
 	},

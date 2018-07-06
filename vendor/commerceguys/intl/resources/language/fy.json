@@ -137,6 +137,12 @@
 	"fur": {
 		"name": "Friulysk"
 	},
+<<<<<<< HEAD
+=======
+	"fy": {
+		"name": "Frysk"
+	},
+>>>>>>> revert Open Social update
 	"ff": {
 		"name": "Fulah"
 	},
@@ -227,9 +233,12 @@
 	"kn": {
 		"name": "Kannada"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Kantoneesk"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ks": {
 		"name": "Kasjmiri"
 	},
@@ -494,6 +503,12 @@
 	"ii": {
 		"name": "Sichuan Yi"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "Sindhi"
+	},
+>>>>>>> revert Open Social update
 	"zh": {
 		"name": "Sineesk"
 	},
@@ -533,6 +548,12 @@
 	"de-CH": {
 		"name": "Switsersk Heechdútsk"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "Tadzjieks"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "Taita"
 	},
@@ -548,6 +569,12 @@
 	"shi": {
 		"name": "Tashelhiyt"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "Tataars"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "Telugu"
 	},
@@ -605,8 +632,13 @@
 	"cy": {
 		"name": "Welsk"
 	},
+<<<<<<< HEAD
 	"fy": {
 		"name": "West-Frysk"
+=======
+	"wo": {
+		"name": "Wolof"
+>>>>>>> revert Open Social update
 	},
 	"be": {
 		"name": "Wyt-Russysk"

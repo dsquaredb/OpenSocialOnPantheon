@@ -12,10 +12,14 @@
 		"name": "Algerië"
 	},
 	"AS": {
+<<<<<<< HEAD
 		"name": "Amerikaans-Samoa"
 	},
 	"VI": {
 		"name": "Amerikaanse Maagde-eilande"
+=======
+		"name": "Amerikaanse Samoa"
+>>>>>>> revert Open Social update
 	},
 	"AD": {
 		"name": "Andorra"
@@ -333,16 +337,30 @@
 		"name": "Kerseiland"
 	},
 	"KG": {
+<<<<<<< HEAD
 		"name": "Kirgisië"
+=======
+		"name": "Kirgistan"
+>>>>>>> revert Open Social update
 	},
 	"KI": {
 		"name": "Kiribati"
 	},
+<<<<<<< HEAD
+=======
+	"UM": {
+		"name": "Klein afgeleë eilande van die VSA"
+	},
+>>>>>>> revert Open Social update
 	"KW": {
 		"name": "Koeweit"
 	},
 	"CC": {
+<<<<<<< HEAD
 		"name": "Kokos-eilande"
+=======
+		"name": "Kokoseilande"
+>>>>>>> revert Open Social update
 	},
 	"CG": {
 		"name": "Kongo - Brazzaville"
@@ -593,9 +611,30 @@
 	"SH": {
 		"name": "Sint Helena"
 	},
+<<<<<<< HEAD
 	"SX": {
 		"name": "Sint Maarten"
 	},
+=======
+	"KN": {
+		"name": "Sint Kitts en Nevis"
+	},
+	"LC": {
+		"name": "Sint Lucia"
+	},
+	"SX": {
+		"name": "Sint Maarten"
+	},
+	"MF": {
+		"name": "Sint Martin"
+	},
+	"PM": {
+		"name": "Sint Pierre en Miquelon"
+	},
+	"VC": {
+		"name": "Sint Vincent en die Grenadine"
+	},
+>>>>>>> revert Open Social update
 	"CY": {
 		"name": "Siprus"
 	},
@@ -623,6 +662,7 @@
 	"LK": {
 		"name": "Sri Lanka"
 	},
+<<<<<<< HEAD
 	"KN": {
 		"name": "St. Kitts en Nevis"
 	},
@@ -638,6 +678,8 @@
 	"VC": {
 		"name": "St. Vincent en die Grenadine"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ZA": {
 		"name": "Suid-Afrika"
 	},
@@ -677,9 +719,12 @@
 	"TH": {
 		"name": "Thailand"
 	},
+<<<<<<< HEAD
 	"CZ": {
 		"name": "Tjeggiese Republiek"
 	},
+=======
+>>>>>>> revert Open Social update
 	"TG": {
 		"name": "Togo"
 	},
@@ -698,11 +743,21 @@
 	"TD": {
 		"name": "Tsjad"
 	},
+<<<<<<< HEAD
+=======
+	"CZ": {
+		"name": "Tsjeggië"
+	},
+>>>>>>> revert Open Social update
 	"TN": {
 		"name": "Tunisië"
 	},
 	"TM": {
+<<<<<<< HEAD
 		"name": "Turkmenië"
+=======
+		"name": "Turkmenistan"
+>>>>>>> revert Open Social update
 	},
 	"TC": {
 		"name": "Turks- en Caicoseilande"
@@ -740,8 +795,13 @@
 	"VN": {
 		"name": "Viëtnam"
 	},
+<<<<<<< HEAD
 	"UM": {
 		"name": "VS klein omliggende eilande"
+=======
+	"VI": {
+		"name": "VSA se Maagde-eilande"
+>>>>>>> revert Open Social update
 	},
 	"WF": {
 		"name": "Wallis en Futuna"

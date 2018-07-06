@@ -1848,7 +1848,6 @@ class ContainerBuilder extends Container implements TaggedContainerInterface
         }
         $envPlaceholders = $bag instanceof EnvPlaceholderParameterBag ? $bag->getEnvPlaceholders() : $this->envPlaceholders;
 
-        $completed = false;
         foreach ($envPlaceholders as $env => $placeholders) {
             foreach ($placeholders as $placeholder) {
                 if (false !== stripos($value, $placeholder)) {
@@ -1859,19 +1858,14 @@ class ContainerBuilder extends Container implements TaggedContainerInterface
                     }
                     if ($placeholder === $value) {
                         $value = $resolved;
-                        $completed = true;
                     } else {
                         if (!is_string($resolved) && !is_numeric($resolved)) {
-                            throw new RuntimeException(sprintf('A string value must be composed of strings and/or numbers, but found parameter "env(%s)" of type %s inside string value "%s".', $env, gettype($resolved), $this->resolveEnvPlaceholders($value)));
+                            throw new RuntimeException(sprintf('A string value must be composed of strings and/or numbers, but found parameter "env(%s)" of type %s inside string value "%s".', $env, gettype($resolved), $value));
                         }
                         $value = str_ireplace($placeholder, $resolved, $value);
                     }
                     $usedEnvs[$env] = $env;
                     $this->envCounters[$env] = isset($this->envCounters[$env]) ? 1 + $this->envCounters[$env] : 1;
-
-                    if ($completed) {
-                        break 2;
-                    }
                 }
             }
         }
@@ -1919,7 +1913,7 @@ class ContainerBuilder extends Container implements TaggedContainerInterface
      */
     public function log(CompilerPassInterface $pass, $message)
     {
-        $this->getCompiler()->log($pass, $this->resolveEnvPlaceholders($message));
+        $this->getCompiler()->log($pass, $message);
     }
 
     /**

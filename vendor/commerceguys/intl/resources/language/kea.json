@@ -89,9 +89,12 @@
 	"bg": {
 		"name": "búlgaru"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Cantonese"
 	},
+=======
+>>>>>>> revert Open Social update
 	"cu": {
 		"name": "Church Slavic"
 	},
@@ -482,6 +485,12 @@
 	"sn": {
 		"name": "Shona"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "sindi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "singales"
 	},
@@ -530,6 +539,12 @@
 	"shi": {
 		"name": "Tachelhit"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "tadjiki"
+	},
+>>>>>>> revert Open Social update
 	"th": {
 		"name": "tailandes"
 	},
@@ -545,6 +560,12 @@
 	"twq": {
 		"name": "Tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "tatar"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "telugu"
 	},
@@ -581,6 +602,12 @@
 	"hu": {
 		"name": "úngaru"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "uolof"
+	},
+>>>>>>> revert Open Social update
 	"ur": {
 		"name": "urdu"
 	},

@@ -8,8 +8,11 @@
 <<<<<<< HEAD
 =======
 			"name": "Alberta",
+<<<<<<< HEAD
 			"iso_code": "CA-AB",
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
 			"postal_code_pattern": "T"
 		},
 		"BC": {
@@ -18,8 +21,11 @@
 <<<<<<< HEAD
 =======
 			"name": "British Columbia",
+<<<<<<< HEAD
 			"iso_code": "CA-BC",
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
 			"postal_code_pattern": "V"
 		},
 		"MB": {
@@ -28,8 +34,11 @@
 <<<<<<< HEAD
 =======
 			"name": "Manitoba",
+<<<<<<< HEAD
 			"iso_code": "CA-MB",
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
 			"postal_code_pattern": "R"
 		},
 		"NB": {
@@ -38,8 +47,11 @@
 <<<<<<< HEAD
 =======
 			"name": "New Brunswick",
+<<<<<<< HEAD
 			"iso_code": "CA-NB",
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
 			"postal_code_pattern": "E"
 		},
 		"NL": {
@@ -48,8 +60,11 @@
 <<<<<<< HEAD
 =======
 			"name": "Newfoundland and Labrador",
+<<<<<<< HEAD
 			"iso_code": "CA-NL",
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
 			"postal_code_pattern": "A"
 		},
 		"NT": {
@@ -58,8 +73,11 @@
 <<<<<<< HEAD
 =======
 			"name": "Northwest Territories",
+<<<<<<< HEAD
 			"iso_code": "CA-NT",
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
 			"postal_code_pattern": "X0E|X0G|X1A"
 		},
 		"NS": {
@@ -69,8 +87,11 @@
 =======
 			"local_name": "Nouvelle-Écosse",
 			"name": "Nova Scotia",
+<<<<<<< HEAD
 			"iso_code": "CA-NS",
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
 			"postal_code_pattern": "B"
 		},
 		"NU": {
@@ -79,8 +100,11 @@
 <<<<<<< HEAD
 =======
 			"name": "Nunavut",
+<<<<<<< HEAD
 			"iso_code": "CA-NU",
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
 			"postal_code_pattern": "X0A|X0B|X0C"
 		},
 		"ON": {
@@ -89,8 +113,11 @@
 <<<<<<< HEAD
 =======
 			"name": "Ontario",
+<<<<<<< HEAD
 			"iso_code": "CA-ON",
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
 			"postal_code_pattern": "K|L|M|N|P"
 		},
 		"PE": {
@@ -100,8 +127,11 @@
 =======
 			"local_name": "Île-du-Prince-Édouard",
 			"name": "Prince Edward Island",
+<<<<<<< HEAD
 			"iso_code": "CA-PE",
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
 			"postal_code_pattern": "C"
 		},
 		"QC": {
@@ -110,8 +140,11 @@
 <<<<<<< HEAD
 =======
 			"name": "Quebec",
+<<<<<<< HEAD
 			"iso_code": "CA-QC",
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
 			"postal_code_pattern": "G|H|J|K1A"
 		},
 		"SK": {
@@ -120,8 +153,11 @@
 <<<<<<< HEAD
 =======
 			"name": "Saskatchewan",
+<<<<<<< HEAD
 			"iso_code": "CA-SK",
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
 			"postal_code_pattern": "S|R8A"
 		},
 		"YT": {
@@ -130,8 +166,11 @@
 <<<<<<< HEAD
 =======
 			"name": "Yukon",
+<<<<<<< HEAD
 			"iso_code": "CA-YT",
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
 			"postal_code_pattern": "Y"
 		}
 	}

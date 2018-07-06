@@ -1,7 +1,10 @@
 {
+<<<<<<< HEAD
 	"agq": {
 		"name": "אהיים"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ee": {
 		"name": "אווה"
 	},
@@ -27,7 +30,11 @@
 		"name": "אורומו"
 	},
 	"or": {
+<<<<<<< HEAD
 		"name": "אוריה"
+=======
+		"name": "אורייה"
+>>>>>>> revert Open Social update
 	},
 	"az": {
 		"name": "אזרית"
@@ -86,6 +93,12 @@
 	"eo": {
 		"name": "אספרנטו"
 	},
+<<<<<<< HEAD
+=======
+	"agq": {
+		"name": "אע׳ם"
+	},
+>>>>>>> revert Open Social update
 	"af": {
 		"name": "אפריקאנס"
 	},
@@ -206,6 +219,12 @@
 	"vo": {
 		"name": "‏וולאפיק"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "וולוף"
+	},
+>>>>>>> revert Open Social update
 	"cy": {
 		"name": "וולשית"
 	},
@@ -227,6 +246,12 @@
 	"dav": {
 		"name": "טאיטה"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "טג׳יקית"
+	},
+>>>>>>> revert Open Social update
 	"to": {
 		"name": "טונגאית"
 	},
@@ -236,15 +261,24 @@
 	"tk": {
 		"name": "טורקמנית"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "טטרית"
+	},
+>>>>>>> revert Open Social update
 	"bo": {
 		"name": "טיבטית"
 	},
 	"te": {
 		"name": "טלוגו"
 	},
+<<<<<<< HEAD
 	"tzm": {
 		"name": "טמזייט של מרכז מרוקו"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ta": {
 		"name": "טמילית"
 	},
@@ -405,7 +439,14 @@
 		"name": "סורבית גבוהה"
 	},
 	"dsb": {
+<<<<<<< HEAD
 		"name": "סורבית נמוכה"
+=======
+		"name": "סורבית תחתית"
+	},
+	"sd": {
+		"name": "סינדהית"
+>>>>>>> revert Open Social update
 	},
 	"si": {
 		"name": "סינהלה"
@@ -578,9 +619,12 @@
 	"kn": {
 		"name": "קנאדה"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "קנטונזית"
 	},
+=======
+>>>>>>> revert Open Social update
 	"rw": {
 		"name": "קנירואנדית"
 	},
@@ -629,6 +673,12 @@
 	"ti": {
 		"name": "תיגרינית"
 	},
+<<<<<<< HEAD
+=======
+	"tzm": {
+		"name": "תמאזיגת של מרכז מרוקו"
+	},
+>>>>>>> revert Open Social update
 	"zgh": {
 		"name": "תמזיע׳ת מרוקאית תקנית"
 	}

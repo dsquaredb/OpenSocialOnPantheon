@@ -300,9 +300,12 @@
 	"BTN": {
 		"name": "Ngultrum Bhutan"
 	},
+<<<<<<< HEAD
 	"PEN": {
 		"name": "Nuevo Sol Peru"
 	},
+=======
+>>>>>>> revert Open Social update
 	"MRO": {
 		"name": "Ouguiya Mauritania"
 	},
@@ -408,9 +411,12 @@
 	"BYN": {
 		"name": "Rubel Belarusia"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "Rubel Belarusia (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"RUB": {
 		"name": "Rubel Rusia"
 	},
@@ -456,6 +462,12 @@
 	"UGX": {
 		"name": "Shilling Uganda"
 	},
+<<<<<<< HEAD
+=======
+	"PEN": {
+		"name": "Sol Peru"
+	},
+>>>>>>> revert Open Social update
 	"KGS": {
 		"name": "Som Kirgistan"
 	},

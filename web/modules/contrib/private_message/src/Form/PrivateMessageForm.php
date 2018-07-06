@@ -274,7 +274,7 @@ class PrivateMessageForm extends ContentEntityForm {
       if($member->id() != $this->currentUser->id()) {
         $params['member'] = $member;
         $send = $this->userData->get('private_message', $member->id(), 'email_notification');
-        $send = is_numeric($send) ? (bool) $send : ($this->config->get('enable_email_notifications') && $this->config->get('send_by_default'));
+        $send = is_numeric($send) ? (bool) $send : ($this->config('enable_email_notifications') && $this->config('send_by_default'));
         if ($send) {
           $mailManager->mail('private_message', 'message_notification', $member->getEmail(), $member->getPreferredLangcode(), $params);
         }

@@ -42,7 +42,11 @@
 		"name": "асу"
 	},
 	"af": {
+<<<<<<< HEAD
 		"name": "африкаанс"
+=======
+		"name": "африканс"
+>>>>>>> revert Open Social update
 	},
 	"bm": {
 		"name": "бамбара"
@@ -95,6 +99,12 @@
 	"vo": {
 		"name": "волапюк"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "волоф"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "вунджо"
 	},
@@ -126,10 +136,20 @@
 		"name": "датски"
 	},
 	"dz": {
+<<<<<<< HEAD
 		"name": "дзонха"
 	},
 	"dyo": {
 		"name": "диола"
+=======
+		"name": "дзонгкха"
+	},
+	"dyo": {
+		"name": "диола-фони"
+	},
+	"dsb": {
+		"name": "долнолужишки"
+>>>>>>> revert Open Social update
 	},
 	"nds": {
 		"name": "долнонемски"
@@ -137,9 +157,12 @@
 	"nds-NL": {
 		"name": "долносаксонски"
 	},
+<<<<<<< HEAD
 	"dsb": {
 		"name": "долносръбски"
 	},
+=======
+>>>>>>> revert Open Social update
 	"dua": {
 		"name": "дуала"
 	},
@@ -158,6 +181,12 @@
 	"et": {
 		"name": "естонски"
 	},
+<<<<<<< HEAD
+=======
+	"fy": {
+		"name": "западнофризийски"
+	},
+>>>>>>> revert Open Social update
 	"dje": {
 		"name": "зарма"
 	},
@@ -218,9 +247,12 @@
 	"kn": {
 		"name": "каннада"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "кантонски"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ca": {
 		"name": "каталонски"
 	},
@@ -297,13 +329,21 @@
 		"name": "литовски"
 	},
 	"lu": {
+<<<<<<< HEAD
 		"name": "луба катанга"
+=======
+		"name": "луба-катанга"
+>>>>>>> revert Open Social update
 	},
 	"luo": {
 		"name": "луо"
 	},
 	"luy": {
+<<<<<<< HEAD
 		"name": "луя"
+=======
+		"name": "лухя"
+>>>>>>> revert Open Social update
 	},
 	"lb": {
 		"name": "люксембургски"
@@ -383,9 +423,12 @@
 	"ne": {
 		"name": "непалски"
 	},
+<<<<<<< HEAD
 	"nyn": {
 		"name": "нианколе"
 	},
+=======
+>>>>>>> revert Open Social update
 	"nl": {
 		"name": "нидерландски"
 	},
@@ -398,6 +441,12 @@
 	"nus": {
 		"name": "нуер"
 	},
+<<<<<<< HEAD
+=======
+	"nyn": {
+		"name": "нянколе"
+	},
+>>>>>>> revert Open Social update
 	"or": {
 		"name": "ория"
 	},
@@ -467,6 +516,12 @@
 	"seh": {
 		"name": "сена"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "синдхи"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "синхалски"
 	},
@@ -494,6 +549,12 @@
 	"ii": {
 		"name": "съчуански и"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "таджикски"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "таита"
 	},
@@ -506,6 +567,12 @@
 	"twq": {
 		"name": "тасавак"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "татарски"
+	},
+>>>>>>> revert Open Social update
 	"shi": {
 		"name": "ташелхит"
 	},
@@ -522,7 +589,11 @@
 		"name": "тигриня"
 	},
 	"to": {
+<<<<<<< HEAD
 		"name": "тонга"
+=======
+		"name": "тонгански"
+>>>>>>> revert Open Social update
 	},
 	"tk": {
 		"name": "туркменски"
@@ -569,9 +640,12 @@
 	"fr-CH": {
 		"name": "френски (Швейцария)"
 	},
+<<<<<<< HEAD
 	"fy": {
 		"name": "фризийски"
 	},
+=======
+>>>>>>> revert Open Social update
 	"fur": {
 		"name": "фриулиански"
 	},
@@ -582,7 +656,11 @@
 		"name": "хавайски"
 	},
 	"ha": {
+<<<<<<< HEAD
 		"name": "хауза"
+=======
+		"name": "хауса"
+>>>>>>> revert Open Social update
 	},
 	"hi": {
 		"name": "хинди"
@@ -597,7 +675,11 @@
 		"name": "църковнославянски"
 	},
 	"chr": {
+<<<<<<< HEAD
 		"name": "чероки"
+=======
+		"name": "черокски"
+>>>>>>> revert Open Social update
 	},
 	"ce": {
 		"name": "чеченски"

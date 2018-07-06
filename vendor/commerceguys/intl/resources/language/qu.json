@@ -86,9 +86,12 @@
 	"my": {
 		"name": "Burmese"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Cantonese"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ca": {
 		"name": "Catalan Simi"
 	},
@@ -533,6 +536,12 @@
 	"sn": {
 		"name": "Shona"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "Sindhi Simi"
+	},
+>>>>>>> revert Open Social update
 	"xog": {
 		"name": "Soga"
 	},
@@ -563,9 +572,21 @@
 	"ta": {
 		"name": "Tamil Simi"
 	},
+<<<<<<< HEAD
 	"twq": {
 		"name": "Tasawaq"
 	},
+=======
+	"tt": {
+		"name": "Tartaro Simi"
+	},
+	"twq": {
+		"name": "Tasawaq"
+	},
+	"tg": {
+		"name": "Tayiko Simi"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "Telugu Simi"
 	},
@@ -614,6 +635,12 @@
 	"wae": {
 		"name": "Walser"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "Wolof Simi"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "Yangben"
 	},

@@ -24,10 +24,17 @@ class InstallerExistingConfigDirectoryTest extends InstallerTestBase {
   protected function setUp() {
     mkdir($this->siteDirectory . '/config_read_only', 0444);
     $this->expectedFilePerms = fileperms($this->siteDirectory . '/config_read_only');
+<<<<<<< HEAD
     $this->settings['config_directories'][CONFIG_SYNC_DIRECTORY] = (object) array(
       'value' => $this->siteDirectory . '/config_read_only',
       'required' => TRUE,
     );
+=======
+    $this->settings['config_directories'][CONFIG_SYNC_DIRECTORY] = (object) [
+      'value' => $this->siteDirectory . '/config_read_only',
+      'required' => TRUE,
+    ];
+>>>>>>> revert Open Social update
     parent::setUp();
   }
 

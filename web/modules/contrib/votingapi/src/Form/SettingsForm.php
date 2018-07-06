@@ -133,13 +133,6 @@ class SettingsForm extends ConfigFormBase {
       '#required' => TRUE,
     ];
 
-    $form['delete_everywhere'] = [
-      '#type' => 'checkbox',
-      '#title' => $this->t('Delete everywhere'),
-      '#description' => $this->t('Allow deleting votes to someone else\'s entity when owner user of this votes is deleting.'),
-      '#default_value' => $config->get('delete_everywhere'),
-    ];
-
     return parent::buildForm($form, $form_state);
   }
 
@@ -148,19 +141,10 @@ class SettingsForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $config = $this->config('votingapi.settings');
-
-    $settings = [
-      'anonymous_window',
-      'user_window',
-      'calculation_schedule',
-      'delete_everywhere',
-    ];
-
-    foreach ($settings as $setting) {
-      $config->set($setting, $form_state->getValue($setting));
-    }
-
-    $config->save();
+    $config->set('anonymous_window', $form_state->getValue('anonymous_window'))
+      ->set('user_window', $form_state->getValue('user_window'))
+      ->set('calculation_schedule', $form_state->getValue('calculation_schedule'))
+      ->save();
 
     parent::submitForm($form, $form_state);
   }

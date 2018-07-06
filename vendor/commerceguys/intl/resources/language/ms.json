@@ -35,9 +35,12 @@
 	"ksf": {
 		"name": "Bafia"
 	},
+<<<<<<< HEAD
 	"ms": {
 		"name": "Bahasa Melayu"
 	},
+=======
+>>>>>>> revert Open Social update
 	"bm": {
 		"name": "Bambara"
 	},
@@ -266,9 +269,12 @@
 	"kn": {
 		"name": "Kannada"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Kantonis"
 	},
+=======
+>>>>>>> revert Open Social update
 	"ks": {
 		"name": "Kashmir"
 	},
@@ -371,6 +377,12 @@
 	"mzn": {
 		"name": "Mazanderani"
 	},
+<<<<<<< HEAD
+=======
+	"ms": {
+		"name": "Melayu"
+	},
+>>>>>>> revert Open Social update
 	"mer": {
 		"name": "Meru"
 	},
@@ -414,7 +426,11 @@
 		"name": "Nynorsk Norway"
 	},
 	"or": {
+<<<<<<< HEAD
 		"name": "Oriya"
+=======
+		"name": "Odia"
+>>>>>>> revert Open Social update
 	},
 	"om": {
 		"name": "Oromo"
@@ -447,7 +463,11 @@
 		"name": "Portugis Eropah"
 	},
 	"prg": {
+<<<<<<< HEAD
 		"name": "Prussian"
+=======
+		"name": "Prusia"
+>>>>>>> revert Open Social update
 	},
 	"pa": {
 		"name": "Punjabi"
@@ -515,6 +535,12 @@
 	"ii": {
 		"name": "Sichuan Yi"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "Sindhi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "Sinhala"
 	},
@@ -551,6 +577,12 @@
 	"dav": {
 		"name": "Taita"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "Tajik"
+	},
+>>>>>>> revert Open Social update
 	"tzm": {
 		"name": "Tamazight Atlas Tengah"
 	},
@@ -563,6 +595,12 @@
 	"twq": {
 		"name": "Tasawaq"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "Tatar"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "Telugu"
 	},
@@ -617,6 +655,12 @@
 	"wae": {
 		"name": "Walser"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "Wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "Yangben"
 	},

@@ -233,9 +233,12 @@
 	"kn": {
 		"name": "Kannada"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Kanton-Schinehsesch"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kea": {
 		"name": "Kapvärdesch"
 	},
@@ -515,6 +518,12 @@
 	"si": {
 		"name": "Singjaleesesch"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "Sinndi"
+	},
+>>>>>>> revert Open Social update
 	"xog": {
 		"name": "Soga"
 	},
@@ -539,6 +548,12 @@
 	"zu": {
 		"name": "Suhlu"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "Tadschihkesch"
+	},
+>>>>>>> revert Open Social update
 	"th": {
 		"name": "Tailändesch"
 	},
@@ -554,6 +569,12 @@
 	"shi": {
 		"name": "Taschelhittesch"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "Tattahresch"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "Telluhju"
 	},
@@ -623,6 +644,12 @@
 	"be": {
 		"name": "Wiißrußesch"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "Woloff"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "Yangben"
 	},

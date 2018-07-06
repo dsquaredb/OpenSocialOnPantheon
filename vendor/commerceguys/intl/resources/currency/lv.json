@@ -47,9 +47,12 @@
 	"BYN": {
 		"name": "Baltkrievijas rubelis"
 	},
+<<<<<<< HEAD
 	"BYR": {
 		"name": "Baltkrievijas rubelis (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"BDT": {
 		"name": "Bangladešas taka"
 	},
@@ -190,7 +193,11 @@
 		"name": "Irānas riāls"
 	},
 	"ISK": {
+<<<<<<< HEAD
 		"name": "Īslandes krona"
+=======
+		"name": "Islandes krona"
+>>>>>>> revert Open Social update
 	},
 	"ILS": {
 		"name": "Izraēlas šekelis",
@@ -362,7 +369,11 @@
 		"name": "Paragvajas guarani"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "Peru jaunais sols"
+=======
+		"name": "Peru sols"
+>>>>>>> revert Open Social update
 	},
 	"PLN": {
 		"name": "Polijas zlots"

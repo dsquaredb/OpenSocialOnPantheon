@@ -163,7 +163,11 @@
 		"name": "Forint Hungary"
 	},
 	"BIF": {
+<<<<<<< HEAD
 		"name": "Franc Burundia"
+=======
+		"name": "Franc Burundi"
+>>>>>>> revert Open Social update
 	},
 	"XOF": {
 		"name": "Franc CFA BCEAO",
@@ -202,7 +206,11 @@
 		"name": "Guarani Paraguay"
 	},
 	"ANG": {
+<<<<<<< HEAD
 		"name": "Guilder Antillean Netherland"
+=======
+		"name": "Guilder Antillen Belanda"
+>>>>>>> revert Open Social update
 	},
 	"UAH": {
 		"name": "Hryvnia Ukraine"
@@ -291,12 +299,21 @@
 	"BTN": {
 		"name": "Ngultrum Bhutan"
 	},
+<<<<<<< HEAD
 	"PEN": {
 		"name": "Nuevo Sol Peru"
 	},
 	"MRO": {
 		"name": "Ouguiya Mauritania"
 	},
+=======
+	"MRO": {
+		"name": "Ouguiya Mauritania"
+	},
+	"TOP": {
+		"name": "Pa’anga Tonga"
+	},
+>>>>>>> revert Open Social update
 	"MOP": {
 		"name": "Pataca Macau"
 	},
@@ -352,6 +369,12 @@
 	"MXN": {
 		"name": "Peso Mexico"
 	},
+<<<<<<< HEAD
+=======
+	"UYU": {
+		"name": "Peso Uruguay"
+	},
+>>>>>>> revert Open Social update
 	"BWP": {
 		"name": "Pula Botswana"
 	},
@@ -388,10 +411,14 @@
 		"name": "Riyal Saudi"
 	},
 	"BYN": {
+<<<<<<< HEAD
 		"name": "Rubel Belarus"
 	},
 	"BYR": {
 		"name": "Rubel Belarus (2000–2016)"
+=======
+		"name": "Rubel Belarus baharu"
+>>>>>>> revert Open Social update
 	},
 	"RUB": {
 		"name": "Rubel Rusia"
@@ -404,7 +431,11 @@
 		"symbol": "₹"
 	},
 	"MUR": {
+<<<<<<< HEAD
 		"name": "Rupee Mauritia"
+=======
+		"name": "Rupee Mauritius"
+>>>>>>> revert Open Social update
 	},
 	"NPR": {
 		"name": "Rupee Nepal"
@@ -424,9 +455,14 @@
 	"SVC": {
 		"name": "Salvadoran Colón"
 	},
+<<<<<<< HEAD
 	"ILS": {
 		"name": "Sheqel Baru Israel",
 		"symbol": "₪"
+=======
+	"PEN": {
+		"name": "Sol Peru"
+>>>>>>> revert Open Social update
 	},
 	"KGS": {
 		"name": "Som Kyrgystani"
@@ -437,6 +473,13 @@
 	"TJS": {
 		"name": "Somoni Tajikistan"
 	},
+<<<<<<< HEAD
+=======
+	"ILS": {
+		"name": "Syekel Baharu Israel",
+		"symbol": "₪"
+	},
+>>>>>>> revert Open Social update
 	"KES": {
 		"name": "Syiling Kenya"
 	},
@@ -458,6 +501,7 @@
 	"KZT": {
 		"name": "Tenge Kazakhstan"
 	},
+<<<<<<< HEAD
 	"TOP": {
 		"name": "Tongan Paʻanga"
 	},
@@ -467,6 +511,11 @@
 	"UYU": {
 		"name": "Uruguayan Peso"
 	},
+=======
+	"MNT": {
+		"name": "Tugrik Mongolia"
+	},
+>>>>>>> revert Open Social update
 	"VUV": {
 		"name": "Vatu Vanuatu"
 	},

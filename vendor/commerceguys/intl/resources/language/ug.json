@@ -164,6 +164,15 @@
 	"ps": {
 		"name": "پۇشتۇچە"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "تاتارچە"
+	},
+	"tg": {
+		"name": "تاجىكچە"
+	},
+>>>>>>> revert Open Social update
 	"ta": {
 		"name": "تامىلچە"
 	},
@@ -290,6 +299,12 @@
 	"sl": {
 		"name": "سىلوۋېنچە"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "سىندىچە"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "سىنگالچە"
 	},
@@ -437,9 +452,12 @@
 	"nl-BE": {
 		"name": "گوللاندچە (بېلگىيە)"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "گۇاڭدوڭچە"
 	},
+=======
+>>>>>>> revert Open Social update
 	"gu": {
 		"name": "گۇجاراتچە"
 	},
@@ -587,6 +605,12 @@
 	"vo": {
 		"name": "ۋولاپۇكچە"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "ۋولوفچە"
+	},
+>>>>>>> revert Open Social update
 	"vun": {
 		"name": "ۋۇنجوچە"
 	},

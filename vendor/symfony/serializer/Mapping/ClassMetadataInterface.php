@@ -58,11 +58,15 @@ interface ClassMetadataInterface
      * @param ClassMetadataInterface $classMetadata
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function merge(ClassMetadataInterface $classMetadata);
 >>>>>>> web and vendor directory from composer install
 =======
     public function merge(self $classMetadata);
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+    public function merge(ClassMetadataInterface $classMetadata);
+>>>>>>> revert Open Social update
 
     /**
      * Returns a {@link \ReflectionClass} instance for this class.

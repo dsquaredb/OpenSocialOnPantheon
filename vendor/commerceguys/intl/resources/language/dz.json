@@ -32,9 +32,12 @@
 	"br": {
 		"name": "Breton"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Cantonese"
 	},
+=======
+>>>>>>> revert Open Social update
 	"tzm": {
 		"name": "Central Atlas Tamazight"
 	},
@@ -347,6 +350,12 @@
 	"ka": {
 		"name": "ཇཽ་ཇི་ཡཱན་ཁ"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "ཊ་ཊར་ཁ"
+	},
+>>>>>>> revert Open Social update
 	"tr": {
 		"name": "ཊཱར་ཀིཤ་ཁ"
 	},
@@ -362,6 +371,12 @@
 	"da": {
 		"name": "ཌེ་ནིཤ་ཁ"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "ཏ་ཇིཀ་ཁ"
+	},
+>>>>>>> revert Open Social update
 	"ta": {
 		"name": "ཏ་མིལ་ཁ"
 	},
@@ -467,6 +482,12 @@
 	"cy": {
 		"name": "ཝེལཤ་ཁ"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "ཝོ་ལོཕ་ཁ"
+	},
+>>>>>>> revert Open Social update
 	"zu": {
 		"name": "ཟུ་ལུ་ཁ"
 	},
@@ -521,6 +542,12 @@
 	"si": {
 		"name": "སིང་ཧ་ལ་ཁ"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "སིན་དཱི་ཁ"
+	},
+>>>>>>> revert Open Social update
 	"de-CH": {
 		"name": "སུ་ཡིས་གི་མཐོ་སའི་ཇཱར་མཱན་ཁ"
 	},

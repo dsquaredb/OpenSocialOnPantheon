@@ -230,9 +230,12 @@
 	"kn": {
 		"name": "Kannada"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "Kantonesisch"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kk": {
 		"name": "Kasachisch"
 	},
@@ -506,6 +509,12 @@
 	"sn": {
 		"name": "Shona"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "Sindhi"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "Singhalesisch"
 	},
@@ -527,6 +536,12 @@
 	"sw": {
 		"name": "Suaheli"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "Tadschikisch"
+	},
+>>>>>>> revert Open Social update
 	"dav": {
 		"name": "Taita"
 	},
@@ -542,6 +557,12 @@
 	"shi": {
 		"name": "Taschelhit"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "Tatarisch"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "Telugu"
 	},
@@ -611,6 +632,12 @@
 	"fy": {
 		"name": "Westfriesisch"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "Wolof"
+	},
+>>>>>>> revert Open Social update
 	"yav": {
 		"name": "Yangben"
 	},

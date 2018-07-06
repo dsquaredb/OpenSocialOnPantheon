@@ -113,8 +113,7 @@ class DbLogController extends ControllerBase {
    * Full-length messages can be viewed on the message details page.
    *
    * @return array
-   *   A render array as expected by
-   *   \Drupal\Core\Render\RendererInterface::render().
+   *   A render array as expected by drupal_render().
    *
    * @see dblog_clear_log_form()
    * @see dblog_event()
@@ -234,7 +233,7 @@ class DbLogController extends ControllerBase {
    *
    * @return array
    *   If the ID is located in the Database Logging table, a build array in the
-   *   format expected by \Drupal\Core\Render\RendererInterface::render().
+   *   format expected by drupal_render();
    */
   public function eventDetails($event_id) {
     $build = array();
@@ -376,8 +375,7 @@ class DbLogController extends ControllerBase {
    *   Type of database log events to display (e.g., 'search').
    *
    * @return array
-   *   A build array in the format expected by
-   *   \Drupal\Core\Render\RendererInterface::render().
+   *   A build array in the format expected by drupal_render().
    */
   public function topLogMessages($type) {
     $header = array(

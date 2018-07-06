@@ -7,6 +7,7 @@ dependencies:
   - features
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Information added by Drupal.org packaging script on 2016-09-29
 version: '8.x-3.0-rc1'
 core: '8.x'
@@ -19,3 +20,10 @@ core: '8.x'
 project: 'features'
 datestamp: 1519763291
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+# Information added by Drupal.org packaging script on 2017-03-07
+version: '8.x-3.5'
+core: '8.x'
+project: 'features'
+datestamp: 1488908587
+>>>>>>> revert Open Social update

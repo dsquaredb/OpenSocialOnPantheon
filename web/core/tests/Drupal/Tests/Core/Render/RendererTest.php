@@ -93,6 +93,7 @@ class RendererTest extends RendererTestBase {
       ['#markup' => 'foo'],
       'foo',
     ];
+<<<<<<< HEAD
     // Basic #markup based renderable array with value '0'.
     $data[] = [
       ['#markup' => '0'],
@@ -114,6 +115,8 @@ class RendererTest extends RendererTestBase {
       '',
     ];
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
     // Basic #plain_text based renderable array.
     $data[] = [[
       '#plain_text' => 'foo',
@@ -133,6 +136,7 @@ class RendererTest extends RendererTestBase {
       ['#plain_text' => Markup::create('<em>foo</em>')],
       '&lt;em&gt;foo&lt;/em&gt;',
     ];
+<<<<<<< HEAD
     // #plain_text based renderable array with value '0'.
     $data[] = [
       ['#plain_text' => '0'],
@@ -154,6 +158,8 @@ class RendererTest extends RendererTestBase {
       '',
     ];
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> revert Open Social update
     // Renderable child element.
     $data[] = [[
       'child' => ['#markup' => 'bar'],

@@ -57,10 +57,14 @@ class MigrateUrlAliasTest extends MigrateDrupal6TestBase {
     $path = \Drupal::service('path.alias_storage')->load($conditions);
     $this->assertPath('1', $conditions, $path);
 <<<<<<< HEAD
+<<<<<<< HEAD
     $this->assertIdentical($id_map->lookupDestinationID(array($path['pid'])), array('1'), "Test IdMap");
 =======
     $this->assertIdentical($id_map->lookupDestinationId([$path['pid']]), ['1'], "Test IdMap");
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+    $this->assertIdentical($id_map->lookupDestinationID([$path['pid']]), ['1'], "Test IdMap");
+>>>>>>> revert Open Social update
 
     $conditions = array(
       'source' => '/node/2',

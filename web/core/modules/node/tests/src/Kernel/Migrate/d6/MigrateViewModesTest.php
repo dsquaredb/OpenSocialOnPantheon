@@ -30,10 +30,14 @@ class MigrateViewModesTest extends MigrateDrupal6TestBase {
     $this->assertIdentical('Preview', $view_mode->label(), 'View mode has correct label.');
     // Test the ID map.
 <<<<<<< HEAD
+<<<<<<< HEAD
     $this->assertIdentical(array('node', 'preview'), $this->getMigration('d6_view_modes')->getIdMap()->lookupDestinationID(array(1)));
 =======
     $this->assertIdentical(['node', 'preview'], $this->getMigration('d6_view_modes')->getIdMap()->lookupDestinationId([1]));
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+    $this->assertIdentical(['node', 'preview'], $this->getMigration('d6_view_modes')->getIdMap()->lookupDestinationID([1]));
+>>>>>>> revert Open Social update
   }
 
 }

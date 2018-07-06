@@ -37,18 +37,27 @@
 	"BBD": {
 		"name": "Barbados Doları"
 	},
+<<<<<<< HEAD
+=======
+	"BYN": {
+		"name": "Belarus Rublesi"
+	},
+>>>>>>> revert Open Social update
 	"BZD": {
 		"name": "Belize Doları"
 	},
 	"BMD": {
 		"name": "Bermuda Doları"
 	},
+<<<<<<< HEAD
 	"BYN": {
 		"name": "Beyaz Rusya Rublesi"
 	},
 	"BYR": {
 		"name": "Beyaz Rusya Rublesi (2000–2016)"
 	},
+=======
+>>>>>>> revert Open Social update
 	"BTN": {
 		"name": "Bhutan Ngultrumu"
 	},
@@ -361,7 +370,11 @@
 		"name": "Paraguay Guaranisi"
 	},
 	"PEN": {
+<<<<<<< HEAD
 		"name": "Peru Nuevo Solü"
+=======
+		"name": "Peru Solü"
+>>>>>>> revert Open Social update
 	},
 	"PLN": {
 		"name": "Polonya Zlotisi"

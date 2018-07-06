@@ -80,6 +80,7 @@ class ExecutableFinder
             $pathExt = getenv('PATHEXT');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             $suffixes = array_merge($suffixes, $pathExt ? explode(PATH_SEPARATOR, $pathExt) : $this->suffixes);
 =======
             $suffixes = array_merge($pathExt ? explode(PATH_SEPARATOR, $pathExt) : $this->suffixes, $suffixes);
@@ -98,6 +99,13 @@ class ExecutableFinder
 >>>>>>> web and vendor directory from composer install
 =======
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+            $suffixes = array_merge($suffixes, $pathExt ? explode(PATH_SEPARATOR, $pathExt) : $this->suffixes);
+        }
+        foreach ($suffixes as $suffix) {
+            foreach ($dirs as $dir) {
+                if (@is_file($file = $dir.DIRECTORY_SEPARATOR.$name.$suffix) && ('\\' === DIRECTORY_SEPARATOR || is_executable($file))) {
+>>>>>>> revert Open Social update
                     return $file;
                 }
             }

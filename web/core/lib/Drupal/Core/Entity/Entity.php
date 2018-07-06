@@ -14,8 +14,11 @@ use Drupal\Core\Link;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
+=======
+>>>>>>> revert Open Social update
 use Symfony\Component\Routing\Exception\RouteNotFoundException;
 >>>>>>> Update Open Social to 8.x-2.1
 
@@ -340,9 +343,6 @@ abstract class Entity implements EntityInterface {
         $this->toUrl($link_relation_type)->toString(TRUE)->getGeneratedUrl();
       }
       catch (RouteNotFoundException $e) {
-        return FALSE;
-      }
-      catch (MissingMandatoryParametersException $e) {
         return FALSE;
       }
       return TRUE;

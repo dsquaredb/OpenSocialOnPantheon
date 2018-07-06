@@ -41,6 +41,12 @@
 	"HK": {
 		"name": "Hong Kong SAR China"
 	},
+<<<<<<< HEAD
+=======
+	"VA": {
+		"name": "Ìlú Vatican"
+	},
+>>>>>>> revert Open Social update
 	"IM": {
 		"name": "Isle of Man"
 	},
@@ -239,9 +245,12 @@
 	"FR": {
 		"name": "Orílɛ́ède Faranse"
 	},
+<<<<<<< HEAD
 	"VA": {
 		"name": "Orílɛ́ède Fatikani"
 	},
+=======
+>>>>>>> revert Open Social update
 	"VE": {
 		"name": "Orílɛ́ède Fɛnɛshuɛla"
 	},

@@ -39,10 +39,17 @@
 		"name": "ಆಸ್ಟ್ರಿಯನ್ ಜರ್ಮನ್"
 	},
 	"en-AU": {
+<<<<<<< HEAD
 		"name": "ಆಸ್ಟ್ರೇಲಿಯನ್ ಇಂಗ್ಲೀಷ್"
 	},
 	"en": {
 		"name": "ಇಂಗ್ಲೀಷ್"
+=======
+		"name": "ಆಸ್ಟ್ರೇಲಿಯನ್ ಇಂಗ್ಲಿಷ್"
+	},
+	"en": {
+		"name": "ಇಂಗ್ಲಿಷ್"
+>>>>>>> revert Open Social update
 	},
 	"id": {
 		"name": "ಇಂಡೋನೇಶಿಯನ್"
@@ -54,7 +61,11 @@
 		"name": "ಇಟಾಲಿಯನ್"
 	},
 	"smn": {
+<<<<<<< HEAD
 		"name": "ಇನರಿ ಸಾಮಿ"
+=======
+		"name": "ಇನಾರಿ ಸಮೀ"
+>>>>>>> revert Open Social update
 	},
 	"ewo": {
 		"name": "ಇವಾಂಡೋ"
@@ -63,7 +74,11 @@
 		"name": "ಈವ್"
 	},
 	"uk": {
+<<<<<<< HEAD
 		"name": "ಉಕ್ರೈನಿಯನ್"
+=======
+		"name": "ಉಕ್ರೇನಿಯನ್"
+>>>>>>> revert Open Social update
 	},
 	"uz": {
 		"name": "ಉಜ್ಬೇಕ್"
@@ -96,17 +111,30 @@
 		"name": "ಐರಿಷ್"
 	},
 	"is": {
+<<<<<<< HEAD
 		"name": "ಐಸ್ಲಾಂಡಿಕ್"
 	},
 	"or": {
 		"name": "ಒರಿಯಾ"
+=======
+		"name": "ಐಸ್‌ಲ್ಯಾಂಡಿಕ್"
+	},
+	"or": {
+		"name": "ಒಡಿಯ"
+	},
+	"om": {
+		"name": "ಒರೊಮೊ"
+>>>>>>> revert Open Social update
 	},
 	"os": {
 		"name": "ಒಸ್ಸೆಟಿಕ್"
 	},
+<<<<<<< HEAD
 	"om": {
 		"name": "ಓರೊಮೋ"
 	},
+=======
+>>>>>>> revert Open Social update
 	"kam": {
 		"name": "ಕಂಬಾ"
 	},
@@ -146,17 +174,30 @@
 	"ki": {
 		"name": "ಕಿಕುಯು"
 	},
+<<<<<<< HEAD
 	"ky": {
 		"name": "ಕಿರ್ಗಿಜ್"
 	},
 	"rw": {
 		"name": "ಕೀನ್ಯಾರುವಾಂಡಾ"
 	},
+=======
+	"rw": {
+		"name": "ಕಿನ್ಯಾರ್‌ವಾಂಡಾ"
+	},
+	"ky": {
+		"name": "ಕಿರ್ಗಿಜ್"
+	},
+>>>>>>> revert Open Social update
 	"ca": {
 		"name": "ಕೆಟಲಾನ್"
 	},
 	"en-CA": {
+<<<<<<< HEAD
 		"name": "ಕೆನೆಡಿಯನ್ ಇಂಗ್ಲೀಷ್"
+=======
+		"name": "ಕೆನೆಡಿಯನ್ ಇಂಗ್ಲಿಷ್"
+>>>>>>> revert Open Social update
 	},
 	"fr-CA": {
 		"name": "ಕೆನೆಡಿಯನ್ ಫ್ರೆಂಚ್"
@@ -173,9 +214,12 @@
 	"ko": {
 		"name": "ಕೊರಿಯನ್"
 	},
+<<<<<<< HEAD
 	"yue": {
 		"name": "ಕ್ಯಾಂಟನೀಸ್"
 	},
+=======
+>>>>>>> revert Open Social update
 	"hr": {
 		"name": "ಕ್ರೊಯೇಶಿಯನ್"
 	},
@@ -213,7 +257,11 @@
 		"name": "ಚೆಚನ್"
 	},
 	"chr": {
+<<<<<<< HEAD
 		"name": "ಚೆರೋಕೀ"
+=======
+		"name": "ಚೆರೋಕಿ"
+>>>>>>> revert Open Social update
 	},
 	"zh": {
 		"name": "ಚೈನೀಸ್"
@@ -254,6 +302,12 @@
 	"twq": {
 		"name": "ಟಸವಕ್"
 	},
+<<<<<<< HEAD
+=======
+	"tt": {
+		"name": "ಟಾಟರ್"
+	},
+>>>>>>> revert Open Social update
 	"ti": {
 		"name": "ಟಿಗ್ರಿನ್ಯಾ"
 	},
@@ -281,6 +335,12 @@
 	"ta": {
 		"name": "ತಮಿಳು"
 	},
+<<<<<<< HEAD
+=======
+	"tg": {
+		"name": "ತಾಜಿಕ್"
+	},
+>>>>>>> revert Open Social update
 	"te": {
 		"name": "ತೆಲುಗು"
 	},
@@ -320,12 +380,21 @@
 	"fy": {
 		"name": "ಪಶ್ಚಿಮ ಫ್ರಿಸಿಯನ್"
 	},
+<<<<<<< HEAD
 	"pl": {
 		"name": "ಪಾಲಿಷ್"
 	},
 	"ps": {
 		"name": "ಪಾಷ್ಟೋ"
 	},
+=======
+	"ps": {
+		"name": "ಪಾಷ್ಟೋ"
+	},
+	"pl": {
+		"name": "ಪೊಲಿಶ್"
+	},
+>>>>>>> revert Open Social update
 	"pt": {
 		"name": "ಪೋರ್ಚುಗೀಸ್"
 	},
@@ -342,7 +411,11 @@
 		"name": "ಫಿಲಿಪಿನೊ"
 	},
 	"ff": {
+<<<<<<< HEAD
 		"name": "ಫುಲಾಹ್"
+=======
+		"name": "ಫುಲಾ"
+>>>>>>> revert Open Social update
 	},
 	"fur": {
 		"name": "ಫ್ರಿಯುಲಿಯನ್"
@@ -390,7 +463,11 @@
 		"name": "ಬೋಸ್ನಿಯನ್"
 	},
 	"en-GB": {
+<<<<<<< HEAD
 		"name": "ಬ್ರಿಟಿಷ್ ಇಂಗ್ಲೀಷ್"
+=======
+		"name": "ಬ್ರಿಟಿಷ್ ಇಂಗ್ಲಿಷ್"
+>>>>>>> revert Open Social update
 	},
 	"br": {
 		"name": "ಬ್ರೆಟನ್"
@@ -404,6 +481,12 @@
 	"tzm": {
 		"name": "ಮಧ್ಯ ಅಟ್ಲಾಸ್ ಟಮಜೈಟ್"
 	},
+<<<<<<< HEAD
+=======
+	"ckb": {
+		"name": "ಮಧ್ಯ ಕುರ್ದಿಶ್"
+	},
+>>>>>>> revert Open Social update
 	"mr": {
 		"name": "ಮರಾಠಿ"
 	},
@@ -480,7 +563,11 @@
 		"name": "ರೊಂಬೊ"
 	},
 	"rm": {
+<<<<<<< HEAD
 		"name": "ರೊಮಾನ್ಷ್"
+=======
+		"name": "ರೊಮಾನ್ಶ್"
+>>>>>>> revert Open Social update
 	},
 	"ro": {
 		"name": "ರೊಮೇನಿಯನ್"
@@ -491,12 +578,21 @@
 	"lb": {
 		"name": "ಲಕ್ಸಂಬರ್ಗಿಷ್"
 	},
+<<<<<<< HEAD
 	"lv": {
 		"name": "ಲಟ್ವಿಯನ್"
 	},
 	"lag": {
 		"name": "ಲಾಂಗಿ"
 	},
+=======
+	"lag": {
+		"name": "ಲಾಂಗಿ"
+	},
+	"lv": {
+		"name": "ಲಾಟ್ವಿಯನ್"
+	},
+>>>>>>> revert Open Social update
 	"lo": {
 		"name": "ಲಾವೋ"
 	},
@@ -531,7 +627,11 @@
 		"name": "ವಾಲ್ಸರ್"
 	},
 	"vi": {
+<<<<<<< HEAD
 		"name": "ವಿಯೇಟ್ನಾಮೀಸ್"
+=======
+		"name": "ವಿಯೆಟ್ನಾಮೀಸ್"
+>>>>>>> revert Open Social update
 	},
 	"vun": {
 		"name": "ವುಂಜೊ"
@@ -542,6 +642,12 @@
 	"vo": {
 		"name": "ವೋಲಾಪುಕ್"
 	},
+<<<<<<< HEAD
+=======
+	"wo": {
+		"name": "ವೋಲೋಫ್"
+	},
+>>>>>>> revert Open Social update
 	"ksb": {
 		"name": "ಶಂಬಲ"
 	},
@@ -560,15 +666,24 @@
 	"zh-Hans": {
 		"name": "ಸರಳೀಕೃತ ಚೈನೀಸ್"
 	},
+<<<<<<< HEAD
 	"sr": {
 		"name": "ಸರ್ಬಿಯನ್"
 	},
+=======
+>>>>>>> revert Open Social update
 	"sg": {
 		"name": "ಸಾಂಗೋ"
 	},
 	"zh-Hant": {
 		"name": "ಸಾಂಪ್ರದಾಯಿಕ ಚೈನೀಸ್"
 	},
+<<<<<<< HEAD
+=======
+	"sd": {
+		"name": "ಸಿಂಧಿ"
+	},
+>>>>>>> revert Open Social update
 	"si": {
 		"name": "ಸಿಂಹಳ"
 	},
@@ -578,17 +693,28 @@
 	"seh": {
 		"name": "ಸೆನ"
 	},
+<<<<<<< HEAD
+=======
+	"sr": {
+		"name": "ಸೆರ್ಬಿಯನ್"
+	},
+>>>>>>> revert Open Social update
 	"xog": {
 		"name": "ಸೊಗ"
 	},
 	"so": {
 		"name": "ಸೊಮಾಲಿ"
 	},
+<<<<<<< HEAD
 	"ckb": {
 		"name": "ಸೊರಾನಿ ಕುರ್ದಿಷ್"
 	},
 	"gd": {
 		"name": "ಸ್ಕಾಟಿಶ್ ಗ್ಯಾಲಿಕ್"
+=======
+	"gd": {
+		"name": "ಸ್ಕಾಟಿಶ್ ಗೆಲಿಕ್"
+>>>>>>> revert Open Social update
 	},
 	"zgh": {
 		"name": "ಸ್ಟ್ಯಾಂಡರ್ಡ್ ಮೊರೊಕ್ಕನ್ ಟಮಜೈಟ್"
@@ -627,7 +753,11 @@
 		"name": "ಹಿಂದಿ"
 	},
 	"he": {
+<<<<<<< HEAD
 		"name": "ಹೀಬ್ರ್ಯೂ"
+=======
+		"name": "ಹೀಬ್ರೂ"
+>>>>>>> revert Open Social update
 	},
 	"ha": {
 		"name": "ಹೌಸಾ"
