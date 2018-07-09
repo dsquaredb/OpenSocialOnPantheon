@@ -274,6 +274,9 @@ function social_search_update_8108(array &$sandbox) {
   \Drupal::service('module_installer')->uninstall($modules);
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> updating open social
 
 /**
  * Update social_all and social_users indices.
@@ -295,6 +298,9 @@ function social_search_update_8109() {
     }
   }
 }
+<<<<<<< HEAD
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social

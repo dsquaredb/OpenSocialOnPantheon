@@ -15,6 +15,7 @@ class Param extends NodeAbstract
     public $variadic;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     /** @var string Name */
     public $name;
 =======
@@ -22,6 +23,9 @@ class Param extends NodeAbstract
 =======
     /** @var Expr\Variable Parameter variable */
 >>>>>>> revert Open Social update
+=======
+    /** @var Expr\Variable|Expr\Error Parameter variable */
+>>>>>>> updating open social
     public $var;
 >>>>>>> Update Open Social to 8.x-2.1
     /** @var null|Expr Default value */
@@ -30,6 +34,7 @@ class Param extends NodeAbstract
     /**
      * Constructs a parameter node.
      *
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
      * @param string           $name       Name
@@ -45,6 +50,9 @@ class Param extends NodeAbstract
 =======
      * @param Expr\Variable                 $var        Parameter variable
 >>>>>>> revert Open Social update
+=======
+     * @param Expr\Variable|Expr\Error      $var        Parameter variable
+>>>>>>> updating open social
      * @param null|Expr                     $default    Default value
      * @param null|string|Name|NullableType $type       Typehint
      * @param bool                          $byRef      Whether is passed by reference
@@ -52,7 +60,7 @@ class Param extends NodeAbstract
      * @param array                         $attributes Additional attributes
      */
     public function __construct(
-        Expr\Variable $var, Expr $default = null, $type = null,
+        $var, Expr $default = null, $type = null,
         bool $byRef = false, bool $variadic = false, array $attributes = []
     ) {
 >>>>>>> Update Open Social to 8.x-2.1

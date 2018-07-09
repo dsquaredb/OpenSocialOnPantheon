@@ -33,6 +33,9 @@ class AddToAnyBlock extends BlockBase {
       $node = Node::load($node);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> updating open social
     $data = addtoany_create_entity_data($node);
     return [
       '#addtoany_html'              => \Drupal::token()->replace($data['addtoany_html'], ['node' => $node]),
@@ -47,6 +50,7 @@ class AddToAnyBlock extends BlockBase {
         'contexts' => ['url'],
       ],
     ];
+<<<<<<< HEAD
 >>>>>>> Update Open Social to 8.x-2.1
 =======
     return array(
@@ -57,6 +61,8 @@ class AddToAnyBlock extends BlockBase {
       ),
     );
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
   }
 
 }

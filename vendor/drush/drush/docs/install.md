@@ -35,6 +35,7 @@ Drupal Compatibility
 -----------------
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Drush Version | Drush Branch  | PHP | Compatible Drupal versions | Code Status
 ------------- | ---------     | --- | -------------------------- | -----------
 Drush 9       | [master](https://travis-ci.org/drush-ops/drush)  | 5.5+ | D7, D8                 | <img src="https://travis-ci.org/drush-ops/drush.svg?branch=master">
@@ -66,6 +67,8 @@ Install a site-local Drush and Drush Launcher.
 Drupal Compatibility
 -----------------
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
 <table>
   <tr>
     <th> Drush Version </th> 

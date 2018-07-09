@@ -2,8 +2,7 @@
 
 namespace Drupal\address\Plugin\Validation\Constraint;
 
-use CommerceGuys\Addressing\AddressFormat\AddressField;
-use Symfony\Component\Validator\Constraint;
+use CommerceGuys\Addressing\Validator\Constraints\AddressFormatConstraint as ExternalAddressFormatConstraint;
 
 /**
  * Address format constraint.
@@ -14,13 +13,13 @@ use Symfony\Component\Validator\Constraint;
  *   type = { "address" }
  * )
  */
-class AddressFormatConstraint extends Constraint {
+class AddressFormatConstraint extends ExternalAddressFormatConstraint {
 
-  public $fields;
   public $blankMessage = '@name field must be blank.';
   public $notBlankMessage = '@name field is required.';
   public $invalidMessage = '@name field is not in the right format.';
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   /**
@@ -55,4 +54,6 @@ class AddressFormatConstraint extends Constraint {
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
 }

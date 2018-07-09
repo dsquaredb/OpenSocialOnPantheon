@@ -27,12 +27,18 @@ matrix:
     - php: 5.4
       env: 'COMPOSER_FLAGS="--prefer-lowest --prefer-stable"'
     - php: hhvm
+  fast_finish: true
 
 install: travis_retry composer update --no-interaction $COMPOSER_FLAGS
 
-script: vendor/bin/phpunit --verbose
+script:
+ - vendor/bin/phpunit --verbose --coverage-clover=coverage.xml
+ - '[[ $TRAVIS_PHP_VERSION = 7.2* ]] && make build -j 4 || true'
 
-before_deploy: bin/package -v $TRAVIS_TAG
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+before_deploy: make dist -j 4
 
 deploy:
   provider: releases
@@ -45,8 +51,12 @@ deploy:
     tags: true
     repo: bobthecow/psysh
 <<<<<<< HEAD
+<<<<<<< HEAD
     condition: $TRAVIS_PHP_VERSION = 7.2*
 >>>>>>> Update Open Social to 8.x-2.1
 =======
     condition: (($TRAVIS_PHP_VERSION = 5.4* && -z "$COMPOSER_FLAGS") || $TRAVIS_PHP_VERSION = 7.0*)
 >>>>>>> revert Open Social update
+=======
+    condition: $TRAVIS_PHP_VERSION = 7.2*
+>>>>>>> updating open social

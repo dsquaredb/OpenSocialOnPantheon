@@ -150,6 +150,7 @@ class ExceptionListenerTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($dispatcher->hasListeners(KernelEvents::RESPONSE), 'CSP removal listener has been removed');
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 
@@ -170,6 +171,8 @@ class ExceptionListenerTest extends \PHPUnit_Framework_TestCase
         $this->assertContains('Whoops, looks like something went wrong.', $event->getResponse()->getContent());
     }
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
 }
 
 class TestLogger extends Logger implements DebugLoggerInterface

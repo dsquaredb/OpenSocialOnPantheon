@@ -4,6 +4,7 @@ namespace Drupal\admin_toolbar_tools\Controller;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\CronInterface;
@@ -18,22 +19,29 @@ use Drupal\Component\Datetime\TimeInterface;
 =======
 use Drupal\Component\Datetime\Time;
 >>>>>>> revert Open Social update
+=======
+use Drupal\Component\Datetime\TimeInterface;
+>>>>>>> updating open social
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\CronInterface;
-use Drupal\Core\Menu\ContextualLinkManager;
-use Drupal\Core\Menu\LocalActionManager;
-use Drupal\Core\Menu\LocalTaskManager;
-use Drupal\Core\Menu\MenuLinkManager;
+use Drupal\Core\Menu\ContextualLinkManagerInterface;
+use Drupal\Core\Menu\LocalActionManagerInterface;
+use Drupal\Core\Menu\LocalTaskManagerInterface;
+use Drupal\Core\Menu\MenuLinkManagerInterface;
 use Drupal\Core\Plugin\CachedDiscoveryClearerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\RequestStack;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Drupal\Core\PhpStorage\PhpStorageFactory;
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+use Drupal\Core\PhpStorage\PhpStorageFactory;
+>>>>>>> updating open social
 
 /**
  * Class ToolbarController
@@ -56,28 +64,28 @@ class ToolbarController extends ControllerBase {
   /**
    * A menu link manager instance.
    *
-   * @var \Drupal\Core\Menu\MenuLinkManager
+   * @var \Drupal\Core\Menu\MenuLinkManagerInterface
    */
   protected $menuLinkManager;
 
   /**
    * A context link manager instance.
    *
-   * @var \Drupal\Core\Menu\ContextualLinkManager
+   * @var \Drupal\Core\Menu\ContextualLinkManagerInterface
    */
   protected $contextualLinkManager;
 
   /**
    * A local task manager instance.
    *
-   * @var \Drupal\Core\Menu\LocalTaskManager
+   * @var \Drupal\Core\Menu\LocalTaskManagerInterface
    */
   protected $localTaskLinkManager;
 
   /**
    * A local action manager instance.
    *
-   * @var \Drupal\Core\Menu\LocalActionManager
+   * @var \Drupal\Core\Menu\LocalActionManagerInterface
    */
 >>>>>>> Update Open Social to 8.x-2.1
   protected $localActionLinkManager;
@@ -99,7 +107,7 @@ class ToolbarController extends ControllerBase {
 =======
    * A date time instance.
    *
-   * @var \Drupal\Component\Datetime\Time
+   * @var \Drupal\Component\Datetime\TimeInterface
    */
   protected $time;
 
@@ -118,15 +126,34 @@ class ToolbarController extends ControllerBase {
   protected $pluginCacheClearer;
 
   /**
-   * {@inheritdoc}
+   * Constructs a ToolbarController object.
+   *
+   * @param \Drupal\Core\CronInterface $cron
+   *   A cron instance.
+   * @param \Drupal\Core\Menu\MenuLinkManagerInterface $menuLinkManager
+   *   A menu link manager instance.
+   * @param \Drupal\Core\Menu\ContextualLinkManagerInterface $contextualLinkManager
+   *   A context link manager instance.
+   * @param \Drupal\Core\Menu\LocalTaskManagerInterface $localTaskLinkManager
+   *   A local task manager instance.
+   * @param \Drupal\Core\Menu\LocalActionManagerInterface $localActionLinkManager
+   *   A local action manager instance.
+   * @param \Drupal\Core\Cache\CacheBackendInterface $cacheRender
+   *   A cache backend interface instance.
+   * @param \Drupal\Component\Datetime\TimeInterface $time
+   *   A date time instance.
+   * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
+   *   A request stack symfony instance.
+   * @param \Drupal\Core\Plugin\CachedDiscoveryClearerInterface $plugin_cache_clearer
+   *   A plugin cache clear instance.
    */
   public function __construct(CronInterface $cron,
-                              MenuLinkManager $menuLinkManager,
-                              ContextualLinkManager $contextualLinkManager,
-                              LocalTaskManager $localTaskLinkManager,
-                              LocalActionManager $localActionLinkManager,
+                              MenuLinkManagerInterface $menuLinkManager,
+                              ContextualLinkManagerInterface $contextualLinkManager,
+                              LocalTaskManagerInterface $localTaskLinkManager,
+                              LocalActionManagerInterface $localActionLinkManager,
                               CacheBackendInterface $cacheRender,
-                              Time $time,
+                              TimeInterface $time,
                               RequestStack $request_stack,
                               CachedDiscoveryClearerInterface $plugin_cache_clearer) {
 >>>>>>> Update Open Social to 8.x-2.1
@@ -231,6 +258,17 @@ class ToolbarController extends ControllerBase {
 
 <<<<<<< HEAD
 =======
+  /**
+   * Clears the twig cache.
+   */
+  public function flushTwig() {
+    // @todo Update once Drupal 8.6 will be released.
+    // @see https://www.drupal.org/node/2908461
+    PhpStorageFactory::get('twig')->deleteAll();
+    drupal_set_message($this->t('Twig cache cleared.'));
+    return new RedirectResponse($this->reloadPage());
+  }
+
   /**
    * Run the cron.
    */

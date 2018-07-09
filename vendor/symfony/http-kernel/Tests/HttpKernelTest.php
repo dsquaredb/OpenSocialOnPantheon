@@ -290,6 +290,8 @@ class HttpKernelTest extends \PHPUnit_Framework_TestCase
         $request->headers->set('X_FORWARDED_FOR', '3.3.3.3');
 
         $kernel->handle($request, $kernel::MASTER_REQUEST, false);
+
+        Request::setTrustedProxies(array(), -1);
     }
 
     protected function getResolver($controller = null)

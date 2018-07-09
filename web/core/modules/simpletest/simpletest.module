@@ -395,14 +395,19 @@ function simpletest_phpunit_command() {
   // The file in Composer's bin dir is a *nix link, which does not work when
   // extracted from a tarball and generally not on Windows.
 <<<<<<< HEAD
+<<<<<<< HEAD
   $command = escapeshellarg($vendor_dir . '/phpunit/phpunit/phpunit');
 >>>>>>> Update Open Social to 8.x-2.1
 =======
   $command = $vendor_dir . '/phpunit/phpunit/phpunit';
 >>>>>>> revert Open Social update
+=======
+  $command = escapeshellarg($vendor_dir . '/phpunit/phpunit/phpunit');
+>>>>>>> updating open social
   if (substr(PHP_OS, 0, 3) == 'WIN') {
     $php_executable_finder = new PhpExecutableFinder();
     $php = $php_executable_finder->find();
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     $phpunit_bin = escapeshellarg($php) . ' -f ' . escapeshellarg($vendor_dir . '/phpunit/phpunit/composer/bin/phpunit') . ' --';
@@ -415,6 +420,9 @@ function simpletest_phpunit_command() {
 =======
     $command = $php . ' -f ' . escapeshellarg($command) . ' --';
 >>>>>>> revert Open Social update
+=======
+    $command = $php . ' -f ' . $command . ' --';
+>>>>>>> updating open social
   }
   return $phpunit_bin;
 }

@@ -20,6 +20,7 @@ http://drupal.org/project/issues/admin_toolbar
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---INSTALLATION---
 =======
 =======
@@ -33,6 +34,8 @@ RECOMMENDED MODULES
 
 
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
 INSTALLATION
 ------------
 >>>>>>> Update Open Social to 8.x-2.1

@@ -21,6 +21,7 @@ class FieldRdfaDatatypeCallbackTest extends FieldRdfaTestBase {
    */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   public static $modules = array('text', 'filter');
 =======
   public static $modules = ['text', 'filter', 'rdf_test'];
@@ -28,6 +29,9 @@ class FieldRdfaDatatypeCallbackTest extends FieldRdfaTestBase {
 =======
   public static $modules = ['text', 'filter'];
 >>>>>>> revert Open Social update
+=======
+  public static $modules = ['text', 'filter', 'rdf_test'];
+>>>>>>> updating open social
 
   protected function setUp() {
     parent::setUp();
@@ -49,7 +53,7 @@ class FieldRdfaDatatypeCallbackTest extends FieldRdfaTestBase {
     $mapping->setFieldMapping($this->fieldName, [
       'properties' => ['schema:interactionCount'],
       'datatype_callback' => [
-        'callable' => 'Drupal\rdf\Tests\Field\TestDataConverter::convertFoo',
+        'callable' => 'Drupal\rdf_test\TestDataConverter::convertFoo',
       ],
     ])->save();
 >>>>>>> Update Open Social to 8.x-2.1

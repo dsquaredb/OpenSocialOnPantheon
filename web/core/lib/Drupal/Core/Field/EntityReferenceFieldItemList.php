@@ -26,6 +26,7 @@ class EntityReferenceFieldItemList extends FieldItemList implements EntityRefere
   public function referencedEntities() {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (empty($this->list)) {
       return array();
 =======
@@ -33,6 +34,9 @@ class EntityReferenceFieldItemList extends FieldItemList implements EntityRefere
 =======
     if (empty($this->list)) {
 >>>>>>> revert Open Social update
+=======
+    if ($this->isEmpty()) {
+>>>>>>> updating open social
       return [];
 >>>>>>> Update Open Social to 8.x-2.1
     }

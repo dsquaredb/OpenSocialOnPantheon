@@ -8,25 +8,34 @@
 =======
  * @see       https://github.com/zendframework/zend-diactoros for the canonical source repository
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @copyright Copyright (c) 2015-2018 Zend Technologies USA Inc. (http://www.zend.com)
 >>>>>>> Update Open Social to 8.x-2.1
 =======
  * @copyright Copyright (c) 2015-2017 Zend Technologies USA Inc. (http://www.zend.com)
 >>>>>>> revert Open Social update
+=======
+ * @copyright Copyright (c) 2015-2018 Zend Technologies USA Inc. (http://www.zend.com)
+>>>>>>> updating open social
  * @license   https://github.com/zendframework/zend-diactoros/blob/master/LICENSE.md New BSD License
  */
 
 namespace Zend\Diactoros;
 
 use OutOfBoundsException;
-use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+
+use function property_exists;
 
 /**
  * "Serve" incoming HTTP requests
  *
  * Given a callback, takes an incoming request, dispatches it to the
  * callback, and then sends a response.
+ *
+ * @deprecated since 1.8.0. We recommend using the `RequestHandlerRunner` class
+ *     from the zendframework/zend-httphandlerrunner package instead.
  */
 class Server
 {

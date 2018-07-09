@@ -4,6 +4,7 @@
   "minimum-stability": "dev",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "license": "BSD",
 =======
   "license": "BSD-3-Clause",
@@ -11,6 +12,9 @@
 =======
   "license": "BSD-2-Clause",
 >>>>>>> revert Open Social update
+=======
+  "license": "BSD-3-Clause",
+>>>>>>> updating open social
   "type": "composer-plugin",
   "extra": {
     "class": "cweagans\\Composer\\Patches"

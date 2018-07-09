@@ -56,6 +56,7 @@ class PhpExecutableFinder
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (!@is_executable($php)) {
 =======
             if (!is_executable($php)) {
@@ -66,6 +67,9 @@ class PhpExecutableFinder
 =======
             if (!is_executable($php)) {
 >>>>>>> revert Open Social update
+=======
+            if (!@is_executable($php)) {
+>>>>>>> updating open social
                 return false;
             }
 
@@ -76,6 +80,7 @@ class PhpExecutableFinder
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (@is_executable($php)) {
 =======
             if (is_executable($php)) {
@@ -86,10 +91,14 @@ class PhpExecutableFinder
 =======
             if (is_executable($php)) {
 >>>>>>> revert Open Social update
+=======
+            if (@is_executable($php)) {
+>>>>>>> updating open social
                 return $php;
             }
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -99,6 +108,9 @@ class PhpExecutableFinder
 =======
         if (is_executable($php = PHP_BINDIR.('\\' === DIRECTORY_SEPARATOR ? '\\php.exe' : '/php'))) {
 >>>>>>> revert Open Social update
+=======
+        if (@is_executable($php = PHP_BINDIR.('\\' === DIRECTORY_SEPARATOR ? '\\php.exe' : '/php'))) {
+>>>>>>> updating open social
             return $php;
         }
 

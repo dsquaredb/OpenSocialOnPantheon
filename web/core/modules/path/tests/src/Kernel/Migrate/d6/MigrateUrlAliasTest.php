@@ -58,6 +58,7 @@ class MigrateUrlAliasTest extends MigrateDrupal6TestBase {
     $this->assertPath('1', $conditions, $path);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     $this->assertIdentical($id_map->lookupDestinationID(array($path['pid'])), array('1'), "Test IdMap");
 =======
     $this->assertIdentical($id_map->lookupDestinationId([$path['pid']]), ['1'], "Test IdMap");
@@ -65,6 +66,9 @@ class MigrateUrlAliasTest extends MigrateDrupal6TestBase {
 =======
     $this->assertIdentical($id_map->lookupDestinationID([$path['pid']]), ['1'], "Test IdMap");
 >>>>>>> revert Open Social update
+=======
+    $this->assertIdentical($id_map->lookupDestinationId([$path['pid']]), ['1'], "Test IdMap");
+>>>>>>> updating open social
 
     $conditions = array(
       'source' => '/node/2',

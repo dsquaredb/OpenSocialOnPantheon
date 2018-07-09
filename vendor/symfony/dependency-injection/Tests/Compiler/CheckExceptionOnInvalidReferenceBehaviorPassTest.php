@@ -64,6 +64,7 @@ class CheckExceptionOnInvalidReferenceBehaviorPassTest extends \PHPUnit_Framewor
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
     /**
@@ -88,6 +89,8 @@ class CheckExceptionOnInvalidReferenceBehaviorPassTest extends \PHPUnit_Framewor
     }
 
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
     public function testProcessDefinitionWithBindings()
     {
         $container = new ContainerBuilder();

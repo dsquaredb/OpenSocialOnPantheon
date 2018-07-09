@@ -192,6 +192,7 @@
 =======
     disableFields: function disableFields(event) {
 <<<<<<< HEAD
+<<<<<<< HEAD
       var $clickedButton = $(this);
 >>>>>>> Update Open Social to 8.x-2.1
 =======
@@ -201,6 +202,9 @@
         return;
       }
 >>>>>>> revert Open Social update
+=======
+      var $clickedButton = $(this);
+>>>>>>> updating open social
 
       // Check if we're working with an "Upload" button.
       var $enabledFields = [];

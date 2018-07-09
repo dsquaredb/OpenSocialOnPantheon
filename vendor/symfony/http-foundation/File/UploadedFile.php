@@ -245,13 +245,17 @@ class UploadedFile extends File
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> updating open social
             set_error_handler(function ($type, $msg) use (&$error) { $error = $msg; });
             $moved = move_uploaded_file($this->getPathname(), $target);
             restore_error_handler();
             if (!$moved) {
                 throw new FileException(sprintf('Could not move the file "%s" to "%s" (%s)', $this->getPathname(), $target, strip_tags($error)));
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
             if (!@move_uploaded_file($this->getPathname(), $target)) {
@@ -265,6 +269,8 @@ class UploadedFile extends File
                 $error = error_get_last();
                 throw new FileException(sprintf('Could not move the file "%s" to "%s" (%s)', $this->getPathname(), $target, strip_tags($error['message'])));
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
             }
 
             @chmod($target, 0666 & ~umask());

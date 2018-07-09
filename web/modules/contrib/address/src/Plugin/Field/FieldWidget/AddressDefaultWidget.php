@@ -321,11 +321,15 @@ class AddressDefaultWidget extends WidgetBase implements ContainerFactoryPluginI
       '#required' => $this->fieldDefinition->isRequired(),
       '#available_countries' => $item->getAvailableCountries(),
 <<<<<<< HEAD
+<<<<<<< HEAD
       '#field_overrides' => $item->getFieldOverrides(),
 >>>>>>> Update Open Social to 8.x-2.1
 =======
       '#used_fields' => $this->getFieldSetting('fields'),
 >>>>>>> revert Open Social update
+=======
+      '#field_overrides' => $item->getFieldOverrides(),
+>>>>>>> updating open social
     ];
     // Hide the country dropdown when there is only one possible value.
     if (count($country_list) == 1 && $this->fieldDefinition->isRequired()) {

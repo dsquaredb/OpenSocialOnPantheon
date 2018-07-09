@@ -65,6 +65,14 @@ field_settings:
     dependencies:
       module:
         - user
+  user_status:
+    label: 'Owner » User » User status'
+    datasource_id: 'entity:profile'
+    property_path: 'uid:entity:status'
+    type: boolean
+    dependencies:
+      module:
+        - user
 datasource_settings:
   'entity:profile':
     plugin_id: 'entity:profile'
@@ -197,12 +205,18 @@ datasource_settings:
     weights:
       preprocess_query: 30
 <<<<<<< HEAD
+<<<<<<< HEAD
   blocked_users:
     weights:
       preprocess_query: -30
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+  blocked_users:
+    weights:
+      preprocess_query: -30
+>>>>>>> updating open social
 tracker_settings:
   default:
     plugin_id: default

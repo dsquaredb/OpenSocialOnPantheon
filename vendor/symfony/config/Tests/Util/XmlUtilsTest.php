@@ -56,6 +56,7 @@ class XmlUtilsTest extends \PHPUnit_Framework_TestCase
         } catch (\InvalidArgumentException $e) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             $this->assertContains('is not valid', $e->getMessage());
 =======
             $this->assertRegExp('/The XML file ".+" is not valid\./', $e->getMessage());
@@ -63,6 +64,9 @@ class XmlUtilsTest extends \PHPUnit_Framework_TestCase
 =======
             $this->assertRegExp('/The XML file "[\w:\/\\\.~+-]+" is not valid\./', $e->getMessage());
 >>>>>>> revert Open Social update
+=======
+            $this->assertRegExp('/The XML file ".+" is not valid\./', $e->getMessage());
+>>>>>>> updating open social
         }
 
         $this->assertInstanceOf('DOMDocument', XmlUtils::loadFile($fixtures.'valid.xml', array($mock, 'validate')));

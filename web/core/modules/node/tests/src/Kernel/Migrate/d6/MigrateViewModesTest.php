@@ -31,6 +31,7 @@ class MigrateViewModesTest extends MigrateDrupal6TestBase {
     // Test the ID map.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     $this->assertIdentical(array('node', 'preview'), $this->getMigration('d6_view_modes')->getIdMap()->lookupDestinationID(array(1)));
 =======
     $this->assertIdentical(['node', 'preview'], $this->getMigration('d6_view_modes')->getIdMap()->lookupDestinationId([1]));
@@ -38,6 +39,9 @@ class MigrateViewModesTest extends MigrateDrupal6TestBase {
 =======
     $this->assertIdentical(['node', 'preview'], $this->getMigration('d6_view_modes')->getIdMap()->lookupDestinationID([1]));
 >>>>>>> revert Open Social update
+=======
+    $this->assertIdentical(['node', 'preview'], $this->getMigration('d6_view_modes')->getIdMap()->lookupDestinationId([1]));
+>>>>>>> updating open social
   }
 
 }

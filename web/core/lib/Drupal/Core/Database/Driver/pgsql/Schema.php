@@ -333,7 +333,7 @@ class Schema extends DatabaseSchema {
     }
 
     if (!empty($field['unsigned'])) {
-      // Unsigned datatypes are not supported in PostgreSQL 9.1. In MySQL,
+      // Unsigned data types are not supported in PostgreSQL 9.1. In MySQL,
       // they are used to ensure a positive number is inserted and it also
       // doubles the maximum integer size that can be stored in a field.
       // The PostgreSQL schema in Drupal creates a check constraint
@@ -532,8 +532,16 @@ class Schema extends DatabaseSchema {
         ->execute();
     }
     if (isset($spec['initial_from_field'])) {
+      if (isset($spec['initial'])) {
+        $expression = 'COALESCE(' . $spec['initial_from_field'] . ', :default_initial_value)';
+        $arguments = [':default_initial_value' => $spec['initial']];
+      }
+      else {
+        $expression = $spec['initial_from_field'];
+        $arguments = [];
+      }
       $this->connection->update($table)
-        ->expression($field, $spec['initial_from_field'])
+        ->expression($field, $expression, $arguments)
         ->execute();
     }
     if ($fixnull) {

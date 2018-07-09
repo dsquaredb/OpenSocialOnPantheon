@@ -55,8 +55,8 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.9-dev",
-            "dev-develop": "2.10-dev"
+            "dev-master": "2.10.x-dev",
+            "dev-develop": "2.11.x-dev"
         }
     },
     "scripts": {
@@ -68,11 +68,15 @@
         "cs-fix": "phpcbf",
         "test": "phpunit --colors=always",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
 >>>>>>> Update Open Social to 8.x-2.1
 =======
         "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
         "upload-coverage": "coveralls -v"
 >>>>>>> revert Open Social update
+=======
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
+>>>>>>> updating open social
     }
 }

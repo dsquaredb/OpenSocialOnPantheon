@@ -2,6 +2,7 @@
 
 namespace Drupal\KernelTests\Core\Database;
 
+use Drupal\Core\Database\Database;
 use Drupal\KernelTests\KernelTestBase;
 
 /**
@@ -14,8 +15,16 @@ abstract class DatabaseTestBase extends KernelTestBase {
 
   public static $modules = array('database_test');
 
+  /**
+   * The database connection for testing.
+   *
+   * @var \Drupal\Core\Database\Connection
+   */
+  protected $connection;
+
   protected function setUp() {
     parent::setUp();
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     $this->installSchema('database_test', array(
@@ -23,6 +32,9 @@ abstract class DatabaseTestBase extends KernelTestBase {
     $this->connection = Database::getConnection();
 =======
 >>>>>>> revert Open Social update
+=======
+    $this->connection = Database::getConnection();
+>>>>>>> updating open social
     $this->installSchema('database_test', [
 >>>>>>> Update Open Social to 8.x-2.1
       'test',
@@ -49,7 +61,7 @@ abstract class DatabaseTestBase extends KernelTestBase {
       ->values(array(
 =======
   public function ensureSampleDataNull() {
-    db_insert('test_null')
+    $this->connection->insert('test_null')
       ->fields(['name', 'age'])
       ->values([
 >>>>>>> Update Open Social to 8.x-2.1
@@ -77,8 +89,10 @@ abstract class DatabaseTestBase extends KernelTestBase {
       ->fields(array(
 =======
   public static function addSampleData() {
+    $connection = Database::getConnection();
+
     // We need the IDs, so we can't use a multi-insert here.
-    $john = db_insert('test')
+    $john = $connection->insert('test')
       ->fields([
 >>>>>>> Update Open Social to 8.x-2.1
         'name' => 'John',
@@ -89,6 +103,7 @@ abstract class DatabaseTestBase extends KernelTestBase {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     $george = db_insert('test')
       ->fields(array(
 =======
@@ -96,6 +111,9 @@ abstract class DatabaseTestBase extends KernelTestBase {
 =======
     $george = db_insert('test')
 >>>>>>> revert Open Social update
+=======
+    $george = $connection->insert('test')
+>>>>>>> updating open social
       ->fields([
 >>>>>>> Update Open Social to 8.x-2.1
         'name' => 'George',
@@ -106,6 +124,7 @@ abstract class DatabaseTestBase extends KernelTestBase {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     db_insert('test')
       ->fields(array(
 =======
@@ -113,6 +132,9 @@ abstract class DatabaseTestBase extends KernelTestBase {
 =======
     db_insert('test')
 >>>>>>> revert Open Social update
+=======
+    $connection->insert('test')
+>>>>>>> updating open social
       ->fields([
 >>>>>>> Update Open Social to 8.x-2.1
         'name' => 'Ringo',
@@ -123,6 +145,7 @@ abstract class DatabaseTestBase extends KernelTestBase {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     $paul = db_insert('test')
       ->fields(array(
 =======
@@ -130,6 +153,9 @@ abstract class DatabaseTestBase extends KernelTestBase {
 =======
     $paul = db_insert('test')
 >>>>>>> revert Open Social update
+=======
+    $paul = $connection->insert('test')
+>>>>>>> updating open social
       ->fields([
 >>>>>>> Update Open Social to 8.x-2.1
         'name' => 'Paul',
@@ -140,6 +166,7 @@ abstract class DatabaseTestBase extends KernelTestBase {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     db_insert('test_people')
       ->fields(array(
 =======
@@ -147,6 +174,9 @@ abstract class DatabaseTestBase extends KernelTestBase {
 =======
     db_insert('test_people')
 >>>>>>> revert Open Social update
+=======
+    $connection->insert('test_people')
+>>>>>>> updating open social
       ->fields([
 >>>>>>> Update Open Social to 8.x-2.1
         'name' => 'Meredith',
@@ -157,6 +187,7 @@ abstract class DatabaseTestBase extends KernelTestBase {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     db_insert('test_task')
       ->fields(array('pid', 'task', 'priority'))
       ->values(array(
@@ -165,6 +196,9 @@ abstract class DatabaseTestBase extends KernelTestBase {
 =======
     db_insert('test_task')
 >>>>>>> revert Open Social update
+=======
+    $connection->insert('test_task')
+>>>>>>> updating open social
       ->fields(['pid', 'task', 'priority'])
       ->values([
 >>>>>>> Update Open Social to 8.x-2.1
@@ -206,6 +240,7 @@ abstract class DatabaseTestBase extends KernelTestBase {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     db_insert('test_special_columns')
       ->fields(array(
 =======
@@ -213,6 +248,9 @@ abstract class DatabaseTestBase extends KernelTestBase {
 =======
     db_insert('test_special_columns')
 >>>>>>> revert Open Social update
+=======
+    $connection->insert('test_special_columns')
+>>>>>>> updating open social
       ->fields([
 >>>>>>> Update Open Social to 8.x-2.1
         'id' => 1,

@@ -917,6 +917,9 @@ array(
         )
     )
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> updating open social
 )
 -----
 <?php
@@ -1231,8 +1234,12 @@ array(
             )
         )
     )
+<<<<<<< HEAD
 )
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 )
 >>>>>>> revert Open Social update
+=======
+)
+>>>>>>> updating open social

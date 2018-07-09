@@ -177,12 +177,16 @@ class MigrateFieldFormatterSettingsTest extends MigrateDrupal6TestBase {
     // Test that our Id map has the correct data.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     $this->assertIdentical(array('node', 'story', 'teaser', 'field_test'), $this->getMigration('d6_field_formatter_settings')->getIdMap()->lookupDestinationID(array('story', 'teaser', 'node', 'field_test')));
 =======
     $this->assertIdentical(['node', 'story', 'teaser', 'field_test'], $this->getMigration('d6_field_formatter_settings')->getIdMap()->lookupDestinationId(['story', 'teaser', 'node', 'field_test']));
 =======
     $this->assertIdentical(['node', 'story', 'teaser', 'field_test'], $this->getMigration('d6_field_formatter_settings')->getIdMap()->lookupDestinationID(['story', 'teaser', 'node', 'field_test']));
 >>>>>>> revert Open Social update
+=======
+    $this->assertIdentical(['node', 'story', 'teaser', 'field_test'], $this->getMigration('d6_field_formatter_settings')->getIdMap()->lookupDestinationId(['story', 'teaser', 'node', 'field_test']));
+>>>>>>> updating open social
 
     // Test hidden field.
     $this->assertComponentNotExists('node.test_planet.teaser', 'field_test_text_single_checkbox');

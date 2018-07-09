@@ -83,6 +83,7 @@ class Drupal {
    */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   const VERSION = '8.2.1';
 =======
   const VERSION = '8.5.5';
@@ -90,6 +91,9 @@ class Drupal {
 =======
   const VERSION = '8.5.3';
 >>>>>>> revert Open Social update
+=======
+  const VERSION = '8.5.5';
+>>>>>>> updating open social
 
   /**
    * Core API compatibility.

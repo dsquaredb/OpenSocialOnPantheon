@@ -31,6 +31,7 @@ interface NormalizerInterface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @param object $object  Object to normalize
 =======
      * @param mixed  $object  Object to normalize
@@ -38,6 +39,9 @@ interface NormalizerInterface
 =======
      * @param object $object  Object to normalize
 >>>>>>> revert Open Social update
+=======
+     * @param mixed  $object  Object to normalize
+>>>>>>> updating open social
      * @param string $format  Format the normalization result will be encoded as
      * @param array  $context Context options for the normalizer
      *

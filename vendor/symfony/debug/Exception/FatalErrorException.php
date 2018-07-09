@@ -25,6 +25,7 @@ class FatalErrorException extends \ErrorException
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Konstanton Myakshin <koc-dp@yandex.ru>
@@ -55,8 +56,11 @@ class FatalErrorException extends LegacyFatalErrorException
 =======
     public function __construct($message, $code, $severity, $filename, $lineno, $traceOffset = null, $traceArgs = true, array $trace = null)
 >>>>>>> revert Open Social update
+=======
+    public function __construct($message, $code, $severity, $filename, $lineno, $traceOffset = null, $traceArgs = true, array $trace = null, $previous = null)
+>>>>>>> updating open social
     {
-        parent::__construct($message, $code, $severity, $filename, $lineno);
+        parent::__construct($message, $code, $severity, $filename, $lineno, $previous);
 
         if (null !== $trace) {
             if (!$traceArgs) {

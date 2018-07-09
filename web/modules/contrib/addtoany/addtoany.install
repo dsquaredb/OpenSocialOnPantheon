@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Entity\Entity\EntityViewDisplay;
+use Drupal\node\Entity\NodeType;
 
 /**
  * Implements hook_install().
@@ -82,7 +83,7 @@ function addtoany_update_8101(&$sandbox) {
   // Convert Display Suite fields to regular "extra fields".
   if (\Drupal::moduleHandler()->moduleExists('ds')) {
     // The DsField implementation only supported node entities.
-    $all_node_types = \Drupal\node\Entity\NodeType::loadMultiple();
+    $all_node_types = NodeType::loadMultiple();
 
     foreach ($all_node_types as $node_type) {
       // Get enabled view modes.

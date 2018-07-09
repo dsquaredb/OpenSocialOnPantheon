@@ -7,10 +7,14 @@ use Drupal\Core\Cache\Cache;
 =======
 use Drupal\Core\Config\ConfigFactoryInterface;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Drupal\Core\Datetime\DrupalDateTime;
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+use Drupal\Core\Datetime\DrupalDateTime;
+>>>>>>> updating open social
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Form\FormBase;
@@ -192,30 +196,35 @@ class EnrollActionForm extends FormBase implements ContainerInjectionInterface {
   protected function eventHasBeenFinished(Node $node) {
     // Use the start date when the end date is not set to determine if the
     // event is closed.
-    $check_end_date = $node->field_event_date->value;
+    /** @var \Drupal\Core\Datetime\DrupalDateTime $check_end_date */
+    $check_end_date = $node->field_event_date->date;
 
-    if (isset($node->field_event_date_end->value)) {
-      $check_end_date = $node->field_event_date_end->value;
+    if (isset($node->field_event_date_end->date)) {
+      $check_end_date = $node->field_event_date_end->date;
     }
-    // Get Event end date to compare w/ current timestamp.
-    $event_end_timestamp = strtotime($check_end_date);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     // Check to see if Event end date is in the future, hence we can still "Enroll".
 
     if (time() > $event_end_timestamp) {
 =======
+=======
+>>>>>>> updating open social
     $current_time = new DrupalDateTime();
 
     // The event has finished if the end date is smaller than the current date.
     if ($current_time > $check_end_date) {
+<<<<<<< HEAD
 >>>>>>> Update Open Social to 8.x-2.1
 =======
     // Check to see if Event end date is in the future,
     // hence we can still "Enroll".
     if (time() > $event_end_timestamp) {
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
       return TRUE;
     }
     return FALSE;

@@ -168,11 +168,15 @@ class CommentLazyBuilders {
 =======
     $links = [];
 <<<<<<< HEAD
+<<<<<<< HEAD
     $status = $commented_entity->getFieldValue($entity->getFieldName(), 'status');
 >>>>>>> Update Open Social to 8.x-2.1
 =======
     $status = $commented_entity->get($entity->getFieldName())->status;
 >>>>>>> revert Open Social update
+=======
+    $status = $commented_entity->getFieldValue($entity->getFieldName(), 'status');
+>>>>>>> updating open social
 
     if ($status == CommentItemInterface::OPEN) {
       if ($entity->access('delete')) {

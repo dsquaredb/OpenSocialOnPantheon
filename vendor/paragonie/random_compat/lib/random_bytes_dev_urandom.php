@@ -8,6 +8,7 @@
  *
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2015 - 2017 Paragon Initiative Enterprises
 =======
  * 
@@ -19,6 +20,9 @@
 =======
  * Copyright (c) 2015 - 2017 Paragon Initiative Enterprises
 >>>>>>> revert Open Social update
+=======
+ * Copyright (c) 2015 - 2018 Paragon Initiative Enterprises
+>>>>>>> updating open social
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -60,7 +64,9 @@ if (!is_callable('random_bytes')) {
      */
     function random_bytes($bytes)
     {
+        /** @var resource $fp */
         static $fp = null;
+
         /**
          * This block should only be run once
          */
@@ -69,8 +75,10 @@ if (!is_callable('random_bytes')) {
              * We use /dev/urandom if it is a char device.
              * We never fall back to /dev/random
              */
+            /** @var resource|bool $fp */
             $fp = fopen('/dev/urandom', 'rb');
-            if (!empty($fp)) {
+            if (is_resource($fp)) {
+                /** @var array<string, int> $st */
                 $st = fstat($fp);
                 if (($st['mode'] & 0170000) !== 020000) {
                     fclose($fp);
@@ -78,7 +86,7 @@ if (!is_callable('random_bytes')) {
                 }
             }
 
-            if (!empty($fp)) {
+            if (is_resource($fp)) {
                 /**
                  * stream_set_read_buffer() does not exist in HHVM
                  *
@@ -97,6 +105,7 @@ if (!is_callable('random_bytes')) {
         }
 
         try {
+            /** @var int $bytes */
             $bytes = RandomCompat_intval($bytes);
         } catch (TypeError $ex) {
             throw new TypeError(
@@ -117,7 +126,7 @@ if (!is_callable('random_bytes')) {
          * if (empty($fp)) line is logic that should only be run once per
          * page load.
          */
-        if (!empty($fp)) {
+        if (is_resource($fp)) {
             /**
              * @var int
              */

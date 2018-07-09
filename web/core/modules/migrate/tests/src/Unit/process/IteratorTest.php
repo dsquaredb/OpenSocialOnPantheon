@@ -18,7 +18,7 @@ class IteratorTest extends MigrateTestCase {
   /**
    * The iterator plugin being tested.
    *
-   * @var \Drupal\migrate\Plugin\migrate\process\TestIterator
+   * @var \Drupal\migrate\Plugin\migrate\process\Iterator
    */
   protected $plugin;
 
@@ -36,10 +36,14 @@ class IteratorTest extends MigrateTestCase {
    *
    * @group legacy
 <<<<<<< HEAD
+<<<<<<< HEAD
    * @expectedDeprecation The Drupal\migrate\Plugin\migrate\process\Iterator is deprecated in Drupal 8.4.x and will be removed before Drupal 9.0.0. Instead, use Drupal\migrate\Plugin\migrate\process\SubProcess
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+   * @expectedDeprecation The Drupal\migrate\Plugin\migrate\process\Iterator is deprecated in Drupal 8.4.x and will be removed before Drupal 9.0.0. Instead, use Drupal\migrate\Plugin\migrate\process\SubProcess
+>>>>>>> updating open social
    */
   public function testIterator() {
     $migration = $this->getMigration();

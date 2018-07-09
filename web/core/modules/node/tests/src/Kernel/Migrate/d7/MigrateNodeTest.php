@@ -53,6 +53,18 @@ class MigrateNodeTest extends MigrateDrupal7TestBase {
   }
 
   /**
+   * {@inheritdoc}
+   */
+  protected function getFileMigrationInfo() {
+    return [
+      'path' => 'public://sites/default/files/cube.jpeg',
+      'size' => '3620',
+      'base_path' => 'public://',
+      'plugin_id' => 'd7_file',
+    ];
+  }
+
+  /**
    * Asserts various aspects of a node.
    *
    * @param string $id
@@ -156,10 +168,14 @@ class MigrateNodeTest extends MigrateDrupal7TestBase {
     $this->assertEquals('another@example.com', $node->field_email[1]->value);
     $this->assertEquals(CommentItemInterface::OPEN, $node->comment_node_test_content_type->status);
 <<<<<<< HEAD
+<<<<<<< HEAD
     $this->assertEquals('3.1416', $node->field_float_list[0]->value);
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+    $this->assertEquals('3.1416', $node->field_float_list[0]->value);
+>>>>>>> updating open social
 
     $node = Node::load(2);
     $this->assertIdentical("...is that it's the absolute best show ever. Trust me, I would know.", $node->body->value);

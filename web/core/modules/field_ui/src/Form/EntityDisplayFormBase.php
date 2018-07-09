@@ -205,11 +205,15 @@ abstract class EntityDisplayFormBase extends EntityForm {
         }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         $form['modes']['display_modes_custom'] = array(
 =======
         natcasesort($display_mode_options);
 =======
 >>>>>>> revert Open Social update
+=======
+        natcasesort($display_mode_options);
+>>>>>>> updating open social
         $form['modes']['display_modes_custom'] = [
 >>>>>>> Update Open Social to 8.x-2.1
           '#type' => 'checkboxes',
@@ -688,7 +692,7 @@ abstract class EntityDisplayFormBase extends EntityForm {
    *
    * @return array
    *
-   * @see drupal_render()
+   * @see \Drupal\Core\Render\RendererInterface::render()
    * @see \Drupal\Core\Render\Element\Table::preRenderTable()
    *
    * @deprecated in Drupal 8.0.0, will be removed before Drupal 9.0.0.

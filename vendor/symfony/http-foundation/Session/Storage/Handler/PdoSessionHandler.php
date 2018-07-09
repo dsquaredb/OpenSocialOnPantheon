@@ -691,6 +691,7 @@ class PdoSessionHandler implements \SessionHandlerInterface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         $insertStmt = null;
 =======
 >>>>>>> web and vendor directory from composer install
@@ -699,6 +700,9 @@ class PdoSessionHandler implements \SessionHandlerInterface
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+        $insertStmt = null;
+>>>>>>> updating open social
 
         do {
             $selectStmt->execute();
@@ -717,15 +721,21 @@ class PdoSessionHandler implements \SessionHandlerInterface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> updating open social
             if (null !== $insertStmt) {
                 $this->rollback();
                 throw new \RuntimeException('Failed to read session: INSERT reported a duplicate id but next SELECT did not return any data.');
             }
 
+<<<<<<< HEAD
 =======
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
             if (!ini_get('session.use_strict_mode') && self::LOCK_TRANSACTIONAL === $this->lockMode && 'sqlite' !== $this->driver) {
                 // In strict mode, session fixation is not possible: new sessions always start with a unique
                 // random id, so that concurrency is not possible and this code path can be skipped.
@@ -787,6 +797,7 @@ class PdoSessionHandler implements \SessionHandlerInterface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 // MySQL 5.7.5 and later enforces a maximum length on lock names of 64 characters. Previously, no limit was enforced.
                 $lockId = \substr($sessionId, 0, 64);
                 // should we handle the return value? 0 on timeout, null on error
@@ -804,13 +815,18 @@ class PdoSessionHandler implements \SessionHandlerInterface
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+                // MySQL 5.7.5 and later enforces a maximum length on lock names of 64 characters. Previously, no limit was enforced.
+                $lockId = \substr($sessionId, 0, 64);
+>>>>>>> updating open social
                 // should we handle the return value? 0 on timeout, null on error
                 // we use a timeout of 50 seconds which is also the default for innodb_lock_wait_timeout
                 $stmt = $this->pdo->prepare('SELECT GET_LOCK(:key, 50)');
-                $stmt->bindValue(':key', $sessionId, \PDO::PARAM_STR);
+                $stmt->bindValue(':key', $lockId, \PDO::PARAM_STR);
                 $stmt->execute();
 
                 $releaseStmt = $this->pdo->prepare('DO RELEASE_LOCK(:key)');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 $releaseStmt->bindValue(':key', $sessionId, \PDO::PARAM_STR);
@@ -821,6 +837,9 @@ class PdoSessionHandler implements \SessionHandlerInterface
 =======
                 $releaseStmt->bindValue(':key', $sessionId, \PDO::PARAM_STR);
 >>>>>>> revert Open Social update
+=======
+                $releaseStmt->bindValue(':key', $lockId, \PDO::PARAM_STR);
+>>>>>>> updating open social
 
                 return $releaseStmt;
             case 'pgsql':

@@ -86,6 +86,7 @@ class InlineServiceDefinitionsPassTest extends \PHPUnit_Framework_TestCase
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function testProcessDoesInlineNonSharedService()
 =======
     public function testProcessDoesNotInlineMixedServicesLoop()
@@ -93,6 +94,9 @@ class InlineServiceDefinitionsPassTest extends \PHPUnit_Framework_TestCase
 =======
     public function testProcessInlinesMixedServicesLoop()
 >>>>>>> revert Open Social update
+=======
+    public function testProcessDoesNotInlineMixedServicesLoop()
+>>>>>>> updating open social
     {
         $container = new ContainerBuilder();
         $container
@@ -115,6 +119,7 @@ class InlineServiceDefinitionsPassTest extends \PHPUnit_Framework_TestCase
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         $arguments = $container->getDefinition('service')->getArguments();
         $this->assertEquals($container->getDefinition('foo'), $arguments[0]);
         $this->assertNotSame($container->getDefinition('foo'), $arguments[0]);
@@ -127,6 +132,9 @@ class InlineServiceDefinitionsPassTest extends \PHPUnit_Framework_TestCase
 =======
         $this->assertEquals($container->getDefinition('foo')->getArgument(0), $container->getDefinition('bar'));
 >>>>>>> revert Open Social update
+=======
+        $this->assertEquals(new Reference('bar'), $container->getDefinition('foo')->getArgument(0));
+>>>>>>> updating open social
     }
 
     /**

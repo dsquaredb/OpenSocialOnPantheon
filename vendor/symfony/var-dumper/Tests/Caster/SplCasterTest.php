@@ -163,6 +163,9 @@ EOTXT;
         $this->assertDumpMatchesFormat('%ADateTime%A', $var);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> updating open social
 
     public function testCastArrayObject()
     {
@@ -210,7 +213,10 @@ EOTXT;
 class MyArrayIterator extends \ArrayIterator
 {
     private $foo = 123;
+<<<<<<< HEAD
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
 }

@@ -34,11 +34,11 @@ use Symfony\Component\Yaml\Yaml as SymfonyYaml;
 use Drupal\Tests\EntityViewTrait;
 use Drupal\Tests\block\Traits\BlockCreationTrait as BaseBlockCreationTrait;
 use Drupal\Tests\Listeners\DeprecationListenerTrait;
-use Drupal\Tests\node\Traits\ContentTypeCreationTrait;
-use Drupal\Tests\node\Traits\NodeCreationTrait;
+use Drupal\Tests\node\Traits\ContentTypeCreationTrait as BaseContentTypeCreationTrait;
+use Drupal\Tests\node\Traits\NodeCreationTrait as BaseNodeCreationTrait;
 use Drupal\Tests\Traits\Core\CronRunTrait;
 use Drupal\Tests\TestFileCreationTrait;
-use Drupal\Tests\user\Traits\UserCreationTrait;
+use Drupal\Tests\user\Traits\UserCreationTrait as BaseUserCreationTrait;
 use Drupal\Tests\XdebugRequestTrait;
 >>>>>>> Update Open Social to 8.x-2.1
 use Zend\Diactoros\Uri;
@@ -59,17 +59,17 @@ abstract class WebTestBase extends TestBase {
   use BlockCreationTrait {
     placeBlock as drupalPlaceBlock;
   }
-  use ContentTypeCreationTrait {
+  use BaseContentTypeCreationTrait {
     createContentType as drupalCreateContentType;
   }
   use AssertMailTrait {
     getMails as drupalGetMails;
   }
-  use NodeCreationTrait {
+  use BaseNodeCreationTrait {
     getNodeByTitle as drupalGetNodeByTitle;
     createNode as drupalCreateNode;
   }
-  use UserCreationTrait {
+  use BaseUserCreationTrait {
     createUser as drupalCreateUser;
     createRole as drupalCreateRole;
     createAdminRole as drupalCreateAdminRole;

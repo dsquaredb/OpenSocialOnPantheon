@@ -341,21 +341,25 @@ class Comment extends ContentEntityBase implements CommentInterface {
    * {@inheritdoc}
    */
   public function getCommentedEntity() {
-    return $this->get('entity_id')->entity;
+    if ($this->getCommentedEntityTypeId() && $entity_id = $this->getCommentedEntityId()) {
+      return $this->entityTypeManager()
+        ->getStorage($this->getCommentedEntityTypeId())
+        ->load($entity_id);
+    }
   }
 
   /**
    * {@inheritdoc}
    */
   public function getCommentedEntityId() {
-    return $this->get('entity_id')->target_id;
+    return $this->getFieldValue('entity_id', 'target_id');
   }
 
   /**
    * {@inheritdoc}
    */
   public function getCommentedEntityTypeId() {
-    return $this->get('entity_type')->value;
+    return $this->getFieldValue('entity_type', 'value');
   }
 
   /**
@@ -370,7 +374,7 @@ class Comment extends ContentEntityBase implements CommentInterface {
    * {@inheritdoc}
    */
   public function getFieldName() {
-    return $this->get('field_name')->value;
+    return $this->getFieldValue('field_name', 'value');
   }
 
   /**
@@ -534,7 +538,7 @@ class Comment extends ContentEntityBase implements CommentInterface {
    * {@inheritdoc}
    */
   public function getOwnerId() {
-    return $this->get('uid')->target_id;
+    return $this->getFieldValue('uid', 'target_id');
   }
 
   /**

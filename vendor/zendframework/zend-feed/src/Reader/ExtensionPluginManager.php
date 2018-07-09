@@ -53,6 +53,9 @@ class ExtensionPluginManager extends AbstractPluginManager
 =======
         'DublinCore\Feed'      => Extension\DublinCore\Feed::class,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> updating open social
         'googleplaypodcastentry'  => Extension\GooglePlayPodcast\Entry::class,
         'googlePlayPodcastEntry'  => Extension\GooglePlayPodcast\Entry::class,
         'GooglePlayPodcastEntry'  => Extension\GooglePlayPodcast\Entry::class,
@@ -61,9 +64,12 @@ class ExtensionPluginManager extends AbstractPluginManager
         'googlePlayPodcastFeed'   => Extension\GooglePlayPodcast\Feed::class,
         'GooglePlayPodcastFeed'   => Extension\GooglePlayPodcast\Feed::class,
         'GooglePlayPodcast\Feed'  => Extension\GooglePlayPodcast\Feed::class,
+<<<<<<< HEAD
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
         'podcastentry'         => Extension\Podcast\Entry::class,
         'podcastEntry'         => Extension\Podcast\Entry::class,
         'PodcastEntry'         => Extension\Podcast\Entry::class,
@@ -97,6 +103,8 @@ class ExtensionPluginManager extends AbstractPluginManager
         Extension\CreativeCommons\Feed::class  => InvokableFactory::class,
         Extension\DublinCore\Entry::class      => InvokableFactory::class,
         Extension\DublinCore\Feed::class       => InvokableFactory::class,
+        Extension\GooglePlayPodcast\Entry::class => InvokableFactory::class,
+        Extension\GooglePlayPodcast\Feed::class  => InvokableFactory::class,
         Extension\Podcast\Entry::class         => InvokableFactory::class,
         Extension\Podcast\Feed::class          => InvokableFactory::class,
         Extension\Slash\Entry::class           => InvokableFactory::class,
@@ -113,6 +121,8 @@ class ExtensionPluginManager extends AbstractPluginManager
         'zendfeedreaderextensioncreativecommonsfeed'  => InvokableFactory::class,
         'zendfeedreaderextensiondublincoreentry'      => InvokableFactory::class,
         'zendfeedreaderextensiondublincorefeed'       => InvokableFactory::class,
+        'zendfeedreaderextensiongoogleplaypodcastentry' => InvokableFactory::class,
+        'zendfeedreaderextensiongoogleplaypodcastfeed'  => InvokableFactory::class,
         'zendfeedreaderextensionpodcastentry'         => InvokableFactory::class,
         'zendfeedreaderextensionpodcastfeed'          => InvokableFactory::class,
         'zendfeedreaderextensionslashentry'           => InvokableFactory::class,

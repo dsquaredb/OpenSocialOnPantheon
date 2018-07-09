@@ -134,8 +134,11 @@ class ViewAjaxController implements ContainerInjectionInterface {
       // end up in pagers and tablesort URLs.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       foreach (array('view_name', 'view_display_id', 'view_args', 'view_path', 'view_dom_id', 'pager_element', 'view_base_path', AjaxResponseSubscriber::AJAX_REQUEST_PARAMETER) as $key) {
 =======
+=======
+>>>>>>> updating open social
       // @todo Remove this parsing once these are removed from the request in
       //   https://www.drupal.org/node/2504709.
       foreach ([
@@ -150,10 +153,13 @@ class ViewAjaxController implements ContainerInjectionInterface {
           FormBuilderInterface::AJAX_FORM_REQUEST,
           MainContentViewSubscriber::WRAPPER_FORMAT,
         ] as $key) {
+<<<<<<< HEAD
 >>>>>>> Update Open Social to 8.x-2.1
 =======
       foreach (['view_name', 'view_display_id', 'view_args', 'view_path', 'view_dom_id', 'pager_element', 'view_base_path', AjaxResponseSubscriber::AJAX_REQUEST_PARAMETER] as $key) {
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
         $request->query->remove($key);
         $request->request->remove($key);
       }
@@ -173,6 +179,7 @@ class ViewAjaxController implements ContainerInjectionInterface {
         // Add all POST data, because AJAX is always a post and many things,
         // such as tablesorts, exposed filters and paging assume GET.
         $request_all = $request->request->all();
+        unset($request_all['ajax_page_state']);
         $query_all = $request->query->all();
         $request->query->replace($request_all + $query_all);
 
@@ -180,13 +187,7 @@ class ViewAjaxController implements ContainerInjectionInterface {
         // @see the redirect.destination service.
         $origin_destination = $path;
 
-        // Remove some special parameters you never want to have part of the
-        // destination query.
         $used_query_parameters = $request->query->all();
-        // @todo Remove this parsing once these are removed from the request in
-        //   https://www.drupal.org/node/2504709.
-        unset($used_query_parameters[FormBuilderInterface::AJAX_FORM_REQUEST], $used_query_parameters[MainContentViewSubscriber::WRAPPER_FORMAT], $used_query_parameters['ajax_page_state']);
-
         $query = UrlHelper::buildQuery($used_query_parameters);
         if ($query != '') {
           $origin_destination .= '?' . $query;

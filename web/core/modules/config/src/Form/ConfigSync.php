@@ -342,12 +342,15 @@ class ConfigSync extends FormBase {
           'error_message' => t('Configuration synchronization has encountered an error.'),
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           'file' => __DIR__ . '/../../config.admin.inc',
         );
 =======
 =======
           'file' => __DIR__ . '/../../config.admin.inc',
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
         ];
 >>>>>>> Update Open Social to 8.x-2.1
         foreach ($sync_steps as $sync_step) {

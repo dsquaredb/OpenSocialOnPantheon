@@ -114,6 +114,7 @@ class PluralizationRules
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             case 'oc':
 =======
 >>>>>>> web and vendor directory from composer install
@@ -122,6 +123,9 @@ class PluralizationRules
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+            case 'oc':
+>>>>>>> updating open social
             case 'om':
             case 'or':
             case 'pa':

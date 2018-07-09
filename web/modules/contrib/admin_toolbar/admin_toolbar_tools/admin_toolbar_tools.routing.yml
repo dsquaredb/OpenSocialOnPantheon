@@ -91,9 +91,21 @@ admin_toolbar_tools.flush_twig:
     _permission: 'administer site configuration'
     _csrf_token: 'TRUE'
 
+<<<<<<< HEAD
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+admin_toolbar_tools.flush_twig:
+  path: '/admin/flush/twig'
+  defaults:
+    _controller: '\Drupal\admin_toolbar_tools\Controller\ToolbarController::flushTwig'
+    _title: 'Twig'
+  requirements:
+    _permission: 'administer site configuration'
+    _csrf_token: 'TRUE'
+
+>>>>>>> updating open social
 admin_toolbar.run.cron:
   path: '/run-cron'
   defaults:

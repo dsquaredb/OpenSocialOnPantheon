@@ -4,6 +4,7 @@ defaults[projects][subdir] = "contrib"
 projects[address][type] = module
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 projects[address][version] = 1.0-rc3
 projects[address][patch][] = "https://www.drupal.org/files/issues/address-2619878-29.patch"
 projects[addtoany][type] = module
@@ -15,10 +16,13 @@ projects[address][version] = 1.4
 =======
 projects[address][version] = 1.3
 >>>>>>> revert Open Social update
+=======
+projects[address][version] = 1.4
+>>>>>>> updating open social
 projects[addtoany][type] = module
-projects[addtoany][version] = 1.8
+projects[addtoany][version] = 1.9
 projects[admin_toolbar][type] = module
-projects[admin_toolbar][version] = 1.23
+projects[admin_toolbar][version] = 1.24
 projects[block_field][type] = module
 projects[block_field][version] = 1.0-alpha5
 >>>>>>> Update Open Social to 8.x-2.1
@@ -31,11 +35,15 @@ projects[crop][version] = 1.0
 projects[crop][version] = 1.5
 projects[csv_serialization][type] = module
 <<<<<<< HEAD
+<<<<<<< HEAD
 projects[csv_serialization][version] = 1.3
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 projects[csv_serialization][version] = 1.2
 >>>>>>> revert Open Social update
+=======
+projects[csv_serialization][version] = 1.3
+>>>>>>> updating open social
 projects[devel][type] = module
 projects[devel][version] = 1.0-alpha1
 projects[devel][patch][] = "https://www.drupal.org/files/issues/fix_entity_manager_wrapper_2749249_5.patch"
@@ -46,6 +54,7 @@ projects[entity][version] = 1.0-alpha3
 projects[features][type] = module
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 projects[features][version] = 3.0-rc1
 =======
 projects[features][version] = 3.7
@@ -53,6 +62,9 @@ projects[features][version] = 3.7
 =======
 projects[features][version] = 3.5
 >>>>>>> revert Open Social update
+=======
+projects[features][version] = 3.7
+>>>>>>> updating open social
 projects[field_group][type] = module
 projects[field_group][version] = 1.0-rc4
 projects[flag][type] = module
@@ -71,6 +83,7 @@ projects[libraries][download][revision] = fa93a5aec2cfcfd5717e42c7112e381487fed9
 projects[libraries][download][branch] = 8.x-3.x
 =======
 projects[image_widget_crop][version] = 2.1
+projects[image_widget_crop][patch][] = "https://www.drupal.org/files/issues/2018-04-25/2865396-26-apply-default-crop.diff"
 projects[like_and_dislike][type] = module
 projects[like_and_dislike][version] = 1.0-alpha2
 projects[like_and_dislike][patch][] = "https://www.drupal.org/files/issues/2848080-2-preview-fails-on-node.patch"
@@ -87,9 +100,7 @@ projects[profile][type] = module
 projects[profile][version] = 1.0-alpha5
 projects[profile][patch][] = "https://www.drupal.org/files/issues/profile-accesscontrol-2703825-6.patch"
 projects[r4032login][type] = module
-projects[r4032login][download][type] = git
-projects[r4032login][download][revision] = 4b2077aa70e3f7b00b8a9cba25af5b948ba2e3b9
-projects[r4032login][download][branch] = 8.x-1.x
+projects[r4032login][version] = 1.0-beta2
 projects[search_api][type] = module
 <<<<<<< HEAD
 projects[search_api][version] = 1.0-beta2
@@ -101,12 +112,17 @@ projects[social_auth][type] = module
 projects[social_auth][version] = 1.0
 projects[swiftmailer][type] = module
 <<<<<<< HEAD
+<<<<<<< HEAD
 projects[swiftmailer][version] = 1.0-beta2
 projects[swiftmailer][patch][] = "https://www.drupal.org/files/issues/2018-03-26/2948607-fix-filter-format-1.patch"
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 projects[swiftmailer][version] = 1.0-beta1
 >>>>>>> revert Open Social update
+=======
+projects[swiftmailer][version] = 1.0-beta2
+projects[swiftmailer][patch][] = "https://www.drupal.org/files/issues/2018-03-26/2948607-fix-filter-format-1.patch"
+>>>>>>> updating open social
 projects[token][type] = module
 projects[token][version] = 1.0-beta2
 projects[bootstrap][type] = theme

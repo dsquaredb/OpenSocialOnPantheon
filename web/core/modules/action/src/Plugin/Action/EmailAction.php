@@ -141,6 +141,7 @@ class EmailAction extends ConfigurableActionBase implements ContainerFactoryPlug
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if ($this->mailManager->mail('system', 'action_send_email', $recipient, $langcode, $params)) {
       $this->logger->notice('Sent email to %recipient', array('%recipient' => $recipient));
     }
@@ -162,6 +163,13 @@ class EmailAction extends ConfigurableActionBase implements ContainerFactoryPlug
       $this->logger->error('Unable to send email to %recipient', ['%recipient' => $recipient]);
     }
 >>>>>>> revert Open Social update
+=======
+    $message = $this->mailManager->mail('system', 'action_send_email', $recipient, $langcode, $params);
+    // Error logging is handled by \Drupal\Core\Mail\MailManager::mail().
+    if ($message['result']) {
+      $this->logger->notice('Sent email to %recipient', ['%recipient' => $recipient]);
+    }
+>>>>>>> updating open social
   }
 
   /**

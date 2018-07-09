@@ -12,6 +12,8 @@ namespace Zend\Diactoros;
 use Psr\Http\Message\StreamInterface;
 use RuntimeException;
 
+use const SEEK_SET;
+
 /**
  * Class RelativeStream
  *

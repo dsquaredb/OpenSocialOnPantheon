@@ -152,6 +152,7 @@ function hook_block_build_alter(array &$build, \Drupal\Core\Block\BlockPluginInt
   // Add the 'user' cache context to some blocks.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ($some_condition) {
     $build['#contexts'][] = 'user';
 =======
@@ -159,6 +160,9 @@ function hook_block_build_alter(array &$build, \Drupal\Core\Block\BlockPluginInt
 =======
   if ($some_condition) {
 >>>>>>> revert Open Social update
+=======
+  if ($block->label() === 'some condition') {
+>>>>>>> updating open social
     $build['#cache']['contexts'][] = 'user';
 >>>>>>> Update Open Social to 8.x-2.1
   }

@@ -107,6 +107,7 @@ interface MessageCatalogueInterface
 <<<<<<< HEAD
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function addCatalogue(self $catalogue);
 =======
      *
@@ -121,6 +122,9 @@ interface MessageCatalogueInterface
 =======
     public function addCatalogue(MessageCatalogueInterface $catalogue);
 >>>>>>> revert Open Social update
+=======
+    public function addCatalogue(self $catalogue);
+>>>>>>> updating open social
 
     /**
      * Merges translations from the given Catalogue into the current one
@@ -130,6 +134,7 @@ interface MessageCatalogueInterface
 <<<<<<< HEAD
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function addFallbackCatalogue(self $catalogue);
 =======
      *
@@ -144,6 +149,9 @@ interface MessageCatalogueInterface
 =======
     public function addFallbackCatalogue(MessageCatalogueInterface $catalogue);
 >>>>>>> revert Open Social update
+=======
+    public function addFallbackCatalogue(self $catalogue);
+>>>>>>> updating open social
 
     /**
      * Gets the fallback catalogue.

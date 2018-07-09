@@ -149,6 +149,7 @@ class RouteCollectionBuilder
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function mount($prefix, self $builder)
 =======
     public function mount($prefix, RouteCollectionBuilder $builder)
@@ -159,6 +160,9 @@ class RouteCollectionBuilder
 =======
     public function mount($prefix, RouteCollectionBuilder $builder)
 >>>>>>> revert Open Social update
+=======
+    public function mount($prefix, self $builder)
+>>>>>>> updating open social
     {
         $builder->prefix = trim(trim($prefix), '/');
         $this->routes[] = $builder;
@@ -298,6 +302,7 @@ class RouteCollectionBuilder
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      * @param ResourceInterface $resource
      *
@@ -308,6 +313,8 @@ class RouteCollectionBuilder
      * @param ResourceInterface $resource
      *
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
      * @return $this
      */
     private function addResource(ResourceInterface $resource)

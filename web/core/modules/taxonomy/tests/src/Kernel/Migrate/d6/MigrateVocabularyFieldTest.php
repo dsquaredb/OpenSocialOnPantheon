@@ -36,6 +36,7 @@ class MigrateVocabularyFieldTest extends MigrateDrupal6TestBase {
     $this->assertIdentical($field_storage_id, $field_storage->id());
 
     $settings = $field_storage->getSettings();
+<<<<<<< HEAD
     $this->assertIdentical('taxonomy_term', $settings['target_type'], "Target type is correct.");
     $this->assertIdentical(1, $field_storage->getCardinality(), "Field cardinality in 1.");
 
@@ -47,6 +48,12 @@ class MigrateVocabularyFieldTest extends MigrateDrupal6TestBase {
 =======
     $this->assertSame(['node', 'field_tags'], $this->getMigration('d6_vocabulary_field')->getIdMap()->lookupDestinationID([4]), "Test IdMap");
 >>>>>>> revert Open Social update
+=======
+    $this->assertSame('taxonomy_term', $settings['target_type'], "Target type is correct.");
+    $this->assertSame(1, $field_storage->getCardinality(), "Field cardinality in 1.");
+
+    $this->assertSame(['node', 'field_tags'], $this->getMigration('d6_vocabulary_field')->getIdMap()->lookupDestinationId([4]), "Test IdMap");
+>>>>>>> updating open social
 
     // Tests that a vocabulary named like a D8 base field will be migrated and
     // prefixed with 'field_' to avoid conflicts.

@@ -19,6 +19,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> Update Open Social to 8.x-2.1
         "php": "^5.5.9|>=7.0.8",
@@ -26,6 +27,10 @@
 =======
         "php": "^5.5.9|>=7.0.8"
 >>>>>>> revert Open Social update
+=======
+        "php": "^5.5.9|>=7.0.8",
+        "symfony/polyfill-ctype": "~1.8"
+>>>>>>> updating open social
     },
     "require-dev": {
         "symfony/yaml": "~3.4|~4.0",

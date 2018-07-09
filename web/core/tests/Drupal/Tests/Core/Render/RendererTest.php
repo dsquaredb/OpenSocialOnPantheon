@@ -94,7 +94,31 @@ class RendererTest extends RendererTestBase {
       'foo',
     ];
 <<<<<<< HEAD
+<<<<<<< HEAD
     // Basic #markup based renderable array with value '0'.
+=======
+    // Basic #markup based renderable array with value '0'.
+    $data[] = [
+      ['#markup' => '0'],
+      '0',
+    ];
+    // Basic #markup based renderable array with value 0.
+    $data[] = [
+      ['#markup' => 0],
+      '0',
+    ];
+    // Basic #markup based renderable array with value ''.
+    $data[] = [
+      ['#markup' => ''],
+      '',
+    ];
+    // Basic #markup based renderable array with value NULL.
+    $data[] = [
+      ['#markup' => NULL],
+      '',
+    ];
+    // Basic #plain_text based renderable array.
+>>>>>>> updating open social
     $data[] = [
       ['#markup' => '0'],
       '0',
@@ -137,7 +161,31 @@ class RendererTest extends RendererTestBase {
       '&lt;em&gt;foo&lt;/em&gt;',
     ];
 <<<<<<< HEAD
+<<<<<<< HEAD
     // #plain_text based renderable array with value '0'.
+=======
+    // #plain_text based renderable array with value '0'.
+    $data[] = [
+      ['#plain_text' => '0'],
+      '0',
+    ];
+    // #plain_text based renderable array with value 0.
+    $data[] = [
+      ['#plain_text' => 0],
+      '0',
+    ];
+    // #plain_text based renderable array with value ''.
+    $data[] = [
+      ['#plain_text' => ''],
+      '',
+    ];
+    // #plain_text based renderable array with value NULL.
+    $data[] = [
+      ['#plain_text' => NULL],
+      '',
+    ];
+    // Renderable child element.
+>>>>>>> updating open social
     $data[] = [
       ['#plain_text' => '0'],
       '0',

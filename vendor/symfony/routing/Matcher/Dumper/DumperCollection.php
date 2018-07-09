@@ -120,6 +120,7 @@ class DumperCollection implements \IteratorAggregate
 <<<<<<< HEAD
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     protected function setParent(self $parent)
 =======
      *
@@ -134,6 +135,9 @@ class DumperCollection implements \IteratorAggregate
 =======
     protected function setParent(DumperCollection $parent)
 >>>>>>> revert Open Social update
+=======
+    protected function setParent(self $parent)
+>>>>>>> updating open social
     {
         $this->parent = $parent;
     }

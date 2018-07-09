@@ -347,6 +347,7 @@ class ThemeSettingsForm extends ConfigFormBase {
     if ($this->moduleHandler->moduleExists('file')) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       // Handle file uploads.
       $validators = array('file_validate_is_image' => array());
 
@@ -387,19 +388,33 @@ class ThemeSettingsForm extends ConfigFormBase {
         // Put the temporary file in form_values so we can save it on submit.
         $form_state->setValue('logo_upload', $file);
 >>>>>>> revert Open Social update
+=======
+
+      // Check for a new uploaded logo.
+      if (isset($form['logo'])) {
+        $file = _file_save_upload_from_form($form['logo']['settings']['logo_upload'], $form_state, 0);
+        if ($file) {
+          // Put the temporary file in form_values so we can save it on submit.
+          $form_state->setValue('logo_upload', $file);
+        }
+>>>>>>> updating open social
       }
 
-      $validators = ['file_validate_extensions' => ['ico png gif jpg jpeg apng svg']];
-
       // Check for a new uploaded favicon.
+<<<<<<< HEAD
 <<<<<<< HEAD
       if (isset($form['favicon'])) {
         $file = _file_save_upload_from_form($form['favicon']['settings']['favicon_upload'], $form_state, 0);
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+      if (isset($form['favicon'])) {
+        $file = _file_save_upload_from_form($form['favicon']['settings']['favicon_upload'], $form_state, 0);
+>>>>>>> updating open social
         if ($file) {
           // Put the temporary file in form_values so we can save it on submit.
           $form_state->setValue('favicon_upload', $file);
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
         else {
           // File upload failed.
@@ -413,6 +428,8 @@ class ThemeSettingsForm extends ConfigFormBase {
         // Put the temporary file in form_values so we can save it on submit.
         $form_state->setValue('favicon_upload', $file);
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
       }
 
       // When intending to use the default logo, unset the logo_path.

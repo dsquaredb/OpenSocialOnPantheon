@@ -34,6 +34,7 @@ class User extends DrupalSqlBase {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     // Profile fields.
     if ($this->moduleExists('profile')) {
       $fields += $this->select('profile_fields', 'pf')
@@ -53,6 +54,8 @@ class User extends DrupalSqlBase {
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
     return $fields;
   }
 

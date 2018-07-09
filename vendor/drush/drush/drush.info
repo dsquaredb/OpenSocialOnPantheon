@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 drush_version=8.1.7
 =======
 drush_version=8.1.17
@@ -7,3 +8,6 @@ drush_version=8.1.17
 =======
 drush_version=8.1.16
 >>>>>>> revert Open Social update
+=======
+drush_version=8.1.17
+>>>>>>> updating open social

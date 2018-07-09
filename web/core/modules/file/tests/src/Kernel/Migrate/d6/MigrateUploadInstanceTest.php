@@ -40,6 +40,7 @@ class MigrateUploadInstanceTest extends MigrateDrupal6TestBase {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     $this->assertIdentical(array('node', 'page', 'upload'), $this->getMigration('d6_upload_field_instance')->getIdMap()->lookupDestinationID(array('page')));
 =======
     $this->assertIdentical(['node', 'page', 'upload'], $this->getMigration('d6_upload_field_instance')->getIdMap()->lookupDestinationId(['page']));
@@ -47,6 +48,9 @@ class MigrateUploadInstanceTest extends MigrateDrupal6TestBase {
 =======
     $this->assertIdentical(['node', 'page', 'upload'], $this->getMigration('d6_upload_field_instance')->getIdMap()->lookupDestinationID(['page']));
 >>>>>>> revert Open Social update
+=======
+    $this->assertIdentical(['node', 'page', 'upload'], $this->getMigration('d6_upload_field_instance')->getIdMap()->lookupDestinationId(['page']));
+>>>>>>> updating open social
   }
 
 }

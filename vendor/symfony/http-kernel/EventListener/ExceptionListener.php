@@ -15,16 +15,18 @@ use Psr\Log\LoggerInterface;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Symfony\Component\Debug\ExceptionHandler;
 =======
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 use Symfony\Component\Debug\ExceptionHandler;
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
 use Symfony\Component\Debug\Exception\FlattenException;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 =======
 use Symfony\Component\Debug\Exception\FlattenException;
@@ -48,13 +50,13 @@ class ExceptionListener implements EventSubscriberInterface
     protected $logger;
 <<<<<<< HEAD
     protected $debug;
-    private $charset;
 
-    public function __construct($controller, LoggerInterface $logger = null, $debug = false, $charset = null)
+    public function __construct($controller, LoggerInterface $logger = null, $debug = false)
     {
         $this->controller = $controller;
         $this->logger = $logger;
         $this->debug = $debug;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         $this->charset = $charset;
@@ -70,6 +72,8 @@ class ExceptionListener implements EventSubscriberInterface
 =======
         $this->charset = $charset;
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
     }
 
     public function onKernelException(GetResponseForExceptionEvent $event)
@@ -98,7 +102,7 @@ class ExceptionListener implements EventSubscriberInterface
                 }
             }
 
-            $prev = new \ReflectionProperty('Exception', 'previous');
+            $prev = new \ReflectionProperty($wrapper instanceof \Exception ? \Exception::class : \Error::class, 'previous');
             $prev->setAccessible(true);
             $prev->setValue($wrapper, $exception);
 
@@ -157,6 +161,7 @@ class ExceptionListener implements EventSubscriberInterface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> revert Open Social update
             'exception' => $exception = FlattenException::create($exception),
@@ -176,6 +181,10 @@ class ExceptionListener implements EventSubscriberInterface
             'exception' => FlattenException::create($exception),
 =======
 >>>>>>> revert Open Social update
+=======
+            '_controller' => $this->controller,
+            'exception' => FlattenException::create($exception),
+>>>>>>> updating open social
             'logger' => $this->logger instanceof DebugLoggerInterface ? $this->logger : null,
             // keep for BC -- as $format can be an argument of the controller callable
             // see src/Symfony/Bundle/TwigBundle/Controller/ExceptionController.php

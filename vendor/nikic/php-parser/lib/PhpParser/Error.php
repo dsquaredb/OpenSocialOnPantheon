@@ -20,11 +20,15 @@ class Error extends \RuntimeException
 =======
     public function __construct(string $message, $attributes = []) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->rawMessage = $message;
 >>>>>>> Update Open Social to 8.x-2.1
 =======
         $this->rawMessage = (string) $message;
 >>>>>>> revert Open Social update
+=======
+        $this->rawMessage = $message;
+>>>>>>> updating open social
         if (is_array($attributes)) {
             $this->attributes = $attributes;
         } else {
@@ -81,11 +85,15 @@ class Error extends \RuntimeException
 =======
     public function setRawMessage(string $message) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->rawMessage = $message;
 >>>>>>> Update Open Social to 8.x-2.1
 =======
         $this->rawMessage = (string) $message;
 >>>>>>> revert Open Social update
+=======
+        $this->rawMessage = $message;
+>>>>>>> updating open social
         $this->updateMessage();
     }
 
@@ -100,11 +108,15 @@ class Error extends \RuntimeException
 =======
     public function setStartLine(int $line) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->attributes['startLine'] = $line;
 >>>>>>> Update Open Social to 8.x-2.1
 =======
         $this->attributes['startLine'] = (int) $line;
 >>>>>>> revert Open Social update
+=======
+        $this->attributes['startLine'] = $line;
+>>>>>>> updating open social
         $this->updateMessage();
     }
 

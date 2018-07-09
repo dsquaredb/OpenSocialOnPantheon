@@ -13,6 +13,8 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\StreamInterface;
 use Psr\Http\Message\UriInterface;
 
+use function strtolower;
+
 /**
  * HTTP Request encapsulation
  *

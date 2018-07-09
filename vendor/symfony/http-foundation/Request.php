@@ -749,6 +749,7 @@ class Request
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             return sprintf('{%s}i', $hostPattern);
 =======
             return sprintf('#%s#i', $hostPattern);
@@ -759,6 +760,9 @@ class Request
 =======
             return sprintf('#%s#i', $hostPattern);
 >>>>>>> revert Open Social update
+=======
+            return sprintf('{%s}i', $hostPattern);
+>>>>>>> updating open social
         }, $hostPatterns);
         // we need to reset trusted hosts on trusted host patterns change
         self::$trustedHosts = array();
@@ -1670,6 +1674,7 @@ class Request
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @return string|null The associated mime type (null if not found)
 =======
      * @return string The associated mime type (null if not found)
@@ -1680,6 +1685,9 @@ class Request
 =======
      * @return string The associated mime type (null if not found)
 >>>>>>> revert Open Social update
+=======
+     * @return string|null The associated mime type (null if not found)
+>>>>>>> updating open social
      */
     public function getMimeType($format)
     {

@@ -218,10 +218,13 @@ class EntityOperations implements ContainerInjectionInterface {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> Update Open Social to 8.x-2.1
 =======
     // @todo what if $entity->moderation_state is null at this point?
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
     $content_moderation_state->set('content_entity_revision_id', $entity_revision_id);
     $content_moderation_state->set('moderation_state', $moderation_state);
     ContentModerationState::updateOrCreateFromEntity($content_moderation_state);

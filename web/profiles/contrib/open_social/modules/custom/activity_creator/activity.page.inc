@@ -42,20 +42,26 @@ function template_preprocess_activity(array &$variables) {
 =======
     ->formatTimeDiffSince($activity->getCreatedTime(), ['granularity' => 1, 'return_as_object' => TRUE]);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> updating open social
   $date = t('@time ago', ['@time' => $created_time_ago->getString()]);
   if (isset($variables['elements']['#view_mode']) && in_array($variables['content']['field_activity_output_text']['#view_mode'], [
     'notification',
     'notification_archive',
   ])) {
+<<<<<<< HEAD
 >>>>>>> Update Open Social to 8.x-2.1
 =======
   $date = t('%time ago', ['%time' => $created_time_ago->getString()]);
   if ($full_url == '') {
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
     $variables['date'] = $date;
   }
   else {
-    $variables['date'] = Link::fromTextAndUrl($date, $full_url);
+    $variables['date'] = Link::fromTextAndUrl($date, $full_url)->toRenderable();
   }
   $variables['#cache']['max-age'] = $created_time_ago->getMaxAge();
 

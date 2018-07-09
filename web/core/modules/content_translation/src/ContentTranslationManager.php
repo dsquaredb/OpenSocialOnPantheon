@@ -18,23 +18,13 @@ class ContentTranslationManager implements ContentTranslationManagerInterface {
   protected $entityManager;
 
   /**
-   * The updates manager.
-   *
-   * @var \Drupal\content_translation\ContentTranslationUpdatesManager
-   */
-  protected $updatesManager;
-
-  /**
    * Constructs a ContentTranslationManageAccessCheck object.
    *
    * @param \Drupal\Core\Entity\EntityManagerInterface $manager
    *   The entity type manager.
-   * @param \Drupal\content_translation\ContentTranslationUpdatesManager $updates_manager
-   *   The updates manager.
    */
-  public function __construct(EntityManagerInterface $manager, ContentTranslationUpdatesManager $updates_manager) {
+  public function __construct(EntityManagerInterface $manager) {
     $this->entityManager = $manager;
-    $this->updatesManager = $updates_manager;
   }
 
   /**
@@ -83,6 +73,7 @@ class ContentTranslationManager implements ContentTranslationManagerInterface {
     $config->setThirdPartySetting('content_translation', 'enabled', $value)->save();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     $entity_type = $this->entityManager->getDefinition($entity_type_id);
     $this->updatesManager->updateDefinitions(array($entity_type_id => $entity_type));
 =======
@@ -91,6 +82,8 @@ class ContentTranslationManager implements ContentTranslationManagerInterface {
     $entity_type = $this->entityManager->getDefinition($entity_type_id);
     $this->updatesManager->updateDefinitions([$entity_type_id => $entity_type]);
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
   }
 
   /**

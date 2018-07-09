@@ -23,6 +23,7 @@ class AccountHeaderBlock extends BlockBase {
     if ($account->id() !== 0) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       $account_name = $account->getAccountName();
       $account_uid = $account->id();
 =======
@@ -31,6 +32,9 @@ class AccountHeaderBlock extends BlockBase {
 =======
       $account_name = $account->getAccountName();
 >>>>>>> revert Open Social update
+=======
+      $account_name = $account->getDisplayName();
+>>>>>>> updating open social
 
       $links = [
         'add' => array(

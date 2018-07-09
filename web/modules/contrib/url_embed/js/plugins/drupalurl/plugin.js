@@ -54,7 +54,7 @@
           var embed_button_id = data.id ? data.id : existingValues['data-embed-button'];
 
           var dialogSettings = {
-            title: existingElement ? 'Edit URL' : 'Insert URL',
+            title: existingElement ? Drupal.t('Edit URL') : Drupal.t('Insert URL'),
             dialogClass: 'url-select-dialog',
             resizable: false,
             minWidth: 800

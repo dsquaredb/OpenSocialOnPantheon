@@ -166,10 +166,14 @@ The PsySH `doc` command is great for documenting source code, but you'll need a 
 ### [💾 Installation](https://github.com/bobthecow/psysh/wiki/Installation)
  * [📕 PHP manual installation](https://github.com/bobthecow/psysh/wiki/PHP-manual)
 <<<<<<< HEAD
+<<<<<<< HEAD
  * <a class="internal present" href="https://github.com/bobthecow/psysh/wiki/Windows"><img src="https://user-images.githubusercontent.com/53660/40878809-407e8368-664b-11e8-8455-f11602c41dfe.png" width="18"> Windows</a>
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+ * <a class="internal present" href="https://github.com/bobthecow/psysh/wiki/Windows"><img src="https://user-images.githubusercontent.com/53660/40878809-407e8368-664b-11e8-8455-f11602c41dfe.png" width="18"> Windows</a>
+>>>>>>> updating open social
 
 
 

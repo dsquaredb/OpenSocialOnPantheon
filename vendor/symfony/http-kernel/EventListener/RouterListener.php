@@ -15,6 +15,7 @@ use Psr\Log\LoggerInterface;
 <<<<<<< HEAD
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
 use Symfony\Component\HttpKernel\Event\FinishRequestEvent;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\HttpKernel\KernelEvents;
@@ -240,12 +241,6 @@ class RouterListener implements EventSubscriberInterface
             unset($parameters['_route'], $parameters['_controller']);
             $request->attributes->set('_route_params', $parameters);
         } catch (ResourceNotFoundException $e) {
-            if ($this->debug && $e instanceof NoConfigurationException) {
-                $event->setResponse($this->createWelcomeResponse());
-
-                return;
-            }
-
             $message = sprintf('No route found for "%s %s"', $request->getMethod(), $request->getPathInfo());
 
             if ($referer = $request->headers->get('referer')) {
@@ -263,8 +258,11 @@ class RouterListener implements EventSubscriberInterface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> updating open social
     public function onKernelException(GetResponseForExceptionEvent $event)
     {
         if (!$this->debug || !($e = $event->getException()) instanceof NotFoundHttpException) {
@@ -277,12 +275,15 @@ class RouterListener implements EventSubscriberInterface
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> web and vendor directory from composer install
 =======
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
     public static function getSubscribedEvents()
     {
         return array(
@@ -291,11 +292,15 @@ class RouterListener implements EventSubscriberInterface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> Update Open Social to 8.x-2.1
             KernelEvents::EXCEPTION => array('onKernelException', -64),
 =======
 >>>>>>> revert Open Social update
+=======
+            KernelEvents::EXCEPTION => array('onKernelException', -64),
+>>>>>>> updating open social
         );
     }
 

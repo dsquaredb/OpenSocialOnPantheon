@@ -87,6 +87,7 @@ class MimeTypeGuesser implements MimeTypeGuesserInterface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->register(new FileBinaryMimeTypeGuesser());
         $this->register(new FileinfoMimeTypeGuesser());
 =======
@@ -107,6 +108,10 @@ class MimeTypeGuesser implements MimeTypeGuesserInterface
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+        $this->register(new FileBinaryMimeTypeGuesser());
+        $this->register(new FileinfoMimeTypeGuesser());
+>>>>>>> updating open social
     }
 
     /**
@@ -153,6 +158,7 @@ class MimeTypeGuesser implements MimeTypeGuesserInterface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> revert Open Social update
@@ -170,6 +176,8 @@ class MimeTypeGuesser implements MimeTypeGuesserInterface
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
         foreach ($this->guessers as $guesser) {
             if (null !== $mimeType = $guesser->guess($path)) {
                 return $mimeType;
@@ -178,12 +186,16 @@ class MimeTypeGuesser implements MimeTypeGuesserInterface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> Update Open Social to 8.x-2.1
+=======
+>>>>>>> updating open social
 
         if (2 === \count($this->guessers) && !FileBinaryMimeTypeGuesser::isSupported() && !FileinfoMimeTypeGuesser::isSupported()) {
             throw new \LogicException('Unable to guess the mime type as no guessers are available (Did you enable the php_fileinfo extension?)');
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> web and vendor directory from composer install
@@ -191,5 +203,7 @@ class MimeTypeGuesser implements MimeTypeGuesserInterface
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
     }
 }

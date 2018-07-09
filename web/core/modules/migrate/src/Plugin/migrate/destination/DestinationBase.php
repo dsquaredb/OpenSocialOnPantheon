@@ -14,12 +14,16 @@ use Drupal\migrate\Plugin\RequirementsInterface;
  *
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @see \Drupal\migrate\Plugin\MigrateDestinationInterface
 =======
  * Migrate destination plugins perform the import operation of the migration.
 =======
  * Migrate destination plugins perfom the import operation of the migration.
 >>>>>>> revert Open Social update
+=======
+ * Migrate destination plugins perform the import operation of the migration.
+>>>>>>> updating open social
  * Destination plugins extend this abstract base class. A destination plugin
  * must implement at least fields(), getIds() and import() methods. Destination
  * plugins can also support rollback operations. For more

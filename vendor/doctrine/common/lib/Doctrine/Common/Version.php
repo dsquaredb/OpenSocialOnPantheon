@@ -37,6 +37,7 @@ class Version
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     const VERSION = '2.6.2-DEV';
 =======
     const VERSION = '2.5.3';
@@ -47,6 +48,9 @@ class Version
 =======
     const VERSION = '2.7.3';
 >>>>>>> revert Open Social update
+=======
+    const VERSION = '2.7.0-DEV';
+>>>>>>> updating open social
 
     /**
      * Compares a Doctrine version with the current one.

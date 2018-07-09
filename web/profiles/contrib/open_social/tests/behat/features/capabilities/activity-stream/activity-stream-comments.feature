@@ -116,7 +116,7 @@ Feature: See comments in activity stream
     And I click "Test open group"
     Then I should see "CreateUser created an event in Test open group"
     And I should see "Test group event"
-    And I should not see "This is a third event comment"
+    And I should see "This is a third event comment"
     And I should not see "This is a first event comment"
     And I should not see "This is a reply event comment"
 

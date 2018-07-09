@@ -27,7 +27,9 @@ class Google_Service_DLP_Resource_OrganizationsInspectTemplates extends Google_S
 {
   /**
    * Creates an InspectTemplate for re-using frequently used configuration for
-   * inspecting content, images, and storage. (inspectTemplates.create)
+   * inspecting content, images, and storage. See
+   * https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   * (inspectTemplates.create)
    *
    * @param string $parent The parent resource name, for example projects/my-
    * project-id or organizations/my-org-id.
@@ -42,7 +44,8 @@ class Google_Service_DLP_Resource_OrganizationsInspectTemplates extends Google_S
     return $this->call('create', array($params), "Google_Service_DLP_GooglePrivacyDlpV2InspectTemplate");
   }
   /**
-   * Deletes an InspectTemplate. (inspectTemplates.delete)
+   * Deletes an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-
+   * templates to learn more. (inspectTemplates.delete)
    *
    * @param string $name Resource name of the organization and inspectTemplate to
    * be deleted, for example `organizations/433245324/inspectTemplates/432452342`
@@ -57,7 +60,8 @@ class Google_Service_DLP_Resource_OrganizationsInspectTemplates extends Google_S
     return $this->call('delete', array($params), "Google_Service_DLP_GoogleProtobufEmpty");
   }
   /**
-   * Gets an InspectTemplate. (inspectTemplates.get)
+   * Gets an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-
+   * templates to learn more. (inspectTemplates.get)
    *
    * @param string $name Resource name of the organization and inspectTemplate to
    * be read, for example `organizations/433245324/inspectTemplates/432452342` or
@@ -72,7 +76,8 @@ class Google_Service_DLP_Resource_OrganizationsInspectTemplates extends Google_S
     return $this->call('get', array($params), "Google_Service_DLP_GooglePrivacyDlpV2InspectTemplate");
   }
   /**
-   * Lists InspectTemplates. (inspectTemplates.listOrganizationsInspectTemplates)
+   * Lists InspectTemplates. See https://cloud.google.com/dlp/docs/creating-
+   * templates to learn more. (inspectTemplates.listOrganizationsInspectTemplates)
    *
    * @param string $parent The parent resource name, for example projects/my-
    * project-id or organizations/my-org-id.
@@ -91,7 +96,8 @@ class Google_Service_DLP_Resource_OrganizationsInspectTemplates extends Google_S
     return $this->call('list', array($params), "Google_Service_DLP_GooglePrivacyDlpV2ListInspectTemplatesResponse");
   }
   /**
-   * Updates the InspectTemplate. (inspectTemplates.patch)
+   * Updates the InspectTemplate. See https://cloud.google.com/dlp/docs/creating-
+   * templates to learn more. (inspectTemplates.patch)
    *
    * @param string $name Resource name of organization and inspectTemplate to be
    * updated, for example `organizations/433245324/inspectTemplates/432452342` or

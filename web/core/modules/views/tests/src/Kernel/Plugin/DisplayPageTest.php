@@ -31,6 +31,7 @@ class DisplayPageTest extends ViewsKernelTestBase {
    */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   public static $modules = array('system', 'user', 'field');
 =======
   public static $modules = ['system', 'user', 'field', 'views_test_data'];
@@ -38,6 +39,9 @@ class DisplayPageTest extends ViewsKernelTestBase {
 =======
   public static $modules = ['system', 'user', 'field'];
 >>>>>>> revert Open Social update
+=======
+  public static $modules = ['system', 'user', 'field', 'views_test_data'];
+>>>>>>> updating open social
 
   /**
    * The router dumper to get all routes.
@@ -227,6 +231,9 @@ class DisplayPageTest extends ViewsKernelTestBase {
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> updating open social
   /**
    * Tests the templates with empty rows.
    */
@@ -263,7 +270,10 @@ class DisplayPageTest extends ViewsKernelTestBase {
     }
   }
 
+<<<<<<< HEAD
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
 }

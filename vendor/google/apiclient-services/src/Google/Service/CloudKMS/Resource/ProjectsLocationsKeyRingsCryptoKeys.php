@@ -187,7 +187,7 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeys exten
     return $this->call('testIamPermissions', array($params), "Google_Service_CloudKMS_TestIamPermissionsResponse");
   }
   /**
-   * Update the version of a CryptoKey that will be used in Encrypt
+   * Update the version of a CryptoKey that will be used in Encrypt.
    * (cryptoKeys.updatePrimaryVersion)
    *
    * @param string $name The resource name of the CryptoKey to update.

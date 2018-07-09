@@ -17,6 +17,7 @@ namespace Symfony\Component\Validator;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Concrete implementations of this interface are used by {@link Validator\ContextualValidatorInterface}
 =======
  * Concrete implementations of this interface are used by {@link ValidationVisitorInterface}
@@ -27,6 +28,9 @@ namespace Symfony\Component\Validator;
 =======
  * Concrete implementations of this interface are used by {@link ValidationVisitorInterface}
 >>>>>>> revert Open Social update
+=======
+ * Concrete implementations of this interface are used by {@link Validator\ContextualValidatorInterface}
+>>>>>>> updating open social
  * to initialize objects just before validating them.
  *
  * @author Fabien Potencier <fabien@symfony.com>

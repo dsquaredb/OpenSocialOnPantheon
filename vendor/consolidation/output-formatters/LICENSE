@@ -15,6 +15,7 @@ Name                       Version  License
 psr/log                    1.0.2    MIT      
 symfony/console            v3.2.3   MIT      
 <<<<<<< HEAD
+<<<<<<< HEAD
 symfony/debug              v3.4.11  MIT      
 symfony/finder             v3.4.11  MIT      
 symfony/polyfill-mbstring  v1.8.0   MIT      
@@ -24,3 +25,8 @@ symfony/debug              v3.4.6   MIT
 symfony/finder             v3.4.6   MIT      
 symfony/polyfill-mbstring  v1.7.0   MIT      
 >>>>>>> revert Open Social update
+=======
+symfony/debug              v3.4.11  MIT      
+symfony/finder             v3.4.11  MIT      
+symfony/polyfill-mbstring  v1.8.0   MIT      
+>>>>>>> updating open social

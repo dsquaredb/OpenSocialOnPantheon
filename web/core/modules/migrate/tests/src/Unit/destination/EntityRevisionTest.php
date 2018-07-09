@@ -223,6 +223,8 @@ class EntityRevision extends RealEntityRevision {
    * workings of its implementation which would trickle into mock assertions. An
    * empty implementation avoids this.
    */
-  protected function updateEntity(EntityInterface $entity, Row $row) {}
+  protected function updateEntity(EntityInterface $entity, Row $row) {
+    return $entity;
+  }
 
 }

@@ -36,12 +36,16 @@ class MigrateVocabularyEntityDisplayTest extends MigrateDrupal6TestBase {
     // Test the Id map.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     $this->assertIdentical(array('node', 'article', 'default', 'tags'), $this->getMigration('d6_vocabulary_entity_display')->getIdMap()->lookupDestinationID(array(4, 'article')));
 =======
     $this->assertSame(['node', 'article', 'default', 'field_tags'], $this->getMigration('d6_vocabulary_entity_display')->getIdMap()->lookupDestinationId([4, 'article']));
 =======
     $this->assertSame(['node', 'article', 'default', 'field_tags'], $this->getMigration('d6_vocabulary_entity_display')->getIdMap()->lookupDestinationID([4, 'article']));
 >>>>>>> revert Open Social update
+=======
+    $this->assertSame(['node', 'article', 'default', 'field_tags'], $this->getMigration('d6_vocabulary_entity_display')->getIdMap()->lookupDestinationId([4, 'article']));
+>>>>>>> updating open social
 
     // Tests that a vocabulary named like a D8 base field will be migrated and
     // prefixed with 'field_' to avoid conflicts.

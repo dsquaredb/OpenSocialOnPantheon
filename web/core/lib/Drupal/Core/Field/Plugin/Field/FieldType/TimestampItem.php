@@ -26,7 +26,6 @@ use Drupal\Core\TypedData\DataDefinition;
  *     }
  *   }
  * )
- * )
  */
 class TimestampItem extends FieldItemBase {
 

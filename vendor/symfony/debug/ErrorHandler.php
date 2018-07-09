@@ -488,7 +488,10 @@ class ErrorHandler
     public function handleError($type, $message, $file, $line)
     {
         // Level is the current error reporting level to manage silent error.
+        $level = error_reporting();
+        $silenced = 0 === ($level & $type);
         // Strong errors are not authorized to be silenced.
+<<<<<<< HEAD
 <<<<<<< HEAD
         $level |= E_RECOVERABLE_ERROR | E_USER_ERROR | E_DEPRECATED | E_USER_DEPRECATED;
 <<<<<<< HEAD
@@ -502,11 +505,15 @@ class ErrorHandler
 =======
         $level = error_reporting() | E_RECOVERABLE_ERROR | E_USER_ERROR | E_DEPRECATED | E_USER_DEPRECATED;
 >>>>>>> revert Open Social update
+=======
+        $level |= E_RECOVERABLE_ERROR | E_USER_ERROR | E_DEPRECATED | E_USER_DEPRECATED;
+>>>>>>> updating open social
         $log = $this->loggedErrors & $type;
         $throw = $this->thrownErrors & $type & $level;
         $type &= $level | $this->screamedErrors;
 
         if (!$type || (!$log && !$throw)) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -516,6 +523,9 @@ class ErrorHandler
 =======
             return $type && $log;
 >>>>>>> revert Open Social update
+=======
+            return !$silenced && $type && $log;
+>>>>>>> updating open social
         }
         $scope = $this->scopedErrors & $type;
 
@@ -724,6 +734,7 @@ class ErrorHandler
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         return !$silenced && $type && $log;
 <<<<<<< HEAD
 =======
@@ -751,6 +762,9 @@ class ErrorHandler
 =======
         return $type && $log;
 >>>>>>> revert Open Social update
+=======
+        return !$silenced && $type && $log;
+>>>>>>> updating open social
     }
 
     /**

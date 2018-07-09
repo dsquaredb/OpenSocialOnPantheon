@@ -223,11 +223,15 @@ class EntityManager implements EntityManagerInterface, ContainerAwareInterface {
    * @deprecated in Drupal 8.0.0, will be removed before Drupal 9.0.0.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
    *   Use \Drupal\Core\Entity\EntityTypeBundleInfoInterface::clearCachedBundles()
 =======
    *   Use \Drupal\Core\Entity\EntityTypeBundleManagerInterface::clearCachedBundles()
 >>>>>>> revert Open Social update
+=======
+   *   Use \Drupal\Core\Entity\EntityTypeBundleInfoInterface::clearCachedBundles()
+>>>>>>> updating open social
    *   instead.
    *
    * @see https://www.drupal.org/node/2549139
@@ -243,11 +247,15 @@ class EntityManager implements EntityManagerInterface, ContainerAwareInterface {
    * @deprecated in Drupal 8.0.0, will be removed before Drupal 9.0.0.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
    *   Use \Drupal\Core\Entity\EntityTypeBundleInfoInterface::getBundleInfo()
 =======
    *   Use \Drupal\Core\Entity\EntityTypeBundleManagerInterface::getBundleInfo()
 >>>>>>> revert Open Social update
+=======
+   *   Use \Drupal\Core\Entity\EntityTypeBundleInfoInterface::getBundleInfo()
+>>>>>>> updating open social
    *   instead.
    *
    * @see https://www.drupal.org/node/2549139
@@ -263,11 +271,15 @@ class EntityManager implements EntityManagerInterface, ContainerAwareInterface {
    * @deprecated in Drupal 8.0.0, will be removed before Drupal 9.0.0.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
    *   Use \Drupal\Core\Entity\EntityTypeBundleInfoInterface::getAllBundleInfo()
 =======
    *   Use \Drupal\Core\Entity\EntityTypeBundleManagerInterface::getAllBundleInfo()
 >>>>>>> revert Open Social update
+=======
+   *   Use \Drupal\Core\Entity\EntityTypeBundleInfoInterface::getAllBundleInfo()
+>>>>>>> updating open social
    *   instead.
    *
    * @see https://www.drupal.org/node/2549139

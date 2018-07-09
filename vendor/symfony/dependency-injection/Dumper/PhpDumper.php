@@ -525,6 +525,7 @@ EOTXT;
 
     private function generateProxyClasses()
     {
+        $alreadyGenerated = array();
         $definitions = $this->container->getDefinitions();
         $strip = '' === $this->docStar && method_exists('Symfony\Component\HttpKernel\Kernel', 'stripComments');
         $proxyDumper = $this->getProxyDumper();
@@ -533,8 +534,12 @@ EOTXT;
             if (!$proxyDumper->isProxyCandidate($definition)) {
                 continue;
             }
+            if (isset($alreadyGenerated[$class = $definition->getClass()])) {
+                continue;
+            }
+            $alreadyGenerated[$class] = true;
             // register class' reflector for resource tracking
-            $this->container->getReflectionClass($definition->getClass());
+            $this->container->getReflectionClass($class);
             $proxyCode = "\n".$proxyDumper->getProxyCode($definition);
 =======
     /**
@@ -678,7 +683,7 @@ EOTXT;
             // $b = new ServiceB();
             // $a = new ServiceA(ServiceB $b);
             // $b->setServiceA(ServiceA $a);
-            if (isset($inlinedDefinition[$definition]) && $this->hasReference($id, array($def->getArguments(), $def->getFactory()))) {
+            if (isset($inlinedDefinitions[$definition]) && $this->hasReference($id, array($def->getArguments(), $def->getFactory()))) {
                 throw new ServiceCircularReferenceException($id, array($id));
             }
 
@@ -2960,6 +2965,9 @@ EOF;
         if ($this->container->hasDefinition($id) && ($definition = $this->container->getDefinition($id)) && !$definition->isSynthetic()) {
             if (null !== $reference && ContainerInterface::IGNORE_ON_UNINITIALIZED_REFERENCE === $reference->getInvalidBehavior()) {
                 $code = 'null';
+                if (!$definition->isShared()) {
+                    return $code;
+                }
             } elseif ($this->isTrivialInstance($definition)) {
                 $code = substr($this->addNewInstance($definition, '', '', $id), 8, -2);
                 if ($definition->isShared()) {

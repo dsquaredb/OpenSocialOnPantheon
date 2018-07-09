@@ -7,6 +7,7 @@
 
 namespace Drupal\r4032login\EventSubscriber;
 
+use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Config\ConfigFactoryInterface;
 <<<<<<< HEAD
 use Drupal\Core\Session\AccountInterface;
@@ -15,15 +16,22 @@ use Drupal\Core\Url;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 =======
 use Drupal\Core\EventSubscriber\HttpExceptionSubscriberBase;
+use Drupal\Core\Path\PathMatcherInterface;
+use Drupal\Core\Routing\TrustedRedirectResponse;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Routing\RedirectDestinationInterface;
 use Drupal\Core\Url;
+<<<<<<< HEAD
 <<<<<<< HEAD
 use Drupal\r4032login\Event\RedirectEvent;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+use Drupal\r4032login\Event\RedirectEvent;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+>>>>>>> updating open social
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -57,6 +65,20 @@ class R4032LoginSubscriber implements EventSubscriberInterface {
   protected $redirectDestination;
 
   /**
+   * The path matcher.
+   *
+   * @var \Drupal\Core\Path\PathMatcherInterface
+   */
+  protected $pathMatcher;
+
+  /**
+   * An event dispatcher instance to use for map events.
+   *
+   * @var \Symfony\Component\EventDispatcher\EventDispatcherInterface
+   */
+  protected $eventDispatcher;
+
+  /**
    * Constructs a new R4032LoginSubscriber.
    *
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
@@ -67,11 +89,17 @@ class R4032LoginSubscriber implements EventSubscriberInterface {
    *   The current user.
    * @param \Drupal\Core\Routing\RedirectDestinationInterface $redirect_destination
    *   The redirect destination service.
+   * @param \Drupal\Core\Path\PathMatcherInterface $path_matcher
+   *   The path matcher.
+   * @param \Symfony\Component\EventDispatcher\EventDispatcherInterface $event_dispatcher
+   *   The event dispatcher.
    */
-  public function __construct(ConfigFactoryInterface $config_factory, AccountInterface $current_user, RedirectDestinationInterface $redirect_destination) {
+  public function __construct(ConfigFactoryInterface $config_factory, AccountInterface $current_user, RedirectDestinationInterface $redirect_destination, PathMatcherInterface $path_matcher, EventDispatcherInterface $event_dispatcher) {
     $this->configFactory = $config_factory;
     $this->currentUser = $current_user;
     $this->redirectDestination = $redirect_destination;
+    $this->pathMatcher = $path_matcher;
+    $this->eventDispatcher = $event_dispatcher;
   }
 
   /**
@@ -89,24 +117,30 @@ class R4032LoginSubscriber implements EventSubscriberInterface {
       return;
     }
     $config = $this->configFactory->get('r4032login.settings');
-    $options = array();
-    $options['query'] = $this->redirectDestination->getAsArray();
-    $options['absolute'] = TRUE;
-    $code = $config->get('default_redirect_code');
-    if ($this->currentUser->isAnonymous()) {
-      // Show custom access denied message if set.
-      if ($config->get('display_denied_message')) {
-        $message = $config->get('access_denied_message');
-        $message_type = $config->get('access_denied_message_type');
-        drupal_set_message(Xss::filterAdmin($message), $message_type);
+
+    // Check if the path should be ignored.
+    $noRedirectPages = trim($config->get('match_noredirect_pages'));
+    if ($noRedirectPages !== '') {
+      $pathToMatch = $this->redirectDestination->get();
+
+      try {
+        // Clean up path from possible language prefix, GET arguments, etc.
+        $pathToMatch = '/' . Url::fromUserInput($pathToMatch)->getInternalPath();
       }
-      // Handle redirection to the login form.
-      $login_path = $config->get('user_login_path');
-      $url = Url::fromUserInput($login_path, $options)->toString();
-      $response = new RedirectResponse($url, $code);
-      $event->setResponse($response);
+      catch (\Exception $e) {
+      }
+
+      if ($this->pathMatcher->matchPath($pathToMatch, $noRedirectPages)) {
+        return;
+      }
+    }
+
+    // Retrieve the redirect path depending if the user is logged or not.
+    if ($this->currentUser->isAnonymous()) {
+      $redirectPath = $config->get('user_login_path');
     }
     else {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -118,6 +152,8 @@ class R4032LoginSubscriber implements EventSubscriberInterface {
 <<<<<<< HEAD
         $url = Url::fromUserInput($redirect, $options)->toString();
 =======
+=======
+>>>>>>> updating open social
       $redirectPath = $config->get('redirect_authenticated_users_to');
     }
 
@@ -172,19 +208,22 @@ class R4032LoginSubscriber implements EventSubscriberInterface {
         }
 
         if ($redirectPath === '<front>') {
+<<<<<<< HEAD
 =======
         if ($redirect === '<front>') {
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
           $url = \Drupal::urlGenerator()->generate('<front>');
         }
         else {
-          $url = Url::fromUserInput($redirect, $options)->toString();
+          $url = Url::fromUserInput($redirectPath, $options)->toString();
         }
 
 >>>>>>> Update Open Social to 8.x-2.1
         $response = new RedirectResponse($url, $code);
-        $event->setResponse($response);
       }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       else {
@@ -197,6 +236,10 @@ class R4032LoginSubscriber implements EventSubscriberInterface {
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+
+      $event->setResponse($response);
+>>>>>>> updating open social
     }
   }
 

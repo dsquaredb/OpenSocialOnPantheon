@@ -4,6 +4,7 @@ namespace Drupal\Tests\file\Kernel\Migrate\d7;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Drupal\Core\StreamWrapper\StreamWrapperInterface;
 use Drupal\file\Entity\File;
 use Drupal\file\FileInterface;
@@ -13,6 +14,8 @@ use Drupal\file\FileInterface;
 use Drupal\file\Entity\File;
 use Drupal\file\FileInterface;
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
 use Drupal\Tests\migrate_drupal\Kernel\d7\MigrateDrupal7TestBase;
 
 /**
@@ -27,12 +30,18 @@ class MigrateFileTest extends MigrateDrupal7TestBase {
   use FileMigrationSetupTrait;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   /**
    * {@inheritdoc}
    */
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update
+=======
+  /**
+   * {@inheritdoc}
+   */
+>>>>>>> updating open social
   public static $modules = ['file'];
 
   /**
@@ -40,6 +49,7 @@ class MigrateFileTest extends MigrateDrupal7TestBase {
    */
   protected function setUp() {
     parent::setUp();
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -64,44 +74,22 @@ class MigrateFileTest extends MigrateDrupal7TestBase {
 =======
 
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
     $this->fileMigrationSetup();
 >>>>>>> Update Open Social to 8.x-2.1
   }
 
   /**
-   * Tests a single file entity.
-   *
-   * @param int $id
-   *   The file ID.
-   * @param string $name
-   *   The expected file name.
-   * @param string $uri
-   *   The expected URI.
-   * @param string $mime
-   *   The expected MIME type.
-   * @param int $size
-   *   The expected file size.
-   * @param int $created
-   *   The expected creation time.
-   * @param int $changed
-   *   The expected modification time.
-   * @param int $uid
-   *   The expected owner ID.
+   * {@inheritdoc}
    */
-  protected function assertEntity($id, $name, $uri, $mime, $size, $created, $changed, $uid) {
-    /** @var \Drupal\file\FileInterface $file */
-    $file = File::load($id);
-    $this->assertTrue($file instanceof FileInterface);
-    $this->assertIdentical($name, $file->getFilename());
-    $this->assertIdentical($uri, $file->getFileUri());
-    $this->assertTrue(file_exists($uri));
-    $this->assertIdentical($mime, $file->getMimeType());
-    $this->assertIdentical($size, $file->getSize());
-    // isPermanent(), isTemporary(), etc. are determined by the status column.
-    $this->assertTrue($file->isPermanent());
-    $this->assertIdentical($created, $file->getCreatedTime());
-    $this->assertIdentical($changed, $file->getChangedTime());
-    $this->assertIdentical($uid, $file->getOwnerId());
+  protected function getFileMigrationInfo() {
+    return [
+      'path' => 'public://sites/default/files/cube.jpeg',
+      'size' => '3620',
+      'base_path' => 'public://',
+      'plugin_id' => 'd7_file',
+    ];
   }
 
   /**

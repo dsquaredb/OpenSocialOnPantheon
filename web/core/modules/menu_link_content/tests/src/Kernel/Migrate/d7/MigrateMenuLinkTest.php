@@ -6,7 +6,6 @@ use Drupal\Core\Database\Database;
 use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\menu_link_content\Entity\MenuLinkContent;
 use Drupal\menu_link_content\MenuLinkContentInterface;
-use Drupal\node\Entity\Node;
 use Drupal\Tests\migrate_drupal\Kernel\d7\MigrateDrupal7TestBase;
 
 /**
@@ -22,8 +21,11 @@ class MigrateMenuLinkTest extends MigrateDrupal7TestBase {
    */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   public static $modules = array('link', 'menu_ui', 'menu_link_content');
 =======
+=======
+>>>>>>> updating open social
   public static $modules = [
     'content_translation',
     'language',
@@ -33,10 +35,13 @@ class MigrateMenuLinkTest extends MigrateDrupal7TestBase {
     'node',
     'text',
   ];
+<<<<<<< HEAD
 >>>>>>> Update Open Social to 8.x-2.1
 =======
   public static $modules = ['link', 'menu_ui', 'menu_link_content', 'node'];
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
 
   /**
    * {@inheritdoc}
@@ -48,17 +53,29 @@ class MigrateMenuLinkTest extends MigrateDrupal7TestBase {
     $this->executeMigration('menu');
 =======
     $this->installEntitySchema('node');
-    $node = Node::create([
-      'nid' => 2,
-      'title' => 'node link test',
-      'type' => 'article',
+    $this->installSchema('node', ['node_access']);
+    $this->installConfig(static::$modules);
+    $this->executeMigrations([
+      'language',
+      'd7_user_role',
+      'd7_user',
+      'd7_node_type',
+      'd7_language_content_settings',
+      'd7_node',
+      'd7_node_translation',
+      'd7_menu',
+      'd7_menu_links',
+      'node_translation_menu_links',
     ]);
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> Update Open Social to 8.x-2.1
 =======
     $node->save();
     $this->executeMigrations(['d7_menu', 'd7_menu_links']);
 >>>>>>> revert Open Social update
+=======
+>>>>>>> updating open social
     \Drupal::service('router.builder')->rebuild();
   }
 
@@ -76,7 +93,7 @@ class MigrateMenuLinkTest extends MigrateDrupal7TestBase {
    * @param bool $enabled
    *   Whether the link is enabled.
    * @param bool $expanded
-   *   Whether the link is expanded
+   *   Whether the link is expanded.
    * @param array $attributes
    *   Additional attributes the link is expected to have.
    * @param string $uri
@@ -87,6 +104,7 @@ class MigrateMenuLinkTest extends MigrateDrupal7TestBase {
   protected function assertEntity($id, $title, $menu, $description, $enabled, $expanded, array $attributes, $uri, $weight) {
     /** @var \Drupal\menu_link_content\MenuLinkContentInterface $menu_link */
     $menu_link = MenuLinkContent::load($id);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     $this->assertTrue($menu_link instanceof MenuLinkContentInterface);
@@ -105,10 +123,11 @@ class MigrateMenuLinkTest extends MigrateDrupal7TestBase {
 =======
     $this->assertTrue($menu_link instanceof MenuLinkContentInterface);
 >>>>>>> revert Open Social update
+=======
+    $this->assertInstanceOf(MenuLinkContentInterface::class, $menu_link);
+>>>>>>> updating open social
     $this->assertSame($title, $menu_link->getTitle());
     $this->assertSame($menu, $menu_link->getMenuName());
-    // The migration sets the description of the link to the value of the
-    // 'title' attribute. Bit strange, but there you go.
     $this->assertSame($description, $menu_link->getDescription());
     $this->assertSame($enabled, $menu_link->isEnabled());
     $this->assertSame($expanded, $menu_link->isExpanded());
@@ -154,6 +173,12 @@ class MigrateMenuLinkTest extends MigrateDrupal7TestBase {
       }
     }
     $this->assertTrue($found);
+
+    // Test the migration of menu links for translated nodes.
+    $this->assertEntity(484, 'The thing about Deep Space 9', 'tools', NULL, TRUE, FALSE, ['attributes' => ['title' => '']], 'entity:node/2', 9);
+    $this->assertEntity(485, 'is - The thing about Deep Space 9', 'tools', NULL, TRUE, FALSE, ['attributes' => ['title' => '']], 'entity:node/2', 10);
+    $this->assertEntity(486, 'is - The thing about Firefly', 'tools', NULL, TRUE, FALSE, ['attributes' => ['title' => '']], 'entity:node/4', 11);
+    $this->assertEntity(487, 'en - The thing about Firefly', 'tools', NULL, TRUE, FALSE, ['attributes' => ['title' => '']], 'entity:node/4', 12);
   }
 
   /**
