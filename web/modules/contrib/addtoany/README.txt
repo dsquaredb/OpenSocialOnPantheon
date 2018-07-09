@@ -10,14 +10,16 @@ CONTENTS OF THIS FILE
 INTRODUCTION
 ------------
 
-The AddToAny module provides share buttons for Drupal. Sharing icons and features are maintained by AddToAny, the universal sharing platform.
+The AddToAny module provides share buttons for Drupal. Sharing icons and
+features are maintained by AddToAny, the universal sharing platform.
 
 By default, the module places share buttons below node content.
 
 CONFIGURATION
 -------------
 
-To configure AddToAny, go to Administration > Configuration > Web services > AddToAny.
+To configure AddToAny, go to:
+Administration > Configuration > Web services > AddToAny.
 
 Explore AddToAny's documentation for the Drupal module:
 https://www.addtoany.com/buttons/customize/drupal
@@ -25,13 +27,15 @@ https://www.addtoany.com/buttons/customize/drupal
 FEATURES
 --------
 
-The module strives to remain lightweight & efficient while integrating with core Drupal features and major contributed modules such as:
+The module strives to remain lightweight & efficient while integrating with
+core Drupal features and major contributed modules such as:
 
  * Blocks
  * Views
  * Display Suite (contributed)
 
-AddToAny core is optimized to load asynchronously, and many sharing and social media features come from AddToAny core including:
+AddToAny core is optimized to load asynchronously, and many sharing and social
+media features come from AddToAny core including:
 
  * Universal share menus
  * Share counters
@@ -47,4 +51,3 @@ MORE INFORMATION
 
  * AddToAny's official website:
    https://www.addtoany.com/
-

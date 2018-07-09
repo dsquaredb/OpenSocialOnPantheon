@@ -199,14 +199,39 @@ class ImageCrop extends FormElement {
           $properties = [];
           $form_state_values = $form_state->getValue($element['#parents']);
           // Check if form state has values.
+          $edit = FALSE;
+          $properties = [];
+          $form_state_values = $form_state->getValue($element['#parents']);
+          // Check if form state has values.
           if ($form_state_values) {
-            $form_state_properties = $form_state_values['crop_wrapper'][$type]['crop_container']['values'];
+            $form_state_props = $form_state_values['crop_wrapper'][$type]['crop_container']['values'];
             // If crop is applied by the form state we keep it that way.
-            if ($form_state_properties['crop_applied'] == '1') {
+            if ($form_state_props['crop_applied'] == '1') {
               $element['crop_wrapper'][$type]['crop_container']['values']['crop_applied']['#default_value'] = 1;
               $edit = TRUE;
+              $properties = $form_state_props;
             }
-            $properties = $form_state_properties;
+            else {
+              list ($width_ratio, $height_ratio) = explode(':', $crop_type->aspect_ratio);
+
+              // Define properties according to dimensions and ratio.
+              $height = $image->getHeight();
+              $width = $image->getWidth();
+              if ($width_ratio > $height_ratio) {
+                $properties['width'] = $width;
+                $properties['height'] = $width * $height_ratio / $width_ratio;
+                $properties['x'] = 0;
+                $properties['y'] = ($height - $properties['height']) / 2;
+              }
+              else {
+                $properties['height'] = $height;
+                $properties['width'] = $height * $width_ratio / $height_ratio;
+                $properties['x'] = ($width - $properties['width']) / 2;
+                $properties['y'] = 0;
+              }
+              $properties['crop_applied'] = 1;
+              $edit = TRUE;
+            }
           }
 
           /** @var \Drupal\crop\CropInterface $crop */

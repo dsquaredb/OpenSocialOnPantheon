@@ -11,6 +11,9 @@ votingapi.settings:
     calculation_schedule:
       type: string
       label: 'Vote tallying'
+    delete_everywhere:
+      type: boolean
+      label: 'Delete everywhere'
 
 votingapi.vote_type.*:
   type: config_entity

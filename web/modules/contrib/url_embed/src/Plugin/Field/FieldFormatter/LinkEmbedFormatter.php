@@ -34,10 +34,11 @@ class LinkEmbedFormatter extends FormatterBase {
     foreach ($items as $delta => $item) {
       if ($url = $item->getUrl()->toString()) {
         try {
-          if ($info = $this->urlEmbed()->getEmbed($url)) {
+          $url_output = \Drupal::service('url_embed')->getUrlCode($url);
+          if ($url_output) {
             $element[$delta] = array(
               '#type' => 'inline_template',
-              '#template' => $info->getCode(),
+              '#template' => $url_output,
             );
           }
         }
