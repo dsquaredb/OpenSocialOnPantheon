@@ -4,8 +4,4 @@
 
 require_once __DIR__ . '/composer/autoload_real.php';
 
-<<<<<<< HEAD
-return ComposerAutoloaderInitDrupal8::getLoader();
-=======
 return ComposerAutoloaderInitdc153d40c1e90ce7271ef1eafc482043::getLoader();
->>>>>>> web and vendor directory from composer install
