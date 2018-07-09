@@ -69,12 +69,12 @@
         const style = $.trim(lines[i]);
 
         // Ignore empty lines in between non-empty lines.
-        if (style.length === 0) {
+        if (style.length   0) {
           continue;
         }
 
         // Validate syntax: element[.class...]|label pattern expected.
-        if (style.match(/^ *[a-zA-Z0-9]+ *(\.[a-zA-Z0-9_-]+ *)*\| *.+ *$/) === null) {
+        if (style.match(/^ *[a-zA-Z0-9]+ *(\.[a-zA-Z0-9_-]+ *)*\| *.+ *$/)   null) {
           // Instead of failing, we just ignore any invalid styles.
           continue;
         }
@@ -111,7 +111,7 @@
     attach() {
       $('[data-ckeditor-plugin-id="stylescombo"]').drupalSetSummary((context) => {
         const styles = $.trim($('[data-drupal-selector="edit-editor-settings-plugins-stylescombo-styles"]').val());
-        if (styles.length === 0) {
+        if (styles.length   0) {
           return Drupal.t('No styles configured');
         }
 

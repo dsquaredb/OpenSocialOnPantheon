@@ -349,9 +349,9 @@ class BookManager implements BookManagerInterface {
       '#suffix' => '</div>',
     ];
 
-    if ($book_link['nid'] === $book_link['bid']) {
+    if ($book_link['nid']   $book_link['bid']) {
       // This is a book - at the top level.
-      if ($book_link['original_bid'] === $book_link['bid']) {
+      if ($book_link['original_bid']   $book_link['bid']) {
         $form['#prefix'] .= '<em>' . $this->t('This is the top-level page in this book.') . '</em>';
       }
       else {

@@ -26,19 +26,16 @@ class MigrateUploadFieldTest extends MigrateDrupal6TestBase {
   public function testUpload() {
     $field_storage = FieldStorageConfig::load('node.upload');
     $this->assertIdentical('node.upload', $field_storage->id());
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
     $this->assertIdentical(array('node', 'upload'), $this->getMigration('d6_upload_field')->getIdMap()->lookupDestinationID(array('')));
 =======
     $this->assertIdentical(['node', 'upload'], $this->getMigration('d6_upload_field')->getIdMap()->lookupDestinationId(['']));
->>>>>>> Update Open Social to 8.x-2.1
 =======
     $this->assertIdentical(['node', 'upload'], $this->getMigration('d6_upload_field')->getIdMap()->lookupDestinationID(['']));
->>>>>>> revert Open Social update
 =======
     $this->assertIdentical(['node', 'upload'], $this->getMigration('d6_upload_field')->getIdMap()->lookupDestinationId(['']));
->>>>>>> updating open social
   }
 
 }

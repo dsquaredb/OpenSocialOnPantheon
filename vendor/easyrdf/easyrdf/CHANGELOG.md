@@ -1,5 +1,5 @@
 EasyRdf 0.9.1
-=============
+    =
 
 Bug Fixes
 ---------
@@ -7,7 +7,7 @@ Bug Fixes
 * Timeout is applied to response-times, not only connection-times (see #202)
 
 EasyRdf 0.9.0
-=============
+    =
 
 Major new features
 ------------------
@@ -44,7 +44,7 @@ Bug Fixes
 
 
 EasyRdf 0.8.0
-=============
+    =
 
 Major new features
 ------------------
@@ -92,7 +92,7 @@ Bug Fixes
 
 
 EasyRdf 0.7.2
-=============
+    =
 
 Enhancements
 ------------
@@ -117,7 +117,7 @@ Bug Fixes
 
 
 EasyRdf 0.7.1
-=============
+    =
 
 Enhancements
 ------------
@@ -135,7 +135,7 @@ Bug Fixes
 
 
 EasyRdf 0.7.0
-=============
+    =
 
 API Changes
 -----------
@@ -179,7 +179,7 @@ Bug Fixes
 
 
 EasyRdf 0.6.3
-=============
+    =
 * Added $graph->parseFile() method.
 * Added support for SSL (https) to the built-in HTTP client
 * Fixes for HTTP responses with a charset parameter in the Content Type.
@@ -194,7 +194,7 @@ EasyRdf 0.6.3
 
 
 EasyRdf 0.6.2
-=============
+    =
 * Bug fix for missing triples in the RDF/XML serialiser.
 * Added countTriples() method to `EasyRdf_Graph`.
 * Re-factored the mechanism for mapping RDF datatypes to PHP classes.
@@ -210,7 +210,7 @@ EasyRdf 0.6.2
 
 
 EasyRdf 0.6.1
-=============
+    =
 * Updated API documentation for new classes and methods added in 0.6.0
 * Added a description to the top of the source code for each example.
 * Changed the generated bnode identifier names from eidXXX to genidXXX.
@@ -229,7 +229,7 @@ EasyRdf 0.6.1
 
 
 EasyRdf 0.6.0
-=============
+    =
 * Major re-factor of the way data is stored internally in `EasyRdf_Graph`.
 * Parsing and serialising is now much faster and will enable further optimisations.
 * API is mostly backwards-compatible apart from:
@@ -247,7 +247,7 @@ EasyRdf 0.6.0
 
 
 EasyRdf 0.5.2
-=============
+    =
 * Added a built-in RDF/XML parser
 * Made the RDF/XML serialiser use the rdf:type to open tags
 * Added support for comments in the N-Triples parser
@@ -256,12 +256,12 @@ EasyRdf 0.5.2
 
 
 EasyRdf 0.5.1
-=============
+    =
 * Bug fixes for PHP 5.2
 
 
 EasyRdf 0.5.0
-=============
+    =
 * Added support for inverse properties.
 * Updated RDF/XML and Turtle serialisers to create new namespaces if possible.
 * Added new is_a($type) method to `EasyRdf_Resource`.
@@ -281,7 +281,7 @@ EasyRdf 0.5.0
 
 
 EasyRdf 0.4.0
-=============
+    =
 * Moved source code to Github
 * Added an `EasyRdf_Literal` class
 * Added proper support for Datatypes and Languages
@@ -296,7 +296,7 @@ EasyRdf 0.4.0
 
 
 EasyRdf 0.3.0
-=============
+    =
 * Generated Wiki pages from phpdoc
 * Filtering of literals by language
 * Moved parsers into `EasyRdf_Parser_XXX` namespace
@@ -309,7 +309,7 @@ EasyRdf 0.3.0
 
 
 EasyRdf 0.2.0
-=============
+    =
 * Added support for Redland PHP bindings
 * Added support for n-triples document type.
 * Improved blank node handing and added newBNode() method to `EasyRdf_Graph`.
@@ -318,7 +318,7 @@ EasyRdf 0.2.0
 
 
 EasyRdf 0.1.0
-=============
+    =
 * First public release
 * Support for ARC2 and Rapper
 * Built-in HTTP Client

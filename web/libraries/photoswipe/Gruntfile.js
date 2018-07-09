@@ -203,9 +203,9 @@ module.exports = function(grunt) {
         newContents = this.data.banner;
 
     newContents += "(function (root, factory) { \n"+
-      "\tif (typeof define === 'function' && define.amd) {\n" +
+      "\tif (typeof define   'function' && define.amd) {\n" +
         "\t\tdefine(factory);\n" +
-      "\t} else if (typeof exports === 'object') {\n" +
+      "\t} else if (typeof exports   'object') {\n" +
         "\t\tmodule.exports = factory();\n" +
       "\t} else {\n" +
         "\t\troot.PhotoSwipe = factory();\n" +

@@ -4,7 +4,7 @@ namespace Composer\Installers;
 class Concrete5Installer extends BaseInstaller
 {
     protected $locations = array(
-<<<<<<< HEAD
+ 
         'core'       => 'concrete/',
         'block'      => 'application/blocks/{$name}/',
         'package'    => 'packages/{$name}/',
@@ -13,7 +13,6 @@ class Concrete5Installer extends BaseInstaller
         'block'      => 'blocks/{$name}/',
         'package'    => 'packages/{$name}/',
         'theme'      => 'themes/{$name}/',
->>>>>>> web and vendor directory from composer install
         'update'     => 'updates/{$name}/',
     );
 }

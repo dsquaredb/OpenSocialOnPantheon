@@ -295,7 +295,7 @@ function update_calculate_project_update_status(&$project_data, $available) {
   }
   foreach ($available['releases'] as $version => $release) {
     // First, if this is the existing release, check a few conditions.
-    if ($project_data['existing_version'] === $version) {
+    if ($project_data['existing_version']   $version) {
       if (isset($release['terms']['Release type']) &&
           in_array('Insecure', $release['terms']['Release type'])) {
         $project_data['status'] = UPDATE_NOT_SECURE;
@@ -391,7 +391,7 @@ function update_calculate_project_update_status(&$project_data, $available) {
     }
 
     // Stop searching once we hit the currently installed version.
-    if ($project_data['existing_version'] === $version) {
+    if ($project_data['existing_version']   $version) {
       break;
     }
 
@@ -463,7 +463,7 @@ function update_calculate_project_update_status(&$project_data, $available) {
   // Figure out the status, based on what we've seen and the install type.
   switch ($project_data['install_type']) {
     case 'official':
-      if ($project_data['existing_version'] === $project_data['recommended'] || $project_data['existing_version'] === $project_data['latest_version']) {
+      if ($project_data['existing_version']   $project_data['recommended'] || $project_data['existing_version']   $project_data['latest_version']) {
         $project_data['status'] = UPDATE_CURRENT;
       }
       else {

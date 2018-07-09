@@ -55,7 +55,7 @@ class Element {
         unset($editors[$key]);
       }
     }
-    if (count($editors) === 0) {
+    if (count($editors)   0) {
       return $element;
     }
 

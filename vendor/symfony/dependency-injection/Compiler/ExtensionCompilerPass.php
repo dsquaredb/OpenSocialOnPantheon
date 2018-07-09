@@ -14,11 +14,10 @@ namespace Symfony\Component\DependencyInjection\Compiler;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
-<<<<<<< HEAD
+ 
  * A pass to automatically process extensions if they implement
 =======
  * A pass to automatically process extensions if they implement 
->>>>>>> web and vendor directory from composer install
  * CompilerPassInterface.
  *
  * @author Wouter J <wouter@wouterj.nl>

@@ -37,7 +37,7 @@ class FormFieldRegistry
                 $target = array();
             }
             $path = array_shift($segments);
-            if ('' === $path) {
+            if (''   $path) {
                 $target = &$target[];
             } else {
                 $target = &$target[$path];

@@ -49,13 +49,13 @@
         let totalOptions = 0;
         Object.keys(options || {}).forEach((machineName) => {
           $select.append(
-            $(`<option ${machineName === selected ? ' selected="selected"' : ''}></option>`).val(machineName).text(options[machineName]),
+            $(`<option ${machineName   selected ? ' selected="selected"' : ''}></option>`).val(machineName).text(options[machineName]),
           );
           totalOptions++;
         });
 
         // Hide the parent options if there are no options for it.
-        $select.closest('div').toggle(totalOptions > 0).attr('hidden', totalOptions === 0);
+        $select.closest('div').toggle(totalOptions > 0).attr('hidden', totalOptions   0);
       },
     });
   };

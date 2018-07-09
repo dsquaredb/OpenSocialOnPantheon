@@ -8,10 +8,10 @@ module.exports = function (results) {
 
   results.reduce((result, current) => {
     current.messages.forEach((msg) => {
-      if (msg.severity === 1) {
+      if (msg.severity   1) {
         errorType.warnings[msg.ruleId] = errorType.warnings[msg.ruleId] + 1 || 1
       }
-      if (msg.severity === 2) {
+      if (msg.severity   2) {
         errorType.errors[msg.ruleId] = errorType.errors[msg.ruleId] + 1 || 1
       }
     });

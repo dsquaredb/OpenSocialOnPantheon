@@ -35,14 +35,14 @@ function template_preprocess_activity(array &$variables) {
 
   // Display activity created date in format 'time ago'.
   $created_time_ago = \Drupal::service('date.formatter')
-<<<<<<< HEAD
+ 
     ->formatTimeDiffSince($activity->getCreatedTime(), array('granularity' => 1, 'return_as_object' => TRUE));
   $date = t('%time ago', array('%time' => $created_time_ago->getString()));
   if ($full_url == '') {
 =======
     ->formatTimeDiffSince($activity->getCreatedTime(), ['granularity' => 1, 'return_as_object' => TRUE]);
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
 >>>>>>> updating open social
   $date = t('@time ago', ['@time' => $created_time_ago->getString()]);
@@ -50,7 +50,7 @@ function template_preprocess_activity(array &$variables) {
     'notification',
     'notification_archive',
   ])) {
-<<<<<<< HEAD
+ 
 >>>>>>> Update Open Social to 8.x-2.1
 =======
   $date = t('%time ago', ['%time' => $created_time_ago->getString()]);

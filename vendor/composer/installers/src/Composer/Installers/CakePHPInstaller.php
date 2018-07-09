@@ -2,10 +2,9 @@
 namespace Composer\Installers;
 
 use Composer\DependencyResolver\Pool;
-<<<<<<< HEAD
+ 
 =======
 use Composer\Package\PackageInterface;
->>>>>>> web and vendor directory from composer install
 
 class CakePHPInstaller extends BaseInstaller
 {
@@ -78,10 +77,9 @@ class CakePHPInstaller extends BaseInstaller
                 $installed = new $constraintClass('=', $package->getVersion());
                 if ($cake3->matches($installed)) {
                     return true;
-<<<<<<< HEAD
+ 
 =======
                     break;
->>>>>>> web and vendor directory from composer install
                 }
             }
         }

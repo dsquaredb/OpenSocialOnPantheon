@@ -11,12 +11,11 @@
 
 namespace Symfony\Component\Validator\Mapping;
 
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Validator\ClassBasedInterface;
 use Symfony\Component\Validator\PropertyMetadataInterface as LegacyPropertyMetadataInterface;
 
->>>>>>> web and vendor directory from composer install
 /**
  * Stores all metadata needed for validating the value of a class property.
  *
@@ -33,7 +32,7 @@ use Symfony\Component\Validator\PropertyMetadataInterface as LegacyPropertyMetad
  * @see CascadingStrategy
  * @see TraversalStrategy
  */
-<<<<<<< HEAD
+ 
 interface PropertyMetadataInterface extends MetadataInterface
 {
     /**
@@ -54,5 +53,4 @@ interface PropertyMetadataInterface extends MetadataInterface
 =======
 interface PropertyMetadataInterface extends MetadataInterface, LegacyPropertyMetadataInterface, ClassBasedInterface
 {
->>>>>>> web and vendor directory from composer install
 }

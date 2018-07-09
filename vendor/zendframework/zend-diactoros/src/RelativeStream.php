@@ -50,13 +50,12 @@ final class RelativeStream implements StreamInterface
      */
     public function __toString()
     {
-<<<<<<< HEAD
+ 
         if ($this->isSeekable()) {
             $this->seek(0);
         }
 =======
         $this->seek(0);
->>>>>>> web and vendor directory from composer install
         return $this->getContents();
     }
 

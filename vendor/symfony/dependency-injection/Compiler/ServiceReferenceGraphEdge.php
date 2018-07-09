@@ -23,16 +23,15 @@ class ServiceReferenceGraphEdge
     private $sourceNode;
     private $destNode;
     private $value;
-<<<<<<< HEAD
+ 
     private $lazy;
     private $weak;
 =======
->>>>>>> web and vendor directory from composer install
 
     /**
      * @param ServiceReferenceGraphNode $sourceNode
      * @param ServiceReferenceGraphNode $destNode
-<<<<<<< HEAD
+ 
      * @param mixed                     $value
      * @param bool                      $lazy
      * @param bool                      $weak
@@ -42,16 +41,14 @@ class ServiceReferenceGraphEdge
      * @param string                    $value
      */
     public function __construct(ServiceReferenceGraphNode $sourceNode, ServiceReferenceGraphNode $destNode, $value = null)
->>>>>>> web and vendor directory from composer install
     {
         $this->sourceNode = $sourceNode;
         $this->destNode = $destNode;
         $this->value = $value;
-<<<<<<< HEAD
+ 
         $this->lazy = $lazy;
         $this->weak = $weak;
 =======
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -83,7 +80,7 @@ class ServiceReferenceGraphEdge
     {
         return $this->destNode;
     }
-<<<<<<< HEAD
+ 
 
     /**
      * Returns true if the edge is lazy, meaning it's a dependency not requiring direct instantiation.
@@ -105,5 +102,4 @@ class ServiceReferenceGraphEdge
         return $this->weak;
     }
 =======
->>>>>>> web and vendor directory from composer install
 }

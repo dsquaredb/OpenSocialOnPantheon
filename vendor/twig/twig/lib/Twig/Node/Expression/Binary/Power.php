@@ -7,7 +7,6 @@
  * (c) Fabien Potencier
 =======
  * (c) 2010 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -22,7 +21,6 @@ class Twig_Node_Expression_Binary_Power extends Twig_Node_Expression_Binary
         }
 
 =======
->>>>>>> web and vendor directory from composer install
         $compiler
             ->raw('pow(')
             ->subcompile($this->getNode('left'))
@@ -41,4 +39,3 @@ class Twig_Node_Expression_Binary_Power extends Twig_Node_Expression_Binary
 
 class_alias('Twig_Node_Expression_Binary_Power', 'Twig\Node\Expression\Binary\PowerBinary', false);
 =======
->>>>>>> web and vendor directory from composer install

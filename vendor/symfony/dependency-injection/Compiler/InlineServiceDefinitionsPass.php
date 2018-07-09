@@ -11,7 +11,7 @@
 
 namespace Symfony\Component\DependencyInjection\Compiler;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\DependencyInjection\Argument\ArgumentInterface;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException;
@@ -21,14 +21,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
->>>>>>> web and vendor directory from composer install
 
 /**
  * Inline service definitions where this is possible.
  *
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
  */
-<<<<<<< HEAD
+ 
 class InlineServiceDefinitionsPass extends AbstractRecursivePass implements RepeatablePassInterface
 {
     private $cloningIds = array();
@@ -41,14 +40,13 @@ class InlineServiceDefinitionsPass implements RepeatablePassInterface
     private $compiler;
     private $formatter;
     private $currentId;
->>>>>>> web and vendor directory from composer install
 
     /**
      * {@inheritdoc}
      */
     public function setRepeatedPass(RepeatedPass $repeatedPass)
     {
-<<<<<<< HEAD
+ 
         // no-op for BC
     }
 
@@ -178,13 +176,12 @@ class InlineServiceDefinitionsPass implements RepeatablePassInterface
         }
 
         return $arguments;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Checks if the definition is inlineable.
      *
-<<<<<<< HEAD
+ 
      * @return bool If the definition is inlineable
      */
     private function isInlineableDefinition($id, Definition $definition, ServiceReferenceGraph $graph)
@@ -220,7 +217,6 @@ class InlineServiceDefinitionsPass implements RepeatablePassInterface
         }
 
         if (!$this->graph->hasNode($id)) {
->>>>>>> web and vendor directory from composer install
             return true;
         }
 
@@ -229,14 +225,13 @@ class InlineServiceDefinitionsPass implements RepeatablePassInterface
         }
 
         $ids = array();
-<<<<<<< HEAD
+ 
         foreach ($graph->getNode($id)->getInEdges() as $edge) {
             if ($edge->isWeak()) {
                 return false;
             }
 =======
         foreach ($this->graph->getNode($id)->getInEdges() as $edge) {
->>>>>>> web and vendor directory from composer install
             $ids[] = $edge->getSourceNode()->getId();
         }
 
@@ -248,10 +243,10 @@ class InlineServiceDefinitionsPass implements RepeatablePassInterface
             return false;
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
         return !$ids || $this->container->getDefinition($ids[0])->isShared();
 =======
         if (count($ids) > 1 && $definition->getFactoryService(false)) {
@@ -259,15 +254,11 @@ class InlineServiceDefinitionsPass implements RepeatablePassInterface
         }
 
         return $container->getDefinition(reset($ids))->getScope(false) === $definition->getScope(false);
->>>>>>> web and vendor directory from composer install
 =======
         return !$ids || $this->container->getDefinition($ids[0])->isShared();
->>>>>>> Update Open Social to 8.x-2.1
 =======
         return true;
->>>>>>> revert Open Social update
 =======
         return !$ids || $this->container->getDefinition($ids[0])->isShared();
->>>>>>> updating open social
     }
 }

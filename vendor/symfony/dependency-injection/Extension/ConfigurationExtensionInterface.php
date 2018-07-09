@@ -24,12 +24,11 @@ interface ConfigurationExtensionInterface
     /**
      * Returns extension configuration.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param array            $config    An array of configuration values
      * @param ContainerBuilder $container A ContainerBuilder instance
      *
->>>>>>> web and vendor directory from composer install
      * @return ConfigurationInterface|null The configuration or null
      */
     public function getConfiguration(array $config, ContainerBuilder $container);

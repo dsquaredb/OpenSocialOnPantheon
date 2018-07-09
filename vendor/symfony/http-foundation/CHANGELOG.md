@@ -1,7 +1,7 @@
 CHANGELOG
-=========
+   
 
-<<<<<<< HEAD
+ 
 3.4.0
 -----
 
@@ -33,7 +33,7 @@ CHANGELOG
 
  * The precedence of parameters returned from `Request::get()` changed from "GET, PATH, BODY" to "PATH, GET, BODY"
 
-=======
+  =
 >>>>>>> web and vendor directory from composer install
 2.8.0
 -----

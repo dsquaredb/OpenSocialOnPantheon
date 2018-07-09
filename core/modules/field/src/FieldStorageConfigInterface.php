@@ -91,14 +91,14 @@ interface FieldStorageConfigInterface extends ConfigEntityInterface, FieldStorag
    * For example:
    * @code
    *   // Given these are the default settings.
-   *   $storage_definition->getSettings() === [
+   *   $storage_definition->getSettings()   [
    *     'fruit' => 'apple',
    *     'season' => 'summer',
    *   ];
    *   // Change only the 'fruit' setting.
    *   $storage_definition->setSettings(['fruit' => 'banana']);
    *   // The 'season' setting persists unchanged.
-   *   $storage_definition->getSettings() === [
+   *   $storage_definition->getSettings()   [
    *     'fruit' => 'banana',
    *     'season' => 'summer',
    *   ];

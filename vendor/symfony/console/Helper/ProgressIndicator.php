@@ -28,10 +28,9 @@ class ProgressIndicator
     private $indicatorCurrent;
     private $indicatorChangeInterval;
     private $indicatorUpdateTime;
-<<<<<<< HEAD
+ 
 =======
     private $lastMessagesLength;
->>>>>>> web and vendor directory from composer install
     private $started = false;
 
     private static $formatters;
@@ -80,7 +79,7 @@ class ProgressIndicator
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Gets the current indicator message.
      *
@@ -118,7 +117,6 @@ class ProgressIndicator
     }
 
     /**
->>>>>>> web and vendor directory from composer install
      * Starts the indicator output.
      *
      * @param $message
@@ -131,10 +129,9 @@ class ProgressIndicator
 
         $this->message = $message;
         $this->started = true;
-<<<<<<< HEAD
+ 
 =======
         $this->lastMessagesLength = 0;
->>>>>>> web and vendor directory from composer install
         $this->startTime = time();
         $this->indicatorUpdateTime = $this->getCurrentTimeInMilliseconds() + $this->indicatorChangeInterval;
         $this->indicatorCurrent = 0;
@@ -271,7 +268,7 @@ class ProgressIndicator
      */
     private function overwrite($message)
     {
-<<<<<<< HEAD
+ 
         if ($this->output->isDecorated()) {
             $this->output->write("\x0D\x1B[2K");
 =======
@@ -284,12 +281,11 @@ class ProgressIndicator
 
         if ($this->output->isDecorated()) {
             $this->output->write("\x0D");
->>>>>>> web and vendor directory from composer install
             $this->output->write($message);
         } else {
             $this->output->writeln($message);
         }
-<<<<<<< HEAD
+ 
 =======
 
         $this->lastMessagesLength = 0;
@@ -299,7 +295,6 @@ class ProgressIndicator
         if ($len > $this->lastMessagesLength) {
             $this->lastMessagesLength = $len;
         }
->>>>>>> web and vendor directory from composer install
     }
 
     private function getCurrentTimeInMilliseconds()
@@ -311,7 +306,7 @@ class ProgressIndicator
     {
         return array(
             'indicator' => function (ProgressIndicator $indicator) {
-<<<<<<< HEAD
+ 
                 return $indicator->indicatorValues[$indicator->indicatorCurrent % count($indicator->indicatorValues)];
             },
             'message' => function (ProgressIndicator $indicator) {
@@ -327,7 +322,6 @@ class ProgressIndicator
             },
             'elapsed' => function (ProgressIndicator $indicator) {
                 return Helper::formatTime(time() - $indicator->getStartTime());
->>>>>>> web and vendor directory from composer install
             },
             'memory' => function () {
                 return Helper::formatMemory(memory_get_usage(true));

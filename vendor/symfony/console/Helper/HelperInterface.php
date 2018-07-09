@@ -20,11 +20,10 @@ interface HelperInterface
 {
     /**
      * Sets the helper set associated with this helper.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param HelperSet $helperSet A HelperSet instance
->>>>>>> web and vendor directory from composer install
      */
     public function setHelperSet(HelperSet $helperSet = null);
 

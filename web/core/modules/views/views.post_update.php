@@ -237,7 +237,7 @@ function views_post_update_boolean_filter_values() {
 }
 
 /**
-<<<<<<< HEAD
+ 
  * @} End of "addtogroup updates-8.2.x".
 =======
  * Rebuild caches to ensure schema changes are read in.
@@ -305,5 +305,4 @@ function views_post_update_entity_link_url() {
 
 /**
  * Update dependencies for moved bulk field plugin.
->>>>>>> Update Open Social to 8.x-2.1
  */

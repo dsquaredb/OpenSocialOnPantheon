@@ -20,11 +20,10 @@ class CommentAttributesTest extends CommentTestBase {
    *
    * @var array
    */
-<<<<<<< HEAD
+ 
   public static $modules = array('views', 'node', 'comment', 'rdf');
 =======
   public static $modules = ['views', 'node', 'comment', 'rdf'];
->>>>>>> revert Open Social update
 
   /**
    * URI of the front page of the Drupal site.
@@ -44,7 +43,7 @@ class CommentAttributesTest extends CommentTestBase {
     parent::setUp();
 
     // Enables anonymous user comments.
-<<<<<<< HEAD
+ 
     user_role_change_permissions(RoleInterface::ANONYMOUS_ID, array(
       'access comments' => TRUE,
       'post comments' => TRUE,
@@ -56,7 +55,6 @@ class CommentAttributesTest extends CommentTestBase {
       'post comments' => TRUE,
       'skip comment approval' => TRUE,
     ]);
->>>>>>> revert Open Social update
     // Allows anonymous to leave their contact information.
     $this->setCommentAnonymous(COMMENT_ANONYMOUS_MAY_CONTACT);
     $this->setCommentPreview(DRUPAL_OPTIONAL);
@@ -70,7 +68,7 @@ class CommentAttributesTest extends CommentTestBase {
 
     // Set relation between node and comment.
     $article_mapping = rdf_get_mapping('node', 'article');
-<<<<<<< HEAD
+ 
     $comment_count_mapping = array(
       'properties' => array('sioc:num_replies'),
       'datatype' => 'xsd:integer',
@@ -82,12 +80,11 @@ class CommentAttributesTest extends CommentTestBase {
       'datatype' => 'xsd:integer',
       'datatype_callback' => ['callable' => 'Drupal\rdf\CommonDataConverter::rawValue'],
     ];
->>>>>>> revert Open Social update
     $article_mapping->setFieldMapping('comment_count', $comment_count_mapping)->save();
 
     // Save user mapping.
     $user_mapping = rdf_get_mapping('user', 'user');
-<<<<<<< HEAD
+ 
     $username_mapping = array(
       'properties' => array('foaf:name'),
     );
@@ -165,7 +162,6 @@ class CommentAttributesTest extends CommentTestBase {
         'properties' => ['foaf:name'],
       ],
     ];
->>>>>>> revert Open Social update
     // Iterate over shared field mappings and save.
     foreach ($field_mappings as $field_name => $field_mapping) {
       $mapping->setFieldMapping($field_name, $field_mapping)->save();
@@ -187,7 +183,7 @@ class CommentAttributesTest extends CommentTestBase {
     $parser->parse($graph, $this->drupalGet('node'), 'rdfa', $this->baseUri);
 
     // Number of comments.
-<<<<<<< HEAD
+ 
     $expected_value = array(
       'type' => 'literal',
       'value' => 2,
@@ -199,7 +195,6 @@ class CommentAttributesTest extends CommentTestBase {
       'value' => 2,
       'datatype' => 'http://www.w3.org/2001/XMLSchema#integer',
     ];
->>>>>>> revert Open Social update
     $this->assertTrue($graph->hasProperty($this->nodeUri, 'http://rdfs.org/sioc/ns#num_replies', $expected_value), 'Number of comments found in RDF output of teaser view (sioc:num_replies).');
 
     // Tests number of comments in full node view, expected value is the same.
@@ -252,11 +247,10 @@ class CommentAttributesTest extends CommentTestBase {
     $this->_testBasicCommentRdfaMarkup($graph, $comment1);
 
     // Posts comment #2 as anonymous user.
-<<<<<<< HEAD
+ 
     $anonymous_user = array();
 =======
     $anonymous_user = [];
->>>>>>> revert Open Social update
     $anonymous_user['name'] = $this->randomMachineName();
     $anonymous_user['mail'] = 'tester@simpletest.org';
     $anonymous_user['homepage'] = 'http://example.org/';
@@ -295,7 +289,7 @@ class CommentAttributesTest extends CommentTestBase {
     $parser->parse($graph, $this->drupalGet('node/' . $this->node->id()), 'rdfa', $this->baseUri);
 
     // Tests the reply_of relationship of a first level comment.
-<<<<<<< HEAD
+ 
     $expected_value = array(
       'type' => 'uri',
       'value' => $this->nodeUri,
@@ -329,7 +323,6 @@ class CommentAttributesTest extends CommentTestBase {
       'type' => 'uri',
       'value' => $comment_1_uri,
     ];
->>>>>>> revert Open Social update
     $this->assertTrue($graph->hasProperty($comment_2_uri, 'http://rdfs.org/sioc/ns#reply_of', $expected_value), 'Comment relation to its parent comment found in RDF output (sioc:reply_of).');
   }
 
@@ -343,7 +336,7 @@ class CommentAttributesTest extends CommentTestBase {
    * @param $account
    *   An array containing information about an anonymous user.
    */
-<<<<<<< HEAD
+ 
   function _testBasicCommentRdfaMarkup($graph, CommentInterface $comment, $account = array()) {
     $comment_uri = $comment->url('canonical', array('absolute' => TRUE));
 
@@ -435,12 +428,11 @@ class CommentAttributesTest extends CommentTestBase {
       'value' => $comment->comment_body->value . "\n",
       'lang' => 'en',
     ];
->>>>>>> revert Open Social update
     $this->assertTrue($graph->hasProperty($comment_uri, 'http://purl.org/rss/1.0/modules/content/encoded', $expected_value), 'Comment body found in RDF output (content:encoded).');
 
     // The comment author can be a registered user or an anonymous user.
     if ($comment->getOwnerId() > 0) {
-<<<<<<< HEAD
+ 
       $author_uri = \Drupal::url('entity.user.canonical', ['user' => $comment->getOwnerId()], array('absolute' => TRUE));
       // Comment relation to author.
       $expected_value = array(
@@ -454,7 +446,6 @@ class CommentAttributesTest extends CommentTestBase {
         'type' => 'uri',
         'value' => $author_uri,
       ];
->>>>>>> revert Open Social update
       $this->assertTrue($graph->hasProperty($comment_uri, 'http://rdfs.org/sioc/ns#has_creator', $expected_value), 'Comment relation to author found in RDF output (sioc:has_creator).');
     }
     else {
@@ -470,7 +461,7 @@ class CommentAttributesTest extends CommentTestBase {
 
     // Author name.
     $name = empty($account["name"]) ? $this->webUser->getUsername() : $account["name"] . " (not verified)";
-<<<<<<< HEAD
+ 
     $expected_value = array(
       'type' => 'literal',
       'value' => $name,
@@ -480,12 +471,11 @@ class CommentAttributesTest extends CommentTestBase {
       'type' => 'literal',
       'value' => $name,
     ];
->>>>>>> revert Open Social update
     $this->assertTrue($graph->hasProperty($author_uri, 'http://xmlns.com/foaf/0.1/name', $expected_value), 'Comment author name found in RDF output (foaf:name).');
 
     // Comment author homepage (only for anonymous authors).
     if ($comment->getOwnerId() == 0) {
-<<<<<<< HEAD
+ 
       $expected_value = array(
         'type' => 'uri',
         'value' => 'http://example.org/',
@@ -495,7 +485,6 @@ class CommentAttributesTest extends CommentTestBase {
         'type' => 'uri',
         'value' => 'http://example.org/',
       ];
->>>>>>> revert Open Social update
       $this->assertTrue($graph->hasProperty($author_uri, 'http://xmlns.com/foaf/0.1/page', $expected_value), 'Comment author link found in RDF output (foaf:page).');
     }
   }
@@ -516,13 +505,12 @@ class CommentAttributesTest extends CommentTestBase {
    * @return \Drupal\comment\Entity\Comment
    *   The saved comment.
    */
-<<<<<<< HEAD
+ 
   function saveComment($nid, $uid, $contact = NULL, $pid = 0) {
     $values = array(
 =======
   public function saveComment($nid, $uid, $contact = NULL, $pid = 0) {
     $values = [
->>>>>>> revert Open Social update
       'entity_id' => $nid,
       'entity_type' => 'node',
       'field_name' => 'comment',
@@ -531,11 +519,10 @@ class CommentAttributesTest extends CommentTestBase {
       'subject' => $this->randomMachineName(),
       'comment_body' => $this->randomMachineName(),
       'status' => 1,
-<<<<<<< HEAD
+ 
     );
 =======
     ];
->>>>>>> revert Open Social update
     if ($contact) {
       $values += $contact;
     }

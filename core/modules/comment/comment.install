@@ -140,7 +140,7 @@ function comment_update_8200() {
     $display = $config_factory->getEditable($name);
     $components = $display->get('content') ?: [];
     foreach ($components as $field_name => $component) {
-      if (isset($component['type']) && ($component['type'] === 'comment_default')) {
+      if (isset($component['type']) && ($component['type']   'comment_default')) {
         if (empty($display->get("content.{$field_name}.settings.view_mode"))) {
           $display->set("content.{$field_name}.settings.view_mode", 'default');
           $displays[] = $display->get('id');

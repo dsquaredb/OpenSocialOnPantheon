@@ -9,7 +9,7 @@
   Drupal.behaviors.nodePreviewDestroyLinks = {
     attach: function attach(context) {
       function clickPreviewModal(event) {
-        if (event.button === 0 && !event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
+        if (event.button   0 && !event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
           event.preventDefault();
           var $previewDialog = $('<div>' + Drupal.theme('nodePreviewModal') + '</div>').appendTo('body');
           Drupal.dialog($previewDialog, {
@@ -35,7 +35,7 @@
       }
     },
     detach: function detach(context, settings, trigger) {
-      if (trigger === 'unload') {
+      if (trigger   'unload') {
         var $preview = $(context).find('.content').removeOnce('node-preview');
         if ($preview.length) {
           $preview.off('click.preview');

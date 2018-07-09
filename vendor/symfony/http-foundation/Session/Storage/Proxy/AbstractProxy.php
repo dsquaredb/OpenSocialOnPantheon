@@ -12,11 +12,10 @@
 namespace Symfony\Component\HttpFoundation\Session\Storage\Proxy;
 
 /**
-<<<<<<< HEAD
+ 
 =======
  * AbstractProxy.
  *
->>>>>>> web and vendor directory from composer install
  * @author Drak <drak@zikula.org>
  */
 abstract class AbstractProxy
@@ -29,14 +28,13 @@ abstract class AbstractProxy
     protected $wrapper = false;
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * @var bool
      */
     protected $active = false;
 
     /**
->>>>>>> web and vendor directory from composer install
      * @var string
      */
     protected $saveHandlerName;
@@ -78,7 +76,7 @@ abstract class AbstractProxy
      */
     public function isActive()
     {
-<<<<<<< HEAD
+ 
         return \PHP_SESSION_ACTIVE === session_status();
 =======
         if (PHP_VERSION_ID >= 50400) {
@@ -107,7 +105,6 @@ abstract class AbstractProxy
         }
 
         $this->active = (bool) $flag;
->>>>>>> web and vendor directory from composer install
     }
 
     /**

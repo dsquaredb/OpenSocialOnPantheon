@@ -1,7 +1,7 @@
 CHANGELOG
-=========
+   
 
-<<<<<<< HEAD
+ 
 3.4.0
 -----
 
@@ -32,7 +32,7 @@ CHANGELOG
  * deprecated `DateTimeValidator::PATTERN` constant
  * added a `format` option to the `DateTime` constraint
 
-=======
+  =
 >>>>>>> web and vendor directory from composer install
 2.8.0
 -----

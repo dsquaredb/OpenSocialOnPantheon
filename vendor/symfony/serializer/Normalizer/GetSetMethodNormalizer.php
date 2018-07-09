@@ -11,13 +11,12 @@
 
 namespace Symfony\Component\Serializer\Normalizer;
 
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Serializer\Exception\CircularReferenceException;
 use Symfony\Component\Serializer\Exception\LogicException;
 use Symfony\Component\Serializer\Exception\RuntimeException;
 
->>>>>>> web and vendor directory from composer install
 /**
  * Converts between objects with getter and setter methods and arrays.
  *
@@ -39,7 +38,7 @@ use Symfony\Component\Serializer\Exception\RuntimeException;
  * @author Nils Adermann <naderman@naderman.de>
  * @author Kévin Dunglas <dunglas@gmail.com>
  */
-<<<<<<< HEAD
+ 
 class GetSetMethodNormalizer extends AbstractObjectNormalizer
 {
     private static $setterAccessibleCache = array();
@@ -131,18 +130,16 @@ class GetSetMethodNormalizer extends AbstractNormalizer
 
         return $object;
     }
->>>>>>> web and vendor directory from composer install
 
     /**
      * {@inheritdoc}
      */
     public function supportsNormalization($data, $format = null)
     {
-<<<<<<< HEAD
+ 
         return parent::supportsNormalization($data, $format) && (isset($this->cache[$type = \get_class($data)]) ? $this->cache[$type] : $this->cache[$type] = $this->supports($type));
 =======
         return is_object($data) && !$data instanceof \Traversable && $this->supports(get_class($data));
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -150,11 +147,10 @@ class GetSetMethodNormalizer extends AbstractNormalizer
      */
     public function supportsDenormalization($data, $type, $format = null)
     {
-<<<<<<< HEAD
+ 
         return parent::supportsDenormalization($data, $type, $format) && (isset($this->cache[$type]) ? $this->cache[$type] : $this->cache[$type] = $this->supports($type));
 =======
         return class_exists($type) && $this->supports($type);
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -180,36 +176,33 @@ class GetSetMethodNormalizer extends AbstractNormalizer
     /**
      * Checks if a method's name is get.* or is.*, and can be called without parameters.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param \ReflectionMethod $method the method to check
      *
->>>>>>> web and vendor directory from composer install
      * @return bool whether the method is a getter or boolean getter
      */
     private function isGetMethod(\ReflectionMethod $method)
     {
-<<<<<<< HEAD
+ 
         $methodLength = \strlen($method->name);
 =======
         $methodLength = strlen($method->name);
->>>>>>> web and vendor directory from composer install
 
         return
             !$method->isStatic() &&
             (
                 ((0 === strpos($method->name, 'get') && 3 < $methodLength) ||
-<<<<<<< HEAD
+ 
                 (0 === strpos($method->name, 'is') && 2 < $methodLength) ||
                 (0 === strpos($method->name, 'has') && 3 < $methodLength)) &&
 =======
                 (0 === strpos($method->name, 'is') && 2 < $methodLength)) &&
->>>>>>> web and vendor directory from composer install
                 0 === $method->getNumberOfRequiredParameters()
             )
         ;
     }
-<<<<<<< HEAD
+ 
 
     /**
      * {@inheritdoc}
@@ -275,5 +268,4 @@ class GetSetMethodNormalizer extends AbstractNormalizer
         }
     }
 =======
->>>>>>> web and vendor directory from composer install
 }

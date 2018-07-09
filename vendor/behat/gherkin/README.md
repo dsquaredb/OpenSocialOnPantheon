@@ -1,5 +1,5 @@
 Behat Gherkin Parser
-====================
+      ==
 
 This is the php Gherkin parser for Behat. It comes bundled with more than 40 native languages
 (see `i18n.php`) support & clean architecture.

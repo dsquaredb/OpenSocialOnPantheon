@@ -11,10 +11,9 @@
 
 namespace Symfony\Component\Validator\Constraints;
 
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
@@ -82,7 +81,7 @@ class CardSchemeValidator extends ConstraintValidator
             '/^5[1-5][0-9]{14}$/',
             '/^2(22[1-9][0-9]{12}|2[3-9][0-9]{13}|[3-6][0-9]{14}|7[0-1][0-9]{13}|720[0-9]{12})$/',
         ),
-<<<<<<< HEAD
+ 
         // All Visa card numbers start with a 4 and have a length of 13, 16, or 19 digits.
         'VISA' => array(
             '/^4([0-9]{12}|[0-9]{15}|[0-9]{18})$/',
@@ -90,7 +89,6 @@ class CardSchemeValidator extends ConstraintValidator
         // All Visa card numbers start with a 4. New cards have 16 digits. Old cards have 13.
         'VISA' => array(
             '/^4([0-9]{12}|[0-9]{15})$/',
->>>>>>> web and vendor directory from composer install
         ),
     );
 
@@ -111,7 +109,7 @@ class CardSchemeValidator extends ConstraintValidator
         }
 
         if (!is_numeric($value)) {
-<<<<<<< HEAD
+ 
             $this->context->buildViolation($constraint->message)
                 ->setParameter('{{ value }}', $this->formatValue($value))
                 ->setCode(CardScheme::NOT_NUMERIC_ERROR)
@@ -128,7 +126,6 @@ class CardSchemeValidator extends ConstraintValidator
                     ->setCode(CardScheme::NOT_NUMERIC_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
 
             return;
         }
@@ -144,7 +141,7 @@ class CardSchemeValidator extends ConstraintValidator
             }
         }
 
-<<<<<<< HEAD
+ 
         $this->context->buildViolation($constraint->message)
             ->setParameter('{{ value }}', $this->formatValue($value))
             ->setCode(CardScheme::INVALID_FORMAT_ERROR)
@@ -161,6 +158,5 @@ class CardSchemeValidator extends ConstraintValidator
                 ->setCode(CardScheme::INVALID_FORMAT_ERROR)
                 ->addViolation();
         }
->>>>>>> web and vendor directory from composer install
     }
 }

@@ -24,7 +24,7 @@ class RemovePrivateAliasesPass implements CompilerPassInterface
 {
     /**
      * Removes private aliases from the ContainerBuilder.
-<<<<<<< HEAD
+ 
      */
     public function process(ContainerBuilder $container)
     {
@@ -41,16 +41,14 @@ class RemovePrivateAliasesPass implements CompilerPassInterface
 
         foreach ($container->getAliases() as $id => $alias) {
             if ($alias->isPublic()) {
->>>>>>> web and vendor directory from composer install
                 continue;
             }
 
             $container->removeAlias($id);
-<<<<<<< HEAD
+ 
             $container->log($this, sprintf('Removed service "%s"; reason: private alias.', $id));
 =======
             $compiler->addLogMessage($formatter->formatRemoveService($this, $id, 'private alias'));
->>>>>>> web and vendor directory from composer install
         }
     }
 }

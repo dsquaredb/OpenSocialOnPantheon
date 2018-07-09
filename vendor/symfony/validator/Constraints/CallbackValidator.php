@@ -32,7 +32,7 @@ class CallbackValidator extends ConstraintValidator
             throw new UnexpectedTypeException($constraint, __NAMESPACE__.'\Callback');
         }
 
-<<<<<<< HEAD
+ 
         $method = $constraint->callback;
         if ($method instanceof \Closure) {
             $method($object, $this->context, $constraint->payload);
@@ -96,7 +96,6 @@ class CallbackValidator extends ConstraintValidator
                 } else {
                     $reflMethod->invoke($object, $this->context);
                 }
->>>>>>> web and vendor directory from composer install
             }
         }
     }

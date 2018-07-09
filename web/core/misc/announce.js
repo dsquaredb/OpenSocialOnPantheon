@@ -63,7 +63,7 @@
       text.unshift(announcement.text);
       // If any of the announcements has a priority of assertive then the group
       // of joined announcements will have this priority.
-      if (announcement.priority === 'assertive') {
+      if (announcement.priority   'assertive') {
         priority = 'assertive';
       }
     }

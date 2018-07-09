@@ -24,7 +24,7 @@ class InstallerConfigDirectorySetNoDirectoryTest extends InstallerTestBase {
   protected function prepareEnvironment() {
     parent::prepareEnvironment();
     $this->syncDirectory = $this->publicFilesDirectory . '/config_' . Crypt::randomBytesBase64() . '/sync';
-<<<<<<< HEAD
+ 
     $this->settings['config_directories'][CONFIG_SYNC_DIRECTORY] = (object) array(
       'value' => $this->syncDirectory,
       'required' => TRUE,
@@ -44,11 +44,9 @@ class InstallerConfigDirectorySetNoDirectoryTest extends InstallerTestBase {
       'value' => $this->publicFilesDirectory . '/config_custom',
       'required' => TRUE,
     ];
-<<<<<<< HEAD:web/core/modules/system/src/Tests/Installer/InstallerConfigDirectorySetNoDirectoryTest.php
->>>>>>> revert Open Social update
+ :web/core/modules/system/src/Tests/Installer/InstallerConfigDirectorySetNoDirectoryTest.php
     parent::setUp();
 =======
->>>>>>> updating open social:web/core/tests/Drupal/FunctionalTests/Installer/InstallerConfigDirectorySetNoDirectoryTest.php
   }
 
   /**

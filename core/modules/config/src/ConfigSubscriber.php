@@ -20,7 +20,7 @@ class ConfigSubscriber extends ConfigImportValidateEventSubscriberBase {
   public function onConfigImporterValidate(ConfigImporterEvent $event) {
     // Make sure config syncs performed via the Config UI don't break, but
     // don't worry about syncs initiated via the command line.
-    if (PHP_SAPI === 'cli') {
+    if (PHP_SAPI   'cli') {
       return;
     }
     $importer = $event->getConfigImporter();

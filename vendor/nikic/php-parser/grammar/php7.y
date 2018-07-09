@@ -228,9 +228,9 @@ block_or_error:
 ;
 
 function_declaration_statement:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
     T_FUNCTION optional_ref T_STRING '(' parameter_list ')' optional_return_type '{' inner_statement_list '}'
         { $$ = Stmt\Function_[$3, ['byRef' => $2, 'params' => $5, 'returnType' => $7, 'stmts' => $9]]; }
 =======
@@ -379,7 +379,7 @@ non_empty_parameter_list:
 ;
 
 parameter:
-<<<<<<< HEAD
+ 
       optional_param_type optional_ref optional_ellipsis T_VARIABLE
           { $$ = Node\Param[parseVar($4), null, $1, $2, $3]; }
     | optional_param_type optional_ref optional_ellipsis T_VARIABLE '=' expr
@@ -456,7 +456,7 @@ class_statement_list:
 ;
 
 class_statement:
-<<<<<<< HEAD
+ 
       variable_modifiers property_declaration_list ';'      { $$ = Stmt\Property[$1, $2]; }
     | T_CONST class_const_list ';'                          { $$ = Stmt\ClassConst[$2]; }
     | method_modifiers T_FUNCTION optional_ref identifier '(' parameter_list ')' optional_return_type method_body
@@ -471,8 +471,8 @@ class_statement:
           { $$ = Stmt\ClassMethod[$4, ['type' => $1, 'byRef' => $3, 'params' => $6, 'returnType' => $8, 'stmts' => $9]];
             $this->checkClassMethod($$, #1); }
     | T_USE class_name_list trait_adaptations               { $$ = Stmt\TraitUse[$2, $3]; }
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
     | error                                                 { $$ = null; /* will be skipped */ }
 >>>>>>> Update Open Social to 8.x-2.1
 =======

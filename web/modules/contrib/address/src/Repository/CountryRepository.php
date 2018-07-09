@@ -12,19 +12,16 @@ use Drupal\Core\Locale\CountryManagerInterface;
  *
  * Countries are stored on disk in JSON and cached inside Drupal.
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 class CountryRepository extends ExternalCountryRepository implements ExternalCountryRepositoryInterface, CountryManagerInterface {
 =======
 class CountryRepository extends ExternalCountryRepository {
->>>>>>> Update Open Social to 8.x-2.1
 =======
 class CountryRepository extends ExternalCountryRepository implements ExternalCountryRepositoryInterface {
->>>>>>> revert Open Social update
 =======
 class CountryRepository extends ExternalCountryRepository {
->>>>>>> updating open social
 
   /**
    * The cache backend.
@@ -71,19 +68,17 @@ class CountryRepository extends ExternalCountryRepository {
     return $this->definitions[$locale];
   }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 =======
->>>>>>> revert Open Social update
   /**
    * Loads the base country definitions.
    *
    * @return array
-<<<<<<< HEAD
+ 
 =======
    *   The base country definitions.
->>>>>>> revert Open Social update
    */
   protected function loadBaseDefinitions() {
     if (!empty($this->baseDefinitions)) {
@@ -102,11 +97,8 @@ class CountryRepository extends ExternalCountryRepository {
     return $this->baseDefinitions;
   }
 
-<<<<<<< HEAD
+ 
 =======
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
 }

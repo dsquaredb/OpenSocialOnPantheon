@@ -2450,7 +2450,7 @@ $connection->insert('content_node_field')
   'locked',
 ))
 ->values(array(
-<<<<<<< HEAD
+ 
 =======
   'field_name' => 'field_commander',
   'type' => 'userreference',
@@ -2476,10 +2476,9 @@ $connection->insert('content_node_field')
   'locked' => '0',
 ))
 ->values(array(
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> updating open social
   'field_name' => 'field_company_2',
   'type' => 'nodereference',
   'global_settings' => 'a:1:{s:19:"referenceable_types";a:10:{s:7:"company";s:7:"company";s:7:"article";i:0;s:8:"employee";i:0;s:5:"forum";i:0;s:10:"test_event";i:0;s:9:"test_page";i:0;s:11:"test_planet";i:0;s:10:"test_story";i:0;s:7:"sponsor";i:0;s:5:"story";i:0;}}',
@@ -2504,12 +2503,9 @@ $connection->insert('content_node_field')
   'locked' => '0',
 ))
 ->values(array(
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
   'field_name' => 'field_multivalue',
   'type' => 'number_decimal',
   'global_settings' => 'a:9:{s:6:"prefix";s:0:"";s:6:"suffix";s:0:"";s:3:"min";s:0:"";s:3:"max";s:0:"";s:14:"allowed_values";s:0:"";s:18:"allowed_values_php";s:0:"";s:9:"precision";s:2:"10";s:5:"scale";s:1:"2";s:7:"decimal";s:1:".";}',
@@ -2868,7 +2864,7 @@ $connection->insert('content_node_field_instance')
   'widget_active',
 ))
 ->values(array(
-<<<<<<< HEAD
+ 
 =======
   'field_name' => 'field_commander',
   'type_name' => 'employee',
@@ -2894,10 +2890,9 @@ $connection->insert('content_node_field_instance')
   'widget_active' => '1',
 ))
 ->values(array(
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> updating open social
   'field_name' => 'field_company_2',
   'type_name' => 'employee',
   'weight' => '33',
@@ -2922,12 +2917,9 @@ $connection->insert('content_node_field_instance')
   'widget_active' => '1',
 ))
 ->values(array(
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
   'field_name' => 'field_multivalue',
   'type_name' => 'test_planet',
   'weight' => '2',
@@ -3229,7 +3221,7 @@ $connection->insert('content_node_field_instance')
 ))
 ->execute();
 
-<<<<<<< HEAD
+ 
 =======
 $connection->schema()->createTable('content_type_employee', array(
   'fields' => array(
@@ -3303,7 +3295,6 @@ $connection->insert('content_type_employee')
 ))
 ->execute();
 
->>>>>>> Update Open Social to 8.x-2.1
 $connection->schema()->createTable('content_type_page', array(
   'fields' => array(
     'vid' => array(
@@ -9449,7 +9440,7 @@ $connection->insert('i18n_strings')
   'objectindex' => '139',
   'format' => '0',
 ))
-<<<<<<< HEAD
+ 
 =======
 ->values(array(
   'lid' => '1664',
@@ -9499,10 +9490,9 @@ $connection->insert('i18n_strings')
   'objectindex' => '7',
   'format' => '0',
 ))
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> updating open social
 ->values(array(
   'lid' => '1674',
   'objectid' => '463',
@@ -9543,12 +9533,9 @@ $connection->insert('i18n_strings')
   'objectindex' => '0',
   'format' => '0',
 ))
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
 ->execute();
 
 $connection->schema()->createTable('i18n_variable', array(
@@ -21930,7 +21917,7 @@ $connection->insert('locales_source')
   'source' => 'Delete all translations',
   'version' => '6.38-dev',
 ))
-<<<<<<< HEAD
+ 
 =======
 ->values(array(
   'lid' => '1664',
@@ -22002,10 +21989,9 @@ $connection->insert('locales_source')
   'source' => 'Forums',
   'version' => '1',
 ))
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> updating open social
 ->values(array(
   'lid' => '1674',
   'location' => 'item:463:title',
@@ -22041,12 +22027,9 @@ $connection->insert('locales_source')
   'source' => 'I really, really, really love migrating',
   'version' => '1',
 ))
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
 ->execute();
 
 $connection->schema()->createTable('locales_target', array(
@@ -27068,7 +27051,7 @@ $connection->insert('locales_target')
   'i18n_status' => '0',
 ))
 ->values(array(
-<<<<<<< HEAD
+ 
 =======
   'lid' => '1669',
   'translation' => "Choisissez la vue du module Views qui sélectionne les nœuds pouvant être référencés.<br />Notez que :<ul><li>seules les vues présentant des champs fonctionneront dans ce cadre </li><li>ceci effacera les paramètres de \"Types de contenus\" figurant ci-dessus. Utilisez à la place la section \"filtres\" de la vue ;</li><li>utilisez la section \"champs\" de la vue pour afficher des informations supplémentaires sur les nœuds candidats dans le formulaire de création/édition de nœud ;</li><li>utilisez la section \"critère de tri\" de la vue pour déterminer l'ordre d'affichage des nœuds candidats.</li></ul>",
@@ -27094,10 +27077,9 @@ $connection->insert('locales_target')
   'i18n_status' => '0',
 ))
 ->values(array(
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> updating open social
   'lid' => '1678',
   'translation' => 'fr - I really, really, really love migrating ',
   'language' => 'fr',
@@ -27106,12 +27088,9 @@ $connection->insert('locales_target')
   'i18n_status' => '0',
 ))
 ->values(array(
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
   'lid' => '66',
   'translation' => 'zu - CCK - Aucune Intégration aux Vues',
   'language' => 'zu',
@@ -33124,7 +33103,7 @@ $connection->insert('menu_links')
   'p9' => '0',
   'updated' => '0',
 ))
-<<<<<<< HEAD
+ 
 =======
 ->values(array(
   'menu_name' => 'navigation',
@@ -33612,10 +33591,9 @@ $connection->insert('menu_links')
   'p9' => '0',
   'updated' => '0',
 ))
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> updating open social
 ->values(array(
   'menu_name' => 'primary-links',
   'mlid' => '459',
@@ -33751,12 +33729,9 @@ $connection->insert('menu_links')
   'p9' => '0',
   'updated' => '0',
 ))
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
 ->execute();
 
 $connection->schema()->createTable('menu_router', array(
@@ -42573,7 +42548,7 @@ $connection->insert('node')
   'tnid' => '10',
   'translate' => '0',
 ))
-<<<<<<< HEAD
+ 
 =======
 ->values(array(
   'nid' => '12',
@@ -42711,10 +42686,9 @@ $connection->insert('node')
   'tnid' => '0',
   'translate' => '0',
 ))
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> updating open social
 ->values(array(
   'nid' => '20',
   'vid' => '23',
@@ -42732,12 +42706,9 @@ $connection->insert('node')
   'tnid' => '12',
   'translate' => '0',
 ))
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
 ->execute();
 
 $connection->schema()->createTable('node_access', array(
@@ -42940,7 +42911,7 @@ $connection->schema()->createTable('node_counter', array(
   'mysql_character_set' => 'utf8',
 ));
 
-<<<<<<< HEAD
+ 
 =======
 $connection->insert('node_counter')
 ->fields(array(
@@ -43041,7 +43012,6 @@ $connection->insert('node_counter')
 ))
 ->execute();
 
->>>>>>> Update Open Social to 8.x-2.1
 $connection->schema()->createTable('node_revisions', array(
   'fields' => array(
     'nid' => array(
@@ -43269,7 +43239,7 @@ $connection->insert('node_revisions')
   'timestamp' => '1444239050',
   'format' => '1',
 ))
-<<<<<<< HEAD
+ 
 =======
 ->values(array(
   'nid' => '12',
@@ -43359,10 +43329,9 @@ $connection->insert('node_revisions')
   'timestamp' => '1501955771',
   'format' => '1',
 ))
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> updating open social
 ->values(array(
   'nid' => '20',
   'vid' => '23',
@@ -43374,12 +43343,9 @@ $connection->insert('node_revisions')
   'timestamp' => '1520613305',
   'format' => '1',
 ))
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
 ->execute();
 
 $connection->schema()->createTable('node_type', array(

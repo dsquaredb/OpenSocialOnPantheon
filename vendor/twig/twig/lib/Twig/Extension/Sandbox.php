@@ -3,22 +3,20 @@
 /*
  * This file is part of Twig.
  *
-<<<<<<< HEAD
+ 
  * (c) Fabien Potencier
 =======
  * (c) 2009 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-<<<<<<< HEAD
+ 
 
 /**
  * @final
  */
 =======
->>>>>>> web and vendor directory from composer install
 class Twig_Extension_Sandbox extends Twig_Extension
 {
     protected $sandboxedGlobally;
@@ -106,8 +104,7 @@ class Twig_Extension_Sandbox extends Twig_Extension
         return 'sandbox';
     }
 }
-<<<<<<< HEAD
+ 
 
 class_alias('Twig_Extension_Sandbox', 'Twig\Extension\SandboxExtension', false);
 =======
->>>>>>> web and vendor directory from composer install

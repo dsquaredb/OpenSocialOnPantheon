@@ -4,7 +4,7 @@ This pull request:
 - [ ] Fixes a bug
 - [ ] Adds a feature
 - [ ] Breaks backwards compatibility
-<<<<<<< HEAD
+ 
 - [ ] Needs tests
 =======
 - [ ] Has tests that cover changes

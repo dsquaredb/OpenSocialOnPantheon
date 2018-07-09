@@ -29,7 +29,7 @@ class InlineFragmentRenderer extends RoutableFragmentRenderer
     private $kernel;
     private $dispatcher;
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * Constructor.
@@ -37,7 +37,6 @@ class InlineFragmentRenderer extends RoutableFragmentRenderer
      * @param HttpKernelInterface      $kernel     A HttpKernelInterface instance
      * @param EventDispatcherInterface $dispatcher A EventDispatcherInterface instance
      */
->>>>>>> web and vendor directory from composer install
     public function __construct(HttpKernelInterface $kernel, EventDispatcherInterface $dispatcher = null)
     {
         $this->kernel = $kernel;
@@ -122,7 +121,7 @@ class InlineFragmentRenderer extends RoutableFragmentRenderer
         // Sub-request object will point to localhost as client ip and real client ip
         // will be included into trusted header for client ip
         try {
-<<<<<<< HEAD
+ 
             if (Request::HEADER_X_FORWARDED_FOR & Request::getTrustedHeaderSet()) {
                 $currentXForwardedFor = $request->headers->get('X_FORWARDED_FOR', '');
 
@@ -130,7 +129,6 @@ class InlineFragmentRenderer extends RoutableFragmentRenderer
             } elseif (method_exists(Request::class, 'getTrustedHeaderName') && $trustedHeaderName = Request::getTrustedHeaderName(Request::HEADER_CLIENT_IP, false)) {
 =======
             if ($trustedHeaderName = Request::getTrustedHeaderName(Request::HEADER_CLIENT_IP)) {
->>>>>>> web and vendor directory from composer install
                 $currentXForwardedFor = $request->headers->get($trustedHeaderName, '');
 
                 $server['HTTP_'.$trustedHeaderName] = ($currentXForwardedFor ? $currentXForwardedFor.', ' : '').$request->getClientIp();

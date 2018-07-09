@@ -29,11 +29,10 @@ interface ContextualValidatorInterface
      *
      * @param string $path The path to append
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return ContextualValidatorInterface This validator
->>>>>>> web and vendor directory from composer install
      */
     public function atPath($path);
 
@@ -50,11 +49,10 @@ interface ContextualValidatorInterface
      *                                             validate. If none is given,
      *                                             "Default" is assumed
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return ContextualValidatorInterface This validator
->>>>>>> web and vendor directory from composer install
      */
     public function validate($value, $constraints = null, $groups = null);
 
@@ -67,11 +65,10 @@ interface ContextualValidatorInterface
      * @param array|null $groups       The validation groups to validate. If
      *                                 none is given, "Default" is assumed
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return ContextualValidatorInterface This validator
->>>>>>> web and vendor directory from composer install
      */
     public function validateProperty($object, $propertyName, $groups = null);
 
@@ -86,11 +83,10 @@ interface ContextualValidatorInterface
      * @param array|null    $groups        The validation groups to validate. If
      *                                     none is given, "Default" is assumed
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return ContextualValidatorInterface This validator
->>>>>>> web and vendor directory from composer install
      */
     public function validatePropertyValue($objectOrClass, $propertyName, $value, $groups = null);
 

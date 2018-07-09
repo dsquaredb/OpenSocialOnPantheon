@@ -1,5 +1,5 @@
 Behat Transliterator
-====================
+      ==
 
 Behat Transliterator provides transliteration utilities for PHP.
 

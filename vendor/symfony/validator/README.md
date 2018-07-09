@@ -7,7 +7,7 @@ The Validator component provides tools to validate values following the
 Resources
 ---------
 
-<<<<<<< HEAD
+ 
   * [Documentation](https://symfony.com/doc/current/components/validator.html)
 =======
   * [Documentation](https://symfony.com/doc/current/book/validation.html)

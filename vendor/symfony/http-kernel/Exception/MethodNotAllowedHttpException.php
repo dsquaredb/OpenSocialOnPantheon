@@ -12,21 +12,19 @@
 namespace Symfony\Component\HttpKernel\Exception;
 
 /**
-<<<<<<< HEAD
+ 
 =======
  * MethodNotAllowedHttpException.
  *
->>>>>>> web and vendor directory from composer install
  * @author Kris Wallsmith <kris@symfony.com>
  */
 class MethodNotAllowedHttpException extends HttpException
 {
     /**
-<<<<<<< HEAD
+ 
 =======
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param array      $allow    An array of allowed methods
      * @param string     $message  The internal exception message
      * @param \Exception $previous The previous exception

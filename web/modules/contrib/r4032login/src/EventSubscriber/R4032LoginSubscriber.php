@@ -9,7 +9,7 @@ namespace Drupal\r4032login\EventSubscriber;
 
 use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Config\ConfigFactoryInterface;
-<<<<<<< HEAD
+ 
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Routing\RedirectDestinationInterface;
 use Drupal\Core\Url;
@@ -21,17 +21,14 @@ use Drupal\Core\Routing\TrustedRedirectResponse;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Routing\RedirectDestinationInterface;
 use Drupal\Core\Url;
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 use Drupal\r4032login\Event\RedirectEvent;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
 use Drupal\r4032login\Event\RedirectEvent;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
->>>>>>> updating open social
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -140,20 +137,18 @@ class R4032LoginSubscriber implements EventSubscriberInterface {
       $redirectPath = $config->get('user_login_path');
     }
     else {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 =======
->>>>>>> revert Open Social update
       // Check to see if we are to redirect the user.
       $redirect = $config->get('redirect_authenticated_users_to');
       if ($redirect) {
         // Custom access denied page for logged in users.
-<<<<<<< HEAD
+ 
         $url = Url::fromUserInput($redirect, $options)->toString();
 =======
 =======
->>>>>>> updating open social
       $redirectPath = $config->get('redirect_authenticated_users_to');
     }
 
@@ -208,24 +203,21 @@ class R4032LoginSubscriber implements EventSubscriberInterface {
         }
 
         if ($redirectPath === '<front>') {
-<<<<<<< HEAD
+ 
 =======
         if ($redirect === '<front>') {
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
           $url = \Drupal::urlGenerator()->generate('<front>');
         }
         else {
           $url = Url::fromUserInput($redirectPath, $options)->toString();
         }
 
->>>>>>> Update Open Social to 8.x-2.1
         $response = new RedirectResponse($url, $code);
       }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
       else {
         // Display the default access denied page.
         throw new AccessDeniedHttpException();
@@ -233,13 +225,10 @@ class R4032LoginSubscriber implements EventSubscriberInterface {
 =======
 
       $event->setResponse($response);
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
 
       $event->setResponse($response);
->>>>>>> updating open social
     }
   }
 

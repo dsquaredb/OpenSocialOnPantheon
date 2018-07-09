@@ -33,7 +33,7 @@ use Symfony\Component\Validator\Exception\ValidatorException;
 class GetterMetadata extends MemberMetadata
 {
     /**
-<<<<<<< HEAD
+ 
      * @param string      $class    The class the getter is defined on
      * @param string      $property The property which the getter returns
      * @param string|null $method   The method that is called to retrieve the value being validated (null for auto-detection)
@@ -80,7 +80,6 @@ class GetterMetadata extends MemberMetadata
             $method = $hasMethod;
         } else {
             throw new ValidatorException(sprintf('Neither of these methods exist in class %s: %s, %s, %s', $class, $getMethod, $isMethod, $hasMethod));
->>>>>>> web and vendor directory from composer install
         }
 
         parent::__construct($class, $method, $property);

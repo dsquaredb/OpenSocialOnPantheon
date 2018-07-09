@@ -24,11 +24,10 @@ interface InputInterface
     /**
      * Returns the first argument from the raw parameters (not parsed).
      *
-<<<<<<< HEAD
+ 
      * @return string|null The value of the first argument or null otherwise
 =======
      * @return string The value of the first argument or null otherwise
->>>>>>> web and vendor directory from composer install
      */
     public function getFirstArgument();
 
@@ -37,7 +36,7 @@ interface InputInterface
      *
      * This method is to be used to introspect the input parameters
      * before they have been validated. It must be used carefully.
-<<<<<<< HEAD
+ 
      * Does not necessarily return the correct result for short options
      * when multiple flags are combined in the same option.
      *
@@ -54,14 +53,13 @@ interface InputInterface
      * @return bool true if the value is contained in the raw parameters
      */
     public function hasParameterOption($values);
->>>>>>> web and vendor directory from composer install
 
     /**
      * Returns the value of a raw option (not parsed).
      *
      * This method is to be used to introspect the input parameters
      * before they have been validated. It must be used carefully.
-<<<<<<< HEAD
+ 
      * Does not necessarily return the correct result for short options
      * when multiple flags are combined in the same option.
      *
@@ -88,7 +86,6 @@ interface InputInterface
      * Binds the current Input instance with the given arguments and options.
      *
      * @param InputDefinition $definition A InputDefinition instance
->>>>>>> web and vendor directory from composer install
      */
     public function bind(InputDefinition $definition);
 

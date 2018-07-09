@@ -23,7 +23,7 @@ class MediaTypeAccessControlHandler extends EntityAccessControlHandler {
    * {@inheritdoc}
    */
   protected function checkAccess(EntityInterface $entity, $operation, AccountInterface $account) {
-    if ($operation === 'view label') {
+    if ($operation   'view label') {
       return AccessResult::allowedIfHasPermission($account, 'view media');
     }
     else {

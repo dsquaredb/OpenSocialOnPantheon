@@ -519,9 +519,9 @@ class FeaturesManager implements FeaturesManagerInterface {
   protected function getConfigDependency(ConfigurationItem $config, $module_list = array()) {
     $dependencies = [];
     $type = $config->getType();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
     if ($type != FeaturesManagerInterface::SYSTEM_SIMPLE_CONFIG) {
       $provider = $this->entityManager->getDefinition($type)->getProvider();
       // Ensure the provider is an installed module and not, for example, 'core'
@@ -529,7 +529,6 @@ class FeaturesManager implements FeaturesManagerInterface {
         $dependencies[] = $provider;
 =======
 =======
->>>>>>> updating open social
 
     // For configuration in the InstallStorage::CONFIG_INSTALL_DIRECTORY
     // directory, set any dependencies of the configuration item as package
@@ -543,17 +542,14 @@ class FeaturesManager implements FeaturesManagerInterface {
       }
       else {
         $dependencies[] = $this->entityTypeManager->getDefinition($type)->getProvider();
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
     if ($type != FeaturesManagerInterface::SYSTEM_SIMPLE_CONFIG) {
       $provider = $this->entityTypeManager->getDefinition($type)->getProvider();
       // Ensure the provider is an installed module and not, for example, 'core'
       if (isset($module_list[$provider])) {
         $dependencies[] = $provider;
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
       }
 
       if (isset($config->getData()['dependencies']['module'])) {

@@ -26,27 +26,25 @@ class Table
 {
     /**
      * Table headers.
-<<<<<<< HEAD
+ 
 =======
      *
      * @var array
->>>>>>> web and vendor directory from composer install
      */
     private $headers = array();
 
     /**
      * Table rows.
-<<<<<<< HEAD
+ 
 =======
      *
      * @var array
->>>>>>> web and vendor directory from composer install
      */
     private $rows = array();
 
     /**
      * Column widths cache.
-<<<<<<< HEAD
+ 
      */
     private $effectiveColumnWidths = array();
 =======
@@ -54,16 +52,14 @@ class Table
      * @var array
      */
     private $columnWidths = array();
->>>>>>> web and vendor directory from composer install
 
     /**
      * Number of columns cache.
      *
-<<<<<<< HEAD
+ 
      * @var int
 =======
      * @var array
->>>>>>> web and vendor directory from composer install
      */
     private $numberOfColumns;
 
@@ -82,7 +78,7 @@ class Table
      */
     private $columnStyles = array();
 
-<<<<<<< HEAD
+ 
     /**
      * User set column widths.
      *
@@ -91,7 +87,6 @@ class Table
     private $columnWidths = array();
 
 =======
->>>>>>> web and vendor directory from composer install
     private static $styles;
 
     public function __construct(OutputInterface $output)
@@ -125,11 +120,10 @@ class Table
      *
      * @param string $name The style name
      *
-<<<<<<< HEAD
+ 
      * @return TableStyle
 =======
      * @return TableStyle A TableStyle instance
->>>>>>> web and vendor directory from composer install
      */
     public static function getStyleDefinition($name)
     {
@@ -149,11 +143,10 @@ class Table
      *
      * @param TableStyle|string $name The style name or a TableStyle instance
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return Table
->>>>>>> web and vendor directory from composer install
      */
     public function setStyle($name)
     {
@@ -178,7 +171,7 @@ class Table
      * @param int               $columnIndex Column index
      * @param TableStyle|string $name        The style name or a TableStyle instance
      *
-<<<<<<< HEAD
+ 
      * @return $this
      */
     public function setColumnStyle($columnIndex, $name)
@@ -190,7 +183,6 @@ class Table
     public function setColumnStyle($columnIndex, $name)
     {
         $columnIndex = intval($columnIndex);
->>>>>>> web and vendor directory from composer install
 
         $this->columnStyles[$columnIndex] = $this->resolveStyle($name);
 
@@ -215,7 +207,7 @@ class Table
         return $this->getStyle();
     }
 
-<<<<<<< HEAD
+ 
     /**
      * Sets the minimum width of a column.
      *
@@ -249,7 +241,6 @@ class Table
     }
 
 =======
->>>>>>> web and vendor directory from composer install
     public function setHeaders(array $headers)
     {
         $headers = array_values($headers);
@@ -306,10 +297,9 @@ class Table
      * Renders table to output.
      *
      * Example:
-<<<<<<< HEAD
+ 
      * <code>
 =======
->>>>>>> web and vendor directory from composer install
      * +---------------+-----------------------+------------------+
      * | ISBN          | Title                 | Author           |
      * +---------------+-----------------------+------------------+
@@ -317,10 +307,9 @@ class Table
      * | 9971-5-0210-0 | A Tale of Two Cities  | Charles Dickens  |
      * | 960-425-059-0 | The Lord of the Rings | J. R. R. Tolkien |
      * +---------------+-----------------------+------------------+
-<<<<<<< HEAD
+ 
      * </code>
 =======
->>>>>>> web and vendor directory from composer install
      */
     public function render()
     {
@@ -354,11 +343,10 @@ class Table
     /**
      * Renders horizontal header separator.
      *
-<<<<<<< HEAD
+ 
      * Example: <code>+-----+-----------+-------+</code>
 =======
      * Example: +-----+-----------+-------+
->>>>>>> web and vendor directory from composer install
      */
     private function renderRowSeparator()
     {
@@ -372,11 +360,10 @@ class Table
 
         $markup = $this->style->getCrossingChar();
         for ($column = 0; $column < $count; ++$column) {
-<<<<<<< HEAD
+ 
             $markup .= str_repeat($this->style->getHorizontalBorderChar(), $this->effectiveColumnWidths[$column]).$this->style->getCrossingChar();
 =======
             $markup .= str_repeat($this->style->getHorizontalBorderChar(), $this->columnWidths[$column]).$this->style->getCrossingChar();
->>>>>>> web and vendor directory from composer install
         }
 
         $this->output->writeln(sprintf($this->style->getBorderFormat(), $markup));
@@ -393,11 +380,10 @@ class Table
     /**
      * Renders table row.
      *
-<<<<<<< HEAD
+ 
      * Example: <code>| 9971-5-0210-0 | A Tale of Two Cities  | Charles Dickens  |</code>
 =======
      * Example: | 9971-5-0210-0 | A Tale of Two Cities  | Charles Dickens  |
->>>>>>> web and vendor directory from composer install
      *
      * @param array  $row
      * @param string $cellFormat
@@ -426,7 +412,7 @@ class Table
     private function renderCell(array $row, $column, $cellFormat)
     {
         $cell = isset($row[$column]) ? $row[$column] : '';
-<<<<<<< HEAD
+ 
         $width = $this->effectiveColumnWidths[$column];
         if ($cell instanceof TableCell && $cell->getColspan() > 1) {
             // add the width of the following columns(numbers of colspan).
@@ -438,7 +424,6 @@ class Table
             // add the width of the following columns(numbers of colspan).
             foreach (range($column + 1, $column + $cell->getColspan() - 1) as $nextColumn) {
                 $width += $this->getColumnSeparatorWidth() + $this->columnWidths[$nextColumn];
->>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -491,11 +476,10 @@ class Table
                 if (!strstr($cell, "\n")) {
                     continue;
                 }
-<<<<<<< HEAD
+ 
                 $lines = explode("\n", str_replace("\n", "<fg=default;bg=default>\n</>", $cell));
 =======
                 $lines = explode("\n", $cell);
->>>>>>> web and vendor directory from composer install
                 foreach ($lines as $lineKey => $line) {
                     if ($cell instanceof TableCell) {
                         $line = new TableCell($line, array('colspan' => $cell->getColspan()));
@@ -527,7 +511,7 @@ class Table
      * @param int   $line
      *
      * @return array
-<<<<<<< HEAD
+ 
      *
      * @throws InvalidArgumentException
      */
@@ -544,16 +528,14 @@ class Table
     {
         $unmergedRows = array();
         foreach ($rows[$line] as $column => $cell) {
->>>>>>> web and vendor directory from composer install
             if ($cell instanceof TableCell && $cell->getRowspan() > 1) {
                 $nbLines = $cell->getRowspan() - 1;
                 $lines = array($cell);
                 if (strstr($cell, "\n")) {
-<<<<<<< HEAD
+ 
                     $lines = explode("\n", str_replace("\n", "<fg=default;bg=default>\n</>", $cell));
 =======
                     $lines = explode("\n", $cell);
->>>>>>> web and vendor directory from composer install
                     $nbLines = count($lines) > $nbLines ? substr_count($cell, "\n") : $nbLines;
 
                     $rows[$line][$column] = new TableCell($lines[0], array('colspan' => $cell->getColspan()));
@@ -565,12 +547,11 @@ class Table
                 foreach ($unmergedRows as $unmergedRowKey => $unmergedRow) {
                     $value = isset($lines[$unmergedRowKey - $line]) ? $lines[$unmergedRowKey - $line] : '';
                     $unmergedRows[$unmergedRowKey][$column] = new TableCell($value, array('colspan' => $cell->getColspan()));
-<<<<<<< HEAD
+ 
                     if ($nbLines === $unmergedRowKey - $line) {
                         break;
                     }
 =======
->>>>>>> web and vendor directory from composer install
                 }
             }
         }
@@ -599,11 +580,10 @@ class Table
     /**
      * fill cells for a row that contains colspan > 1.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param array $row
      *
->>>>>>> web and vendor directory from composer install
      * @return array
      */
     private function fillCells($row)
@@ -628,11 +608,10 @@ class Table
      *
      * @return array
      */
-<<<<<<< HEAD
+ 
     private function copyRow(array $rows, $line)
 =======
     private function copyRow($rows, $line)
->>>>>>> web and vendor directory from composer install
     {
         $row = $rows[$line];
         foreach ($row as $cellKey => $cellValue) {
@@ -648,11 +627,10 @@ class Table
     /**
      * Gets number of columns by row.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param array $row
      *
->>>>>>> web and vendor directory from composer install
      * @return int
      */
     private function getNumberOfColumns(array $row)
@@ -668,7 +646,7 @@ class Table
     /**
      * Gets list of columns for the given row.
      *
-<<<<<<< HEAD
+ 
      * @return array
      */
     private function getRowColumns(array $row)
@@ -678,7 +656,6 @@ class Table
      * @return array
      */
     private function getRowColumns($row)
->>>>>>> web and vendor directory from composer install
     {
         $columns = range(0, $this->numberOfColumns - 1);
         foreach ($row as $cellKey => $cell) {
@@ -693,7 +670,7 @@ class Table
 
     /**
      * Calculates columns widths.
-<<<<<<< HEAD
+ 
      */
     private function calculateColumnsWidth(array $rows)
 =======
@@ -701,7 +678,6 @@ class Table
      * @param array $rows
      */
     private function calculateColumnsWidth($rows)
->>>>>>> web and vendor directory from composer install
     {
         for ($column = 0; $column < $this->numberOfColumns; ++$column) {
             $lengths = array();
@@ -712,7 +688,7 @@ class Table
 
                 foreach ($row as $i => $cell) {
                     if ($cell instanceof TableCell) {
-<<<<<<< HEAD
+ 
                         $textContent = Helper::removeDecoration($this->output->getFormatter(), $cell);
                         $textLength = Helper::strlen($textContent);
                         if ($textLength > 0) {
@@ -721,7 +697,6 @@ class Table
                         $textLength = strlen($cell);
                         if ($textLength > 0) {
                             $contentColumns = str_split($cell, ceil($textLength / $cell->getColspan()));
->>>>>>> web and vendor directory from composer install
                             foreach ($contentColumns as $position => $content) {
                                 $row[$i + $position] = $content;
                             }
@@ -732,11 +707,10 @@ class Table
                 $lengths[] = $this->getCellWidth($row, $column);
             }
 
-<<<<<<< HEAD
+ 
             $this->effectiveColumnWidths[$column] = max($lengths) + strlen($this->style->getCellRowContentFormat()) - 2;
 =======
             $this->columnWidths[$column] = max($lengths) + strlen($this->style->getCellRowContentFormat()) - 2;
->>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -760,7 +734,7 @@ class Table
      */
     private function getCellWidth(array $row, $column)
     {
-<<<<<<< HEAD
+ 
         $cellWidth = 0;
 
         if (isset($row[$column])) {
@@ -780,7 +754,6 @@ class Table
         }
 
         return 0;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -788,11 +761,10 @@ class Table
      */
     private function cleanup()
     {
-<<<<<<< HEAD
+ 
         $this->effectiveColumnWidths = array();
 =======
         $this->columnWidths = array();
->>>>>>> web and vendor directory from composer install
         $this->numberOfColumns = null;
     }
 

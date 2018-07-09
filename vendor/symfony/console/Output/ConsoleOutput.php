@@ -14,7 +14,7 @@ namespace Symfony\Component\Console\Output;
 use Symfony\Component\Console\Formatter\OutputFormatterInterface;
 
 /**
-<<<<<<< HEAD
+ 
  * ConsoleOutput is the default class for all CLI output. It uses STDOUT and STDERR.
  *
  * This class is a convenient wrapper around `StreamOutput` for both STDOUT and STDERR.
@@ -22,23 +22,21 @@ use Symfony\Component\Console\Formatter\OutputFormatterInterface;
  * ConsoleOutput is the default class for all CLI output. It uses STDOUT.
  *
  * This class is a convenient wrapper around `StreamOutput`.
->>>>>>> web and vendor directory from composer install
  *
  *     $output = new ConsoleOutput();
  *
  * This is equivalent to:
  *
  *     $output = new StreamOutput(fopen('php://stdout', 'w'));
-<<<<<<< HEAD
+ 
  *     $stdErr = new StreamOutput(fopen('php://stderr', 'w'));
 =======
->>>>>>> web and vendor directory from composer install
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
 class ConsoleOutput extends StreamOutput implements ConsoleOutputInterface
 {
-<<<<<<< HEAD
+ 
     private $stderr;
 
     /**
@@ -51,7 +49,6 @@ class ConsoleOutput extends StreamOutput implements ConsoleOutputInterface
     /**
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param int                           $verbosity The verbosity level (one of the VERBOSITY constants in OutputInterface)
      * @param bool|null                     $decorated Whether to decorate messages (null for auto-guessing)
      * @param OutputFormatterInterface|null $formatter Output formatter instance (null to use default OutputFormatter)
@@ -155,7 +152,7 @@ class ConsoleOutput extends StreamOutput implements ConsoleOutputInterface
      */
     private function openOutputStream()
     {
-<<<<<<< HEAD
+ 
         if (!$this->hasStdoutSupport()) {
             return fopen('php://output', 'w');
         }
@@ -165,7 +162,6 @@ class ConsoleOutput extends StreamOutput implements ConsoleOutputInterface
         $outputStream = $this->hasStdoutSupport() ? 'php://stdout' : 'php://output';
 
         return @fopen($outputStream, 'w') ?: fopen('php://output', 'w');
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -173,12 +169,11 @@ class ConsoleOutput extends StreamOutput implements ConsoleOutputInterface
      */
     private function openErrorStream()
     {
-<<<<<<< HEAD
+ 
         return fopen($this->hasStderrSupport() ? 'php://stderr' : 'php://output', 'w');
 =======
         $errorStream = $this->hasStderrSupport() ? 'php://stderr' : 'php://output';
 
         return fopen($errorStream, 'w');
->>>>>>> web and vendor directory from composer install
     }
 }

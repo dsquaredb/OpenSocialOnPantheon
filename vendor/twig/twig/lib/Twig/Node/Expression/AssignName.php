@@ -3,13 +3,12 @@
 /*
  * This file is part of Twig.
  *
-<<<<<<< HEAD
+ 
  * (c) Fabien Potencier
  * (c) Armin Ronacher
 =======
  * (c) 2009 Fabien Potencier
  * (c) 2009 Armin Ronacher
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -26,8 +25,7 @@ class Twig_Node_Expression_AssignName extends Twig_Node_Expression_Name
         ;
     }
 }
-<<<<<<< HEAD
+ 
 
 class_alias('Twig_Node_Expression_AssignName', 'Twig\Node\Expression\AssignNameExpression', false);
 =======
->>>>>>> web and vendor directory from composer install

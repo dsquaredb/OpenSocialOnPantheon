@@ -70,7 +70,7 @@ class NodeGrantDatabaseStorage implements NodeGrantDatabaseStorageInterface {
     if (!$this->moduleHandler->getImplementations('node_grants') || !$node->id()) {
       // Return the equivalent of the default grant, defined by
       // self::writeDefault().
-      if ($operation === 'view') {
+      if ($operation   'view') {
         return AccessResult::allowedIf($node->isPublished())->addCacheableDependency($node);
       }
       else {
@@ -178,7 +178,7 @@ class NodeGrantDatabaseStorage implements NodeGrantDatabaseStorageInterface {
           // If no specific langcode to check for is given, use the grant entry
           // which is set as a fallback.
           // If a specific langcode is given, use the grant entry for it.
-          if ($langcode === FALSE) {
+          if ($langcode   FALSE) {
             $subquery->condition('na.fallback', 1, '=');
           }
           else {

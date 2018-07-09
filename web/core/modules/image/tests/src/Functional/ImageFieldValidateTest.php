@@ -2,23 +2,21 @@
 
 namespace Drupal\Tests\image\Functional;
 
-<<<<<<< HEAD:web/core/modules/image/src/Tests/ImageFieldValidateTest.php
-<<<<<<< HEAD
+ :web/core/modules/image/src/Tests/ImageFieldValidateTest.php
+ 
 =======
 use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\field\Entity\FieldConfig;
 =======
 use Drupal\Tests\TestFileCreationTrait;
->>>>>>> updating open social:web/core/modules/image/tests/src/Functional/ImageFieldValidateTest.php
 
->>>>>>> revert Open Social update
 /**
  * Tests validation functions such as min/max resolution.
  *
  * @group image
  */
 class ImageFieldValidateTest extends ImageFieldTestBase {
-<<<<<<< HEAD
+ 
   /**
    * Test min/max resolution settings.
    */
@@ -88,7 +86,6 @@ class ImageFieldValidateTest extends ImageFieldTestBase {
    * Test min/max resolution settings.
    */
   public function testResolution() {
->>>>>>> revert Open Social update
     $field_names = [
       0 => strtolower($this->randomMachineName()),
       1 => strtolower($this->randomMachineName()),
@@ -139,10 +136,9 @@ class ImageFieldValidateTest extends ImageFieldTestBase {
       }
       if ($image_file->getWidth() < $min_resolution['width']) {
         $image_that_is_too_small = $image;
-<<<<<<< HEAD
+ 
 =======
         $image_that_is_too_small_file = $image_file;
->>>>>>> revert Open Social update
       }
       if ($image_that_is_too_small && $image_that_is_too_big) {
         break;
@@ -150,7 +146,7 @@ class ImageFieldValidateTest extends ImageFieldTestBase {
     }
     $this->uploadNodeImage($image_that_is_too_small, $field_names[0], 'article');
     $this->assertRaw(t('The specified file %name could not be uploaded.', ['%name' => $image_that_is_too_small->filename]));
-<<<<<<< HEAD
+ 
     $this->assertRaw(t('The image is too small; the minimum dimensions are %dimensions pixels.', ['%dimensions' => '50x50']));
 =======
     $this->assertRaw(t('The image is too small. The minimum dimensions are %dimensions pixels and the image size is %widthx%height pixels.', [
@@ -158,7 +154,6 @@ class ImageFieldValidateTest extends ImageFieldTestBase {
       '%width' => $image_that_is_too_small_file->getWidth(),
       '%height' => $image_that_is_too_small_file->getHeight(),
       ]));
->>>>>>> revert Open Social update
     $this->uploadNodeImage($image_that_is_too_big, $field_names[0], 'article');
     $this->assertText(t('The image was resized to fit within the maximum allowed dimensions of 100x100 pixels.'));
     $this->uploadNodeImage($image_that_is_too_small, $field_names[1], 'article');
@@ -174,7 +169,7 @@ class ImageFieldValidateTest extends ImageFieldTestBase {
   /**
    * Test that required alt/title fields gets validated right.
    */
-<<<<<<< HEAD
+ 
   function testRequiredAttributes() {
     $field_name = strtolower($this->randomMachineName());
     $field_settings = array(
@@ -182,19 +177,17 @@ class ImageFieldValidateTest extends ImageFieldTestBase {
   public function testRequiredAttributes() {
     $field_name = strtolower($this->randomMachineName());
     $field_settings = [
->>>>>>> revert Open Social update
       'alt_field' => 1,
       'alt_field_required' => 1,
       'title_field' => 1,
       'title_field_required' => 1,
       'required' => 1,
-<<<<<<< HEAD
+ 
     );
     $instance = $this->createImageField($field_name, 'article', array(), $field_settings);
 =======
     ];
     $instance = $this->createImageField($field_name, 'article', [], $field_settings);
->>>>>>> revert Open Social update
     $images = $this->drupalGetTestFiles('image');
     // Let's just use the first image.
     $image = $images[0];
@@ -216,7 +209,7 @@ class ImageFieldValidateTest extends ImageFieldTestBase {
     $instance->setSetting('title_field_required', 0);
     $instance->save();
 
-<<<<<<< HEAD
+ 
     $edit = array(
       'title[0][value]' => $this->randomMachineName(),
     );
@@ -226,7 +219,6 @@ class ImageFieldValidateTest extends ImageFieldTestBase {
       'title[0][value]' => $this->randomMachineName(),
     ];
     $this->drupalPostForm('node/add/article', $edit, t('Save'));
->>>>>>> revert Open Social update
 
     $this->assertNoText(t('Alternative text field is required.'));
     $this->assertNoText(t('Title field is required.'));
@@ -236,7 +228,7 @@ class ImageFieldValidateTest extends ImageFieldTestBase {
     $instance->setSetting('title_field_required', 1);
     $instance->save();
 
-<<<<<<< HEAD
+ 
     $edit = array(
       'title[0][value]' => $this->randomMachineName(),
     );
@@ -246,7 +238,6 @@ class ImageFieldValidateTest extends ImageFieldTestBase {
       'title[0][value]' => $this->randomMachineName(),
     ];
     $this->drupalPostForm('node/add/article', $edit, t('Save'));
->>>>>>> revert Open Social update
 
     $this->assertNoText(t('Alternative text field is required.'));
     $this->assertNoText(t('Title field is required.'));
@@ -270,8 +261,8 @@ class ImageFieldValidateTest extends ImageFieldTestBase {
     ];
   }
 
-<<<<<<< HEAD:web/core/modules/image/src/Tests/ImageFieldValidateTest.php
-<<<<<<< HEAD
+ :web/core/modules/image/src/Tests/ImageFieldValidateTest.php
+ 
 =======
   /**
    * Test the validation message is displayed only once for ajax uploads.
@@ -339,7 +330,5 @@ class ImageFieldValidateTest extends ImageFieldTestBase {
     $this->drupalPostAjaxForm(NULL, $edit, 'field_dummy_select[select_widget]');
   }
 
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social:web/core/modules/image/tests/src/Functional/ImageFieldValidateTest.php
 }

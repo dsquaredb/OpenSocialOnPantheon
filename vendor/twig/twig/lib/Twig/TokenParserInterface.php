@@ -7,7 +7,6 @@
  * (c) Fabien Potencier
 =======
  * (c) 2010 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -26,7 +25,6 @@ interface Twig_TokenParserInterface
 =======
      *
      * @param Twig_Parser $parser A Twig_Parser instance
->>>>>>> web and vendor directory from composer install
      */
     public function setParser(Twig_Parser $parser);
 
@@ -39,7 +37,6 @@ interface Twig_TokenParserInterface
      * @param Twig_Token $token A Twig_Token instance
      *
      * @return Twig_NodeInterface A Twig_NodeInterface instance
->>>>>>> web and vendor directory from composer install
      *
      * @throws Twig_Error_Syntax
      */
@@ -58,4 +55,3 @@ class_alias('Twig_TokenParserInterface', 'Twig\TokenParser\TokenParserInterface'
 class_exists('Twig_Parser');
 class_exists('Twig_Token');
 =======
->>>>>>> web and vendor directory from composer install

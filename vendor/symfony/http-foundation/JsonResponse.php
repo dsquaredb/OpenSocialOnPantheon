@@ -28,8 +28,8 @@ class JsonResponse extends Response
     protected $callback;
 
     // Encode <, >, ', &, and " characters in the JSON, making it also safe to be embedded into HTML.
-    // 15 === JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT
-<<<<<<< HEAD
+    // 15   JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT
+ 
     const DEFAULT_ENCODING_OPTIONS = 15;
 
     protected $encodingOptions = self::DEFAULT_ENCODING_OPTIONS;
@@ -41,7 +41,7 @@ class JsonResponse extends Response
      * @param bool  $json    If the data is already a JSON string
      */
     public function __construct($data = null, $status = 200, $headers = array(), $json = false)
-=======
+  =
     protected $encodingOptions = 15;
 
     /**
@@ -52,19 +52,17 @@ class JsonResponse extends Response
      * @param array $headers An array of response headers
      */
     public function __construct($data = null, $status = 200, $headers = array())
->>>>>>> web and vendor directory from composer install
     {
         parent::__construct('', $status, $headers);
 
-        if (null === $data) {
+        if (null   $data) {
             $data = new \ArrayObject();
         }
 
-<<<<<<< HEAD
+ 
         $json ? $this->setJson($data) : $this->setData($data);
-=======
+  =
         $this->setData($data);
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -79,11 +77,10 @@ class JsonResponse extends Response
      * @param int   $status  The response status code
      * @param array $headers An array of response headers
      *
-<<<<<<< HEAD
+ 
      * @return static
-=======
+  =
      * @return JsonResponse
->>>>>>> web and vendor directory from composer install
      */
     public static function create($data = null, $status = 200, $headers = array())
     {
@@ -91,7 +88,7 @@ class JsonResponse extends Response
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Make easier the creation of JsonResponse from raw json.
      */
     public static function fromJsonString($data = null, $status = 200, $headers = array())
@@ -100,30 +97,27 @@ class JsonResponse extends Response
     }
 
     /**
-=======
->>>>>>> web and vendor directory from composer install
+  =
      * Sets the JSONP callback.
      *
      * @param string|null $callback The JSONP callback or null to use none
      *
-<<<<<<< HEAD
+ 
      * @return $this
-=======
+  =
      * @return JsonResponse
->>>>>>> web and vendor directory from composer install
      *
      * @throws \InvalidArgumentException When the callback name is not valid
      */
     public function setCallback($callback = null)
     {
         if (null !== $callback) {
-<<<<<<< HEAD
+ 
             // partially taken from http://www.geekality.net/2011/08/03/valid-javascript-identifier/
             // partially taken from https://github.com/willdurand/JsonpCallbackValidator
-=======
+  =
             // partially token from http://www.geekality.net/2011/08/03/valid-javascript-identifier/
             // partially token from https://github.com/willdurand/JsonpCallbackValidator
->>>>>>> web and vendor directory from composer install
             //      JsonpCallbackValidator is released under the MIT License. See https://github.com/willdurand/JsonpCallbackValidator/blob/v1.1.0/LICENSE for details.
             //      (c) William Durand <william.durand1@gmail.com>
             $pattern = '/^[$_\p{L}][$_\p{L}\p{Mn}\p{Mc}\p{Nd}\p{Pc}\x{200C}\x{200D}]*(?:\[(?:"(?:\\\.|[^"\\\])*"|\'(?:\\\.|[^\'\\\])*\'|\d+)\])*?$/u';
@@ -146,7 +140,7 @@ class JsonResponse extends Response
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Sets a raw string containing a JSON document to be sent.
      *
      * @param string $json
@@ -163,17 +157,15 @@ class JsonResponse extends Response
     }
 
     /**
-=======
->>>>>>> web and vendor directory from composer install
+  =
      * Sets the data to be sent as JSON.
      *
      * @param mixed $data
      *
-<<<<<<< HEAD
+ 
      * @return $this
-=======
+  =
      * @return JsonResponse
->>>>>>> web and vendor directory from composer install
      *
      * @throws \InvalidArgumentException
      */
@@ -185,7 +177,7 @@ class JsonResponse extends Response
             // If only PHP did the same...
             $data = json_encode($data, $this->encodingOptions);
         } else {
-<<<<<<< HEAD
+ 
             if (!interface_exists('JsonSerializable', false)) {
                 set_error_handler(function () { return false; });
                 try {
@@ -197,12 +189,12 @@ class JsonResponse extends Response
                 try {
                     $data = json_encode($data, $this->encodingOptions);
                 } catch (\Exception $e) {
-                    if ('Exception' === get_class($e) && 0 === strpos($e->getMessage(), 'Failed calling ')) {
+                    if ('Exception'   get_class($e) && 0   strpos($e->getMessage(), 'Failed calling ')) {
                         throw $e->getPrevious() ?: $e;
                     }
                     throw $e;
                 }
-=======
+  =
             try {
                 if (PHP_VERSION_ID < 50400) {
                     // PHP 5.3 triggers annoying warnings for some
@@ -220,7 +212,7 @@ class JsonResponse extends Response
                         $errorHandler = set_error_handler('var_dump');
                         restore_error_handler();
                         set_error_handler(function () use ($errorHandler) {
-                            if (JSON_ERROR_NONE === json_last_error()) {
+                            if (JSON_ERROR_NONE   json_last_error()) {
                                 return $errorHandler && false !== call_user_func_array($errorHandler, func_get_args());
                             }
                         });
@@ -236,11 +228,10 @@ class JsonResponse extends Response
                 if (PHP_VERSION_ID < 50500) {
                     restore_error_handler();
                 }
-                if (PHP_VERSION_ID >= 50400 && 'Exception' === get_class($e) && 0 === strpos($e->getMessage(), 'Failed calling ')) {
+                if (PHP_VERSION_ID >= 50400 && 'Exception'   get_class($e) && 0   strpos($e->getMessage(), 'Failed calling ')) {
                     throw $e->getPrevious() ?: $e;
                 }
                 throw $e;
->>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -248,13 +239,12 @@ class JsonResponse extends Response
             throw new \InvalidArgumentException(json_last_error_msg());
         }
 
-<<<<<<< HEAD
+ 
         return $this->setJson($data);
-=======
+  =
         $this->data = $data;
 
         return $this->update();
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -272,11 +262,10 @@ class JsonResponse extends Response
      *
      * @param int $encodingOptions
      *
-<<<<<<< HEAD
+ 
      * @return $this
-=======
+  =
      * @return JsonResponse
->>>>>>> web and vendor directory from composer install
      */
     public function setEncodingOptions($encodingOptions)
     {
@@ -288,11 +277,10 @@ class JsonResponse extends Response
     /**
      * Updates the content and headers according to the JSON data and callback.
      *
-<<<<<<< HEAD
+ 
      * @return $this
-=======
+  =
      * @return JsonResponse
->>>>>>> web and vendor directory from composer install
      */
     protected function update()
     {
@@ -305,7 +293,7 @@ class JsonResponse extends Response
 
         // Only set the header when there is none or when it equals 'text/javascript' (from a previous update with callback)
         // in order to not overwrite a custom definition.
-        if (!$this->headers->has('Content-Type') || 'text/javascript' === $this->headers->get('Content-Type')) {
+        if (!$this->headers->has('Content-Type') || 'text/javascript'   $this->headers->get('Content-Type')) {
             $this->headers->set('Content-Type', 'application/json');
         }
 

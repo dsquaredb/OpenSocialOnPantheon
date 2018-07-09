@@ -19,11 +19,10 @@ namespace Symfony\Component\Serializer\Mapping;
 class AttributeMetadata implements AttributeMetadataInterface
 {
     /**
-<<<<<<< HEAD
+ 
 =======
      * @var string
      *
->>>>>>> web and vendor directory from composer install
      * @internal This property is public in order to reduce the size of the
      *           class' serialized representation. Do not access it. Use
      *           {@link getName()} instead.
@@ -31,11 +30,10 @@ class AttributeMetadata implements AttributeMetadataInterface
     public $name;
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * @var array
      *
->>>>>>> web and vendor directory from composer install
      * @internal This property is public in order to reduce the size of the
      *           class' serialized representation. Do not access it. Use
      *           {@link getGroups()} instead.
@@ -43,7 +41,7 @@ class AttributeMetadata implements AttributeMetadataInterface
     public $groups = array();
 
     /**
-<<<<<<< HEAD
+ 
      * @var int|null
      *
      * @internal This property is public in order to reduce the size of the
@@ -54,7 +52,6 @@ class AttributeMetadata implements AttributeMetadataInterface
 
     /**
 =======
->>>>>>> web and vendor directory from composer install
      * Constructs a metadata for the given attribute.
      *
      * @param string $name
@@ -77,11 +74,10 @@ class AttributeMetadata implements AttributeMetadataInterface
      */
     public function addGroup($group)
     {
-<<<<<<< HEAD
+ 
         if (!\in_array($group, $this->groups)) {
 =======
         if (!in_array($group, $this->groups)) {
->>>>>>> web and vendor directory from composer install
             $this->groups[] = $group;
         }
     }
@@ -97,7 +93,7 @@ class AttributeMetadata implements AttributeMetadataInterface
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
     public function setMaxDepth($maxDepth)
     {
         $this->maxDepth = $maxDepth;
@@ -115,20 +111,18 @@ class AttributeMetadata implements AttributeMetadataInterface
      * {@inheritdoc}
      */
 =======
->>>>>>> web and vendor directory from composer install
     public function merge(AttributeMetadataInterface $attributeMetadata)
     {
         foreach ($attributeMetadata->getGroups() as $group) {
             $this->addGroup($group);
         }
-<<<<<<< HEAD
+ 
 
         // Overwrite only if not defined
         if (null === $this->maxDepth) {
             $this->maxDepth = $attributeMetadata->getMaxDepth();
         }
 =======
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -138,10 +132,9 @@ class AttributeMetadata implements AttributeMetadataInterface
      */
     public function __sleep()
     {
-<<<<<<< HEAD
+ 
         return array('name', 'groups', 'maxDepth');
 =======
         return array('name', 'groups');
->>>>>>> web and vendor directory from composer install
     }
 }

@@ -249,7 +249,7 @@ class ContextDefinition implements ContextDefinitionInterface {
     return $definition;
   }
 
-<<<<<<< HEAD
+ 
 =======
   /**
    * {@inheritdoc}
@@ -359,5 +359,4 @@ class ContextDefinition implements ContextDefinitionInterface {
     return $constraints;
   }
 
->>>>>>> Update Open Social to 8.x-2.1
 }

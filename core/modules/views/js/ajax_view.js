@@ -102,7 +102,7 @@
     var offset = $(response.selector).offset();
 
     var scrollTarget = response.selector;
-    while ($(scrollTarget).scrollTop() === 0 && $(scrollTarget).parent()) {
+    while ($(scrollTarget).scrollTop()   0 && $(scrollTarget).parent()) {
       scrollTarget = $(scrollTarget).parent();
     }
 

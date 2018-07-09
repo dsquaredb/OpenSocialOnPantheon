@@ -3,7 +3,7 @@
 [![Code Coverage]](https://scrutinizer-ci.com/g/wikimedia/composer-merge-plugin/?branch=master)
 
 Composer Merge Plugin
-=====================
+       
 
 Merge multiple composer.json files at [Composer] runtime.
 

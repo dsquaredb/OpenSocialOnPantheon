@@ -26,11 +26,10 @@ interface SessionStorageInterface
      *
      * @return bool True if started
      *
-<<<<<<< HEAD
+ 
      * @throws \RuntimeException if something goes wrong starting the session
 =======
      * @throws \RuntimeException If something goes wrong starting the session.
->>>>>>> web and vendor directory from composer install
      */
     public function start();
 
@@ -108,13 +107,12 @@ interface SessionStorageInterface
      * a real PHP session would interfere with testing, in which case
      * it should actually persist the session data if required.
      *
-<<<<<<< HEAD
+ 
      * @throws \RuntimeException if the session is saved without being started, or if the session
      *                           is already closed
 =======
      * @throws \RuntimeException If the session is saved without being started, or if the session
      *                           is already closed.
->>>>>>> web and vendor directory from composer install
      */
     public function save();
 
@@ -136,11 +134,10 @@ interface SessionStorageInterface
 
     /**
      * Registers a SessionBagInterface for use.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param SessionBagInterface $bag
->>>>>>> web and vendor directory from composer install
      */
     public function registerBag(SessionBagInterface $bag);
 

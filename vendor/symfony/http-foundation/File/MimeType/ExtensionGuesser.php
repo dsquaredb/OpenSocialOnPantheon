@@ -42,11 +42,10 @@ class ExtensionGuesser implements ExtensionGuesserInterface
     /**
      * Returns the singleton instance.
      *
-<<<<<<< HEAD
+ 
      * @return self
 =======
      * @return ExtensionGuesser
->>>>>>> web and vendor directory from composer install
      */
     public static function getInstance()
     {
@@ -69,11 +68,10 @@ class ExtensionGuesser implements ExtensionGuesserInterface
      * Registers a new extension guesser.
      *
      * When guessing, this guesser is preferred over previously registered ones.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param ExtensionGuesserInterface $guesser
->>>>>>> web and vendor directory from composer install
      */
     public function register(ExtensionGuesserInterface $guesser)
     {

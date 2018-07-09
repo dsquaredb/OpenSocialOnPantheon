@@ -53,7 +53,7 @@ class FeaturesConfigInstaller extends ConfigInstaller {
   public function __construct(ConfigInstallerInterface $config_installer, FeaturesManagerInterface $features_manager, ConfigFactoryInterface $config_factory, StorageInterface $active_storage, TypedConfigManagerInterface $typed_config, ConfigManagerInterface $config_manager, EventDispatcherInterface $event_dispatcher) {
     $this->configInstaller = $config_installer;
     $this->featuresManager = $features_manager;
-<<<<<<< HEAD
+ 
     parent::__construct($config_factory, $active_storage, $typed_config, $config_manager, $event_dispatcher);
 =======
 
@@ -66,7 +66,6 @@ class FeaturesConfigInstaller extends ConfigInstaller {
     else {
       parent::__construct($config_factory, $active_storage, $typed_config, $config_manager, $event_dispatcher);
     }
->>>>>>> Update Open Social to 8.x-2.1
   }
 
   /**

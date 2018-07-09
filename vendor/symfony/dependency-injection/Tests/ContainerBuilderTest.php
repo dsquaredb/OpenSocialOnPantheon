@@ -472,7 +472,7 @@ class ContainerBuilderTest extends \PHPUnit_Framework_TestCase
         $config->setDefinition('foo', new Definition('BazClass'));
         $container->merge($config);
         $this->assertEquals('BazClass', $container->getDefinition('foo')->getClass(), '->merge() overrides already defined services');
-<<<<<<< HEAD
+ 
 =======
 
         $container = new ContainerBuilder();
@@ -714,7 +714,6 @@ class ContainerBuilderTest extends \PHPUnit_Framework_TestCase
         } finally {
             putenv('DUMMY_ENV_VAR');
         }
->>>>>>> Update Open Social to 8.x-2.1
     }
 
     /**
@@ -1095,7 +1094,7 @@ class ProjectContainer extends ContainerBuilder
 class A
 {
 }
-<<<<<<< HEAD
+ 
 
 class B
 {
@@ -1103,10 +1102,9 @@ class B
     {
     }
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> Update Open Social to 8.x-2.1
 =======
 
 class TestingEnvPlaceholderParameterBag extends EnvPlaceholderParameterBag
@@ -1116,6 +1114,4 @@ class TestingEnvPlaceholderParameterBag extends EnvPlaceholderParameterBag
         return 'env(array)' === strtolower($name) ? array(123) : parent::get($name);
     }
 }
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social

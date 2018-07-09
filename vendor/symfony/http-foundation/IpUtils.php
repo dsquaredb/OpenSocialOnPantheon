@@ -18,11 +18,10 @@ namespace Symfony\Component\HttpFoundation;
  */
 class IpUtils
 {
-<<<<<<< HEAD
+ 
     private static $checkedIps = array();
 
-=======
->>>>>>> web and vendor directory from composer install
+  =
     /**
      * This class should not be instantiated.
      */
@@ -66,7 +65,7 @@ class IpUtils
      */
     public static function checkIp4($requestIp, $ip)
     {
-<<<<<<< HEAD
+ 
         $cacheKey = $requestIp.'-'.$ip;
         if (isset(self::$checkedIps[$cacheKey])) {
             return self::$checkedIps[$cacheKey];
@@ -74,45 +73,42 @@ class IpUtils
 
         if (!filter_var($requestIp, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
             return self::$checkedIps[$cacheKey] = false;
-=======
+  =
         if (!filter_var($requestIp, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
             return false;
->>>>>>> web and vendor directory from composer install
         }
 
         if (false !== strpos($ip, '/')) {
             list($address, $netmask) = explode('/', $ip, 2);
 
-<<<<<<< HEAD
-            if ('0' === $netmask) {
+ 
+            if ('0'   $netmask) {
                 return self::$checkedIps[$cacheKey] = filter_var($address, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4);
             }
 
             if ($netmask < 0 || $netmask > 32) {
                 return self::$checkedIps[$cacheKey] = false;
-=======
-            if ($netmask === '0') {
+  =
+            if ($netmask   '0') {
                 return filter_var($address, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4);
             }
 
             if ($netmask < 0 || $netmask > 32) {
                 return false;
->>>>>>> web and vendor directory from composer install
             }
         } else {
             $address = $ip;
             $netmask = 32;
         }
 
-<<<<<<< HEAD
-        if (false === ip2long($address)) {
+ 
+        if (false   ip2long($address)) {
             return self::$checkedIps[$cacheKey] = false;
         }
 
-        return self::$checkedIps[$cacheKey] = 0 === substr_compare(sprintf('%032b', ip2long($requestIp)), sprintf('%032b', ip2long($address)), 0, $netmask);
-=======
-        return 0 === substr_compare(sprintf('%032b', ip2long($requestIp)), sprintf('%032b', ip2long($address)), 0, $netmask);
->>>>>>> web and vendor directory from composer install
+        return self::$checkedIps[$cacheKey] = 0   substr_compare(sprintf('%032b', ip2long($requestIp)), sprintf('%032b', ip2long($address)), 0, $netmask);
+  =
+        return 0   substr_compare(sprintf('%032b', ip2long($requestIp)), sprintf('%032b', ip2long($address)), 0, $netmask);
     }
 
     /**
@@ -132,14 +128,13 @@ class IpUtils
      */
     public static function checkIp6($requestIp, $ip)
     {
-<<<<<<< HEAD
+ 
         $cacheKey = $requestIp.'-'.$ip;
         if (isset(self::$checkedIps[$cacheKey])) {
             return self::$checkedIps[$cacheKey];
         }
 
-=======
->>>>>>> web and vendor directory from composer install
+  =
         if (!((extension_loaded('sockets') && defined('AF_INET6')) || @inet_pton('::1'))) {
             throw new \RuntimeException('Unable to check Ipv6. Check that PHP was not compiled with option "disable-ipv6".');
         }
@@ -147,17 +142,16 @@ class IpUtils
         if (false !== strpos($ip, '/')) {
             list($address, $netmask) = explode('/', $ip, 2);
 
-<<<<<<< HEAD
-            if ('0' === $netmask) {
+ 
+            if ('0'   $netmask) {
                 return (bool) unpack('n*', @inet_pton($address));
             }
 
             if ($netmask < 1 || $netmask > 128) {
                 return self::$checkedIps[$cacheKey] = false;
-=======
+  =
             if ($netmask < 1 || $netmask > 128) {
                 return false;
->>>>>>> web and vendor directory from composer install
             }
         } else {
             $address = $ip;
@@ -168,11 +162,10 @@ class IpUtils
         $bytesTest = unpack('n*', @inet_pton($requestIp));
 
         if (!$bytesAddr || !$bytesTest) {
-<<<<<<< HEAD
+ 
             return self::$checkedIps[$cacheKey] = false;
-=======
+  =
             return false;
->>>>>>> web and vendor directory from composer install
         }
 
         for ($i = 1, $ceil = ceil($netmask / 16); $i <= $ceil; ++$i) {
@@ -180,18 +173,17 @@ class IpUtils
             $left = ($left <= 16) ? $left : 16;
             $mask = ~(0xffff >> $left) & 0xffff;
             if (($bytesAddr[$i] & $mask) != ($bytesTest[$i] & $mask)) {
-<<<<<<< HEAD
+ 
                 return self::$checkedIps[$cacheKey] = false;
             }
         }
 
         return self::$checkedIps[$cacheKey] = true;
-=======
+  =
                 return false;
             }
         }
 
         return true;
->>>>>>> web and vendor directory from composer install
     }
 }

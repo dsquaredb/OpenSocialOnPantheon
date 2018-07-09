@@ -1,12 +1,12 @@
 1.2.1 / 2016-03-05
-==================
+      
 
 Testsuite:
 
 * Added testing on PHP 7
 
 1.2.0 / 2015-09-21
-==================
+      
 
 New features:
 
@@ -17,7 +17,7 @@ Misc:
 * Updated the repository structure to PSR-4
 
 1.1.0 / 2014-10-09
-==================
+      
 
 The driver now relies on BrowserKitDriver 1.2.x, so all changes of this driver are relevant.
 The changes below only describe the changes related to GoutteDriver specifically.

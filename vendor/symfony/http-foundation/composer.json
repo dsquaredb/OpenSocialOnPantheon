@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-<<<<<<< HEAD
+ 
         "php": "^5.5.9|>=7.0.8",
         "symfony/polyfill-mbstring": "~1.1",
         "symfony/polyfill-php70": "~1.6"
@@ -42,7 +42,7 @@
     "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
-<<<<<<< HEAD
+ 
             "dev-master": "3.4-dev"
 =======
             "dev-master": "2.8-dev"

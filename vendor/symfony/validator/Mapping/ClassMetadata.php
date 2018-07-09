@@ -17,10 +17,9 @@ use Symfony\Component\Validator\Constraints\Traverse;
 use Symfony\Component\Validator\Constraints\Valid;
 use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
 use Symfony\Component\Validator\Exception\GroupDefinitionException;
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Validator\ValidationVisitorInterface;
->>>>>>> web and vendor directory from composer install
 
 /**
  * Default implementation of {@link ClassMetadataInterface}.
@@ -30,11 +29,10 @@ use Symfony\Component\Validator\ValidationVisitorInterface;
  * @author Bernhard Schussek <bschussek@gmail.com>
  * @author Fabien Potencier <fabien@symfony.com>
  */
-<<<<<<< HEAD
+ 
 class ClassMetadata extends GenericMetadata implements ClassMetadataInterface
 =======
 class ClassMetadata extends ElementMetadata implements ClassMetadataInterface
->>>>>>> web and vendor directory from composer install
 {
     /**
      * @var string
@@ -55,11 +53,10 @@ class ClassMetadata extends ElementMetadata implements ClassMetadataInterface
     public $defaultGroup;
 
     /**
-<<<<<<< HEAD
+ 
      * @var MemberMetadata[][]
 =======
      * @var MemberMetadata[]
->>>>>>> web and vendor directory from composer install
      *
      * @internal This property is public in order to reduce the size of the
      *           class' serialized representation. Do not access it. Use
@@ -139,7 +136,7 @@ class ClassMetadata extends ElementMetadata implements ClassMetadataInterface
 
     /**
      * {@inheritdoc}
-<<<<<<< HEAD
+ 
 =======
      *
      * @deprecated since version 2.5, to be removed in 3.0.
@@ -182,7 +179,6 @@ class ClassMetadata extends ElementMetadata implements ClassMetadataInterface
 
     /**
      * {@inheritdoc}
->>>>>>> web and vendor directory from composer install
      */
     public function __sleep()
     {
@@ -275,11 +271,10 @@ class ClassMetadata extends ElementMetadata implements ClassMetadataInterface
      * @param string     $property   The name of the property
      * @param Constraint $constraint The constraint
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return ClassMetadata This object
->>>>>>> web and vendor directory from composer install
      */
     public function addPropertyConstraint($property, Constraint $constraint)
     {
@@ -300,11 +295,10 @@ class ClassMetadata extends ElementMetadata implements ClassMetadataInterface
      * @param string       $property
      * @param Constraint[] $constraints
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return ClassMetadata
->>>>>>> web and vendor directory from composer install
      */
     public function addPropertyConstraints($property, array $constraints)
     {
@@ -324,11 +318,10 @@ class ClassMetadata extends ElementMetadata implements ClassMetadataInterface
      * @param string     $property   The name of the property
      * @param Constraint $constraint The constraint
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return ClassMetadata This object
->>>>>>> web and vendor directory from composer install
      */
     public function addGetterConstraint($property, Constraint $constraint)
     {
@@ -346,7 +339,7 @@ class ClassMetadata extends ElementMetadata implements ClassMetadataInterface
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Adds a constraint to the getter of the given property.
      *
      * @param string     $property   The name of the property
@@ -380,7 +373,6 @@ class ClassMetadata extends ElementMetadata implements ClassMetadataInterface
      * @param Constraint[] $constraints
      *
      * @return ClassMetadata
->>>>>>> web and vendor directory from composer install
      */
     public function addGetterConstraints($property, array $constraints)
     {
@@ -392,7 +384,7 @@ class ClassMetadata extends ElementMetadata implements ClassMetadataInterface
     }
 
     /**
-<<<<<<< HEAD
+ 
      * @param string       $property
      * @param string       $method
      * @param Constraint[] $constraints
@@ -424,7 +416,6 @@ class ClassMetadata extends ElementMetadata implements ClassMetadataInterface
      */
     public function mergeConstraints(ClassMetadata $source)
     {
->>>>>>> web and vendor directory from composer install
         foreach ($source->getConstraints() as $constraint) {
             $this->addConstraint(clone $constraint);
         }
@@ -434,14 +425,13 @@ class ClassMetadata extends ElementMetadata implements ClassMetadataInterface
                 $member = clone $member;
 
                 foreach ($member->getConstraints() as $constraint) {
-<<<<<<< HEAD
+ 
                     if (in_array($constraint::DEFAULT_GROUP, $constraint->groups, true)) {
                         $member->constraintsByGroup[$this->getDefaultGroup()][] = $constraint;
                     }
 
 =======
                     $member->constraintsByGroup[$this->getDefaultGroup()][] = $constraint;
->>>>>>> web and vendor directory from composer install
                     $constraint->addImplicitGroupName($this->getDefaultGroup());
                 }
 
@@ -461,7 +451,7 @@ class ClassMetadata extends ElementMetadata implements ClassMetadataInterface
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Adds a member metadata.
      *
@@ -509,7 +499,6 @@ class ClassMetadata extends ElementMetadata implements ClassMetadataInterface
     }
 
     /**
->>>>>>> web and vendor directory from composer install
      * {@inheritdoc}
      */
     public function hasPropertyMetadata($property)
@@ -542,11 +531,10 @@ class ClassMetadata extends ElementMetadata implements ClassMetadataInterface
      *
      * @param array $groupSequence An array of group names
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return ClassMetadata
->>>>>>> web and vendor directory from composer install
      *
      * @throws GroupDefinitionException
      */
@@ -641,14 +629,13 @@ class ClassMetadata extends ElementMetadata implements ClassMetadataInterface
         return CascadingStrategy::NONE;
     }
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * Adds a property metadata.
      *
      * @param PropertyMetadataInterface $metadata
      */
->>>>>>> web and vendor directory from composer install
     private function addPropertyMetadata(PropertyMetadataInterface $metadata)
     {
         $property = $metadata->getPropertyName();

@@ -25,7 +25,7 @@ use Symfony\Component\Console\Exception\RuntimeException;
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
-<<<<<<< HEAD
+ 
 abstract class Input implements InputInterface, StreamableInputInterface
 {
     protected $definition;
@@ -37,19 +37,17 @@ abstract class Input implements InputInterface
      * @var InputDefinition
      */
     protected $definition;
->>>>>>> web and vendor directory from composer install
     protected $options = array();
     protected $arguments = array();
     protected $interactive = true;
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * Constructor.
      *
      * @param InputDefinition|null $definition A InputDefinition instance
      */
->>>>>>> web and vendor directory from composer install
     public function __construct(InputDefinition $definition = null)
     {
         if (null === $definition) {
@@ -167,11 +165,10 @@ abstract class Input implements InputInterface
             throw new InvalidArgumentException(sprintf('The "%s" option does not exist.', $name));
         }
 
-<<<<<<< HEAD
+ 
         return array_key_exists($name, $this->options) ? $this->options[$name] : $this->definition->getOption($name)->getDefault();
 =======
         return isset($this->options[$name]) ? $this->options[$name] : $this->definition->getOption($name)->getDefault();
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -205,7 +202,7 @@ abstract class Input implements InputInterface
     {
         return preg_match('{^[\w-]+$}', $token) ? $token : escapeshellarg($token);
     }
-<<<<<<< HEAD
+ 
 
     /**
      * {@inheritdoc}
@@ -223,5 +220,4 @@ abstract class Input implements InputInterface
         return $this->stream;
     }
 =======
->>>>>>> web and vendor directory from composer install
 }

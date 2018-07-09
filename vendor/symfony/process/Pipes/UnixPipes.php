@@ -22,7 +22,7 @@ use Symfony\Component\Process\Process;
  */
 class UnixPipes extends AbstractPipes
 {
-<<<<<<< HEAD
+ 
     private $ttyMode;
     private $ptyMode;
     private $haveReadSupport;
@@ -45,7 +45,6 @@ class UnixPipes extends AbstractPipes
         $this->ttyMode = (bool) $ttyMode;
         $this->ptyMode = (bool) $ptyMode;
         $this->disableOutput = (bool) $disableOutput;
->>>>>>> web and vendor directory from composer install
 
         parent::__construct($input);
     }
@@ -60,11 +59,10 @@ class UnixPipes extends AbstractPipes
      */
     public function getDescriptors()
     {
-<<<<<<< HEAD
+ 
         if (!$this->haveReadSupport) {
 =======
         if ($this->disableOutput) {
->>>>>>> web and vendor directory from composer install
             $nullstream = fopen('/dev/null', 'c');
 
             return array(
@@ -118,29 +116,25 @@ class UnixPipes extends AbstractPipes
         unset($r[0]);
 
         // let's have a look if something changed in streams
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
         set_error_handler(array($this, 'handleError'));
         if (($r || $w) && false === stream_select($r, $w, $e, 0, $blocking ? Process::TIMEOUT_PRECISION * 1E6 : 0)) {
             restore_error_handler();
 =======
         if (($r || $w) && false === $n = @stream_select($r, $w, $e, 0, $blocking ? Process::TIMEOUT_PRECISION * 1E6 : 0)) {
->>>>>>> web and vendor directory from composer install
 =======
         set_error_handler(array($this, 'handleError'));
         if (($r || $w) && false === stream_select($r, $w, $e, 0, $blocking ? Process::TIMEOUT_PRECISION * 1E6 : 0)) {
             restore_error_handler();
->>>>>>> Update Open Social to 8.x-2.1
 =======
         if (($r || $w) && false === @stream_select($r, $w, $e, 0, $blocking ? Process::TIMEOUT_PRECISION * 1E6 : 0)) {
->>>>>>> revert Open Social update
 =======
         set_error_handler(array($this, 'handleError'));
         if (($r || $w) && false === stream_select($r, $w, $e, 0, $blocking ? Process::TIMEOUT_PRECISION * 1E6 : 0)) {
             restore_error_handler();
->>>>>>> updating open social
             // if a system call has been interrupted, forget about it, let's try again
             // otherwise, an error occurred, let's reset pipes
             if (!$this->hasSystemCallBeenInterrupted()) {
@@ -149,21 +143,17 @@ class UnixPipes extends AbstractPipes
 
             return $read;
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
         restore_error_handler();
 =======
->>>>>>> web and vendor directory from composer install
 =======
         restore_error_handler();
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
         restore_error_handler();
->>>>>>> updating open social
 
         foreach ($r as $pipe) {
             // prior PHP 5.4 the array passed to stream_select is modified and
@@ -191,7 +181,7 @@ class UnixPipes extends AbstractPipes
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
     public function haveReadSupport()
     {
         return $this->haveReadSupport;
@@ -220,6 +210,5 @@ class UnixPipes extends AbstractPipes
     public static function create(Process $process, $input)
     {
         return new static($process->isTty(), $process->isPty(), $input, $process->isOutputDisabled());
->>>>>>> web and vendor directory from composer install
     }
 }

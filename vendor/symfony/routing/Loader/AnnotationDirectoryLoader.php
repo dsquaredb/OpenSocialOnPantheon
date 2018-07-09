@@ -34,7 +34,7 @@ class AnnotationDirectoryLoader extends AnnotationFileLoader
      */
     public function load($path, $type = null)
     {
-<<<<<<< HEAD
+ 
         if (!is_dir($dir = $this->locator->locate($path))) {
             return parent::supports($path, $type) ? parent::load($path, $type) : new RouteCollection();
         }
@@ -56,7 +56,6 @@ class AnnotationDirectoryLoader extends AnnotationFileLoader
         $collection = new RouteCollection();
         $collection->addResource(new DirectoryResource($dir, '/\.php$/'));
         $files = iterator_to_array(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($dir), \RecursiveIteratorIterator::LEAVES_ONLY));
->>>>>>> web and vendor directory from composer install
         usort($files, function (\SplFileInfo $a, \SplFileInfo $b) {
             return (string) $a > (string) $b ? 1 : -1;
         });
@@ -84,7 +83,7 @@ class AnnotationDirectoryLoader extends AnnotationFileLoader
      */
     public function supports($resource, $type = null)
     {
-<<<<<<< HEAD
+ 
         if ('annotation' === $type) {
             return true;
         }
@@ -92,12 +91,11 @@ class AnnotationDirectoryLoader extends AnnotationFileLoader
         if ($type || !is_string($resource)) {
 =======
         if (!is_string($resource)) {
->>>>>>> web and vendor directory from composer install
             return false;
         }
 
         try {
-<<<<<<< HEAD
+ 
             return is_dir($this->locator->locate($resource));
         } catch (\Exception $e) {
             return false;
@@ -109,6 +107,5 @@ class AnnotationDirectoryLoader extends AnnotationFileLoader
         }
 
         return is_dir($path) && (!$type || 'annotation' === $type);
->>>>>>> web and vendor directory from composer install
     }
 }

@@ -14,10 +14,9 @@ namespace Symfony\Component\Validator\Validator;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Constraints\GroupSequence;
 use Symfony\Component\Validator\ConstraintValidatorFactoryInterface;
-<<<<<<< HEAD
+ 
 use Symfony\Component\Validator\Context\ExecutionContext;
 =======
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
 use Symfony\Component\Validator\Exception\NoSuchMetadataException;
@@ -30,11 +29,10 @@ use Symfony\Component\Validator\Mapping\GenericMetadata;
 use Symfony\Component\Validator\Mapping\MetadataInterface;
 use Symfony\Component\Validator\Mapping\PropertyMetadataInterface;
 use Symfony\Component\Validator\Mapping\TraversalStrategy;
-<<<<<<< HEAD
+ 
 use Symfony\Component\Validator\Mapping\Factory\MetadataFactoryInterface;
 =======
 use Symfony\Component\Validator\MetadataFactoryInterface;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\ObjectInitializerInterface;
 use Symfony\Component\Validator\Util\PropertyPath;
 
@@ -45,7 +43,7 @@ use Symfony\Component\Validator\Util\PropertyPath;
  */
 class RecursiveContextualValidator implements ContextualValidatorInterface
 {
-<<<<<<< HEAD
+ 
     private $context;
     private $defaultPropertyPath;
     private $defaultGroups;
@@ -80,7 +78,6 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
     /**
      * @var ObjectInitializerInterface[]
      */
->>>>>>> web and vendor directory from composer install
     private $objectInitializers;
 
     /**
@@ -126,14 +123,13 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
         $previousMetadata = $this->context->getMetadata();
         $previousPath = $this->context->getPropertyPath();
         $previousGroup = $this->context->getGroup();
-<<<<<<< HEAD
+ 
         $previousConstraint = null;
 
         if ($this->context instanceof ExecutionContext || method_exists($this->context, 'getConstraint')) {
             $previousConstraint = $this->context->getConstraint();
         }
 =======
->>>>>>> web and vendor directory from composer install
 
         // If explicit constraints are passed, validate the value against
         // those constraints
@@ -149,11 +145,10 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
 
             $this->validateGenericNode(
                 $value,
-<<<<<<< HEAD
+ 
                 $previousObject,
 =======
                 null,
->>>>>>> web and vendor directory from composer install
                 is_object($value) ? spl_object_hash($value) : null,
                 $metadata,
                 $this->defaultPropertyPath,
@@ -166,13 +161,12 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
             $this->context->setNode($previousValue, $previousObject, $previousMetadata, $previousPath);
             $this->context->setGroup($previousGroup);
 
-<<<<<<< HEAD
+ 
             if (null !== $previousConstraint) {
                 $this->context->setConstraint($previousConstraint);
             }
 
 =======
->>>>>>> web and vendor directory from composer install
             return $this;
         }
 
@@ -200,10 +194,9 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
                 $value,
                 $this->defaultPropertyPath,
                 $groups,
-<<<<<<< HEAD
+ 
 =======
                 true,
->>>>>>> web and vendor directory from composer install
                 $this->context
             );
 
@@ -228,11 +221,10 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
         $classMetadata = $this->metadataFactory->getMetadataFor($object);
 
         if (!$classMetadata instanceof ClassMetadataInterface) {
-<<<<<<< HEAD
+ 
 =======
             // Cannot be UnsupportedMetadataException because of BC with
             // Symfony < 2.5
->>>>>>> web and vendor directory from composer install
             throw new ValidatorException(sprintf(
                 'The metadata factory should return instances of '.
                 '"\Symfony\Component\Validator\Mapping\ClassMetadataInterface", '.
@@ -258,11 +250,10 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
             $this->validateGenericNode(
                 $propertyValue,
                 $object,
-<<<<<<< HEAD
+ 
                 $cacheKey.':'.get_class($object).':'.$propertyName,
 =======
                 $cacheKey.':'.$propertyName,
->>>>>>> web and vendor directory from composer install
                 $propertyMetadata,
                 $propertyPath,
                 $groups,
@@ -286,11 +277,10 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
         $classMetadata = $this->metadataFactory->getMetadataFor($objectOrClass);
 
         if (!$classMetadata instanceof ClassMetadataInterface) {
-<<<<<<< HEAD
+ 
 =======
             // Cannot be UnsupportedMetadataException because of BC with
             // Symfony < 2.5
->>>>>>> web and vendor directory from composer install
             throw new ValidatorException(sprintf(
                 'The metadata factory should return instances of '.
                 '"\Symfony\Component\Validator\Mapping\ClassMetadataInterface", '.
@@ -304,19 +294,17 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
 
         if (is_object($objectOrClass)) {
             $object = $objectOrClass;
-<<<<<<< HEAD
+ 
             $class = get_class($object);
 =======
->>>>>>> web and vendor directory from composer install
             $cacheKey = spl_object_hash($objectOrClass);
             $propertyPath = PropertyPath::append($this->defaultPropertyPath, $propertyName);
         } else {
             // $objectOrClass contains a class name
             $object = null;
-<<<<<<< HEAD
+ 
             $class = $objectOrClass;
 =======
->>>>>>> web and vendor directory from composer install
             $cacheKey = null;
             $propertyPath = $this->defaultPropertyPath;
         }
@@ -331,11 +319,10 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
             $this->validateGenericNode(
                 $value,
                 $object,
-<<<<<<< HEAD
+ 
                 $cacheKey.':'.$class.':'.$propertyName,
 =======
                 $cacheKey.':'.$propertyName,
->>>>>>> web and vendor directory from composer install
                 $propertyMetadata,
                 $propertyPath,
                 $groups,
@@ -374,10 +361,9 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
 
         return array($groups);
     }
-<<<<<<< HEAD
+ 
 
 =======
->>>>>>> web and vendor directory from composer install
     /**
      * Validates an object against the constraints defined for its class.
      *
@@ -440,10 +426,9 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
                 $object,
                 $propertyPath,
                 $groups,
-<<<<<<< HEAD
+ 
 =======
                 $traversalStrategy & TraversalStrategy::STOP_RECURSION,
->>>>>>> web and vendor directory from composer install
                 $context
             );
         }
@@ -457,7 +442,7 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
      * objects are iterated as well. Nested arrays are always iterated,
      * regardless of the value of $recursive.
      *
-<<<<<<< HEAD
+ 
      * @param iterable                  $collection   The collection
      * @param string                    $propertyPath The current property path
      * @param string[]                  $groups       The validated groups
@@ -471,12 +456,11 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
      *                                                 backwards compatibility
      *                                                 with Symfony < 2.5.
      * @param ExecutionContextInterface $context       The current execution context
->>>>>>> web and vendor directory from composer install
      *
      * @see ClassNode
      * @see CollectionNode
      */
-<<<<<<< HEAD
+ 
     private function validateEachObjectIn($collection, $propertyPath, array $groups, ExecutionContextInterface $context)
     {
 =======
@@ -488,23 +472,20 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
             $traversalStrategy = TraversalStrategy::IMPLICIT;
         }
 
->>>>>>> web and vendor directory from composer install
         foreach ($collection as $key => $value) {
             if (is_array($value)) {
                 // Arrays are always cascaded, independent of the specified
                 // traversal strategy
-<<<<<<< HEAD
+ 
 =======
                 // (BC with Symfony < 2.5)
->>>>>>> web and vendor directory from composer install
                 $this->validateEachObjectIn(
                     $value,
                     $propertyPath.'['.$key.']',
                     $groups,
-<<<<<<< HEAD
+ 
 =======
                     $stopRecursion,
->>>>>>> web and vendor directory from composer install
                     $context
                 );
 
@@ -512,20 +493,18 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
             }
 
             // Scalar and null values in the collection are ignored
-<<<<<<< HEAD
+ 
 =======
             // (BC with Symfony < 2.5)
->>>>>>> web and vendor directory from composer install
             if (is_object($value)) {
                 $this->validateObject(
                     $value,
                     $propertyPath.'['.$key.']',
                     $groups,
-<<<<<<< HEAD
+ 
                     TraversalStrategy::IMPLICIT,
 =======
                     $traversalStrategy,
->>>>>>> web and vendor directory from composer install
                     $context
                 );
             }
@@ -689,11 +668,10 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
                 $this->validateGenericNode(
                     $propertyValue,
                     $object,
-<<<<<<< HEAD
+ 
                     $cacheKey.':'.get_class($object).':'.$propertyName,
 =======
                     $cacheKey.':'.$propertyName,
->>>>>>> web and vendor directory from composer install
                     $propertyMetadata,
                     PropertyPath::append($propertyPath, $propertyName),
                     $groups,
@@ -707,13 +685,12 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
         // If no specific traversal strategy was requested when this method
         // was called, use the traversal strategy of the class' metadata
         if ($traversalStrategy & TraversalStrategy::IMPLICIT) {
-<<<<<<< HEAD
+ 
             $traversalStrategy = $metadata->getTraversalStrategy();
 =======
             // Keep the STOP_RECURSION flag, if it was set
             $traversalStrategy = $metadata->getTraversalStrategy()
                 | ($traversalStrategy & TraversalStrategy::STOP_RECURSION);
->>>>>>> web and vendor directory from composer install
         }
 
         // Traverse only if IMPLICIT or TRAVERSE
@@ -728,11 +705,10 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
 
         // If TRAVERSE, fail if we have no Traversable
         if (!$object instanceof \Traversable) {
-<<<<<<< HEAD
+ 
 =======
             // Must throw a ConstraintDefinitionException for backwards
             // compatibility reasons with Symfony < 2.5
->>>>>>> web and vendor directory from composer install
             throw new ConstraintDefinitionException(sprintf(
                 'Traversal was enabled for "%s", but this class '.
                 'does not implement "\Traversable".',
@@ -744,10 +720,9 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
             $object,
             $propertyPath,
             $groups,
-<<<<<<< HEAD
+ 
 =======
             $traversalStrategy & TraversalStrategy::STOP_RECURSION,
->>>>>>> web and vendor directory from composer install
             $context
         );
     }
@@ -833,41 +808,37 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
         // If no specific traversal strategy was requested when this method
         // was called, use the traversal strategy of the node's metadata
         if ($traversalStrategy & TraversalStrategy::IMPLICIT) {
-<<<<<<< HEAD
+ 
             $traversalStrategy = $metadata->getTraversalStrategy();
 =======
             // Keep the STOP_RECURSION flag, if it was set
             $traversalStrategy = $metadata->getTraversalStrategy()
                 | ($traversalStrategy & TraversalStrategy::STOP_RECURSION);
->>>>>>> web and vendor directory from composer install
         }
 
         // The $cascadedGroups property is set, if the "Default" group is
         // overridden by a group sequence
         // See validateClassNode()
-<<<<<<< HEAD
+ 
         $cascadedGroups = null !== $cascadedGroups && count($cascadedGroups) > 0 ? $cascadedGroups : $groups;
 =======
         $cascadedGroups = count($cascadedGroups) > 0
             ? $cascadedGroups
             : $groups;
->>>>>>> web and vendor directory from composer install
 
         if (is_array($value)) {
             // Arrays are always traversed, independent of the specified
             // traversal strategy
-<<<<<<< HEAD
+ 
 =======
             // (BC with Symfony < 2.5)
->>>>>>> web and vendor directory from composer install
             $this->validateEachObjectIn(
                 $value,
                 $propertyPath,
                 $cascadedGroups,
-<<<<<<< HEAD
+ 
 =======
                 $traversalStrategy & TraversalStrategy::STOP_RECURSION,
->>>>>>> web and vendor directory from composer install
                 $context
             );
 
@@ -876,10 +847,9 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
 
         // If the value is a scalar, pass it anyway, because we want
         // a NoSuchMetadataException to be thrown in that case
-<<<<<<< HEAD
+ 
 =======
         // (BC with Symfony < 2.5)
->>>>>>> web and vendor directory from composer install
         $this->validateObject(
             $value,
             $propertyPath,
@@ -925,11 +895,10 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
         $cascadedGroups = $cascadedGroup ? array($cascadedGroup) : null;
 
         foreach ($groupSequence->groups as $groupInSequence) {
-<<<<<<< HEAD
+ 
             $groups = (array) $groupInSequence;
 =======
             $groups = array($groupInSequence);
->>>>>>> web and vendor directory from composer install
 
             if ($metadata instanceof ClassMetadataInterface) {
                 $this->validateClassNode(

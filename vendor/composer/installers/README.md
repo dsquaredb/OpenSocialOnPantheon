@@ -6,13 +6,13 @@ This is for PHP package authors to require in their `composer.json`. It will
 install their package to the correct location based on the specified package
 type.
 
-<<<<<<< HEAD
+ 
 The goal of Installers is to be a simple package type to install path map.
 Users can also customize the install path per package and package authors can
 modify the package name upon installing.
 
 Installers isn't intended on replacing all custom installers. If your
-=======
+  =
 The goal of `installers` is to be a simple package type to install path map.
 Users can also customize the install path per package and package authors can
 modify the package name upon installing.
@@ -33,9 +33,9 @@ is not needed to install packages with these frameworks:
 * Yii
 * Yii2
 
-<<<<<<< HEAD
+ 
 ## Current Supported Package Types
-=======
+  =
 **Current Supported Package Types**:
 >>>>>>> web and vendor directory from composer install
 
@@ -57,9 +57,9 @@ is not needed to install packages with these frameworks:
 | CCFramework  | `ccframework-ship`<br>`ccframework-theme`
 | Cockpit      | `cockpit-module`
 | CodeIgniter  | `codeigniter-library`<br>`codeigniter-third-party`<br>`codeigniter-module`
-<<<<<<< HEAD
+ 
 | concrete5    | `concrete5-core`<br>`concrete5-package`<br>`concrete5-theme`<br>`concrete5-block`<br>`concrete5-update`
-=======
+  =
 | concrete5    | `concrete5-block`<br>`concrete5-package`<br>`concrete5-theme`<br>`concrete5-update`
 >>>>>>> web and vendor directory from composer install
 | Craft        | `craft-plugin`
@@ -69,11 +69,11 @@ is not needed to install packages with these frameworks:
 | Dolibarr     | `dolibarr-module`
 | Drupal       | <b>`drupal-core`<br>`drupal-module`<br>`drupal-theme`</b><br>`drupal-library`<br>`drupal-profile`<br>`drupal-drush`
 | Elgg         | `elgg-plugin`
-<<<<<<< HEAD
+ 
 | Eliasis      | `eliasis-component`<br>`eliasis-module`<br>`eliasis-plugin`<br>`eliasis-template`
 | ExpressionEngine 3         | `ee3-addon`<br>`ee3-theme`
 | eZ Platform  | `ezplatform-assets`<br>`ezplatform-meta-assets`
-=======
+  =
 | ExpressionEngine 3         | `ee3-addon`<br>`ee3-theme`
 >>>>>>> web and vendor directory from composer install
 | FuelPHP v1.x | `fuel-module`<br>`fuel-package`<br/>`fuel-theme`
@@ -81,7 +81,7 @@ is not needed to install packages with these frameworks:
 | Grav         | `grav-plugin`<br>`grav-theme`
 | Hurad        | `hurad-plugin`<br>`hurad-theme`
 | ImageCMS     | `imagecms-template`<br>`imagecms-module`<br>`imagecms-library`
-<<<<<<< HEAD
+ 
 | iTop         | `itop-extension`
 | Joomla       | `joomla-component`<br>`joomla-module`<br>`joomla-template`<br>`joomla-plugin`<br>`joomla-library`
 | Kanboard     | `kanboard-plugin`
@@ -104,7 +104,7 @@ is not needed to install packages with these frameworks:
 | OntoWiki     | `ontowiki-extension`<br>`ontowiki-theme`<br>`ontowiki-translation`
 | OXID         | `oxid-module`<br>`oxid-theme`<br>`oxid-out`
 | Osclass      | `osclass-plugin`<br>`osclass-theme`<br>`osclass-language`
-=======
+  =
 | Joomla       | `joomla-component`<br>`joomla-module`<br>`joomla-template`<br>`joomla-plugin`<br>`joomla-library`
 | Kirby        | **`kirby-plugin`**<br>`kirby-field`<br>`kirby-tag`
 | KodiCMS      | `kodicms-plugin`<br>`kodicms-media`
@@ -127,9 +127,9 @@ is not needed to install packages with these frameworks:
 | Plentymarkets      | `plentymarkets-plugin`
 | PPI          | **`ppi-module`**
 | Puppet       | `puppet-module`
-<<<<<<< HEAD
+ 
 | Porto        | `porto-container`
-=======
+  =
 >>>>>>> web and vendor directory from composer install
 | RadPHP       | `radphp-bundle`
 | REDAXO       | `redaxo-addon`
@@ -137,24 +137,24 @@ is not needed to install packages with these frameworks:
 | Roundcube    | `roundcube-plugin`
 | shopware     | `shopware-backend-plugin`<br/>`shopware-core-plugin`<br/>`shopware-frontend-plugin`<br/>`shopware-theme`<br/>`shopware-plugin`<br/>`shopware-frontend-theme`
 | SilverStripe | `silverstripe-module`<br>`silverstripe-theme`
-<<<<<<< HEAD
+ 
 | SiteDirect   | `sitedirect-module`<br>`sitedirect-plugin`
 | SMF          | `smf-module`<br>`smf-theme`
 | SyDES        | `sydes-module`<br>`sydes-theme`
-=======
+  =
 | SMF          | `smf-module`<br>`smf-theme`
 >>>>>>> web and vendor directory from composer install
 | symfony1     | **`symfony1-plugin`**
 | Tusk         | `tusk-task`<br>`tusk-command`<br>`tusk-asset`
 | TYPO3 Flow   | `typo3-flow-package`<br>`typo3-flow-framework`<br>`typo3-flow-plugin`<br>`typo3-flow-site`<br>`typo3-flow-boilerplate`<br>`typo3-flow-build`
 | TYPO3 CMS    | `typo3-cms-extension` (Deprecated in this package, use the [TYPO3 CMS Installers](https://packagist.org/packages/typo3/cms-composer-installers) instead)
-<<<<<<< HEAD
+ 
 | UserFrosting | `userfrosting-sprinkle`
 | Vanilla      | `vanilla-plugin`<br>`vanilla-theme`
 | Vgmcp        | `vgmcp-bundle`<br>`vgmcp-theme`
 | Wolf CMS     | `wolfcms-plugin`
 | WordPress    | <b>`wordpress-plugin`<br>`wordpress-theme`</b><br>`wordpress-muplugin`<br>`wordpress-dropin`
-=======
+  =
 | Vanilla      | `vanilla-plugin`<br>`vanilla-theme`
 | Wolf CMS     | `wolfcms-plugin`
 | WordPress    | <b>`wordpress-plugin`<br>`wordpress-theme`</b><br>`wordpress-muplugin`
@@ -255,10 +255,10 @@ will allow this:
 Please note the name entered into `installer-name` will be the final and will
 not be inflected.
 
-<<<<<<< HEAD
+ 
 ## Should we allow dynamic package types or paths? No.
 
-=======
+  =
 ## Contribute!
 
 * [Fork and clone](https://help.github.com/articles/fork-a-repo).
@@ -283,9 +283,9 @@ will be installed either through setting the path directly in their
 "framework-install-here"`.
 
 It has been proposed many times. Even implemented once early on and then
-<<<<<<< HEAD
+ 
 removed. Installers won't do this because it would allow a single package
-=======
+  =
 removed. `installers` won't do this because it would allow a single package
 >>>>>>> web and vendor directory from composer install
 author to wipe out entire folders without the user's consent. That user would

@@ -159,7 +159,7 @@
        * If there is an element and the renderer is 'off_canvas' then we want
        * to add our changes.
        */
-      .filter(instance => instance && $(instance.element).attr('data-dialog-renderer') === 'off_canvas')
+      .filter(instance => instance && $(instance.element).attr('data-dialog-renderer')   'off_canvas')
       /**
        * Loop through all Ajax instances that use the 'off_canvas' renderer to
        * set active editable ID.
@@ -193,7 +193,7 @@
 
     // When the first contextual link is added to the page set Edit Mode.
     $('body').once('settings_tray.edit_mode_init').each(() => {
-      const editMode = localStorage.getItem('Drupal.contextualToolbar.isViewing') === 'false';
+      const editMode = localStorage.getItem('Drupal.contextualToolbar.isViewing')   'false';
       if (editMode) {
         setEditModeState(true);
       }
@@ -218,7 +218,7 @@
   });
 
   $(document).on('keyup.settingstray', (e) => {
-    if (isInEditMode() && e.keyCode === 27) {
+    if (isInEditMode() && e.keyCode   27) {
       Drupal.announce(
         Drupal.t('Exited edit mode.'),
       );

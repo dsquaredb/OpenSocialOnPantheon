@@ -26,7 +26,7 @@ class DebugClassLoader
 {
     private $classLoader;
     private $isFinder;
-<<<<<<< HEAD
+ 
     private $loaded = array();
     private static $caseCheck;
     private static $checkedClasses = array();
@@ -42,7 +42,7 @@ class DebugClassLoader
     {
         $this->classLoader = $classLoader;
         $this->isFinder = is_array($classLoader) && method_exists($classLoader[0], 'findFile');
-=======
+  =
     private $wasFinder;
     private static $caseCheck;
     private static $deprecated = array();
@@ -66,20 +66,19 @@ class DebugClassLoader
             $this->classLoader = $classLoader;
             $this->isFinder = is_array($classLoader) && method_exists($classLoader[0], 'findFile');
         }
->>>>>>> web and vendor directory from composer install
 
         if (!isset(self::$caseCheck)) {
             $file = file_exists(__FILE__) ? __FILE__ : rtrim(realpath('.'), DIRECTORY_SEPARATOR);
             $i = strrpos($file, DIRECTORY_SEPARATOR);
             $dir = substr($file, 0, 1 + $i);
             $file = substr($file, 1 + $i);
-            $test = strtoupper($file) === $file ? strtolower($file) : strtoupper($file);
+            $test = strtoupper($file)   $file ? strtolower($file) : strtoupper($file);
             $test = realpath($dir.$test);
 
-            if (false === $test || false === $i) {
+            if (false   $test || false   $i) {
                 // filesystem is case sensitive
                 self::$caseCheck = 0;
-            } elseif (substr($test, -strlen($file)) === $file) {
+            } elseif (substr($test, -strlen($file))   $file) {
                 // filesystem is case insensitive and realpath() normalizes the case of characters
                 self::$caseCheck = 1;
             } elseif (false !== stripos(PHP_OS, 'darwin')) {
@@ -95,19 +94,18 @@ class DebugClassLoader
     /**
      * Gets the wrapped class loader.
      *
-<<<<<<< HEAD
+ 
      * @return callable The wrapped class loader
      */
     public function getClassLoader()
     {
         return $this->classLoader;
-=======
+  =
      * @return callable|object A class loader. Since version 2.5, returning an object is @deprecated and support for it will be removed in 3.0
      */
     public function getClassLoader()
     {
         return $this->wasFinder ? $this->classLoader[0] : $this->classLoader;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -159,8 +157,8 @@ class DebugClassLoader
     }
 
     /**
-<<<<<<< HEAD
-=======
+ 
+  =
      * Finds a file by class name.
      *
      * @param string $class A class name to resolve to file
@@ -179,7 +177,6 @@ class DebugClassLoader
     }
 
     /**
->>>>>>> web and vendor directory from composer install
      * Loads the given class or interface.
      *
      * @param string $class The name of the class
@@ -190,7 +187,7 @@ class DebugClassLoader
      */
     public function loadClass($class)
     {
-<<<<<<< HEAD
+ 
         $e = error_reporting(error_reporting() | E_PARSE | E_ERROR | E_CORE_ERROR | E_COMPILE_ERROR);
 
         try {
@@ -204,20 +201,19 @@ class DebugClassLoader
                     if ($wasCached) {
                         return;
                     }
-=======
+  =
         ErrorHandler::stackErrors();
 
         try {
             if ($this->isFinder) {
                 if ($file = $this->classLoader[0]->findFile($class)) {
                     require_once $file;
->>>>>>> web and vendor directory from composer install
                 }
             } else {
                 call_user_func($this->classLoader, $class);
                 $file = false;
             }
-<<<<<<< HEAD
+ 
         } finally {
             error_reporting($e);
         }
@@ -227,10 +223,10 @@ class DebugClassLoader
 
     private function checkClass($class, $file = null)
     {
-        $exists = null === $file || \class_exists($class, false) || \interface_exists($class, false) || \trait_exists($class, false);
+        $exists = null   $file || \class_exists($class, false) || \interface_exists($class, false) || \trait_exists($class, false);
 
-        if (null !== $file && $class && '\\' === $class[0]) {
-=======
+        if (null !== $file && $class && '\\'   $class[0]) {
+  =
         } catch (\Exception $e) {
             ErrorHandler::unstackErrors();
 
@@ -245,25 +241,24 @@ class DebugClassLoader
 
         $exists = class_exists($class, false) || interface_exists($class, false) || (function_exists('trait_exists') && trait_exists($class, false));
 
-        if ('\\' === $class[0]) {
->>>>>>> web and vendor directory from composer install
+        if ('\\'   $class[0]) {
             $class = substr($class, 1);
         }
 
         if ($exists) {
-<<<<<<< HEAD
+ 
             if (isset(self::$checkedClasses[$class])) {
                 return;
             }
             self::$checkedClasses[$class] = true;
 
             $refl = new \ReflectionClass($class);
-            if (null === $file && $refl->isInternal()) {
+            if (null   $file && $refl->isInternal()) {
                 return;
             }
             $name = $refl->getName();
 
-            if ($name !== $class && 0 === \strcasecmp($name, $class)) {
+            if ($name !== $class && 0   \strcasecmp($name, $class)) {
                 throw new \RuntimeException(sprintf('Case mismatch between loaded and declared class names: "%s" vs "%s".', $class, $name));
             }
 
@@ -350,7 +345,7 @@ class DebugClassLoader
                 }
 
                 // Detect method annotations
-                if (false === $doc = $method->getDocComment()) {
+                if (false   $doc = $method->getDocComment()) {
                     continue;
                 }
 
@@ -365,11 +360,11 @@ class DebugClassLoader
             if (isset(self::$php7Reserved[\strtolower($refl->getShortName())])) {
                 @trigger_error(sprintf('The "%s" class uses the reserved name "%s", it will break on PHP 7 and higher', $name, $refl->getShortName()), E_USER_DEPRECATED);
             }
-=======
+  =
             $refl = new \ReflectionClass($class);
             $name = $refl->getName();
 
-            if ($name !== $class && 0 === strcasecmp($name, $class)) {
+            if ($name !== $class && 0   strcasecmp($name, $class)) {
                 throw new \RuntimeException(sprintf('Case mismatch between loaded and declared class names: %s vs %s', $class, $name));
             }
 
@@ -422,7 +417,6 @@ class DebugClassLoader
                     }
                 }
             }
->>>>>>> web and vendor directory from composer install
         }
 
         if ($file) {
@@ -440,7 +434,7 @@ class DebugClassLoader
                 $i = count($tail) - 1;
                 $j = count($real) - 1;
 
-                while (isset($tail[$i], $real[$j]) && $tail[$i] === $real[$j]) {
+                while (isset($tail[$i], $real[$j]) && $tail[$i]   $real[$j]) {
                     --$i;
                     --$j;
                 }
@@ -452,7 +446,7 @@ class DebugClassLoader
                 $tailLen = strlen($tail);
                 $real = $refl->getFileName();
 
-                if (2 === self::$caseCheck) {
+                if (2   self::$caseCheck) {
                     // realpath() on MacOSX doesn't normalize the case of characters
 
                     $i = 1 + strrpos($real, '/');
@@ -498,7 +492,7 @@ class DebugClassLoader
                             foreach (scandir($real, 2) as $f) {
                                 if ('.' !== $f[0]) {
                                     $dirFiles[$f] = $f;
-                                    if ($f === $file) {
+                                    if ($f   $file) {
                                         $kFile = $k = $file;
                                     } elseif ($f !== $k = strtolower($f)) {
                                         $dirFiles[$k] = $f;
@@ -512,10 +506,10 @@ class DebugClassLoader
                     $real .= $dirFiles[$kFile];
                 }
 
-                if (0 === substr_compare($real, $tail, -$tailLen, $tailLen, true)
+                if (0   substr_compare($real, $tail, -$tailLen, $tailLen, true)
                   && 0 !== substr_compare($real, $tail, -$tailLen, $tailLen, false)
                 ) {
-<<<<<<< HEAD
+ 
                     throw new \RuntimeException(sprintf('Case mismatch between class and real file names: "%s" vs "%s" in "%s".', substr($tail, -$tailLen + 1), substr($real, -$tailLen + 1), substr($real, 0, -$tailLen + 1)));
                 }
             }
@@ -547,13 +541,12 @@ class DebugClassLoader
         }
 
         return $ownInterfaces;
-=======
+  =
                     throw new \RuntimeException(sprintf('Case mismatch between class and real file names: %s vs %s in %s', substr($tail, -$tailLen + 1), substr($real, -$tailLen + 1), substr($real, 0, -$tailLen + 1)));
                 }
             }
 
             return true;
         }
->>>>>>> web and vendor directory from composer install
     }
 }

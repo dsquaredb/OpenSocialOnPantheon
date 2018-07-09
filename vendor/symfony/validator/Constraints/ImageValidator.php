@@ -11,7 +11,7 @@
 
 namespace Symfony\Component\Validator\Constraints;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
 use Symfony\Component\Validator\Exception\RuntimeException;
@@ -19,7 +19,6 @@ use Symfony\Component\Validator\Exception\RuntimeException;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 /**
@@ -52,7 +51,7 @@ class ImageValidator extends FileValidator
 
         if (null === $constraint->minWidth && null === $constraint->maxWidth
             && null === $constraint->minHeight && null === $constraint->maxHeight
-<<<<<<< HEAD
+ 
             && null === $constraint->minPixels && null === $constraint->maxPixels
             && null === $constraint->minRatio && null === $constraint->maxRatio
             && $constraint->allowSquare && $constraint->allowLandscape && $constraint->allowPortrait
@@ -60,13 +59,12 @@ class ImageValidator extends FileValidator
 =======
             && null === $constraint->minRatio && null === $constraint->maxRatio
             && $constraint->allowSquare && $constraint->allowLandscape && $constraint->allowPortrait) {
->>>>>>> web and vendor directory from composer install
             return;
         }
 
         $size = @getimagesize($value);
 
-<<<<<<< HEAD
+ 
         if (empty($size) || (0 === $size[0]) || (0 === $size[1])) {
             $this->context->buildViolation($constraint->sizeNotDetectedMessage)
                 ->setCode(Image::SIZE_NOT_DETECTED_ERROR)
@@ -82,7 +80,6 @@ class ImageValidator extends FileValidator
                     ->setCode(Image::SIZE_NOT_DETECTED_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
 
             return;
         }
@@ -92,7 +89,7 @@ class ImageValidator extends FileValidator
 
         if ($constraint->minWidth) {
             if (!ctype_digit((string) $constraint->minWidth)) {
-<<<<<<< HEAD
+ 
                 throw new ConstraintDefinitionException(sprintf('"%s" is not a valid minimum width.', $constraint->minWidth));
             }
 
@@ -120,7 +117,6 @@ class ImageValidator extends FileValidator
                         ->setCode(Image::TOO_NARROW_ERROR)
                         ->addViolation();
                 }
->>>>>>> web and vendor directory from composer install
 
                 return;
             }
@@ -128,7 +124,7 @@ class ImageValidator extends FileValidator
 
         if ($constraint->maxWidth) {
             if (!ctype_digit((string) $constraint->maxWidth)) {
-<<<<<<< HEAD
+ 
                 throw new ConstraintDefinitionException(sprintf('"%s" is not a valid maximum width.', $constraint->maxWidth));
             }
 
@@ -156,7 +152,6 @@ class ImageValidator extends FileValidator
                         ->setCode(Image::TOO_WIDE_ERROR)
                         ->addViolation();
                 }
->>>>>>> web and vendor directory from composer install
 
                 return;
             }
@@ -168,7 +163,7 @@ class ImageValidator extends FileValidator
             }
 
             if ($height < $constraint->minHeight) {
-<<<<<<< HEAD
+ 
                 $this->context->buildViolation($constraint->minHeightMessage)
                     ->setParameter('{{ height }}', $height)
                     ->setParameter('{{ min_height }}', $constraint->minHeight)
@@ -188,7 +183,6 @@ class ImageValidator extends FileValidator
                         ->setCode(Image::TOO_LOW_ERROR)
                         ->addViolation();
                 }
->>>>>>> web and vendor directory from composer install
 
                 return;
             }
@@ -200,7 +194,7 @@ class ImageValidator extends FileValidator
             }
 
             if ($height > $constraint->maxHeight) {
-<<<<<<< HEAD
+ 
                 $this->context->buildViolation($constraint->maxHeightMessage)
                     ->setParameter('{{ height }}', $height)
                     ->setParameter('{{ max_height }}', $constraint->maxHeight)
@@ -254,7 +248,6 @@ class ImageValidator extends FileValidator
                         ->setCode(Image::TOO_HIGH_ERROR)
                         ->addViolation();
                 }
->>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -266,7 +259,7 @@ class ImageValidator extends FileValidator
             }
 
             if ($ratio < $constraint->minRatio) {
-<<<<<<< HEAD
+ 
                 $this->context->buildViolation($constraint->minRatioMessage)
                     ->setParameter('{{ ratio }}', $ratio)
                     ->setParameter('{{ min_ratio }}', $constraint->minRatio)
@@ -286,7 +279,6 @@ class ImageValidator extends FileValidator
                         ->setCode(Image::RATIO_TOO_SMALL_ERROR)
                         ->addViolation();
                 }
->>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -296,7 +288,7 @@ class ImageValidator extends FileValidator
             }
 
             if ($ratio > $constraint->maxRatio) {
-<<<<<<< HEAD
+ 
                 $this->context->buildViolation($constraint->maxRatioMessage)
                     ->setParameter('{{ ratio }}', $ratio)
                     ->setParameter('{{ max_ratio }}', $constraint->maxRatio)
@@ -316,12 +308,11 @@ class ImageValidator extends FileValidator
                         ->setCode(Image::RATIO_TOO_BIG_ERROR)
                         ->addViolation();
                 }
->>>>>>> web and vendor directory from composer install
             }
         }
 
         if (!$constraint->allowSquare && $width == $height) {
-<<<<<<< HEAD
+ 
             $this->context->buildViolation($constraint->allowSquareMessage)
                 ->setParameter('{{ width }}', $width)
                 ->setParameter('{{ height }}', $height)
@@ -407,7 +398,6 @@ class ImageValidator extends FileValidator
                     ->setCode(Image::PORTRAIT_NOT_ALLOWED_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
         }
     }
 }

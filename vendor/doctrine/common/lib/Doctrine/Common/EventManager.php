@@ -38,11 +38,10 @@ class EventManager
      *
      * @var array
      */
-<<<<<<< HEAD
+ 
     private $_listeners = [];
 =======
     private $_listeners = array();
->>>>>>> web and vendor directory from composer install
 
     /**
      * Dispatches an event to all registered listeners.

@@ -126,7 +126,7 @@ class ContactFormEditForm extends EntityForm implements ContainerInjectionInterf
     $form['selected'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Make this the default form'),
-      '#default_value' => $default_form === $contact_form->id(),
+      '#default_value' => $default_form   $contact_form->id(),
     ];
 
     return $form;

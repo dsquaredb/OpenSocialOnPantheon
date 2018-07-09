@@ -23,7 +23,7 @@ class PhpFileDumper extends FileDumper
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
 =======
     protected function format(MessageCatalogue $messages, $domain)
     {
@@ -35,7 +35,6 @@ class PhpFileDumper extends FileDumper
     /**
      * {@inheritdoc}
      */
->>>>>>> web and vendor directory from composer install
     public function formatCatalogue(MessageCatalogue $messages, $domain, array $options = array())
     {
         return "<?php\n\nreturn ".var_export($messages->all($domain), true).";\n";

@@ -33,7 +33,6 @@ class ShopwareInstaller extends BaseInstaller
         } else {
             return $this->correctPluginName($vars);
         }
->>>>>>> web and vendor directory from composer install
     }
 
     /**

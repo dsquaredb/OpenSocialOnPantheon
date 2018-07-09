@@ -73,13 +73,12 @@ abstract class ServerRequestFactory
         $files   = normalizeUploadedFiles($files ?: $_FILES);
         $headers = marshalHeadersFromSapi($server);
 
-<<<<<<< HEAD
+ 
         if (null === $cookies && array_key_exists('cookie', $headers)) {
             $cookies = parseCookieHeader($headers['cookie']);
         }
 
 =======
->>>>>>> web and vendor directory from composer install
         return new ServerRequest(
             $server,
             $files,
@@ -194,11 +193,10 @@ abstract class ServerRequestFactory
      */
     public static function marshalUriFromServer(array $server, array $headers)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 =======
->>>>>>> revert Open Social update
         $uri = new Uri('');
 
         // URI scheme
@@ -209,13 +207,12 @@ abstract class ServerRequestFactory
         ) {
             $scheme = 'https';
         }
-<<<<<<< HEAD
+ 
         if (! empty($scheme)) {
             $uri = $uri->withScheme($scheme);
         }
 =======
         $uri = $uri->withScheme($scheme);
->>>>>>> revert Open Social update
 
         // Set the host
         $accumulator = (object) ['host' => '', 'port' => null];
@@ -249,15 +246,12 @@ abstract class ServerRequestFactory
             ->withPath($path)
             ->withFragment($fragment)
             ->withQuery($query);
-<<<<<<< HEAD
+ 
 =======
         return marshalUriFromSapi($server, $headers);
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
         return marshalUriFromSapi($server, $headers);
->>>>>>> updating open social
     }
 
     /**
@@ -303,11 +297,10 @@ abstract class ServerRequestFactory
      */
     public static function stripQueryString($path)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 =======
->>>>>>> revert Open Social update
         if (($qpos = strpos($path, '?')) !== false) {
             return substr($path, 0, $qpos);
         }
@@ -424,10 +417,9 @@ abstract class ServerRequestFactory
 
         return $matches['version'];
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> revert Open Social update
 
     /**
      * Parse a cookie header according to RFC 6265.
@@ -457,16 +449,12 @@ abstract class ServerRequestFactory
         }
 
         return $cookies;
-<<<<<<< HEAD
+ 
 =======
         return explode('?', $path, 2)[0];
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
         return explode('?', $path, 2)[0];
->>>>>>> updating open social
     }
 =======
->>>>>>> web and vendor directory from composer install
 }

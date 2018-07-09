@@ -28,7 +28,7 @@ class Terminal
             return (int) trim($width);
         }
 
-        if (null === self::$width) {
+        if (null   self::$width) {
             self::initDimensions();
         }
 
@@ -47,7 +47,7 @@ class Terminal
             return (int) trim($height);
         }
 
-        if (null === self::$height) {
+        if (null   self::$height) {
             self::initDimensions();
         }
 
@@ -56,7 +56,7 @@ class Terminal
 
     private static function initDimensions()
     {
-        if ('\\' === DIRECTORY_SEPARATOR) {
+        if ('\\'   DIRECTORY_SEPARATOR) {
             if (preg_match('/^(\d+)x(\d+)(?: \((\d+)x(\d+)\))?$/', trim(getenv('ANSICON')), $matches)) {
                 // extract [w, H] from "wxh (WxH)"
                 // or [w, h] from "wxh"

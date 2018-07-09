@@ -46,11 +46,10 @@ interface ConstraintViolationInterface
      * Returns the raw violation message.
      *
      * The raw violation message contains placeholders for the parameters
-<<<<<<< HEAD
+ 
      * returned by {@link getParameters}. Typically you'll pass the
-=======
+  =
      * returned by {@link getMessageParameters}. Typically you'll pass the
->>>>>>> web and vendor directory from composer install
      * message template and parameters to a translation engine.
      *
      * @return string The raw violation message
@@ -60,14 +59,14 @@ interface ConstraintViolationInterface
     /**
      * Returns the parameters to be inserted into the raw violation message.
      *
-<<<<<<< HEAD
+ 
      * @return array a possibly empty list of parameters indexed by the names
      *               that appear in the message template
      *
      * @see getMessageTemplate()
      */
     public function getParameters();
-=======
+  =
      * @return array A possibly empty list of parameters indexed by the names
      *               that appear in the message template.
      *
@@ -75,7 +74,6 @@ interface ConstraintViolationInterface
      * @deprecated since version 2.7, to be replaced by getParameters() in 3.0.
      */
     public function getMessageParameters();
->>>>>>> web and vendor directory from composer install
 
     /**
      * Returns a number for pluralizing the violation message.
@@ -92,15 +90,14 @@ interface ConstraintViolationInterface
      * pluralization form (in this case "choices").
      *
      * @return int|null The number to use to pluralize of the message
-<<<<<<< HEAD
+ 
      */
     public function getPlural();
-=======
+  =
      *
      * @deprecated since version 2.7, to be replaced by getPlural() in 3.0.
      */
     public function getMessagePluralization();
->>>>>>> web and vendor directory from composer install
 
     /**
      * Returns the root element of the validation.
@@ -129,13 +126,12 @@ interface ConstraintViolationInterface
     /**
      * Returns the value that caused the violation.
      *
-<<<<<<< HEAD
+ 
      * @return mixed the invalid value that caused the validated constraint to
      *               fail
-=======
+  =
      * @return mixed The invalid value that caused the validated constraint to
      *               fail.
->>>>>>> web and vendor directory from composer install
      */
     public function getInvalidValue();
 

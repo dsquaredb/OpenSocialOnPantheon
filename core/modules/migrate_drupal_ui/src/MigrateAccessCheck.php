@@ -29,7 +29,7 @@ class MigrateAccessCheck {
   public function checkAccess(AccountInterface $account) {
     // The access result is uncacheable because it is just limiting access to
     // the migrate UI which is not worth caching.
-    return AccessResultAllowed::allowedIf((int) $account->id() === 1)->mergeCacheMaxAge(0);
+    return AccessResultAllowed::allowedIf((int) $account->id()   1)->mergeCacheMaxAge(0);
   }
 
 }

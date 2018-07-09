@@ -11,10 +11,9 @@
 
 namespace Symfony\Component\HttpKernel\EventListener;
 
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 use Symfony\Component\HttpKernel\Event\PostResponseEvent;
@@ -36,16 +35,15 @@ class ProfilerListener implements EventSubscriberInterface
     protected $onlyException;
     protected $onlyMasterRequests;
     protected $exception;
-<<<<<<< HEAD
+ 
 =======
     protected $requests = array();
->>>>>>> web and vendor directory from composer install
     protected $profiles;
     protected $requestStack;
     protected $parents;
 
     /**
-<<<<<<< HEAD
+ 
      * @param Profiler                     $profiler           A Profiler instance
      * @param RequestStack                 $requestStack       A RequestStack instance
      * @param RequestMatcherInterface|null $matcher            A RequestMatcher instance
@@ -84,7 +82,6 @@ class ProfilerListener implements EventSubscriberInterface
             throw new \InvalidArgumentException('Matcher must implement RequestMatcherInterface.');
         }
 
->>>>>>> web and vendor directory from composer install
         $this->profiler = $profiler;
         $this->matcher = $matcher;
         $this->onlyException = (bool) $onlyException;
@@ -96,11 +93,10 @@ class ProfilerListener implements EventSubscriberInterface
 
     /**
      * Handles the onKernelException event.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param GetResponseForExceptionEvent $event A GetResponseForExceptionEvent instance
->>>>>>> web and vendor directory from composer install
      */
     public function onKernelException(GetResponseForExceptionEvent $event)
     {
@@ -112,7 +108,7 @@ class ProfilerListener implements EventSubscriberInterface
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Handles the onKernelResponse event.
 =======
      * @deprecated since version 2.4, to be removed in 3.0.
@@ -128,7 +124,6 @@ class ProfilerListener implements EventSubscriberInterface
      * Handles the onKernelResponse event.
      *
      * @param FilterResponseEvent $event A FilterResponseEvent instance
->>>>>>> web and vendor directory from composer install
      */
     public function onKernelResponse(FilterResponseEvent $event)
     {
@@ -155,7 +150,7 @@ class ProfilerListener implements EventSubscriberInterface
 
         $this->profiles[$request] = $profile;
 
-<<<<<<< HEAD
+ 
         $this->parents[$request] = $this->requestStack->getParentRequest();
 =======
         if (null !== $this->requestStack) {
@@ -166,19 +161,17 @@ class ProfilerListener implements EventSubscriberInterface
 
             $this->parents[$request] = end($this->requests);
         }
->>>>>>> web and vendor directory from composer install
     }
 
     public function onKernelTerminate(PostResponseEvent $event)
     {
         // attach children to parents
         foreach ($this->profiles as $request) {
-<<<<<<< HEAD
+ 
             if (null !== $parentRequest = $this->parents[$request]) {
 =======
             // isset call should be removed when requestStack is required
             if (isset($this->parents[$request]) && null !== $parentRequest = $this->parents[$request]) {
->>>>>>> web and vendor directory from composer install
                 if (isset($this->profiles[$parentRequest])) {
                     $this->profiles[$parentRequest]->addChild($this->profiles[$request]);
                 }
@@ -192,21 +185,19 @@ class ProfilerListener implements EventSubscriberInterface
 
         $this->profiles = new \SplObjectStorage();
         $this->parents = new \SplObjectStorage();
-<<<<<<< HEAD
+ 
 =======
         $this->requests = array();
->>>>>>> web and vendor directory from composer install
     }
 
     public static function getSubscribedEvents()
     {
         return array(
-<<<<<<< HEAD
+ 
 =======
             // kernel.request must be registered as early as possible to not break
             // when an exception is thrown in any other kernel.request listener
             KernelEvents::REQUEST => array('onKernelRequest', 1024),
->>>>>>> web and vendor directory from composer install
             KernelEvents::RESPONSE => array('onKernelResponse', -100),
             KernelEvents::EXCEPTION => 'onKernelException',
             KernelEvents::TERMINATE => array('onKernelTerminate', -1024),

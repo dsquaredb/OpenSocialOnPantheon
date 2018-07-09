@@ -17,20 +17,19 @@ use Symfony\Component\Serializer\Exception\LogicException;
 use Symfony\Component\Serializer\Exception\RuntimeException;
 use Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactoryInterface;
 use Symfony\Component\Serializer\Mapping\AttributeMetadataInterface;
-<<<<<<< HEAD
+ 
 use Symfony\Component\Serializer\NameConverter\NameConverterInterface;
 use Symfony\Component\Serializer\SerializerAwareInterface;
 =======
 use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter;
 use Symfony\Component\Serializer\NameConverter\NameConverterInterface;
->>>>>>> web and vendor directory from composer install
 
 /**
  * Normalizer implementation.
  *
  * @author Kévin Dunglas <dunglas@gmail.com>
  */
-<<<<<<< HEAD
+ 
 abstract class AbstractNormalizer extends SerializerAwareNormalizer implements NormalizerInterface, DenormalizerInterface, SerializerAwareInterface
 {
     use ObjectToPopulateTrait;
@@ -46,7 +45,6 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
     const CIRCULAR_REFERENCE_LIMIT = 'circular_reference_limit';
     const OBJECT_TO_POPULATE = 'object_to_populate';
     const GROUPS = 'groups';
->>>>>>> web and vendor directory from composer install
 
     /**
      * @var int
@@ -85,12 +83,11 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
 
     /**
      * Sets the {@link ClassMetadataFactoryInterface} to use.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param ClassMetadataFactoryInterface|null $classMetadataFactory
      * @param NameConverterInterface|null        $nameConverter
->>>>>>> web and vendor directory from composer install
      */
     public function __construct(ClassMetadataFactoryInterface $classMetadataFactory = null, NameConverterInterface $nameConverter = null)
     {
@@ -101,11 +98,10 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
     /**
      * Set circular reference limit.
      *
-<<<<<<< HEAD
+ 
      * @param int $circularReferenceLimit Limit of iterations for the same object
 =======
      * @param int $circularReferenceLimit limit of iterations for the same object
->>>>>>> web and vendor directory from composer install
      *
      * @return self
      */
@@ -122,7 +118,7 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
      * @param callable $circularReferenceHandler
      *
      * @return self
-<<<<<<< HEAD
+ 
      */
     public function setCircularReferenceHandler(callable $circularReferenceHandler)
     {
@@ -136,7 +132,6 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
             throw new InvalidArgumentException('The given circular reference handler is not callable.');
         }
 
->>>>>>> web and vendor directory from composer install
         $this->circularReferenceHandler = $circularReferenceHandler;
 
         return $this;
@@ -145,11 +140,10 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
     /**
      * Set normalization callbacks.
      *
-<<<<<<< HEAD
+ 
      * @param callable[] $callbacks Help normalize the result
 =======
      * @param callable[] $callbacks help normalize the result
->>>>>>> web and vendor directory from composer install
      *
      * @return self
      *
@@ -158,11 +152,10 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
     public function setCallbacks(array $callbacks)
     {
         foreach ($callbacks as $attribute => $callback) {
-<<<<<<< HEAD
+ 
             if (!\is_callable($callback)) {
 =======
             if (!is_callable($callback)) {
->>>>>>> web and vendor directory from composer install
                 throw new InvalidArgumentException(sprintf(
                     'The given callback for attribute "%s" is not callable.',
                     $attribute
@@ -177,11 +170,10 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
     /**
      * Set ignored attributes for normalization and denormalization.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param array $ignoredAttributes
      *
->>>>>>> web and vendor directory from composer install
      * @return self
      */
     public function setIgnoredAttributes(array $ignoredAttributes)
@@ -192,7 +184,7 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Set attributes to be camelized on denormalize.
      *
@@ -225,7 +217,6 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
     }
 
     /**
->>>>>>> web and vendor directory from composer install
      * Detects if the configured circular reference limit is reached.
      *
      * @param object $object
@@ -269,7 +260,7 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
     protected function handleCircularReference($object)
     {
         if ($this->circularReferenceHandler) {
-<<<<<<< HEAD
+ 
             return \call_user_func($this->circularReferenceHandler, $object);
         }
 
@@ -295,7 +286,6 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
         @trigger_error(sprintf('%s is deprecated since version 2.7 and will be removed in 3.0. Use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter instead.', __METHOD__), E_USER_DEPRECATED);
 
         return $this->nameConverter ? $this->nameConverter->normalize($attributeName) : $attributeName;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -311,7 +301,7 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
      */
     protected function getAllowedAttributes($classOrObject, array $context, $attributesAsString = false)
     {
-<<<<<<< HEAD
+ 
         if (!$this->classMetadataFactory) {
             if (isset($context[static::ALLOW_EXTRA_ATTRIBUTES]) && !$context[static::ALLOW_EXTRA_ATTRIBUTES]) {
                 throw new LogicException(sprintf('A class metadata factory must be provided in the constructor when setting "%s" to false.', static::ALLOW_EXTRA_ATTRIBUTES));
@@ -326,13 +316,12 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
         } elseif (!isset($context[static::ALLOW_EXTRA_ATTRIBUTES]) || $context[static::ALLOW_EXTRA_ATTRIBUTES]) {
 =======
         if (!$this->classMetadataFactory || !isset($context[static::GROUPS]) || !is_array($context[static::GROUPS])) {
->>>>>>> web and vendor directory from composer install
             return false;
         }
 
         $allowedAttributes = array();
         foreach ($this->classMetadataFactory->getMetadataFor($classOrObject)->getAttributesMetadata() as $attributeMetadata) {
-<<<<<<< HEAD
+ 
             $name = $attributeMetadata->getName();
 
             if (
@@ -343,7 +332,6 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
 =======
             if (count(array_intersect($attributeMetadata->getGroups(), $context[static::GROUPS]))) {
                 $allowedAttributes[] = $attributesAsString ? $attributeMetadata->getName() : $attributeMetadata;
->>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -351,7 +339,7 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Is this attribute allowed?
      *
      * @param object|string $classOrObject
@@ -381,7 +369,6 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
 
     /**
 =======
->>>>>>> web and vendor directory from composer install
      * Normalizes the given data to an array. It's particularly useful during
      * the denormalization process.
      *
@@ -395,7 +382,7 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Returns the method to use to construct an object. This method must be either
      * the object constructor or static.
      *
@@ -414,7 +401,6 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
 
     /**
 =======
->>>>>>> web and vendor directory from composer install
      * Instantiates an object using constructor parameters when needed.
      *
      * This method also allows to denormalize data into an existing object if
@@ -427,16 +413,15 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
      * @param array            $context
      * @param \ReflectionClass $reflectionClass
      * @param array|bool       $allowedAttributes
-<<<<<<< HEAD
+ 
      * @param string|null      $format
 =======
->>>>>>> web and vendor directory from composer install
      *
      * @return object
      *
      * @throws RuntimeException
      */
-<<<<<<< HEAD
+ 
     protected function instantiateObject(array &$data, $class, array &$context, \ReflectionClass $reflectionClass, $allowedAttributes/*, string $format = null*/)
     {
         if (\func_num_args() >= 6) {
@@ -462,17 +447,15 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
             $context[static::OBJECT_TO_POPULATE] instanceof $class
         ) {
             $object = $context[static::OBJECT_TO_POPULATE];
->>>>>>> web and vendor directory from composer install
             unset($context[static::OBJECT_TO_POPULATE]);
 
             return $object;
         }
 
-<<<<<<< HEAD
+ 
         $constructor = $this->getConstructor($data, $class, $context, $reflectionClass, $allowedAttributes);
 =======
         $constructor = $reflectionClass->getConstructor();
->>>>>>> web and vendor directory from composer install
         if ($constructor) {
             $constructorParameters = $constructor->getParameters();
 
@@ -481,7 +464,7 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
                 $paramName = $constructorParameter->name;
                 $key = $this->nameConverter ? $this->nameConverter->normalize($paramName) : $paramName;
 
-<<<<<<< HEAD
+ 
                 $allowed = false === $allowedAttributes || \in_array($paramName, $allowedAttributes);
                 $ignored = !$this->isAllowedAttribute($class, $paramName, $format, $context);
                 if (method_exists($constructorParameter, 'isVariadic') && $constructorParameter->isVariadic()) {
@@ -493,14 +476,13 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
                 if (method_exists($constructorParameter, 'isVariadic') && $constructorParameter->isVariadic()) {
                     if ($allowed && !$ignored && (isset($data[$key]) || array_key_exists($key, $data))) {
                         if (!is_array($data[$paramName])) {
->>>>>>> web and vendor directory from composer install
                             throw new RuntimeException(sprintf('Cannot create an instance of %s from serialized data because the variadic parameter %s can only accept an array.', $class, $constructorParameter->name));
                         }
 
                         $params = array_merge($params, $data[$paramName]);
                     }
                 } elseif ($allowed && !$ignored && (isset($data[$key]) || array_key_exists($key, $data))) {
-<<<<<<< HEAD
+ 
                     $parameterData = $data[$key];
                     if (null === $parameterData && $constructorParameter->allowsNull()) {
                         $params[] = null;
@@ -525,7 +507,6 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
 =======
                     $params[] = $data[$key];
                     // don't run set for a parameter passed to the constructor
->>>>>>> web and vendor directory from composer install
                     unset($data[$key]);
                 } elseif ($constructorParameter->isDefaultValueAvailable()) {
                     $params[] = $constructorParameter->getDefaultValue();
@@ -540,7 +521,7 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
                 }
             }
 
-<<<<<<< HEAD
+ 
             if ($constructor->isConstructor()) {
                 return $reflectionClass->newInstanceArgs($params);
             } else {
@@ -548,12 +529,11 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
             }
 =======
             return $reflectionClass->newInstanceArgs($params);
->>>>>>> web and vendor directory from composer install
         }
 
         return new $class();
     }
-<<<<<<< HEAD
+ 
 
     /**
      * @param array  $parentContext
@@ -574,5 +554,4 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
         return $parentContext;
     }
 =======
->>>>>>> web and vendor directory from composer install
 }

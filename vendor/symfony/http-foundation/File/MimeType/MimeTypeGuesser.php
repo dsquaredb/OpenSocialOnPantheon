@@ -56,11 +56,10 @@ class MimeTypeGuesser implements MimeTypeGuesserInterface
     /**
      * Returns the singleton instance.
      *
-<<<<<<< HEAD
+ 
      * @return self
 =======
      * @return MimeTypeGuesser
->>>>>>> web and vendor directory from composer install
      */
     public static function getInstance()
     {
@@ -84,15 +83,14 @@ class MimeTypeGuesser implements MimeTypeGuesserInterface
      */
     private function __construct()
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
         $this->register(new FileBinaryMimeTypeGuesser());
         $this->register(new FileinfoMimeTypeGuesser());
 =======
 =======
->>>>>>> revert Open Social update
         if (FileBinaryMimeTypeGuesser::isSupported()) {
             $this->register(new FileBinaryMimeTypeGuesser());
         }
@@ -100,29 +98,24 @@ class MimeTypeGuesser implements MimeTypeGuesserInterface
         if (FileinfoMimeTypeGuesser::isSupported()) {
             $this->register(new FileinfoMimeTypeGuesser());
         }
-<<<<<<< HEAD
->>>>>>> web and vendor directory from composer install
+ 
 =======
         $this->register(new FileBinaryMimeTypeGuesser());
         $this->register(new FileinfoMimeTypeGuesser());
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
         $this->register(new FileBinaryMimeTypeGuesser());
         $this->register(new FileinfoMimeTypeGuesser());
->>>>>>> updating open social
     }
 
     /**
      * Registers a new mime type guesser.
      *
      * When guessing, this guesser is preferred over previously registered ones.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param MimeTypeGuesserInterface $guesser
->>>>>>> web and vendor directory from composer install
      */
     public function register(MimeTypeGuesserInterface $guesser)
     {
@@ -155,13 +148,12 @@ class MimeTypeGuesser implements MimeTypeGuesserInterface
             throw new AccessDeniedException($path);
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
 =======
 =======
->>>>>>> revert Open Social update
         if (!$this->guessers) {
             $msg = 'Unable to guess the mime type as no guessers are available';
             if (!FileinfoMimeTypeGuesser::isSupported()) {
@@ -170,40 +162,30 @@ class MimeTypeGuesser implements MimeTypeGuesserInterface
             throw new \LogicException($msg);
         }
 
-<<<<<<< HEAD
->>>>>>> web and vendor directory from composer install
+ 
 =======
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
         foreach ($this->guessers as $guesser) {
             if (null !== $mimeType = $guesser->guess($path)) {
                 return $mimeType;
             }
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
 =======
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> updating open social
 
         if (2 === \count($this->guessers) && !FileBinaryMimeTypeGuesser::isSupported() && !FileinfoMimeTypeGuesser::isSupported()) {
             throw new \LogicException('Unable to guess the mime type as no guessers are available (Did you enable the php_fileinfo extension?)');
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> web and vendor directory from composer install
 =======
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
     }
 }

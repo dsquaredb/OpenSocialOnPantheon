@@ -29,4 +29,3 @@ interface Twig_RuntimeLoaderInterface
 
 class_alias('Twig_RuntimeLoaderInterface', 'Twig\RuntimeLoader\RuntimeLoaderInterface', false);
 =======
->>>>>>> web and vendor directory from composer install

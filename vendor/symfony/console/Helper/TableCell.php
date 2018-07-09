@@ -18,7 +18,7 @@ use Symfony\Component\Console\Exception\InvalidArgumentException;
  */
 class TableCell
 {
-<<<<<<< HEAD
+ 
     private $value;
 =======
     /**
@@ -29,7 +29,6 @@ class TableCell
     /**
      * @var array
      */
->>>>>>> web and vendor directory from composer install
     private $options = array(
         'rowspan' => 1,
         'colspan' => 1,
@@ -41,13 +40,12 @@ class TableCell
      */
     public function __construct($value = '', array $options = array())
     {
-<<<<<<< HEAD
+ 
         if (is_numeric($value) && !is_string($value)) {
             $value = (string) $value;
         }
 
 =======
->>>>>>> web and vendor directory from composer install
         $this->value = $value;
 
         // check option names

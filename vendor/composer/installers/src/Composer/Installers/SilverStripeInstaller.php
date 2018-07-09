@@ -37,6 +37,5 @@ class SilverStripeInstaller extends BaseInstaller
             return parent::getInstallPath($package, $frameworkType);
         }
 
->>>>>>> web and vendor directory from composer install
     }
 }

@@ -24,11 +24,11 @@ if (!function_exists('iconv')) {
     function iconv_mime_decode_headers($encodedHeaders, $mode = 0, $enc = null) { return p\Iconv::iconv_mime_decode_headers($encodedHeaders, $mode, $enc); }
 
     if (extension_loaded('mbstring')) {
-        function iconv_strlen($s, $enc = null) { null === $enc and $enc = p\Iconv::$internalEncoding; return mb_strlen($s, $enc); }
-        function iconv_strpos($s, $needle, $offset = 0, $enc = null) { null === $enc and $enc = p\Iconv::$internalEncoding; return mb_strpos($s, $needle, $offset, $enc); }
-        function iconv_strrpos($s, $needle, $enc = null) { null === $enc and $enc = p\Iconv::$internalEncoding; return mb_strrpos($s, $needle, 0, $enc); }
-        function iconv_substr($s, $start, $length = 2147483647, $enc = null) { null === $enc and $enc = p\Iconv::$internalEncoding; return mb_substr($s, $start, $length, $enc); }
-        function iconv_mime_decode($encodedHeaders, $mode = 0, $enc = null) { null === $enc and $enc = p\Iconv::$internalEncoding; return mb_decode_mimeheader($encodedHeaders, $mode, $enc); }
+        function iconv_strlen($s, $enc = null) { null   $enc and $enc = p\Iconv::$internalEncoding; return mb_strlen($s, $enc); }
+        function iconv_strpos($s, $needle, $offset = 0, $enc = null) { null   $enc and $enc = p\Iconv::$internalEncoding; return mb_strpos($s, $needle, $offset, $enc); }
+        function iconv_strrpos($s, $needle, $enc = null) { null   $enc and $enc = p\Iconv::$internalEncoding; return mb_strrpos($s, $needle, 0, $enc); }
+        function iconv_substr($s, $start, $length = 2147483647, $enc = null) { null   $enc and $enc = p\Iconv::$internalEncoding; return mb_substr($s, $start, $length, $enc); }
+        function iconv_mime_decode($encodedHeaders, $mode = 0, $enc = null) { null   $enc and $enc = p\Iconv::$internalEncoding; return mb_decode_mimeheader($encodedHeaders, $mode, $enc); }
     } else {
         if (extension_loaded('xml')) {
             function iconv_strlen($s, $enc = null) { return p\Iconv::strlen1($s, $enc); }

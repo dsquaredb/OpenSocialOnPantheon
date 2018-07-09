@@ -3,13 +3,12 @@
 /*
  * This file is part of Twig.
  *
-<<<<<<< HEAD
+ 
  * (c) Fabien Potencier
  * (c) Armin Ronacher
 =======
  * (c) 2009 Fabien Potencier
  * (c) 2009 Armin Ronacher
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -22,7 +21,7 @@
  */
 class Twig_Node_Expression_BlockReference extends Twig_Node_Expression
 {
-<<<<<<< HEAD
+ 
     /**
      * @param Twig_Node|null $template
      */
@@ -44,12 +43,11 @@ class Twig_Node_Expression_BlockReference extends Twig_Node_Expression
     public function __construct(Twig_NodeInterface $name, $asString = false, $lineno, $tag = null)
     {
         parent::__construct(array('name' => $name), array('as_string' => $asString, 'output' => false), $lineno, $tag);
->>>>>>> web and vendor directory from composer install
     }
 
     public function compile(Twig_Compiler $compiler)
     {
-<<<<<<< HEAD
+ 
         if ($this->getAttribute('is_defined_test')) {
             $this->compileTemplateCall($compiler, 'hasBlock');
         } else {
@@ -124,4 +122,3 @@ class_alias('Twig_Node_Expression_BlockReference', 'Twig\Node\Expression\BlockRe
         }
     }
 }
->>>>>>> web and vendor directory from composer install

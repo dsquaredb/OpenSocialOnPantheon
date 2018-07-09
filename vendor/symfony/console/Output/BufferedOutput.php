@@ -16,12 +16,11 @@ namespace Symfony\Component\Console\Output;
  */
 class BufferedOutput extends Output
 {
-<<<<<<< HEAD
+ 
 =======
     /**
      * @var string
      */
->>>>>>> web and vendor directory from composer install
     private $buffer = '';
 
     /**
@@ -45,11 +44,10 @@ class BufferedOutput extends Output
         $this->buffer .= $message;
 
         if ($newline) {
-<<<<<<< HEAD
+ 
             $this->buffer .= PHP_EOL;
 =======
             $this->buffer .= "\n";
->>>>>>> web and vendor directory from composer install
         }
     }
 }

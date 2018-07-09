@@ -26,14 +26,13 @@ class AjaxDataCollector extends DataCollector
         // all collecting is done client side
     }
 
-<<<<<<< HEAD
+ 
     public function reset()
     {
         // all collecting is done client side
     }
 
 =======
->>>>>>> web and vendor directory from composer install
     public function getName()
     {
         return 'ajax';

@@ -11,11 +11,10 @@
 
 namespace Symfony\Component\Validator;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 =======
->>>>>>> web and vendor directory from composer install
 /**
  * Entry point for the Validator component.
  *
@@ -24,7 +23,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 final class Validation
 {
     /**
-<<<<<<< HEAD
+ 
 =======
      * The Validator API provided by Symfony 2.4 and older.
      *
@@ -44,7 +43,6 @@ final class Validation
     const API_VERSION_2_5_BC = 3;
 
     /**
->>>>>>> web and vendor directory from composer install
      * Creates a new validator.
      *
      * If you want to configure the validator, use

@@ -8,7 +8,7 @@ use Drupal\entity_access_by_field\EntityAccessHelper;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Cache\Cache;
-<<<<<<< HEAD
+ 
 use \Drupal\node\Entity\Node;
 
 // @TODO Prevent creating multiple visibility fields on one node.
@@ -18,8 +18,8 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityFormInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\social_post\Entity\PostInterface;
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 use Drupal\field\Entity\FieldConfig;
 >>>>>>> Update Open Social to 8.x-2.1
 =======
@@ -171,7 +171,7 @@ function entity_access_by_field_node_presave(NodeInterface $node) {
 /**
  * Implements hook_form_alter().
  */
-<<<<<<< HEAD
+ 
 function entity_access_by_field_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
 
   if (isset($form['field_content_visibility']) || isset($form['field_visibility'])) {

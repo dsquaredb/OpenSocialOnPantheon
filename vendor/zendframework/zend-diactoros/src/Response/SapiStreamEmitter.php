@@ -1,22 +1,19 @@
 <?php
 /**
-<<<<<<< HEAD
+ 
  * Zend Framework (http://framework.zend.com/)
  *
  * @see       http://github.com/zendframework/zend-diactoros for the canonical source repository
  * @copyright Copyright (c) 2015-2016 Zend Technologies USA Inc. (http://www.zend.com)
 =======
  * @see       https://github.com/zendframework/zend-diactoros for the canonical source repository
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
  * @copyright Copyright (c) 2015-2018 Zend Technologies USA Inc. (http://www.zend.com)
->>>>>>> Update Open Social to 8.x-2.1
 =======
  * @copyright Copyright (c) 2015-2017 Zend Technologies USA Inc. (http://www.zend.com)
->>>>>>> revert Open Social update
 =======
  * @copyright Copyright (c) 2015-2018 Zend Technologies USA Inc. (http://www.zend.com)
->>>>>>> updating open social
  * @license   https://github.com/zendframework/zend-diactoros/blob/master/LICENSE.md New BSD License
  */
 
@@ -60,11 +57,10 @@ class SapiStreamEmitter implements EmitterInterface
 
         $range = $this->parseContentRange($response->getHeaderLine('Content-Range'));
 
-<<<<<<< HEAD
+ 
         if (is_array($range) && $range[0] === 'bytes') {
 =======
         if (is_array($range)) {
->>>>>>> web and vendor directory from composer install
             $this->emitBodyRange($range, $response, $maxBufferLength);
             return;
         }
@@ -82,7 +78,7 @@ class SapiStreamEmitter implements EmitterInterface
     {
         $body = $response->getBody();
 
-<<<<<<< HEAD
+ 
         if ($body->isSeekable()) {
             $body->rewind();
         }
@@ -90,15 +86,13 @@ class SapiStreamEmitter implements EmitterInterface
         if (! $body->isReadable()) {
 =======
         if (! $body->isSeekable()) {
->>>>>>> web and vendor directory from composer install
             echo $body;
             return;
         }
 
-<<<<<<< HEAD
+ 
 =======
         $body->rewind();
->>>>>>> web and vendor directory from composer install
         while (! $body->eof()) {
             echo $body->read($maxBufferLength);
         }
@@ -117,7 +111,7 @@ class SapiStreamEmitter implements EmitterInterface
 
         $body = $response->getBody();
 
-<<<<<<< HEAD
+ 
         $length = $last - $first + 1;
 
         if ($body->isSeekable()) {
@@ -161,7 +155,6 @@ class SapiStreamEmitter implements EmitterInterface
 
             echo $body->read($maxBufferLength);
             $pos = $body->tell();
->>>>>>> web and vendor directory from composer install
         }
     }
 

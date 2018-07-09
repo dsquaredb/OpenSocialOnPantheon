@@ -158,7 +158,7 @@ class DedupeEntityTest extends MigrateProcessTestCase {
       ->will($this->returnValue($this->entityQuery));
     $this->entityQuery->expects($this->exactly($count + 1))
       ->method('execute')
-<<<<<<< HEAD
+ 
       ->will($this->returnCallback(function () use (&$count) { return $count--;}));
 =======
       ->will($this->returnCallback(function () use (&$count) {
@@ -207,7 +207,6 @@ class DedupeEntityTest extends MigrateProcessTestCase {
     // Entity 'test_vocab' was migrated, should be deduplicated.
     $actual = $plugin->transform('test_vocab', $this->migrateExecutable, $this->row, 'testproperty');
     $this->assertEquals('test_vocab1', $actual, 'Migrated name is deduplicated');
->>>>>>> Update Open Social to 8.x-2.1
   }
 
 }

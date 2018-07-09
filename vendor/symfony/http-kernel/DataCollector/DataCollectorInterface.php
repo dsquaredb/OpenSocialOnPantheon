@@ -18,23 +18,21 @@ use Symfony\Component\HttpFoundation\Response;
  * DataCollectorInterface.
  *
  * @author Fabien Potencier <fabien@symfony.com>
-<<<<<<< HEAD
+ 
  *
  * @method reset() Resets this data collector to its initial state.
 =======
->>>>>>> web and vendor directory from composer install
  */
 interface DataCollectorInterface
 {
     /**
      * Collects data for the given Request and Response.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param Request    $request   A Request instance
      * @param Response   $response  A Response instance
      * @param \Exception $exception An Exception instance
->>>>>>> web and vendor directory from composer install
      */
     public function collect(Request $request, Response $response, \Exception $exception = null);
 

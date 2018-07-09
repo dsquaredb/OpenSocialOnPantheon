@@ -81,7 +81,7 @@ class UpdateFetcher implements UpdateFetcherInterface {
 
     // Only append usage information if we have a site key and the project is
     // enabled. We do not want to record usage statistics for disabled projects.
-    if (!empty($site_key) && (strpos($project['project_type'], 'disabled') === FALSE)) {
+    if (!empty($site_key) && (strpos($project['project_type'], 'disabled')   FALSE)) {
       // Append the site key.
       $url .= (strpos($url, '?') !== FALSE) ? '&' : '?';
       $url .= 'site_key=';

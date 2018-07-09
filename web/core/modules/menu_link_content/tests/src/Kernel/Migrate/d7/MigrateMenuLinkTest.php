@@ -19,13 +19,12 @@ class MigrateMenuLinkTest extends MigrateDrupal7TestBase {
   /**
    * {@inheritdoc}
    */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
   public static $modules = array('link', 'menu_ui', 'menu_link_content');
 =======
 =======
->>>>>>> updating open social
   public static $modules = [
     'content_translation',
     'language',
@@ -35,13 +34,10 @@ class MigrateMenuLinkTest extends MigrateDrupal7TestBase {
     'node',
     'text',
   ];
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
   public static $modules = ['link', 'menu_ui', 'menu_link_content', 'node'];
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
 
   /**
    * {@inheritdoc}
@@ -49,7 +45,7 @@ class MigrateMenuLinkTest extends MigrateDrupal7TestBase {
   protected function setUp() {
     parent::setUp();
     $this->installEntitySchema('menu_link_content');
-<<<<<<< HEAD
+ 
     $this->executeMigration('menu');
 =======
     $this->installEntitySchema('node');
@@ -67,15 +63,12 @@ class MigrateMenuLinkTest extends MigrateDrupal7TestBase {
       'd7_menu_links',
       'node_translation_menu_links',
     ]);
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
+ 
 =======
     $node->save();
     $this->executeMigrations(['d7_menu', 'd7_menu_links']);
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
     \Drupal::service('router.builder')->rebuild();
   }
 
@@ -104,9 +97,9 @@ class MigrateMenuLinkTest extends MigrateDrupal7TestBase {
   protected function assertEntity($id, $title, $menu, $description, $enabled, $expanded, array $attributes, $uri, $weight) {
     /** @var \Drupal\menu_link_content\MenuLinkContentInterface $menu_link */
     $menu_link = MenuLinkContent::load($id);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
     $this->assertTrue($menu_link instanceof MenuLinkContentInterface);
     $this->assertIdentical($title, $menu_link->getTitle());
     $this->assertIdentical($menu, $menu_link->getMenuName());
@@ -122,10 +115,8 @@ class MigrateMenuLinkTest extends MigrateDrupal7TestBase {
     $this->assertInstanceOf(MenuLinkContentInterface::class, $menu_link);
 =======
     $this->assertTrue($menu_link instanceof MenuLinkContentInterface);
->>>>>>> revert Open Social update
 =======
     $this->assertInstanceOf(MenuLinkContentInterface::class, $menu_link);
->>>>>>> updating open social
     $this->assertSame($title, $menu_link->getTitle());
     $this->assertSame($menu, $menu_link->getMenuName());
     $this->assertSame($description, $menu_link->getDescription());
@@ -134,7 +125,6 @@ class MigrateMenuLinkTest extends MigrateDrupal7TestBase {
     $this->assertSame($attributes, $menu_link->link->options);
     $this->assertSame($uri, $menu_link->link->uri);
     $this->assertSame($weight, $menu_link->getWeight());
->>>>>>> Update Open Social to 8.x-2.1
     return $menu_link;
   }
 

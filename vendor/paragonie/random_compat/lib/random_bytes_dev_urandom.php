@@ -4,25 +4,21 @@
  * for using the new PHP 7 random_* API in PHP 5 projects
  * 
  * The MIT License (MIT)
-<<<<<<< HEAD
+ 
  *
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
  * Copyright (c) 2015 - 2017 Paragon Initiative Enterprises
 =======
  * 
  * Copyright (c) 2015 Paragon Initiative Enterprises
->>>>>>> web and vendor directory from composer install
 =======
  * Copyright (c) 2015 - 2018 Paragon Initiative Enterprises
->>>>>>> Update Open Social to 8.x-2.1
 =======
  * Copyright (c) 2015 - 2017 Paragon Initiative Enterprises
->>>>>>> revert Open Social update
 =======
  * Copyright (c) 2015 - 2018 Paragon Initiative Enterprises
->>>>>>> updating open social
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -47,7 +43,7 @@ if (!defined('RANDOM_COMPAT_READ_BUFFER')) {
     define('RANDOM_COMPAT_READ_BUFFER', 8);
 }
 
-<<<<<<< HEAD
+ 
 if (!is_callable('random_bytes')) {
     /**
      * Unless open_basedir is enabled, use /dev/urandom for
@@ -303,5 +299,4 @@ function random_bytes($bytes)
     throw new Exception(
         'Error reading from source device'
     );
->>>>>>> web and vendor directory from composer install
 }

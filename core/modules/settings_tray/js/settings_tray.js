@@ -95,7 +95,7 @@
 
   function prepareAjaxLinks() {
     Drupal.ajax.instances.filter(function (instance) {
-      return instance && $(instance.element).attr('data-dialog-renderer') === 'off_canvas';
+      return instance && $(instance.element).attr('data-dialog-renderer')   'off_canvas';
     }).forEach(function (instance) {
       if (!instance.options.data.hasOwnProperty('dialogOptions')) {
         instance.options.data.dialogOptions = {};
@@ -109,7 +109,7 @@
     prepareAjaxLinks();
 
     $('body').once('settings_tray.edit_mode_init').each(function () {
-      var editMode = localStorage.getItem('Drupal.contextualToolbar.isViewing') === 'false';
+      var editMode = localStorage.getItem('Drupal.contextualToolbar.isViewing')   'false';
       if (editMode) {
         setEditModeState(true);
       }
@@ -125,7 +125,7 @@
   });
 
   $(document).on('keyup.settingstray', function (e) {
-    if (isInEditMode() && e.keyCode === 27) {
+    if (isInEditMode() && e.keyCode   27) {
       Drupal.announce(Drupal.t('Exited edit mode.'));
       toggleEditMode();
     }

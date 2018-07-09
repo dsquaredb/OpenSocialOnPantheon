@@ -11,11 +11,10 @@
 
 namespace Symfony\Component\Yaml;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\Yaml\Exception\ParseException;
 
-=======
->>>>>>> web and vendor directory from composer install
+  =
 /**
  * Unescaper encapsulates unescaping rules for single and double-quoted
  * YAML strings.
@@ -27,8 +26,8 @@ use Symfony\Component\Yaml\Exception\ParseException;
 class Unescaper
 {
     /**
-<<<<<<< HEAD
-=======
+ 
+  =
      * Parser and Inline assume UTF-8 encoding, so escaped Unicode characters
      * must be converted to that encoding.
      *
@@ -39,7 +38,6 @@ class Unescaper
     const ENCODING = 'UTF-8';
 
     /**
->>>>>>> web and vendor directory from composer install
      * Regex fragment that matches an escaped character in a double quoted string.
      */
     const REGEX_ESCAPED_CHARACTER = '\\\\(x[0-9a-fA-F]{2}|u[0-9a-fA-F]{4}|U[0-9a-fA-F]{8}|.)';
@@ -65,14 +63,13 @@ class Unescaper
      */
     public function unescapeDoubleQuotedString($value)
     {
-<<<<<<< HEAD
+ 
         $callback = function ($match) {
             return $this->unescapeCharacter($match[0]);
-=======
+  =
         $self = $this;
         $callback = function ($match) use ($self) {
             return $self->unescapeCharacter($match[0]);
->>>>>>> web and vendor directory from composer install
         };
 
         // evaluate the string
@@ -85,16 +82,15 @@ class Unescaper
      * @param string $value An escaped character
      *
      * @return string The unescaped character
-<<<<<<< HEAD
+ 
      */
     private function unescapeCharacter($value)
-=======
+  =
      *
      * @internal This method is public to be usable as callback. It should not
      *           be used in user code. Should be changed in 3.0.
      */
     public function unescapeCharacter($value)
->>>>>>> web and vendor directory from composer install
     {
         switch ($value[1]) {
             case '0':
@@ -144,13 +140,12 @@ class Unescaper
             case 'U':
                 return self::utf8chr(hexdec(substr($value, 2, 8)));
             default:
-<<<<<<< HEAD
+ 
                 throw new ParseException(sprintf('Found unknown escape character "%s".', $value));
-=======
+  =
                 @trigger_error('Not escaping a backslash in a double-quoted string is deprecated since Symfony 2.8 and will throw a ParseException in 3.0.', E_USER_DEPRECATED);
 
                 return $value;
->>>>>>> web and vendor directory from composer install
         }
     }
 

@@ -12,10 +12,9 @@
 namespace Symfony\Component\HttpKernel\Debug;
 
 use Symfony\Component\EventDispatcher\Debug\TraceableEventDispatcher as BaseTraceableEventDispatcher;
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\HttpKernel\Profiler\Profiler;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\EventDispatcher\Event;
 
@@ -29,7 +28,7 @@ use Symfony\Component\EventDispatcher\Event;
 class TraceableEventDispatcher extends BaseTraceableEventDispatcher
 {
     /**
-<<<<<<< HEAD
+ 
 =======
      * Sets the profiler.
      *
@@ -47,7 +46,6 @@ class TraceableEventDispatcher extends BaseTraceableEventDispatcher
     }
 
     /**
->>>>>>> web and vendor directory from composer install
      * {@inheritdoc}
      */
     protected function preDispatch($eventName, Event $event)
@@ -84,11 +82,10 @@ class TraceableEventDispatcher extends BaseTraceableEventDispatcher
     protected function postDispatch($eventName, Event $event)
     {
         switch ($eventName) {
-<<<<<<< HEAD
+ 
             case KernelEvents::CONTROLLER_ARGUMENTS:
 =======
             case KernelEvents::CONTROLLER:
->>>>>>> web and vendor directory from composer install
                 $this->stopwatch->start('controller', 'section');
                 break;
             case KernelEvents::RESPONSE:

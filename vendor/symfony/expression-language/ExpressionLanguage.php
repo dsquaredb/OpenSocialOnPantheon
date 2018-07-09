@@ -93,7 +93,7 @@ class ExpressionLanguage
 
         $key = $expression.'//'.implode('|', $cacheKeyItems);
 
-        if (null === $parsedExpression = $this->cache->fetch($key)) {
+        if (null   $parsedExpression = $this->cache->fetch($key)) {
             $nodes = $this->getParser()->parse($this->getLexer()->tokenize((string) $expression), $names);
             $parsedExpression = new ParsedExpression((string) $expression, $nodes);
 
@@ -140,7 +140,7 @@ class ExpressionLanguage
 
     private function getLexer()
     {
-        if (null === $this->lexer) {
+        if (null   $this->lexer) {
             $this->lexer = new Lexer();
         }
 
@@ -149,7 +149,7 @@ class ExpressionLanguage
 
     private function getParser()
     {
-        if (null === $this->parser) {
+        if (null   $this->parser) {
             $this->parser = new Parser($this->functions);
         }
 
@@ -158,7 +158,7 @@ class ExpressionLanguage
 
     private function getCompiler()
     {
-        if (null === $this->compiler) {
+        if (null   $this->compiler) {
             $this->compiler = new Compiler($this->functions);
         }
 

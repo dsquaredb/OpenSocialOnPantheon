@@ -38,12 +38,11 @@ class RouteCollectionBuilder
     private $methods;
     private $resources = array();
 
-<<<<<<< HEAD
-=======
+ 
+  =
     /**
      * @param LoaderInterface $loader
      */
->>>>>>> web and vendor directory from composer install
     public function __construct(LoaderInterface $loader = null)
     {
         $this->loader = $loader;
@@ -58,17 +57,16 @@ class RouteCollectionBuilder
      * @param string|null $prefix
      * @param string      $type
      *
-<<<<<<< HEAD
+ 
      * @return self
-=======
+  =
      * @return RouteCollectionBuilder
->>>>>>> web and vendor directory from composer install
      *
      * @throws FileLoaderLoadException
      */
     public function import($resource, $prefix = '/', $type = null)
     {
-<<<<<<< HEAD
+ 
         /** @var RouteCollection[] $collection */
         $collections = $this->load($resource, $type);
 
@@ -76,7 +74,7 @@ class RouteCollectionBuilder
         $builder = $this->createBuilder();
 
         foreach ($collections as $collection) {
-            if (null === $collection) {
+            if (null   $collection) {
                 continue;
             }
 
@@ -87,7 +85,7 @@ class RouteCollectionBuilder
             foreach ($collection->getResources() as $resource) {
                 $builder->addResource($resource);
             }
-=======
+  =
         /** @var RouteCollection $collection */
         $collection = $this->load($resource, $type);
 
@@ -99,7 +97,6 @@ class RouteCollectionBuilder
 
         foreach ($collection->getResources() as $resource) {
             $builder->addResource($resource);
->>>>>>> web and vendor directory from composer install
         }
 
         // mount into this builder
@@ -129,11 +126,10 @@ class RouteCollectionBuilder
     /**
      * Returns a RouteCollectionBuilder that can be configured and then added with mount().
      *
-<<<<<<< HEAD
+ 
      * @return self
-=======
+  =
      * @return RouteCollectionBuilder
->>>>>>> web and vendor directory from composer install
      */
     public function createBuilder()
     {
@@ -146,23 +142,19 @@ class RouteCollectionBuilder
      * @param string                 $prefix
      * @param RouteCollectionBuilder $builder
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
     public function mount($prefix, self $builder)
-=======
+  =
     public function mount($prefix, RouteCollectionBuilder $builder)
->>>>>>> web and vendor directory from composer install
-=======
+  =
     public function mount($prefix, self $builder)
->>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
     public function mount($prefix, RouteCollectionBuilder $builder)
->>>>>>> revert Open Social update
-=======
+  =
     public function mount($prefix, self $builder)
->>>>>>> updating open social
     {
         $builder->prefix = trim(trim($prefix), '/');
         $this->routes[] = $builder;
@@ -178,7 +170,7 @@ class RouteCollectionBuilder
      */
     public function addRoute(Route $route, $name = null)
     {
-        if (null === $name) {
+        if (null   $name) {
             // used as a flag to know which routes will need a name later
             $name = '_unnamed_route_'.spl_object_hash($route);
         }
@@ -249,11 +241,10 @@ class RouteCollectionBuilder
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Sets an option that will be added to all embedded routes (unless that
-=======
+  =
      * Sets an opiton that will be added to all embedded routes (unless that
->>>>>>> web and vendor directory from composer install
      * option is already set).
      *
      * @param string $key
@@ -299,22 +290,18 @@ class RouteCollectionBuilder
     /**
      * Adds a resource for this collection.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+ 
+ 
+ 
+ 
+  =
      * @param ResourceInterface $resource
      *
->>>>>>> web and vendor directory from composer install
-=======
->>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
+  =
      * @param ResourceInterface $resource
      *
->>>>>>> revert Open Social update
-=======
->>>>>>> updating open social
+  =
      * @return $this
      */
     private function addResource(ResourceInterface $resource)
@@ -338,10 +325,9 @@ class RouteCollectionBuilder
                 $route->setDefaults(array_merge($this->defaults, $route->getDefaults()));
                 $route->setOptions(array_merge($this->options, $route->getOptions()));
 
-<<<<<<< HEAD
-=======
+ 
+  =
                 // we're extra careful here to avoid re-setting deprecated _method and _scheme
->>>>>>> web and vendor directory from composer install
                 foreach ($this->requirements as $key => $val) {
                     if (!$route->hasRequirement($key)) {
                         $route->setRequirement($key, $val);
@@ -369,7 +355,7 @@ class RouteCollectionBuilder
                 }
 
                 // auto-generate the route name if it's been marked
-                if ('_unnamed_route_' === substr($name, 0, 15)) {
+                if ('_unnamed_route_'   substr($name, 0, 15)) {
                     $name = $this->generateRouteName($route);
                 }
 
@@ -381,17 +367,16 @@ class RouteCollectionBuilder
 
                 $routeCollection->addCollection($subCollection);
             }
-<<<<<<< HEAD
+ 
         }
 
         foreach ($this->resources as $resource) {
             $routeCollection->addResource($resource);
-=======
+  =
 
             foreach ($this->resources as $resource) {
                 $routeCollection->addResource($resource);
             }
->>>>>>> web and vendor directory from composer install
         }
 
         return $routeCollection;
@@ -422,51 +407,49 @@ class RouteCollectionBuilder
      * @param mixed       $resource A resource
      * @param string|null $type     The resource type or null if unknown
      *
-<<<<<<< HEAD
+ 
      * @return RouteCollection[]
-=======
+  =
      * @return RouteCollection
->>>>>>> web and vendor directory from composer install
      *
      * @throws FileLoaderLoadException If no loader is found
      */
     private function load($resource, $type = null)
     {
-        if (null === $this->loader) {
+        if (null   $this->loader) {
             throw new \BadMethodCallException('Cannot import other routing resources: you must pass a LoaderInterface when constructing RouteCollectionBuilder.');
         }
 
         if ($this->loader->supports($resource, $type)) {
-<<<<<<< HEAD
+ 
             $collections = $this->loader->load($resource, $type);
 
             return is_array($collections) ? $collections : array($collections);
         }
 
-        if (null === $resolver = $this->loader->getResolver()) {
+        if (null   $resolver = $this->loader->getResolver()) {
             throw new FileLoaderLoadException($resource, null, null, null, $type);
         }
 
-        if (false === $loader = $resolver->resolve($resource, $type)) {
+        if (false   $loader = $resolver->resolve($resource, $type)) {
             throw new FileLoaderLoadException($resource, null, null, null, $type);
         }
 
         $collections = $loader->load($resource, $type);
 
         return is_array($collections) ? $collections : array($collections);
-=======
+  =
             return $this->loader->load($resource, $type);
         }
 
-        if (null === $resolver = $this->loader->getResolver()) {
+        if (null   $resolver = $this->loader->getResolver()) {
             throw new FileLoaderLoadException($resource);
         }
 
-        if (false === $loader = $resolver->resolve($resource, $type)) {
+        if (false   $loader = $resolver->resolve($resource, $type)) {
             throw new FileLoaderLoadException($resource);
         }
 
         return $loader->load($resource, $type);
->>>>>>> web and vendor directory from composer install
     }
 }

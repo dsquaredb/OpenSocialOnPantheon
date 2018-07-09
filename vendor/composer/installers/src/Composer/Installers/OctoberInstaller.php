@@ -36,7 +36,6 @@ class OctoberInstaller extends BaseInstaller
         $vars['name'] = preg_replace('/^oc-|-plugin$/', '', $vars['name']);
 =======
         $vars['name'] = preg_replace('/-plugin$/', '', $vars['name']);
->>>>>>> web and vendor directory from composer install
 
         return $vars;
     }
@@ -55,4 +54,3 @@ class OctoberInstaller extends BaseInstaller
         return $vars;
     }
 }
->>>>>>> web and vendor directory from composer install

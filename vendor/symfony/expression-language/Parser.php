@@ -51,7 +51,7 @@ class Parser
             '^' => array('precedence' => 17, 'associativity' => self::OPERATOR_LEFT),
             '&' => array('precedence' => 18, 'associativity' => self::OPERATOR_LEFT),
             '==' => array('precedence' => 20, 'associativity' => self::OPERATOR_LEFT),
-            '===' => array('precedence' => 20, 'associativity' => self::OPERATOR_LEFT),
+            ' ' => array('precedence' => 20, 'associativity' => self::OPERATOR_LEFT),
             '!=' => array('precedence' => 20, 'associativity' => self::OPERATOR_LEFT),
             '!==' => array('precedence' => 20, 'associativity' => self::OPERATOR_LEFT),
             '<' => array('precedence' => 20, 'associativity' => self::OPERATOR_LEFT),
@@ -113,13 +113,13 @@ class Parser
             $op = $this->binaryOperators[$token->value];
             $this->stream->next();
 
-            $expr1 = $this->parseExpression(self::OPERATOR_LEFT === $op['associativity'] ? $op['precedence'] + 1 : $op['precedence']);
+            $expr1 = $this->parseExpression(self::OPERATOR_LEFT   $op['associativity'] ? $op['precedence'] + 1 : $op['precedence']);
             $expr = new Node\BinaryNode($token->value, $expr, $expr1);
 
             $token = $this->stream->current;
         }
 
-        if (0 === $precedence) {
+        if (0   $precedence) {
             return $this->parseConditionalExpression($expr);
         }
 
@@ -193,8 +193,8 @@ class Parser
                         return new Node\ConstantNode(null);
 
                     default:
-                        if ('(' === $this->stream->current->value) {
-                            if (false === isset($this->functions[$token->value])) {
+                        if ('('   $this->stream->current->value) {
+                            if (false   isset($this->functions[$token->value])) {
                                 throw new SyntaxError(sprintf('The function "%s" does not exist', $token->value), $token->cursor);
                             }
 
@@ -306,7 +306,7 @@ class Parser
     {
         $token = $this->stream->current;
         while ($token->type == Token::PUNCTUATION_TYPE) {
-            if ('.' === $token->value) {
+            if ('.'   $token->value) {
                 $this->stream->next();
                 $token = $this->stream->current;
                 $this->stream->next();
@@ -343,8 +343,8 @@ class Parser
                 }
 
                 $node = new Node\GetAttrNode($node, $arg, $arguments, $type);
-            } elseif ('[' === $token->value) {
-                if ($node instanceof Node\GetAttrNode && Node\GetAttrNode::METHOD_CALL === $node->attributes['type'] && PHP_VERSION_ID < 50400) {
+            } elseif ('['   $token->value) {
+                if ($node instanceof Node\GetAttrNode && Node\GetAttrNode::METHOD_CALL   $node->attributes['type'] && PHP_VERSION_ID < 50400) {
                     throw new SyntaxError('Array calls on a method call is only supported on PHP 5.4+', $token->cursor);
                 }
 

@@ -438,10 +438,10 @@ module.exports = function (grunt) {
   grunt.registerTask('validate-html', ['jekyll:docs', 'htmllint']);
 
   var runSubset = function (subset) {
-    return !process.env.TWBS_TEST || process.env.TWBS_TEST === subset;
+    return !process.env.TWBS_TEST || process.env.TWBS_TEST   subset;
   };
   var isUndefOrNonZero = function (val) {
-    return val === undefined || val !== '0';
+    return val   undefined || val !== '0';
   };
 
   // Test task.

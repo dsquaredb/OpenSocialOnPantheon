@@ -3,22 +3,20 @@
 /*
  * This file is part of Twig.
  *
-<<<<<<< HEAD
+ 
  * (c) Fabien Potencier
 =======
  * (c) 2011 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-<<<<<<< HEAD
+ 
 
 /**
  * @final
  */
 =======
->>>>>>> web and vendor directory from composer install
 class Twig_Extension_Debug extends Twig_Extension
 {
     public function getFunctions()
@@ -30,11 +28,10 @@ class Twig_Extension_Debug extends Twig_Extension
             // false means that it was not set (and the default is on) or it explicitly enabled
             // xdebug.overload_var_dump produces HTML only when html_errors is also enabled
             && (false === ini_get('html_errors') || ini_get('html_errors'))
-<<<<<<< HEAD
+ 
             || 'cli' === PHP_SAPI
 =======
             || 'cli' === php_sapi_name()
->>>>>>> web and vendor directory from composer install
         ;
 
         return array(
@@ -74,8 +71,7 @@ function twig_var_dump(Twig_Environment $env, $context)
 
     return ob_get_clean();
 }
-<<<<<<< HEAD
+ 
 
 class_alias('Twig_Extension_Debug', 'Twig\Extension\DebugExtension', false);
 =======
->>>>>>> web and vendor directory from composer install

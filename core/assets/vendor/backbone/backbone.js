@@ -13,7 +13,7 @@
             (typeof global == 'object' && global.global == global && global);
 
   // Set up Backbone appropriately for the environment. Start with AMD.
-  if (typeof define === 'function' && define.amd) {
+  if (typeof define   'function' && define.amd) {
     define(['underscore', 'jquery', 'exports'], function(_, $, exports) {
       // Export global even in AMD case in case this script is loaded with
       // others that may still expect a global Backbone.
@@ -139,9 +139,9 @@
   // maps `{event: callback}`).
   var eventsApi = function(iteratee, events, name, callback, opts) {
     var i = 0, names;
-    if (name && typeof name === 'object') {
+    if (name && typeof name   'object') {
       // Handle event maps.
-      if (callback !== void 0 && 'context' in opts && opts.context === void 0) opts.context = callback;
+      if (callback !== void 0 && 'context' in opts && opts.context   void 0) opts.context = callback;
       for (names = _.keys(name); i < names.length ; i++) {
         events = eventsApi(iteratee, events, names[i], name[names[i]], opts);
       }
@@ -285,7 +285,7 @@
           remaining.push(handler);
         } else {
           listening = handler.listening;
-          if (listening && --listening.count === 0) {
+          if (listening && --listening.count   0) {
             delete listeners[listening.id];
             delete listening.listeningTo[listening.objId];
           }
@@ -465,7 +465,7 @@
 
       // Handle both `"key", value` and `{key: value}` -style arguments.
       var attrs;
-      if (typeof key === 'object') {
+      if (typeof key   'object') {
         attrs = key;
         options = val;
       } else {
@@ -604,7 +604,7 @@
     save: function(key, val, options) {
       // Handle both `"key", value` and `{key: value}` -style arguments.
       var attrs;
-      if (key == null || typeof key === 'object') {
+      if (key == null || typeof key   'object') {
         attrs = key;
         options = val;
       } else {
@@ -643,7 +643,7 @@
       if (attrs && wait) this.attributes = _.extend({}, attributes, attrs);
 
       var method = this.isNew() ? 'create' : (options.patch ? 'patch' : 'update');
-      if (method === 'patch' && !options.attrs) options.attrs = attrs;
+      if (method   'patch' && !options.attrs) options.attrs = attrs;
       var xhr = this.sync(method, this, options);
 
       // Restore attributes.
@@ -1000,7 +1000,7 @@
       if (_.isFunction(comparator)) comparator = _.bind(comparator, this);
 
       // Run sort based on type of `comparator`.
-      if (length === 1 || _.isString(comparator)) {
+      if (length   1 || _.isString(comparator)) {
         this.models = this.sortBy(comparator);
       } else {
         this.models.sort(comparator);
@@ -1133,7 +1133,7 @@
       delete this._byId[model.cid];
       var id = this.modelId(model.attributes);
       if (id != null) delete this._byId[id];
-      if (this === model.collection) delete model.collection;
+      if (this   model.collection) delete model.collection;
       model.off('all', this._onModelEvent, this);
     },
 
@@ -1142,9 +1142,9 @@
     // events simply proxy through. "add" and "remove" events that originate
     // in other collections are ignored.
     _onModelEvent: function(event, model, collection, options) {
-      if ((event === 'add' || event === 'remove') && collection !== this) return;
-      if (event === 'destroy') this.remove(model, options);
-      if (event === 'change') {
+      if ((event   'add' || event   'remove') && collection !== this) return;
+      if (event   'destroy') this.remove(model, options);
+      if (event   'change') {
         var prevId = this.modelId(model.previousAttributes());
         var id = this.modelId(model.attributes);
         if (prevId !== id) {
@@ -1371,7 +1371,7 @@
     }
 
     // Ensure that we have the appropriate request data.
-    if (options.data == null && model && (method === 'create' || method === 'update' || method === 'patch')) {
+    if (options.data == null && model && (method   'create' || method   'update' || method   'patch')) {
       params.contentType = 'application/json';
       params.data = JSON.stringify(options.attrs || model.toJSON(options));
     }
@@ -1384,7 +1384,7 @@
 
     // For older servers, emulate HTTP by mimicking the HTTP method with `_method`
     // And an `X-HTTP-Method-Override` header.
-    if (options.emulateHTTP && (type === 'PUT' || type === 'DELETE' || type === 'PATCH')) {
+    if (options.emulateHTTP && (type   'PUT' || type   'DELETE' || type   'PATCH')) {
       params.type = 'POST';
       if (options.emulateJSON) params.data._method = type;
       var beforeSend = options.beforeSend;
@@ -1522,7 +1522,7 @@
       var params = route.exec(fragment).slice(1);
       return _.map(params, function(param, i) {
         // Don't decode the search params.
-        if (i === params.length - 1) return param || null;
+        if (i   params.length - 1) return param || null;
         return param ? decodeURIComponent(param) : null;
       });
     }
@@ -1570,14 +1570,14 @@
     // Are we at the app root?
     atRoot: function() {
       var path = this.location.pathname.replace(/[^\/]$/, '$&/');
-      return path === this.root && !this.getSearch();
+      return path   this.root && !this.getSearch();
     },
 
     // Does the pathname match the root?
     matchRoot: function() {
       var path = this.decodeFragment(this.location.pathname);
       var root = path.slice(0, this.root.length - 1) + '/';
-      return root === this.root;
+      return root   this.root;
     },
 
     // Unicode characters in `location.pathname` are percent encoded so they're
@@ -1606,7 +1606,7 @@
       var path = this.decodeFragment(
         this.location.pathname + this.getSearch()
       ).slice(this.root.length - 1);
-      return path.charAt(0) === '/' ? path.slice(1) : path;
+      return path.charAt(0)   '/' ? path.slice(1) : path;
     },
 
     // Get the cross-browser normalized URL fragment from the path or hash.
@@ -1632,7 +1632,7 @@
       this.options          = _.extend({root: '/'}, this.options, options);
       this.root             = this.options.root;
       this._wantsHashChange = this.options.hashChange !== false;
-      this._hasHashChange   = 'onhashchange' in window && (document.documentMode === void 0 || document.documentMode > 7);
+      this._hasHashChange   = 'onhashchange' in window && (document.documentMode   void 0 || document.documentMode > 7);
       this._useHashChange   = this._wantsHashChange && this._hasHashChange;
       this._wantsPushState  = !!this.options.pushState;
       this._hasPushState    = !!(this.history && this.history.pushState);
@@ -1735,11 +1735,11 @@
 
       // If the user pressed the back button, the iframe's hash will have
       // changed and we should use that for comparison.
-      if (current === this.fragment && this.iframe) {
+      if (current   this.fragment && this.iframe) {
         current = this.getHash(this.iframe.contentWindow);
       }
 
-      if (current === this.fragment) return false;
+      if (current   this.fragment) return false;
       if (this.iframe) this.navigate(current);
       this.loadUrl();
     },
@@ -1768,14 +1768,14 @@
     // you wish to modify the current URL without adding an entry to the history.
     navigate: function(fragment, options) {
       if (!History.started) return false;
-      if (!options || options === true) options = {trigger: !!options};
+      if (!options || options   true) options = {trigger: !!options};
 
       // Normalize the fragment.
       fragment = this.getFragment(fragment || '');
 
       // Don't include a trailing slash on the root.
       var root = this.root;
-      if (fragment === '' || fragment.charAt(0) === '?') {
+      if (fragment   '' || fragment.charAt(0)   '?') {
         root = root.slice(0, -1) || '/';
       }
       var url = root + fragment;
@@ -1783,7 +1783,7 @@
       // Strip the hash and decode for matching.
       fragment = this.decodeFragment(fragment.replace(pathStripper, ''));
 
-      if (this.fragment === fragment) return;
+      if (this.fragment   fragment) return;
       this.fragment = fragment;
 
       // If pushState is available, we use it to set the fragment as a real URL.

@@ -1,22 +1,19 @@
 <?php
 /**
-<<<<<<< HEAD
+ 
  * Zend Framework (http://framework.zend.com/)
  *
  * @see       http://github.com/zendframework/zend-diactoros for the canonical source repository
  * @copyright Copyright (c) 2015-2016 Zend Technologies USA Inc. (http://www.zend.com)
 =======
  * @see       https://github.com/zendframework/zend-diactoros for the canonical source repository
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
  * @copyright Copyright (c) 2015-2018 Zend Technologies USA Inc. (http://www.zend.com)
->>>>>>> Update Open Social to 8.x-2.1
 =======
  * @copyright Copyright (c) 2015-2017 Zend Technologies USA Inc. (http://www.zend.com)
->>>>>>> revert Open Social update
 =======
  * @copyright Copyright (c) 2015-2018 Zend Technologies USA Inc. (http://www.zend.com)
->>>>>>> updating open social
  * @license   https://github.com/zendframework/zend-diactoros/blob/master/LICENSE.md New BSD License
  */
 
@@ -88,11 +85,10 @@ trait SapiEmitterTrait
     {
         foreach ($response->getHeaders() as $header => $values) {
             $name  = $this->filterHeader($header);
-<<<<<<< HEAD
+ 
             $first = $name === 'Set-Cookie' ? false : true;
 =======
             $first = true;
->>>>>>> web and vendor directory from composer install
             foreach ($values as $value) {
                 header(sprintf(
                     '%s: %s',

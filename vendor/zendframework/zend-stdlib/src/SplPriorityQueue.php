@@ -36,11 +36,10 @@ class SplPriorityQueue extends \SplPriorityQueue implements Serializable
      */
     public function insert($datum, $priority)
     {
-<<<<<<< HEAD
+ 
         if (!is_array($priority)) {
 =======
         if (! is_array($priority)) {
->>>>>>> web and vendor directory from composer install
             $priority = [$priority, $this->serial--];
         }
         parent::insert($datum, $priority);

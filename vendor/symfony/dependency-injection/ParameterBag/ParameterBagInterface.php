@@ -56,7 +56,7 @@ interface ParameterBagInterface
     public function get($name);
 
     /**
-<<<<<<< HEAD
+ 
      * Removes a parameter.
      *
      * @param string $name The parameter name
@@ -65,7 +65,6 @@ interface ParameterBagInterface
 
     /**
 =======
->>>>>>> web and vendor directory from composer install
      * Sets a service container parameter.
      *
      * @param string $name  The parameter name

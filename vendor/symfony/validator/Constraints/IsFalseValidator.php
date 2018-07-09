@@ -11,10 +11,9 @@
 
 namespace Symfony\Component\Validator\Constraints;
 
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
@@ -37,7 +36,7 @@ class IsFalseValidator extends ConstraintValidator
             return;
         }
 
-<<<<<<< HEAD
+ 
         $this->context->buildViolation($constraint->message)
             ->setParameter('{{ value }}', $this->formatValue($value))
             ->setCode(IsFalse::NOT_FALSE_ERROR)
@@ -54,6 +53,5 @@ class IsFalseValidator extends ConstraintValidator
                 ->setCode(IsFalse::NOT_FALSE_ERROR)
                 ->addViolation();
         }
->>>>>>> web and vendor directory from composer install
     }
 }

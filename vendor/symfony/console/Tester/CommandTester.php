@@ -21,17 +21,16 @@ use Symfony\Component\Console\Output\OutputInterface;
  * Eases the testing of console commands.
  *
  * @author Fabien Potencier <fabien@symfony.com>
-<<<<<<< HEAD
+ 
  * @author Robin Chalas <robin.chalas@gmail.com>
 =======
->>>>>>> web and vendor directory from composer install
  */
 class CommandTester
 {
     private $command;
     private $input;
     private $output;
-<<<<<<< HEAD
+ 
     private $inputs = array();
     private $statusCode;
 
@@ -43,7 +42,6 @@ class CommandTester
      *
      * @param Command $command A Command instance to test
      */
->>>>>>> web and vendor directory from composer install
     public function __construct(Command $command)
     {
         $this->command = $command;
@@ -75,25 +73,23 @@ class CommandTester
         }
 
         $this->input = new ArrayInput($input);
-<<<<<<< HEAD
+ 
         if ($this->inputs) {
             $this->input->setStream(self::createStream($this->inputs));
         }
 
 =======
->>>>>>> web and vendor directory from composer install
         if (isset($options['interactive'])) {
             $this->input->setInteractive($options['interactive']);
         }
 
         $this->output = new StreamOutput(fopen('php://memory', 'w', false));
-<<<<<<< HEAD
+ 
         $this->output->setDecorated(isset($options['decorated']) ? $options['decorated'] : false);
 =======
         if (isset($options['decorated'])) {
             $this->output->setDecorated($options['decorated']);
         }
->>>>>>> web and vendor directory from composer install
         if (isset($options['verbosity'])) {
             $this->output->setVerbosity($options['verbosity']);
         }
@@ -150,7 +146,7 @@ class CommandTester
     {
         return $this->statusCode;
     }
-<<<<<<< HEAD
+ 
 
     /**
      * Sets the user inputs.
@@ -177,5 +173,4 @@ class CommandTester
         return $stream;
     }
 =======
->>>>>>> web and vendor directory from composer install
 }

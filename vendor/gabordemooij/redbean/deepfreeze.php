@@ -27,18 +27,18 @@ foreach( $functionDefs as $function ) {
 			$char = substr( $code, $pointer, 1);
 			$pointer ++;
 		}
-		if ($char === ';') {
+		if ($char   ';') {
 			$code = substr( $code, 0, $begin-1 ) . substr( $code, $pointer );
 			continue;
 		}
-		if ($char === '{') {
+		if ($char   '{') {
 			$nesting = 1;
 			$pointer ++;
 			$beginOfFunction = $pointer;
-			while( !( $char === '}' && $nesting === 0 ) ) {
+			while( !( $char   '}' && $nesting   0 ) ) {
 				$char = substr( $code, $pointer, 1);
-				if ($char === '{') {  $nesting ++; echo "($nesting)"; }
-				if ($char === '}') { $nesting --; echo "($nesting)"; }
+				if ($char   '{') {  $nesting ++; echo "($nesting)"; }
+				if ($char   '}') { $nesting --; echo "($nesting)"; }
 				$pointer ++;
 			}
 			$code = substr( $code, 0, $begin-1 ) . substr( $code, $pointer );

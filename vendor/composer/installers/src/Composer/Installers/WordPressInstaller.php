@@ -10,6 +10,5 @@ class WordPressInstaller extends BaseInstaller
 <<<<<<< HEAD
         'dropin'    => 'wp-content/{$name}/',
 =======
->>>>>>> web and vendor directory from composer install
     );
 }

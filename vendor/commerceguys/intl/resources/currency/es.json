@@ -132,7 +132,7 @@
 	},
 	"USD": {
 		"name": "dólar estadounidense",
-<<<<<<< HEAD
+ 
 		"symbol": "$"
 =======
 		"symbol": "US$"
@@ -200,7 +200,7 @@
 	"BIF": {
 		"name": "franco burundés"
 	},
-<<<<<<< HEAD
+ 
 	"XOF": {
 		"name": "franco CFA BCEAO"
 	},
@@ -257,7 +257,7 @@
 	"LAK": {
 		"name": "kip"
 	},
-<<<<<<< HEAD
+ 
 	"ZMW": {
 		"name": "kuacha zambiano"
 	},
@@ -272,7 +272,7 @@
 	"MWK": {
 		"name": "kwacha malauí"
 	},
-<<<<<<< HEAD
+ 
 =======
 	"ZMW": {
 		"name": "kwacha zambiano"
@@ -299,7 +299,7 @@
 	"BGN": {
 		"name": "lev búlgaro"
 	},
-<<<<<<< HEAD
+ 
 	"GBP": {
 		"name": "libra británica"
 	},
@@ -311,7 +311,7 @@
 	"EGP": {
 		"name": "libra egipcia"
 	},
-<<<<<<< HEAD
+ 
 =======
 	"GBP": {
 		"name": "libra esterlina"
@@ -345,7 +345,7 @@
 		"name": "loti lesothense"
 	},
 	"AZN": {
-<<<<<<< HEAD
+ 
 		"name": "manat azerí"
 =======
 		"name": "manat azerbaiyano"
@@ -355,7 +355,7 @@
 		"name": "manat turcomano"
 	},
 	"BAM": {
-<<<<<<< HEAD
+ 
 		"name": "marco convertible de Bosnia-Herzegovina"
 =======
 		"name": "marco convertible de Bosnia y Herzegovina"
@@ -376,7 +376,7 @@
 	"ILS": {
 		"name": "nuevo séquel israelí"
 	},
-<<<<<<< HEAD
+ 
 	"PEN": {
 		"name": "nuevo sol peruano"
 	},
@@ -451,7 +451,7 @@
 	"BYN": {
 		"name": "rublo bielorruso"
 	},
-<<<<<<< HEAD
+ 
 	"BYR": {
 		"name": "rublo bielorruso (2000–2016)"
 	},
@@ -484,7 +484,7 @@
 	"SCR": {
 		"name": "rupia seychellense"
 	},
-<<<<<<< HEAD
+ 
 =======
 	"PEN": {
 		"name": "sol peruano"

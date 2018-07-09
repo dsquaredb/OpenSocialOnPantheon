@@ -1,5 +1,5 @@
 Upgrading from PHP-Parser 0.9 to 1.0
-====================================
+            
 
 ### PHP version requirements
 

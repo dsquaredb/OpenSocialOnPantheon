@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-<<<<<<< HEAD
+ 
         "php": "^5.5.9|>=7.0.8",
         "symfony/polyfill-mbstring": "~1.0"
     },
@@ -49,7 +49,7 @@
     "suggest": {
         "symfony/config": "",
         "symfony/yaml": "",
-<<<<<<< HEAD
+ 
         "psr/log-implementation": "To use logging capability in translator"
 =======
         "psr/log": "To use logging capability in translator"
@@ -64,7 +64,7 @@
     "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
-<<<<<<< HEAD
+ 
             "dev-master": "3.4-dev"
 =======
             "dev-master": "2.8-dev"

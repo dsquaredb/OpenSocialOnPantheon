@@ -33,11 +33,10 @@ interface ClassMetadataInterface
 
     /**
      * Adds an {@link AttributeMetadataInterface}.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param AttributeMetadataInterface $attributeMetadata
->>>>>>> web and vendor directory from composer install
      */
     public function addAttributeMetadata(AttributeMetadataInterface $attributeMetadata);
 
@@ -50,27 +49,23 @@ interface ClassMetadataInterface
 
     /**
      * Merges a {@link ClassMetadataInterface} in the current one.
-<<<<<<< HEAD
+ 
      */
     public function merge(self $classMetadata);
 =======
      *
      * @param ClassMetadataInterface $classMetadata
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
     public function merge(ClassMetadataInterface $classMetadata);
->>>>>>> web and vendor directory from composer install
 =======
     public function merge(self $classMetadata);
->>>>>>> Update Open Social to 8.x-2.1
 =======
     public function merge(ClassMetadataInterface $classMetadata);
->>>>>>> revert Open Social update
 =======
     public function merge(self $classMetadata);
->>>>>>> updating open social
 
     /**
      * Returns a {@link \ReflectionClass} instance for this class.

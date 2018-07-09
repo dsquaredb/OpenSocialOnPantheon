@@ -30,11 +30,10 @@ class YamlFileLoader extends FileLoader
      *
      * @var array
      */
-<<<<<<< HEAD
+ 
     private $classes;
 =======
     private $classes = null;
->>>>>>> web and vendor directory from composer install
 
     /**
      * {@inheritdoc}
@@ -42,7 +41,7 @@ class YamlFileLoader extends FileLoader
     public function loadClassMetadata(ClassMetadataInterface $classMetadata)
     {
         if (null === $this->classes) {
-<<<<<<< HEAD
+ 
             $this->classes = $this->getClassesFromYaml();
         }
 
@@ -186,6 +185,5 @@ class YamlFileLoader extends FileLoader
         }
 
         return false;
->>>>>>> web and vendor directory from composer install
     }
 }

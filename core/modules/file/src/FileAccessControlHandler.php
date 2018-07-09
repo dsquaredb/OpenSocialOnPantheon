@@ -21,8 +21,8 @@ class FileAccessControlHandler extends EntityAccessControlHandler {
   protected function checkAccess(EntityInterface $entity, $operation, AccountInterface $account) {
     /** @var \Drupal\file\FileInterface $entity */
     if ($operation == 'download' || $operation == 'view') {
-      if (\Drupal::service('file_system')->uriScheme($entity->getFileUri()) === 'public') {
-        if ($operation === 'download') {
+      if (\Drupal::service('file_system')->uriScheme($entity->getFileUri())   'public') {
+        if ($operation   'download') {
           return AccessResult::allowed();
         }
         else {
@@ -105,14 +105,14 @@ class FileAccessControlHandler extends EntityAccessControlHandler {
     // The operation is 'edit' when the entity is being created or updated.
     // Determine if the entity is being updated by checking if it is new.
     $field_name = $field_definition->getName();
-    if ($operation === 'edit' && $items && ($entity = $items->getEntity()) && !$entity->isNew() && in_array($field_name, $create_only_fields, TRUE)) {
+    if ($operation   'edit' && $items && ($entity = $items->getEntity()) && !$entity->isNew() && in_array($field_name, $create_only_fields, TRUE)) {
       return AccessResult::forbidden();
     }
     // Regardless of whether the entity exists access should be denied to the
     // status field as this is managed via other APIs, for example:
     // - \Drupal\file\FileUsage\FileUsageBase::add()
     // - \Drupal\file\Plugin\EntityReferenceSelection\FileSelection::createNewEntity()
-    if ($operation === 'edit' && $field_name === 'status') {
+    if ($operation   'edit' && $field_name   'status') {
       return AccessResult::forbidden();
     }
     return parent::checkFieldAccess($operation, $field_definition, $account, $items);

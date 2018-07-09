@@ -11,7 +11,7 @@
 
 namespace Symfony\Component\EventDispatcher\Tests\DependencyInjection;
 
-<<<<<<< HEAD
+ 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\Argument\ServiceClosureArgument;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -24,7 +24,6 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\EventDispatcher\DependencyInjection\RegisterListenersPass;
 
 class RegisterListenersPassTest extends \PHPUnit_Framework_TestCase
->>>>>>> web and vendor directory from composer install
 {
     /**
      * Tests that event subscribers not implementing EventSubscriberInterface
@@ -34,7 +33,7 @@ class RegisterListenersPassTest extends \PHPUnit_Framework_TestCase
      */
     public function testEventSubscriberWithoutInterface()
     {
-<<<<<<< HEAD
+ 
         $builder = new ContainerBuilder();
         $builder->register('event_dispatcher');
         $builder->register('my_event_subscriber', 'stdClass')
@@ -69,7 +68,6 @@ class RegisterListenersPassTest extends \PHPUnit_Framework_TestCase
         $builder->expects($this->atLeastOnce())
             ->method('getDefinition')
             ->will($this->returnValue($definition));
->>>>>>> web and vendor directory from composer install
 
         $registerListenersPass = new RegisterListenersPass();
         $registerListenersPass->process($builder);
@@ -81,7 +79,7 @@ class RegisterListenersPassTest extends \PHPUnit_Framework_TestCase
             'my_event_subscriber' => array(0 => array()),
         );
 
-<<<<<<< HEAD
+ 
         $builder = new ContainerBuilder();
         $eventDispatcherDefinition = $builder->register('event_dispatcher');
         $builder->register('my_event_subscriber', 'Symfony\Component\EventDispatcher\Tests\DependencyInjection\SubscriberService')
@@ -147,12 +145,11 @@ class RegisterListenersPassTest extends \PHPUnit_Framework_TestCase
 
         $registerListenersPass = new RegisterListenersPass();
         $registerListenersPass->process($container);
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * @expectedException \InvalidArgumentException
-<<<<<<< HEAD
+ 
      * @expectedExceptionMessage The service "foo" tagged "kernel.event_listener" must not be abstract.
 =======
      * @expectedExceptionMessage The service "foo" must be public as event subscribers are lazy-loaded.
@@ -170,7 +167,6 @@ class RegisterListenersPassTest extends \PHPUnit_Framework_TestCase
     /**
      * @expectedException \InvalidArgumentException
      * @expectedExceptionMessage The service "foo" must not be abstract as event listeners are lazy-loaded.
->>>>>>> web and vendor directory from composer install
      */
     public function testAbstractEventListener()
     {
@@ -184,11 +180,10 @@ class RegisterListenersPassTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException \InvalidArgumentException
-<<<<<<< HEAD
+ 
      * @expectedExceptionMessage The service "foo" tagged "kernel.event_subscriber" must not be abstract.
 =======
      * @expectedExceptionMessage The service "foo" must not be abstract as event subscribers are lazy-loaded.
->>>>>>> web and vendor directory from composer install
      */
     public function testAbstractEventSubscriber()
     {
@@ -212,7 +207,7 @@ class RegisterListenersPassTest extends \PHPUnit_Framework_TestCase
         $registerListenersPass->process($container);
 
         $definition = $container->getDefinition('event_dispatcher');
-<<<<<<< HEAD
+ 
         $expectedCalls = array(
             array(
                 'addListener',
@@ -247,7 +242,6 @@ class RegisterListenersPassTest extends \PHPUnit_Framework_TestCase
             ),
         );
         $this->assertSame($expected_calls, $definition->getMethodCalls());
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -269,11 +263,10 @@ class SubscriberService implements \Symfony\Component\EventDispatcher\EventSubsc
 {
     public static function getSubscribedEvents()
     {
-<<<<<<< HEAD
+ 
         return array(
             'event' => 'onEvent',
         );
 =======
->>>>>>> web and vendor directory from composer install
     }
 }

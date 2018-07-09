@@ -3,13 +3,12 @@
 /*
  * This file is part of Twig.
  *
-<<<<<<< HEAD
+ 
  * (c) Fabien Potencier
  * (c) Armin Ronacher
 =======
  * (c) 2009 Fabien Potencier
  * (c) 2009 Armin Ronacher
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -30,7 +29,7 @@ class Twig_Compiler implements Twig_CompilerInterface
     protected $sourceOffset;
     protected $sourceLine;
     protected $filename;
-<<<<<<< HEAD
+ 
     private $varNameSalt = 0;
 
 =======
@@ -40,7 +39,6 @@ class Twig_Compiler implements Twig_CompilerInterface
      *
      * @param Twig_Environment $env The twig environment instance
      */
->>>>>>> web and vendor directory from composer install
     public function __construct(Twig_Environment $env)
     {
         $this->env = $env;
@@ -59,11 +57,10 @@ class Twig_Compiler implements Twig_CompilerInterface
     /**
      * Returns the environment instance related to this compiler.
      *
-<<<<<<< HEAD
+ 
      * @return Twig_Environment
 =======
      * @return Twig_Environment The environment instance
->>>>>>> web and vendor directory from composer install
      */
     public function getEnvironment()
     {
@@ -86,11 +83,10 @@ class Twig_Compiler implements Twig_CompilerInterface
      * @param Twig_NodeInterface $node        The node to compile
      * @param int                $indentation The current indentation
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return Twig_Compiler The current compiler instance
->>>>>>> web and vendor directory from composer install
      */
     public function compile(Twig_NodeInterface $node, $indentation = 0)
     {
@@ -101,10 +97,9 @@ class Twig_Compiler implements Twig_CompilerInterface
         // source code starts at 1 (as we then increment it when we encounter new lines)
         $this->sourceLine = 1;
         $this->indentation = $indentation;
-<<<<<<< HEAD
+ 
         $this->varNameSalt = 0;
 =======
->>>>>>> web and vendor directory from composer install
 
         if ($node instanceof Twig_Node_Module) {
             // to be removed in 2.0
@@ -132,11 +127,10 @@ class Twig_Compiler implements Twig_CompilerInterface
      *
      * @param string $string The string
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return Twig_Compiler The current compiler instance
->>>>>>> web and vendor directory from composer install
      */
     public function raw($string)
     {
@@ -148,11 +142,10 @@ class Twig_Compiler implements Twig_CompilerInterface
     /**
      * Writes a string to the compiled code by adding indentation.
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return Twig_Compiler The current compiler instance
->>>>>>> web and vendor directory from composer install
      */
     public function write()
     {
@@ -167,11 +160,10 @@ class Twig_Compiler implements Twig_CompilerInterface
     /**
      * Appends an indentation to the current PHP code after compilation.
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return Twig_Compiler The current compiler instance
->>>>>>> web and vendor directory from composer install
      *
      * @deprecated since 1.27 (to be removed in 2.0).
      */
@@ -189,11 +181,10 @@ class Twig_Compiler implements Twig_CompilerInterface
      *
      * @param string $value The string
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return Twig_Compiler The current compiler instance
->>>>>>> web and vendor directory from composer install
      */
     public function string($value)
     {
@@ -207,20 +198,18 @@ class Twig_Compiler implements Twig_CompilerInterface
      *
      * @param mixed $value The value to convert
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return Twig_Compiler The current compiler instance
->>>>>>> web and vendor directory from composer install
      */
     public function repr($value)
     {
         if (is_int($value) || is_float($value)) {
-<<<<<<< HEAD
+ 
             if (false !== $locale = setlocale(LC_NUMERIC, '0')) {
 =======
             if (false !== $locale = setlocale(LC_NUMERIC, 0)) {
->>>>>>> web and vendor directory from composer install
                 setlocale(LC_NUMERIC, 'C');
             }
 
@@ -256,13 +245,12 @@ class Twig_Compiler implements Twig_CompilerInterface
     /**
      * Adds debugging information.
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @param Twig_NodeInterface $node The related twig node
      *
      * @return Twig_Compiler The current compiler instance
->>>>>>> web and vendor directory from composer install
      */
     public function addDebugInfo(Twig_NodeInterface $node)
     {
@@ -273,11 +261,10 @@ class Twig_Compiler implements Twig_CompilerInterface
             // mb_substr_count() replaces substr_count()
             // but they have different signatures!
             if (((int) ini_get('mbstring.func_overload')) & 2) {
-<<<<<<< HEAD
+ 
                 @trigger_error('Support for having "mbstring.func_overload" different from 0 is deprecated version 1.29 and will be removed in 2.0.', E_USER_DEPRECATED);
 
 =======
->>>>>>> web and vendor directory from composer install
                 // this is much slower than the "right" version
                 $this->sourceLine += mb_substr_count(mb_substr($this->source, $this->sourceOffset), "\n");
             } else {
@@ -304,11 +291,10 @@ class Twig_Compiler implements Twig_CompilerInterface
      *
      * @param int $step The number of indentation to add
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return Twig_Compiler The current compiler instance
->>>>>>> web and vendor directory from composer install
      */
     public function indent($step = 1)
     {
@@ -322,11 +308,10 @@ class Twig_Compiler implements Twig_CompilerInterface
      *
      * @param int $step The number of indentation to remove
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return Twig_Compiler The current compiler instance
->>>>>>> web and vendor directory from composer install
      *
      * @throws LogicException When trying to outdent too much so the indentation would become negative
      */
@@ -344,7 +329,7 @@ class Twig_Compiler implements Twig_CompilerInterface
 
     public function getVarName()
     {
-<<<<<<< HEAD
+ 
         return sprintf('__internal_%s', hash('sha256', __METHOD__.$this->varNameSalt++));
     }
 }
@@ -355,4 +340,3 @@ class_exists('Twig_Node');
         return sprintf('__internal_%s', hash('sha256', uniqid(mt_rand(), true), false));
     }
 }
->>>>>>> web and vendor directory from composer install

@@ -488,7 +488,7 @@ class LocaleConfigManager {
     // translated regardless of whether they are shipped if they in the standard
     // language list.
     $config_entity_type = $this->configManager->getEntityTypeIdByName($name);
-    if (!$config_entity_type || $config_entity_type === 'configurable_language'
+    if (!$config_entity_type || $config_entity_type   'configurable_language'
       || !empty($this->configFactory->get($name)->get('_core.default_config_hash'))
     ) {
       $shipped = $this->defaultConfigStorage->read($name);

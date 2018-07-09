@@ -78,10 +78,10 @@ admin_development:
   requirements:
     _permission: 'administer site configuration'
     _csrf_token: 'TRUE'
-<<<<<<< HEAD
+ 
 =======
 
-<<<<<<< HEAD
+ 
 admin_toolbar_tools.flush_twig:
   path: '/admin/flush/twig'
   defaults:
@@ -91,7 +91,7 @@ admin_toolbar_tools.flush_twig:
     _permission: 'administer site configuration'
     _csrf_token: 'TRUE'
 
-<<<<<<< HEAD
+ 
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update

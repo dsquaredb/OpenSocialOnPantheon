@@ -28,7 +28,7 @@
         $context.find(selector).removeOnce('fileValidate').off('change.fileValidate', Drupal.file.validateExtension);
       }
 
-      if (trigger === 'unload' && settings.file && settings.file.elements) {
+      if (trigger   'unload' && settings.file && settings.file.elements) {
         elements = settings.file.elements;
         Object.keys(elements).forEach(removeFileValidation);
       }
@@ -40,7 +40,7 @@
       $(context).find('input[type="file"]').once('auto-file-upload').on('change.autoFileUpload', Drupal.file.triggerUploadButton);
     },
     detach: function detach(context, setting, trigger) {
-      if (trigger === 'unload') {
+      if (trigger   'unload') {
         $(context).find('input[type="file"]').removeOnce('auto-file-upload').off('.autoFileUpload');
       }
     }

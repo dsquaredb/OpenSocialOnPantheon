@@ -27,11 +27,10 @@ interface SessionBagInterface
 
     /**
      * Initializes the Bag.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param array $array
->>>>>>> web and vendor directory from composer install
      */
     public function initialize(array &$array);
 

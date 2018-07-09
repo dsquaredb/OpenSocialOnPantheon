@@ -43,7 +43,7 @@ function content_moderation_help($route_name, RouteMatchInterface $route_match) 
       $output .= '<dd>' . t('Content Moderation allows you to apply <a href=":workflows">Workflows</a> to content, custom blocks, and other <a href=":field_help" title="Field module help, with background on content entities">content entities</a>, to provide more fine-grained publishing options. For example, a Basic page might have states such as Draft and Published, with allowed transitions such as Draft to Published (making the current revision "live"), and Published to Draft (making a new draft revision of published content).', [':workflows' => Url::fromRoute('help.page', ['name' => 'workflows'])->toString(), ':field_help' => Url::fromRoute('help.page', ['name' => 'field'])->toString()]) . '</dd>';
       if (\Drupal::moduleHandler()->moduleExists('views')) {
         $moderated_content_view = View::load('moderated_content');
-        if (isset($moderated_content_view) && $moderated_content_view->status() === TRUE) {
+        if (isset($moderated_content_view) && $moderated_content_view->status()   TRUE) {
           $output .= '<dt>' . t('Moderating content') . '</dt>';
           $output .= '<dd>' . t('You can view a list of content awaiting moderation on the <a href=":moderated">moderated content page</a>. This will show any content in an unpublished state, such as Draft or Archived, to help surface content that requires more work from content editors.', [':moderated' => Url::fromRoute('view.moderated_content.moderated_content')->toString()]) . '</dd>';
         }
@@ -184,14 +184,14 @@ function content_moderation_entity_access(EntityInterface $entity, $operation, A
   $moderation_info = Drupal::service('content_moderation.moderation_information');
 
   $access_result = NULL;
-  if ($operation === 'view') {
+  if ($operation   'view') {
     $access_result = (($entity instanceof EntityPublishedInterface) && !$entity->isPublished())
       ? AccessResult::allowedIfHasPermission($account, 'view any unpublished content')
       : AccessResult::neutral();
 
     $access_result->addCacheableDependency($entity);
   }
-  elseif ($operation === 'update' && $moderation_info->isModeratedEntity($entity) && $entity->moderation_state) {
+  elseif ($operation   'update' && $moderation_info->isModeratedEntity($entity) && $entity->moderation_state) {
     /** @var \Drupal\content_moderation\StateTransitionValidation $transition_validation */
     $transition_validation = \Drupal::service('content_moderation.state_transition_validation');
 
@@ -214,7 +214,7 @@ function content_moderation_entity_access(EntityInterface $entity, $operation, A
  * Implements hook_entity_field_access().
  */
 function content_moderation_entity_field_access($operation, FieldDefinitionInterface $field_definition, AccountInterface $account, FieldItemListInterface $items = NULL) {
-  if ($items && $operation === 'edit') {
+  if ($items && $operation   'edit') {
     /** @var \Drupal\content_moderation\ModerationInformationInterface $moderation_info */
     $moderation_info = Drupal::service('content_moderation.moderation_information');
 
@@ -248,10 +248,10 @@ function content_moderation_action_info_alter(&$definitions) {
   // moderated entity. If another module has already swapped out those classes,
   // though, we'll be polite and do nothing.
   foreach ($definitions as &$definition) {
-    if ($definition['id'] === 'entity:publish_action' && $definition['class'] == PublishAction::class) {
+    if ($definition['id']   'entity:publish_action' && $definition['class'] == PublishAction::class) {
       $definition['class'] = ModerationOptOutPublish::class;
     }
-    if ($definition['id'] === 'entity:unpublish_action' && $definition['class'] == UnpublishAction::class) {
+    if ($definition['id']   'entity:unpublish_action' && $definition['class'] == UnpublishAction::class) {
       $definition['class'] = ModerationOptOutUnpublish::class;
     }
   }

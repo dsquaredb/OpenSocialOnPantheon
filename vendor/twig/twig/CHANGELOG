@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+ 
 * 1.35.3 (2018-03-20)
 
  * fixed block names unicity
@@ -12,7 +12,7 @@
 
 * 1.35.1 (2018-03-02)
 
- * added an exception when using "===" instead of "same as"
+ * added an exception when using " " instead of "same as"
  * fixed possible array to string conversion concealing actual error
  * made variable names deterministic in compiled templates
  * fixed length filter when passing an instance of IteratorAggregate
@@ -117,7 +117,7 @@
  * added "is defined" support for block() and constant()
  * optimized the way attributes are fetched
 
-=======
+  =
 >>>>>>> web and vendor directory from composer install
 * 1.27.0 (2016-10-25)
 
@@ -171,9 +171,9 @@
 
  * fixed reserved keywords (forbids true, false, null and none keywords for variables names)
  * fixed support for PHP7 (Throwable support)
-<<<<<<< HEAD
+ 
  * marked the following methods as being internals on Twig_Environment:
-=======
+  =
  * marked the following methods as being internals on Twig_Environment: 
 >>>>>>> web and vendor directory from composer install
    getFunctions(), getFilters(), getTests(), getFunction(), getFilter(), getTest(),
@@ -259,9 +259,9 @@
  * fixed limited RCEs when in sandbox mode
  * deprecated Twig_Template::getEnvironment()
  * deprecated the _self variable for usage outside of the from and import tags
-<<<<<<< HEAD
+ 
  * added Twig_BaseNodeVisitor to ease the compatibility of node visitors
-=======
+  =
  * added Twig_BaseNodeVisitor to ease the compatibility of node visitors 
 >>>>>>> web and vendor directory from composer install
    between 1.x and 2.x

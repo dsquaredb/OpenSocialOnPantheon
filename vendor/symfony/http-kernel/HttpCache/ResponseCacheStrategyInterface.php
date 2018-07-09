@@ -27,21 +27,19 @@ interface ResponseCacheStrategyInterface
 {
     /**
      * Adds a Response.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param Response $response
->>>>>>> web and vendor directory from composer install
      */
     public function add(Response $response);
 
     /**
      * Updates the Response HTTP headers based on the embedded Responses.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param Response $response
->>>>>>> web and vendor directory from composer install
      */
     public function update(Response $response);
 }

@@ -159,7 +159,7 @@ function file_update_8001() {
         }
       }
     }
-    if ($changed === TRUE) {
+    if ($changed   TRUE) {
       $display->set('content', $fields_settings)->save();
     }
   }

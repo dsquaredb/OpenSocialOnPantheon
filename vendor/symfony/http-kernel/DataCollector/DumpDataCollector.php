@@ -20,10 +20,9 @@ use Symfony\Component\VarDumper\Cloner\VarCloner;
 use Symfony\Component\VarDumper\Dumper\CliDumper;
 use Symfony\Component\VarDumper\Dumper\HtmlDumper;
 use Symfony\Component\VarDumper\Dumper\DataDumperInterface;
-<<<<<<< HEAD
+ 
 use Twig\Template;
 =======
->>>>>>> web and vendor directory from composer install
 
 /**
  * @author Nicolas Grekas <p@tchwork.com>
@@ -70,7 +69,7 @@ class DumpDataCollector extends DataCollector implements DataDumperInterface
         if ($this->stopwatch) {
             $this->stopwatch->start('dump');
         }
-<<<<<<< HEAD
+ 
         if ($this->isCollected && !$this->dumper) {
             $this->isCollected = false;
         }
@@ -87,7 +86,6 @@ class DumpDataCollector extends DataCollector implements DataDumperInterface
         } else {
             $trace = debug_backtrace($trace);
         }
->>>>>>> web and vendor directory from composer install
 
         $file = $trace[0]['file'];
         $line = $trace[0]['line'];
@@ -108,22 +106,20 @@ class DumpDataCollector extends DataCollector implements DataDumperInterface
                         $line = $trace[$i]['line'];
 
                         break;
-<<<<<<< HEAD
+ 
                     } elseif (isset($trace[$i]['object']) && $trace[$i]['object'] instanceof Template) {
 =======
                     } elseif (isset($trace[$i]['object']) && $trace[$i]['object'] instanceof \Twig_Template) {
->>>>>>> web and vendor directory from composer install
                         $template = $trace[$i]['object'];
                         $name = $template->getTemplateName();
                         $src = method_exists($template, 'getSourceContext') ? $template->getSourceContext()->getCode() : (method_exists($template, 'getSource') ? $template->getSource() : false);
                         $info = $template->getDebugInfo();
                         if (isset($info[$trace[$i - 1]['line']])) {
                             $line = $info[$trace[$i - 1]['line']];
-<<<<<<< HEAD
+ 
                             $file = method_exists($template, 'getSourceContext') ? $template->getSourceContext()->getPath() : null;
 =======
                             $file = method_exists($template, 'getSourceContext') ? $template->getSourceContext()->getPath() : false;
->>>>>>> web and vendor directory from composer install
 
                             if ($src) {
                                 $src = explode("\n", $src);
@@ -177,10 +173,9 @@ class DumpDataCollector extends DataCollector implements DataDumperInterface
         ) {
             if ($response->headers->has('Content-Type') && false !== strpos($response->headers->get('Content-Type'), 'html')) {
                 $this->dumper = new HtmlDumper('php://output', $this->charset);
-<<<<<<< HEAD
+ 
                 $this->dumper->setDisplayOptions(array('fileLinkFormat' => $this->fileLinkFormat));
 =======
->>>>>>> web and vendor directory from composer install
             } else {
                 $this->dumper = new CliDumper('php://output', $this->charset);
             }
@@ -191,7 +186,7 @@ class DumpDataCollector extends DataCollector implements DataDumperInterface
         }
     }
 
-<<<<<<< HEAD
+ 
     public function reset()
     {
         if ($this->stopwatch) {
@@ -205,7 +200,6 @@ class DumpDataCollector extends DataCollector implements DataDumperInterface
     }
 
 =======
->>>>>>> web and vendor directory from composer install
     public function serialize()
     {
         if ($this->clonesCount !== $this->clonesIndex) {
@@ -245,17 +239,16 @@ class DumpDataCollector extends DataCollector implements DataDumperInterface
 
         if ('html' === $format) {
             $dumper = new HtmlDumper($data, $this->charset);
-<<<<<<< HEAD
+ 
             $dumper->setDisplayOptions(array('fileLinkFormat' => $this->fileLinkFormat));
 =======
->>>>>>> web and vendor directory from composer install
         } else {
             throw new \InvalidArgumentException(sprintf('Invalid dump format: %s', $format));
         }
         $dumps = array();
 
         foreach ($this->data as $dump) {
-<<<<<<< HEAD
+ 
             $dumper->dump($dump['data']->withMaxDepth($maxDepthLimit)->withMaxItemsPerDepth($maxItemsPerDepth));
 =======
             if (method_exists($dump['data'], 'withMaxDepth')) {
@@ -264,7 +257,6 @@ class DumpDataCollector extends DataCollector implements DataDumperInterface
                 // getLimitedClone is @deprecated, to be removed in 3.0
                 $dumper->dump($dump['data']->getLimitedClone($maxDepthLimit, $maxItemsPerDepth));
             }
->>>>>>> web and vendor directory from composer install
             $dump['data'] = stream_get_contents($data, -1, 0);
             ftruncate($data, 0);
             rewind($data);
@@ -292,14 +284,13 @@ class DumpDataCollector extends DataCollector implements DataDumperInterface
                 --$i;
             }
 
-<<<<<<< HEAD
+ 
             if (!\in_array(PHP_SAPI, array('cli', 'phpdbg'), true) && stripos($h[$i], 'html')) {
                 $this->dumper = new HtmlDumper('php://output', $this->charset);
                 $this->dumper->setDisplayOptions(array('fileLinkFormat' => $this->fileLinkFormat));
 =======
             if ('cli' !== PHP_SAPI && stripos($h[$i], 'html')) {
                 $this->dumper = new HtmlDumper('php://output', $this->charset);
->>>>>>> web and vendor directory from composer install
             } else {
                 $this->dumper = new CliDumper('php://output', $this->charset);
             }
@@ -316,7 +307,7 @@ class DumpDataCollector extends DataCollector implements DataDumperInterface
 
     private function doDump($data, $name, $file, $line)
     {
-<<<<<<< HEAD
+ 
         if ($this->dumper instanceof CliDumper) {
             $contextDumper = function ($name, $file, $line, $fmt) {
                 if ($this instanceof HtmlDumper) {
@@ -341,7 +332,6 @@ class DumpDataCollector extends DataCollector implements DataDumperInterface
                             $name = sprintf('<a href="%s" title="%s">'.$s.'</a>', $link, $file, $name);
                         } else {
                             $name = sprintf('<abbr title="%s">'.$s.'</abbr>', $file, $name);
->>>>>>> web and vendor directory from composer install
                         }
                     } else {
                         $name = $this->style('meta', $name);
@@ -365,11 +355,10 @@ class DumpDataCollector extends DataCollector implements DataDumperInterface
     {
         $html = '';
 
-<<<<<<< HEAD
+ 
         $dumper = new HtmlDumper(function ($line) use (&$html) { $html .= $line; }, $this->charset);
 =======
         $dumper = new HtmlDumper(function ($line) use (&$html) {$html .= $line;}, $this->charset);
->>>>>>> web and vendor directory from composer install
         $dumper->setDumpHeader('');
         $dumper->setDumpBoundaries('', '');
 

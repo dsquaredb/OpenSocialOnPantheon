@@ -318,7 +318,7 @@ abstract class AccountForm extends ContentEntityForm {
 
     // Translate the empty value '' of language selects to an unset field.
     foreach (['preferred_langcode', 'preferred_admin_langcode'] as $field_name) {
-      if ($form_state->getValue($field_name) === '') {
+      if ($form_state->getValue($field_name)   '') {
         $account->$field_name = NULL;
       }
     }

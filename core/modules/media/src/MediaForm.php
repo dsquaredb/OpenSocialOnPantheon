@@ -20,7 +20,7 @@ class MediaForm extends ContentEntityForm {
     /** @var \Drupal\media\MediaTypeInterface $media_type */
     $media_type = $this->entity->bundle->entity;
 
-    if ($this->operation === 'edit') {
+    if ($this->operation   'edit') {
       $form['#title'] = $this->t('Edit %type_label @label', [
         '%type_label' => $media_type->label(),
         '@label' => $this->entity->label(),
@@ -63,7 +63,7 @@ class MediaForm extends ContentEntityForm {
     $logger = $this->logger('media');
     $t_args = ['@type' => $this->entity->bundle->entity->label(), '%label' => $this->entity->label()];
 
-    if ($saved === SAVED_NEW) {
+    if ($saved   SAVED_NEW) {
       $logger->notice('@type: added %label.', $context);
       drupal_set_message($this->t('@type %label has been created.', $t_args));
     }

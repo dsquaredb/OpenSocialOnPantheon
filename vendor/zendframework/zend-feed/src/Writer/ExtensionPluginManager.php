@@ -38,14 +38,13 @@ class ExtensionPluginManager extends AbstractPluginManager
         'dublincorerendererfeed'     => Extension\DublinCore\Renderer\Feed::class,
         'dublinCoreRendererFeed'     => Extension\DublinCore\Renderer\Feed::class,
         'DublinCoreRendererFeed'     => Extension\DublinCore\Renderer\Feed::class,
-<<<<<<< HEAD
+ 
 =======
         'DublinCoreRenderer\Feed'    => Extension\DublinCore\Renderer\Feed::class,
         'DublinCore\Renderer\Feed'   => Extension\DublinCore\Renderer\Feed::class,
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> updating open social
         'googleplaypodcastentry'           => Extension\GooglePlayPodcast\Entry::class,
         'googleplaypodcastEntry'           => Extension\GooglePlayPodcast\Entry::class,
         'googlePlayPodcastEntry'           => Extension\GooglePlayPodcast\Entry::class,
@@ -70,12 +69,9 @@ class ExtensionPluginManager extends AbstractPluginManager
         'GooglePlayPodcastRendererFeed'    => Extension\GooglePlayPodcast\Renderer\Feed::class,
         'GoogleplaypodcastRenderer\Feed'   => Extension\GooglePlayPodcast\Renderer\Feed::class,
         'GooglePlayPodcast\Renderer\Feed'  => Extension\GooglePlayPodcast\Renderer\Feed::class,
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
         'itunesentry'                => Extension\ITunes\Entry::class,
         'itunesEntry'                => Extension\ITunes\Entry::class,
         'iTunesEntry'                => Extension\ITunes\Entry::class,

@@ -11,7 +11,7 @@
 
 namespace Symfony\Component\DependencyInjection\Dumper;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\DependencyInjection\Argument\ArgumentInterface;
 use Symfony\Component\DependencyInjection\Argument\IteratorArgument;
 use Symfony\Component\DependencyInjection\Argument\ServiceClosureArgument;
@@ -21,18 +21,16 @@ use Symfony\Component\DependencyInjection\Compiler\AnalyzeServiceReferencesPass;
 =======
 use Symfony\Component\DependencyInjection\Variable;
 use Symfony\Component\DependencyInjection\Definition;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Reference;
-<<<<<<< HEAD
+ 
 use Symfony\Component\DependencyInjection\TypedReference;
 use Symfony\Component\DependencyInjection\Parameter;
 use Symfony\Component\DependencyInjection\Exception\EnvParameterException;
 =======
 use Symfony\Component\DependencyInjection\Parameter;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
 use Symfony\Component\DependencyInjection\Exception\RuntimeException;
 use Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException;
@@ -40,10 +38,9 @@ use Symfony\Component\DependencyInjection\LazyProxy\PhpDumper\DumperInterface as
 use Symfony\Component\DependencyInjection\LazyProxy\PhpDumper\NullDumper;
 use Symfony\Component\DependencyInjection\ExpressionLanguage;
 use Symfony\Component\ExpressionLanguage\Expression;
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\ExpressionLanguage\ExpressionFunctionProviderInterface;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\HttpKernel\Kernel;
 
 /**
@@ -56,17 +53,16 @@ class PhpDumper extends Dumper
 {
     /**
      * Characters that might appear in the generated variable name as first character.
-<<<<<<< HEAD
+ 
 =======
      *
      * @var string
->>>>>>> web and vendor directory from composer install
      */
     const FIRST_CHARS = 'abcdefghijklmnopqrstuvwxyz';
 
     /**
      * Characters that might appear in the generated variable name as any but the first character.
-<<<<<<< HEAD
+ 
      */
     const NON_FIRST_CHARS = 'abcdefghijklmnopqrstuvwxyz0123456789_';
 
@@ -77,7 +73,6 @@ class PhpDumper extends Dumper
     const NON_FIRST_CHARS = 'abcdefghijklmnopqrstuvwxyz0123456789_';
 
     private $inlinedDefinitions;
->>>>>>> web and vendor directory from composer install
     private $definitionVariables;
     private $referenceVariables;
     private $variableCount;
@@ -86,7 +81,7 @@ class PhpDumper extends Dumper
     private $targetDirRegex;
     private $targetDirMaxMatches;
     private $docStar;
-<<<<<<< HEAD
+ 
     private $serviceIdToMethodNameMap;
     private $usedMethodNames;
     private $namespace;
@@ -107,7 +102,6 @@ class PhpDumper extends Dumper
 
     /**
      * @var \Symfony\Component\DependencyInjection\LazyProxy\PhpDumper\DumperInterface
->>>>>>> web and vendor directory from composer install
      */
     private $proxyDumper;
 
@@ -116,7 +110,7 @@ class PhpDumper extends Dumper
      */
     public function __construct(ContainerBuilder $container)
     {
-<<<<<<< HEAD
+ 
         if (!$container->isCompiled()) {
             @trigger_error('Dumping an uncompiled ContainerBuilder is deprecated since Symfony 3.3 and will not be supported anymore in 4.0. Compile the container beforehand.', E_USER_DEPRECATED);
         }
@@ -126,16 +120,14 @@ class PhpDumper extends Dumper
         parent::__construct($container);
 
         $this->inlinedDefinitions = new \SplObjectStorage();
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Sets the dumper to be used when dumping proxies in the generated container.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param ProxyDumper $proxyDumper
->>>>>>> web and vendor directory from composer install
      */
     public function setProxyDumper(ProxyDumper $proxyDumper)
     {
@@ -150,7 +142,7 @@ class PhpDumper extends Dumper
      *  * class:      The class name
      *  * base_class: The base class name
      *  * namespace:  The class namespace
-<<<<<<< HEAD
+ 
      *  * as_files:   To split the container in several files
      *
      * @return string|array A PHP class representing the service container or an array of PHP files if the "as_files" option is set
@@ -161,20 +153,18 @@ class PhpDumper extends Dumper
      * @param array $options An array of options
      *
      * @return string A PHP class representing of the service container
->>>>>>> web and vendor directory from composer install
      */
     public function dump(array $options = array())
     {
         $this->targetDirRegex = null;
-<<<<<<< HEAD
+ 
         $this->inlinedRequires = array();
 =======
->>>>>>> web and vendor directory from composer install
         $options = array_merge(array(
             'class' => 'ProjectServiceContainer',
             'base_class' => 'Container',
             'namespace' => '',
-<<<<<<< HEAD
+ 
             'as_files' => false,
             'debug' => true,
             'hot_path_tag' => 'container.hot_path',
@@ -210,7 +200,6 @@ class PhpDumper extends Dumper
 =======
             'debug' => true,
         ), $options);
->>>>>>> web and vendor directory from composer install
         $this->docStar = $options['debug'] ? '*' : '';
 
         if (!empty($options['file']) && is_dir($dir = dirname($options['file']))) {
@@ -238,7 +227,7 @@ class PhpDumper extends Dumper
             }
         }
 
-<<<<<<< HEAD
+ 
         $code =
             $this->startClass($options['class'], $baseClass, $baseClassWithNamespace).
             $this->addServices().
@@ -346,7 +335,6 @@ EOF;
             $this->addProxyClasses()
         ;
         $this->targetDirRegex = null;
->>>>>>> web and vendor directory from composer install
 
         return $code;
     }
@@ -368,7 +356,7 @@ EOF;
     /**
      * Generates Service local temp variables.
      *
-<<<<<<< HEAD
+ 
      * @return string
      */
     private function addServiceLocalTempVariables($cId, Definition $definition, \SplObjectStorage $inlinedDefinitions, \SplObjectStorage $allInlinedDefinitions)
@@ -413,12 +401,11 @@ EOF;
             $this->getServiceCallsFromArguments($iDefinition->getProperties(), $calls, $behavior);
             $this->getServiceCallsFromArguments(array($iDefinition->getConfigurator()), $calls, $behavior);
             $this->getServiceCallsFromArguments(array($iDefinition->getFactory()), $calls, $behavior);
->>>>>>> web and vendor directory from composer install
         }
 
         $code = '';
         foreach ($calls as $id => $callCount) {
-<<<<<<< HEAD
+ 
             if ('service_container' === $id || $id === $cId || isset($this->referenceVariables[$id])) {
                 continue;
             }
@@ -462,14 +449,13 @@ EOTXT;
         }
 
         if ('' !== $code) {
->>>>>>> web and vendor directory from composer install
             $code .= "\n";
         }
 
         return $code;
     }
 
-<<<<<<< HEAD
+ 
     private function analyzeCircularReferences(array $edges, &$checkedNodes, &$currentPath)
     {
         foreach ($edges as $edge) {
@@ -559,12 +545,11 @@ EOTXT;
 
         foreach ($definitions as $definition) {
             $proxyCode = "\n".$this->getProxyDumper()->getProxyCode($definition);
->>>>>>> web and vendor directory from composer install
             if ($strip) {
                 $proxyCode = "<?php\n".$proxyCode;
                 $proxyCode = substr(Kernel::stripComments($proxyCode), 5);
             }
-<<<<<<< HEAD
+ 
             yield sprintf('%s.php', explode(' ', $proxyCode, 3)[1]) => $proxyCode;
         }
 =======
@@ -572,13 +557,12 @@ EOTXT;
         }
 
         return $code;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Generates the require_once statement for service includes.
      *
-<<<<<<< HEAD
+ 
      * @return string
      */
     private function addServiceInclude($cId, Definition $definition, \SplObjectStorage $inlinedDefinitions)
@@ -632,7 +616,6 @@ EOTXT;
         foreach ($this->getInlinedDefinitions($definition) as $definition) {
             if (null !== $file = $definition->getFile()) {
                 $code .= sprintf($template, $this->dumpValue($file));
->>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -646,18 +629,17 @@ EOTXT;
     /**
      * Generates the inline definition of a service.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param string     $id
      * @param Definition $definition
      *
->>>>>>> web and vendor directory from composer install
      * @return string
      *
      * @throws RuntimeException                  When the factory definition is incomplete
      * @throws ServiceCircularReferenceException When a circular reference is detected
      */
-<<<<<<< HEAD
+ 
     private function addServiceInlinedDefinitions($id, Definition $definition, \SplObjectStorage $inlinedDefinitions, &$isSimpleInstance)
     {
         $code = '';
@@ -748,14 +730,13 @@ EOTXT;
 
                 $code .= "\n";
             }
->>>>>>> web and vendor directory from composer install
         }
 
         return $code;
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Adds the service return statement.
      *
@@ -774,22 +755,20 @@ EOTXT;
     }
 
     /**
->>>>>>> web and vendor directory from composer install
      * Generates the service instance.
      *
      * @param string     $id
      * @param Definition $definition
-<<<<<<< HEAD
+ 
      * @param bool       $isSimpleInstance
 =======
->>>>>>> web and vendor directory from composer install
      *
      * @return string
      *
      * @throws InvalidArgumentException
      * @throws RuntimeException
      */
-<<<<<<< HEAD
+ 
     private function addServiceInstance($id, Definition $definition, $isSimpleInstance)
     {
         $class = $this->dumpValue($definition->getClass());
@@ -828,22 +807,20 @@ EOTXT;
         } elseif (!$isProxyCandidate && $definition->isShared() && ContainerInterface::SCOPE_PROTOTYPE !== $scope = $definition->getScope(false)) {
             $instantiation = "\$this->services['$id'] = \$this->scopedServices['$scope']['$id'] = ".($simple ? '' : '$instance');
         } elseif (!$simple) {
->>>>>>> web and vendor directory from composer install
             $instantiation = '$instance';
         }
 
         $return = '';
-<<<<<<< HEAD
+ 
         if ($isSimpleInstance) {
 =======
         if ($simple) {
->>>>>>> web and vendor directory from composer install
             $return = 'return ';
         } else {
             $instantiation .= ' = ';
         }
 
-<<<<<<< HEAD
+ 
         $code = $this->addNewInstance($definition, $return, $instantiation, $id);
 
         if (!$isSimpleInstance) {
@@ -851,7 +828,6 @@ EOTXT;
         $code = $this->addNewInstance($id, $definition, $return, $instantiation);
 
         if (!$simple) {
->>>>>>> web and vendor directory from composer install
             $code .= "\n";
         }
 
@@ -859,19 +835,18 @@ EOTXT;
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Checks if the definition is a trivial instance.
      *
 =======
      * Checks if the definition is a simple instance.
      *
      * @param string     $id
->>>>>>> web and vendor directory from composer install
      * @param Definition $definition
      *
      * @return bool
      */
-<<<<<<< HEAD
+ 
     private function isTrivialInstance(Definition $definition)
     {
         if ($definition->isSynthetic() || $definition->getFile() || $definition->getMethodCalls() || $definition->getProperties() || $definition->getConfigurator()) {
@@ -912,38 +887,34 @@ EOTXT;
             }
 
             if ($sDefinition->getMethodCalls() || $sDefinition->getProperties() || $sDefinition->getConfigurator()) {
->>>>>>> web and vendor directory from composer install
                 return false;
             }
         }
 
-<<<<<<< HEAD
+ 
         if (false !== strpos($this->dumpLiteralClass($this->dumpValue($definition->getClass())), '$')) {
             return false;
         }
 
 =======
->>>>>>> web and vendor directory from composer install
         return true;
     }
 
     /**
      * Adds method calls to a service definition.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param string     $id
->>>>>>> web and vendor directory from composer install
      * @param Definition $definition
      * @param string     $variableName
      *
      * @return string
      */
-<<<<<<< HEAD
+ 
     private function addServiceMethodCalls(Definition $definition, $variableName = 'instance')
 =======
     private function addServiceMethodCalls($id, Definition $definition, $variableName = 'instance')
->>>>>>> web and vendor directory from composer install
     {
         $calls = '';
         foreach ($definition->getMethodCalls() as $call) {
@@ -958,11 +929,10 @@ EOTXT;
         return $calls;
     }
 
-<<<<<<< HEAD
+ 
     private function addServiceProperties(Definition $definition, $variableName = 'instance')
 =======
     private function addServiceProperties($id, Definition $definition, $variableName = 'instance')
->>>>>>> web and vendor directory from composer install
     {
         $code = '';
         foreach ($definition->getProperties() as $name => $value) {
@@ -975,26 +945,24 @@ EOTXT;
     /**
      * Generates the inline definition setup.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param string     $id
      * @param Definition $definition
      *
->>>>>>> web and vendor directory from composer install
      * @return string
      *
      * @throws ServiceCircularReferenceException when the container contains a circular reference
      */
-<<<<<<< HEAD
+ 
     private function addServiceInlinedDefinitionsSetup($id, Definition $definition, \SplObjectStorage $inlinedDefinitions, $isSimpleInstance)
 =======
     private function addServiceInlinedDefinitionsSetup($id, Definition $definition)
->>>>>>> web and vendor directory from composer install
     {
         $this->referenceVariables[$id] = new Variable('instance');
 
         $code = '';
-<<<<<<< HEAD
+ 
         foreach ($inlinedDefinitions as $def) {
             if ($definition === $def || !$this->hasReference($id, array($def->getProperties(), $def->getMethodCalls(), $def->getConfigurator()), true)) {
 =======
@@ -1006,13 +974,12 @@ EOTXT;
             $processed->offsetSet($iDefinition);
 
             if (!$this->hasReference($id, $iDefinition->getMethodCalls(), true) && !$this->hasReference($id, $iDefinition->getProperties(), true)) {
->>>>>>> web and vendor directory from composer install
                 continue;
             }
 
             // if the instance is simple, the return statement has already been generated
             // so, the only possible way to get there is because of a circular reference
-<<<<<<< HEAD
+ 
             if ($isSimpleInstance) {
                 throw new ServiceCircularReferenceException($id, array($id));
             }
@@ -1036,7 +1003,6 @@ EOTXT;
         }
 
         if ('' !== $code) {
->>>>>>> web and vendor directory from composer install
             $code .= "\n";
         }
 
@@ -1046,20 +1012,18 @@ EOTXT;
     /**
      * Adds configurator definition.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param string     $id
->>>>>>> web and vendor directory from composer install
      * @param Definition $definition
      * @param string     $variableName
      *
      * @return string
      */
-<<<<<<< HEAD
+ 
     private function addServiceConfigurator(Definition $definition, $variableName = 'instance')
 =======
     private function addServiceConfigurator($id, Definition $definition, $variableName = 'instance')
->>>>>>> web and vendor directory from composer install
     {
         if (!$callable = $definition->getConfigurator()) {
             return '';
@@ -1073,7 +1037,7 @@ EOTXT;
 
             $class = $this->dumpValue($callable[0]);
             // If the class is a string we can optimize call_user_func away
-<<<<<<< HEAD
+ 
             if (0 === strpos($class, "'") && false === strpos($class, '$')) {
                 return sprintf("        %s::%s(\$%s);\n", $this->dumpLiteralClass($class), $callable[1], $variableName);
             }
@@ -1089,7 +1053,6 @@ EOTXT;
             }
 
             return sprintf("        call_user_func(array(%s, '%s'), \$%s);\n", $this->dumpValue($callable[0]), $callable[1], $variableName);
->>>>>>> web and vendor directory from composer install
         }
 
         return sprintf("        %s(\$%s);\n", $callable, $variableName);
@@ -1100,7 +1063,7 @@ EOTXT;
      *
      * @param string     $id
      * @param Definition $definition
-<<<<<<< HEAD
+ 
      * @param string     &$file
      *
      * @return string
@@ -1111,7 +1074,6 @@ EOTXT;
      * @return string
      */
     private function addService($id, Definition $definition)
->>>>>>> web and vendor directory from composer install
     {
         $this->definitionVariables = new \SplObjectStorage();
         $this->referenceVariables = array();
@@ -1119,7 +1081,7 @@ EOTXT;
 
         $return = array();
 
-<<<<<<< HEAD
+ 
         if ($class = $definition->getClass()) {
             $class = $this->container->resolveEnvPlaceholders($class);
             $return[] = sprintf(0 === strpos($class, '%') ? '@return object A %1$s instance' : '@return \%s', ltrim($class, '\\'));
@@ -1128,7 +1090,6 @@ EOTXT;
             $return[] = '@throws RuntimeException always since this service is expected to be injected dynamically';
         } elseif ($class = $definition->getClass()) {
             $return[] = sprintf('@return %s A %s instance', 0 === strpos($class, '%') ? 'object' : '\\'.ltrim($class, '\\'), ltrim($class, '\\'));
->>>>>>> web and vendor directory from composer install
         } elseif ($definition->getFactory()) {
             $factory = $definition->getFactory();
             if (is_string($factory)) {
@@ -1140,7 +1101,7 @@ EOTXT;
                     $return[] = sprintf('@return object An instance returned by %s::%s()', $factory[0]->getClass(), $factory[1]);
                 }
             }
-<<<<<<< HEAD
+ 
 =======
         } elseif ($definition->getFactoryClass(false)) {
             $return[] = sprintf('@return object An instance returned by %s::%s()', $definition->getFactoryClass(false), $definition->getFactoryMethod(false));
@@ -1154,7 +1115,6 @@ EOTXT;
                 $return[] = '';
             }
             $return[] = sprintf("@throws InactiveScopeException when the '%s' service is requested while the '%s' scope is not active", $id, $scope);
->>>>>>> web and vendor directory from composer install
         }
 
         if ($definition->isDeprecated()) {
@@ -1166,7 +1126,7 @@ EOTXT;
         }
 
         $return = str_replace("\n     * \n", "\n     *\n", implode("\n     * ", $return));
-<<<<<<< HEAD
+ 
         $return = $this->container->resolveEnvPlaceholders($return);
 
         $shared = $definition->isShared() ? ' shared' : '';
@@ -1322,7 +1282,6 @@ EOF;
                 $this->addServiceConfigurator($id, $definition).
                 $this->addServiceReturn($id, $definition)
             ;
->>>>>>> web and vendor directory from composer install
         }
 
         $this->definitionVariables = null;
@@ -1338,7 +1297,7 @@ EOF;
      */
     private function addServices()
     {
-<<<<<<< HEAD
+ 
         $publicServices = $privateServices = '';
         $definitions = $this->container->getDefinitions();
         ksort($definitions);
@@ -1351,13 +1310,12 @@ EOF;
         $definitions = $this->container->getDefinitions();
         ksort($definitions);
         foreach ($definitions as $id => $definition) {
->>>>>>> web and vendor directory from composer install
             if ($definition->isPublic()) {
                 $publicServices .= $this->addService($id, $definition);
             } else {
                 $privateServices .= $this->addService($id, $definition);
             }
-<<<<<<< HEAD
+ 
         }
 
         return $publicServices.$privateServices;
@@ -1449,7 +1407,6 @@ EOF;
     private function addNewInstance($id, Definition $definition, $return, $instantiation)
     {
         $class = $this->dumpValue($definition->getClass());
->>>>>>> web and vendor directory from composer install
 
         $arguments = array();
         foreach ($definition->getArguments() as $value) {
@@ -1465,16 +1422,15 @@ EOF;
 
                 if ($callable[0] instanceof Reference
                     || ($callable[0] instanceof Definition && $this->definitionVariables->contains($callable[0]))) {
-<<<<<<< HEAD
+ 
                     return $return.sprintf("%s->%s(%s);\n", $this->dumpValue($callable[0]), $callable[1], $arguments ? implode(', ', $arguments) : '');
 =======
                     return sprintf("        $return{$instantiation}%s->%s(%s);\n", $this->dumpValue($callable[0]), $callable[1], $arguments ? implode(', ', $arguments) : '');
->>>>>>> web and vendor directory from composer install
                 }
 
                 $class = $this->dumpValue($callable[0]);
                 // If the class is a string we can optimize call_user_func away
-<<<<<<< HEAD
+ 
                 if (0 === strpos($class, "'") && false === strpos($class, '$')) {
                     if ("''" === $class) {
                         throw new RuntimeException(sprintf('Cannot dump definition: The "%s" service is defined to be created by a factory but is missing the service reference, did you forget to define the factory service id or class?', $id));
@@ -1531,13 +1487,12 @@ EOF;
         }
 
         return sprintf("        $return{$instantiation}new %s(%s);\n", $this->dumpLiteralClass($class), implode(', ', $arguments));
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Adds the class headers.
      *
-<<<<<<< HEAD
+ 
      * @param string $class                  Class name
      * @param string $baseClass              The name of the base class
      * @param string $baseClassWithNamespace Fully qualified base class name
@@ -1573,14 +1528,13 @@ $namespaceLine
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\DependencyInjection\Exception\InactiveScopeException;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
 use Symfony\Component\DependencyInjection\Exception\LogicException;
 use Symfony\Component\DependencyInjection\Exception\RuntimeException;
 $bagClass
 
 /*{$this->docStar}
-<<<<<<< HEAD
+ 
  * This class has been auto-generated
  * by the Symfony Dependency Injection Component.
  *
@@ -1590,14 +1544,13 @@ $bagClass
  *
  * This class has been auto-generated
  * by the Symfony Dependency Injection Component.
->>>>>>> web and vendor directory from composer install
  */
 class $class extends $baseClass
 {
     private \$parameters;
     private \$targetDirs = array();
 
-<<<<<<< HEAD
+ 
     public function __construct()
     {
 
@@ -1683,12 +1636,11 @@ EOF;
         $code .= $this->addMethodMap();
         $code .= $this->addAliases();
 
->>>>>>> web and vendor directory from composer install
         $code .= <<<'EOF'
     }
 
 EOF;
-<<<<<<< HEAD
+ 
         $code .= $this->addRemovedIds();
 
         if ($this->container->isCompiled()) {
@@ -1800,13 +1752,12 @@ EOF;
     }
 
 EOF;
->>>>>>> web and vendor directory from composer install
 
         return $code;
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Adds the normalizedIds property definition.
      *
      * @return string
@@ -1907,7 +1858,6 @@ EOF;
     public function isFrozen()
     {
         return true;
->>>>>>> web and vendor directory from composer install
     }
 
 EOF;
@@ -1920,7 +1870,7 @@ EOF;
      */
     private function addMethodMap()
     {
-<<<<<<< HEAD
+ 
         $code = '';
         $definitions = $this->container->getDefinitions();
         ksort($definitions);
@@ -1998,7 +1948,6 @@ EOF;
         }
 
         return $code."        );\n";
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -2009,7 +1958,7 @@ EOF;
     private function addAliases()
     {
         if (!$aliases = $this->container->getAliases()) {
-<<<<<<< HEAD
+ 
             return $this->container->isCompiled() ? "\n        \$this->aliases = array();\n" : '';
 =======
             if ($this->container->isFrozen()) {
@@ -2017,13 +1966,12 @@ EOF;
             } else {
                 return '';
             }
->>>>>>> web and vendor directory from composer install
         }
 
         $code = "        \$this->aliases = array(\n";
         ksort($aliases);
         foreach ($aliases as $alias => $id) {
-<<<<<<< HEAD
+ 
             $id = $this->container->normalizeId($id);
             while (isset($aliases[$id])) {
                 $id = $this->container->normalizeId($aliases[$id]);
@@ -2035,13 +1983,12 @@ EOF;
                 $id = (string) $aliases[$id];
             }
             $code .= '            '.var_export($alias, true).' => '.var_export($id, true).",\n";
->>>>>>> web and vendor directory from composer install
         }
 
         return $code."        );\n";
     }
 
-<<<<<<< HEAD
+ 
     private function addInlineRequires()
     {
         if (!$this->hotPathTag || !$this->inlineRequires) {
@@ -2074,7 +2021,6 @@ EOF;
     }
 
 =======
->>>>>>> web and vendor directory from composer install
     /**
      * Adds default parameters method.
      *
@@ -2086,7 +2032,7 @@ EOF;
             return '';
         }
 
-<<<<<<< HEAD
+ 
         $php = array();
         $dynamicPhp = array();
         $normalizedParams = array();
@@ -2144,13 +2090,12 @@ EOF;
 
         if (!(isset($this->parameters[$name]) || array_key_exists($name, $this->parameters))) {
             throw new InvalidArgumentException(sprintf('The parameter "%s" must be defined.', $name));
->>>>>>> web and vendor directory from composer install
         }
 
         return $this->parameters[$name];
     }
 
-<<<<<<< HEAD
+ 
     public function hasParameter($name)
     {
         $name = (string) $name;
@@ -2176,13 +2121,12 @@ EOF;
     /**
      * {@inheritdoc}
      */
->>>>>>> web and vendor directory from composer install
     public function setParameter($name, $value)
     {
         throw new LogicException('Impossible to call set() on a frozen ParameterBag.');
     }
 
-<<<<<<< HEAD
+ 
     public function getParameterBag()
     {
         if (null === $this->parameterBag) {
@@ -2202,14 +2146,13 @@ EOF;
     {
         if (null === $this->parameterBag) {
             $this->parameterBag = new FrozenParameterBag($this->parameters);
->>>>>>> web and vendor directory from composer install
         }
 
         return $this->parameterBag;
     }
 
 EOF;
-<<<<<<< HEAD
+ 
             if (!$this->asFiles) {
                 $code = preg_replace('/^.*buildParameters.*\n.*\n.*\n/m', '', $code);
             }
@@ -2277,7 +2220,6 @@ EOF;
             if ('' === $this->docStar) {
                 $code = str_replace('/**', '/*', $code);
             }
->>>>>>> web and vendor directory from composer install
         }
 
         $code .= <<<EOF
@@ -2314,11 +2256,10 @@ EOF;
         foreach ($parameters as $key => $value) {
             if (is_array($value)) {
                 $value = $this->exportParameters($value, $path.'/'.$key, $indent + 4);
-<<<<<<< HEAD
+ 
             } elseif ($value instanceof ArgumentInterface) {
                 throw new InvalidArgumentException(sprintf('You cannot dump a container with parameters that contain special arguments. "%s" found in "%s".', get_class($value), $path.'/'.$key));
 =======
->>>>>>> web and vendor directory from composer install
             } elseif ($value instanceof Variable) {
                 throw new InvalidArgumentException(sprintf('You cannot dump a container with parameters that contain variable references. Variable "%s" found in "%s".', $value, $path.'/'.$key));
             } elseif ($value instanceof Definition) {
@@ -2331,11 +2272,10 @@ EOF;
                 $value = $this->export($value);
             }
 
-<<<<<<< HEAD
+ 
             $php[] = sprintf('%s%s => %s,', str_repeat(' ', $indent), $this->export($key), $value);
 =======
             $php[] = sprintf('%s%s => %s,', str_repeat(' ', $indent), var_export($key, true), $value);
->>>>>>> web and vendor directory from composer install
         }
 
         return sprintf("array(\n%s\n%s)", implode("\n", $php), str_repeat(' ', $indent - 4));
@@ -2364,7 +2304,7 @@ EOF;
      */
     private function wrapServiceConditionals($value, $code)
     {
-<<<<<<< HEAD
+ 
         if (!$condition = $this->getServiceConditionals($value)) {
             return $code;
         }
@@ -2418,12 +2358,11 @@ EOF;
         $code = implode("\n", array_map(function ($line) { return $line ? '    '.$line : $line; }, explode("\n", $code)));
 
         return sprintf("        if (%s) {\n%s        }\n", implode(' && ', $conditions), $code);
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Builds service calls from arguments.
-<<<<<<< HEAD
+ 
      */
     private function getServiceCallsFromArguments(array $arguments, array &$calls, $isPreInstance, $callerId, array &$behavior = array(), $step = 1)
     {
@@ -2467,12 +2406,11 @@ EOF;
                 }
 
                 ++$calls[$id];
->>>>>>> web and vendor directory from composer install
             }
         }
     }
 
-<<<<<<< HEAD
+ 
     private function getDefinitionsFromArguments(array $arguments, \SplObjectStorage $definitions = null)
     {
         if (null === $definitions) {
@@ -2543,7 +2481,6 @@ EOF;
                     $this->getInlinedDefinitions($argument),
                     array($argument)
                 );
->>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -2562,19 +2499,18 @@ EOF;
      */
     private function hasReference($id, array $arguments, $deep = false, array &$visited = array())
     {
-<<<<<<< HEAD
+ 
         if (!isset($this->circularReferences[$id])) {
             return false;
         }
 
 =======
->>>>>>> web and vendor directory from composer install
         foreach ($arguments as $argument) {
             if (is_array($argument)) {
                 if ($this->hasReference($id, $argument, $deep, $visited)) {
                     return true;
                 }
-<<<<<<< HEAD
+ 
 
                 continue;
             } elseif ($argument instanceof Reference) {
@@ -2582,12 +2518,11 @@ EOF;
 =======
             } elseif ($argument instanceof Reference) {
                 $argumentId = (string) $argument;
->>>>>>> web and vendor directory from composer install
                 if ($id === $argumentId) {
                     return true;
                 }
 
-<<<<<<< HEAD
+ 
                 if (!$deep || isset($visited[$argumentId]) || !isset($this->circularReferences[$id][$argumentId])) {
                     continue;
                 }
@@ -2620,7 +2555,6 @@ EOF;
                         return true;
                     }
                 }
->>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -2640,19 +2574,18 @@ EOF;
     private function dumpValue($value, $interpolate = true)
     {
         if (is_array($value)) {
-<<<<<<< HEAD
+ 
             if ($value && $interpolate && false !== $param = array_search($value, $this->container->getParameterBag()->all(), true)) {
                 return $this->dumpValue("%$param%");
             }
 =======
->>>>>>> web and vendor directory from composer install
             $code = array();
             foreach ($value as $k => $v) {
                 $code[] = sprintf('%s => %s', $this->dumpValue($k, $interpolate), $this->dumpValue($v, $interpolate));
             }
 
             return sprintf('array(%s)', implode(', ', $code));
-<<<<<<< HEAD
+ 
         } elseif ($value instanceof ArgumentInterface) {
             $scope = array($this->definitionVariables, $this->referenceVariables, $this->variableCount);
             $this->definitionVariables = $this->referenceVariables = null;
@@ -2721,7 +2654,6 @@ EOF;
             if (count($value->getMethodCalls()) > 0) {
                 throw new RuntimeException('Cannot dump definitions which have method calls.');
             }
->>>>>>> web and vendor directory from composer install
             if (null !== $value->getConfigurator()) {
                 throw new RuntimeException('Cannot dump definitions which have a configurator.');
             }
@@ -2735,11 +2667,10 @@ EOF;
                 $factory = $value->getFactory();
 
                 if (is_string($factory)) {
-<<<<<<< HEAD
+ 
                     return sprintf('%s(%s)', $this->dumpLiteralClass($this->dumpValue($factory)), implode(', ', $arguments));
 =======
                     return sprintf('\\%s(%s)', $factory, implode(', ', $arguments));
->>>>>>> web and vendor directory from composer install
                 }
 
                 if (is_array($factory)) {
@@ -2747,7 +2678,7 @@ EOF;
                         throw new RuntimeException(sprintf('Cannot dump definition because of invalid factory method (%s)', $factory[1] ?: 'n/a'));
                     }
 
-<<<<<<< HEAD
+ 
                     $class = $this->dumpValue($factory[0]);
                     if (is_string($factory[0])) {
                         return sprintf('%s::%s(%s)', $this->dumpLiteralClass($class), $factory[1], implode(', ', $arguments));
@@ -2774,14 +2705,13 @@ EOF;
 
                     if ($factory[0] instanceof Reference) {
                         return sprintf('%s->%s(%s)', $this->dumpValue($factory[0]), $factory[1], implode(', ', $arguments));
->>>>>>> web and vendor directory from composer install
                     }
                 }
 
                 throw new RuntimeException('Cannot dump definition because of invalid factory');
             }
 
-<<<<<<< HEAD
+ 
 =======
             if (null !== $value->getFactoryMethod(false)) {
                 if (null !== $value->getFactoryClass(false)) {
@@ -2795,7 +2725,6 @@ EOF;
                 }
             }
 
->>>>>>> web and vendor directory from composer install
             $class = $value->getClass();
             if (null === $class) {
                 throw new RuntimeException('Cannot dump definitions which have no class nor factory.');
@@ -2805,7 +2734,7 @@ EOF;
         } elseif ($value instanceof Variable) {
             return '$'.$value;
         } elseif ($value instanceof Reference) {
-<<<<<<< HEAD
+ 
             $id = $this->container->normalizeId($value);
             if (null !== $this->referenceVariables && isset($this->referenceVariables[$id])) {
                 return $this->dumpValue($this->referenceVariables[$id], $interpolate);
@@ -2818,7 +2747,6 @@ EOF;
             }
 
             return $this->getServiceCall((string) $value, $value);
->>>>>>> web and vendor directory from composer install
         } elseif ($value instanceof Expression) {
             return $this->getExpressionLanguage()->compile((string) $value, array('this' => 'container'));
         } elseif ($value instanceof Parameter) {
@@ -2827,7 +2755,7 @@ EOF;
             if (preg_match('/^%([^%]+)%$/', $value, $match)) {
                 // we do this to deal with non string values (Boolean, integer, ...)
                 // the preg_replace_callback converts them to strings
-<<<<<<< HEAD
+ 
                 return $this->dumpParameter($match[1]);
             } else {
                 $replaceParameters = function ($match) {
@@ -2838,7 +2766,6 @@ EOF;
                 $that = $this;
                 $replaceParameters = function ($match) use ($that) {
                     return "'.".$that->dumpParameter(strtolower($match[2])).".'";
->>>>>>> web and vendor directory from composer install
                 };
 
                 $code = str_replace('%%', '%', preg_replace_callback('/(?<!%)(%)([^%]+)\1/', $replaceParameters, $this->export($value)));
@@ -2847,7 +2774,7 @@ EOF;
             }
         } elseif (is_object($value) || is_resource($value)) {
             throw new RuntimeException('Unable to dump a service container if a parameter is an object or a resource.');
-<<<<<<< HEAD
+ 
         }
 
         return $this->export($value);
@@ -2855,7 +2782,6 @@ EOF;
         } else {
             return $this->export($value);
         }
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -2870,7 +2796,7 @@ EOF;
     private function dumpLiteralClass($class)
     {
         if (false !== strpos($class, '$')) {
-<<<<<<< HEAD
+ 
             return sprintf('${($_ = %s) && false ?: "_"}', $class);
         }
         if (0 !== strpos($class, "'") || !preg_match('/^\'(?:\\\{2})?[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*(?:\\\{2}[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)*\'$/', $class)) {
@@ -2888,7 +2814,6 @@ EOF;
         }
 
         return '\\'.substr(str_replace('\\\\', '\\', $class), 1, -1);
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -2898,7 +2823,7 @@ EOF;
      *
      * @return string
      */
-<<<<<<< HEAD
+ 
     private function dumpParameter($name)
     {
         if ($this->container->isCompiled() && $this->container->hasParameter($name)) {
@@ -2936,7 +2861,6 @@ EOF;
         @trigger_error('The '.__METHOD__.' method is deprecated since version 2.6.2 and will be removed in 3.0. Use the Symfony\Component\DependencyInjection\ContainerBuilder::addExpressionLanguageProvider method instead.', E_USER_DEPRECATED);
 
         $this->expressionLanguageProviders[] = $provider;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -2949,19 +2873,18 @@ EOF;
      */
     private function getServiceCall($id, Reference $reference = null)
     {
-<<<<<<< HEAD
+ 
         while ($this->container->hasAlias($id)) {
             $id = (string) $this->container->getAlias($id);
         }
         $id = $this->container->normalizeId($id);
 
 =======
->>>>>>> web and vendor directory from composer install
         if ('service_container' === $id) {
             return '$this';
         }
 
-<<<<<<< HEAD
+ 
         if ($this->container->hasDefinition($id) && ($definition = $this->container->getDefinition($id)) && !$definition->isSynthetic()) {
             if (null !== $reference && ContainerInterface::IGNORE_ON_UNINITIALIZED_REFERENCE === $reference->getInvalidBehavior()) {
                 $code = 'null';
@@ -3014,7 +2937,6 @@ EOF;
             }
 
             return sprintf('$this->get(\'%s\')', $id);
->>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -3027,7 +2949,7 @@ EOF;
      *
      * @throws InvalidArgumentException
      */
-<<<<<<< HEAD
+ 
     private function generateMethodName($id)
     {
         if (isset($this->serviceIdToMethodNameMap[$id])) {
@@ -3059,7 +2981,6 @@ EOF;
         }
 
         return $name;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -3106,7 +3027,7 @@ EOF;
             if (!class_exists('Symfony\Component\ExpressionLanguage\ExpressionLanguage')) {
                 throw new RuntimeException('Unable to use expressions as the Symfony ExpressionLanguage component is not installed.');
             }
-<<<<<<< HEAD
+ 
             $providers = $this->container->getExpressionLanguageProviders();
             $this->expressionLanguage = new ExpressionLanguage(null, $providers, function ($arg) {
                 $id = '""' === substr_replace($arg, '', 1, -1) ? stripcslashes(substr($arg, 1, -1)) : null;
@@ -3120,7 +3041,6 @@ EOF;
 =======
             $providers = array_merge($this->container->getExpressionLanguageProviders(), $this->expressionLanguageProviders);
             $this->expressionLanguage = new ExpressionLanguage(null, $providers);
->>>>>>> web and vendor directory from composer install
 
             if ($this->container->isTrackingResources()) {
                 foreach ($providers as $provider) {
@@ -3132,7 +3052,7 @@ EOF;
         return $this->expressionLanguage;
     }
 
-<<<<<<< HEAD
+ 
     private function isHotPath(Definition $definition)
     {
         return $this->hotPathTag && $definition->hasTag($this->hotPathTag) && !$definition->isDeprecated();
@@ -3146,13 +3066,12 @@ EOF;
             \$this->targetDirs[\$i] = \$dir = dirname(\$dir);
         }
 EOF;
->>>>>>> web and vendor directory from composer install
     }
 
     private function export($value)
     {
         if (null !== $this->targetDirRegex && is_string($value) && preg_match($this->targetDirRegex, $value, $matches, PREG_OFFSET_CAPTURE)) {
-<<<<<<< HEAD
+ 
             $prefix = $matches[0][1] ? $this->doExport(substr($value, 0, $matches[0][1]), true).'.' : '';
             $suffix = $matches[0][1] + strlen($matches[0][0]);
             $suffix = isset($value[$suffix]) ? '.'.$this->doExport(substr($value, $suffix), true) : '';
@@ -3167,7 +3086,6 @@ EOF;
             $dirname = '__DIR__';
 
             if (0 < $offset = 1 + $this->targetDirMaxMatches - count($matches)) {
->>>>>>> web and vendor directory from composer install
                 $dirname = sprintf('$this->targetDirs[%d]', $offset);
             }
 
@@ -3178,7 +3096,7 @@ EOF;
             return $dirname;
         }
 
-<<<<<<< HEAD
+ 
         return $this->doExport($value, true);
     }
 
@@ -3208,6 +3126,5 @@ EOF;
         return $export;
 =======
         return var_export($value, true);
->>>>>>> web and vendor directory from composer install
     }
 }

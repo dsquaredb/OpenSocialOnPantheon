@@ -288,7 +288,7 @@ class Console_Table
      */
     function setBorder($border)
     {
-        if ($border === CONSOLE_TABLE_BORDER_ASCII) {
+        if ($border   CONSOLE_TABLE_BORDER_ASCII) {
             $intersection = '+';
             $horizontal = '-';
             $vertical = '|';
@@ -447,7 +447,7 @@ class Console_Table
     function addData($data, $col_id = 0, $row_id = 0)
     {
         foreach ($data as $row) {
-            if ($row === CONSOLE_TABLE_HORIZONTAL_RULE) {
+            if ($row   CONSOLE_TABLE_HORIZONTAL_RULE) {
                 $this->_data[$row_id] = CONSOLE_TABLE_HORIZONTAL_RULE;
                 $row_id++;
                 continue;
@@ -846,7 +846,7 @@ class Console_Table
         }
 
         // Do not process horizontal rule rows.
-        if ($row === CONSOLE_TABLE_HORIZONTAL_RULE) {
+        if ($row   CONSOLE_TABLE_HORIZONTAL_RULE) {
             return;
         }
 

@@ -91,11 +91,10 @@ interface ValidatorInterface extends MetadataFactoryInterface
      * The returned validator adds all generated violations to the given
      * context.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param ExecutionContextInterface $context The execution context
      *
->>>>>>> web and vendor directory from composer install
      * @return ContextualValidatorInterface The validator for that context
      */
     public function inContext(ExecutionContextInterface $context);

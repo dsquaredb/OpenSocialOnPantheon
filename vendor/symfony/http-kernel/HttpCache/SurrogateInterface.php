@@ -33,22 +33,20 @@ interface SurrogateInterface
     /**
      * Checks that at least one surrogate has Surrogate capability.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Request $request A Request instance
      *
->>>>>>> web and vendor directory from composer install
      * @return bool true if one surrogate has Surrogate capability, false otherwise
      */
     public function hasSurrogateCapability(Request $request);
 
     /**
      * Adds Surrogate-capability to the given Request.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param Request $request A Request instance
->>>>>>> web and vendor directory from composer install
      */
     public function addSurrogateCapability(Request $request);
 
@@ -56,22 +54,20 @@ interface SurrogateInterface
      * Adds HTTP headers to specify that the Response needs to be parsed for Surrogate.
      *
      * This method only adds an Surrogate HTTP header if the Response has some Surrogate tags.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param Response $response A Response instance
->>>>>>> web and vendor directory from composer install
      */
     public function addSurrogateControl(Response $response);
 
     /**
      * Checks that the Response needs to be parsed for Surrogate tags.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Response $response A Response instance
      *
->>>>>>> web and vendor directory from composer install
      * @return bool true if the Response needs to be parsed, false otherwise
      */
     public function needsParsing(Response $response);
@@ -91,12 +87,11 @@ interface SurrogateInterface
     /**
      * Replaces a Response Surrogate tags with the included resource content.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Request  $request  A Request instance
      * @param Response $response A Response instance
      *
->>>>>>> web and vendor directory from composer install
      * @return Response
      */
     public function process(Request $request, Response $response);

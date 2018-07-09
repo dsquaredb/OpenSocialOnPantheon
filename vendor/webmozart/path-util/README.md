@@ -1,5 +1,5 @@
 File Path Utility
-=================
+     ==
 
 [![Build Status](https://travis-ci.org/webmozart/path-util.svg?branch=2.3.0)](https://travis-ci.org/webmozart/path-util)
 [![Build status](https://ci.appveyor.com/api/projects/status/d5uuypr6p162gpxf/branch/master?svg=true)](https://ci.appveyor.com/project/webmozart/path-util/branch/master)

@@ -13,10 +13,9 @@ namespace Symfony\Component\Serializer\Mapping\Loader;
 
 use Doctrine\Common\Annotations\Reader;
 use Symfony\Component\Serializer\Annotation\Groups;
-<<<<<<< HEAD
+ 
 use Symfony\Component\Serializer\Annotation\MaxDepth;
 =======
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Serializer\Exception\MappingException;
 use Symfony\Component\Serializer\Mapping\AttributeMetadata;
 use Symfony\Component\Serializer\Mapping\ClassMetadataInterface;
@@ -28,7 +27,7 @@ use Symfony\Component\Serializer\Mapping\ClassMetadataInterface;
  */
 class AnnotationLoader implements LoaderInterface
 {
-<<<<<<< HEAD
+ 
     private $reader;
 
 =======
@@ -40,7 +39,6 @@ class AnnotationLoader implements LoaderInterface
     /**
      * @param Reader $reader
      */
->>>>>>> web and vendor directory from composer install
     public function __construct(Reader $reader)
     {
         $this->reader = $reader;
@@ -64,7 +62,7 @@ class AnnotationLoader implements LoaderInterface
             }
 
             if ($property->getDeclaringClass()->name === $className) {
-<<<<<<< HEAD
+ 
                 foreach ($this->reader->getPropertyAnnotations($property) as $annotation) {
                     if ($annotation instanceof Groups) {
                         foreach ($annotation->getGroups() as $group) {
@@ -78,7 +76,6 @@ class AnnotationLoader implements LoaderInterface
                         foreach ($groups->getGroups() as $group) {
                             $attributesMetadata[$property->name]->addGroup($group);
                         }
->>>>>>> web and vendor directory from composer install
                     }
 
                     $loaded = true;
@@ -87,7 +84,7 @@ class AnnotationLoader implements LoaderInterface
         }
 
         foreach ($reflectionClass->getMethods() as $method) {
-<<<<<<< HEAD
+ 
             if ($method->getDeclaringClass()->name !== $className) {
                 continue;
             }
@@ -146,7 +143,6 @@ class AnnotationLoader implements LoaderInterface
 
                     $loaded = true;
                 }
->>>>>>> web and vendor directory from composer install
             }
         }
 

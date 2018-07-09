@@ -63,22 +63,20 @@ use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\RequestContext;
 
 /**
-<<<<<<< HEAD
+ 
 =======
  * {$options['class']}.
  *
->>>>>>> web and vendor directory from composer install
  * This class has been auto-generated
  * by the Symfony Routing Component.
  */
 class {$options['class']} extends {$options['base_class']}
 {
-<<<<<<< HEAD
+ 
 =======
     /**
      * Constructor.
      */
->>>>>>> web and vendor directory from composer install
     public function __construct(RequestContext \$context)
     {
         \$this->context = \$context;
@@ -107,7 +105,7 @@ EOF;
         $code = rtrim($this->compileRoutes($this->getRoutes(), $supportsRedirections), "\n");
 
         return <<<EOF
-<<<<<<< HEAD
+ 
     public function match(\$rawPathinfo)
     {
         \$allow = array();
@@ -127,7 +125,6 @@ EOF;
         \$pathinfo = rawurldecode(\$pathinfo);
         \$context = \$this->context;
         \$request = \$this->request;
->>>>>>> web and vendor directory from composer install
 
 $code
 
@@ -147,34 +144,31 @@ EOF;
     private function compileRoutes(RouteCollection $routes, $supportsRedirections)
     {
         $fetchedHost = false;
-<<<<<<< HEAD
+ 
 =======
 
->>>>>>> web and vendor directory from composer install
         $groups = $this->groupRoutesByHostRegex($routes);
         $code = '';
 
         foreach ($groups as $collection) {
             if (null !== $regex = $collection->getAttribute('host_regex')) {
                 if (!$fetchedHost) {
-<<<<<<< HEAD
+ 
                     $code .= "        \$host = \$context->getHost();\n\n";
 =======
                     $code .= "        \$host = \$this->context->getHost();\n\n";
->>>>>>> web and vendor directory from composer install
                     $fetchedHost = true;
                 }
 
                 $code .= sprintf("        if (preg_match(%s, \$host, \$hostMatches)) {\n", var_export($regex, true));
             }
 
-<<<<<<< HEAD
+ 
             $tree = $this->buildStaticPrefixCollection($collection);
             $groupCode = $this->compileStaticPrefixRoutes($tree, $supportsRedirections);
 =======
             $tree = $this->buildPrefixTree($collection);
             $groupCode = $this->compilePrefixRoutes($tree, $supportsRedirections);
->>>>>>> web and vendor directory from composer install
 
             if (null !== $regex) {
                 // apply extra indention at each line (except empty ones)
@@ -186,7 +180,7 @@ EOF;
             }
         }
 
-<<<<<<< HEAD
+ 
         // used to display the Welcome Page in apps that don't define a homepage
         $code .= "        if ('/' === \$pathinfo && !\$allow) {\n";
         $code .= "            throw new Symfony\Component\Routing\Exception\NoConfigurationException();\n";
@@ -275,7 +269,6 @@ EOF;
         }
 
         if ($optimizable) {
->>>>>>> web and vendor directory from composer install
             $code .= "    }\n\n";
             // apply extra indention at each line (except empty ones)
             $code = preg_replace('/^.{2,}$/m', '    $0', $code);
@@ -306,7 +299,7 @@ EOF;
         $hostMatches = false;
         $methods = $route->getMethods();
 
-<<<<<<< HEAD
+ 
         $supportsTrailingSlash = $supportsRedirections && (!$methods || in_array('GET', $methods));
         $regex = $compiledRoute->getRegex();
 
@@ -330,17 +323,15 @@ EOF;
                 $hasTrailingSlash = true;
             } else {
                 $conditions[] = sprintf('$pathinfo === %s', var_export(str_replace('\\', '', $m['url']), true));
->>>>>>> web and vendor directory from composer install
             }
         } else {
             if ($compiledRoute->getStaticPrefix() && $compiledRoute->getStaticPrefix() !== $parentPrefix) {
                 $conditions[] = sprintf('0 === strpos($pathinfo, %s)', var_export($compiledRoute->getStaticPrefix(), true));
             }
 
-<<<<<<< HEAD
+ 
 =======
             $regex = $compiledRoute->getRegex();
->>>>>>> web and vendor directory from composer install
             if ($supportsTrailingSlash && $pos = strpos($regex, '/$')) {
                 $regex = substr($regex, 0, $pos).'/?$'.substr($regex, $pos + 2);
                 $hasTrailingSlash = true;
@@ -367,7 +358,7 @@ EOF;
 EOF;
 
         $gotoname = 'not_'.preg_replace('/[^A-Za-z0-9_]/', '', $name);
-<<<<<<< HEAD
+ 
 
         // the offset where the return value is appended below, with indendation
         $retOffset = 12 + strlen($code);
@@ -414,12 +405,11 @@ EOF;
 
 EOF;
             }
->>>>>>> web and vendor directory from composer install
         }
 
         if ($hasTrailingSlash) {
             $code .= <<<EOF
-<<<<<<< HEAD
+ 
             if ('/' === substr(\$pathinfo, -1)) {
                 // no-op
             } elseif ('GET' !== \$canonicalMethod) {
@@ -429,27 +419,25 @@ EOF;
 =======
             if (substr(\$pathinfo, -1) !== '/') {
                 return \$this->redirect(\$pathinfo.'/', '$name');
->>>>>>> web and vendor directory from composer install
             }
 
 
 EOF;
         }
 
-<<<<<<< HEAD
+ 
         if ($methods) {
             $methodVariable = in_array('GET', $methods) ? '$canonicalMethod' : '$requestMethod';
             $methods = implode("', '", $methods);
         }
 
 =======
->>>>>>> web and vendor directory from composer install
         if ($schemes = $route->getSchemes()) {
             if (!$supportsRedirections) {
                 throw new \LogicException('The "schemes" requirement is only supported for URL matchers that implement RedirectableUrlMatcherInterface.');
             }
             $schemes = str_replace("\n", '', var_export(array_flip($schemes), true));
-<<<<<<< HEAD
+ 
             if ($methods) {
                 $code .= <<<EOF
             \$requiredSchemes = $schemes;
@@ -471,12 +459,11 @@ EOF;
             \$requiredSchemes = $schemes;
             if (!isset(\$requiredSchemes[\$this->context->getScheme()])) {
                 return \$this->redirect(\$pathinfo, '$name', key(\$requiredSchemes));
->>>>>>> web and vendor directory from composer install
             }
 
 
 EOF;
-<<<<<<< HEAD
+ 
             } else {
                 $code .= <<<EOF
             \$requiredSchemes = $schemes;
@@ -537,7 +524,6 @@ EOF;
         $code .= "        }\n";
 
         if ($methods) {
->>>>>>> web and vendor directory from composer install
             $code .= "        $gotoname:\n";
         }
 
@@ -556,10 +542,9 @@ EOF;
     private function groupRoutesByHostRegex(RouteCollection $routes)
     {
         $groups = new DumperCollection();
-<<<<<<< HEAD
+ 
 =======
 
->>>>>>> web and vendor directory from composer install
         $currentGroup = new DumperCollection();
         $currentGroup->setAttribute('host_regex', null);
         $groups->add($currentGroup);
@@ -577,7 +562,7 @@ EOF;
         return $groups;
     }
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * Organizes the routes into a prefix tree.
@@ -603,7 +588,6 @@ EOF;
         return $tree;
     }
 
->>>>>>> web and vendor directory from composer install
     private function getExpressionLanguage()
     {
         if (null === $this->expressionLanguage) {

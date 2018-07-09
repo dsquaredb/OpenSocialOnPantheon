@@ -11,7 +11,7 @@
 
 namespace Symfony\Component\Serializer\Normalizer;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\Serializer\Exception\BadMethodCallException;
 use Symfony\Component\Serializer\Exception\ExtraAttributesException;
 use Symfony\Component\Serializer\Exception\InvalidArgumentException;
@@ -20,7 +20,6 @@ use Symfony\Component\Serializer\Exception\RuntimeException;
 use Symfony\Component\Serializer\Exception\UnexpectedValueException;
 
 =======
->>>>>>> web and vendor directory from composer install
 /**
  * Defines the interface of denormalizers.
  *
@@ -31,7 +30,7 @@ interface DenormalizerInterface
     /**
      * Denormalizes data back into an object of the given class.
      *
-<<<<<<< HEAD
+ 
      * @param mixed  $data    Data to restore
      * @param string $class   The expected class to instantiate
      * @param string $format  Format the given data was extracted from
@@ -52,7 +51,6 @@ interface DenormalizerInterface
      * @param array  $context options available to the denormalizer
      *
      * @return object
->>>>>>> web and vendor directory from composer install
      */
     public function denormalize($data, $class, $format = null, array $context = array());
 

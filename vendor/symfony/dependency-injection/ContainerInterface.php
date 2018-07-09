@@ -11,10 +11,9 @@
 
 namespace Symfony\Component\DependencyInjection;
 
-<<<<<<< HEAD
+ 
 use Psr\Container\ContainerInterface as PsrContainerInterface;
-=======
->>>>>>> web and vendor directory from composer install
+  =
 use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
 use Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException;
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
@@ -25,31 +24,29 @@ use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
  */
-<<<<<<< HEAD
+ 
 interface ContainerInterface extends PsrContainerInterface
-=======
+  =
 interface ContainerInterface
->>>>>>> web and vendor directory from composer install
 {
     const EXCEPTION_ON_INVALID_REFERENCE = 1;
     const NULL_ON_INVALID_REFERENCE = 2;
     const IGNORE_ON_INVALID_REFERENCE = 3;
-<<<<<<< HEAD
+ 
     const IGNORE_ON_UNINITIALIZED_REFERENCE = 4;
-=======
+  =
     const SCOPE_CONTAINER = 'container';
     const SCOPE_PROTOTYPE = 'prototype';
->>>>>>> web and vendor directory from composer install
 
     /**
      * Sets a service.
      *
-<<<<<<< HEAD
+ 
      * @param string $id      The service identifier
      * @param object $service The service instance
      */
     public function set($id, $service);
-=======
+  =
      * Note: The $scope parameter is deprecated since version 2.8 and will be removed in 3.0.
      *
      * @param string $id      The service identifier
@@ -57,7 +54,6 @@ interface ContainerInterface
      * @param string $scope   The scope of the service
      */
     public function set($id, $service, $scope = self::SCOPE_CONTAINER);
->>>>>>> web and vendor directory from composer install
 
     /**
      * Gets a service.
@@ -84,7 +80,7 @@ interface ContainerInterface
     public function has($id);
 
     /**
-<<<<<<< HEAD
+ 
      * Check for whether or not a service has been initialized.
      *
      * @param string $id
@@ -94,8 +90,7 @@ interface ContainerInterface
     public function initialized($id);
 
     /**
-=======
->>>>>>> web and vendor directory from composer install
+  =
      * Gets a parameter.
      *
      * @param string $name The parameter name
@@ -122,8 +117,8 @@ interface ContainerInterface
      * @param mixed  $value The parameter value
      */
     public function setParameter($name, $value);
-<<<<<<< HEAD
-=======
+ 
+  =
 
     /**
      * Enters the given scope.
@@ -175,5 +170,4 @@ interface ContainerInterface
      * @deprecated since version 2.8, to be removed in 3.0.
      */
     public function isScopeActive($name);
->>>>>>> web and vendor directory from composer install
 }

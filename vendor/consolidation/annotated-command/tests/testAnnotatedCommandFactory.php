@@ -10,10 +10,9 @@ use Consolidation\TestUtils\ExampleCommandInfoAlterer;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Console\Input\ArgvInput;
->>>>>>> revert Open Social update
 use Symfony\Component\Console\Input\StringInput;
 use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -23,7 +22,7 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
     protected $commandFileInstance;
     protected $commandFactory;
 
-<<<<<<< HEAD
+ 
 =======
     function testFibonacci()
     {
@@ -239,7 +238,6 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
         $this->assertFalse(array_key_exists('nonExistentMethod', $rebuiltCachedData));
     }
 
->>>>>>> revert Open Social update
     /**
      * Test CommandInfo command annotation parsing.
      */
@@ -256,11 +254,10 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
         $this->assertEquals('This is the test:arithmatic command', $command->getDescription());
         $this->assertEquals("This command will add one and two. If the --negate flag\nis provided, then the result is negated.", $command->getHelp());
         $this->assertEquals('arithmatic', implode(',', $command->getAliases()));
-<<<<<<< HEAD
+ 
         $this->assertEquals('test:arithmatic [--negate] [--] <one> <two>', $command->getSynopsis());
 =======
         $this->assertEquals('test:arithmatic [--negate] [--unused [UNUSED]] [--] <one> [<two>]', $command->getSynopsis());
->>>>>>> revert Open Social update
         $this->assertEquals('test:arithmatic 2 2 --negate', implode(',', $command->getUsages()));
 
         $input = new StringInput('arithmatic 2 3 --negate');
@@ -311,7 +308,7 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
         $this->assertRunCommandViaApplicationEquals($command, $input, 'alphabet');
     }
 
-<<<<<<< HEAD
+ 
 =======
     function testJoinCommandHelp()
     {
@@ -336,7 +333,6 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
         $this->assertRunCommandViaApplicationEquals($command, $input, 'alphabetalphabet');
     }
 
->>>>>>> revert Open Social update
     function testDefaultsCommand()
     {
         $this->commandFileInstance = new \Consolidation\TestUtils\ExampleCommandFile;
@@ -377,7 +373,7 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
 
         $input = new StringInput('command:with-no-options something');
         $this->assertRunCommandViaApplicationEquals($command, $input, 'somethingdefault');
-<<<<<<< HEAD
+ 
 =======
 
         $input = new StringInput('help command:with-no-options something');
@@ -407,7 +403,6 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
 
         $input = new StringInput('command:with-io-parameters');
         $this->assertRunCommandViaApplicationEquals($command, $input, 'command:with-io-parameters');
->>>>>>> revert Open Social update
     }
 
     function testCommandWithNoArguments()
@@ -519,7 +514,7 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
         $this->assertRunCommandViaApplicationEquals($command, $input, 'betxyzbetxyz');
     }
 
-<<<<<<< HEAD
+ 
 =======
     function testRequiredArrayOption()
     {
@@ -556,7 +551,6 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
         $this->assertRunCommandViaApplicationEquals($command, $input, 'a');
     }
 
->>>>>>> revert Open Social update
     function testHookedCommand()
     {
         $this->commandFileInstance = new \Consolidation\TestUtils\ExampleCommandFile();
@@ -584,7 +578,7 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
 
         $input = new StringInput('test:hook bar');
         $this->assertRunCommandViaApplicationEquals($command, $input, '<[bar]>');
-<<<<<<< HEAD
+ 
 =======
 
         $input = new StringInput('list --raw');
@@ -613,7 +607,6 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
         $commandInfo = $this->commandFactory->createCommandInfo($this->commandFileInstance, 'testReplaceCommand');
         $command = $this->commandFactory->createCommand($commandInfo, $this->commandFileInstance);
         $this->assertRunCommandViaApplicationEquals($command, $input, "bar", 0);
->>>>>>> revert Open Social update
     }
 
     function testPostCommandCalledAfterCommand()
@@ -688,7 +681,7 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
         $this->assertRunCommandViaApplicationEquals($command, $input, '*** bar ***');
     }
 
-<<<<<<< HEAD
+ 
 =======
     function testDoubleDashWithVersion()
     {
@@ -706,7 +699,6 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
         $this->assertEquals('one--version', $commandOutput);
     }
 
->>>>>>> revert Open Social update
     function testAnnotatedHookedCommand()
     {
         $this->commandFileInstance = new \Consolidation\TestUtils\ExampleCommandFile();
@@ -773,11 +765,10 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
         $annotationData = $commandInfo->getRawAnnotations();
         $this->assertEquals('addmycommandname', implode(',', $annotationData->keys()));
         $annotationData = $commandInfo->getAnnotations();
-<<<<<<< HEAD
+ 
         $this->assertEquals('addmycommandname,command', implode(',', $annotationData->keys()));
 =======
         $this->assertEquals('addmycommandname,command,_path,_classname', implode(',', $annotationData->keys()));
->>>>>>> revert Open Social update
 
         $command = $this->commandFactory->createCommand($commandInfo, $this->commandFileInstance);
 
@@ -788,10 +779,9 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
         $this->assertRunCommandViaApplicationEquals($command, $input, 'fantabulous from alter:me-too');
     }
 
-<<<<<<< HEAD
+ 
 
 =======
->>>>>>> revert Open Social update
     function testHookedCommandWithHookAddedLater()
     {
         $this->commandFileInstance = new \Consolidation\TestUtils\ExampleCommandFile();
@@ -988,7 +978,7 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
         return $r->invokeArgs($object, $args);
     }
 
-<<<<<<< HEAD
+ 
     function assertRunCommandViaApplicationEquals($command, $input, $expectedOutput, $expectedStatusCode = 0)
     {
 =======
@@ -1012,7 +1002,6 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
 
     function runCommandViaApplication($command, $input)
     {
->>>>>>> revert Open Social update
         $output = new BufferedOutput();
         if ($this->commandFileInstance && method_exists($this->commandFileInstance, 'setOutput')) {
             $this->commandFileInstance->setOutput($output);
@@ -1023,18 +1012,17 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
 
         $eventDispatcher = new \Symfony\Component\EventDispatcher\EventDispatcher();
         $eventDispatcher->addSubscriber($this->commandFactory->commandProcessor()->hookManager());
-<<<<<<< HEAD
+ 
         $eventDispatcher->addSubscriber($alterOptionsEventManager);
 =======
         $this->commandFactory->commandProcessor()->hookManager()->addCommandEvent($alterOptionsEventManager);
->>>>>>> revert Open Social update
         $application->setDispatcher($eventDispatcher);
 
         $application->setAutoExit(false);
         $application->add($command);
 
         $statusCode = $application->run($input, $output);
-<<<<<<< HEAD
+ 
         $commandOutput = trim($output->fetch());
 
         $this->assertEquals($expectedOutput, $commandOutput);
@@ -1043,6 +1031,5 @@ class AnnotatedCommandFactoryTests extends \PHPUnit_Framework_TestCase
         $commandOutput = trim(str_replace("\r", '', $output->fetch()));
 
         return [$statusCode, $commandOutput];
->>>>>>> revert Open Social update
     }
 }

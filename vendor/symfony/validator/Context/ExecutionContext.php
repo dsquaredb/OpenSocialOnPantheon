@@ -12,7 +12,7 @@
 namespace Symfony\Component\Validator\Context;
 
 use Symfony\Component\Translation\TranslatorInterface;
-<<<<<<< HEAD
+ 
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationList;
@@ -33,7 +33,6 @@ use Symfony\Component\Validator\Mapping\PropertyMetadataInterface;
 use Symfony\Component\Validator\Util\PropertyPath;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Component\Validator\ValidatorInterface as LegacyValidatorInterface;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\Violation\ConstraintViolationBuilder;
 
 /**
@@ -43,12 +42,11 @@ use Symfony\Component\Validator\Violation\ConstraintViolationBuilder;
  *
  * @see ExecutionContextInterface
  *
-<<<<<<< HEAD
+ 
  * @internal since version 2.5. Code against ExecutionContextInterface instead.
 =======
  * @internal You should not instantiate or use this class. Code against
  *           {@link ExecutionContextInterface} instead.
->>>>>>> web and vendor directory from composer install
  */
 class ExecutionContext implements ExecutionContextInterface
 {
@@ -197,7 +195,7 @@ class ExecutionContext implements ExecutionContextInterface
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
     public function addViolation($message, array $parameters = array())
     {
 =======
@@ -220,7 +218,6 @@ class ExecutionContext implements ExecutionContextInterface
             return;
         }
 
->>>>>>> web and vendor directory from composer install
         $this->violations->add(new ConstraintViolation(
             $this->translator->trans($message, $parameters, $this->translationDomain),
             $message,
@@ -308,24 +305,22 @@ class ExecutionContext implements ExecutionContextInterface
         return $this->group;
     }
 
-<<<<<<< HEAD
+ 
     public function getConstraint()
     {
         return $this->constraint;
     }
 
 =======
->>>>>>> web and vendor directory from composer install
     /**
      * {@inheritdoc}
      */
     public function getClassName()
     {
-<<<<<<< HEAD
+ 
         return $this->metadata instanceof MemberMetadata || $this->metadata instanceof ClassMetadataInterface ? $this->metadata->getClassName() : null;
 =======
         return $this->metadata instanceof ClassBasedInterface ? $this->metadata->getClassName() : null;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -347,7 +342,7 @@ class ExecutionContext implements ExecutionContextInterface
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
 =======
     public function addViolationAt($subPath, $message, array $parameters = array(), $invalidValue = null, $plural = null, $code = null)
     {
@@ -446,7 +441,6 @@ class ExecutionContext implements ExecutionContextInterface
     /**
      * {@inheritdoc}
      */
->>>>>>> web and vendor directory from composer install
     public function markGroupAsValidated($cacheKey, $groupHash)
     {
         if (!isset($this->validatedObjects[$cacheKey])) {

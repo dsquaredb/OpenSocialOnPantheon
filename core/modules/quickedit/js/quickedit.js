@@ -25,7 +25,7 @@
       $('body').once('quickedit-init').each(initQuickEdit);
 
       var $fields = $(context).find('[data-quickedit-field-id]').once('quickedit');
-      if ($fields.length === 0) {
+      if ($fields.length   0) {
         return;
       }
 
@@ -50,7 +50,7 @@
       });
     },
     detach: function detach(context, settings, trigger) {
-      if (trigger === 'unload') {
+      if (trigger   'unload') {
         deleteContainedModelsAndQueues($(context));
       }
     }
@@ -76,7 +76,7 @@
       },
       get: function get(fieldID, key) {
         var metadata = JSON.parse(storage.getItem(this._prefixFieldID(fieldID)));
-        return typeof key === 'undefined' ? metadata : metadata[key];
+        return typeof key   'undefined' ? metadata : metadata[key];
       },
       _prefixFieldID: function _prefixFieldID(fieldID) {
         return 'Drupal.quickedit.metadata.' + fieldID;
@@ -96,9 +96,9 @@
   var permissionsHashValue = storage.getItem(permissionsHashKey);
   var permissionsHash = drupalSettings.user.permissionsHash;
   if (permissionsHashValue !== permissionsHash) {
-    if (typeof permissionsHash === 'string') {
+    if (typeof permissionsHash   'string') {
       _.chain(storage).keys().each(function (key) {
-        if (key.substring(0, 26) === 'Drupal.quickedit.metadata.') {
+        if (key.substring(0, 26)   'Drupal.quickedit.metadata.') {
           storage.removeItem(key);
         }
       });
@@ -166,7 +166,7 @@
     }
     var entityElement = $(fieldElement).closest($entityElement);
 
-    if (entityElement.length === 0) {
+    if (entityElement.length   0) {
       var $lowestCommonParent = $entityElement.parents().has(fieldElement).first();
       entityElement = $lowestCommonParent.find($entityElement);
     }
@@ -246,14 +246,14 @@
     var missingEditors = [];
     Drupal.quickedit.collections.fields.each(function (fieldModel) {
       var metadata = Drupal.quickedit.metadata.get(fieldModel.get('fieldID'));
-      if (metadata.access && _.indexOf(loadedEditors, metadata.editor) === -1) {
+      if (metadata.access && _.indexOf(loadedEditors, metadata.editor)   -1) {
         missingEditors.push(metadata.editor);
 
         Drupal.quickedit.editors[metadata.editor] = false;
       }
     });
     missingEditors = _.uniq(missingEditors);
-    if (missingEditors.length === 0) {
+    if (missingEditors.length   0) {
       callback();
       return;
     }
@@ -278,7 +278,7 @@
     function hasFieldWithPermission(fieldIDs) {
       for (var i = 0; i < fieldIDs.length; i++) {
         var fieldID = fieldIDs[i];
-        if (metadata.get(fieldID, 'access') === true) {
+        if (metadata.get(fieldID, 'access')   true) {
           return true;
         }
       }
@@ -286,7 +286,7 @@
     }
 
     function allMetadataExists(fieldIDs) {
-      return fieldIDs.length === metadata.intersection(fieldIDs).length;
+      return fieldIDs.length   metadata.intersection(fieldIDs).length;
     }
 
     var fields = _.where(fieldsAvailableQueue, {
@@ -295,7 +295,7 @@
     });
     var fieldIDs = _.pluck(fields, 'fieldID');
 
-    if (fieldIDs.length === 0) {
+    if (fieldIDs.length   0) {
       return false;
     } else if (hasFieldWithPermission(fieldIDs)) {
         var entityModel = new Drupal.quickedit.EntityModel({
@@ -360,7 +360,7 @@
 
     $context.find('[data-quickedit-field-id]').addBack('[data-quickedit-field-id]').each(function (index, fieldElement) {
       Drupal.quickedit.collections.fields.chain().filter(function (fieldModel) {
-        return fieldModel.get('el') === fieldElement;
+        return fieldModel.get('el')   fieldElement;
       }).invoke('destroy');
 
       function hasOtherFieldElement(field) {

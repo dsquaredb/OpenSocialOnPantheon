@@ -11,7 +11,7 @@
 
 namespace Symfony\Component\DependencyInjection\Loader;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\Config\Util\XmlUtils;
 use Symfony\Component\DependencyInjection\Argument\TaggedIteratorArgument;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -28,7 +28,6 @@ use Symfony\Component\DependencyInjection\DefinitionDecorator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Alias;
 use Symfony\Component\DependencyInjection\Definition;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
 use Symfony\Component\DependencyInjection\Exception\RuntimeException;
@@ -52,7 +51,7 @@ class XmlFileLoader extends FileLoader
 
         $xml = $this->parseFileToDOM($path);
 
-<<<<<<< HEAD
+ 
         $this->container->fileExists($path);
 
         $defaults = $this->getServiceDefaults($xml, $path);
@@ -64,23 +63,21 @@ class XmlFileLoader extends FileLoader
 
         // anonymous services
         $this->processAnonymousServices($xml, $path);
->>>>>>> web and vendor directory from composer install
 
         // imports
         $this->parseImports($xml, $path);
 
         // parameters
-<<<<<<< HEAD
+ 
         $this->parseParameters($xml, $path);
 =======
         $this->parseParameters($xml);
->>>>>>> web and vendor directory from composer install
 
         // extensions
         $this->loadFromExtensions($xml);
 
         // services
-<<<<<<< HEAD
+ 
         try {
             $this->parseDefinitions($xml, $path, $defaults);
         } finally {
@@ -88,7 +85,6 @@ class XmlFileLoader extends FileLoader
         }
 =======
         $this->parseDefinitions($xml, $path);
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -96,7 +92,7 @@ class XmlFileLoader extends FileLoader
      */
     public function supports($resource, $type = null)
     {
-<<<<<<< HEAD
+ 
         if (!is_string($resource)) {
             return false;
         }
@@ -108,14 +104,13 @@ class XmlFileLoader extends FileLoader
         return 'xml' === $type;
 =======
         return is_string($resource) && 'xml' === pathinfo($resource, PATHINFO_EXTENSION);
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Parses parameters.
      *
      * @param \DOMDocument $xml
-<<<<<<< HEAD
+ 
      * @param string       $file
      */
     private function parseParameters(\DOMDocument $xml, $file)
@@ -128,7 +123,6 @@ class XmlFileLoader extends FileLoader
     {
         if ($parameters = $this->getChildren($xml->documentElement, 'parameters')) {
             $this->container->getParameterBag()->add($this->getArgumentsAsPhp($parameters[0], 'parameter'));
->>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -150,11 +144,10 @@ class XmlFileLoader extends FileLoader
         $defaultDirectory = dirname($file);
         foreach ($imports as $import) {
             $this->setCurrentDir($defaultDirectory);
-<<<<<<< HEAD
+ 
             $this->import($import->getAttribute('resource'), XmlUtils::phpize($import->getAttribute('type')) ?: null, (bool) XmlUtils::phpize($import->getAttribute('ignore-errors')), $file);
 =======
             $this->import($import->getAttribute('resource'), null, (bool) XmlUtils::phpize($import->getAttribute('ignore-errors')), $file);
->>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -164,16 +157,15 @@ class XmlFileLoader extends FileLoader
      * @param \DOMDocument $xml
      * @param string       $file
      */
-<<<<<<< HEAD
+ 
     private function parseDefinitions(\DOMDocument $xml, $file, $defaults)
 =======
     private function parseDefinitions(\DOMDocument $xml, $file)
->>>>>>> web and vendor directory from composer install
     {
         $xpath = new \DOMXPath($xml);
         $xpath->registerNamespace('container', self::NS);
 
-<<<<<<< HEAD
+ 
         if (false === $services = $xpath->query('//container:services/container:service|//container:services/container:prototype')) {
             return;
         }
@@ -243,7 +235,6 @@ class XmlFileLoader extends FileLoader
                 $this->container->setDefinition((string) $service->getAttribute('id'), $definition);
             }
         }
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -251,7 +242,7 @@ class XmlFileLoader extends FileLoader
      *
      * @param \DOMElement $service
      * @param string      $file
-<<<<<<< HEAD
+ 
      * @param array       $defaults
      *
      * @return Definition|null
@@ -279,12 +270,11 @@ class XmlFileLoader extends FileLoader
                 $public = XmlUtils::phpize($publicAttr);
             }
             $this->container->setAlias((string) $service->getAttribute('id'), new Alias($alias, $public));
->>>>>>> web and vendor directory from composer install
 
             return;
         }
 
-<<<<<<< HEAD
+ 
         if ($this->isLoadingInstanceof) {
             $definition = new ChildDefinition('');
         } elseif ($parent = $service->getAttribute('parent')) {
@@ -343,7 +333,6 @@ class XmlFileLoader extends FileLoader
                     @trigger_error(sprintf('The "%s" attribute of service "%s" in file "%s" is deprecated since version 2.6 and will be removed in 3.0. Use the "factory" element instead.', $key, (string) $service->getAttribute('id'), $file), E_USER_DEPRECATED);
                 }
                 $method = 'set'.str_replace('-', '', $key);
->>>>>>> web and vendor directory from composer install
                 $definition->$method(XmlUtils::phpize($value));
             }
         }
@@ -352,7 +341,7 @@ class XmlFileLoader extends FileLoader
             $definition->setAutowired(XmlUtils::phpize($value));
         }
 
-<<<<<<< HEAD
+ 
         if ($value = $service->getAttribute('autoconfigure')) {
             if (!$definition instanceof ChildDefinition) {
                 $definition->setAutoconfigured(XmlUtils::phpize($value));
@@ -378,7 +367,6 @@ class XmlFileLoader extends FileLoader
             }
 
             $definition->setSynchronized(XmlUtils::phpize($value), $triggerDeprecation);
->>>>>>> web and vendor directory from composer install
         }
 
         if ($files = $this->getChildren($service, 'file')) {
@@ -389,20 +377,19 @@ class XmlFileLoader extends FileLoader
             $definition->setDeprecated(true, $deprecated[0]->nodeValue ?: null);
         }
 
-<<<<<<< HEAD
+ 
         $definition->setArguments($this->getArgumentsAsPhp($service, 'argument', $file, false, $definition instanceof ChildDefinition));
         $definition->setProperties($this->getArgumentsAsPhp($service, 'property', $file));
 =======
         $definition->setArguments($this->getArgumentsAsPhp($service, 'argument'));
         $definition->setProperties($this->getArgumentsAsPhp($service, 'property'));
->>>>>>> web and vendor directory from composer install
 
         if ($factories = $this->getChildren($service, 'factory')) {
             $factory = $factories[0];
             if ($function = $factory->getAttribute('function')) {
                 $definition->setFactory($function);
             } else {
-<<<<<<< HEAD
+ 
                 if ($childService = $factory->getAttribute('service')) {
                     $class = new Reference($childService, ContainerInterface::EXCEPTION_ON_INVALID_REFERENCE);
                 } else {
@@ -416,7 +403,6 @@ class XmlFileLoader extends FileLoader
                     $class = new Reference($childService, ContainerInterface::EXCEPTION_ON_INVALID_REFERENCE, false);
                 } else {
                     $class = $factory->getAttribute('class');
->>>>>>> web and vendor directory from composer install
                 }
 
                 $definition->setFactory(array($class, $factory->getAttribute('method')));
@@ -428,7 +414,7 @@ class XmlFileLoader extends FileLoader
             if ($function = $configurator->getAttribute('function')) {
                 $definition->setConfigurator($function);
             } else {
-<<<<<<< HEAD
+ 
                 if ($childService = $configurator->getAttribute('service')) {
                     $class = new Reference($childService, ContainerInterface::EXCEPTION_ON_INVALID_REFERENCE);
 =======
@@ -438,7 +424,6 @@ class XmlFileLoader extends FileLoader
                     $class = $this->parseDefinition($configuratorService[0], $file);
                 } elseif ($childService = $configurator->getAttribute('service')) {
                     $class = new Reference($childService, ContainerInterface::EXCEPTION_ON_INVALID_REFERENCE, false);
->>>>>>> web and vendor directory from composer install
                 } else {
                     $class = $configurator->getAttribute('class');
                 }
@@ -448,7 +433,7 @@ class XmlFileLoader extends FileLoader
         }
 
         foreach ($this->getChildren($service, 'call') as $call) {
-<<<<<<< HEAD
+ 
             $definition->addMethodCall($call->getAttribute('method'), $this->getArgumentsAsPhp($call, 'argument', $file));
         }
 
@@ -464,7 +449,6 @@ class XmlFileLoader extends FileLoader
         }
 
         foreach ($this->getChildren($service, 'tag') as $tag) {
->>>>>>> web and vendor directory from composer install
             $parameters = array();
             foreach ($tag->attributes as $name => $node) {
                 if ('name' === $name) {
@@ -474,11 +458,10 @@ class XmlFileLoader extends FileLoader
                 if (false !== strpos($name, '-') && false === strpos($name, '_') && !array_key_exists($normalizedName = str_replace('-', '_', $name), $parameters)) {
                     $parameters[$normalizedName] = XmlUtils::phpize($node->nodeValue);
                 }
-<<<<<<< HEAD
+ 
                 // keep not normalized key
 =======
                 // keep not normalized key for BC too
->>>>>>> web and vendor directory from composer install
                 $parameters[$name] = XmlUtils::phpize($node->nodeValue);
             }
 
@@ -493,7 +476,7 @@ class XmlFileLoader extends FileLoader
             $definition->addAutowiringType($type->textContent);
         }
 
-<<<<<<< HEAD
+ 
         $bindings = $this->getArgumentsAsPhp($service, 'bind', $file);
         if (isset($defaults['bind'])) {
             // deep clone, to avoid multiple process of the same instance in the passes
@@ -504,7 +487,6 @@ class XmlFileLoader extends FileLoader
         }
 
 =======
->>>>>>> web and vendor directory from composer install
         if ($value = $service->getAttribute('decorates')) {
             $renameId = $service->hasAttribute('decoration-inner-name') ? $service->getAttribute('decoration-inner-name') : null;
             $priority = $service->hasAttribute('decoration-priority') ? $service->getAttribute('decoration-priority') : 0;
@@ -541,7 +523,7 @@ class XmlFileLoader extends FileLoader
      *
      * @param \DOMDocument $xml
      * @param string       $file
-<<<<<<< HEAD
+ 
      * @param array        $defaults
      */
     private function processAnonymousServices(\DOMDocument $xml, $file, $defaults)
@@ -555,13 +537,12 @@ class XmlFileLoader extends FileLoader
     {
         $definitions = array();
         $count = 0;
->>>>>>> web and vendor directory from composer install
 
         $xpath = new \DOMXPath($xml);
         $xpath->registerNamespace('container', self::NS);
 
         // anonymous services as arguments/properties
-<<<<<<< HEAD
+ 
         if (false !== $nodes = $xpath->query('//container:argument[@type="service"][not(@id)]|//container:property[@type="service"][not(@id)]|//container:bind[not(@id)]|//container:factory[not(@service)]|//container:configurator[not(@service)]')) {
             foreach ($nodes as $node) {
                 if ($services = $this->getChildren($node, 'service')) {
@@ -578,7 +559,6 @@ class XmlFileLoader extends FileLoader
                 $node->setAttribute('id', $id);
 
                 if ($services = $this->getChildren($node, 'service')) {
->>>>>>> web and vendor directory from composer install
                     $definitions[$id] = array($services[0], $file, false);
                     $services[0]->setAttribute('id', $id);
 
@@ -592,7 +572,7 @@ class XmlFileLoader extends FileLoader
         // anonymous services "in the wild"
         if (false !== $nodes = $xpath->query('//container:services/container:service[not(@id)]')) {
             foreach ($nodes as $node) {
-<<<<<<< HEAD
+ 
                 @trigger_error(sprintf('Top-level anonymous services are deprecated since Symfony 3.4, the "id" attribute will be required in version 4.0 in %s at line %d.', $file, $node->getLineNo()), E_USER_DEPRECATED);
 
                 // give it a unique name
@@ -600,14 +580,13 @@ class XmlFileLoader extends FileLoader
 =======
                 // give it a unique name
                 $id = sprintf('%s_%d', hash('sha256', $file), ++$count);
->>>>>>> web and vendor directory from composer install
                 $node->setAttribute('id', $id);
                 $definitions[$id] = array($node, $file, true);
             }
         }
 
         // resolve definitions
-<<<<<<< HEAD
+ 
         uksort($definitions, 'strnatcmp');
         foreach (array_reverse($definitions) as $id => list($domElement, $file, $wild)) {
             if (null !== $definition = $this->parseDefinition($domElement, $file, $wild ? $defaults : array())) {
@@ -619,18 +598,16 @@ class XmlFileLoader extends FileLoader
 
             if (null !== $definition = $this->parseDefinition($domElement, $file)) {
                 $this->container->setDefinition($id, $definition);
->>>>>>> web and vendor directory from composer install
             }
 
             if (true === $wild) {
                 $tmpDomElement = new \DOMElement('_services', null, self::NS);
                 $domElement->parentNode->replaceChild($tmpDomElement, $domElement);
                 $tmpDomElement->setAttribute('id', $id);
-<<<<<<< HEAD
+ 
 =======
             } else {
                 $domElement->parentNode->removeChild($domElement);
->>>>>>> web and vendor directory from composer install
             }
         }
     }
@@ -640,19 +617,17 @@ class XmlFileLoader extends FileLoader
      *
      * @param \DOMElement $node
      * @param string      $name
-<<<<<<< HEAD
+ 
      * @param string      $file
 =======
->>>>>>> web and vendor directory from composer install
      * @param bool        $lowercase
      *
      * @return mixed
      */
-<<<<<<< HEAD
+ 
     private function getArgumentsAsPhp(\DOMElement $node, $name, $file, $lowercase = true, $isChildDefinition = false)
 =======
     private function getArgumentsAsPhp(\DOMElement $node, $name, $lowercase = true)
->>>>>>> web and vendor directory from composer install
     {
         $arguments = array();
         foreach ($this->getChildren($node, $name) as $arg) {
@@ -660,7 +635,7 @@ class XmlFileLoader extends FileLoader
                 $arg->setAttribute('key', $arg->getAttribute('name'));
             }
 
-<<<<<<< HEAD
+ 
             // this is used by ChildDefinition to overwrite a specific
             // argument of the parent definition
             if ($arg->hasAttribute('index')) {
@@ -673,12 +648,11 @@ class XmlFileLoader extends FileLoader
 =======
             if (!$arg->hasAttribute('key')) {
                 $key = !$arguments ? 0 : max(array_keys($arguments)) + 1;
->>>>>>> web and vendor directory from composer install
             } else {
                 $key = $arg->getAttribute('key');
             }
 
-<<<<<<< HEAD
+ 
             $onInvalid = $arg->getAttribute('on-invalid');
             $invalidBehavior = ContainerInterface::EXCEPTION_ON_INVALID_REFERENCE;
             if ('ignore' == $onInvalid) {
@@ -697,12 +671,11 @@ class XmlFileLoader extends FileLoader
             // argument of the parent definition
             if ($arg->hasAttribute('index')) {
                 $key = 'index_'.$arg->getAttribute('index');
->>>>>>> web and vendor directory from composer install
             }
 
             switch ($arg->getAttribute('type')) {
                 case 'service':
-<<<<<<< HEAD
+ 
                     if (!$arg->getAttribute('id')) {
                         throw new InvalidArgumentException(sprintf('Tag "<%s>" with type="service" has no or empty "id" attribute in "%s".', $name, $file));
                     }
@@ -757,7 +730,6 @@ class XmlFileLoader extends FileLoader
                     break;
                 case 'collection':
                     $arguments[$key] = $this->getArgumentsAsPhp($arg, $name, false);
->>>>>>> web and vendor directory from composer install
                     break;
                 case 'string':
                     $arguments[$key] = $arg->nodeValue;
@@ -785,11 +757,10 @@ class XmlFileLoader extends FileLoader
     {
         $children = array();
         foreach ($node->childNodes as $child) {
-<<<<<<< HEAD
+ 
             if ($child instanceof \DOMElement && $child->localName === $name && self::NS === $child->namespaceURI) {
 =======
             if ($child instanceof \DOMElement && $child->localName === $name && $child->namespaceURI === self::NS) {
->>>>>>> web and vendor directory from composer install
                 $children[] = $child;
             }
         }
@@ -833,19 +804,18 @@ class XmlFileLoader extends FileLoader
         $imports = '';
         foreach ($schemaLocations as $namespace => $location) {
             $parts = explode('/', $location);
-<<<<<<< HEAD
+ 
             $locationstart = 'file:///';
             if (0 === stripos($location, 'phar://')) {
                 $tmpfile = tempnam(sys_get_temp_dir(), 'symfony');
 =======
             if (0 === stripos($location, 'phar://')) {
                 $tmpfile = tempnam(sys_get_temp_dir(), 'sf2');
->>>>>>> web and vendor directory from composer install
                 if ($tmpfile) {
                     copy($location, $tmpfile);
                     $tmpfiles[] = $tmpfile;
                     $parts = explode('/', str_replace('\\', '/', $tmpfile));
-<<<<<<< HEAD
+ 
                 } else {
                     array_shift($parts);
                     $locationstart = 'phar:///';
@@ -858,7 +828,6 @@ class XmlFileLoader extends FileLoader
             }
             $drive = '\\' === DIRECTORY_SEPARATOR ? array_shift($parts).'/' : '';
             $location = 'file:///'.$drive.implode('/', array_map('rawurlencode', $parts));
->>>>>>> web and vendor directory from composer install
 
             $imports .= sprintf('  <xsd:import namespace="%s" schemaLocation="%s" />'."\n", $namespace, $location);
         }
@@ -888,7 +857,7 @@ EOF
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Validates an alias.
      *
      * @param \DOMElement $alias
@@ -911,7 +880,6 @@ EOF
 
     /**
 =======
->>>>>>> web and vendor directory from composer install
      * Validates an extension.
      *
      * @param \DOMDocument $dom
@@ -948,11 +916,10 @@ EOF
     private function loadFromExtensions(\DOMDocument $xml)
     {
         foreach ($xml->documentElement->childNodes as $node) {
-<<<<<<< HEAD
+ 
             if (!$node instanceof \DOMElement || self::NS === $node->namespaceURI) {
 =======
             if (!$node instanceof \DOMElement || $node->namespaceURI === self::NS) {
->>>>>>> web and vendor directory from composer install
                 continue;
             }
 
@@ -966,11 +933,10 @@ EOF
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Converts a \DOMElement object to a PHP array.
 =======
      * Converts a \DomElement object to a PHP array.
->>>>>>> web and vendor directory from composer install
      *
      * The following rules applies during the conversion:
      *
@@ -984,11 +950,10 @@ EOF
      *
      *  * The nested-tags are converted to keys (<foo><foo>bar</foo></foo>)
      *
-<<<<<<< HEAD
+ 
      * @param \DOMElement $element A \DOMElement instance
 =======
      * @param \DomElement $element A \DomElement instance
->>>>>>> web and vendor directory from composer install
      *
      * @return array A PHP array
      */

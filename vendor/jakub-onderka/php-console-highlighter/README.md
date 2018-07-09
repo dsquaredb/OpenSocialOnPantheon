@@ -1,5 +1,5 @@
 PHP Console Highlighter
-=======================
+       ==
 
 Highlight PHP code in console (terminal).
 

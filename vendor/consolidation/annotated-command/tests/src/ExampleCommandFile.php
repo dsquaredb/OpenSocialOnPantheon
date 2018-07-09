@@ -7,10 +7,9 @@ use Consolidation\AnnotatedCommand\CommandError;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Event\ConsoleCommandEvent;
 use Symfony\Component\Console\Input\InputInterface;
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Console\Input\InputOption;
->>>>>>> revert Open Social update
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -37,7 +36,7 @@ class ExampleCommandFile
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Import config from a config directory.
      *
@@ -98,7 +97,6 @@ class ExampleCommandFile
     }
 
     /**
->>>>>>> revert Open Social update
      * This is the my:cat command
      *
      * This command will concatenate two parameters. If the --flip flag
@@ -112,11 +110,10 @@ class ExampleCommandFile
      *   Concatenate "alpha" and "bet".
      * @arbitrary This annotation is here merely as a marker used in testing.
      */
-<<<<<<< HEAD
+ 
     public function myCat($one, $two = '', $options = ['flip' => false])
 =======
     public function myCat($one, $two = '', array $options = ['flip' => false])
->>>>>>> revert Open Social update
     {
         if ($options['flip']) {
             return "{$two}{$one}";
@@ -127,17 +124,16 @@ class ExampleCommandFile
     /**
      * @command my:repeat
      */
-<<<<<<< HEAD
+ 
     public function myRepeat($one, $two = '', $options = ['repeat' => 1])
 =======
     public function myRepeat($one, $two = '', array $options = ['repeat' => 1])
->>>>>>> revert Open Social update
     {
         return str_repeat("{$one}{$two}", $options['repeat']);
     }
 
     /**
-<<<<<<< HEAD
+ 
      * @command my:join
      */
     public function myJoin(array $args, $options = ['flip' => false, 'repeat' => 1])
@@ -153,7 +149,6 @@ class ExampleCommandFile
      *   Example with no parameters or options
      */
     public function myJoin(array $args, array $options = ['flip' => false, 'repeat' => 1])
->>>>>>> revert Open Social update
     {
         if ($options['flip']) {
             $args = array_reverse($args);
@@ -179,7 +174,7 @@ class ExampleCommandFile
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * This command work with app's input and output
      *
@@ -191,18 +186,16 @@ class ExampleCommandFile
     }
 
     /**
->>>>>>> revert Open Social update
      * This command has no arguments--only options
      *
      * Return a result only if not silent.
      *
      * @option silent Supress output.
      */
-<<<<<<< HEAD
+ 
     public function commandWithNoArguments($opts = ['silent|s' => false])
 =======
     public function commandWithNoArguments(array $opts = ['silent|s' => false])
->>>>>>> revert Open Social update
     {
         if (!$opts['silent']) {
             return "Hello, world";
@@ -217,11 +210,10 @@ class ExampleCommandFile
      * @param $opts The options
      * @option silent|s Supress output.
      */
-<<<<<<< HEAD
+ 
     public function shortcutOnAnnotation($opts = ['silent' => false])
 =======
     public function shortcutOnAnnotation(array $opts = ['silent' => false])
->>>>>>> revert Open Social update
     {
         if (!$opts['silent']) {
             return "Hello, world";
@@ -242,7 +234,7 @@ class ExampleCommandFile
      * @usage 2 2 --negate
      *   Add two plus two and then negate.
      * @custom
-<<<<<<< HEAD
+ 
      */
     public function testArithmatic($one, $two, $options = ['negate' => false])
 =======
@@ -250,7 +242,6 @@ class ExampleCommandFile
      * @dup two
      */
     public function testArithmatic($one, $two = 2, array $options = ['negate' => false, 'unused' => 'bob'])
->>>>>>> revert Open Social update
     {
         $result = $one + $two;
         if ($options['negate']) {
@@ -363,7 +354,7 @@ class ExampleCommandFile
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * @command test:replace-command
      */
@@ -381,7 +372,6 @@ class ExampleCommandFile
     }
 
     /**
->>>>>>> revert Open Social update
      * @hook pre-command test:post-command
      */
     public function hookTestPreCommandHook(CommandData $commandData)
@@ -483,7 +473,7 @@ class ExampleCommandFile
         }
         return "nothing provided";
     }
-<<<<<<< HEAD
+ 
 =======
 
     /**
@@ -559,5 +549,4 @@ class ExampleCommandFile
     {
         return "Arg is $arg, options[help] is " . var_export($options['help'], true) . "\n";
     }
->>>>>>> revert Open Social update
 }

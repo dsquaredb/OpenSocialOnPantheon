@@ -9,7 +9,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\activity_creator\ActivityInterface;
 use Drupal\message\Entity\Message;
 use Drupal\activity_send_email\Plugin\ActivityDestination\EmailActivityDestination;
-<<<<<<< HEAD
+ 
 use Drupal\Core\Url;
 use Drupal\Core\Link;
 =======

@@ -22,7 +22,7 @@
     detach: function detach(element, format, trigger) {
       var editor = CKEDITOR.dom.element.get(element).getEditor();
       if (editor) {
-        if (trigger === 'serialize') {
+        if (trigger   'serialize') {
           editor.updateElement();
         } else {
           editor.destroy();
@@ -78,7 +78,7 @@
         for (var i = 0; !sourceButtonFound && i < settings.toolbar.length; i++) {
           if (settings.toolbar[i] !== '/') {
             for (var j = 0; !sourceButtonFound && j < settings.toolbar[i].items.length; j++) {
-              if (settings.toolbar[i].items[j] === 'Source') {
+              if (settings.toolbar[i].items[j]   'Source') {
                 sourceButtonFound = true;
 
                 settings.toolbar[i].items[j] = 'Sourcedialog';
@@ -115,7 +115,7 @@
 
     openDialog: function openDialog(editor, url, existingValues, saveCallback, dialogSettings) {
       var $target = $(editor.container.$);
-      if (editor.elementMode === CKEDITOR.ELEMENT_MODE_REPLACE) {
+      if (editor.elementMode   CKEDITOR.ELEMENT_MODE_REPLACE) {
         $target = $target.find('.cke_contents');
       }
 

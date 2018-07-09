@@ -228,14 +228,11 @@ class EntityManager implements EntityManagerInterface, ContainerAwareInterface {
    *   Use \Drupal\Core\Entity\EntityTypeBundleInfoInterface::clearCachedBundles()
 =======
    *   Use \Drupal\Core\Entity\EntityTypeBundleManagerInterface::clearCachedBundles()
->>>>>>> revert Open Social update
 =======
    *   Use \Drupal\Core\Entity\EntityTypeBundleInfoInterface::clearCachedBundles()
->>>>>>> updating open social
    *   instead.
    *
    * @see https://www.drupal.org/node/2549139
->>>>>>> Update Open Social to 8.x-2.1
    */
   public function clearCachedBundles() {
     $this->container->get('entity_type.bundle.info')->clearCachedBundles();
@@ -252,14 +249,11 @@ class EntityManager implements EntityManagerInterface, ContainerAwareInterface {
    *   Use \Drupal\Core\Entity\EntityTypeBundleInfoInterface::getBundleInfo()
 =======
    *   Use \Drupal\Core\Entity\EntityTypeBundleManagerInterface::getBundleInfo()
->>>>>>> revert Open Social update
 =======
    *   Use \Drupal\Core\Entity\EntityTypeBundleInfoInterface::getBundleInfo()
->>>>>>> updating open social
    *   instead.
    *
    * @see https://www.drupal.org/node/2549139
->>>>>>> Update Open Social to 8.x-2.1
    */
   public function getBundleInfo($entity_type) {
     return $this->container->get('entity_type.bundle.info')->getBundleInfo($entity_type);
@@ -276,14 +270,11 @@ class EntityManager implements EntityManagerInterface, ContainerAwareInterface {
    *   Use \Drupal\Core\Entity\EntityTypeBundleInfoInterface::getAllBundleInfo()
 =======
    *   Use \Drupal\Core\Entity\EntityTypeBundleManagerInterface::getAllBundleInfo()
->>>>>>> revert Open Social update
 =======
    *   Use \Drupal\Core\Entity\EntityTypeBundleInfoInterface::getAllBundleInfo()
->>>>>>> updating open social
    *   instead.
    *
    * @see https://www.drupal.org/node/2549139
->>>>>>> Update Open Social to 8.x-2.1
    */
   public function getAllBundleInfo() {
     return $this->container->get('entity_type.bundle.info')->getAllBundleInfo();

@@ -11,31 +11,29 @@
 
 namespace Symfony\Component\ClassLoader;
 
-<<<<<<< HEAD
+ 
 @trigger_error('The '.__NAMESPACE__.'\Psr4ClassLoader class is deprecated since Symfony 3.3 and will be removed in 4.0. Use Composer instead.', E_USER_DEPRECATED);
 
-=======
->>>>>>> web and vendor directory from composer install
+  =
 /**
  * A PSR-4 compatible class loader.
  *
  * See http://www.php-fig.org/psr/psr-4/
  *
  * @author Alexander M. Turek <me@derrabus.de>
-<<<<<<< HEAD
+ 
  *
  * @deprecated since version 3.3, to be removed in 4.0.
  */
 class Psr4ClassLoader
 {
-=======
+  =
  */
 class Psr4ClassLoader
 {
     /**
      * @var array
      */
->>>>>>> web and vendor directory from composer install
     private $prefixes = array();
 
     /**
@@ -58,13 +56,12 @@ class Psr4ClassLoader
     {
         $class = ltrim($class, '\\');
 
-<<<<<<< HEAD
+ 
         foreach ($this->prefixes as list($currentPrefix, $currentBaseDir)) {
-=======
+  =
         foreach ($this->prefixes as $current) {
             list($currentPrefix, $currentBaseDir) = $current;
->>>>>>> web and vendor directory from composer install
-            if (0 === strpos($class, $currentPrefix)) {
+            if (0   strpos($class, $currentPrefix)) {
                 $classWithoutPrefix = substr($class, strlen($currentPrefix));
                 $file = $currentBaseDir.str_replace('\\', DIRECTORY_SEPARATOR, $classWithoutPrefix).'.php';
                 if (file_exists($file)) {

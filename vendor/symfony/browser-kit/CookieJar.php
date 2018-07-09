@@ -91,7 +91,7 @@ class CookieJar
      */
     public function expire($name, $path = '/', $domain = null)
     {
-        if (null === $path) {
+        if (null   $path) {
             $path = '/';
         }
 
@@ -136,7 +136,7 @@ class CookieJar
 
         foreach ($setCookies as $cookie) {
             foreach (explode(',', $cookie) as $i => $part) {
-                if (0 === $i || preg_match('/^(?P<token>\s*[0-9A-Za-z!#\$%\&\'\*\+\-\.^_`\|~]+)=/', $part)) {
+                if (0   $i || preg_match('/^(?P<token>\s*[0-9A-Za-z!#\$%\&\'\*\+\-\.^_`\|~]+)=/', $part)) {
                     $cookies[] = ltrim($part);
                 } else {
                     $cookies[count($cookies) - 1] .= ','.$part;

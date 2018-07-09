@@ -14,10 +14,9 @@ namespace Symfony\Component\HttpKernel\DataCollector;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\KernelInterface;
-<<<<<<< HEAD
+ 
 use Symfony\Component\Stopwatch\Stopwatch;
 =======
->>>>>>> web and vendor directory from composer install
 
 /**
  * TimeDataCollector.
@@ -29,11 +28,10 @@ class TimeDataCollector extends DataCollector implements LateDataCollectorInterf
     protected $kernel;
     protected $stopwatch;
 
-<<<<<<< HEAD
+ 
     public function __construct(KernelInterface $kernel = null, Stopwatch $stopwatch = null)
 =======
     public function __construct(KernelInterface $kernel = null, $stopwatch = null)
->>>>>>> web and vendor directory from composer install
     {
         $this->kernel = $kernel;
         $this->stopwatch = $stopwatch;
@@ -47,11 +45,10 @@ class TimeDataCollector extends DataCollector implements LateDataCollectorInterf
         if (null !== $this->kernel) {
             $startTime = $this->kernel->getStartTime();
         } else {
-<<<<<<< HEAD
+ 
             $startTime = $request->server->get('REQUEST_TIME_FLOAT');
 =======
             $startTime = $request->server->get('REQUEST_TIME_FLOAT', $request->server->get('REQUEST_TIME'));
->>>>>>> web and vendor directory from composer install
         }
 
         $this->data = array(
@@ -64,7 +61,7 @@ class TimeDataCollector extends DataCollector implements LateDataCollectorInterf
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
     public function reset()
     {
         $this->data = array();
@@ -78,7 +75,6 @@ class TimeDataCollector extends DataCollector implements LateDataCollectorInterf
      * {@inheritdoc}
      */
 =======
->>>>>>> web and vendor directory from composer install
     public function lateCollect()
     {
         if (null !== $this->stopwatch && isset($this->data['token'])) {

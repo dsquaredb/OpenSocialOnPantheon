@@ -21,7 +21,7 @@ use Symfony\Component\DependencyInjection\Reference;
  *
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
  */
-<<<<<<< HEAD
+ 
 class ReplaceAliasByActualDefinitionPass extends AbstractRecursivePass
 {
     private $replacements;
@@ -30,42 +30,38 @@ class ReplaceAliasByActualDefinitionPass implements CompilerPassInterface
 {
     private $compiler;
     private $formatter;
->>>>>>> web and vendor directory from composer install
 
     /**
      * Process the Container to replace aliases with service definitions.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param ContainerBuilder $container
      *
->>>>>>> web and vendor directory from composer install
      * @throws InvalidArgumentException if the service definition does not exist
      */
     public function process(ContainerBuilder $container)
     {
-<<<<<<< HEAD
+ 
 =======
         // Setup
         $this->compiler = $container->getCompiler();
         $this->formatter = $this->compiler->getLoggingFormatter();
->>>>>>> web and vendor directory from composer install
         // First collect all alias targets that need to be replaced
         $seenAliasTargets = array();
         $replacements = array();
         foreach ($container->getAliases() as $definitionId => $target) {
-<<<<<<< HEAD
+ 
             $targetId = $container->normalizeId($target);
 =======
             $targetId = (string) $target;
->>>>>>> web and vendor directory from composer install
             // Special case: leave this target alone
             if ('service_container' === $targetId) {
                 continue;
             }
             // Check if target needs to be replaces
             if (isset($replacements[$targetId])) {
-<<<<<<< HEAD
+ 
                 $container->setAlias($definitionId, $replacements[$targetId])->setPublic($target->isPublic())->setPrivate($target->isPrivate());
             }
             // No need to process the same target twice
@@ -73,7 +69,6 @@ class ReplaceAliasByActualDefinitionPass implements CompilerPassInterface
                 $container->setAlias($definitionId, $replacements[$targetId]);
             }
             // No neeed to process the same target twice
->>>>>>> web and vendor directory from composer install
             if (isset($seenAliasTargets[$targetId])) {
                 continue;
             }
@@ -84,7 +79,7 @@ class ReplaceAliasByActualDefinitionPass implements CompilerPassInterface
             } catch (InvalidArgumentException $e) {
                 throw new InvalidArgumentException(sprintf('Unable to replace alias "%s" with actual definition "%s".', $definitionId, $targetId), null, $e);
             }
-<<<<<<< HEAD
+ 
             if ($definition->isPublic() || $definition->isPrivate()) {
                 continue;
             }
@@ -97,12 +92,11 @@ class ReplaceAliasByActualDefinitionPass implements CompilerPassInterface
             }
             // Remove private definition and schedule for replacement
             $definition->setPublic(true);
->>>>>>> web and vendor directory from composer install
             $container->setDefinition($definitionId, $definition);
             $container->removeDefinition($targetId);
             $replacements[$targetId] = $definitionId;
         }
-<<<<<<< HEAD
+ 
         $this->replacements = $replacements;
 
         parent::process($container);
@@ -192,6 +186,5 @@ class ReplaceAliasByActualDefinitionPass implements CompilerPassInterface
         }
 
         return $factory;
->>>>>>> web and vendor directory from composer install
     }
 }

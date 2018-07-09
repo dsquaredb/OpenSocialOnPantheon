@@ -1,5 +1,5 @@
 BrowserKit Component
-====================
+      ==
 
 The BrowserKit component simulates the behavior of a web browser, allowing you
 to make requests, click on links and submit forms programmatically.

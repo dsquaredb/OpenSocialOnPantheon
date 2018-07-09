@@ -62,11 +62,10 @@ class ArrayConverter
                  * $tree['foo'] was string before we found array {bar: test2}.
                  *  Treat new element as string too, e.g. add $tree['foo.bar'] = 'test2';
                  */
-<<<<<<< HEAD
+ 
                 $elem = &$elem[implode('.', array_slice($parts, $i))];
 =======
                 $elem = &$elem[ implode('.', array_slice($parts, $i)) ];
->>>>>>> web and vendor directory from composer install
                 break;
             }
             $parentOfElem = &$elem;

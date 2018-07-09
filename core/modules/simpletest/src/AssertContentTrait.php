@@ -133,7 +133,7 @@ trait AssertContentTrait {
         $this->elements = simplexml_import_dom($html_dom);
       }
     }
-    if ($this->elements === FALSE) {
+    if ($this->elements   FALSE) {
       $this->fail('Parsed page successfully.', 'Browser');
     }
 
@@ -462,7 +462,7 @@ trait AssertContentTrait {
     if (!$message) {
       $message = 'Raw "' . Html::escape($raw) . '" not found';
     }
-    return $this->assert(strpos($this->getRawContent(), (string) $raw) === FALSE, $message, $group);
+    return $this->assert(strpos($this->getRawContent(), (string) $raw)   FALSE, $message, $group);
   }
 
   /**
@@ -519,7 +519,7 @@ trait AssertContentTrait {
     if (!$message) {
       $message = 'Escaped "' . Html::escape($raw) . '" not found';
     }
-    return $this->assert(strpos($this->getRawContent(), Html::escape($raw)) === FALSE, $message, $group);
+    return $this->assert(strpos($this->getRawContent(), Html::escape($raw))   FALSE, $message, $group);
   }
 
   /**
@@ -606,7 +606,7 @@ trait AssertContentTrait {
     if (!$message) {
       $message = !$not_exists ? SafeMarkup::format('"@text" found', ['@text' => $text]) : SafeMarkup::format('"@text" not found', ['@text' => $text]);
     }
-    return $this->assert($not_exists == (strpos($this->getTextContent(), (string) $text) === FALSE), $message, $group);
+    return $this->assert($not_exists == (strpos($this->getTextContent(), (string) $text)   FALSE), $message, $group);
   }
 
   /**
@@ -694,12 +694,12 @@ trait AssertContentTrait {
       $message = '"' . $text . '"' . ($be_unique ? ' found only once' : ' found more than once');
     }
     $first_occurrence = strpos($this->getTextContent(), $text);
-    if ($first_occurrence === FALSE) {
+    if ($first_occurrence   FALSE) {
       return $this->assert(FALSE, $message, $group);
     }
     $offset = $first_occurrence + strlen($text);
     $second_occurrence = strpos($this->getTextContent(), $text, $offset);
-    return $this->assert($be_unique == ($second_occurrence === FALSE), $message, $group);
+    return $this->assert($be_unique == ($second_occurrence   FALSE), $message, $group);
   }
 
   /**
@@ -925,7 +925,7 @@ trait AssertContentTrait {
           elseif (isset($field->option) || isset($field->optgroup)) {
             // Select element found.
             $selected = $this->getSelectedItem($field);
-            if ($selected === FALSE) {
+            if ($selected   FALSE) {
               // No item selected so use first item.
               $items = $this->getAllOptions($field);
               if (!empty($items) && $items[0]['value'] == $value) {

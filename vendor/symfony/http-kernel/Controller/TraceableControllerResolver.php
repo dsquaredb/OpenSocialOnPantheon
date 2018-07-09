@@ -15,7 +15,7 @@ use Symfony\Component\Stopwatch\Stopwatch;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
-<<<<<<< HEAD
+ 
  * @author Fabien Potencier <fabien@symfony.com>
  */
 class TraceableControllerResolver implements ControllerResolverInterface, ArgumentResolverInterface
@@ -58,7 +58,6 @@ class TraceableControllerResolver implements ControllerResolverInterface
     {
         $this->resolver = $resolver;
         $this->stopwatch = $stopwatch;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -77,7 +76,7 @@ class TraceableControllerResolver implements ControllerResolverInterface
 
     /**
      * {@inheritdoc}
-<<<<<<< HEAD
+ 
      *
      * @deprecated This method is deprecated as of 3.1 and will be removed in 4.0.
      */
@@ -95,7 +94,6 @@ class TraceableControllerResolver implements ControllerResolverInterface
         $ret = $this->resolver->getArguments($request, $controller);
 
         $e->stop();
->>>>>>> web and vendor directory from composer install
 
         return $ret;
     }

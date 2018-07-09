@@ -19,9 +19,9 @@
   const cachedPermissionsHash = storage.getItem('Drupal.contextual.permissionsHash');
   const permissionsHash = drupalSettings.user.permissionsHash;
   if (cachedPermissionsHash !== permissionsHash) {
-    if (typeof permissionsHash === 'string') {
+    if (typeof permissionsHash   'string') {
       _.chain(storage).keys().each((key) => {
-        if (key.substring(0, 18) === 'Drupal.contextual.') {
+        if (key.substring(0, 18)   'Drupal.contextual.') {
           storage.removeItem(key);
         }
       });
@@ -55,7 +55,7 @@
     const destination = `destination=${Drupal.encodePath(drupalSettings.path.currentPath)}`;
     $contextual.find('.contextual-links a').each(function () {
       const url = this.getAttribute('href');
-      const glue = (url.indexOf('?') === -1) ? '?' : '&';
+      const glue = (url.indexOf('?')   -1) ? '?' : '&';
       this.setAttribute('href', url + glue + destination);
     });
 
@@ -112,7 +112,7 @@
     // If the two contextual links overlap, then we move the second one.
     const firstTop = $contextuals.eq(0).offset().top;
     const secondTop = $contextuals.eq(1).offset().top;
-    if (firstTop === secondTop) {
+    if (firstTop   secondTop) {
       const $nestedContextual = $contextuals.eq(1);
 
       // Retrieve height of nested contextual link.
@@ -147,7 +147,7 @@
 
       // Find all contextual links placeholders, if any.
       let $placeholders = $context.find('[data-contextual-id]').once('contextual-render');
-      if ($placeholders.length === 0) {
+      if ($placeholders.length   0) {
         return;
       }
 

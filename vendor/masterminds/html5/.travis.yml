@@ -1,10 +1,10 @@
 language: php
 
-<<<<<<< HEAD
+ 
 sudo: false
 
 php:
-=======
+  =
 # Setting sudo access to false will let Travis CI use containers rather than
 # VMs to run the tests. For more details see:
 # - http://docs.travis-ci.com/user/workers/container-based-infrastructure/
@@ -18,7 +18,7 @@ php:
   - 5.5
   - 5.6
   - 7.0
-<<<<<<< HEAD
+ 
   - 7.1
   - hhvm
 
@@ -30,7 +30,7 @@ matrix:
 
 dist: trusty
 
-=======
+  =
   - hhvm
 
 >>>>>>> web and vendor directory from composer install
@@ -52,7 +52,7 @@ script:
 after_script:
   - bash -c 'if [ "$TRAVIS_PHP_VERSION" == "5.6" ] ; then wget https://scrutinizer-ci.com/ocular.phar; fi;'
   - bash -c 'if [ "$TRAVIS_PHP_VERSION" == "5.6" ] ; then php ocular.phar code-coverage:upload --format=php-clover coverage.xml; fi;'
-<<<<<<< HEAD
+ 
   - php test/benchmark/run.php 50
-=======
+  =
 >>>>>>> web and vendor directory from composer install

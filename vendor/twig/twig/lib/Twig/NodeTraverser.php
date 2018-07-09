@@ -7,7 +7,6 @@
  * (c) Fabien Potencier
 =======
  * (c) 2009 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -22,7 +21,6 @@
  * @final
  *
 =======
->>>>>>> web and vendor directory from composer install
  * @author Fabien Potencier <fabien@symfony.com>
  */
 class Twig_NodeTraverser
@@ -39,7 +37,6 @@ class Twig_NodeTraverser
      *
      * @param Twig_Environment            $env      A Twig_Environment instance
      * @param Twig_NodeVisitorInterface[] $visitors An array of Twig_NodeVisitorInterface instances
->>>>>>> web and vendor directory from composer install
      */
     public function __construct(Twig_Environment $env, array $visitors = array())
     {
@@ -56,7 +53,6 @@ class Twig_NodeTraverser
      *
      * @param Twig_NodeVisitorInterface $visitor A Twig_NodeVisitorInterface instance
      */
->>>>>>> web and vendor directory from composer install
     public function addVisitor(Twig_NodeVisitorInterface $visitor)
     {
         if (!isset($this->visitors[$visitor->getPriority()])) {
@@ -73,7 +69,6 @@ class Twig_NodeTraverser
 =======
      * @param Twig_NodeInterface $node A Twig_NodeInterface instance
      *
->>>>>>> web and vendor directory from composer install
      * @return Twig_NodeInterface
      */
     public function traverse(Twig_NodeInterface $node)
@@ -111,4 +106,3 @@ class Twig_NodeTraverser
 
 class_alias('Twig_NodeTraverser', 'Twig\NodeTraverser', false);
 =======
->>>>>>> web and vendor directory from composer install

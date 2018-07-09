@@ -18,21 +18,18 @@ By default, the module places share buttons below node content.
 CONFIGURATION
 -------------
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 To configure AddToAny, go to Administration > Configuration > System > AddToAny.
 =======
 To configure AddToAny, go to:
 Administration > Configuration > Web services > AddToAny.
->>>>>>> Update Open Social to 8.x-2.1
 =======
 To configure AddToAny, go to Administration > Configuration > Web services > AddToAny.
->>>>>>> revert Open Social update
 =======
 To configure AddToAny, go to:
 Administration > Configuration > Web services > AddToAny.
->>>>>>> updating open social
 
 Explore AddToAny's documentation for the Drupal module:
 https://www.addtoany.com/buttons/customize/drupal

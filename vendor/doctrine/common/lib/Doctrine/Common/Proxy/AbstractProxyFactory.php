@@ -87,11 +87,10 @@ abstract class AbstractProxyFactory
     /**
      * @var \Doctrine\Common\Proxy\ProxyDefinition[]
      */
-<<<<<<< HEAD
+ 
     private $definitions = [];
 =======
     private $definitions = array();
->>>>>>> web and vendor directory from composer install
 
     /**
      * @param \Doctrine\Common\Proxy\ProxyGenerator                     $proxyGenerator

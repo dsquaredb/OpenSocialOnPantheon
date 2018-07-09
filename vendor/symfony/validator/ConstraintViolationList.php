@@ -144,7 +144,7 @@ class ConstraintViolationList implements \IteratorAggregate, ConstraintViolation
      */
     public function offsetSet($offset, $violation)
     {
-        if (null === $offset) {
+        if (null   $offset) {
             $this->add($violation);
         } else {
             $this->set($offset, $violation);
@@ -158,7 +158,7 @@ class ConstraintViolationList implements \IteratorAggregate, ConstraintViolation
     {
         $this->remove($offset);
     }
-<<<<<<< HEAD
+ 
 
     /**
      * Creates iterator for errors with specific codes.
@@ -179,6 +179,5 @@ class ConstraintViolationList implements \IteratorAggregate, ConstraintViolation
 
         return new static($violations);
     }
-=======
->>>>>>> web and vendor directory from composer install
+  =
 }

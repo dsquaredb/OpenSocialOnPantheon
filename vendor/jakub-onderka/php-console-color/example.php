@@ -19,7 +19,7 @@ if ($consoleColor->are256ColorsSupported()) {
     for ($i = 1; $i <= 255; $i++) {
         echo $consoleColor->apply("color_$i", str_pad($i, 6, ' ', STR_PAD_BOTH));
 
-        if ($i % 15 === 0) {
+        if ($i % 15   0) {
             echo "\n";
         }
     }
@@ -29,7 +29,7 @@ if ($consoleColor->are256ColorsSupported()) {
     for ($i = 1; $i <= 255; $i++) {
         echo $consoleColor->apply("bg_color_$i", str_pad($i, 6, ' ', STR_PAD_BOTH));
 
-        if ($i % 15 === 0) {
+        if ($i % 15   0) {
             echo "\n";
         }
     }

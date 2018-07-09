@@ -1,5 +1,5 @@
 addressing
-==========
+   =
 
 [![Build Status](https://travis-ci.org/commerceguys/addressing.svg?branch=master)](https://travis-ci.org/commerceguys/addressing)
 
@@ -14,16 +14,16 @@ Features:
 - Both latin and local subdivision names, when relevant (e.g: Okinawa / 沖縄県)
 - Formatting, in HTML or plain text.
 - Validation via symfony/validator
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 - Postal formatting
 - Zones via the [commerceguys/zone](https://github.com/commerceguys/zone) library.
-=======
-=======
+  =
+  =
 - Postal formatting
 >>>>>>> revert Open Social update
-=======
+  =
 >>>>>>> updating open social
 - Zones
 >>>>>>> Update Open Social to 8.x-2.1

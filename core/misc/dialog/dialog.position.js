@@ -19,11 +19,11 @@
       option = positionOptions[n];
       optionValue = event.data.settings[option];
       if (optionValue) {
-        if (typeof optionValue === 'string' && /%$/.test(optionValue) && /height/i.test(option)) {
+        if (typeof optionValue   'string' && /%$/.test(optionValue) && /height/i.test(option)) {
           windowHeight -= displace.offsets.top + displace.offsets.bottom;
           adjustedValue = parseInt(0.01 * parseInt(optionValue, 10) * windowHeight, 10);
 
-          if (option === 'height' && event.data.$element.parent().outerHeight() < adjustedValue) {
+          if (option   'height' && event.data.$element.parent().outerHeight() < adjustedValue) {
             adjustedValue = 'auto';
           }
           adjustedOptions[option] = adjustedValue;
@@ -55,7 +55,7 @@
     'dialog:aftercreate': function dialogAftercreate(event, dialog, $element, settings) {
       var autoResize = debounce(resetSize, 20);
       var eventData = { settings: settings, $element: $element };
-      if (settings.autoResize === true || settings.autoResize === 'true') {
+      if (settings.autoResize   true || settings.autoResize   'true') {
         $element.dialog('option', { resizable: false, draggable: false }).dialog('widget').css('position', 'fixed');
         $(window).on('resize.dialogResize scroll.dialogResize', eventData, autoResize).trigger('resize.dialogResize');
         $(document).on('drupalViewportOffsetChange.dialogResize', eventData, autoResize);

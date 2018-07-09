@@ -11,15 +11,13 @@
 
 namespace Symfony\Component\DependencyInjection\Tests\Dumper;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 =======
 =======
 use DummyProxyDumper;
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Config\FileLocator;
@@ -27,7 +25,6 @@ use Symfony\Component\DependencyInjection\Argument\IteratorArgument;
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\Argument\ServiceClosureArgument;
 use Symfony\Component\DependencyInjection\ChildDefinition;
->>>>>>> Update Open Social to 8.x-2.1
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Dumper\PhpDumper;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
@@ -292,7 +289,7 @@ class PhpDumperTest extends \PHPUnit_Framework_TestCase
         $dumper = new PhpDumper($container);
         $this->assertStringEqualsFile(self::$fixturesPath.'/php/services13.php', $dumper->dump(), '->dump() dumps inline definitions which reference service_container');
     }
-<<<<<<< HEAD
+ 
 =======
 
     public function testNonSharedLazyDefinitionReferences()
@@ -865,5 +862,4 @@ class Rot13EnvVarProcessor implements EnvVarProcessorInterface
     {
         return array('rot13' => 'string');
     }
->>>>>>> Update Open Social to 8.x-2.1
 }

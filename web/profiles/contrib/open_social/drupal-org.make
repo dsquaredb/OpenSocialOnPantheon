@@ -2,9 +2,9 @@ core = 8.x
 api = 2
 defaults[projects][subdir] = "contrib"
 projects[address][type] = module
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 projects[address][version] = 1.0-rc3
 projects[address][patch][] = "https://www.drupal.org/files/issues/address-2619878-29.patch"
 projects[addtoany][type] = module
@@ -29,13 +29,13 @@ projects[block_field][version] = 1.0-alpha5
 projects[config_update][type] = module
 projects[config_update][version] = 1.1
 projects[crop][type] = module
-<<<<<<< HEAD
+ 
 projects[crop][version] = 1.0
 =======
 projects[crop][version] = 1.5
 projects[csv_serialization][type] = module
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 projects[csv_serialization][version] = 1.3
 >>>>>>> Update Open Social to 8.x-2.1
 =======
@@ -52,9 +52,9 @@ projects[dynamic_entity_reference][version] = 1.0-rc5
 projects[entity][type] = module
 projects[entity][version] = 1.0-alpha3
 projects[features][type] = module
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 projects[features][version] = 3.0-rc1
 =======
 projects[features][version] = 3.7
@@ -75,7 +75,7 @@ projects[group][type] = module
 projects[group][version] = 1.0-beta4
 projects[group][patch][] = "https://www.drupal.org/files/issues/error-when-uploading-files-2793621-5.patch"
 projects[image_widget_crop][type] = module
-<<<<<<< HEAD
+ 
 projects[image_widget_crop][version] = 1.3
 projects[libraries][type] = module
 projects[libraries][download][type] = git
@@ -102,7 +102,7 @@ projects[profile][patch][] = "https://www.drupal.org/files/issues/profile-access
 projects[r4032login][type] = module
 projects[r4032login][version] = 1.0-beta2
 projects[search_api][type] = module
-<<<<<<< HEAD
+ 
 projects[search_api][version] = 1.0-beta2
 =======
 projects[search_api][version] = 1.6
@@ -111,8 +111,8 @@ projects[social_api][version] = 1.1
 projects[social_auth][type] = module
 projects[social_auth][version] = 1.0
 projects[swiftmailer][type] = module
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 projects[swiftmailer][version] = 1.0-beta2
 projects[swiftmailer][patch][] = "https://www.drupal.org/files/issues/2018-03-26/2948607-fix-filter-format-1.patch"
 >>>>>>> Update Open Social to 8.x-2.1

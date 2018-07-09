@@ -22,7 +22,7 @@ use Symfony\Component\Validator\Util\PropertyPath;
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
  *
-<<<<<<< HEAD
+ 
  * @internal since version 2.5. Code against ConstraintViolationBuilderInterface instead.
  */
 class ConstraintViolationBuilder implements ConstraintViolationBuilderInterface
@@ -96,7 +96,6 @@ class ConstraintViolationBuilder implements ConstraintViolationBuilderInterface
     /**
      * @var mixed
      */
->>>>>>> web and vendor directory from composer install
     private $code;
 
     /**

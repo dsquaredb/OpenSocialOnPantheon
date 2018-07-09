@@ -350,16 +350,15 @@ class Schema extends DatabaseSchema {
       }
       elseif (isset($specification['initial_from_field'])) {
         // If we have a initial value, copy it over.
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         $mapping[$field] = array(
           'expression' => $specification['initial_from_field'],
           'arguments' => [],
         );
 =======
 =======
->>>>>>> updating open social
         if (isset($specification['initial'])) {
           $expression = 'COALESCE(' . $specification['initial_from_field'] . ', :default_initial_value)';
           $arguments = [':default_initial_value' => $specification['initial']];
@@ -368,16 +367,13 @@ class Schema extends DatabaseSchema {
           $expression = $specification['initial_from_field'];
           $arguments = [];
         }
-<<<<<<< HEAD
+ 
 =======
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
         $mapping[$field] = [
           'expression' => $expression,
           'arguments' => $arguments,
         ];
->>>>>>> Update Open Social to 8.x-2.1
       }
       else {
         // Else use the default of the field.

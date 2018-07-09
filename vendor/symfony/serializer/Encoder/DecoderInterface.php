@@ -25,11 +25,10 @@ interface DecoderInterface
      *
      * @param string $data    Data to decode
      * @param string $format  Format name
-<<<<<<< HEAD
+ 
      * @param array  $context Options that decoders have access to
 =======
      * @param array  $context options that decoders have access to
->>>>>>> web and vendor directory from composer install
      *
      * The format parameter specifies which format the data is in; valid values
      * depend on the specific implementation. Authors implementing this interface
@@ -45,11 +44,10 @@ interface DecoderInterface
     /**
      * Checks whether the deserializer can decode from given format.
      *
-<<<<<<< HEAD
+ 
      * @param string $format Format name
 =======
      * @param string $format format name
->>>>>>> web and vendor directory from composer install
      *
      * @return bool
      */

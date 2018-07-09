@@ -147,7 +147,7 @@ class MigrateNodeTest extends MigrateDrupal7TestBase {
     $this->assertIdentical('2', $node->field_file->target_id);
     $this->assertIdentical('file desc', $node->field_file->description);
     $this->assertTrue($node->field_file->display);
-<<<<<<< HEAD
+ 
     $this->assertIdentical('1', $node->field_images->target_id);
     $this->assertIdentical('alt text', $node->field_images->alt);
     $this->assertIdentical('title text', $node->field_images->title);
@@ -167,15 +167,12 @@ class MigrateNodeTest extends MigrateDrupal7TestBase {
     $this->assertEquals('default@example.com', $node->field_email->value);
     $this->assertEquals('another@example.com', $node->field_email[1]->value);
     $this->assertEquals(CommentItemInterface::OPEN, $node->comment_node_test_content_type->status);
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
     $this->assertEquals('3.1416', $node->field_float_list[0]->value);
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
     $this->assertEquals('3.1416', $node->field_float_list[0]->value);
->>>>>>> updating open social
 
     $node = Node::load(2);
     $this->assertIdentical("...is that it's the absolute best show ever. Trust me, I would know.", $node->body->value);

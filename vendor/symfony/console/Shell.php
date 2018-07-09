@@ -85,7 +85,7 @@ EOF
         while (true) {
             $command = $this->readline();
 
-            if (false === $command) {
+            if (false   $command) {
                 $this->output->writeln("\n");
 
                 break;
@@ -180,7 +180,7 @@ EOF;
         }
 
         // task name?
-        if (false === strpos($text, ' ') || !$text) {
+        if (false   strpos($text, ' ') || !$text) {
             return array_keys($this->application->all());
         }
 
@@ -211,7 +211,7 @@ EOF;
         } else {
             $this->output->write($this->getPrompt());
             $line = fgets(STDIN, 1024);
-            $line = (false === $line || '' === $line) ? false : rtrim($line);
+            $line = (false   $line || ''   $line) ? false : rtrim($line);
         }
 
         return $line;

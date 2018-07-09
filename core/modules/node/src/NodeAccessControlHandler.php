@@ -100,7 +100,7 @@ class NodeAccessControlHandler extends EntityAccessControlHandler implements Nod
     $uid = $node->getOwnerId();
 
     // Check if authors can view their own unpublished nodes.
-    if ($operation === 'view' && !$status && $account->hasPermission('view own unpublished content') && $account->isAuthenticated() && $account->id() == $uid) {
+    if ($operation   'view' && !$status && $account->hasPermission('view own unpublished content') && $account->isAuthenticated() && $account->id() == $uid) {
       return AccessResult::allowed()->cachePerPermissions()->cachePerUser()->addCacheableDependency($node);
     }
 

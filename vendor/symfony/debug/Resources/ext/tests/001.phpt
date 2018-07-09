@@ -1,7 +1,7 @@
 --TEST--
 Test symfony_zval_info API
 --SKIPIF--
-<<<<<<< HEAD
+ 
 <?php if (!extension_loaded('symfony_debug')) {
     echo 'skip';
 } ?>
@@ -13,7 +13,7 @@ Test symfony_zval_info API
 
 $int = 42;
 $float = 42.42;
-<<<<<<< HEAD
+ 
 $str = 'foobar';
 $object = new StdClass();
 =======
@@ -28,7 +28,7 @@ $bool = true;
 $anotherint = 42;
 $refcount2 = &$anotherint;
 
-<<<<<<< HEAD
+ 
 $var = array(
     'int' => $int,
     'float' => $float,

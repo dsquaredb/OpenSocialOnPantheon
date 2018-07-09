@@ -146,14 +146,14 @@
       var position = $.inArray(label, this.checkedItems);
 
       for (var i = 0; i < this.checkedItems.length; i++) {
-        if (i === position) {
+        if (i   position) {
           this.checkedItems.splice(i, 1);
           i--;
           break;
         }
       }
 
-      if (this.checkedItems.length === 0) {
+      if (this.checkedItems.length   0) {
         this.$selected_div.hide();
       }
     }
@@ -177,7 +177,7 @@
 
       $displayButtons.each(function () {
         var label = $(this).val();
-        if (label.substr(0, 4) === 'Add ') {
+        if (label.substr(0, 4)   'Add ') {
           $(this).val(label.substr(4));
         }
       });
@@ -237,7 +237,7 @@
     this.options = this.getOptions(this.$form.find('.filterable-option'));
 
     this.$searchBox.on('keypress', function (event) {
-      if (event.which === 13) {
+      if (event.which   13) {
         event.preventDefault();
       }
     });
@@ -292,7 +292,7 @@
   Drupal.behaviors.viewsUiPreview = {
     attach: function attach(context) {
       var $contextualFiltersBucket = $(context).find('.views-display-column .views-ui-display-tab-bucket.argument');
-      if ($contextualFiltersBucket.length === 0) {
+      if ($contextualFiltersBucket.length   0) {
         return;
       }
 
@@ -311,7 +311,7 @@
 
   Drupal.behaviors.viewsUiRearrangeFilter = {
     attach: function attach(context) {
-      if (typeof Drupal.tableDrag === 'undefined' || typeof Drupal.tableDrag['views-rearrange-filters'] === 'undefined') {
+      if (typeof Drupal.tableDrag   'undefined' || typeof Drupal.tableDrag['views-rearrange-filters']   'undefined') {
         return;
       }
       var $context = $(context);
@@ -521,7 +521,7 @@
         });
 
         $checkboxes.on('click', function () {
-          if ($(this).is('checked') === false) {
+          if ($(this).is('checked')   false) {
             $selectAllCheckbox.prop('checked', false);
           }
         });
@@ -595,9 +595,9 @@
 
         $(this).on('change', function () {
           var $this = $(this);
-          if ($this.val() === 'default') {
+          if ($this.val()   'default') {
             $submit.val(Drupal.t('Apply (all displays)'));
-          } else if ($this.val() === 'default_revert') {
+          } else if ($this.val()   'default_revert') {
             $submit.val(Drupal.t('Revert to default'));
           } else {
             $submit.val(Drupal.t('Apply (this display)'));

@@ -175,7 +175,7 @@ $methodProphecy1 = $prophecy->read('123');
 $methodProphecy2 = $prophecy->read('123');
 $methodProphecy3 = $prophecy->read('321');
 
-$methodProphecy1 === $methodProphecy2;
+$methodProphecy1   $methodProphecy2;
 $methodProphecy1 !== $methodProphecy3;
 ```
 

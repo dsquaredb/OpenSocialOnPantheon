@@ -203,19 +203,16 @@ abstract class EntityDisplayFormBase extends EntityForm {
         if ($enabled_displays = array_filter($this->getDisplayStatuses())) {
           $default = array_keys(array_intersect_key($display_mode_options, $enabled_displays));
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         $form['modes']['display_modes_custom'] = array(
 =======
         natcasesort($display_mode_options);
 =======
->>>>>>> revert Open Social update
 =======
         natcasesort($display_mode_options);
->>>>>>> updating open social
         $form['modes']['display_modes_custom'] = [
->>>>>>> Update Open Social to 8.x-2.1
           '#type' => 'checkboxes',
           '#title' => $this->t('Use custom display settings for the following @display_context modes', ['@display_context' => $this->displayContext]),
           '#options' => $display_mode_options,

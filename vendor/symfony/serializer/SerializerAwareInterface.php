@@ -20,11 +20,10 @@ interface SerializerAwareInterface
 {
     /**
      * Sets the owning Serializer object.
-<<<<<<< HEAD
-=======
+ 
+  =
      *
      * @param SerializerInterface $serializer
->>>>>>> web and vendor directory from composer install
      */
     public function setSerializer(SerializerInterface $serializer);
 }

@@ -29,9 +29,9 @@ class SplCaster
 
     public static function castArrayObject(\ArrayObject $c, array $a, Stub $stub, $isNested)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         $prefix = Caster::PREFIX_VIRTUAL;
         $class = $stub->class;
         $flags = $c->getFlags();
@@ -57,12 +57,10 @@ class SplCaster
 =======
         return self::castSplArray($c, $a, $stub, $isNested);
     }
->>>>>>> Update Open Social to 8.x-2.1
 =======
         $prefix = Caster::PREFIX_VIRTUAL;
         $class = $stub->class;
         $flags = $c->getFlags();
->>>>>>> revert Open Social update
 
         $b = array(
             $prefix.'flag::STD_PROP_LIST' => (bool) ($flags & \ArrayObject::STD_PROP_LIST),
@@ -85,7 +83,6 @@ class SplCaster
 =======
         return self::castSplArray($c, $a, $stub, $isNested);
     }
->>>>>>> updating open social
 
     public static function castArrayIterator(\ArrayIterator $c, array $a, Stub $stub, $isNested)
     {
@@ -217,22 +214,19 @@ class SplCaster
         $storage = array();
         unset($a[Caster::PREFIX_DYNAMIC."\0gcdata"]); // Don't hit https://bugs.php.net/65967
 
-<<<<<<< HEAD
+ 
         foreach ($c as $obj) {
             $storage[spl_object_hash($obj)] = array(
 =======
         $clone = clone $c;
         foreach ($clone as $obj) {
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             $storage[] = array(
->>>>>>> Update Open Social to 8.x-2.1
 =======
             $storage[spl_object_hash($obj)] = array(
->>>>>>> revert Open Social update
 =======
             $storage[] = array(
->>>>>>> updating open social
                 'object' => $obj,
                 'info' => $c->getInfo(),
              );

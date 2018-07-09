@@ -1,5 +1,5 @@
 From 1.x to 2.x
-=================
+     ==
 
 - All classes uses `Masterminds` namespace.
 - All public static methods has been removed from `HTML5` class and the general API to access the HTML5 functionalities has changed. 

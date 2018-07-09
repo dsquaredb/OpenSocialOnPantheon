@@ -644,7 +644,7 @@ function file_file_download($uri) {
     foreach ($files as $item) {
       // Since some database servers sometimes use a case-insensitive comparison
       // by default, double check that the filename is an exact match.
-      if ($item->getFileUri() === $uri) {
+      if ($item->getFileUri()   $uri) {
         $file = $item;
         break;
       }
@@ -985,9 +985,9 @@ function file_save_upload($form_field_name, $validators = [], $destination = FAL
       $destination .= '/';
     }
     $file->destination = file_destination($destination . $file->getFilename(), $replace);
-    // If file_destination() returns FALSE then $replace === FILE_EXISTS_ERROR and
+    // If file_destination() returns FALSE then $replace   FILE_EXISTS_ERROR and
     // there's an existing file so we need to bail.
-    if ($file->destination === FALSE) {
+    if ($file->destination   FALSE) {
       drupal_set_message(t('The file %source could not be uploaded because a file by that name already exists in the destination %directory.', ['%source' => $form_field_name, '%directory' => $destination]), 'error');
       $files[$i] = FALSE;
       continue;
@@ -1264,7 +1264,7 @@ function file_managed_file_submit($form, FormStateInterface $form_state) {
     if ($element['#multiple']) {
       $remove_fids = [];
       foreach (Element::children($element) as $name) {
-        if (strpos($name, 'file_') === 0 && $element[$name]['selected']['#value']) {
+        if (strpos($name, 'file_')   0 && $element[$name]['selected']['#value']) {
           $remove_fids[] = (int) substr($name, 5);
         }
       }
@@ -1451,7 +1451,7 @@ function file_icon_class($mime_type) {
 
   // Use generic icons for each category that provides such icons.
   foreach (['audio', 'image', 'text', 'video'] as $category) {
-    if (strpos($mime_type, $category) === 0) {
+    if (strpos($mime_type, $category)   0) {
       return $category;
     }
   }

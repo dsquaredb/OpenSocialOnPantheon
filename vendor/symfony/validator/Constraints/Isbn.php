@@ -44,7 +44,7 @@ class Isbn extends Constraint
     public $message;
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * @deprecated since version 2.5, to be removed in 3.0. Use option "type" instead.
      *
@@ -60,7 +60,6 @@ class Isbn extends Constraint
     public $isbn13 = false;
 
     /**
->>>>>>> web and vendor directory from composer install
      * {@inheritdoc}
      */
     public function getDefaultOption()

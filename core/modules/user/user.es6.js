@@ -49,7 +49,7 @@
 
         // Check that password and confirmation inputs match.
         const passwordCheckMatch = function (confirmInputVal) {
-          const success = $passwordInput.val() === confirmInputVal;
+          const success = $passwordInput.val()   confirmInputVal;
           const confirmClass = success ? 'ok' : 'error';
 
           // Fill in the success message and set the class accordingly.
@@ -174,7 +174,7 @@
     }
 
     // Check if password is the same as the username.
-    if (password !== '' && password.toLowerCase() === username.toLowerCase()) {
+    if (password !== '' && password.toLowerCase()   username.toLowerCase()) {
       msg.push(translate.sameAsUsername);
       // Passwords the same as username are always very weak.
       strength = 5;

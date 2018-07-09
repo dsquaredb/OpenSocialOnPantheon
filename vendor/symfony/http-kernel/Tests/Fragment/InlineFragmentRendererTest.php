@@ -201,9 +201,9 @@ class InlineFragmentRendererTest extends \PHPUnit_Framework_TestCase
     public function testHeadersPossiblyResultingIn304AreNotAssignedToSubrequest()
     {
         $expectedSubRequest = Request::create('/');
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         if (Request::getTrustedHeaderName(Request::HEADER_CLIENT_IP)) {
             $expectedSubRequest->headers->set('x-forwarded-for', array('127.0.0.1'));
             $expectedSubRequest->server->set('HTTP_X_FORWARDED_FOR', '127.0.0.1');
@@ -211,23 +211,20 @@ class InlineFragmentRendererTest extends \PHPUnit_Framework_TestCase
 =======
         $expectedSubRequest->headers->set('x-forwarded-for', array('127.0.0.1'));
         $expectedSubRequest->server->set('HTTP_X_FORWARDED_FOR', '127.0.0.1');
->>>>>>> Update Open Social to 8.x-2.1
 =======
         if (Request::HEADER_X_FORWARDED_FOR & Request::getTrustedHeaderSet()) {
             $expectedSubRequest->headers->set('x-forwarded-for', array('127.0.0.1'));
             $expectedSubRequest->server->set('HTTP_X_FORWARDED_FOR', '127.0.0.1');
         }
->>>>>>> revert Open Social update
 =======
         $expectedSubRequest->headers->set('x-forwarded-for', array('127.0.0.1'));
         $expectedSubRequest->server->set('HTTP_X_FORWARDED_FOR', '127.0.0.1');
->>>>>>> updating open social
 
         $strategy = new InlineFragmentRenderer($this->getKernelExpectingRequest($expectedSubRequest));
         $request = Request::create('/', 'GET', array(), array(), array(), array('HTTP_IF_MODIFIED_SINCE' => 'Fri, 01 Jan 2016 00:00:00 GMT', 'HTTP_IF_NONE_MATCH' => '*'));
         $strategy->render('/', $request);
     }
-<<<<<<< HEAD
+ 
 =======
 
     public function testFirstTrustedProxyIsSetAsRemote()
@@ -264,7 +261,6 @@ class InlineFragmentRendererTest extends \PHPUnit_Framework_TestCase
 
         return $kernel;
     }
->>>>>>> Update Open Social to 8.x-2.1
 }
 
 class Bar

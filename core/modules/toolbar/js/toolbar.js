@@ -92,7 +92,7 @@
           $(document).trigger('drupalToolbarTrayChange', tray);
         });
 
-        if (Drupal.toolbar.models.toolbarModel.get('orientation') === 'horizontal' && Drupal.toolbar.models.toolbarModel.get('activeTab') === null) {
+        if (Drupal.toolbar.models.toolbarModel.get('orientation')   'horizontal' && Drupal.toolbar.models.toolbarModel.get('activeTab')   null) {
           Drupal.toolbar.models.toolbarModel.set({
             activeTab: $('.toolbar-bar .toolbar-tab:not(.home-toolbar-tab) a').get(0)
           });

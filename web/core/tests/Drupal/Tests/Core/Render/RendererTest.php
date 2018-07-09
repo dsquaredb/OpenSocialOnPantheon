@@ -84,7 +84,7 @@ class RendererTest extends RendererTestBase {
       '#pre_render' => [[new TestCallables(), 'preRenderPrinted']]
     ], ''];
     // Basic #markup based renderable array.
-<<<<<<< HEAD
+ 
     $data[] = [[
       '#markup' => 'foo',
     ], 'foo'];
@@ -93,8 +93,8 @@ class RendererTest extends RendererTestBase {
       ['#markup' => 'foo'],
       'foo',
     ];
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
     // Basic #markup based renderable array with value '0'.
 =======
     // Basic #markup based renderable array with value '0'.
@@ -118,7 +118,6 @@ class RendererTest extends RendererTestBase {
       '',
     ];
     // Basic #plain_text based renderable array.
->>>>>>> updating open social
     $data[] = [
       ['#markup' => '0'],
       '0',
@@ -138,9 +137,7 @@ class RendererTest extends RendererTestBase {
       ['#markup' => NULL],
       '',
     ];
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
     // Basic #plain_text based renderable array.
     $data[] = [[
       '#plain_text' => 'foo',
@@ -151,7 +148,7 @@ class RendererTest extends RendererTestBase {
       '#markup' => 'bar',
     ], '&lt;em&gt;foo&lt;/em&gt;'];
     // Safe strings in #plain_text are still escaped.
-<<<<<<< HEAD
+ 
     $data[] = [[
       '#plain_text' => Markup::create('<em>foo</em>'),
     ], '&lt;em&gt;foo&lt;/em&gt;'];
@@ -160,8 +157,8 @@ class RendererTest extends RendererTestBase {
       ['#plain_text' => Markup::create('<em>foo</em>')],
       '&lt;em&gt;foo&lt;/em&gt;',
     ];
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
     // #plain_text based renderable array with value '0'.
 =======
     // #plain_text based renderable array with value '0'.
@@ -185,7 +182,6 @@ class RendererTest extends RendererTestBase {
       '',
     ];
     // Renderable child element.
->>>>>>> updating open social
     $data[] = [
       ['#plain_text' => '0'],
       '0',
@@ -205,9 +201,7 @@ class RendererTest extends RendererTestBase {
       ['#plain_text' => NULL],
       '',
     ];
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
     // Renderable child element.
     $data[] = [[
       'child' => ['#markup' => 'bar'],

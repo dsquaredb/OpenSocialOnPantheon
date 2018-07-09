@@ -1,5 +1,5 @@
 Placeholder Resolver
-====================
+      ==
 
 Given a data source representing key => value pairs, resolve placeholders
 like `${foo.bar}` to the value associated with the `foo.bar` key in

@@ -3,18 +3,15 @@
 namespace Drupal\social_event\Form;
 
 use Drupal\Core\Cache\Cache;
-<<<<<<< HEAD
+ 
 =======
 use Drupal\Core\Config\ConfigFactoryInterface;
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 use Drupal\Core\Datetime\DrupalDateTime;
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
 use Drupal\Core\Datetime\DrupalDateTime;
->>>>>>> updating open social
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Form\FormBase;
@@ -203,28 +200,24 @@ class EnrollActionForm extends FormBase implements ContainerInjectionInterface {
       $check_end_date = $node->field_event_date_end->date;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
     // Check to see if Event end date is in the future, hence we can still "Enroll".
 
     if (time() > $event_end_timestamp) {
 =======
 =======
->>>>>>> updating open social
     $current_time = new DrupalDateTime();
 
     // The event has finished if the end date is smaller than the current date.
     if ($current_time > $check_end_date) {
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
     // Check to see if Event end date is in the future,
     // hence we can still "Enroll".
     if (time() > $event_end_timestamp) {
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
       return TRUE;
     }
     return FALSE;

@@ -10,7 +10,7 @@
 		"symbol": "฿"
 	},
 	"PAB": {
-<<<<<<< HEAD
+ 
 		"name": "Balboa do Panamá"
 =======
 		"name": "balboa do Panamá"
@@ -20,7 +20,7 @@
 		"name": "Birr etíope"
 	},
 	"VEF": {
-<<<<<<< HEAD
+ 
 		"name": "Bolívar venezuelano"
 	},
 	"BOB": {
@@ -39,7 +39,7 @@
 		"name": "Colom salvadorenho"
 	},
 	"CRC": {
-<<<<<<< HEAD
+ 
 		"name": "Colon costa-riquenho"
 	},
 	"NIO": {
@@ -85,7 +85,7 @@
 		"name": "Dalasi da Gâmbia"
 	},
 	"DZD": {
-<<<<<<< HEAD
+ 
 		"name": "Dinar argelino"
 =======
 		"name": "dinar argelino"
@@ -104,7 +104,7 @@
 		"name": "Dinar kuwaitiano"
 	},
 	"LYD": {
-<<<<<<< HEAD
+ 
 		"name": "Dinar líbio"
 	},
 	"MKD": {
@@ -132,7 +132,7 @@
 		"name": "Dirham dos Emirados Árabes Unidos"
 	},
 	"MAD": {
-<<<<<<< HEAD
+ 
 		"name": "Dirham marroquino"
 =======
 		"name": "dirham marroquino"
@@ -146,7 +146,7 @@
 		"symbol": "AU$"
 	},
 	"BBD": {
-<<<<<<< HEAD
+ 
 		"name": "Dólar barbadense"
 	},
 	"BZD": {
@@ -168,7 +168,7 @@
 		"name": "Dólar bruneíno"
 	},
 	"CAD": {
-<<<<<<< HEAD
+ 
 		"name": "Dólar canadiano",
 		"symbol": "CA$"
 	},
@@ -186,7 +186,7 @@
 		"name": "Dólar da Namíbia"
 	},
 	"BSD": {
-<<<<<<< HEAD
+ 
 		"name": "Dólar das Bahamas"
 =======
 		"name": "dólar das Bahamas"
@@ -216,7 +216,7 @@
 		"name": "Dólar de Trindade e Tobago"
 	},
 	"SRD": {
-<<<<<<< HEAD
+ 
 		"name": "Dólar do Suriname"
 =======
 		"name": "dólar do Suriname"
@@ -226,7 +226,7 @@
 		"name": "Dólar do Zimbábue (2009)"
 	},
 	"USD": {
-<<<<<<< HEAD
+ 
 		"name": "Dólar dos Estados Unidos",
 =======
 		"name": "dólar dos Estados Unidos",
@@ -251,7 +251,7 @@
 		"name": "Dram arménio"
 	},
 	"CVE": {
-<<<<<<< HEAD
+ 
 		"name": "Escudo cabo-verdiano"
 	},
 	"EUR": {
@@ -268,7 +268,7 @@
 		"name": "Florim das Antilhas Holandesas"
 	},
 	"AWG": {
-<<<<<<< HEAD
+ 
 		"name": "Florim de Aruba"
 	},
 	"HUF": {
@@ -284,7 +284,7 @@
 		"name": "Franco burundiano"
 	},
 	"XOF": {
-<<<<<<< HEAD
+ 
 		"name": "Franco CFA (BCEAO)",
 =======
 		"name": "franco CFA (BCEAO)",
@@ -315,7 +315,7 @@
 		"name": "Franco ruandês"
 	},
 	"CHF": {
-<<<<<<< HEAD
+ 
 		"name": "Franco suíço"
 =======
 		"name": "franco suíço"
@@ -325,7 +325,7 @@
 		"name": "Gourde haitiano"
 	},
 	"PYG": {
-<<<<<<< HEAD
+ 
 		"name": "Guarani paraguaio"
 	},
 	"UAH": {
@@ -348,7 +348,7 @@
 		"name": "Kip de Laos"
 	},
 	"HRK": {
-<<<<<<< HEAD
+ 
 		"name": "Kuna croata"
 =======
 		"name": "kuna croata"
@@ -371,7 +371,7 @@
 		"name": "Lari georgiano"
 	},
 	"ALL": {
-<<<<<<< HEAD
+ 
 		"name": "Lek albanês"
 	},
 	"HNL": {
@@ -387,7 +387,7 @@
 		"name": "Leone de Serra Leoa"
 	},
 	"MDL": {
-<<<<<<< HEAD
+ 
 		"name": "Leu moldavo"
 	},
 	"RON": {
@@ -421,7 +421,7 @@
 		"name": "Libra de Santa Helena"
 	},
 	"EGP": {
-<<<<<<< HEAD
+ 
 		"name": "Libra egípcia"
 	},
 	"GBP": {
@@ -441,7 +441,7 @@
 		"name": "Libra síria"
 	},
 	"SDG": {
-<<<<<<< HEAD
+ 
 		"name": "Libra sudanesa"
 =======
 		"name": "libra sudanesa"
@@ -466,7 +466,7 @@
 		"name": "Manat do Turquemenistão"
 	},
 	"BAM": {
-<<<<<<< HEAD
+ 
 		"name": "Marco bósnio-herzegóvino conversível"
 =======
 		"name": "marco bósnio-herzegóvino conversível"
@@ -488,7 +488,7 @@
 		"name": "Novo dólar taiwanês",
 		"symbol": "NT$"
 	},
-<<<<<<< HEAD
+ 
 	"PEN": {
 		"name": "Novo sol peruano"
 	},
@@ -504,7 +504,7 @@
 		"name": "Pataca de Macau"
 	},
 	"ARS": {
-<<<<<<< HEAD
+ 
 		"name": "Peso argentino"
 	},
 	"CLP": {
@@ -541,7 +541,7 @@
 		"name": "Peso filipino"
 	},
 	"MXN": {
-<<<<<<< HEAD
+ 
 		"name": "Peso mexicano",
 		"symbol": "MX$"
 	},
@@ -559,7 +559,7 @@
 		"name": "Pula de Botswana"
 	},
 	"GTQ": {
-<<<<<<< HEAD
+ 
 		"name": "Quetzal da Guatemala"
 =======
 		"name": "quetzal da Guatemala"
@@ -569,7 +569,7 @@
 		"name": "Rand sul-africano"
 	},
 	"BRL": {
-<<<<<<< HEAD
+ 
 		"name": "Real brasileiro",
 =======
 		"name": "real brasileiro",
@@ -598,7 +598,7 @@
 		"name": "Ringgit malaio"
 	},
 	"BYN": {
-<<<<<<< HEAD
+ 
 		"name": "Rublo bielorrusso"
 	},
 	"BYR": {
@@ -642,7 +642,7 @@
 		"name": "Sheqel novo israelita",
 		"symbol": "₪"
 	},
-<<<<<<< HEAD
+ 
 =======
 	"PEN": {
 		"name": "sol peruano"
@@ -692,7 +692,7 @@
 		"name": "Xelim ugandense"
 	},
 	"CNY": {
-<<<<<<< HEAD
+ 
 		"name": "Yuan chinês",
 		"symbol": "CN¥"
 	},

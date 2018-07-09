@@ -10,11 +10,10 @@ namespace GuzzleHttp\Promise;
  *
  *     GuzzleHttp\Promise\queue()->run();
  */
-<<<<<<< HEAD
+ 
 class TaskQueue implements TaskQueueInterface
 =======
 class TaskQueue
->>>>>>> web and vendor directory from composer install
 {
     private $enableShutdown = true;
     private $queue = [];
@@ -34,20 +33,19 @@ class TaskQueue
         }
     }
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * Returns true if the queue is empty.
      *
      * @return bool
      */
->>>>>>> web and vendor directory from composer install
     public function isEmpty()
     {
         return !$this->queue;
     }
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * Adds a task to the queue that will be executed the next time run is
@@ -55,18 +53,16 @@ class TaskQueue
      *
      * @param callable $task
      */
->>>>>>> web and vendor directory from composer install
     public function add(callable $task)
     {
         $this->queue[] = $task;
     }
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * Execute all of the pending task in the queue.
      */
->>>>>>> web and vendor directory from composer install
     public function run()
     {
         /** @var callable $task */

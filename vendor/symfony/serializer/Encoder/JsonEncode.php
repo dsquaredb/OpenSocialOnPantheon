@@ -11,11 +11,10 @@
 
 namespace Symfony\Component\Serializer\Encoder;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\Serializer\Exception\NotEncodableValueException;
 =======
 use Symfony\Component\Serializer\Exception\UnexpectedValueException;
->>>>>>> web and vendor directory from composer install
 
 /**
  * Encodes JSON data.
@@ -25,10 +24,9 @@ use Symfony\Component\Serializer\Exception\UnexpectedValueException;
 class JsonEncode implements EncoderInterface
 {
     private $options;
-<<<<<<< HEAD
+ 
 =======
     private $lastError = JSON_ERROR_NONE;
->>>>>>> web and vendor directory from composer install
 
     public function __construct($bitmask = 0)
     {
@@ -36,7 +34,7 @@ class JsonEncode implements EncoderInterface
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Returns the last encoding error (if any).
      *
@@ -54,7 +52,6 @@ class JsonEncode implements EncoderInterface
     }
 
     /**
->>>>>>> web and vendor directory from composer install
      * Encodes PHP data to a JSON string.
      *
      * {@inheritdoc}
@@ -65,13 +62,12 @@ class JsonEncode implements EncoderInterface
 
         $encodedJson = json_encode($data, $context['json_encode_options']);
 
-<<<<<<< HEAD
+ 
         if (JSON_ERROR_NONE !== json_last_error() && (false === $encodedJson || !($context['json_encode_options'] & JSON_PARTIAL_OUTPUT_ON_ERROR))) {
             throw new NotEncodableValueException(json_last_error_msg());
 =======
         if (JSON_ERROR_NONE !== $this->lastError = json_last_error()) {
             throw new UnexpectedValueException(json_last_error_msg());
->>>>>>> web and vendor directory from composer install
         }
 
         return $encodedJson;
@@ -88,11 +84,10 @@ class JsonEncode implements EncoderInterface
     /**
      * Merge default json encode options with context.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param array $context
      *
->>>>>>> web and vendor directory from composer install
      * @return array
      */
     private function resolveContext(array $context = array())

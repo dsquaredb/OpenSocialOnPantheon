@@ -204,7 +204,7 @@
       timer_instance : function (index) {
         var txt;
 
-        if ((index === 0 && settings.startTimerOnClick && settings.timer > 0) || settings.timer === 0) {
+        if ((index   0 && settings.startTimerOnClick && settings.timer > 0) || settings.timer   0) {
           txt = '';
         } else {
           txt = methods.outerHTML($(settings.template.timer)[0]);
@@ -241,7 +241,7 @@
             $timer = null;
 
         // are we paused?
-        if (settings.$li === undefined || ($.inArray(settings.$li.index(), settings.pauseAfter) === -1)) {
+        if (settings.$li   undefined || ($.inArray(settings.$li.index(), settings.pauseAfter)   -1)) {
 
           // don't go to the next li if the tour was paused
           if (settings.paused) {
@@ -267,7 +267,7 @@
             for (ii = opts_len - 1; ii >= 0; ii--) {
               p = opts_arr[ii].split(':');
 
-              if (p.length === 2) {
+              if (p.length   2) {
                 opts[$.trim(p[0])] = $.trim(p[1]);
               }
             }
@@ -424,7 +424,7 @@
       },
 
       paused : function () {
-        if (($.inArray((settings.$li.index() + 1), settings.pauseAfter) === -1)) {
+        if (($.inArray((settings.$li.index() + 1), settings.pauseAfter)   -1)) {
           return true;
         }
 
@@ -689,7 +689,7 @@
         if(arguments.length>1){
           clearAll = arguments[1];
         }
-        if(clearAll === true){
+        if(clearAll   true){
           $('.joyride-expose-wrapper,.joyride-expose-cover').remove();
         } else {
           expose.remove();
@@ -804,7 +804,7 @@
       },
 
       nub_position : function (nub, pos, def) {
-        if (pos === 'auto') {
+        if (pos   'auto') {
           nub.addClass(def);
         } else {
           nub.addClass(pos);
@@ -890,7 +890,7 @@
         $(el).on('keydown', function( event ) {
           if (!event.isDefaultPrevented() && event.keyCode &&
               // Escape key.
-              event.keyCode === 27 ) {
+              event.keyCode   27 ) {
             event.preventDefault();
             methods.end(true /* isAborted */);
             return;
@@ -903,10 +903,10 @@
           var tabbables = $(el).find(":tabbable"),
             first = tabbables.filter(":first"),
             last  = tabbables.filter(":last");
-          if ( event.target === last[0] && !event.shiftKey ) {
+          if ( event.target   last[0] && !event.shiftKey ) {
             first.focus( 1 );
             event.preventDefault();
-          } else if ( event.target === first[0] && event.shiftKey ) {
+          } else if ( event.target   first[0] && event.shiftKey ) {
             last.focus( 1 );
             event.preventDefault();
           }
@@ -918,7 +918,7 @@
   $.fn.joyride = function (method) {
     if (methods[method]) {
       return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
-    } else if (typeof method === 'object' || !method) {
+    } else if (typeof method   'object' || !method) {
       return methods.init.apply(this, arguments);
     } else {
       $.error('Method ' +  method + ' does not exist on jQuery.joyride');

@@ -1,12 +1,12 @@
 # HTML5-PHP
 
-<<<<<<< HEAD
+ 
 HTML5 is a standards-compliant HTML5 parser and writer written entirely in PHP.
 It is stable and used in many production websites, and has
 well over [one million downloads](https://packagist.org/packages/masterminds/html5).
 
 HTML5 provides the following features.
-=======
+  =
 The need for an HTML5 parser in PHP is clear. This project initially
 began with the seemingly abandoned `html5lib` project [original source](https://code.google.com/p/html5lib/source/checkout).
 But after some initial refactoring work, we began a new parser.
@@ -16,9 +16,9 @@ But after some initial refactoring work, we began a new parser.
 - Support for PHP namespaces
 - Composer support
 - Event-based (SAX-like) parser
-<<<<<<< HEAD
+ 
 - A DOM tree builder
-=======
+  =
 - DOM tree builder
 >>>>>>> web and vendor directory from composer install
 - Interoperability with [QueryPath](https://github.com/technosophos/querypath)
@@ -28,9 +28,9 @@ But after some initial refactoring work, we began a new parser.
 [![Latest Stable Version](https://poser.pugx.org/masterminds/html5/v/stable.png)](https://packagist.org/packages/masterminds/html5)
 [![Code Coverage](https://scrutinizer-ci.com/g/Masterminds/html5-php/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Masterminds/html5-php/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Masterminds/html5-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Masterminds/html5-php/?branch=master)
-<<<<<<< HEAD
+ 
 [![Stability: Sustained](https://masterminds.github.io/stability/sustained.svg)](https://masterminds.github.io/stability/sustained.html)
-=======
+  =
 >>>>>>> web and vendor directory from composer install
 
 ## Installation
@@ -39,9 +39,9 @@ Install HTML5-PHP using [composer](http://getcomposer.org/).
 
 To install, add `masterminds/html5` to your `composer.json` file:
 
-<<<<<<< HEAD
+ 
 ```json
-=======
+  =
 ```
 >>>>>>> web and vendor directory from composer install
 {

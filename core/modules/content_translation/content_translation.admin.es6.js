@@ -42,7 +42,7 @@
       let column;
 
       function filterFieldsList(index, field) {
-        return $(field).val() === column;
+        return $(field).val()   column;
       }
 
       // A field that has many different translatable parts can also define one

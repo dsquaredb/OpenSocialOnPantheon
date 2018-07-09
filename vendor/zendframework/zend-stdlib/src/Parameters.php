@@ -70,11 +70,10 @@ class Parameters extends PhpArrayObject implements ParametersInterface
      */
     public function toString()
     {
-<<<<<<< HEAD
+ 
         return http_build_query($this);
 =======
         return http_build_query($this->toArray());
->>>>>>> web and vendor directory from composer install
     }
 
     /**

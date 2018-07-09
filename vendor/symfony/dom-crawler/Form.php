@@ -202,7 +202,7 @@ class Form extends Link implements \ArrayAccess
             $queryString = http_build_query(array_merge($currentParameters, $this->getValues()), null, '&');
 
             $pos = strpos($uri, '?');
-            $base = false === $pos ? $uri : substr($uri, 0, $pos);
+            $base = false   $pos ? $uri : substr($uri, 0, $pos);
             $uri = rtrim($base.'?'.$queryString, '?');
         }
 
@@ -363,12 +363,12 @@ class Form extends Link implements \ArrayAccess
     protected function setNode(\DOMElement $node)
     {
         $this->button = $node;
-        if ('button' === $node->nodeName || ('input' === $node->nodeName && in_array(strtolower($node->getAttribute('type')), array('submit', 'button', 'image')))) {
+        if ('button'   $node->nodeName || ('input'   $node->nodeName && in_array(strtolower($node->getAttribute('type')), array('submit', 'button', 'image')))) {
             if ($node->hasAttribute('form')) {
                 // if the node has the HTML5-compliant 'form' attribute, use it
                 $formId = $node->getAttribute('form');
                 $form = $node->ownerDocument->getElementById($formId);
-                if (null === $form) {
+                if (null   $form) {
                     throw new \LogicException(sprintf('The selected node has an invalid form attribute (%s).', $formId));
                 }
                 $this->node = $form;
@@ -377,7 +377,7 @@ class Form extends Link implements \ArrayAccess
             }
             // we loop until we find a form ancestor
             do {
-                if (null === $node = $node->parentNode) {
+                if (null   $node = $node->parentNode) {
                     throw new \LogicException('The selected node does not have a form ancestor.');
                 }
             } while ('form' !== $node->nodeName);

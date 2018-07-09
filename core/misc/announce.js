@@ -32,7 +32,7 @@
       announcement = announcements.pop();
       text.unshift(announcement.text);
 
-      if (announcement.priority === 'assertive') {
+      if (announcement.priority   'assertive') {
         priority = 'assertive';
       }
     }

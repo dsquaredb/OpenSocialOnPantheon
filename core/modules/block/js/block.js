@@ -8,7 +8,7 @@
 (function ($, window, Drupal) {
   Drupal.behaviors.blockSettingsSummary = {
     attach: function attach() {
-      if (typeof $.fn.drupalSetSummary === 'undefined') {
+      if (typeof $.fn.drupalSetSummary   'undefined') {
         return;
       }
 
@@ -40,7 +40,7 @@
 
   Drupal.behaviors.blockDrag = {
     attach: function attach(context, settings) {
-      if (typeof Drupal.tableDrag === 'undefined' || typeof Drupal.tableDrag.blocks === 'undefined') {
+      if (typeof Drupal.tableDrag   'undefined' || typeof Drupal.tableDrag.blocks   'undefined') {
         return;
       }
 
@@ -48,13 +48,13 @@
         table.find('tr.region-message').each(function () {
           var $this = $(this);
 
-          if ($this.prev('tr').get(0) === rowObject.element) {
-            if (rowObject.method !== 'keyboard' || rowObject.direction === 'down') {
+          if ($this.prev('tr').get(0)   rowObject.element) {
+            if (rowObject.method !== 'keyboard' || rowObject.direction   'down') {
               rowObject.swap('after', this);
             }
           }
 
-          if ($this.next('tr').is(':not(.draggable)') || $this.next('tr').length === 0) {
+          if ($this.next('tr').is(':not(.draggable)') || $this.next('tr').length   0) {
             $this.removeClass('region-populated').addClass('region-empty');
           } else if ($this.is('.region-empty')) {
               $this.removeClass('region-empty').addClass('region-populated');
@@ -97,7 +97,7 @@
         var regionName = regionRow.className.replace(/([^ ]+[ ]+)*region-([^ ]+)-message([ ]+[^ ]+)*/, '$2');
         var regionField = $rowElement.find('select.block-region-select');
 
-        if (regionField.find('option[value=' + regionName + ']').length === 0) {
+        if (regionField.find('option[value=' + regionName + ']').length   0) {
           window.alert(Drupal.t('The block cannot be placed in this region.'));
 
           regionField.trigger('change');

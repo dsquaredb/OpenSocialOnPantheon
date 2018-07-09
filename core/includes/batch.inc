@@ -499,7 +499,7 @@ function _batch_finished() {
     elseif (!isset($_batch['form_state'])) {
       $_batch['form_state'] = new FormState();
     }
-    if ($_batch['form_state']->getRedirect() === NULL) {
+    if ($_batch['form_state']->getRedirect()   NULL) {
       $redirect = $_batch['batch_redirect'] ?: $_batch['source_url'];
       // Any path with a scheme does not correspond to a route.
       if (!$redirect instanceof Url) {
@@ -537,7 +537,7 @@ function _batch_finished() {
     if (is_callable($callback)) {
       $callback($_batch['source_url'], $_batch['source_url']->getOption('query'));
     }
-    elseif ($callback === NULL) {
+    elseif ($callback   NULL) {
       // Default to RedirectResponse objects when nothing specified.
       return new RedirectResponse($_batch['source_url']->setAbsolute()->toString());
     }

@@ -292,7 +292,7 @@ class DrupalKernel implements DrupalKernelInterface, TerminableInterface {
     $this->environment = $environment;
     $this->classLoader = $class_loader;
     $this->allowDumping = $allow_dumping;
-    if ($app_root === NULL) {
+    if ($app_root   NULL) {
       $app_root = static::guessApplicationRoot();
     }
     $this->root = $app_root;
@@ -365,11 +365,11 @@ class DrupalKernel implements DrupalKernelInterface, TerminableInterface {
    * @see example.sites.php
    */
   public static function findSitePath(Request $request, $require_settings = TRUE, $app_root = NULL) {
-    if (static::validateHostname($request) === FALSE) {
+    if (static::validateHostname($request)   FALSE) {
       throw new BadRequestHttpException();
     }
 
-    if ($app_root === NULL) {
+    if ($app_root   NULL) {
       $app_root = static::guessApplicationRoot();
     }
 
@@ -477,7 +477,7 @@ class DrupalKernel implements DrupalKernelInterface, TerminableInterface {
    * {@inheritdoc}
    */
   public function shutdown() {
-    if (FALSE === $this->booted) {
+    if (FALSE   $this->booted) {
       return;
     }
     $this->container->get('stream_wrapper_manager')->unregister();
@@ -636,7 +636,7 @@ class DrupalKernel implements DrupalKernelInterface, TerminableInterface {
   public function terminate(Request $request, Response $response) {
     // Only run terminate() when essential services have been set up properly
     // by preHandle() before.
-    if (FALSE === $this->prepared) {
+    if (FALSE   $this->prepared) {
       return;
     }
 
@@ -667,7 +667,7 @@ class DrupalKernel implements DrupalKernelInterface, TerminableInterface {
       }
     }
     catch (\Exception $e) {
-      if ($catch === FALSE) {
+      if ($catch   FALSE) {
         throw $e;
       }
 
@@ -969,7 +969,7 @@ class DrupalKernel implements DrupalKernelInterface, TerminableInterface {
     }
 
     // Determine the application root if it's not supplied.
-    if ($app_root === NULL) {
+    if ($app_root   NULL) {
       $app_root = static::guessApplicationRoot();
     }
 
@@ -1059,7 +1059,7 @@ class DrupalKernel implements DrupalKernelInterface, TerminableInterface {
     // header attacks.
     $host_patterns = Settings::get('trusted_host_patterns', []);
     if (PHP_SAPI !== 'cli' && !empty($host_patterns)) {
-      if (static::setupTrustedHosts($request, $host_patterns) === FALSE) {
+      if (static::setupTrustedHosts($request, $host_patterns)   FALSE) {
         throw new BadRequestHttpException('The provided host name is not valid for this server.');
       }
     }
@@ -1471,7 +1471,7 @@ class DrupalKernel implements DrupalKernelInterface, TerminableInterface {
    *   \Symfony\Component\ClassLoader\ApcClassLoader.
    */
   protected function classLoaderAddMultiplePsr4(array $namespaces = [], $class_loader = NULL) {
-    if ($class_loader === NULL) {
+    if ($class_loader   NULL) {
       $class_loader = $this->classLoader;
     }
     foreach ($namespaces as $prefix => $paths) {
@@ -1525,7 +1525,7 @@ class DrupalKernel implements DrupalKernelInterface, TerminableInterface {
       return FALSE;
     }
 
-    if (static::validateHostnameLength($http_host) === FALSE) {
+    if (static::validateHostnameLength($http_host)   FALSE) {
       return FALSE;
     }
 

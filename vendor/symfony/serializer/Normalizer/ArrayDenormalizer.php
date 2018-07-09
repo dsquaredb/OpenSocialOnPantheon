@@ -13,10 +13,9 @@ namespace Symfony\Component\Serializer\Normalizer;
 
 use Symfony\Component\Serializer\Exception\BadMethodCallException;
 use Symfony\Component\Serializer\Exception\InvalidArgumentException;
-<<<<<<< HEAD
+ 
 use Symfony\Component\Serializer\Exception\NotNormalizableValueException;
 =======
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Serializer\SerializerAwareInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 
@@ -24,11 +23,10 @@ use Symfony\Component\Serializer\SerializerInterface;
  * Denormalizes arrays of objects.
  *
  * @author Alexander M. Turek <me@derrabus.de>
-<<<<<<< HEAD
+ 
  *
  * @final since version 3.3.
 =======
->>>>>>> web and vendor directory from composer install
  */
 class ArrayDenormalizer implements DenormalizerInterface, SerializerAwareInterface
 {
@@ -39,7 +37,7 @@ class ArrayDenormalizer implements DenormalizerInterface, SerializerAwareInterfa
 
     /**
      * {@inheritdoc}
-<<<<<<< HEAD
+ 
      *
      * @throws NotNormalizableValueException
      */
@@ -51,24 +49,22 @@ class ArrayDenormalizer implements DenormalizerInterface, SerializerAwareInterfa
     public function denormalize($data, $class, $format = null, array $context = array())
     {
         if ($this->serializer === null) {
->>>>>>> web and vendor directory from composer install
             throw new BadMethodCallException('Please set a serializer before calling denormalize()!');
         }
         if (!is_array($data)) {
             throw new InvalidArgumentException('Data expected to be an array, '.gettype($data).' given.');
         }
-<<<<<<< HEAD
+ 
         if ('[]' !== substr($class, -2)) {
 =======
         if (substr($class, -2) !== '[]') {
->>>>>>> web and vendor directory from composer install
             throw new InvalidArgumentException('Unsupported class: '.$class);
         }
 
         $serializer = $this->serializer;
         $class = substr($class, 0, -2);
 
-<<<<<<< HEAD
+ 
         $builtinType = isset($context['key_type']) ? $context['key_type']->getBuiltinType() : null;
         foreach ($data as $key => $value) {
             if (null !== $builtinType && !call_user_func('is_'.$builtinType, $key)) {
@@ -86,13 +82,12 @@ class ArrayDenormalizer implements DenormalizerInterface, SerializerAwareInterfa
             },
             $data
         );
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
     public function supportsDenormalization($data, $type, $format = null/*, array $context = array()*/)
     {
         $context = \func_num_args() > 3 ? func_get_arg(3) : array();
@@ -104,7 +99,6 @@ class ArrayDenormalizer implements DenormalizerInterface, SerializerAwareInterfa
     {
         return substr($type, -2) === '[]'
             && $this->serializer->supportsDenormalization($data, substr($type, 0, -2), $format);
->>>>>>> web and vendor directory from composer install
     }
 
     /**

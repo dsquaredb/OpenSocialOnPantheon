@@ -14,10 +14,9 @@ namespace Symfony\Component\Console\Helper;
 use Symfony\Component\Console\Output\ConsoleOutputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Exception\LogicException;
-<<<<<<< HEAD
+ 
 use Symfony\Component\Console\Terminal;
 =======
->>>>>>> web and vendor directory from composer install
 
 /**
  * The ProgressBar provides helpers to display progress output.
@@ -25,14 +24,13 @@ use Symfony\Component\Console\Terminal;
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Chris Jones <leeked@gmail.com>
  */
-<<<<<<< HEAD
+ 
 final class ProgressBar
 {
 =======
 class ProgressBar
 {
     // options
->>>>>>> web and vendor directory from composer install
     private $barWidth = 28;
     private $barChar;
     private $emptyBarChar = '-';
@@ -40,13 +38,12 @@ class ProgressBar
     private $format;
     private $internalFormat;
     private $redrawFreq = 1;
-<<<<<<< HEAD
+ 
 =======
 
     /**
      * @var OutputInterface
      */
->>>>>>> web and vendor directory from composer install
     private $output;
     private $step = 0;
     private $max;
@@ -56,21 +53,19 @@ class ProgressBar
     private $formatLineCount;
     private $messages = array();
     private $overwrite = true;
-<<<<<<< HEAD
+ 
     private $terminal;
 =======
->>>>>>> web and vendor directory from composer install
     private $firstRun = true;
 
     private static $formatters;
     private static $formats;
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param OutputInterface $output An OutputInterface instance
      * @param int             $max    Maximum steps (0 if unknown)
      */
@@ -82,10 +77,9 @@ class ProgressBar
 
         $this->output = $output;
         $this->setMaxSteps($max);
-<<<<<<< HEAD
+ 
         $this->terminal = new Terminal();
 =======
->>>>>>> web and vendor directory from composer install
 
         if (!$this->output->isDecorated()) {
             // disable overwrite when output does not support ANSI codes.
@@ -106,11 +100,10 @@ class ProgressBar
      * @param string   $name     The placeholder name (including the delimiter char like %)
      * @param callable $callable A PHP callable
      */
-<<<<<<< HEAD
+ 
     public static function setPlaceholderFormatterDefinition($name, callable $callable)
 =======
     public static function setPlaceholderFormatterDefinition($name, $callable)
->>>>>>> web and vendor directory from composer install
     {
         if (!self::$formatters) {
             self::$formatters = self::initPlaceholderFormatters();
@@ -209,7 +202,7 @@ class ProgressBar
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Gets the progress bar step.
      *
@@ -225,7 +218,6 @@ class ProgressBar
     }
 
     /**
->>>>>>> web and vendor directory from composer install
      * Gets the current step position.
      *
      * @return int The progress bar step
@@ -238,7 +230,7 @@ class ProgressBar
     /**
      * Gets the progress bar step width.
      *
-<<<<<<< HEAD
+ 
      * @return int The progress bar step width
      */
     private function getStepWidth()
@@ -248,7 +240,6 @@ class ProgressBar
      * @return int The progress bar step width
      */
     public function getStepWidth()
->>>>>>> web and vendor directory from composer install
     {
         return $this->stepWidth;
     }
@@ -270,11 +261,10 @@ class ProgressBar
      */
     public function setBarWidth($size)
     {
-<<<<<<< HEAD
+ 
         $this->barWidth = max(1, (int) $size);
 =======
         $this->barWidth = (int) $size;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -394,11 +384,10 @@ class ProgressBar
      * Advances the progress output X steps.
      *
      * @param int $step Number of steps to advance
-<<<<<<< HEAD
+ 
 =======
      *
      * @throws LogicException
->>>>>>> web and vendor directory from composer install
      */
     public function advance($step = 1)
     {
@@ -406,7 +395,7 @@ class ProgressBar
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Sets the current progress.
      *
@@ -424,7 +413,6 @@ class ProgressBar
     }
 
     /**
->>>>>>> web and vendor directory from composer install
      * Sets whether to overwrite the progressbar, false for new line.
      *
      * @param bool $overwrite
@@ -438,16 +426,15 @@ class ProgressBar
      * Sets the current progress.
      *
      * @param int $step The current progress
-<<<<<<< HEAD
+ 
 =======
      *
      * @throws LogicException
->>>>>>> web and vendor directory from composer install
      */
     public function setProgress($step)
     {
         $step = (int) $step;
-<<<<<<< HEAD
+ 
 
         if ($this->max && $step > $this->max) {
             $this->max = $step;
@@ -460,7 +447,6 @@ class ProgressBar
 
         if ($this->max && $step > $this->max) {
             $this->max = $step;
->>>>>>> web and vendor directory from composer install
         }
 
         $prevPeriod = (int) ($this->step / $this->redrawFreq);
@@ -502,7 +488,7 @@ class ProgressBar
             $this->setRealFormat($this->internalFormat ?: $this->determineBestFormat());
         }
 
-<<<<<<< HEAD
+ 
         $this->overwrite($this->buildLine());
 =======
         // these 3 variables can be removed in favor of using $this in the closure when support for PHP 5.3 will be dropped.
@@ -524,7 +510,6 @@ class ProgressBar
 
             return $text;
         }, $this->format));
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -694,7 +679,7 @@ class ProgressBar
             'debug_nomax' => ' %current% [%bar%] %elapsed:6s% %memory:6s%',
         );
     }
-<<<<<<< HEAD
+ 
 
     /**
      * @return string
@@ -736,5 +721,4 @@ class ProgressBar
         return preg_replace_callback($regex, $callback, $this->format);
     }
 =======
->>>>>>> web and vendor directory from composer install
 }

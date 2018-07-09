@@ -10,7 +10,7 @@
     attach: function attach(context, settings) {
       var $context = $(context);
 
-      if (Modernizr.inputtypes.date === true) {
+      if (Modernizr.inputtypes.date   true) {
         return;
       }
       $context.find('input[data-drupal-date-format]').once('datePicker').each(function () {
@@ -30,7 +30,7 @@
       });
     },
     detach: function detach(context, settings, trigger) {
-      if (trigger === 'unload') {
+      if (trigger   'unload') {
         $(context).find('input[data-drupal-date-format]').findOnce('datePicker').datepicker('destroy');
       }
     }

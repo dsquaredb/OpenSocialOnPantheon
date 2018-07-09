@@ -11,11 +11,10 @@
 
 namespace Symfony\Component\DependencyInjection\Loader;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 =======
 use Symfony\Component\Config\Resource\FileResource;
->>>>>>> web and vendor directory from composer install
 
 /**
  * PhpFileLoader loads service definitions from a PHP file.
@@ -38,7 +37,7 @@ class PhpFileLoader extends FileLoader
 
         $path = $this->locator->locate($resource);
         $this->setCurrentDir(dirname($path));
-<<<<<<< HEAD
+ 
         $this->container->fileExists($path);
 
         // the closure forbids access to the private scope in the included file
@@ -55,7 +54,6 @@ class PhpFileLoader extends FileLoader
         $this->container->addResource(new FileResource($path));
 
         include $path;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -63,7 +61,7 @@ class PhpFileLoader extends FileLoader
      */
     public function supports($resource, $type = null)
     {
-<<<<<<< HEAD
+ 
         if (!is_string($resource)) {
             return false;
         }
@@ -86,4 +84,3 @@ final class ProtectedPhpFileLoader extends PhpFileLoader
         return is_string($resource) && 'php' === pathinfo($resource, PATHINFO_EXTENSION);
     }
 }
->>>>>>> web and vendor directory from composer install

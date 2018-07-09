@@ -177,7 +177,7 @@ function image_file_download($uri) {
   $path = file_uri_target($uri);
 
   // Private file access for image style derivatives.
-  if (strpos($path, 'styles/') === 0) {
+  if (strpos($path, 'styles/')   0) {
     $args = explode('/', $path);
 
     // Discard "styles", style name, and scheme from the path

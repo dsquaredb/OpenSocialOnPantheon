@@ -54,7 +54,7 @@ interface PipesInterface
     public function areOpen();
 
     /**
-<<<<<<< HEAD
+ 
      * Returns if pipes are able to read output.
      *
      * @return bool
@@ -63,7 +63,6 @@ interface PipesInterface
 
     /**
 =======
->>>>>>> web and vendor directory from composer install
      * Closes file handles and pipes.
      */
     public function close();

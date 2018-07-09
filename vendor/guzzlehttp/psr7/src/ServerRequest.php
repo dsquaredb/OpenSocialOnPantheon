@@ -188,7 +188,7 @@ class ServerRequest extends Request implements ServerRequestInterface
     public static function getUriFromGlobals() {
         $uri = new Uri('');
 
-<<<<<<< HEAD
+ 
         $uri = $uri->withScheme(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 'http');
 
         $hasPort = false;
@@ -240,7 +240,6 @@ class ServerRequest extends Request implements ServerRequestInterface
         }
 
         if (isset($_SERVER['QUERY_STRING'])) {
->>>>>>> web and vendor directory from composer install
             $uri = $uri->withQuery($_SERVER['QUERY_STRING']);
         }
 

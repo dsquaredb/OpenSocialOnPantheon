@@ -53,11 +53,10 @@ abstract class AbstractClassMetadataFactory implements ClassMetadataFactory
     /**
      * @var ClassMetadata[]
      */
-<<<<<<< HEAD
+ 
     private $loadedMetadata = [];
 =======
     private $loadedMetadata = array();
->>>>>>> web and vendor directory from composer install
 
     /**
      * @var bool
@@ -114,11 +113,10 @@ abstract class AbstractClassMetadataFactory implements ClassMetadataFactory
         }
 
         $driver = $this->getDriver();
-<<<<<<< HEAD
+ 
         $metadata = [];
 =======
         $metadata = array();
->>>>>>> web and vendor directory from composer install
         foreach ($driver->getAllClassNames() as $className) {
             $metadata[] = $this->getMetadataFor($className);
         }
@@ -216,11 +214,10 @@ abstract class AbstractClassMetadataFactory implements ClassMetadataFactory
 
         try {
             if ($this->cacheDriver) {
-<<<<<<< HEAD
+ 
                 if (($cached = $this->cacheDriver->fetch($realClassName . $this->cacheSalt)) instanceof ClassMetadata) {
 =======
                 if (($cached = $this->cacheDriver->fetch($realClassName . $this->cacheSalt)) !== false) {
->>>>>>> web and vendor directory from composer install
                     $this->loadedMetadata[$realClassName] = $cached;
 
                     $this->wakeupReflection($cached, $this->getReflectionService());
@@ -289,11 +286,10 @@ abstract class AbstractClassMetadataFactory implements ClassMetadataFactory
     protected function getParentClasses($name)
     {
         // Collect parent classes, ignoring transient (not-mapped) classes.
-<<<<<<< HEAD
+ 
         $parentClasses = [];
 =======
         $parentClasses = array();
->>>>>>> web and vendor directory from composer install
         foreach (array_reverse($this->getReflectionService()->getParentClasses($name)) as $parentClass) {
             if ( ! $this->getDriver()->isTransient($parentClass)) {
                 $parentClasses[] = $parentClass;
@@ -322,11 +318,10 @@ abstract class AbstractClassMetadataFactory implements ClassMetadataFactory
             $this->initialize();
         }
 
-<<<<<<< HEAD
+ 
         $loaded = [];
 =======
         $loaded = array();
->>>>>>> web and vendor directory from composer install
 
         $parentClasses = $this->getParentClasses($name);
         $parentClasses[] = $name;
@@ -334,11 +329,10 @@ abstract class AbstractClassMetadataFactory implements ClassMetadataFactory
         // Move down the hierarchy of parent classes, starting from the topmost class
         $parent = null;
         $rootEntityFound = false;
-<<<<<<< HEAD
+ 
         $visited = [];
 =======
         $visited = array();
->>>>>>> web and vendor directory from composer install
         $reflService = $this->getReflectionService();
         foreach ($parentClasses as $className) {
             if (isset($this->loadedMetadata[$className])) {

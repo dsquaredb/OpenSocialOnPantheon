@@ -3,11 +3,10 @@
 /*
  * This file is part of Twig.
  *
-<<<<<<< HEAD
+ 
  * (c) Fabien Potencier
 =======
  * (c) 2010 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -28,7 +27,7 @@
  */
 class Twig_Error_Loader extends Twig_Error
 {
-<<<<<<< HEAD
+ 
     public function __construct($message, $lineno = -1, $source = null, Exception $previous = null)
     {
         if (PHP_VERSION_ID < 50300) {
@@ -49,4 +48,3 @@ class_alias('Twig_Error_Loader', 'Twig\Error\LoaderError', false);
         parent::__construct($message, false, false, $previous);
     }
 }
->>>>>>> web and vendor directory from composer install

@@ -3,16 +3,14 @@
 namespace Drupal\Tests\image\Functional;
 
 use Drupal\image\Entity\ImageStyle;
-<<<<<<< HEAD
+ 
 =======
 use Drupal\language\Entity\ConfigurableLanguage;
-<<<<<<< HEAD:web/core/modules/image/src/Tests/ImageStylesPathAndUrlTest.php
->>>>>>> revert Open Social update
+ :web/core/modules/image/src/Tests/ImageStylesPathAndUrlTest.php
 use Drupal\simpletest\WebTestBase;
 =======
 use Drupal\Tests\BrowserTestBase;
 use Drupal\Tests\TestFileCreationTrait;
->>>>>>> updating open social:web/core/modules/image/tests/src/Functional/ImageStylesPathAndUrlTest.php
 
 /**
  * Tests the functions for generating paths and URLs for image styles.
@@ -31,7 +29,7 @@ class ImageStylesPathAndUrlTest extends BrowserTestBase {
    *
    * @var array
    */
-<<<<<<< HEAD
+ 
   public static $modules = array('image', 'image_module_test');
 
   /**
@@ -41,12 +39,11 @@ class ImageStylesPathAndUrlTest extends BrowserTestBase {
   /**
    * The image style.
    *
->>>>>>> revert Open Social update
    * @var \Drupal\image\ImageStyleInterface
    */
   protected $style;
 
-<<<<<<< HEAD
+ 
   protected function setUp() {
     parent::setUp();
 
@@ -67,17 +64,15 @@ class ImageStylesPathAndUrlTest extends BrowserTestBase {
 
     // Create a new language.
     ConfigurableLanguage::createFromLangcode('fr')->save();
->>>>>>> revert Open Social update
   }
 
   /**
    * Tests \Drupal\image\ImageStyleInterface::buildUri().
    */
-<<<<<<< HEAD
+ 
   function testImageStylePath() {
 =======
   public function testImageStylePath() {
->>>>>>> revert Open Social update
     $scheme = 'public';
     $actual = $this->style->buildUri("$scheme://foo/bar.gif");
     $expected = "$scheme://styles/" . $this->style->id() . "/$scheme/foo/bar.gif";
@@ -91,49 +86,45 @@ class ImageStylesPathAndUrlTest extends BrowserTestBase {
   /**
    * Tests an image style URL using the "public://" scheme.
    */
-<<<<<<< HEAD
+ 
   function testImageStyleUrlAndPathPublic() {
 =======
   public function testImageStyleUrlAndPathPublic() {
->>>>>>> revert Open Social update
     $this->doImageStyleUrlAndPathTests('public');
   }
 
   /**
    * Tests an image style URL using the "private://" scheme.
    */
-<<<<<<< HEAD
+ 
   function testImageStyleUrlAndPathPrivate() {
 =======
   public function testImageStyleUrlAndPathPrivate() {
->>>>>>> revert Open Social update
     $this->doImageStyleUrlAndPathTests('private');
   }
 
   /**
    * Tests an image style URL with the "public://" scheme and unclean URLs.
    */
-<<<<<<< HEAD
+ 
   function testImageStyleUrlAndPathPublicUnclean() {
 =======
   public function testImageStyleUrlAndPathPublicUnclean() {
->>>>>>> revert Open Social update
     $this->doImageStyleUrlAndPathTests('public', FALSE);
   }
 
   /**
    * Tests an image style URL with the "private://" schema and unclean URLs.
    */
-<<<<<<< HEAD
+ 
   function testImageStyleUrlAndPathPrivateUnclean() {
 =======
   public function testImageStyleUrlAndPathPrivateUnclean() {
->>>>>>> revert Open Social update
     $this->doImageStyleUrlAndPathTests('private', FALSE);
   }
 
   /**
-<<<<<<< HEAD
+ 
    * Tests an image style URL with a file URL that has an extra slash in it.
    */
   function testImageStyleUrlExtraSlash() {
@@ -155,18 +146,16 @@ class ImageStylesPathAndUrlTest extends BrowserTestBase {
    * Tests an image style URL with a file URL that has an extra slash in it.
    */
   public function testImageStyleUrlExtraSlash() {
->>>>>>> revert Open Social update
     $this->doImageStyleUrlAndPathTests('public', TRUE, TRUE);
   }
 
   /**
    * Tests that an invalid source image returns a 404.
    */
-<<<<<<< HEAD
+ 
   function testImageStyleUrlForMissingSourceImage() {
 =======
   public function testImageStyleUrlForMissingSourceImage() {
->>>>>>> revert Open Social update
     $non_existent_uri = 'public://foo.png';
     $generated_url = $this->style->buildUrl($non_existent_uri);
     $this->drupalGet($generated_url);
@@ -176,11 +165,10 @@ class ImageStylesPathAndUrlTest extends BrowserTestBase {
   /**
    * Tests building an image style URL.
    */
-<<<<<<< HEAD
+ 
   function doImageStyleUrlAndPathTests($scheme, $clean_url = TRUE, $extra_slash = FALSE) {
 =======
   public function doImageStyleUrlAndPathTests($scheme, $clean_url = TRUE, $extra_slash = FALSE, $langcode = FALSE) {
->>>>>>> revert Open Social update
     $this->prepareRequestForGenerator($clean_url);
 
     // Make the default scheme neither "public" nor "private" to verify the
@@ -192,7 +180,7 @@ class ImageStylesPathAndUrlTest extends BrowserTestBase {
     $status = file_prepare_directory($directory, FILE_CREATE_DIRECTORY);
     $this->assertNotIdentical(FALSE, $status, 'Created the directory for the generated images for the test style.');
 
-<<<<<<< HEAD
+ 
 =======
     // Override the language to build the URL for the correct language.
     if ($langcode) {
@@ -201,7 +189,6 @@ class ImageStylesPathAndUrlTest extends BrowserTestBase {
       $language_manager->setConfigOverrideLanguage($language);
     }
 
->>>>>>> revert Open Social update
     // Create a working copy of the file.
     $files = $this->drupalGetTestFiles('image');
     $file = array_shift($files);
@@ -216,14 +203,13 @@ class ImageStylesPathAndUrlTest extends BrowserTestBase {
     $this->assertFalse(file_exists($generated_uri), 'Generated file does not exist.');
     $generate_url = $this->style->buildUrl($original_uri, $clean_url);
 
-<<<<<<< HEAD
+ 
 =======
     // Make sure that language prefix is never added to the image style URL.
     if ($langcode) {
       $this->assertTrue(strpos($generate_url, "/$langcode/") === FALSE, 'Langcode was not found in the image style URL.');
     }
 
->>>>>>> revert Open Social update
     // Ensure that the tests still pass when the file is generated by accessing
     // a poorly constructed (but still valid) file URL that has an extra slash
     // in it.
@@ -263,12 +249,11 @@ class ImageStylesPathAndUrlTest extends BrowserTestBase {
     $this->assertEqual($this->drupalGetHeader('Content-Length'), $image->getFileSize(), 'Expected Content-Length was reported.');
 
     // Check that we did not download the original file.
-<<<<<<< HEAD
+ 
     $original_image = $this->container->get('image.factory')->get($original_uri);
 =======
     $original_image = $this->container->get('image.factory')
       ->get($original_uri);
->>>>>>> revert Open Social update
     $this->assertNotEqual($this->drupalGetHeader('Content-Length'), $original_image->getFileSize());
 
     if ($scheme == 'private') {
@@ -303,7 +288,7 @@ class ImageStylesPathAndUrlTest extends BrowserTestBase {
 
       $this->drupalGet($generate_url_noaccess);
       $this->assertResponse(403, 'Confirmed that access is denied for the private image style.');
-<<<<<<< HEAD
+ 
       // Verify that images are not appended to the response. Currently this test only uses PNG images.
       if (strpos($generate_url, '.png') === FALSE ) {
         $this->fail('Confirming that private image styles are not appended require PNG file.');
@@ -322,13 +307,11 @@ class ImageStylesPathAndUrlTest extends BrowserTestBase {
         // Check for PNG-Signature
         // (cf. http://www.libpng.org/pub/png/book/chapter08.html#png.ch08.div.2)
         // in the response body.
-<<<<<<< HEAD:web/core/modules/image/src/Tests/ImageStylesPathAndUrlTest.php
+ :web/core/modules/image/src/Tests/ImageStylesPathAndUrlTest.php
         $this->assertNoRaw(chr(137) . chr(80) . chr(78) . chr(71) . chr(13) . chr(10) . chr(26) . chr(10), 'No PNG signature found in the response body.');
->>>>>>> revert Open Social update
 =======
         $raw = $this->getSession()->getPage()->getContent();
         $this->assertFalse(strpos($raw, chr(137) . chr(80) . chr(78) . chr(71) . chr(13) . chr(10) . chr(26) . chr(10)));
->>>>>>> updating open social:web/core/modules/image/tests/src/Functional/ImageStylesPathAndUrlTest.php
       }
     }
     else {
@@ -344,13 +327,12 @@ class ImageStylesPathAndUrlTest extends BrowserTestBase {
 
     // Allow insecure image derivatives to be created for the remainder of this
     // test.
-<<<<<<< HEAD
+ 
     $this->config('image.settings')->set('allow_insecure_derivatives', TRUE)->save();
 =======
     $this->config('image.settings')
       ->set('allow_insecure_derivatives', TRUE)
       ->save();
->>>>>>> revert Open Social update
 
     // Create another working copy of the file.
     $files = $this->drupalGetTestFiles('image');
@@ -374,12 +356,11 @@ class ImageStylesPathAndUrlTest extends BrowserTestBase {
     // Stop supressing the security token in the URL.
     $this->config('image.settings')->set('suppress_itok_output', FALSE)->save();
     // Ensure allow_insecure_derivatives is enabled.
-<<<<<<< HEAD
+ 
     $this->assertEqual($this->config('image.settings')->get('allow_insecure_derivatives'), TRUE);
 =======
     $this->assertEqual($this->config('image.settings')
       ->get('allow_insecure_derivatives'), TRUE);
->>>>>>> revert Open Social update
     // Check that a security token is still required when generating a second
     // image derivative using the first one as a source.
     $nested_url = $this->style->buildUrl($generated_uri, $clean_url);

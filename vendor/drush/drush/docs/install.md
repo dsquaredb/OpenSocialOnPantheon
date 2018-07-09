@@ -33,9 +33,9 @@ In addition to the global Drush, it is recommended that Drupal 8 sites be [built
 
 Drupal Compatibility
 -----------------
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 Drush Version | Drush Branch  | PHP | Compatible Drupal versions | Code Status
 ------------- | ---------     | --- | -------------------------- | -----------
 Drush 9       | [master](https://travis-ci.org/drush-ops/drush)  | 5.5+ | D7, D8                 | <img src="https://travis-ci.org/drush-ops/drush.svg?branch=master">

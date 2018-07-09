@@ -27,7 +27,7 @@ class ArrayInput extends Input
 {
     private $parameters;
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * Constructor.
@@ -35,7 +35,6 @@ class ArrayInput extends Input
      * @param array                $parameters An array of parameters
      * @param InputDefinition|null $definition A InputDefinition instance
      */
->>>>>>> web and vendor directory from composer install
     public function __construct(array $parameters, InputDefinition $definition = null)
     {
         $this->parameters = $parameters;
@@ -60,11 +59,10 @@ class ArrayInput extends Input
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
     public function hasParameterOption($values, $onlyParams = false)
 =======
     public function hasParameterOption($values)
->>>>>>> web and vendor directory from composer install
     {
         $values = (array) $values;
 
@@ -73,13 +71,12 @@ class ArrayInput extends Input
                 $v = $k;
             }
 
-<<<<<<< HEAD
+ 
             if ($onlyParams && '--' === $v) {
                 return false;
             }
 
 =======
->>>>>>> web and vendor directory from composer install
             if (in_array($v, $values)) {
                 return true;
             }
@@ -91,22 +88,20 @@ class ArrayInput extends Input
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
     public function getParameterOption($values, $default = false, $onlyParams = false)
 =======
     public function getParameterOption($values, $default = false)
->>>>>>> web and vendor directory from composer install
     {
         $values = (array) $values;
 
         foreach ($this->parameters as $k => $v) {
-<<<<<<< HEAD
+ 
             if ($onlyParams && ('--' === $k || (is_int($k) && '--' === $v))) {
                 return false;
             }
 
 =======
->>>>>>> web and vendor directory from composer install
             if (is_int($k)) {
                 if (in_array($v, $values)) {
                     return true;
@@ -129,7 +124,7 @@ class ArrayInput extends Input
         $params = array();
         foreach ($this->parameters as $param => $val) {
             if ($param && '-' === $param[0]) {
-<<<<<<< HEAD
+ 
                 if (is_array($val)) {
                     foreach ($val as $v) {
                         $params[] = $param.('' != $v ? '='.$this->escapeToken($v) : '');
@@ -143,7 +138,6 @@ class ArrayInput extends Input
                 $params[] = $param.('' != $val ? '='.$this->escapeToken($val) : '');
             } else {
                 $params[] = $this->escapeToken($val);
->>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -156,12 +150,11 @@ class ArrayInput extends Input
     protected function parse()
     {
         foreach ($this->parameters as $key => $value) {
-<<<<<<< HEAD
+ 
             if ('--' === $key) {
                 return;
             }
 =======
->>>>>>> web and vendor directory from composer install
             if (0 === strpos($key, '--')) {
                 $this->addLongOption(substr($key, 2), $value);
             } elseif ('-' === $key[0]) {
@@ -211,13 +204,12 @@ class ArrayInput extends Input
                 throw new InvalidOptionException(sprintf('The "--%s" option requires a value.', $name));
             }
 
-<<<<<<< HEAD
+ 
             if (!$option->isValueOptional()) {
                 $value = true;
             }
 =======
             $value = $option->isValueOptional() ? $option->getDefault() : true;
->>>>>>> web and vendor directory from composer install
         }
 
         $this->options[$name] = $value;

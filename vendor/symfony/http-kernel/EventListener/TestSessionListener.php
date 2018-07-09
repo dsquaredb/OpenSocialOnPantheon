@@ -11,7 +11,7 @@
 
 namespace Symfony\Component\HttpKernel\EventListener;
 
-<<<<<<< HEAD
+ 
 use Psr\Container\ContainerInterface;
 
 /**
@@ -108,5 +108,4 @@ abstract class TestSessionListener implements EventSubscriberInterface
      * @return SessionInterface|null A SessionInterface instance or null if no session is available
      */
     abstract protected function getSession();
->>>>>>> web and vendor directory from composer install
 }

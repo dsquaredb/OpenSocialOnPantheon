@@ -12,10 +12,9 @@
 namespace Symfony\Component\Translation;
 
 use Psr\Log\LoggerInterface;
-<<<<<<< HEAD
+ 
 use Symfony\Component\Translation\Exception\InvalidArgumentException;
-=======
->>>>>>> web and vendor directory from composer install
+  =
 
 /**
  * @author Abdellatif Ait boudad <a.aitboudad@gmail.com>
@@ -27,12 +26,11 @@ class LoggingTranslator implements TranslatorInterface, TranslatorBagInterface
      */
     private $translator;
 
-<<<<<<< HEAD
-=======
+ 
+  =
     /**
      * @var LoggerInterface
      */
->>>>>>> web and vendor directory from composer install
     private $logger;
 
     /**
@@ -42,11 +40,10 @@ class LoggingTranslator implements TranslatorInterface, TranslatorBagInterface
     public function __construct(TranslatorInterface $translator, LoggerInterface $logger)
     {
         if (!$translator instanceof TranslatorBagInterface) {
-<<<<<<< HEAD
+ 
             throw new InvalidArgumentException(sprintf('The Translator "%s" must implement TranslatorInterface and TranslatorBagInterface.', get_class($translator)));
-=======
+  =
             throw new \InvalidArgumentException(sprintf('The Translator "%s" must implement TranslatorInterface and TranslatorBagInterface.', get_class($translator)));
->>>>>>> web and vendor directory from composer install
         }
 
         $this->translator = $translator;
@@ -100,7 +97,7 @@ class LoggingTranslator implements TranslatorInterface, TranslatorBagInterface
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Gets the fallback locales.
      *
      * @return array $locales The fallback locales
@@ -115,8 +112,7 @@ class LoggingTranslator implements TranslatorInterface, TranslatorBagInterface
     }
 
     /**
-=======
->>>>>>> web and vendor directory from composer install
+  =
      * Passes through all unknown calls onto the translator object.
      */
     public function __call($method, $args)
@@ -133,7 +129,7 @@ class LoggingTranslator implements TranslatorInterface, TranslatorBagInterface
      */
     private function log($id, $domain, $locale)
     {
-        if (null === $domain) {
+        if (null   $domain) {
             $domain = 'messages';
         }
 

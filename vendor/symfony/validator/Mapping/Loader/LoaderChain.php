@@ -25,12 +25,11 @@ use Symfony\Component\Validator\Mapping\ClassMetadata;
  */
 class LoaderChain implements LoaderInterface
 {
-<<<<<<< HEAD
+ 
 =======
     /**
      * @var LoaderInterface[]
      */
->>>>>>> web and vendor directory from composer install
     protected $loaders;
 
     /**
@@ -62,7 +61,7 @@ class LoaderChain implements LoaderInterface
 
         return $success;
     }
-<<<<<<< HEAD
+ 
 
     /**
      * @return LoaderInterface[]
@@ -72,5 +71,4 @@ class LoaderChain implements LoaderInterface
         return $this->loaders;
     }
 =======
->>>>>>> web and vendor directory from composer install
 }

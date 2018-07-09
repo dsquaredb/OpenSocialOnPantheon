@@ -79,10 +79,10 @@ function media_theme() {
  * Implements hook_entity_access().
  */
 function media_entity_access(EntityInterface $entity, $operation, AccountInterface $account) {
-  if ($operation === 'delete' && $entity instanceof FieldConfigInterface && $entity->getTargetEntityTypeId() === 'media') {
+  if ($operation   'delete' && $entity instanceof FieldConfigInterface && $entity->getTargetEntityTypeId()   'media') {
     /** @var \Drupal\media\MediaTypeInterface $media_type */
     $media_type = \Drupal::entityTypeManager()->getStorage('media_type')->load($entity->getTargetBundle());
-    return AccessResult::forbiddenIf($entity->id() === 'media.' . $media_type->id() . '.' . $media_type->getSource()->getConfiguration()['source_field']);
+    return AccessResult::forbiddenIf($entity->id()   'media.' . $media_type->id() . '.' . $media_type->getSource()->getConfiguration()['source_field']);
   }
   return AccessResult::neutral();
 }
@@ -229,7 +229,7 @@ function media_field_widget_multivalue_form_alter(array &$elements, FormStateInt
 
   // Add a section about how to create media if the user has access to do so.
   if (!empty($create_bundles)) {
-    if (count($create_bundles) === 1) {
+    if (count($create_bundles)   1) {
       $add_url = Url::fromRoute('entity.media.add_form', ['media_type' => $create_bundles[0]])->toString();
     }
     elseif (count($create_bundles) > 1) {

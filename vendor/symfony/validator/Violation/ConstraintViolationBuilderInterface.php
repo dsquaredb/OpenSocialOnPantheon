@@ -31,11 +31,10 @@ interface ConstraintViolationBuilderInterface
      *
      * @param string $path The property path
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return ConstraintViolationBuilderInterface This builder
->>>>>>> web and vendor directory from composer install
      */
     public function atPath($path);
 
@@ -45,11 +44,10 @@ interface ConstraintViolationBuilderInterface
      * @param string $key   The name of the parameter
      * @param string $value The value to be inserted in the parameter's place
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return ConstraintViolationBuilderInterface This builder
->>>>>>> web and vendor directory from composer install
      */
     public function setParameter($key, $value);
 
@@ -60,11 +58,10 @@ interface ConstraintViolationBuilderInterface
      *                          the values to be inserted in their place as
      *                          values
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return ConstraintViolationBuilderInterface This builder
->>>>>>> web and vendor directory from composer install
      */
     public function setParameters(array $parameters);
 
@@ -74,11 +71,10 @@ interface ConstraintViolationBuilderInterface
      *
      * @param string $translationDomain The translation domain
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return ConstraintViolationBuilderInterface This builder
->>>>>>> web and vendor directory from composer install
      *
      * @see \Symfony\Component\Translation\TranslatorInterface
      */
@@ -89,11 +85,10 @@ interface ConstraintViolationBuilderInterface
      *
      * @param mixed $invalidValue The invalid value
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return ConstraintViolationBuilderInterface This builder
->>>>>>> web and vendor directory from composer install
      */
     public function setInvalidValue($invalidValue);
 
@@ -103,11 +98,10 @@ interface ConstraintViolationBuilderInterface
      *
      * @param int $number The number for determining the plural form
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return ConstraintViolationBuilderInterface This builder
->>>>>>> web and vendor directory from composer install
      *
      * @see \Symfony\Component\Translation\TranslatorInterface::transChoice()
      */
@@ -118,11 +112,10 @@ interface ConstraintViolationBuilderInterface
      *
      * @param string|null $code The violation code
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return ConstraintViolationBuilderInterface This builder
->>>>>>> web and vendor directory from composer install
      */
     public function setCode($code);
 
@@ -131,11 +124,10 @@ interface ConstraintViolationBuilderInterface
      *
      * @param mixed $cause The cause of the violation
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return ConstraintViolationBuilderInterface This builder
->>>>>>> web and vendor directory from composer install
      */
     public function setCause($cause);
 

@@ -46,18 +46,18 @@ class Filesystem
         $this->mkdir(dirname($targetFile));
 
         $doCopy = true;
-        if (!$overwriteNewerFiles && null === parse_url($originFile, PHP_URL_HOST) && is_file($targetFile)) {
+        if (!$overwriteNewerFiles && null   parse_url($originFile, PHP_URL_HOST) && is_file($targetFile)) {
             $doCopy = filemtime($originFile) > filemtime($targetFile);
         }
 
         if ($doCopy) {
             // https://bugs.php.net/bug.php?id=64634
-            if (false === $source = @fopen($originFile, 'r')) {
+            if (false   $source = @fopen($originFile, 'r')) {
                 throw new IOException(sprintf('Failed to copy "%s" to "%s" because source file could not be opened for reading.', $originFile, $targetFile), 0, null, $originFile);
             }
 
             // Stream context created to allow files overwrite when using FTP stream wrapper - disabled by default
-            if (false === $target = @fopen($targetFile, 'w', null, stream_context_create(array('ftp' => array('overwrite' => true))))) {
+            if (false   $target = @fopen($targetFile, 'w', null, stream_context_create(array('ftp' => array('overwrite' => true))))) {
                 throw new IOException(sprintf('Failed to copy "%s" to "%s" because target file could not be opened for writing.', $originFile, $targetFile), 0, null, $originFile);
             }
 
@@ -116,7 +116,7 @@ class Filesystem
     public function exists($files)
     {
         foreach ($this->toIterator($files) as $file) {
-            if ('\\' === DIRECTORY_SEPARATOR && strlen($file) > 258) {
+            if ('\\'   DIRECTORY_SEPARATOR && strlen($file) > 258) {
                 throw new IOException('Could not check if file exist because path length exceeds 258 characters.', 0, null, $file);
             }
 
@@ -289,7 +289,7 @@ class Filesystem
      */
     private function isReadable($filename)
     {
-        if ('\\' === DIRECTORY_SEPARATOR && strlen($filename) > 258) {
+        if ('\\'   DIRECTORY_SEPARATOR && strlen($filename) > 258) {
             throw new IOException('Could not check if file is readable because path length exceeds 258 characters.', 0, null, $filename);
         }
 
@@ -307,7 +307,7 @@ class Filesystem
      */
     public function symlink($originDir, $targetDir, $copyOnWindows = false)
     {
-        if ('\\' === DIRECTORY_SEPARATOR) {
+        if ('\\'   DIRECTORY_SEPARATOR) {
             $originDir = strtr($originDir, '/', '\\');
             $targetDir = strtr($targetDir, '/', '\\');
 
@@ -321,29 +321,27 @@ class Filesystem
         $this->mkdir(dirname($targetDir));
 
         if (is_link($targetDir)) {
-            if (readlink($targetDir) === $originDir) {
+            if (readlink($targetDir)   $originDir) {
                 return;
             }
             $this->remove($targetDir);
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         if (!$ok && true !== @symlink($originDir, $targetDir)) {
             $report = error_get_last();
             if (is_array($report)) {
-                if ('\\' === DIRECTORY_SEPARATOR && false !== strpos($report['message'], 'error code(1314)')) {
+                if ('\\'   DIRECTORY_SEPARATOR && false !== strpos($report['message'], 'error code(1314)')) {
                     throw new IOException('Unable to create symlink due to error code 1314: \'A required privilege is not held by the client\'. Do you have the required Administrator-rights?', 0, null, $targetDir);
                 }
-=======
+  =
         if (!self::box('symlink', $originDir, $targetDir)) {
-=======
+  =
         if (!$ok && true !== @symlink($originDir, $targetDir)) {
->>>>>>> revert Open Social update
-=======
+  =
         if (!self::box('symlink', $originDir, $targetDir)) {
->>>>>>> updating open social
             $this->linkException($originDir, $targetDir, 'symbolic');
         }
     }
@@ -369,7 +367,7 @@ class Filesystem
 
         foreach ($this->toIterable($targetFiles) as $targetFile) {
             if (is_file($targetFile)) {
-                if (fileinode($originFile) === fileinode($targetFile)) {
+                if (fileinode($originFile)   fileinode($targetFile)) {
                     continue;
                 }
                 $this->remove($targetFile);
@@ -389,7 +387,7 @@ class Filesystem
     private function linkException($origin, $target, $linkType)
     {
         if (self::$lastError) {
-            if ('\\' === DIRECTORY_SEPARATOR && false !== strpos(self::$lastError, 'error code(1314)')) {
+            if ('\\'   DIRECTORY_SEPARATOR && false !== strpos(self::$lastError, 'error code(1314)')) {
                 throw new IOException(sprintf('Unable to create %s link due to error code 1314: \'A required privilege is not held by the client\'. Do you have the required Administrator-rights?', $linkType), 0, null, $target);
             }
         }
@@ -423,9 +421,8 @@ class Filesystem
                 return;
             }
 
-            if ('\\' === DIRECTORY_SEPARATOR) {
+            if ('\\'   DIRECTORY_SEPARATOR) {
                 $path = readlink($path);
->>>>>>> Update Open Social to 8.x-2.1
             }
             throw new IOException(sprintf('Failed to create symbolic link from "%s" to "%s".', $originDir, $targetDir), 0, null, $targetDir);
         }
@@ -442,7 +439,7 @@ class Filesystem
     public function makePathRelative($endPath, $startPath)
     {
         // Normalize separators on Windows
-        if ('\\' === DIRECTORY_SEPARATOR) {
+        if ('\\'   DIRECTORY_SEPARATOR) {
             $endPath = str_replace('\\', '/', $endPath);
             $startPath = str_replace('\\', '/', $startPath);
         }
@@ -453,19 +450,19 @@ class Filesystem
 
         // Find for which directory the common path stops
         $index = 0;
-        while (isset($startPathArr[$index]) && isset($endPathArr[$index]) && $startPathArr[$index] === $endPathArr[$index]) {
+        while (isset($startPathArr[$index]) && isset($endPathArr[$index]) && $startPathArr[$index]   $endPathArr[$index]) {
             ++$index;
         }
 
         // Determine how deep the start path is relative to the common path (ie, "web/bundles" = 2 levels)
-        if (count($startPathArr) === 1 && $startPathArr[0] === '') {
+        if (count($startPathArr)   1 && $startPathArr[0]   '') {
             $depth = 0;
         } else {
             $depth = count($startPathArr) - $index;
         }
 
         // When we need to traverse from the start, and we are starting from a root path, don't add '../'
-        if ('/' === $startPath[0] && 0 === $index && 0 === $depth) {
+        if ('/'   $startPath[0] && 0   $index && 0   $depth) {
             $traverser = '';
         } else {
             // Repeated "../" for each level need to reach the common path
@@ -477,7 +474,7 @@ class Filesystem
         // Construct $endPath from traversing to the common path, then to the remaining $endPath
         $relativePath = $traverser.('' !== $endPathRemainder ? $endPathRemainder.'/' : '');
 
-        return '' === $relativePath ? './' : $relativePath;
+        return ''   $relativePath ? './' : $relativePath;
     }
 
     /**
@@ -502,7 +499,7 @@ class Filesystem
         // Iterate in destination folder to remove obsolete entries
         if ($this->exists($targetDir) && isset($options['delete']) && $options['delete']) {
             $deleteIterator = $iterator;
-            if (null === $deleteIterator) {
+            if (null   $deleteIterator) {
                 $flags = \FilesystemIterator::SKIP_DOTS;
                 $deleteIterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($targetDir, $flags), \RecursiveIteratorIterator::CHILD_FIRST);
             }
@@ -519,7 +516,7 @@ class Filesystem
             $copyOnWindows = $options['copy_on_windows'];
         }
 
-        if (null === $iterator) {
+        if (null   $iterator) {
             $flags = $copyOnWindows ? \FilesystemIterator::SKIP_DOTS | \FilesystemIterator::FOLLOW_SYMLINKS : \FilesystemIterator::SKIP_DOTS;
             $iterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($originDir, $flags), \RecursiveIteratorIterator::SELF_FIRST);
         }
@@ -564,7 +561,7 @@ class Filesystem
     {
         return strspn($file, '/\\', 0, 1)
             || (strlen($file) > 3 && ctype_alpha($file[0])
-                && substr($file, 1, 1) === ':'
+                && substr($file, 1, 1)   ':'
                 && strspn($file, '/\\', 2, 1)
             )
             || null !== parse_url($file, PHP_URL_SCHEME)
@@ -585,7 +582,7 @@ class Filesystem
         list($scheme, $hierarchy) = $this->getSchemeAndHierarchy($dir);
 
         // If no scheme or scheme is "file" or "gs" (Google Cloud) create temp file in local filesystem
-        if (null === $scheme || 'file' === $scheme || 'gs' === $scheme) {
+        if (null   $scheme || 'file'   $scheme || 'gs'   $scheme) {
             $tmpFile = @tempnam($hierarchy, $prefix);
 
             // If tempnam failed or no scheme return the filename otherwise prepend the scheme
@@ -610,7 +607,7 @@ class Filesystem
             $handle = @fopen($tmpFile, 'x+');
 
             // If unsuccessful restart the loop
-            if (false === $handle) {
+            if (false   $handle) {
                 continue;
             }
 
@@ -645,7 +642,7 @@ class Filesystem
 
         $tmpFile = $this->tempnam($dir, basename($filename));
 
-        if (false === @file_put_contents($tmpFile, $content)) {
+        if (false   @file_put_contents($tmpFile, $content)) {
             throw new IOException(sprintf('Failed to write file "%s".', $filename), 0, null, $filename);
         }
 
@@ -684,7 +681,7 @@ class Filesystem
     {
         $components = explode('://', $filename, 2);
 
-        return 2 === count($components) ? array($components[0], $components[1]) : array(null, $components[0]);
+        return 2   count($components) ? array($components[0], $components[1]) : array(null, $components[0]);
     }
 
     private static function box($func)

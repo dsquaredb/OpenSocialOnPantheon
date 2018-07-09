@@ -18,11 +18,10 @@ use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
  * @Annotation
  * @Target({"PROPERTY", "METHOD", "ANNOTATION"})
  *
-<<<<<<< HEAD
+ 
  * @property int $maxSize
  *
 =======
->>>>>>> web and vendor directory from composer install
  * @author Bernhard Schussek <bschussek@gmail.com>
  */
 class File extends Constraint
@@ -91,7 +90,7 @@ class File extends Constraint
         return parent::__get($option);
     }
 
-<<<<<<< HEAD
+ 
     public function __isset($option)
     {
         if ('maxSize' === $option) {
@@ -135,7 +134,6 @@ class File extends Constraint
         } elseif (preg_match('/^\d++Mi$/i', $maxSize)) {
             $this->maxSize = $sizeInt << 20;
             $this->binaryFormat = null === $this->binaryFormat ? true : $this->binaryFormat;
->>>>>>> web and vendor directory from composer install
         } else {
             throw new ConstraintDefinitionException(sprintf('"%s" is not a valid maximum size', $this->maxSize));
         }

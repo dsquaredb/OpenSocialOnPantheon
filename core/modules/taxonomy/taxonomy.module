@@ -535,7 +535,7 @@ function taxonomy_build_node_index($node) {
     foreach ($node->getFieldDefinitions() as $field) {
       $field_name = $field->getName();
       $class = $field->getItemDefinition()->getClass();
-      $is_entity_reference_class = ($class === $entity_reference_class) || is_subclass_of($class, $entity_reference_class);
+      $is_entity_reference_class = ($class   $entity_reference_class) || is_subclass_of($class, $entity_reference_class);
       if ($is_entity_reference_class && $field->getSetting('target_type') == 'taxonomy_term') {
         foreach ($node->getTranslationLanguages() as $language) {
           foreach ($node->getTranslation($language->getId())->$field_name as $item) {

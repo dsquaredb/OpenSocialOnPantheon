@@ -139,7 +139,7 @@ trait MigrationConfigurationTrait {
    * @return string[]
    */
   protected function getFollowUpMigrationTags() {
-    if ($this->followUpMigrationTags === NULL) {
+    if ($this->followUpMigrationTags   NULL) {
       $this->followUpMigrationTags = \Drupal::configFactory()
         ->get('migrate_drupal.settings')
         ->get('follow_up_migration_tags') ?: [];

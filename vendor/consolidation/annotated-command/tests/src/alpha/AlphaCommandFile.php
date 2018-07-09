@@ -7,14 +7,13 @@ use Consolidation\OutputFormatters\StructuredData\AssociativeList;
 use Consolidation\AnnotatedCommand\AnnotationData;
 use Symfony\Component\Console\Input\InputOption;
 use Consolidation\AnnotatedCommand\CommandData;
-<<<<<<< HEAD
+ 
 =======
 use Consolidation\AnnotatedCommand\Events\CustomEventAwareInterface;
 use Consolidation\AnnotatedCommand\Events\CustomEventAwareTrait;
 use Symfony\Component\Console\Command\Command;
 
 use Consolidation\TestUtils\ExampleCommandFile as ExampleAliasedClass;
->>>>>>> revert Open Social update
 
 /**
  * Test file used in the testCommandDiscovery() test.
@@ -23,7 +22,7 @@ use Consolidation\TestUtils\ExampleCommandFile as ExampleAliasedClass;
  * 'src' directory, and 'alpha' is one of the search directories available
  * for searching.
  */
-<<<<<<< HEAD
+ 
 class AlphaCommandFile
 {
 =======
@@ -31,7 +30,6 @@ class AlphaCommandFile implements CustomEventAwareInterface
 {
     use CustomEventAwareTrait;
 
->>>>>>> revert Open Social update
     /**
      * @command always:fail
      */
@@ -40,14 +38,13 @@ class AlphaCommandFile implements CustomEventAwareInterface
         return new CommandError('This command always fails.', 13);
     }
 
-<<<<<<< HEAD
+ 
 =======
     public static function ignoredStaticMethod()
     {
         return 'This method is static; it should not generate a command.';
     }
 
->>>>>>> revert Open Social update
     /**
      * @command simulated:status
      */
@@ -95,15 +92,14 @@ class AlphaCommandFile implements CustomEventAwareInterface
      * Test command with formatters
      *
      * @command example:table
-<<<<<<< HEAD
+ 
 =======
      * @param $unused An unused argument
->>>>>>> revert Open Social update
      * @field-labels
      *   first: I
      *   second: II
      *   third: III
-<<<<<<< HEAD
+ 
      * @usage example:table --format=yaml
      * @usage example:table --format=csv
      * @usage example:table --fields=first,third
@@ -153,7 +149,6 @@ class AlphaCommandFile implements CustomEventAwareInterface
      * @return RowsOfFields Short class names are converted to fqcns
      */
     public function exampleTableTwo($unused = '', $options = ['format' => 'table', 'fields' => ''])
->>>>>>> revert Open Social update
     {
         $outputData = [
             [ 'first' => 'One',  'second' => 'Two',  'third' => 'Three' ],
@@ -165,7 +160,7 @@ class AlphaCommandFile implements CustomEventAwareInterface
     }
 
     /**
-<<<<<<< HEAD
+ 
      * @hook option example:table
      */
     public function additionalOptionForExampleTable($command, $annotationData)
@@ -194,7 +189,6 @@ class AlphaCommandFile implements CustomEventAwareInterface
      * @hook option example:table
      */
     public function additionalOptionForExampleTable(Command $command, AnnotationData $annotationData)
->>>>>>> revert Open Social update
     {
         $command->addOption(
             'dynamic',
@@ -317,7 +311,7 @@ class AlphaCommandFile implements CustomEventAwareInterface
     {
         return 'very lost';
     }
-<<<<<<< HEAD
+ 
 =======
 
     /**
@@ -354,5 +348,4 @@ class AlphaCommandFile implements CustomEventAwareInterface
     {
         return 'two';
     }
->>>>>>> revert Open Social update
 }

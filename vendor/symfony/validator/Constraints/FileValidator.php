@@ -13,10 +13,9 @@ namespace Symfony\Component\Validator\Constraints;
 
 use Symfony\Component\HttpFoundation\File\File as FileObject;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
@@ -65,7 +64,7 @@ class FileValidator extends ConstraintValidator
                     }
 
                     list($sizeAsString, $limitAsString, $suffix) = $this->factorizeSizes(0, $limitInBytes, $binaryFormat);
-<<<<<<< HEAD
+ 
                     $this->context->buildViolation($constraint->uploadIniSizeErrorMessage)
                         ->setParameter('{{ limit }}', $limitAsString)
                         ->setParameter('{{ suffix }}', $suffix)
@@ -211,7 +210,6 @@ class FileValidator extends ConstraintValidator
                             ->setCode($value->getError())
                             ->addViolation();
                     }
->>>>>>> web and vendor directory from composer install
 
                     return;
             }
@@ -224,7 +222,7 @@ class FileValidator extends ConstraintValidator
         $path = $value instanceof FileObject ? $value->getPathname() : (string) $value;
 
         if (!is_file($path)) {
-<<<<<<< HEAD
+ 
             $this->context->buildViolation($constraint->notFoundMessage)
                 ->setParameter('{{ file }}', $this->formatValue($path))
                 ->setCode(File::NOT_FOUND_ERROR)
@@ -241,13 +239,12 @@ class FileValidator extends ConstraintValidator
                     ->setCode(File::NOT_FOUND_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
 
             return;
         }
 
         if (!is_readable($path)) {
-<<<<<<< HEAD
+ 
             $this->context->buildViolation($constraint->notReadableMessage)
                 ->setParameter('{{ file }}', $this->formatValue($path))
                 ->setCode(File::NOT_READABLE_ERROR)
@@ -264,7 +261,6 @@ class FileValidator extends ConstraintValidator
                     ->setCode(File::NOT_READABLE_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
 
             return;
         }
@@ -272,7 +268,7 @@ class FileValidator extends ConstraintValidator
         $sizeInBytes = filesize($path);
 
         if (0 === $sizeInBytes) {
-<<<<<<< HEAD
+ 
             $this->context->buildViolation($constraint->disallowEmptyMessage)
                 ->setParameter('{{ file }}', $this->formatValue($path))
                 ->setCode(File::EMPTY_ERROR)
@@ -289,7 +285,6 @@ class FileValidator extends ConstraintValidator
                     ->setCode(File::EMPTY_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
 
             return;
         }
@@ -299,7 +294,7 @@ class FileValidator extends ConstraintValidator
 
             if ($sizeInBytes > $limitInBytes) {
                 list($sizeAsString, $limitAsString, $suffix) = $this->factorizeSizes($sizeInBytes, $limitInBytes, $constraint->binaryFormat);
-<<<<<<< HEAD
+ 
                 $this->context->buildViolation($constraint->maxSizeMessage)
                     ->setParameter('{{ file }}', $this->formatValue($path))
                     ->setParameter('{{ size }}', $sizeAsString)
@@ -325,7 +320,6 @@ class FileValidator extends ConstraintValidator
                         ->setCode(File::TOO_LARGE_ERROR)
                         ->addViolation();
                 }
->>>>>>> web and vendor directory from composer install
 
                 return;
             }
@@ -351,7 +345,7 @@ class FileValidator extends ConstraintValidator
                 }
             }
 
-<<<<<<< HEAD
+ 
             $this->context->buildViolation($constraint->mimeTypesMessage)
                 ->setParameter('{{ file }}', $this->formatValue($path))
                 ->setParameter('{{ type }}', $this->formatValue($mime))
@@ -374,7 +368,6 @@ class FileValidator extends ConstraintValidator
                     ->setCode(File::INVALID_MIME_TYPE_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
         }
     }
 

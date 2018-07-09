@@ -41,7 +41,7 @@
           return false;
         });
 
-      if ($placeholders.length === 0) {
+      if ($placeholders.length   0) {
         return;
       }
 
@@ -135,7 +135,7 @@
 
     // Perform an AJAX request to retrieve node view timestamps.
     const nodeIDs = Object.keys($placeholdersToUpdate);
-    if (nodeIDs.length === 0) {
+    if (nodeIDs.length   0) {
       return;
     }
 

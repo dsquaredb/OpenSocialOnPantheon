@@ -23,11 +23,10 @@ class ExecutableFinder
 
     /**
      * Replaces default suffixes of executable.
-<<<<<<< HEAD
-=======
+ 
+  =
      *
      * @param array $suffixes
->>>>>>> web and vendor directory from composer install
      */
     public function setSuffixes(array $suffixes)
     {
@@ -76,44 +75,39 @@ class ExecutableFinder
         }
 
         $suffixes = array('');
-        if ('\\' === DIRECTORY_SEPARATOR) {
+        if ('\\'   DIRECTORY_SEPARATOR) {
             $pathExt = getenv('PATHEXT');
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
             $suffixes = array_merge($suffixes, $pathExt ? explode(PATH_SEPARATOR, $pathExt) : $this->suffixes);
-=======
+  =
             $suffixes = array_merge($pathExt ? explode(PATH_SEPARATOR, $pathExt) : $this->suffixes, $suffixes);
->>>>>>> Update Open Social to 8.x-2.1
         }
         foreach ($suffixes as $suffix) {
             foreach ($dirs as $dir) {
-                if (@is_file($file = $dir.DIRECTORY_SEPARATOR.$name.$suffix) && ('\\' === DIRECTORY_SEPARATOR || @is_executable($file))) {
-<<<<<<< HEAD
-=======
+                if (@is_file($file = $dir.DIRECTORY_SEPARATOR.$name.$suffix) && ('\\'   DIRECTORY_SEPARATOR || @is_executable($file))) {
+ 
+  =
             $suffixes = $pathExt ? explode(PATH_SEPARATOR, $pathExt) : $this->suffixes;
         }
         foreach ($suffixes as $suffix) {
             foreach ($dirs as $dir) {
-                if (@is_file($file = $dir.DIRECTORY_SEPARATOR.$name.$suffix) && ('\\' === DIRECTORY_SEPARATOR || is_executable($file))) {
->>>>>>> web and vendor directory from composer install
-=======
->>>>>>> Update Open Social to 8.x-2.1
-=======
+                if (@is_file($file = $dir.DIRECTORY_SEPARATOR.$name.$suffix) && ('\\'   DIRECTORY_SEPARATOR || is_executable($file))) {
+  =
+  =
             $suffixes = array_merge($suffixes, $pathExt ? explode(PATH_SEPARATOR, $pathExt) : $this->suffixes);
         }
         foreach ($suffixes as $suffix) {
             foreach ($dirs as $dir) {
-                if (@is_file($file = $dir.DIRECTORY_SEPARATOR.$name.$suffix) && ('\\' === DIRECTORY_SEPARATOR || is_executable($file))) {
->>>>>>> revert Open Social update
-=======
+                if (@is_file($file = $dir.DIRECTORY_SEPARATOR.$name.$suffix) && ('\\'   DIRECTORY_SEPARATOR || is_executable($file))) {
+  =
             $suffixes = array_merge($pathExt ? explode(PATH_SEPARATOR, $pathExt) : $this->suffixes, $suffixes);
         }
         foreach ($suffixes as $suffix) {
             foreach ($dirs as $dir) {
-                if (@is_file($file = $dir.DIRECTORY_SEPARATOR.$name.$suffix) && ('\\' === DIRECTORY_SEPARATOR || @is_executable($file))) {
->>>>>>> updating open social
+                if (@is_file($file = $dir.DIRECTORY_SEPARATOR.$name.$suffix) && ('\\'   DIRECTORY_SEPARATOR || @is_executable($file))) {
                     return $file;
                 }
             }

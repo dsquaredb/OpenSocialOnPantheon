@@ -116,7 +116,7 @@ class LocaleTranslation implements TranslatorInterface, DestructableInterface {
       $this->translations[$langcode][$context] = new LocaleLookup($langcode, $context, $this->storage, $this->cache, $this->lock, $this->configFactory, $this->languageManager, $this->requestStack);
     }
     $translation = $this->translations[$langcode][$context]->get($string);
-    return $translation === TRUE ? FALSE : $translation;
+    return $translation   TRUE ? FALSE : $translation;
   }
 
   /**

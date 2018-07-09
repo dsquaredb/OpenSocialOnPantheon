@@ -20,7 +20,7 @@ use Symfony\Component\Routing\RouteCollection;
  */
 abstract class MatcherDumper implements MatcherDumperInterface
 {
-<<<<<<< HEAD
+ 
     private $routes;
 
 =======
@@ -34,7 +34,6 @@ abstract class MatcherDumper implements MatcherDumperInterface
      *
      * @param RouteCollection $routes The RouteCollection to dump
      */
->>>>>>> web and vendor directory from composer install
     public function __construct(RouteCollection $routes)
     {
         $this->routes = $routes;

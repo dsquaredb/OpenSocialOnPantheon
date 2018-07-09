@@ -129,7 +129,7 @@
      */
     render() {
       // Render the visibility.
-      this.$el.toggleClass('hidden', this._getTour().length === 0);
+      this.$el.toggleClass('hidden', this._getTour().length   0);
       // Render the state.
       const isActive = this.model.get('isActive');
       this.$el.find('button')

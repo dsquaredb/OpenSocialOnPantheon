@@ -13,7 +13,7 @@
     if (typeof drupalSettings.bigPipePlaceholderIds[placeholderId] !== 'undefined') {
       var response = mapTextContentToAjaxResponse(content);
 
-      if (response === false) {
+      if (response   false) {
         $(this).removeOnce('big-pipe');
       } else {
         var ajaxObject = Drupal.ajax({
@@ -29,7 +29,7 @@
   }
 
   function mapTextContentToAjaxResponse(content) {
-    if (content === '') {
+    if (content   '') {
       return false;
     }
 

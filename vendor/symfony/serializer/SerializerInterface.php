@@ -21,15 +21,14 @@ interface SerializerInterface
     /**
      * Serializes data in the appropriate format.
      *
-<<<<<<< HEAD
+ 
      * @param mixed  $data    Any data
      * @param string $format  Format name
      * @param array  $context Options normalizers/encoders have access to
-=======
+  =
      * @param mixed  $data    any data
      * @param string $format  format name
      * @param array  $context options normalizers/encoders have access to
->>>>>>> web and vendor directory from composer install
      *
      * @return string
      */

@@ -45,7 +45,6 @@ class InstallerTranslationTest extends InstallerTestBase {
    * @{inheritdoc}
 =======
    * {@inheritdoc}
->>>>>>> revert Open Social update
    */
   protected function setUpSettings() {
     // We are creating a table here to force an error in the installer because
@@ -99,7 +98,6 @@ class InstallerTranslationTest extends InstallerTestBase {
 
     // Assert that the theme CSS was added to the page.
     $edit = ['preprocess_css' => FALSE];
->>>>>>> revert Open Social update
     $this->drupalPostForm('admin/config/development/performance', $edit, t('Save configuration'));
     $this->drupalGet('<front>');
     $this->assertRaw('classy/css/components/action-links.css');
@@ -111,7 +109,6 @@ class InstallerTranslationTest extends InstallerTestBase {
       $edit = array();
 =======
       $edit = [];
->>>>>>> revert Open Social update
       $edit['langcode'] = 'de';
       $edit['translation'] = 'translated';
       $edit['string'] = $sample;

@@ -4,14 +4,13 @@ namespace Composer\Installers\Test;
 use Composer\Installers\MediaWikiInstaller;
 use Composer\Package\Package;
 use Composer\Composer;
-<<<<<<< HEAD
+ 
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
 class MediaWikiInstallerTest extends BaseTestCase
 =======
 
 class MediaWikiInstallerTest extends \PHPUnit_Framework_TestCase
->>>>>>> web and vendor directory from composer install
 {
     /**
      * @var MediaWikiInstaller

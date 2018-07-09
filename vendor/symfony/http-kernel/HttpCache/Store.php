@@ -29,11 +29,10 @@ class Store implements StoreInterface
     private $locks;
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param string $root The path to the cache directory
      *
      * @throws \RuntimeException
@@ -65,11 +64,10 @@ class Store implements StoreInterface
     /**
      * Tries to lock the cache for a given Request, without blocking.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Request $request A Request instance
      *
->>>>>>> web and vendor directory from composer install
      * @return bool|string true if the lock is acquired, the path to the current lock otherwise
      */
     public function lock(Request $request)
@@ -97,11 +95,10 @@ class Store implements StoreInterface
     /**
      * Releases the lock for the given Request.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Request $request A Request instance
      *
->>>>>>> web and vendor directory from composer install
      * @return bool False if the lock file does not exist or cannot be unlocked, true otherwise
      */
     public function unlock(Request $request)
@@ -142,11 +139,10 @@ class Store implements StoreInterface
     /**
      * Locates a cached Response for the Request provided.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Request $request A Request instance
      *
->>>>>>> web and vendor directory from composer install
      * @return Response|null A Response instance, or null if no cache entry was found
      */
     public function lookup(Request $request)
@@ -171,11 +167,10 @@ class Store implements StoreInterface
             return;
         }
 
-<<<<<<< HEAD
+ 
         $headers = $match[1];
 =======
         list($req, $headers) = $match;
->>>>>>> web and vendor directory from composer install
         if (file_exists($body = $this->getPath($headers['x-content-digest'][0]))) {
             return $this->restoreResponse($headers, $body);
         }
@@ -191,12 +186,11 @@ class Store implements StoreInterface
      * Existing entries are read and any that match the response are removed. This
      * method calls write with the new list of cache entries.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Request  $request  A Request instance
      * @param Response $response A Response instance
      *
->>>>>>> web and vendor directory from composer install
      * @return string The key under which the response is stored
      *
      * @throws \RuntimeException
@@ -229,11 +223,10 @@ class Store implements StoreInterface
                 $entry[1]['vary'] = array('');
             }
 
-<<<<<<< HEAD
+ 
             if ($entry[1]['vary'][0] != $vary || !$this->requestsMatch($vary, $entry[0], $storedEnv)) {
 =======
             if ($vary != $entry[1]['vary'][0] || !$this->requestsMatch($vary, $entry[0], $storedEnv)) {
->>>>>>> web and vendor directory from composer install
                 $entries[] = $entry;
             }
         }
@@ -253,11 +246,10 @@ class Store implements StoreInterface
     /**
      * Returns content digest for $response.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Response $response
      *
->>>>>>> web and vendor directory from composer install
      * @return string
      */
     protected function generateContentDigest(Response $response)
@@ -268,11 +260,10 @@ class Store implements StoreInterface
     /**
      * Invalidates all cache entries that match the request.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Request $request A Request instance
      *
->>>>>>> web and vendor directory from composer install
      * @throws \RuntimeException
      */
     public function invalidate(Request $request)
@@ -346,7 +337,7 @@ class Store implements StoreInterface
     /**
      * Purges data for the given URL.
      *
-<<<<<<< HEAD
+ 
      * This method purges both the HTTP and the HTTPS version of the cache entry.
      *
      * @param string $url A URL
@@ -368,12 +359,11 @@ class Store implements StoreInterface
      * Purges data for the given URL.
      *
 =======
->>>>>>> web and vendor directory from composer install
      * @param string $url A URL
      *
      * @return bool true if the URL exists and has been purged, false otherwise
      */
-<<<<<<< HEAD
+ 
     private function doPurge($url)
     {
         $key = $this->getCacheKey(Request::create($url));
@@ -382,7 +372,6 @@ class Store implements StoreInterface
     {
         $key = $this->getCacheKey(Request::create($url));
 
->>>>>>> web and vendor directory from composer install
         if (isset($this->locks[$key])) {
             flock($this->locks[$key], LOCK_UN);
             fclose($this->locks[$key]);
@@ -441,31 +430,28 @@ class Store implements StoreInterface
 
             $tmpFile = tempnam(dirname($path), basename($path));
             if (false === $fp = @fopen($tmpFile, 'wb')) {
-<<<<<<< HEAD
+ 
                 @unlink($tmpFile);
 
 =======
->>>>>>> web and vendor directory from composer install
                 return false;
             }
             @fwrite($fp, $data);
             @fclose($fp);
 
             if ($data != file_get_contents($tmpFile)) {
-<<<<<<< HEAD
+ 
                 @unlink($tmpFile);
 
 =======
->>>>>>> web and vendor directory from composer install
                 return false;
             }
 
             if (false === @rename($tmpFile, $path)) {
-<<<<<<< HEAD
+ 
                 @unlink($tmpFile);
 
 =======
->>>>>>> web and vendor directory from composer install
                 return false;
             }
         }
@@ -488,11 +474,10 @@ class Store implements StoreInterface
      * headers, use a Vary header to indicate them, and each representation will
      * be stored independently under the same cache key.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Request $request A Request instance
      *
->>>>>>> web and vendor directory from composer install
      * @return string A key for the given Request
      */
     protected function generateCacheKey(Request $request)
@@ -503,11 +488,10 @@ class Store implements StoreInterface
     /**
      * Returns a cache key for the given Request.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Request $request A Request instance
      *
->>>>>>> web and vendor directory from composer install
      * @return string A key for the given Request
      */
     private function getCacheKey(Request $request)
@@ -522,11 +506,10 @@ class Store implements StoreInterface
     /**
      * Persists the Request HTTP headers.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Request $request A Request instance
      *
->>>>>>> web and vendor directory from composer install
      * @return array An array of HTTP headers
      */
     private function persistRequest(Request $request)
@@ -537,11 +520,10 @@ class Store implements StoreInterface
     /**
      * Persists the Response HTTP headers.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Response $response A Response instance
      *
->>>>>>> web and vendor directory from composer install
      * @return array An array of HTTP headers
      */
     private function persistResponse(Response $response)

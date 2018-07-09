@@ -1,6 +1,6 @@
 language: php
 
-<<<<<<< HEAD
+ 
 sudo: false
 
 dist: trusty
@@ -9,7 +9,7 @@ git:
   depth: 5
 
 php:
-=======
+  =
 php:
   - 5.3
 >>>>>>> web and vendor directory from composer install
@@ -17,7 +17,7 @@ php:
   - 5.5
   - 5.6
   - 7.0
-<<<<<<< HEAD
+ 
   - 7.1
   - 7.2
   - hhvm
@@ -32,7 +32,7 @@ matrix:
     - php: nightly
 
 before_script:
-=======
+  =
   - hhvm
 
 matrix:

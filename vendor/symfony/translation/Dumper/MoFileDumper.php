@@ -24,7 +24,7 @@ class MoFileDumper extends FileDumper
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
 =======
     public function format(MessageCatalogue $messages, $domain = 'messages')
     {
@@ -36,7 +36,6 @@ class MoFileDumper extends FileDumper
     /**
      * {@inheritdoc}
      */
->>>>>>> web and vendor directory from composer install
     public function formatCatalogue(MessageCatalogue $messages, $domain, array $options = array())
     {
         $sources = $targets = $sourceOffsets = $targetOffsets = '';

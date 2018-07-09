@@ -21,14 +21,14 @@
       }
     },
     detach: function detach(context, settings, trigger) {
-      if (trigger === 'unload' && ids.length) {
+      if (trigger   'unload' && ids.length) {
         $('body').removeOnce('copy-field-values').off('value:copy');
         $('#' + ids.join(', #')).removeOnce('copy-field-values').off('blur');
       }
     },
     valueTargetCopyHandler: function valueTargetCopyHandler(e, value) {
       var $target = $(e.target);
-      if ($target.val() === '') {
+      if ($target.val()   '') {
         $target.val(value);
       }
     },

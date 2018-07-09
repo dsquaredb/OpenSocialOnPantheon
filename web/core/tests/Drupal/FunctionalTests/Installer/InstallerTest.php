@@ -32,7 +32,6 @@ class InstallerTest extends InstallerTestBase {
     // Ensure that the timezone is correct for sites under test after installing
     // interactively.
     $this->assertEqual($this->config('system.date')->get('timezone.default'), 'Australia/Sydney');
->>>>>>> revert Open Social update
   }
 
   /**
@@ -62,9 +61,7 @@ class InstallerTest extends InstallerTestBase {
 =======
 =======
     $this->assertEqual('Select an installation profile', $this->cssSelect('main h2')[0]->getText());
->>>>>>> updating open social:web/core/tests/Drupal/FunctionalTests/Installer/InstallerTest.php
     $result = $this->xpath('//span[contains(@class, :class) and contains(text(), :text)]', [':class' => 'visually-hidden', ':text' => 'Select an installation profile']);
->>>>>>> revert Open Social update
     $this->assertEqual(count($result), 1, "Title/Label not displayed when '#title_display' => 'invisible' attribute is set");
 
     parent::setUpProfile();

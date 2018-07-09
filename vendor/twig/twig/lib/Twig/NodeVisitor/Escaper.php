@@ -3,11 +3,10 @@
 /*
  * This file is part of Twig.
  *
-<<<<<<< HEAD
+ 
  * (c) Fabien Potencier
 =======
  * (c) 2009 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -16,11 +15,10 @@
 /**
  * Twig_NodeVisitor_Escaper implements output escaping.
  *
-<<<<<<< HEAD
+ 
  * @final
  *
 =======
->>>>>>> web and vendor directory from composer install
  * @author Fabien Potencier <fabien@symfony.com>
  */
 class Twig_NodeVisitor_Escaper extends Twig_BaseNodeVisitor
@@ -37,12 +35,11 @@ class Twig_NodeVisitor_Escaper extends Twig_BaseNodeVisitor
         $this->safeAnalysis = new Twig_NodeVisitor_SafeAnalysis();
     }
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * {@inheritdoc}
      */
->>>>>>> web and vendor directory from composer install
     protected function doEnterNode(Twig_Node $node, Twig_Environment $env)
     {
         if ($node instanceof Twig_Node_Module) {
@@ -62,12 +59,11 @@ class Twig_NodeVisitor_Escaper extends Twig_BaseNodeVisitor
         return $node;
     }
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * {@inheritdoc}
      */
->>>>>>> web and vendor directory from composer install
     protected function doLeaveNode(Twig_Node $node, Twig_Environment $env)
     {
         if ($node instanceof Twig_Node_Module) {
@@ -164,19 +160,17 @@ class Twig_NodeVisitor_Escaper extends Twig_BaseNodeVisitor
         return new Twig_Node_Expression_Filter($node, $name, $args, $line);
     }
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * {@inheritdoc}
      */
->>>>>>> web and vendor directory from composer install
     public function getPriority()
     {
         return 0;
     }
 }
-<<<<<<< HEAD
+ 
 
 class_alias('Twig_NodeVisitor_Escaper', 'Twig\NodeVisitor\EscaperNodeVisitor', false);
 =======
->>>>>>> web and vendor directory from composer install

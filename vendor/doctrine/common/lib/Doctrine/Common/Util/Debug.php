@@ -19,10 +19,9 @@
 
 namespace Doctrine\Common\Util;
 
-<<<<<<< HEAD
+ 
 use Doctrine\Common\Collections\Collection;
 =======
->>>>>>> web and vendor directory from composer install
 use Doctrine\Common\Persistence\Proxy;
 
 /**
@@ -99,21 +98,19 @@ final class Debug
         $return = null;
         $isObj = is_object($var);
 
-<<<<<<< HEAD
+ 
         if ($var instanceof Collection) {
 =======
         if ($isObj && in_array('Doctrine\Common\Collections\Collection', class_implements($var))) {
->>>>>>> web and vendor directory from composer install
             $var = $var->toArray();
         }
 
         if ($maxDepth) {
             if (is_array($var)) {
-<<<<<<< HEAD
+ 
                 $return = [];
 =======
                 $return = array();
->>>>>>> web and vendor directory from composer install
 
                 foreach ($var as $k => $v) {
                     $return[$k] = self::export($v, $maxDepth - 1);

@@ -27,21 +27,19 @@ interface KernelInterface extends HttpKernelInterface, \Serializable
     /**
      * Returns an array of bundles to register.
      *
-<<<<<<< HEAD
+ 
      * @return iterable|BundleInterface[] An iterable of bundle instances
-=======
+  =
      * @return BundleInterface[] An array of bundle instances
->>>>>>> web and vendor directory from composer install
      */
     public function registerBundles();
 
     /**
      * Loads the container configuration.
-<<<<<<< HEAD
-=======
+ 
+  =
      *
      * @param LoaderInterface $loader A LoaderInterface instance
->>>>>>> web and vendor directory from composer install
      */
     public function registerContainerConfiguration(LoaderInterface $loader);
 
@@ -65,12 +63,12 @@ interface KernelInterface extends HttpKernelInterface, \Serializable
     public function getBundles();
 
     /**
-<<<<<<< HEAD
+ 
      * Returns a bundle and optionally its descendants by its name.
      *
      * The second argument is deprecated as of 3.4 and will be removed in 4.0. This method
      * will always return an instance of BundleInterface in 4.0.
-=======
+  =
      * Checks if a given class name belongs to an active bundle.
      *
      * @param string $class A class name
@@ -83,7 +81,6 @@ interface KernelInterface extends HttpKernelInterface, \Serializable
 
     /**
      * Returns a bundle and optionally its descendants by its name.
->>>>>>> web and vendor directory from composer install
      *
      * @param string $name  Bundle name
      * @param bool   $first Whether to return the first bundle only or together with its descendants
@@ -146,15 +143,14 @@ interface KernelInterface extends HttpKernelInterface, \Serializable
     public function isDebug();
 
     /**
-<<<<<<< HEAD
+ 
      * Gets the application root dir (path of the project's Kernel class).
      *
      * @return string The Kernel root dir
-=======
+  =
      * Gets the application root dir.
      *
      * @return string The application root dir
->>>>>>> web and vendor directory from composer install
      */
     public function getRootDir();
 

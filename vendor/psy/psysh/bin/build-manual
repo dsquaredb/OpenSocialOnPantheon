@@ -4,7 +4,7 @@
 /*
  * This file is part of Psy Shell.
  *
-<<<<<<< HEAD
+ 
  * (c) 2012-2015 Justin Hileman
 =======
  * (c) 2012-2017 Justin Hileman
@@ -31,7 +31,7 @@ function htmlwrap($text, $width = null)
 
     $len = strlen($text);
 
-<<<<<<< HEAD
+ 
     $return = array();
 =======
     $return = [];
@@ -61,7 +61,7 @@ function htmlwrap($text, $width = null)
 
             case '>':
                 $inTag = false;
-<<<<<<< HEAD
+ 
 
             default:
 =======
@@ -93,7 +93,7 @@ function htmlwrap($text, $width = null)
 
 function extract_paragraphs($element)
 {
-<<<<<<< HEAD
+ 
     $paragraphs = array();
     foreach ($element->getElementsByTagName('para') as $p) {
         $text = '';
@@ -128,7 +128,7 @@ function extract_paragraphs($element)
 
 function format_doc($doc)
 {
-<<<<<<< HEAD
+ 
     $chunks   = array();
 =======
     $chunks   = [];
@@ -186,7 +186,7 @@ function format_doc($doc)
 
 function thunk_tags($text)
 {
-<<<<<<< HEAD
+ 
     $tagMap = array(
 =======
     $tagMap = [
@@ -196,7 +196,7 @@ function thunk_tags($text)
         'literal>'   => 'return>',
         'type>'      => 'info>',
         'constant>'  => 'info>',
-<<<<<<< HEAD
+ 
     );
 
     $andBack = array(
@@ -209,7 +209,7 @@ function thunk_tags($text)
         '&amp;true;'  => '<return>true</return>',
         '&amp;false;' => '<return>false</return>',
         '&amp;null;'  => '<return>null</return>',
-<<<<<<< HEAD
+ 
     );
 =======
     ];
@@ -236,7 +236,7 @@ function find_type($xml, $paramName)
     }
 }
 
-<<<<<<< HEAD
+ 
 $docs = array();
 foreach (glob($argv[1] . '/*/*/*.xml') as $function) {
     $funcname = basename($function);
@@ -283,7 +283,7 @@ function format_function_doc($xml)
                 break;
 
             case 'parameters':
-<<<<<<< HEAD
+ 
                 $params = array();
                 $vars = $refsect1->getElementsByTagName('varlistentry');
                 foreach ($vars as $var) {
@@ -322,7 +322,7 @@ function format_function_doc($xml)
         $doc['description'] = trim($desc);
     }
 
-<<<<<<< HEAD
+ 
     $formatted = format_doc($doc);
     foreach ($xml->getElementsByTagName('refname') as $ref) {
         $docs[$ref->textContent] = $formatted;
@@ -386,7 +386,7 @@ $db = new PDO('sqlite:' . $argv[2]);
 $db->query('CREATE TABLE php_manual (id char(256) PRIMARY KEY, doc TEXT)');
 $cmd = $db->prepare('INSERT INTO php_manual (id, doc) VALUES (?, ?)');
 foreach ($docs as $id => $doc) {
-<<<<<<< HEAD
+ 
     $cmd->execute(array($id, $doc));
 =======
     $cmd->execute([$id, $doc]);

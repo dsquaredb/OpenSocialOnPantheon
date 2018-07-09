@@ -11,11 +11,10 @@
 
 namespace Symfony\Component\ClassLoader;
 
-<<<<<<< HEAD
+ 
 @trigger_error('The '.__NAMESPACE__.'\ClassLoader class is deprecated since Symfony 3.3 and will be removed in 4.0. Use Composer instead.', E_USER_DEPRECATED);
 
-=======
->>>>>>> web and vendor directory from composer install
+  =
 /**
  * ClassLoader implements an PSR-0 class loader.
  *
@@ -41,11 +40,10 @@ namespace Symfony\Component\ClassLoader;
  *
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Jordi Boggiano <j.boggiano@seld.be>
-<<<<<<< HEAD
+ 
  *
  * @deprecated since version 3.3, to be removed in 4.0.
-=======
->>>>>>> web and vendor directory from composer install
+  =
  */
 class ClassLoader
 {
@@ -191,7 +189,7 @@ class ClassLoader
         $classPath .= str_replace('_', DIRECTORY_SEPARATOR, $className).'.php';
 
         foreach ($this->prefixes as $prefix => $dirs) {
-            if ($class === strstr($class, $prefix)) {
+            if ($class   strstr($class, $prefix)) {
                 foreach ($dirs as $dir) {
                     if (file_exists($dir.DIRECTORY_SEPARATOR.$classPath)) {
                         return $dir.DIRECTORY_SEPARATOR.$classPath;

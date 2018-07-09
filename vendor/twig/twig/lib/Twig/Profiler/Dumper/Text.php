@@ -3,11 +3,10 @@
 /*
  * This file is part of Twig.
  *
-<<<<<<< HEAD
+ 
  * (c) Fabien Potencier
 =======
  * (c) 2015 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,7 +14,7 @@
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
-<<<<<<< HEAD
+ 
  *
  * @final
  */
@@ -32,7 +31,6 @@ class Twig_Profiler_Dumper_Text
         return $this->dumpProfile($profile);
     }
 
->>>>>>> web and vendor directory from composer install
     protected function formatTemplate(Twig_Profiler_Profile $profile, $prefix)
     {
         return sprintf('%s└ %s', $prefix, $profile->getTemplate());
@@ -47,7 +45,7 @@ class Twig_Profiler_Dumper_Text
     {
         return sprintf('%.2fms/%.0f%%', $profile->getDuration() * 1000, $percent);
     }
-<<<<<<< HEAD
+ 
 }
 
 class_alias('Twig_Profiler_Dumper_Text', 'Twig\Profiler\Dumper\TextDumper', false);
@@ -83,4 +81,3 @@ class_alias('Twig_Profiler_Dumper_Text', 'Twig\Profiler\Dumper\TextDumper', fals
         return $str;
     }
 }
->>>>>>> web and vendor directory from composer install

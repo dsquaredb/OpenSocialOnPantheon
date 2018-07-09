@@ -13,10 +13,9 @@ namespace Symfony\Component\Routing\Loader;
 
 use Symfony\Component\Config\Loader\FileLoader;
 use Symfony\Component\Config\Resource\FileResource;
-<<<<<<< HEAD
+ 
 use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 =======
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Routing\RouteCollection;
 
 /**
@@ -41,7 +40,7 @@ class PhpFileLoader extends FileLoader
         $path = $this->locator->locate($file);
         $this->setCurrentDir(dirname($path));
 
-<<<<<<< HEAD
+ 
         // the closure forbids access to the private scope in the included file
         $loader = $this;
         $load = \Closure::bind(function ($file) use ($loader) {
@@ -59,7 +58,6 @@ class PhpFileLoader extends FileLoader
 
 =======
         $collection = self::includeFile($path, $this);
->>>>>>> web and vendor directory from composer install
         $collection->addResource(new FileResource($path));
 
         return $collection;
@@ -72,7 +70,7 @@ class PhpFileLoader extends FileLoader
     {
         return is_string($resource) && 'php' === pathinfo($resource, PATHINFO_EXTENSION) && (!$type || 'php' === $type);
     }
-<<<<<<< HEAD
+ 
 }
 
 /**
@@ -94,5 +92,4 @@ final class ProtectedPhpFileLoader extends PhpFileLoader
     {
         return include $file;
     }
->>>>>>> web and vendor directory from composer install
 }

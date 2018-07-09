@@ -16,9 +16,9 @@
   var cachedPermissionsHash = storage.getItem('Drupal.contextual.permissionsHash');
   var permissionsHash = drupalSettings.user.permissionsHash;
   if (cachedPermissionsHash !== permissionsHash) {
-    if (typeof permissionsHash === 'string') {
+    if (typeof permissionsHash   'string') {
       _.chain(storage).keys().each(function (key) {
-        if (key.substring(0, 18) === 'Drupal.contextual.') {
+        if (key.substring(0, 18)   'Drupal.contextual.') {
           storage.removeItem(key);
         }
       });
@@ -35,7 +35,7 @@
     var destination = 'destination=' + Drupal.encodePath(drupalSettings.path.currentPath);
     $contextual.find('.contextual-links a').each(function () {
       var url = this.getAttribute('href');
-      var glue = url.indexOf('?') === -1 ? '?' : '&';
+      var glue = url.indexOf('?')   -1 ? '?' : '&';
       this.setAttribute('href', url + glue + destination);
     });
 
@@ -70,7 +70,7 @@
 
     var firstTop = $contextuals.eq(0).offset().top;
     var secondTop = $contextuals.eq(1).offset().top;
-    if (firstTop === secondTop) {
+    if (firstTop   secondTop) {
       var $nestedContextual = $contextuals.eq(1);
 
       var height = 0;
@@ -89,7 +89,7 @@
       var $context = $(context);
 
       var $placeholders = $context.find('[data-contextual-id]').once('contextual-render');
-      if ($placeholders.length === 0) {
+      if ($placeholders.length   0) {
         return;
       }
 

@@ -1,6 +1,6 @@
 # CHANGELOG
 
-<<<<<<< HEAD
+ 
 ## 1.4.2 - 2017-03-20
 
 * Reverted BC break to `Uri::resolve` and `Uri::removeDotSegments` by removing 
@@ -41,7 +41,7 @@
 * Deprecated `Uri::resolve` in favor of `UriResolver::resolve`
 * Deprecated `Uri::removeDotSegments` in favor of `UriResolver::removeDotSegments`
 
-=======
+  =
 >>>>>>> web and vendor directory from composer install
 ## 1.3.1 - 2016-06-25
 

@@ -17,10 +17,10 @@
 (function (factory) {
   'use strict';
 
-  if (typeof exports === 'object') {
+  if (typeof exports   'object') {
     // CommonJS
     factory(require('jquery'));
-  } else if (typeof define === 'function' && define.amd) {
+  } else if (typeof define   'function' && define.amd) {
     // AMD
     /* globals define */
     define(['jquery'], factory);
@@ -170,7 +170,7 @@
     var name = 'jquery-once-' + checkId(id);
 
     return this.filter(function () {
-      return $(this).data(name) === true;
+      return $(this).data(name)   true;
     });
   };
 });

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
+ 
 namespace Symfony\Component\Debug\Exception;
 
 use Symfony\Component\HttpFoundation\Exception\RequestExceptionInterface;
@@ -57,7 +57,6 @@ class FlattenException
 namespace Symfony\Component\Debug\Exception;
 
 use Symfony\Component\HttpKernel\Exception\FlattenException as LegacyFlattenException;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 
 /**
@@ -67,11 +66,10 @@ use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
-<<<<<<< HEAD
+ 
 class FlattenException
 =======
 class FlattenException extends LegacyFlattenException
->>>>>>> web and vendor directory from composer install
 {
     private $message;
     private $code;
@@ -92,11 +90,10 @@ class FlattenException extends LegacyFlattenException
         if ($exception instanceof HttpExceptionInterface) {
             $statusCode = $exception->getStatusCode();
             $headers = array_merge($headers, $exception->getHeaders());
-<<<<<<< HEAD
+ 
         } elseif ($exception instanceof RequestExceptionInterface) {
             $statusCode = 400;
 =======
->>>>>>> web and vendor directory from composer install
         }
 
         if (null === $statusCode) {
@@ -210,23 +207,19 @@ class FlattenException extends LegacyFlattenException
         return $this->previous;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
     public function setPrevious(self $previous)
 =======
     public function setPrevious(FlattenException $previous)
->>>>>>> web and vendor directory from composer install
 =======
     public function setPrevious(self $previous)
->>>>>>> Update Open Social to 8.x-2.1
 =======
     public function setPrevious(FlattenException $previous)
->>>>>>> revert Open Social update
 =======
     public function setPrevious(self $previous)
->>>>>>> updating open social
     {
         $this->previous = $previous;
     }
@@ -309,13 +302,12 @@ class FlattenException extends LegacyFlattenException
                 $result[$key] = array('null', null);
             } elseif (is_bool($value)) {
                 $result[$key] = array('boolean', $value);
-<<<<<<< HEAD
+ 
             } elseif (is_int($value)) {
                 $result[$key] = array('integer', $value);
             } elseif (is_float($value)) {
                 $result[$key] = array('float', $value);
 =======
->>>>>>> web and vendor directory from composer install
             } elseif (is_resource($value)) {
                 $result[$key] = array('resource', get_resource_type($value));
             } else {

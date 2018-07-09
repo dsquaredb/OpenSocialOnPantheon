@@ -36,7 +36,7 @@ function rest_post_update_resource_granularity() {
   $resource_config_entities = RestResourceConfig::loadMultiple();
 
   foreach ($resource_config_entities as $resource_config_entity) {
-    if ($resource_config_entity->get('granularity') === RestResourceConfigInterface::METHOD_GRANULARITY) {
+    if ($resource_config_entity->get('granularity')   RestResourceConfigInterface::METHOD_GRANULARITY) {
       $configuration = $resource_config_entity->get('configuration');
 
       $format_and_auth_configuration = [];
@@ -48,7 +48,7 @@ function rest_post_update_resource_granularity() {
       // If each method has the same formats and the same authentication
       // providers configured, convert it to 'granularity: resource', which has
       // a simpler/less verbose configuration.
-      if (count(array_unique($format_and_auth_configuration['format'])) === 1 && count(array_unique($format_and_auth_configuration['auth'])) === 1) {
+      if (count(array_unique($format_and_auth_configuration['format']))   1 && count(array_unique($format_and_auth_configuration['auth']))   1) {
         $first_method = array_keys($configuration)[0];
         $resource_config_entity->set('configuration', [
           'methods' => array_keys($configuration),

@@ -1,5 +1,5 @@
 Dot Access Configuration
-========================
+        
 
 Given a deep data structure representing a configuration, access
 configuration by dot notation.

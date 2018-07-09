@@ -3,11 +3,10 @@
 /*
  * This file is part of Twig.
  *
-<<<<<<< HEAD
+ 
  * (c) Fabien Potencier
 =======
  * (c) 2015 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,7 +14,7 @@
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
-<<<<<<< HEAD
+ 
  *
  * @final
  */
@@ -23,7 +22,6 @@ class Twig_Profiler_Dumper_Html extends Twig_Profiler_Dumper_Base
 =======
  */
 class Twig_Profiler_Dumper_Html extends Twig_Profiler_Dumper_Text
->>>>>>> web and vendor directory from composer install
 {
     private static $colors = array(
         'block' => '#dfd',
@@ -52,8 +50,7 @@ class Twig_Profiler_Dumper_Html extends Twig_Profiler_Dumper_Text
         return sprintf('<span style="color: %s">%.2fms/%.0f%%</span>', $percent > 20 ? self::$colors['big'] : 'auto', $profile->getDuration() * 1000, $percent);
     }
 }
-<<<<<<< HEAD
+ 
 
 class_alias('Twig_Profiler_Dumper_Html', 'Twig\Profiler\Dumper\HtmlDumper', false);
 =======
->>>>>>> web and vendor directory from composer install

@@ -15,10 +15,9 @@ use Symfony\Component\Console\Output\ConsoleOutputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Process\ProcessBuilder;
->>>>>>> web and vendor directory from composer install
 
 /**
  * The ProcessHelper class provides helpers to run external processes.
@@ -39,11 +38,10 @@ class ProcessHelper extends Helper
      *
      * @return Process The process that ran
      */
-<<<<<<< HEAD
+ 
     public function run(OutputInterface $output, $cmd, $error = null, callable $callback = null, $verbosity = OutputInterface::VERBOSITY_VERY_VERBOSE)
 =======
     public function run(OutputInterface $output, $cmd, $error = null, $callback = null, $verbosity = OutputInterface::VERBOSITY_VERY_VERBOSE)
->>>>>>> web and vendor directory from composer install
     {
         if ($output instanceof ConsoleOutputInterface) {
             $output = $output->getErrorOutput();
@@ -51,13 +49,12 @@ class ProcessHelper extends Helper
 
         $formatter = $this->getHelperSet()->get('debug_formatter');
 
-<<<<<<< HEAD
+ 
         if ($cmd instanceof Process) {
 =======
         if (is_array($cmd)) {
             $process = ProcessBuilder::create($cmd)->getProcess();
         } elseif ($cmd instanceof Process) {
->>>>>>> web and vendor directory from composer install
             $process = $cmd;
         } else {
             $process = new Process($cmd);
@@ -103,11 +100,10 @@ class ProcessHelper extends Helper
      *
      * @see run()
      */
-<<<<<<< HEAD
+ 
     public function mustRun(OutputInterface $output, $cmd, $error = null, callable $callback = null)
 =======
     public function mustRun(OutputInterface $output, $cmd, $error = null, $callback = null)
->>>>>>> web and vendor directory from composer install
     {
         $process = $this->run($output, $cmd, $error, $callback);
 
@@ -127,11 +123,10 @@ class ProcessHelper extends Helper
      *
      * @return callable
      */
-<<<<<<< HEAD
+ 
     public function wrapCallback(OutputInterface $output, Process $process, callable $callback = null)
 =======
     public function wrapCallback(OutputInterface $output, Process $process, $callback = null)
->>>>>>> web and vendor directory from composer install
     {
         if ($output instanceof ConsoleOutputInterface) {
             $output = $output->getErrorOutput();
@@ -139,7 +134,7 @@ class ProcessHelper extends Helper
 
         $formatter = $this->getHelperSet()->get('debug_formatter');
 
-<<<<<<< HEAD
+ 
         return function ($type, $buffer) use ($output, $process, $callback, $formatter) {
             $output->write($formatter->progress(spl_object_hash($process), $this->escapeString($buffer), Process::ERR === $type));
 =======
@@ -147,7 +142,6 @@ class ProcessHelper extends Helper
 
         return function ($type, $buffer) use ($output, $process, $callback, $formatter, $that) {
             $output->write($formatter->progress(spl_object_hash($process), $that->escapeString($buffer), Process::ERR === $type));
->>>>>>> web and vendor directory from composer install
 
             if (null !== $callback) {
                 call_user_func($callback, $type, $buffer);
@@ -155,7 +149,7 @@ class ProcessHelper extends Helper
         };
     }
 
-<<<<<<< HEAD
+ 
     private function escapeString($str)
 =======
     /**
@@ -164,7 +158,6 @@ class ProcessHelper extends Helper
      * @internal
      */
     public function escapeString($str)
->>>>>>> web and vendor directory from composer install
     {
         return str_replace('<', '\\<', $str);
     }

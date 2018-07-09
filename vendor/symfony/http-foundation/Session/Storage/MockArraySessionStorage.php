@@ -58,7 +58,7 @@ class MockArraySessionStorage implements SessionStorageInterface
     protected $metadataBag;
 
     /**
-<<<<<<< HEAD
+ 
      * @var array|SessionBagInterface[]
      */
     protected $bags = array();
@@ -72,7 +72,6 @@ class MockArraySessionStorage implements SessionStorageInterface
     /**
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param string      $name    Session name
      * @param MetadataBag $metaBag MetadataBag instance
      */
@@ -82,14 +81,13 @@ class MockArraySessionStorage implements SessionStorageInterface
         $this->setMetadataBag($metaBag);
     }
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * Sets the session data.
      *
      * @param array $array
      */
->>>>>>> web and vendor directory from composer install
     public function setSessionData(array $array)
     {
         $this->data = $array;
@@ -226,14 +224,13 @@ class MockArraySessionStorage implements SessionStorageInterface
         return $this->started;
     }
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * Sets the MetadataBag.
      *
      * @param MetadataBag $bag
      */
->>>>>>> web and vendor directory from composer install
     public function setMetadataBag(MetadataBag $bag = null)
     {
         if (null === $bag) {

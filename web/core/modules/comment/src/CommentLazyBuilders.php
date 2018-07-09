@@ -162,21 +162,18 @@ class CommentLazyBuilders {
    *   An array that can be processed by drupal_pre_render_links().
    */
   protected function buildLinks(CommentInterface $entity, EntityInterface $commented_entity) {
-<<<<<<< HEAD
+ 
     $links = array();
     $status = $commented_entity->get($entity->getFieldName())->status;
 =======
     $links = [];
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
     $status = $commented_entity->getFieldValue($entity->getFieldName(), 'status');
->>>>>>> Update Open Social to 8.x-2.1
 =======
     $status = $commented_entity->get($entity->getFieldName())->status;
->>>>>>> revert Open Social update
 =======
     $status = $commented_entity->getFieldValue($entity->getFieldName(), 'status');
->>>>>>> updating open social
 
     if ($status == CommentItemInterface::OPEN) {
       if ($entity->access('delete')) {

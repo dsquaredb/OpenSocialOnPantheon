@@ -36,12 +36,11 @@ class FatalThrowableError extends FatalErrorException
             $e->getCode(),
             $severity,
             $e->getFile(),
-<<<<<<< HEAD
+ 
             $e->getLine(),
             $e->getPrevious()
 =======
             $e->getLine()
->>>>>>> web and vendor directory from composer install
         );
 
         $this->setTrace($e->getTrace());

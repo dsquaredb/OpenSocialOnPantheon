@@ -9,7 +9,6 @@
 =======
  * (c) 2009 Fabien Potencier
  * (c) 2009 Armin Ronacher
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -23,7 +22,6 @@
  *
  * @final
 =======
->>>>>>> web and vendor directory from composer install
  */
 class Twig_Token
 {
@@ -50,7 +48,6 @@ class Twig_Token
 =======
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param int    $type   The type of the token
      * @param string $value  The token value
      * @param int    $lineno The line position in the source
@@ -69,7 +66,6 @@ class Twig_Token
      *
      * @return string A string representation of the token
      */
->>>>>>> web and vendor directory from composer install
     public function __toString()
     {
         return sprintf('%s(%s)', self::typeToString($this->type, true), $this->value);
@@ -87,7 +83,6 @@ class Twig_Token
      * * just type
      * * type and value (or array of possible values)
      * * just value (or array of possible values) (NAME_TYPE is used as type)
->>>>>>> web and vendor directory from composer install
      *
      * @param array|int         $type   The type to test
      * @param array|string|null $values The token value
@@ -115,7 +110,6 @@ class Twig_Token
      * Gets the line.
      *
      * @return int The source line
->>>>>>> web and vendor directory from composer install
      */
     public function getLine()
     {
@@ -129,7 +123,6 @@ class Twig_Token
      * Gets the token type.
      *
      * @return int The token type
->>>>>>> web and vendor directory from composer install
      */
     public function getType()
     {
@@ -143,7 +136,6 @@ class Twig_Token
      * Gets the token value.
      *
      * @return string The token value
->>>>>>> web and vendor directory from composer install
      */
     public function getValue()
     {
@@ -212,7 +204,6 @@ class Twig_Token
      * Returns the English representation of a given type.
 =======
      * Returns the english representation of a given type.
->>>>>>> web and vendor directory from composer install
      *
      * @param int $type The type as an integer
      *
@@ -256,4 +247,3 @@ class Twig_Token
 
 class_alias('Twig_Token', 'Twig\Token', false);
 =======
->>>>>>> web and vendor directory from composer install

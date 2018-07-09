@@ -61,11 +61,10 @@ class LabelHelper {
       AddressField::GIVEN_NAME => t('First name', [], ['context' => 'Address label']),
       AddressField::ADDITIONAL_NAME => t('Middle name', [], ['context' => 'Address label']),
       AddressField::FAMILY_NAME => t('Last name', [], ['context' => 'Address label']),
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 =======
->>>>>>> revert Open Social update
     ];
   }
 
@@ -86,7 +85,7 @@ class LabelHelper {
       AddressField::SORTING_CODE => t('Sorting code', [], ['context' => 'Address label']),
       AddressField::ADDRESS_LINE1 => t('Address line 1', [], ['context' => 'Address label']),
       AddressField::ADDRESS_LINE2 => t('Address line 2', [], ['context' => 'Address label']),
-<<<<<<< HEAD
+ 
       AddressField::ORGANIZATION => t('Organization', [], ['context' => 'Address label']),
       AddressField::GIVEN_NAME => t('Given name', [], ['context' => 'Address label']),
       AddressField::ADDITIONAL_NAME => t('Additional name', [], ['context' => 'Address label']),
@@ -102,13 +101,11 @@ class LabelHelper {
       AddressField::DEPENDENT_LOCALITY => self::getDependentLocalityLabel($dependent_locality_type),
       AddressField::LOCALITY => self::getLocalityLabel($locality_type),
       AddressField::ADMINISTRATIVE_AREA => self::getAdministrativeAreaLabel($administrative_area_type),
->>>>>>> Update Open Social to 8.x-2.1
 =======
       AddressField::ORGANIZATION => t('Company', [], ['context' => 'Address label']),
       AddressField::GIVEN_NAME => t('First name', [], ['context' => 'Address label']),
       AddressField::ADDITIONAL_NAME => t('Middle name', [], ['context' => 'Address label']),
       AddressField::FAMILY_NAME => t('Last name', [], ['context' => 'Address label']),
->>>>>>> revert Open Social update
 =======
       AddressField::ORGANIZATION => t('Company', [], ['context' => 'Address label']),
       AddressField::ADDRESS_LINE1 => t('Street address', [], ['context' => 'Address label']),
@@ -120,7 +117,6 @@ class LabelHelper {
       AddressField::DEPENDENT_LOCALITY => self::getDependentLocalityLabel($dependent_locality_type),
       AddressField::LOCALITY => self::getLocalityLabel($locality_type),
       AddressField::ADMINISTRATIVE_AREA => self::getAdministrativeAreaLabel($administrative_area_type),
->>>>>>> updating open social
     ];
   }
 

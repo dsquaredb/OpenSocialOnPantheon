@@ -76,7 +76,7 @@ function _social_group_get_permissions($role) {
   );
 
   // Authenticated.
-<<<<<<< HEAD
+ 
   $permissions['authenticated'] = array_merge($permissions['anonymous'], array(
     'create open_group group'
   ));

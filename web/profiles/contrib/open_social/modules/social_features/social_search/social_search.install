@@ -118,7 +118,7 @@ function social_search_update_8102(&$sandbox) {
   }
 
 }
-<<<<<<< HEAD
+ 
 =======
 
 /**
@@ -273,8 +273,8 @@ function social_search_update_8108(array &$sandbox) {
   ];
   \Drupal::service('module_installer')->uninstall($modules);
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
 >>>>>>> updating open social
 
@@ -298,7 +298,7 @@ function social_search_update_8109() {
     }
   }
 }
-<<<<<<< HEAD
+ 
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update

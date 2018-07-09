@@ -7,7 +7,6 @@
  * (c) Fabien Potencier
 =======
  * (c) 2009 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -28,7 +27,6 @@ interface Twig_NodeVisitorInterface
      * @param Twig_NodeInterface $node The node to visit
      * @param Twig_Environment   $env  The Twig environment instance
      *
->>>>>>> web and vendor directory from composer install
      * @return Twig_NodeInterface The modified node
      */
     public function enterNode(Twig_NodeInterface $node, Twig_Environment $env);
@@ -41,7 +39,6 @@ interface Twig_NodeVisitorInterface
      * @param Twig_NodeInterface $node The node to visit
      * @param Twig_Environment   $env  The Twig environment instance
      *
->>>>>>> web and vendor directory from composer install
      * @return Twig_NodeInterface|false The modified node or false if the node must be removed
      */
     public function leaveNode(Twig_NodeInterface $node, Twig_Environment $env);
@@ -61,4 +58,3 @@ class_alias('Twig_NodeVisitorInterface', 'Twig\NodeVisitor\NodeVisitorInterface'
 class_exists('Twig_Environment');
 class_exists('Twig_Node');
 =======
->>>>>>> web and vendor directory from composer install

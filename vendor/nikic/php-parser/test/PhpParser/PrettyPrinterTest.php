@@ -161,7 +161,7 @@ class PrettyPrinterTest extends CodeTestAbstract
             [new Encapsed([new EncapsedStringPart("STR")], $heredoc), '"STR"'],
         ];
     }
-<<<<<<< HEAD
+ 
 =======
 
     /** @dataProvider provideTestUnnaturalLiterals */
@@ -312,5 +312,4 @@ CODE
             $this->getTests(__DIR__ . '/../code/parser', 'test')
         );
     }
->>>>>>> Update Open Social to 8.x-2.1
 }

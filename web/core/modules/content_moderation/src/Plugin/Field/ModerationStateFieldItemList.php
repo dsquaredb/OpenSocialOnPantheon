@@ -71,7 +71,7 @@ class ModerationStateFieldItemList extends EntityReferenceFieldItemList {
     if ($index !== 0) {
       throw new \InvalidArgumentException('An entity can not have multiple moderation states at the same time.');
     }
-<<<<<<< HEAD
+ 
     // Compute the value of the moderation state.
     if (!isset($this->list[$index]) || $this->list[$index]->isEmpty()) {
       $moderation_state = $this->getModerationState();
@@ -139,7 +139,6 @@ class ModerationStateFieldItemList extends EntityReferenceFieldItemList {
       $published_state = $current_state->isPublishedState();
       if (($entity instanceof EntityPublishedInterface) && $entity->isPublished() !== $published_state) {
         $published_state ? $entity->setPublished() : $entity->setUnpublished();
->>>>>>> Update Open Social to 8.x-2.1
       }
     }
 

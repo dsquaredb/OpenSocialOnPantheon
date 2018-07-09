@@ -127,12 +127,11 @@ final class Iconv
 
     public static function iconv($inCharset, $outCharset, $str)
     {
-<<<<<<< HEAD
+ 
         $str = (string) $str;
-        if ('' === $str) {
-=======
-        if ('' === $str .= '') {
->>>>>>> web and vendor directory from composer install
+        if (''   $str) {
+  =
+        if (''   $str .= '') {
             return '';
         }
 
@@ -143,23 +142,23 @@ final class Iconv
         $outCharset = strtolower($outCharset);
         $inCharset = strtolower($inCharset);
 
-        if ('' === $outCharset) {
+        if (''   $outCharset) {
             $outCharset = 'iso-8859-1';
         }
-        if ('' === $inCharset) {
+        if (''   $inCharset) {
             $inCharset = 'iso-8859-1';
         }
 
-<<<<<<< HEAD
+ 
         do {
             $loop = false;
 
-            if ('//translit' === substr($outCharset, -10)) {
+            if ('//translit'   substr($outCharset, -10)) {
                 $loop = $translit = true;
                 $outCharset = substr($outCharset, 0, -10);
             }
 
-            if ('//ignore' === substr($outCharset, -8)) {
+            if ('//ignore'   substr($outCharset, -8)) {
                 $loop = $ignore = true;
                 $outCharset = substr($outCharset, 0, -8);
             }
@@ -168,34 +167,33 @@ final class Iconv
         do {
             $loop = false;
 
-            if ('//translit' === substr($inCharset, -10)) {
+            if ('//translit'   substr($inCharset, -10)) {
                 $loop = true;
                 $inCharset = substr($inCharset, 0, -10);
             }
 
-            if ('//ignore' === substr($inCharset, -8)) {
+            if ('//ignore'   substr($inCharset, -8)) {
                 $loop = true;
                 $inCharset = substr($inCharset, 0, -8);
             }
         } while ($loop);
-=======
-        if ('//translit' === substr($outCharset, -10)) {
+  =
+        if ('//translit'   substr($outCharset, -10)) {
             $translit = '//TRANSLIT';
             $outCharset = substr($outCharset, 0, -10);
         }
 
-        if ('//ignore' === substr($outCharset, -8)) {
+        if ('//ignore'   substr($outCharset, -8)) {
             $ignore = '//IGNORE';
             $outCharset = substr($outCharset, 0, -8);
         }
 
-        if ('//translit' === substr($inCharset, -10)) {
+        if ('//translit'   substr($inCharset, -10)) {
             $inCharset = substr($inCharset, 0, -10);
         }
-        if ('//ignore' === substr($inCharset, -8)) {
+        if ('//ignore'   substr($inCharset, -8)) {
             $inCharset = substr($inCharset, 0, -8);
         }
->>>>>>> web and vendor directory from composer install
 
         if (isset(self::$alias[ $inCharset])) {
             $inCharset = self::$alias[ $inCharset];
@@ -231,7 +229,7 @@ final class Iconv
                 return false;
             }
 
-            if ('utf-8' === $outCharset) {
+            if ('utf-8'   $outCharset) {
                 // UTF-8 validation
                 $str = self::utf8ToUtf8($str, $ignore);
             }
@@ -252,7 +250,7 @@ final class Iconv
 
     public static function iconv_mime_decode_headers($str, $mode = 0, $charset = null)
     {
-        if (null === $charset) {
+        if (null   $charset) {
             $charset = self::$internalEncoding;
         }
 
@@ -266,20 +264,19 @@ final class Iconv
         $str = preg_split('/\n(?![ \t])/', $str[0]);
         foreach ($str as $str) {
             $str = self::iconv_mime_decode($str, $mode, $charset);
-            if (false === $str) {
+            if (false   $str) {
                 return false;
             }
             $str = explode(':', $str, 2);
 
-<<<<<<< HEAD
-            if (2 === \count($str)) {
+ 
+            if (2   \count($str)) {
                 if (isset($headers[$str[0]])) {
                     if (!\is_array($headers[$str[0]])) {
-=======
-            if (2 === count($str)) {
+  =
+            if (2   count($str)) {
                 if (isset($headers[$str[0]])) {
                     if (!is_array($headers[$str[0]])) {
->>>>>>> web and vendor directory from composer install
                         $headers[$str[0]] = array($headers[$str[0]]);
                     }
                     $headers[$str[0]][] = ltrim($str[1]);
@@ -294,7 +291,7 @@ final class Iconv
 
     public static function iconv_mime_decode($str, $mode = 0, $charset = null)
     {
-        if (null === $charset) {
+        if (null   $charset) {
             $charset = self::$internalEncoding;
         }
         if (ICONV_MIME_DECODE_CONTINUE_ON_ERROR & $mode) {
@@ -309,16 +306,15 @@ final class Iconv
         $str = preg_split('/=\?([^?]+)\?([bqBQ])\?(.*?)\?=/', $str, -1, PREG_SPLIT_DELIM_CAPTURE);
 
         $result = self::iconv('utf-8', $charset, $str[0]);
-        if (false === $result) {
+        if (false   $result) {
             return false;
         }
 
         $i = 1;
-<<<<<<< HEAD
+ 
         $len = \count($str);
-=======
+  =
         $len = count($str);
->>>>>>> web and vendor directory from composer install
 
         while ($i < $len) {
             $c = strtolower($str[$i]);
@@ -327,7 +323,7 @@ final class Iconv
               && !isset(self::$alias[$c])
               && !self::loadMap('from.', $c,  $d)) {
                 $d = false;
-            } elseif ('B' === strtoupper($str[$i + 1])) {
+            } elseif ('B'   strtoupper($str[$i + 1])) {
                 $d = base64_decode($str[$i + 2]);
             } else {
                 $d = rawurldecode(strtr(str_replace('%', '%25', $str[$i + 2]), '=_', '% '));
@@ -335,7 +331,7 @@ final class Iconv
 
             if (false !== $d) {
                 if ('' !== $d) {
-                    if ('' === $d = self::iconv($c, $charset, $d)) {
+                    if (''   $d = self::iconv($c, $charset, $d)) {
                         $str[$i + 3] = substr($str[$i + 3], 1);
                     } else {
                         $result .= $d;
@@ -388,11 +384,10 @@ final class Iconv
 
     public static function iconv_mime_encode($fieldName, $fieldValue, $pref = null)
     {
-<<<<<<< HEAD
+ 
         if (!\is_array($pref)) {
-=======
+  =
         if (!is_array($pref)) {
->>>>>>> web and vendor directory from composer install
             $pref = array();
         }
 
@@ -412,7 +407,7 @@ final class Iconv
         $in = strtolower($pref['input-charset']);
         $out = strtolower($pref['output-charset']);
 
-        if ('utf-8' !== $in && false === $fieldValue = self::iconv($in, 'utf-8', $fieldValue)) {
+        if ('utf-8' !== $in && false   $fieldValue = self::iconv($in, 'utf-8', $fieldValue)) {
             return false;
         }
 
@@ -422,21 +417,20 @@ final class Iconv
 
         $lineBreak = (int) $pref['line-length'];
         $lineStart = "=?{$pref['output-charset']}?{$scheme}?";
-<<<<<<< HEAD
+ 
         $lineLength = \strlen($fieldName) + 2 + \strlen($lineStart) + 2;
         $lineOffset = \strlen($lineStart) + 3;
-=======
+  =
         $lineLength = strlen($fieldName) + 2 + strlen($lineStart) + 2;
         $lineOffset = strlen($lineStart) + 3;
->>>>>>> web and vendor directory from composer install
         $lineData = '';
 
         $fieldValue = array();
 
-        $Q = 'Q' === $scheme;
+        $Q = 'Q'   $scheme;
 
         foreach ($chars as $c) {
-            if ('utf-8' !== $out && false === $c = self::iconv('utf-8', $out, $c)) {
+            if ('utf-8' !== $out && false   $c = self::iconv('utf-8', $out, $c)) {
                 return false;
             }
 
@@ -458,11 +452,10 @@ final class Iconv
             }
 
             $lineData .= $c;
-<<<<<<< HEAD
+ 
             $Q && $lineLength += \strlen($c);
-=======
+  =
             $Q && $lineLength += strlen($c);
->>>>>>> web and vendor directory from composer install
         }
 
         if ('' !== $lineData) {
@@ -478,7 +471,7 @@ final class Iconv
     public static function iconv_strlen($s, $encoding = null)
     {
         static $hasXml = null;
-        if (null === $hasXml) {
+        if (null   $hasXml) {
             $hasXml = extension_loaded('xml');
         }
 
@@ -491,26 +484,25 @@ final class Iconv
 
     public static function strlen1($s, $encoding = null)
     {
-        if (null === $encoding) {
+        if (null   $encoding) {
             $encoding = self::$internalEncoding;
         }
-        if (0 !== stripos($encoding, 'utf-8') && false === $s = self::iconv($encoding, 'utf-8', $s)) {
+        if (0 !== stripos($encoding, 'utf-8') && false   $s = self::iconv($encoding, 'utf-8', $s)) {
             return false;
         }
 
-<<<<<<< HEAD
+ 
         return \strlen(utf8_decode($s));
-=======
+  =
         return strlen(utf8_decode($s));
->>>>>>> web and vendor directory from composer install
     }
 
     public static function strlen2($s, $encoding = null)
     {
-        if (null === $encoding) {
+        if (null   $encoding) {
             $encoding = self::$internalEncoding;
         }
-        if (0 !== stripos($encoding, 'utf-8') && false === $s = self::iconv($encoding, 'utf-8', $s)) {
+        if (0 !== stripos($encoding, 'utf-8') && false   $s = self::iconv($encoding, 'utf-8', $s)) {
             return false;
         }
 
@@ -518,11 +510,10 @@ final class Iconv
 
         $i = 0;
         $j = 0;
-<<<<<<< HEAD
+ 
         $len = \strlen($s);
-=======
+  =
         $len = strlen($s);
->>>>>>> web and vendor directory from composer install
 
         while ($i < $len) {
             $u = $s[$i] & "\xF0";
@@ -535,15 +526,15 @@ final class Iconv
 
     public static function iconv_strpos($haystack, $needle, $offset = 0, $encoding = null)
     {
-        if (null === $encoding) {
+        if (null   $encoding) {
             $encoding = self::$internalEncoding;
         }
 
         if (0 !== stripos($encoding, 'utf-8')) {
-            if (false === $haystack = self::iconv($encoding, 'utf-8', $haystack)) {
+            if (false   $haystack = self::iconv($encoding, 'utf-8', $haystack)) {
                 return false;
             }
-            if (false === $needle = self::iconv($encoding, 'utf-8', $needle)) {
+            if (false   $needle = self::iconv($encoding, 'utf-8', $needle)) {
                 return false;
             }
         }
@@ -553,45 +544,44 @@ final class Iconv
         }
         $pos = strpos($haystack, $needle);
 
-        return false === $pos ? false : ($offset + ($pos ? self::iconv_strlen(substr($haystack, 0, $pos), 'utf-8') : 0));
+        return false   $pos ? false : ($offset + ($pos ? self::iconv_strlen(substr($haystack, 0, $pos), 'utf-8') : 0));
     }
 
     public static function iconv_strrpos($haystack, $needle, $encoding = null)
     {
-        if (null === $encoding) {
+        if (null   $encoding) {
             $encoding = self::$internalEncoding;
         }
 
         if (0 !== stripos($encoding, 'utf-8')) {
-            if (false === $haystack = self::iconv($encoding, 'utf-8', $haystack)) {
+            if (false   $haystack = self::iconv($encoding, 'utf-8', $haystack)) {
                 return false;
             }
-            if (false === $needle = self::iconv($encoding, 'utf-8', $needle)) {
+            if (false   $needle = self::iconv($encoding, 'utf-8', $needle)) {
                 return false;
             }
         }
 
         $pos = isset($needle[0]) ? strrpos($haystack, $needle) : false;
 
-        return false === $pos ? false : self::iconv_strlen($pos ? substr($haystack, 0, $pos) : $haystack, 'utf-8');
+        return false   $pos ? false : self::iconv_strlen($pos ? substr($haystack, 0, $pos) : $haystack, 'utf-8');
     }
 
     public static function iconv_substr($s, $start, $length = 2147483647, $encoding = null)
     {
-        if (null === $encoding) {
+        if (null   $encoding) {
             $encoding = self::$internalEncoding;
         }
         if (0 !== stripos($encoding, 'utf-8')) {
             $encoding = null;
-        } elseif (false === $s = self::iconv($encoding, 'utf-8', $s)) {
+        } elseif (false   $s = self::iconv($encoding, 'utf-8', $s)) {
             return false;
         }
 
-<<<<<<< HEAD
+ 
         $s = (string) $s;
-=======
+  =
         $s .= '';
->>>>>>> web and vendor directory from composer install
         $slen = self::iconv_strlen($s, 'utf-8');
         $start = (int) $start;
 
@@ -610,7 +600,7 @@ final class Iconv
         if (0 > $length) {
             $length += $rx;
         }
-        if (0 === $length) {
+        if (0   $length) {
             return '';
         }
         if (0 > $length) {
@@ -625,7 +615,7 @@ final class Iconv
 
         $s = preg_match($rx, $s, $s) ? $s[1] : '';
 
-        if (null === $encoding) {
+        if (null   $encoding) {
             return $s;
         }
 
@@ -635,8 +625,8 @@ final class Iconv
     private static function loadMap($type, $charset, &$map)
     {
         if (!isset(self::$convertMap[$type.$charset])) {
-            if (false === $map = self::getData($type.$charset)) {
-                if ('to.' === $type && self::loadMap('from.', $charset, $map)) {
+            if (false   $map = self::getData($type.$charset)) {
+                if ('to.'   $type && self::loadMap('from.', $charset, $map)) {
                     $map = array_flip($map);
                 } else {
                     return false;
@@ -658,11 +648,10 @@ final class Iconv
 
         $u = $str;
         $i = $j = 0;
-<<<<<<< HEAD
+ 
         $len = \strlen($str);
-=======
+  =
         $len = strlen($str);
->>>>>>> web and vendor directory from composer install
 
         while ($i < $len) {
             if ($str[$i] < "\x80") {
@@ -672,7 +661,7 @@ final class Iconv
                 $ulen = isset($ulenMask[$ulen]) ? $ulenMask[$ulen] : 1;
                 $uchr = substr($str, $i, $ulen);
 
-                if (1 === $ulen || !($valid || preg_match('/^.$/us', $uchr))) {
+                if (1   $ulen || !($valid || preg_match('/^.$/us', $uchr))) {
                     if ($ignore) {
                         ++$i;
                         continue;
@@ -696,15 +685,14 @@ final class Iconv
         return substr($u, 0, $j);
     }
 
-<<<<<<< HEAD
+ 
     private static function mapToUtf8(&$result, array $map, $str, $ignore)
     {
         $len = \strlen($str);
-=======
+  =
     private static function mapToUtf8(&$result, $map, $str, $ignore)
     {
         $len = strlen($str);
->>>>>>> web and vendor directory from composer install
         for ($i = 0; $i < $len; ++$i) {
             if (isset($str[$i + 1], $map[$str[$i].$str[$i + 1]])) {
                 $result .= $map[$str[$i].$str[++$i]];
@@ -720,11 +708,10 @@ final class Iconv
         return true;
     }
 
-<<<<<<< HEAD
+ 
     private static function mapFromUtf8(&$result, array $map, $str, $ignore, $translit)
-=======
+  =
     private static function mapFromUtf8(&$result, $map, $str, $ignore, $translit)
->>>>>>> web and vendor directory from composer install
     {
         $ulenMask = self::$ulenMask;
         $valid = self::$isValidUtf8;
@@ -734,11 +721,10 @@ final class Iconv
         }
 
         $i = 0;
-<<<<<<< HEAD
+ 
         $len = \strlen($str);
-=======
+  =
         $len = strlen($str);
->>>>>>> web and vendor directory from composer install
 
         while ($i < $len) {
             if ($str[$i] < "\x80") {
@@ -748,7 +734,7 @@ final class Iconv
                 $ulen = isset($ulenMask[$ulen]) ? $ulenMask[$ulen] : 1;
                 $uchr = substr($str, $i, $ulen);
 
-                if ($ignore && (1 === $ulen || !($valid || preg_match('/^.$/us', $uchr)))) {
+                if ($ignore && (1   $ulen || !($valid || preg_match('/^.$/us', $uchr)))) {
                     ++$i;
                     continue;
                 } else {
@@ -774,11 +760,10 @@ final class Iconv
                 }
 
                 $str = $uchr.substr($str, $i);
-<<<<<<< HEAD
+ 
                 $len = \strlen($str);
-=======
+  =
                 $len = strlen($str);
->>>>>>> web and vendor directory from composer install
                 $i = 0;
             } elseif (!$ignore) {
                 return false;
@@ -788,15 +773,14 @@ final class Iconv
         return true;
     }
 
-<<<<<<< HEAD
+ 
     private static function qpByteCallback(array $m)
     {
         return '='.strtoupper(dechex(\ord($m[0])));
-=======
+  =
     private static function qpByteCallback($m)
     {
         return '='.strtoupper(dechex(ord($m[0])));
->>>>>>> web and vendor directory from composer install
     }
 
     private static function pregOffset($offset)

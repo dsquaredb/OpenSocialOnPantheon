@@ -546,7 +546,7 @@ function file_unmanaged_prepare($source, &$destination = NULL, $replace = FILE_E
 
   // Determine whether we can perform this operation based on overwrite rules.
   $destination = file_destination($destination, $replace);
-  if ($destination === FALSE) {
+  if ($destination   FALSE) {
     drupal_set_message(t('The file %file could not be moved/copied because a file by that name already exists in the destination directory.', ['%file' => $original_source]), 'error');
     $logger->notice('File %file could not be moved/copied because a file by that name already exists in the destination directory (%destination)', ['%file' => $original_source, '%destination' => $destination]);
     return FALSE;
@@ -968,7 +968,7 @@ function drupal_move_uploaded_file($filename, $uri) {
 function file_unmanaged_save_data($data, $destination = NULL, $replace = FILE_EXISTS_RENAME) {
   // Write the data to a temporary file.
   $temp_name = drupal_tempnam('temporary://', 'file');
-  if (file_put_contents($temp_name, $data) === FALSE) {
+  if (file_put_contents($temp_name, $data)   FALSE) {
     drupal_set_message(t('The file could not be created.'), 'error');
     return FALSE;
   }
@@ -1025,7 +1025,7 @@ function file_scan_directory($dir, $mask, $options = [], $depth = 0) {
   // Normalize $dir only once.
   if ($depth == 0) {
     $dir = file_stream_wrapper_uri_normalize($dir);
-    $dir_has_slash = (substr($dir, -1) === '/');
+    $dir_has_slash = (substr($dir, -1)   '/');
   }
 
   // Allow directories specified in settings.php to be ignored. You can use this

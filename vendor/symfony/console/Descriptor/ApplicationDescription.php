@@ -24,7 +24,7 @@ class ApplicationDescription
 {
     const GLOBAL_NAMESPACE = '_global';
 
-<<<<<<< HEAD
+ 
     private $application;
     private $namespace;
     private $showHidden;
@@ -38,7 +38,6 @@ class ApplicationDescription
      * @var null|string
      */
     private $namespace;
->>>>>>> web and vendor directory from composer install
 
     /**
      * @var array
@@ -56,7 +55,7 @@ class ApplicationDescription
     private $aliases;
 
     /**
-<<<<<<< HEAD
+ 
      * @param Application $application
      * @param string|null $namespace
      * @param bool        $showHidden
@@ -76,7 +75,6 @@ class ApplicationDescription
     {
         $this->application = $application;
         $this->namespace = $namespace;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -130,11 +128,10 @@ class ApplicationDescription
 
             /** @var Command $command */
             foreach ($commands as $name => $command) {
-<<<<<<< HEAD
+ 
                 if (!$command->getName() || (!$this->showHidden && $command->isHidden())) {
 =======
                 if (!$command->getName()) {
->>>>>>> web and vendor directory from composer install
                     continue;
                 }
 
@@ -152,11 +149,10 @@ class ApplicationDescription
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * @param array $commands
      *
->>>>>>> web and vendor directory from composer install
      * @return array
      */
     private function sortCommands(array $commands)

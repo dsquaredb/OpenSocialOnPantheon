@@ -34,11 +34,10 @@ use function is_array;
  */
 class ServerRequest implements ServerRequestInterface
 {
-<<<<<<< HEAD
+ 
     use RequestTrait;
 =======
     use MessageTrait, RequestTrait;
->>>>>>> web and vendor directory from composer install
 
     /**
      * @var array

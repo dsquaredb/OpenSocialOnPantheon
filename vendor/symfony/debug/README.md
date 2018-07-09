@@ -1,5 +1,5 @@
 Debug Component
-===============
+     
 
 The Debug component provides tools to ease debugging PHP code.
 

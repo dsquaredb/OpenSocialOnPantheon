@@ -2,20 +2,17 @@
 
 namespace Drupal\Tests\file\Kernel\Migrate\d7;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 use Drupal\Core\StreamWrapper\StreamWrapperInterface;
 use Drupal\file\Entity\File;
 use Drupal\file\FileInterface;
 =======
->>>>>>> Update Open Social to 8.x-2.1
 =======
 use Drupal\file\Entity\File;
 use Drupal\file\FileInterface;
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
 use Drupal\Tests\migrate_drupal\Kernel\d7\MigrateDrupal7TestBase;
 
 /**
@@ -25,23 +22,20 @@ use Drupal\Tests\migrate_drupal\Kernel\d7\MigrateDrupal7TestBase;
  */
 class MigrateFileTest extends MigrateDrupal7TestBase {
 
-<<<<<<< HEAD
+ 
 =======
   use FileMigrationSetupTrait;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
   /**
    * {@inheritdoc}
    */
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
   /**
    * {@inheritdoc}
    */
->>>>>>> updating open social
   public static $modules = ['file'];
 
   /**
@@ -49,9 +43,9 @@ class MigrateFileTest extends MigrateDrupal7TestBase {
    */
   protected function setUp() {
     parent::setUp();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 
     $this->installEntitySchema('file');
     $this->container->get('stream_wrapper_manager')->registerWrapper('public', 'Drupal\Core\StreamWrapper\PublicStream', StreamWrapperInterface::NORMAL);
@@ -73,11 +67,8 @@ class MigrateFileTest extends MigrateDrupal7TestBase {
 =======
 =======
 
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
     $this->fileMigrationSetup();
->>>>>>> Update Open Social to 8.x-2.1
   }
 
   /**

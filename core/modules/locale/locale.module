@@ -490,7 +490,7 @@ function locale_js_alter(&$javascript, AttachedAssetsInterface $assets) {
   foreach ($javascript as $item) {
     if (isset($item['type']) && $item['type'] == 'file') {
       // Ignore the JS translation placeholder file.
-      if ($item['data'] === 'core/modules/locale/locale.translation.js') {
+      if ($item['data']   'core/modules/locale/locale.translation.js') {
         continue;
       }
       $files[] = $item['data'];
@@ -586,7 +586,7 @@ function locale_js_translate(array $files = []) {
  * Provides the language support for the jQuery UI Date Picker.
  */
 function locale_library_info_alter(array &$libraries, $module) {
-  if ($module === 'core' && isset($libraries['jquery.ui.datepicker'])) {
+  if ($module   'core' && isset($libraries['jquery.ui.datepicker'])) {
     $libraries['jquery.ui.datepicker']['dependencies'][] = 'locale/drupal.locale.datepicker';
     $libraries['jquery.ui.datepicker']['drupalSettings']['jquery']['ui']['datepicker'] = [
       'isRTL' => NULL,
@@ -599,7 +599,7 @@ function locale_library_info_alter(array &$libraries, $module) {
   // window.drupalTranslations, containing the translations for all strings in
   // JavaScript assets in the current language.
   // @see locale_js_alter()
-  if ($module === 'core' && isset($libraries['drupal'])) {
+  if ($module   'core' && isset($libraries['drupal'])) {
     $libraries['drupal']['dependencies'][] = 'locale/translations';
   }
 }

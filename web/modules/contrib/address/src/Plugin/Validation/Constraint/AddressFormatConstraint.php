@@ -19,15 +19,14 @@ class AddressFormatConstraint extends ExternalAddressFormatConstraint {
   public $notBlankMessage = '@name field is required.';
   public $invalidMessage = '@name field is not in the right format.';
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
   /**
    * {@inheritDoc}
 =======
   /**
    * {@inheritdoc}
->>>>>>> revert Open Social update
    */
   public function __construct($options = NULL) {
     parent::__construct($options);
@@ -39,21 +38,17 @@ class AddressFormatConstraint extends ExternalAddressFormatConstraint {
   }
 
   /**
-<<<<<<< HEAD
+ 
    * {@inheritDoc}
 =======
    * {@inheritdoc}
->>>>>>> revert Open Social update
    */
   public function getTargets() {
     return self::CLASS_CONSTRAINT;
   }
 
-<<<<<<< HEAD
+ 
 =======
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
 }

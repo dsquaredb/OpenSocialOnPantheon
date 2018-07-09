@@ -13,18 +13,15 @@ use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 =======
 use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 =======
->>>>>>> revert Open Social update
 =======
 use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
->>>>>>> updating open social
 use Symfony\Component\Routing\Exception\RouteNotFoundException;
->>>>>>> Update Open Social to 8.x-2.1
 
 /**
  * Defines a base entity class.
@@ -335,7 +332,7 @@ abstract class Entity implements EntityInterface {
    * {@inheritdoc}
    */
   public function uriRelationships() {
-<<<<<<< HEAD
+ 
     return array_keys($this->linkTemplates());
 =======
     return array_filter(array_keys($this->linkTemplates()), function ($link_relation_type) {
@@ -354,7 +351,6 @@ abstract class Entity implements EntityInterface {
       }
       return TRUE;
     });
->>>>>>> Update Open Social to 8.x-2.1
   }
 
   /**

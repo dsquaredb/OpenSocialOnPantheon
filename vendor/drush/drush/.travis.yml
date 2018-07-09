@@ -19,10 +19,10 @@ cache:
 sudo: false
 
 env:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+ 
+ 
+ 
+  =
 >>>>>>> revert Open Social update
   matrix:
 #D6
@@ -37,9 +37,9 @@ env:
     - UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--group=pm
     - UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--group=quick-drupal
     - UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--exclude-group=base,make,commands,pm,quick-drupal
-<<<<<<< HEAD
+ 
 #D8
-=======
+  =
 #D8.3.x
     - UNISH_DRUPAL_MAJOR_VERSION=8 UNISH_DRUPAL_MINOR_VERSION=3.7 PHPUNIT_ARGS=--group=make
     - UNISH_DRUPAL_MAJOR_VERSION=8 UNISH_DRUPAL_MINOR_VERSION=3.7 PHPUNIT_ARGS=--group=base
@@ -54,9 +54,9 @@ env:
     - UNISH_DRUPAL_MAJOR_VERSION=8 PHPUNIT_ARGS=--group=commands
     - UNISH_DRUPAL_MAJOR_VERSION=8 PHPUNIT_ARGS=--group=pm
     - UNISH_DRUPAL_MAJOR_VERSION=8 PHPUNIT_ARGS=--group=quick-drupal
-<<<<<<< HEAD
+ 
     - UNISH_DRUPAL_MAJOR_VERSION=8 PHPUNIT_ARGS=--exclude-group=base,make,commands,pm,quick-drupal TEST_CHILDREN="drush-ops/config-extra"
-=======
+  =
     - UNISH_DRUPAL_MAJOR_VERSION=8 PHPUNIT_ARGS=--exclude-group=base,make,commands,pm,quick-drupal
 >>>>>>> revert Open Social update
 
@@ -72,12 +72,12 @@ env:
     # - UNISH_DB_URL=pgsql://postgres:@localhost PHPUNIT_ARGS=--group=pm
     # - UNISH_DB_URL=pgsql://postgres:@localhost PHPUNIT_ARGS=--group=quick-drupal
     # - UNISH_DB_URL=pgsql://postgres:@localhost PHPUNIT_ARGS=--exclude-group=base,make,commands,pm,quick-drupal
-<<<<<<< HEAD
-=======
+ 
+  =
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
 >>>>>>> revert Open Social update
-=======
+  =
 >>>>>>> updating open social
   global:
     # Github deploy
@@ -95,17 +95,17 @@ matrix:
     - php: 7.0
       env: 'UNISH_DRUPAL_MAJOR_VERSION=8 UNISH_DRUPAL_MINOR_VERSION=5.0-rc1 PHPUNIT_ARGS=--group=pm'
     - php: 7.0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
       env: UNISH_DRUPAL_MAJOR_VERSION=6 PHPUNIT_ARGS=--exclude-group=base,make,commands,pm,quick-drupal
     # Drupal 8 requires a minimum php of 5.5, so skip all of the Drupal 8 tests with this php.
     - php: 5.4
       env: UNISH_DRUPAL_MAJOR_VERSION=8 PHPUNIT_ARGS=--group=make
     - php: 5.4
       env: UNISH_DRUPAL_MAJOR_VERSION=8 PHPUNIT_ARGS=--group=base
-=======
-=======
+  =
+  =
 >>>>>>> updating open social
       env: 'UNISH_DRUPAL_MAJOR_VERSION=8 UNISH_DRUPAL_MINOR_VERSION=5.0-rc1 PHPUNIT_ARGS=--group=quick-drupal'
     - php: 7.0
@@ -165,9 +165,9 @@ matrix:
 
     # D6
     # Note that Drupal 6 does not work with PHP 7
-<<<<<<< HEAD
+ 
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
       env: UNISH_DRUPAL_MAJOR_VERSION=6 PHPUNIT_ARGS=--exclude-group=base,make,commands,pm,quick-drupal
     # Drupal 8 requires a minimum php of 5.5, so skip all of the Drupal 8 tests with this php.
     - php: 5.4
@@ -187,7 +187,7 @@ matrix:
     - php: 5.4
       env: UNISH_DRUPAL_MAJOR_VERSION=8 PHPUNIT_ARGS=--group=base
 >>>>>>> revert Open Social update
-=======
+  =
 >>>>>>> updating open social
     - php: 5.4
       env: 'UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--group=base'
@@ -196,17 +196,17 @@ matrix:
     - php: 5.4
       env: 'UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--group=pm'
     - php: 5.4
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
       env: UNISH_DRUPAL_MAJOR_VERSION=8 PHPUNIT_ARGS=--exclude-group=base,make,commands,pm,quick-drupal TEST_CHILDREN="drush-ops/config-extra"
-=======
+  =
       env: 'UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--exclude-group=base,make,commands,pm,quick-drupal TEST_CHILDREN="drush-ops/config-extra"'
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
       env: UNISH_DRUPAL_MAJOR_VERSION=8 PHPUNIT_ARGS=--exclude-group=base,make,commands,pm,quick-drupal
 >>>>>>> revert Open Social update
-=======
+  =
       env: 'UNISH_DRUPAL_MAJOR_VERSION=7 PHPUNIT_ARGS=--exclude-group=base,make,commands,pm,quick-drupal TEST_CHILDREN="drush-ops/config-extra"'
 >>>>>>> updating open social
 

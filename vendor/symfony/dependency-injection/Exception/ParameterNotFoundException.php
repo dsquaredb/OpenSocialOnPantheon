@@ -22,7 +22,7 @@ class ParameterNotFoundException extends InvalidArgumentException
     private $sourceId;
     private $sourceKey;
     private $alternatives;
-<<<<<<< HEAD
+ 
     private $nonNestedAlternative;
 
     /**
@@ -44,16 +44,14 @@ class ParameterNotFoundException extends InvalidArgumentException
      * @param string[]   $alternatives Some parameter name alternatives
      */
     public function __construct($key, $sourceId = null, $sourceKey = null, \Exception $previous = null, array $alternatives = array())
->>>>>>> web and vendor directory from composer install
     {
         $this->key = $key;
         $this->sourceId = $sourceId;
         $this->sourceKey = $sourceKey;
         $this->alternatives = $alternatives;
-<<<<<<< HEAD
+ 
         $this->nonNestedAlternative = $nonNestedAlternative;
 =======
->>>>>>> web and vendor directory from composer install
 
         parent::__construct('', 0, $previous);
 
@@ -77,11 +75,10 @@ class ParameterNotFoundException extends InvalidArgumentException
                 $this->message .= ' Did you mean one of these: "';
             }
             $this->message .= implode('", "', $this->alternatives).'"?';
-<<<<<<< HEAD
+ 
         } elseif (null !== $this->nonNestedAlternative) {
             $this->message .= ' You cannot access nested array items, do you want to inject "'.$this->nonNestedAlternative.'" instead?';
 =======
->>>>>>> web and vendor directory from composer install
         }
     }
 

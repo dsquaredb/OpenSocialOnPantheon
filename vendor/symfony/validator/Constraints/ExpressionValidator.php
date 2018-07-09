@@ -12,7 +12,7 @@
 namespace Symfony\Component\Validator\Constraints;
 
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
-<<<<<<< HEAD
+ 
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 =======
@@ -22,7 +22,6 @@ use Symfony\Component\PropertyAccess\PropertyPath;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\Exception\RuntimeException;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
@@ -32,7 +31,7 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
  */
 class ExpressionValidator extends ConstraintValidator
 {
-<<<<<<< HEAD
+ 
     private $expressionLanguage;
 
     public function __construct($propertyAccessor = null, ExpressionLanguage $expressionLanguage = null)
@@ -51,7 +50,6 @@ class ExpressionValidator extends ConstraintValidator
     public function __construct(PropertyAccessorInterface $propertyAccessor = null, ExpressionLanguage $expressionLanguage = null)
     {
         $this->propertyAccessor = $propertyAccessor;
->>>>>>> web and vendor directory from composer install
         $this->expressionLanguage = $expressionLanguage;
     }
 
@@ -65,7 +63,7 @@ class ExpressionValidator extends ConstraintValidator
         }
 
         $variables = array();
-<<<<<<< HEAD
+ 
         $variables['value'] = $value;
         $variables['this'] = $this->context->getObject();
 
@@ -110,7 +108,6 @@ class ExpressionValidator extends ConstraintValidator
                     ->setCode(Expression::EXPRESSION_FAILED_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -125,7 +122,7 @@ class ExpressionValidator extends ConstraintValidator
 
         return $this->expressionLanguage;
     }
-<<<<<<< HEAD
+ 
 =======
 
     private function getPropertyAccessor()
@@ -139,5 +136,4 @@ class ExpressionValidator extends ConstraintValidator
 
         return $this->propertyAccessor;
     }
->>>>>>> web and vendor directory from composer install
 }

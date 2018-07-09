@@ -7,7 +7,6 @@
  * (c) Fabien Potencier
 =======
  * (c) 2010 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -29,7 +28,6 @@
  *
  * @final
 =======
->>>>>>> web and vendor directory from composer install
  */
 class Twig_TokenParser_Spaceless extends Twig_TokenParser
 {
@@ -58,4 +56,3 @@ class Twig_TokenParser_Spaceless extends Twig_TokenParser
 
 class_alias('Twig_TokenParser_Spaceless', 'Twig\TokenParser\SpacelessTokenParser', false);
 =======
->>>>>>> web and vendor directory from composer install

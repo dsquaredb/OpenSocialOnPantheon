@@ -5,23 +5,19 @@
  *
  * The MIT License (MIT)
  *
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
  * Copyright (c) 2015 - 2017 Paragon Initiative Enterprises
 =======
  * Copyright (c) 2015 Paragon Initiative Enterprises
->>>>>>> web and vendor directory from composer install
 =======
  * Copyright (c) 2015 - 2018 Paragon Initiative Enterprises
->>>>>>> Update Open Social to 8.x-2.1
 =======
  * Copyright (c) 2015 - 2017 Paragon Initiative Enterprises
->>>>>>> revert Open Social update
 =======
  * Copyright (c) 2015 - 2018 Paragon Initiative Enterprises
->>>>>>> updating open social
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -42,11 +38,10 @@
  * SOFTWARE.
  */
 
-<<<<<<< HEAD
+ 
 if (!is_callable('RandomCompat_strlen')) {
 =======
 if (!function_exists('RandomCompat_strlen')) {
->>>>>>> web and vendor directory from composer install
     if (
         defined('MB_OVERLOAD_STRING')
             &&
@@ -72,11 +67,10 @@ if (!function_exists('RandomCompat_strlen')) {
                 );
             }
 
-<<<<<<< HEAD
+ 
             return (int) mb_strlen($binary_string, '8bit');
 =======
             return mb_strlen($binary_string, '8bit');
->>>>>>> web and vendor directory from composer install
         }
 
     } else {
@@ -98,20 +92,18 @@ if (!function_exists('RandomCompat_strlen')) {
                     'RandomCompat_strlen() expects a string'
                 );
             }
-<<<<<<< HEAD
+ 
             return (int) strlen($binary_string);
 =======
             return strlen($binary_string);
->>>>>>> web and vendor directory from composer install
         }
     }
 }
 
-<<<<<<< HEAD
+ 
 if (!is_callable('RandomCompat_substr')) {
 =======
 if (!function_exists('RandomCompat_substr')) {
->>>>>>> web and vendor directory from composer install
 
     if (
         defined('MB_OVERLOAD_STRING')
@@ -151,29 +143,25 @@ if (!function_exists('RandomCompat_substr')) {
                  * mb_substr($str, 0, NULL, '8bit') returns an empty string on
                  * PHP 5.3, so we have to find the length ourselves.
                  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
 =======
                 /** @var int $length */
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
                 /** @var int $length */
->>>>>>> updating open social
                 $length = RandomCompat_strlen($binary_string) - $start;
 =======
                 $length = RandomCompat_strlen($length) - $start;
->>>>>>> web and vendor directory from composer install
             } elseif (!is_int($length)) {
                 throw new TypeError(
                     'RandomCompat_substr(): Third argument should be an integer, or omitted'
                 );
             }
 
-<<<<<<< HEAD
+ 
             // Consistency with PHP's behavior
             if ($start === RandomCompat_strlen($binary_string) && $length === 0) {
                 return '';
@@ -182,29 +170,24 @@ if (!function_exists('RandomCompat_substr')) {
                 return '';
             }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             return (string) mb_substr($binary_string, $start, $length, '8bit');
 =======
             return mb_substr($binary_string, $start, $length, '8bit');
->>>>>>> web and vendor directory from composer install
 =======
 =======
->>>>>>> updating open social
             return (string) mb_substr(
                 (string) $binary_string,
                 (int) $start,
                 (int) $length,
                 '8bit'
             );
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
             return (string) mb_substr($binary_string, $start, $length, '8bit');
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
         }
 
     } else {
@@ -243,10 +226,10 @@ if (!function_exists('RandomCompat_substr')) {
                     );
                 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
                 return (string) substr($binary_string, $start, $length);
             }
 
@@ -256,29 +239,25 @@ if (!function_exists('RandomCompat_substr')) {
             }
 
             return substr($binary_string, $start);
->>>>>>> web and vendor directory from composer install
 =======
 =======
->>>>>>> updating open social
                 return (string) substr(
                     (string )$binary_string,
                     (int) $start,
                     (int) $length
                 );
-<<<<<<< HEAD
+ 
             }
 
             return (string) substr(
                 (string) $binary_string,
                 (int) $start
             );
->>>>>>> Update Open Social to 8.x-2.1
 =======
                 return (string) substr($binary_string, $start, $length);
             }
 
             return (string) substr($binary_string, $start);
->>>>>>> revert Open Social update
 =======
             }
 
@@ -286,7 +265,6 @@ if (!function_exists('RandomCompat_substr')) {
                 (string) $binary_string,
                 (int) $start
             );
->>>>>>> updating open social
         }
     }
 }

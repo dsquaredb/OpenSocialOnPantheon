@@ -113,7 +113,7 @@ class IntegrationTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($container->hasDefinition('b'));
         $this->assertFalse($container->hasDefinition('c'), 'Service C was not inlined.');
     }
-<<<<<<< HEAD
+ 
 =======
 
     /**
@@ -220,5 +220,4 @@ class IntegrationTestStubParent
     public function setSunshine($type)
     {
     }
->>>>>>> Update Open Social to 8.x-2.1
 }

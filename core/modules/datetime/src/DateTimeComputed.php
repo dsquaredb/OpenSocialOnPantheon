@@ -47,7 +47,7 @@ class DateTimeComputed extends TypedData {
     $value = $item->{($this->definition->getSetting('date source'))};
 
     $datetime_type = $item->getFieldDefinition()->getSetting('datetime_type');
-    $storage_format = $datetime_type === DateTimeItem::DATETIME_TYPE_DATE ? DateTimeItemInterface::DATE_STORAGE_FORMAT : DateTimeItemInterface::DATETIME_STORAGE_FORMAT;
+    $storage_format = $datetime_type   DateTimeItem::DATETIME_TYPE_DATE ? DateTimeItemInterface::DATE_STORAGE_FORMAT : DateTimeItemInterface::DATETIME_STORAGE_FORMAT;
     try {
       $date = DrupalDateTime::createFromFormat($storage_format, $value, DateTimeItemInterface::STORAGE_TIMEZONE);
       if ($date instanceof DrupalDateTime && !$date->hasErrors()) {
@@ -59,7 +59,7 @@ class DateTimeComputed extends TypedData {
         // zones.
         // @see \Drupal\Component\Datetime\DateTimePlus::setDefaultDateTime()
         // @see http://php.net/manual/datetime.createfromformat.php
-        if ($datetime_type === DateTimeItem::DATETIME_TYPE_DATE) {
+        if ($datetime_type   DateTimeItem::DATETIME_TYPE_DATE) {
           $this->date->setDefaultDateTime();
         }
       }

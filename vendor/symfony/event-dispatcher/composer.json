@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-<<<<<<< HEAD
+ 
         "php": "^5.5.9|>=7.0.8"
     },
     "require-dev": {
@@ -29,7 +29,7 @@
     "conflict": {
         "symfony/dependency-injection": "<3.3"
     },
-=======
+  =
         "php": ">=5.3.9"
     },
     "require-dev": {
@@ -53,9 +53,9 @@
     "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
-<<<<<<< HEAD
+ 
             "dev-master": "3.4-dev"
-=======
+  =
             "dev-master": "2.8-dev"
 >>>>>>> web and vendor directory from composer install
         }

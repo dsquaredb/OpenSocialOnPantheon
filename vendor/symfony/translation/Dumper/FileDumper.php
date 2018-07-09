@@ -12,11 +12,10 @@
 namespace Symfony\Component\Translation\Dumper;
 
 use Symfony\Component\Translation\MessageCatalogue;
-<<<<<<< HEAD
+ 
 use Symfony\Component\Translation\Exception\InvalidArgumentException;
 use Symfony\Component\Translation\Exception\RuntimeException;
 =======
->>>>>>> web and vendor directory from composer install
 
 /**
  * FileDumper is an implementation of DumperInterface that dump a message catalogue to file(s).
@@ -69,11 +68,10 @@ abstract class FileDumper implements DumperInterface
     public function dump(MessageCatalogue $messages, $options = array())
     {
         if (!array_key_exists('path', $options)) {
-<<<<<<< HEAD
+ 
             throw new InvalidArgumentException('The file dumper needs a path option.');
 =======
             throw new \InvalidArgumentException('The file dumper needs a path option.');
->>>>>>> web and vendor directory from composer install
         }
 
         // save a file for each domain
@@ -82,20 +80,18 @@ abstract class FileDumper implements DumperInterface
             $fullpath = $options['path'].'/'.$this->getRelativePath($domain, $messages->getLocale());
             if (file_exists($fullpath)) {
                 if ($this->backup) {
-<<<<<<< HEAD
+ 
                     @trigger_error('Creating a backup while dumping a message catalogue is deprecated since Symfony 3.1 and will be removed in 4.0. Use TranslationWriter::disableBackup() to disable the backup.', E_USER_DEPRECATED);
 =======
->>>>>>> web and vendor directory from composer install
                     copy($fullpath, $fullpath.'~');
                 }
             } else {
                 $directory = dirname($fullpath);
                 if (!file_exists($directory) && !@mkdir($directory, 0777, true)) {
-<<<<<<< HEAD
+ 
                     throw new RuntimeException(sprintf('Unable to create directory "%s".', $directory));
 =======
                     throw new \RuntimeException(sprintf('Unable to create directory "%s".', $directory));
->>>>>>> web and vendor directory from composer install
                 }
             }
             // save file
@@ -106,18 +102,17 @@ abstract class FileDumper implements DumperInterface
     /**
      * Transforms a domain of a message catalogue to its string representation.
      *
-<<<<<<< HEAD
+ 
 =======
      * Override this function in child class if $options is used for message formatting.
      *
->>>>>>> web and vendor directory from composer install
      * @param MessageCatalogue $messages
      * @param string           $domain
      * @param array            $options
      *
      * @return string representation
      */
-<<<<<<< HEAD
+ 
     abstract public function formatCatalogue(MessageCatalogue $messages, $domain, array $options = array());
 =======
     public function formatCatalogue(MessageCatalogue $messages, $domain, array $options = array())
@@ -141,7 +136,6 @@ abstract class FileDumper implements DumperInterface
     {
         throw new \LogicException('The "FileDumper::format" method needs to be overwritten, you should implement either "format" or "formatCatalogue".');
     }
->>>>>>> web and vendor directory from composer install
 
     /**
      * Gets the file extension of the dumper.

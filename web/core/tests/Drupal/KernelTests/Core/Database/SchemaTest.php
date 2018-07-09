@@ -522,7 +522,6 @@ class SchemaTest extends KernelTestBase {
             'initial'  => 100,
           ],
         ];
->>>>>>> Update Open Social to 8.x-2.1
 
         foreach ($variations as $variation) {
           $field_spec = $variation + $base_field_spec;
@@ -583,12 +582,9 @@ class SchemaTest extends KernelTestBase {
 <<<<<<< HEAD
 <<<<<<< HEAD
         'test_nullable_field' => ['type' => 'int', 'not null' => FALSE],
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
         'test_nullable_field' => ['type' => 'int', 'not null' => FALSE],
->>>>>>> updating open social
         'test_field' => $field_spec,
       ),
       'primary key' => array('serial_column'),
@@ -619,7 +615,6 @@ class SchemaTest extends KernelTestBase {
       ],
       'primary key' => ['serial_column'],
     ];
->>>>>>> Update Open Social to 8.x-2.1
     db_create_table($table_name, $table_spec);
     $this->pass(format_string('Table %table created.', array('%table' => $table_name)));
 
@@ -633,12 +628,9 @@ class SchemaTest extends KernelTestBase {
 <<<<<<< HEAD
 <<<<<<< HEAD
         ->fields(['test_nullable_field' => 100])
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
         ->fields(['test_nullable_field' => 100])
->>>>>>> updating open social
         ->execute();
     }
 

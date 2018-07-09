@@ -169,19 +169,16 @@ class Feed
      */
     public function setItunesImage($value)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         if (!Uri::factory($value)->isValid()) {
 =======
         if (! is_string($value) || ! Uri::factory($value)->isValid()) {
->>>>>>> Update Open Social to 8.x-2.1
 =======
         if (! Uri::factory($value)->isValid()) {
->>>>>>> revert Open Social update
 =======
         if (! is_string($value) || ! Uri::factory($value)->isValid()) {
->>>>>>> updating open social
             throw new Writer\Exception\InvalidArgumentException('invalid parameter: "image" may only'
             . ' be a valid URI/IRI');
         }
@@ -417,19 +414,16 @@ class Feed
                 'invalid method: ' . $method
             );
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         if (!array_key_exists($point, $this->data) || empty($this->data[$point])) {
 =======
 
 =======
->>>>>>> revert Open Social update
 =======
 
->>>>>>> updating open social
         if (! array_key_exists($point, $this->data) || empty($this->data[$point])) {
->>>>>>> Update Open Social to 8.x-2.1
             return;
         }
         return $this->data[$point];

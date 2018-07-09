@@ -256,7 +256,7 @@ class AccessResultTest extends UnitTestCase {
    * @covers ::orIf
    */
   public function testOrIf() {
-<<<<<<< HEAD
+ 
     $neutral = AccessResult::neutral();
     $allowed = AccessResult::allowed();
     $forbidden = AccessResult::forbidden();
@@ -266,17 +266,14 @@ class AccessResultTest extends UnitTestCase {
     $neutral_reasonless = AccessResult::neutral();
     $allowed = AccessResult::allowed();
     $forbidden = AccessResult::forbidden('forbidden message');
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
     $forbidden_other = AccessResult::forbidden('other forbidden message');
     $forbidden_reasonless = AccessResult::forbidden();
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
     $forbidden_other = AccessResult::forbidden('other forbidden message');
     $forbidden_reasonless = AccessResult::forbidden();
->>>>>>> updating open social
     $unused_access_result_due_to_lazy_evaluation = $this->getMock('\Drupal\Core\Access\AccessResultInterface');
     $unused_access_result_due_to_lazy_evaluation->expects($this->never())
       ->method($this->anything());

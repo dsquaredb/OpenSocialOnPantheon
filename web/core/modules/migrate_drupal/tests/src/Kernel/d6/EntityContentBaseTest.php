@@ -114,21 +114,18 @@ class EntityContentBaseTest extends MigrateDrupal6TestBase {
     $message = $this->prophesize(MigrateMessageInterface::class);
     // Match the expected message. Can't use default argument types, because
     // we need to convert to string from TranslatableMarkup.
-<<<<<<< HEAD
+ 
     $argument = Argument::that(function($msg) {
       return strpos((string) $msg, "This entity type does not support translation") !== FALSE;
 =======
     $argument = Argument::that(function ($msg) {
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
       return strpos((string) $msg, htmlentities('The "no_language_entity_test" entity type does not support translations.')) !== FALSE;
->>>>>>> Update Open Social to 8.x-2.1
 =======
       return strpos((string) $msg, "This entity type does not support translation") !== FALSE;
->>>>>>> revert Open Social update
 =======
       return strpos((string) $msg, htmlentities('The "no_language_entity_test" entity type does not support translations.')) !== FALSE;
->>>>>>> updating open social
     });
     $message->display($argument, Argument::any())
       ->shouldBeCalled();

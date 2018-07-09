@@ -23,17 +23,16 @@ use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
  */
 class RouterDataCollector extends DataCollector
 {
-<<<<<<< HEAD
+ 
     /**
      * @var \SplObjectStorage
      */
 =======
->>>>>>> web and vendor directory from composer install
     protected $controllers;
 
     public function __construct()
     {
-<<<<<<< HEAD
+ 
         $this->reset();
 =======
         $this->controllers = new \SplObjectStorage();
@@ -43,7 +42,6 @@ class RouterDataCollector extends DataCollector
             'url' => null,
             'route' => null,
         );
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -63,7 +61,7 @@ class RouterDataCollector extends DataCollector
         unset($this->controllers[$request]);
     }
 
-<<<<<<< HEAD
+ 
     public function reset()
     {
         $this->controllers = new \SplObjectStorage();
@@ -76,7 +74,6 @@ class RouterDataCollector extends DataCollector
     }
 
 =======
->>>>>>> web and vendor directory from composer install
     protected function guessRoute(Request $request, $controller)
     {
         return 'n/a';
@@ -84,11 +81,10 @@ class RouterDataCollector extends DataCollector
 
     /**
      * Remembers the controller associated to each request.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param FilterControllerEvent $event The filter controller event
->>>>>>> web and vendor directory from composer install
      */
     public function onKernelController(FilterControllerEvent $event)
     {

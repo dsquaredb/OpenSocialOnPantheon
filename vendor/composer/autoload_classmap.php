@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-<<<<<<< HEAD
+ 
     'ArithmeticError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
     'Asm89\\Stack\\Cors' => $vendorDir . '/asm89/stack-cors/src/Asm89/Stack/Cors.php',
     'Asm89\\Stack\\CorsService' => $vendorDir . '/asm89/stack-cors/src/Asm89/Stack/CorsService.php',
@@ -3470,7 +3470,7 @@ return array(
     'Zend\\Stdlib\\StringWrapper\\MbString' => $vendorDir . '/zendframework/zend-stdlib/src/StringWrapper/MbString.php',
     'Zend\\Stdlib\\StringWrapper\\Native' => $vendorDir . '/zendframework/zend-stdlib/src/StringWrapper/Native.php',
     'Zend\\Stdlib\\StringWrapper\\StringWrapperInterface' => $vendorDir . '/zendframework/zend-stdlib/src/StringWrapper/StringWrapperInterface.php',
-=======
+  =
     'CallbackFilterIterator' => $vendorDir . '/symfony/polyfill-php54/Resources/stubs/CallbackFilterIterator.php',
     'Console_Table' => $vendorDir . '/pear/console_table/Table.php',
     'Drupal' => $baseDir . '/web/core/lib/Drupal.php',
@@ -3919,5 +3919,4 @@ return array(
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/polyfill-php54/Resources/stubs/SessionHandlerInterface.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
->>>>>>> web and vendor directory from composer install
 );

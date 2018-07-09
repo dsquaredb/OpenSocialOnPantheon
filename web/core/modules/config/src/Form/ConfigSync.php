@@ -340,19 +340,16 @@ class ConfigSync extends FormBase {
           'init_message' => t('Starting configuration synchronization.'),
           'progress_message' => t('Completed step @current of @total.'),
           'error_message' => t('Configuration synchronization has encountered an error.'),
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
           'file' => __DIR__ . '/../../config.admin.inc',
         );
 =======
 =======
           'file' => __DIR__ . '/../../config.admin.inc',
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
         ];
->>>>>>> Update Open Social to 8.x-2.1
         foreach ($sync_steps as $sync_step) {
           $batch['operations'][] = array(array(get_class($this), 'processBatch'), array($config_importer, $sync_step));
         }

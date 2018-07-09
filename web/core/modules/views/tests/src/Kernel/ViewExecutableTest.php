@@ -38,19 +38,16 @@ class ViewExecutableTest extends ViewsKernelTestBase {
    *
    * @var array
    */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
   public static $testViews = array('test_destroy', 'test_executable_displays');
 =======
   public static $testViews = ['test_destroy', 'test_executable_displays', 'test_argument_dependency'];
->>>>>>> Update Open Social to 8.x-2.1
 =======
   public static $testViews = ['test_destroy', 'test_executable_displays'];
->>>>>>> revert Open Social update
 =======
   public static $testViews = ['test_destroy', 'test_executable_displays', 'test_argument_dependency'];
->>>>>>> updating open social
 
   /**
    * Properties that should be stored in the configuration.

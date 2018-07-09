@@ -62,7 +62,7 @@ interface OutputInterface
     public function getVerbosity();
 
     /**
-<<<<<<< HEAD
+ 
      * Returns whether verbosity is quiet (-q).
      *
      * @return bool true if verbosity is set to VERBOSITY_QUIET, false otherwise
@@ -92,7 +92,6 @@ interface OutputInterface
 
     /**
 =======
->>>>>>> web and vendor directory from composer install
      * Sets the decorated flag.
      *
      * @param bool $decorated Whether to decorate the messages
@@ -106,14 +105,13 @@ interface OutputInterface
      */
     public function isDecorated();
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * Sets output formatter.
      *
      * @param OutputFormatterInterface $formatter
      */
->>>>>>> web and vendor directory from composer install
     public function setFormatter(OutputFormatterInterface $formatter);
 
     /**

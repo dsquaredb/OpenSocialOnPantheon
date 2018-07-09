@@ -11,10 +11,9 @@
 
 namespace Symfony\Component\Validator\Constraints;
 
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
@@ -51,7 +50,7 @@ class IssnValidator extends ConstraintValidator
 
         // 1234-567X
         //     ^
-<<<<<<< HEAD
+ 
         if (isset($canonical[4]) && '-' === $canonical[4]) {
             // remove hyphen
             $canonical = substr($canonical, 0, 4).substr($canonical, 5);
@@ -76,7 +75,6 @@ class IssnValidator extends ConstraintValidator
                     ->setCode(Issn::MISSING_HYPHEN_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
 
             return;
         }
@@ -84,7 +82,7 @@ class IssnValidator extends ConstraintValidator
         $length = strlen($canonical);
 
         if ($length < 8) {
-<<<<<<< HEAD
+ 
             $this->context->buildViolation($constraint->message)
                 ->setParameter('{{ value }}', $this->formatValue($value))
                 ->setCode(Issn::TOO_SHORT_ERROR)
@@ -101,13 +99,12 @@ class IssnValidator extends ConstraintValidator
                     ->setCode(Issn::TOO_SHORT_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
 
             return;
         }
 
         if ($length > 8) {
-<<<<<<< HEAD
+ 
             $this->context->buildViolation($constraint->message)
                 ->setParameter('{{ value }}', $this->formatValue($value))
                 ->setCode(Issn::TOO_LONG_ERROR)
@@ -124,7 +121,6 @@ class IssnValidator extends ConstraintValidator
                     ->setCode(Issn::TOO_LONG_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
 
             return;
         }
@@ -132,7 +128,7 @@ class IssnValidator extends ConstraintValidator
         // 1234567X
         // ^^^^^^^ digits only
         if (!ctype_digit(substr($canonical, 0, 7))) {
-<<<<<<< HEAD
+ 
             $this->context->buildViolation($constraint->message)
                 ->setParameter('{{ value }}', $this->formatValue($value))
                 ->setCode(Issn::INVALID_CHARACTERS_ERROR)
@@ -149,14 +145,13 @@ class IssnValidator extends ConstraintValidator
                     ->setCode(Issn::INVALID_CHARACTERS_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
 
             return;
         }
 
         // 1234567X
         //        ^ digit, x or X
-<<<<<<< HEAD
+ 
         if (!ctype_digit($canonical[7]) && 'x' !== $canonical[7] && 'X' !== $canonical[7]) {
             $this->context->buildViolation($constraint->message)
                 ->setParameter('{{ value }}', $this->formatValue($value))
@@ -175,14 +170,13 @@ class IssnValidator extends ConstraintValidator
                     ->setCode(Issn::INVALID_CHARACTERS_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
 
             return;
         }
 
         // 1234567X
         //        ^ case-sensitive?
-<<<<<<< HEAD
+ 
         if ($constraint->caseSensitive && 'x' === $canonical[7]) {
             $this->context->buildViolation($constraint->message)
                 ->setParameter('{{ value }}', $this->formatValue($value))
@@ -201,13 +195,12 @@ class IssnValidator extends ConstraintValidator
                     ->setCode(Issn::INVALID_CASE_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
 
             return;
         }
 
         // Calculate a checksum. "X" equals 10.
-<<<<<<< HEAD
+ 
         $checkSum = 'X' === $canonical[7]
         || 'x' === $canonical[7]
         ? 10
@@ -246,7 +239,6 @@ class IssnValidator extends ConstraintValidator
                     ->setCode(Issn::CHECKSUM_FAILED_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
         }
     }
 }

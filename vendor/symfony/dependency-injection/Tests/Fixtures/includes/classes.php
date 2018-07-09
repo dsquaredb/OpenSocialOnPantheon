@@ -59,7 +59,7 @@ class BarUserClass
         $this->bar = $bar;
     }
 }
-<<<<<<< HEAD
+ 
 =======
 
 class MethodCallClass
@@ -132,4 +132,3 @@ class BarCircular
         $this->foobar = $foobar;
     }
 }
->>>>>>> Update Open Social to 8.x-2.1

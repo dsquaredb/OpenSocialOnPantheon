@@ -16,12 +16,11 @@
  */
 abstract class Twig_BaseNodeVisitor implements Twig_NodeVisitorInterface
 {
-<<<<<<< HEAD
+ 
 =======
     /**
      * {@inheritdoc}
      */
->>>>>>> web and vendor directory from composer install
     final public function enterNode(Twig_NodeInterface $node, Twig_Environment $env)
     {
         if (!$node instanceof Twig_Node) {
@@ -31,12 +30,11 @@ abstract class Twig_BaseNodeVisitor implements Twig_NodeVisitorInterface
         return $this->doEnterNode($node, $env);
     }
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * {@inheritdoc}
      */
->>>>>>> web and vendor directory from composer install
     final public function leaveNode(Twig_NodeInterface $node, Twig_Environment $env)
     {
         if (!$node instanceof Twig_Node) {
@@ -49,12 +47,11 @@ abstract class Twig_BaseNodeVisitor implements Twig_NodeVisitorInterface
     /**
      * Called before child nodes are visited.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Twig_Node        $node The node to visit
      * @param Twig_Environment $env  The Twig environment instance
      *
->>>>>>> web and vendor directory from composer install
      * @return Twig_Node The modified node
      */
     abstract protected function doEnterNode(Twig_Node $node, Twig_Environment $env);
@@ -62,20 +59,18 @@ abstract class Twig_BaseNodeVisitor implements Twig_NodeVisitorInterface
     /**
      * Called after child nodes are visited.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Twig_Node        $node The node to visit
      * @param Twig_Environment $env  The Twig environment instance
      *
->>>>>>> web and vendor directory from composer install
      * @return Twig_Node|false The modified node or false if the node must be removed
      */
     abstract protected function doLeaveNode(Twig_Node $node, Twig_Environment $env);
 }
-<<<<<<< HEAD
+ 
 
 class_alias('Twig_BaseNodeVisitor', 'Twig\NodeVisitor\AbstractNodeVisitor', false);
 class_exists('Twig_Environment');
 class_exists('Twig_Node');
 =======
->>>>>>> web and vendor directory from composer install

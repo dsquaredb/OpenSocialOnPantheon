@@ -30,7 +30,7 @@ class TextProcessed extends TypedData implements CacheableDependencyInterface {
   public function __construct(DataDefinitionInterface $definition, $name = NULL, TypedDataInterface $parent = NULL) {
     parent::__construct($definition, $name, $parent);
 
-    if ($definition->getSetting('text source') === NULL) {
+    if ($definition->getSetting('text source')   NULL) {
       throw new \InvalidArgumentException("The definition's 'text source' key has to specify the name of the text property to be processed.");
     }
   }
@@ -47,7 +47,7 @@ class TextProcessed extends TypedData implements CacheableDependencyInterface {
     $text = $item->{($this->definition->getSetting('text source'))};
 
     // Avoid doing unnecessary work on empty strings.
-    if (!isset($text) || $text === '') {
+    if (!isset($text) || $text   '') {
       $this->processed = new FilterProcessResult('');
     }
     else {

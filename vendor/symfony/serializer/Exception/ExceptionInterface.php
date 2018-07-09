@@ -16,10 +16,9 @@ namespace Symfony\Component\Serializer\Exception;
  *
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
  */
-<<<<<<< HEAD
+ 
 interface ExceptionInterface
 =======
 interface ExceptionInterface extends Exception
->>>>>>> web and vendor directory from composer install
 {
 }

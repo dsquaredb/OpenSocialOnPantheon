@@ -331,13 +331,10 @@ function hook_menu_local_tasks_alter(&$data, $route_name, \Drupal\Core\Cache\Ref
 <<<<<<< HEAD
   // The tab we're adding is dependent on a user's access to add content.
   $cacheability->addCacheTags(['user.permissions']);
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
   // The tab we're adding is dependent on a user's access to add content.
   $cacheability->addCacheTags(['user.permissions']);
->>>>>>> updating open social
 }
 
 /**

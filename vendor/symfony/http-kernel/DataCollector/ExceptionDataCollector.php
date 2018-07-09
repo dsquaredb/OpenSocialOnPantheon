@@ -35,7 +35,7 @@ class ExceptionDataCollector extends DataCollector
     }
 
     /**
-<<<<<<< HEAD
+ 
      * {@inheritdoc}
      */
     public function reset()
@@ -45,7 +45,6 @@ class ExceptionDataCollector extends DataCollector
 
     /**
 =======
->>>>>>> web and vendor directory from composer install
      * Checks if the exception is not null.
      *
      * @return bool true if the exception is not null, false otherwise

@@ -13,10 +13,9 @@ namespace Symfony\Component\Validator\Mapping;
 
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Validator\ValidationVisitorInterface;
->>>>>>> web and vendor directory from composer install
 
 /**
  * Stores all metadata needed for validating a class property.
@@ -30,7 +29,7 @@ use Symfony\Component\Validator\ValidationVisitorInterface;
  *
  * @see PropertyMetadataInterface
  */
-<<<<<<< HEAD
+ 
 abstract class MemberMetadata extends GenericMetadata implements PropertyMetadataInterface
 {
     /**
@@ -40,7 +39,6 @@ abstract class MemberMetadata extends ElementMetadata implements PropertyMetadat
     /**
      * @var string
      *
->>>>>>> web and vendor directory from composer install
      * @internal This property is public in order to reduce the size of the
      *           class' serialized representation. Do not access it. Use
      *           {@link getClassName()} instead.
@@ -48,11 +46,10 @@ abstract class MemberMetadata extends ElementMetadata implements PropertyMetadat
     public $class;
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * @var string
      *
->>>>>>> web and vendor directory from composer install
      * @internal This property is public in order to reduce the size of the
      *           class' serialized representation. Do not access it. Use
      *           {@link getName()} instead.
@@ -60,11 +57,10 @@ abstract class MemberMetadata extends ElementMetadata implements PropertyMetadat
     public $name;
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * @var string
      *
->>>>>>> web and vendor directory from composer install
      * @internal This property is public in order to reduce the size of the
      *           class' serialized representation. Do not access it. Use
      *           {@link getPropertyName()} instead.
@@ -77,11 +73,10 @@ abstract class MemberMetadata extends ElementMetadata implements PropertyMetadat
     private $reflMember = array();
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param string $class    The name of the class this member is defined on
      * @param string $name     The name of the member
      * @param string $property The property the member belongs to
@@ -95,7 +90,7 @@ abstract class MemberMetadata extends ElementMetadata implements PropertyMetadat
 
     /**
      * {@inheritdoc}
-<<<<<<< HEAD
+ 
 =======
      *
      * @deprecated since version 2.5, to be removed in 3.0.
@@ -113,7 +108,6 @@ abstract class MemberMetadata extends ElementMetadata implements PropertyMetadat
 
     /**
      * {@inheritdoc}
->>>>>>> web and vendor directory from composer install
      */
     public function addConstraint(Constraint $constraint)
     {
@@ -204,7 +198,7 @@ abstract class MemberMetadata extends ElementMetadata implements PropertyMetadat
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Returns whether objects stored in this member should be validated.
      *
@@ -253,7 +247,6 @@ abstract class MemberMetadata extends ElementMetadata implements PropertyMetadat
     }
 
     /**
->>>>>>> web and vendor directory from composer install
      * Returns the reflection instance for accessing the member's value.
      *
      * @param object|string $objectOrClassName The object or the class name

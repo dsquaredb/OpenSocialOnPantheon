@@ -3,11 +3,10 @@
 /*
  * This file is part of Twig.
  *
-<<<<<<< HEAD
+ 
  * (c) Fabien Potencier
 =======
  * (c) 2010 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,11 +20,10 @@
  * You can configure which optimizations you want to activate via the
  * optimizer mode.
  *
-<<<<<<< HEAD
+ 
  * @final
  *
 =======
->>>>>>> web and vendor directory from composer install
  * @author Fabien Potencier <fabien@symfony.com>
  */
 class Twig_NodeVisitor_Optimizer extends Twig_BaseNodeVisitor
@@ -43,11 +41,10 @@ class Twig_NodeVisitor_Optimizer extends Twig_BaseNodeVisitor
     protected $inABody = false;
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param int $optimizers The optimizer mode
      */
     public function __construct($optimizers = -1)
@@ -59,12 +56,11 @@ class Twig_NodeVisitor_Optimizer extends Twig_BaseNodeVisitor
         $this->optimizers = $optimizers;
     }
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * {@inheritdoc}
      */
->>>>>>> web and vendor directory from composer install
     protected function doEnterNode(Twig_Node $node, Twig_Environment $env)
     {
         if (self::OPTIMIZE_FOR === (self::OPTIMIZE_FOR & $this->optimizers)) {
@@ -74,11 +70,10 @@ class Twig_NodeVisitor_Optimizer extends Twig_BaseNodeVisitor
         if (PHP_VERSION_ID < 50400 && self::OPTIMIZE_VAR_ACCESS === (self::OPTIMIZE_VAR_ACCESS & $this->optimizers) && !$env->isStrictVariables() && !$env->hasExtension('Twig_Extension_Sandbox')) {
             if ($this->inABody) {
                 if (!$node instanceof Twig_Node_Expression) {
-<<<<<<< HEAD
+ 
                     if ('Twig_Node' !== get_class($node)) {
 =======
                     if (get_class($node) !== 'Twig_Node') {
->>>>>>> web and vendor directory from composer install
                         array_unshift($this->prependedNodes, array());
                     }
                 } else {
@@ -92,12 +87,11 @@ class Twig_NodeVisitor_Optimizer extends Twig_BaseNodeVisitor
         return $node;
     }
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * {@inheritdoc}
      */
->>>>>>> web and vendor directory from composer install
     protected function doLeaveNode(Twig_Node $node, Twig_Environment $env)
     {
         $expression = $node instanceof Twig_Node_Expression;
@@ -116,11 +110,10 @@ class Twig_NodeVisitor_Optimizer extends Twig_BaseNodeVisitor
             if ($node instanceof Twig_Node_Body) {
                 $this->inABody = false;
             } elseif ($this->inABody) {
-<<<<<<< HEAD
+ 
                 if (!$expression && 'Twig_Node' !== get_class($node) && $prependedNodes = array_shift($this->prependedNodes)) {
 =======
                 if (!$expression && get_class($node) !== 'Twig_Node' && $prependedNodes = array_shift($this->prependedNodes)) {
->>>>>>> web and vendor directory from composer install
                     $nodes = array();
                     foreach (array_unique($prependedNodes) as $name) {
                         $nodes[] = new Twig_Node_SetTemp($name, $node->getTemplateLine());
@@ -153,12 +146,11 @@ class Twig_NodeVisitor_Optimizer extends Twig_BaseNodeVisitor
      *
      *   * "echo $this->render(Parent)Block()" with "$this->display(Parent)Block()"
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Twig_NodeInterface $node A Node
      * @param Twig_Environment   $env  The current Twig environment
      *
->>>>>>> web and vendor directory from composer install
      * @return Twig_NodeInterface
      */
     protected function optimizePrintNode(Twig_NodeInterface $node, Twig_Environment $env)
@@ -167,7 +159,7 @@ class Twig_NodeVisitor_Optimizer extends Twig_BaseNodeVisitor
             return $node;
         }
 
-<<<<<<< HEAD
+ 
         $exprNode = $node->getNode('expr');
         if (
             $exprNode instanceof Twig_Node_Expression_BlockReference ||
@@ -184,7 +176,6 @@ class Twig_NodeVisitor_Optimizer extends Twig_BaseNodeVisitor
             $node->getNode('expr')->setAttribute('output', true);
 
             return $node->getNode('expr');
->>>>>>> web and vendor directory from composer install
         }
 
         return $node;
@@ -193,12 +184,11 @@ class Twig_NodeVisitor_Optimizer extends Twig_BaseNodeVisitor
     /**
      * Removes "raw" filters.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Twig_NodeInterface $node A Node
      * @param Twig_Environment   $env  The current Twig environment
      *
->>>>>>> web and vendor directory from composer install
      * @return Twig_NodeInterface
      */
     protected function optimizeRawFilter(Twig_NodeInterface $node, Twig_Environment $env)
@@ -212,12 +202,11 @@ class Twig_NodeVisitor_Optimizer extends Twig_BaseNodeVisitor
 
     /**
      * Optimizes "for" tag by removing the "loop" variable creation whenever possible.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param Twig_NodeInterface $node A Node
      * @param Twig_Environment   $env  The current Twig environment
->>>>>>> web and vendor directory from composer install
      */
     protected function enterOptimizeFor(Twig_NodeInterface $node, Twig_Environment $env)
     {
@@ -282,12 +271,11 @@ class Twig_NodeVisitor_Optimizer extends Twig_BaseNodeVisitor
 
     /**
      * Optimizes "for" tag by removing the "loop" variable creation whenever possible.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param Twig_NodeInterface $node A Node
      * @param Twig_Environment   $env  The current Twig environment
->>>>>>> web and vendor directory from composer install
      */
     protected function leaveOptimizeFor(Twig_NodeInterface $node, Twig_Environment $env)
     {
@@ -310,19 +298,17 @@ class Twig_NodeVisitor_Optimizer extends Twig_BaseNodeVisitor
         }
     }
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * {@inheritdoc}
      */
->>>>>>> web and vendor directory from composer install
     public function getPriority()
     {
         return 255;
     }
 }
-<<<<<<< HEAD
+ 
 
 class_alias('Twig_NodeVisitor_Optimizer', 'Twig\NodeVisitor\OptimizerNodeVisitor', false);
 =======
->>>>>>> web and vendor directory from composer install

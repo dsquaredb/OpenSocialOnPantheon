@@ -47,7 +47,7 @@ class TraversalStrategy
     const TRAVERSE = 4;
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Specifies that nested instances of {@link \Traversable} should never be
      * iterated. Can be combined with {@link IMPLICIT} or {@link TRAVERSE}.
@@ -59,7 +59,6 @@ class TraversalStrategy
     const STOP_RECURSION = 8;
 
     /**
->>>>>>> web and vendor directory from composer install
      * Not instantiable.
      */
     private function __construct()

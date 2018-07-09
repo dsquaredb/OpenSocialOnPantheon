@@ -19,7 +19,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
  *
-<<<<<<< HEAD
+ 
  * @internal version 2.5. Code against ExecutionContextFactoryInterface instead.
  */
 class ExecutionContextFactory implements ExecutionContextFactoryInterface
@@ -39,7 +39,6 @@ class ExecutionContextFactory implements ExecutionContextFactoryInterface
     /**
      * @var string|null
      */
->>>>>>> web and vendor directory from composer install
     private $translationDomain;
 
     /**

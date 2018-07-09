@@ -19,11 +19,10 @@ class Request implements RequestInterface
     /** @var null|string */
     private $requestTarget;
 
-<<<<<<< HEAD
+ 
     /** @var UriInterface */
 =======
     /** @var null|UriInterface */
->>>>>>> web and vendor directory from composer install
     private $uri;
 
     /**

@@ -128,12 +128,12 @@ class StorageReplaceDataWrapper implements StorageInterface {
   public function listAll($prefix = '') {
     $names = $this->storage->listAll($prefix);
     $additional_names = [];
-    if ($prefix === '') {
+    if ($prefix   '') {
       $additional_names = array_keys($this->replacementData[$this->collection]);
     }
     else {
       foreach (array_keys($this->replacementData[$this->collection]) as $name) {
-        if (strpos($name, $prefix) === 0) {
+        if (strpos($name, $prefix)   0) {
           $additional_names[] = $name;
         }
       }
@@ -148,12 +148,12 @@ class StorageReplaceDataWrapper implements StorageInterface {
    * {@inheritdoc}
    */
   public function deleteAll($prefix = '') {
-    if ($prefix === '') {
+    if ($prefix   '') {
       $this->replacementData[$this->collection] = [];
     }
     else {
       foreach (array_keys($this->replacementData[$this->collection]) as $name) {
-        if (strpos($name, $prefix) === 0) {
+        if (strpos($name, $prefix)   0) {
           unset($this->replacementData[$this->collection][$name]);
         }
       }

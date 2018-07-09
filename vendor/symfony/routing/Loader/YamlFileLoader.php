@@ -27,11 +27,10 @@ use Symfony\Component\Config\Loader\FileLoader;
 class YamlFileLoader extends FileLoader
 {
     private static $availableKeys = array(
-<<<<<<< HEAD
+ 
         'resource', 'type', 'prefix', 'path', 'host', 'schemes', 'methods', 'defaults', 'requirements', 'options', 'condition', 'controller',
 =======
         'resource', 'type', 'prefix', 'pattern', 'path', 'host', 'schemes', 'methods', 'defaults', 'requirements', 'options', 'condition',
->>>>>>> web and vendor directory from composer install
     );
     private $yamlParser;
 
@@ -61,7 +60,7 @@ class YamlFileLoader extends FileLoader
             $this->yamlParser = new YamlParser();
         }
 
-<<<<<<< HEAD
+ 
         $prevErrorHandler = set_error_handler(function ($level, $message, $script, $line) use ($file, &$prevErrorHandler) {
             $message = E_USER_DEPRECATED === $level ? preg_replace('/ on line \d+/', ' in "'.$file.'"$0', $message) : $message;
 
@@ -79,7 +78,6 @@ class YamlFileLoader extends FileLoader
             $parsedConfig = $this->yamlParser->parse(file_get_contents($path));
         } catch (ParseException $e) {
             throw new \InvalidArgumentException(sprintf('The file "%s" does not contain valid YAML.', $path), 0, $e);
->>>>>>> web and vendor directory from composer install
         }
 
         $collection = new RouteCollection();
@@ -96,7 +94,7 @@ class YamlFileLoader extends FileLoader
         }
 
         foreach ($parsedConfig as $name => $config) {
-<<<<<<< HEAD
+ 
 =======
             if (isset($config['pattern'])) {
                 if (isset($config['path'])) {
@@ -109,7 +107,6 @@ class YamlFileLoader extends FileLoader
                 unset($config['pattern']);
             }
 
->>>>>>> web and vendor directory from composer install
             $this->validate($config, $name, $path);
 
             if (isset($config['resource'])) {
@@ -148,7 +145,7 @@ class YamlFileLoader extends FileLoader
         $methods = isset($config['methods']) ? $config['methods'] : array();
         $condition = isset($config['condition']) ? $config['condition'] : null;
 
-<<<<<<< HEAD
+ 
         if (isset($config['controller'])) {
             $defaults['_controller'] = $config['controller'];
 =======
@@ -168,7 +165,6 @@ class YamlFileLoader extends FileLoader
 
             unset($requirements['_scheme']);
             @trigger_error(sprintf('The "_scheme" requirement of route "%s" in file "%s" is deprecated since version 2.2 and will be removed in 3.0. Use the "schemes" option instead.', $name, $path), E_USER_DEPRECATED);
->>>>>>> web and vendor directory from composer install
         }
 
         $route = new Route($config['path'], $defaults, $requirements, $options, $host, $schemes, $methods, $condition);
@@ -196,7 +192,7 @@ class YamlFileLoader extends FileLoader
         $schemes = isset($config['schemes']) ? $config['schemes'] : null;
         $methods = isset($config['methods']) ? $config['methods'] : null;
 
-<<<<<<< HEAD
+ 
         if (isset($config['controller'])) {
             $defaults['_controller'] = $config['controller'];
         }
@@ -253,7 +249,6 @@ class YamlFileLoader extends FileLoader
         $subCollection->addOptions($options);
 
         $collection->addCollection($subCollection);
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -295,11 +290,10 @@ class YamlFileLoader extends FileLoader
                 $name, $path
             ));
         }
-<<<<<<< HEAD
+ 
         if (isset($config['controller']) && isset($config['defaults']['_controller'])) {
             throw new \InvalidArgumentException(sprintf('The routing file "%s" must not specify both the "controller" key and the defaults key "_controller" for "%s".', $path, $name));
         }
 =======
->>>>>>> web and vendor directory from composer install
     }
 }

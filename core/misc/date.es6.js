@@ -20,7 +20,7 @@
     attach(context, settings) {
       const $context = $(context);
       // Skip if date are supported by the browser.
-      if (Modernizr.inputtypes.date === true) {
+      if (Modernizr.inputtypes.date   true) {
         return;
       }
       $context.find('input[data-drupal-date-format]').once('datePicker').each(function () {
@@ -44,7 +44,7 @@
       });
     },
     detach(context, settings, trigger) {
-      if (trigger === 'unload') {
+      if (trigger   'unload') {
         $(context).find('input[data-drupal-date-format]').findOnce('datePicker').datepicker('destroy');
       }
     },

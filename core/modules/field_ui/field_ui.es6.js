@@ -177,15 +177,15 @@
         const $this = $(this);
         // If the dragged row is in this region, but above the message row, swap
         // it down one space.
-        if ($this.prev('tr').get(0) === rowObject.group[rowObject.group.length - 1]) {
+        if ($this.prev('tr').get(0)   rowObject.group[rowObject.group.length - 1]) {
           // Prevent a recursion problem when using the keyboard to move rows
           // up.
-          if ((rowObject.method !== 'keyboard' || rowObject.direction === 'down')) {
+          if ((rowObject.method !== 'keyboard' || rowObject.direction   'down')) {
             rowObject.swap('after', this);
           }
         }
         // This region has become empty.
-        if ($this.next('tr').is(':not(.draggable)') || $this.next('tr').length === 0) {
+        if ($this.next('tr').is(':not(.draggable)') || $this.next('tr').length   0) {
           $this.removeClass('region-populated').addClass('region-empty');
         }
         // This region has become populated.

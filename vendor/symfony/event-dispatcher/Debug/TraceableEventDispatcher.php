@@ -33,7 +33,7 @@ class TraceableEventDispatcher implements TraceableEventDispatcherInterface
     private $dispatcher;
     private $wrappedListeners;
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * Constructor.
@@ -42,7 +42,6 @@ class TraceableEventDispatcher implements TraceableEventDispatcherInterface
      * @param Stopwatch                $stopwatch  A Stopwatch instance
      * @param LoggerInterface          $logger     A LoggerInterface instance
      */
->>>>>>> web and vendor directory from composer install
     public function __construct(EventDispatcherInterface $dispatcher, Stopwatch $stopwatch, LoggerInterface $logger = null)
     {
         $this->dispatcher = $dispatcher;
@@ -107,7 +106,7 @@ class TraceableEventDispatcher implements TraceableEventDispatcherInterface
      */
     public function getListenerPriority($eventName, $listener)
     {
-<<<<<<< HEAD
+ 
         // we might have wrapped listeners for the event (if called while dispatching)
         // in that case get the priority by wrapper
         if (isset($this->wrappedListeners[$eventName])) {
@@ -119,7 +118,6 @@ class TraceableEventDispatcher implements TraceableEventDispatcherInterface
 =======
         if (!method_exists($this->dispatcher, 'getListenerPriority')) {
             return 0;
->>>>>>> web and vendor directory from composer install
         }
 
         return $this->dispatcher->getListenerPriority($eventName, $listener);
@@ -171,12 +169,11 @@ class TraceableEventDispatcher implements TraceableEventDispatcherInterface
         $called = array();
         foreach ($this->called as $eventName => $listeners) {
             foreach ($listeners as $listener) {
-<<<<<<< HEAD
+ 
                 $called[$eventName.'.'.$listener->getPretty()] = $listener->getInfo($eventName);
 =======
                 $info = $this->getListenerInfo($listener->getWrappedListener(), $eventName);
                 $called[$eventName.'.'.$info['pretty']] = $info;
->>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -214,7 +211,7 @@ class TraceableEventDispatcher implements TraceableEventDispatcherInterface
                 }
 
                 if (!$called) {
-<<<<<<< HEAD
+ 
                     if (!$listener instanceof WrappedListener) {
                         $listener = new WrappedListener($listener, null, $this->stopwatch, $this);
                     }
@@ -222,7 +219,6 @@ class TraceableEventDispatcher implements TraceableEventDispatcherInterface
 =======
                     $info = $this->getListenerInfo($listener, $eventName);
                     $notCalled[$eventName.'.'.$info['pretty']] = $info;
->>>>>>> web and vendor directory from composer install
                 }
             }
         }
@@ -232,14 +228,13 @@ class TraceableEventDispatcher implements TraceableEventDispatcherInterface
         return $notCalled;
     }
 
-<<<<<<< HEAD
+ 
     public function reset()
     {
         $this->called = array();
     }
 
 =======
->>>>>>> web and vendor directory from composer install
     /**
      * Proxies all method calls to the original event dispatcher.
      *
@@ -276,7 +271,7 @@ class TraceableEventDispatcher implements TraceableEventDispatcherInterface
     private function preProcess($eventName)
     {
         foreach ($this->dispatcher->getListeners($eventName) as $listener) {
-<<<<<<< HEAD
+ 
             $priority = $this->getListenerPriority($eventName, $listener);
             $wrappedListener = new WrappedListener($listener, null, $this->stopwatch, $this);
             $this->wrappedListeners[$eventName][] = $wrappedListener;
@@ -289,7 +284,6 @@ class TraceableEventDispatcher implements TraceableEventDispatcherInterface
             $this->wrappedListeners[$eventName][] = $wrappedListener;
             $this->dispatcher->removeListener($eventName, $listener);
             $this->dispatcher->addListener($eventName, $wrappedListener, $info['priority']);
->>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -306,7 +300,7 @@ class TraceableEventDispatcher implements TraceableEventDispatcherInterface
             $this->dispatcher->removeListener($eventName, $listener);
             $this->dispatcher->addListener($eventName, $listener->getWrappedListener(), $priority);
 
-<<<<<<< HEAD
+ 
             if (null !== $this->logger) {
                 $context = array('event' => $eventName, 'listener' => $listener->getPretty());
             }
@@ -319,7 +313,6 @@ class TraceableEventDispatcher implements TraceableEventDispatcherInterface
             if ($listener->wasCalled()) {
                 if (null !== $this->logger) {
                     $this->logger->debug(sprintf('Notified event "%s" to listener "%s".', $eventName, $info['pretty']));
->>>>>>> web and vendor directory from composer install
                 }
 
                 if (!isset($this->called[$eventName])) {
@@ -330,20 +323,18 @@ class TraceableEventDispatcher implements TraceableEventDispatcherInterface
             }
 
             if (null !== $this->logger && $skipped) {
-<<<<<<< HEAD
+ 
                 $this->logger->debug('Listener "{listener}" was not called for event "{event}".', $context);
 =======
                 $this->logger->debug(sprintf('Listener "%s" was not called for event "%s".', $info['pretty'], $eventName));
->>>>>>> web and vendor directory from composer install
             }
 
             if ($listener->stoppedPropagation()) {
                 if (null !== $this->logger) {
-<<<<<<< HEAD
+ 
                     $this->logger->debug('Listener "{listener}" stopped propagation of the event "{event}".', $context);
 =======
                     $this->logger->debug(sprintf('Listener "%s" stopped propagation of the event "%s".', $info['pretty'], $eventName));
->>>>>>> web and vendor directory from composer install
                 }
 
                 $skipped = true;
@@ -351,7 +342,7 @@ class TraceableEventDispatcher implements TraceableEventDispatcherInterface
         }
     }
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * Returns information about the listener.
@@ -414,7 +405,6 @@ class TraceableEventDispatcher implements TraceableEventDispatcherInterface
         return $info;
     }
 
->>>>>>> web and vendor directory from composer install
     private function sortListenersByPriority($a, $b)
     {
         if (is_int($a['priority']) && !is_int($b['priority'])) {

@@ -51,7 +51,7 @@ if ($args['help'] || $count == 0) {
 
 simpletest_script_init();
 
-<<<<<<< HEAD
+ 
 try {
   $request = Request::createFromGlobals();
   $kernel = TestRunnerKernel::createFromRequest($request, $autoloader);
@@ -60,7 +60,7 @@ try {
 catch (Exception $e) {
   echo (string) $e;
   exit(SIMPLETEST_SCRIPT_EXIT_EXCEPTION);
-=======
+  =
 if (!class_exists(TestCase::class)) {
   echo "\nrun-tests.sh requires the PHPUnit testing framework. Please use 'composer install' to ensure that it is present.\n\n";
   exit(SIMPLETEST_SCRIPT_EXIT_FAILURE);
@@ -438,7 +438,7 @@ function simpletest_script_init() {
     }
   }
 
-  if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+  if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']   'on') {
     $base_url = 'https://';
   }
   else {
@@ -550,7 +550,7 @@ function simpletest_script_setup_database($new = FALSE) {
   }
   // Otherwise, set up a SQLite connection for the test runner.
   else {
-    if ($args['sqlite'][0] === '/') {
+    if ($args['sqlite'][0]   '/') {
       $sqlite = $args['sqlite'];
     }
     else {
@@ -671,7 +671,7 @@ function simpletest_script_execute_batch($test_classes) {
       if (empty($status['running'])) {
         // The child exited, unregister it.
         proc_close($child['process']);
-        if ($status['exitcode'] === SIMPLETEST_SCRIPT_EXIT_FAILURE) {
+        if ($status['exitcode']   SIMPLETEST_SCRIPT_EXIT_FAILURE) {
           $total_status = max($status['exitcode'], $total_status);
         }
         elseif ($status['exitcode']) {
@@ -1003,7 +1003,7 @@ function simpletest_script_get_test_list() {
       // Ignore anything from third party vendors.
       $ignore = array('.', '..', 'vendor');
       $files = [];
-      if ($args['directory'][0] === '/') {
+      if ($args['directory'][0]   '/') {
         $directory = $args['directory'];
       }
       else {

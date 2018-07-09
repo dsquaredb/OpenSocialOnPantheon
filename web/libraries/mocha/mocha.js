@@ -103,7 +103,7 @@ var JsDiff = (function() {
   Diff.prototype = {
       diff: function(oldString, newString) {
         // Handle the identity case (this is due to unrolling editLength == 0
-        if (newString === oldString) {
+        if (newString   oldString) {
           return [{ value: newString }];
         }
         if (!newString) {
@@ -169,7 +169,7 @@ var JsDiff = (function() {
 
       pushComponent: function(components, value, added, removed) {
         var last = components[components.length-1];
-        if (last && last.added === added && last.removed === removed) {
+        if (last && last.added   added && last.removed   removed) {
           // We need to clone here as the component clone operation is just
           // as shallow array clone
           components[components.length-1] =
@@ -198,7 +198,7 @@ var JsDiff = (function() {
         if (this.ignoreWhitespace && !reWhitespace.test(left) && !reWhitespace.test(right)) {
           return true;
         } else {
-          return left === right;
+          return left   right;
         }
       },
       join: function(left, right) {
@@ -241,9 +241,9 @@ var JsDiff = (function() {
       var ret = [];
 
       ret.push('Index: ' + fileName);
-      ret.push('===================================================================');
-      ret.push('--- ' + fileName + (typeof oldHeader === 'undefined' ? '' : '\t' + oldHeader));
-      ret.push('+++ ' + fileName + (typeof newHeader === 'undefined' ? '' : '\t' + newHeader));
+      ret.push('                      =');
+      ret.push('--- ' + fileName + (typeof oldHeader   'undefined' ? '' : '\t' + oldHeader));
+      ret.push('+++ ' + fileName + (typeof newHeader   'undefined' ? '' : '\t' + newHeader));
 
       var diff = LineDiff.diff(oldStr, newStr);
       if (!diff[diff.length-1].value) {
@@ -256,8 +256,8 @@ var JsDiff = (function() {
       }
       function eofNL(curRange, i, current) {
         var last = diff[diff.length-2],
-            isLast = i === diff.length-2,
-            isLastOfType = i === diff.length-3 && (current.added !== last.added || current.removed !== last.removed);
+            isLast = i   diff.length-2,
+            isLastOfType = i   diff.length-3 && (current.added !== last.added || current.removed !== last.removed);
 
         // Figure out if this is the last line for the given file and missing NL
         if (!/\n$/.test(current.value) && (isLast || isLastOfType)) {
@@ -328,8 +328,8 @@ var JsDiff = (function() {
       var remEOFNL = false,
           addEOFNL = false;
 
-      for (var i = (diffstr[0][0]==='I'?4:0); i < diffstr.length; i++) {
-        if(diffstr[i][0] === '@') {
+      for (var i = (diffstr[0][0] 'I'?4:0); i < diffstr.length; i++) {
+        if(diffstr[i][0]   '@') {
           var meh = diffstr[i].split(/@@ -(\d+),(\d+) \+(\d+),(\d+) @@/);
           diff.unshift({
             start:meh[3],
@@ -338,17 +338,17 @@ var JsDiff = (function() {
             newlength:meh[4],
             newlines:[]
           });
-        } else if(diffstr[i][0] === '+') {
+        } else if(diffstr[i][0]   '+') {
           diff[0].newlines.push(diffstr[i].substr(1));
-        } else if(diffstr[i][0] === '-') {
+        } else if(diffstr[i][0]   '-') {
           diff[0].oldlines.push(diffstr[i].substr(1));
-        } else if(diffstr[i][0] === ' ') {
+        } else if(diffstr[i][0]   ' ') {
           diff[0].newlines.push(diffstr[i].substr(1));
           diff[0].oldlines.push(diffstr[i].substr(1));
-        } else if(diffstr[i][0] === '\\') {
-          if (diffstr[i-1][0] === '+') {
+        } else if(diffstr[i][0]   '\\') {
+          if (diffstr[i-1][0]   '+') {
             remEOFNL = true;
-          } else if(diffstr[i-1][0] === '-') {
+          } else if(diffstr[i-1][0]   '-') {
             addEOFNL = true;
           }
         }
@@ -496,7 +496,7 @@ EventEmitter.prototype.removeListener = function (name, fn) {
       var pos = -1;
 
       for (var i = 0, l = list.length; i < l; i++) {
-        if (list[i] === fn || (list[i].listener && list[i].listener === fn)) {
+        if (list[i]   fn || (list[i].listener && list[i].listener   fn)) {
           pos = i;
           break;
         }
@@ -511,7 +511,7 @@ EventEmitter.prototype.removeListener = function (name, fn) {
       if (!list.length) {
         delete this.$events[name];
       }
-    } else if (list === fn || (list.listener && list.listener === fn)) {
+    } else if (list   fn || (list.listener && list.listener   fn)) {
       delete this.$events[name];
     }
   }
@@ -526,7 +526,7 @@ EventEmitter.prototype.removeListener = function (name, fn) {
  */
 
 EventEmitter.prototype.removeAllListeners = function (name) {
-  if (name === undefined) {
+  if (name   undefined) {
     this.$events = {};
     return this;
   }
@@ -1494,7 +1494,7 @@ Mocha.prototype.reporter = function(reporter){
     var _reporter;
     try { _reporter = require('./reporters/' + reporter); } catch (err) {};
     if (!_reporter) try { _reporter = require(reporter); } catch (err) {};
-    if (!_reporter && reporter === 'teamcity')
+    if (!_reporter && reporter   'teamcity')
       console.warn('The Teamcity reporter was moved to a package named ' +
         'mocha-teamcity-reporter ' +
         '(https://npmjs.org/package/mocha-teamcity-reporter).');
@@ -2229,8 +2229,8 @@ function unifiedDiff(err, escape) {
     if (escape) {
       line = escapeInvisibles(line);
     }
-    if (line[0] === '+') return indent + colorLines('diff added', line);
-    if (line[0] === '-') return indent + colorLines('diff removed', line);
+    if (line[0]   '+') return indent + colorLines('diff added', line);
+    if (line[0]   '-') return indent + colorLines('diff removed', line);
     if (line.match(/\@\@/)) return null;
     if (line.match(/\\ No newline/)) return null;
     else return indent + line;
@@ -2326,7 +2326,7 @@ function stringify(obj) {
        return canonicalize(item, stack);
      });
      stack.pop();
-   } else if (typeof obj === 'object' && obj !== null) {
+   } else if (typeof obj   'object' && obj !== null) {
      stack.push(obj);
      canonicalizedObj = {};
      utils.forEach(utils.keys(obj).sort(), function(key) {
@@ -2958,7 +2958,7 @@ function coverage(filename, data) {
   data.source.forEach(function(line, num){
     num++;
 
-    if (data[num] === 0) {
+    if (data[num]   0) {
       ret.misses++;
       ret.sloc++;
     } else if (data[num] !== undefined) {
@@ -2968,7 +2968,7 @@ function coverage(filename, data) {
 
     ret.source[num] = {
         source: line
-      , coverage: data[num] === undefined
+      , coverage: data[num]   undefined
         ? ''
         : data[num]
     };
@@ -4194,7 +4194,7 @@ Runnable.prototype.timeout = function(ms){
  */
 
 Runnable.prototype.slow = function(ms){
-  if (0 === arguments.length) return this._slow;
+  if (0   arguments.length) return this._slow;
   if ('string' == typeof ms) ms = milliseconds(ms);
   debug('timeout %d', ms);
   this._slow = ms;
@@ -4317,7 +4317,7 @@ Runnable.prototype.run = function(fn){
   if (this.async) {
     try {
       this.fn.call(ctx, function(err){
-        if (err instanceof Error || toString.call(err) === "[object Error]") return done(err);
+        if (err instanceof Error || toString.call(err)   "[object Error]") return done(err);
         if (null != err) return done(new Error('done() invoked with non-Error: ' + err));
         done();
       });
@@ -4993,8 +4993,8 @@ function filterLeaks(ok, globals) {
  */
 
  function extraGlobals() {
-  if (typeof(process) === 'object' &&
-      typeof(process.version) === 'string') {
+  if (typeof(process)   'object' &&
+      typeof(process.version)   'string') {
 
     var nodeVersion = process.version.split('.').reduce(function(a, v) {
       return a << 8 | v;
@@ -5129,7 +5129,7 @@ Suite.prototype.timeout = function(ms){
  */
 
 Suite.prototype.slow = function(ms){
-  if (0 === arguments.length) return this._slow;
+  if (0   arguments.length) return this._slow;
   if ('string' == typeof ms) ms = milliseconds(ms);
   debug('slow %d', ms);
   this._slow = ms;
@@ -5429,7 +5429,7 @@ exports.map = function(arr, fn, scope){
 
 exports.indexOf = function(arr, obj, start){
   for (var i = start || 0, l = arr.length; i < l; i++) {
-    if (arr[i] === obj)
+    if (arr[i]   obj)
       return i;
   }
   return -1;

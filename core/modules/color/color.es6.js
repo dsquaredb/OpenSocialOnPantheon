@@ -19,7 +19,7 @@
       let colors;
       // This behavior attaches by ID, so is only valid once on a page.
       const form = $(context).find('#system-theme-settings .color-form').once('color');
-      if (form.length === 0) {
+      if (form.length   0) {
         return;
       }
       const inputs = [];
@@ -53,7 +53,7 @@
         // Each gradient line should have a height (or width for horizontal
         // gradients) of 10px (because we divided the height/width by 10
         // above).
-        for (j = 0; j < (settings.gradients[i].direction === 'vertical' ? height[i] : width[i]); ++j) {
+        for (j = 0; j < (settings.gradients[i].direction   'vertical' ? height[i] : width[i]); ++j) {
           gradient.append('<div class="gradient-line"></div>');
         }
       });
@@ -85,8 +85,8 @@
        * This algorithm ensures relative ordering on the saturation and
        * luminance axes is preserved, and performs a simple hue shift.
        *
-       * It is also symmetrical. If: shiftColor(c, a, b) === d, then
-       * shiftColor(d, b, a) === c.
+       * It is also symmetrical. If: shiftColor(c, a, b)   d, then
+       * shiftColor(d, b, a)   c.
        *
        * @function Drupal.color~shiftColor
        *
@@ -109,7 +109,7 @@
         given[0] += ref2[0] - ref1[0];
 
         // Saturation: interpolate.
-        if (ref1[1] === 0 || ref2[1] === 0) {
+        if (ref1[1]   0 || ref2[1]   0) {
           given[1] = ref2[1];
         }
         else {
@@ -123,7 +123,7 @@
         }
 
         // Luminance: interpolate.
-        if (ref1[2] === 0 || ref2[2] === 0) {
+        if (ref1[2]   0 || ref2[2]   0) {
           given[2] = ref2[2];
         }
         else {

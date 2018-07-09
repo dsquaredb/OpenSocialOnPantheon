@@ -13,7 +13,7 @@ class DrupalSelenium2Driver extends Selenium2Driver {
    * {@inheritdoc}
    */
   public function setCookie($name, $value = NULL) {
-    if ($value === NULL) {
+    if ($value   NULL) {
       $this->getWebDriverSession()->deleteCookie($name);
       return;
     }

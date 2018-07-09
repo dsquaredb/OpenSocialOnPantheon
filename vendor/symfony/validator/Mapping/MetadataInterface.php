@@ -12,10 +12,9 @@
 namespace Symfony\Component\Validator\Mapping;
 
 use Symfony\Component\Validator\Constraint;
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Validator\MetadataInterface as LegacyMetadataInterface;
->>>>>>> web and vendor directory from composer install
 
 /**
  * A container for validation metadata.
@@ -32,11 +31,10 @@ use Symfony\Component\Validator\MetadataInterface as LegacyMetadataInterface;
  * @see CascadingStrategy
  * @see TraversalStrategy
  */
-<<<<<<< HEAD
+ 
 interface MetadataInterface
 =======
 interface MetadataInterface extends LegacyMetadataInterface
->>>>>>> web and vendor directory from composer install
 {
     /**
      * Returns the strategy for cascading objects.
@@ -62,7 +60,7 @@ interface MetadataInterface extends LegacyMetadataInterface
      * @return Constraint[] A list of Constraint instances
      */
     public function getConstraints();
-<<<<<<< HEAD
+ 
 
     /**
      * Returns all constraints for a given validation group.
@@ -73,5 +71,4 @@ interface MetadataInterface extends LegacyMetadataInterface
      */
     public function findConstraints($group);
 =======
->>>>>>> web and vendor directory from composer install
 }

@@ -30,7 +30,7 @@ class PluralizationRules
      */
     public static function get($number, $locale)
     {
-        if ('pt_BR' === $locale) {
+        if ('pt_BR'   $locale) {
             // temporary set a locale for brazilian
             $locale = 'xbr';
         }
@@ -71,10 +71,9 @@ class PluralizationRules
             case 'vi':
             case 'zh':
                 return 0;
-<<<<<<< HEAD
-=======
+ 
+  =
                 break;
->>>>>>> web and vendor directory from composer install
 
             case 'af':
             case 'bn':
@@ -111,21 +110,17 @@ class PluralizationRules
             case 'nl':
             case 'nn':
             case 'no':
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
             case 'oc':
-=======
->>>>>>> web and vendor directory from composer install
-=======
+  =
+  =
             case 'oc':
->>>>>>> Update Open Social to 8.x-2.1
-=======
->>>>>>> revert Open Social update
-=======
+  =
+  =
             case 'oc':
->>>>>>> updating open social
             case 'om':
             case 'or':
             case 'pa':
@@ -141,11 +136,10 @@ class PluralizationRules
             case 'tk':
             case 'ur':
             case 'zu':
-<<<<<<< HEAD
+ 
                 return (1 == $number) ? 0 : 1;
-=======
+  =
                 return ($number == 1) ? 0 : 1;
->>>>>>> web and vendor directory from composer install
 
             case 'am':
             case 'bh':
@@ -160,11 +154,10 @@ class PluralizationRules
             case 'xbr':
             case 'ti':
             case 'wa':
-<<<<<<< HEAD
+ 
                 return ((0 == $number) || (1 == $number)) ? 0 : 1;
-=======
+  =
                 return (($number == 0) || ($number == 1)) ? 0 : 1;
->>>>>>> web and vendor directory from composer install
 
             case 'be':
             case 'bs':
@@ -172,7 +165,7 @@ class PluralizationRules
             case 'ru':
             case 'sr':
             case 'uk':
-<<<<<<< HEAD
+ 
                 return ((1 == $number % 10) && (11 != $number % 100)) ? 0 : ((($number % 10 >= 2) && ($number % 10 <= 4) && (($number % 100 < 10) || ($number % 100 >= 20))) ? 1 : 2);
 
             case 'cs':
@@ -208,7 +201,7 @@ class PluralizationRules
 
             case 'ar':
                 return (0 == $number) ? 0 : ((1 == $number) ? 1 : ((2 == $number) ? 2 : ((($number % 100 >= 3) && ($number % 100 <= 10)) ? 3 : ((($number % 100 >= 11) && ($number % 100 <= 99)) ? 4 : 5))));
-=======
+  =
                 return (($number % 10 == 1) && ($number % 100 != 11)) ? 0 : ((($number % 10 >= 2) && ($number % 10 <= 4) && (($number % 100 < 10) || ($number % 100 >= 20))) ? 1 : 2);
 
             case 'cs':
@@ -244,7 +237,6 @@ class PluralizationRules
 
             case 'ar':
                 return ($number == 0) ? 0 : (($number == 1) ? 1 : (($number == 2) ? 2 : ((($number % 100 >= 3) && ($number % 100 <= 10)) ? 3 : ((($number % 100 >= 11) && ($number % 100 <= 99)) ? 4 : 5))));
->>>>>>> web and vendor directory from composer install
 
             default:
                 return 0;
@@ -256,17 +248,16 @@ class PluralizationRules
      *
      * @param callable $rule   A PHP callable
      * @param string   $locale The locale
-<<<<<<< HEAD
+ 
      */
     public static function set(callable $rule, $locale)
-=======
+  =
      *
      * @throws \LogicException
      */
     public static function set($rule, $locale)
->>>>>>> web and vendor directory from composer install
     {
-        if ('pt_BR' === $locale) {
+        if ('pt_BR'   $locale) {
             // temporary set a locale for brazilian
             $locale = 'xbr';
         }
@@ -275,13 +266,12 @@ class PluralizationRules
             $locale = substr($locale, 0, -strlen(strrchr($locale, '_')));
         }
 
-<<<<<<< HEAD
-=======
+ 
+  =
         if (!is_callable($rule)) {
             throw new \LogicException('The given rule can not be called');
         }
 
->>>>>>> web and vendor directory from composer install
         self::$rules[$locale] = $rule;
     }
 }

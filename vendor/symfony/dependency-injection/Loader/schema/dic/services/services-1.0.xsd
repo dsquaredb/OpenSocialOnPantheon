@@ -52,7 +52,7 @@
         Enclosing element for the definition of all services
       ]]></xsd:documentation>
     </xsd:annotation>
-<<<<<<< HEAD
+ 
     <xsd:choice maxOccurs="unbounded">
       <xsd:element name="service" type="service" minOccurs="1" />
       <xsd:element name="prototype" type="prototype" minOccurs="0" />
@@ -84,7 +84,7 @@
     </xsd:annotation>
     <xsd:attribute name="resource" type="xsd:string" use="required" />
     <xsd:attribute name="ignore-errors" type="boolean" />
-<<<<<<< HEAD
+ 
     <xsd:attribute name="type" type="xsd:string" />
 =======
 >>>>>>> web and vendor directory from composer install
@@ -94,7 +94,7 @@
     <xsd:choice minOccurs="0" maxOccurs="1">
       <xsd:element name="service" type="service" minOccurs="0" maxOccurs="1" />
     </xsd:choice>
-<<<<<<< HEAD
+ 
 =======
     <xsd:attribute name="id" type="xsd:string" />
 >>>>>>> web and vendor directory from composer install
@@ -104,7 +104,7 @@
     <xsd:attribute name="function" type="xsd:string" />
   </xsd:complexType>
 
-<<<<<<< HEAD
+ 
   <xsd:complexType name="defaults">
     <xsd:annotation>
       <xsd:documentation><![CDATA[
@@ -133,7 +133,7 @@
       <xsd:element name="tag" type="tag" minOccurs="0" maxOccurs="unbounded" />
       <xsd:element name="property" type="property" minOccurs="0" maxOccurs="unbounded" />
       <xsd:element name="autowiring-type" type="xsd:string" minOccurs="0" maxOccurs="unbounded" />
-<<<<<<< HEAD
+ 
       <xsd:element name="bind" type="bind" minOccurs="0" maxOccurs="unbounded" />
 =======
 >>>>>>> web and vendor directory from composer install
@@ -141,7 +141,7 @@
     <xsd:attribute name="id" type="xsd:string" />
     <xsd:attribute name="class" type="xsd:string" />
     <xsd:attribute name="shared" type="boolean" />
-<<<<<<< HEAD
+ 
     <xsd:attribute name="public" type="boolean" />
     <xsd:attribute name="synthetic" type="boolean" />
     <xsd:attribute name="lazy" type="boolean" />
@@ -163,7 +163,7 @@
     <xsd:attribute name="decoration-inner-name" type="xsd:string" />
     <xsd:attribute name="decoration-priority" type="xsd:integer" />
     <xsd:attribute name="autowire" type="boolean" />
-<<<<<<< HEAD
+ 
     <xsd:attribute name="autoconfigure" type="boolean" />
   </xsd:complexType>
 
@@ -231,7 +231,7 @@
   </xsd:complexType>
 
   <xsd:complexType name="property" mixed="true">
-<<<<<<< HEAD
+ 
     <xsd:choice minOccurs="0">
       <xsd:element name="property" type="property" maxOccurs="unbounded" />
 =======
@@ -244,7 +244,7 @@
     <xsd:attribute name="id" type="xsd:string" />
     <xsd:attribute name="key" type="xsd:string" />
     <xsd:attribute name="name" type="xsd:string" />
-<<<<<<< HEAD
+ 
     <xsd:attribute name="on-invalid" type="invalid_sequence" />
     <xsd:attribute name="strict" type="boolean" />
     <xsd:attribute name="tag" type="xsd:string" />
@@ -280,7 +280,7 @@
     <xsd:attribute name="id" type="xsd:string" />
     <xsd:attribute name="key" type="xsd:string" />
     <xsd:attribute name="index" type="xsd:integer" />
-<<<<<<< HEAD
+ 
     <xsd:attribute name="on-invalid" type="invalid_sequence" />
     <xsd:attribute name="strict" type="boolean" />
     <xsd:attribute name="tag" type="xsd:string" />
@@ -318,7 +318,7 @@
       <xsd:enumeration value="expression" />
       <xsd:enumeration value="string" />
       <xsd:enumeration value="constant" />
-<<<<<<< HEAD
+ 
       <xsd:enumeration value="iterator" />
       <xsd:enumeration value="tagged" />
 =======
@@ -331,7 +331,7 @@
       <xsd:enumeration value="null" />
       <xsd:enumeration value="ignore" />
       <xsd:enumeration value="exception" />
-<<<<<<< HEAD
+ 
       <xsd:enumeration value="ignore_uninitialized" />
 =======
 >>>>>>> web and vendor directory from composer install

@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-<<<<<<< HEAD
+ 
         "php": "^5.5.9|>=7.0.8",
         "symfony/polyfill-ctype": "~1.8",
         "symfony/polyfill-mbstring": "~1.0",
@@ -70,7 +70,7 @@
         "symfony/yaml": "",
         "symfony/config": "",
         "egulias/email-validator": "Strict (RFC compliant) email validation",
-<<<<<<< HEAD
+ 
         "symfony/property-access": "For accessing properties within comparison constraints",
         "symfony/expression-language": "For using the Expression validator"
 =======
@@ -87,7 +87,7 @@
     "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
-<<<<<<< HEAD
+ 
             "dev-master": "3.4-dev"
 =======
             "dev-master": "2.8-dev"

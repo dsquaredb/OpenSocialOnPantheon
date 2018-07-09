@@ -7,9 +7,9 @@
 
 use Drupal\group\Entity\GroupContent;
 use Drupal\Core\Entity\EntityInterface;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 use Drupal\Core\Entity\ContentEntityInterface;
 =======
 use Drupal\Core\Entity\EntityTypeInterface;

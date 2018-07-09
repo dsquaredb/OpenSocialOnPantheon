@@ -83,7 +83,7 @@ function path_entity_base_field_info(EntityTypeInterface $entity_type) {
  */
 function path_entity_translation_create(ContentEntityInterface $translation) {
   foreach ($translation->getFieldDefinitions() as $field_name => $field_definition) {
-    if ($field_definition->getType() === 'path' && $translation->get($field_name)->pid) {
+    if ($field_definition->getType()   'path' && $translation->get($field_name)->pid) {
       // If there are values and a path ID, update the langcode and unset the
       // path ID to save this as a new alias.
       $translation->get($field_name)->langcode = $translation->language()->getId();

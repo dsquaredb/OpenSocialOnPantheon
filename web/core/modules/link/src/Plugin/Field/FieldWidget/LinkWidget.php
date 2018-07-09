@@ -230,9 +230,9 @@ class LinkWidget extends WidgetBase {
     // Post-process the title field to make it conditionally required if URL is
     // non-empty. Omit the validation on the field edit form, since the field
     // settings cannot be saved otherwise.
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
     if (!$this->isDefaultValueWidget($form_state) && $this->getFieldSetting('title') == DRUPAL_REQUIRED) {
       $element['#element_validate'][] = array(get_called_class(), 'validateTitleElement');
 =======
@@ -240,12 +240,10 @@ class LinkWidget extends WidgetBase {
     // Validate that title field is filled out (regardless of uri) when it is a
     // required field.
 =======
->>>>>>> revert Open Social update
 =======
     //
     // Validate that title field is filled out (regardless of uri) when it is a
     // required field.
->>>>>>> updating open social
     if (!$this->isDefaultValueWidget($form_state) && $this->getFieldSetting('title') === DRUPAL_REQUIRED) {
       $element['#element_validate'][] = [get_called_class(), 'validateTitleElement'];
       $element['#element_validate'][] = [get_called_class(), 'validateTitleNoLink'];
@@ -265,7 +263,6 @@ class LinkWidget extends WidgetBase {
           ':input[name="' . $selector . '[' . $delta . '][uri]"]' => ['filled' => TRUE]
         ];
       }
->>>>>>> Update Open Social to 8.x-2.1
     }
 
     // Ensure that a URI is always entered when an optional title field is

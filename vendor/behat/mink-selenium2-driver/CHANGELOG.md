@@ -1,5 +1,5 @@
 1.3.1 / 2016-03-05
-==================
+      
 
 Bug fixes:
 
@@ -10,7 +10,7 @@ Testsuite:
 * Add testing on PHP 7
 
 1.3.0 / 2015-09-21
-==================
+      
 
 New features:
 
@@ -26,7 +26,7 @@ Misc:
 * Updated the repository structure to PSR-4
 
 1.2.0 / 2014-09-29
-==================
+      
 
 BC break:
 

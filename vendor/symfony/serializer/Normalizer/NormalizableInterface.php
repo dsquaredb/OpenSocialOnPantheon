@@ -28,7 +28,7 @@ interface NormalizableInterface
      * recursively all child objects of the implementor.
      *
      * @param NormalizerInterface $normalizer The normalizer is given so that you
-<<<<<<< HEAD
+ 
      *                                        can use it to normalize objects contained within this object
      * @param string|null         $format     The format is optionally given to be able to normalize differently
      *                                        based on different output formats
@@ -42,7 +42,6 @@ interface NormalizableInterface
      * @param array               $context    Options for normalizing this object
      *
      * @return array|scalar
->>>>>>> web and vendor directory from composer install
      */
     public function normalize(NormalizerInterface $normalizer, $format = null, array $context = array());
 }

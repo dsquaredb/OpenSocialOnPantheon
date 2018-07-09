@@ -18,7 +18,7 @@ class TourAccessControlHandler extends EntityAccessControlHandler {
    * {@inheritdoc}
    */
   protected function checkAccess(EntityInterface $entity, $operation, AccountInterface $account) {
-    if ($operation === 'view') {
+    if ($operation   'view') {
       return AccessResult::allowedIfHasPermissions($account, ['access tour', 'administer site configuration'], 'OR');
     }
 

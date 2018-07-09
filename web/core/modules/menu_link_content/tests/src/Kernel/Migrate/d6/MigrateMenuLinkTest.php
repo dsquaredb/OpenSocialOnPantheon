@@ -16,26 +16,22 @@ class MigrateMenuLinkTest extends MigrateNodeTestBase {
   /**
    * {@inheritdoc}
    */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
   public static $modules = array('menu_ui', 'menu_link_content');
 =======
 =======
->>>>>>> updating open social
   public static $modules = [
     'content_translation',
     'language',
     'menu_link_content',
     'menu_ui',
   ];
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
   public static $modules = ['menu_ui', 'menu_link_content'];
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
 
   /**
    * {@inheritdoc}
@@ -43,13 +39,12 @@ class MigrateMenuLinkTest extends MigrateNodeTestBase {
   protected function setUp() {
     parent::setUp();
     $this->installEntitySchema('menu_link_content');
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
     $this->executeMigrations(['menu', 'menu_links']);
 =======
 =======
->>>>>>> updating open social
     $this->executeMigrations([
       'language',
       'd6_language_content_settings',
@@ -99,13 +94,10 @@ class MigrateMenuLinkTest extends MigrateNodeTestBase {
     $this->assertSame($uri, $menu_link->link->uri);
     $this->assertSame($weight, $menu_link->getWeight());
     return $menu_link;
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
     $this->executeMigrations(['d6_menu', 'd6_menu_links']);
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
   }
 
   /**

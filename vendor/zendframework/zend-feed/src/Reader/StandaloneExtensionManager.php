@@ -12,7 +12,7 @@ namespace Zend\Feed\Reader;
 class StandaloneExtensionManager implements ExtensionManagerInterface
 {
     private $extensions = [
-<<<<<<< HEAD
+ 
         'Atom\Entry'            => 'Zend\Feed\Reader\Extension\Atom\Entry',
         'Atom\Feed'             => 'Zend\Feed\Reader\Extension\Atom\Feed',
         'Content\Entry'         => 'Zend\Feed\Reader\Extension\Content\Entry',
@@ -42,7 +42,6 @@ class StandaloneExtensionManager implements ExtensionManagerInterface
         'Syndication\Feed'      => Extension\Syndication\Feed::class,
         'Thread\Entry'          => Extension\Thread\Entry::class,
         'WellFormedWeb\Entry'   => Extension\WellFormedWeb\Entry::class,
->>>>>>> Update Open Social to 8.x-2.1
     ];
 
     /**

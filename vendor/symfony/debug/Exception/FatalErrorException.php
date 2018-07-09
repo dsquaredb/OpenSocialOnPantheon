@@ -9,23 +9,22 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
+ 
 namespace Symfony\Component\Debug\Exception;
 =======
 namespace Symfony\Component\HttpKernel\Exception;
->>>>>>> web and vendor directory from composer install
 
 /**
  * Fatal Error Exception.
  *
-<<<<<<< HEAD
+ 
  * @author Konstanton Myakshin <koc-dp@yandex.ru>
  */
 class FatalErrorException extends \ErrorException
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 =======
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Konstanton Myakshin <koc-dp@yandex.ru>
@@ -48,17 +47,13 @@ use Symfony\Component\HttpKernel\Exception\FatalErrorException as LegacyFatalErr
  */
 class FatalErrorException extends LegacyFatalErrorException
 {
->>>>>>> web and vendor directory from composer install
     public function __construct($message, $code, $severity, $filename, $lineno, $traceOffset = null, $traceArgs = true, array $trace = null)
 =======
     public function __construct($message, $code, $severity, $filename, $lineno, $traceOffset = null, $traceArgs = true, array $trace = null, $previous = null)
->>>>>>> Update Open Social to 8.x-2.1
 =======
     public function __construct($message, $code, $severity, $filename, $lineno, $traceOffset = null, $traceArgs = true, array $trace = null)
->>>>>>> revert Open Social update
 =======
     public function __construct($message, $code, $severity, $filename, $lineno, $traceOffset = null, $traceArgs = true, array $trace = null, $previous = null)
->>>>>>> updating open social
     {
         parent::__construct($message, $code, $severity, $filename, $lineno, $previous);
 

@@ -4,23 +4,23 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
     "hash": "287996fa611f46eb393c625c762f709f",
     "content-hash": "3efa62db7f378a4802a4cf729875f3aa",
-=======
+  =
     "hash": "2b74eafc79e361bf19f9af581c4b136d",
     "content-hash": "9390878456f884afbbef8d1d4ec6c8b7",
 >>>>>>> web and vendor directory from composer install
-=======
+  =
     "content-hash": "6a979d48e42840de5442a250eb48ea3c",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
     "content-hash": "de254758c5d28198ad8441fb154fc7f3",
 >>>>>>> revert Open Social update
-=======
+  =
     "content-hash": "6a979d48e42840de5442a250eb48ea3c",
 >>>>>>> updating open social
     "packages": [
@@ -181,7 +181,7 @@
         },
         {
             "name": "phpspec/prophecy",
-<<<<<<< HEAD
+ 
             "version": "v1.7.0",
             "source": {
                 "type": "git",
@@ -192,7 +192,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/phpspec/prophecy/zipball/93d39f1f7f9326d746203c7c056f300f7f126073",
                 "reference": "93d39f1f7f9326d746203c7c056f300f7f126073",
-=======
+  =
             "version": "v1.6.1",
             "source": {
                 "type": "git",
@@ -210,14 +210,14 @@
                 "doctrine/instantiator": "^1.0.2",
                 "php": "^5.3|^7.0",
                 "phpdocumentor/reflection-docblock": "^2.0|^3.0.2",
-<<<<<<< HEAD
+ 
                 "sebastian/comparator": "^1.1|^2.0",
                 "sebastian/recursion-context": "^1.0|^2.0|^3.0"
             },
             "require-dev": {
                 "phpspec/phpspec": "^2.5|^3.2",
                 "phpunit/phpunit": "^4.8 || ^5.6.5"
-=======
+  =
                 "sebastian/comparator": "^1.1",
                 "sebastian/recursion-context": "^1.0"
             },
@@ -261,9 +261,9 @@
                 "spy",
                 "stub"
             ],
-<<<<<<< HEAD
+ 
             "time": "2017-03-02 20:05:34"
-=======
+  =
             "time": "2016-06-07 08:13:47"
 >>>>>>> web and vendor directory from composer install
         },
@@ -331,7 +331,7 @@
         },
         {
             "name": "phpunit/php-file-iterator",
-<<<<<<< HEAD
+ 
             "version": "1.4.2",
             "source": {
                 "type": "git",
@@ -342,7 +342,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/3cc8f69b3028d0f96a9078e6295d86e9bf019be5",
                 "reference": "3cc8f69b3028d0f96a9078e6295d86e9bf019be5",
-=======
+  =
             "version": "1.4.1",
             "source": {
                 "type": "git",
@@ -387,9 +387,9 @@
                 "filesystem",
                 "iterator"
             ],
-<<<<<<< HEAD
+ 
             "time": "2016-10-03 07:40:28"
-=======
+  =
             "time": "2015-06-21 13:08:43"
 >>>>>>> web and vendor directory from composer install
         },
@@ -436,7 +436,7 @@
         },
         {
             "name": "phpunit/php-timer",
-<<<<<<< HEAD
+ 
             "version": "1.0.9",
             "source": {
                 "type": "git",
@@ -461,7 +461,7 @@
                     "dev-master": "1.0-dev"
                 }
             },
-=======
+  =
             "version": "1.0.8",
             "source": {
                 "type": "git",
@@ -503,7 +503,7 @@
             "keywords": [
                 "timer"
             ],
-<<<<<<< HEAD
+ 
             "time": "2017-02-26 11:10:40"
         },
         {
@@ -518,7 +518,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/e03f8f67534427a787e21a385a67ec3ca6978ea7",
                 "reference": "e03f8f67534427a787e21a385a67ec3ca6978ea7",
-=======
+  =
             "time": "2016-05-12 18:03:57"
         },
         {
@@ -569,7 +569,7 @@
             "keywords": [
                 "tokenizer"
             ],
-<<<<<<< HEAD
+ 
             "time": "2017-02-27 10:12:30"
         },
         {
@@ -584,7 +584,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/791b1a67c25af50e230f841ee7a9c6eba507dc87",
                 "reference": "791b1a67c25af50e230f841ee7a9c6eba507dc87",
-=======
+  =
             "time": "2015-09-15 10:49:45"
         },
         {
@@ -615,9 +615,9 @@
                 "phpunit/php-text-template": "~1.2",
                 "phpunit/php-timer": "^1.0.6",
                 "phpunit/phpunit-mock-objects": "~2.3",
-<<<<<<< HEAD
+ 
                 "sebastian/comparator": "~1.2.2",
-=======
+  =
                 "sebastian/comparator": "~1.1",
 >>>>>>> web and vendor directory from composer install
                 "sebastian/diff": "~1.2",
@@ -662,9 +662,9 @@
                 "testing",
                 "xunit"
             ],
-<<<<<<< HEAD
+ 
             "time": "2017-02-06 05:18:07"
-=======
+  =
             "time": "2016-07-21 06:48:14"
 >>>>>>> web and vendor directory from composer install
         },
@@ -726,7 +726,7 @@
         },
         {
             "name": "sebastian/comparator",
-<<<<<<< HEAD
+ 
             "version": "1.2.4",
             "source": {
                 "type": "git",
@@ -737,7 +737,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/2b7424b55f5047b47ac6e5ccb20b2aea4011d9be",
                 "reference": "2b7424b55f5047b47ac6e5ccb20b2aea4011d9be",
-=======
+  =
             "version": "1.2.0",
             "source": {
                 "type": "git",
@@ -754,9 +754,9 @@
             "require": {
                 "php": ">=5.3.3",
                 "sebastian/diff": "~1.2",
-<<<<<<< HEAD
+ 
                 "sebastian/exporter": "~1.2 || ~2.0"
-=======
+  =
                 "sebastian/exporter": "~1.2"
 >>>>>>> web and vendor directory from composer install
             },
@@ -803,9 +803,9 @@
                 "compare",
                 "equality"
             ],
-<<<<<<< HEAD
+ 
             "time": "2017-01-29 09:50:25"
-=======
+  =
             "time": "2015-07-26 15:48:44"
 >>>>>>> web and vendor directory from composer install
         },
@@ -1031,7 +1031,7 @@
         },
         {
             "name": "sebastian/recursion-context",
-<<<<<<< HEAD
+ 
             "version": "1.0.5",
             "source": {
                 "type": "git",
@@ -1042,7 +1042,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/b19cc3298482a335a95f3016d2f8a6950f0fbcd7",
                 "reference": "b19cc3298482a335a95f3016d2f8a6950f0fbcd7",
-=======
+  =
             "version": "1.0.2",
             "source": {
                 "type": "git",
@@ -1093,9 +1093,9 @@
             ],
             "description": "Provides functionality to recursively process PHP variables",
             "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
-<<<<<<< HEAD
+ 
             "time": "2016-10-03 07:41:43"
-=======
+  =
             "time": "2015-11-11 19:50:13"
 >>>>>>> web and vendor directory from composer install
         },
@@ -1136,7 +1136,7 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-<<<<<<< HEAD
+ 
             "version": "2.8.1",
             "source": {
                 "type": "git",
@@ -1147,7 +1147,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/d7cf0d894e8aa4c73712ee4a331cc1eaa37cdc7d",
                 "reference": "d7cf0d894e8aa4c73712ee4a331cc1eaa37cdc7d",
-=======
+  =
             "version": "2.7.0",
             "source": {
                 "type": "git",
@@ -1223,7 +1223,7 @@
                 "phpcs",
                 "standards"
             ],
-<<<<<<< HEAD
+ 
             "time": "2017-03-01 22:17:45"
         },
         {
@@ -1238,7 +1238,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/yaml/zipball/286d84891690b0e2515874717e49360d1c98a703",
                 "reference": "286d84891690b0e2515874717e49360d1c98a703",
-=======
+  =
             "time": "2016-09-01 23:53:02"
         },
         {
@@ -1289,7 +1289,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
+ 
             "time": "2017-03-20 09:41:44"
         },
         {
@@ -1320,7 +1320,7 @@
                 "zf"
             ],
             "time": "2016-11-09 21:30:43"
-=======
+  =
             "time": "2016-09-02 01:57:56"
 >>>>>>> web and vendor directory from composer install
         }
@@ -1333,12 +1333,12 @@
     "platform": {
         "php": "^5.4 || ^7.0"
     },
-<<<<<<< HEAD
+ 
     "platform-dev": {
         "ext-dom": "*",
         "ext-libxml": "*"
     }
-=======
+  =
     "platform-dev": []
 >>>>>>> web and vendor directory from composer install
 }

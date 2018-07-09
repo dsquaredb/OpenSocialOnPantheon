@@ -18,10 +18,10 @@
         const $select = $(context).find('.book-title-select');
         const val = $select.val();
 
-        if (val === '0') {
+        if (val   '0') {
           return Drupal.t('Not in book');
         }
-        else if (val === 'new') {
+        else if (val   'new') {
           return Drupal.t('New book');
         }
 

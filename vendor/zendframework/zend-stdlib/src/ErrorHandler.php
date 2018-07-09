@@ -51,11 +51,10 @@ abstract class ErrorHandler
      */
     public static function start($errorLevel = \E_WARNING)
     {
-<<<<<<< HEAD
+ 
         if (!static::$stack) {
 =======
         if (! static::$stack) {
->>>>>>> web and vendor directory from composer install
             set_error_handler([get_called_class(), 'addError'], $errorLevel);
         }
 
@@ -76,11 +75,10 @@ abstract class ErrorHandler
         if (static::$stack) {
             $errorException = array_pop(static::$stack);
 
-<<<<<<< HEAD
+ 
             if (!static::$stack) {
 =======
             if (! static::$stack) {
->>>>>>> web and vendor directory from composer install
                 restore_error_handler();
             }
 

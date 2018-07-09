@@ -2,9 +2,9 @@
 
 namespace Drupal\admin_toolbar_tools\Controller;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\CronInterface;
@@ -18,10 +18,8 @@ use Drupal\Core\Menu\MenuLinkManager;
 use Drupal\Component\Datetime\TimeInterface;
 =======
 use Drupal\Component\Datetime\Time;
->>>>>>> revert Open Social update
 =======
 use Drupal\Component\Datetime\TimeInterface;
->>>>>>> updating open social
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\CronInterface;
@@ -33,15 +31,12 @@ use Drupal\Core\Plugin\CachedDiscoveryClearerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\RequestStack;
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 use Drupal\Core\PhpStorage\PhpStorageFactory;
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
 use Drupal\Core\PhpStorage\PhpStorageFactory;
->>>>>>> updating open social
 
 /**
  * Class ToolbarController
@@ -55,7 +50,7 @@ class ToolbarController extends ControllerBase {
    * @var $cron \Drupal\Core\CronInterface
    */
   protected $cron;
-<<<<<<< HEAD
+ 
   protected $menuLinkManager;
   protected $contextualLinkManager;
   protected $localTaskLinkManager;
@@ -87,12 +82,11 @@ class ToolbarController extends ControllerBase {
    *
    * @var \Drupal\Core\Menu\LocalActionManagerInterface
    */
->>>>>>> Update Open Social to 8.x-2.1
   protected $localActionLinkManager;
   protected $cacheRender;
 
   /**
-<<<<<<< HEAD
+ 
    * Constructs a CronController object.
    *
    * @param \Drupal\Core\CronInterface $cron
@@ -156,7 +150,6 @@ class ToolbarController extends ControllerBase {
                               TimeInterface $time,
                               RequestStack $request_stack,
                               CachedDiscoveryClearerInterface $plugin_cache_clearer) {
->>>>>>> Update Open Social to 8.x-2.1
     $this->cron = $cron;
     $this->menuLinkManager = $menuLinkManager;
     $this->contextualLinkManager = $contextualLinkManager;
@@ -256,7 +249,7 @@ class ToolbarController extends ControllerBase {
     return $response;
   }
 
-<<<<<<< HEAD
+ 
 =======
   /**
    * Clears the twig cache.
@@ -272,7 +265,6 @@ class ToolbarController extends ControllerBase {
   /**
    * Run the cron.
    */
->>>>>>> Update Open Social to 8.x-2.1
   public function runCron() {
     $this->cron->run();
     drupal_set_message($this->t('Cron ran successfully.'));

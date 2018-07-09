@@ -3,11 +3,10 @@
 /*
  * This file is part of Twig.
  *
-<<<<<<< HEAD
+ 
  * (c) Fabien Potencier
 =======
  * (c) 2015 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,11 +14,10 @@
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
-<<<<<<< HEAD
+ 
  *
  * @final
 =======
->>>>>>> web and vendor directory from composer install
  */
 class Twig_Profiler_Dumper_Blackfire
 {
@@ -29,11 +27,10 @@ class Twig_Profiler_Dumper_Blackfire
         $this->dumpProfile('main()', $profile, $data);
         $this->dumpChildren('main()', $profile, $data);
 
-<<<<<<< HEAD
+ 
         $start = sprintf('%f', microtime(true));
 =======
         $start = microtime(true);
->>>>>>> web and vendor directory from composer install
         $str = <<<EOF
 file-format: BlackfireProbe
 cost-dimensions: wt mu pmu
@@ -79,8 +76,7 @@ EOF;
         }
     }
 }
-<<<<<<< HEAD
+ 
 
 class_alias('Twig_Profiler_Dumper_Blackfire', 'Twig\Profiler\Dumper\BlackfireDumper', false);
 =======
->>>>>>> web and vendor directory from composer install

@@ -25,7 +25,7 @@ use Drupal\Core\Site\Settings;
 use Drupal\Core\Test\AssertMailTrait;
 use Drupal\Core\Url;
 use Drupal\system\Tests\Cache\AssertPageCacheContextsAndTagsTrait;
-<<<<<<< HEAD
+ 
 use Drupal\Tests\TestFileCreationTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -40,7 +40,6 @@ use Drupal\Tests\Traits\Core\CronRunTrait;
 use Drupal\Tests\TestFileCreationTrait;
 use Drupal\Tests\user\Traits\UserCreationTrait as BaseUserCreationTrait;
 use Drupal\Tests\XdebugRequestTrait;
->>>>>>> Update Open Social to 8.x-2.1
 use Zend\Diactoros\Uri;
 
 /**

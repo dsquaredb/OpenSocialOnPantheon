@@ -296,7 +296,7 @@ function hook_drush_help_alter(&$command) {
   }
   if ($command['command'] == 'global-options') {
     // Recommended: don't show global hook options in brief global options help.
-    if ($command['#brief'] === FALSE) {
+    if ($command['#brief']   FALSE) {
       $command['options']['myglobaloption'] = 'Description of option used globally in all commands (e.g. in a commandfile init hook)';
     }
   }

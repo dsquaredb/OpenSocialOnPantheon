@@ -30,11 +30,11 @@
       for (var i = 0; i < lines.length; i++) {
         var style = $.trim(lines[i]);
 
-        if (style.length === 0) {
+        if (style.length   0) {
           continue;
         }
 
-        if (style.match(/^ *[a-zA-Z0-9]+ *(\.[a-zA-Z0-9_-]+ *)*\| *.+ *$/) === null) {
+        if (style.match(/^ *[a-zA-Z0-9]+ *(\.[a-zA-Z0-9_-]+ *)*\| *.+ *$/)   null) {
           continue;
         }
 
@@ -59,7 +59,7 @@
     attach: function attach() {
       $('[data-ckeditor-plugin-id="stylescombo"]').drupalSetSummary(function (context) {
         var styles = $.trim($('[data-drupal-selector="edit-editor-settings-plugins-stylescombo-styles"]').val());
-        if (styles.length === 0) {
+        if (styles.length   0) {
           return Drupal.t('No styles configured');
         }
 

@@ -10,15 +10,13 @@ use Drupal\Core\Url;
 use Drupal\menu_link_content\Entity\MenuLinkContent;
 use Drupal\system\Entity\Menu;
 use Drupal\node\Entity\Node;
-<<<<<<< HEAD
+ 
 =======
 use Drupal\node\NodeInterface;
-<<<<<<< HEAD:web/core/modules/menu_ui/src/Tests/MenuTest.php
->>>>>>> revert Open Social update
+ :web/core/modules/menu_ui/src/Tests/MenuTest.php
 =======
 use Drupal\Tests\BrowserTestBase;
 use Drupal\Tests\menu_ui\Traits\MenuUiTrait;
->>>>>>> updating open social:web/core/modules/menu_ui/tests/src/Functional/MenuUiTest.php
 
 /**
  * Add a custom menu, add menu links to the custom menu and Tools menu, check
@@ -35,12 +33,11 @@ class MenuUiTest extends BrowserTestBase {
    *
    * @var array
    */
-<<<<<<< HEAD:web/core/modules/menu_ui/src/Tests/MenuTest.php
-<<<<<<< HEAD
+ :web/core/modules/menu_ui/src/Tests/MenuTest.php
+ 
   public static $modules = array('node', 'block', 'contextual', 'help', 'path', 'test_page_test');
 =======
   public static $modules = ['node', 'block', 'contextual', 'help', 'path', 'test_page_test'];
->>>>>>> revert Open Social update
 =======
   protected static $modules = [
     'block',
@@ -52,7 +49,6 @@ class MenuUiTest extends BrowserTestBase {
     'path',
     'test_page_test',
   ];
->>>>>>> updating open social:web/core/modules/menu_ui/tests/src/Functional/MenuUiTest.php
 
   /**
    * A user with administration rights.
@@ -94,7 +90,7 @@ class MenuUiTest extends BrowserTestBase {
 
     $this->drupalPlaceBlock('page_title_block');
 
-<<<<<<< HEAD
+ 
     $this->drupalCreateContentType(array('type' => 'article', 'name' => 'Article'));
 
     // Create users.
@@ -106,13 +102,12 @@ class MenuUiTest extends BrowserTestBase {
     // Create users.
     $this->adminUser = $this->drupalCreateUser(['access administration pages', 'administer blocks', 'administer menu', 'create article content']);
     $this->authenticatedUser = $this->drupalCreateUser([]);
->>>>>>> revert Open Social update
   }
 
   /**
    * Tests menu functionality using the admin and user interfaces.
    */
-<<<<<<< HEAD
+ 
   function testMenu() {
     // Log in the user.
     $this->drupalLogin($this->adminUser);
@@ -122,7 +117,6 @@ class MenuUiTest extends BrowserTestBase {
     // Log in the user.
     $this->drupalLogin($this->adminUser);
     $this->items = [];
->>>>>>> revert Open Social update
 
     $this->menu = $this->addCustomMenu();
     $this->doMenuTests();
@@ -174,11 +168,10 @@ class MenuUiTest extends BrowserTestBase {
     $instance = $this->getStandardMenuLink();
     $old_weight = $instance->getWeight();
     // Edit the static menu link.
-<<<<<<< HEAD
+ 
     $edit = array();
 =======
     $edit = [];
->>>>>>> revert Open Social update
     $edit['weight'] = 10;
     $id = $instance->getPluginId();
     $this->drupalPostForm("admin/structure/menu/link/$id/edit", $edit, t('Save'));
@@ -194,16 +187,15 @@ class MenuUiTest extends BrowserTestBase {
   /**
    * Adds a custom menu using CRUD functions.
    */
-<<<<<<< HEAD
+ 
   function addCustomMenuCRUD() {
 =======
   public function addCustomMenuCRUD() {
->>>>>>> revert Open Social update
     // Add a new custom menu.
     $menu_name = substr(hash('sha256', $this->randomMachineName(16)), 0, MENU_MAX_MENU_NAME_LENGTH_UI);
     $label = $this->randomMachineName(16);
 
-<<<<<<< HEAD
+ 
     $menu = Menu::create(array(
       'id' => $menu_name,
       'label' => $label,
@@ -215,7 +207,6 @@ class MenuUiTest extends BrowserTestBase {
       'label' => $label,
       'description' => 'Description text',
     ]);
->>>>>>> revert Open Social update
     $menu->save();
 
     // Assert the new menu.
@@ -236,16 +227,15 @@ class MenuUiTest extends BrowserTestBase {
    * @return \Drupal\system\Entity\Menu
    *   The custom menu that has been created.
    */
-<<<<<<< HEAD
+ 
   function addCustomMenu() {
 =======
   public function addCustomMenu() {
->>>>>>> revert Open Social update
     // Try adding a menu using a menu_name that is too long.
     $this->drupalGet('admin/structure/menu/add');
     $menu_name = substr(hash('sha256', $this->randomMachineName(16)), 0, MENU_MAX_MENU_NAME_LENGTH_UI + 1);
     $label = $this->randomMachineName(16);
-<<<<<<< HEAD
+ 
     $edit = array(
       'id' => $menu_name,
       'description' => '',
@@ -257,12 +247,11 @@ class MenuUiTest extends BrowserTestBase {
       'description' => '',
       'label' => $label,
     ];
->>>>>>> revert Open Social update
     $this->drupalPostForm('admin/structure/menu/add', $edit, t('Save'));
 
     // Verify that using a menu_name that is too long results in a validation
     // message.
-<<<<<<< HEAD
+ 
     $this->assertRaw(t('@name cannot be longer than %max characters but is currently %length characters long.', array(
       '@name' => t('Menu name'),
       '%max' => MENU_MAX_MENU_NAME_LENGTH_UI,
@@ -274,7 +263,6 @@ class MenuUiTest extends BrowserTestBase {
       '%max' => MENU_MAX_MENU_NAME_LENGTH_UI,
       '%length' => Unicode::strlen($menu_name),
     ]));
->>>>>>> revert Open Social update
 
     // Change the menu_name so it no longer exceeds the maximum length.
     $menu_name = substr(hash('sha256', $this->randomMachineName(16)), 0, MENU_MAX_MENU_NAME_LENGTH_UI);
@@ -282,7 +270,7 @@ class MenuUiTest extends BrowserTestBase {
     $this->drupalPostForm('admin/structure/menu/add', $edit, t('Save'));
 
     // Verify that no validation error is given for menu_name length.
-<<<<<<< HEAD
+ 
     $this->assertNoRaw(t('@name cannot be longer than %max characters but is currently %length characters long.', array(
       '@name' => t('Menu name'),
       '%max' => MENU_MAX_MENU_NAME_LENGTH_UI,
@@ -298,7 +286,6 @@ class MenuUiTest extends BrowserTestBase {
     ]));
     // Verify that the confirmation message is displayed.
     $this->assertRaw(t('Menu %label has been added.', ['%label' => $label]));
->>>>>>> revert Open Social update
     $this->drupalGet('admin/structure/menu');
     $this->assertText($label, 'Menu created');
 
@@ -319,16 +306,15 @@ class MenuUiTest extends BrowserTestBase {
    * This deletes the custom menu that is stored in $this->menu and performs
    * tests on the menu delete user interface.
    */
-<<<<<<< HEAD
+ 
   function deleteCustomMenu() {
 =======
   public function deleteCustomMenu() {
->>>>>>> revert Open Social update
     $menu_name = $this->menu->id();
     $label = $this->menu->label();
 
     // Delete custom menu.
-<<<<<<< HEAD
+ 
     $this->drupalPostForm("admin/structure/menu/manage/$menu_name/delete", array(), t('Delete'));
     $this->assertResponse(200);
     $this->assertRaw(t('The menu %title has been deleted.', array('%title' => $label)), 'Custom menu was deleted');
@@ -344,7 +330,6 @@ class MenuUiTest extends BrowserTestBase {
     // Test if all menu links associated with the menu were removed from
     // database.
     $result = entity_load_multiple_by_properties('menu_link_content', ['menu_name' => $menu_name]);
->>>>>>> revert Open Social update
     $this->assertFalse($result, 'All menu links associated with the custom menu were deleted.');
 
     // Make sure there's no delete button on system menus.
@@ -359,11 +344,10 @@ class MenuUiTest extends BrowserTestBase {
   /**
    * Tests menu functionality.
    */
-<<<<<<< HEAD
+ 
   function doMenuTests() {
 =======
   public function doMenuTests() {
->>>>>>> revert Open Social update
     $menu_name = $this->menu->id();
 
     // Test the 'Add link' local action.
@@ -371,17 +355,16 @@ class MenuUiTest extends BrowserTestBase {
 
     $this->clickLink(t('Add link'));
     $link_title = $this->randomString();
-<<<<<<< HEAD
+ 
     $this->drupalPostForm(NULL, array('link[0][uri]' => '/', 'title[0][value]' => $link_title), t('Save'));
 =======
     $this->drupalPostForm(NULL, ['link[0][uri]' => '/', 'title[0][value]' => $link_title], t('Save'));
->>>>>>> revert Open Social update
     $this->assertUrl(Url::fromRoute('entity.menu.edit_form', ['menu' => $menu_name]));
     // Test the 'Edit' operation.
     $this->clickLink(t('Edit'));
     $this->assertFieldByName('title[0][value]', $link_title);
     $link_title = $this->randomString();
-<<<<<<< HEAD
+ 
     $this->drupalPostForm(NULL, array('title[0][value]' => $link_title), t('Save'));
     $this->assertUrl(Url::fromRoute('entity.menu.edit_form', ['menu' => $menu_name]));
     // Test the 'Delete' operation.
@@ -423,7 +406,6 @@ class MenuUiTest extends BrowserTestBase {
         'alias' => '/node5',
       ],
     ]);
->>>>>>> revert Open Social update
 
     // Verify add link button.
     $this->drupalGet('admin/structure/menu');
@@ -443,8 +425,8 @@ class MenuUiTest extends BrowserTestBase {
     // -- item2
     // --- item3
 
-<<<<<<< HEAD:web/core/modules/menu_ui/src/Tests/MenuTest.php
-<<<<<<< HEAD
+ :web/core/modules/menu_ui/src/Tests/MenuTest.php
+ 
     $this->assertMenuLink($item1->getPluginId(), array(
       'children' => array($item2->getPluginId(), $item3->getPluginId()),
       'parents' => array($item1->getPluginId()),
@@ -468,7 +450,6 @@ class MenuUiTest extends BrowserTestBase {
     $this->assertMenuLink($item1->getPluginId(), [
 =======
     $this->assertMenuLink([
->>>>>>> updating open social:web/core/modules/menu_ui/tests/src/Functional/MenuUiTest.php
       'children' => [$item2->getPluginId(), $item3->getPluginId()],
       'parents' => [$item1->getPluginId()],
       // We assert the language code here to make sure that the language
@@ -486,12 +467,10 @@ class MenuUiTest extends BrowserTestBase {
       'parents' => [$item3->getPluginId(), $item2->getPluginId(), $item1->getPluginId()],
       // See above.
       'langcode' => 'en',
-<<<<<<< HEAD:web/core/modules/menu_ui/src/Tests/MenuTest.php
+ :web/core/modules/menu_ui/src/Tests/MenuTest.php
     ]);
->>>>>>> revert Open Social update
 =======
     ], $item3->getPluginId());
->>>>>>> updating open social:web/core/modules/menu_ui/tests/src/Functional/MenuUiTest.php
 
     // Verify menu links.
     $this->verifyMenuLink($item1, $node1);
@@ -513,8 +492,8 @@ class MenuUiTest extends BrowserTestBase {
     // -- item5
     // -- item6
 
-<<<<<<< HEAD:web/core/modules/menu_ui/src/Tests/MenuTest.php
-<<<<<<< HEAD
+ :web/core/modules/menu_ui/src/Tests/MenuTest.php
+ 
     $this->assertMenuLink($item4->getPluginId(), array(
       'children' => array($item5->getPluginId(), $item6->getPluginId()),
       'parents' => array($item4->getPluginId()),
@@ -539,7 +518,6 @@ class MenuUiTest extends BrowserTestBase {
     $this->assertMenuLink($item4->getPluginId(), [
 =======
     $this->assertMenuLink([
->>>>>>> updating open social:web/core/modules/menu_ui/tests/src/Functional/MenuUiTest.php
       'children' => [$item5->getPluginId(), $item6->getPluginId()],
       'parents' => [$item4->getPluginId()],
       // See above.
@@ -558,12 +536,10 @@ class MenuUiTest extends BrowserTestBase {
       'url' => '',
       // See above.
       'langcode' => 'en',
-<<<<<<< HEAD:web/core/modules/menu_ui/src/Tests/MenuTest.php
+ :web/core/modules/menu_ui/src/Tests/MenuTest.php
     ]);
->>>>>>> revert Open Social update
 =======
     ], $item6->getPluginId());
->>>>>>> updating open social:web/core/modules/menu_ui/tests/src/Functional/MenuUiTest.php
 
     // Modify menu links.
     $this->modifyMenuLink($item1);
@@ -584,8 +560,8 @@ class MenuUiTest extends BrowserTestBase {
     // ---- item3
     // -- item6
 
-<<<<<<< HEAD:web/core/modules/menu_ui/src/Tests/MenuTest.php
-<<<<<<< HEAD
+ :web/core/modules/menu_ui/src/Tests/MenuTest.php
+ 
     $this->assertMenuLink($item1->getPluginId(), array(
       'children' => array(),
       'parents' => array($item1->getPluginId()),
@@ -633,7 +609,6 @@ class MenuUiTest extends BrowserTestBase {
     $this->assertMenuLink($item1->getPluginId(), [
 =======
     $this->assertMenuLink([
->>>>>>> updating open social:web/core/modules/menu_ui/tests/src/Functional/MenuUiTest.php
       'children' => [],
       'parents' => [$item1->getPluginId()],
       // See above.
@@ -676,7 +651,6 @@ class MenuUiTest extends BrowserTestBase {
     // Disable a link and then re-enable the link via the overview form.
     $this->disableMenuLink($item1);
     $edit = [];
->>>>>>> revert Open Social update
     $edit['links[menu_plugin_id:' . $item1->getPluginId() . '][enabled]'] = TRUE;
     $this->drupalPostForm('admin/structure/menu/manage/' . $item1->getMenuName(), $edit, t('Save'));
 
@@ -690,8 +664,8 @@ class MenuUiTest extends BrowserTestBase {
     $item5->save();
 
     // Verify in the database.
-<<<<<<< HEAD:web/core/modules/menu_ui/src/Tests/MenuTest.php
-<<<<<<< HEAD
+ :web/core/modules/menu_ui/src/Tests/MenuTest.php
+ 
     $this->assertMenuLink($item1->getPluginId(), array('enabled' => 1));
 
     // Add an external link.
@@ -705,7 +679,6 @@ class MenuUiTest extends BrowserTestBase {
     $this->assertMenuLink($item1->getPluginId(), ['enabled' => 1]);
 =======
     $this->assertMenuLink(['enabled' => 1], $item1->getPluginId());
->>>>>>> updating open social:web/core/modules/menu_ui/tests/src/Functional/MenuUiTest.php
 
     // Add an external link.
     $item7 = $this->addMenuLink('', 'https://www.drupal.org', $menu_name);
@@ -713,12 +686,10 @@ class MenuUiTest extends BrowserTestBase {
 
     // Add <front> menu item.
     $item8 = $this->addMenuLink('', '/', $menu_name);
-<<<<<<< HEAD:web/core/modules/menu_ui/src/Tests/MenuTest.php
+ :web/core/modules/menu_ui/src/Tests/MenuTest.php
     $this->assertMenuLink($item8->getPluginId(), ['route_name' => '<front>']);
->>>>>>> revert Open Social update
 =======
     $this->assertMenuLink(['route_name' => '<front>'], $item8->getPluginId());
->>>>>>> updating open social:web/core/modules/menu_ui/tests/src/Functional/MenuUiTest.php
     $this->drupalGet('');
     $this->assertResponse(200);
     // Make sure we get routed correctly.
@@ -753,11 +724,10 @@ class MenuUiTest extends BrowserTestBase {
   /**
    * Adds and removes a menu link with a query string and fragment.
    */
-<<<<<<< HEAD
+ 
   function testMenuQueryAndFragment() {
 =======
   public function testMenuQueryAndFragment() {
->>>>>>> revert Open Social update
     $this->drupalLogin($this->adminUser);
 
     // Make a path with query and fragment on.
@@ -769,11 +739,10 @@ class MenuUiTest extends BrowserTestBase {
 
     // Now change the path to something without query and fragment.
     $path = '/test-page';
-<<<<<<< HEAD
+ 
     $this->drupalPostForm('admin/structure/menu/item/' . $item->id() . '/edit', array('link[0][uri]' => $path), t('Save'));
 =======
     $this->drupalPostForm('admin/structure/menu/item/' . $item->id() . '/edit', ['link[0][uri]' => $path], t('Save'));
->>>>>>> revert Open Social update
     $this->drupalGet('admin/structure/menu/item/' . $item->id() . '/edit');
     $this->assertFieldByName('link[0][uri]', $path, 'Path no longer has query or fragment.');
 
@@ -784,11 +753,10 @@ class MenuUiTest extends BrowserTestBase {
     $this->drupalGet('admin/structure/menu/item/' . $item->id() . '/edit');
     $this->assertFieldByName('link[0][uri]', $path, 'Path is found with both query and fragment.');
 
-<<<<<<< HEAD
+ 
     $this->drupalPostForm('admin/structure/menu/item/' . $item->id() . '/edit', array(), t('Save'));
 =======
     $this->drupalPostForm('admin/structure/menu/item/' . $item->id() . '/edit', [], t('Save'));
->>>>>>> revert Open Social update
 
     $this->drupalGet('admin/structure/menu/item/' . $item->id() . '/edit');
     $this->assertFieldByName('link[0][uri]', $path, 'Path is found with both query and fragment.');
@@ -797,7 +765,7 @@ class MenuUiTest extends BrowserTestBase {
   /**
    * Tests renaming the built-in menu.
    */
-<<<<<<< HEAD
+ 
   function testSystemMenuRename() {
     $this->drupalLogin($this->adminUser);
     $edit = array(
@@ -809,7 +777,6 @@ class MenuUiTest extends BrowserTestBase {
     $edit = [
       'label' => $this->randomMachineName(16),
     ];
->>>>>>> revert Open Social update
     $this->drupalPostForm('admin/structure/menu/manage/main', $edit, t('Save'));
 
     // Make sure menu shows up with new name in block addition.
@@ -822,7 +789,7 @@ class MenuUiTest extends BrowserTestBase {
   /**
    * Tests that menu items pointing to unpublished nodes are editable.
    */
-<<<<<<< HEAD
+ 
   function testUnpublishedNodeMenuItem() {
     $this->drupalLogin($this->drupalCreateUser(array('access administration pages', 'administer blocks', 'administer menu', 'create article content', 'bypass node access')));
     // Create an unpublished node.
@@ -838,7 +805,6 @@ class MenuUiTest extends BrowserTestBase {
       'type' => 'article',
       'status' => NodeInterface::NOT_PUBLISHED,
     ]);
->>>>>>> revert Open Social update
 
     $item = $this->addMenuLink('', '/node/' . $node->id());
     $this->modifyMenuLink($item);
@@ -851,7 +817,7 @@ class MenuUiTest extends BrowserTestBase {
     $this->assertNoText($item->getTitle(), "Menu link pointing to unpublished node is only visible to users with 'bypass node access' permission");
     // The cache contexts associated with the (in)accessible menu links are
     // bubbled. See DefaultMenuLinkTreeManipulators::menuLinkCheckAccess().
-<<<<<<< HEAD:web/core/modules/menu_ui/src/Tests/MenuTest.php
+ :web/core/modules/menu_ui/src/Tests/MenuTest.php
     $this->assertCacheContext('user.permissions');
   }
 
@@ -859,7 +825,7 @@ class MenuUiTest extends BrowserTestBase {
    * Tests the contextual links on a menu block.
    */
   public function testBlockContextualLinks() {
-<<<<<<< HEAD
+ 
     $this->drupalLogin($this->drupalCreateUser(array('administer menu', 'access contextual links', 'administer blocks')));
     $custom_menu = $this->addCustomMenu();
     $this->addMenuLink('', '/', $custom_menu->id());
@@ -869,12 +835,11 @@ class MenuUiTest extends BrowserTestBase {
     $custom_menu = $this->addCustomMenu();
     $this->addMenuLink('', '/', $custom_menu->id());
     $block = $this->drupalPlaceBlock('system_menu_block:' . $custom_menu->id(), ['label' => 'Custom menu', 'provider' => 'system']);
->>>>>>> revert Open Social update
     $this->drupalGet('test-page');
 
     $id = 'block:block=' . $block->id() . ':langcode=en|menu:menu=' . $custom_menu->id() . ':langcode=en';
     // @see \Drupal\contextual\Tests\ContextualDynamicContextTest:assertContextualLinkPlaceHolder()
-<<<<<<< HEAD
+ 
     $this->assertRaw('<div data-contextual-id="' . $id . '"></div>', format_string('Contextual link placeholder with id @id exists.', array('@id' => $id)));
 
     // Get server-rendered contextual links.
@@ -888,13 +853,11 @@ class MenuUiTest extends BrowserTestBase {
     // @see \Drupal\contextual\Tests\ContextualDynamicContextTest:renderContextualLinks()
     $post = ['ids[0]' => $id];
     $response = $this->drupalPost('contextual/render', 'application/json', $post, ['query' => ['destination' => 'test-page']]);
->>>>>>> revert Open Social update
     $this->assertResponse(200);
     $json = Json::decode($response);
     $this->assertIdentical($json[$id], '<ul class="contextual-links"><li class="block-configure"><a href="' . base_path() . 'admin/structure/block/manage/' . $block->id() . '">Configure block</a></li><li class="entitymenuedit-form"><a href="' . base_path() . 'admin/structure/menu/manage/' . $custom_menu->id() . '">Edit menu</a></li></ul>');
 =======
     $this->assertSession()->responseHeaderContains('X-Drupal-Cache-Contexts', 'user.permissions');
->>>>>>> updating open social:web/core/modules/menu_ui/tests/src/Functional/MenuUiTest.php
   }
 
   /**
@@ -916,21 +879,19 @@ class MenuUiTest extends BrowserTestBase {
    * @return \Drupal\menu_link_content\Entity\MenuLinkContent
    *   A menu link entity.
    */
-<<<<<<< HEAD
+ 
   function addMenuLink($parent = '', $path = '/', $menu_name = 'tools', $expanded = FALSE, $weight = '0') {
 =======
   public function addMenuLink($parent = '', $path = '/', $menu_name = 'tools', $expanded = FALSE, $weight = '0') {
->>>>>>> revert Open Social update
     // View add menu link page.
     $this->drupalGet("admin/structure/menu/manage/$menu_name/add");
     $this->assertResponse(200);
 
     $title = '!link_' . $this->randomMachineName(16);
-<<<<<<< HEAD
+ 
     $edit = array(
 =======
     $edit = [
->>>>>>> revert Open Social update
       'link[0][uri]' => $path,
       'title[0][value]' => $title,
       'description[0][value]' => '',
@@ -938,18 +899,17 @@ class MenuUiTest extends BrowserTestBase {
       'expanded[value]' => $expanded,
       'menu_parent' => $menu_name . ':' . $parent,
       'weight[0][value]' => $weight,
-<<<<<<< HEAD
+ 
     );
 =======
     ];
->>>>>>> revert Open Social update
 
     // Add menu link.
     $this->drupalPostForm(NULL, $edit, t('Save'));
     $this->assertResponse(200);
     $this->assertText('The menu link has been saved.');
 
-<<<<<<< HEAD
+ 
     $menu_links = entity_load_multiple_by_properties('menu_link_content', array('title' => $title));
 
     $menu_link = reset($menu_links);
@@ -960,12 +920,10 @@ class MenuUiTest extends BrowserTestBase {
 
     $menu_link = reset($menu_links);
     $this->assertTrue($menu_link, 'Menu link was found in database.');
-<<<<<<< HEAD:web/core/modules/menu_ui/src/Tests/MenuTest.php
+ :web/core/modules/menu_ui/src/Tests/MenuTest.php
     $this->assertMenuLink($menu_link->getPluginId(), ['menu_name' => $menu_name, 'children' => [], 'parent' => $parent]);
->>>>>>> revert Open Social update
 =======
     $this->assertMenuLink(['menu_name' => $menu_name, 'children' => [], 'parent' => $parent], $menu_link->getPluginId());
->>>>>>> updating open social:web/core/modules/menu_ui/tests/src/Functional/MenuUiTest.php
 
     return $menu_link;
   }
@@ -973,7 +931,7 @@ class MenuUiTest extends BrowserTestBase {
   /**
    * Attempts to add menu link with invalid path or no access permission.
    */
-<<<<<<< HEAD
+ 
   function addInvalidMenuLink() {
     foreach (array('access' => '/admin/people/permissions') as $type => $link_path) {
       $edit = array(
@@ -991,14 +949,13 @@ class MenuUiTest extends BrowserTestBase {
       ];
       $this->drupalPostForm("admin/structure/menu/manage/{$this->menu->id()}/add", $edit, t('Save'));
       $this->assertRaw(t("The path '@link_path' is inaccessible.", ['@link_path' => $link_path]), 'Menu link was not created');
->>>>>>> revert Open Social update
     }
   }
 
   /**
    * Tests that parent options are limited by depth when adding menu links.
    */
-<<<<<<< HEAD
+ 
   function checkInvalidParentMenuLinks() {
     $last_link = NULL;
     $created_links = array();
@@ -1006,7 +963,6 @@ class MenuUiTest extends BrowserTestBase {
   public function checkInvalidParentMenuLinks() {
     $last_link = NULL;
     $created_links = [];
->>>>>>> revert Open Social update
 
     // Get the max depth of the tree.
     $menu_link_tree = \Drupal::service('menu.link_tree');
@@ -1016,11 +972,10 @@ class MenuUiTest extends BrowserTestBase {
     for ($i = 0; $i <= $max_depth - 1; $i++) {
       $parent = $last_link ? 'tools:' . $last_link->getPluginId() : 'tools:';
       $title = 'title' . $i;
-<<<<<<< HEAD
+ 
       $edit = array(
 =======
       $edit = [
->>>>>>> revert Open Social update
         'link[0][uri]' => '/',
         'title[0][value]' => $title,
         'menu_parent' => $parent,
@@ -1028,7 +983,7 @@ class MenuUiTest extends BrowserTestBase {
         'enabled[value]' => 1,
         'expanded[value]' => FALSE,
         'weight[0][value]' => '0',
-<<<<<<< HEAD
+ 
       );
       $this->drupalPostForm("admin/structure/menu/manage/{$this->menu->id()}/add", $edit, t('Save'));
       $menu_links = entity_load_multiple_by_properties('menu_link_content', array('title' => $title));
@@ -1036,7 +991,6 @@ class MenuUiTest extends BrowserTestBase {
       ];
       $this->drupalPostForm("admin/structure/menu/manage/{$this->menu->id()}/add", $edit, t('Save'));
       $menu_links = entity_load_multiple_by_properties('menu_link_content', ['title' => $title]);
->>>>>>> revert Open Social update
       $last_link = reset($menu_links);
       $created_links[]  = 'tools:' . $last_link->getPluginId();
     }
@@ -1065,11 +1019,10 @@ class MenuUiTest extends BrowserTestBase {
    * @param object $parent_node
    *   Parent menu link content node.
    */
-<<<<<<< HEAD
+ 
   function verifyMenuLink(MenuLinkContent $item, $item_node, MenuLinkContent $parent = NULL, $parent_node = NULL) {
 =======
   public function verifyMenuLink(MenuLinkContent $item, $item_node, MenuLinkContent $parent = NULL, $parent_node = NULL) {
->>>>>>> revert Open Social update
     // View home page.
     $this->drupalGet('');
     $this->assertResponse(200);
@@ -1083,11 +1036,10 @@ class MenuUiTest extends BrowserTestBase {
       // Verify menu link link.
       $this->clickLink($title);
       $title = $parent_node->label();
-<<<<<<< HEAD
+ 
       $this->assertTitle(t("@title | Drupal", array('@title' => $title)), 'Parent menu link link target was correct');
 =======
       $this->assertTitle(t("@title | Drupal", ['@title' => $title]), 'Parent menu link link target was correct');
->>>>>>> revert Open Social update
     }
 
     // Verify menu link.
@@ -1097,11 +1049,10 @@ class MenuUiTest extends BrowserTestBase {
     // Verify menu link link.
     $this->clickLink($title);
     $title = $item_node->label();
-<<<<<<< HEAD
+ 
     $this->assertTitle(t("@title | Drupal", array('@title' => $title)), 'Menu link link target was correct');
 =======
     $this->assertTitle(t("@title | Drupal", ['@title' => $title]), 'Menu link link target was correct');
->>>>>>> revert Open Social update
   }
 
   /**
@@ -1114,7 +1065,7 @@ class MenuUiTest extends BrowserTestBase {
    * @param string $menu_name
    *   The menu the menu link will be moved to.
    */
-<<<<<<< HEAD
+ 
   function moveMenuLink(MenuLinkContent $item, $parent, $menu_name) {
     $mlid = $item->id();
 
@@ -1128,7 +1079,6 @@ class MenuUiTest extends BrowserTestBase {
     $edit = [
       'menu_parent' => $menu_name . ':' . $parent,
     ];
->>>>>>> revert Open Social update
     $this->drupalPostForm("admin/structure/menu/item/$mlid/edit", $edit, t('Save'));
     $this->assertResponse(200);
   }
@@ -1139,22 +1089,20 @@ class MenuUiTest extends BrowserTestBase {
    * @param \Drupal\menu_link_content\Entity\MenuLinkContent $item
    *   Menu link entity.
    */
-<<<<<<< HEAD
+ 
   function modifyMenuLink(MenuLinkContent $item) {
 =======
   public function modifyMenuLink(MenuLinkContent $item) {
->>>>>>> revert Open Social update
     $item->title->value = $this->randomMachineName(16);
 
     $mlid = $item->id();
     $title = $item->getTitle();
 
     // Edit menu link.
-<<<<<<< HEAD
+ 
     $edit = array();
 =======
     $edit = [];
->>>>>>> revert Open Social update
     $edit['title[0][value]'] = $title;
     $this->drupalPostForm("admin/structure/menu/item/$mlid/edit", $edit, t('Save'));
     $this->assertResponse(200);
@@ -1172,7 +1120,7 @@ class MenuUiTest extends BrowserTestBase {
    * @param int $old_weight
    *   Original title for menu link.
    */
-<<<<<<< HEAD
+ 
   function resetMenuLink(MenuLinkInterface $menu_link, $old_weight) {
     // Reset menu link.
     $this->drupalPostForm("admin/structure/menu/link/{$menu_link->getPluginId()}/reset", array(), t('Reset'));
@@ -1180,7 +1128,6 @@ class MenuUiTest extends BrowserTestBase {
   public function resetMenuLink(MenuLinkInterface $menu_link, $old_weight) {
     // Reset menu link.
     $this->drupalPostForm("admin/structure/menu/link/{$menu_link->getPluginId()}/reset", [], t('Reset'));
->>>>>>> revert Open Social update
     $this->assertResponse(200);
     $this->assertRaw(t('The menu link was reset to its default settings.'), 'Menu link was reset');
 
@@ -1195,16 +1142,15 @@ class MenuUiTest extends BrowserTestBase {
    * @param \Drupal\menu_link_content\Entity\MenuLinkContent $item
    *   Menu link.
    */
-<<<<<<< HEAD
+ 
   function deleteMenuLink(MenuLinkContent $item) {
 =======
   public function deleteMenuLink(MenuLinkContent $item) {
->>>>>>> revert Open Social update
     $mlid = $item->id();
     $title = $item->getTitle();
 
     // Delete menu link.
-<<<<<<< HEAD
+ 
     $this->drupalPostForm("admin/structure/menu/item/$mlid/delete", array(), t('Delete'));
     $this->assertResponse(200);
     $this->assertRaw(t('The menu link %title has been deleted.', array('%title' => $title)), 'Menu link was deleted');
@@ -1212,7 +1158,6 @@ class MenuUiTest extends BrowserTestBase {
     $this->drupalPostForm("admin/structure/menu/item/$mlid/delete", [], t('Delete'));
     $this->assertResponse(200);
     $this->assertRaw(t('The menu link %title has been deleted.', ['%title' => $title]), 'Menu link was deleted');
->>>>>>> revert Open Social update
 
     // Verify deletion.
     $this->drupalGet('');
@@ -1225,11 +1170,10 @@ class MenuUiTest extends BrowserTestBase {
    * @param \Drupal\menu_link_content\Entity\MenuLinkContent $item
    *   Menu link.
    */
-<<<<<<< HEAD
+ 
   function toggleMenuLink(MenuLinkContent $item) {
 =======
   public function toggleMenuLink(MenuLinkContent $item) {
->>>>>>> revert Open Social update
     $this->disableMenuLink($item);
 
     // Verify menu link is absent.
@@ -1248,26 +1192,23 @@ class MenuUiTest extends BrowserTestBase {
    * @param \Drupal\menu_link_content\Entity\MenuLinkContent $item
    *   Menu link.
    */
-<<<<<<< HEAD
+ 
   function disableMenuLink(MenuLinkContent $item) {
 =======
   public function disableMenuLink(MenuLinkContent $item) {
->>>>>>> revert Open Social update
     $mlid = $item->id();
     $edit['enabled[value]'] = FALSE;
     $this->drupalPostForm("admin/structure/menu/item/$mlid/edit", $edit, t('Save'));
 
     // Unlike most other modules, there is no confirmation message displayed.
     // Verify in the database.
-<<<<<<< HEAD:web/core/modules/menu_ui/src/Tests/MenuTest.php
-<<<<<<< HEAD
+ :web/core/modules/menu_ui/src/Tests/MenuTest.php
+ 
     $this->assertMenuLink($item->getPluginId(), array('enabled' => 0));
 =======
     $this->assertMenuLink($item->getPluginId(), ['enabled' => 0]);
->>>>>>> revert Open Social update
 =======
     $this->assertMenuLink(['enabled' => 0], $item->getPluginId());
->>>>>>> updating open social:web/core/modules/menu_ui/tests/src/Functional/MenuUiTest.php
   }
 
   /**
@@ -1276,41 +1217,36 @@ class MenuUiTest extends BrowserTestBase {
    * @param \Drupal\menu_link_content\Entity\MenuLinkContent $item
    *   Menu link.
    */
-<<<<<<< HEAD
+ 
   function enableMenuLink(MenuLinkContent $item) {
 =======
   public function enableMenuLink(MenuLinkContent $item) {
->>>>>>> revert Open Social update
     $mlid = $item->id();
     $edit['enabled[value]'] = TRUE;
     $this->drupalPostForm("admin/structure/menu/item/$mlid/edit", $edit, t('Save'));
 
     // Verify in the database.
-<<<<<<< HEAD:web/core/modules/menu_ui/src/Tests/MenuTest.php
-<<<<<<< HEAD
+ :web/core/modules/menu_ui/src/Tests/MenuTest.php
+ 
     $this->assertMenuLink($item->getPluginId(), array('enabled' => 1));
 =======
     $this->assertMenuLink($item->getPluginId(), ['enabled' => 1]);
->>>>>>> revert Open Social update
 =======
     $this->assertMenuLink(['enabled' => 1], $item->getPluginId());
->>>>>>> updating open social:web/core/modules/menu_ui/tests/src/Functional/MenuUiTest.php
   }
 
   /**
    * Tests if admin users, other than UID1, can access parents AJAX callback.
    */
   public function testMenuParentsJsAccess() {
-<<<<<<< HEAD:web/core/modules/menu_ui/src/Tests/MenuTest.php
-<<<<<<< HEAD
+ :web/core/modules/menu_ui/src/Tests/MenuTest.php
+ 
     $admin = $this->drupalCreateUser(array('administer menu'));
 =======
     $admin = $this->drupalCreateUser(['administer menu']);
->>>>>>> revert Open Social update
     $this->drupalLogin($admin);
 =======
     $this->drupalLogin($this->drupalCreateUser(['administer menu']));
->>>>>>> updating open social:web/core/modules/menu_ui/tests/src/Functional/MenuUiTest.php
     // Just check access to the callback overall, the POST data is irrelevant.
     $this->drupalGet('admin/structure/menu/parents', ['query' => [MainContentViewSubscriber::WRAPPER_FORMAT => 'drupal_ajax']], ['X-Requested-With: XMLHttpRequest']);
     $this->assertSession()->statusCodeEquals(200);

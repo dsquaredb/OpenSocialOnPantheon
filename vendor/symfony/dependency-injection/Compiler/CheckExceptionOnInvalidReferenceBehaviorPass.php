@@ -11,17 +11,14 @@
 
 namespace Symfony\Component\DependencyInjection\Compiler;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
 =======
->>>>>>> Update Open Social to 8.x-2.1
 =======
 use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Reference;
@@ -31,14 +28,13 @@ use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
->>>>>>> web and vendor directory from composer install
 
 /**
  * Checks that all references are pointing to a valid service.
  *
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
  */
-<<<<<<< HEAD
+ 
 class CheckExceptionOnInvalidReferenceBehaviorPass extends AbstractRecursivePass
 {
     protected function processValue($value, $isRoot = false)
@@ -89,6 +85,5 @@ class CheckExceptionOnInvalidReferenceBehaviorPass implements CompilerPassInterf
                 }
             }
         }
->>>>>>> web and vendor directory from composer install
     }
 }

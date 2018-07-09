@@ -9,7 +9,6 @@
 =======
  * (c) 2009 Fabien Potencier
  * (c) 2009 Armin Ronacher
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -137,7 +136,6 @@ class Twig_Node implements Twig_NodeInterface
         @trigger_error('The '.__METHOD__.' method is deprecated since version 1.27 and will be removed in 2.0. Use getTemplateLine() instead.', E_USER_DEPRECATED);
 =======
         @trigger_error('The '.__METHOD__.' method is deprecated since version 1.27 and will be removed in 2.0. Use getTemplateName() instead.', E_USER_DEPRECATED);
->>>>>>> web and vendor directory from composer install
 
         return $this->lineno;
     }
@@ -156,7 +154,6 @@ class Twig_Node implements Twig_NodeInterface
      * @param string $name The attribute name
      *
      * @return bool true if the attribute is defined, false otherwise
->>>>>>> web and vendor directory from composer install
      */
     public function hasAttribute($name)
     {
@@ -170,7 +167,6 @@ class Twig_Node implements Twig_NodeInterface
      *
      * @param string $name
      *
->>>>>>> web and vendor directory from composer install
      * @return mixed
      */
     public function getAttribute($name)
@@ -187,7 +183,6 @@ class Twig_Node implements Twig_NodeInterface
 =======
      * Sets an attribute by name to a value.
      *
->>>>>>> web and vendor directory from composer install
      * @param string $name
      * @param mixed  $value
      */
@@ -203,7 +198,6 @@ class Twig_Node implements Twig_NodeInterface
      *
      * @param string $name
      */
->>>>>>> web and vendor directory from composer install
     public function removeAttribute($name)
     {
         unset($this->attributes[$name]);
@@ -216,7 +210,6 @@ class Twig_Node implements Twig_NodeInterface
      *
      * @param string $name
      *
->>>>>>> web and vendor directory from composer install
      * @return bool
      */
     public function hasNode($name)
@@ -231,7 +224,6 @@ class Twig_Node implements Twig_NodeInterface
      *
      * @param string $name
      *
->>>>>>> web and vendor directory from composer install
      * @return Twig_Node
      */
     public function getNode($name)
@@ -251,7 +243,6 @@ class Twig_Node implements Twig_NodeInterface
      * @param string    $name
      * @param Twig_Node $node
      */
->>>>>>> web and vendor directory from composer install
     public function setNode($name, $node = null)
     {
         if (!$node instanceof Twig_NodeInterface) {
@@ -268,7 +259,6 @@ class Twig_Node implements Twig_NodeInterface
      *
      * @param string $name
      */
->>>>>>> web and vendor directory from composer install
     public function removeNode($name)
     {
         unset($this->nodes[$name]);
@@ -324,4 +314,3 @@ class Twig_Node implements Twig_NodeInterface
 class_alias('Twig_Node', 'Twig\Node\Node', false);
 class_exists('Twig_Compiler');
 =======
->>>>>>> web and vendor directory from composer install

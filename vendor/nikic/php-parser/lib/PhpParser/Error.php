@@ -14,21 +14,18 @@ class Error extends \RuntimeException
      * @param array|int $attributes Attributes of node/token where error occurred
      *                              (or start line of error -- deprecated)
      */
-<<<<<<< HEAD
+ 
     public function __construct($message, $attributes = array()) {
         $this->rawMessage = (string) $message;
 =======
     public function __construct(string $message, $attributes = []) {
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
         $this->rawMessage = $message;
->>>>>>> Update Open Social to 8.x-2.1
 =======
         $this->rawMessage = (string) $message;
->>>>>>> revert Open Social update
 =======
         $this->rawMessage = $message;
->>>>>>> updating open social
         if (is_array($attributes)) {
             $this->attributes = $attributes;
         } else {
@@ -79,21 +76,18 @@ class Error extends \RuntimeException
      *
      * @param string $message Error message
      */
-<<<<<<< HEAD
+ 
     public function setRawMessage($message) {
         $this->rawMessage = (string) $message;
 =======
     public function setRawMessage(string $message) {
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
         $this->rawMessage = $message;
->>>>>>> Update Open Social to 8.x-2.1
 =======
         $this->rawMessage = (string) $message;
->>>>>>> revert Open Social update
 =======
         $this->rawMessage = $message;
->>>>>>> updating open social
         $this->updateMessage();
     }
 
@@ -102,21 +96,18 @@ class Error extends \RuntimeException
      *
      * @param int $line Error start line
      */
-<<<<<<< HEAD
+ 
     public function setStartLine($line) {
         $this->attributes['startLine'] = (int) $line;
 =======
     public function setStartLine(int $line) {
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
         $this->attributes['startLine'] = $line;
->>>>>>> Update Open Social to 8.x-2.1
 =======
         $this->attributes['startLine'] = (int) $line;
->>>>>>> revert Open Social update
 =======
         $this->attributes['startLine'] = $line;
->>>>>>> updating open social
         $this->updateMessage();
     }
 

@@ -17,16 +17,15 @@ class GetNamespacesTest extends WebTestBase {
    *
    * @var array
    */
-<<<<<<< HEAD
+ 
   public static $modules = array('rdf', 'rdf_test_namespaces');
 =======
   public static $modules = ['rdf', 'rdf_test_namespaces'];
->>>>>>> revert Open Social update
 
   /**
    * Tests RDF namespaces.
    */
-<<<<<<< HEAD
+ 
   function testGetRdfNamespaces() {
     // Fetches the front page and extracts RDFa 1.1 prefixes.
     $this->drupalGet('');
@@ -72,7 +71,6 @@ class GetNamespacesTest extends WebTestBase {
     $element = $this->xpath('//html[contains(@prefix, :prefix_binding)]', [
       ':prefix_binding' => 'dc: http://purl.org/dc/terms/',
     ]);
->>>>>>> revert Open Social update
     $this->assertTrue(!empty($element), 'When a prefix has conflicting namespaces, the first declared one is used.');
   }
 

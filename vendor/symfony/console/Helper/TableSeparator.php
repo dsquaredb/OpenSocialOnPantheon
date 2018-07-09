@@ -18,12 +18,11 @@ namespace Symfony\Component\Console\Helper;
  */
 class TableSeparator extends TableCell
 {
-<<<<<<< HEAD
+ 
 =======
     /**
      * @param array $options
      */
->>>>>>> web and vendor directory from composer install
     public function __construct(array $options = array())
     {
         parent::__construct('', $options);

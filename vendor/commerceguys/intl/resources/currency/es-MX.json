@@ -1,6 +1,6 @@
 {
 	"AFN": {
-<<<<<<< HEAD
+ 
 		"name": "afgani afgano",
 		"symbol": "Af"
 	},
@@ -20,7 +20,7 @@
 		"name": "balboa panameño"
 	},
 	"ETB": {
-<<<<<<< HEAD
+ 
 		"name": "birr etíope"
 =======
 		"name": "bir"
@@ -33,7 +33,7 @@
 		"name": "boliviano"
 	},
 	"GHS": {
-<<<<<<< HEAD
+ 
 		"name": "cedi ghanés"
 =======
 		"name": "cedi"
@@ -76,7 +76,7 @@
 		"name": "corona sueca"
 	},
 	"GMD": {
-<<<<<<< HEAD
+ 
 		"name": "dalasi gambiano"
 =======
 		"name": "dalasi"
@@ -116,7 +116,7 @@
 		"name": "dírham marroquí"
 	},
 	"STD": {
-<<<<<<< HEAD
+ 
 		"name": "dobra de Santo Tomé y Príncipe"
 	},
 	"AUD": {
@@ -138,7 +138,7 @@
 	"BZD": {
 		"name": "dólar beliceño"
 	},
-<<<<<<< HEAD
+ 
 =======
 	"BND": {
 		"name": "dólar bruneano"
@@ -150,7 +150,7 @@
 	"BMD": {
 		"name": "dólar de Bermudas"
 	},
-<<<<<<< HEAD
+ 
 	"BND": {
 		"name": "dólar de Brunéi"
 	},
@@ -183,7 +183,7 @@
 	"GYD": {
 		"name": "dólar guyanés"
 	},
-<<<<<<< HEAD
+ 
 =======
 	"HKD": {
 		"name": "dólar hongkonés"
@@ -201,7 +201,7 @@
 	"NZD": {
 		"name": "dólar neozelandés"
 	},
-<<<<<<< HEAD
+ 
 =======
 	"SBD": {
 		"name": "dólar salomonense"
@@ -217,7 +217,7 @@
 		"name": "dólar zimbabuense"
 	},
 	"VND": {
-<<<<<<< HEAD
+ 
 		"name": "dong vietnamita"
 =======
 		"name": "dong"
@@ -229,7 +229,7 @@
 	"CVE": {
 		"name": "escudo de Cabo Verde"
 	},
-<<<<<<< HEAD
+ 
 =======
 	"PLN": {
 		"name": "esloti"
@@ -239,7 +239,7 @@
 		"name": "euro"
 	},
 	"AWG": {
-<<<<<<< HEAD
+ 
 		"name": "florín arubeño",
 		"symbol": "Afl."
 	},
@@ -259,7 +259,7 @@
 	"BIF": {
 		"name": "franco burundés"
 	},
-<<<<<<< HEAD
+ 
 	"XOF": {
 		"name": "franco CFA BCEAO"
 	},
@@ -302,7 +302,7 @@
 		"name": "gourde haitiano"
 	},
 	"UAH": {
-<<<<<<< HEAD
+ 
 		"name": "grivna ucraniana"
 =======
 		"name": "grivna"
@@ -311,7 +311,7 @@
 	"PYG": {
 		"name": "guaraní paraguayo"
 	},
-<<<<<<< HEAD
+ 
 	"PGK": {
 		"name": "kina de Papúa Nueva Guinea"
 	},
@@ -346,7 +346,7 @@
 	"ZMW": {
 		"name": "kwacha zambiano"
 	},
-<<<<<<< HEAD
+ 
 	"AOA": {
 		"name": "kwanza angoleño",
 		"symbol": "Kz"
@@ -371,7 +371,7 @@
 		"name": "lempira hondureño"
 	},
 	"SLL": {
-<<<<<<< HEAD
+ 
 		"name": "leone de Sierra Leona"
 =======
 		"name": "leona"
@@ -386,7 +386,7 @@
 	"BGN": {
 		"name": "lev búlgaro"
 	},
-<<<<<<< HEAD
+ 
 	"GBP": {
 		"name": "libra británica"
 	},
@@ -398,7 +398,7 @@
 	"EGP": {
 		"name": "libra egipcia"
 	},
-<<<<<<< HEAD
+ 
 =======
 	"GBP": {
 		"name": "libra esterlina"
@@ -423,7 +423,7 @@
 		"name": "libra sursudanesa"
 	},
 	"SZL": {
-<<<<<<< HEAD
+ 
 		"name": "lilangeni suazi"
 =======
 		"name": "lilangeni"
@@ -436,7 +436,7 @@
 		"name": "loti lesothense"
 	},
 	"AZN": {
-<<<<<<< HEAD
+ 
 		"name": "manat azerí"
 	},
 	"TMT": {
@@ -479,7 +479,7 @@
 		"name": "nuevo dólar taiwanés"
 	},
 	"ILS": {
-<<<<<<< HEAD
+ 
 		"name": "nuevo shéquel israelí"
 	},
 	"PEN": {
@@ -501,7 +501,7 @@
 		"name": "pataca de Macao"
 	},
 	"ARS": {
-<<<<<<< HEAD
+ 
 		"name": "peso argentino",
 		"symbol": "$a"
 =======
@@ -534,7 +534,7 @@
 		"name": "peso uruguayo"
 	},
 	"BWP": {
-<<<<<<< HEAD
+ 
 		"name": "pula botsuano"
 =======
 		"name": "pula"
@@ -544,7 +544,7 @@
 		"name": "quetzal guatemalteco"
 	},
 	"ZAR": {
-<<<<<<< HEAD
+ 
 		"name": "rand sudafricano"
 =======
 		"name": "rand"
@@ -553,7 +553,7 @@
 	"BRL": {
 		"name": "real brasileño"
 	},
-<<<<<<< HEAD
+ 
 =======
 	"QAR": {
 		"name": "rial catarí"
@@ -565,7 +565,7 @@
 	"OMR": {
 		"name": "rial omaní"
 	},
-<<<<<<< HEAD
+ 
 =======
 	"SAR": {
 		"name": "rial saudí"
@@ -575,7 +575,7 @@
 		"name": "rial yemení"
 	},
 	"KHR": {
-<<<<<<< HEAD
+ 
 		"name": "riel camboyano"
 	},
 	"MYR": {
@@ -596,7 +596,7 @@
 	"BYN": {
 		"name": "rublo bielorruso"
 	},
-<<<<<<< HEAD
+ 
 	"BYR": {
 		"name": "rublo bielorruso (2000–2016)"
 	},
@@ -606,7 +606,7 @@
 		"name": "rublo ruso"
 	},
 	"MVR": {
-<<<<<<< HEAD
+ 
 		"name": "rufiyaa de Maldivas"
 	},
 	"SCR": {
@@ -636,7 +636,7 @@
 	"PKR": {
 		"name": "rupia pakistaní"
 	},
-<<<<<<< HEAD
+ 
 	"KGS": {
 		"name": "som kirguís"
 	},
@@ -656,7 +656,7 @@
 	"TJS": {
 		"name": "somoni tayiko"
 	},
-<<<<<<< HEAD
+ 
 	"BDT": {
 		"name": "taka de Bangladesh"
 	},
@@ -701,7 +701,7 @@
 		"name": "won surcoreano"
 	},
 	"JPY": {
-<<<<<<< HEAD
+ 
 		"name": "yen japonés"
 	},
 	"CNY": {

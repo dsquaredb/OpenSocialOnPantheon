@@ -14,7 +14,7 @@ use Drupal\user\RoleInterface;
  */
 function node_requirements($phase) {
   $requirements = [];
-  if ($phase === 'runtime') {
+  if ($phase   'runtime') {
     // Only show rebuild button if there are either 0, or 2 or more, rows
     // in the {node_access} table, or if there are modules that
     // implement hook_node_grants().

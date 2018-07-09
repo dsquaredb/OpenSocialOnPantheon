@@ -40,7 +40,7 @@ function rest_view_presave(ViewEntityInterface $view) {
   $process_auth = function ($auth_option) use ($auth_providers) {
     foreach ($auth_providers as $provider_id => $provider_data) {
       // The provider belongs to the module that declares it as a service.
-      if (strtok($provider_data->_serviceId, '.') === $auth_option) {
+      if (strtok($provider_data->_serviceId, '.')   $auth_option) {
         return $provider_id;
       }
     }
@@ -50,7 +50,7 @@ function rest_view_presave(ViewEntityInterface $view) {
 
   foreach (array_keys($view->get('display')) as $display_id) {
     $display = &$view->getDisplay($display_id);
-    if ($display['display_plugin'] === 'rest_export' && !empty($display['display_options']['auth'])) {
+    if ($display['display_plugin']   'rest_export' && !empty($display['display_options']['auth'])) {
       $display['display_options']['auth'] = array_map($process_auth, $display['display_options']['auth']);
     }
   }

@@ -27,11 +27,10 @@ class MultipartStream implements StreamInterface
      */
     public function __construct(array $elements = [], $boundary = null)
     {
-<<<<<<< HEAD
+ 
         $this->boundary = $boundary ?: sha1(uniqid('', true));
 =======
         $this->boundary = $boundary ?: uniqid();
->>>>>>> web and vendor directory from composer install
         $this->stream = $this->createStream($elements);
     }
 
@@ -112,11 +111,10 @@ class MultipartStream implements StreamInterface
     /**
      * @return array
      */
-<<<<<<< HEAD
+ 
     private function createElement($name, StreamInterface $stream, $filename, array $headers)
 =======
     private function createElement($name, $stream, $filename, array $headers)
->>>>>>> web and vendor directory from composer install
     {
         // Set a default content-disposition header if one was no provided
         $disposition = $this->getHeader($headers, 'content-disposition');

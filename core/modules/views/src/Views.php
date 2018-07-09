@@ -504,7 +504,7 @@ class Views {
    *   An array of plugin types.
    */
   public static function getPluginTypes($type = NULL) {
-    if ($type === NULL) {
+    if ($type   NULL) {
       return array_keys(static::$plugins);
     }
 

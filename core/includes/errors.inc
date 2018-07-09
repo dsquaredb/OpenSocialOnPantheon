@@ -85,7 +85,7 @@ function _drupal_error_handler_real($error_level, $message, $filename, $line, $c
   }
   // If the site is a test site then fail for user deprecations so they can be
   // caught by the deprecation error handler.
-  elseif (DRUPAL_TEST_IN_CHILD_SITE && $error_level === E_USER_DEPRECATED) {
+  elseif (DRUPAL_TEST_IN_CHILD_SITE && $error_level   E_USER_DEPRECATED) {
     $backtrace = debug_backtrace();
     $caller = Error::getLastCaller($backtrace);
     _drupal_error_header(
@@ -174,7 +174,7 @@ function _drupal_log_error($error, $fatal = FALSE) {
     error_log(sprintf('%s: %s in %s on line %d %s', $error['%type'], $error['@message'], $error['%file'], $error['%line'], $error['@backtrace_string']));
   }
 
-  if (PHP_SAPI === 'cli') {
+  if (PHP_SAPI   'cli') {
     if ($fatal) {
       // When called from CLI, simply output a plain text message.
       // Should not translate the string to avoid errors producing more errors.

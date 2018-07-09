@@ -64,18 +64,17 @@ class JsonDescriptor extends Descriptor
     protected function describeApplication(Application $application, array $options = array())
     {
         $describedNamespace = isset($options['namespace']) ? $options['namespace'] : null;
-<<<<<<< HEAD
+ 
         $description = new ApplicationDescription($application, $describedNamespace, true);
 =======
         $description = new ApplicationDescription($application, $describedNamespace);
->>>>>>> web and vendor directory from composer install
         $commands = array();
 
         foreach ($description->getCommands() as $command) {
             $commands[] = $this->getCommandData($command);
         }
 
-<<<<<<< HEAD
+ 
         $data = array();
         if ('UNKNOWN' !== $application->getName()) {
             $data['application']['name'] = $application->getName();
@@ -95,7 +94,6 @@ class JsonDescriptor extends Descriptor
         $data = $describedNamespace
             ? array('commands' => $commands, 'namespace' => $describedNamespace)
             : array('commands' => $commands, 'namespaces' => array_values($description->getNamespaces()));
->>>>>>> web and vendor directory from composer install
 
         $this->writeData($data, $options);
     }
@@ -103,12 +101,11 @@ class JsonDescriptor extends Descriptor
     /**
      * Writes data as json.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param array $data
      * @param array $options
      *
->>>>>>> web and vendor directory from composer install
      * @return array|string
      */
     private function writeData(array $data, array $options)
@@ -117,11 +114,10 @@ class JsonDescriptor extends Descriptor
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * @param InputArgument $argument
      *
->>>>>>> web and vendor directory from composer install
      * @return array
      */
     private function getInputArgumentData(InputArgument $argument)
@@ -131,49 +127,44 @@ class JsonDescriptor extends Descriptor
             'is_required' => $argument->isRequired(),
             'is_array' => $argument->isArray(),
             'description' => preg_replace('/\s*[\r\n]\s*/', ' ', $argument->getDescription()),
-<<<<<<< HEAD
+ 
             'default' => INF === $argument->getDefault() ? 'INF' : $argument->getDefault(),
 =======
             'default' => $argument->getDefault(),
->>>>>>> web and vendor directory from composer install
         );
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * @param InputOption $option
      *
->>>>>>> web and vendor directory from composer install
      * @return array
      */
     private function getInputOptionData(InputOption $option)
     {
         return array(
             'name' => '--'.$option->getName(),
-<<<<<<< HEAD
+ 
             'shortcut' => $option->getShortcut() ? '-'.str_replace('|', '|-', $option->getShortcut()) : '',
 =======
             'shortcut' => $option->getShortcut() ? '-'.implode('|-', explode('|', $option->getShortcut())) : '',
->>>>>>> web and vendor directory from composer install
             'accept_value' => $option->acceptValue(),
             'is_value_required' => $option->isValueRequired(),
             'is_multiple' => $option->isArray(),
             'description' => preg_replace('/\s*[\r\n]\s*/', ' ', $option->getDescription()),
-<<<<<<< HEAD
+ 
             'default' => INF === $option->getDefault() ? 'INF' : $option->getDefault(),
 =======
             'default' => $option->getDefault(),
->>>>>>> web and vendor directory from composer install
         );
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * @param InputDefinition $definition
      *
->>>>>>> web and vendor directory from composer install
      * @return array
      */
     private function getInputDefinitionData(InputDefinition $definition)
@@ -192,11 +183,10 @@ class JsonDescriptor extends Descriptor
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * @param Command $command
      *
->>>>>>> web and vendor directory from composer install
      * @return array
      */
     private function getCommandData(Command $command)
@@ -210,10 +200,9 @@ class JsonDescriptor extends Descriptor
             'description' => $command->getDescription(),
             'help' => $command->getProcessedHelp(),
             'definition' => $this->getInputDefinitionData($command->getNativeDefinition()),
-<<<<<<< HEAD
+ 
             'hidden' => $command->isHidden(),
 =======
->>>>>>> web and vendor directory from composer install
         );
     }
 }

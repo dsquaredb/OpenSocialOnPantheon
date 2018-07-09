@@ -26,7 +26,6 @@ class RequestFormatRouteFilter implements RouteFilterInterface {
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
->>>>>>> updating open social
     // If the request does not specify a format then use the default.
     if (is_null($request->getRequestFormat(NULL))) {
       $format = $default_format;
@@ -36,12 +35,9 @@ class RequestFormatRouteFilter implements RouteFilterInterface {
       $format = $request->getRequestFormat($default_format);
     }
 <<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
 =======
     $format = $request->getRequestFormat($default_format);
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
 
   /**
    * {@inheritdoc}
@@ -106,5 +102,4 @@ class RequestFormatRouteFilter implements RouteFilterInterface {
       : 'html';
   }
 
->>>>>>> Update Open Social to 8.x-2.1
 }

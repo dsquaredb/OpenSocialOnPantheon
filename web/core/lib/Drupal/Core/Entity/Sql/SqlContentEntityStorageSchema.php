@@ -1617,7 +1617,7 @@ class SqlContentEntityStorageSchema implements DynamicallyFieldableEntityStorage
 
       $schema['fields'][$schema_field_name] = $column_schema;
       $schema['fields'][$schema_field_name]['not null'] = in_array($field_name, $not_null_keys);
-<<<<<<< HEAD
+ 
 =======
 
       // Use the initial value of the field storage, if available.
@@ -1627,7 +1627,6 @@ class SqlContentEntityStorageSchema implements DynamicallyFieldableEntityStorage
       if (!empty($initial_value_from_field)) {
         $schema['fields'][$schema_field_name]['initial_from_field'] = $initial_value_from_field[$field_column_name];
       }
->>>>>>> Update Open Social to 8.x-2.1
     }
 
     if (!empty($field_schema['indexes'])) {

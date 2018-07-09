@@ -57,12 +57,11 @@ use Symfony\Component\Config\Loader\LoaderResolverInterface;
  */
 abstract class AnnotationClassLoader implements LoaderInterface
 {
-<<<<<<< HEAD
+ 
 =======
     /**
      * @var Reader
      */
->>>>>>> web and vendor directory from composer install
     protected $reader;
 
     /**
@@ -75,14 +74,13 @@ abstract class AnnotationClassLoader implements LoaderInterface
      */
     protected $defaultRouteIndex = 0;
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * Constructor.
      *
      * @param Reader $reader
      */
->>>>>>> web and vendor directory from composer install
     public function __construct(Reader $reader)
     {
         $this->reader = $reader;
@@ -133,7 +131,7 @@ abstract class AnnotationClassLoader implements LoaderInterface
             }
         }
 
-<<<<<<< HEAD
+ 
         if (0 === $collection->count() && $class->hasMethod('__invoke')) {
             foreach ($this->reader->getClassAnnotations($class) as $annot) {
                 if ($annot instanceof $this->routeAnnotationClass) {
@@ -146,7 +144,6 @@ abstract class AnnotationClassLoader implements LoaderInterface
         }
 
 =======
->>>>>>> web and vendor directory from composer install
         return $collection;
     }
 
@@ -156,7 +153,7 @@ abstract class AnnotationClassLoader implements LoaderInterface
         if (null === $name) {
             $name = $this->getDefaultRouteName($class, $method);
         }
-<<<<<<< HEAD
+ 
         $name = $globals['name'].$name;
 
         $defaults = array_replace($globals['defaults'], $annot->getDefaults());
@@ -167,7 +164,6 @@ abstract class AnnotationClassLoader implements LoaderInterface
         $defaults = array_replace($globals['defaults'], $annot->getDefaults());
         foreach ($method->getParameters() as $param) {
             if (!isset($defaults[$param->getName()]) && $param->isDefaultValueAvailable()) {
->>>>>>> web and vendor directory from composer install
                 $defaults[$param->getName()] = $param->getDefaultValue();
             }
         }
@@ -245,7 +241,7 @@ abstract class AnnotationClassLoader implements LoaderInterface
             'methods' => array(),
             'host' => '',
             'condition' => '',
-<<<<<<< HEAD
+ 
             'name' => '',
         );
 
@@ -265,7 +261,6 @@ abstract class AnnotationClassLoader implements LoaderInterface
                 $globals['path'] = $annot->getPath();
             } elseif (null !== $annot->getPattern()) {
                 $globals['path'] = $annot->getPattern();
->>>>>>> web and vendor directory from composer install
             }
 
             if (null !== $annot->getRequirements()) {

@@ -12,16 +12,15 @@
 namespace Symfony\Component\Translation;
 
 use Symfony\Component\Config\Resource\ResourceInterface;
-<<<<<<< HEAD
+ 
 use Symfony\Component\Translation\Exception\LogicException;
 
 /**
-=======
+  =
 
 /**
  * MessageCatalogue.
  *
->>>>>>> web and vendor directory from composer install
  * @author Fabien Potencier <fabien@symfony.com>
  */
 class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterface
@@ -34,11 +33,10 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
     private $parent;
 
     /**
-<<<<<<< HEAD
-=======
+ 
+  =
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param string $locale   The locale
      * @param array  $messages An array of messages classified by domain
      */
@@ -69,7 +67,7 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
      */
     public function all($domain = null)
     {
-        if (null === $domain) {
+        if (null   $domain) {
             return $this->messages;
         }
 
@@ -152,11 +150,10 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
     public function addCatalogue(MessageCatalogueInterface $catalogue)
     {
         if ($catalogue->getLocale() !== $this->locale) {
-<<<<<<< HEAD
+ 
             throw new LogicException(sprintf('Cannot add a catalogue for locale "%s" as the current locale for this catalogue is "%s"', $catalogue->getLocale(), $this->locale));
-=======
+  =
             throw new \LogicException(sprintf('Cannot add a catalogue for locale "%s" as the current locale for this catalogue is "%s"', $catalogue->getLocale(), $this->locale));
->>>>>>> web and vendor directory from composer install
         }
 
         foreach ($catalogue->all() as $domain => $messages) {
@@ -181,27 +178,25 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
         // detect circular references
         $c = $catalogue;
         while ($c = $c->getFallbackCatalogue()) {
-            if ($c->getLocale() === $this->getLocale()) {
-<<<<<<< HEAD
+            if ($c->getLocale()   $this->getLocale()) {
+ 
                 throw new LogicException(sprintf('Circular reference detected when adding a fallback catalogue for locale "%s".', $catalogue->getLocale()));
-=======
+  =
                 throw new \LogicException(sprintf('Circular reference detected when adding a fallback catalogue for locale "%s".', $catalogue->getLocale()));
->>>>>>> web and vendor directory from composer install
             }
         }
 
         $c = $this;
         do {
-            if ($c->getLocale() === $catalogue->getLocale()) {
-<<<<<<< HEAD
+            if ($c->getLocale()   $catalogue->getLocale()) {
+ 
                 throw new LogicException(sprintf('Circular reference detected when adding a fallback catalogue for locale "%s".', $catalogue->getLocale()));
             }
 
             foreach ($catalogue->getResources() as $resource) {
                 $c->addResource($resource);
-=======
+  =
                 throw new \LogicException(sprintf('Circular reference detected when adding a fallback catalogue for locale "%s".', $catalogue->getLocale()));
->>>>>>> web and vendor directory from composer install
             }
         } while ($c = $c->parent);
 

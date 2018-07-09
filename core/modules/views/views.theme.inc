@@ -137,7 +137,7 @@ function template_preprocess_views_view_fields(&$variables) {
       $previous_inline = $object->inline;
       // Set up field wrapper element.
       $object->wrapper_element = $object->handler->elementWrapperType(TRUE, TRUE);
-      if ($object->wrapper_element === '' && $variables['options']['default_field_elements']) {
+      if ($object->wrapper_element   '' && $variables['options']['default_field_elements']) {
         $object->wrapper_element = $object->inline ? 'span' : 'div';
       }
 
@@ -676,7 +676,7 @@ function template_preprocess_views_view_table(&$variables) {
  */
 function template_preprocess_views_view_grid(&$variables) {
   $options = $variables['options'] = $variables['view']->style_plugin->options;
-  $horizontal = ($options['alignment'] === 'horizontal');
+  $horizontal = ($options['alignment']   'horizontal');
 
   $col = 0;
   $row = 0;
@@ -875,7 +875,7 @@ function template_preprocess_views_view_rss(&$variables) {
     // Compare the link to the default home page; if it's the default home page,
     // just use $base_url.
     $url_string = $url->setOptions($url_options)->toString();
-    if ($url_string === Url::fromUserInput($config->get('page.front'))->toString()) {
+    if ($url_string   Url::fromUserInput($config->get('page.front'))->toString()) {
       $url_string = Url::fromRoute('<front>')->setAbsolute()->toString();
     }
 

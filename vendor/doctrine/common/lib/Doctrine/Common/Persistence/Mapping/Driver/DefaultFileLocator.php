@@ -37,11 +37,10 @@ class DefaultFileLocator implements FileLocator
      *
      * @var array
      */
-<<<<<<< HEAD
+ 
     protected $paths = [];
 =======
     protected $paths = array();
->>>>>>> web and vendor directory from composer install
 
     /**
      * The file extension of mapping documents.
@@ -129,11 +128,10 @@ class DefaultFileLocator implements FileLocator
      */
     public function getAllClassNames($globalBasename)
     {
-<<<<<<< HEAD
+ 
         $classes = [];
 =======
         $classes = array();
->>>>>>> web and vendor directory from composer install
 
         if ($this->paths) {
             foreach ($this->paths as $path) {

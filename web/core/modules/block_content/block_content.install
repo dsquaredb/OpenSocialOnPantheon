@@ -61,7 +61,7 @@ function block_content_update_8003() {
   \Drupal::entityDefinitionUpdateManager()
     ->installFieldStorageDefinition('revision_user', 'block_content', 'block_content', $revision_user);
 }
-<<<<<<< HEAD
+ 
 =======
 
 /**

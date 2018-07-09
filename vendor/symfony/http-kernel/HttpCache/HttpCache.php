@@ -69,14 +69,13 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
      *                            the cache can serve a stale response when an error is encountered (default: 60).
      *                            This setting is overridden by the stale-if-error HTTP Cache-Control extension
      *                            (see RFC 5861).
-<<<<<<< HEAD
+ 
 =======
      *
      * @param HttpKernelInterface $kernel    An HttpKernelInterface instance
      * @param StoreInterface      $store     A Store instance
      * @param SurrogateInterface  $surrogate A SurrogateInterface instance
      * @param array               $options   An array of options
->>>>>>> web and vendor directory from composer install
      */
     public function __construct(HttpKernelInterface $kernel, StoreInterface $store, SurrogateInterface $surrogate = null, array $options = array())
     {
@@ -162,18 +161,17 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
      */
     public function getSurrogate()
     {
-<<<<<<< HEAD
+ 
 =======
         if (!$this->surrogate instanceof Esi) {
             throw new \LogicException('This instance of HttpCache was not set up to use ESI as surrogate handler. You must overwrite and use createSurrogate');
         }
 
->>>>>>> web and vendor directory from composer install
         return $this->surrogate;
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Gets the Esi instance.
      *
@@ -191,7 +189,6 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
     }
 
     /**
->>>>>>> web and vendor directory from composer install
      * {@inheritdoc}
      */
     public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
@@ -209,7 +206,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
             }
         }
 
-<<<<<<< HEAD
+ 
         $this->traces[$this->getTraceKey($request)] = array();
 
         if (!$request->isMethodSafe(false)) {
@@ -234,18 +231,16 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
             $response = $this->invalidate($request, $catch);
         } elseif ($request->headers->has('expect') || !$request->isMethodCacheable()) {
             $response = $this->pass($request, $catch);
->>>>>>> web and vendor directory from composer install
         } else {
             $response = $this->lookup($request, $catch);
         }
 
         $this->restoreResponseBody($request, $response);
 
-<<<<<<< HEAD
+ 
 =======
         $response->setDate(\DateTime::createFromFormat('U', time(), new \DateTimeZone('UTC')));
 
->>>>>>> web and vendor directory from composer install
         if (HttpKernelInterface::MASTER_REQUEST === $type && $this->options['debug']) {
             $response->headers->set('X-Symfony-Cache', $this->getLog());
         }
@@ -343,11 +338,10 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
      * it triggers "miss" processing.
      *
      * @param Request $request A Request instance
-<<<<<<< HEAD
+ 
      * @param bool    $catch   Whether to process exceptions
 =======
      * @param bool    $catch   whether to process exceptions
->>>>>>> web and vendor directory from composer install
      *
      * @return Response A Response instance
      *
@@ -355,7 +349,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
      */
     protected function lookup(Request $request, $catch = false)
     {
-<<<<<<< HEAD
+ 
 =======
         // if allow_reload and no-cache Cache-Control, allow a cache reload
         if ($this->options['allow_reload'] && $request->isNoCache()) {
@@ -364,7 +358,6 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
             return $this->fetch($request, $catch);
         }
 
->>>>>>> web and vendor directory from composer install
         try {
             $entry = $this->store->lookup($request);
         } catch (\Exception $e) {
@@ -462,7 +455,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Unconditionally fetches a fresh response from the backend and
      * stores it in the cache if is cacheable.
      *
@@ -475,7 +468,6 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
      *
      * @param Request $request A Request instance
      * @param bool    $catch   whether to process exceptions
->>>>>>> web and vendor directory from composer install
      *
      * @return Response A Response instance
      */
@@ -504,12 +496,11 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
     /**
      * Forwards the Request to the backend and returns the Response.
      *
-<<<<<<< HEAD
+ 
      * All backend requests (cache passes, fetches, cache validations)
      * run through this method.
      *
 =======
->>>>>>> web and vendor directory from composer install
      * @param Request  $request A Request instance
      * @param bool     $catch   Whether to catch exceptions or not
      * @param Response $entry   A Response instance (the stale entry if present, null otherwise)
@@ -537,11 +528,10 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
         // make sure HttpCache is a trusted proxy
         if (!in_array('127.0.0.1', $trustedProxies = Request::getTrustedProxies())) {
             $trustedProxies[] = '127.0.0.1';
-<<<<<<< HEAD
+ 
             Request::setTrustedProxies($trustedProxies, Request::HEADER_X_FORWARDED_ALL);
 =======
             Request::setTrustedProxies($trustedProxies);
->>>>>>> web and vendor directory from composer install
         }
 
         // always a "master" request (as the real master request can be in cache)
@@ -561,7 +551,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
             }
         }
 
-<<<<<<< HEAD
+ 
         /*
             RFC 7231 Sect. 7.1.1.2 says that a server that does not have a reasonably accurate
             clock MUST NOT send a "Date" header, although it MUST send one in most other cases
@@ -574,7 +564,6 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
         }
 
 =======
->>>>>>> web and vendor directory from composer install
         $this->processResponseBody($request, $response);
 
         if ($this->isPrivateRequest($request) && !$response->headers->hasCacheControlDirective('public')) {
@@ -589,12 +578,11 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
     /**
      * Checks whether the cache entry is "fresh enough" to satisfy the Request.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Request  $request A Request instance
      * @param Response $entry   A Response instance
      *
->>>>>>> web and vendor directory from composer install
      * @return bool true if the cache entry if fresh enough, false otherwise
      */
     protected function isFreshEnough(Request $request, Response $entry)
@@ -613,12 +601,11 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
     /**
      * Locks a Request during the call to the backend.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Request  $request A Request instance
      * @param Response $entry   A Response instance
      *
->>>>>>> web and vendor directory from composer install
      * @return bool true if the cache entry can be returned even if it is staled, false otherwise
      */
     protected function lock(Request $request, Response $entry)
@@ -626,7 +613,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
         // try to acquire a lock to call the backend
         $lock = $this->store->lock($request);
 
-<<<<<<< HEAD
+ 
         if (true === $lock) {
             // we have the lock, call the backend
             return false;
@@ -704,28 +691,25 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
 
         // we have the lock, call the backend
         return false;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Writes the Response to the cache.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Request  $request  A Request instance
      * @param Response $response A Response instance
      *
->>>>>>> web and vendor directory from composer install
      * @throws \Exception
      */
     protected function store(Request $request, Response $response)
     {
-<<<<<<< HEAD
+ 
 =======
         if (!$response->headers->has('Date')) {
             $response->setDate(\DateTime::createFromFormat('U', time()));
         }
->>>>>>> web and vendor directory from composer install
         try {
             $this->store->write($request, $response);
 
@@ -746,7 +730,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
 
     /**
      * Restores the Response body.
-<<<<<<< HEAD
+ 
      */
     private function restoreResponseBody(Request $request, Response $response)
     {
@@ -765,7 +749,6 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
             return;
         }
 
->>>>>>> web and vendor directory from composer install
         if ($response->headers->has('X-Body-Eval')) {
             ob_start();
 
@@ -781,7 +764,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
                 $response->headers->set('Content-Length', strlen($response->getContent()));
             }
         } elseif ($response->headers->has('X-Body-File')) {
-<<<<<<< HEAD
+ 
             // Response does not include possibly dynamic content (ESI, SSI), so we need
             // not handle the content for HEAD requests
             if (!$request->isMethod('HEAD')) {
@@ -789,7 +772,6 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
             }
 =======
             $response->setContent(file_get_contents($response->headers->get('X-Body-File')));
->>>>>>> web and vendor directory from composer install
         } else {
             return;
         }
@@ -808,11 +790,10 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
      * Checks if the Request includes authorization or other sensitive information
      * that should cause the Response to be considered private by default.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Request $request A Request instance
      *
->>>>>>> web and vendor directory from composer install
      * @return bool true if the Request is private, false otherwise
      */
     private function isPrivateRequest(Request $request)
@@ -840,7 +821,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
      */
     private function record(Request $request, $event)
     {
-<<<<<<< HEAD
+ 
         $this->traces[$this->getTraceKey($request)][] = $event;
     }
 
@@ -854,12 +835,11 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
     private function getTraceKey(Request $request)
     {
 =======
->>>>>>> web and vendor directory from composer install
         $path = $request->getPathInfo();
         if ($qs = $request->getQueryString()) {
             $path .= '?'.$qs;
         }
-<<<<<<< HEAD
+ 
 
         return $request->getMethod().' '.$path;
     }
@@ -901,6 +881,5 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
         return $wait < 100;
 =======
         $this->traces[$request->getMethod().' '.$path][] = $event;
->>>>>>> web and vendor directory from composer install
     }
 }

@@ -24,11 +24,10 @@ class FileBinaryMimeTypeGuesser implements MimeTypeGuesserInterface
     private $cmd;
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * The $cmd pattern must contain a "%s" string that will be replaced
      * with the file name to guess.
      *
@@ -48,7 +47,7 @@ class FileBinaryMimeTypeGuesser implements MimeTypeGuesserInterface
      */
     public static function isSupported()
     {
-<<<<<<< HEAD
+ 
         static $supported = null;
 
         if (null !== $supported) {
@@ -66,7 +65,6 @@ class FileBinaryMimeTypeGuesser implements MimeTypeGuesserInterface
         return $supported = 0 === $exitStatus && '' !== $binPath;
 =======
         return '\\' !== DIRECTORY_SEPARATOR && function_exists('passthru') && function_exists('escapeshellarg');
->>>>>>> web and vendor directory from composer install
     }
 
     /**

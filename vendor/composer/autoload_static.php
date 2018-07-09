@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-<<<<<<< HEAD
+ 
 class ComposerStaticInitDrupal8
 {
     public static $files = array (
@@ -22,7 +22,7 @@ class ComposerStaticInitDrupal8
     public static $prefixLengthsPsr4 = array (
         'Z' => 
         array (
-=======
+  =
 class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
 {
     public static $files = array (
@@ -34,14 +34,13 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
-<<<<<<< HEAD
+ 
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
-=======
+  =
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> updating open social
+ 
+ 
+  =
         'cf97c57bfe0f23854afd2f3818abb7a0' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/create_uploaded_file.php',
         '9bf37a3d0dad93e29cb4e1b1bfab04e9' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/marshal_headers_from_sapi.php',
         'ce70dccb4bcc2efc6e94d2ee526e6972' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/marshal_method_from_sapi.php',
@@ -50,12 +49,9 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         '0b0974a5566a1077e4f2e111341112c1' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/normalize_server.php',
         '1ca3bc274755662169f9629d5412a1da' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/normalize_uploaded_files.php',
         '40360c0b9b437e69bcbb7f1349ce029e' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/parse_cookie_header.php',
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
-=======
->>>>>>> revert Open Social update
-=======
->>>>>>> updating open social
+ 
+  =
+  =
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
@@ -77,13 +73,12 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         array (
             'Zumba\\Mink\\Driver\\' => 18,
             'Zumba\\GastonJS\\' => 15,
->>>>>>> web and vendor directory from composer install
             'Zend\\Stdlib\\' => 12,
             'Zend\\Feed\\' => 10,
             'Zend\\Escaper\\' => 13,
             'Zend\\Diactoros\\' => 15,
         ),
-<<<<<<< HEAD
+ 
         'W' => 
         array (
             'Wikimedia\\Composer\\' => 19,
@@ -99,7 +94,7 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             'Symfony\\Polyfill\\Iconv\\' => 23,
             'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\Yaml\\' => 23,
-=======
+  =
         'X' => 
         array (
             'XdgBaseDir\\' => 11,
@@ -118,7 +113,6 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\VarDumper\\' => 28,
->>>>>>> web and vendor directory from composer install
             'Symfony\\Component\\Validator\\' => 28,
             'Symfony\\Component\\Translation\\' => 30,
             'Symfony\\Component\\Serializer\\' => 29,
@@ -126,7 +120,7 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             'Symfony\\Component\\Process\\' => 26,
             'Symfony\\Component\\HttpKernel\\' => 29,
             'Symfony\\Component\\HttpFoundation\\' => 33,
-<<<<<<< HEAD
+ 
             'Symfony\\Component\\EventDispatcher\\' => 34,
             'Symfony\\Component\\DependencyInjection\\' => 38,
             'Symfony\\Component\\Debug\\' => 24,
@@ -140,7 +134,7 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
-=======
+  =
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\Filesystem\\' => 29,
             'Symfony\\Component\\ExpressionLanguage\\' => 37,
@@ -167,7 +161,6 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'PhpParser\\' => 10,
->>>>>>> web and vendor directory from composer install
         ),
         'M' => 
         array (
@@ -178,15 +171,14 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
-<<<<<<< HEAD
-=======
+ 
+  =
             'Goutte\\' => 7,
->>>>>>> web and vendor directory from composer install
         ),
         'D' => 
         array (
             'Drupal\\Driver\\' => 14,
-<<<<<<< HEAD
+ 
             'Drupal\\Core\\Composer\\' => 21,
             'Drupal\\Core\\' => 12,
             'Drupal\\Component\\Uuid\\' => 22,
@@ -223,7 +215,7 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         'A' => 
         array (
             'Asm89\\Stack\\' => 12,
-=======
+  =
             'Drupal\\Core\\' => 12,
             'Drupal\\Console\\' => 15,
             'Drupal\\Component\\' => 17,
@@ -237,19 +229,16 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             'Consolidation\\AnnotatedCommand\\' => 31,
             'Composer\\Semver\\' => 16,
             'Composer\\Installers\\' => 20,
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             'CommerceGuys\\Zone\\' => 18,
             'CommerceGuys\\Intl\\' => 18,
             'CommerceGuys\\Enum\\' => 18,
-=======
->>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
+  =
             'CommerceGuys\\Intl\\' => 18,
->>>>>>> revert Open Social update
-=======
->>>>>>> updating open social
+  =
             'CommerceGuys\\Addressing\\' => 24,
         ),
         'B' => 
@@ -260,13 +249,12 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         'A' => 
         array (
             'Alchemy\\Zippy\\' => 14,
->>>>>>> web and vendor directory from composer install
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-<<<<<<< HEAD
-=======
+ 
+  =
         'phpseclib\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib',
@@ -283,7 +271,6 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         array (
             0 => __DIR__ . '/..' . '/jcalderonzumba/gastonjs/src',
         ),
->>>>>>> web and vendor directory from composer install
         'Zend\\Stdlib\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-stdlib/src',
@@ -300,7 +287,7 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-diactoros/src',
         ),
-<<<<<<< HEAD
+ 
         'Wikimedia\\Composer\\' => 
         array (
             0 => __DIR__ . '/..' . '/wikimedia/composer-merge-plugin/src',
@@ -312,7 +299,7 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         'Symfony\\Polyfill\\Php70\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php70',
-=======
+  =
         'XdgBaseDir\\' => 
         array (
             0 => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src',
@@ -332,7 +319,6 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         'Symfony\\Polyfill\\Php54\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php54',
->>>>>>> web and vendor directory from composer install
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
@@ -342,39 +328,32 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-iconv',
         ),
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Update Open Social to 8.x-2.1
-=======
->>>>>>> updating open social
+ 
+ 
+ 
+ 
+  =
+  =
         'Symfony\\Polyfill\\Ctype\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> web and vendor directory from composer install
-=======
->>>>>>> Update Open Social to 8.x-2.1
-=======
->>>>>>> revert Open Social update
-=======
->>>>>>> updating open social
+ 
+ 
+  =
+  =
+  =
+  =
         'Symfony\\Component\\Yaml\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/yaml',
         ),
-<<<<<<< HEAD
-=======
+ 
+  =
         'Symfony\\Component\\VarDumper\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
->>>>>>> web and vendor directory from composer install
         'Symfony\\Component\\Validator\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/validator',
@@ -403,8 +382,8 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         array (
             0 => __DIR__ . '/..' . '/symfony/http-foundation',
         ),
-<<<<<<< HEAD
-=======
+ 
+  =
         'Symfony\\Component\\Finder\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/finder',
@@ -417,18 +396,16 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         array (
             0 => __DIR__ . '/..' . '/symfony/expression-language',
         ),
->>>>>>> web and vendor directory from composer install
         'Symfony\\Component\\EventDispatcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
         ),
-<<<<<<< HEAD
-=======
+ 
+  =
         'Symfony\\Component\\DomCrawler\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/dom-crawler',
         ),
->>>>>>> web and vendor directory from composer install
         'Symfony\\Component\\DependencyInjection\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/dependency-injection',
@@ -437,35 +414,32 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         array (
             0 => __DIR__ . '/..' . '/symfony/debug',
         ),
-<<<<<<< HEAD
-=======
+ 
+  =
         'Symfony\\Component\\CssSelector\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/css-selector',
         ),
->>>>>>> web and vendor directory from composer install
         'Symfony\\Component\\Console\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
-<<<<<<< HEAD
-=======
+ 
+  =
         'Symfony\\Component\\Config\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/config',
         ),
->>>>>>> web and vendor directory from composer install
         'Symfony\\Component\\ClassLoader\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/class-loader',
         ),
-<<<<<<< HEAD
-=======
+ 
+  =
         'Symfony\\Component\\BrowserKit\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/browser-kit',
         ),
->>>>>>> web and vendor directory from composer install
         'Symfony\\Cmf\\Component\\Routing\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony-cmf/routing',
@@ -474,8 +448,8 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         array (
             0 => __DIR__ . '/..' . '/symfony/psr-http-message-bridge',
         ),
-<<<<<<< HEAD
-=======
+ 
+  =
         'Stecman\\Component\\Symfony\\Console\\BashCompletion\\' => 
         array (
             0 => __DIR__ . '/..' . '/stecman/symfony-console-completion/src',
@@ -488,7 +462,6 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         array (
             0 => __DIR__ . '/..' . '/psy/psysh/src/Psy',
         ),
->>>>>>> web and vendor directory from composer install
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
@@ -497,15 +470,14 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
-<<<<<<< HEAD
+ 
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
-=======
+  =
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
->>>>>>> web and vendor directory from composer install
         ),
         'Masterminds\\' => 
         array (
@@ -523,7 +495,7 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
-<<<<<<< HEAD
+ 
         'Drupal\\Driver\\' => 
         array (
             0 => __DIR__ . '/../..' . '/drivers/lib/Drupal/Driver',
@@ -651,7 +623,7 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
     );
 
     public static $prefixesPsr0 = array (
-=======
+  =
         'Goutte\\' => 
         array (
             0 => __DIR__ . '/..' . '/fabpot/goutte/Goutte',
@@ -701,28 +673,24 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         array (
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         'CommerceGuys\\Zone\\' => 
         array (
             0 => __DIR__ . '/..' . '/commerceguys/zone/src',
         ),
-=======
->>>>>>> revert Open Social update
+  =
         'CommerceGuys\\Intl\\' => 
         array (
             0 => __DIR__ . '/..' . '/commerceguys/intl/src',
         ),
-<<<<<<< HEAD
+ 
         'CommerceGuys\\Enum\\' => 
-=======
-=======
->>>>>>> revert Open Social update
-=======
->>>>>>> updating open social
+  =
+  =
+  =
         'CommerceGuys\\Addressing\\' => 
->>>>>>> Update Open Social to 8.x-2.1
         array (
             0 => __DIR__ . '/..' . '/commerceguys/enum/src',
         ),
@@ -768,7 +736,6 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
                 0 => __DIR__ . '/..' . '/instaclick/php-webdriver/lib',
             ),
         ),
->>>>>>> web and vendor directory from composer install
         'T' => 
         array (
             'Twig_' => 
@@ -783,8 +750,8 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
                 0 => __DIR__ . '/..' . '/stack/builder/src',
             ),
         ),
-<<<<<<< HEAD
-=======
+ 
+  =
         'P' => 
         array (
             'Prophecy\\' => 
@@ -807,7 +774,6 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
                 0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
             ),
         ),
->>>>>>> web and vendor directory from composer install
         'E' => 
         array (
             'Egulias\\' => 
@@ -821,8 +787,8 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         ),
         'D' => 
         array (
-<<<<<<< HEAD
-=======
+ 
+  =
             'Drush' => 
             array (
                 0 => __DIR__ . '/..' . '/drush/drush/lib',
@@ -851,7 +817,6 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             array (
                 0 => __DIR__ . '/..' . '/drupal/drupal-driver/src',
             ),
->>>>>>> web and vendor directory from composer install
             'Doctrine\\Common\\Lexer\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
@@ -868,8 +833,8 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             array (
                 0 => __DIR__ . '/..' . '/doctrine/annotations/lib',
             ),
-<<<<<<< HEAD
-=======
+ 
+  =
             'Doctrine\\Common\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/common/lib',
@@ -923,12 +888,11 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             array (
                 0 => __DIR__ . '/..' . '/asm89/stack-cors/src',
             ),
->>>>>>> web and vendor directory from composer install
         ),
     );
 
     public static $classMap = array (
-<<<<<<< HEAD
+ 
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack/CorsService.php',
@@ -4392,7 +4356,7 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         'Zend\\Stdlib\\StringWrapper\\MbString' => __DIR__ . '/..' . '/zendframework/zend-stdlib/src/StringWrapper/MbString.php',
         'Zend\\Stdlib\\StringWrapper\\Native' => __DIR__ . '/..' . '/zendframework/zend-stdlib/src/StringWrapper/Native.php',
         'Zend\\Stdlib\\StringWrapper\\StringWrapperInterface' => __DIR__ . '/..' . '/zendframework/zend-stdlib/src/StringWrapper/StringWrapperInterface.php',
-=======
+  =
         'CallbackFilterIterator' => __DIR__ . '/..' . '/symfony/polyfill-php54/Resources/stubs/CallbackFilterIterator.php',
         'Console_Table' => __DIR__ . '/..' . '/pear/console_table/Table.php',
         'Drupal' => __DIR__ . '/../..' . '/web/core/lib/Drupal.php',
@@ -4841,23 +4805,21 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'SessionHandlerInterface' => __DIR__ . '/..' . '/symfony/polyfill-php54/Resources/stubs/SessionHandlerInterface.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
->>>>>>> web and vendor directory from composer install
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-<<<<<<< HEAD
+ 
             $loader->prefixLengthsPsr4 = ComposerStaticInitDrupal8::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitDrupal8::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInitDrupal8::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitDrupal8::$classMap;
-=======
+  =
             $loader->prefixLengthsPsr4 = ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043::$classMap;
->>>>>>> web and vendor directory from composer install
 
         }, null, ClassLoader::class);
     }

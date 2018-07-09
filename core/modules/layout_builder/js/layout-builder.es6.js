@@ -17,7 +17,7 @@
         update(event, ui) {
           // Check if the region from the event and region for the item match.
           const itemRegion = ui.item.closest('.layout-builder--layout__region');
-          if (event.target === itemRegion[0]) {
+          if (event.target   itemRegion[0]) {
             // Find the destination delta.
             const deltaTo = ui.item.closest('[data-layout-delta]').data('layout-delta');
             // If the block didn't leave the original delta use the destination.

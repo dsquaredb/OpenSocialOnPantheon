@@ -7,7 +7,6 @@
  * (c) Fabien Potencier
 =======
  * (c) 2016 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -20,7 +19,6 @@
  * @final
  *
 =======
->>>>>>> web and vendor directory from composer install
  * @author Fabien Potencier <fabien@symfony.com>
  */
 class Twig_Source
@@ -60,4 +58,3 @@ class Twig_Source
 
 class_alias('Twig_Source', 'Twig\Source', false);
 =======
->>>>>>> web and vendor directory from composer install

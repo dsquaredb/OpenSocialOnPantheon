@@ -11,10 +11,9 @@
 
 namespace Symfony\Component\Validator\Constraints;
 
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
@@ -51,12 +50,11 @@ class ChoiceValidator extends ConstraintValidator
         }
 
         if ($constraint->callback) {
-<<<<<<< HEAD
+ 
             if (!is_callable($choices = array($this->context->getObject(), $constraint->callback))
                 && !is_callable($choices = array($this->context->getClassName(), $constraint->callback))
 =======
             if (!is_callable($choices = array($this->context->getClassName(), $constraint->callback))
->>>>>>> web and vendor directory from composer install
                 && !is_callable($choices = $constraint->callback)
             ) {
                 throw new ConstraintDefinitionException('The Choice constraint expects a valid callback');
@@ -66,7 +64,7 @@ class ChoiceValidator extends ConstraintValidator
             $choices = $constraint->choices;
         }
 
-<<<<<<< HEAD
+ 
         if (true !== $constraint->strict) {
             @trigger_error('Not setting the strict option of the Choice constraint to true is deprecated since Symfony 3.4 and will throw an exception in 4.0.', E_USER_DEPRECATED);
         }
@@ -96,7 +94,6 @@ class ChoiceValidator extends ConstraintValidator
                             ->setInvalidValue($_value)
                             ->addViolation();
                     }
->>>>>>> web and vendor directory from composer install
 
                     return;
                 }
@@ -104,7 +101,7 @@ class ChoiceValidator extends ConstraintValidator
 
             $count = count($value);
 
-<<<<<<< HEAD
+ 
             if (null !== $constraint->min && $count < $constraint->min) {
                 $this->context->buildViolation($constraint->minMessage)
                     ->setParameter('{{ limit }}', $constraint->min)
@@ -126,12 +123,11 @@ class ChoiceValidator extends ConstraintValidator
                         ->setCode(Choice::TOO_FEW_ERROR)
                         ->addViolation();
                 }
->>>>>>> web and vendor directory from composer install
 
                 return;
             }
 
-<<<<<<< HEAD
+ 
             if (null !== $constraint->max && $count > $constraint->max) {
                 $this->context->buildViolation($constraint->maxMessage)
                     ->setParameter('{{ limit }}', $constraint->max)
@@ -153,12 +149,11 @@ class ChoiceValidator extends ConstraintValidator
                         ->setCode(Choice::TOO_MANY_ERROR)
                         ->addViolation();
                 }
->>>>>>> web and vendor directory from composer install
 
                 return;
             }
         } elseif (!in_array($value, $choices, $constraint->strict)) {
-<<<<<<< HEAD
+ 
             $this->context->buildViolation($constraint->message)
                 ->setParameter('{{ value }}', $this->formatValue($value))
                 ->setCode(Choice::NO_SUCH_CHOICE_ERROR)
@@ -175,7 +170,6 @@ class ChoiceValidator extends ConstraintValidator
                     ->setCode(Choice::NO_SUCH_CHOICE_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
         }
     }
 }

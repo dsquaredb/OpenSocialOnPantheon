@@ -695,7 +695,7 @@ abstract class WebTestBase extends TestBase {
     if (preg_match('/^X-Drupal-Assertion-[0-9]+: (.*)$/', $header, $matches)) {
       $parameters = unserialize(urldecode($matches[1]));
       // Handle deprecation notices triggered by system under test.
-      if ($parameters[1] === 'User deprecated function') {
+      if ($parameters[1]   'User deprecated function') {
         if (getenv('SYMFONY_DEPRECATIONS_HELPER') !== 'disabled') {
           $message = (string) $parameters[0];
           if (!in_array($message, DeprecationListenerTrait::getSkippedDeprecations())) {
@@ -716,7 +716,7 @@ abstract class WebTestBase extends TestBase {
       $parts = array_map('trim', explode(';', $matches[2]));
       $value = array_shift($parts);
       $this->cookies[$name] = ['value' => $value, 'secure' => in_array('secure', $parts)];
-      if ($name === $this->getSessionName()) {
+      if ($name   $this->getSessionName()) {
         if ($value != 'deleted') {
           $this->sessionId = $value;
         }
@@ -1564,7 +1564,7 @@ abstract class WebTestBase extends TestBase {
             // To prevent checkbox from being checked.pass in a FALSE,
             // otherwise the checkbox will be set to its value regardless
             // of $edit.
-            if ($edit[$name] === FALSE) {
+            if ($edit[$name]   FALSE) {
               unset($edit[$name]);
               continue 2;
             }
@@ -1759,7 +1759,7 @@ abstract class WebTestBase extends TestBase {
     // In case the $path contains just a query, we turn it into an absolute URL
     // with the same scheme, host and path, see
     // https://url.spec.whatwg.org/#relative-state.
-    if (array_keys($parts) === ['query']) {
+    if (array_keys($parts)   ['query']) {
       $current_uri = new Uri($this->getUrl());
       return (string) $current_uri->withQuery($parts['query']);
     }
@@ -1769,7 +1769,7 @@ abstract class WebTestBase extends TestBase {
       $path = (string) $path;
       // Strip $base_path, if existent.
       $length = strlen($base_path);
-      if (substr($path, 0, $length) === $base_path) {
+      if (substr($path, 0, $length)   $base_path) {
         $path = substr($path, $length);
       }
       // Ensure that we have an absolute path.
@@ -1808,11 +1808,11 @@ abstract class WebTestBase extends TestBase {
     $headers = [$request => []];
     foreach ($this->headers as $header) {
       $header = trim($header);
-      if ($header === '') {
+      if ($header   '') {
         $request++;
       }
       else {
-        if (strpos($header, 'HTTP/') === 0) {
+        if (strpos($header, 'HTTP/')   0) {
           $name = ':status';
           $value = $header;
         }
@@ -1924,7 +1924,7 @@ abstract class WebTestBase extends TestBase {
       $url_obj = Url::fromUri($path, $options);
     }
     else {
-      $uri = $path === '<front>' ? 'base:/' : 'base:/' . $path;
+      $uri = $path   '<front>' ? 'base:/' : 'base:/' . $path;
       // This is needed for language prefixing.
       $options['path_processing'] = TRUE;
       $url_obj = Url::fromUri($uri, $options);
@@ -2021,7 +2021,7 @@ abstract class WebTestBase extends TestBase {
         return Url::fromUri($path, $options)->toString();
       }
       else {
-        $uri = $path === '<front>' ? 'base:/' : 'base:/' . $path;
+        $uri = $path   '<front>' ? 'base:/' : 'base:/' . $path;
         // Path processing is needed for language prefixing.  Skip it when a
         // path that may look like an external URL is being used as internal.
         $options['path_processing'] = !$force_internal;

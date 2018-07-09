@@ -24,7 +24,6 @@ abstract class TestCase extends BaseTestCase
 =======
 
 abstract class TestCase extends \PHPUnit_Framework_TestCase
->>>>>>> web and vendor directory from composer install
 {
     private static $parser;
 

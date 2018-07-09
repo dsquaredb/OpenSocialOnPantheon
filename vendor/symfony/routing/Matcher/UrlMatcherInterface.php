@@ -11,10 +11,9 @@
 
 namespace Symfony\Component\Routing\Matcher;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\Routing\Exception\NoConfigurationException;
 =======
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Routing\RequestContextAwareInterface;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\Exception\MethodNotAllowedException;
@@ -36,10 +35,9 @@ interface UrlMatcherInterface extends RequestContextAwareInterface
      *
      * @return array An array of parameters
      *
-<<<<<<< HEAD
+ 
      * @throws NoConfigurationException  If no routing configuration could be found
 =======
->>>>>>> web and vendor directory from composer install
      * @throws ResourceNotFoundException If the resource could not be found
      * @throws MethodNotAllowedException If the resource was found but the request method is not allowed
      */

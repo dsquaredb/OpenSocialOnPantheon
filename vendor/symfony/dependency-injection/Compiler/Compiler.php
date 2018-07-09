@@ -12,10 +12,9 @@
 namespace Symfony\Component\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-<<<<<<< HEAD
+ 
 use Symfony\Component\DependencyInjection\Exception\EnvParameterException;
 =======
->>>>>>> web and vendor directory from composer install
 
 /**
  * This class is used to remove circular dependencies between individual passes.
@@ -33,10 +32,9 @@ class Compiler
     {
         $this->passConfig = new PassConfig();
         $this->serviceReferenceGraph = new ServiceReferenceGraph();
-<<<<<<< HEAD
+ 
 =======
         $this->loggingFormatter = new LoggingFormatter();
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -63,7 +61,7 @@ class Compiler
      * Returns the logging formatter which can be used by compilation passes.
      *
      * @return LoggingFormatter
-<<<<<<< HEAD
+ 
      *
      * @deprecated since version 3.3, to be removed in 4.0. Use the ContainerBuilder::log() method instead.
      */
@@ -79,14 +77,13 @@ class Compiler
      */
     public function getLoggingFormatter()
     {
->>>>>>> web and vendor directory from composer install
         return $this->loggingFormatter;
     }
 
     /**
      * Adds a pass to the PassConfig.
      *
-<<<<<<< HEAD
+ 
      * @param CompilerPassInterface $pass     A compiler pass
      * @param string                $type     The type of the pass
      * @param int                   $priority Used to sort the passes
@@ -114,14 +111,13 @@ class Compiler
     public function addPass(CompilerPassInterface $pass, $type = PassConfig::TYPE_BEFORE_OPTIMIZATION)
     {
         $this->passConfig->addPass($pass, $type);
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Adds a log message.
      *
      * @param string $string The log message
-<<<<<<< HEAD
+ 
      *
      * @deprecated since version 3.3, to be removed in 4.0. Use the ContainerBuilder::log() method instead.
      */
@@ -133,12 +129,11 @@ class Compiler
      */
     public function addLogMessage($string)
     {
->>>>>>> web and vendor directory from composer install
         $this->log[] = $string;
     }
 
     /**
-<<<<<<< HEAD
+ 
      * @final
      */
     public function log(CompilerPassInterface $pass, $message)
@@ -152,7 +147,6 @@ class Compiler
 
     /**
 =======
->>>>>>> web and vendor directory from composer install
      * Returns the log.
      *
      * @return array Log array
@@ -164,7 +158,7 @@ class Compiler
 
     /**
      * Run the Compiler and process all Passes.
-<<<<<<< HEAD
+ 
      */
     public function compile(ContainerBuilder $container)
     {
@@ -201,7 +195,6 @@ class Compiler
     {
         foreach ($this->passConfig->getPasses() as $pass) {
             $pass->process($container);
->>>>>>> web and vendor directory from composer install
         }
     }
 }

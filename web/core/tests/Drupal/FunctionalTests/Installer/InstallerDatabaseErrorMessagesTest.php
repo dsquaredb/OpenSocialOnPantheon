@@ -12,11 +12,10 @@ use Drupal\Core\Database\Database;
 class InstallerDatabaseErrorMessagesTest extends InstallerTestBase {
 
   /**
-<<<<<<< HEAD
+ 
    * @{inheritdoc}
 =======
    * {@inheritdoc}
->>>>>>> revert Open Social update
    */
   protected function setUpSettings() {
     // We are creating a table here to force an error in the installer because
@@ -28,11 +27,10 @@ class InstallerDatabaseErrorMessagesTest extends InstallerTestBase {
   }
 
   /**
-<<<<<<< HEAD
+ 
    * @{inheritdoc}
 =======
    * {@inheritdoc}
->>>>>>> revert Open Social update
    */
   protected function setUpSite() {
     // This step should not appear as we had a failure on the settings screen.

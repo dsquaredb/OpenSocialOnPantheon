@@ -21,7 +21,7 @@ class CommandNotFoundException extends \InvalidArgumentException implements Exce
     private $alternatives;
 
     /**
-<<<<<<< HEAD
+ 
      * @param string     $message      Exception message to throw
      * @param array      $alternatives List of similar defined names
      * @param int        $code         Exception code
@@ -31,7 +31,6 @@ class CommandNotFoundException extends \InvalidArgumentException implements Exce
      * @param array     $alternatives List of similar defined names
      * @param int       $code         Exception code
      * @param Exception $previous     previous exception used for the exception chaining
->>>>>>> web and vendor directory from composer install
      */
     public function __construct($message, array $alternatives = array(), $code = 0, \Exception $previous = null)
     {

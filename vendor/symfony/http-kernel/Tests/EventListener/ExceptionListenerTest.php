@@ -121,7 +121,7 @@ class ExceptionListenerTest extends \PHPUnit_Framework_TestCase
         $response = $event->getResponse();
         $this->assertEquals('xml', $response->getContent());
     }
-<<<<<<< HEAD
+ 
 =======
 
     public function testCSPHeaderIsRemoved()
@@ -149,9 +149,8 @@ class ExceptionListenerTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($response->headers->has('content-security-policy'), 'CSP header has been removed');
         $this->assertFalse($dispatcher->hasListeners(KernelEvents::RESPONSE), 'CSP removal listener has been removed');
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
+ 
 =======
 
     public function testNullController()
@@ -170,9 +169,7 @@ class ExceptionListenerTest extends \PHPUnit_Framework_TestCase
 
         $this->assertContains('Whoops, looks like something went wrong.', $event->getResponse()->getContent());
     }
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
 }
 
 class TestLogger extends Logger implements DebugLoggerInterface

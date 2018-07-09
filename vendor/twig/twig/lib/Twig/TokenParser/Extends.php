@@ -3,13 +3,12 @@
 /*
  * This file is part of Twig.
  *
-<<<<<<< HEAD
+ 
  * (c) Fabien Potencier
  * (c) Armin Ronacher
 =======
  * (c) 2009 Fabien Potencier
  * (c) 2009 Armin Ronacher
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,11 +20,10 @@
  * <pre>
  *  {% extends "base.html" %}
  * </pre>
-<<<<<<< HEAD
+ 
  *
  * @final
 =======
->>>>>>> web and vendor directory from composer install
  */
 class Twig_TokenParser_Extends extends Twig_TokenParser
 {
@@ -34,7 +32,7 @@ class Twig_TokenParser_Extends extends Twig_TokenParser
         $stream = $this->parser->getStream();
 
         if (!$this->parser->isMainScope()) {
-<<<<<<< HEAD
+ 
             throw new Twig_Error_Syntax('Cannot extend from a block.', $token->getLine(), $stream->getSourceContext());
         }
 
@@ -46,7 +44,6 @@ class Twig_TokenParser_Extends extends Twig_TokenParser
 
         if (null !== $this->parser->getParent()) {
             throw new Twig_Error_Syntax('Multiple extends tags are forbidden.', $token->getLine(), $stream->getSourceContext()->getName());
->>>>>>> web and vendor directory from composer install
         }
         $this->parser->setParent($this->parser->getExpressionParser()->parseExpression());
 
@@ -58,8 +55,7 @@ class Twig_TokenParser_Extends extends Twig_TokenParser
         return 'extends';
     }
 }
-<<<<<<< HEAD
+ 
 
 class_alias('Twig_TokenParser_Extends', 'Twig\TokenParser\ExtendsTokenParser', false);
 =======
->>>>>>> web and vendor directory from composer install

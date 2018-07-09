@@ -1,7 +1,7 @@
 CHANGELOG
-=========
+   
 
-<<<<<<< HEAD
+ 
 3.4.0
 -----
 
@@ -33,7 +33,7 @@ CHANGELOG
  * removed `FileDumper::format()` method.
  * Changed the visibility of the locale property in `Translator` from protected to private.
 
-=======
+  =
 >>>>>>> web and vendor directory from composer install
 2.8.0
 -----

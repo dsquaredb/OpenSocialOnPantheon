@@ -25,11 +25,10 @@ class ParameterBag implements ParameterBagInterface
     protected $parameters = array();
     protected $resolved = false;
 
-<<<<<<< HEAD
+ 
     private $normalizedNames = array();
 
 =======
->>>>>>> web and vendor directory from composer install
     /**
      * @param array $parameters An array of parameters
      */
@@ -54,11 +53,10 @@ class ParameterBag implements ParameterBagInterface
     public function add(array $parameters)
     {
         foreach ($parameters as $key => $value) {
-<<<<<<< HEAD
+ 
             $this->set($key, $value);
 =======
             $this->parameters[strtolower($key)] = $value;
->>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -75,11 +73,10 @@ class ParameterBag implements ParameterBagInterface
      */
     public function get($name)
     {
-<<<<<<< HEAD
+ 
         $name = $this->normalizeName($name);
 =======
         $name = strtolower($name);
->>>>>>> web and vendor directory from composer install
 
         if (!array_key_exists($name, $this->parameters)) {
             if (!$name) {
@@ -94,7 +91,7 @@ class ParameterBag implements ParameterBagInterface
                 }
             }
 
-<<<<<<< HEAD
+ 
             $nonNestedAlternative = null;
             if (!count($alternatives) && false !== strpos($name, '.')) {
                 $namePartsLength = array_map('strlen', explode('.', $name));
@@ -114,7 +111,6 @@ class ParameterBag implements ParameterBagInterface
             throw new ParameterNotFoundException($name, null, null, null, $alternatives, $nonNestedAlternative);
 =======
             throw new ParameterNotFoundException($name, null, null, null, $alternatives);
->>>>>>> web and vendor directory from composer install
         }
 
         return $this->parameters[$name];
@@ -128,11 +124,10 @@ class ParameterBag implements ParameterBagInterface
      */
     public function set($name, $value)
     {
-<<<<<<< HEAD
+ 
         $this->parameters[$this->normalizeName($name)] = $value;
 =======
         $this->parameters[strtolower($name)] = $value;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -140,11 +135,10 @@ class ParameterBag implements ParameterBagInterface
      */
     public function has($name)
     {
-<<<<<<< HEAD
+ 
         return array_key_exists($this->normalizeName($name), $this->parameters);
 =======
         return array_key_exists(strtolower($name), $this->parameters);
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -154,11 +148,10 @@ class ParameterBag implements ParameterBagInterface
      */
     public function remove($name)
     {
-<<<<<<< HEAD
+ 
         unset($this->parameters[$this->normalizeName($name)]);
 =======
         unset($this->parameters[strtolower($name)]);
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -196,7 +189,7 @@ class ParameterBag implements ParameterBagInterface
      *
      * @throws ParameterNotFoundException          if a placeholder references a parameter that does not exist
      * @throws ParameterCircularReferenceException if a circular reference if detected
-<<<<<<< HEAD
+ 
      * @throws RuntimeException                    when a given parameter has a type problem
      */
     public function resolveValue($value, array $resolving = array())
@@ -214,17 +207,15 @@ class ParameterBag implements ParameterBagInterface
             $args = array();
             foreach ($value as $k => $v) {
                 $args[$this->resolveValue($k, $resolving)] = $this->resolveValue($v, $resolving);
->>>>>>> web and vendor directory from composer install
             }
 
             return $args;
         }
 
-<<<<<<< HEAD
+ 
         if (!\is_string($value) || 2 > \strlen($value)) {
 =======
         if (!is_string($value)) {
->>>>>>> web and vendor directory from composer install
             return $value;
         }
 
@@ -241,11 +232,10 @@ class ParameterBag implements ParameterBagInterface
      *
      * @throws ParameterNotFoundException          if a placeholder references a parameter that does not exist
      * @throws ParameterCircularReferenceException if a circular reference if detected
-<<<<<<< HEAD
+ 
      * @throws RuntimeException                    when a given parameter has a type problem
 =======
      * @throws RuntimeException                    when a given parameter has a type problem.
->>>>>>> web and vendor directory from composer install
      */
     public function resolveString($value, array $resolving = array())
     {
@@ -253,7 +243,7 @@ class ParameterBag implements ParameterBagInterface
         // as the preg_replace_callback throw an exception when trying
         // a non-string in a parameter value
         if (preg_match('/^%([^%\s]+)%$/', $value, $match)) {
-<<<<<<< HEAD
+ 
             $key = $match[1];
             $lcKey = strtolower($key); // strtolower() to be removed in 4.0
 
@@ -270,24 +260,22 @@ class ParameterBag implements ParameterBagInterface
             }
 
             $resolving[$key] = true;
->>>>>>> web and vendor directory from composer install
 
             return $this->resolved ? $this->get($key) : $this->resolveValue($this->get($key), $resolving);
         }
 
-<<<<<<< HEAD
+ 
         return preg_replace_callback('/%%|%([^%\s]+)%/', function ($match) use ($resolving, $value) {
 =======
         $self = $this;
 
         return preg_replace_callback('/%%|%([^%\s]+)%/', function ($match) use ($self, $resolving, $value) {
->>>>>>> web and vendor directory from composer install
             // skip %%
             if (!isset($match[1])) {
                 return '%%';
             }
 
-<<<<<<< HEAD
+ 
             $key = $match[1];
             $lcKey = strtolower($key); // strtolower() to be removed in 4.0
             if (isset($resolving[$lcKey])) {
@@ -302,14 +290,13 @@ class ParameterBag implements ParameterBagInterface
             }
 
             $resolved = $self->get($key);
->>>>>>> web and vendor directory from composer install
 
             if (!is_string($resolved) && !is_numeric($resolved)) {
                 throw new RuntimeException(sprintf('A string value must be composed of strings and/or numbers, but found parameter "%s" of type %s inside string value "%s".', $key, gettype($resolved), $value));
             }
 
             $resolved = (string) $resolved;
-<<<<<<< HEAD
+ 
             $resolving[$lcKey] = true;
 
             return $this->isResolved() ? $resolved : $this->resolveString($resolved, $resolving);
@@ -317,7 +304,6 @@ class ParameterBag implements ParameterBagInterface
             $resolving[$key] = true;
 
             return $self->isResolved() ? $resolved : $self->resolveString($resolved, $resolving);
->>>>>>> web and vendor directory from composer install
         }, $value);
     }
 
@@ -367,7 +353,7 @@ class ParameterBag implements ParameterBagInterface
 
         return $value;
     }
-<<<<<<< HEAD
+ 
 
     private function normalizeName($name)
     {
@@ -383,5 +369,4 @@ class ParameterBag implements ParameterBagInterface
         return $normalizedName;
     }
 =======
->>>>>>> web and vendor directory from composer install
 }

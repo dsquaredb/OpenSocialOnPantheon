@@ -30,9 +30,9 @@ r4032login.settings:
     default_redirect_code:
       type: mapping
       label: 'HTTP redirect code'
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
       mapping:
         302:
           type: integer

@@ -34,7 +34,7 @@ function admin_toolbar_tools_help($route_name, RouteMatchInterface $route_match)
   switch ($route_name) {
     case 'help.page.admin_toolbar_tools':
       $output = '';
-<<<<<<< HEAD
+ 
       $output .= '<p>' . t('The Admin Toolbar Extra Tools module comes packaged with the <a href="https://www.drupal.org/project/admin_toolbar"> Admin Toolbar</a> module and adds functionality to it. The additional functionality is accessed thru extra links on the main administration <a href="https://www.drupal.org/project/toolbar">Toolbar</a>.  Some links to Admin Toolbar Extra Tools administration pages are located at the bottom of this page. For more information, see the <a href="https://www.drupal.org/node/2713693">online documentation for Admin Toolbar</a>') . '</p>';
       $output .= '<h3>' . t('Uses') . '</h3>';
       $output .= '<p>' . t('To use Admin Toolbar Extra Tools just install it like any other module.  There is no other configuration required. The Admin Toolbar functionality can be further extended by installing complimentary modules.  See <a href="https://www.drupal.org/project/admin_toolbar">Admin Toolbar</a> for a complete listing of these complimentary modules.') . '</p>';
@@ -43,8 +43,8 @@ function admin_toolbar_tools_help($route_name, RouteMatchInterface $route_match)
       $output .= t('The Admin Toolbar Extra Tools module comes packaged with the <a href=":admin-toolbar">Admin Toolbar</a> module and adds functionality to it. The additional functionality is accessed thru extra links on the main administration Toolbar. Some links to Admin Toolbar Extra Tools administration pages are located at the bottom of this page.</a>', [':admin-toolbar' => Url::fromRoute('help.page', ['name' => 'admin_toolbar'])->toString()]);
       $output .= '</p>';
       $output .= '<h3>' . t('Uses') . '</h3>';
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
       $output .= '<p>' . t('To use Admin Toolbar Extra Tools just install it like any other module. There is no other configuration required.') . '</p>';
 >>>>>>> Update Open Social to 8.x-2.1
 =======
@@ -81,7 +81,7 @@ function admin_toolbar_tools_menu_links_discovered_alter(&$links) {
     }
   }
 
-<<<<<<< HEAD
+ 
 =======
   // Adding a menu link to clean the Views cache.
   if ($moduleHandler->moduleExists('views')) {
@@ -506,7 +506,7 @@ function admin_toolbar_tools_menu_links_discovered_alter(&$links) {
       );
     }
   }
-<<<<<<< HEAD
+ 
 =======
 
   // If module Language enabled.

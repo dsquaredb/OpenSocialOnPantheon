@@ -793,7 +793,7 @@ function system_form_alter(&$form, FormStateInterface $form_state) {
   /** @var \Drupal\Core\PageCache\RequestPolicyInterface $request_policy */
   $request_policy = \Drupal::service('page_cache_request_policy');
   $request = \Drupal::requestStack()->getCurrentRequest();
-  $request_is_cacheable = $request_policy->check($request) === RequestPolicyInterface::ALLOW;
+  $request_is_cacheable = $request_policy->check($request)   RequestPolicyInterface::ALLOW;
   if ($request_is_cacheable) {
     $form_state->addBuildInfo('immutable', TRUE);
   }

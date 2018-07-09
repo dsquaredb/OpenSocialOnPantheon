@@ -7,9 +7,9 @@ dependencies:
   - config
   - config_update
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 # Information added by Drupal.org packaging script on 2016-09-29
 version: '8.x-3.0-rc1'
 core: '8.x'

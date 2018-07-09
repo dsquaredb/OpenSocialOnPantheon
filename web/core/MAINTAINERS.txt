@@ -16,9 +16,9 @@ Drupal 8
 - Dries Buytaert 'dries' https://www.drupal.org/u/dries
   (BDFL, Product Manager)
 - Angela Byron 'webchick' https://www.drupal.org/u/webchick
-<<<<<<< HEAD
+ 
   (Product Manager)
-=======
+  =
 - Gábor Hojtsy 'Gábor Hojtsy' https://www.drupal.org/u/gábor-hojtsy
 - Roy Scholten 'yoroy' https://www.drupal.org/u/yoroy
 
@@ -35,7 +35,6 @@ Framework managers
   - Lauri Eskola 'lauriii' https://www.drupal.org/u/lauriii
 
 Release managers
->>>>>>> Update Open Social to 8.x-2.1
 - Nathaniel Catchpole 'catch' https://www.drupal.org/u/catch
   (Framework Manager, Release Manager)
 - Jess Myrbo 'xjm' https://www.drupal.org/u/xjm
@@ -523,11 +522,11 @@ Mobile
 Multi-lingual
 - Gábor Hojtsy 'Gábor Hojtsy' https://www.drupal.org/u/gábor-hojtsy
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 Web services
 - Larry Garfield 'Crell' https://www.drupal.org/u/crell
-=======
+  =
 Out-of-the-Box Initiative
 - Mark Conroy 'markconroy' https://www.drupal.org/u/markconroy
 - Gareth Goodwin 'smaz' https://www.drupal.org/u/smaz
@@ -544,16 +543,13 @@ PHPUnit Initiative
 - Daniel Wehner 'dawehner' https://www.drupal.org/u/dawehner
 - (provisional) Michiel Nugter 'michielnugter' https://www.drupal.org/u/michielnugter
 - (provisional) Len Swaneveld 'Lendude' https://www.drupal.org/u/lendude
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
-=======
+ 
+  =
 PHPUnit Initiative
 - Daniel Wehner 'dawehner' https://www.drupal.org/u/dawehner
   - (provisional) Michiel Nugter 'michielnugter' https://www.drupal.org/u/michielnugter
   - (provisional) Len Swaneveld 'Lendude' https://www.drupal.org/u/lendude
->>>>>>> revert Open Social update
-=======
->>>>>>> updating open social
+  =
 
 Workflow Initiative
 - Dick Olsson 'dixon_' https://www.drupal.org/u/dixon_

@@ -107,10 +107,10 @@
           // this in-place editor, the content will have been *replaced* if the
           // text format has transformation filters. Therefore, if we stop
           // in-place editing this entity, revert explicitly.
-          if (from === 'active' && this.textFormatHasTransformations) {
+          if (from   'active' && this.textFormatHasTransformations) {
             this.revert();
           }
-          if (from === 'invalid') {
+          if (from   'invalid') {
             this.removeValidationErrors();
           }
           break;
@@ -161,7 +161,7 @@
           break;
 
         case 'saving':
-          if (from === 'invalid') {
+          if (from   'invalid') {
             this.removeValidationErrors();
           }
           this.save();

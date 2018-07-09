@@ -25,24 +25,22 @@ class MenuUiLanguageTest extends BrowserTestBase {
    *
    * @var array
    */
-<<<<<<< HEAD:web/core/modules/menu_ui/src/Tests/MenuLanguageTest.php
-<<<<<<< HEAD
+ :web/core/modules/menu_ui/src/Tests/MenuLanguageTest.php
+ 
   public static $modules = array('language');
 =======
   public static $modules = ['language'];
->>>>>>> revert Open Social update
 =======
   protected static $modules = [
     'language',
     'menu_link_content',
     'menu_ui',
   ];
->>>>>>> updating open social:web/core/modules/menu_ui/tests/src/Functional/MenuUiLanguageTest.php
 
   protected function setUp() {
     parent::setUp();
 
-<<<<<<< HEAD
+ 
     $this->drupalLogin($this->drupalCreateUser(array('access administration pages', 'administer menu')));
 
     // Add some custom languages.
@@ -60,36 +58,32 @@ class MenuUiLanguageTest extends BrowserTestBase {
         'id' => $language_code,
         'label' => $this->randomMachineName(),
       ])->save();
->>>>>>> revert Open Social update
     }
   }
 
   /**
    * Tests menu language settings and the defaults for menu link items.
    */
-<<<<<<< HEAD
+ 
   function testMenuLanguage() {
 =======
   public function testMenuLanguage() {
->>>>>>> revert Open Social update
     // Create a test menu to test the various language-related settings.
     // Machine name has to be lowercase.
     $menu_name = Unicode::strtolower($this->randomMachineName(16));
     $label = $this->randomString();
-<<<<<<< HEAD
+ 
     $edit = array(
 =======
     $edit = [
->>>>>>> revert Open Social update
       'id' => $menu_name,
       'description' => '',
       'label' => $label,
       'langcode' => 'aa',
-<<<<<<< HEAD
+ 
     );
 =======
     ];
->>>>>>> revert Open Social update
     $this->drupalPostForm('admin/structure/menu/add', $edit, t('Save'));
     ContentLanguageSettings::loadByEntityTypeBundle('menu_link_content', 'menu_link_content')
       ->setDefaultLangcode('bb')
@@ -104,7 +98,7 @@ class MenuUiLanguageTest extends BrowserTestBase {
 
     // Add a menu link.
     $link_title = $this->randomString();
-<<<<<<< HEAD
+ 
     $edit = array(
       'title[0][value]' => $link_title,
       'link[0][uri]' => $link_path,
@@ -131,12 +125,10 @@ class MenuUiLanguageTest extends BrowserTestBase {
       'menu_name' => $menu_name,
       'route_name' => '<front>',
       'langcode' => 'bb',
-<<<<<<< HEAD:web/core/modules/menu_ui/src/Tests/MenuLanguageTest.php
+ :web/core/modules/menu_ui/src/Tests/MenuLanguageTest.php
     ]);
->>>>>>> revert Open Social update
 =======
     ], $menu_link->getPluginId());
->>>>>>> updating open social:web/core/modules/menu_ui/tests/src/Functional/MenuUiLanguageTest.php
 
     // Edit menu link default, changing it to cc.
     ContentLanguageSettings::loadByEntityTypeBundle('menu_link_content', 'menu_link_content')
@@ -146,7 +138,7 @@ class MenuUiLanguageTest extends BrowserTestBase {
 
     // Add a menu link.
     $link_title = $this->randomString();
-<<<<<<< HEAD
+ 
     $edit = array(
       'title[0][value]' => $link_title,
       'link[0][uri]' => $link_path,
@@ -195,12 +187,10 @@ class MenuUiLanguageTest extends BrowserTestBase {
       'menu_name' => $menu_name,
       'route_name' => '<front>',
       'langcode' => 'bb',
-<<<<<<< HEAD:web/core/modules/menu_ui/src/Tests/MenuLanguageTest.php
+ :web/core/modules/menu_ui/src/Tests/MenuLanguageTest.php
     ]);
->>>>>>> revert Open Social update
 =======
     ], $menu_link->getPluginId());
->>>>>>> updating open social:web/core/modules/menu_ui/tests/src/Functional/MenuUiLanguageTest.php
 
     // Saving menu link items ends up on the edit menu page. To check the menu
     // link has the correct language default on edit, go to the menu link edit

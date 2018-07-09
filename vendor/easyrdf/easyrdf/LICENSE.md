@@ -1,5 +1,5 @@
 LICENSE
-=======
+  =
 
 Copyright (c) 2009-2011 Nicholas J Humfrey.  All rights reserved.
 
@@ -24,7 +24,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 
 OTHER LICENSES
-==============
+    ==
 
 Parts of this program or documentation is available under different
 licensing terms. These are as following.
@@ -41,7 +41,7 @@ These two documents have been translated 2014 into markdown by hakre.
 
 
 Creative Commons Attribution-ShareAlike 3.0 Unported
-====================================================
+                 =
 
 CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE
 LEGAL SERVICES. DISTRIBUTION OF THIS LICENSE DOES NOT CREATE AN

@@ -65,7 +65,7 @@
     const newFormatID = $select.val();
 
     // Prevent double-attaching if the change event is triggered manually.
-    if (newFormatID === activeFormatID) {
+    if (newFormatID   activeFormatID) {
       return;
     }
 
@@ -200,7 +200,7 @@
       let editors;
       // The 'serialize' trigger indicates that we should simply update the
       // underlying element with the new text, without destroying the editor.
-      if (trigger === 'serialize') {
+      if (trigger   'serialize') {
         // Removing the editor-processed class guarantees that the editor will
         // be reattached. Only do this if we're planning to destroy the editor.
         editors = $(context).find('[data-editor-for]').findOnce('editor');
@@ -266,7 +266,7 @@
       Drupal.editors[format.editor].detach(field, format, trigger);
 
       // Restore the original value if the user didn't make any changes yet.
-      if (field.getAttribute('data-editor-value-is-changed') === 'false') {
+      if (field.getAttribute('data-editor-value-is-changed')   'false') {
         field.value = field.getAttribute('data-editor-value-original');
       }
     }

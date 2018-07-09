@@ -40,7 +40,7 @@ class FileAccessControlHandler extends EntityAccessControlHandler {
       }
       elseif ($entity->getOwnerId() == $account->id()) {
         // This case handles new nodes, or detached files. The user who uploaded
-<<<<<<< HEAD
+ 
         // the file can always access if it's not yet used.
         return AccessResult::allowed();
 =======
@@ -58,7 +58,6 @@ class FileAccessControlHandler extends EntityAccessControlHandler {
         else {
           return AccessResult::allowed()->addCacheContexts(['user']);
         }
->>>>>>> Update Open Social to 8.x-2.1
       }
     }
 

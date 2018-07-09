@@ -5,9 +5,9 @@ dependencies:
     - field.storage.profile.field_profile_first_name
     - field.storage.profile.field_profile_last_name
   module:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 =======
     - profile
 =======

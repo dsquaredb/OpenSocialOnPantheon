@@ -10,9 +10,9 @@ use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Render\Markup;
 use Drupal\Core\Url;
 use Drupal\Component\Utility\UrlHelper;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 use Drupal\node\Entity\NodeType;
 =======
 =======
@@ -123,15 +123,15 @@ function addtoany_page_attachments(&$page) {
     $node = \Drupal::routeMatch()->getParameter('node');
     $data = [];
     if ($node) {
-<<<<<<< HEAD
+ 
        $data = ['node' => $node];
        $additional_js = \Drupal::token()->replace($additional_js, $data);
 =======
       if (is_numeric($node)) {
         $node = Node::load($node);
       }
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
       $data = ['node' => $node];
       $additional_js = \Drupal::token()->replace($additional_js, $data);
 >>>>>>> Update Open Social to 8.x-2.1
@@ -196,9 +196,9 @@ function addtoany_page_attachments(&$page) {
  *
  * @param object $node
  *   The node object to create the buttons for.
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
  *
  * @return string
  *   The HTML code for the buttons.
@@ -223,8 +223,8 @@ function addtoany_create_node_buttons($node) {
 function addtoany_create_entity_data($node, $config = NULL) {
   $url = isset($node) ? $node->url('canonical', ['absolute' => TRUE]) : NULL;
   $title = isset($node) ? $node->label() : NULL;
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
   return addtoany_create_data($url, $title, $config);
 >>>>>>> Update Open Social to 8.x-2.1
 =======
@@ -243,9 +243,9 @@ function addtoany_create_entity_data($node, $config = NULL) {
  * @param string $title
  *   If present this will be used as the title. Use an empty string for no title
  *   or NULL to use the current page title.
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
  *
  * @return string
  *   The HTML code for the buttons.
@@ -267,15 +267,15 @@ function addtoany_create_buttons($url = NULL, $title = NULL) {
  * @return array
  *   The array with url, title, additional_html that will be send to Twig.
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
 >>>>>>> updating open social
 function addtoany_create_data($url = NULL, $title = NULL, $config = NULL) {
   if (is_null($config)) {
     $config = \Drupal::config('addtoany.settings');
   }
-<<<<<<< HEAD
+ 
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 function addtoany_create_buttons($url = NULL, $title = NULL, $config = NULL) {
@@ -335,16 +335,16 @@ function addtoany_create_buttons($url = NULL, $title = NULL, $config = NULL) {
     && is_numeric($buttons_size) && intval($buttons_size) == $buttons_size && $buttons_size > 0
   ) ? $buttons_size : '32';
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 =======
 >>>>>>> revert Open Social update
   if (\Drupal::moduleHandler()->moduleExists('token')) {
     $node = \Drupal::routeMatch()->getParameter('node');
     $data = [];
     if ($node) {
-<<<<<<< HEAD
+ 
        $data = ['node' => $node];
        $buttons = \Drupal::token()->replace($buttons, $data);
     }
@@ -358,7 +358,7 @@ function addtoany_create_buttons($url = NULL, $title = NULL, $config = NULL) {
 
   if ($button_setting == 'custom') {
     $button_image = UrlHelper::stripDangerousProtocols($config->get('custom_universal_button'));
-<<<<<<< HEAD
+ 
 =======
       if (is_numeric($node)) {
         $node = Node::load($node);
@@ -381,8 +381,8 @@ function addtoany_create_buttons($url = NULL, $title = NULL, $config = NULL) {
     'addtoany_html'              => $additional_html,
   ];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
   return $info;
 >>>>>>> Update Open Social to 8.x-2.1
 =======

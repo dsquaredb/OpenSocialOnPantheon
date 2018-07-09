@@ -102,7 +102,7 @@ class Test {
     return ['#plain_text' => 'Bad html <script>alert(123);</script>'];
   }
 
-<<<<<<< HEAD
+ 
 =======
   /**
    * Renders a page with pipe character in link test.
@@ -127,5 +127,4 @@ class Test {
     return new RedirectResponse(Url::fromRoute('test_page_test.test_page', [], ['absolute' => TRUE])->toString(), 302);
   }
 
->>>>>>> Update Open Social to 8.x-2.1
 }

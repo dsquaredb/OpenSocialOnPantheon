@@ -14,7 +14,7 @@ namespace Symfony\Component\HttpFoundation\Exception;
 /**
  * The HTTP request contains headers with conflicting information.
  *
-<<<<<<< HEAD
+ 
  * @author Magnus Nordlander <magnus@fervo.se>
  */
 class ConflictingHeadersException extends \UnexpectedValueException implements RequestExceptionInterface
@@ -24,6 +24,5 @@ class ConflictingHeadersException extends \UnexpectedValueException implements R
  * @author Magnus Nordlander <magnus@fervo.se>
  */
 class ConflictingHeadersException extends \RuntimeException
->>>>>>> web and vendor directory from composer install
 {
 }

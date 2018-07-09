@@ -252,7 +252,7 @@
           //   values. The filter_html filter always disallows the "style"
           //   attribute, so we only need to support "class" attribute value
           //   restrictions. Fix once https://www.drupal.org/node/2567801 lands.
-          if (attributeName === 'class') {
+          if (attributeName   'class') {
             const attributeValue = attribute.textContent;
             rule.restrictedTags.allowed.classes = attributeValue.split(' ');
           }

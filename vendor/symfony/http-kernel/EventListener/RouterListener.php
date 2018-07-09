@@ -12,7 +12,7 @@
 namespace Symfony\Component\HttpKernel\EventListener;
 
 use Psr\Log\LoggerInterface;
-<<<<<<< HEAD
+ 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
@@ -24,15 +24,13 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\Event\FinishRequestEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\Exception\MethodNotAllowedException;
-<<<<<<< HEAD
+ 
 use Symfony\Component\Routing\Exception\NoConfigurationException;
 =======
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\Matcher\UrlMatcherInterface;
 use Symfony\Component\Routing\Matcher\RequestMatcherInterface;
@@ -44,7 +42,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Initializes the context from the request and sets request attributes based on a matching route.
  *
-<<<<<<< HEAD
+ 
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Yonel Ceruto <yonelceruto@gmail.com>
 =======
@@ -54,14 +52,13 @@ use Symfony\Component\HttpFoundation\Request;
  *  * 2.4+ mode where you must pass a RequestStack instance in the constructor.
  *
  * @author Fabien Potencier <fabien@symfony.com>
->>>>>>> web and vendor directory from composer install
  */
 class RouterListener implements EventSubscriberInterface
 {
     private $matcher;
     private $context;
     private $logger;
-<<<<<<< HEAD
+ 
     private $requestStack;
     private $projectDir;
     private $debug;
@@ -76,12 +73,11 @@ class RouterListener implements EventSubscriberInterface
      *
      * RequestStack will become required in 3.0.
      *
->>>>>>> web and vendor directory from composer install
      * @param UrlMatcherInterface|RequestMatcherInterface $matcher      The Url or Request matcher
      * @param RequestStack                                $requestStack A RequestStack instance
      * @param RequestContext|null                         $context      The RequestContext (can be null when $matcher implements RequestContextAwareInterface)
      * @param LoggerInterface|null                        $logger       The logger
-<<<<<<< HEAD
+ 
      * @param string                                      $projectDir
      * @param bool                                        $debug
      *
@@ -116,7 +112,6 @@ class RouterListener implements EventSubscriberInterface
             throw new \InvalidArgumentException('Logger must implement LoggerInterface.');
         }
 
->>>>>>> web and vendor directory from composer install
         if (!$matcher instanceof UrlMatcherInterface && !$matcher instanceof RequestMatcherInterface) {
             throw new \InvalidArgumentException('Matcher must either implement UrlMatcherInterface or RequestMatcherInterface.');
         }
@@ -129,7 +124,7 @@ class RouterListener implements EventSubscriberInterface
         $this->context = $context ?: $matcher->getContext();
         $this->requestStack = $requestStack;
         $this->logger = $logger;
-<<<<<<< HEAD
+ 
         $this->projectDir = $projectDir;
         $this->debug = $debug;
 =======
@@ -151,12 +146,11 @@ class RouterListener implements EventSubscriberInterface
         @trigger_error('The '.__METHOD__.' method is deprecated since version 2.4 and will be made private in 3.0.', E_USER_DEPRECATED);
 
         $this->setCurrentRequest($request);
->>>>>>> web and vendor directory from composer install
     }
 
     private function setCurrentRequest(Request $request = null)
     {
-<<<<<<< HEAD
+ 
         if (null !== $request) {
             try {
                 $this->context->fromRequest($request);
@@ -188,7 +182,6 @@ class RouterListener implements EventSubscriberInterface
             return; // removed when requestStack is required
         }
 
->>>>>>> web and vendor directory from composer install
         $this->setCurrentRequest($this->requestStack->getParentRequest());
     }
 
@@ -196,7 +189,7 @@ class RouterListener implements EventSubscriberInterface
     {
         $request = $event->getRequest();
 
-<<<<<<< HEAD
+ 
         $this->setCurrentRequest($request);
 =======
         // initialize the context that is also used by the generator (assuming matcher and generator share the same context instance)
@@ -206,7 +199,6 @@ class RouterListener implements EventSubscriberInterface
         if (null !== $this->requestStack) {
             $this->setCurrentRequest($request);
         }
->>>>>>> web and vendor directory from composer install
 
         if ($request->attributes->has('_controller')) {
             // routing is already done
@@ -223,7 +215,7 @@ class RouterListener implements EventSubscriberInterface
             }
 
             if (null !== $this->logger) {
-<<<<<<< HEAD
+ 
                 $this->logger->info('Matched route "{route}".', array(
                     'route' => isset($parameters['_route']) ? $parameters['_route'] : 'n/a',
                     'route_parameters' => $parameters,
@@ -233,7 +225,6 @@ class RouterListener implements EventSubscriberInterface
                 $this->logger->info(sprintf('Matched route "%s".', isset($parameters['_route']) ? $parameters['_route'] : 'n/a'), array(
                     'route_parameters' => $parameters,
                     'request_uri' => $request->getUri(),
->>>>>>> web and vendor directory from composer install
                 ));
             }
 
@@ -255,14 +246,12 @@ class RouterListener implements EventSubscriberInterface
         }
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
 =======
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> updating open social
     public function onKernelException(GetResponseForExceptionEvent $event)
     {
         if (!$this->debug || !($e = $event->getException()) instanceof NotFoundHttpException) {
@@ -274,33 +263,26 @@ class RouterListener implements EventSubscriberInterface
         }
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> web and vendor directory from composer install
 =======
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
     public static function getSubscribedEvents()
     {
         return array(
             KernelEvents::REQUEST => array(array('onKernelRequest', 32)),
             KernelEvents::FINISH_REQUEST => array(array('onKernelFinishRequest', 0)),
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Update Open Social to 8.x-2.1
-            KernelEvents::EXCEPTION => array('onKernelException', -64),
-=======
->>>>>>> revert Open Social update
+ 
+ 
+ 
+ 
 =======
             KernelEvents::EXCEPTION => array('onKernelException', -64),
->>>>>>> updating open social
+=======
+=======
+            KernelEvents::EXCEPTION => array('onKernelException', -64),
         );
     }
 
@@ -318,5 +300,4 @@ class RouterListener implements EventSubscriberInterface
 =======
         );
     }
->>>>>>> web and vendor directory from composer install
 }

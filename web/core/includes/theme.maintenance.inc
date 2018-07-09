@@ -118,7 +118,7 @@ function template_preprocess_authorize_report(&$variables) {
     foreach ($variables['messages'] as $heading => $logs) {
       $items = [];
       foreach ($logs as $number => $log_message) {
-        if ($number === '#abort') {
+        if ($number   '#abort') {
           continue;
         }
         $class = 'authorize-results__' . ($log_message['success'] ? 'success' : 'failure');

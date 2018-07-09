@@ -3,11 +3,10 @@
 /*
  * This file is part of Twig.
  *
-<<<<<<< HEAD
+ 
  * (c) Fabien Potencier
 =======
  * (c) 2015 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -60,11 +59,10 @@ class Twig_Node_CheckSecurity extends Twig_Node
             ->outdent()
             ->write("} catch (Twig_Sandbox_SecurityError \$e) {\n")
             ->indent()
-<<<<<<< HEAD
+ 
             ->write("\$e->setSourceContext(\$this->getSourceContext());\n\n")
 =======
             ->write("\$e->setTemplateName(\$this->getTemplateName());\n\n")
->>>>>>> web and vendor directory from composer install
             ->write("if (\$e instanceof Twig_Sandbox_SecurityNotAllowedTagError && isset(\$tags[\$e->getTagName()])) {\n")
             ->indent()
             ->write("\$e->setTemplateLine(\$tags[\$e->getTagName()]);\n")
@@ -84,8 +82,7 @@ class Twig_Node_CheckSecurity extends Twig_Node
         ;
     }
 }
-<<<<<<< HEAD
+ 
 
 class_alias('Twig_Node_CheckSecurity', 'Twig\Node\CheckSecurityNode', false);
 =======
->>>>>>> web and vendor directory from composer install

@@ -4,18 +4,18 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
     "hash": "116f69e7f88bcdebdc157a80dfaa31c7",
     "content-hash": "fcbb0cf6a792bee4cd64b27b2e58909c",
     "packages": [],
-=======
+  =
     "content-hash": "cc2cd84cd41c52965cd00f2e515bb6d3",
-=======
+  =
     "content-hash": "84e81d56e7ed4144aee74f8da0745c4c",
 >>>>>>> revert Open Social update
-=======
+  =
     "content-hash": "cc2cd84cd41c52965cd00f2e515bb6d3",
 >>>>>>> updating open social
     "packages": [
@@ -138,17 +138,17 @@
                 "ssl",
                 "tls"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-04-13 10:13:24"
-=======
+  =
             "time": "2018-03-29T19:57:20+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2016-04-13T10:13:24+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-03-29T19:57:20+00:00"
 >>>>>>> updating open social
         },
@@ -230,9 +230,9 @@
                 "dependency",
                 "package"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-05-19 18:44:43"
         },
         {
@@ -296,13 +296,13 @@
                 "versioning"
             ],
             "time": "2016-03-30 13:16:03"
-=======
+  =
             "time": "2018-06-07T09:15:18+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2016-05-19T18:44:43+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-06-07T09:15:18+00:00"
 >>>>>>> updating open social
         },
@@ -365,12 +365,12 @@
                 "spdx",
                 "validator"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-05-04 12:27:30"
-=======
-=======
+  =
+  =
 >>>>>>> updating open social
             "time": "2018-04-30T10:33:04+00:00"
         },
@@ -417,12 +417,12 @@
                 "performance"
             ],
             "time": "2018-04-11T15:42:36+00:00"
-<<<<<<< HEAD
+ 
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2016-05-04T12:27:30+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
 >>>>>>> updating open social
         },
         {
@@ -576,12 +576,12 @@
                 "json",
                 "schema"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-01-25 15:43:01"
-=======
-=======
+  =
+  =
 >>>>>>> updating open social
             "time": "2018-02-14T22:26:30+00:00"
         },
@@ -785,12 +785,12 @@
                 "static analysis"
             ],
             "time": "2017-09-11T18:02:19+00:00"
-<<<<<<< HEAD
+ 
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2016-01-25T15:43:01+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
 >>>>>>> updating open social
         },
         {
@@ -889,17 +889,17 @@
                     "email": "me@mikevanriel.com"
                 }
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2015-02-03 12:10:50"
-=======
+  =
             "time": "2017-07-14T14:27:02+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2015-02-03T12:10:50+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2017-07-14T14:27:02+00:00"
 >>>>>>> updating open social
         },
@@ -964,17 +964,17 @@
                 "spy",
                 "stub"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-02-15 07:46:21"
-=======
+  =
             "time": "2018-04-18T13:57:24+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2016-02-15T07:46:21+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-04-18T13:57:24+00:00"
 >>>>>>> updating open social
         },
@@ -1039,17 +1039,17 @@
                 "testing",
                 "xunit"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2015-10-06 15:47:00"
-=======
+  =
             "time": "2018-04-06T15:36:58+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2015-10-06T15:47:00+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-04-06T15:36:58+00:00"
 >>>>>>> updating open social
         },
@@ -1098,17 +1098,17 @@
                 "filesystem",
                 "iterator"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2015-06-21 13:08:43"
-=======
+  =
             "time": "2017-11-27T13:52:08+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2015-06-21T13:08:43+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2017-11-27T13:52:08+00:00"
 >>>>>>> updating open social
         },
@@ -1200,17 +1200,17 @@
             "keywords": [
                 "timer"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-05-12 18:03:57"
-=======
+  =
             "time": "2017-02-26T11:10:40+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2016-05-12T18:03:57+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2017-02-26T11:10:40+00:00"
 >>>>>>> updating open social
         },
@@ -1261,17 +1261,17 @@
             "keywords": [
                 "tokenizer"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2015-09-15 10:49:45"
-=======
+  =
             "time": "2017-11-27T05:48:46+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2015-09-15T10:49:45+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2017-11-27T05:48:46+00:00"
 >>>>>>> updating open social
         },
@@ -1357,17 +1357,17 @@
                 "testing",
                 "xunit"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-05-17 03:09:28"
-=======
+  =
             "time": "2018-04-10T11:38:34+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2016-05-17T03:09:28+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-04-10T11:38:34+00:00"
 >>>>>>> updating open social
         },
@@ -1428,17 +1428,17 @@
                 "mock",
                 "xunit"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2015-10-02 06:51:40"
-=======
+  =
             "time": "2018-05-29T13:50:43+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2015-10-02T06:51:40+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-05-29T13:50:43+00:00"
 >>>>>>> updating open social
         },
@@ -1487,12 +1487,12 @@
                 "psr",
                 "psr-3"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2012-12-21 11:40:51"
-=======
-=======
+  =
+  =
 >>>>>>> updating open social
             "time": "2016-10-10T12:19:37+00:00"
         },
@@ -1540,12 +1540,12 @@
             "description": "Looks up which function or method a line of code belongs to",
             "homepage": "https://github.com/sebastianbergmann/code-unit-reverse-lookup/",
             "time": "2017-03-04T06:30:41+00:00"
-<<<<<<< HEAD
+ 
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2012-12-21T11:40:51+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
 >>>>>>> updating open social
         },
         {
@@ -1610,17 +1610,17 @@
                 "compare",
                 "equality"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2015-07-26 15:48:44"
-=======
+  =
             "time": "2018-02-01T13:46:46+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2015-07-26T15:48:44+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-02-01T13:46:46+00:00"
 >>>>>>> updating open social
         },
@@ -1674,17 +1674,17 @@
             "keywords": [
                 "diff"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2015-12-08 07:14:41"
-=======
+  =
             "time": "2017-08-03T08:09:46+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2015-12-08T07:14:41+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2017-08-03T08:09:46+00:00"
 >>>>>>> updating open social
         },
@@ -1736,17 +1736,17 @@
                 "environment",
                 "hhvm"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-05-17 03:18:57"
-=======
+  =
             "time": "2017-07-01T08:51:00+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2016-05-17T03:18:57+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2017-07-01T08:51:00+00:00"
 >>>>>>> updating open social
         },
@@ -1815,17 +1815,17 @@
                 "export",
                 "exporter"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2015-06-21 07:55:53"
-=======
+  =
             "time": "2017-04-03T13:19:02+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2015-06-21T07:55:53+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2017-04-03T13:19:02+00:00"
 >>>>>>> updating open social
         },
@@ -1878,12 +1878,12 @@
             "keywords": [
                 "global state"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2015-10-12 03:26:01"
-=======
-=======
+  =
+  =
 >>>>>>> updating open social
             "time": "2017-04-27T15:39:26+00:00"
         },
@@ -1978,12 +1978,12 @@
             "description": "Allows reflection of object attributes, including inherited and non-public ones",
             "homepage": "https://github.com/sebastianbergmann/object-reflector/",
             "time": "2017-03-29T09:07:27+00:00"
-<<<<<<< HEAD
+ 
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2015-10-12T03:26:01+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
 >>>>>>> updating open social
         },
         {
@@ -2037,17 +2037,17 @@
             ],
             "description": "Provides functionality to recursively process PHP variables",
             "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2015-11-11 19:50:13"
-=======
+  =
             "time": "2017-03-03T06:23:57+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2015-11-11T19:50:13+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2017-03-03T06:23:57+00:00"
 >>>>>>> updating open social
         },
@@ -2089,23 +2089,23 @@
                     "email": "sebastian@phpunit.de"
                 }
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
             "time": "2015-06-21 13:59:46"
-=======
+  =
             "description": "Provides a list of PHP built-in functions that operate on resources",
             "homepage": "https://www.github.com/sebastianbergmann/resource-operations",
             "time": "2015-07-28T20:34:47+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
             "time": "2015-06-21T13:59:46+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "description": "Provides a list of PHP built-in functions that operate on resources",
             "homepage": "https://www.github.com/sebastianbergmann/resource-operations",
             "time": "2015-07-28T20:34:47+00:00"
@@ -2150,10 +2150,10 @@
                     "role": "lead"
                 }
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+ 
+ 
+ 
+  =
 >>>>>>> revert Open Social update
             "description": "Allows you to prompt for user input on the command line, and optionally hide the characters they type",
             "keywords": [
@@ -2163,17 +2163,17 @@
                 "input",
                 "prompt"
             ],
-<<<<<<< HEAD
+ 
             "time": "2016-04-18 09:31:41"
-=======
+  =
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
             "time": "2016-10-03T07:35:21+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2016-04-18T09:31:41+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
             "time": "2016-10-03T07:35:21+00:00"
@@ -2226,17 +2226,17 @@
                 "parser",
                 "validator"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2015-11-21 02:21:41"
-=======
+  =
             "time": "2018-01-24T12:46:19+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2015-11-21T02:21:41+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-01-24T12:46:19+00:00"
 >>>>>>> updating open social
         },
@@ -2429,12 +2429,12 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-04-28 09:48:42"
-=======
-=======
+  =
+  =
 >>>>>>> updating open social
             "time": "2018-05-16T08:49:21+00:00"
         },
@@ -2493,12 +2493,12 @@
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
             "time": "2018-05-16T14:03:39+00:00"
-<<<<<<< HEAD
+ 
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2016-04-28T09:48:42+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
 >>>>>>> updating open social
         },
         {
@@ -2549,17 +2549,17 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-04-12 18:09:53"
-=======
+  =
             "time": "2018-05-16T08:49:21+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2016-04-12T18:09:53+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-05-16T08:49:21+00:00"
 >>>>>>> updating open social
         },
@@ -2610,12 +2610,12 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-03-10 11:13:05"
-=======
-=======
+  =
+  =
 >>>>>>> updating open social
             "time": "2018-05-16T08:49:21+00:00"
         },
@@ -2673,12 +2673,12 @@
                 "portable"
             ],
             "time": "2018-04-30T19:57:29+00:00"
-<<<<<<< HEAD
+ 
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2016-03-10T11:13:05+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
 >>>>>>> updating open social
         },
         {
@@ -2738,17 +2738,17 @@
                 "portable",
                 "shim"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-05-18 14:26:46"
-=======
+  =
             "time": "2018-04-26T10:06:28+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2016-05-18T14:26:46+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-04-26T10:06:28+00:00"
 >>>>>>> updating open social
         },
@@ -2799,11 +2799,11 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-04-14 15:30:28"
-=======
+  =
             "time": "2018-05-16T08:49:21+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
         },
@@ -2846,10 +2846,10 @@
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
             "time": "2017-04-07T12:08:54+00:00"
-=======
+  =
             "time": "2016-04-14T15:30:28+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-05-16T08:49:21+00:00"
 >>>>>>> updating open social
         },
@@ -2935,14 +2935,14 @@
                     "email": "bschussek@gmail.com"
                 }
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2016-03-04 07:55:57"
-=======
-=======
+  =
+  =
 >>>>>>> updating open social
             "description": "Assertions to validate method input/output with nice error messages.",
             "keywords": [
@@ -2951,14 +2951,14 @@
                 "validate"
             ],
             "time": "2018-01-29T19:49:41+00:00"
-<<<<<<< HEAD
+ 
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2016-03-04T07:55:57+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
 >>>>>>> updating open social
         }
     ],

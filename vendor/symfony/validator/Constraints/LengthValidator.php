@@ -11,10 +11,9 @@
 
 namespace Symfony\Component\Validator\Constraints;
 
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
@@ -48,7 +47,7 @@ class LengthValidator extends ConstraintValidator
         }
 
         if ($invalidCharset) {
-<<<<<<< HEAD
+ 
             $this->context->buildViolation($constraint->charsetMessage)
                 ->setParameter('{{ value }}', $this->formatValue($stringValue))
                 ->setParameter('{{ charset }}', $constraint->charset)
@@ -71,13 +70,12 @@ class LengthValidator extends ConstraintValidator
                     ->setCode(Length::INVALID_CHARACTERS_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
 
             return;
         }
 
         if (null !== $constraint->max && $length > $constraint->max) {
-<<<<<<< HEAD
+ 
             $this->context->buildViolation($constraint->min == $constraint->max ? $constraint->exactMessage : $constraint->maxMessage)
                 ->setParameter('{{ value }}', $this->formatValue($stringValue))
                 ->setParameter('{{ limit }}', $constraint->max)
@@ -103,13 +101,12 @@ class LengthValidator extends ConstraintValidator
                     ->setCode(Length::TOO_LONG_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
 
             return;
         }
 
         if (null !== $constraint->min && $length < $constraint->min) {
-<<<<<<< HEAD
+ 
             $this->context->buildViolation($constraint->min == $constraint->max ? $constraint->exactMessage : $constraint->minMessage)
                 ->setParameter('{{ value }}', $this->formatValue($stringValue))
                 ->setParameter('{{ limit }}', $constraint->min)
@@ -135,7 +132,6 @@ class LengthValidator extends ConstraintValidator
                     ->setCode(Length::TOO_SHORT_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
         }
     }
 }

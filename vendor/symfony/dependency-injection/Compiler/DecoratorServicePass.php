@@ -35,12 +35,11 @@ class DecoratorServicePass implements CompilerPassInterface
             $definitions->insert(array($id, $definition), array($decorated[2], --$order));
         }
 
-<<<<<<< HEAD
+ 
         foreach ($definitions as list($id, $definition)) {
 =======
         foreach ($definitions as $arr) {
             list($id, $definition) = $arr;
->>>>>>> web and vendor directory from composer install
             list($inner, $renamedId) = $definition->getDecoratedService();
 
             $definition->setDecoratedService(null);
@@ -54,7 +53,7 @@ class DecoratorServicePass implements CompilerPassInterface
             if ($container->hasAlias($inner)) {
                 $alias = $container->getAlias($inner);
                 $public = $alias->isPublic();
-<<<<<<< HEAD
+ 
                 $private = $alias->isPrivate();
                 $container->setAlias($renamedId, new Alias($container->normalizeId($alias), false));
             } else {
@@ -88,7 +87,6 @@ class DecoratorServicePass implements CompilerPassInterface
             }
 
             $container->setAlias($inner, new Alias($id, $public));
->>>>>>> web and vendor directory from composer install
         }
     }
 }

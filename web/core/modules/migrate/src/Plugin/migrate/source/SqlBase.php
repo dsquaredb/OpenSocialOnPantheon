@@ -13,7 +13,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Sources whose data may be fetched via DBTNG.
  *
-<<<<<<< HEAD
+ 
  * By default, an existing database connection with key 'migrate' and target
  * 'default' is used. These may be overridden with explicit 'key' and/or
  * 'target' configuration keys. In addition, if the configuration key 'database'
@@ -65,7 +65,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *
  * @see https://www.drupal.org/docs/8/api/database-api
  * @see \Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase
->>>>>>> Update Open Social to 8.x-2.1
  */
 abstract class SqlBase extends SourcePluginBase implements ContainerFactoryPluginInterface {
 

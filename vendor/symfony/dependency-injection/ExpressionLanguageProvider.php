@@ -24,7 +24,7 @@ use Symfony\Component\ExpressionLanguage\ExpressionFunctionProviderInterface;
  */
 class ExpressionLanguageProvider implements ExpressionFunctionProviderInterface
 {
-<<<<<<< HEAD
+ 
     private $serviceCompiler;
 
     public function __construct(callable $serviceCompiler = null)
@@ -41,7 +41,6 @@ class ExpressionLanguageProvider implements ExpressionFunctionProviderInterface
     {
         return array(
             new ExpressionFunction('service', function ($arg) {
->>>>>>> web and vendor directory from composer install
                 return sprintf('$this->get(%s)', $arg);
             }, function (array $variables, $value) {
                 return $variables['container']->get($value);

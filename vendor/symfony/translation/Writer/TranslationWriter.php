@@ -13,18 +13,17 @@ namespace Symfony\Component\Translation\Writer;
 
 use Symfony\Component\Translation\MessageCatalogue;
 use Symfony\Component\Translation\Dumper\DumperInterface;
-<<<<<<< HEAD
+ 
 use Symfony\Component\Translation\Exception\InvalidArgumentException;
 use Symfony\Component\Translation\Exception\RuntimeException;
 =======
->>>>>>> web and vendor directory from composer install
 
 /**
  * TranslationWriter writes translation messages.
  *
  * @author Michel Salib <michelsalib@hotmail.com>
  */
-<<<<<<< HEAD
+ 
 class TranslationWriter implements TranslationWriterInterface
 {
 =======
@@ -35,7 +34,6 @@ class TranslationWriter
      *
      * @var array
      */
->>>>>>> web and vendor directory from composer install
     private $dumpers = array();
 
     /**
@@ -74,7 +72,7 @@ class TranslationWriter
     /**
      * Writes translation from the catalogue according to the selected format.
      *
-<<<<<<< HEAD
+ 
      * @param MessageCatalogue $catalogue The message catalogue to write
      * @param string           $format    The format to use to dump the messages
      * @param array            $options   Options that are passed to the dumper
@@ -96,24 +94,22 @@ class TranslationWriter
     {
         if (!isset($this->dumpers[$format])) {
             throw new \InvalidArgumentException(sprintf('There is no dumper associated with format "%s".', $format));
->>>>>>> web and vendor directory from composer install
         }
 
         // get the right dumper
         $dumper = $this->dumpers[$format];
 
         if (isset($options['path']) && !is_dir($options['path']) && !@mkdir($options['path'], 0777, true) && !is_dir($options['path'])) {
-<<<<<<< HEAD
+ 
             throw new RuntimeException(sprintf('Translation Writer was not able to create directory "%s"', $options['path']));
 =======
             throw new \RuntimeException(sprintf('Translation Writer was not able to create directory "%s"', $options['path']));
->>>>>>> web and vendor directory from composer install
         }
 
         // save
         $dumper->dump($catalogue, $options);
     }
-<<<<<<< HEAD
+ 
 
     /**
      * Writes translation from the catalogue according to the selected format.
@@ -132,5 +128,4 @@ class TranslationWriter
         $this->write($catalogue, $format, $options);
     }
 =======
->>>>>>> web and vendor directory from composer install
 }

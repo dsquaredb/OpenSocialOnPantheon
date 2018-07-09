@@ -1,5 +1,5 @@
 HttpKernel Component
-====================
+      ==
 
 The HttpKernel component provides a structured process for converting a Request
 into a Response by making use of the EventDispatcher component. It's flexible

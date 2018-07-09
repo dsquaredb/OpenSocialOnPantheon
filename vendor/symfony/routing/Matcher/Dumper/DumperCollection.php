@@ -38,11 +38,10 @@ class DumperCollection implements \IteratorAggregate
     /**
      * Returns the children routes and collections.
      *
-<<<<<<< HEAD
+ 
      * @return self[]|DumperRoute[]
 =======
      * @return DumperCollection[]|DumperRoute[] Array of DumperCollection|DumperRoute
->>>>>>> web and vendor directory from composer install
      */
     public function all()
     {
@@ -90,11 +89,10 @@ class DumperCollection implements \IteratorAggregate
     /**
      * Returns the root of the collection.
      *
-<<<<<<< HEAD
+ 
      * @return self The root collection
 =======
      * @return DumperCollection The root collection
->>>>>>> web and vendor directory from composer install
      */
     public function getRoot()
     {
@@ -104,11 +102,10 @@ class DumperCollection implements \IteratorAggregate
     /**
      * Returns the parent collection.
      *
-<<<<<<< HEAD
+ 
      * @return self|null The parent collection or null if the collection has no parent
 =======
      * @return DumperCollection|null The parent collection or null if the collection has no parent
->>>>>>> web and vendor directory from composer install
      */
     protected function getParent()
     {
@@ -117,27 +114,23 @@ class DumperCollection implements \IteratorAggregate
 
     /**
      * Sets the parent collection.
-<<<<<<< HEAD
+ 
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
     protected function setParent(self $parent)
 =======
      *
      * @param DumperCollection $parent The parent collection
      */
-<<<<<<< HEAD
+ 
     protected function setParent(DumperCollection $parent)
->>>>>>> web and vendor directory from composer install
 =======
     protected function setParent(self $parent)
->>>>>>> Update Open Social to 8.x-2.1
 =======
     protected function setParent(DumperCollection $parent)
->>>>>>> revert Open Social update
 =======
     protected function setParent(self $parent)
->>>>>>> updating open social
     {
         $this->parent = $parent;
     }

@@ -21,7 +21,7 @@
         return false;
       });
 
-      if ($placeholders.length === 0) {
+      if ($placeholders.length   0) {
         return;
       }
 
@@ -50,7 +50,7 @@
           isFirstNewComment = false;
           $comment.prev().before('<a id="new" />');
 
-          if (window.location.hash === '#new') {
+          if (window.location.hash   '#new') {
             window.scrollTo(0, $comment.offset().top - Drupal.displace.offsets.top);
           }
         }

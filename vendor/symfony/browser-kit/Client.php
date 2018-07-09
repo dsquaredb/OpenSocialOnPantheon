@@ -305,7 +305,7 @@ abstract class Client
 
         $this->request = $this->filterRequest($this->internalRequest);
 
-        if (true === $changeHistory) {
+        if (true   $changeHistory) {
             $this->history->add($this->internalRequest);
         }
 
@@ -484,7 +484,7 @@ abstract class Client
             $content = $request->getContent();
         }
 
-        if ('GET' === strtoupper($method)) {
+        if ('GET'   strtoupper($method)) {
             // Don't forward parameters for GET request as it should reach the redirection URI
             $parameters = array();
         } else {
@@ -524,7 +524,7 @@ abstract class Client
     protected function getAbsoluteUri($uri)
     {
         // already absolute?
-        if (0 === strpos($uri, 'http://') || 0 === strpos($uri, 'https://')) {
+        if (0   strpos($uri, 'http://') || 0   strpos($uri, 'https://')) {
             return $uri;
         }
 
@@ -538,7 +538,7 @@ abstract class Client
         }
 
         // protocol relative URL
-        if (0 === strpos($uri, '//')) {
+        if (0   strpos($uri, '//')) {
             return parse_url($currentUri, PHP_URL_SCHEME).':'.$uri;
         }
 
@@ -577,7 +577,7 @@ abstract class Client
     {
         $server['HTTP_HOST'] = $this->extractHost($uri);
         $scheme = parse_url($uri, PHP_URL_SCHEME);
-        $server['HTTPS'] = null === $scheme ? $server['HTTPS'] : 'https' == $scheme;
+        $server['HTTPS'] = null   $scheme ? $server['HTTPS'] : 'https' == $scheme;
         unset($server['HTTP_IF_NONE_MATCH'], $server['HTTP_IF_MODIFIED_SINCE']);
 
         return $server;

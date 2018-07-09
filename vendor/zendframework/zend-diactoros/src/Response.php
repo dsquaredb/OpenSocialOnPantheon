@@ -30,12 +30,11 @@ class Response implements ResponseInterface
 {
     use MessageTrait;
 
-<<<<<<< HEAD
+ 
     const MIN_STATUS_CODE_VALUE = 100;
     const MAX_STATUS_CODE_VALUE = 599;
 
 =======
->>>>>>> web and vendor directory from composer install
     /**
      * Map of standard HTTP status code/reason phrases
      *
@@ -54,7 +53,7 @@ class Response implements ResponseInterface
         204 => 'No Content',
         205 => 'Reset Content',
         206 => 'Partial Content',
-<<<<<<< HEAD
+ 
         207 => 'Multi-Status',
         208 => 'Already Reported',
         226 => 'IM Used',
@@ -62,7 +61,6 @@ class Response implements ResponseInterface
         207 => 'Multi-status',
         208 => 'Already Reported',
         226 => 'IM used',
->>>>>>> web and vendor directory from composer install
         // REDIRECTION CODES
         300 => 'Multiple Choices',
         301 => 'Moved Permanently',
@@ -82,16 +80,15 @@ class Response implements ResponseInterface
         405 => 'Method Not Allowed',
         406 => 'Not Acceptable',
         407 => 'Proxy Authentication Required',
-<<<<<<< HEAD
+ 
         408 => 'Request Timeout',
 =======
         408 => 'Request Time-out',
->>>>>>> web and vendor directory from composer install
         409 => 'Conflict',
         410 => 'Gone',
         411 => 'Length Required',
         412 => 'Precondition Failed',
-<<<<<<< HEAD
+ 
         413 => 'Payload Too Large',
         414 => 'URI Too Long',
         415 => 'Unsupported Media Type',
@@ -101,7 +98,6 @@ class Response implements ResponseInterface
         414 => 'Request-URI Too Large',
         415 => 'Unsupported Media Type',
         416 => 'Requested range not satisfiable',
->>>>>>> web and vendor directory from composer install
         417 => 'Expectation Failed',
         418 => 'I\'m a teapot',
         421 => 'Misdirected Request',
@@ -121,13 +117,12 @@ class Response implements ResponseInterface
         501 => 'Not Implemented',
         502 => 'Bad Gateway',
         503 => 'Service Unavailable',
-<<<<<<< HEAD
+ 
         504 => 'Gateway Timeout',
         505 => 'HTTP Version Not Supported',
 =======
         504 => 'Gateway Time-out',
         505 => 'HTTP Version not supported',
->>>>>>> web and vendor directory from composer install
         506 => 'Variant Also Negotiates',
         507 => 'Insufficient Storage',
         508 => 'Loop Detected',
@@ -156,13 +151,12 @@ class Response implements ResponseInterface
     {
         $this->setStatusCode($status);
         $this->stream = $this->getStream($body, 'wb+');
-<<<<<<< HEAD
+ 
         $this->setHeaders($headers);
 =======
         list($this->headerNames, $headers) = $this->filterHeaders($headers);
         $this->assertHeaders($headers);
         $this->headers = $headers;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -199,7 +193,7 @@ class Response implements ResponseInterface
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Set a valid status code.
      *
      * @param int $code
@@ -207,14 +201,13 @@ class Response implements ResponseInterface
      * Validate a status code.
      *
      * @param int|string $code
->>>>>>> web and vendor directory from composer install
      * @throws InvalidArgumentException on an invalid status code.
      */
     private function setStatusCode($code)
     {
         if (! is_numeric($code)
             || is_float($code)
-<<<<<<< HEAD
+ 
             || $code < static::MIN_STATUS_CODE_VALUE
             || $code > static::MAX_STATUS_CODE_VALUE
         ) {
@@ -230,12 +223,11 @@ class Response implements ResponseInterface
             throw new InvalidArgumentException(sprintf(
                 'Invalid status code "%s"; must be an integer between 100 and 599, inclusive',
                 (is_scalar($code) ? $code : gettype($code))
->>>>>>> web and vendor directory from composer install
             ));
         }
         $this->statusCode = $code;
     }
-<<<<<<< HEAD
+ 
 =======
 
     /**
@@ -251,5 +243,4 @@ class Response implements ResponseInterface
             array_walk($headerValues, __NAMESPACE__ . '\HeaderSecurity::assertValid');
         }
     }
->>>>>>> web and vendor directory from composer install
 }

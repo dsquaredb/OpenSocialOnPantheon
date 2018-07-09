@@ -12,16 +12,15 @@
 namespace Symfony\Component\HttpFoundation\Session\Storage\Proxy;
 
 /**
-<<<<<<< HEAD
+ 
 =======
  * SessionHandler proxy.
  *
->>>>>>> web and vendor directory from composer install
  * @author Drak <drak@zikula.org>
  */
 class SessionHandlerProxy extends AbstractProxy implements \SessionHandlerInterface
 {
-<<<<<<< HEAD
+ 
     protected $handler;
 
 =======
@@ -35,7 +34,6 @@ class SessionHandlerProxy extends AbstractProxy implements \SessionHandlerInterf
      *
      * @param \SessionHandlerInterface $handler
      */
->>>>>>> web and vendor directory from composer install
     public function __construct(\SessionHandlerInterface $handler)
     {
         $this->handler = $handler;
@@ -43,7 +41,7 @@ class SessionHandlerProxy extends AbstractProxy implements \SessionHandlerInterf
         $this->saveHandlerName = $this->wrapper ? ini_get('session.save_handler') : 'user';
     }
 
-<<<<<<< HEAD
+ 
     /**
      * @return \SessionHandlerInterface
      */
@@ -53,7 +51,6 @@ class SessionHandlerProxy extends AbstractProxy implements \SessionHandlerInterf
     }
 
 =======
->>>>>>> web and vendor directory from composer install
     // \SessionHandlerInterface
 
     /**
@@ -61,7 +58,7 @@ class SessionHandlerProxy extends AbstractProxy implements \SessionHandlerInterf
      */
     public function open($savePath, $sessionName)
     {
-<<<<<<< HEAD
+ 
         return (bool) $this->handler->open($savePath, $sessionName);
 =======
         $return = (bool) $this->handler->open($savePath, $sessionName);
@@ -71,7 +68,6 @@ class SessionHandlerProxy extends AbstractProxy implements \SessionHandlerInterf
         }
 
         return $return;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -79,11 +75,10 @@ class SessionHandlerProxy extends AbstractProxy implements \SessionHandlerInterf
      */
     public function close()
     {
-<<<<<<< HEAD
+ 
 =======
         $this->active = false;
 
->>>>>>> web and vendor directory from composer install
         return (bool) $this->handler->close();
     }
 

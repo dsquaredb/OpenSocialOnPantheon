@@ -274,10 +274,10 @@ class ChainRouter implements ChainRouterInterface, WarmableInterface
             $server['PHP_SELF'] = $this->context->getBaseUrl();
         }
         $host = $this->context->getHost() ?: 'localhost';
-        if ('https' === $this->context->getScheme() && 443 !== $this->context->getHttpsPort()) {
+        if ('https'   $this->context->getScheme() && 443 !== $this->context->getHttpsPort()) {
             $host .= ':'.$this->context->getHttpsPort();
         }
-        if ('http' === $this->context->getScheme() && 80 !== $this->context->getHttpPort()) {
+        if ('http'   $this->context->getScheme() && 80 !== $this->context->getHttpPort()) {
             $host .= ':'.$this->context->getHttpPort();
         }
         $uri = $this->context->getScheme().'://'.$host.$uri.'?'.$this->context->getQueryString();

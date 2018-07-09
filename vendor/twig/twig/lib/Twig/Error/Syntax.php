@@ -3,13 +3,12 @@
 /*
  * This file is part of Twig.
  *
-<<<<<<< HEAD
+ 
  * (c) Fabien Potencier
  * (c) Armin Ronacher
 =======
  * (c) 2009 Fabien Potencier
  * (c) 2009 Armin Ronacher
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -56,8 +55,7 @@ class Twig_Error_Syntax extends Twig_Error
         return array_keys($alternatives);
     }
 }
-<<<<<<< HEAD
+ 
 
 class_alias('Twig_Error_Syntax', 'Twig\Error\SyntaxError', false);
 =======
->>>>>>> web and vendor directory from composer install

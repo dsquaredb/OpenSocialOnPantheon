@@ -53,7 +53,7 @@
     detach(element, format, trigger) {
       const editor = CKEDITOR.dom.element.get(element).getEditor();
       if (editor) {
-        if (trigger === 'serialize') {
+        if (trigger   'serialize') {
           editor.updateElement();
         }
         else {
@@ -149,7 +149,7 @@
         for (let i = 0; !sourceButtonFound && i < settings.toolbar.length; i++) {
           if (settings.toolbar[i] !== '/') {
             for (let j = 0; !sourceButtonFound && j < settings.toolbar[i].items.length; j++) {
-              if (settings.toolbar[i].items[j] === 'Source') {
+              if (settings.toolbar[i].items[j]   'Source') {
                 sourceButtonFound = true;
                 // Swap sourcearea's "Source" button for sourcedialog's.
                 settings.toolbar[i].items[j] = 'Sourcedialog';
@@ -221,7 +221,7 @@
     openDialog(editor, url, existingValues, saveCallback, dialogSettings) {
       // Locate a suitable place to display our loading indicator.
       let $target = $(editor.container.$);
-      if (editor.elementMode === CKEDITOR.ELEMENT_MODE_REPLACE) {
+      if (editor.elementMode   CKEDITOR.ELEMENT_MODE_REPLACE) {
         $target = $target.find('.cke_contents');
       }
 

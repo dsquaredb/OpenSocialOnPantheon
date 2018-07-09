@@ -13,10 +13,9 @@ namespace Symfony\Component\HttpKernel\HttpCache;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\HttpKernel\HttpKernelInterface;
->>>>>>> web and vendor directory from composer install
 
 /**
  * Esi implements the ESI capabilities to Request and Response instances.
@@ -29,7 +28,7 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
-<<<<<<< HEAD
+ 
 class Esi extends AbstractSurrogate
 {
 =======
@@ -52,14 +51,13 @@ class Esi implements SurrogateInterface
         $this->contentTypes = $contentTypes;
     }
 
->>>>>>> web and vendor directory from composer install
     public function getName()
     {
         return 'esi';
     }
 
     /**
-<<<<<<< HEAD
+ 
      * {@inheritdoc}
 =======
      * Returns a new cache strategy instance.
@@ -136,7 +134,6 @@ class Esi implements SurrogateInterface
      * This method only adds an ESI HTTP header if the Response has some ESI tags.
      *
      * @param Response $response A Response instance
->>>>>>> web and vendor directory from composer install
      */
     public function addSurrogateControl(Response $response)
     {
@@ -146,7 +143,7 @@ class Esi implements SurrogateInterface
     }
 
     /**
-<<<<<<< HEAD
+ 
      * {@inheritdoc}
 =======
      * Checks that the Response needs to be parsed for ESI tags.
@@ -189,7 +186,6 @@ class Esi implements SurrogateInterface
      * @param string $comment      A comment to add as an esi:include tag
      *
      * @return string
->>>>>>> web and vendor directory from composer install
      */
     public function renderIncludeTag($uri, $alt = null, $ignoreErrors = true, $comment = '')
     {
@@ -207,7 +203,7 @@ class Esi implements SurrogateInterface
     }
 
     /**
-<<<<<<< HEAD
+ 
      * {@inheritdoc}
 =======
      * Replaces a Response ESI tags with the included resource content.
@@ -216,7 +212,6 @@ class Esi implements SurrogateInterface
      * @param Response $response A Response instance
      *
      * @return Response
->>>>>>> web and vendor directory from composer install
      */
     public function process(Request $request, Response $response)
     {
@@ -265,7 +260,7 @@ class Esi implements SurrogateInterface
         $response->headers->set('X-Body-Eval', 'ESI');
 
         // remove ESI/1.0 from the Surrogate-Control header
-<<<<<<< HEAD
+ 
         $this->removeFromControl($response);
 =======
         if ($response->headers->has('Surrogate-Control')) {
@@ -314,6 +309,5 @@ class Esi implements SurrogateInterface
                 throw $e;
             }
         }
->>>>>>> web and vendor directory from composer install
     }
 }

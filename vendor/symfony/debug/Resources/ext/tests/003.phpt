@@ -1,7 +1,7 @@
 --TEST--
 Test ErrorHandler in case of fatal error
 --SKIPIF--
-<<<<<<< HEAD
+ 
 <?php if (!extension_loaded('symfony_debug')) {
     echo 'skip';
 } ?>

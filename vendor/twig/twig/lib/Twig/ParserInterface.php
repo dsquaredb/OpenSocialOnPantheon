@@ -7,7 +7,6 @@
  * (c) Fabien Potencier
 =======
  * (c) 2009 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -31,7 +30,6 @@ interface Twig_ParserInterface
      * @param Twig_TokenStream $stream A token stream instance
      *
      * @return Twig_Node_Module A node tree
->>>>>>> web and vendor directory from composer install
      *
      * @throws Twig_Error_Syntax When the token stream is syntactically or semantically wrong
      */

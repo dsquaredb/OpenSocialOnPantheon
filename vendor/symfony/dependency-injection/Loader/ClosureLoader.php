@@ -25,12 +25,11 @@ class ClosureLoader extends Loader
 {
     private $container;
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * @param ContainerBuilder $container A ContainerBuilder instance
      */
->>>>>>> web and vendor directory from composer install
     public function __construct(ContainerBuilder $container)
     {
         $this->container = $container;

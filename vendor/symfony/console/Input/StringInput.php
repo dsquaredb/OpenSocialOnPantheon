@@ -28,7 +28,7 @@ class StringInput extends ArgvInput
     const REGEX_QUOTED_STRING = '(?:"([^"\\\\]*(?:\\\\.[^"\\\\]*)*)"|\'([^\'\\\\]*(?:\\\\.[^\'\\\\]*)*)\')';
 
     /**
-<<<<<<< HEAD
+ 
      * @param string $input A string representing the parameters from the CLI
      */
     public function __construct($input)
@@ -57,7 +57,6 @@ class StringInput extends ArgvInput
         if (null !== $definition) {
             $this->bind($definition);
         }
->>>>>>> web and vendor directory from composer install
     }
 
     /**

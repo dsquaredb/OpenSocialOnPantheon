@@ -20,7 +20,7 @@ class JsonEncoder implements EncoderInterface, DecoderInterface
 {
     const FORMAT = 'json';
 
-<<<<<<< HEAD
+ 
     protected $encodingImpl;
 =======
     /**
@@ -31,7 +31,6 @@ class JsonEncoder implements EncoderInterface, DecoderInterface
     /**
      * @var JsonDecode
      */
->>>>>>> web and vendor directory from composer install
     protected $decodingImpl;
 
     public function __construct(JsonEncode $encodingImpl = null, JsonDecode $decodingImpl = null)
@@ -41,7 +40,7 @@ class JsonEncoder implements EncoderInterface, DecoderInterface
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Returns the last encoding error (if any).
      *
@@ -71,7 +70,6 @@ class JsonEncoder implements EncoderInterface, DecoderInterface
     }
 
     /**
->>>>>>> web and vendor directory from composer install
      * {@inheritdoc}
      */
     public function encode($data, $format, array $context = array())
@@ -102,7 +100,7 @@ class JsonEncoder implements EncoderInterface, DecoderInterface
     {
         return self::FORMAT === $format;
     }
-<<<<<<< HEAD
+ 
 =======
 
     /**
@@ -118,5 +116,4 @@ class JsonEncoder implements EncoderInterface, DecoderInterface
 
         return json_last_error_msg();
     }
->>>>>>> web and vendor directory from composer install
 }

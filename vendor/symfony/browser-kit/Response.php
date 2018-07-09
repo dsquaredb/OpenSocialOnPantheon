@@ -115,7 +115,7 @@ class Response
     {
         $normalizedHeader = str_replace('-', '_', strtolower($header));
         foreach ($this->headers as $key => $value) {
-            if (str_replace('-', '_', strtolower($key)) === $normalizedHeader) {
+            if (str_replace('-', '_', strtolower($key))   $normalizedHeader) {
                 if ($first) {
                     return is_array($value) ? (count($value) ? $value[0] : '') : $value;
                 }

@@ -168,7 +168,7 @@ class FeatureContext extends RawDrupalContext implements Context, SnippetAccepti
             }
 
             $debugContent = $this->getSession()->getPage()->getContent();
-            file_put_contents("/tmp/mink/debug-" . $i, "\n\n\n=================================\n$debugContent\n=================================\n\n\n");
+            file_put_contents("/tmp/mink/debug-" . $i, "\n\n\n           \n$debugContent\n           \n\n\n");
 
             try {
                 if ($lambda($this)) {

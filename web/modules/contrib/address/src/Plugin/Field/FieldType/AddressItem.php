@@ -3,21 +3,18 @@
 namespace Drupal\address\Plugin\Field\FieldType;
 
 use CommerceGuys\Addressing\AddressFormat\AddressField;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 use Drupal\address\Event\AddressEvents;
 use Drupal\address\Event\AvailableCountriesEvent;
 =======
 use CommerceGuys\Addressing\AddressFormat\FieldOverride;
 use CommerceGuys\Addressing\AddressFormat\FieldOverrides;
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
 use CommerceGuys\Addressing\AddressFormat\FieldOverride;
 use CommerceGuys\Addressing\AddressFormat\FieldOverrides;
->>>>>>> updating open social
 use Drupal\address\AddressInterface;
 use Drupal\address\LabelHelper;
 use Drupal\Core\Field\FieldItemBase;
@@ -147,7 +144,7 @@ class AddressItem extends FieldItemBase implements AddressInterface {
    * {@inheritdoc}
    */
   public static function defaultFieldSettings() {
-<<<<<<< HEAD
+ 
     return [
       'available_countries' => [],
       'fields' => array_values(AddressField::getAll()),
@@ -160,7 +157,6 @@ class AddressItem extends FieldItemBase implements AddressInterface {
       // Replaced by field_overrides.
       'fields' => [],
     ];
->>>>>>> Update Open Social to 8.x-2.1
   }
 
   /**
@@ -176,7 +172,7 @@ class AddressItem extends FieldItemBase implements AddressInterface {
       }
     }
 
-<<<<<<< HEAD
+ 
     $element = [];
     $element['available_countries'] = [
       '#type' => 'select',
@@ -197,9 +193,8 @@ class AddressItem extends FieldItemBase implements AddressInterface {
     ];
 =======
     $element = $this->countrySettingsForm($form, $form_state);
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
+ 
 =======
     $element['fields'] = [
       '#type' => 'checkboxes',
@@ -209,9 +204,7 @@ class AddressItem extends FieldItemBase implements AddressInterface {
       '#options' => LabelHelper::getGenericFieldLabels(),
       '#required' => TRUE,
     ];
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
     $element['langcode_override'] = [
       '#type' => 'select',
       '#title' => $this->t('Language override'),
@@ -261,9 +254,9 @@ class AddressItem extends FieldItemBase implements AddressInterface {
   }
 
   /**
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
    * Gets the available countries for the current field.
    *
    * @return array
@@ -284,7 +277,6 @@ class AddressItem extends FieldItemBase implements AddressInterface {
     return static::$availableCountries[$definition_id];
 =======
 =======
->>>>>>> updating open social
    * Form element validation handler: Removes empty field overrides.
    *
    * @param array $element
@@ -321,18 +313,15 @@ class AddressItem extends FieldItemBase implements AddressInterface {
     }
 
     return $field_overrides;
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
   }
 
   /**
 =======
->>>>>>> revert Open Social update
 =======
   }
 
   /**
->>>>>>> updating open social
    * Initializes and returns the langcode property for the current field.
    *
    * Some countries use separate address formats for the local language VS
@@ -381,7 +370,7 @@ class AddressItem extends FieldItemBase implements AddressInterface {
    */
   public function getConstraints() {
     $constraints = parent::getConstraints();
-<<<<<<< HEAD
+ 
     $manager = \Drupal::typedDataManager()->getValidationConstraintManager();
     $available_countries = $this->getAvailableCountries();
     $enabled_fields = array_filter($this->getSetting('fields'));
@@ -397,16 +386,13 @@ class AddressItem extends FieldItemBase implements AddressInterface {
         ],
       ],
     ]);
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
     $constraints[] = $constraint_manager->create('AddressFormat', ['fieldOverrides' => $field_overrides]);
->>>>>>> Update Open Social to 8.x-2.1
 =======
     $constraints[] = $constraint_manager->create('AddressFormat', ['fields' => $enabled_fields]);
->>>>>>> revert Open Social update
 =======
     $constraints[] = $constraint_manager->create('AddressFormat', ['fieldOverrides' => $field_overrides]);
->>>>>>> updating open social
 
     return $constraints;
   }

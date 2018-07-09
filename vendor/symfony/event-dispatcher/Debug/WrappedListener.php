@@ -14,10 +14,9 @@ namespace Symfony\Component\EventDispatcher\Debug;
 use Symfony\Component\Stopwatch\Stopwatch;
 use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-<<<<<<< HEAD
+ 
 use Symfony\Component\VarDumper\Caster\ClassStub;
 =======
->>>>>>> web and vendor directory from composer install
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
@@ -30,12 +29,11 @@ class WrappedListener
     private $stoppedPropagation;
     private $stopwatch;
     private $dispatcher;
-<<<<<<< HEAD
+ 
     private $pretty;
     private $stub;
     private static $hasClassStub;
 =======
->>>>>>> web and vendor directory from composer install
 
     public function __construct($listener, $name, Stopwatch $stopwatch, EventDispatcherInterface $dispatcher = null)
     {
@@ -45,7 +43,7 @@ class WrappedListener
         $this->dispatcher = $dispatcher;
         $this->called = false;
         $this->stoppedPropagation = false;
-<<<<<<< HEAD
+ 
 
         if (is_array($listener)) {
             $this->name = is_object($listener[0]) ? get_class($listener[0]) : $listener[0];
@@ -67,7 +65,6 @@ class WrappedListener
             self::$hasClassStub = class_exists(ClassStub::class);
         }
 =======
->>>>>>> web and vendor directory from composer install
     }
 
     public function getWrappedListener()
@@ -85,7 +82,7 @@ class WrappedListener
         return $this->stoppedPropagation;
     }
 
-<<<<<<< HEAD
+ 
     public function getPretty()
     {
         return $this->pretty;
@@ -106,7 +103,6 @@ class WrappedListener
     }
 
 =======
->>>>>>> web and vendor directory from composer install
     public function __invoke(Event $event, $eventName, EventDispatcherInterface $dispatcher)
     {
         $this->called = true;

@@ -62,9 +62,9 @@ class CheckExceptionOnInvalidReferenceBehaviorPassTest extends \PHPUnit_Framewor
         $this->process($container);
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 =======
 =======
     /**
@@ -88,9 +88,7 @@ class CheckExceptionOnInvalidReferenceBehaviorPassTest extends \PHPUnit_Framewor
         $this->process($container);
     }
 
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
     public function testProcessDefinitionWithBindings()
     {
         $container = new ContainerBuilder();
@@ -105,7 +103,6 @@ class CheckExceptionOnInvalidReferenceBehaviorPassTest extends \PHPUnit_Framewor
         $this->addToAssertionCount(1);
     }
 
->>>>>>> Update Open Social to 8.x-2.1
     private function process(ContainerBuilder $container)
     {
         $pass = new CheckExceptionOnInvalidReferenceBehaviorPass();

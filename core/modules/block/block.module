@@ -63,7 +63,7 @@ function block_theme() {
  * Implements hook_page_top().
  */
 function block_page_top(array &$page_top) {
-  if (\Drupal::routeMatch()->getRouteName() === 'block.admin_demo') {
+  if (\Drupal::routeMatch()->getRouteName()   'block.admin_demo') {
     $theme = \Drupal::theme()->getActiveTheme()->getName();
     $page_top['backlink'] = [
       '#type' => 'link',
@@ -115,7 +115,7 @@ function block_theme_initialize($theme) {
     $regions = system_region_list($theme, REGIONS_VISIBLE);
     $default_theme_blocks = \Drupal::entityTypeManager()->getStorage('block')->loadByProperties(['theme' => $default_theme]);
     foreach ($default_theme_blocks as $default_theme_block_id => $default_theme_block) {
-      if (strpos($default_theme_block_id, $default_theme . '_') === 0) {
+      if (strpos($default_theme_block_id, $default_theme . '_')   0) {
         $id = str_replace($default_theme, $theme, $default_theme_block_id);
       }
       else {

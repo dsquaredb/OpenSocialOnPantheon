@@ -89,7 +89,7 @@
 	},
 	"AUD": {
 		"name": "Dólar australiano",
-<<<<<<< HEAD
+ 
 		"symbol": "$A"
 =======
 		"symbol": "A$"
@@ -100,7 +100,7 @@
 	},
 	"CAD": {
 		"name": "Dólar canadense",
-<<<<<<< HEAD
+ 
 		"symbol": "$CA"
 =======
 		"symbol": "CA$"
@@ -393,7 +393,7 @@
 	},
 	"BRL": {
 		"name": "Real brasileiro",
-<<<<<<< HEAD
+ 
 		"symbol": "$R"
 =======
 		"symbol": "R$"
@@ -423,7 +423,7 @@
 	"BYN": {
 		"name": "Rublo bielorruso"
 	},
-<<<<<<< HEAD
+ 
 	"BYR": {
 		"name": "Rublo bielorruso (2000–2016)"
 	},

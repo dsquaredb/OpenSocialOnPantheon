@@ -4,10 +4,9 @@ namespace Drupal\Tests\admin_toolbar\Functional;
 
 use Drupal\Tests\BrowserTestBase;
 
-<<<<<<< HEAD
+ 
 
 =======
->>>>>>> revert Open Social update
 /**
  * Test the existence of Admin Toolbar module.
  *
@@ -50,7 +49,7 @@ class AdminToolbarAlterTest extends BrowserTestBase {
   /**
    * Tests for a the hover of sub menus.
    */
-<<<<<<< HEAD
+ 
   function testAdminToolbar() {
     // Assert that expanded links are present in the HTML.
     $this->assertRaw('class="toolbar-icon toolbar-icon-user-admin-index"');
@@ -61,5 +60,4 @@ class AdminToolbarAlterTest extends BrowserTestBase {
     $this->assertRaw('class="toolbar-icon toolbar-icon-user-admin-index"');
   }
 
->>>>>>> revert Open Social update
 }

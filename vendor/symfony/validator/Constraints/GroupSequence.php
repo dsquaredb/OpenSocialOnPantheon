@@ -11,11 +11,10 @@
 
 namespace Symfony\Component\Validator\Constraints;
 
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Validator\Exception\OutOfBoundsException;
 
->>>>>>> web and vendor directory from composer install
 /**
  * A sequence of validation groups.
  *
@@ -56,7 +55,7 @@ use Symfony\Component\Validator\Exception\OutOfBoundsException;
  * @Target({"CLASS", "ANNOTATION"})
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
-<<<<<<< HEAD
+ 
  */
 class GroupSequence
 =======
@@ -64,16 +63,14 @@ class GroupSequence
  * Implementing \ArrayAccess, \IteratorAggregate and \Countable is @deprecated since 2.5 and will be removed in 3.0.
  */
 class GroupSequence implements \ArrayAccess, \IteratorAggregate, \Countable
->>>>>>> web and vendor directory from composer install
 {
     /**
      * The groups in the sequence.
      *
-<<<<<<< HEAD
+ 
      * @var string[]|array[]|GroupSequence[]
 =======
      * @var string[]|GroupSequence[]
->>>>>>> web and vendor directory from composer install
      */
     public $groups;
 
@@ -103,7 +100,7 @@ class GroupSequence implements \ArrayAccess, \IteratorAggregate, \Countable
         // Support for Doctrine annotations
         $this->groups = isset($groups['value']) ? $groups['value'] : $groups;
     }
-<<<<<<< HEAD
+ 
 =======
 
     /**
@@ -222,5 +219,4 @@ class GroupSequence implements \ArrayAccess, \IteratorAggregate, \Countable
 
         return count($this->groups);
     }
->>>>>>> web and vendor directory from composer install
 }

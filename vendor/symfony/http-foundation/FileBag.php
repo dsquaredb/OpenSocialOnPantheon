@@ -24,11 +24,10 @@ class FileBag extends ParameterBag
     private static $fileKeys = array('error', 'name', 'size', 'tmp_name', 'type');
 
     /**
-<<<<<<< HEAD
-=======
+ 
+  =
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param array $parameters An array of HTTP files
      */
     public function __construct(array $parameters = array())
@@ -72,11 +71,10 @@ class FileBag extends ParameterBag
      *
      * @param array|UploadedFile $file A (multi-dimensional) array of uploaded file information
      *
-<<<<<<< HEAD
+ 
      * @return UploadedFile[]|UploadedFile|null A (multi-dimensional) array of UploadedFile instances
-=======
+  =
      * @return array A (multi-dimensional) array of UploadedFile instances
->>>>>>> web and vendor directory from composer install
      */
     protected function convertFileInformation($file)
     {
@@ -97,12 +95,11 @@ class FileBag extends ParameterBag
                 }
             } else {
                 $file = array_map(array($this, 'convertFileInformation'), $file);
-<<<<<<< HEAD
-                if (array_keys($keys) === $keys) {
+ 
+                if (array_keys($keys)   $keys) {
                     $file = array_filter($file);
                 }
-=======
->>>>>>> web and vendor directory from composer install
+  =
             }
         }
 
@@ -121,11 +118,10 @@ class FileBag extends ParameterBag
      * It's safe to pass an already converted array, in which case this method
      * just returns the original array unmodified.
      *
-<<<<<<< HEAD
-=======
+ 
+  =
      * @param array $data
      *
->>>>>>> web and vendor directory from composer install
      * @return array
      */
     protected function fixPhpFilesArray($data)

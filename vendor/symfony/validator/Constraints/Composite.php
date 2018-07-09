@@ -67,13 +67,12 @@ abstract class Composite extends Constraint
 
         foreach ($nestedConstraints as $constraint) {
             if (!$constraint instanceof Constraint) {
-<<<<<<< HEAD
+ 
                 if (is_object($constraint)) {
                     $constraint = get_class($constraint);
                 }
 
 =======
->>>>>>> web and vendor directory from composer install
                 throw new ConstraintDefinitionException(sprintf('The value %s is not an instance of Constraint in constraint %s', $constraint, get_class($this)));
             }
 

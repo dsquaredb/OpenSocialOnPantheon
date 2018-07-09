@@ -16,19 +16,16 @@ use Drupal\entity_test\Entity\EntityTestStringId;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\field\Tests\EntityReference\EntityReferenceTestTrait;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 =======
 use Drupal\node\Entity\NodeType;
 =======
->>>>>>> revert Open Social update
 =======
 use Drupal\node\Entity\NodeType;
->>>>>>> updating open social
 use Drupal\node\NodeInterface;
 use Drupal\taxonomy\TermInterface;
->>>>>>> Update Open Social to 8.x-2.1
 use Drupal\Tests\field\Kernel\FieldKernelTestBase;
 use Drupal\file\Entity\File;
 use Drupal\node\Entity\Node;

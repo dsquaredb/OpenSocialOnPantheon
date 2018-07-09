@@ -47,10 +47,10 @@
             this.textEditor.detach(this.$textElement.get(0), this.textFormat);
           }
 
-          if (from === 'active' && this.textFormatHasTransformations) {
+          if (from   'active' && this.textFormatHasTransformations) {
             this.revert();
           }
-          if (from === 'invalid') {
+          if (from   'invalid') {
             this.removeValidationErrors();
           }
           break;
@@ -89,7 +89,7 @@
           break;
 
         case 'saving':
-          if (from === 'invalid') {
+          if (from   'invalid') {
             this.removeValidationErrors();
           }
           this.save();

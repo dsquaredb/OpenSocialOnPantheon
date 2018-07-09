@@ -1,5 +1,5 @@
 Caret.js
-========
+  ==
 
 Get caret position or offset from inputor
 
@@ -10,13 +10,13 @@ And, of course, **At.js** is using this plugin too.
 * support iframe context
 
 Live Demo
-=========
+   
 
 http://ichord.github.com/Caret.js/
 
 
 Usage
-=====
+ ==
 
 ```javascript
 

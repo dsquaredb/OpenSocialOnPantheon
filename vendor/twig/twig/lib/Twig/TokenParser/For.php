@@ -3,13 +3,12 @@
 /*
  * This file is part of Twig.
  *
-<<<<<<< HEAD
+ 
  * (c) Fabien Potencier
  * (c) Armin Ronacher
 =======
  * (c) 2009 Fabien Potencier
  * (c) 2009 Armin Ronacher
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -25,11 +24,10 @@
  *  {% endfor %}
  * </ul>
  * </pre>
-<<<<<<< HEAD
+ 
  *
  * @final
 =======
->>>>>>> web and vendor directory from composer install
  */
 class Twig_TokenParser_For extends Twig_TokenParser
 {
@@ -48,11 +46,10 @@ class Twig_TokenParser_For extends Twig_TokenParser
 
         $stream->expect(Twig_Token::BLOCK_END_TYPE);
         $body = $this->parser->subparse(array($this, 'decideForFork'));
-<<<<<<< HEAD
+ 
         if ('else' == $stream->next()->getValue()) {
 =======
         if ($stream->next()->getValue() == 'else') {
->>>>>>> web and vendor directory from composer install
             $stream->expect(Twig_Token::BLOCK_END_TYPE);
             $else = $this->parser->subparse(array($this, 'decideForEnd'), true);
         } else {
@@ -93,11 +90,10 @@ class Twig_TokenParser_For extends Twig_TokenParser
     protected function checkLoopUsageCondition(Twig_TokenStream $stream, Twig_NodeInterface $node)
     {
         if ($node instanceof Twig_Node_Expression_GetAttr && $node->getNode('node') instanceof Twig_Node_Expression_Name && 'loop' == $node->getNode('node')->getAttribute('name')) {
-<<<<<<< HEAD
+ 
             throw new Twig_Error_Syntax('The "loop" variable cannot be used in a looping condition.', $node->getTemplateLine(), $stream->getSourceContext());
 =======
             throw new Twig_Error_Syntax('The "loop" variable cannot be used in a looping condition.', $node->getTemplateLine(), $stream->getSourceContext()->getName());
->>>>>>> web and vendor directory from composer install
         }
 
         foreach ($node as $n) {
@@ -116,11 +112,10 @@ class Twig_TokenParser_For extends Twig_TokenParser
         if ($node instanceof Twig_Node_Expression_GetAttr && $node->getNode('node') instanceof Twig_Node_Expression_Name && 'loop' == $node->getNode('node')->getAttribute('name')) {
             $attribute = $node->getNode('attribute');
             if ($attribute instanceof Twig_Node_Expression_Constant && in_array($attribute->getAttribute('value'), array('length', 'revindex0', 'revindex', 'last'))) {
-<<<<<<< HEAD
+ 
                 throw new Twig_Error_Syntax(sprintf('The "loop.%s" variable is not defined when looping with a condition.', $attribute->getAttribute('value')), $node->getTemplateLine(), $stream->getSourceContext());
 =======
                 throw new Twig_Error_Syntax(sprintf('The "loop.%s" variable is not defined when looping with a condition.', $attribute->getAttribute('value')), $node->getTemplateLine(), $stream->getSourceContext()->getName());
->>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -143,8 +138,7 @@ class Twig_TokenParser_For extends Twig_TokenParser
         return 'for';
     }
 }
-<<<<<<< HEAD
+ 
 
 class_alias('Twig_TokenParser_For', 'Twig\TokenParser\ForTokenParser', false);
 =======
->>>>>>> web and vendor directory from composer install

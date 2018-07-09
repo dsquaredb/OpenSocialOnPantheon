@@ -1,5 +1,5 @@
 Contributing to EasyRdf
-=======================
+       ==
 
 Contributions to the EasyRdf codebase are welcome using the usual Github pull request workflow.
 

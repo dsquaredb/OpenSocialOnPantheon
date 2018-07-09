@@ -7,7 +7,6 @@
  * (c) Fabien Potencier
 =======
  * (c) 2010 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -28,7 +27,6 @@ interface Twig_NodeInterface extends Countable, IteratorAggregate
 =======
      *
      * @param Twig_Compiler $compiler A Twig_Compiler instance
->>>>>>> web and vendor directory from composer install
      */
     public function compile(Twig_Compiler $compiler);
 

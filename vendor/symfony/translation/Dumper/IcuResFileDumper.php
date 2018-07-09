@@ -28,7 +28,7 @@ class IcuResFileDumper extends FileDumper
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
 =======
     public function format(MessageCatalogue $messages, $domain = 'messages')
     {
@@ -40,18 +40,16 @@ class IcuResFileDumper extends FileDumper
     /**
      * {@inheritdoc}
      */
->>>>>>> web and vendor directory from composer install
     public function formatCatalogue(MessageCatalogue $messages, $domain, array $options = array())
     {
         $data = $indexes = $resources = '';
 
         foreach ($messages->all($domain) as $source => $target) {
             $indexes .= pack('v', strlen($data) + 28);
-<<<<<<< HEAD
+ 
             $data .= $source."\0";
 =======
             $data    .= $source."\0";
->>>>>>> web and vendor directory from composer install
         }
 
         $data .= $this->writePadding($data);
@@ -69,11 +67,10 @@ class IcuResFileDumper extends FileDumper
 
         $resOffset = $this->getPosition($data);
 
-<<<<<<< HEAD
+ 
         $data .= pack('v', count($messages->all($domain)))
 =======
         $data .= pack('v', count($messages))
->>>>>>> web and vendor directory from composer install
             .$indexes
             .$this->writePadding($data)
             .$resources
@@ -84,7 +81,7 @@ class IcuResFileDumper extends FileDumper
         $root = pack('V7',
             $resOffset + (2 << 28), // Resource Offset + Resource Type
             6,                      // Index length
-<<<<<<< HEAD
+ 
             $keyTop,                        // Index keys top
             $bundleTop,                     // Index resources top
             $bundleTop,                     // Index bundle top
@@ -96,7 +93,6 @@ class IcuResFileDumper extends FileDumper
             $bundleTop,             // Index bundle top
             count($messages),       // Index max table length
             0                       // Index attributes
->>>>>>> web and vendor directory from composer install
         );
 
         $header = pack('vC2v4C12@32',

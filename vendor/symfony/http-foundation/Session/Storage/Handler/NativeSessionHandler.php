@@ -11,7 +11,7 @@
 
 namespace Symfony\Component\HttpFoundation\Session\Storage\Handler;
 
-<<<<<<< HEAD
+ 
 /**
  * @deprecated since version 3.4, to be removed in 4.0. Use \SessionHandler instead.
  * @see http://php.net/sessionhandler
@@ -31,6 +31,5 @@ if (PHP_VERSION_ID >= 50400) {
 } else {
     class NativeSessionHandler
     {
->>>>>>> web and vendor directory from composer install
     }
 }

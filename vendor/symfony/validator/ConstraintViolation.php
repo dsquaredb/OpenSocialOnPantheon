@@ -18,7 +18,7 @@ namespace Symfony\Component\Validator;
  */
 class ConstraintViolation implements ConstraintViolationInterface
 {
-<<<<<<< HEAD
+ 
     private $message;
     private $messageTemplate;
     private $parameters;
@@ -28,7 +28,7 @@ class ConstraintViolation implements ConstraintViolationInterface
     private $invalidValue;
     private $constraint;
     private $code;
-=======
+  =
     /**
      * @var string
      */
@@ -77,7 +77,6 @@ class ConstraintViolation implements ConstraintViolationInterface
     /**
      * @var mixed
      */
->>>>>>> web and vendor directory from composer install
     private $cause;
 
     /**
@@ -153,8 +152,8 @@ class ConstraintViolation implements ConstraintViolationInterface
 
     /**
      * {@inheritdoc}
-<<<<<<< HEAD
-=======
+ 
+  =
      *
      * @deprecated since version 2.7, to be removed in 3.0.
      *             Use getParameters() instead
@@ -168,7 +167,6 @@ class ConstraintViolation implements ConstraintViolationInterface
 
     /**
      * Alias of {@link getMessageParameters()}.
->>>>>>> web and vendor directory from composer install
      */
     public function getParameters()
     {
@@ -177,8 +175,8 @@ class ConstraintViolation implements ConstraintViolationInterface
 
     /**
      * {@inheritdoc}
-<<<<<<< HEAD
-=======
+ 
+  =
      *
      * @deprecated since version 2.7, to be removed in 3.0.
      *             Use getPlural() instead
@@ -192,7 +190,6 @@ class ConstraintViolation implements ConstraintViolationInterface
 
     /**
      * Alias of {@link getMessagePluralization()}.
->>>>>>> web and vendor directory from composer install
      */
     public function getPlural()
     {

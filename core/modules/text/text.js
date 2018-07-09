@@ -16,7 +16,7 @@
         var $full = $widget.children('.js-form-type-textarea');
         var $fullLabel = $full.find('label').eq(0);
 
-        if ($fullLabel.length === 0) {
+        if ($fullLabel.length   0) {
           $fullLabel = $('<label></label>').prependTo($full);
         }
 
@@ -37,7 +37,7 @@
           toggleClick = !toggleClick;
         }).appendTo($summaryLabel);
 
-        if ($widget.find('.js-text-summary').val() === '') {
+        if ($widget.find('.js-text-summary').val()   '') {
           $link.trigger('click');
         }
       });

@@ -11,7 +11,7 @@
 
 namespace Symfony\Component\DependencyInjection\Compiler;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\DependencyInjection\Argument\ArgumentInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Definition;
@@ -24,7 +24,6 @@ use Symfony\Component\ExpressionLanguage\Expression;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
->>>>>>> web and vendor directory from composer install
 
 /**
  * Run this pass before passes that need to know more about the relation of
@@ -35,7 +34,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  *
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
  */
-<<<<<<< HEAD
+ 
 class AnalyzeServiceReferencesPass extends AbstractRecursivePass implements RepeatablePassInterface
 {
     private $graph;
@@ -52,7 +51,6 @@ class AnalyzeServiceReferencesPass implements RepeatablePassInterface
     private $currentDefinition;
     private $repeatedPass;
     private $onlyConstructorArguments;
->>>>>>> web and vendor directory from composer install
 
     /**
      * @param bool $onlyConstructorArguments Sets this Service Reference pass to ignore method calls
@@ -67,27 +65,25 @@ class AnalyzeServiceReferencesPass implements RepeatablePassInterface
      */
     public function setRepeatedPass(RepeatedPass $repeatedPass)
     {
-<<<<<<< HEAD
+ 
         // no-op for BC
 =======
         $this->repeatedPass = $repeatedPass;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Processes a ContainerBuilder object to populate the service reference graph.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param ContainerBuilder $container
->>>>>>> web and vendor directory from composer install
      */
     public function process(ContainerBuilder $container)
     {
         $this->container = $container;
         $this->graph = $container->getCompiler()->getServiceReferenceGraph();
         $this->graph->clear();
-<<<<<<< HEAD
+ 
         $this->lazy = false;
 
         foreach ($container->getAliases() as $id => $alias) {
@@ -215,7 +211,6 @@ class AnalyzeServiceReferencesPass implements RepeatablePassInterface
                 }
             }
         }
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -227,11 +222,10 @@ class AnalyzeServiceReferencesPass implements RepeatablePassInterface
      */
     private function getDefinition($id)
     {
-<<<<<<< HEAD
+ 
 =======
         $id = $this->getDefinitionId($id);
 
->>>>>>> web and vendor directory from composer install
         return null === $id ? null : $this->container->getDefinition($id);
     }
 
@@ -245,7 +239,7 @@ class AnalyzeServiceReferencesPass implements RepeatablePassInterface
             return;
         }
 
-<<<<<<< HEAD
+ 
         return $this->container->normalizeId($id);
     }
 
@@ -277,6 +271,5 @@ class AnalyzeServiceReferencesPass implements RepeatablePassInterface
         return $this->expressionLanguage;
 =======
         return $id;
->>>>>>> web and vendor directory from composer install
     }
 }

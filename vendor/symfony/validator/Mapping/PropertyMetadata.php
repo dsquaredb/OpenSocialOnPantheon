@@ -29,11 +29,10 @@ use Symfony\Component\Validator\Exception\ValidatorException;
 class PropertyMetadata extends MemberMetadata
 {
     /**
-<<<<<<< HEAD
+ 
 =======
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param string $class The class this property is defined on
      * @param string $name  The name of this property
      *

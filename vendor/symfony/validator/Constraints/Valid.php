@@ -12,10 +12,9 @@
 namespace Symfony\Component\Validator\Constraints;
 
 use Symfony\Component\Validator\Constraint;
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
->>>>>>> web and vendor directory from composer install
 
 /**
  * @Annotation
@@ -27,7 +26,7 @@ class Valid extends Constraint
 {
     public $traverse = true;
 
-<<<<<<< HEAD
+ 
     public function __get($option)
     {
         if ('groups' === $option) {
@@ -66,6 +65,5 @@ class Valid extends Constraint
         }
 
         parent::__construct($options);
->>>>>>> web and vendor directory from composer install
     }
 }

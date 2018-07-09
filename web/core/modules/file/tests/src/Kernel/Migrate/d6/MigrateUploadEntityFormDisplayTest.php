@@ -38,18 +38,16 @@ class MigrateUploadEntityFormDisplayTest extends MigrateDrupal6TestBase {
     $component = $display->getComponent('upload');
     $this->assertTrue(is_null($component));
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
     $this->assertIdentical(array('node', 'page', 'default', 'upload'), $this->getMigration('d6_upload_entity_form_display')->getIdMap()->lookupDestinationID(array('page')));
 =======
     $this->assertIdentical(['node', 'page', 'default', 'upload'], $this->getMigration('d6_upload_entity_form_display')->getIdMap()->lookupDestinationId(['page']));
 =======
     $this->assertIdentical(['node', 'page', 'default', 'upload'], $this->getMigration('d6_upload_entity_form_display')->getIdMap()->lookupDestinationID(['page']));
->>>>>>> revert Open Social update
 =======
     $this->assertIdentical(['node', 'page', 'default', 'upload'], $this->getMigration('d6_upload_entity_form_display')->getIdMap()->lookupDestinationId(['page']));
->>>>>>> updating open social
   }
 
   /**
@@ -69,7 +67,6 @@ class MigrateUploadEntityFormDisplayTest extends MigrateDrupal6TestBase {
 
     $this->executeMigration($migration);
     $this->assertNull($migration->getIdMap()->lookupDestinationIds(['node_type' => 'story'])[0][0]);
->>>>>>> Update Open Social to 8.x-2.1
   }
 
 }

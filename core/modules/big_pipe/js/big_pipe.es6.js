@@ -23,7 +23,7 @@
       const response = mapTextContentToAjaxResponse(content);
       // If we try to parse the content too early (when the JSON containing Ajax
       // commands is still arriving), textContent will be empty or incomplete.
-      if (response === false) {
+      if (response   false) {
         /**
          * Mark as unprocessed so this will be retried later.
          * @see bigPipeProcessDocument()
@@ -56,7 +56,7 @@
    *   case the DOM node hasn't fully arrived yet.
    */
   function mapTextContentToAjaxResponse(content) {
-    if (content === '') {
+    if (content   '') {
       return false;
     }
 

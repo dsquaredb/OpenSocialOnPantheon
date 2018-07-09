@@ -24,11 +24,10 @@ class ImageFieldAttributesTest extends ImageFieldTestBase {
    *
    * @var array
    */
-<<<<<<< HEAD
+ 
   public static $modules = array('rdf', 'image');
 =======
   public static $modules = ['rdf', 'image'];
->>>>>>> revert Open Social update
 
   /**
    * The name of the image field used in the test.
@@ -61,7 +60,7 @@ class ImageFieldAttributesTest extends ImageFieldTestBase {
 
     // Set the RDF mapping for the new field.
     rdf_get_mapping('node', 'article')
-<<<<<<< HEAD
+ 
       ->setFieldMapping($this->fieldName, array(
         'properties' => array('og:image'),
         'mapping_type' => 'rel',
@@ -73,7 +72,6 @@ class ImageFieldAttributesTest extends ImageFieldTestBase {
         'mapping_type' => 'rel',
       ])
       ->setBundleMapping(['types' => []])
->>>>>>> revert Open Social update
       ->save();
 
     // Get the test image that simpletest provides.
@@ -88,7 +86,7 @@ class ImageFieldAttributesTest extends ImageFieldTestBase {
   /**
    * Tests that image fields in teasers have correct resources.
    */
-<<<<<<< HEAD
+ 
   function testNodeTeaser() {
     // Set the display options for the teaser.
     $display_options = array(
@@ -102,7 +100,6 @@ class ImageFieldAttributesTest extends ImageFieldTestBase {
       'type' => 'image',
       'settings' => ['image_style' => 'medium', 'image_link' => 'content'],
     ];
->>>>>>> revert Open Social update
     $display = entity_get_display('node', 'article', 'teaser');
     $display->setComponent($this->fieldName, $display_options)
       ->save();
@@ -122,7 +119,7 @@ class ImageFieldAttributesTest extends ImageFieldTestBase {
     $image_uri = ImageStyle::load('medium')->buildUrl($this->file->getFileUri());
 
     // Test relations from node to image.
-<<<<<<< HEAD
+ 
     $expected_value = array(
       'type' => 'uri',
       'value' => $image_uri,
@@ -146,7 +143,6 @@ class ImageFieldAttributesTest extends ImageFieldTestBase {
       'type' => 'uri',
       'value' => 'http://xmlns.com/foaf/0.1/Image',
     ];
->>>>>>> revert Open Social update
     $this->assertTrue($graph->hasProperty($image_uri, 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type', $expected_value), 'Image type found in RDF output (foaf:Image).');
   }
 

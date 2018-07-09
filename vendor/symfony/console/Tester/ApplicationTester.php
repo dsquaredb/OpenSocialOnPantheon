@@ -14,10 +14,9 @@ namespace Symfony\Component\Console\Tester;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputInterface;
-<<<<<<< HEAD
+ 
 use Symfony\Component\Console\Output\ConsoleOutput;
 =======
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Output\StreamOutput;
 
@@ -35,7 +34,7 @@ class ApplicationTester
 {
     private $application;
     private $input;
-<<<<<<< HEAD
+ 
     private $statusCode;
     /**
      * @var OutputInterface
@@ -52,7 +51,6 @@ class ApplicationTester
      *
      * @param Application $application An Application instance to test
      */
->>>>>>> web and vendor directory from composer install
     public function __construct(Application $application)
     {
         $this->application = $application;
@@ -63,7 +61,7 @@ class ApplicationTester
      *
      * Available options:
      *
-<<<<<<< HEAD
+ 
      *  * interactive:               Sets the input interactive flag
      *  * decorated:                 Sets the output decorated flag
      *  * verbosity:                 Sets the output verbosity flag
@@ -72,7 +70,6 @@ class ApplicationTester
      *  * interactive: Sets the input interactive flag
      *  * decorated:   Sets the output decorated flag
      *  * verbosity:   Sets the output verbosity flag
->>>>>>> web and vendor directory from composer install
      *
      * @param array $input   An array of arguments and options
      * @param array $options An array of options
@@ -86,7 +83,7 @@ class ApplicationTester
             $this->input->setInteractive($options['interactive']);
         }
 
-<<<<<<< HEAD
+ 
         $this->captureStreamsIndependently = array_key_exists('capture_stderr_separately', $options) && $options['capture_stderr_separately'];
         if (!$this->captureStreamsIndependently) {
             $this->output = new StreamOutput(fopen('php://memory', 'w', false));
@@ -123,7 +120,6 @@ class ApplicationTester
         }
         if (isset($options['verbosity'])) {
             $this->output->setVerbosity($options['verbosity']);
->>>>>>> web and vendor directory from composer install
         }
 
         return $this->statusCode = $this->application->run($this->input, $this->output);
@@ -150,7 +146,7 @@ class ApplicationTester
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Gets the output written to STDERR by the application.
      *
      * @param bool $normalize Whether to normalize end of lines to \n or not
@@ -176,7 +172,6 @@ class ApplicationTester
 
     /**
 =======
->>>>>>> web and vendor directory from composer install
      * Gets the input instance used by the last execution of the application.
      *
      * @return InputInterface The current input instance

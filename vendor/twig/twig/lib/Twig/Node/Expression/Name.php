@@ -9,7 +9,6 @@
 =======
  * (c) 2009 Fabien Potencier
  * (c) 2009 Armin Ronacher
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -68,7 +67,6 @@ class Twig_Node_Expression_Name extends Twig_Node_Expression
             // as the non-optimized version is just a workaround for slow ternary operator
             // when the context has a lot of variables
             if (PHP_VERSION_ID >= 50400) {
->>>>>>> web and vendor directory from composer install
                 // PHP 5.4 ternary operator performance was optimized
                 $compiler
                     ->raw('(isset($context[')
@@ -114,4 +112,3 @@ class Twig_Node_Expression_Name extends Twig_Node_Expression
 
 class_alias('Twig_Node_Expression_Name', 'Twig\Node\Expression\NameExpression', false);
 =======
->>>>>>> web and vendor directory from composer install

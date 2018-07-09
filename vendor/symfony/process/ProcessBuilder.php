@@ -11,24 +11,22 @@
 
 namespace Symfony\Component\Process;
 
-<<<<<<< HEAD
+ 
 @trigger_error(sprintf('The %s class is deprecated since Symfony 3.4 and will be removed in 4.0. Use the Process class instead.', ProcessBuilder::class), E_USER_DEPRECATED);
 
-=======
->>>>>>> web and vendor directory from composer install
+  =
 use Symfony\Component\Process\Exception\InvalidArgumentException;
 use Symfony\Component\Process\Exception\LogicException;
 
 /**
-<<<<<<< HEAD
+ 
  * @author Kris Wallsmith <kris@symfony.com>
  *
  * @deprecated since version 3.4, to be removed in 4.0. Use the Process class instead.
-=======
+  =
  * Process builder.
  *
  * @author Kris Wallsmith <kris@symfony.com>
->>>>>>> web and vendor directory from composer install
  */
 class ProcessBuilder
 {
@@ -37,21 +35,19 @@ class ProcessBuilder
     private $env = array();
     private $input;
     private $timeout = 60;
-<<<<<<< HEAD
+ 
     private $options;
-=======
+  =
     private $options = array();
->>>>>>> web and vendor directory from composer install
     private $inheritEnv = true;
     private $prefix = array();
     private $outputDisabled = false;
 
     /**
-<<<<<<< HEAD
-=======
+ 
+  =
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param string[] $arguments An array of arguments
      */
     public function __construct(array $arguments = array())
@@ -64,11 +60,10 @@ class ProcessBuilder
      *
      * @param string[] $arguments An array of arguments
      *
-<<<<<<< HEAD
+ 
      * @return static
-=======
+  =
      * @return ProcessBuilder
->>>>>>> web and vendor directory from composer install
      */
     public static function create(array $arguments = array())
     {
@@ -80,11 +75,10 @@ class ProcessBuilder
      *
      * @param string $argument A command argument
      *
-<<<<<<< HEAD
+ 
      * @return $this
-=======
+  =
      * @return ProcessBuilder
->>>>>>> web and vendor directory from composer install
      */
     public function add($argument)
     {
@@ -100,11 +94,10 @@ class ProcessBuilder
      *
      * @param string|array $prefix A command prefix or an array of command prefixes
      *
-<<<<<<< HEAD
+ 
      * @return $this
-=======
+  =
      * @return ProcessBuilder
->>>>>>> web and vendor directory from composer install
      */
     public function setPrefix($prefix)
     {
@@ -121,11 +114,10 @@ class ProcessBuilder
      *
      * @param string[] $arguments
      *
-<<<<<<< HEAD
+ 
      * @return $this
-=======
+  =
      * @return ProcessBuilder
->>>>>>> web and vendor directory from composer install
      */
     public function setArguments(array $arguments)
     {
@@ -139,11 +131,10 @@ class ProcessBuilder
      *
      * @param null|string $cwd The working directory
      *
-<<<<<<< HEAD
+ 
      * @return $this
-=======
+  =
      * @return ProcessBuilder
->>>>>>> web and vendor directory from composer install
      */
     public function setWorkingDirectory($cwd)
     {
@@ -157,11 +148,10 @@ class ProcessBuilder
      *
      * @param bool $inheritEnv
      *
-<<<<<<< HEAD
+ 
      * @return $this
-=======
+  =
      * @return ProcessBuilder
->>>>>>> web and vendor directory from composer install
      */
     public function inheritEnvironmentVariables($inheritEnv = true)
     {
@@ -179,11 +169,10 @@ class ProcessBuilder
      * @param string      $name  The variable name
      * @param null|string $value The variable value
      *
-<<<<<<< HEAD
+ 
      * @return $this
-=======
+  =
      * @return ProcessBuilder
->>>>>>> web and vendor directory from composer install
      */
     public function setEnv($name, $value)
     {
@@ -201,11 +190,10 @@ class ProcessBuilder
      *
      * @param array $variables The variables
      *
-<<<<<<< HEAD
+ 
      * @return $this
-=======
+  =
      * @return ProcessBuilder
->>>>>>> web and vendor directory from composer install
      */
     public function addEnvironmentVariables(array $variables)
     {
@@ -217,13 +205,13 @@ class ProcessBuilder
     /**
      * Sets the input of the process.
      *
-<<<<<<< HEAD
+ 
      * @param resource|string|int|float|bool|\Traversable|null $input The input content
      *
      * @return $this
      *
      * @throws InvalidArgumentException In case the argument is invalid
-=======
+  =
      * @param mixed $input The input as a string
      *
      * @return ProcessBuilder
@@ -231,7 +219,6 @@ class ProcessBuilder
      * @throws InvalidArgumentException In case the argument is invalid
      *
      * Passing an object as an input is deprecated since version 2.5 and will be removed in 3.0.
->>>>>>> web and vendor directory from composer install
      */
     public function setInput($input)
     {
@@ -247,17 +234,16 @@ class ProcessBuilder
      *
      * @param float|null $timeout
      *
-<<<<<<< HEAD
+ 
      * @return $this
-=======
+  =
      * @return ProcessBuilder
->>>>>>> web and vendor directory from composer install
      *
      * @throws InvalidArgumentException
      */
     public function setTimeout($timeout)
     {
-        if (null === $timeout) {
+        if (null   $timeout) {
             $this->timeout = null;
 
             return $this;
@@ -280,11 +266,10 @@ class ProcessBuilder
      * @param string $name  The option name
      * @param string $value The option value
      *
-<<<<<<< HEAD
+ 
      * @return $this
-=======
+  =
      * @return ProcessBuilder
->>>>>>> web and vendor directory from composer install
      */
     public function setOption($name, $value)
     {
@@ -296,11 +281,10 @@ class ProcessBuilder
     /**
      * Disables fetching output and error output from the underlying process.
      *
-<<<<<<< HEAD
+ 
      * @return $this
-=======
+  =
      * @return ProcessBuilder
->>>>>>> web and vendor directory from composer install
      */
     public function disableOutput()
     {
@@ -312,11 +296,10 @@ class ProcessBuilder
     /**
      * Enables fetching output and error output from the underlying process.
      *
-<<<<<<< HEAD
+ 
      * @return $this
-=======
+  =
      * @return ProcessBuilder
->>>>>>> web and vendor directory from composer install
      */
     public function enableOutput()
     {
@@ -334,11 +317,11 @@ class ProcessBuilder
      */
     public function getProcess()
     {
-        if (0 === count($this->prefix) && 0 === count($this->arguments)) {
+        if (0   count($this->prefix) && 0   count($this->arguments)) {
             throw new LogicException('You must add() command arguments before calling getProcess().');
         }
 
-<<<<<<< HEAD
+ 
         $arguments = array_merge($this->prefix, $this->arguments);
         $process = new Process($arguments, $this->cwd, $this->env, $this->input, $this->timeout, $this->options);
         // to preserve the BC with symfony <3.3, we convert the array structure
@@ -348,7 +331,7 @@ class ProcessBuilder
         if ($this->inheritEnv) {
             $process->inheritEnvironmentVariables();
         }
-=======
+  =
         $options = $this->options;
 
         $arguments = array_merge($this->prefix, $this->arguments);
@@ -363,7 +346,6 @@ class ProcessBuilder
 
         $process = new Process($script, $this->cwd, $env, $this->input, $this->timeout, $options);
 
->>>>>>> web and vendor directory from composer install
         if ($this->outputDisabled) {
             $process->disableOutput();
         }

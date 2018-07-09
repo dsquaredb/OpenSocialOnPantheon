@@ -371,7 +371,7 @@ function copy_to_stream(
     StreamInterface $dest,
     $maxLen = -1
 ) {
-<<<<<<< HEAD
+ 
     $bufferSize = 8192;
 
     if ($maxLen === -1) {
@@ -410,7 +410,6 @@ function copy_to_stream(
         $dest->write($buf);
         if ($bytes == $maxLen) {
             break;
->>>>>>> web and vendor directory from composer install
         }
     }
 }
@@ -513,14 +512,13 @@ function parse_request($message)
 function parse_response($message)
 {
     $data = _parse_message($message);
-<<<<<<< HEAD
+ 
     // According to https://tools.ietf.org/html/rfc7230#section-3.1.2 the space
     // between status-code and reason-phrase is required. But browsers accept
     // responses without space and reason as well.
     if (!preg_match('/^HTTP\/.* [0-9]{3}( .*|$)/', $data['start-line'])) {
 =======
     if (!preg_match('/^HTTP\/.* [0-9]{3} .*/', $data['start-line'])) {
->>>>>>> web and vendor directory from composer install
         throw new \InvalidArgumentException('Invalid response string');
     }
     $parts = explode(' ', $data['start-line'], 3);

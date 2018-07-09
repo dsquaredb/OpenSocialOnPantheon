@@ -462,7 +462,7 @@ class Uri implements UriInterface
             );
         }
 
-<<<<<<< HEAD
+ 
         $this->scheme    = isset($parts['scheme']) ? $this->filterScheme($parts['scheme']) : '';
         $this->userInfo  = isset($parts['user']) ? $parts['user'] : '';
         $this->host      = isset($parts['host']) ? $parts['host'] : '';
@@ -476,7 +476,6 @@ class Uri implements UriInterface
         $this->port      = isset($parts['port'])     ? $parts['port']     : null;
         $this->path      = isset($parts['path'])     ? $this->filterPath($parts['path']) : '';
         $this->query     = isset($parts['query'])    ? $this->filterQuery($parts['query']) : '';
->>>>>>> web and vendor directory from composer install
         $this->fragment  = isset($parts['fragment']) ? $this->filterFragment($parts['fragment']) : '';
 
         if (isset($parts['pass'])) {
@@ -498,20 +497,17 @@ class Uri implements UriInterface
     {
         $uri = '';
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         if (! empty($scheme)) {
-<<<<<<< HEAD
+ 
 =======
         if ('' !== $scheme) {
->>>>>>> Update Open Social to 8.x-2.1
 =======
         if (! empty($scheme)) {
->>>>>>> revert Open Social update
 =======
         if ('' !== $scheme) {
->>>>>>> updating open social
             $uri .= sprintf('%s:', $scheme);
         }
 
@@ -523,7 +519,6 @@ class Uri implements UriInterface
 
         if (! empty($authority)) {
             $uri .= $authority;
->>>>>>> web and vendor directory from composer install
         }
 
         if ('' !== $path && '/' !== substr($path, 0, 1)) {
@@ -601,11 +596,10 @@ class Uri implements UriInterface
     private function filterPath($path)
     {
         $path = preg_replace_callback(
-<<<<<<< HEAD
+ 
             '/(?:[^' . self::CHAR_UNRESERVED . ')(:@&=\+\$,\/;%]+|%(?![A-Fa-f0-9]{2}))/u',
 =======
             '/(?:[^' . self::CHAR_UNRESERVED . ':@&=\+\$,\/;%]+|%(?![A-Fa-f0-9]{2}))/u',
->>>>>>> web and vendor directory from composer install
             [$this, 'urlEncodeChar'],
             $path
         );

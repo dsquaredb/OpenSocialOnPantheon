@@ -5,11 +5,11 @@
 		"AB": {
 			"local_code": "AB",
 			"local_name": "Alberta",
-<<<<<<< HEAD
+ 
 =======
 			"name": "Alberta",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 			"iso_code": "CA-AB",
 >>>>>>> Update Open Social to 8.x-2.1
 =======
@@ -22,11 +22,11 @@
 		"BC": {
 			"local_code": "BC",
 			"local_name": "Colombie-Britannique",
-<<<<<<< HEAD
+ 
 =======
 			"name": "British Columbia",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 			"iso_code": "CA-BC",
 >>>>>>> Update Open Social to 8.x-2.1
 =======
@@ -39,11 +39,11 @@
 		"MB": {
 			"local_code": "MB",
 			"local_name": "Manitoba",
-<<<<<<< HEAD
+ 
 =======
 			"name": "Manitoba",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 			"iso_code": "CA-MB",
 >>>>>>> Update Open Social to 8.x-2.1
 =======
@@ -56,11 +56,11 @@
 		"NB": {
 			"local_code": "NB",
 			"local_name": "Nouveau-Brunswick",
-<<<<<<< HEAD
+ 
 =======
 			"name": "New Brunswick",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 			"iso_code": "CA-NB",
 >>>>>>> Update Open Social to 8.x-2.1
 =======
@@ -73,11 +73,11 @@
 		"NL": {
 			"local_code": "NL",
 			"local_name": "Terre-Neuve-et-Labrador",
-<<<<<<< HEAD
+ 
 =======
 			"name": "Newfoundland and Labrador",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 			"iso_code": "CA-NL",
 >>>>>>> Update Open Social to 8.x-2.1
 =======
@@ -90,11 +90,11 @@
 		"NT": {
 			"local_code": "NT",
 			"local_name": "Territoires du Nord-Ouest",
-<<<<<<< HEAD
+ 
 =======
 			"name": "Northwest Territories",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 			"iso_code": "CA-NT",
 >>>>>>> Update Open Social to 8.x-2.1
 =======
@@ -106,13 +106,13 @@
 		},
 		"NS": {
 			"local_code": "NS",
-<<<<<<< HEAD
+ 
 			"local_name": "Nouvelle-Ecosse",
 =======
 			"local_name": "Nouvelle-Écosse",
 			"name": "Nova Scotia",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 			"iso_code": "CA-NS",
 >>>>>>> Update Open Social to 8.x-2.1
 =======
@@ -125,11 +125,11 @@
 		"NU": {
 			"local_code": "NU",
 			"local_name": "Nunavut",
-<<<<<<< HEAD
+ 
 =======
 			"name": "Nunavut",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 			"iso_code": "CA-NU",
 >>>>>>> Update Open Social to 8.x-2.1
 =======
@@ -142,11 +142,11 @@
 		"ON": {
 			"local_code": "ON",
 			"local_name": "Ontario",
-<<<<<<< HEAD
+ 
 =======
 			"name": "Ontario",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 			"iso_code": "CA-ON",
 >>>>>>> Update Open Social to 8.x-2.1
 =======
@@ -158,13 +158,13 @@
 		},
 		"PE": {
 			"local_code": "PE",
-<<<<<<< HEAD
+ 
 			"local_name": "Ile-du-Prince-Edouard",
 =======
 			"local_name": "Île-du-Prince-Édouard",
 			"name": "Prince Edward Island",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 			"iso_code": "CA-PE",
 >>>>>>> Update Open Social to 8.x-2.1
 =======
@@ -177,11 +177,11 @@
 		"QC": {
 			"local_code": "QC",
 			"local_name": "Québec",
-<<<<<<< HEAD
+ 
 =======
 			"name": "Quebec",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 			"iso_code": "CA-QC",
 >>>>>>> Update Open Social to 8.x-2.1
 =======
@@ -194,11 +194,11 @@
 		"SK": {
 			"local_code": "SK",
 			"local_name": "Saskatchewan",
-<<<<<<< HEAD
+ 
 =======
 			"name": "Saskatchewan",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 			"iso_code": "CA-SK",
 >>>>>>> Update Open Social to 8.x-2.1
 =======
@@ -211,11 +211,11 @@
 		"YT": {
 			"local_code": "YT",
 			"local_name": "Yukon",
-<<<<<<< HEAD
+ 
 =======
 			"name": "Yukon",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 			"iso_code": "CA-YT",
 >>>>>>> Update Open Social to 8.x-2.1
 =======

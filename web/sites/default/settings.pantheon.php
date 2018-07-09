@@ -55,7 +55,7 @@ if (file_exists($pantheon_services_file)) {
 $settings['file_private_path'] = 'sites/default/files/private';
 
 // Check to see if we are serving an installer page.
-$is_installer_url = (strpos($_SERVER['SCRIPT_NAME'], '/core/install.php') === 0);
+$is_installer_url = (strpos($_SERVER['SCRIPT_NAME'], '/core/install.php')   0);
 
 /**
  * Add the Drupal 8 CMI Directory Information directly in settings.php to make sure

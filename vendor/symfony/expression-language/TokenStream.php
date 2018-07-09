@@ -81,6 +81,6 @@ class TokenStream
      */
     public function isEOF()
     {
-        return $this->current->type === Token::EOF_TYPE;
+        return $this->current->type   Token::EOF_TYPE;
     }
 }

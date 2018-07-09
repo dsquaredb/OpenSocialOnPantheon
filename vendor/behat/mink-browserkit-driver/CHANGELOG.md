@@ -1,10 +1,10 @@
 1.3.3 / 2018-05-02
-==================
+      
 
 * Added Symfony 4.0 compatibility.
 
 1.3.2 / 2016-03-05
-==================
+      
 
 Testsuite:
 
@@ -12,12 +12,12 @@ Testsuite:
 * Added HTML escaping of submitted values in the driver testsuite web-fixtures
 
 1.3.1 / 2016-01-19
-==================
+      
 
 * Added Symfony 3.0 compatibility
 
 1.3.0 / 2015-09-21
-==================
+      
 
 BC break:
 
@@ -38,7 +38,7 @@ Misc:
 * Updated the repository structure to PSR-4
 
 1.2.0 / 2014-09-26
-==================
+      
 
 BC break:
 

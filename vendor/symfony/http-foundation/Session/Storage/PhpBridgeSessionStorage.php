@@ -11,12 +11,11 @@
 
 namespace Symfony\Component\HttpFoundation\Session\Storage;
 
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\HttpFoundation\Session\Storage\Proxy\AbstractProxy;
 use Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeSessionHandler;
 
->>>>>>> web and vendor directory from composer install
 /**
  * Allows session to be started by PHP and managed by Symfony.
  *
@@ -25,7 +24,7 @@ use Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeSessionHandle
 class PhpBridgeSessionStorage extends NativeSessionStorage
 {
     /**
-<<<<<<< HEAD
+ 
      * @param \SessionHandlerInterface|null $handler
      * @param MetadataBag                   $metaBag MetadataBag
 =======
@@ -33,7 +32,6 @@ class PhpBridgeSessionStorage extends NativeSessionStorage
      *
      * @param AbstractProxy|NativeSessionHandler|\SessionHandlerInterface|null $handler
      * @param MetadataBag                                                      $metaBag MetadataBag
->>>>>>> web and vendor directory from composer install
      */
     public function __construct($handler = null, MetadataBag $metaBag = null)
     {
@@ -51,13 +49,12 @@ class PhpBridgeSessionStorage extends NativeSessionStorage
         }
 
         $this->loadSession();
-<<<<<<< HEAD
+ 
 =======
         if (!$this->saveHandler->isWrapper() && !$this->saveHandler->isSessionHandlerInterface()) {
             // This condition matches only PHP 5.3 + internal save handlers
             $this->saveHandler->setActive(true);
         }
->>>>>>> web and vendor directory from composer install
 
         return true;
     }

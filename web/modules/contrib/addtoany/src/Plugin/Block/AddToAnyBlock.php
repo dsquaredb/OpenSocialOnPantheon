@@ -19,7 +19,7 @@ class AddToAnyBlock extends BlockBase {
    */
   public function build() {
     $node = \Drupal::routeMatch()->getParameter('node');
-<<<<<<< HEAD
+ 
 
     return array(
       '#addtoany_html' => addtoany_create_node_buttons($node),
@@ -32,10 +32,9 @@ class AddToAnyBlock extends BlockBase {
     if (is_numeric($node)) {
       $node = Node::load($node);
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> updating open social
     $data = addtoany_create_entity_data($node);
     return [
       '#addtoany_html'              => \Drupal::token()->replace($data['addtoany_html'], ['node' => $node]),
@@ -50,8 +49,7 @@ class AddToAnyBlock extends BlockBase {
         'contexts' => ['url'],
       ],
     ];
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
     return array(
       '#addtoany_html' => addtoany_create_node_buttons($node),
@@ -60,9 +58,7 @@ class AddToAnyBlock extends BlockBase {
         'contexts' => array('url'),
       ),
     );
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
   }
 
 }

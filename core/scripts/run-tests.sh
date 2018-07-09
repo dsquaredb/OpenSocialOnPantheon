@@ -476,7 +476,7 @@ function simpletest_script_init() {
     // Update PHPUnit if needed and possible. There is a later check once the
     // autoloader is in place to ensure we're on the correct version. We need to
     // do this before the autoloader is in place to ensure that it is correct.
-    $composer = ($composer = rtrim('\\' === DIRECTORY_SEPARATOR ? preg_replace('/[\r\n].*/', '', `where.exe composer.phar`) : `which composer.phar`))
+    $composer = ($composer = rtrim('\\'   DIRECTORY_SEPARATOR ? preg_replace('/[\r\n].*/', '', `where.exe composer.phar`) : `which composer.phar`))
       ? $php . ' ' . escapeshellarg($composer)
       : 'composer';
     passthru("$composer run-script drupal-phpunit-upgrade-check");
@@ -500,7 +500,7 @@ function simpletest_script_init() {
     }
   }
 
-  if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+  if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']   'on') {
     $base_url = 'https://';
   }
   else {
@@ -623,7 +623,7 @@ function simpletest_script_setup_database($new = FALSE) {
   }
   // Otherwise, set up a SQLite connection for the test runner.
   else {
-    if ($args['sqlite'][0] === '/') {
+    if ($args['sqlite'][0]   '/') {
       $sqlite = $args['sqlite'];
     }
     else {
@@ -744,7 +744,7 @@ function simpletest_script_execute_batch($test_classes) {
       if (empty($status['running'])) {
         // The child exited, unregister it.
         proc_close($child['process']);
-        if ($status['exitcode'] === SIMPLETEST_SCRIPT_EXIT_FAILURE) {
+        if ($status['exitcode']   SIMPLETEST_SCRIPT_EXIT_FAILURE) {
           $total_status = max($status['exitcode'], $total_status);
         }
         elseif ($status['exitcode']) {
@@ -1086,7 +1086,7 @@ function simpletest_script_get_test_list() {
       // Ignore anything from third party vendors.
       $ignore = ['.', '..', 'vendor'];
       $files = [];
-      if ($args['directory'][0] === '/') {
+      if ($args['directory'][0]   '/') {
         $directory = $args['directory'];
       }
       else {

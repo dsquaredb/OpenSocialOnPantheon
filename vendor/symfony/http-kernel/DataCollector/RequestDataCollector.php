@@ -11,7 +11,7 @@
 
 namespace Symfony\Component\HttpKernel\DataCollector;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,13 +23,12 @@ use Symfony\Component\HttpFoundation\HeaderBag;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
-<<<<<<< HEAD
+ 
  * @author Fabien Potencier <fabien@symfony.com>
  */
 class RequestDataCollector extends DataCollector implements EventSubscriberInterface, LateDataCollectorInterface
@@ -39,7 +38,6 @@ class RequestDataCollector extends DataCollector implements EventSubscriberInter
  * @author Fabien Potencier <fabien@symfony.com>
  */
 class RequestDataCollector extends DataCollector implements EventSubscriberInterface
->>>>>>> web and vendor directory from composer install
 {
     protected $controllers;
 
@@ -53,7 +51,7 @@ class RequestDataCollector extends DataCollector implements EventSubscriberInter
      */
     public function collect(Request $request, Response $response, \Exception $exception = null)
     {
-<<<<<<< HEAD
+ 
         // attributes are serialized and as they can be anything, they need to be converted to strings.
         $attributes = array();
         $route = '';
@@ -86,7 +84,6 @@ class RequestDataCollector extends DataCollector implements EventSubscriberInter
                 $attributes[$key] = $value;
             } else {
                 $attributes[$key] = $this->varToString($value);
->>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -100,10 +97,9 @@ class RequestDataCollector extends DataCollector implements EventSubscriberInter
 
         $sessionMetadata = array();
         $sessionAttributes = array();
-<<<<<<< HEAD
+ 
         $session = null;
 =======
->>>>>>> web and vendor directory from composer install
         $flashes = array();
         if ($request->hasSession()) {
             $session = $request->getSession();
@@ -118,7 +114,7 @@ class RequestDataCollector extends DataCollector implements EventSubscriberInter
 
         $statusCode = $response->getStatusCode();
 
-<<<<<<< HEAD
+ 
         $responseCookies = array();
         foreach ($response->headers->getCookies() as $cookie) {
             $responseCookies[$cookie->getName()] = $cookie;
@@ -128,7 +124,6 @@ class RequestDataCollector extends DataCollector implements EventSubscriberInter
             'method' => $request->getMethod(),
 =======
         $this->data = array(
->>>>>>> web and vendor directory from composer install
             'format' => $request->getRequestFormat(),
             'content' => $content,
             'content_type' => $response->headers->get('Content-Type', 'text/html'),
@@ -140,13 +135,12 @@ class RequestDataCollector extends DataCollector implements EventSubscriberInter
             'request_server' => $request->server->all(),
             'request_cookies' => $request->cookies->all(),
             'request_attributes' => $attributes,
-<<<<<<< HEAD
+ 
             'route' => $route,
             'response_headers' => $response->headers->all(),
             'response_cookies' => $responseCookies,
 =======
             'response_headers' => $responseHeaders,
->>>>>>> web and vendor directory from composer install
             'session_metadata' => $sessionMetadata,
             'session_attributes' => $sessionAttributes,
             'flashes' => $flashes,
@@ -167,7 +161,7 @@ class RequestDataCollector extends DataCollector implements EventSubscriberInter
             $this->data['request_request']['_password'] = '******';
         }
 
-<<<<<<< HEAD
+ 
         foreach ($this->data as $key => $value) {
             if (!is_array($value)) {
                 continue;
@@ -263,7 +257,6 @@ class RequestDataCollector extends DataCollector implements EventSubscriberInter
             }
             unset($this->controllers[$request]);
         }
->>>>>>> web and vendor directory from composer install
     }
 
     public function getPathInfo()
@@ -273,25 +266,23 @@ class RequestDataCollector extends DataCollector implements EventSubscriberInter
 
     public function getRequestRequest()
     {
-<<<<<<< HEAD
+ 
         return new ParameterBag($this->data['request_request']->getValue());
 =======
         return new ParameterBag($this->data['request_request']);
->>>>>>> web and vendor directory from composer install
     }
 
     public function getRequestQuery()
     {
-<<<<<<< HEAD
+ 
         return new ParameterBag($this->data['request_query']->getValue());
 =======
         return new ParameterBag($this->data['request_query']);
->>>>>>> web and vendor directory from composer install
     }
 
     public function getRequestHeaders()
     {
-<<<<<<< HEAD
+ 
         return new ParameterBag($this->data['request_headers']->getValue());
     }
 
@@ -315,21 +306,19 @@ class RequestDataCollector extends DataCollector implements EventSubscriberInter
     public function getRequestCookies()
     {
         return new ParameterBag($this->data['request_cookies']);
->>>>>>> web and vendor directory from composer install
     }
 
     public function getRequestAttributes()
     {
-<<<<<<< HEAD
+ 
         return new ParameterBag($this->data['request_attributes']->getValue());
 =======
         return new ParameterBag($this->data['request_attributes']);
->>>>>>> web and vendor directory from composer install
     }
 
     public function getResponseHeaders()
     {
-<<<<<<< HEAD
+ 
         return new ParameterBag($this->data['response_headers']->getValue());
     }
 
@@ -338,34 +327,30 @@ class RequestDataCollector extends DataCollector implements EventSubscriberInter
         return new ParameterBag($this->data['response_cookies']->getValue());
 =======
         return new ResponseHeaderBag($this->data['response_headers']);
->>>>>>> web and vendor directory from composer install
     }
 
     public function getSessionMetadata()
     {
-<<<<<<< HEAD
+ 
         return $this->data['session_metadata']->getValue();
 =======
         return $this->data['session_metadata'];
->>>>>>> web and vendor directory from composer install
     }
 
     public function getSessionAttributes()
     {
-<<<<<<< HEAD
+ 
         return $this->data['session_attributes']->getValue();
 =======
         return $this->data['session_attributes'];
->>>>>>> web and vendor directory from composer install
     }
 
     public function getFlashes()
     {
-<<<<<<< HEAD
+ 
         return $this->data['flashes']->getValue();
 =======
         return $this->data['flashes'];
->>>>>>> web and vendor directory from composer install
     }
 
     public function getContent()
@@ -407,7 +392,7 @@ class RequestDataCollector extends DataCollector implements EventSubscriberInter
      */
     public function getRoute()
     {
-<<<<<<< HEAD
+ 
         return $this->data['route'];
     }
 
@@ -416,7 +401,6 @@ class RequestDataCollector extends DataCollector implements EventSubscriberInter
         return $this->data['identifier'];
 =======
         return isset($this->data['request_attributes']['_route']) ? $this->data['request_attributes']['_route'] : '';
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -428,7 +412,7 @@ class RequestDataCollector extends DataCollector implements EventSubscriberInter
      */
     public function getRouteParams()
     {
-<<<<<<< HEAD
+ 
         return isset($this->data['request_attributes']['_route_params']) ? $this->data['request_attributes']['_route_params']->getValue() : array();
     }
 
@@ -445,14 +429,13 @@ class RequestDataCollector extends DataCollector implements EventSubscriberInter
      * Gets the controller.
      *
      * @return string The controller as a string
->>>>>>> web and vendor directory from composer install
      */
     public function getController()
     {
         return $this->data['controller'];
     }
 
-<<<<<<< HEAD
+ 
     /**
      * Gets the previous request attributes.
      *
@@ -465,13 +448,12 @@ class RequestDataCollector extends DataCollector implements EventSubscriberInter
     }
 
 =======
->>>>>>> web and vendor directory from composer install
     public function onKernelController(FilterControllerEvent $event)
     {
         $this->controllers[$event->getRequest()] = $event->getController();
     }
 
-<<<<<<< HEAD
+ 
     public function onKernelResponse(FilterResponseEvent $event)
     {
         if (!$event->isMasterRequest()) {
@@ -493,7 +475,6 @@ class RequestDataCollector extends DataCollector implements EventSubscriberInter
     public static function getSubscribedEvents()
     {
         return array(KernelEvents::CONTROLLER => 'onKernelController');
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -504,7 +485,7 @@ class RequestDataCollector extends DataCollector implements EventSubscriberInter
         return 'request';
     }
 
-<<<<<<< HEAD
+ 
     /**
      * Parse a controller.
      *
@@ -600,6 +581,5 @@ class RequestDataCollector extends DataCollector implements EventSubscriberInter
         }
 
         return $cookie;
->>>>>>> web and vendor directory from composer install
     }
 }

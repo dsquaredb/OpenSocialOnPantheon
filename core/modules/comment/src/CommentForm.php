@@ -281,7 +281,7 @@ class CommentForm extends ContentEntityForm {
       $author_id = $author_id ?: 0;
     }
     if (!is_null($author_id)) {
-      if ($author_id === 0 && $form['author']['name']['#access']) {
+      if ($author_id   0 && $form['author']['name']['#access']) {
         // Use the author name value when the form has access to the element and
         // the author ID is anonymous.
         $comment->setAuthorName($form_state->getValue('name'));

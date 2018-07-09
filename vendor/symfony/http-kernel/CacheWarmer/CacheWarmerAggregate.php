@@ -15,32 +15,29 @@ namespace Symfony\Component\HttpKernel\CacheWarmer;
  * Aggregates several cache warmers into a single one.
  *
  * @author Fabien Potencier <fabien@symfony.com>
-<<<<<<< HEAD
+ 
  *
  * @final since version 3.4
 =======
->>>>>>> web and vendor directory from composer install
  */
 class CacheWarmerAggregate implements CacheWarmerInterface
 {
     protected $warmers = array();
     protected $optionalsEnabled = false;
-<<<<<<< HEAD
+ 
     private $triggerDeprecation = false;
 
     public function __construct($warmers = array())
 =======
 
     public function __construct(array $warmers = array())
->>>>>>> web and vendor directory from composer install
     {
         foreach ($warmers as $warmer) {
             $this->add($warmer);
         }
-<<<<<<< HEAD
+ 
         $this->triggerDeprecation = true;
 =======
->>>>>>> web and vendor directory from composer install
     }
 
     public function enableOptionalWarmers()
@@ -74,7 +71,7 @@ class CacheWarmerAggregate implements CacheWarmerInterface
         return false;
     }
 
-<<<<<<< HEAD
+ 
     /**
      * @deprecated since version 3.4, to be removed in 4.0, inject the list of clearers as a constructor argument instead.
      */
@@ -85,14 +82,13 @@ class CacheWarmerAggregate implements CacheWarmerInterface
 =======
     public function setWarmers(array $warmers)
     {
->>>>>>> web and vendor directory from composer install
         $this->warmers = array();
         foreach ($warmers as $warmer) {
             $this->add($warmer);
         }
     }
 
-<<<<<<< HEAD
+ 
     /**
      * @deprecated since version 3.4, to be removed in 4.0, inject the list of clearers as a constructor argument instead.
      */
@@ -105,7 +101,6 @@ class CacheWarmerAggregate implements CacheWarmerInterface
 =======
     public function add(CacheWarmerInterface $warmer)
     {
->>>>>>> web and vendor directory from composer install
         $this->warmers[] = $warmer;
     }
 }

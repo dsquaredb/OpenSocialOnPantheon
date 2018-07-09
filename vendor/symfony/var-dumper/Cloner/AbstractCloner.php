@@ -22,7 +22,7 @@ use Symfony\Component\VarDumper\Exception\ThrowingCasterException;
 abstract class AbstractCloner implements ClonerInterface
 {
     public static $defaultCasters = array(
-<<<<<<< HEAD
+ 
         'Symfony\Component\VarDumper\Caster\CutStub' => 'Symfony\Component\VarDumper\Caster\StubCaster::castStub',
         'Symfony\Component\VarDumper\Caster\CutArrayStub' => 'Symfony\Component\VarDumper\Caster\StubCaster::castCutArray',
         'Symfony\Component\VarDumper\Caster\ConstStub' => 'Symfony\Component\VarDumper\Caster\StubCaster::castStub',
@@ -222,7 +222,6 @@ abstract class AbstractCloner implements ClonerInterface
         ':persistent stream' => array('Symfony\Component\VarDumper\Caster\ResourceCaster', 'castStream'),
         ':stream-context' => array('Symfony\Component\VarDumper\Caster\ResourceCaster', 'castStreamContext'),
         ':xml' => array('Symfony\Component\VarDumper\Caster\XmlResourceCaster', 'castXml'),
->>>>>>> Update Open Social to 8.x-2.1
     );
 
     protected $maxItems = 2500;

@@ -62,7 +62,7 @@ class CommentViewBuilder extends EntityViewBuilder {
     // Store a threading field setting to use later in self::buildComponents().
     $build['#comment_threaded'] = $entity->getCommentedEntity()
       ->getFieldDefinition($entity->getFieldName())
-      ->getSetting('default_mode') === CommentManagerInterface::COMMENT_MODE_THREADED;
+      ->getSetting('default_mode')   CommentManagerInterface::COMMENT_MODE_THREADED;
     // If threading is enabled, don't render cache individual comments, but do
     // keep the cacheability metadata, so it can bubble up.
     if ($build['#comment_threaded']) {
@@ -144,7 +144,7 @@ class CommentViewBuilder extends EntityViewBuilder {
         $build[$id]['#attached'] = [];
       }
       $build[$id]['#attached']['library'][] = 'comment/drupal.comment-by-viewer';
-      if ($attach_history && $commented_entity->getEntityTypeId() === 'node') {
+      if ($attach_history && $commented_entity->getEntityTypeId()   'node') {
         $build[$id]['#attached']['library'][] = 'comment/drupal.comment-new-indicator';
 
         // Embed the metadata for the comment "new" indicators on this node.

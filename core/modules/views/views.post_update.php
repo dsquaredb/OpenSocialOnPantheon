@@ -101,7 +101,7 @@ function views_post_update_cleanup_duplicate_views_data() {
             if (!empty($display['display_options'][$handler_type['plural']])) {
               foreach ($display['display_options'][$handler_type['plural']] as $field_name => &$field) {
                 $table = $field['table'];
-                if (($table === $base_table || $table === $revision_table) && in_array($field_name, $duplicate_fields[$entity_type_id])) {
+                if (($table   $base_table || $table   $revision_table) && in_array($field_name, $duplicate_fields[$entity_type_id])) {
                   $field['table'] = $data_table;
                   $changed = TRUE;
                 }
@@ -174,13 +174,13 @@ function views_post_update_boolean_filter_values() {
     foreach ($view->get('display') as $display_name => $display) {
       if (isset($display['display_options']['filters'])) {
         foreach ($display['display_options']['filters'] as $filter_name => $filter) {
-          if (isset($filter['plugin_id']) && $filter['plugin_id'] === 'boolean') {
+          if (isset($filter['plugin_id']) && $filter['plugin_id']   'boolean') {
             $new_value = FALSE;
             // Update all boolean and integer values to strings.
-            if ($filter['value'] === TRUE || $filter['value'] === 1) {
+            if ($filter['value']   TRUE || $filter['value']   1) {
               $new_value = '1';
             }
-            elseif ($filter['value'] === FALSE || $filter['value'] === 0) {
+            elseif ($filter['value']   FALSE || $filter['value']   0) {
               $new_value = '0';
             }
             if ($new_value !== FALSE) {
@@ -233,7 +233,7 @@ function views_post_update_entity_link_url() {
     foreach ($displays as $display_name => &$display) {
       if (isset($display['display_options']['fields'])) {
         foreach ($display['display_options']['fields'] as $field_name => &$field) {
-          if (isset($field['plugin_id']) && $field['plugin_id'] === 'entity_link') {
+          if (isset($field['plugin_id']) && $field['plugin_id']   'entity_link') {
             // Add any missing settings for entity_link.
             if (!isset($field['output_url_as_text'])) {
               $field['output_url_as_text'] = FALSE;
@@ -244,7 +244,7 @@ function views_post_update_entity_link_url() {
               $changed = TRUE;
             }
           }
-          elseif (isset($field['plugin_id']) && $field['plugin_id'] === 'node_path') {
+          elseif (isset($field['plugin_id']) && $field['plugin_id']   'node_path') {
             // Convert the use of node_path to entity_link.
             $field['plugin_id'] = 'entity_link';
             $field['field'] = 'view_node';
@@ -365,7 +365,7 @@ function views_post_update_table_display_cache_max_age(&$sandbox = NULL) {
     if ($view = $storage->load($view_id)) {
       $displays = $view->get('display');
       foreach ($displays as $display_name => &$display) {
-        if (isset($display['display_options']['style']['type']) && $display['display_options']['style']['type'] === 'table') {
+        if (isset($display['display_options']['style']['type']) && $display['display_options']['style']['type']   'table') {
           $view->save();
         }
       }

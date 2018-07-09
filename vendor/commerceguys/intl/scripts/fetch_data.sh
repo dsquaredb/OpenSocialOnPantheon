@@ -1,6 +1,6 @@
 #!/bin/sh
 
-<<<<<<< HEAD
+ 
 URL="http://www.currency-iso.org/dam/downloads/lists/list_one.xml"
 =======
 URL="https://www.currency-iso.org/dam/downloads/lists/list_one.xml"

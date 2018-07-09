@@ -195,8 +195,8 @@ class ImageCrop extends FormElement {
           $properties = [];
           $form_state_element_values = $form_state->getValue($element['#parents']);
           // Check if form state has values.
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
           if ($form_state_element_values) {
             $form_state_properties = $form_state_element_values['crop_wrapper'][$crop_type->id()]['crop_container']['values'];
             // If crop is applied by the form state we keep it that way.
@@ -207,21 +207,18 @@ class ImageCrop extends FormElement {
           $properties = [];
           $form_state_values = $form_state->getValue($element['#parents']);
           // Check if form state has values.
-<<<<<<< HEAD
+ 
 =======
->>>>>>> revert Open Social update
 =======
           $edit = FALSE;
           $properties = [];
           $form_state_values = $form_state->getValue($element['#parents']);
           // Check if form state has values.
->>>>>>> updating open social
           if ($form_state_values) {
             $form_state_props = $form_state_values['crop_wrapper'][$type]['crop_container']['values'];
             // If crop is applied by the form state we keep it that way.
             if ($form_state_props['crop_applied'] == '1') {
               $element['crop_wrapper'][$type]['crop_container']['values']['crop_applied']['#default_value'] = 1;
->>>>>>> Update Open Social to 8.x-2.1
               $edit = TRUE;
               $properties = $form_state_props;
             }

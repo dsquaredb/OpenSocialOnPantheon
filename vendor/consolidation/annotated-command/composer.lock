@@ -4,9 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
     "hash": "ca5fddeb022bbd342f0b96bab203c3af",
     "content-hash": "8a694bf346370c987395a0a498036552",
     "packages": [
@@ -22,12 +22,12 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/consolidation/output-formatters/zipball/31aac0f6ffd76833a70a12ba7fb3e428f78b55ef",
                 "reference": "31aac0f6ffd76833a70a12ba7fb3e428f78b55ef",
-=======
+  =
     "content-hash": "180dd9d3779b6c35cdb29faac7f66db3",
-=======
+  =
     "content-hash": "7310da82087734800a6fbd1b48f6eb5c",
 >>>>>>> revert Open Social update
-=======
+  =
     "content-hash": "180dd9d3779b6c35cdb29faac7f66db3",
 >>>>>>> updating open social
     "packages": [
@@ -41,16 +41,16 @@
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
                 "url": "https://api.github.com/repos/consolidation/output-formatters/zipball/da889e4bce19f145ca4ec5b1725a946f4eb625a9",
                 "reference": "da889e4bce19f145ca4ec5b1725a946f4eb625a9",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
                 "url": "https://api.github.com/repos/consolidation/output-formatters/zipball/3188461e965b32148c8fb85261833b2b72d34b8c",
                 "reference": "3188461e965b32148c8fb85261833b2b72d34b8c",
 >>>>>>> revert Open Social update
-=======
+  =
                 "url": "https://api.github.com/repos/consolidation/output-formatters/zipball/da889e4bce19f145ca4ec5b1725a946f4eb625a9",
                 "reference": "da889e4bce19f145ca4ec5b1725a946f4eb625a9",
 >>>>>>> updating open social
@@ -63,21 +63,21 @@
                 "victorjonsson/markdowndocs": "^1.3"
             },
             "require-dev": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
                 "phpunit/phpunit": "4.*",
                 "satooshi/php-coveralls": "^1.0",
                 "squizlabs/php_codesniffer": "2.*"
-=======
+  =
                 "g-1-a/composer-test-scenarios": "^2",
                 "phpunit/phpunit": "^5.7.27",
                 "satooshi/php-coveralls": "^2",
-=======
+  =
                 "phpunit/phpunit": "^4.8",
                 "satooshi/php-coveralls": "^1.0.2 | dev-master",
 >>>>>>> revert Open Social update
-=======
+  =
                 "g-1-a/composer-test-scenarios": "^2",
                 "phpunit/phpunit": "^5.7.27",
                 "satooshi/php-coveralls": "^2",
@@ -113,9 +113,9 @@
                 }
             ],
             "description": "Format text by applying transformations provided by plug-in formatters.",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-11-14 18:44:33"
         },
         {
@@ -263,13 +263,13 @@
                 }
             ],
             "time": "2016-06-10 07:14:17"
-=======
+  =
             "time": "2018-03-20T15:18:32+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2017-11-29T15:25:38+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-03-20T15:18:32+00:00"
 >>>>>>> updating open social
         },
@@ -322,9 +322,9 @@
         },
         {
             "name": "symfony/console",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "version": "v3.1.6",
             "source": {
                 "type": "git",
@@ -335,12 +335,12 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/console/zipball/c99da1119ae61e15de0e4829196b9fba6f73d065",
                 "reference": "c99da1119ae61e15de0e4829196b9fba6f73d065",
-=======
+  =
             "version": "v3.4.11",
-=======
+  =
             "version": "v3.4.4",
 >>>>>>> revert Open Social update
-=======
+  =
             "version": "v3.4.11",
 >>>>>>> updating open social
             "source": {
@@ -350,16 +350,16 @@
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
                 "url": "https://api.github.com/repos/symfony/console/zipball/36f83f642443c46f3cf751d4d2ee5d047d757a27",
                 "reference": "36f83f642443c46f3cf751d4d2ee5d047d757a27",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
                 "url": "https://api.github.com/repos/symfony/console/zipball/26b6f419edda16c19775211987651cb27baea7f1",
                 "reference": "26b6f419edda16c19775211987651cb27baea7f1",
 >>>>>>> revert Open Social update
-=======
+  =
                 "url": "https://api.github.com/repos/symfony/console/zipball/36f83f642443c46f3cf751d4d2ee5d047d757a27",
                 "reference": "36f83f642443c46f3cf751d4d2ee5d047d757a27",
 >>>>>>> updating open social
@@ -410,9 +410,9 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-10-06 01:44:51"
         },
         {
@@ -427,12 +427,12 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/debug/zipball/e2b3f74a67fc928adc3c1b9027f73e1bc01190a8",
                 "reference": "e2b3f74a67fc928adc3c1b9027f73e1bc01190a8",
-=======
+  =
             "time": "2018-05-16T08:49:21+00:00"
-=======
+  =
             "time": "2018-01-29T09:03:43+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-05-16T08:49:21+00:00"
 >>>>>>> updating open social
         },
@@ -446,16 +446,16 @@
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
                 "url": "https://api.github.com/repos/symfony/debug/zipball/b28fd73fefbac341f673f5efd707d539d6a19f68",
                 "reference": "b28fd73fefbac341f673f5efd707d539d6a19f68",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
                 "url": "https://api.github.com/repos/symfony/debug/zipball/53f6af2805daf52a43b393b93d2f24925d35c937",
                 "reference": "53f6af2805daf52a43b393b93d2f24925d35c937",
 >>>>>>> revert Open Social update
-=======
+  =
                 "url": "https://api.github.com/repos/symfony/debug/zipball/b28fd73fefbac341f673f5efd707d539d6a19f68",
                 "reference": "b28fd73fefbac341f673f5efd707d539d6a19f68",
 >>>>>>> updating open social
@@ -502,9 +502,9 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-09-06 11:02:40"
         },
         {
@@ -519,12 +519,12 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/28b0832b2553ffb80cabef6a7a812ff1e670c0bc",
                 "reference": "28b0832b2553ffb80cabef6a7a812ff1e670c0bc",
-=======
+  =
             "time": "2018-05-16T14:03:39+00:00"
-=======
+  =
             "time": "2018-01-18T22:16:57+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-05-16T14:03:39+00:00"
 >>>>>>> updating open social
         },
@@ -538,16 +538,16 @@
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
                 "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/fdd5abcebd1061ec647089c6c41a07ed60af09f8",
                 "reference": "fdd5abcebd1061ec647089c6c41a07ed60af09f8",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
                 "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/26b87b6bca8f8f797331a30b76fdae5342dc26ca",
                 "reference": "26b87b6bca8f8f797331a30b76fdae5342dc26ca",
 >>>>>>> revert Open Social update
-=======
+  =
                 "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/fdd5abcebd1061ec647089c6c41a07ed60af09f8",
                 "reference": "fdd5abcebd1061ec647089c6c41a07ed60af09f8",
 >>>>>>> updating open social
@@ -597,9 +597,9 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-10-13 06:28:43"
         },
         {
@@ -614,12 +614,12 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/finder/zipball/205b5ffbb518a98ba2ae60a52656c4a31ab00c6f",
                 "reference": "205b5ffbb518a98ba2ae60a52656c4a31ab00c6f",
-=======
+  =
             "time": "2018-04-06T07:35:25+00:00"
-=======
+  =
             "time": "2018-01-03T07:37:34+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-04-06T07:35:25+00:00"
 >>>>>>> updating open social
         },
@@ -633,16 +633,16 @@
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
                 "url": "https://api.github.com/repos/symfony/finder/zipball/472a92f3df8b247b49ae364275fb32943b9656c6",
                 "reference": "472a92f3df8b247b49ae364275fb32943b9656c6",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
                 "url": "https://api.github.com/repos/symfony/finder/zipball/613e26310776f49a1773b6737c6bd554b8bc8c6f",
                 "reference": "613e26310776f49a1773b6737c6bd554b8bc8c6f",
 >>>>>>> revert Open Social update
-=======
+  =
                 "url": "https://api.github.com/repos/symfony/finder/zipball/472a92f3df8b247b49ae364275fb32943b9656c6",
                 "reference": "472a92f3df8b247b49ae364275fb32943b9656c6",
 >>>>>>> updating open social
@@ -681,9 +681,9 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-09-28 00:11:12"
         },
         {
@@ -698,12 +698,12 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/e79d363049d1c2128f133a2667e4f4190904f7f4",
                 "reference": "e79d363049d1c2128f133a2667e4f4190904f7f4",
-=======
+  =
             "time": "2018-05-16T08:49:21+00:00"
-=======
+  =
             "time": "2018-01-03T07:37:34+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-05-16T08:49:21+00:00"
 >>>>>>> updating open social
         },
@@ -717,16 +717,16 @@
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
                 "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/3296adf6a6454a050679cde90f95350ad604b171",
                 "reference": "3296adf6a6454a050679cde90f95350ad604b171",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
                 "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/78be803ce01e55d3491c1397cf1c64beb9c1b63b",
                 "reference": "78be803ce01e55d3491c1397cf1c64beb9c1b63b",
 >>>>>>> revert Open Social update
-=======
+  =
                 "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/3296adf6a6454a050679cde90f95350ad604b171",
                 "reference": "3296adf6a6454a050679cde90f95350ad604b171",
 >>>>>>> updating open social
@@ -741,17 +741,17 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
                     "dev-master": "1.3-dev"
-=======
+  =
                     "dev-master": "1.8-dev"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
                     "dev-master": "1.7-dev"
 >>>>>>> revert Open Social update
-=======
+  =
                     "dev-master": "1.8-dev"
 >>>>>>> updating open social
                 }
@@ -773,8 +773,8 @@
                     "name": "Nicolas Grekas",
                     "email": "p@tchwork.com"
                 },
-<<<<<<< HEAD
-=======
+ 
+  =
                 {
                     "name": "Symfony Community",
                     "homepage": "https://symfony.com/contributors"
@@ -1046,11 +1046,11 @@
             "time": "2016-10-11 21:10:19"
         },
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "name": "webmozart/assert",
             "version": "1.1.0",
-=======
+  =
             "name": "myclabs/deep-copy",
             "version": "1.7.0",
             "source": {
@@ -1198,10 +1198,10 @@
             "time": "2017-03-05T17:38:23+00:00"
         },
         {
-<<<<<<< HEAD
-=======
+ 
+  =
 >>>>>>> revert Open Social update
-=======
+  =
             "name": "myclabs/deep-copy",
             "version": "1.7.0",
             "source": {
@@ -1403,7 +1403,7 @@
     ],
     "packages-dev": [
         {
-<<<<<<< HEAD
+ 
             "name": "doctrine/instantiator",
             "version": "1.0.5",
             "source": {
@@ -1426,7 +1426,7 @@
                 "ext-phar": "*",
                 "phpunit/phpunit": "~4.0",
                 "squizlabs/php_codesniffer": "~2.0"
-=======
+  =
             "name": "phpdocumentor/reflection-docblock",
             "version": "4.3.0",
             "source": {
@@ -1447,8 +1447,8 @@
                 "webmozart/assert": "^1.0"
             },
             "require-dev": {
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
                 "doctrine/instantiator": "~1.0.5",
                 "mockery/mockery": "^1.0",
                 "phpunit/phpunit": "^6.4"
@@ -1457,20 +1457,20 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-<<<<<<< HEAD
+ 
                     "dev-master": "1.0.x-dev"
-=======
+  =
                     "dev-master": "4.x-dev"
 >>>>>>> Update Open Social to 8.x-2.1
                 }
             },
-=======
+  =
                 "mockery/mockery": "^0.9.4",
                 "phpunit/phpunit": "^4.4"
             },
             "type": "library",
 >>>>>>> revert Open Social update
-=======
+  =
                 "doctrine/instantiator": "~1.0.5",
                 "mockery/mockery": "^1.0",
                 "phpunit/phpunit": "^6.4"
@@ -1498,7 +1498,7 @@
                     "homepage": "http://ocramius.github.com/"
                 }
             ],
-<<<<<<< HEAD
+ 
             "description": "A small, lightweight utility to instantiate objects in PHP without invoking their constructors",
             "homepage": "https://github.com/doctrine/instantiator",
             "keywords": [
@@ -1506,16 +1506,16 @@
                 "instantiate"
             ],
             "time": "2015-06-14 21:17:01"
-=======
+  =
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "time": "2017-11-30T07:14:17+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2017-11-10T14:09:06+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2017-11-30T07:14:17+00:00"
 >>>>>>> updating open social
         },
@@ -1614,9 +1614,9 @@
         },
         {
             "name": "phpspec/prophecy",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "version": "v1.6.1",
             "source": {
                 "type": "git",
@@ -1627,12 +1627,12 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/phpspec/prophecy/zipball/58a8137754bc24b25740d4281399a4a3596058e0",
                 "reference": "58a8137754bc24b25740d4281399a4a3596058e0",
-=======
+  =
             "version": "1.7.6",
-=======
+  =
             "version": "1.7.5",
 >>>>>>> revert Open Social update
-=======
+  =
             "version": "1.7.6",
 >>>>>>> updating open social
             "source": {
@@ -1642,16 +1642,16 @@
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
                 "url": "https://api.github.com/repos/phpspec/prophecy/zipball/33a7e3c4fda54e912ff6338c48823bd5c0f0b712",
                 "reference": "33a7e3c4fda54e912ff6338c48823bd5c0f0b712",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
                 "url": "https://api.github.com/repos/phpspec/prophecy/zipball/dfd6be44111a7c41c2e884a336cc4f461b3b2401",
                 "reference": "dfd6be44111a7c41c2e884a336cc4f461b3b2401",
 >>>>>>> revert Open Social update
-=======
+  =
                 "url": "https://api.github.com/repos/phpspec/prophecy/zipball/33a7e3c4fda54e912ff6338c48823bd5c0f0b712",
                 "reference": "33a7e3c4fda54e912ff6338c48823bd5c0f0b712",
 >>>>>>> updating open social
@@ -1660,11 +1660,11 @@
             "require": {
                 "doctrine/instantiator": "^1.0.2",
                 "php": "^5.3|^7.0",
-<<<<<<< HEAD
+ 
                 "phpdocumentor/reflection-docblock": "^2.0|^3.0.2",
                 "sebastian/comparator": "^1.1",
                 "sebastian/recursion-context": "^1.0"
-=======
+  =
                 "phpdocumentor/reflection-docblock": "^2.0|^3.0.2|^4.0",
                 "sebastian/comparator": "^1.1|^2.0|^3.0",
                 "sebastian/recursion-context": "^1.0|^2.0|^3.0"
@@ -1709,17 +1709,17 @@
                 "spy",
                 "stub"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-06-07 08:13:47"
-=======
+  =
             "time": "2018-04-18T13:57:24+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2018-02-19T10:16:54+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-04-18T13:57:24+00:00"
 >>>>>>> updating open social
         },
@@ -1784,17 +1784,17 @@
                 "testing",
                 "xunit"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2015-10-06 15:47:00"
-=======
+  =
             "time": "2018-04-06T15:36:58+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2015-10-06T15:47:00+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-04-06T15:36:58+00:00"
 >>>>>>> updating open social
         },
@@ -1932,9 +1932,9 @@
         },
         {
             "name": "phpunit/php-token-stream",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "version": "1.4.8",
             "source": {
                 "type": "git",
@@ -1945,12 +1945,12 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/3144ae21711fb6cac0b1ab4cbe63b75ce3d4e8da",
                 "reference": "3144ae21711fb6cac0b1ab4cbe63b75ce3d4e8da",
-=======
+  =
             "version": "2.0.2",
-=======
+  =
             "version": "1.4.12",
 >>>>>>> revert Open Social update
-=======
+  =
             "version": "2.0.2",
 >>>>>>> updating open social
             "source": {
@@ -1960,16 +1960,16 @@
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
                 "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/791198a2c6254db10131eecfe8c06670700904db",
                 "reference": "791198a2c6254db10131eecfe8c06670700904db",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
                 "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/1ce90ba27c42e4e44e6d8458241466380b51fa16",
                 "reference": "1ce90ba27c42e4e44e6d8458241466380b51fa16",
 >>>>>>> revert Open Social update
-=======
+  =
                 "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/791198a2c6254db10131eecfe8c06670700904db",
                 "reference": "791198a2c6254db10131eecfe8c06670700904db",
 >>>>>>> updating open social
@@ -2008,9 +2008,9 @@
             "keywords": [
                 "tokenizer"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2015-09-15 10:49:45"
         },
         {
@@ -2025,12 +2025,12 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/558a3a0d28b4cb7e4a593a4fbd2220e787076225",
                 "reference": "558a3a0d28b4cb7e4a593a4fbd2220e787076225",
-=======
+  =
             "time": "2017-11-27T05:48:46+00:00"
-=======
+  =
             "time": "2017-12-04T08:55:13+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2017-11-27T05:48:46+00:00"
 >>>>>>> updating open social
         },
@@ -2044,16 +2044,16 @@
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/4f21a3c6b97c42952fd5c2837bb354ec0199b97b",
                 "reference": "4f21a3c6b97c42952fd5c2837bb354ec0199b97b",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/46023de9a91eec7dfb06cc56cb4e260017298517",
                 "reference": "46023de9a91eec7dfb06cc56cb4e260017298517",
 >>>>>>> revert Open Social update
-=======
+  =
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/4f21a3c6b97c42952fd5c2837bb354ec0199b97b",
                 "reference": "4f21a3c6b97c42952fd5c2837bb354ec0199b97b",
 >>>>>>> updating open social
@@ -2062,10 +2062,10 @@
             "require": {
                 "ext-dom": "*",
                 "ext-json": "*",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+ 
+ 
+ 
+  =
 >>>>>>> revert Open Social update
                 "ext-pcre": "*",
                 "ext-reflection": "*",
@@ -2077,9 +2077,9 @@
                 "phpunit/php-text-template": "~1.2",
                 "phpunit/php-timer": "^1.0.6",
                 "phpunit/phpunit-mock-objects": "~2.3",
-<<<<<<< HEAD
+ 
                 "sebastian/comparator": "~1.1",
-=======
+  =
                 "sebastian/comparator": "~1.2.2",
 >>>>>>> revert Open Social update
                 "sebastian/diff": "~1.2",
@@ -2088,9 +2088,9 @@
                 "sebastian/global-state": "~1.0",
                 "sebastian/version": "~1.0",
                 "symfony/yaml": "~2.1|~3.0"
-<<<<<<< HEAD
-=======
-=======
+ 
+  =
+  =
 >>>>>>> updating open social
                 "ext-libxml": "*",
                 "ext-mbstring": "*",
@@ -2120,11 +2120,11 @@
             },
             "require-dev": {
                 "ext-pdo": "*"
-<<<<<<< HEAD
+ 
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
 >>>>>>> revert Open Social update
-=======
+  =
 >>>>>>> updating open social
             },
             "suggest": {
@@ -2163,17 +2163,17 @@
                 "testing",
                 "xunit"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-11-14 06:25:28"
-=======
+  =
             "time": "2018-04-10T11:38:34+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2017-06-21T08:07:12+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-04-10T11:38:34+00:00"
 >>>>>>> updating open social
         },
@@ -2234,9 +2234,9 @@
                 "mock",
                 "xunit"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2015-10-02 06:51:40"
         },
         {
@@ -2251,12 +2251,12 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/satooshi/php-coveralls/zipball/da51d304fe8622bf9a6da39a8446e7afd432115c",
                 "reference": "da51d304fe8622bf9a6da39a8446e7afd432115c",
-=======
+  =
             "time": "2018-01-06T05:45:45+00:00"
-=======
+  =
             "time": "2015-10-02T06:51:40+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-01-06T05:45:45+00:00"
 >>>>>>> updating open social
         },
@@ -2320,16 +2320,16 @@
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
                 "url": "https://api.github.com/repos/php-coveralls/php-coveralls/zipball/3eaf7eb689cdf6b86801a3843940d974dc657068",
                 "reference": "3eaf7eb689cdf6b86801a3843940d974dc657068",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
                 "url": "https://api.github.com/repos/php-coveralls/php-coveralls/zipball/c9d3fe2327c8539f1105dc19954673ba993e4ad9",
                 "reference": "c9d3fe2327c8539f1105dc19954673ba993e4ad9",
 >>>>>>> revert Open Social update
-=======
+  =
                 "url": "https://api.github.com/repos/php-coveralls/php-coveralls/zipball/3eaf7eb689cdf6b86801a3843940d974dc657068",
                 "reference": "3eaf7eb689cdf6b86801a3843940d974dc657068",
 >>>>>>> updating open social
@@ -2377,8 +2377,8 @@
                 "github",
                 "test"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "time": "2016-01-20 17:35:46"
         },
         {
@@ -2399,7 +2399,7 @@
                 "php": ">=5.3.3",
                 "sebastian/diff": "~1.2",
                 "sebastian/exporter": "~1.2"
-=======
+  =
             "time": "2017-12-08T14:28:16+00:00"
         },
         {
@@ -2443,14 +2443,14 @@
                     "email": "sebastian@phpunit.de"
                 }
             ],
-<<<<<<< HEAD
+ 
             "description": "Looks up which function or method a line of code belongs to",
             "homepage": "https://github.com/sebastianbergmann/code-unit-reverse-lookup/",
             "time": "2017-03-04T06:30:41+00:00"
-=======
+  =
             "time": "2017-10-14T23:16:28+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "description": "PHP client library for Coveralls API",
             "homepage": "https://github.com/php-coveralls/php-coveralls",
             "keywords": [
@@ -2522,18 +2522,18 @@
                 "shasum": ""
             },
             "require": {
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
                 "php": "^7.0",
                 "sebastian/diff": "^2.0 || ^3.0",
                 "sebastian/exporter": "^3.1"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
                 "php": ">=5.3.3",
                 "sebastian/diff": "~1.2",
                 "sebastian/exporter": "~1.2 || ~2.0"
 >>>>>>> revert Open Social update
-=======
+  =
                 "php": "^7.0",
                 "sebastian/diff": "^2.0 || ^3.0",
                 "sebastian/exporter": "^3.1"
@@ -2582,9 +2582,9 @@
                 "compare",
                 "equality"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2015-07-26 15:48:44"
         },
         {
@@ -2606,12 +2606,12 @@
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.8"
-=======
+  =
             "time": "2018-02-01T13:46:46+00:00"
-=======
+  =
             "time": "2017-01-29T09:50:25+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-02-01T13:46:46+00:00"
 >>>>>>> updating open social
         },
@@ -2633,14 +2633,14 @@
                 "php": "^7.0"
             },
             "require-dev": {
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
                 "phpunit/phpunit": "^6.2"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
                 "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
 >>>>>>> revert Open Social update
-=======
+  =
                 "phpunit/phpunit": "^6.2"
 >>>>>>> updating open social
             },
@@ -2674,17 +2674,17 @@
             "keywords": [
                 "diff"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2015-12-08 07:14:41"
-=======
+  =
             "time": "2017-08-03T08:09:46+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2017-05-22T07:24:03+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2017-08-03T08:09:46+00:00"
 >>>>>>> updating open social
         },
@@ -2736,17 +2736,17 @@
                 "environment",
                 "hhvm"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-08-18 05:49:44"
-=======
+  =
             "time": "2017-07-01T08:51:00+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2016-08-18T05:49:44+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2017-07-01T08:51:00+00:00"
 >>>>>>> updating open social
         },
@@ -2815,17 +2815,17 @@
                 "export",
                 "exporter"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-06-17 09:04:28"
-=======
+  =
             "time": "2017-04-03T13:19:02+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2016-06-17T09:04:28+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2017-04-03T13:19:02+00:00"
 >>>>>>> updating open social
         },
@@ -2878,9 +2878,9 @@
             "keywords": [
                 "global state"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2015-10-12 03:26:01"
         },
         {
@@ -2895,8 +2895,8 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/79860854756415e1cec8d186c9cf261cafd87dfc",
                 "reference": "79860854756415e1cec8d186c9cf261cafd87dfc",
-=======
-=======
+  =
+  =
 >>>>>>> updating open social
             "time": "2017-04-27T15:39:26+00:00"
         },
@@ -2991,11 +2991,11 @@
             "description": "Allows reflection of object attributes, including inherited and non-public ones",
             "homepage": "https://github.com/sebastianbergmann/object-reflector/",
             "time": "2017-03-29T09:07:27+00:00"
-<<<<<<< HEAD
-=======
+ 
+  =
             "time": "2015-10-12T03:26:01+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
 >>>>>>> updating open social
         },
         {
@@ -3008,16 +3008,16 @@
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
                 "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/5b0cd723502bac3b006cbf3dbf7a1e3fcefe4fa8",
                 "reference": "5b0cd723502bac3b006cbf3dbf7a1e3fcefe4fa8",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
                 "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/b19cc3298482a335a95f3016d2f8a6950f0fbcd7",
                 "reference": "b19cc3298482a335a95f3016d2f8a6950f0fbcd7",
 >>>>>>> revert Open Social update
-=======
+  =
                 "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/5b0cd723502bac3b006cbf3dbf7a1e3fcefe4fa8",
                 "reference": "5b0cd723502bac3b006cbf3dbf7a1e3fcefe4fa8",
 >>>>>>> updating open social
@@ -3060,12 +3060,12 @@
             ],
             "description": "Provides functionality to recursively process PHP variables",
             "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-11-14 15:54:23"
-=======
-=======
+  =
+  =
 >>>>>>> updating open social
             "time": "2017-03-03T06:23:57+00:00"
         },
@@ -3110,12 +3110,12 @@
             "description": "Provides a list of PHP built-in functions that operate on resources",
             "homepage": "https://www.github.com/sebastianbergmann/resource-operations",
             "time": "2015-07-28T20:34:47+00:00"
-<<<<<<< HEAD
+ 
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2016-10-03T07:41:43+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
 >>>>>>> updating open social
         },
         {
@@ -3159,17 +3159,17 @@
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2015-06-21 13:59:46"
-=======
+  =
             "time": "2016-10-03T07:35:21+00:00"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "time": "2015-06-21T13:59:46+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2016-10-03T07:35:21+00:00"
 >>>>>>> updating open social
         },
@@ -3253,9 +3253,9 @@
         },
         {
             "name": "symfony/config",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "version": "v3.1.6",
             "source": {
                 "type": "git",
@@ -3271,12 +3271,12 @@
             "require": {
                 "php": ">=5.5.9",
                 "symfony/filesystem": "~2.8|~3.0"
-=======
+  =
             "version": "v3.4.11",
-=======
+  =
             "version": "v3.4.4",
 >>>>>>> revert Open Social update
-=======
+  =
             "version": "v3.4.11",
 >>>>>>> updating open social
             "source": {
@@ -3339,9 +3339,9 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-09-25 08:27:07"
         },
         {
@@ -3360,12 +3360,12 @@
             },
             "require": {
                 "php": ">=5.5.9"
-=======
+  =
             "time": "2018-05-14T16:49:53+00:00"
-=======
+  =
             "time": "2018-01-21T19:05:02+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-05-14T16:49:53+00:00"
 >>>>>>> updating open social
         },
@@ -3384,15 +3384,15 @@
                 "shasum": ""
             },
             "require": {
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
                 "php": "^5.5.9|>=7.0.8",
                 "symfony/polyfill-ctype": "~1.8"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
                 "php": "^5.5.9|>=7.0.8"
 >>>>>>> revert Open Social update
-=======
+  =
                 "php": "^5.5.9|>=7.0.8",
                 "symfony/polyfill-ctype": "~1.8"
 >>>>>>> updating open social
@@ -3427,9 +3427,9 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-10-18 04:30:12"
         },
         {
@@ -3444,8 +3444,8 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/stopwatch/zipball/bb42806b12c5f89db4ebf64af6741afe6d8457e1",
                 "reference": "bb42806b12c5f89db4ebf64af6741afe6d8457e1",
-=======
-=======
+  =
+  =
 >>>>>>> updating open social
             "time": "2018-05-16T08:49:21+00:00"
         },
@@ -3503,11 +3503,11 @@
                 "portable"
             ],
             "time": "2018-04-30T19:57:29+00:00"
-<<<<<<< HEAD
-=======
+ 
+  =
             "time": "2018-01-03T07:37:34+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
 >>>>>>> updating open social
         },
         {
@@ -3520,16 +3520,16 @@
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
                 "url": "https://api.github.com/repos/symfony/stopwatch/zipball/eb17cfa072cab26537ac37e9c4ece6c0361369af",
                 "reference": "eb17cfa072cab26537ac37e9c4ece6c0361369af",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
                 "url": "https://api.github.com/repos/symfony/stopwatch/zipball/c865551df7c17e63fc1f09f763db04387f91ae4d",
                 "reference": "c865551df7c17e63fc1f09f763db04387f91ae4d",
 >>>>>>> revert Open Social update
-=======
+  =
                 "url": "https://api.github.com/repos/symfony/stopwatch/zipball/eb17cfa072cab26537ac37e9c4ece6c0361369af",
                 "reference": "eb17cfa072cab26537ac37e9c4ece6c0361369af",
 >>>>>>> updating open social
@@ -3568,9 +3568,9 @@
             ],
             "description": "Symfony Stopwatch Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-06-29 05:41:56"
         },
         {
@@ -3589,12 +3589,12 @@
             },
             "require": {
                 "php": ">=5.5.9"
-=======
+  =
             "time": "2018-02-17T14:55:25+00:00"
-=======
+  =
             "time": "2018-01-03T07:37:34+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
             "time": "2018-02-17T14:55:25+00:00"
 >>>>>>> updating open social
         },
@@ -3656,12 +3656,12 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "time": "2016-10-24 18:41:13"
-=======
-=======
+  =
+  =
 >>>>>>> updating open social
             "time": "2018-05-03T23:18:14+00:00"
         },
@@ -3704,11 +3704,11 @@
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
             "time": "2017-04-07T12:08:54+00:00"
-<<<<<<< HEAD
-=======
+ 
+  =
             "time": "2018-01-21T19:05:02+00:00"
 >>>>>>> revert Open Social update
-=======
+  =
 >>>>>>> updating open social
         },
         {
@@ -3771,9 +3771,9 @@
     "platform": {
         "php": ">=5.4.0"
     },
-<<<<<<< HEAD
+ 
     "platform-dev": []
-=======
+  =
     "platform-dev": [],
     "platform-overrides": {
         "php": "7.0.8"

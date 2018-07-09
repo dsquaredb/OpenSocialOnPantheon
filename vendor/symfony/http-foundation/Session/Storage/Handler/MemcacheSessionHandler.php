@@ -11,7 +11,7 @@
 
 namespace Symfony\Component\HttpFoundation\Session\Storage\Handler;
 
-<<<<<<< HEAD
+ 
 @trigger_error(sprintf('The class %s is deprecated since Symfony 3.4 and will be removed in 4.0. Use Symfony\Component\HttpFoundation\Session\Storage\Handler\MemcachedSessionHandler instead.', MemcacheSessionHandler::class), E_USER_DEPRECATED);
 
 /**
@@ -32,7 +32,6 @@ class MemcacheSessionHandler implements \SessionHandlerInterface
     /**
      * @var \Memcache Memcache driver
      */
->>>>>>> web and vendor directory from composer install
     private $memcache;
 
     /**
@@ -83,11 +82,10 @@ class MemcacheSessionHandler implements \SessionHandlerInterface
      */
     public function close()
     {
-<<<<<<< HEAD
+ 
         return true;
 =======
         return $this->memcache->close();
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -111,13 +109,12 @@ class MemcacheSessionHandler implements \SessionHandlerInterface
      */
     public function destroy($sessionId)
     {
-<<<<<<< HEAD
+ 
         $this->memcache->delete($this->prefix.$sessionId);
 
         return true;
 =======
         return $this->memcache->delete($this->prefix.$sessionId);
->>>>>>> web and vendor directory from composer install
     }
 
     /**

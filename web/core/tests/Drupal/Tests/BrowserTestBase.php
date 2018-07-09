@@ -1788,8 +1788,8 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
   }
 
   /**
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
    * Gets the config schema exclusions for this test.
 =======
    * Transforms a nested array into a flat array suitable for drupalPostForm().
@@ -1814,9 +1814,8 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
   }
 
   /**
-<<<<<<< HEAD
+ 
 =======
->>>>>>> revert Open Social update
 =======
    * Transforms a nested array into a flat array suitable for drupalPostForm().
    *
@@ -1840,12 +1839,10 @@ abstract class BrowserTestBase extends \PHPUnit_Framework_TestCase {
   }
 
   /**
->>>>>>> updating open social
    * Checks for meta refresh tag and if found call drupalGet() recursively.
    *
    * This function looks for the http-equiv attribute to be set to "Refresh" and
    * is case-insensitive.
->>>>>>> Update Open Social to 8.x-2.1
    *
    * @return string[]
    *   An array of config object names that are excluded from schema checking.

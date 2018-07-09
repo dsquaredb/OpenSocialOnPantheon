@@ -32,11 +32,10 @@ class AcceptHeader
     private $sorted = true;
 
     /**
-<<<<<<< HEAD
-=======
+ 
+  =
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param AcceptHeaderItem[] $items
      */
     public function __construct(array $items)
@@ -51,11 +50,10 @@ class AcceptHeader
      *
      * @param string $headerValue
      *
-<<<<<<< HEAD
+ 
      * @return self
-=======
+  =
      * @return AcceptHeader
->>>>>>> web and vendor directory from composer install
      */
     public static function fromString($headerValue)
     {
@@ -106,13 +104,12 @@ class AcceptHeader
     /**
      * Adds an item.
      *
-<<<<<<< HEAD
+ 
      * @return $this
-=======
+  =
      * @param AcceptHeaderItem $item
      *
      * @return AcceptHeader
->>>>>>> web and vendor directory from composer install
      */
     public function add(AcceptHeaderItem $item)
     {
@@ -139,11 +136,10 @@ class AcceptHeader
      *
      * @param string $pattern
      *
-<<<<<<< HEAD
+ 
      * @return self
-=======
+  =
      * @return AcceptHeader
->>>>>>> web and vendor directory from composer install
      */
     public function filter($pattern)
     {
@@ -170,15 +166,14 @@ class AcceptHeader
     private function sort()
     {
         if (!$this->sorted) {
-<<<<<<< HEAD
+ 
             uasort($this->items, function (AcceptHeaderItem $a, AcceptHeaderItem $b) {
-=======
+  =
             uasort($this->items, function ($a, $b) {
->>>>>>> web and vendor directory from composer install
                 $qA = $a->getQuality();
                 $qB = $b->getQuality();
 
-                if ($qA === $qB) {
+                if ($qA   $qB) {
                     return $a->getIndex() > $b->getIndex() ? 1 : -1;
                 }
 

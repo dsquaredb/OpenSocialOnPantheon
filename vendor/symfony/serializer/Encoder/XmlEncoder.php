@@ -11,11 +11,10 @@
 
 namespace Symfony\Component\Serializer\Encoder;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\Serializer\Exception\NotEncodableValueException;
 =======
 use Symfony\Component\Serializer\Exception\UnexpectedValueException;
->>>>>>> web and vendor directory from composer install
 
 /**
  * Encodes XML data.
@@ -27,11 +26,10 @@ use Symfony\Component\Serializer\Exception\UnexpectedValueException;
  */
 class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, DecoderInterface, NormalizationAwareInterface
 {
-<<<<<<< HEAD
+ 
     const FORMAT = 'xml';
 
 =======
->>>>>>> web and vendor directory from composer install
     /**
      * @var \DOMDocument
      */
@@ -39,15 +37,14 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
     private $format;
     private $context;
     private $rootNodeName = 'response';
-<<<<<<< HEAD
+ 
     private $loadOptions;
 =======
->>>>>>> web and vendor directory from composer install
 
     /**
      * Construct new XmlEncoder and allow to change the root node element name.
      *
-<<<<<<< HEAD
+ 
      * @param string   $rootNodeName
      * @param int|null $loadOptions  A bit field of LIBXML_* constants
      */
@@ -61,7 +58,6 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
     public function __construct($rootNodeName = 'response')
     {
         $this->rootNodeName = $rootNodeName;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -96,11 +92,10 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
     public function decode($data, $format, array $context = array())
     {
         if ('' === trim($data)) {
-<<<<<<< HEAD
+ 
             throw new NotEncodableValueException('Invalid XML data, it can not be empty.');
 =======
             throw new UnexpectedValueException('Invalid XML data, it can not be empty.');
->>>>>>> web and vendor directory from composer install
         }
 
         $internalErrors = libxml_use_internal_errors(true);
@@ -108,11 +103,10 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
         libxml_clear_errors();
 
         $dom = new \DOMDocument();
-<<<<<<< HEAD
+ 
         $dom->loadXML($data, $this->loadOptions);
 =======
         $dom->loadXML($data, LIBXML_NONET | LIBXML_NOBLANKS);
->>>>>>> web and vendor directory from composer install
 
         libxml_use_internal_errors($internalErrors);
         libxml_disable_entity_loader($disableEntities);
@@ -120,7 +114,7 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
         if ($error = libxml_get_last_error()) {
             libxml_clear_errors();
 
-<<<<<<< HEAD
+ 
             throw new NotEncodableValueException($error->message);
         }
 
@@ -146,7 +140,6 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
 
         $rootNode = $dom->firstChild;
 
->>>>>>> web and vendor directory from composer install
         // todo: throw an exception if the root node name is not correctly configured (bc)
 
         if ($rootNode->hasChildNodes()) {
@@ -159,7 +152,7 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
             unset($data['@xmlns:xml']);
 
             if (empty($data)) {
-<<<<<<< HEAD
+ 
                 return $this->parseXml($rootNode, $context);
             }
 
@@ -169,7 +162,6 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
             }
 
             return array_merge($data, (array) $this->parseXml($rootNode));
->>>>>>> web and vendor directory from composer install
         }
 
         if (!$rootNode->hasAttributes()) {
@@ -192,11 +184,10 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
      */
     public function supportsEncoding($format)
     {
-<<<<<<< HEAD
+ 
         return self::FORMAT === $format;
 =======
         return 'xml' === $format;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -204,21 +195,19 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
      */
     public function supportsDecoding($format)
     {
-<<<<<<< HEAD
+ 
         return self::FORMAT === $format;
 =======
         return 'xml' === $format;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Sets the root node name.
      *
-<<<<<<< HEAD
+ 
      * @param string $name Root node name
 =======
      * @param string $name root node name
->>>>>>> web and vendor directory from composer install
      */
     public function setRootNodeName($name)
     {
@@ -243,11 +232,10 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
      */
     final protected function appendXMLString(\DOMNode $node, $val)
     {
-<<<<<<< HEAD
+ 
         if (\strlen($val) > 0) {
 =======
         if (strlen($val) > 0) {
->>>>>>> web and vendor directory from composer install
             $frag = $this->dom->createDocumentFragment();
             $frag->appendXML($val);
             $node->appendChild($frag);
@@ -320,7 +308,7 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
     /**
      * Parse the input DOMNode into an array or a string.
      *
-<<<<<<< HEAD
+ 
      * @return array|string
      */
     private function parseXml(\DOMNode $node, array $context = array())
@@ -350,17 +338,15 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
         }
 
         if (!is_array($value)) {
->>>>>>> web and vendor directory from composer install
             $data['#'] = $value;
 
             return $data;
         }
 
-<<<<<<< HEAD
+ 
         if (1 === \count($value) && key($value)) {
 =======
         if (1 === count($value) && key($value)) {
->>>>>>> web and vendor directory from composer install
             $data[key($value)] = current($value);
 
             return $data;
@@ -376,7 +362,7 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
     /**
      * Parse the input DOMNode attributes into an array.
      *
-<<<<<<< HEAD
+ 
      * @return array
      */
     private function parseXmlAttributes(\DOMNode $node, array $context = array())
@@ -386,14 +372,13 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
      * @return array
      */
     private function parseXmlAttributes(\DOMNode $node)
->>>>>>> web and vendor directory from composer install
     {
         if (!$node->hasAttributes()) {
             return array();
         }
 
         $data = array();
-<<<<<<< HEAD
+ 
         $typeCastAttributes = $this->resolveXmlTypeCastAttributes($context);
 
         foreach ($node->attributes as $attr) {
@@ -418,7 +403,6 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
             } else {
                 $data['@'.$attr->nodeName] = $attr->nodeValue;
             }
->>>>>>> web and vendor directory from composer install
         }
 
         return $data;
@@ -427,7 +411,7 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
     /**
      * Parse the input DOMNode value (content and children) into an array or a string.
      *
-<<<<<<< HEAD
+ 
      * @return array|string
      */
     private function parseXmlValue(\DOMNode $node, array $context = array())
@@ -437,24 +421,22 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
      * @return array|string
      */
     private function parseXmlValue(\DOMNode $node)
->>>>>>> web and vendor directory from composer install
     {
         if (!$node->hasChildNodes()) {
             return $node->nodeValue;
         }
 
-<<<<<<< HEAD
+ 
         if (1 === $node->childNodes->length && \in_array($node->firstChild->nodeType, array(XML_TEXT_NODE, XML_CDATA_SECTION_NODE))) {
 =======
         if (1 === $node->childNodes->length && in_array($node->firstChild->nodeType, array(XML_TEXT_NODE, XML_CDATA_SECTION_NODE))) {
->>>>>>> web and vendor directory from composer install
             return $node->firstChild->nodeValue;
         }
 
         $value = array();
 
         foreach ($node->childNodes as $subnode) {
-<<<<<<< HEAD
+ 
             if (XML_PI_NODE === $subnode->nodeType) {
                 continue;
             }
@@ -462,7 +444,6 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
             $val = $this->parseXml($subnode, $context);
 =======
             $val = $this->parseXml($subnode);
->>>>>>> web and vendor directory from composer install
 
             if ('item' === $subnode->nodeName && isset($val['@key'])) {
                 if (isset($val['#'])) {
@@ -476,11 +457,10 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
         }
 
         foreach ($value as $key => $val) {
-<<<<<<< HEAD
+ 
             if (\is_array($val) && 1 === \count($val)) {
 =======
             if (is_array($val) && 1 === count($val)) {
->>>>>>> web and vendor directory from composer install
                 $value[$key] = current($val);
             }
         }
@@ -497,17 +477,16 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
      *
      * @return bool
      *
-<<<<<<< HEAD
+ 
      * @throws NotEncodableValueException
 =======
      * @throws UnexpectedValueException
->>>>>>> web and vendor directory from composer install
      */
     private function buildXml(\DOMNode $parentNode, $data, $xmlRootNodeName = null)
     {
         $append = true;
 
-<<<<<<< HEAD
+ 
         if (\is_array($data) || ($data instanceof \Traversable && !$this->serializer->supportsNormalization($data, $this->format))) {
             foreach ($data as $key => $data) {
                 //Ah this is the magic @ attribute types.
@@ -528,7 +507,6 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
                 } elseif ($key === '#') {
                     $append = $this->selectNodeType($parentNode, $data);
                 } elseif (is_array($data) && false === is_numeric($key)) {
->>>>>>> web and vendor directory from composer install
                     // Is this array fully numeric keys?
                     if (ctype_digit(implode('', array_keys($data)))) {
                         /*
@@ -544,11 +522,10 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
                     }
                 } elseif (is_numeric($key) || !$this->isElementNameValid($key)) {
                     $append = $this->appendNode($parentNode, $data, 'item', $key);
-<<<<<<< HEAD
+ 
                 } elseif (null !== $data || !isset($this->context['remove_empty_tags']) || false === $this->context['remove_empty_tags']) {
 =======
                 } else {
->>>>>>> web and vendor directory from composer install
                     $append = $this->appendNode($parentNode, $data, $key);
                 }
             }
@@ -556,11 +533,10 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
             return $append;
         }
 
-<<<<<<< HEAD
+ 
         if (\is_object($data)) {
 =======
         if (is_object($data)) {
->>>>>>> web and vendor directory from composer install
             $data = $this->serializer->normalize($data, $this->format, $this->context);
             if (null !== $data && !is_scalar($data)) {
                 return $this->buildXml($parentNode, $data, $xmlRootNodeName);
@@ -577,11 +553,10 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
             return $this->appendNode($parentNode, $data, 'data');
         }
 
-<<<<<<< HEAD
+ 
         throw new NotEncodableValueException(sprintf('An unexpected value could not be serialized: %s', var_export($data, true)));
 =======
         throw new UnexpectedValueException(sprintf('An unexpected value could not be serialized: %s', var_export($data, true)));
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -618,11 +593,10 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
      */
     private function needsCdataWrapping($val)
     {
-<<<<<<< HEAD
+ 
         return 0 < preg_match('/[<>&]/', $val);
 =======
         return preg_match('/[<>&]/', $val);
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -633,7 +607,7 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
      *
      * @return bool
      *
-<<<<<<< HEAD
+ 
      * @throws NotEncodableValueException
      */
     private function selectNodeType(\DOMNode $node, $val)
@@ -645,14 +619,13 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
     private function selectNodeType(\DOMNode $node, $val)
     {
         if (is_array($val)) {
->>>>>>> web and vendor directory from composer install
             return $this->buildXml($node, $val);
         } elseif ($val instanceof \SimpleXMLElement) {
             $child = $this->dom->importNode(dom_import_simplexml($val), true);
             $node->appendChild($child);
         } elseif ($val instanceof \Traversable) {
             $this->buildXml($node, $val);
-<<<<<<< HEAD
+ 
         } elseif (\is_object($val)) {
             return $this->selectNodeType($node, $this->serializer->normalize($val, $this->format, $this->context));
         } elseif (is_numeric($val)) {
@@ -672,7 +645,6 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
         } elseif (is_string($val)) {
             return $this->appendText($node, $val);
         } elseif (is_bool($val)) {
->>>>>>> web and vendor directory from composer install
             return $this->appendText($node, (int) $val);
         } elseif ($val instanceof \DOMNode) {
             $child = $this->dom->importNode($val, true);
@@ -685,11 +657,10 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
     /**
      * Get real XML root node name, taking serializer options into account.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param array $context
      *
->>>>>>> web and vendor directory from composer install
      * @return string
      */
     private function resolveXmlRootName(array $context = array())
@@ -700,7 +671,7 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Get XML option for type casting attributes Defaults to true.
      *
      * @param array $context
@@ -722,7 +693,6 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
      * Create a DOM document, taking serializer options into account.
      *
      * @param array $context options that the encoder has access to
->>>>>>> web and vendor directory from composer install
      *
      * @return \DOMDocument
      */

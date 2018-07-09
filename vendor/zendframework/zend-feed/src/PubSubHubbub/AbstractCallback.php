@@ -290,7 +290,7 @@ abstract class AbstractCallback implements CallbackInterface
      */
     protected function _getRawBody()
     {
-<<<<<<< HEAD
+ 
         $body = file_get_contents('php://input');
         if (strlen(trim($body)) == 0 && isset($GLOBALS['HTTP_RAW_POST_DATA'])) {
             $body = $GLOBALS['HTTP_RAW_POST_DATA'];
@@ -301,17 +301,15 @@ abstract class AbstractCallback implements CallbackInterface
         return false;
 =======
         // @codingStandardsIgnoreEnd
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> updating open social
         $body = is_resource($this->inputStream)
             ? stream_get_contents($this->inputStream)
             : file_get_contents($this->inputStream);
 
         return strlen(trim($body)) > 0 ? $body : false;
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
         $body = file_get_contents('php://input');
         if (strlen(trim($body)) == 0 && isset($GLOBALS['HTTP_RAW_POST_DATA'])) {
@@ -321,8 +319,6 @@ abstract class AbstractCallback implements CallbackInterface
             return $body;
         }
         return false;
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
     }
 }

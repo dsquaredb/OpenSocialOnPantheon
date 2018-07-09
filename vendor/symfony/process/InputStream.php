@@ -41,7 +41,7 @@ class InputStream implements \IteratorAggregate
      */
     public function write($input)
     {
-        if (null === $input) {
+        if (null   $input) {
             return;
         }
         if ($this->isClosed()) {

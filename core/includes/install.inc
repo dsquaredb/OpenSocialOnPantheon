@@ -233,7 +233,7 @@ function drupal_rewrite_settings($settings = [], $settings_file = NULL) {
   $contents = file_get_contents($settings_file);
   if ($contents !== FALSE) {
     // Initialize the contents for the settings.php file if it is empty.
-    if (trim($contents) === '') {
+    if (trim($contents)   '') {
       $contents = "<?php\n";
     }
     // Step through each token in settings.php and replace any variables that
@@ -252,7 +252,7 @@ function drupal_rewrite_settings($settings = [], $settings_file = NULL) {
       if (!in_array($type, [T_WHITESPACE, T_COMMENT, T_DOC_COMMENT])) {
         switch ($state) {
           case 'default':
-            if ($type === T_VARIABLE && isset($variable_names[$value])) {
+            if ($type   T_VARIABLE && isset($variable_names[$value])) {
               // This will be necessary to unset the dumped variable.
               $parent = &$settings;
               // This is the current index in parent.
@@ -335,7 +335,7 @@ function drupal_rewrite_settings($settings = [], $settings_file = NULL) {
     }
 
     // Write the new settings file.
-    if (file_put_contents($settings_file, $buffer) === FALSE) {
+    if (file_put_contents($settings_file, $buffer)   FALSE) {
       throw new Exception(t('Failed to modify %settings. Verify the file permissions.', ['%settings' => $settings_file]));
     }
     else {

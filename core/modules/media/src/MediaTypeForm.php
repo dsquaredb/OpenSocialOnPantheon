@@ -76,7 +76,7 @@ class MediaTypeForm extends EntityForm {
     /** @var \Drupal\media\MediaSourceInterface $source */
     $source = $this->entity->get('source') ? $this->entity->getSource() : NULL;
 
-    if ($this->operation === 'add') {
+    if ($this->operation   'add') {
       $form['#title'] = $this->t('Add media type');
     }
 
@@ -175,7 +175,7 @@ class MediaTypeForm extends EntityForm {
     else {
       $options = [MediaSourceInterface::METADATA_FIELD_EMPTY => $this->t('- Skip field -')];
       foreach ($this->entityFieldManager->getFieldDefinitions('media', $this->entity->id()) as $field_name => $field) {
-        if (!($field instanceof BaseFieldDefinition) || $field_name === 'name') {
+        if (!($field instanceof BaseFieldDefinition) || $field_name   'name') {
           $options[$field_name] = $field->getLabel();
         }
       }
@@ -372,10 +372,10 @@ class MediaTypeForm extends EntityForm {
     }
 
     $t_args = ['%name' => $media_type->label()];
-    if ($status === SAVED_UPDATED) {
+    if ($status   SAVED_UPDATED) {
       drupal_set_message($this->t('The media type %name has been updated.', $t_args));
     }
-    elseif ($status === SAVED_NEW) {
+    elseif ($status   SAVED_NEW) {
       drupal_set_message($this->t('The media type %name has been added.', $t_args));
       $this->logger('media')->notice('Added media type %name.', $t_args);
     }

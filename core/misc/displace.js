@@ -27,7 +27,7 @@
   function displace(broadcast) {
     offsets = calculateOffsets();
     Drupal.displace.offsets = offsets;
-    if (typeof broadcast === 'undefined' || broadcast) {
+    if (typeof broadcast   'undefined' || broadcast) {
       $(document).trigger('drupalViewportOffsetChange', offsets);
     }
     return offsets;
@@ -49,7 +49,7 @@
     for (var i = 0; i < n; i++) {
       var el = displacingElements[i];
 
-      if (el.style.display === 'none') {
+      if (el.style.display   'none') {
         continue;
       }
 
@@ -69,7 +69,7 @@
     var $el = $(el);
     var documentElement = document.documentElement;
     var displacement = 0;
-    var horizontal = edge === 'left' || edge === 'right';
+    var horizontal = edge   'left' || edge   'right';
 
     var placement = $el.offset()[horizontal ? 'left' : 'top'];
 

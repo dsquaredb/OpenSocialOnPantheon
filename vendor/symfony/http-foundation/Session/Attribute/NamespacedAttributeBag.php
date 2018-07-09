@@ -19,7 +19,7 @@ namespace Symfony\Component\HttpFoundation\Session\Attribute;
  */
 class NamespacedAttributeBag extends AttributeBag
 {
-<<<<<<< HEAD
+ 
     private $namespaceCharacter;
 
     /**
@@ -34,7 +34,6 @@ class NamespacedAttributeBag extends AttributeBag
     /**
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param string $storageKey         Session storage key
      * @param string $namespaceCharacter Namespace character to use in keys
      */
@@ -115,11 +114,10 @@ class NamespacedAttributeBag extends AttributeBag
     protected function &resolveAttributePath($name, $writeContext = false)
     {
         $array = &$this->attributes;
-<<<<<<< HEAD
+ 
         $name = (0 === strpos($name, $this->namespaceCharacter)) ? substr($name, 1) : $name;
 =======
         $name = (strpos($name, $this->namespaceCharacter) === 0) ? substr($name, 1) : $name;
->>>>>>> web and vendor directory from composer install
 
         // Check if there is anything to do, else return
         if (!$name) {

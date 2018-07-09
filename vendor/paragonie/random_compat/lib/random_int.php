@@ -1,5 +1,5 @@
 <?php
-<<<<<<< HEAD
+ 
 
 if (!is_callable('random_int')) {
     /**
@@ -392,5 +392,4 @@ function random_int($min, $max)
     } while (!is_int($val) || $val > $max || $val < $min);
 
     return (int) $val;
->>>>>>> web and vendor directory from composer install
 }

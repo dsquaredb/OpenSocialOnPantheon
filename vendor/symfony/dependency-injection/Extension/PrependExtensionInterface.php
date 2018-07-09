@@ -17,11 +17,10 @@ interface PrependExtensionInterface
 {
     /**
      * Allow an extension to prepend the extension configurations.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param ContainerBuilder $container
->>>>>>> web and vendor directory from composer install
      */
     public function prepend(ContainerBuilder $container);
 }

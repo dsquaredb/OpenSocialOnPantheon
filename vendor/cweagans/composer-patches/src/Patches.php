@@ -102,7 +102,7 @@ class Patches implements PluginInterface, EventSubscriberInterface {
 
       foreach ($packages as $package) {
         $extra = $package->getExtra();
-<<<<<<< HEAD
+ 
 =======
         if (isset($extra['patches'])) {
           if (isset($patches_ignore[$package->getName()])) {
@@ -114,7 +114,6 @@ class Patches implements PluginInterface, EventSubscriberInterface {
           }
           $this->installedPatches[$package->getName()] = $extra['patches'];
         }
->>>>>>> Update Open Social to 8.x-2.1
         $patches = isset($extra['patches']) ? $extra['patches'] : array();
         $tmp_patches = array_merge_recursive($tmp_patches, $patches);
       }
@@ -346,7 +345,7 @@ class Patches implements PluginInterface, EventSubscriberInterface {
     $patched = FALSE;
     // The order here is intentional. p1 is most likely to apply with git apply.
     // p0 is next likely. p2 is extremely unlikely, but for some special cases,
-<<<<<<< HEAD
+ 
     // it might be useful.
     $patch_levels = array('-p1', '-p0', '-p2');
     foreach ($patch_levels as $patch_level) {
@@ -367,7 +366,6 @@ class Patches implements PluginInterface, EventSubscriberInterface {
     }
     // Attempt to apply with git apply.
     $patched = $this->applyPatchWithGit($install_path, $patch_levels, $filename);
->>>>>>> Update Open Social to 8.x-2.1
 
     // In some rare cases, git will fail to apply a patch, fallback to using
     // the 'patch' command.

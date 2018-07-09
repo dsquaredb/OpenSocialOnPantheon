@@ -1,5 +1,5 @@
 Config Component
-================
+     =
 
 The Config component provides several classes to help you find, load, combine,
 autofill and validate configuration values of any kind, whatever their source

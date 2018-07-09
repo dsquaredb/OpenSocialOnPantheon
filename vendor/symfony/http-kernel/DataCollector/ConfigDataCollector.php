@@ -15,7 +15,7 @@ use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-<<<<<<< HEAD
+ 
 use Symfony\Component\VarDumper\Caster\LinkStub;
 
 /**
@@ -30,7 +30,6 @@ class ConfigDataCollector extends DataCollector implements LateDataCollectorInte
  * @author Fabien Potencier <fabien@symfony.com>
  */
 class ConfigDataCollector extends DataCollector
->>>>>>> web and vendor directory from composer install
 {
     /**
      * @var KernelInterface
@@ -38,7 +37,7 @@ class ConfigDataCollector extends DataCollector
     private $kernel;
     private $name;
     private $version;
-<<<<<<< HEAD
+ 
     private $hasVarDumper;
 
     /**
@@ -48,7 +47,6 @@ class ConfigDataCollector extends DataCollector
     /**
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param string $name    The name of the application using the web profiler
      * @param string $version The version of the application using the web profiler
      */
@@ -56,19 +54,17 @@ class ConfigDataCollector extends DataCollector
     {
         $this->name = $name;
         $this->version = $version;
-<<<<<<< HEAD
+ 
         $this->hasVarDumper = class_exists(LinkStub::class);
 =======
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Sets the Kernel associated with this Request.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param KernelInterface $kernel A KernelInterface instance
->>>>>>> web and vendor directory from composer install
      */
     public function setKernel(KernelInterface $kernel = null)
     {
@@ -90,7 +86,7 @@ class ConfigDataCollector extends DataCollector
             'env' => isset($this->kernel) ? $this->kernel->getEnvironment() : 'n/a',
             'debug' => isset($this->kernel) ? $this->kernel->isDebug() : 'n/a',
             'php_version' => PHP_VERSION,
-<<<<<<< HEAD
+ 
             'php_architecture' => PHP_INT_SIZE * 8,
             'php_intl_locale' => class_exists('Locale', false) && \Locale::getDefault() ? \Locale::getDefault() : 'n/a',
             'php_timezone' => date_default_timezone_get(),
@@ -102,7 +98,6 @@ class ConfigDataCollector extends DataCollector
             'apc_enabled' => extension_loaded('apc') && ini_get('apc.enabled'),
             'xcache_enabled' => extension_loaded('xcache') && ini_get('xcache.cacher'),
             'wincache_enabled' => extension_loaded('wincache') && ini_get('wincache.ocenabled'),
->>>>>>> web and vendor directory from composer install
             'zend_opcache_enabled' => extension_loaded('Zend OPcache') && ini_get('opcache.enable'),
             'bundles' => array(),
             'sapi_name' => PHP_SAPI,
@@ -110,7 +105,7 @@ class ConfigDataCollector extends DataCollector
 
         if (isset($this->kernel)) {
             foreach ($this->kernel->getBundles() as $name => $bundle) {
-<<<<<<< HEAD
+ 
                 $this->data['bundles'][$name] = $this->hasVarDumper ? new LinkStub($bundle->getPath()) : $bundle->getPath();
             }
 
@@ -149,7 +144,6 @@ class ConfigDataCollector extends DataCollector
         }
     }
 
->>>>>>> web and vendor directory from composer install
     public function getApplicationName()
     {
         return $this->data['app_name'];
@@ -190,7 +184,7 @@ class ConfigDataCollector extends DataCollector
         return $this->data['symfony_state'];
     }
 
-<<<<<<< HEAD
+ 
     /**
      * Returns the minor Symfony version used (without patch numbers of extra
      * suffix like "RC", "beta", etc.).
@@ -226,7 +220,6 @@ class ConfigDataCollector extends DataCollector
     public function setCacheVersionInfo($cacheVersionInfo)
     {
         $this->cacheVersionInfo = $cacheVersionInfo;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -240,7 +233,7 @@ class ConfigDataCollector extends DataCollector
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Gets the PHP version extra part.
      *
      * @return string|null The extra part
@@ -430,7 +423,6 @@ class ConfigDataCollector extends DataCollector
     public function hasAccelerator()
     {
         return $this->hasApc() || $this->hasZendOpcache() || $this->hasEAccelerator() || $this->hasXCache() || $this->hasWinCache();
->>>>>>> web and vendor directory from composer install
     }
 
     public function getBundles()

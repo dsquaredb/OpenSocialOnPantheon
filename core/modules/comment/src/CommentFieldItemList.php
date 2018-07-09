@@ -33,7 +33,7 @@ class CommentFieldItemList extends FieldItemList {
   public function offsetExists($offset) {
     // For consistency with what happens in get(), we force offsetExists() to
     // be TRUE for delta 0.
-    if ($offset === 0) {
+    if ($offset   0) {
       return TRUE;
     }
     return parent::offsetExists($offset);
@@ -43,13 +43,13 @@ class CommentFieldItemList extends FieldItemList {
    * {@inheritdoc}
    */
   public function access($operation = 'view', AccountInterface $account = NULL, $return_as_object = FALSE) {
-    if ($operation === 'edit') {
+    if ($operation   'edit') {
       // Only users with administer comments permission can edit the comment
       // status field.
       $result = AccessResult::allowedIfHasPermission($account ?: \Drupal::currentUser(), 'administer comments');
       return $return_as_object ? $result : $result->isAllowed();
     }
-    if ($operation === 'view') {
+    if ($operation   'view') {
       // Only users with either post comments or access comments permisison can
       // view the field value. The formatter,
       // Drupal\comment\Plugin\Field\FieldFormatter\CommentDefaultFormatter,

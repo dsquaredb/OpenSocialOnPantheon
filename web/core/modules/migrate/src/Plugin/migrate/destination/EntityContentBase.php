@@ -130,9 +130,9 @@ class EntityContentBase extends Entity {
     $ids[$id_key]['type'] = 'integer';
 
     if ($this->isTranslationDestination()) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
       if ($key = $this->getKey('langcode')) {
         $ids[$key]['type'] = 'string';
       }
@@ -142,16 +142,13 @@ class EntityContentBase extends Entity {
       $langcode_key = $this->getKey('langcode');
       if (!$langcode_key) {
         throw new MigrateException(sprintf('The "%s" entity type does not support translations.', $this->storage->getEntityTypeId()));
->>>>>>> Update Open Social to 8.x-2.1
 =======
       if (!$langcode_key = $this->getKey('langcode')) {
         throw new MigrateException('This entity type does not support translation.');
->>>>>>> revert Open Social update
 =======
       $langcode_key = $this->getKey('langcode');
       if (!$langcode_key) {
         throw new MigrateException(sprintf('The "%s" entity type does not support translations.', $this->storage->getEntityTypeId()));
->>>>>>> updating open social
       }
     }
 

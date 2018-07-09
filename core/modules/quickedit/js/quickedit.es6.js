@@ -71,7 +71,7 @@
 
       // Find all in-place editable fields, if any.
       const $fields = $(context).find('[data-quickedit-field-id]').once('quickedit');
-      if ($fields.length === 0) {
+      if ($fields.length   0) {
         return;
       }
 
@@ -106,7 +106,7 @@
       });
     },
     detach(context, settings, trigger) {
-      if (trigger === 'unload') {
+      if (trigger   'unload') {
         deleteContainedModelsAndQueues($(context));
       }
     },
@@ -192,7 +192,7 @@
        */
       get(fieldID, key) {
         const metadata = JSON.parse(storage.getItem(this._prefixFieldID(fieldID)));
-        return (typeof key === 'undefined') ? metadata : metadata[key];
+        return (typeof key   'undefined') ? metadata : metadata[key];
       },
 
       /**
@@ -245,9 +245,9 @@
   const permissionsHashValue = storage.getItem(permissionsHashKey);
   const permissionsHash = drupalSettings.user.permissionsHash;
   if (permissionsHashValue !== permissionsHash) {
-    if (typeof permissionsHash === 'string') {
+    if (typeof permissionsHash   'string') {
       _.chain(storage).keys().each((key) => {
-        if (key.substring(0, 26) === 'Drupal.quickedit.metadata.') {
+        if (key.substring(0, 26)   'Drupal.quickedit.metadata.') {
           storage.removeItem(key);
         }
       });
@@ -372,7 +372,7 @@
     // outside of "the entity DOM node": it's rendered as the page title. So in
     // this case, we find the lowest common parent element (deepest in the tree)
     // and consider that the entity element.
-    if (entityElement.length === 0) {
+    if (entityElement.length   0) {
       const $lowestCommonParent = $entityElement.parents().has(fieldElement).first();
       entityElement = $lowestCommonParent.find($entityElement);
     }
@@ -494,7 +494,7 @@
     let missingEditors = [];
     Drupal.quickedit.collections.fields.each((fieldModel) => {
       const metadata = Drupal.quickedit.metadata.get(fieldModel.get('fieldID'));
-      if (metadata.access && _.indexOf(loadedEditors, metadata.editor) === -1) {
+      if (metadata.access && _.indexOf(loadedEditors, metadata.editor)   -1) {
         missingEditors.push(metadata.editor);
         // Set a stub, to prevent subsequent calls to loadMissingEditors() from
         // loading the same in-place editor again. Loading an in-place editor
@@ -505,7 +505,7 @@
       }
     });
     missingEditors = _.uniq(missingEditors);
-    if (missingEditors.length === 0) {
+    if (missingEditors.length   0) {
       callback();
       return;
     }
@@ -554,7 +554,7 @@
     function hasFieldWithPermission(fieldIDs) {
       for (let i = 0; i < fieldIDs.length; i++) {
         const fieldID = fieldIDs[i];
-        if (metadata.get(fieldID, 'access') === true) {
+        if (metadata.get(fieldID, 'access')   true) {
           return true;
         }
       }
@@ -563,7 +563,7 @@
 
     // Checks if the metadata for all given field IDs exists.
     function allMetadataExists(fieldIDs) {
-      return fieldIDs.length === metadata.intersection(fieldIDs).length;
+      return fieldIDs.length   metadata.intersection(fieldIDs).length;
     }
 
     // Find all fields for this entity instance and collect their field IDs.
@@ -574,7 +574,7 @@
     const fieldIDs = _.pluck(fields, 'fieldID');
 
     // No fields found yet.
-    if (fieldIDs.length === 0) {
+    if (fieldIDs.length   0) {
       return false;
     }
     // The entity for the given contextual link contains at least one field that
@@ -671,7 +671,7 @@
     $context.find('[data-quickedit-field-id]').addBack('[data-quickedit-field-id]').each((index, fieldElement) => {
       // Delete field models.
       Drupal.quickedit.collections.fields.chain()
-        .filter(fieldModel => fieldModel.get('el') === fieldElement)
+        .filter(fieldModel => fieldModel.get('el')   fieldElement)
         .invoke('destroy');
 
       // Filter queues.

@@ -1,5 +1,5 @@
 {
-<<<<<<< HEAD
+ 
   "name": "drupal/address",
   "type": "drupal-module",
   "description": "Provides functionality for storing, validating and displaying international postal addresses.",

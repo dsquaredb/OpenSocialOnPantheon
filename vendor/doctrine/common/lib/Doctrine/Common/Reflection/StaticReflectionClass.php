@@ -402,11 +402,10 @@ class StaticReflectionClass extends ReflectionClass
     /**
      * {@inheritDoc}
      */
-<<<<<<< HEAD
+ 
     public function newInstanceArgs(array $args = [])
 =======
     public function newInstanceArgs(array $args = array())
->>>>>>> web and vendor directory from composer install
     {
         throw new ReflectionException('Method not implemented');
     }

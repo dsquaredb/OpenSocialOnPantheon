@@ -152,9 +152,9 @@ function _social_user_search_content_pre_render(array $build) {
  * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
  */
 function social_user_user_format_name_alter(&$name, $account) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 
   // Let's get the First name Last name.
   /** @var \Drupal\profile\ProfileStorageInterface $storage */
@@ -182,8 +182,8 @@ function social_user_user_format_name_alter(&$name, $account) {
   if (!empty($storage)) {
     // Returns false.
     if ($user_profile = $storage->loadByUser($account, 'profile', TRUE)) {
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
       $accountname = $user_profile->get('field_profile_first_name')->value . " " . $user_profile->get('field_profile_last_name')->value;
       $accountname = trim($accountname);
 >>>>>>> Update Open Social to 8.x-2.1
@@ -223,11 +223,11 @@ function social_user_menu_local_tasks_alter(&$data, $route_name) {
     $data['tabs'][0]['social_user.topics']['#weight'] = -1;
   }
 
-<<<<<<< HEAD
+ 
 }
 =======
 }
-<<<<<<< HEAD
+ 
 
 /**
  * Implements hook_tokens_alter().
@@ -250,7 +250,7 @@ function social_user_tokens_alter(&$replacements, $context, $bubbleable_metadata
     $replacements[$context['tokens']['url:absolute']] = NULL;
   }
 }
-<<<<<<< HEAD
+ 
 >>>>>>> Update Open Social to 8.x-2.1
 =======
 >>>>>>> revert Open Social update

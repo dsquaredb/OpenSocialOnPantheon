@@ -330,7 +330,7 @@ is returned as-is.
 
 ```php
 $uri = GuzzleHttp\Psr7\uri_for('http://example.com');
-assert($uri === GuzzleHttp\Psr7\uri_for($uri));
+assert($uri   GuzzleHttp\Psr7\uri_for($uri));
 ```
 
 
@@ -519,7 +519,7 @@ Determines the mimetype of a file by looking at its extension.
 Maps a file extensions to a mimetype.
 
 
-<<<<<<< HEAD
+ 
 # Additional URI Methods
 
 Aside from the standard `Psr\Http\Message\UriInterface` implementation in form of the `GuzzleHttp\Psr7\Uri` class,
@@ -641,7 +641,7 @@ Removes dot segments from a path and returns the new path according to
 Returns the target URI as a relative reference from the base URI. This method is the counterpart to resolve():
 
 ```php
-(string) $target === (string) UriResolver::resolve($base, UriResolver::relativize($base, $target))
+(string) $target   (string) UriResolver::resolve($base, UriResolver::relativize($base, $target))
 ```
 
 One use-case is to use the current request URI as base URI and then generate relative links in your documents
@@ -738,7 +738,7 @@ Whether two URIs can be considered equivalent. Both URIs are normalized automati
 `$normalizations` bitmask. The method also accepts relative URI references and returns true when they are equivalent.
 This of course assumes they will be resolved against the same base URI. If this is not the case, determination of
 equivalence or difference of relative references does not mean anything.
-=======
+  =
 # Static URI methods
 
 The `GuzzleHttp\Psr7\Uri` class has several static methods to manipulate URIs.

@@ -2,16 +2,16 @@
 /**
  * Random_* Compatibility Library
  * for using the new PHP 7 random_* API in PHP 5 projects
-<<<<<<< HEAD
+ 
  *
  * @version 2.0.17
  * @released 2018-07-04
  *
  * The MIT License (MIT)
  *
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
  * Copyright (c) 2015 - 2017 Paragon Initiative Enterprises
 =======
  * 
@@ -21,16 +21,12 @@
  * The MIT License (MIT)
  *
  * Copyright (c) 2015 Paragon Initiative Enterprises
->>>>>>> web and vendor directory from composer install
 =======
  * Copyright (c) 2015 - 2018 Paragon Initiative Enterprises
->>>>>>> Update Open Social to 8.x-2.1
 =======
  * Copyright (c) 2015 - 2017 Paragon Initiative Enterprises
->>>>>>> revert Open Social update
 =======
  * Copyright (c) 2015 - 2018 Paragon Initiative Enterprises
->>>>>>> updating open social
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -53,11 +49,10 @@
 
 if (!defined('PHP_VERSION_ID')) {
     // This constant was introduced in PHP 5.2.7
-<<<<<<< HEAD
+ 
     $RandomCompatversion = array_map('intval', explode('.', PHP_VERSION));
 =======
     $RandomCompatversion = explode('.', PHP_VERSION);
->>>>>>> web and vendor directory from composer install
     define(
         'PHP_VERSION_ID',
         $RandomCompatversion[0] * 10000
@@ -67,7 +62,7 @@ if (!defined('PHP_VERSION_ID')) {
     $RandomCompatversion = null;
 }
 
-<<<<<<< HEAD
+ 
 /**
  * PHP 7.0.0 and newer have these functions natively.
  */
@@ -230,19 +225,16 @@ if (!is_callable('random_bytes')) {
          * and hope the developer won't let it fail silently.
          *
          * @param mixed $length
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
          * @return void
 =======
          * @psalm-suppress InvalidReturnType
->>>>>>> Update Open Social to 8.x-2.1
 =======
          * @psalm-suppress MissingReturnType
->>>>>>> revert Open Social update
 =======
          * @psalm-suppress InvalidReturnType
->>>>>>> updating open social
          * @throws Exception
          */
         function random_bytes($length)
@@ -439,4 +431,3 @@ if (PHP_VERSION_ID < 70000) {
 
     $RandomCompatDIR = null;
 }
->>>>>>> web and vendor directory from composer install

@@ -11,13 +11,12 @@
 
 namespace Symfony\Component\Serializer\Normalizer;
 
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Serializer\Exception\CircularReferenceException;
 use Symfony\Component\Serializer\Exception\LogicException;
 use Symfony\Component\Serializer\Exception\RuntimeException;
 
->>>>>>> web and vendor directory from composer install
 /**
  * Converts between objects and arrays by mapping properties.
  *
@@ -35,7 +34,7 @@ use Symfony\Component\Serializer\Exception\RuntimeException;
  * @author Matthieu Napoli <matthieu@mnapoli.fr>
  * @author Kévin Dunglas <dunglas@gmail.com>
  */
-<<<<<<< HEAD
+ 
 class PropertyNormalizer extends AbstractObjectNormalizer
 {
     private $cache = array();
@@ -152,12 +151,11 @@ class PropertyNormalizer extends AbstractNormalizer
         }
 
         return $attributes;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * {@inheritdoc}
-<<<<<<< HEAD
+ 
      */
     protected function extractAttributes($object, $format = null, array $context = array())
     {
@@ -211,13 +209,12 @@ class PropertyNormalizer extends AbstractNormalizer
         }
 
         return $object;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
     protected function getAttributeValue($object, $attribute, $format = null, array $context = array())
     {
         try {
@@ -236,13 +233,12 @@ class PropertyNormalizer extends AbstractNormalizer
     public function supportsNormalization($data, $format = null)
     {
         return is_object($data) && !$data instanceof \Traversable && $this->supports(get_class($data));
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
     protected function setAttributeValue($object, $attribute, $value, $format = null, array $context = array())
     {
         try {
@@ -308,6 +304,5 @@ class PropertyNormalizer extends AbstractNormalizer
         }
 
         return false;
->>>>>>> web and vendor directory from composer install
     }
 }

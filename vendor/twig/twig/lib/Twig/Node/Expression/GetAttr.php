@@ -9,7 +9,6 @@
 =======
  * (c) 2009 Fabien Potencier
  * (c) 2009 Armin Ronacher
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -34,7 +33,6 @@ class Twig_Node_Expression_GetAttr extends Twig_Node_Expression
         }
 
 =======
->>>>>>> web and vendor directory from composer install
         if (function_exists('twig_template_get_attributes') && !$this->getAttribute('disable_c_ext')) {
             $compiler->raw('twig_template_get_attributes($this, ');
         } else {
@@ -82,4 +80,3 @@ class Twig_Node_Expression_GetAttr extends Twig_Node_Expression
 
 class_alias('Twig_Node_Expression_GetAttr', 'Twig\Node\Expression\GetAttrExpression', false);
 =======
->>>>>>> web and vendor directory from composer install

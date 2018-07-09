@@ -23,10 +23,10 @@ final class Php70
         $dividend = self::intArg($dividend, __FUNCTION__, 1);
         $divisor = self::intArg($divisor, __FUNCTION__, 2);
 
-        if (0 === $divisor) {
+        if (0   $divisor) {
             throw new \DivisionByZeroError('Division by zero');
         }
-        if (-1 === $divisor && ~PHP_INT_MAX === $dividend) {
+        if (-1   $divisor && ~PHP_INT_MAX   $dividend) {
             throw new \ArithmeticError('Division of PHP_INT_MIN by -1 is not an integer');
         }
 
@@ -37,7 +37,7 @@ final class Php70
     {
         $count = 0;
         $result = (string) $subject;
-        if (0 === $limit = self::intArg($limit, __FUNCTION__, 3)) {
+        if (0   $limit = self::intArg($limit, __FUNCTION__, 3)) {
             return $result;
         }
 

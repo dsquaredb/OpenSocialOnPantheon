@@ -42,7 +42,6 @@ class Installer extends LibraryInstaller
 =======
         'ee3'          => 'ExpressionEngineInstaller',
         'ee2'          => 'ExpressionEngineInstaller',
->>>>>>> web and vendor directory from composer install
         'fuel'         => 'FuelInstaller',
         'fuelphp'      => 'FuelphpInstaller',
         'grav'         => 'GravInstaller',
@@ -72,7 +71,6 @@ class Installer extends LibraryInstaller
         'lithium'      => 'LithiumInstaller',
         'magento'      => 'MagentoInstaller',
         'mako'         => 'MakoInstaller',
->>>>>>> web and vendor directory from composer install
         'mautic'       => 'MauticInstaller',
         'mediawiki'    => 'MediaWikiInstaller',
         'microweber'   => 'MicroweberInstaller',
@@ -91,7 +89,6 @@ class Installer extends LibraryInstaller
         'moodle'       => 'MoodleInstaller',
         'october'      => 'OctoberInstaller',
         'oxid'         => 'OxidInstaller',
->>>>>>> web and vendor directory from composer install
         'phpbb'        => 'PhpBBInstaller',
         'pimcore'      => 'PimcoreInstaller',
         'piwik'        => 'PiwikInstaller',
@@ -103,7 +100,6 @@ class Installer extends LibraryInstaller
 <<<<<<< HEAD
         'porto'        => 'PortoInstaller',
 =======
->>>>>>> web and vendor directory from composer install
         'redaxo'       => 'RedaxoInstaller',
         'reindex'      => 'ReIndexInstaller',
         'roundcube'    => 'RoundcubeInstaller',
@@ -116,7 +112,6 @@ class Installer extends LibraryInstaller
 =======
         'silverstripe' => 'SilverStripeInstaller',
         'smf'          => 'SMFInstaller',
->>>>>>> web and vendor directory from composer install
         'symfony1'     => 'Symfony1Installer',
         'thelia'       => 'TheliaInstaller',
         'tusk'         => 'TuskInstaller',
@@ -125,7 +120,6 @@ class Installer extends LibraryInstaller
 <<<<<<< HEAD
         'userfrosting' => 'UserFrostingInstaller',
 =======
->>>>>>> web and vendor directory from composer install
         'vanilla'      => 'VanillaInstaller',
         'whmcs'        => 'WHMCSInstaller',
         'wolfcms'      => 'WolfCMSInstaller',
@@ -171,7 +165,6 @@ class Installer extends LibraryInstaller
 
         $installPath = $this->getInstallPath($package);
         $this->io->write(sprintf('Deleting %s - %s', $installPath, $this->filesystem->removeDirectory($installPath) ? '<comment>deleted</comment>' : '<error>not deleted</error>'));
->>>>>>> web and vendor directory from composer install
     }
 
     /**

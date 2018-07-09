@@ -172,7 +172,7 @@
     triggerUploadButton: function (event) {
       $(event.target).closest('.js-form-managed-file').find('.js-form-submit').trigger('mousedown');
     },
-<<<<<<< HEAD
+ 
 
     /**
      * Prevent file uploads when using buttons not intended to upload.
@@ -191,20 +191,17 @@
       }
 =======
     disableFields: function disableFields(event) {
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
       var $clickedButton = $(this);
->>>>>>> Update Open Social to 8.x-2.1
 =======
       var $clickedButton = $(this).findOnce('ajax');
 
       if (!$clickedButton.length) {
         return;
       }
->>>>>>> revert Open Social update
 =======
       var $clickedButton = $(this);
->>>>>>> updating open social
 
       // Check if we're working with an "Upload" button.
       var $enabledFields = [];

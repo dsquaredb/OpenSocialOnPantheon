@@ -20,14 +20,13 @@ namespace Symfony\Polyfill\Mbstring;
  * - mb_convert_variables    - Convert character code in variable(s)
  * - mb_decode_mimeheader    - Decode string in MIME header field
  * - mb_encode_mimeheader    - Encode string for MIME header XXX NATIVE IMPLEMENTATION IS REALLY BUGGED
-<<<<<<< HEAD
+ 
  * - mb_decode_numericentity - Decode HTML numeric string reference to character
  * - mb_encode_numericentity - Encode character to HTML numeric string reference
  * - mb_convert_case         - Perform case folding on a string
  * - mb_detect_encoding      - Detect character encoding
-=======
+  =
  * - mb_convert_case         - Perform case folding on a string
->>>>>>> web and vendor directory from composer install
  * - mb_get_info             - Get internal settings of mbstring
  * - mb_http_input           - Detect HTTP input character encoding
  * - mb_http_output          - Set/Get HTTP output character encoding
@@ -54,11 +53,10 @@ namespace Symfony\Polyfill\Mbstring;
  *
  * Not implemented:
  * - mb_convert_kana         - Convert "kana" one from another ("zen-kaku", "han-kaku" and more)
-<<<<<<< HEAD
-=======
+ 
+  =
  * - mb_decode_numericentity - Decode HTML numeric string reference to character
  * - mb_encode_numericentity - Encode character to HTML numeric string reference
->>>>>>> web and vendor directory from composer install
  * - mb_ereg_*               - Regular expression with multibyte support
  * - mb_parse_str            - Parse GET/POST/COOKIE data and set global variable
  * - mb_preferred_mime_name  - Get MIME charset string
@@ -87,11 +85,10 @@ final class Mbstring
 
     public static function mb_convert_encoding($s, $toEncoding, $fromEncoding = null)
     {
-<<<<<<< HEAD
+ 
         if (\is_array($fromEncoding) || false !== strpos($fromEncoding, ',')) {
-=======
+  =
         if (is_array($fromEncoding) || false !== strpos($fromEncoding, ',')) {
->>>>>>> web and vendor directory from composer install
             $fromEncoding = self::mb_detect_encoding($s, $fromEncoding);
         } else {
             $fromEncoding = self::getEncoding($fromEncoding);
@@ -99,17 +96,17 @@ final class Mbstring
 
         $toEncoding = self::getEncoding($toEncoding);
 
-        if ('BASE64' === $fromEncoding) {
+        if ('BASE64'   $fromEncoding) {
             $s = base64_decode($s);
             $fromEncoding = $toEncoding;
         }
 
-        if ('BASE64' === $toEncoding) {
+        if ('BASE64'   $toEncoding) {
             return base64_encode($s);
         }
 
-        if ('HTML-ENTITIES' === $toEncoding || 'HTML' === $toEncoding) {
-            if ('HTML-ENTITIES' === $fromEncoding || 'HTML' === $fromEncoding) {
+        if ('HTML-ENTITIES'   $toEncoding || 'HTML'   $toEncoding) {
+            if ('HTML-ENTITIES'   $fromEncoding || 'HTML'   $fromEncoding) {
                 $fromEncoding = 'Windows-1252';
             }
             if ('UTF-8' !== $fromEncoding) {
@@ -119,7 +116,7 @@ final class Mbstring
             return preg_replace_callback('/[\x80-\xFF]+/', array(__CLASS__, 'html_encoding_callback'), $s);
         }
 
-        if ('HTML-ENTITIES' === $fromEncoding) {
+        if ('HTML-ENTITIES'   $fromEncoding) {
             $s = html_entity_decode($s, ENT_COMPAT, 'UTF-8');
             $fromEncoding = 'UTF-8';
         }
@@ -133,7 +130,7 @@ final class Mbstring
 
         $ok = true;
         array_walk_recursive($vars, function (&$v) use (&$ok, $toEncoding, $fromEncoding) {
-            if (false === $v = Mbstring::mb_convert_encoding($v, $toEncoding, $fromEncoding)) {
+            if (false   $v = Mbstring::mb_convert_encoding($v, $toEncoding, $fromEncoding)) {
                 $ok = false;
             }
         });
@@ -151,7 +148,7 @@ final class Mbstring
         trigger_error('mb_encode_mimeheader() is bugged. Please use iconv_mime_encode() instead', E_USER_WARNING);
     }
 
-<<<<<<< HEAD
+ 
     public static function mb_decode_numericentity($s, $convmap, $encoding = null)
     {
         if (null !== $s && !\is_scalar($s) && !(\is_object($s) && \method_exists($s, '__toString'))) {
@@ -169,13 +166,13 @@ final class Mbstring
         }
 
         $s = (string) $s;
-        if ('' === $s) {
+        if (''   $s) {
             return '';
         }
 
         $encoding = self::getEncoding($encoding);
 
-        if ('UTF-8' === $encoding) {
+        if ('UTF-8'   $encoding) {
             $encoding = null;
             if (!preg_match('//u', $s)) {
                 $s = @iconv('UTF-8', 'UTF-8//IGNORE', $s);
@@ -202,7 +199,7 @@ final class Mbstring
             return $m[0];
         }, $s);
 
-        if (null === $encoding) {
+        if (null   $encoding) {
             return $s;
         }
 
@@ -231,13 +228,13 @@ final class Mbstring
         }
 
         $s = (string) $s;
-        if ('' === $s) {
+        if (''   $s) {
             return '';
         }
 
         $encoding = self::getEncoding($encoding);
 
-        if ('UTF-8' === $encoding) {
+        if ('UTF-8'   $encoding) {
             $encoding = null;
             if (!preg_match('//u', $s)) {
                 $s = @iconv('UTF-8', 'UTF-8//IGNORE', $s);
@@ -269,7 +266,7 @@ final class Mbstring
             $result .= $uchr;
         }
 
-        if (null === $encoding) {
+        if (null   $encoding) {
             return $result;
         }
 
@@ -279,25 +276,23 @@ final class Mbstring
     public static function mb_convert_case($s, $mode, $encoding = null)
     {
         $s = (string) $s;
-        if ('' === $s) {
-=======
+        if (''   $s) {
+  =
     public static function mb_convert_case($s, $mode, $encoding = null)
     {
-        if ('' === $s .= '') {
->>>>>>> web and vendor directory from composer install
+        if (''   $s .= '') {
             return '';
         }
 
         $encoding = self::getEncoding($encoding);
 
-        if ('UTF-8' === $encoding) {
+        if ('UTF-8'   $encoding) {
             $encoding = null;
-<<<<<<< HEAD
+ 
             if (!preg_match('//u', $s)) {
                 $s = @iconv('UTF-8', 'UTF-8//IGNORE', $s);
             }
-=======
->>>>>>> web and vendor directory from composer install
+  =
         } else {
             $s = iconv($encoding, 'UTF-8//IGNORE', $s);
         }
@@ -308,17 +303,17 @@ final class Mbstring
         } else {
             if (MB_CASE_UPPER == $mode) {
                 static $upper = null;
-                if (null === $upper) {
+                if (null   $upper) {
                     $upper = self::getData('upperCase');
                 }
                 $map = $upper;
             } else {
-                if (self::MB_CASE_FOLD === $mode) {
+                if (self::MB_CASE_FOLD   $mode) {
                     $s = str_replace(self::$caseFold[0], self::$caseFold[1], $s);
                 }
 
                 static $lower = null;
-                if (null === $lower) {
+                if (null   $lower) {
                     $lower = self::getData('lowerCase');
                 }
                 $map = $lower;
@@ -327,11 +322,10 @@ final class Mbstring
             static $ulenMask = array("\xC0" => 2, "\xD0" => 2, "\xE0" => 3, "\xF0" => 4);
 
             $i = 0;
-<<<<<<< HEAD
+ 
             $len = \strlen($s);
-=======
+  =
             $len = strlen($s);
->>>>>>> web and vendor directory from composer install
 
             while ($i < $len) {
                 $ulen = $s[$i] < "\x80" ? 1 : $ulenMask[$s[$i] & "\xF0"];
@@ -340,11 +334,10 @@ final class Mbstring
 
                 if (isset($map[$uchr])) {
                     $uchr = $map[$uchr];
-<<<<<<< HEAD
+ 
                     $nlen = \strlen($uchr);
-=======
+  =
                     $nlen = strlen($uchr);
->>>>>>> web and vendor directory from composer install
 
                     if ($nlen == $ulen) {
                         $nlen = $i;
@@ -360,7 +353,7 @@ final class Mbstring
             }
         }
 
-        if (null === $encoding) {
+        if (null   $encoding) {
             return $s;
         }
 
@@ -369,13 +362,13 @@ final class Mbstring
 
     public static function mb_internal_encoding($encoding = null)
     {
-        if (null === $encoding) {
+        if (null   $encoding) {
             return self::$internalEncoding;
         }
 
         $encoding = self::getEncoding($encoding);
 
-        if ('UTF-8' === $encoding || false !== @iconv($encoding, $encoding, ' ')) {
+        if ('UTF-8'   $encoding || false !== @iconv($encoding, $encoding, ' ')) {
             self::$internalEncoding = $encoding;
 
             return true;
@@ -386,7 +379,7 @@ final class Mbstring
 
     public static function mb_language($lang = null)
     {
-        if (null === $lang) {
+        if (null   $lang) {
             return self::$language;
         }
 
@@ -419,8 +412,8 @@ final class Mbstring
 
     public static function mb_check_encoding($var = null, $encoding = null)
     {
-        if (null === $encoding) {
-            if (null === $var) {
+        if (null   $encoding) {
+            if (null   $var) {
                 return false;
             }
             $encoding = self::$internalEncoding;
@@ -431,14 +424,13 @@ final class Mbstring
 
     public static function mb_detect_encoding($str, $encodingList = null, $strict = false)
     {
-        if (null === $encodingList) {
+        if (null   $encodingList) {
             $encodingList = self::$encodingList;
         } else {
-<<<<<<< HEAD
+ 
             if (!\is_array($encodingList)) {
-=======
+  =
             if (!is_array($encodingList)) {
->>>>>>> web and vendor directory from composer install
                 $encodingList = array_map('trim', explode(',', $encodingList));
             }
             $encodingList = array_map('strtoupper', $encodingList);
@@ -460,7 +452,7 @@ final class Mbstring
                     break;
 
                 default:
-                    if (0 === strncmp($enc, 'ISO-8859-', 9)) {
+                    if (0   strncmp($enc, 'ISO-8859-', 9)) {
                         return $enc;
                     }
             }
@@ -471,15 +463,14 @@ final class Mbstring
 
     public static function mb_detect_order($encodingList = null)
     {
-        if (null === $encodingList) {
+        if (null   $encodingList) {
             return self::$encodingList;
         }
 
-<<<<<<< HEAD
+ 
         if (!\is_array($encodingList)) {
-=======
+  =
         if (!is_array($encodingList)) {
->>>>>>> web and vendor directory from composer install
             $encodingList = array_map('trim', explode(',', $encodingList));
         }
         $encodingList = array_map('strtoupper', $encodingList);
@@ -503,16 +494,15 @@ final class Mbstring
 
     public static function mb_strlen($s, $encoding = null)
     {
-<<<<<<< HEAD
+ 
         $encoding = self::getEncoding($encoding);
-        if ('CP850' === $encoding || 'ASCII' === $encoding) {
+        if ('CP850'   $encoding || 'ASCII'   $encoding) {
             return \strlen($s);
-=======
+  =
         switch ($encoding = self::getEncoding($encoding)) {
             case 'ASCII':
             case 'CP850':
                 return strlen($s);
->>>>>>> web and vendor directory from composer install
         }
 
         return @iconv_strlen($s, $encoding);
@@ -521,17 +511,16 @@ final class Mbstring
     public static function mb_strpos($haystack, $needle, $offset = 0, $encoding = null)
     {
         $encoding = self::getEncoding($encoding);
-<<<<<<< HEAD
-        if ('CP850' === $encoding || 'ASCII' === $encoding) {
+ 
+        if ('CP850'   $encoding || 'ASCII'   $encoding) {
             return strpos($haystack, $needle, $offset);
         }
 
         $needle = (string) $needle;
-        if ('' === $needle) {
-=======
+        if (''   $needle) {
+  =
 
-        if ('' === $needle .= '') {
->>>>>>> web and vendor directory from composer install
+        if (''   $needle .= '') {
             trigger_error(__METHOD__.': Empty delimiter', E_USER_WARNING);
 
             return false;
@@ -543,12 +532,11 @@ final class Mbstring
     public static function mb_strrpos($haystack, $needle, $offset = 0, $encoding = null)
     {
         $encoding = self::getEncoding($encoding);
-<<<<<<< HEAD
-        if ('CP850' === $encoding || 'ASCII' === $encoding) {
+ 
+        if ('CP850'   $encoding || 'ASCII'   $encoding) {
             return strrpos($haystack, $needle, $offset);
         }
-=======
->>>>>>> web and vendor directory from composer install
+  =
 
         if ($offset != (int) $offset) {
             $offset = 0;
@@ -578,7 +566,7 @@ final class Mbstring
 
     public static function mb_substitute_character($c = null)
     {
-        if (0 === strcasecmp($c, 'none')) {
+        if (0   strcasecmp($c, 'none')) {
             return true;
         }
 
@@ -588,12 +576,11 @@ final class Mbstring
     public static function mb_substr($s, $start, $length = null, $encoding = null)
     {
         $encoding = self::getEncoding($encoding);
-<<<<<<< HEAD
-        if ('CP850' === $encoding || 'ASCII' === $encoding) {
-            return substr($s, $start, null === $length ? 2147483647 : $length);
+ 
+        if ('CP850'   $encoding || 'ASCII'   $encoding) {
+            return substr($s, $start, null   $length ? 2147483647 : $length);
         }
-=======
->>>>>>> web and vendor directory from composer install
+  =
 
         if ($start < 0) {
             $start = iconv_strlen($s, $encoding) + $start;
@@ -602,7 +589,7 @@ final class Mbstring
             }
         }
 
-        if (null === $length) {
+        if (null   $length) {
             $length = 2147483647;
         } elseif ($length < 0) {
             $length = iconv_strlen($s, $encoding) + $length - $start;
@@ -611,11 +598,10 @@ final class Mbstring
             }
         }
 
-<<<<<<< HEAD
+ 
         return (string) iconv_substr($s, $start, $length, $encoding);
-=======
+  =
         return iconv_substr($s, $start, $length, $encoding).'';
->>>>>>> web and vendor directory from composer install
     }
 
     public static function mb_stripos($haystack, $needle, $offset = 0, $encoding = null)
@@ -636,12 +622,11 @@ final class Mbstring
     public static function mb_strrchr($haystack, $needle, $part = false, $encoding = null)
     {
         $encoding = self::getEncoding($encoding);
-<<<<<<< HEAD
-        if ('CP850' === $encoding || 'ASCII' === $encoding) {
+ 
+        if ('CP850'   $encoding || 'ASCII'   $encoding) {
             return strrchr($haystack, $needle, $part);
         }
-=======
->>>>>>> web and vendor directory from composer install
+  =
         $needle = self::mb_substr($needle, 0, 1, $encoding);
         $pos = iconv_strrpos($haystack, $needle, $encoding);
 
@@ -667,7 +652,7 @@ final class Mbstring
     public static function mb_strstr($haystack, $needle, $part = false, $encoding = null)
     {
         $pos = strpos($haystack, $needle);
-        if (false === $pos) {
+        if (false   $pos) {
             return false;
         }
         if ($part) {
@@ -696,7 +681,7 @@ final class Mbstring
             'strict_detection' => 'Off',
         );
 
-        if ('all' === $type) {
+        if ('all'   $type) {
             return $info;
         }
         if (isset($info[$type])) {
@@ -713,7 +698,7 @@ final class Mbstring
 
     public static function mb_http_output($encoding = null)
     {
-        return null !== $encoding ? 'pass' === $encoding : 'pass';
+        return null !== $encoding ? 'pass'   $encoding : 'pass';
     }
 
     public static function mb_strwidth($s, $encoding = null)
@@ -742,7 +727,7 @@ final class Mbstring
     public static function mb_chr($code, $encoding = null)
     {
         if (0x80 > $code %= 0x200000) {
-<<<<<<< HEAD
+ 
             $s = \chr($code);
         } elseif (0x800 > $code) {
             $s = \chr(0xC0 | $code >> 6).\chr(0x80 | $code & 0x3F);
@@ -750,7 +735,7 @@ final class Mbstring
             $s = \chr(0xE0 | $code >> 12).\chr(0x80 | $code >> 6 & 0x3F).\chr(0x80 | $code & 0x3F);
         } else {
             $s = \chr(0xF0 | $code >> 18).\chr(0x80 | $code >> 12 & 0x3F).\chr(0x80 | $code >> 6 & 0x3F).\chr(0x80 | $code & 0x3F);
-=======
+  =
             $s = chr($code);
         } elseif (0x800 > $code) {
             $s = chr(0xC0 | $code >> 6).chr(0x80 | $code & 0x3F);
@@ -758,7 +743,6 @@ final class Mbstring
             $s = chr(0xE0 | $code >> 12).chr(0x80 | $code >> 6 & 0x3F).chr(0x80 | $code & 0x3F);
         } else {
             $s = chr(0xF0 | $code >> 18).chr(0x80 | $code >> 12 & 0x3F).chr(0x80 | $code >> 6 & 0x3F).chr(0x80 | $code & 0x3F);
->>>>>>> web and vendor directory from composer install
         }
 
         if ('UTF-8' !== $encoding = self::getEncoding($encoding)) {
@@ -790,7 +774,7 @@ final class Mbstring
 
     private static function getSubpart($pos, $part, $haystack, $encoding)
     {
-        if (false === $pos) {
+        if (false   $pos) {
             return false;
         }
         if ($part) {
@@ -800,11 +784,10 @@ final class Mbstring
         return self::mb_substr($haystack, $pos, null, $encoding);
     }
 
-<<<<<<< HEAD
+ 
     private static function html_encoding_callback(array $m)
-=======
+  =
     private static function html_encoding_callback($m)
->>>>>>> web and vendor directory from composer install
     {
         $i = 1;
         $entities = '';
@@ -812,11 +795,10 @@ final class Mbstring
 
         while (isset($m[$i])) {
             if (0x80 > $m[$i]) {
-<<<<<<< HEAD
+ 
                 $entities .= \chr($m[$i++]);
-=======
+  =
                 $entities .= chr($m[$i++]);
->>>>>>> web and vendor directory from composer install
                 continue;
             }
             if (0xF0 <= $m[$i]) {
@@ -833,20 +815,18 @@ final class Mbstring
         return $entities;
     }
 
-<<<<<<< HEAD
+ 
     private static function title_case_lower(array $s)
-=======
+  =
     private static function title_case_lower($s)
->>>>>>> web and vendor directory from composer install
     {
         return self::mb_convert_case($s[0], MB_CASE_LOWER, 'UTF-8');
     }
 
-<<<<<<< HEAD
+ 
     private static function title_case_upper(array $s)
-=======
+  =
     private static function title_case_upper($s)
->>>>>>> web and vendor directory from composer install
     {
         return self::mb_convert_case($s[0], MB_CASE_UPPER, 'UTF-8');
     }
@@ -862,16 +842,16 @@ final class Mbstring
 
     private static function getEncoding($encoding)
     {
-        if (null === $encoding) {
+        if (null   $encoding) {
             return self::$internalEncoding;
         }
 
         $encoding = strtoupper($encoding);
 
-        if ('8BIT' === $encoding || 'BINARY' === $encoding) {
+        if ('8BIT'   $encoding || 'BINARY'   $encoding) {
             return 'CP850';
         }
-        if ('UTF8' === $encoding) {
+        if ('UTF8'   $encoding) {
             return 'UTF-8';
         }
 

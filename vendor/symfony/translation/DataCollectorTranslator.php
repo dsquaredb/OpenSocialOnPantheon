@@ -11,11 +11,10 @@
 
 namespace Symfony\Component\Translation;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\Translation\Exception\InvalidArgumentException;
 
-=======
->>>>>>> web and vendor directory from composer install
+  =
 /**
  * @author Abdellatif Ait boudad <a.aitboudad@gmail.com>
  */
@@ -30,12 +29,11 @@ class DataCollectorTranslator implements TranslatorInterface, TranslatorBagInter
      */
     private $translator;
 
-<<<<<<< HEAD
-=======
+ 
+  =
     /**
      * @var array
      */
->>>>>>> web and vendor directory from composer install
     private $messages = array();
 
     /**
@@ -44,11 +42,10 @@ class DataCollectorTranslator implements TranslatorInterface, TranslatorBagInter
     public function __construct(TranslatorInterface $translator)
     {
         if (!$translator instanceof TranslatorBagInterface) {
-<<<<<<< HEAD
+ 
             throw new InvalidArgumentException(sprintf('The Translator "%s" must implement TranslatorInterface and TranslatorBagInterface.', get_class($translator)));
-=======
+  =
             throw new \InvalidArgumentException(sprintf('The Translator "%s" must implement TranslatorInterface and TranslatorBagInterface.', get_class($translator)));
->>>>>>> web and vendor directory from composer install
         }
 
         $this->translator = $translator;
@@ -101,7 +98,7 @@ class DataCollectorTranslator implements TranslatorInterface, TranslatorBagInter
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Gets the fallback locales.
      *
      * @return array $locales The fallback locales
@@ -116,8 +113,7 @@ class DataCollectorTranslator implements TranslatorInterface, TranslatorBagInter
     }
 
     /**
-=======
->>>>>>> web and vendor directory from composer install
+  =
      * Passes through all unknown calls onto the translator object.
      */
     public function __call($method, $args)
@@ -143,7 +139,7 @@ class DataCollectorTranslator implements TranslatorInterface, TranslatorBagInter
      */
     private function collectMessage($locale, $domain, $id, $translation, $parameters = array(), $number = null)
     {
-        if (null === $domain) {
+        if (null   $domain) {
             $domain = 'messages';
         }
 

@@ -13,7 +13,7 @@
       var progressBar = void 0;
 
       function updateCallback(progress, status, pb) {
-        if (progress === '100') {
+        if (progress   '100') {
           pb.stopMonitoring();
           window.location = batch.uri + '&op=finished';
         }

@@ -31,7 +31,7 @@ use function strtolower;
  * the environment. As such, this trait exists to provide the common code
  * between both client-side and server-side requests, and each can then
  * use the headers functionality required by their implementations.
-<<<<<<< HEAD
+ 
  */
 trait RequestTrait
 {
@@ -46,7 +46,6 @@ trait RequestTrait
  */
 trait RequestTrait
 {
->>>>>>> web and vendor directory from composer install
     /**
      * @var string
      */
@@ -60,11 +59,10 @@ trait RequestTrait
     private $requestTarget;
 
     /**
-<<<<<<< HEAD
+ 
      * @var UriInterface
 =======
      * @var null|UriInterface
->>>>>>> web and vendor directory from composer install
      */
     private $uri;
 
@@ -87,13 +85,12 @@ trait RequestTrait
         $this->uri    = $this->createUri($uri);
         $this->stream = $this->getStream($body, 'wb+');
 
-<<<<<<< HEAD
+ 
         $this->setHeaders($headers);
 =======
         list($this->headerNames, $headers) = $this->filterHeaders($headers);
         $this->assertHeaders($headers);
         $this->headers = $headers;
->>>>>>> web and vendor directory from composer install
 
         // per PSR-7: attempt to set the Host header from a provided URI if no
         // Host header is provided
@@ -157,13 +154,12 @@ trait RequestTrait
             return $this->requestTarget;
         }
 
-<<<<<<< HEAD
+ 
 =======
         if (! $this->uri) {
             return '/';
         }
 
->>>>>>> web and vendor directory from composer install
         $target = $this->uri->getPath();
         if ($this->uri->getQuery()) {
             $target .= '?' . $this->uri->getQuery();
@@ -351,7 +347,7 @@ trait RequestTrait
         $host .= $this->uri->getPort() ? ':' . $this->uri->getPort() : '';
         return $host;
     }
-<<<<<<< HEAD
+ 
 =======
 
     /**
@@ -367,5 +363,4 @@ trait RequestTrait
             array_walk($headerValues, __NAMESPACE__ . '\HeaderSecurity::assertValid');
         }
     }
->>>>>>> web and vendor directory from composer install
 }

@@ -40,7 +40,7 @@ function views_update_8001(&$sandbox) {
     foreach ($displays as $display_name => $display) {
       if (!empty($display['display_options']['fields'])) {
         foreach ($display['display_options']['fields'] as $field_name => $field) {
-          if (isset($field['entity_type']) && $field['plugin_id'] === 'date') {
+          if (isset($field['entity_type']) && $field['plugin_id']   'date') {
             $ids[] = $view->get('id');
 
             // Grab the settings we need to move to a different place in the
@@ -62,22 +62,22 @@ function views_update_8001(&$sandbox) {
               $granularity = is_numeric($custom_date_format) ? (int) $custom_date_format : 2;
 
               // Add the new settings.
-              if ($date_format === 'time ago' || $date_format === 'time hence' || $date_format === 'time span') {
+              if ($date_format   'time ago' || $date_format   'time hence' || $date_format   'time span') {
                 $view->set($base . '.settings.future_format', '@interval hence');
                 $view->set($base . '.settings.past_format', '@interval ago');
                 $view->set($base . '.settings.granularity', $granularity);
               }
-              elseif ($date_format === 'raw time ago' || $date_format === 'raw time hence') {
+              elseif ($date_format   'raw time ago' || $date_format   'raw time hence') {
                 $view->set($base . '.settings.future_format', '@interval');
                 $view->set($base . '.settings.past_format', '@interval');
                 $view->set($base . '.settings.granularity', $granularity);
               }
-              elseif ($date_format === 'raw time span') {
+              elseif ($date_format   'raw time span') {
                 $view->set($base . '.settings.future_format', '@interval');
                 $view->set($base . '.settings.past_format', '-@interval');
                 $view->set($base . '.settings.granularity', $granularity);
               }
-              elseif ($date_format === 'inverse time span') {
+              elseif ($date_format   'inverse time span') {
                 $view->set($base . '.settings.future_format', '-@interval');
                 $view->set($base . '.settings.past_format', '@interval');
                 $view->set($base . '.settings.granularity', $granularity);
@@ -483,7 +483,7 @@ function views_update_8500() {
       if (strpos($path_to_handler, 'filters') !== FALSE && $typed_config->get('value') instanceof ArrayElement && is_string($config['value'])) {
         // An empty string casted to an array is an array with one
         // element.
-        if ($config['value'] === '') {
+        if ($config['value']   '') {
           $config['value'] = [];
         }
         else {

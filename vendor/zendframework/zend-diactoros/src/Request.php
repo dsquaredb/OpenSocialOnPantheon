@@ -24,11 +24,10 @@ use function strtolower;
  */
 class Request implements RequestInterface
 {
-<<<<<<< HEAD
+ 
     use RequestTrait;
 =======
     use MessageTrait, RequestTrait;
->>>>>>> web and vendor directory from composer install
 
     /**
      * @param null|string|UriInterface $uri URI for the request, if any.
@@ -49,11 +48,10 @@ class Request implements RequestInterface
     {
         $headers = $this->headers;
         if (! $this->hasHeader('host')
-<<<<<<< HEAD
+ 
             && $this->uri->getHost()
 =======
             && ($this->uri && $this->uri->getHost())
->>>>>>> web and vendor directory from composer install
         ) {
             $headers['Host'] = [$this->getHostFromUri()];
         }
@@ -68,11 +66,10 @@ class Request implements RequestInterface
     {
         if (! $this->hasHeader($header)) {
             if (strtolower($header) === 'host'
-<<<<<<< HEAD
+ 
                 && $this->uri->getHost()
 =======
                 && ($this->uri && $this->uri->getHost())
->>>>>>> web and vendor directory from composer install
             ) {
                 return [$this->getHostFromUri()];
             }
@@ -81,7 +78,7 @@ class Request implements RequestInterface
         }
 
         $header = $this->headerNames[strtolower($header)];
-<<<<<<< HEAD
+ 
 
         return $this->headers[$header];
 =======
@@ -89,6 +86,5 @@ class Request implements RequestInterface
         $value  = is_array($value) ? $value : [$value];
 
         return $value;
->>>>>>> web and vendor directory from composer install
     }
 }

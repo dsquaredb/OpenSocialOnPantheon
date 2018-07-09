@@ -4,14 +4,13 @@ namespace Composer\Installers\Test;
 use Composer\Installers\OctoberInstaller;
 use Composer\Package\Package;
 use Composer\Composer;
-<<<<<<< HEAD
+ 
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
 class OctoberInstallerTest extends BaseTestCase
 =======
 
 class OctoberInstallerTest extends \PHPUnit_Framework_TestCase
->>>>>>> web and vendor directory from composer install
 {
     /**
      * @var OctoberInstaller
@@ -69,8 +68,7 @@ class OctoberInstallerTest extends \PHPUnit_Framework_TestCase
             ),
         );
     }
-<<<<<<< HEAD
+ 
 }
 =======
 }
->>>>>>> web and vendor directory from composer install

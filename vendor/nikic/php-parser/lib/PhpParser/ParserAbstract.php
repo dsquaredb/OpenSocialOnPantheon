@@ -91,7 +91,7 @@ abstract class ParserAbstract implements Parser
     /** @var array Start attributes of last *read* token */
     protected $lookaheadStartAttributes;
 
-<<<<<<< HEAD
+ 
     /** @var bool Whether to throw on first error */
     protected $throwOnError;
     /** @var Error[] Errors collected during last parse */
@@ -106,7 +106,6 @@ abstract class ParserAbstract implements Parser
      * Initialize $reduceCallbacks map.
      */
     abstract protected function initReduceCallbacks();
->>>>>>> Update Open Social to 8.x-2.1
 
     /**
      * Creates a parser instance.
@@ -118,24 +117,21 @@ abstract class ParserAbstract implements Parser
      */
     public function __construct(Lexer $lexer, array $options = array()) {
         $this->lexer = $lexer;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         $this->errors = array();
         $this->throwOnError = isset($options['throwOnError']) ? $options['throwOnError'] : true;
     }
 =======
 =======
         $this->errors = [];
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
 
         if (isset($options['throwOnError'])) {
             throw new \LogicException(
                 '"throwOnError" is no longer supported, use "errorHandler" instead');
         }
->>>>>>> Update Open Social to 8.x-2.1
 
     /**
      * Get array of errors that occurred during the last parse.

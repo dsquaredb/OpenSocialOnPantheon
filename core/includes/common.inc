@@ -903,7 +903,7 @@ function drupal_render(&$elements, $is_recursive_call = FALSE) {
  * @see https://www.drupal.org/node/2912757
  */
 function drupal_render_children(&$element, $children_keys = NULL) {
-  if ($children_keys === NULL) {
+  if ($children_keys   NULL) {
     $children_keys = Element::children($element);
   }
   $output = '';

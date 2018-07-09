@@ -81,7 +81,7 @@ class RequestException extends TransferException
         $level = (int) floor($response->getStatusCode() / 100);
         if ($level === 4) {
             $label = 'Client error';
-<<<<<<< HEAD
+ 
             $className = ClientException::class;
         } elseif ($level === 5) {
             $label = 'Server error';
@@ -91,7 +91,6 @@ class RequestException extends TransferException
         } elseif ($level === 5) {
             $label = 'Server error';
             $className = __NAMESPACE__ . '\\ServerException';
->>>>>>> web and vendor directory from composer install
         } else {
             $label = 'Unsuccessful request';
             $className = __CLASS__;
@@ -100,7 +99,7 @@ class RequestException extends TransferException
         $uri = $request->getUri();
         $uri = static::obfuscateUri($uri);
 
-<<<<<<< HEAD
+ 
         // Client Error: `GET /` resulted in a `404 Not Found` response:
         // <html> ... (truncated)
         $message = sprintf(
@@ -118,7 +117,6 @@ class RequestException extends TransferException
             $label,
             $request->getMethod() . ' ' . $uri,
             $response->getStatusCode() . ' ' . $response->getReasonPhrase()
->>>>>>> web and vendor directory from composer install
         );
 
         $summary = static::getResponseBodySummary($response);
@@ -148,14 +146,13 @@ class RequestException extends TransferException
         }
 
         $size = $body->getSize();
-<<<<<<< HEAD
+ 
 
         if ($size === 0) {
             return null;
         }
 
 =======
->>>>>>> web and vendor directory from composer install
         $summary = $body->read(120);
         $body->rewind();
 

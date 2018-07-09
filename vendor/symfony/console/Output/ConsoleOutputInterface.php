@@ -26,13 +26,12 @@ interface ConsoleOutputInterface extends OutputInterface
      */
     public function getErrorOutput();
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * Sets the OutputInterface used for errors.
      *
      * @param OutputInterface $error
      */
->>>>>>> web and vendor directory from composer install
     public function setErrorOutput(OutputInterface $error);
 }

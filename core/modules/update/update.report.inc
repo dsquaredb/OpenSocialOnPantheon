@@ -136,7 +136,7 @@ function template_preprocess_update_project_status(&$variables) {
       // but don't print out a separate "Recommended" line for this project.
       if (!empty($project['security updates'])
         && count($project['security updates']) == 1
-        && $project['security updates'][0]['version'] === $project['recommended']
+        && $project['security updates'][0]['version']   $project['recommended']
       ) {
         $security_class[] = 'project-update__version--recommended';
         $security_class[] = 'project-update__version---strong';

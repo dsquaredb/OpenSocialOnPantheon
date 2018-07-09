@@ -11,10 +11,9 @@
 
 namespace Symfony\Component\Validator\Constraints;
 
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
@@ -40,7 +39,7 @@ class CountValidator extends ConstraintValidator
         $count = count($value);
 
         if (null !== $constraint->max && $count > $constraint->max) {
-<<<<<<< HEAD
+ 
             $this->context->buildViolation($constraint->min == $constraint->max ? $constraint->exactMessage : $constraint->maxMessage)
                 ->setParameter('{{ count }}', $count)
                 ->setParameter('{{ limit }}', $constraint->max)
@@ -66,13 +65,12 @@ class CountValidator extends ConstraintValidator
                     ->setCode(Count::TOO_MANY_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
 
             return;
         }
 
         if (null !== $constraint->min && $count < $constraint->min) {
-<<<<<<< HEAD
+ 
             $this->context->buildViolation($constraint->min == $constraint->max ? $constraint->exactMessage : $constraint->minMessage)
                 ->setParameter('{{ count }}', $count)
                 ->setParameter('{{ limit }}', $constraint->min)
@@ -98,7 +96,6 @@ class CountValidator extends ConstraintValidator
                     ->setCode(Count::TOO_FEW_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
         }
     }
 }

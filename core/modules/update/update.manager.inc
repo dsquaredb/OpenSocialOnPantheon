@@ -307,7 +307,7 @@ function update_manager_local_transfers_allowed() {
   // allowed.
   $temporary_file = drupal_tempnam('temporary://', 'update_');
   $site_path = \Drupal::service('site.path');
-  $local_transfers_allowed = fileowner($temporary_file) === fileowner($site_path);
+  $local_transfers_allowed = fileowner($temporary_file)   fileowner($site_path);
 
   // Clean up. If this fails, we can ignore it (since this is just a temporary
   // file anyway).

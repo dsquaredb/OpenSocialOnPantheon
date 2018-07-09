@@ -7,7 +7,6 @@
  * (c) Fabien Potencier
 =======
  * (c) 2009 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -33,7 +32,6 @@
  *
  * @final
 =======
->>>>>>> web and vendor directory from composer install
  */
 class Twig_TokenParser_Set extends Twig_TokenParser
 {
@@ -54,7 +52,6 @@ class Twig_TokenParser_Set extends Twig_TokenParser
                 throw new Twig_Error_Syntax('When using set, you must have the same number of variables and assignments.', $stream->getCurrent()->getLine(), $stream->getSourceContext());
 =======
                 throw new Twig_Error_Syntax('When using set, you must have the same number of variables and assignments.', $stream->getCurrent()->getLine(), $stream->getSourceContext()->getName());
->>>>>>> web and vendor directory from composer install
             }
         } else {
             $capture = true;
@@ -64,7 +61,6 @@ class Twig_TokenParser_Set extends Twig_TokenParser
                 throw new Twig_Error_Syntax('When using set with a block, you cannot have a multi-target.', $stream->getCurrent()->getLine(), $stream->getSourceContext());
 =======
                 throw new Twig_Error_Syntax('When using set with a block, you cannot have a multi-target.', $stream->getCurrent()->getLine(), $stream->getSourceContext()->getName());
->>>>>>> web and vendor directory from composer install
             }
 
             $stream->expect(Twig_Token::BLOCK_END_TYPE);
@@ -90,4 +86,3 @@ class Twig_TokenParser_Set extends Twig_TokenParser
 
 class_alias('Twig_TokenParser_Set', 'Twig\TokenParser\SetTokenParser', false);
 =======
->>>>>>> web and vendor directory from composer install

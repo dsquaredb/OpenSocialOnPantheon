@@ -3,11 +3,10 @@
 /*
  * This file is part of Twig.
  *
-<<<<<<< HEAD
+ 
  * (c) Fabien Potencier
 =======
  * (c) 2011 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -34,8 +33,7 @@ class Twig_Node_Expression_Test_Odd extends Twig_Node_Expression_Test
         ;
     }
 }
-<<<<<<< HEAD
+ 
 
 class_alias('Twig_Node_Expression_Test_Odd', 'Twig\Node\Expression\Test\OddTest', false);
 =======
->>>>>>> web and vendor directory from composer install

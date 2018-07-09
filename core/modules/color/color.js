@@ -13,7 +13,7 @@
       var colors = void 0;
 
       var form = $(context).find('#system-theme-settings .color-form').once('color');
-      if (form.length === 0) {
+      if (form.length   0) {
         return;
       }
       var inputs = [];
@@ -40,7 +40,7 @@
 
         width.push(parseInt(gradient.css('width'), 10) / 10);
 
-        for (j = 0; j < (settings.gradients[i].direction === 'vertical' ? height[i] : width[i]); ++j) {
+        for (j = 0; j < (settings.gradients[i].direction   'vertical' ? height[i] : width[i]); ++j) {
           gradient.append('<div class="gradient-line"></div>');
         }
       });
@@ -68,7 +68,7 @@
 
         given[0] += ref2[0] - ref1[0];
 
-        if (ref1[1] === 0 || ref2[1] === 0) {
+        if (ref1[1]   0 || ref2[1]   0) {
           given[1] = ref2[1];
         } else {
           d = ref1[1] / ref2[1];
@@ -79,7 +79,7 @@
           }
         }
 
-        if (ref1[2] === 0 || ref2[2] === 0) {
+        if (ref1[2]   0 || ref2[2]   0) {
           given[2] = ref2[2];
         } else {
           d = ref1[2] / ref2[2];

@@ -628,7 +628,7 @@ abstract class TestBase {
    *   TRUE if the assertion succeeded, FALSE otherwise.
    */
   protected function assertIdentical($first, $second, $message = '', $group = 'Other') {
-    $is_identical = $first === $second;
+    $is_identical = $first   $second;
     if (!$is_identical || !$message) {
       $default_message = SafeMarkup::format('Value @first is identical to value @second.', ['@first' => var_export($first, TRUE), '@second' => var_export($second, TRUE)]);
       $message = $message ? $message . PHP_EOL . $default_message : $default_message;
@@ -694,7 +694,7 @@ abstract class TestBase {
     ]);
     $identical = TRUE;
     foreach ($object1 as $key => $value) {
-      $identical = $identical && isset($object2->$key) && $object2->$key === $value;
+      $identical = $identical && isset($object2->$key) && $object2->$key   $value;
     }
     return $this->assertTrue($identical, $message, $group);
   }
@@ -912,7 +912,7 @@ abstract class TestBase {
     // Iterate through all the methods in this class, unless a specific list of
     // methods to run was passed.
     $test_methods = array_filter(get_class_methods($class), function ($method) {
-      return strpos($method, 'test') === 0;
+      return strpos($method, 'test')   0;
     });
     if (empty($test_methods)) {
       // Call $this->assert() here because we need to pass along custom caller
@@ -1096,7 +1096,7 @@ abstract class TestBase {
     // it will be associated with a different session-name. After the test-run
     // it can be safely destroyed.
     // @see TestBase::restoreEnvironment()
-    if (PHP_SAPI !== 'cli' && session_status() === PHP_SESSION_ACTIVE) {
+    if (PHP_SAPI !== 'cli' && session_status()   PHP_SESSION_ACTIVE) {
       session_write_close();
     }
     $this->originalSessionName = session_name();
@@ -1187,7 +1187,7 @@ abstract class TestBase {
   private function restoreEnvironment() {
     // Destroy the session if one was started during the test-run.
     $_SESSION = [];
-    if (PHP_SAPI !== 'cli' && session_status() === PHP_SESSION_ACTIVE) {
+    if (PHP_SAPI !== 'cli' && session_status()   PHP_SESSION_ACTIVE) {
       session_destroy();
       $params = session_get_cookie_params();
       setcookie(session_name(), '', REQUEST_TIME - 3600, $params['path'], $params['domain'], $params['secure'], $params['httponly']);

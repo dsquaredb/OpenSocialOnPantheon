@@ -11,20 +11,18 @@
 
 namespace Symfony\Component\DependencyInjection\Compiler;
 
-<<<<<<< HEAD
+ 
 @trigger_error('The '.__NAMESPACE__.'\LoggingFormatter class is deprecated since Symfony 3.3 and will be removed in 4.0. Use the ContainerBuilder::log() method instead.', E_USER_DEPRECATED);
 
 =======
->>>>>>> web and vendor directory from composer install
 /**
  * Used to format logging messages during the compilation.
  *
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
-<<<<<<< HEAD
+ 
  *
  * @deprecated since version 3.3, to be removed in 4.0. Use the ContainerBuilder::log() method instead.
 =======
->>>>>>> web and vendor directory from composer install
  */
 class LoggingFormatter
 {
@@ -48,14 +46,13 @@ class LoggingFormatter
         return $this->format($pass, sprintf('Resolving inheritance for "%s" (parent: %s).', $childId, $parentId));
     }
 
-<<<<<<< HEAD
+ 
     public function formatUnusedAutowiringPatterns(CompilerPassInterface $pass, $id, array $patterns)
     {
         return $this->format($pass, sprintf('Autowiring\'s patterns "%s" for service "%s" don\'t match any method.', implode('", "', $patterns), $id));
     }
 
 =======
->>>>>>> web and vendor directory from composer install
     public function format(CompilerPassInterface $pass, $message)
     {
         return sprintf('%s: %s', get_class($pass), $message);

@@ -4,14 +4,13 @@ namespace Composer\Installers\Test;
 use Composer\Installers\AsgardInstaller;
 use Composer\Package\Package;
 use Composer\Composer;
-<<<<<<< HEAD
+ 
 use PHPUnit\Framework\TestCase;
 
 class AsgardInstallerTest extends TestCase
 =======
 
 class AsgardInstallerTest extends \PHPUnit_Framework_TestCase
->>>>>>> web and vendor directory from composer install
 {
     /**
      * @var AsgardInstaller

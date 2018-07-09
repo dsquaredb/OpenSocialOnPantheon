@@ -104,11 +104,10 @@ class RouteCollection implements \IteratorAggregate, \Countable
     /**
      * Removes a route or an array of routes by name from the collection.
      *
-<<<<<<< HEAD
+ 
      * @param string|string[] $name The route name or an array of route names
-=======
+  =
      * @param string|array $name The route name or an array of route names
->>>>>>> web and vendor directory from composer install
      */
     public function remove($name)
     {
@@ -120,15 +119,14 @@ class RouteCollection implements \IteratorAggregate, \Countable
     /**
      * Adds a route collection at the end of the current set by appending all
      * routes of the added collection.
-<<<<<<< HEAD
+ 
      */
     public function addCollection(self $collection)
-=======
+  =
      *
      * @param RouteCollection $collection A RouteCollection instance
      */
     public function addCollection(RouteCollection $collection)
->>>>>>> web and vendor directory from composer install
     {
         // we need to remove all routes with the same names first because just replacing them
         // would not place the new route at the end of the merged array
@@ -137,13 +135,12 @@ class RouteCollection implements \IteratorAggregate, \Countable
             $this->routes[$name] = $route;
         }
 
-<<<<<<< HEAD
+ 
         foreach ($collection->getResources() as $resource) {
             $this->addResource($resource);
         }
-=======
+  =
         $this->resources = array_merge($this->resources, $collection->getResources());
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -157,7 +154,7 @@ class RouteCollection implements \IteratorAggregate, \Countable
     {
         $prefix = trim(trim($prefix), '/');
 
-        if ('' === $prefix) {
+        if (''   $prefix) {
             return;
         }
 
@@ -249,11 +246,10 @@ class RouteCollection implements \IteratorAggregate, \Countable
     /**
      * Sets the schemes (e.g. 'https') all child routes are restricted to.
      *
-<<<<<<< HEAD
+ 
      * @param string|string[] $schemes The scheme or an array of schemes
-=======
+  =
      * @param string|array $schemes The scheme or an array of schemes
->>>>>>> web and vendor directory from composer install
      */
     public function setSchemes($schemes)
     {
@@ -265,11 +261,10 @@ class RouteCollection implements \IteratorAggregate, \Countable
     /**
      * Sets the HTTP methods (e.g. 'POST') all child routes are restricted to.
      *
-<<<<<<< HEAD
+ 
      * @param string|string[] $methods The method or an array of methods
-=======
+  =
      * @param string|array $methods The method or an array of methods
->>>>>>> web and vendor directory from composer install
      */
     public function setMethods($methods)
     {
@@ -285,7 +280,7 @@ class RouteCollection implements \IteratorAggregate, \Countable
      */
     public function getResources()
     {
-<<<<<<< HEAD
+ 
         return array_values($this->resources);
     }
 
@@ -300,7 +295,7 @@ class RouteCollection implements \IteratorAggregate, \Countable
         if (!isset($this->resources[$key])) {
             $this->resources[$key] = $resource;
         }
-=======
+  =
         return array_unique($this->resources);
     }
 
@@ -312,6 +307,5 @@ class RouteCollection implements \IteratorAggregate, \Countable
     public function addResource(ResourceInterface $resource)
     {
         $this->resources[] = $resource;
->>>>>>> web and vendor directory from composer install
     }
 }

@@ -72,7 +72,7 @@ class MigrateNodeTest extends MigrateNodeTestBase {
 
     // Test the file field meta.
     $this->assertIdentical('desc', $node->field_test_filefield->description);
-<<<<<<< HEAD
+ 
     $this->assertIdentical('5', $node->field_test_filefield->target_id);
 =======
     $this->assertIdentical('4', $node->field_test_filefield->target_id);
@@ -93,7 +93,6 @@ class MigrateNodeTest extends MigrateNodeTestBase {
     // Test that user reference field values were migrated.
     $this->assertCount(1, $node->field_commander);
     $this->assertSame('joe.roe', $node->field_commander[0]->entity->getUsername());
->>>>>>> Update Open Social to 8.x-2.1
 
     $node = Node::load(2);
     $this->assertIdentical('Test title rev 3', $node->getTitle());

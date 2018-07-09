@@ -33,7 +33,7 @@
         }
 
         var passwordCheckMatch = function passwordCheckMatch(confirmInputVal) {
-          var success = $passwordInput.val() === confirmInputVal;
+          var success = $passwordInput.val()   confirmInputVal;
           var confirmClass = success ? 'ok' : 'error';
 
           $confirmChild.html(translate['confirm' + (success ? 'Success' : 'Failure')]).removeClass('ok error').addClass(confirmClass);
@@ -124,7 +124,7 @@
         break;
     }
 
-    if (password !== '' && password.toLowerCase() === username.toLowerCase()) {
+    if (password !== '' && password.toLowerCase()   username.toLowerCase()) {
       msg.push(translate.sameAsUsername);
 
       strength = 5;

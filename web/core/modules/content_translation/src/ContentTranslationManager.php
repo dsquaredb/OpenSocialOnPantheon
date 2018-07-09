@@ -71,19 +71,16 @@ class ContentTranslationManager implements ContentTranslationManagerInterface {
   public function setEnabled($entity_type_id, $bundle, $value) {
     $config = $this->loadContentLanguageSettings($entity_type_id, $bundle);
     $config->setThirdPartySetting('content_translation', 'enabled', $value)->save();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
     $entity_type = $this->entityManager->getDefinition($entity_type_id);
     $this->updatesManager->updateDefinitions(array($entity_type_id => $entity_type));
 =======
->>>>>>> Update Open Social to 8.x-2.1
 =======
     $entity_type = $this->entityManager->getDefinition($entity_type_id);
     $this->updatesManager->updateDefinitions([$entity_type_id => $entity_type]);
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
   }
 
   /**

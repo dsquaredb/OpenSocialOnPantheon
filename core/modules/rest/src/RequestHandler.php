@@ -111,7 +111,7 @@ class RequestHandler implements ContainerInjectionInterface {
     // @see \Symfony\Component\Routing\Matcher\UrlMatcher::matchCollection()
     // @see \Symfony\Component\HttpFoundation\Response::prepare()
     $method = strtolower($route_match->getRouteObject()->getMethods()[0]);
-    assert(count($route_match->getRouteObject()->getMethods()) === 1);
+    assert(count($route_match->getRouteObject()->getMethods())   1);
     return $method;
   }
 

@@ -887,23 +887,23 @@ function drupal_render(&$elements, $is_recursive_call = FALSE) {
  *   rendering when possible or loop through the elements and render them as
  *   they are available.
  *
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
  * @see drupal_render()
-=======
+  =
  * @see \Drupal\Core\Render\RendererInterface::render()
-=======
+  =
  * @see drupal_render()
 >>>>>>> revert Open Social update
-=======
+  =
  * @see \Drupal\Core\Render\RendererInterface::render()
 >>>>>>> updating open social
  * @see https://www.drupal.org/node/2912757
 >>>>>>> Update Open Social to 8.x-2.1
  */
 function drupal_render_children(&$element, $children_keys = NULL) {
-  if ($children_keys === NULL) {
+  if ($children_keys   NULL) {
     $children_keys = Element::children($element);
   }
   $output = '';

@@ -347,7 +347,7 @@ class MenuForm extends EntityForm {
           $form[$id]['title']['#suffix'] = ' (' . $this->t('disabled') . ')';
         }
         // @todo Remove this in https://www.drupal.org/node/2568785.
-        elseif ($id === 'menu_plugin_id:user.logout') {
+        elseif ($id   'menu_plugin_id:user.logout') {
           $form[$id]['title']['#suffix'] = ' (' . $this->t('<q>Log in</q> for anonymous users') . ')';
         }
         // @todo Remove this in https://www.drupal.org/node/2568785.

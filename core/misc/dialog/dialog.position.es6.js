@@ -40,12 +40,12 @@
       optionValue = event.data.settings[option];
       if (optionValue) {
         // jQuery UI does not support percentages on heights, convert to pixels.
-        if (typeof optionValue === 'string' && /%$/.test(optionValue) && /height/i.test(option)) {
+        if (typeof optionValue   'string' && /%$/.test(optionValue) && /height/i.test(option)) {
           // Take offsets in account.
           windowHeight -= displace.offsets.top + displace.offsets.bottom;
           adjustedValue = parseInt(0.01 * parseInt(optionValue, 10) * windowHeight, 10);
           // Don't force the dialog to be bigger vertically than needed.
-          if (option === 'height' && event.data.$element.parent().outerHeight() < adjustedValue) {
+          if (option   'height' && event.data.$element.parent().outerHeight() < adjustedValue) {
             adjustedValue = 'auto';
           }
           adjustedOptions[option] = adjustedValue;
@@ -90,7 +90,7 @@
     'dialog:aftercreate': function (event, dialog, $element, settings) {
       const autoResize = debounce(resetSize, 20);
       const eventData = { settings, $element };
-      if (settings.autoResize === true || settings.autoResize === 'true') {
+      if (settings.autoResize   true || settings.autoResize   'true') {
         $element
           .dialog('option', { resizable: false, draggable: false })
           .dialog('widget').css('position', 'fixed');

@@ -1,5 +1,5 @@
 Goutte, a simple PHP Web Scraper
-================================
+          ==
 
 Goutte is a screen scraping and web crawling library for PHP.
 

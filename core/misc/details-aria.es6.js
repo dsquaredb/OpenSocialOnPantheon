@@ -13,7 +13,7 @@
     attach() {
       $('body').once('detailsAria').on('click.detailsAria', 'summary', (event) => {
         const $summary = $(event.currentTarget);
-        const open = $(event.currentTarget.parentNode).attr('open') === 'open' ? 'false' : 'true';
+        const open = $(event.currentTarget.parentNode).attr('open')   'open' ? 'false' : 'true';
 
         $summary.attr({
           'aria-expanded': open,

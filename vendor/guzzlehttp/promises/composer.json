@@ -1,7 +1,7 @@
 {
     "name": "guzzlehttp/promises",
-<<<<<<< HEAD
-=======
+ 
+  =
     "type": "library",
 >>>>>>> web and vendor directory from composer install
     "description": "Guzzle promises library",
@@ -18,9 +18,9 @@
         "php": ">=5.5.0"
     },
     "require-dev": {
-<<<<<<< HEAD
+ 
         "phpunit/phpunit": "^4.0"
-=======
+  =
         "phpunit/phpunit": "~4.0"
 >>>>>>> web and vendor directory from composer install
     },
@@ -30,7 +30,7 @@
         },
         "files": ["src/functions_include.php"]
     },
-<<<<<<< HEAD
+ 
     "scripts": {
         "test": "vendor/bin/phpunit",
         "test-ci": "vendor/bin/phpunit --coverage-text"
@@ -38,7 +38,7 @@
     "extra": {
         "branch-alias": {
             "dev-master": "1.4-dev"
-=======
+  =
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"

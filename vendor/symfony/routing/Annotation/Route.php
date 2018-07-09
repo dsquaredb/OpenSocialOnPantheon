@@ -32,11 +32,10 @@ class Route
     private $condition;
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param array $data An array of key/value parameters
      *
      * @throws \BadMethodCallException
@@ -57,7 +56,7 @@ class Route
         }
     }
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * @deprecated since version 2.2, to be removed in 3.0. Use setPath instead.
@@ -79,7 +78,6 @@ class Route
         return $this->path;
     }
 
->>>>>>> web and vendor directory from composer install
     public function setPath($path)
     {
         $this->path = $path;
@@ -112,7 +110,7 @@ class Route
 
     public function setRequirements($requirements)
     {
-<<<<<<< HEAD
+ 
 =======
         if (isset($requirements['_method'])) {
             if (0 === count($this->methods)) {
@@ -130,7 +128,6 @@ class Route
             @trigger_error('The "_scheme" requirement is deprecated since version 2.2 and will be removed in 3.0. Use the "schemes" option instead.', E_USER_DEPRECATED);
         }
 
->>>>>>> web and vendor directory from composer install
         $this->requirements = $requirements;
     }
 

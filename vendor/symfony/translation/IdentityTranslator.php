@@ -22,11 +22,10 @@ class IdentityTranslator implements TranslatorInterface
     private $locale;
 
     /**
-<<<<<<< HEAD
-=======
+ 
+  =
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param MessageSelector|null $selector The message selector for pluralization
      */
     public function __construct(MessageSelector $selector = null)

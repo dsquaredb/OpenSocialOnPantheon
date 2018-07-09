@@ -27,7 +27,7 @@ class Callback extends Constraint
     public $callback;
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * @var array
      *
@@ -36,7 +36,6 @@ class Callback extends Constraint
     public $methods;
 
     /**
->>>>>>> web and vendor directory from composer install
      * {@inheritdoc}
      */
     public function __construct($options = null)
@@ -46,7 +45,7 @@ class Callback extends Constraint
             $options = $options['value'];
         }
 
-<<<<<<< HEAD
+ 
         if (is_array($options) && !isset($options['callback']) && !isset($options['groups']) && !isset($options['payload'])) {
             $options = array('callback' => $options);
 =======
@@ -61,7 +60,6 @@ class Callback extends Constraint
                 // @deprecated, to be removed in 3.0
                 $options = array('methods' => $options);
             }
->>>>>>> web and vendor directory from composer install
         }
 
         parent::__construct($options);

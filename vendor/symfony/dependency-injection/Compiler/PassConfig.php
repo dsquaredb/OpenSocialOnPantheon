@@ -39,7 +39,7 @@ class PassConfig
     {
         $this->mergePass = new MergeExtensionConfigurationPass();
 
-<<<<<<< HEAD
+ 
         $this->beforeOptimizationPasses = array(
             100 => array(
                 $resolveClassPass = new ResolveClassPass(),
@@ -95,7 +95,6 @@ class PassConfig
         );
 
         $this->removingPasses = array(
->>>>>>> web and vendor directory from composer install
             new RemovePrivateAliasesPass(),
             new ReplaceAliasByActualDefinitionPass(),
             new RemoveAbstractDefinitionsPass(),
@@ -105,7 +104,7 @@ class PassConfig
                 new AnalyzeServiceReferencesPass(),
                 new RemoveUnusedDefinitionsPass(),
             )),
-<<<<<<< HEAD
+ 
             new DefinitionErrorExceptionPass(),
             new CheckExceptionOnInvalidReferenceBehaviorPass(),
             new ResolveHotPathPass(),
@@ -113,23 +112,21 @@ class PassConfig
 =======
             new CheckExceptionOnInvalidReferenceBehaviorPass(),
         );
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Returns all passes in order to be processed.
      *
-<<<<<<< HEAD
+ 
      * @return CompilerPassInterface[]
 =======
      * @return array An array of all passes to process
->>>>>>> web and vendor directory from composer install
      */
     public function getPasses()
     {
         return array_merge(
             array($this->mergePass),
-<<<<<<< HEAD
+ 
             $this->getBeforeOptimizationPasses(),
             $this->getOptimizationPasses(),
             $this->getBeforeRemovingPasses(),
@@ -141,14 +138,13 @@ class PassConfig
             $this->beforeRemovingPasses,
             $this->removingPasses,
             $this->afterRemovingPasses
->>>>>>> web and vendor directory from composer install
         );
     }
 
     /**
      * Adds a pass.
      *
-<<<<<<< HEAD
+ 
      * @param CompilerPassInterface $pass     A Compiler pass
      * @param string                $type     The pass type
      * @param int                   $priority Used to sort the passes
@@ -178,13 +174,12 @@ class PassConfig
      */
     public function addPass(CompilerPassInterface $pass, $type = self::TYPE_BEFORE_OPTIMIZATION)
     {
->>>>>>> web and vendor directory from composer install
         $property = $type.'Passes';
         if (!isset($this->$property)) {
             throw new InvalidArgumentException(sprintf('Invalid type "%s".', $type));
         }
 
-<<<<<<< HEAD
+ 
         $passes = &$this->$property;
 
         if (!isset($passes[$priority])) {
@@ -193,13 +188,12 @@ class PassConfig
         $passes[$priority][] = $pass;
 =======
         $this->{$property}[] = $pass;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Gets all passes for the AfterRemoving pass.
      *
-<<<<<<< HEAD
+ 
      * @return CompilerPassInterface[]
      */
     public function getAfterRemovingPasses()
@@ -211,13 +205,12 @@ class PassConfig
     public function getAfterRemovingPasses()
     {
         return $this->afterRemovingPasses;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Gets all passes for the BeforeOptimization pass.
      *
-<<<<<<< HEAD
+ 
      * @return CompilerPassInterface[]
      */
     public function getBeforeOptimizationPasses()
@@ -229,13 +222,12 @@ class PassConfig
     public function getBeforeOptimizationPasses()
     {
         return $this->beforeOptimizationPasses;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Gets all passes for the BeforeRemoving pass.
      *
-<<<<<<< HEAD
+ 
      * @return CompilerPassInterface[]
      */
     public function getBeforeRemovingPasses()
@@ -247,13 +239,12 @@ class PassConfig
     public function getBeforeRemovingPasses()
     {
         return $this->beforeRemovingPasses;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Gets all passes for the Optimization pass.
      *
-<<<<<<< HEAD
+ 
      * @return CompilerPassInterface[]
      */
     public function getOptimizationPasses()
@@ -265,13 +256,12 @@ class PassConfig
     public function getOptimizationPasses()
     {
         return $this->optimizationPasses;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Gets all passes for the Removing pass.
      *
-<<<<<<< HEAD
+ 
      * @return CompilerPassInterface[]
      */
     public function getRemovingPasses()
@@ -283,31 +273,28 @@ class PassConfig
     public function getRemovingPasses()
     {
         return $this->removingPasses;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Gets the Merge pass.
      *
-<<<<<<< HEAD
+ 
      * @return CompilerPassInterface
 =======
      * @return CompilerPassInterface The merge pass
->>>>>>> web and vendor directory from composer install
      */
     public function getMergePass()
     {
         return $this->mergePass;
     }
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * Sets the Merge Pass.
      *
      * @param CompilerPassInterface $pass The merge pass
      */
->>>>>>> web and vendor directory from composer install
     public function setMergePass(CompilerPassInterface $pass)
     {
         $this->mergePass = $pass;
@@ -316,7 +303,7 @@ class PassConfig
     /**
      * Sets the AfterRemoving passes.
      *
-<<<<<<< HEAD
+ 
      * @param CompilerPassInterface[] $passes
      */
     public function setAfterRemovingPasses(array $passes)
@@ -328,13 +315,12 @@ class PassConfig
     public function setAfterRemovingPasses(array $passes)
     {
         $this->afterRemovingPasses = $passes;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Sets the BeforeOptimization passes.
      *
-<<<<<<< HEAD
+ 
      * @param CompilerPassInterface[] $passes
      */
     public function setBeforeOptimizationPasses(array $passes)
@@ -346,13 +332,12 @@ class PassConfig
     public function setBeforeOptimizationPasses(array $passes)
     {
         $this->beforeOptimizationPasses = $passes;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Sets the BeforeRemoving passes.
      *
-<<<<<<< HEAD
+ 
      * @param CompilerPassInterface[] $passes
      */
     public function setBeforeRemovingPasses(array $passes)
@@ -364,13 +349,12 @@ class PassConfig
     public function setBeforeRemovingPasses(array $passes)
     {
         $this->beforeRemovingPasses = $passes;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Sets the Optimization passes.
      *
-<<<<<<< HEAD
+ 
      * @param CompilerPassInterface[] $passes
      */
     public function setOptimizationPasses(array $passes)
@@ -382,13 +366,12 @@ class PassConfig
     public function setOptimizationPasses(array $passes)
     {
         $this->optimizationPasses = $passes;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Sets the Removing passes.
      *
-<<<<<<< HEAD
+ 
      * @param CompilerPassInterface[] $passes
      */
     public function setRemovingPasses(array $passes)
@@ -419,6 +402,5 @@ class PassConfig
     public function setRemovingPasses(array $passes)
     {
         $this->removingPasses = $passes;
->>>>>>> web and vendor directory from composer install
     }
 }

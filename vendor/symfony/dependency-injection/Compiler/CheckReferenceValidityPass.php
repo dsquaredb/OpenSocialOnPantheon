@@ -12,7 +12,7 @@
 namespace Symfony\Component\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Definition;
-<<<<<<< HEAD
+ 
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\DependencyInjection\Exception\RuntimeException;
 =======
@@ -22,14 +22,13 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Exception\RuntimeException;
 use Symfony\Component\DependencyInjection\Exception\ScopeCrossingInjectionException;
 use Symfony\Component\DependencyInjection\Exception\ScopeWideningInjectionException;
->>>>>>> web and vendor directory from composer install
 
 /**
  * Checks the validity of references.
  *
  * The following checks are performed by this pass:
  * - target definitions are not abstract
-<<<<<<< HEAD
+ 
  *
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
  */
@@ -192,6 +191,5 @@ class CheckReferenceValidityPass implements CompilerPassInterface
         }
 
         return $this->container->getDefinition($id);
->>>>>>> web and vendor directory from composer install
     }
 }

@@ -16,12 +16,11 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Templating\EngineInterface;
 use Symfony\Component\HttpKernel\Controller\ControllerReference;
 use Symfony\Component\HttpKernel\UriSigner;
-<<<<<<< HEAD
+ 
 use Twig\Environment;
 use Twig\Error\LoaderError;
 use Twig\Loader\ExistsLoaderInterface;
 =======
->>>>>>> web and vendor directory from composer install
 
 /**
  * Implements the Hinclude rendering strategy.
@@ -36,7 +35,7 @@ class HIncludeFragmentRenderer extends RoutableFragmentRenderer
     private $charset;
 
     /**
-<<<<<<< HEAD
+ 
      * @param EngineInterface|Environment $templating            An EngineInterface or a Twig instance
      * @param UriSigner                   $signer                A UriSigner instance
      * @param string                      $globalDefaultTemplate The global default content (it can be a template name or the content)
@@ -48,7 +47,6 @@ class HIncludeFragmentRenderer extends RoutableFragmentRenderer
      * @param UriSigner                         $signer                A UriSigner instance
      * @param string                            $globalDefaultTemplate The global default content (it can be a template name or the content)
      * @param string                            $charset
->>>>>>> web and vendor directory from composer install
      */
     public function __construct($templating = null, UriSigner $signer = null, $globalDefaultTemplate = null, $charset = 'utf-8')
     {
@@ -61,23 +59,21 @@ class HIncludeFragmentRenderer extends RoutableFragmentRenderer
     /**
      * Sets the templating engine to use to render the default content.
      *
-<<<<<<< HEAD
+ 
      * @param EngineInterface|Environment|null $templating An EngineInterface or an Environment instance
 =======
      * @param EngineInterface|\Twig_Environment|null $templating An EngineInterface or a \Twig_Environment instance
->>>>>>> web and vendor directory from composer install
      *
      * @throws \InvalidArgumentException
      */
     public function setTemplating($templating)
     {
-<<<<<<< HEAD
+ 
         if (null !== $templating && !$templating instanceof EngineInterface && !$templating instanceof Environment) {
             throw new \InvalidArgumentException('The hinclude rendering strategy needs an instance of Twig\Environment or Symfony\Component\Templating\EngineInterface');
 =======
         if (null !== $templating && !$templating instanceof EngineInterface && !$templating instanceof \Twig_Environment) {
             throw new \InvalidArgumentException('The hinclude rendering strategy needs an instance of \Twig_Environment or Symfony\Component\Templating\EngineInterface');
->>>>>>> web and vendor directory from composer install
         }
 
         $this->templating = $templating;
@@ -129,7 +125,7 @@ class HIncludeFragmentRenderer extends RoutableFragmentRenderer
         }
         $renderedAttributes = '';
         if (count($attributes) > 0) {
-<<<<<<< HEAD
+ 
             $flags = ENT_QUOTES | ENT_SUBSTITUTE;
 =======
             if (PHP_VERSION_ID >= 50400) {
@@ -137,7 +133,6 @@ class HIncludeFragmentRenderer extends RoutableFragmentRenderer
             } else {
                 $flags = ENT_QUOTES;
             }
->>>>>>> web and vendor directory from composer install
             foreach ($attributes as $attribute => $value) {
                 $renderedAttributes .= sprintf(
                     ' %s="%s"',
@@ -166,16 +161,15 @@ class HIncludeFragmentRenderer extends RoutableFragmentRenderer
         }
 
         $loader = $this->templating->getLoader();
-<<<<<<< HEAD
+ 
         if ($loader instanceof ExistsLoaderInterface || method_exists($loader, 'exists')) {
 =======
         if ($loader instanceof \Twig_ExistsLoaderInterface) {
->>>>>>> web and vendor directory from composer install
             return $loader->exists($template);
         }
 
         try {
-<<<<<<< HEAD
+ 
             if (method_exists($loader, 'getSourceContext')) {
                 $loader->getSourceContext($template);
             } else {
@@ -189,7 +183,6 @@ class HIncludeFragmentRenderer extends RoutableFragmentRenderer
 
             return true;
         } catch (\Twig_Error_Loader $e) {
->>>>>>> web and vendor directory from composer install
         }
 
         return false;

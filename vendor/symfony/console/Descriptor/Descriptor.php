@@ -29,11 +29,10 @@ abstract class Descriptor implements DescriptorInterface
     /**
      * @var OutputInterface
      */
-<<<<<<< HEAD
+ 
     protected $output;
 =======
     private $output;
->>>>>>> web and vendor directory from composer install
 
     /**
      * {@inheritdoc}
@@ -77,12 +76,11 @@ abstract class Descriptor implements DescriptorInterface
     /**
      * Describes an InputArgument instance.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param InputArgument $argument
      * @param array         $options
      *
->>>>>>> web and vendor directory from composer install
      * @return string|mixed
      */
     abstract protected function describeInputArgument(InputArgument $argument, array $options = array());
@@ -90,12 +88,11 @@ abstract class Descriptor implements DescriptorInterface
     /**
      * Describes an InputOption instance.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param InputOption $option
      * @param array       $options
      *
->>>>>>> web and vendor directory from composer install
      * @return string|mixed
      */
     abstract protected function describeInputOption(InputOption $option, array $options = array());
@@ -103,12 +100,11 @@ abstract class Descriptor implements DescriptorInterface
     /**
      * Describes an InputDefinition instance.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param InputDefinition $definition
      * @param array           $options
      *
->>>>>>> web and vendor directory from composer install
      * @return string|mixed
      */
     abstract protected function describeInputDefinition(InputDefinition $definition, array $options = array());
@@ -116,12 +112,11 @@ abstract class Descriptor implements DescriptorInterface
     /**
      * Describes a Command instance.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Command $command
      * @param array   $options
      *
->>>>>>> web and vendor directory from composer install
      * @return string|mixed
      */
     abstract protected function describeCommand(Command $command, array $options = array());
@@ -129,12 +124,11 @@ abstract class Descriptor implements DescriptorInterface
     /**
      * Describes an Application instance.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Application $application
      * @param array       $options
      *
->>>>>>> web and vendor directory from composer install
      * @return string|mixed
      */
     abstract protected function describeApplication(Application $application, array $options = array());

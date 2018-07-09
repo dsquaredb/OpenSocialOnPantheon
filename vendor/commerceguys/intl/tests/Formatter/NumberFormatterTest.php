@@ -174,7 +174,7 @@ class NumberFormatterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * @covers ::parse
      *
@@ -192,7 +192,6 @@ class NumberFormatterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
->>>>>>> revert Open Social update
      * @covers ::parseCurrency
      *
      * @uses \CommerceGuys\Intl\Currency\Currency
@@ -356,7 +355,7 @@ class NumberFormatterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Provides values for the formatted value parser.
      */
@@ -370,7 +369,6 @@ class NumberFormatterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
->>>>>>> revert Open Social update
      * Provides values for the formatted currency parser.
      */
     public function formattedCurrencyProvider()

@@ -35,7 +35,6 @@ class SiteNameTest extends BrowserTestBase {
   function testSiteName() {
 =======
   public function testSiteName() {
->>>>>>> revert Open Social update
     $this->drupalGet('');
     $this->assertRaw($this->siteName, 'The site name that was set during the installation appears on the front page after installation.');
   }

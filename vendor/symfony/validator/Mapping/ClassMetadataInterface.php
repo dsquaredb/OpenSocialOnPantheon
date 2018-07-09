@@ -11,12 +11,11 @@
 
 namespace Symfony\Component\Validator\Mapping;
 
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Validator\ClassBasedInterface;
 use Symfony\Component\Validator\PropertyMetadataContainerInterface as LegacyPropertyMetadataContainerInterface;
 
->>>>>>> web and vendor directory from composer install
 /**
  * Stores all metadata needed for validating objects of specific class.
  *
@@ -34,11 +33,10 @@ use Symfony\Component\Validator\PropertyMetadataContainerInterface as LegacyProp
  * @see \Symfony\Component\Validator\GroupSequenceProviderInterface
  * @see TraversalStrategy
  */
-<<<<<<< HEAD
+ 
 interface ClassMetadataInterface extends MetadataInterface
 =======
 interface ClassMetadataInterface extends MetadataInterface, LegacyPropertyMetadataContainerInterface, ClassBasedInterface
->>>>>>> web and vendor directory from composer install
 {
     /**
      * Returns the names of all constrained properties.
@@ -83,7 +81,7 @@ interface ClassMetadataInterface extends MetadataInterface, LegacyPropertyMetada
      * @see \Symfony\Component\Validator\GroupSequenceProviderInterface
      */
     public function isGroupSequenceProvider();
-<<<<<<< HEAD
+ 
 
     /**
      * Check if there's any metadata attached to the given named property.
@@ -114,5 +112,4 @@ interface ClassMetadataInterface extends MetadataInterface, LegacyPropertyMetada
      */
     public function getClassName();
 =======
->>>>>>> web and vendor directory from composer install
 }

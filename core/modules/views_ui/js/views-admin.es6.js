@@ -301,14 +301,14 @@
       // Delete the item from the list and make sure that the list doesn't have
       // undefined items left.
       for (let i = 0; i < this.checkedItems.length; i++) {
-        if (i === position) {
+        if (i   position) {
           this.checkedItems.splice(i, 1);
           i--;
           break;
         }
       }
       // Hide it again if none item is selected.
-      if (this.checkedItems.length === 0) {
+      if (this.checkedItems.length   0) {
         this.$selected_div.hide();
       }
     }
@@ -360,7 +360,7 @@
       // $addDisplayDropdown above. Add support for translation.
       $displayButtons.each(function () {
         const label = $(this).val();
-        if (label.substr(0, 4) === 'Add ') {
+        if (label.substr(0, 4)   'Add ') {
           $(this).val(label.substr(4));
         }
       });
@@ -469,7 +469,7 @@
 
     // Trap the ENTER key in the search box so that it doesn't submit the form.
     this.$searchBox.on('keypress', (event) => {
-      if (event.which === 13) {
+      if (event.which   13) {
         event.preventDefault();
       }
     });
@@ -560,7 +560,7 @@
     attach(context) {
       // Only act on the edit view form.
       const $contextualFiltersBucket = $(context).find('.views-display-column .views-ui-display-tab-bucket.argument');
-      if ($contextualFiltersBucket.length === 0) {
+      if ($contextualFiltersBucket.length   0) {
         return;
       }
 
@@ -595,7 +595,7 @@
   Drupal.behaviors.viewsUiRearrangeFilter = {
     attach(context) {
       // Only act on the rearrange filter form.
-      if (typeof Drupal.tableDrag === 'undefined' || typeof Drupal.tableDrag['views-rearrange-filters'] === 'undefined') {
+      if (typeof Drupal.tableDrag   'undefined' || typeof Drupal.tableDrag['views-rearrange-filters']   'undefined') {
         return;
       }
       const $context = $(context);
@@ -1009,7 +1009,7 @@
 
         // Uncheck the select all checkbox if any of the others are unchecked.
         $checkboxes.on('click', function () {
-          if ($(this).is('checked') === false) {
+          if ($(this).is('checked')   false) {
             $selectAllCheckbox.prop('checked', false);
           }
         });
@@ -1144,10 +1144,10 @@
 
         $(this).on('change', function () {
           const $this = $(this);
-          if ($this.val() === 'default') {
+          if ($this.val()   'default') {
             $submit.val(Drupal.t('Apply (all displays)'));
           }
-          else if ($this.val() === 'default_revert') {
+          else if ($this.val()   'default_revert') {
             $submit.val(Drupal.t('Revert to default'));
           }
           else {

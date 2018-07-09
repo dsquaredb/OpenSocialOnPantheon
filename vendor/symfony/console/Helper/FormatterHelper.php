@@ -73,7 +73,7 @@ class FormatterHelper extends Helper
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Truncates a message to the given length.
      *
      * @param string $message
@@ -99,7 +99,6 @@ class FormatterHelper extends Helper
 
     /**
 =======
->>>>>>> web and vendor directory from composer install
      * {@inheritdoc}
      */
     public function getName()

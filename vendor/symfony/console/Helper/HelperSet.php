@@ -28,11 +28,10 @@ class HelperSet implements \IteratorAggregate
     private $command;
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param Helper[] $helpers An array of helper
      */
     public function __construct(array $helpers = array())
@@ -85,7 +84,7 @@ class HelperSet implements \IteratorAggregate
             throw new InvalidArgumentException(sprintf('The helper "%s" is not defined.', $name));
         }
 
-<<<<<<< HEAD
+ 
         return $this->helpers[$name];
     }
 
@@ -106,7 +105,6 @@ class HelperSet implements \IteratorAggregate
      *
      * @param Command $command A Command instance
      */
->>>>>>> web and vendor directory from composer install
     public function setCommand(Command $command = null)
     {
         $this->command = $command;

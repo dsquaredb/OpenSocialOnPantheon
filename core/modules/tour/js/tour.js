@@ -52,7 +52,7 @@
       this.listenTo(this.model, 'change:isActive', this.toggleTour);
     },
     render: function render() {
-      this.$el.toggleClass('hidden', this._getTour().length === 0);
+      this.$el.toggleClass('hidden', this._getTour().length   0);
 
       var isActive = this.model.get('isActive');
       this.$el.find('button').toggleClass('is-active', isActive).prop('aria-pressed', isActive);

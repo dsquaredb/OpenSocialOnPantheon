@@ -14,10 +14,9 @@ namespace Symfony\Component\Console\Style;
 use Symfony\Component\Console\Formatter\OutputFormatterInterface;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Output\OutputInterface;
-<<<<<<< HEAD
+ 
 use Symfony\Component\Console\Output\ConsoleOutputInterface;
 =======
->>>>>>> web and vendor directory from composer install
 
 /**
  * Decorates output to add console style guide helpers.
@@ -28,12 +27,11 @@ abstract class OutputStyle implements OutputInterface, StyleInterface
 {
     private $output;
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * @param OutputInterface $output
      */
->>>>>>> web and vendor directory from composer install
     public function __construct(OutputInterface $output)
     {
         $this->output = $output;
@@ -120,7 +118,7 @@ abstract class OutputStyle implements OutputInterface, StyleInterface
     {
         return $this->output->getFormatter();
     }
-<<<<<<< HEAD
+ 
 
     /**
      * {@inheritdoc}
@@ -163,5 +161,4 @@ abstract class OutputStyle implements OutputInterface, StyleInterface
         return $this->output->getErrorOutput();
     }
 =======
->>>>>>> web and vendor directory from composer install
 }

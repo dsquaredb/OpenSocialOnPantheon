@@ -21,19 +21,16 @@ class FieldInstance extends DrupalSqlBase {
   public function query() {
     $query = $this->select('field_config_instance', 'fci')
       ->fields('fci')
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
       ->condition('fci.deleted', 0)
 =======
       ->fields('fc', ['type', 'translatable'])
->>>>>>> Update Open Social to 8.x-2.1
 =======
       ->fields('fc', ['type'])
->>>>>>> revert Open Social update
 =======
       ->fields('fc', ['type', 'translatable'])
->>>>>>> updating open social
       ->condition('fc.active', 1)
       ->condition('fc.deleted', 0)
       ->condition('fc.storage_active', 1)
@@ -74,7 +71,7 @@ class FieldInstance extends DrupalSqlBase {
   public function prepareRow(Row $row) {
     $data = unserialize($row->getSourceProperty('data'));
 
-<<<<<<< HEAD
+ 
     $row->setSourceProperty('label', $data['label']);
     $row->setSourceProperty('description', $data['description']);
     $row->setSourceProperty('required', $data['required']);
@@ -108,7 +105,6 @@ class FieldInstance extends DrupalSqlBase {
       // field_config table.
       $field_data = unserialize($field_definition['data']);
       $translatable = $field_data['translatable'];
->>>>>>> Update Open Social to 8.x-2.1
     }
     $row->setSourceProperty('default_value', $default_value);
 

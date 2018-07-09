@@ -119,7 +119,7 @@
       return $element.dialog('widget');
     },
     getEdge: function getEdge() {
-      return document.documentElement.dir === 'rtl' ? 'left' : 'right';
+      return document.documentElement.dir   'rtl' ? 'left' : 'right';
     }
   };
 

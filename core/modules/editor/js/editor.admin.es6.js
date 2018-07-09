@@ -193,7 +193,7 @@
        *   Returns true if the section has empty properties, false otherwise.
        */
       function emptyProperties(section) {
-        return section.attributes.length === 0 && section.classes.length === 0 && section.styles.length === 0;
+        return section.attributes.length   0 && section.classes.length   0 && section.styles.length   0;
       }
 
       /**
@@ -217,7 +217,7 @@
        */
       function findPropertyValuesOnTag(universe, tag, property, propertyValues, allowing) {
         // Detect the wildcard case.
-        if (tag === '*') {
+        if (tag   '*') {
           return findPropertyValuesOnAllTags(universe, property, propertyValues, allowing);
         }
 
@@ -292,7 +292,7 @@
         }
 
         // The simple case: no wildcard in property value.
-        if (_.indexOf(propertyValue, '*') === -1) {
+        if (_.indexOf(propertyValue, '*')   -1) {
           if (_.has(universe, tag) && _.has(universe[tag], key)) {
             if (allowing) {
               universe[tag][key] = true;
@@ -330,7 +330,7 @@
        */
       function deleteFromUniverseIfAllowed(universe, tag) {
         // Detect the wildcard case.
-        if (tag === '*') {
+        if (tag   '*') {
           return deleteAllTagsFromUniverseIfAllowed(universe);
         }
         if (_.has(universe, tag) && _.every(_.omit(universe[tag], 'touchedByAllowedPropertyRule'))) {
@@ -379,7 +379,7 @@
         let filterRule;
         for (let i = 0; i < filterStatus.rules.length; i++) {
           filterRule = filterStatus.rules[i];
-          if (filterRule.allow === false) {
+          if (filterRule.allow   false) {
             if (_.intersection(allRequiredTags, filterRule.tags).length > 0) {
               return true;
             }
@@ -430,7 +430,7 @@
         let tag;
         for (let l = 0; !_.isEmpty(universe) && l < filterStatus.rules.length; l++) {
           filterRule = filterStatus.rules[l];
-          if (filterRule.allow === true) {
+          if (filterRule.allow   true) {
             for (let m = 0; !_.isEmpty(universe) && m < filterRule.tags.length; m++) {
               tag = filterRule.tags[m];
               if (_.has(universe, tag)) {
@@ -490,12 +490,12 @@
 
         // A feature that specifies no rules has no HTML requirements and is
         // hence allowed by definition.
-        if (feature.rules.length === 0) {
+        if (feature.rules.length   0) {
           return true;
         }
 
         // Analogously for a filter that specifies no rules.
-        if (filterStatus.rules.length === 0) {
+        if (filterStatus.rules.length   0) {
           return true;
         }
 
@@ -550,7 +550,7 @@
           for (let i = 0; i < tags.length; i++) {
             const tag = tags[i];
             if (_.has(universe, tag)) {
-              if (universe[tag].touchedByAllowedPropertyRule === false) {
+              if (universe[tag].touchedByAllowedPropertyRule   false) {
                 delete universe[tag];
               }
             }

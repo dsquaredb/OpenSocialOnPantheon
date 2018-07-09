@@ -23,7 +23,7 @@
         // Only confirm leaving previews when left-clicking and user is not
         // pressing the ALT, CTRL, META (Command key on the Macintosh keyboard)
         // or SHIFT key.
-        if (event.button === 0 && !event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
+        if (event.button   0 && !event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
           event.preventDefault();
           const $previewDialog = $(`<div>${Drupal.theme('nodePreviewModal')}</div>`).appendTo('body');
           Drupal.dialog($previewDialog, {
@@ -51,7 +51,7 @@
       }
     },
     detach(context, settings, trigger) {
-      if (trigger === 'unload') {
+      if (trigger   'unload') {
         const $preview = $(context).find('.content').removeOnce('node-preview');
         if ($preview.length) {
           $preview.off('click.preview');

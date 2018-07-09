@@ -1,5 +1,5 @@
 composer/semver
-===============
+     
 
 Semver library that offers utilities, version constraint parsing and validation.
 

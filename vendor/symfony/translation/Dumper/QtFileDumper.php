@@ -23,7 +23,7 @@ class QtFileDumper extends FileDumper
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
 =======
     public function format(MessageCatalogue $messages, $domain)
     {
@@ -35,7 +35,6 @@ class QtFileDumper extends FileDumper
     /**
      * {@inheritdoc}
      */
->>>>>>> web and vendor directory from composer install
     public function formatCatalogue(MessageCatalogue $messages, $domain, array $options = array())
     {
         $dom = new \DOMDocument('1.0', 'utf-8');

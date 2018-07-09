@@ -24,9 +24,9 @@ class PostForm extends ContentEntityForm {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
     // Retrieve the form display before it is overwritten in the parent.
 =======
     // Init form mode comparison strings.
@@ -34,19 +34,16 @@ class PostForm extends ContentEntityForm {
 
     // If we're rendered in a block and given a display mode then we store it
     // now because it's overwritten by ContentEntityForm::init().
->>>>>>> Update Open Social to 8.x-2.1
 =======
     // Init form modes.
     $this->setFormMode();
 
->>>>>>> revert Open Social update
 =======
     // Init form mode comparison strings.
     $this->setFormMode();
 
     // If we're rendered in a block and given a display mode then we store it
     // now because it's overwritten by ContentEntityForm::init().
->>>>>>> updating open social
     $display = $this->getFormDisplay($form_state);
     $form = parent::buildForm($form, $form_state);
     $form['#attached']['library'][] = 'social_post/visibility-settings';
@@ -54,8 +51,8 @@ class PostForm extends ContentEntityForm {
     // Default is create/add mode.
     $form['field_visibility']['widget'][0]['#edit_mode'] = FALSE;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
     if (isset($display)) {
       $this->setFormDisplay($display, $form_state);
     }
@@ -91,10 +88,9 @@ class PostForm extends ContentEntityForm {
       $this->configureViewMode($form_state);
     }
 
-<<<<<<< HEAD
+ 
     // If this post has a visibility field then we configure its allowed values.
 =======
->>>>>>> revert Open Social update
 =======
     // If we already have a form display mode then we simply restore that.
     if (!empty($display)) {
@@ -107,7 +103,6 @@ class PostForm extends ContentEntityForm {
     }
 
     // If this post has a visibility field then we configure its allowed values.
->>>>>>> updating open social
     if (isset($form['field_visibility'])) {
       $this->configureVisibilityField($form, $form_state);
     }
@@ -177,14 +172,13 @@ class PostForm extends ContentEntityForm {
         }
       }
       else {
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
         $form['field_visibility']['widget'][0]['#default_value'] = '2';
->>>>>>> Update Open Social to 8.x-2.1
       }
     }
 
-<<<<<<< HEAD
+ 
     // Do some alterations on this form.
     if ($this->operation == 'edit') {
       /** @var \Drupal\social_post\Entity\Post $post */
@@ -223,10 +217,8 @@ class PostForm extends ContentEntityForm {
         $display = EntityFormDisplay::load($display_id);
         // Set the custom display in the form.
         $this->setFormDisplay($display, $form_state);
->>>>>>> revert Open Social update
 =======
         $form['field_visibility']['widget'][0]['#default_value'] = '2';
->>>>>>> updating open social
       }
 
       unset($form['field_visibility']['widget'][0]['#options'][3]);
@@ -271,11 +263,10 @@ class PostForm extends ContentEntityForm {
         else {
           $form['field_visibility']['widget'][0]['#default_value'] = "3";
         }
->>>>>>> Update Open Social to 8.x-2.1
       }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
     // When a post is being edited we configure the visibility to be shown as a
     // read-only value.
@@ -291,7 +282,6 @@ class PostForm extends ContentEntityForm {
         $form['field_visibility']['widget'][0]['#default_value'] = $current_value;
       }
 
->>>>>>> Update Open Social to 8.x-2.1
       // Unset the other options, because we do not want to be able to change
       // it but we do want to use the button for informing the user.
       foreach ($form['field_visibility']['widget'][0]['#options'] as $key => $option) {
@@ -299,14 +289,13 @@ class PostForm extends ContentEntityForm {
           unset($form['field_visibility']['widget'][0]['#options'][$key]);
         }
       }
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 
       // Set button to disabled in our template, users have no option anyway.
       $form['field_visibility']['widget'][0]['#edit_mode'] = TRUE;
     }
 =======
->>>>>>> Update Open Social to 8.x-2.1
 =======
       // Do some alterations on this form.
       if ($this->operation == 'edit') {
@@ -336,7 +325,6 @@ class PostForm extends ContentEntityForm {
         // We set the default value.
         $form['field_visibility']['widget'][0]['#default_value'] = $current_value;
       }
->>>>>>> updating open social
 
       // Unset the other options, because we do not want to be able to change
       // it but we do want to use the button for informing the user.
@@ -344,13 +332,11 @@ class PostForm extends ContentEntityForm {
         if ($option['value'] != $form['field_visibility']['widget'][0]['#default_value']) {
           unset($form['field_visibility']['widget'][0]['#options'][$key]);
         }
-<<<<<<< HEAD
->>>>>>> revert Open Social update
+ 
 
         // Set button to disabled in our template, users have no option anyway.
         $form['field_visibility']['widget'][0]['#edit_mode'] = TRUE;
 =======
->>>>>>> updating open social
       }
 
       // Set button to disabled in our template, users have no option anyway.
@@ -364,9 +350,9 @@ class PostForm extends ContentEntityForm {
   public function save(array $form, FormStateInterface $form_state) {
     $display = $this->getFormDisplay($form_state);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
     if (isset($display) && ($display_id = $display->get('id'))) {
       if ($display_id === 'post.post.profile') {
         $account_profile = \Drupal::routeMatch()->getParameter('user');
@@ -377,7 +363,6 @@ class PostForm extends ContentEntityForm {
         $this->entity->get('field_recipient_group')->setValue($group);
 =======
 =======
->>>>>>> updating open social
     if ($this->entity->isNew()) {
       if (isset($display) && ($display_id = $display->get('id'))) {
         if ($display_id === $this->postViewProfile) {
@@ -388,8 +373,7 @@ class PostForm extends ContentEntityForm {
           $group = \Drupal::routeMatch()->getParameter('group');
           $this->entity->get('field_recipient_group')->setValue($group);
         }
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
     if (isset($display) && ($display_id = $display->get('id'))) {
       if ($display_id === $this->postViewProfile) {
@@ -399,9 +383,7 @@ class PostForm extends ContentEntityForm {
       elseif ($display_id === $this->postViewGroup) {
         $group = \Drupal::routeMatch()->getParameter('group');
         $this->entity->get('field_recipient_group')->setValue($group);
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
       }
     }
 

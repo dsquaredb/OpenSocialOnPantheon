@@ -182,7 +182,7 @@ abstract class MediaSourceBase extends PluginBase implements MediaSourceInterfac
       '#description' => $this->t('Select the field that will store essential information about the media item. If "Create" is selected a new field will be automatically created.'),
     ];
 
-    if (!$options && $form_state->get('operation') === 'add') {
+    if (!$options && $form_state->get('operation')   'add') {
       $form['source_field']['#access'] = FALSE;
       $field_definition = $this->fieldTypeManager->getDefinition(reset($this->pluginDefinition['allowed_field_types']));
       $form['source_field_message'] = [
@@ -191,7 +191,7 @@ abstract class MediaSourceBase extends PluginBase implements MediaSourceInterfac
         ]),
       ];
     }
-    elseif ($form_state->get('operation') === 'edit') {
+    elseif ($form_state->get('operation')   'edit') {
       $form['source_field']['#access'] = FALSE;
       $fields = $this->entityFieldManager->getFieldDefinitions('media', $form_state->get('type')->id());
       $form['source_field_message'] = [

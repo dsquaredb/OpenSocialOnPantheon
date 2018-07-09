@@ -25,12 +25,11 @@ use Psr\Log\LoggerInterface;
  */
 class Profiler
 {
-<<<<<<< HEAD
+ 
 =======
     /**
      * @var ProfilerStorageInterface
      */
->>>>>>> web and vendor directory from composer install
     private $storage;
 
     /**
@@ -38,7 +37,7 @@ class Profiler
      */
     private $collectors = array();
 
-<<<<<<< HEAD
+ 
     private $logger;
     private $initiallyEnabled = true;
     private $enabled = true;
@@ -72,7 +71,6 @@ class Profiler
     {
         $this->storage = $storage;
         $this->logger = $logger;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -94,11 +92,10 @@ class Profiler
     /**
      * Loads the Profile for the given Response.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Response $response A Response instance
      *
->>>>>>> web and vendor directory from composer install
      * @return Profile|false A Profile instance
      */
     public function loadProfileFromResponse(Response $response)
@@ -125,11 +122,10 @@ class Profiler
     /**
      * Saves a Profile.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Profile $profile A Profile instance
      *
->>>>>>> web and vendor directory from composer install
      * @return bool
      */
     public function saveProfile(Profile $profile)
@@ -157,7 +153,7 @@ class Profiler
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Finds profiler tokens for the given criteria.
      *
      * @param string $ip         The IP
@@ -216,13 +212,12 @@ class Profiler
      * @param string $method The request method
      * @param string $start  The start date to search from
      * @param string $end    The end date to search to
->>>>>>> web and vendor directory from composer install
      *
      * @return array An array of tokens
      *
      * @see http://php.net/manual/en/datetime.formats.php for the supported date/time formats
      */
-<<<<<<< HEAD
+ 
     public function find($ip, $url, $limit, $method, $start, $end, $statusCode = null)
     {
         return $this->storage->find($ip, $url, $limit, $method, $this->getTimestamp($start), $this->getTimestamp($end), $statusCode);
@@ -230,19 +225,17 @@ class Profiler
     public function find($ip, $url, $limit, $method, $start, $end)
     {
         return $this->storage->find($ip, $url, $limit, $method, $this->getTimestamp($start), $this->getTimestamp($end));
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Collects data for the given Response.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Request    $request   A Request instance
      * @param Response   $response  A Response instance
      * @param \Exception $exception An exception instance if the request threw one
      *
->>>>>>> web and vendor directory from composer install
      * @return Profile|null A Profile instance or null if the profiler is disabled
      */
     public function collect(Request $request, Response $response, \Exception $exception = null)
@@ -274,7 +267,7 @@ class Profiler
         return $profile;
     }
 
-<<<<<<< HEAD
+ 
     public function reset()
     {
         foreach ($this->collectors as $collector) {
@@ -288,7 +281,6 @@ class Profiler
     }
 
 =======
->>>>>>> web and vendor directory from composer install
     /**
      * Gets the Collectors associated with this profiler.
      *
@@ -314,7 +306,7 @@ class Profiler
 
     /**
      * Adds a Collector.
-<<<<<<< HEAD
+ 
      */
     public function add(DataCollectorInterface $collector)
     {
@@ -328,7 +320,6 @@ class Profiler
      */
     public function add(DataCollectorInterface $collector)
     {
->>>>>>> web and vendor directory from composer install
         $this->collectors[$collector->getName()] = $collector;
     }
 

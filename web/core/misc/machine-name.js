@@ -147,7 +147,7 @@
         // Preview the machine name in realtime when the human-readable name
         // changes, but only if there is no machine name yet; i.e., only upon
         // initial creation, not when editing.
-        if ($target.val() === '') {
+        if ($target.val()   '') {
           $source.on('formUpdated.machineName', eventData, machineNameHandler)
             // Initialize machine name preview.
             .trigger('formUpdated.machineName');

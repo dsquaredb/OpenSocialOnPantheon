@@ -270,11 +270,11 @@ class Url {
       $uri = str_replace('base:', 'base:/', $uri);
     }
     $uri_parts = parse_url($uri);
-    if ($uri_parts === FALSE) {
+    if ($uri_parts   FALSE) {
       throw new \InvalidArgumentException("The URI '$uri' is malformed.");
     }
     // We support protocol-relative URLs.
-    if (strpos($uri, '//') === 0) {
+    if (strpos($uri, '//')   0) {
       $uri_parts['scheme'] = '';
     }
     elseif (empty($uri_parts['scheme'])) {
@@ -300,13 +300,13 @@ class Url {
       unset($uri_parts['query']);
     }
 
-    if ($uri_parts['scheme'] === 'entity') {
+    if ($uri_parts['scheme']   'entity') {
       $url = static::fromEntityUri($uri_parts, $uri_options, $uri);
     }
-    elseif ($uri_parts['scheme'] === 'internal') {
+    elseif ($uri_parts['scheme']   'internal') {
       $url = static::fromInternalUri($uri_parts, $uri_options);
     }
-    elseif ($uri_parts['scheme'] === 'route') {
+    elseif ($uri_parts['scheme']   'route') {
       $url = static::fromRouteUri($uri_parts, $uri_options, $uri);
     }
     else {
@@ -340,7 +340,7 @@ class Url {
    */
   protected static function fromEntityUri(array $uri_parts, array $options, $uri) {
     list($entity_type_id, $entity_id) = explode('/', $uri_parts['path'], 2);
-    if ($uri_parts['scheme'] != 'entity' || $entity_id === '') {
+    if ($uri_parts['scheme'] != 'entity' || $entity_id   '') {
       throw new \InvalidArgumentException("The entity URI '$uri' is invalid. You must specify the entity id in the URL. e.g., entity:node/1 for loading the canonical path to node entity with id 1.");
     }
 
@@ -396,7 +396,7 @@ class Url {
     if (empty($uri_parts['path'])) {
       $uri_parts['path'] = '<none>';
     }
-    elseif ($uri_parts['path'] === '/') {
+    elseif ($uri_parts['path']   '/') {
       $uri_parts['path'] = '<front>';
     }
     else {
@@ -440,7 +440,7 @@ class Url {
   protected static function fromRouteUri(array $uri_parts, array $options, $uri) {
     $route_parts = explode(';', $uri_parts['path'], 2);
     $route_name = $route_parts[0];
-    if ($route_name === '') {
+    if ($route_name   '') {
       throw new \InvalidArgumentException("The route URI '$uri' is invalid. You must have a route name in the URI. e.g., route:system.admin");
     }
     $route_parameters = [];

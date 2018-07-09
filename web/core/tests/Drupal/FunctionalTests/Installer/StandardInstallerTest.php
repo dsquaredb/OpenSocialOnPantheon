@@ -27,7 +27,6 @@ class StandardInstallerTest extends ConfigAfterInstallerTestBase {
 =======
     // Verify that the Standard install profile's default frontpage appears.
     $this->assertRaw('No front page content has been created yet.');
->>>>>>> revert Open Social update
   }
 
   /**

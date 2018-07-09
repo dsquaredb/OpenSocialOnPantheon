@@ -1,33 +1,30 @@
 <?php
 
 if (!defined('ENT_SUBSTITUTE')) {
-<<<<<<< HEAD
+ 
     define('ENT_SUBSTITUTE', 8);
 =======
     // use 0 as hhvm does not support several flags yet
     define('ENT_SUBSTITUTE', 0);
->>>>>>> web and vendor directory from composer install
 }
 
 /*
  * This file is part of Twig.
  *
-<<<<<<< HEAD
+ 
  * (c) Fabien Potencier
 =======
  * (c) 2009 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-<<<<<<< HEAD
+ 
 
 /**
  * @final
  */
 =======
->>>>>>> web and vendor directory from composer install
 class Twig_Extension_Core extends Twig_Extension
 {
     protected $dateFormats = array('F j, Y H:i', '%d days');
@@ -110,7 +107,7 @@ class Twig_Extension_Core extends Twig_Extension
     /**
      * Sets the default format to be used by the number_format filter.
      *
-<<<<<<< HEAD
+ 
      * @param int    $decimal      the number of decimal places to use
      * @param string $decimalPoint the character(s) to use for the decimal point
      * @param string $thousandSep  the character(s) to use for the thousands separator
@@ -118,7 +115,6 @@ class Twig_Extension_Core extends Twig_Extension
      * @param int    $decimal      The number of decimal places to use.
      * @param string $decimalPoint The character(s) to use for the decimal point.
      * @param string $thousandSep  The character(s) to use for the thousands separator.
->>>>>>> web and vendor directory from composer install
      */
     public function setNumberFormat($decimal, $decimalPoint, $thousandSep)
     {
@@ -153,10 +149,9 @@ class Twig_Extension_Core extends Twig_Extension
             new Twig_TokenParser_Flush(),
             new Twig_TokenParser_Do(),
             new Twig_TokenParser_Embed(),
-<<<<<<< HEAD
+ 
             new Twig_TokenParser_With(),
 =======
->>>>>>> web and vendor directory from composer install
         );
     }
 
@@ -183,11 +178,10 @@ class Twig_Extension_Core extends Twig_Extension
             new Twig_SimpleFilter('upper', 'strtoupper'),
             new Twig_SimpleFilter('lower', 'strtolower'),
             new Twig_SimpleFilter('striptags', 'strip_tags'),
-<<<<<<< HEAD
+ 
             new Twig_SimpleFilter('trim', 'twig_trim_filter'),
 =======
             new Twig_SimpleFilter('trim', 'trim'),
->>>>>>> web and vendor directory from composer install
             new Twig_SimpleFilter('nl2br', 'nl2br', array('pre_escape' => 'html', 'is_safe' => array('html'))),
 
             // array helpers
@@ -304,11 +298,10 @@ class Twig_Extension_Core extends Twig_Extension
 /**
  * Cycles over a value.
  *
-<<<<<<< HEAD
+ 
  * @param ArrayAccess|array $values
 =======
  * @param ArrayAccess|array $values   An array or an ArrayAccess instance
->>>>>>> web and vendor directory from composer install
  * @param int               $position The cycle position
  *
  * @return string The next value in the cycle
@@ -328,7 +321,7 @@ function twig_cycle($values, $position)
  * - a random character from a string
  * - a random integer between 0 and the integer parameter.
  *
-<<<<<<< HEAD
+ 
  * @param Twig_Environment                   $env
  * @param Traversable|array|int|float|string $values The values to pick a random item from
  *
@@ -338,7 +331,6 @@ function twig_cycle($values, $position)
  * @param Traversable|array|int|string $values The values to pick a random item from
  *
  * @throws Twig_Error_Runtime When $values is an empty array (does not apply to an empty string which is returned as is).
->>>>>>> web and vendor directory from composer install
  *
  * @return mixed A random value from the given sequence
  */
@@ -395,11 +387,10 @@ function twig_random(Twig_Environment $env, $values = null)
  *   {{ post.published_at|date("m/d/Y") }}
  * </pre>
  *
-<<<<<<< HEAD
+ 
  * @param Twig_Environment                               $env
 =======
  * @param Twig_Environment                               $env      A Twig_Environment instance
->>>>>>> web and vendor directory from composer install
  * @param DateTime|DateTimeInterface|DateInterval|string $date     A date
  * @param string|null                                    $format   The target format, null to use the default
  * @param DateTimeZone|string|null|false                 $timezone The target timezone, null to use the default, false to leave unchanged
@@ -427,11 +418,10 @@ function twig_date_format_filter(Twig_Environment $env, $date, $format = null, $
  *   {{ post.published_at|date_modify("-1day")|date("m/d/Y") }}
  * </pre>
  *
-<<<<<<< HEAD
+ 
  * @param Twig_Environment $env
 =======
  * @param Twig_Environment $env      A Twig_Environment instance
->>>>>>> web and vendor directory from composer install
  * @param DateTime|string  $date     A date
  * @param string           $modifier A modifier string
  *
@@ -457,11 +447,10 @@ function twig_date_modify_filter(Twig_Environment $env, $date, $modifier)
  *    {% endif %}
  * </pre>
  *
-<<<<<<< HEAD
+ 
  * @param Twig_Environment                       $env
 =======
  * @param Twig_Environment                       $env      A Twig_Environment instance
->>>>>>> web and vendor directory from composer install
  * @param DateTime|DateTimeInterface|string|null $date     A date
  * @param DateTimeZone|string|null|false         $timezone The target timezone, null to use the default, false to leave unchanged
  *
@@ -563,7 +552,7 @@ function twig_round($value, $precision = 0, $method = 'common')
  * be used.  Supplying any of the parameters will override the defaults set in the
  * environment object.
  *
-<<<<<<< HEAD
+ 
  * @param Twig_Environment $env
  * @param mixed            $number       A float/int/string of the number to format
  * @param int              $decimal      the number of decimal points to display
@@ -575,7 +564,6 @@ function twig_round($value, $precision = 0, $method = 'common')
  * @param int              $decimal      The number of decimal points to display.
  * @param string           $decimalPoint The character(s) to use for the decimal point.
  * @param string           $thousandSep  The character(s) to use for the thousands separator.
->>>>>>> web and vendor directory from composer install
  *
  * @return string The formatted number
  */
@@ -621,11 +609,10 @@ if (PHP_VERSION_ID < 50300) {
     /**
      * JSON encodes a variable.
      *
-<<<<<<< HEAD
+ 
      * @param mixed $value   the value to encode
 =======
      * @param mixed $value   The value to encode.
->>>>>>> web and vendor directory from composer install
      * @param int   $options Not used on PHP 5.2.x
      *
      * @return mixed The JSON encoded value
@@ -644,11 +631,10 @@ if (PHP_VERSION_ID < 50300) {
     /**
      * JSON encodes a variable.
      *
-<<<<<<< HEAD
+ 
      * @param mixed $value   the value to encode
 =======
      * @param mixed $value   The value to encode.
->>>>>>> web and vendor directory from composer install
      * @param int   $options Bitmask consisting of JSON_HEX_QUOT, JSON_HEX_TAG, JSON_HEX_AMP, JSON_HEX_APOS, JSON_NUMERIC_CHECK, JSON_PRETTY_PRINT, JSON_UNESCAPED_SLASHES, JSON_FORCE_OBJECT
      *
      * @return mixed The JSON encoded value
@@ -708,11 +694,10 @@ function twig_array_merge($arr1, $arr2)
 /**
  * Slices a variable.
  *
-<<<<<<< HEAD
+ 
  * @param Twig_Environment $env
 =======
  * @param Twig_Environment $env          A Twig_Environment instance
->>>>>>> web and vendor directory from composer install
  * @param mixed            $item         A variable
  * @param int              $start        Start of the slice
  * @param int              $length       Size of the slice
@@ -723,21 +708,19 @@ function twig_array_merge($arr1, $arr2)
 function twig_slice(Twig_Environment $env, $item, $start, $length = null, $preserveKeys = false)
 {
     if ($item instanceof Traversable) {
-<<<<<<< HEAD
+ 
         while ($item instanceof IteratorAggregate) {
 =======
         if ($item instanceof IteratorAggregate) {
->>>>>>> web and vendor directory from composer install
             $item = $item->getIterator();
         }
 
         if ($start >= 0 && $length >= 0 && $item instanceof Iterator) {
             try {
-<<<<<<< HEAD
+ 
                 return iterator_to_array(new LimitIterator($item, $start, null === $length ? -1 : $length), $preserveKeys);
 =======
                 return iterator_to_array(new LimitIterator($item, $start, $length === null ? -1 : $length), $preserveKeys);
->>>>>>> web and vendor directory from composer install
             } catch (OutOfBoundsException $exception) {
                 return array();
             }
@@ -762,11 +745,10 @@ function twig_slice(Twig_Environment $env, $item, $start, $length = null, $prese
 /**
  * Returns the first element of the item.
  *
-<<<<<<< HEAD
+ 
  * @param Twig_Environment $env
 =======
  * @param Twig_Environment $env  A Twig_Environment instance
->>>>>>> web and vendor directory from composer install
  * @param mixed            $item A variable
  *
  * @return mixed The first element of the item
@@ -781,11 +763,10 @@ function twig_first(Twig_Environment $env, $item)
 /**
  * Returns the last element of the item.
  *
-<<<<<<< HEAD
+ 
  * @param Twig_Environment $env
 =======
  * @param Twig_Environment $env  A Twig_Environment instance
->>>>>>> web and vendor directory from composer install
  * @param mixed            $item A variable
  *
  * @return mixed The last element of the item
@@ -841,11 +822,10 @@ function twig_join_filter($value, $glue = '')
  *  {# returns [aa, bb, cc] #}
  * </pre>
  *
-<<<<<<< HEAD
+ 
  * @param Twig_Environment $env
 =======
  * @param Twig_Environment $env       A Twig_Environment instance
->>>>>>> web and vendor directory from composer install
  * @param string           $value     A string
  * @param string           $delimiter The delimiter
  * @param int              $limit     The limit
@@ -912,7 +892,7 @@ function _twig_default_filter($value, $default = '')
 function twig_get_array_keys_filter($array)
 {
     if ($array instanceof Traversable) {
-<<<<<<< HEAD
+ 
         while ($array instanceof IteratorAggregate) {
             $array = $array->getIterator();
         }
@@ -936,7 +916,6 @@ function twig_get_array_keys_filter($array)
         return $keys;
 =======
         return array_keys(iterator_to_array($array));
->>>>>>> web and vendor directory from composer install
     }
 
     if (!is_array($array)) {
@@ -949,11 +928,10 @@ function twig_get_array_keys_filter($array)
 /**
  * Reverses a variable.
  *
-<<<<<<< HEAD
+ 
  * @param Twig_Environment         $env
 =======
  * @param Twig_Environment         $env          A Twig_Environment instance
->>>>>>> web and vendor directory from composer install
  * @param array|Traversable|string $item         An array, a Traversable instance, or a string
  * @param bool                     $preserveKeys Whether to preserve key or not
  *
@@ -1020,7 +998,7 @@ function twig_in_filter($value, $compare)
     } elseif (is_string($compare) && (is_string($value) || is_int($value) || is_float($value))) {
         return '' === $value || false !== strpos($compare, (string) $value);
     } elseif ($compare instanceof Traversable) {
-<<<<<<< HEAD
+ 
         if (is_object($value) || is_resource($value)) {
             foreach ($compare as $item) {
                 if ($item === $value) {
@@ -1038,14 +1016,13 @@ function twig_in_filter($value, $compare)
         return false;
 =======
         return in_array($value, iterator_to_array($compare, false), is_object($value) || is_resource($value));
->>>>>>> web and vendor directory from composer install
     }
 
     return false;
 }
 
 /**
-<<<<<<< HEAD
+ 
  * Returns a trimmed string.
  *
  * @return string
@@ -1078,7 +1055,6 @@ function twig_trim_filter($string, $characterMask = null, $side = 'both')
  * Escapes a string.
  *
  * @param Twig_Environment $env        A Twig_Environment instance
->>>>>>> web and vendor directory from composer install
  * @param mixed            $string     The value to be escaped
  * @param string           $strategy   The escaping strategy
  * @param string           $charset    The charset
@@ -1111,7 +1087,7 @@ function twig_escape_filter(Twig_Environment $env, $string, $strategy = 'html', 
             // Using a static variable to avoid initializing the array
             // each time the function is called. Moving the declaration on the
             // top of the function slow downs other escaping strategies.
-<<<<<<< HEAD
+ 
             static $htmlspecialcharsCharsets = array(
                 'ISO-8859-1' => true, 'ISO8859-1' => true,
                 'ISO-8859-15' => true, 'ISO8859-15' => true,
@@ -1153,7 +1129,6 @@ function twig_escape_filter(Twig_Environment $env, $string, $strategy = 'html', 
                     );
                 }
             }
->>>>>>> web and vendor directory from composer install
 
             if (isset($htmlspecialcharsCharsets[$charset])) {
                 return htmlspecialchars($string, ENT_QUOTES | ENT_SUBSTITUTE, $charset);
@@ -1178,11 +1153,10 @@ function twig_escape_filter(Twig_Environment $env, $string, $strategy = 'html', 
                 $string = twig_convert_encoding($string, 'UTF-8', $charset);
             }
 
-<<<<<<< HEAD
+ 
             if (0 == strlen($string) ? false : 1 !== preg_match('/^./su', $string)) {
 =======
             if (0 == strlen($string) ? false : (1 == preg_match('/^./su', $string) ? false : true)) {
->>>>>>> web and vendor directory from composer install
                 throw new Twig_Error_Runtime('The string to escape is not a valid UTF-8 string.');
             }
 
@@ -1199,11 +1173,10 @@ function twig_escape_filter(Twig_Environment $env, $string, $strategy = 'html', 
                 $string = twig_convert_encoding($string, 'UTF-8', $charset);
             }
 
-<<<<<<< HEAD
+ 
             if (0 == strlen($string) ? false : 1 !== preg_match('/^./su', $string)) {
 =======
             if (0 == strlen($string) ? false : (1 == preg_match('/^./su', $string) ? false : true)) {
->>>>>>> web and vendor directory from composer install
                 throw new Twig_Error_Runtime('The string to escape is not a valid UTF-8 string.');
             }
 
@@ -1220,11 +1193,10 @@ function twig_escape_filter(Twig_Environment $env, $string, $strategy = 'html', 
                 $string = twig_convert_encoding($string, 'UTF-8', $charset);
             }
 
-<<<<<<< HEAD
+ 
             if (0 == strlen($string) ? false : 1 !== preg_match('/^./su', $string)) {
 =======
             if (0 == strlen($string) ? false : (1 == preg_match('/^./su', $string) ? false : true)) {
->>>>>>> web and vendor directory from composer install
                 throw new Twig_Error_Runtime('The string to escape is not a valid UTF-8 string.');
             }
 
@@ -1304,7 +1276,7 @@ function _twig_escape_js_callback($matches)
 
     // \uHHHH
     $char = twig_convert_encoding($char, 'UTF-16BE', 'UTF-8');
-<<<<<<< HEAD
+ 
     $char = strtoupper(bin2hex($char));
 
     if (4 >= strlen($char)) {
@@ -1315,7 +1287,6 @@ function _twig_escape_js_callback($matches)
 =======
 
     return '\\u'.strtoupper(substr('0000'.bin2hex($char), -4));
->>>>>>> web and vendor directory from composer install
 }
 
 function _twig_escape_css_callback($matches)
@@ -1366,11 +1337,10 @@ function _twig_escape_html_attr_callback($matches)
      * The following replaces characters undefined in HTML with the
      * hex entity for the Unicode replacement character.
      */
-<<<<<<< HEAD
+ 
     if (($ord <= 0x1f && "\t" != $chr && "\n" != $chr && "\r" != $chr) || ($ord >= 0x7f && $ord <= 0x9f)) {
 =======
     if (($ord <= 0x1f && $chr != "\t" && $chr != "\n" && $chr != "\r") || ($ord >= 0x7f && $ord <= 0x9f)) {
->>>>>>> web and vendor directory from composer install
         return '&#xFFFD;';
     }
 
@@ -1378,11 +1348,10 @@ function _twig_escape_html_attr_callback($matches)
      * Check if the current character to escape has a name entity we should
      * replace it with while grabbing the hex value of the character.
      */
-<<<<<<< HEAD
+ 
     if (1 == strlen($chr)) {
 =======
     if (strlen($chr) == 1) {
->>>>>>> web and vendor directory from composer install
         $hex = strtoupper(substr('00'.bin2hex($chr), -2));
     } else {
         $chr = twig_convert_encoding($chr, 'UTF-16BE', 'UTF-8');
@@ -1406,18 +1375,17 @@ if (function_exists('mb_get_info')) {
     /**
      * Returns the length of a variable.
      *
-<<<<<<< HEAD
+ 
      * @param Twig_Environment $env
 =======
      * @param Twig_Environment $env   A Twig_Environment instance
->>>>>>> web and vendor directory from composer install
      * @param mixed            $thing A variable
      *
      * @return int The length of the value
      */
     function twig_length_filter(Twig_Environment $env, $thing)
     {
-<<<<<<< HEAD
+ 
         if (null === $thing) {
             return 0;
         }
@@ -1445,17 +1413,15 @@ if (function_exists('mb_get_info')) {
         return 1;
 =======
         return is_scalar($thing) ? mb_strlen($thing, $env->getCharset()) : count($thing);
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Converts a string to uppercase.
      *
-<<<<<<< HEAD
+ 
      * @param Twig_Environment $env
 =======
      * @param Twig_Environment $env    A Twig_Environment instance
->>>>>>> web and vendor directory from composer install
      * @param string           $string A string
      *
      * @return string The uppercased string
@@ -1472,11 +1438,10 @@ if (function_exists('mb_get_info')) {
     /**
      * Converts a string to lowercase.
      *
-<<<<<<< HEAD
+ 
      * @param Twig_Environment $env
 =======
      * @param Twig_Environment $env    A Twig_Environment instance
->>>>>>> web and vendor directory from composer install
      * @param string           $string A string
      *
      * @return string The lowercased string
@@ -1493,11 +1458,10 @@ if (function_exists('mb_get_info')) {
     /**
      * Returns a titlecased string.
      *
-<<<<<<< HEAD
+ 
      * @param Twig_Environment $env
 =======
      * @param Twig_Environment $env    A Twig_Environment instance
->>>>>>> web and vendor directory from composer install
      * @param string           $string A string
      *
      * @return string The titlecased string
@@ -1514,11 +1478,10 @@ if (function_exists('mb_get_info')) {
     /**
      * Returns a capitalized string.
      *
-<<<<<<< HEAD
+ 
      * @param Twig_Environment $env
 =======
      * @param Twig_Environment $env    A Twig_Environment instance
->>>>>>> web and vendor directory from composer install
      * @param string           $string A string
      *
      * @return string The capitalized string
@@ -1537,18 +1500,17 @@ else {
     /**
      * Returns the length of a variable.
      *
-<<<<<<< HEAD
+ 
      * @param Twig_Environment $env
 =======
      * @param Twig_Environment $env   A Twig_Environment instance
->>>>>>> web and vendor directory from composer install
      * @param mixed            $thing A variable
      *
      * @return int The length of the value
      */
     function twig_length_filter(Twig_Environment $env, $thing)
     {
-<<<<<<< HEAD
+ 
         if (null === $thing) {
             return 0;
         }
@@ -1576,17 +1538,15 @@ else {
         return 1;
 =======
         return is_scalar($thing) ? strlen($thing) : count($thing);
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Returns a titlecased string.
      *
-<<<<<<< HEAD
+ 
      * @param Twig_Environment $env
 =======
      * @param Twig_Environment $env    A Twig_Environment instance
->>>>>>> web and vendor directory from composer install
      * @param string           $string A string
      *
      * @return string The titlecased string
@@ -1599,11 +1559,10 @@ else {
     /**
      * Returns a capitalized string.
      *
-<<<<<<< HEAD
+ 
      * @param Twig_Environment $env
 =======
      * @param Twig_Environment $env    A Twig_Environment instance
->>>>>>> web and vendor directory from composer install
      * @param string           $string A string
      *
      * @return string The capitalized string
@@ -1646,13 +1605,12 @@ function twig_test_empty($value)
         return 0 == count($value);
     }
 
-<<<<<<< HEAD
+ 
     if (is_object($value) && method_exists($value, '__toString')) {
         return '' === (string) $value;
     }
 
 =======
->>>>>>> web and vendor directory from composer install
     return '' === $value || false === $value || null === $value || array() === $value;
 }
 
@@ -1661,11 +1619,10 @@ function twig_test_empty($value)
  *
  * <pre>
  * {# evaluates to true if the foo variable is an array or a traversable object #}
-<<<<<<< HEAD
+ 
  * {% if foo is iterable %}
 =======
  * {% if foo is traversable %}
->>>>>>> web and vendor directory from composer install
  *     {# ... #}
  * {% endif %}
  * </pre>
@@ -1718,7 +1675,7 @@ function twig_include(Twig_Environment $env, $context, $template, $variables = a
 
             throw $e;
         }
-<<<<<<< HEAD
+ 
     } catch (Throwable $e) {
         if ($isSandboxed && !$alreadySandboxed) {
             $sandbox->disableSandbox();
@@ -1732,7 +1689,6 @@ function twig_include(Twig_Environment $env, $context, $template, $variables = a
 
         throw $e;
 =======
->>>>>>> web and vendor directory from composer install
     }
 
     if ($isSandboxed && !$alreadySandboxed) {
@@ -1785,7 +1741,7 @@ function twig_constant($constant, $object = null)
 }
 
 /**
-<<<<<<< HEAD
+ 
  * Checks if a constant exists.
  *
  * @param string      $constant The name of the constant
@@ -1804,7 +1760,6 @@ function twig_constant_is_defined($constant, $object = null)
 
 /**
 =======
->>>>>>> web and vendor directory from composer install
  * Batches item.
  *
  * @param array $items An array of items
@@ -1835,8 +1790,7 @@ function twig_array_batch($items, $size, $fill = null)
 
     return $result;
 }
-<<<<<<< HEAD
+ 
 
 class_alias('Twig_Extension_Core', 'Twig\Extension\CoreExtension', false);
 =======
->>>>>>> web and vendor directory from composer install

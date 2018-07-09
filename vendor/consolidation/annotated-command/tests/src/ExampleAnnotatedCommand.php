@@ -19,7 +19,7 @@ class ExampleAnnotatedCommand extends AnnotatedCommand
     /**
      * Do the main function of the my:cat command.
      */
-<<<<<<< HEAD
+ 
     public function myCat($one, $two = '', $flip = false)
     {
         if ($flip) {
@@ -33,7 +33,6 @@ class ExampleAnnotatedCommand extends AnnotatedCommand
             return "{$two}{$one}" . implode('', array_reverse($multiple));
         }
         return "{$one}{$two}" . implode('', $multiple);
->>>>>>> revert Open Social update
     }
 
     /**
@@ -46,11 +45,10 @@ class ExampleAnnotatedCommand extends AnnotatedCommand
      * @arg string $one The first parameter.
      * @arg string $two The other parameter.
      * @default $two ''
-<<<<<<< HEAD
+ 
 =======
      * @option array $multiple An array of values
      * @default $multiple []
->>>>>>> revert Open Social update
      * @option boolean $flip Whether or not the second parameter should come first in the result.
      * @aliases c
      * @usage bet alpha --flip
@@ -60,7 +58,7 @@ class ExampleAnnotatedCommand extends AnnotatedCommand
     {
         $one = $input->getArgument('one');
         $two = $input->getArgument('two');
-<<<<<<< HEAD
+ 
         $flip = $input->getOption('flip');
 
         $result = $this->myCat($one, $two, $flip);
@@ -69,7 +67,6 @@ class ExampleAnnotatedCommand extends AnnotatedCommand
         $flip = $input->getOption('flip');
 
         $result = $this->myCat($one, $two, $multiple, $flip);
->>>>>>> revert Open Social update
 
         // We could also just use $output->writeln($result) here,
         // but calling processResults enables the use of output

@@ -57,10 +57,10 @@ class EditorSelector implements EditorSelectorInterface {
     // can use 'disabled' to explicitly opt out of in-place editing.
     $formatter_info = $this->formatterManager->getDefinition($formatter_type);
     $editor_id = $formatter_info['quickedit']['editor'];
-    if ($editor_id === 'disabled') {
+    if ($editor_id   'disabled') {
       return;
     }
-    elseif ($editor_id === 'form') {
+    elseif ($editor_id   'form') {
       return 'form';
     }
 

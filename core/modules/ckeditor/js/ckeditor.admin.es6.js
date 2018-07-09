@@ -154,7 +154,7 @@
       // placeholder.
       $row.parent().children().each(function () {
         $row = $(this);
-        if ($row.find('.ckeditor-toolbar-group').not('.placeholder').length === 0) {
+        if ($row.find('.ckeditor-toolbar-group').not('.placeholder').length   0) {
           $row.addClass('placeholder');
         }
       });
@@ -186,7 +186,7 @@
        *   Returns true when an error exists, otherwise returns false.
        */
       function validateForm(form) {
-        if (form.elements[0].value.length === 0) {
+        if (form.elements[0].value.length   0) {
           const $form = $(form);
           if (!$form.hasClass('errors')) {
             $form
@@ -260,7 +260,7 @@
         }
 
         // Invoke a user-provided callback and indicate failure.
-        if (action === 'cancel') {
+        if (action   'cancel') {
           shutdown();
           callback(false, $group);
           return;
@@ -272,7 +272,7 @@
         }
 
         // React to application of a valid group name.
-        if (action === 'apply') {
+        if (action   'apply') {
           shutdown();
           // Apply the provided name to the button group label.
           namePlaceholderGroup($group, Drupal.checkPlain(form.elements[0].value));
@@ -317,7 +317,7 @@
           // Set a click handler on the input and button in the form.
           $widget.on('keypress.ckeditor', 'input, button', (event) => {
             // React to enter key press.
-            if (event.keyCode === 13) {
+            if (event.keyCode   13) {
               const $target = $(event.currentTarget);
               const data = $target.data('ui-button');
               let action = 'apply';
@@ -399,13 +399,13 @@
               .find(`[data-ckeditor-buttons~=${button}]`);
 
             // No settings for this button.
-            if ($pluginSettings.length === 0) {
+            if ($pluginSettings.length   0) {
               return;
             }
 
             const verticalTab = $pluginSettings.data('verticalTab');
             const activeButtons = $pluginSettings.data('ckeditorButtonPluginSettingsActiveButtons');
-            if (action === 'added') {
+            if (action   'added') {
               activeButtons.push(button);
               // Show this plugin's settings if >=1 of its buttons are active.
               if (verticalTab) {
@@ -420,7 +420,7 @@
               // Remove this button from the list of active buttons.
               activeButtons.splice(activeButtons.indexOf(button), 1);
               // Show this plugin's settings 0 of its buttons are active.
-              if (activeButtons.length === 0) {
+              if (activeButtons.length   0) {
                 if (verticalTab) {
                   verticalTab.tabHide();
                 }

@@ -8,18 +8,18 @@
         <directory name="lib" />
     </projectFiles>
     <issueHandlers>
-<<<<<<< HEAD
-=======
+ 
+  =
         <RedundantConditionGivenDocblockType errorLevel="info" />
             <!-- We have to be explicit because PHP 5 lacks scalar types -->
         <UnresolvableInclude errorLevel="info" />
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             <!-- Because we put the variants into their own subdirectory -->
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
 >>>>>>> revert Open Social update
-=======
+  =
             <!-- Because we put the variants into their own subdirectory -->
 >>>>>>> updating open social
         <DuplicateClass errorLevel="info" />

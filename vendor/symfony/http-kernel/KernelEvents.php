@@ -23,11 +23,11 @@ final class KernelEvents
      * dispatching.
      *
      * This event allows you to create a response for a request before any
-<<<<<<< HEAD
+ 
      * other code in the framework is executed.
      *
      * @Event("Symfony\Component\HttpKernel\Event\GetResponseEvent")
-=======
+  =
      * other code in the framework is executed. The event listener method
      * receives a Symfony\Component\HttpKernel\Event\GetResponseEvent
      * instance.
@@ -35,7 +35,6 @@ final class KernelEvents
      * @Event
      *
      * @var string
->>>>>>> web and vendor directory from composer install
      */
     const REQUEST = 'kernel.request';
 
@@ -43,11 +42,11 @@ final class KernelEvents
      * The EXCEPTION event occurs when an uncaught exception appears.
      *
      * This event allows you to create a response for a thrown exception or
-<<<<<<< HEAD
+ 
      * to modify the thrown exception.
      *
      * @Event("Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent")
-=======
+  =
      * to modify the thrown exception. The event listener method receives
      * a Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent
      * instance.
@@ -55,7 +54,6 @@ final class KernelEvents
      * @Event
      *
      * @var string
->>>>>>> web and vendor directory from composer install
      */
     const EXCEPTION = 'kernel.exception';
 
@@ -64,11 +62,11 @@ final class KernelEvents
      * is not a Response instance.
      *
      * This event allows you to create a response for the return value of the
-<<<<<<< HEAD
+ 
      * controller.
      *
      * @Event("Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent")
-=======
+  =
      * controller. The event listener method receives a
      * Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent
      * instance.
@@ -76,7 +74,6 @@ final class KernelEvents
      * @Event
      *
      * @var string
->>>>>>> web and vendor directory from composer install
      */
     const VIEW = 'kernel.view';
 
@@ -85,7 +82,7 @@ final class KernelEvents
      * handling a request.
      *
      * This event allows you to change the controller that will handle the
-<<<<<<< HEAD
+ 
      * request.
      *
      * @Event("Symfony\Component\HttpKernel\Event\FilterControllerEvent")
@@ -101,7 +98,7 @@ final class KernelEvents
      * @Event("Symfony\Component\HttpKernel\Event\FilterControllerArgumentsEvent")
      */
     const CONTROLLER_ARGUMENTS = 'kernel.controller_arguments';
-=======
+  =
      * request. The event listener method receives a
      * Symfony\Component\HttpKernel\Event\FilterControllerEvent instance.
      *
@@ -110,25 +107,23 @@ final class KernelEvents
      * @var string
      */
     const CONTROLLER = 'kernel.controller';
->>>>>>> web and vendor directory from composer install
 
     /**
      * The RESPONSE event occurs once a response was created for
      * replying to a request.
      *
      * This event allows you to modify or replace the response that will be
-<<<<<<< HEAD
+ 
      * replied.
      *
      * @Event("Symfony\Component\HttpKernel\Event\FilterResponseEvent")
-=======
+  =
      * replied. The event listener method receives a
      * Symfony\Component\HttpKernel\Event\FilterResponseEvent instance.
      *
      * @Event
      *
      * @var string
->>>>>>> web and vendor directory from composer install
      */
     const RESPONSE = 'kernel.response';
 
@@ -136,17 +131,16 @@ final class KernelEvents
      * The TERMINATE event occurs once a response was sent.
      *
      * This event allows you to run expensive post-response jobs.
-<<<<<<< HEAD
+ 
      *
      * @Event("Symfony\Component\HttpKernel\Event\PostResponseEvent")
-=======
+  =
      * The event listener method receives a
      * Symfony\Component\HttpKernel\Event\PostResponseEvent instance.
      *
      * @Event
      *
      * @var string
->>>>>>> web and vendor directory from composer install
      */
     const TERMINATE = 'kernel.terminate';
 
@@ -155,17 +149,16 @@ final class KernelEvents
      *
      * This event allows you to reset the global and environmental state of
      * the application, when it was changed during the request.
-<<<<<<< HEAD
+ 
      *
      * @Event("Symfony\Component\HttpKernel\Event\FinishRequestEvent")
-=======
+  =
      * The event listener method receives a
      * Symfony\Component\HttpKernel\Event\FinishRequestEvent instance.
      *
      * @Event
      *
      * @var string
->>>>>>> web and vendor directory from composer install
      */
     const FINISH_REQUEST = 'kernel.finish_request';
 }

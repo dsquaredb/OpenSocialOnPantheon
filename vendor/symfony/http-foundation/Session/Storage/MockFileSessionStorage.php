@@ -24,7 +24,7 @@ namespace Symfony\Component\HttpFoundation\Session\Storage;
  */
 class MockFileSessionStorage extends MockArraySessionStorage
 {
-<<<<<<< HEAD
+ 
     private $savePath;
 
     /**
@@ -37,7 +37,6 @@ class MockFileSessionStorage extends MockArraySessionStorage
     /**
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param string      $savePath Path of directory to save session files
      * @param string      $name     Session name
      * @param MetadataBag $metaBag  MetadataBag instance
@@ -102,7 +101,7 @@ class MockFileSessionStorage extends MockArraySessionStorage
             throw new \RuntimeException('Trying to save a session that was not started yet or was already closed');
         }
 
-<<<<<<< HEAD
+ 
         $data = $this->data;
 
         foreach ($this->bags as $bag) {
@@ -125,7 +124,6 @@ class MockFileSessionStorage extends MockArraySessionStorage
         }
 =======
         file_put_contents($this->getFilePath(), serialize($this->data));
->>>>>>> web and vendor directory from composer install
 
         // this is needed for Silex, where the session object is re-used across requests
         // in functional tests. In Symfony, the container is rebooted, so we don't have

@@ -26,7 +26,7 @@ use Symfony\Component\Process\Exception\RuntimeException;
  */
 class WindowsPipes extends AbstractPipes
 {
-<<<<<<< HEAD
+ 
     private $files = array();
     private $fileHandles = array();
 =======
@@ -35,12 +35,11 @@ class WindowsPipes extends AbstractPipes
     /** @var array */
     private $fileHandles = array();
     /** @var array */
->>>>>>> web and vendor directory from composer install
     private $readBytes = array(
         Process::STDOUT => 0,
         Process::STDERR => 0,
     );
-<<<<<<< HEAD
+ 
     private $haveReadSupport;
 
     public function __construct($input, $haveReadSupport)
@@ -57,7 +56,6 @@ class WindowsPipes extends AbstractPipes
         $this->disableOutput = (bool) $disableOutput;
 
         if (!$this->disableOutput) {
->>>>>>> web and vendor directory from composer install
             // Fix for PHP bug #51800: reading from STDOUT pipe hangs forever on Windows if the output is too big.
             // Workaround for this problem is to use temporary files instead of pipes on Windows platform.
             //
@@ -112,11 +110,10 @@ class WindowsPipes extends AbstractPipes
      */
     public function getDescriptors()
     {
-<<<<<<< HEAD
+ 
         if (!$this->haveReadSupport) {
 =======
         if ($this->disableOutput) {
->>>>>>> web and vendor directory from composer install
             $nullstream = fopen('NUL', 'c');
 
             return array(
@@ -179,7 +176,7 @@ class WindowsPipes extends AbstractPipes
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
     public function haveReadSupport()
     {
         return $this->haveReadSupport;
@@ -189,7 +186,6 @@ class WindowsPipes extends AbstractPipes
      * {@inheritdoc}
      */
 =======
->>>>>>> web and vendor directory from composer install
     public function areOpen()
     {
         return $this->pipes && $this->fileHandles;
@@ -208,7 +204,7 @@ class WindowsPipes extends AbstractPipes
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Creates a new WindowsPipes instance.
      *
@@ -223,7 +219,6 @@ class WindowsPipes extends AbstractPipes
     }
 
     /**
->>>>>>> web and vendor directory from composer install
      * Removes temporary files.
      */
     private function removeFiles()

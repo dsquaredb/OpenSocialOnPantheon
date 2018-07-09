@@ -3,32 +3,29 @@
 /*
  * This file is part of Twig.
  *
-<<<<<<< HEAD
+ 
  * (c) Fabien Potencier
 =======
  * (c) 2009 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-<<<<<<< HEAD
+ 
 
 /**
  * @final
  */
 =======
->>>>>>> web and vendor directory from composer install
 class Twig_Extension_Escaper extends Twig_Extension
 {
     protected $defaultStrategy;
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param string|false|callable $defaultStrategy An escaping strategy
      *
      * @see setDefaultStrategy()
@@ -120,8 +117,7 @@ function twig_raw_filter($string)
 {
     return $string;
 }
-<<<<<<< HEAD
+ 
 
 class_alias('Twig_Extension_Escaper', 'Twig\Extension\EscaperExtension', false);
 =======
->>>>>>> web and vendor directory from composer install

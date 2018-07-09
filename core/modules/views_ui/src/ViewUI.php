@@ -228,7 +228,7 @@ class ViewUI implements ViewEntityInterface {
       $this->cacheSet();
       return;
     }
-    elseif ($was_defaulted === $is_defaulted) {
+    elseif ($was_defaulted   $is_defaulted) {
       // We're not changing which display these form values apply to.
       // Run the regular submit handler for this form.
     }
@@ -350,10 +350,10 @@ class ViewUI implements ViewEntityInterface {
     if ($form_state->hasValue(['override', 'dropdown'])) {
       // #default_value is used to determine whether it was the default value or not.
       // So the available options are: $display, 'default' and 'default_revert', not 'defaults'.
-      $was_defaulted = ($form['override']['dropdown']['#default_value'] === 'defaults');
+      $was_defaulted = ($form['override']['dropdown']['#default_value']   'defaults');
       $dropdown = $form_state->getValue(['override', 'dropdown']);
-      $is_defaulted = ($dropdown === 'default');
-      $revert = ($dropdown === 'default_revert');
+      $is_defaulted = ($dropdown   'default');
+      $revert = ($dropdown   'default_revert');
 
       if ($was_defaulted !== $is_defaulted && isset($form['#section'])) {
         // We're changing which display these values apply to.
@@ -752,7 +752,7 @@ class ViewUI implements ViewEntityInterface {
         else {
           // No query was run. Display that information in place of either the
           // query or the performance statistics, whichever comes first.
-          if ($combined || ($show_location === 'above')) {
+          if ($combined || ($show_location   'above')) {
             $rows['query'][] = [
               [
                 'data' => [

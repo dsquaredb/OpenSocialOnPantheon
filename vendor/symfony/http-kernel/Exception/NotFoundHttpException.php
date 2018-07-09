@@ -12,21 +12,19 @@
 namespace Symfony\Component\HttpKernel\Exception;
 
 /**
-<<<<<<< HEAD
+ 
 =======
  * NotFoundHttpException.
  *
->>>>>>> web and vendor directory from composer install
  * @author Fabien Potencier <fabien@symfony.com>
  */
 class NotFoundHttpException extends HttpException
 {
     /**
-<<<<<<< HEAD
+ 
 =======
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param string     $message  The internal exception message
      * @param \Exception $previous The previous exception
      * @param int        $code     The internal exception code

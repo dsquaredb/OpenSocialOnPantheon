@@ -31,11 +31,10 @@ class Question
     private $normalizer;
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param string $question The question to ask to the user
      * @param mixed  $default  The default answer to return if the user enters nothing
      */
@@ -80,11 +79,10 @@ class Question
      *
      * @param bool $hidden
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return Question The current instance
->>>>>>> web and vendor directory from composer install
      *
      * @throws LogicException In case the autocompleter is also used
      */
@@ -114,11 +112,10 @@ class Question
      *
      * @param bool $fallback
      *
-<<<<<<< HEAD
+ 
      * @return $this
 =======
      * @return Question The current instance
->>>>>>> web and vendor directory from composer install
      */
     public function setHiddenFallback($fallback)
     {
@@ -130,11 +127,10 @@ class Question
     /**
      * Gets values for the autocompleter.
      *
-<<<<<<< HEAD
+ 
      * @return null|iterable
 =======
      * @return null|array|\Traversable
->>>>>>> web and vendor directory from composer install
      */
     public function getAutocompleterValues()
     {
@@ -144,7 +140,7 @@ class Question
     /**
      * Sets values for the autocompleter.
      *
-<<<<<<< HEAD
+ 
      * @param null|iterable $values
      *
      * @return $this
@@ -152,7 +148,6 @@ class Question
      * @param null|array|\Traversable $values
      *
      * @return Question The current instance
->>>>>>> web and vendor directory from composer install
      *
      * @throws InvalidArgumentException
      * @throws LogicException
@@ -163,7 +158,7 @@ class Question
             $values = $this->isAssoc($values) ? array_merge(array_keys($values), array_values($values)) : array_values($values);
         }
 
-<<<<<<< HEAD
+ 
         if (null !== $values && !is_array($values) && !$values instanceof \Traversable) {
             throw new InvalidArgumentException('Autocompleter values can be either an array, `null` or a `Traversable` object.');
 =======
@@ -171,7 +166,6 @@ class Question
             if (!$values instanceof \Traversable || !$values instanceof \Countable) {
                 throw new InvalidArgumentException('Autocompleter values can be either an array, `null` or an object implementing both `Countable` and `Traversable` interfaces.');
             }
->>>>>>> web and vendor directory from composer install
         }
 
         if ($this->hidden) {
@@ -188,7 +182,7 @@ class Question
      *
      * @param null|callable $validator
      *
-<<<<<<< HEAD
+ 
      * @return $this
      */
     public function setValidator(callable $validator = null)
@@ -196,7 +190,6 @@ class Question
      * @return Question The current instance
      */
     public function setValidator($validator)
->>>>>>> web and vendor directory from composer install
     {
         $this->validator = $validator;
 
@@ -220,7 +213,7 @@ class Question
      *
      * @param null|int $attempts
      *
-<<<<<<< HEAD
+ 
      * @return $this
      *
      * @throws InvalidArgumentException in case the number of attempts is invalid
@@ -228,7 +221,6 @@ class Question
      * @return Question The current instance
      *
      * @throws InvalidArgumentException In case the number of attempts is invalid.
->>>>>>> web and vendor directory from composer install
      */
     public function setMaxAttempts($attempts)
     {
@@ -260,7 +252,7 @@ class Question
      *
      * @param callable $normalizer
      *
-<<<<<<< HEAD
+ 
      * @return $this
      */
     public function setNormalizer(callable $normalizer)
@@ -268,7 +260,6 @@ class Question
      * @return Question The current instance
      */
     public function setNormalizer($normalizer)
->>>>>>> web and vendor directory from composer install
     {
         $this->normalizer = $normalizer;
 

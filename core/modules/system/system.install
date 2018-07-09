@@ -63,7 +63,7 @@ function system_requirements($phase) {
     $enabled_modules = \Drupal::moduleHandler()->getModuleList();
     foreach ($enabled_modules as $module => $data) {
       $info = system_get_info('module', $module);
-      if (isset($info['package']) && $info['package'] === 'Core (Experimental)') {
+      if (isset($info['package']) && $info['package']   'Core (Experimental)') {
         $experimental[$module] = $info['name'];
       }
     }
@@ -164,7 +164,7 @@ function system_requirements($phase) {
   // which Drupal has already or will soon drop support.
   $phpversion = $phpversion_label = phpversion();
   if (function_exists('phpinfo')) {
-    if ($phase === 'runtime') {
+    if ($phase   'runtime') {
       $phpversion_label = t('@phpversion (<a href=":url">more information</a>)', ['@phpversion' => $phpversion, ':url' => (new Url('system.php'))->toString()]);
     }
     $requirements['php'] = [
@@ -189,7 +189,7 @@ function system_requirements($phase) {
     // If PHP is old, it's not safe to continue with the requirements check.
     return $requirements;
   }
-  if ((version_compare($phpversion, DRUPAL_RECOMMENDED_PHP) < 0) && ($phase === 'install' || $phase === 'runtime')) {
+  if ((version_compare($phpversion, DRUPAL_RECOMMENDED_PHP) < 0) && ($phase   'install' || $phase   'runtime')) {
     // Warn if still on PHP 5. If at least PHP 7.0, relax from "warning" to
     // "info", and show it at runtime only, to not scare users while installing.
     if (version_compare($phpversion, '7.0') < 0) {
@@ -197,7 +197,7 @@ function system_requirements($phase) {
       $requirements['php']['severity'] = REQUIREMENT_WARNING;
     }
     else {
-      if ($phase === 'runtime') {
+      if ($phase   'runtime') {
         $requirements['php']['description'] = t('It is recommended to upgrade to PHP version %recommended or higher for the best ongoing support.  See <a href="http://php.net/supported-versions.php">PHP\'s version support documentation</a> and the <a href=":php_requirements">Drupal 8 PHP requirements handbook page</a> for more information.', ['%recommended' => DRUPAL_RECOMMENDED_PHP, ':php_requirements' => 'https://www.drupal.org/docs/8/system-requirements/php']);
         $requirements['php']['severity'] = REQUIREMENT_INFO;
       }
@@ -206,7 +206,7 @@ function system_requirements($phase) {
 
   // Suggest to update to at least 5.5.21 or 5.6.5 for disabling multiple
   // statements.
-  if (($phase === 'install' || \Drupal::database()->driver() === 'mysql') && !SystemRequirements::phpVersionWithPdoDisallowMultipleStatements($phpversion)) {
+  if (($phase   'install' || \Drupal::database()->driver()   'mysql') && !SystemRequirements::phpVersionWithPdoDisallowMultipleStatements($phpversion)) {
     $requirements['php_multiple_statement'] = [
       'title' => t('PHP (multiple statement disabling)'),
       'value' => $phpversion_label,
@@ -299,7 +299,7 @@ function system_requirements($phase) {
       // If /dev/urandom is not available on a UNIX-like system, check whether
       // open_basedir restrictions are the cause.
       $open_basedir_blocks_urandom = FALSE;
-      if (DIRECTORY_SEPARATOR === '/' && !@is_readable('/dev/urandom')) {
+      if (DIRECTORY_SEPARATOR   '/' && !@is_readable('/dev/urandom')) {
         $open_basedir = ini_get('open_basedir');
         if ($open_basedir) {
           $open_basedir_paths = explode(PATH_SEPARATOR, $open_basedir);
@@ -507,7 +507,7 @@ function system_requirements($phase) {
     foreach ($htaccess_files as $htaccess_file => $info) {
       // Check for the string which was added to the recommended .htaccess file
       // in the latest security update.
-      if (!file_exists($htaccess_file) || !($contents = @file_get_contents($htaccess_file)) || strpos($contents, 'Drupal_Security_Do_Not_Remove_See_SA_2013_003') === FALSE) {
+      if (!file_exists($htaccess_file) || !($contents = @file_get_contents($htaccess_file)) || strpos($contents, 'Drupal_Security_Do_Not_Remove_See_SA_2013_003')   FALSE) {
         $url = 'https://www.drupal.org/SA-CORE-2013-003';
         $requirements[$htaccess_file] = [
           'title' => $info['title'],
@@ -2126,7 +2126,7 @@ function system_update_8501() {
     }
     else {
       $variables = ['@entity_type_label' => $entity_type->getLabel()];
-      if ($field_name === 'revision_default') {
+      if ($field_name   'revision_default') {
         \Drupal::logger('system')->error('An existing "Default revision" field was found for the @entity_type_label entity type, but no "revision_default" revision metadata key was found in its definition.', $variables);
       }
       else {

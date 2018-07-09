@@ -55,7 +55,6 @@ msgstr "Language $langcode"
 #: Testing site name configuration during the installer.
 msgid "Drupal"
 msgstr "Drupal"
->>>>>>> revert Open Social update
 ENDPO;
   }
 
@@ -80,7 +79,6 @@ ENDPO;
     // Ensure the title is correct.
     $this->assertEqual('SITE_NAME_' . $this->langcode, \Drupal::config('system.site')->get('name'));
 
->>>>>>> revert Open Social update
     // Verify German and Spanish were configured.
     $this->drupalGet('admin/config/regional/language');
     $this->assertText('German');
@@ -149,7 +147,6 @@ ENDPO;
         'modules[views][enable]' => TRUE,
         'modules[filter][enable]' => TRUE,
       ];
->>>>>>> revert Open Social update
       $this->drupalPostForm('admin/modules', $edit, t('Install'));
 
       // Verify the strings from the translation are still as expected.
@@ -183,7 +180,6 @@ ENDPO;
         $edit = array();
 =======
         $edit = [];
->>>>>>> revert Open Social update
         $edit['langcode'] = $langcode;
         $edit['translation'] = 'translated';
         $edit['string'] = $sample;

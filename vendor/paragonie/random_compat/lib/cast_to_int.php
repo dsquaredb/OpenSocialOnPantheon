@@ -5,23 +5,19 @@
  *
  * The MIT License (MIT)
  *
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
  * Copyright (c) 2015 - 2017 Paragon Initiative Enterprises
 =======
  * Copyright (c) 2015 Paragon Initiative Enterprises
->>>>>>> web and vendor directory from composer install
 =======
  * Copyright (c) 2015 - 2018 Paragon Initiative Enterprises
->>>>>>> Update Open Social to 8.x-2.1
 =======
  * Copyright (c) 2015 - 2017 Paragon Initiative Enterprises
->>>>>>> revert Open Social update
 =======
  * Copyright (c) 2015 - 2018 Paragon Initiative Enterprises
->>>>>>> updating open social
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -42,11 +38,10 @@
  * SOFTWARE.
  */
 
-<<<<<<< HEAD
+ 
 if (!is_callable('RandomCompat_intval')) {
 =======
 if (!function_exists('RandomCompat_intval')) {
->>>>>>> web and vendor directory from composer install
     
     /**
      * Cast to an integer if we can, safely.
@@ -58,7 +53,7 @@ if (!function_exists('RandomCompat_intval')) {
      * through.
      * 
      * @param int|float $number    The number we want to convert to an int
-<<<<<<< HEAD
+ 
      * @param bool      $fail_open Set to true to not throw an exception
      * 
      * @return float|int
@@ -67,30 +62,25 @@ if (!function_exists('RandomCompat_intval')) {
      * @param boolean   $fail_open Set to true to not throw an exception
      * 
      * @return int (or float if $fail_open)
->>>>>>> web and vendor directory from composer install
      *
      * @throws TypeError
      */
     function RandomCompat_intval($number, $fail_open = false)
     {
-<<<<<<< HEAD
+ 
         if (is_int($number) || is_float($number)) {
             $number += 0;
         } elseif (is_numeric($number)) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 =======
         if (is_numeric($number)) {
->>>>>>> web and vendor directory from composer install
 =======
             /** @psalm-suppress InvalidOperand */
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
             /** @psalm-suppress InvalidOperand */
->>>>>>> updating open social
             $number += 0;
         }
         /** @var int|float $number */
@@ -105,7 +95,7 @@ if (!function_exists('RandomCompat_intval')) {
             $number = (int) $number;
         }
 
-<<<<<<< HEAD
+ 
         if (is_int($number)) {
             return (int) $number;
         } elseif (!$fail_open) {
@@ -122,6 +112,5 @@ if (!function_exists('RandomCompat_intval')) {
         throw new TypeError(
             'Expected an integer.'
         );
->>>>>>> web and vendor directory from composer install
     }
 }

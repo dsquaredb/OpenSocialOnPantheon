@@ -1,5 +1,5 @@
 Webmozart Assert
-================
+     =
 
 [![Build Status](https://travis-ci.org/webmozart/assert.svg?branch=1.1.0)](https://travis-ci.org/webmozart/assert)
 [![Build status](https://ci.appveyor.com/api/projects/status/lyg83bcsisrr94se/branch/master?svg=true)](https://ci.appveyor.com/project/webmozart/assert/branch/master)
@@ -119,7 +119,7 @@ Method                                          | Description
 `notEmpty($value, $message = '')`               | Check that a value is not `empty()`
 `eq($value, $value2, $message = '')`            | Check that a value equals another (`==`)
 `notEq($value, $value2, $message = '')`         | Check that a value does not equal another (`!=`)
-`same($value, $value2, $message = '')`          | Check that a value is identical to another (`===`)
+`same($value, $value2, $message = '')`          | Check that a value is identical to another (` `)
 `notSame($value, $value2, $message = '')`       | Check that a value is not identical to another (`!==`)
 `greaterThan($value, $value2, $message = '')`   | Check that a value is greater than another
 `greaterThanEq($value, $value2, $message = '')` | Check that a value is greater than or equal to another

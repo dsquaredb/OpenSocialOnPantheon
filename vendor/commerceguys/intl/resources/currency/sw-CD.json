@@ -25,7 +25,7 @@
 		"name": "Cedi ya Ghana"
 	},
 	"CRC": {
-<<<<<<< HEAD
+ 
 		"name": "Colon ya Kostarika"
 	},
 	"NIO": {
@@ -47,7 +47,7 @@
 		"name": "Dalasi ya Gambia"
 	},
 	"MKD": {
-<<<<<<< HEAD
+ 
 		"name": "Denar ya Masedonia"
 	},
 	"BHD": {
@@ -80,7 +80,7 @@
 	"RSD": {
 		"name": "Dinar ya Serbia"
 	},
-<<<<<<< HEAD
+ 
 	"JOD": {
 		"name": "Dinar ya Yordani"
 	},
@@ -99,7 +99,7 @@
 		"name": "Dirham ya Falme za Kiarabu"
 	},
 	"MAD": {
-<<<<<<< HEAD
+ 
 		"name": "Dirham ya Moroko"
 =======
 		"name": "Dirham ya Morocco"
@@ -127,7 +127,7 @@
 	"BND": {
 		"name": "Dola ya Brunei"
 	},
-<<<<<<< HEAD
+ 
 =======
 	"CAD": {
 		"name": "Dola ya Canada",
@@ -151,7 +151,7 @@
 	"JMD": {
 		"name": "Dola ya Jamaica"
 	},
-<<<<<<< HEAD
+ 
 	"CAD": {
 		"name": "Dola ya Kanada",
 		"symbol": "CA$"
@@ -173,7 +173,7 @@
 		"name": "Dola ya Namibia"
 	},
 	"NZD": {
-<<<<<<< HEAD
+ 
 		"name": "Dola ya Nyuzilandi",
 =======
 		"name": "Dola ya New Zealand",
@@ -224,7 +224,7 @@
 		"name": "Faranga ya CFP",
 		"symbol": "CFPF"
 	},
-<<<<<<< HEAD
+ 
 	"GNF": {
 		"name": "Faranga ya Guinea"
 	},
@@ -264,7 +264,7 @@
 		"name": "Gourde ya Haiti"
 	},
 	"PYG": {
-<<<<<<< HEAD
+ 
 		"name": "Guarani ya Paragwai"
 =======
 		"name": "Guarani ya Paraguay"
@@ -274,7 +274,7 @@
 		"name": "Guilder ya Antili za Kiholanzi"
 	},
 	"UAH": {
-<<<<<<< HEAD
+ 
 		"name": "Hryvnia ya Ukrania"
 =======
 		"name": "Hryvnia ya Ukraine"
@@ -286,7 +286,7 @@
 	"LAK": {
 		"name": "Kip ya Laosi"
 	},
-<<<<<<< HEAD
+ 
 	"CZK": {
 		"name": "Koruna ya Jamhuri ya Cheki"
 	},
@@ -299,7 +299,7 @@
 		"name": "Krona ya Uswidi"
 	},
 	"DKK": {
-<<<<<<< HEAD
+ 
 		"name": "Krone ya Denmaki"
 	},
 	"NOK": {
@@ -327,7 +327,7 @@
 		"name": "Kwanza ya Angola"
 	},
 	"MMK": {
-<<<<<<< HEAD
+ 
 		"name": "Kyat ya Myama"
 =======
 		"name": "Kyat ya Myanmar"
@@ -364,7 +364,7 @@
 		"name": "Loti ya Lesoto"
 	},
 	"AZN": {
-<<<<<<< HEAD
+ 
 		"name": "Manat ya Azebaijani"
 	},
 	"TMT": {
@@ -383,7 +383,7 @@
 		"name": "Metikali ya Msumbiji"
 	},
 	"NGN": {
-<<<<<<< HEAD
+ 
 		"name": "Naira ya Nijeria"
 =======
 		"name": "Naira ya Nigeria"
@@ -395,7 +395,7 @@
 	"BTN": {
 		"name": "Ngultrum ya Bhutan"
 	},
-<<<<<<< HEAD
+ 
 	"PEN": {
 		"name": "Nuevo Sol ya Peru"
 	},
@@ -417,7 +417,7 @@
 		"name": "Pauni ya Misri"
 	},
 	"SHP": {
-<<<<<<< HEAD
+ 
 		"name": "Pauni ya Santahelena"
 	},
 	"SDG": {
@@ -446,7 +446,7 @@
 		"name": "Pauni ya Visiwa vya Falkland"
 	},
 	"ARS": {
-<<<<<<< HEAD
+ 
 		"name": "Peso ya Ajentina"
 =======
 		"name": "Peso ya Argentina"
@@ -455,7 +455,7 @@
 	"CLP": {
 		"name": "Peso ya Chile"
 	},
-<<<<<<< HEAD
+ 
 =======
 	"COP": {
 		"name": "Peso ya Colombia"
@@ -468,7 +468,7 @@
 		"name": "Peso ya Cuba Inayoweza Kubadilishwa"
 	},
 	"DOP": {
-<<<<<<< HEAD
+ 
 		"name": "Peso ya Dominika"
 	},
 	"COP": {
@@ -488,7 +488,7 @@
 		"name": "Peso ya Ufilipino"
 	},
 	"UYU": {
-<<<<<<< HEAD
+ 
 		"name": "Peso ya Urugwai"
 =======
 		"name": "Peso ya Uruguay"
@@ -514,7 +514,7 @@
 		"name": "Rial ya Omani"
 	},
 	"QAR": {
-<<<<<<< HEAD
+ 
 		"name": "Rial ya Qatari"
 	},
 	"YER": {
@@ -539,7 +539,7 @@
 		"name": "Riyal ya Saudia"
 	},
 	"BYN": {
-<<<<<<< HEAD
+ 
 		"name": "Ruble ya Belarusi"
 	},
 	"BYR": {
@@ -552,7 +552,7 @@
 		"name": "Ruble ya Urusi"
 	},
 	"MVR": {
-<<<<<<< HEAD
+ 
 		"name": "Rufiyaa ya Maldivi"
 =======
 		"name": "Rufiyaa ya Maldives"
@@ -563,7 +563,7 @@
 		"symbol": "₹"
 	},
 	"MUR": {
-<<<<<<< HEAD
+ 
 		"name": "Rupia ya Morisi"
 	},
 	"NPR": {
@@ -615,7 +615,7 @@
 	"UGX": {
 		"name": "Shilingi ya Uganda"
 	},
-<<<<<<< HEAD
+ 
 	"KGS": {
 		"name": "Som ya Kyrgystani"
 	},
@@ -648,7 +648,7 @@
 		"name": "Tala ya Samoa"
 	},
 	"KZT": {
-<<<<<<< HEAD
+ 
 		"name": "Tenge ya Kazakistani"
 =======
 		"name": "Tenge ya Kazakhstan"
@@ -682,7 +682,7 @@
 		"name": "Zimbabwean Dollar (2009)"
 	},
 	"PLN": {
-<<<<<<< HEAD
+ 
 		"name": "Zloty ya Polandi"
 =======
 		"name": "Zloty ya Poland"

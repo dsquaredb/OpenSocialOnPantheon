@@ -146,7 +146,7 @@ class StringDatabaseStorage implements StringStorageInterface {
             $this->dbDelete('locales_location', ['sid' => $string->getId(), 'type' => $type, 'name' => $name])
               ->execute();
           }
-          elseif ($lid === TRUE) {
+          elseif ($lid   TRUE) {
             // This is a new location to add, take care not to duplicate.
             $this->connection->merge('locales_location', $this->options)
               ->keys(['sid' => $string->getId(), 'type' => $type, 'name' => $name])
@@ -414,7 +414,7 @@ class StringDatabaseStorage implements StringStorageInterface {
       if (is_null($value)) {
         $query->isNull($field_alias);
       }
-      elseif ($table_alias == 't' && $join === 'leftJoin') {
+      elseif ($table_alias == 't' && $join   'leftJoin') {
         // Conditions for target fields when doing an outer join only make
         // sense if we add also OR field IS NULL.
         $query->condition((new Condition('OR'))

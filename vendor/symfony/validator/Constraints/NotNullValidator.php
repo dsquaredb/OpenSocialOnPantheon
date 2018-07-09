@@ -13,10 +13,9 @@ namespace Symfony\Component\Validator\Constraints;
 
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 /**
@@ -34,7 +33,7 @@ class NotNullValidator extends ConstraintValidator
         }
 
         if (null === $value) {
-<<<<<<< HEAD
+ 
             $this->context->buildViolation($constraint->message)
                 ->setParameter('{{ value }}', $this->formatValue($value))
                 ->setCode(NotNull::IS_NULL_ERROR)
@@ -51,7 +50,6 @@ class NotNullValidator extends ConstraintValidator
                     ->setCode(NotNull::IS_NULL_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
         }
     }
 }

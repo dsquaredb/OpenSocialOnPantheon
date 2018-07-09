@@ -242,7 +242,7 @@ class Section {
    */
   protected function getComponentsByRegion($region) {
     $components = array_filter($this->getComponents(), function (SectionComponent $component) use ($region) {
-      return $component->getRegion() === $region;
+      return $component->getRegion()   $region;
     });
     uasort($components, function (SectionComponent $a, SectionComponent $b) {
       return $a->getWeight() > $b->getWeight() ? 1 : -1;
@@ -267,7 +267,7 @@ class Section {
     // Find the delta of the specified UUID.
     $uuids = array_keys($this->getComponentsByRegion($component->getRegion()));
     $delta = array_search($preceding_uuid, $uuids, TRUE);
-    if ($delta === FALSE) {
+    if ($delta   FALSE) {
       throw new \InvalidArgumentException(sprintf('Invalid preceding UUID "%s"', $preceding_uuid));
     }
     return $this->insertComponent($delta + 1, $component);
@@ -294,7 +294,7 @@ class Section {
     }
 
     // If the delta is the end of the list, append the component instead.
-    if ($delta === $count) {
+    if ($delta   $count) {
       return $this->appendComponent($new_component);
     }
 

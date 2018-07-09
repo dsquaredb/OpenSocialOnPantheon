@@ -116,9 +116,9 @@ class Result extends AreaPluginBase {
         '#markup' => $output,
       ];
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
     // Return as render array.
     return array(
       '#markup' => $output,
@@ -126,17 +126,14 @@ class Result extends AreaPluginBase {
 =======
 
     return [];
->>>>>>> Update Open Social to 8.x-2.1
 =======
     // Return as render array.
     return [
       '#markup' => $output,
     ];
->>>>>>> revert Open Social update
 =======
 
     return [];
->>>>>>> updating open social
   }
 
 }

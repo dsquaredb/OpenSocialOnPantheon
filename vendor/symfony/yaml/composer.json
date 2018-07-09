@@ -16,18 +16,18 @@
         }
     ],
     "require": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+ 
+ 
+ 
+ 
+  =
 >>>>>>> Update Open Social to 8.x-2.1
         "php": "^5.5.9|>=7.0.8",
         "symfony/polyfill-ctype": "~1.8"
-=======
+  =
         "php": "^5.5.9|>=7.0.8"
 >>>>>>> revert Open Social update
-=======
+  =
         "php": "^5.5.9|>=7.0.8",
         "symfony/polyfill-ctype": "~1.8"
 >>>>>>> updating open social
@@ -40,7 +40,7 @@
     },
     "suggest": {
         "symfony/console": "For validating YAML files using the lint command"
-=======
+  =
         "php": ">=5.3.9"
 >>>>>>> web and vendor directory from composer install
     },
@@ -53,9 +53,9 @@
     "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
-<<<<<<< HEAD
+ 
             "dev-master": "3.4-dev"
-=======
+  =
             "dev-master": "2.8-dev"
 >>>>>>> web and vendor directory from composer install
         }

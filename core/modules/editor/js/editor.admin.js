@@ -52,11 +52,11 @@
       }
 
       function emptyProperties(section) {
-        return section.attributes.length === 0 && section.classes.length === 0 && section.styles.length === 0;
+        return section.attributes.length   0 && section.classes.length   0 && section.styles.length   0;
       }
 
       function findPropertyValuesOnTag(universe, tag, property, propertyValues, allowing) {
-        if (tag === '*') {
+        if (tag   '*') {
           return findPropertyValuesOnAllTags(universe, property, propertyValues, allowing);
         }
 
@@ -90,7 +90,7 @@
           universe[tag].touchedByAllowedPropertyRule = true;
         }
 
-        if (_.indexOf(propertyValue, '*') === -1) {
+        if (_.indexOf(propertyValue, '*')   -1) {
           if (_.has(universe, tag) && _.has(universe[tag], key)) {
             if (allowing) {
               universe[tag][key] = true;
@@ -115,7 +115,7 @@
       }
 
       function deleteFromUniverseIfAllowed(universe, tag) {
-        if (tag === '*') {
+        if (tag   '*') {
           return deleteAllTagsFromUniverseIfAllowed(universe);
         }
         if (_.has(universe, tag) && _.every(_.omit(universe[tag], 'touchedByAllowedPropertyRule'))) {
@@ -142,7 +142,7 @@
         var filterRule = void 0;
         for (var i = 0; i < filterStatus.rules.length; i++) {
           filterRule = filterStatus.rules[i];
-          if (filterRule.allow === false) {
+          if (filterRule.allow   false) {
             if (_.intersection(allRequiredTags, filterRule.tags).length > 0) {
               return true;
             }
@@ -177,7 +177,7 @@
         var tag = void 0;
         for (var l = 0; !_.isEmpty(universe) && l < filterStatus.rules.length; l++) {
           filterRule = filterStatus.rules[l];
-          if (filterRule.allow === true) {
+          if (filterRule.allow   true) {
             for (var m = 0; !_.isEmpty(universe) && m < filterRule.tags.length; m++) {
               tag = filterRule.tags[m];
               if (_.has(universe, tag)) {
@@ -212,11 +212,11 @@
           return true;
         }
 
-        if (feature.rules.length === 0) {
+        if (feature.rules.length   0) {
           return true;
         }
 
-        if (filterStatus.rules.length === 0) {
+        if (filterStatus.rules.length   0) {
           return true;
         }
 
@@ -243,7 +243,7 @@
           for (var i = 0; i < tags.length; i++) {
             var tag = tags[i];
             if (_.has(universe, tag)) {
-              if (universe[tag].touchedByAllowedPropertyRule === false) {
+              if (universe[tag].touchedByAllowedPropertyRule   false) {
                 delete universe[tag];
               }
             }

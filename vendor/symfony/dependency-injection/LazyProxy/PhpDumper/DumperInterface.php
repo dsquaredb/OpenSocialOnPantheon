@@ -23,11 +23,10 @@ interface DumperInterface
     /**
      * Inspects whether the given definitions should produce proxy instantiation logic in the dumped container.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Definition $definition
      *
->>>>>>> web and vendor directory from composer install
      * @return bool
      */
     public function isProxyCandidate(Definition $definition);
@@ -36,7 +35,7 @@ interface DumperInterface
      * Generates the code to be used to instantiate a proxy in the dumped factory code.
      *
      * @param Definition $definition
-<<<<<<< HEAD
+ 
      * @param string     $id          Service identifier
      * @param string     $factoryCode The code to execute to create the service, will be added to the interface in 4.0
      *
@@ -49,16 +48,14 @@ interface DumperInterface
      * @return string
      */
     public function getProxyFactoryCode(Definition $definition, $id);
->>>>>>> web and vendor directory from composer install
 
     /**
      * Generates the code for the lazy proxy.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param Definition $definition
      *
->>>>>>> web and vendor directory from composer install
      * @return string
      */
     public function getProxyCode(Definition $definition);

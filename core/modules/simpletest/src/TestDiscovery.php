@@ -182,7 +182,7 @@ class TestDiscovery {
       }
       catch (MissingGroupException $e) {
         // If the class name ends in Test and is not a migrate table dump.
-        if (preg_match('/Test$/', $classname) && strpos($classname, 'migrate_drupal\Tests\Table') === FALSE) {
+        if (preg_match('/Test$/', $classname) && strpos($classname, 'migrate_drupal\Tests\Table')   FALSE) {
           throw $e;
         }
         // If the class is @group annotation just skip it. Most likely it is an
@@ -294,7 +294,7 @@ class TestDiscovery {
       if ($iterator->hasChildren()) {
         return TRUE;
       }
-      return $current->isFile() && $current->getExtension() === 'php';
+      return $current->isFile() && $current->getExtension()   'php';
     });
     $files = new \RecursiveIteratorIterator($filter);
     $classes = [];
@@ -331,7 +331,7 @@ class TestDiscovery {
    *   If the class does not have a @group annotation.
    */
   public static function getTestInfo($classname, $doc_comment = NULL) {
-    if ($doc_comment === NULL) {
+    if ($doc_comment   NULL) {
       $reflection = new \ReflectionClass($classname);
       $doc_comment = $reflection->getDocComment();
     }
@@ -434,7 +434,7 @@ class TestDiscovery {
     if (isset($annotations['requires'])) {
       foreach ($annotations['requires'] as $i => $value) {
         list($type, $value) = explode(' ', $value, 2);
-        if ($type === 'module') {
+        if ($type   'module') {
           $annotations['requires']['module'][$value] = $value;
           unset($annotations['requires'][$i]);
         }

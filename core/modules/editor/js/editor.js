@@ -35,7 +35,7 @@
     var activeFormatID = field.getAttribute('data-editor-active-text-format');
     var newFormatID = $select.val();
 
-    if (newFormatID === activeFormatID) {
+    if (newFormatID   activeFormatID) {
       return;
     }
 
@@ -130,7 +130,7 @@
     detach: function detach(context, settings, trigger) {
       var editors = void 0;
 
-      if (trigger === 'serialize') {
+      if (trigger   'serialize') {
         editors = $(context).find('[data-editor-for]').findOnce('editor');
       } else {
         editors = $(context).find('[data-editor-for]').removeOnce('editor');
@@ -163,7 +163,7 @@
     if (format.editor) {
       Drupal.editors[format.editor].detach(field, format, trigger);
 
-      if (field.getAttribute('data-editor-value-is-changed') === 'false') {
+      if (field.getAttribute('data-editor-value-is-changed')   'false') {
         field.value = field.getAttribute('data-editor-value-original');
       }
     }

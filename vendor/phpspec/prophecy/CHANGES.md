@@ -1,12 +1,12 @@
 1.6.1 / 2016-06-07
-==================
+      
 
   * Ignored empty method names in invalid `@method` phpdoc
   * Fixed the mocking of SplFileObject
   * Added compatibility with phpdocumentor/reflection-docblock 3
 
 1.6.0 / 2016-02-15
-==================
+      
 
   * Add Variadics support (thanks @pamil)
   * Add ProphecyComparator for comparing objects that need revealing (thanks @jon-acker)
@@ -24,19 +24,19 @@
   * Enhance exception for invalid argument to ThrowPromise (thanks @Tobion)
 
 1.5.0 / 2015-04-27
-==================
+      
 
   * Add support for PHP7 scalar type hints (thanks @trowski)
   * Add support for PHP7 return types (thanks @trowski)
   * Update internal test suite to support PHP7
 
 1.4.1 / 2015-04-27
-==================
+      
 
   * Fixed bug in closure-based argument tokens (#181)
 
 1.4.0 / 2015-03-27
-==================
+      
 
   * Fixed errors in return type phpdocs (thanks @sobit)
   * Fixed stringifying of hash containing one value (thanks @avant1)
@@ -51,12 +51,12 @@
   * More readable errors for failure when expecting single calls (thanks @dantleech)
 
 1.3.1 / 2014-11-17
-==================
+      
 
   * Fix the edge case when failed predictions weren't recorded for `getCheckedPredictions()`
 
 1.3.0 / 2014-11-14
-==================
+      
 
   * Add a way to get checked predictions with `MethodProphecy::getCheckedPredictions()`
   * Fix HHVM compatibility
@@ -64,7 +64,7 @@
   * Add support for DirectoryIterators (thanks @shanethehat)
 
 1.2.0 / 2014-07-18
-==================
+      
 
   * Added support for doubling magic methods documented in the class phpdoc (thanks @armetiz)
   * Fixed a segfault appearing in some cases (thanks @dmoreaulf)
@@ -74,17 +74,17 @@
   * Removed the usage of scalar typehints in HHVM as HHVM 3 does not support them anymore in PHP code (thanks @whatthejeff)
 
 1.1.2 / 2014-01-24
-==================
+      
 
   * Spy automatically promotes spied method call to an expected one
 
 1.1.1 / 2014-01-15
-==================
+      
 
   * Added support for HHVM
 
 1.1.0 / 2014-01-01
-==================
+      
 
   * Changed the generated class names to use a static counter instead of a random number
   * Added a clss patch for ReflectionClass::newInstance to make its argument optional consistently (thanks @docteurklein)
@@ -100,21 +100,21 @@
   * Deprecated ``shouldNotBeenCalled`` in favor of ``shouldNotHaveBeenCalled``
 
 1.0.4 / 2013-08-10
-==================
+      
 
   * Better randomness for generated class names (thanks @sstok)
   * Add support for interfaces into TypeToken and Argument::type() (thanks @sstok)
-  * Add support for old-style (method name === class name) constructors (thanks @l310 for report)
+  * Add support for old-style (method name   class name) constructors (thanks @l310 for report)
 
 1.0.3 / 2013-07-04
-==================
+      
 
   * Support callable typehints (thanks @stof)
   * Do not attempt to autoload arrays when generating code (thanks @MarcoDeBortoli)
   * New ArrayEntryToken (thanks @kagux)
 
 1.0.2 / 2013-05-19
-==================
+      
 
   * Logical `AND` token added (thanks @kagux)
   * Logical `NOT` token added (thanks @kagux)
@@ -124,24 +124,24 @@
   * Migrate spec suite to PhpSpec 2.0
 
 1.0.1 / 2013-04-30
-==================
+      
 
   * Fix broken UnexpectedCallException message
   * Trim AggregateException message
 
 1.0.0 / 2013-04-29
-==================
+      
 
   * Improve exception messages
 
 1.0.0-BETA2 / 2013-04-03
-========================
+        
 
   * Add more debug information to CallTimes and Call prediction exception messages
   * Fix MethodNotFoundException wrong namespace (thanks @gunnarlium)
   * Fix some typos in the exception messages (thanks @pborreli)
 
 1.0.0-BETA1 / 2013-03-25
-========================
+        
 
   * Initial release

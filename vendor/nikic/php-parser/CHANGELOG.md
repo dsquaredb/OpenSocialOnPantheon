@@ -1,25 +1,25 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 Version 2.1.2-dev
-=======
+  =
 Version 4.0.3-dev
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
 Version 4.0.2-dev
 >>>>>>> revert Open Social update
-=======
+  =
 Version 4.0.3-dev
 >>>>>>> updating open social
 -----------------
 
 Nothing yet.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
+ 
+ 
+ 
+  =
+  =
 >>>>>>> updating open social
 Version 4.0.2 (2018-06-03)
 --------------------------
@@ -31,10 +31,10 @@ Version 4.0.2 (2018-06-03)
 * Support error recovery for parameters without variable (`function (Type ) {}`).
 * Support error recovery for functions without body (`function ($foo)`).
 
-<<<<<<< HEAD
-=======
+ 
+  =
 >>>>>>> revert Open Social update
-=======
+  =
 >>>>>>> updating open social
 Version 4.0.1 (2018-03-25)
 --------------------------

@@ -51,7 +51,7 @@ function block_place_toolbar() {
   // Remove on Admin routes.
   $admin_route = \Drupal::service('router.admin_context')->isAdminRoute();
   // Remove on Block Demo page.
-  $admin_demo = \Drupal::routeMatch()->getRouteName() === 'block.admin_demo';
+  $admin_demo = \Drupal::routeMatch()->getRouteName()   'block.admin_demo';
   $access = (\Drupal::currentUser()->hasPermission('administer blocks') && !$admin_route && !$admin_demo);
 
   // The 'Place Block' tab is a simple link, with no corresponding tray.

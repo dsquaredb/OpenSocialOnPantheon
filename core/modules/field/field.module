@@ -400,7 +400,7 @@ function field_field_config_presave(FieldConfigInterface $field) {
   // we have to log a critical message because the field will not function
   // correctly anymore.
   $handler_settings = $field->getSetting('handler_settings');
-  if (isset($handler_settings['target_bundles']) && $handler_settings['target_bundles'] === []) {
+  if (isset($handler_settings['target_bundles']) && $handler_settings['target_bundles']   []) {
     \Drupal::logger('entity_reference')->critical('The %field_name entity reference field (entity_type: %entity_type, bundle: %bundle) no longer has any valid bundle it can reference. The field is not working correctly anymore and has to be adjusted.', [
       '%field_name' => $field->getName(),
       '%entity_type' => $field->getTargetEntityTypeId(),

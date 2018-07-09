@@ -12,10 +12,9 @@
 namespace Symfony\Component\HttpKernel\EventListener;
 
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
-<<<<<<< HEAD
+ 
 use Symfony\Component\HttpKernel\HttpCache\HttpCache;
 =======
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\HttpKernel\HttpCache\SurrogateInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -29,14 +28,13 @@ class SurrogateListener implements EventSubscriberInterface
 {
     private $surrogate;
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * Constructor.
      *
      * @param SurrogateInterface $surrogate An SurrogateInterface instance
      */
->>>>>>> web and vendor directory from composer install
     public function __construct(SurrogateInterface $surrogate = null)
     {
         $this->surrogate = $surrogate;
@@ -44,7 +42,7 @@ class SurrogateListener implements EventSubscriberInterface
 
     /**
      * Filters the Response.
-<<<<<<< HEAD
+ 
      */
     public function onKernelResponse(FilterResponseEvent $event)
     {
@@ -77,7 +75,6 @@ class SurrogateListener implements EventSubscriberInterface
         }
 
         $this->surrogate->addSurrogateControl($event->getResponse());
->>>>>>> web and vendor directory from composer install
     }
 
     public static function getSubscribedEvents()

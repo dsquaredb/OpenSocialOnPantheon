@@ -3583,7 +3583,7 @@ $connection->insert('field_config')
   'translatable' => '0',
   'deleted' => '0',
 ))
-<<<<<<< HEAD
+ 
 =======
 ->values(array(
   'id' => '22',
@@ -3810,10 +3810,9 @@ $connection->insert('field_config')
   'translatable' => '0',
   'deleted' => '0',
 ))
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> updating open social
 ->values(array(
   'id' => '37',
   'field_name' => 'field_float_list',
@@ -3859,12 +3858,9 @@ $connection->insert('field_config')
   'translatable' => '0',
   'deleted' => '0',
 ))
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
 ->execute();
 
 $connection->schema()->createTable('field_config_instance', array(
@@ -4231,7 +4227,7 @@ $connection->insert('field_config_instance')
   'data' => 'a:7:{s:5:"label";s:7:"Integer";s:6:"widget";a:5:{s:6:"weight";s:1:"9";s:4:"type";s:6:"number";s:6:"module";s:6:"number";s:6:"active";i:0;s:8:"settings";a:0:{}}s:8:"settings";a:5:{s:3:"min";s:1:"1";s:3:"max";s:2:"25";s:6:"prefix";s:3:"abc";s:6:"suffix";s:3:"xyz";s:18:"user_register_form";b:0;}s:7:"display";a:1:{s:7:"default";a:5:{s:5:"label";s:5:"above";s:4:"type";s:14:"number_integer";s:6:"weight";s:1:"8";s:8:"settings";a:4:{s:18:"thousand_separator";s:1:" ";s:17:"decimal_separator";s:1:".";s:5:"scale";i:0;s:13:"prefix_suffix";b:1;}s:6:"module";s:6:"number";}}s:8:"required";i:1;s:11:"description";s:0:"";s:13:"default_value";N;}',
   'deleted' => '0',
 ))
-<<<<<<< HEAD
+ 
 =======
 ->values(array(
   'id' => '37',
@@ -4467,10 +4463,9 @@ $connection->insert('field_config_instance')
   'data' => 'a:6:{s:5:"label";s:17:"Date without time";s:6:"widget";a:5:{s:6:"weight";s:1:"2";s:4:"type";s:11:"date_select";s:6:"module";s:4:"date";s:6:"active";i:1;s:8:"settings";a:6:{s:12:"input_format";s:13:"m/d/Y - H:i:s";s:19:"input_format_custom";s:0:"";s:10:"year_range";s:5:"-3:+3";s:9:"increment";s:2:"15";s:14:"label_position";s:5:"above";s:10:"text_parts";a:0:{}}}s:8:"settings";a:5:{s:13:"default_value";s:3:"now";s:18:"default_value_code";s:0:"";s:14:"default_value2";s:4:"same";s:19:"default_value_code2";s:0:"";s:18:"user_register_form";b:0;}s:7:"display";a:1:{s:7:"default";a:5:{s:5:"label";s:5:"above";s:4:"type";s:12:"date_default";s:6:"weight";s:1:"3";s:8:"settings";a:5:{s:11:"format_type";s:4:"long";s:15:"multiple_number";s:0:"";s:13:"multiple_from";s:0:"";s:11:"multiple_to";s:0:"";s:6:"fromto";s:4:"both";}s:6:"module";s:4:"date";}}s:8:"required";i:0;s:11:"description";s:0:"";}',
   'deleted' => '0',
 ))
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> updating open social
 ->values(array(
   'id' => '63',
   'field_id' => '37',
@@ -4498,12 +4493,9 @@ $connection->insert('field_config_instance')
   'data' => 'a:6:{s:5:"label";s:11:"Reference 2";s:6:"widget";a:4:{s:4:"type";s:14:"options_select";s:6:"weight";s:2:"21";s:8:"settings";a:0:{}s:6:"module";s:7:"options";}s:8:"settings";a:1:{s:18:"user_register_form";b:0;}s:7:"display";a:1:{s:7:"default";a:5:{s:5:"label";s:5:"above";s:4:"type";s:21:"entityreference_label";s:8:"settings";a:2:{s:4:"link";b:0;s:13:"bypass_access";b:0;}s:6:"module";s:15:"entityreference";s:6:"weight";i:21;}}s:8:"required";b:0;s:11:"description";s:0:"";}',
   'deleted' => '0',
 ))
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
 ->execute();
 
 $connection->schema()->createTable('field_data_body', array(
@@ -5533,7 +5525,7 @@ $connection->schema()->createTable('field_data_field_image', array(
   'mysql_character_set' => 'utf8',
 ));
 
-<<<<<<< HEAD
+ 
 =======
 $connection->insert('field_data_field_float')
 ->fields(array(
@@ -5641,7 +5633,6 @@ $connection->schema()->createTable('field_data_field_image', array(
   'mysql_character_set' => 'utf8',
 ));
 
->>>>>>> revert Open Social update
 $connection->schema()->createTable('field_data_field_images', array(
   'fields' => array(
     'entity_type' => array(
@@ -5847,7 +5838,7 @@ $connection->insert('field_data_field_integer')
   'delta' => '0',
   'field_integer_value' => '99',
 ))
-<<<<<<< HEAD
+ 
 =======
 ->values(array(
   'entity_type' => 'taxonomy_term',
@@ -5859,7 +5850,6 @@ $connection->insert('field_data_field_integer')
   'delta' => '0',
   'field_integer_value' => '6',
 ))
->>>>>>> Update Open Social to 8.x-2.1
 ->execute();
 
 $connection->schema()->createTable('field_data_field_integer_list', array(
@@ -6303,13 +6293,12 @@ $connection->schema()->createTable('field_data_field_phone', array(
   'mysql_character_set' => 'utf8',
 ));
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 $connection->schema()->createTable('field_data_field_phone', array(
 =======
 =======
->>>>>>> updating open social
 $connection->insert('field_data_field_phone')
 ->fields(array(
   'entity_type',
@@ -6334,12 +6323,10 @@ $connection->insert('field_data_field_phone')
 ->execute();
 
 $connection->schema()->createTable('field_data_field_private_file', array(
-<<<<<<< HEAD
+ 
 =======
 $connection->schema()->createTable('field_data_field_node_entityreference', array(
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
   'fields' => array(
     'entity_type' => array(
       'type' => 'varchar',
@@ -6462,16 +6449,13 @@ $connection->insert('field_data_field_private_file')
 ))
 ->execute();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 $connection->schema()->createTable('field_data_field_reference', array(
->>>>>>> Update Open Social to 8.x-2.1
 =======
 $connection->schema()->createTable('field_data_field_phone', array(
->>>>>>> revert Open Social update
 =======
 $connection->schema()->createTable('field_data_field_reference', array(
->>>>>>> updating open social
   'fields' => array(
     'entity_type' => array(
       'type' => 'varchar',
@@ -6564,21 +6548,20 @@ $connection->insert('field_data_field_reference')
   'revision_id',
   'language',
   'delta',
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
   'field_reference_target_id',
 ))
 ->values(array(
   'entity_type' => 'node',
   'bundle' => 'article',
   'deleted' => '0',
-<<<<<<< HEAD
+ 
   'entity_id' => '1',
   'revision_id' => '1',
 =======
   'entity_id' => '2',
   'revision_id' => '2',
->>>>>>> Update Open Social to 8.x-2.1
   'language' => 'und',
   'delta' => '0',
   'field_reference_target_id' => '5',
@@ -6604,10 +6587,8 @@ $connection->insert('field_data_field_reference')
   'field_reference_target_id' => '3',
 =======
   'field_phone_value',
->>>>>>> revert Open Social update
 =======
   'field_reference_target_id',
->>>>>>> updating open social
 ))
 ->values(array(
   'entity_type' => 'node',
@@ -6651,17 +6632,15 @@ $connection->insert('field_data_field_reference')
 ))
 ->execute();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 =======
 $connection->schema()->createTable('field_data_field_reference_2', array(
 =======
 $connection->schema()->createTable('field_data_field_private_file', array(
->>>>>>> revert Open Social update
 =======
 $connection->schema()->createTable('field_data_field_reference_2', array(
->>>>>>> updating open social
   'fields' => array(
     'entity_type' => array(
       'type' => 'varchar',
@@ -6798,7 +6777,6 @@ $connection->insert('field_data_field_reference_2')
 ))
 ->execute();
 
->>>>>>> Update Open Social to 8.x-2.1
 $connection->schema()->createTable('field_data_field_tags', array(
   'fields' => array(
     'entity_type' => array(
@@ -8765,7 +8743,7 @@ $connection->insert('field_revision_field_tags')
   'entity_id' => '2',
   'revision_id' => '2',
   'language' => 'und',
-<<<<<<< HEAD
+ 
   'delta' => '2',
   'field_tags_tid' => '17',
 =======
@@ -8954,16 +8932,13 @@ $connection->insert('field_revision_field_float_list')
   'revision_id',
   'language',
   'delta',
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
   'field_float_list_value',
->>>>>>> Update Open Social to 8.x-2.1
 =======
   'field_float_value',
->>>>>>> revert Open Social update
 =======
   'field_float_list_value',
->>>>>>> updating open social
 ))
 ->values(array(
   'entity_type' => 'node',
@@ -8972,21 +8947,18 @@ $connection->insert('field_revision_field_float_list')
   'entity_id' => '3',
   'revision_id' => '3',
   'language' => 'und',
-<<<<<<< HEAD
+ 
   'delta' => '2',
   'field_tags_tid' => '17',
 =======
   'delta' => '0',
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
   'field_float_list_value' => '3.1416',
->>>>>>> Update Open Social to 8.x-2.1
 =======
   'field_float_value' => '1',
->>>>>>> revert Open Social update
 =======
   'field_float_list_value' => '3.1416',
->>>>>>> updating open social
 ))
 ->execute();
 
@@ -9034,7 +9006,7 @@ $connection->schema()->createTable('field_revision_field_term_reference', array(
       'size' => 'normal',
       'unsigned' => TRUE,
     ),
-<<<<<<< HEAD
+ 
     'field_term_reference_tid' => array(
       'type' => 'int',
 =======
@@ -11299,7 +11271,6 @@ $connection->schema()->createTable('field_revision_field_text_sum_plain', array(
     ),
     'field_text_sum_plain_format' => array(
       'type' => 'varchar',
->>>>>>> Update Open Social to 8.x-2.1
       'not null' => FALSE,
       'size' => 'normal',
       'unsigned' => TRUE,
@@ -23470,7 +23441,7 @@ $connection->insert('menu_links')
   'p9' => '0',
   'updated' => '0',
 ))
-<<<<<<< HEAD
+ 
 =======
 ->values(array(
   'menu_name' => 'navigation',
@@ -23499,10 +23470,9 @@ $connection->insert('menu_links')
   'p9' => '0',
   'updated' => '0',
 ))
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> updating open social
   ->values(array(
     'menu_name' => 'book-toc-1',
     'mlid' => '480',
@@ -23746,12 +23716,9 @@ $connection->insert('menu_links')
   'p9' => '0',
   'updated' => '0',
 ))
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
 ->execute();
 
 $connection->schema()->createTable('menu_router', array(
@@ -36569,7 +36536,7 @@ $connection->insert('registry')
   'weight' => '0',
 ))
 ->values(array(
-<<<<<<< HEAD
+ 
 =======
   'name' => 'EntityReferenceAdminTestCase',
   'type' => 'class',
@@ -36914,7 +36881,6 @@ $connection->insert('registry')
   'weight' => '0',
 ))
 ->values(array(
->>>>>>> Update Open Social to 8.x-2.1
   'name' => 'ESPhoneNumberTestCase',
   'type' => 'class',
   'filename' => 'sites/all/modules/phone/tests/phone.es.test',
@@ -44943,7 +44909,7 @@ $connection->insert('system')
   'info' => 'a:14:{s:4:"name";s:5:"Email";s:11:"description";s:28:"Defines an email field type.";s:4:"core";s:3:"7.x";s:7:"package";s:6:"Fields";s:5:"files";a:1:{i:0;s:17:"email.migrate.inc";}s:7:"version";s:7:"7.x-1.3";s:7:"project";s:5:"email";s:9:"datestamp";s:10:"1397134155";s:5:"mtime";i:1397134155;s:12:"dependencies";a:0:{}s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;s:8:"required";b:1;s:11:"explanation";s:73:"Field type(s) in use - see <a href="/admin/reports/fields">Field list</a>";}',
 ))
 ->values(array(
-<<<<<<< HEAD
+ 
 =======
   'filename' => 'sites/all/modules/entity/entity.module',
   'name' => 'entity',
@@ -45033,10 +44999,9 @@ $connection->insert('system')
   'info' => 'a:13:{s:4:"name";s:41:"Entityreference - Feeds integration tests";s:11:"description";s:65:"Support module for the Entityreference - Feeds integration tests.";s:7:"package";s:7:"Testing";s:4:"core";s:3:"7.x";s:6:"hidden";b:1;s:12:"dependencies";a:3:{i:0;s:5:"feeds";i:1;s:8:"feeds_ui";i:2;s:15:"entityreference";}s:7:"version";s:7:"7.x-1.1";s:7:"project";s:15:"entityreference";s:9:"datestamp";s:10:"1384973110";s:5:"mtime";i:1384973110;s:3:"php";s:5:"5.2.4";s:5:"files";a:0:{}s:9:"bootstrap";i:0;}',
 ))
 ->values(array(
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> updating open social
   'filename' => 'sites/all/modules/entity_translation/entity_translation.module',
   'name' => 'entity_translation',
   'type' => 'module',
@@ -45048,12 +45013,9 @@ $connection->insert('system')
   'info' => 'a:14:{s:4:"name";s:18:"Entity Translation";s:11:"description";s:58:"Allows entities to be translated into different languages.";s:7:"package";s:33:"Multilingual - Entity Translation";s:4:"core";s:3:"7.x";s:9:"configure";s:40:"admin/config/regional/entity_translation";s:12:"dependencies";a:1:{i:0;s:14:"locale (>7.14)";}s:17:"test_dependencies";a:2:{i:0;s:17:"pathauto:pathauto";i:1;s:5:"title";}s:5:"files";a:15:{i:0;s:40:"includes/translation.handler_factory.inc";i:1;s:32:"includes/translation.handler.inc";i:2;s:40:"includes/translation.handler.comment.inc";i:3;s:37:"includes/translation.handler.node.inc";i:4;s:46:"includes/translation.handler.taxonomy_term.inc";i:5;s:37:"includes/translation.handler.user.inc";i:6;s:32:"includes/translation.migrate.inc";i:7;s:29:"tests/entity_translation.test";i:8;s:49:"views/entity_translation_handler_relationship.inc";i:9;s:57:"views/entity_translation_handler_field_translate_link.inc";i:10;s:48:"views/entity_translation_handler_field_label.inc";i:11;s:55:"views/entity_translation_handler_filter_entity_type.inc";i:12;s:52:"views/entity_translation_handler_filter_language.inc";i:13;s:62:"views/entity_translation_handler_filter_translation_exists.inc";i:14;s:48:"views/entity_translation_handler_field_field.inc";}s:7:"version";s:7:"7.x-1.0";s:7:"project";s:18:"entity_translation";s:9:"datestamp";s:10:"1522600694";s:5:"mtime";i:1522600694;s:3:"php";s:5:"5.2.4";s:9:"bootstrap";i:0;}',
 ))
 ->values(array(
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
   'filename' => 'sites/all/modules/link/link.module',
   'name' => 'link',
   'type' => 'module',

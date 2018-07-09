@@ -853,7 +853,7 @@ function _search_find_match_with_simplify($key, $text, $boundary, $langcode = NU
   // Run both text and key through search_simplify.
   $simplified_key = trim(search_simplify($key, $langcode));
   $simplified_text = trim(search_simplify($text, $langcode));
-  if ($simplified_key == '' || $simplified_text == '' || strpos($simplified_text, $simplified_key) === FALSE) {
+  if ($simplified_key == '' || $simplified_text == '' || strpos($simplified_text, $simplified_key)   FALSE) {
     // The simplified keyword and text do not match at all, or are empty.
     return NULL;
   }

@@ -807,7 +807,7 @@ class EntityDefinitionUpdateTest extends EntityKernelTestBase {
     $this->assertFalse($this->entityDefinitionUpdateManager->needsUpdates(), 'Entity and field schema data are correctly detected.');
   }
 
-<<<<<<< HEAD
+ 
 =======
   /**
    * Tests adding a base field with initial values.
@@ -971,5 +971,4 @@ class EntityDefinitionUpdateTest extends EntityKernelTestBase {
     }
   }
 
->>>>>>> Update Open Social to 8.x-2.1
 }

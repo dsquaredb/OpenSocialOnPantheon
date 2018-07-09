@@ -1957,7 +1957,7 @@ class ViewExecutable {
     $path = $this->getPath();
 
     // Don't bother working if there's nothing to do:
-    if (empty($path) || (empty($args) && strpos($path, '%') === FALSE)) {
+    if (empty($path) || (empty($args) && strpos($path, '%')   FALSE)) {
       return $display_handler->getUrlInfo();
     }
 

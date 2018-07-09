@@ -88,7 +88,7 @@ function hook_update_status_alter(&$projects) {
     if (isset($settings[$project]) && isset($settings[$project]['check']) &&
         ($settings[$project]['check'] == 'never' ||
           (isset($project_info['recommended']) &&
-            $settings[$project]['check'] === $project_info['recommended']))) {
+            $settings[$project]['check']   $project_info['recommended']))) {
       $projects[$project]['status'] = UPDATE_NOT_CHECKED;
       $projects[$project]['reason'] = t('Ignored from settings');
       if (!empty($settings[$project]['notes'])) {

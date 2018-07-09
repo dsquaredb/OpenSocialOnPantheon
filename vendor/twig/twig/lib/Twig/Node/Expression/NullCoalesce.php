@@ -49,4 +49,3 @@ class Twig_Node_Expression_NullCoalesce extends Twig_Node_Expression_Conditional
 class_alias('Twig_Node_Expression_NullCoalesce', 'Twig\Node\Expression\NullCoalesceExpression', false);
 =======
 }
->>>>>>> web and vendor directory from composer install

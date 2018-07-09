@@ -1,7 +1,7 @@
 --TEST--
 Test symfony_debug_backtrace in case of fatal error
 --SKIPIF--
-<<<<<<< HEAD
+ 
 <?php if (!extension_loaded('symfony_debug')) {
     echo 'skip';
 } ?>
@@ -24,7 +24,7 @@ function foo()
 function bt()
 {
     print_r(symfony_debug_backtrace());
-<<<<<<< HEAD
+ 
 =======
 
 >>>>>>> web and vendor directory from composer install

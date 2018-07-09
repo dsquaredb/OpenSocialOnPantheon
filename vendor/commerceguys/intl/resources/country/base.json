@@ -1045,7 +1045,7 @@
 	"ST": {
 		"three_letter_code": "STP",
 		"numeric_code": "678",
-<<<<<<< HEAD
+ 
 		"currency_code": "STD"
 =======
 		"currency_code": "STN"
@@ -1203,7 +1203,7 @@
 	"VG": {
 		"three_letter_code": "VGB",
 		"numeric_code": "092",
-<<<<<<< HEAD
+ 
 		"currency_code": "USD"
 =======
 		"currency_code": "GBP"

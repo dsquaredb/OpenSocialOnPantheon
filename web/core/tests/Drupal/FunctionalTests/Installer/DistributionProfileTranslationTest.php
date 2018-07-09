@@ -28,9 +28,9 @@ class DistributionProfileTranslationTest extends InstallerTestBase {
   /**
    * {@inheritdoc}
    */
-<<<<<<< HEAD:web/core/modules/system/src/Tests/Installer/DistributionProfileTranslationTest.php
+ :web/core/modules/system/src/Tests/Installer/DistributionProfileTranslationTest.php
   protected function setUp() {
-<<<<<<< HEAD
+ 
     $this->info = array(
       'type' => 'profile',
       'core' => \Drupal::CORE_COMPATIBILITY,
@@ -47,7 +47,6 @@ class DistributionProfileTranslationTest extends InstallerTestBase {
 =======
   protected function prepareEnvironment() {
     parent::prepareEnvironment();
->>>>>>> updating open social:web/core/tests/Drupal/FunctionalTests/Installer/DistributionProfileTranslationTest.php
     $this->info = [
       'type' => 'profile',
       'core' => \Drupal::CORE_COMPATIBILITY,
@@ -60,25 +59,23 @@ class DistributionProfileTranslationTest extends InstallerTestBase {
         ],
       ],
     ];
->>>>>>> revert Open Social update
     // File API functions are not available yet.
     $path = $this->root . DIRECTORY_SEPARATOR . $this->siteDirectory . '/profiles/mydistro';
     mkdir($path, 0777, TRUE);
     file_put_contents("$path/mydistro.info.yml", Yaml::encode($this->info));
 
     // Place a custom local translation in the translations directory.
-<<<<<<< HEAD:web/core/modules/system/src/Tests/Installer/DistributionProfileTranslationTest.php
+ :web/core/modules/system/src/Tests/Installer/DistributionProfileTranslationTest.php
     mkdir(\Drupal::root() . '/' . $this->siteDirectory . '/files/translations', 0777, TRUE);
     file_put_contents(\Drupal::root() . '/' . $this->siteDirectory . '/files/translations/drupal-8.0.0.de.po', $this->getPo('de'));
 
     parent::visitInstaller();
-<<<<<<< HEAD
+ 
 
 =======
 =======
     mkdir($this->root . '/' . $this->siteDirectory . '/files/translations', 0777, TRUE);
     file_put_contents($this->root . '/' . $this->siteDirectory . '/files/translations/drupal-8.0.0.de.po', $this->getPo('de'));
->>>>>>> updating open social:web/core/tests/Drupal/FunctionalTests/Installer/DistributionProfileTranslationTest.php
   }
 
   /**
@@ -100,7 +97,6 @@ class DistributionProfileTranslationTest extends InstallerTestBase {
    * {@inheritdoc}
    */
   protected function setUpSettings() {
->>>>>>> revert Open Social update
     // The language should have been automatically detected, all following
     // screens should be translated already.
     $elements = $this->xpath('//input[@type="submit"]/@value');
@@ -117,7 +113,7 @@ class DistributionProfileTranslationTest extends InstallerTestBase {
     $this->assertRaw($this->info['distribution']['install']['theme']);
     // Verify that the "Choose profile" step does not appear.
     $this->assertNoText('profile');
-<<<<<<< HEAD
+ 
   }
 
   /**
@@ -139,7 +135,6 @@ class DistributionProfileTranslationTest extends InstallerTestBase {
     parent::setUpSettings();
   }
 
->>>>>>> revert Open Social update
 
   /**
    * Confirms that the installation succeeded.

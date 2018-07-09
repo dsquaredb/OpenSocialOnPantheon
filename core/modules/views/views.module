@@ -874,7 +874,7 @@ function views_view_presave(ViewEntityInterface $view) {
   foreach ($displays as $display_name => &$display) {
     if (isset($display['display_options']['fields'])) {
       foreach ($display['display_options']['fields'] as $field_name => &$field) {
-        if (isset($field['plugin_id']) && $field['plugin_id'] === 'entity_link') {
+        if (isset($field['plugin_id']) && $field['plugin_id']   'entity_link') {
           // Add any missing settings for entity_link.
           if (!isset($field['output_url_as_text'])) {
             $field['output_url_as_text'] = FALSE;
@@ -885,7 +885,7 @@ function views_view_presave(ViewEntityInterface $view) {
             $changed = TRUE;
           }
         }
-        elseif (isset($field['plugin_id']) && $field['plugin_id'] === 'node_path') {
+        elseif (isset($field['plugin_id']) && $field['plugin_id']   'node_path') {
           // Convert the use of node_path to entity_link.
           $field['plugin_id'] = 'entity_link';
           $field['field'] = 'view_node';

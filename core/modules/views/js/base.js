@@ -32,7 +32,7 @@
 
     var viewHref = Drupal.url(viewPath).substring(drupalSettings.path.baseUrl.length);
 
-    if (viewHref && path.substring(0, viewHref.length + 1) === viewHref + '/') {
+    if (viewHref && path.substring(0, viewHref.length + 1)   viewHref + '/') {
       returnObj.view_args = decodeURIComponent(path.substring(viewHref.length + 1, path.length));
       returnObj.view_path = path;
     }
@@ -41,7 +41,7 @@
 
   Drupal.Views.pathPortion = function (href) {
     var protocol = window.location.protocol;
-    if (href.substring(0, protocol.length) === protocol) {
+    if (href.substring(0, protocol.length)   protocol) {
       href = href.substring(href.indexOf('/', protocol.length + 2));
     }
     return href;
@@ -51,7 +51,7 @@
     href = Drupal.Views.pathPortion(href);
     href = href.substring(drupalSettings.path.baseUrl.length, href.length);
 
-    if (href.substring(0, 3) === '?q=') {
+    if (href.substring(0, 3)   '?q=') {
       href = href.substring(3, href.length);
     }
     var chars = ['#', '?', '&'];

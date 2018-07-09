@@ -27,11 +27,10 @@ use Symfony\Component\Console\Input\InputOption;
 class XmlDescriptor extends Descriptor
 {
     /**
-<<<<<<< HEAD
+ 
 =======
      * @param InputDefinition $definition
      *
->>>>>>> web and vendor directory from composer install
      * @return \DOMDocument
      */
     public function getInputDefinitionDocument(InputDefinition $definition)
@@ -53,11 +52,10 @@ class XmlDescriptor extends Descriptor
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * @param Command $command
      *
->>>>>>> web and vendor directory from composer install
      * @return \DOMDocument
      */
     public function getCommandDocument(Command $command)
@@ -70,10 +68,9 @@ class XmlDescriptor extends Descriptor
 
         $commandXML->setAttribute('id', $command->getName());
         $commandXML->setAttribute('name', $command->getName());
-<<<<<<< HEAD
+ 
         $commandXML->setAttribute('hidden', $command->isHidden() ? 1 : 0);
 =======
->>>>>>> web and vendor directory from composer install
 
         $commandXML->appendChild($usagesXML = $dom->createElement('usages'));
 
@@ -104,7 +101,7 @@ class XmlDescriptor extends Descriptor
         $dom = new \DOMDocument('1.0', 'UTF-8');
         $dom->appendChild($rootXml = $dom->createElement('symfony'));
 
-<<<<<<< HEAD
+ 
         if ('UNKNOWN' !== $application->getName()) {
             $rootXml->setAttribute('name', $application->getName());
             if ('UNKNOWN' !== $application->getVersion()) {
@@ -112,18 +109,16 @@ class XmlDescriptor extends Descriptor
         if ($application->getName() !== 'UNKNOWN') {
             $rootXml->setAttribute('name', $application->getName());
             if ($application->getVersion() !== 'UNKNOWN') {
->>>>>>> web and vendor directory from composer install
                 $rootXml->setAttribute('version', $application->getVersion());
             }
         }
 
         $rootXml->appendChild($commandsXML = $dom->createElement('commands'));
 
-<<<<<<< HEAD
+ 
         $description = new ApplicationDescription($application, $namespace, true);
 =======
         $description = new ApplicationDescription($application, $namespace);
->>>>>>> web and vendor directory from composer install
 
         if ($namespace) {
             $commandsXML->setAttribute('namespace', $namespace);
@@ -192,12 +187,11 @@ class XmlDescriptor extends Descriptor
 
     /**
      * Appends document children to parent node.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param \DOMNode $parentNode
      * @param \DOMNode $importedParent
->>>>>>> web and vendor directory from composer install
      */
     private function appendDocument(\DOMNode $parentNode, \DOMNode $importedParent)
     {
@@ -209,11 +203,10 @@ class XmlDescriptor extends Descriptor
     /**
      * Writes DOM document.
      *
-<<<<<<< HEAD
+ 
 =======
      * @param \DOMDocument $dom
      *
->>>>>>> web and vendor directory from composer install
      * @return \DOMDocument|string
      */
     private function writeDocument(\DOMDocument $dom)
@@ -223,11 +216,10 @@ class XmlDescriptor extends Descriptor
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * @param InputArgument $argument
      *
->>>>>>> web and vendor directory from composer install
      * @return \DOMDocument
      */
     private function getInputArgumentDocument(InputArgument $argument)
@@ -252,11 +244,10 @@ class XmlDescriptor extends Descriptor
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * @param InputOption $option
      *
->>>>>>> web and vendor directory from composer install
      * @return \DOMDocument
      */
     private function getInputOptionDocument(InputOption $option)
@@ -268,11 +259,10 @@ class XmlDescriptor extends Descriptor
         $pos = strpos($option->getShortcut(), '|');
         if (false !== $pos) {
             $objectXML->setAttribute('shortcut', '-'.substr($option->getShortcut(), 0, $pos));
-<<<<<<< HEAD
+ 
             $objectXML->setAttribute('shortcuts', '-'.str_replace('|', '|-', $option->getShortcut()));
 =======
             $objectXML->setAttribute('shortcuts', '-'.implode('|-', explode('|', $option->getShortcut())));
->>>>>>> web and vendor directory from composer install
         } else {
             $objectXML->setAttribute('shortcut', $option->getShortcut() ? '-'.$option->getShortcut() : '');
         }

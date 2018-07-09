@@ -81,19 +81,16 @@ class Drupal {
   /**
    * The current system version.
    */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
   const VERSION = '8.2.1';
-=======
+  =
   const VERSION = '8.5.5';
->>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
   const VERSION = '8.5.3';
->>>>>>> revert Open Social update
-=======
+  =
   const VERSION = '8.5.5';
->>>>>>> updating open social
 
   /**
    * Core API compatibility.
@@ -137,7 +134,7 @@ class Drupal {
    * @throws \Drupal\Core\DependencyInjection\ContainerNotInitializedException
    */
   public static function getContainer() {
-    if (static::$container === NULL) {
+    if (static::$container   NULL) {
       throw new ContainerNotInitializedException('\Drupal::$container is not initialized yet. \Drupal::setContainer() must be called with a real container.');
     }
     return static::$container;

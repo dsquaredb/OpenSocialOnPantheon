@@ -31,20 +31,18 @@ class StreamedResponse extends Response
     private $headersSent;
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param callable|null $callback A valid PHP callback or null to set it later
      * @param int           $status   The response status code
      * @param array         $headers  An array of response headers
      */
-<<<<<<< HEAD
+ 
     public function __construct(callable $callback = null, $status = 200, $headers = array())
 =======
     public function __construct($callback = null, $status = 200, $headers = array())
->>>>>>> web and vendor directory from composer install
     {
         parent::__construct(null, $status, $headers);
 
@@ -62,11 +60,10 @@ class StreamedResponse extends Response
      * @param int           $status   The response status code
      * @param array         $headers  An array of response headers
      *
-<<<<<<< HEAD
+ 
      * @return static
 =======
      * @return StreamedResponse
->>>>>>> web and vendor directory from composer install
      */
     public static function create($callback = null, $status = 200, $headers = array())
     {
@@ -78,7 +75,7 @@ class StreamedResponse extends Response
      *
      * @param callable $callback A valid PHP callback
      *
-<<<<<<< HEAD
+ 
      * @return $this
      */
     public function setCallback(callable $callback)
@@ -95,56 +92,50 @@ class StreamedResponse extends Response
             throw new \LogicException('The Response callback must be a valid PHP callable.');
         }
         $this->callback = $callback;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * {@inheritdoc}
      *
      * This method only sends the headers once.
-<<<<<<< HEAD
+ 
      *
      * @return $this
 =======
->>>>>>> web and vendor directory from composer install
      */
     public function sendHeaders()
     {
         if ($this->headersSent) {
-<<<<<<< HEAD
+ 
             return $this;
 =======
             return;
->>>>>>> web and vendor directory from composer install
         }
 
         $this->headersSent = true;
 
-<<<<<<< HEAD
+ 
         return parent::sendHeaders();
 =======
         parent::sendHeaders();
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * {@inheritdoc}
      *
      * This method only sends the content once.
-<<<<<<< HEAD
+ 
      *
      * @return $this
 =======
->>>>>>> web and vendor directory from composer install
      */
     public function sendContent()
     {
         if ($this->streamed) {
-<<<<<<< HEAD
+ 
             return $this;
 =======
             return;
->>>>>>> web and vendor directory from composer install
         }
 
         $this->streamed = true;
@@ -154,33 +145,30 @@ class StreamedResponse extends Response
         }
 
         call_user_func($this->callback);
-<<<<<<< HEAD
+ 
 
         return $this;
 =======
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * {@inheritdoc}
      *
      * @throws \LogicException when the content is not null
-<<<<<<< HEAD
+ 
      *
      * @return $this
 =======
->>>>>>> web and vendor directory from composer install
      */
     public function setContent($content)
     {
         if (null !== $content) {
             throw new \LogicException('The content cannot be set on a StreamedResponse instance.');
         }
-<<<<<<< HEAD
+ 
 
         return $this;
 =======
->>>>>>> web and vendor directory from composer install
     }
 
     /**

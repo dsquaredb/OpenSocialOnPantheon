@@ -1,7 +1,7 @@
 CHANGELOG
-=========
+   
 
-<<<<<<< HEAD
+ 
 3.4.0
 -----
 
@@ -21,7 +21,7 @@ CHANGELOG
     and `Event::getName()` have been removed.
     The event dispatcher and the event name are passed to the listener call.
 
-=======
+  =
 >>>>>>> web and vendor directory from composer install
 2.5.0
 -----

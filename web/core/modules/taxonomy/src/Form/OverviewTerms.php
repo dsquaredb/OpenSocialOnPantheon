@@ -201,7 +201,7 @@ class OverviewTerms extends FormBase {
     // Build the actual form.
     $form['terms'] = array(
       '#type' => 'table',
-<<<<<<< HEAD
+ 
       '#header' => array($this->t('Name'), $this->t('Weight'), $this->t('Operations')),
       '#empty' => $this->t('No terms available. <a href=":link">Add term</a>.', array(':link' => $this->url('entity.taxonomy_term.add_form', array('taxonomy_vocabulary' => $taxonomy_vocabulary->id())))),
       '#attributes' => array(
@@ -213,7 +213,6 @@ class OverviewTerms extends FormBase {
         'weight' => $this->t('Weight'),
       ],
       '#attributes' => [
->>>>>>> Update Open Social to 8.x-2.1
         'id' => 'taxonomy',
       ),
     );
@@ -328,9 +327,9 @@ class OverviewTerms extends FormBase {
       $row_position++;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
     if ($parent_fields) {
       $form['terms']['#tabledrag'][] = array(
         'action' => 'match',
@@ -354,9 +353,7 @@ class OverviewTerms extends FormBase {
 =======
     $form['terms']['#header'] = [$this->t('Name')];
 
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
     $this->renderer->addCacheableDependency($form['terms'], $change_weight_access);
     if ($change_weight_access->isAllowed()) {
       if ($parent_fields) {
@@ -384,7 +381,6 @@ class OverviewTerms extends FormBase {
         'action' => 'order',
         'relationship' => 'sibling',
         'group' => 'term-weight',
->>>>>>> Update Open Social to 8.x-2.1
       ];
     }
     $form['terms']['#tabledrag'][] = array(
@@ -393,9 +389,9 @@ class OverviewTerms extends FormBase {
       'group' => 'term-weight',
     );
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
     if ($taxonomy_vocabulary->getHierarchy() != TAXONOMY_HIERARCHY_MULTIPLE && count($tree) > 1) {
       $form['actions'] = array('#type' => 'actions', '#tree' => FALSE);
       $form['actions']['submit'] = array(
@@ -403,13 +399,10 @@ class OverviewTerms extends FormBase {
 =======
     $form['terms']['#header'][] = $this->t('Operations');
 
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
     if (($taxonomy_vocabulary->getHierarchy() !== VocabularyInterface::HIERARCHY_MULTIPLE && count($tree) > 1) && $change_weight_access->isAllowed()) {
       $form['actions'] = ['#type' => 'actions', '#tree' => FALSE];
       $form['actions']['submit'] = [
->>>>>>> Update Open Social to 8.x-2.1
         '#type' => 'submit',
         '#value' => $this->t('Save'),
         '#button_type' => 'primary',

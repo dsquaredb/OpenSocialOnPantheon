@@ -11,7 +11,7 @@
 
 namespace Symfony\Component\DependencyInjection\Compiler;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\Config\Resource\ClassExistenceResource;
 use Symfony\Component\DependencyInjection\Config\AutowireServiceResource;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -75,14 +75,13 @@ class AutowirePass implements CompilerPassInterface
     private $definedTypes = array();
     private $types;
     private $notGuessableTypes = array();
->>>>>>> web and vendor directory from composer install
 
     /**
      * {@inheritdoc}
      */
     public function process(ContainerBuilder $container)
     {
-<<<<<<< HEAD
+ 
         // clear out any possibly stored exceptions from before
         $this->autowiringExceptions = array();
         $this->strictMode = $container->hasParameter('container.autowiring.strict_mode') && $container->getParameter('container.autowiring.strict_mode');
@@ -286,12 +285,11 @@ class AutowirePass implements CompilerPassInterface
 
         $arguments = $definition->getArguments();
         foreach ($constructor->getParameters() as $index => $parameter) {
->>>>>>> web and vendor directory from composer install
             if (array_key_exists($index, $arguments) && '' !== $arguments[$index]) {
                 continue;
             }
 
-<<<<<<< HEAD
+ 
             $type = ProxyHelper::getTypeHint($reflectionMethod, $parameter, true);
 
             if (!$type) {
@@ -369,13 +367,12 @@ class AutowirePass implements CompilerPassInterface
                 }
 
                 $value = $parameter->getDefaultValue();
->>>>>>> web and vendor directory from composer install
             }
 
             $arguments[$index] = $value;
         }
 
-<<<<<<< HEAD
+ 
         if ($parameters && !isset($arguments[++$index])) {
             while (0 <= --$index) {
                 $parameter = $parameters[$index];
@@ -442,13 +439,12 @@ class AutowirePass implements CompilerPassInterface
         // make sure that we re-order so they're injected as expected
         ksort($arguments);
         $definition->setArguments($arguments);
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Populates the list of available types.
      */
-<<<<<<< HEAD
+ 
     private function populateAvailableTypes($onlyAutowiringTypes = false)
     {
         $this->types = array();
@@ -465,7 +461,6 @@ class AutowirePass implements CompilerPassInterface
 
         foreach ($this->container->getDefinitions() as $id => $definition) {
             $this->populateAvailableType($id, $definition);
->>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -475,18 +470,17 @@ class AutowirePass implements CompilerPassInterface
      * @param string     $id
      * @param Definition $definition
      */
-<<<<<<< HEAD
+ 
     private function populateAvailableType($id, Definition $definition, $onlyAutowiringTypes)
 =======
     private function populateAvailableType($id, Definition $definition)
->>>>>>> web and vendor directory from composer install
     {
         // Never use abstract services
         if ($definition->isAbstract()) {
             return;
         }
 
-<<<<<<< HEAD
+ 
         foreach ($definition->getAutowiringTypes(false) as $type) {
             $this->definedTypes[$type] = true;
             $this->types[$type] = $id;
@@ -505,7 +499,6 @@ class AutowirePass implements CompilerPassInterface
         }
 
         if (!$reflectionClass = $this->getReflectionClass($id, $definition)) {
->>>>>>> web and vendor directory from composer install
             return;
         }
 
@@ -530,19 +523,18 @@ class AutowirePass implements CompilerPassInterface
             return;
         }
 
-<<<<<<< HEAD
+ 
         // is this already a type/class that is known to match multiple services?
         if (isset($this->ambiguousServiceTypes[$type])) {
             $this->ambiguousServiceTypes[$type][] = $id;
 =======
         if (!isset($this->types[$type])) {
             $this->types[$type] = $id;
->>>>>>> web and vendor directory from composer install
 
             return;
         }
 
-<<<<<<< HEAD
+ 
         // check to make sure the type doesn't match multiple services
         if (!isset($this->types[$type]) || $this->types[$type] === $id) {
             $this->types[$type] = $id;
@@ -567,13 +559,12 @@ class AutowirePass implements CompilerPassInterface
         }
 
         $this->types[$type][] = $id;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Registers a definition for the type if possible or throws an exception.
      *
-<<<<<<< HEAD
+ 
      * @param string $type
      *
      * @return TypedReference|null A reference to the registered definition
@@ -787,6 +778,5 @@ class AutowirePass implements CompilerPassInterface
         }
 
         return $this->reflectionClasses[$id] = $reflector;
->>>>>>> web and vendor directory from composer install
     }
 }

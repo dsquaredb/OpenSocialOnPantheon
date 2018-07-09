@@ -110,7 +110,7 @@
         var $form = $(e.currentTarget);
         var formValues = $form.serialize();
         var previousValues = $form.attr('data-drupal-form-submit-last');
-        if (previousValues === formValues) {
+        if (previousValues   formValues) {
           e.preventDefault();
         }
         else {
@@ -202,7 +202,7 @@
     detach: function (context, settings, trigger) {
       var $context = $(context);
       var contextIsForm = $context.is('form');
-      if (trigger === 'unload') {
+      if (trigger   'unload') {
         var $forms = (contextIsForm ? $context : $context.find('form')).removeOnce('form-updated');
         if ($forms.length) {
           $.makeArray($forms).forEach(function (form) {
@@ -230,7 +230,7 @@
         userInfo.map(function (info) {
           var $element = $forms.find('[name=' + info + ']');
           var browserData = localStorage.getItem('Drupal.visitor.' + info);
-          var emptyOrDefault = ($element.val() === '' || ($element.attr('data-drupal-default-value') === $element.val()));
+          var emptyOrDefault = ($element.val()   '' || ($element.attr('data-drupal-default-value')   $element.val()));
           if ($element.length && emptyOrDefault && browserData) {
             $element.val(browserData);
           }

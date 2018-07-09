@@ -33,19 +33,16 @@ class MigrateNodeTypeTest extends MigrateDrupal6TestBase {
     $this->assertIdentical(TRUE, $node_type_page->displaySubmitted());
     $this->assertIdentical(FALSE, $node_type_page->isNewRevision());
     $this->assertIdentical(DRUPAL_OPTIONAL, $node_type_page->getPreviewMode());
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
     $this->assertIdentical($id_map->lookupDestinationID(array('test_page')), array('test_page'));
 =======
     $this->assertIdentical($id_map->lookupDestinationId(['test_page']), ['test_page']);
->>>>>>> Update Open Social to 8.x-2.1
 =======
     $this->assertIdentical($id_map->lookupDestinationID(['test_page']), ['test_page']);
->>>>>>> revert Open Social update
 =======
     $this->assertIdentical($id_map->lookupDestinationId(['test_page']), ['test_page']);
->>>>>>> updating open social
 
     // Test we have a body field.
     $field = FieldConfig::loadByName('node', 'test_page', 'body');
@@ -58,19 +55,16 @@ class MigrateNodeTypeTest extends MigrateDrupal6TestBase {
     $this->assertIdentical(TRUE, $node_type_story->displaySubmitted());
     $this->assertIdentical(FALSE, $node_type_story->isNewRevision());
     $this->assertIdentical(DRUPAL_OPTIONAL, $node_type_story->getPreviewMode());
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
     $this->assertIdentical($id_map->lookupDestinationID(array('test_story')), array('test_story'));
 =======
     $this->assertIdentical($id_map->lookupDestinationId(['test_story']), ['test_story']);
->>>>>>> Update Open Social to 8.x-2.1
 =======
     $this->assertIdentical($id_map->lookupDestinationID(['test_story']), ['test_story']);
->>>>>>> revert Open Social update
 =======
     $this->assertIdentical($id_map->lookupDestinationId(['test_story']), ['test_story']);
->>>>>>> updating open social
 
     // Test we don't have a body field.
     $field = FieldConfig::loadByName('node', 'test_story', 'body');
@@ -83,19 +77,16 @@ class MigrateNodeTypeTest extends MigrateDrupal6TestBase {
     $this->assertIdentical(TRUE, $node_type_event->displaySubmitted());
     $this->assertIdentical(TRUE, $node_type_event->isNewRevision());
     $this->assertIdentical(DRUPAL_OPTIONAL, $node_type_event->getPreviewMode());
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
     $this->assertIdentical($id_map->lookupDestinationID(array('test_event')), array('test_event'));
 =======
     $this->assertIdentical($id_map->lookupDestinationId(['test_event']), ['test_event']);
->>>>>>> Update Open Social to 8.x-2.1
 =======
     $this->assertIdentical($id_map->lookupDestinationID(['test_event']), ['test_event']);
->>>>>>> revert Open Social update
 =======
     $this->assertIdentical($id_map->lookupDestinationId(['test_event']), ['test_event']);
->>>>>>> updating open social
 
     // Test we have a body field.
     $field = FieldConfig::loadByName('node', 'test_event', 'body');

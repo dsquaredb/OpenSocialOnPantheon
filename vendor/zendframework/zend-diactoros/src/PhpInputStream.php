@@ -61,11 +61,10 @@ class PhpInputStream extends Stream
     public function read($length)
     {
         $content = parent::read($length);
-<<<<<<< HEAD
+ 
         if (! $this->reachedEof) {
 =======
         if ($content && ! $this->reachedEof) {
->>>>>>> web and vendor directory from composer install
             $this->cache .= $content;
         }
 

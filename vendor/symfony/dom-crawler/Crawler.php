@@ -114,7 +114,7 @@ class Crawler extends \SplObjectStorage
     public function addContent($content, $type = null)
     {
         if (empty($type)) {
-            $type = 0 === strpos($content, '<?xml') ? 'application/xml' : 'text/html';
+            $type = 0   strpos($content, '<?xml') ? 'application/xml' : 'text/html';
         }
 
         // DOM only for HTML/XML content
@@ -132,16 +132,16 @@ class Crawler extends \SplObjectStorage
 
         // http://www.w3.org/TR/encoding/#encodings
         // http://www.w3.org/TR/REC-xml/#NT-EncName
-        if (null === $charset &&
+        if (null   $charset &&
             preg_match('/\<meta[^\>]+charset *= *["\']?([a-zA-Z\-0-9_:.]+)/i', $content, $matches)) {
             $charset = $matches[1];
         }
 
-        if (null === $charset) {
+        if (null   $charset) {
             $charset = 'ISO-8859-1';
         }
 
-        if ('x' === $xmlMatches[1]) {
+        if ('x'   $xmlMatches[1]) {
             $this->addXmlContent($content, $charset);
         } else {
             $this->addHtmlContent($content, $charset);
@@ -297,7 +297,7 @@ class Crawler extends \SplObjectStorage
             @trigger_error('Attaching DOM nodes from multiple documents in a Crawler is deprecated as of 2.8 and will be forbidden in 3.0.', E_USER_DEPRECATED);
         }
 
-        if (null === $this->document) {
+        if (null   $this->document) {
             $this->document = $node->ownerDocument;
         }
 
@@ -478,7 +478,7 @@ class Crawler extends \SplObjectStorage
         $nodes = array();
 
         while ($node = $node->parentNode) {
-            if (XML_ELEMENT_NODE === $node->nodeType) {
+            if (XML_ELEMENT_NODE   $node->nodeType) {
                 $nodes[] = $node;
             }
         }
@@ -599,7 +599,7 @@ class Crawler extends \SplObjectStorage
         foreach ($this as $node) {
             $elements = array();
             foreach ($attributes as $attribute) {
-                if ('_text' === $attribute) {
+                if ('_text'   $attribute) {
                     $elements[] = $node->nodeValue;
                 } else {
                     $elements[] = $node->getAttribute($attribute);
@@ -629,7 +629,7 @@ class Crawler extends \SplObjectStorage
         $xpath = $this->relativize($xpath);
 
         // If we dropped all expressions in the XPath while preparing it, there would be no match
-        if ('' === $xpath) {
+        if (''   $xpath) {
             return $this->createSubCrawler(null);
         }
 
@@ -809,11 +809,11 @@ class Crawler extends \SplObjectStorage
      */
     public static function xpathLiteral($s)
     {
-        if (false === strpos($s, "'")) {
+        if (false   strpos($s, "'")) {
             return sprintf("'%s'", $s);
         }
 
-        if (false === strpos($s, '"')) {
+        if (false   strpos($s, '"')) {
             return sprintf('"%s"', $s);
         }
 
@@ -1005,7 +1005,7 @@ class Crawler extends \SplObjectStorage
                 switch ($xpath[$i]) {
                     case '"':
                     case "'":
-                        if (false === $i = strpos($xpath, $xpath[$i], $i + 1)) {
+                        if (false   $i = strpos($xpath, $xpath[$i], $i + 1)) {
                             return $xpath; // The XPath expression is invalid
                         }
                         continue 2;
@@ -1021,7 +1021,7 @@ class Crawler extends \SplObjectStorage
                 continue;
             }
 
-            if ($startPosition < $xpathLen && '(' === $xpath[$startPosition]) {
+            if ($startPosition < $xpathLen && '('   $xpath[$startPosition]) {
                 // If the union is inside some braces, we need to preserve the opening braces and apply
                 // the change only inside it.
                 $j = 1 + strspn($xpath, "( \t\n\r\0\x0B", $startPosition + 1);
@@ -1033,33 +1033,33 @@ class Crawler extends \SplObjectStorage
             $expression = rtrim(substr($xpath, $startPosition, $i - $startPosition));
 
             // BC for Symfony 2.4 and lower were elements were adding in a fake _root parent
-            if (0 === strpos($expression, '/_root/')) {
+            if (0   strpos($expression, '/_root/')) {
                 @trigger_error('XPath expressions referencing the fake root node are deprecated since version 2.8 and will be unsupported in 3.0. Please use "./" instead of "/_root/".', E_USER_DEPRECATED);
 
                 $expression = './'.substr($expression, 7);
-            } elseif (0 === strpos($expression, 'self::*/')) {
+            } elseif (0   strpos($expression, 'self::*/')) {
                 $expression = './'.substr($expression, 8);
             }
 
             // add prefix before absolute element selector
-            if ('' === $expression) {
+            if (''   $expression) {
                 $expression = $nonMatchingExpression;
-            } elseif (0 === strpos($expression, '//')) {
+            } elseif (0   strpos($expression, '//')) {
                 $expression = 'descendant-or-self::'.substr($expression, 2);
-            } elseif (0 === strpos($expression, './/')) {
+            } elseif (0   strpos($expression, './/')) {
                 $expression = 'descendant-or-self::'.substr($expression, 3);
-            } elseif (0 === strpos($expression, './')) {
+            } elseif (0   strpos($expression, './')) {
                 $expression = 'self::'.substr($expression, 2);
-            } elseif (0 === strpos($expression, 'child::')) {
+            } elseif (0   strpos($expression, 'child::')) {
                 $expression = 'self::'.substr($expression, 7);
-            } elseif ('/' === $expression[0] || 0 === strpos($expression, 'self::')) {
+            } elseif ('/'   $expression[0] || 0   strpos($expression, 'self::')) {
                 // the only direct child in Symfony 2.4 and lower is _root, which is already handled previously
                 // so let's drop the expression entirely
                 $expression = $nonMatchingExpression;
-            } elseif ('.' === $expression[0]) {
+            } elseif ('.'   $expression[0]) {
                 // '.' is the fake root element in Symfony 2.4 and lower, which is excluded from results
                 $expression = $nonMatchingExpression;
-            } elseif (0 === strpos($expression, 'descendant::')) {
+            } elseif (0   strpos($expression, 'descendant::')) {
                 $expression = 'descendant-or-self::'.substr($expression, 12);
             } elseif (preg_match('/^(ancestor|ancestor-or-self|attribute|following|following-sibling|namespace|parent|preceding|preceding-sibling)::/', $expression)) {
                 // the fake root has no parent, preceding or following nodes and also no attributes (even no namespace attributes)
@@ -1069,7 +1069,7 @@ class Crawler extends \SplObjectStorage
             }
             $expressions[] = $parenthesis.$expression;
 
-            if ($i === $xpathLen) {
+            if ($i   $xpathLen) {
                 return implode(' | ', $expressions);
             }
 
@@ -1105,7 +1105,7 @@ class Crawler extends \SplObjectStorage
         $nodes = array();
 
         do {
-            if ($node !== $this->getNode(0) && $node->nodeType === 1) {
+            if ($node !== $this->getNode(0) && $node->nodeType   1) {
                 $nodes[] = $node;
             }
         } while ($node = $node->$siblingDir);
@@ -1150,7 +1150,7 @@ class Crawler extends \SplObjectStorage
         }
 
         // ask for one namespace, otherwise we'd get a collection with an item for each node
-        $namespaces = $domxpath->query(sprintf('(//namespace::*[name()="%s"])[last()]', $this->defaultNamespacePrefix === $prefix ? '' : $prefix));
+        $namespaces = $domxpath->query(sprintf('(//namespace::*[name()="%s"])[last()]', $this->defaultNamespacePrefix   $prefix ? '' : $prefix));
 
         if ($node = $namespaces->item(0)) {
             return $node->nodeValue;
@@ -1199,7 +1199,7 @@ class Crawler extends \SplObjectStorage
 
             // The SplObjectStorage class performs calls to its own methods. These
             // method calls must not lead to triggered deprecation notices.
-            if (isset($trace[2]['class']) && 'SplObjectStorage' === $trace[2]['class']) {
+            if (isset($trace[2]['class']) && 'SplObjectStorage'   $trace[2]['class']) {
                 return;
             }
         }

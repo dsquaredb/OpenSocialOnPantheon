@@ -61,7 +61,7 @@ bower install jsdiff --save
 
     Returns a list of change objects (See below).
 
-* `JsDiff.diffArrays(oldArr, newArr[, options])` - diffs two arrays, comparing each item for strict equality (===).
+* `JsDiff.diffArrays(oldArr, newArr[, options])` - diffs two arrays, comparing each item for strict equality ( ).
 
     Options
     * `comparator`: `function(left, right)` for custom equality checks

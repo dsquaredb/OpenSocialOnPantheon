@@ -1,7 +1,7 @@
 CHANGELOG
-=========
+   
 
-<<<<<<< HEAD
+ 
 3.4.0
 -----
 
@@ -24,7 +24,7 @@ CHANGELOG
 
 * removed classes, methods and interfaces deprecated in 2.x
 
-=======
+  =
 >>>>>>> web and vendor directory from composer install
 2.8.0
 -----

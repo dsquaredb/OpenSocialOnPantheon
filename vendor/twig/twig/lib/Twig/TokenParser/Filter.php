@@ -3,11 +3,10 @@
 /*
  * This file is part of Twig.
  *
-<<<<<<< HEAD
+ 
  * (c) Fabien Potencier
 =======
  * (c) 2009 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,22 +20,20 @@
  *  This text becomes uppercase
  * {% endfilter %}
  * </pre>
-<<<<<<< HEAD
+ 
  *
  * @final
 =======
->>>>>>> web and vendor directory from composer install
  */
 class Twig_TokenParser_Filter extends Twig_TokenParser
 {
     public function parse(Twig_Token $token)
     {
         $name = $this->parser->getVarName();
-<<<<<<< HEAD
+ 
         $ref = new Twig_Node_Expression_BlockReference(new Twig_Node_Expression_Constant($name, $token->getLine()), null, $token->getLine(), $this->getTag());
 =======
         $ref = new Twig_Node_Expression_BlockReference(new Twig_Node_Expression_Constant($name, $token->getLine()), true, $token->getLine(), $this->getTag());
->>>>>>> web and vendor directory from composer install
 
         $filter = $this->parser->getExpressionParser()->parseFilterExpressionRaw($ref, $this->getTag());
         $this->parser->getStream()->expect(Twig_Token::BLOCK_END_TYPE);
@@ -60,8 +57,7 @@ class Twig_TokenParser_Filter extends Twig_TokenParser
         return 'filter';
     }
 }
-<<<<<<< HEAD
+ 
 
 class_alias('Twig_TokenParser_Filter', 'Twig\TokenParser\FilterTokenParser', false);
 =======
->>>>>>> web and vendor directory from composer install

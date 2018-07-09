@@ -13,7 +13,7 @@ namespace Symfony\Component\Translation;
 
 use Symfony\Component\Translation\Loader\LoaderInterface;
 use Symfony\Component\Translation\Exception\NotFoundResourceException;
-<<<<<<< HEAD
+ 
 use Symfony\Component\Translation\Exception\InvalidArgumentException;
 use Symfony\Component\Translation\Exception\LogicException;
 use Symfony\Component\Translation\Exception\RuntimeException;
@@ -33,7 +33,6 @@ use Symfony\Component\Config\ConfigCacheFactory;
 /**
  * Translator.
  *
->>>>>>> web and vendor directory from composer install
  * @author Fabien Potencier <fabien@symfony.com>
  */
 class Translator implements TranslatorInterface, TranslatorBagInterface
@@ -46,11 +45,10 @@ class Translator implements TranslatorInterface, TranslatorBagInterface
     /**
      * @var string
      */
-<<<<<<< HEAD
+ 
     private $locale;
 =======
     protected $locale;
->>>>>>> web and vendor directory from composer install
 
     /**
      * @var array
@@ -68,7 +66,7 @@ class Translator implements TranslatorInterface, TranslatorBagInterface
     private $resources = array();
 
     /**
-<<<<<<< HEAD
+ 
      * @var MessageFormatterInterface
      */
     private $formatter;
@@ -76,7 +74,6 @@ class Translator implements TranslatorInterface, TranslatorBagInterface
      * @var MessageSelector
      */
     private $selector;
->>>>>>> web and vendor directory from composer install
 
     /**
      * @var string
@@ -94,7 +91,7 @@ class Translator implements TranslatorInterface, TranslatorBagInterface
     private $configCacheFactory;
 
     /**
-<<<<<<< HEAD
+ 
      * @param string                         $locale    The locale
      * @param MessageFormatterInterface|null $formatter The message formatter
      * @param string|null                    $cacheDir  The directory to use for the cache
@@ -128,19 +125,17 @@ class Translator implements TranslatorInterface, TranslatorBagInterface
     {
         $this->setLocale($locale);
         $this->selector = $selector ?: new MessageSelector();
->>>>>>> web and vendor directory from composer install
         $this->cacheDir = $cacheDir;
         $this->debug = $debug;
     }
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * Sets the ConfigCache factory to use.
      *
      * @param ConfigCacheFactoryInterface $configCacheFactory
      */
->>>>>>> web and vendor directory from composer install
     public function setConfigCacheFactory(ConfigCacheFactoryInterface $configCacheFactory)
     {
         $this->configCacheFactory = $configCacheFactory;
@@ -165,11 +160,10 @@ class Translator implements TranslatorInterface, TranslatorBagInterface
      * @param string $locale   The locale
      * @param string $domain   The domain
      *
-<<<<<<< HEAD
+ 
      * @throws InvalidArgumentException If the locale contains invalid characters
 =======
      * @throws \InvalidArgumentException If the locale contains invalid characters
->>>>>>> web and vendor directory from composer install
      */
     public function addResource($format, $resource, $locale, $domain = null)
     {
@@ -206,7 +200,7 @@ class Translator implements TranslatorInterface, TranslatorBagInterface
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Sets the fallback locale(s).
      *
@@ -224,16 +218,14 @@ class Translator implements TranslatorInterface, TranslatorBagInterface
     }
 
     /**
->>>>>>> web and vendor directory from composer install
      * Sets the fallback locales.
      *
      * @param array $locales The fallback locales
      *
-<<<<<<< HEAD
+ 
      * @throws InvalidArgumentException If a locale contains invalid characters
 =======
      * @throws \InvalidArgumentException If a locale contains invalid characters
->>>>>>> web and vendor directory from composer install
      */
     public function setFallbackLocales(array $locales)
     {
@@ -266,11 +258,10 @@ class Translator implements TranslatorInterface, TranslatorBagInterface
             $domain = 'messages';
         }
 
-<<<<<<< HEAD
+ 
         return $this->formatter->format($this->getCatalogue($locale)->get((string) $id, $domain), $locale, $parameters);
 =======
         return strtr($this->getCatalogue($locale)->get((string) $id, $domain), $parameters);
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -278,13 +269,12 @@ class Translator implements TranslatorInterface, TranslatorBagInterface
      */
     public function transChoice($id, $number, array $parameters = array(), $domain = null, $locale = null)
     {
-<<<<<<< HEAD
+ 
         if (!$this->formatter instanceof ChoiceMessageFormatterInterface) {
             throw new LogicException(sprintf('The formatter "%s" does not support plural translations.', get_class($this->formatter)));
         }
 
 =======
->>>>>>> web and vendor directory from composer install
         if (null === $domain) {
             $domain = 'messages';
         }
@@ -301,11 +291,10 @@ class Translator implements TranslatorInterface, TranslatorBagInterface
             }
         }
 
-<<<<<<< HEAD
+ 
         return $this->formatter->choiceFormat($catalogue->get($id, $domain), $number, $locale, $parameters);
 =======
         return strtr($this->selector->choose($catalogue->get($id, $domain), (int) $number, $locale), $parameters);
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -337,7 +326,7 @@ class Translator implements TranslatorInterface, TranslatorBagInterface
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Collects all messages for the given locale.
      *
@@ -361,7 +350,6 @@ class Translator implements TranslatorInterface, TranslatorBagInterface
     }
 
     /**
->>>>>>> web and vendor directory from composer install
      * @param string $locale
      */
     protected function loadCatalogue($locale)
@@ -401,7 +389,7 @@ class Translator implements TranslatorInterface, TranslatorBagInterface
         }
 
         $this->assertValidLocale($locale);
-<<<<<<< HEAD
+ 
         $cache = $this->getConfigCacheFactory()->cache($this->getCatalogueCachePath($locale),
             function (ConfigCacheInterface $cache) use ($locale) {
                 $this->dumpCatalogue($locale, $cache);
@@ -410,7 +398,6 @@ class Translator implements TranslatorInterface, TranslatorBagInterface
         $cache = $this->getConfigCacheFactory()->cache($this->getCatalogueCachePath($locale),
             function (ConfigCacheInterface $cache) use ($self, $locale) {
                 $self->dumpCatalogue($locale, $cache);
->>>>>>> web and vendor directory from composer install
             }
         );
 
@@ -423,7 +410,7 @@ class Translator implements TranslatorInterface, TranslatorBagInterface
         $this->catalogues[$locale] = include $cache->getPath();
     }
 
-<<<<<<< HEAD
+ 
     private function dumpCatalogue($locale, ConfigCacheInterface $cache)
 =======
     /**
@@ -432,7 +419,6 @@ class Translator implements TranslatorInterface, TranslatorBagInterface
      * @internal
      */
     public function dumpCatalogue($locale, ConfigCacheInterface $cache)
->>>>>>> web and vendor directory from composer install
     {
         $this->initializeCatalogue($locale);
         $fallbackContent = $this->getFallbackContent($this->catalogues[$locale]);
@@ -468,7 +454,7 @@ EOF
             $fallbackSuffix = ucfirst(preg_replace($replacementPattern, '_', $fallback));
             $currentSuffix = ucfirst(preg_replace($replacementPattern, '_', $current));
 
-<<<<<<< HEAD
+ 
             $fallbackContent .= sprintf(<<<'EOF'
 $catalogue%s = new MessageCatalogue('%s', %s);
 $catalogue%s->addFallbackCatalogue($catalogue%s);
@@ -476,7 +462,6 @@ $catalogue%s->addFallbackCatalogue($catalogue%s);
             $fallbackContent .= sprintf(<<<EOF
 \$catalogue%s = new MessageCatalogue('%s', %s);
 \$catalogue%s->addFallbackCatalogue(\$catalogue%s);
->>>>>>> web and vendor directory from composer install
 
 EOF
                 ,
@@ -495,11 +480,10 @@ EOF
 
     private function getCatalogueCachePath($locale)
     {
-<<<<<<< HEAD
+ 
         return $this->cacheDir.'/catalogue.'.$locale.'.'.strtr(substr(base64_encode(hash('sha256', serialize($this->fallbackLocales), true)), 0, 7), '/', '_').'.php';
 =======
         return $this->cacheDir.'/catalogue.'.$locale.'.'.sha1(serialize($this->fallbackLocales)).'.php';
->>>>>>> web and vendor directory from composer install
     }
 
     private function doLoadCatalogue($locale)
@@ -509,11 +493,10 @@ EOF
         if (isset($this->resources[$locale])) {
             foreach ($this->resources[$locale] as $resource) {
                 if (!isset($this->loaders[$resource[0]])) {
-<<<<<<< HEAD
+ 
                     throw new RuntimeException(sprintf('The "%s" translation loader is not registered.', $resource[0]));
 =======
                     throw new \RuntimeException(sprintf('The "%s" translation loader is not registered.', $resource[0]));
->>>>>>> web and vendor directory from composer install
                 }
                 $this->catalogues[$locale]->addCatalogue($this->loaders[$resource[0]]->load($resource[1], $locale, $resource[2]));
             }
@@ -526,11 +509,10 @@ EOF
 
         foreach ($this->computeFallbackLocales($locale) as $fallback) {
             if (!isset($this->catalogues[$fallback])) {
-<<<<<<< HEAD
+ 
                 $this->initializeCatalogue($fallback);
 =======
                 $this->doLoadCatalogue($fallback);
->>>>>>> web and vendor directory from composer install
             }
 
             $fallbackCatalogue = new MessageCatalogue($fallback, $this->catalogues[$fallback]->all());
@@ -553,11 +535,10 @@ EOF
             $locales[] = $fallback;
         }
 
-<<<<<<< HEAD
+ 
         if (false !== strrchr($locale, '_')) {
 =======
         if (strrchr($locale, '_') !== false) {
->>>>>>> web and vendor directory from composer install
             array_unshift($locales, substr($locale, 0, -strlen(strrchr($locale, '_'))));
         }
 
@@ -569,20 +550,18 @@ EOF
      *
      * @param string $locale Locale to tests
      *
-<<<<<<< HEAD
+ 
      * @throws InvalidArgumentException If the locale contains invalid characters
 =======
      * @throws \InvalidArgumentException If the locale contains invalid characters
->>>>>>> web and vendor directory from composer install
      */
     protected function assertValidLocale($locale)
     {
         if (1 !== preg_match('/^[a-z0-9@_\\.\\-]*$/i', $locale)) {
-<<<<<<< HEAD
+ 
             throw new InvalidArgumentException(sprintf('Invalid "%s" locale.', $locale));
 =======
             throw new \InvalidArgumentException(sprintf('Invalid "%s" locale.', $locale));
->>>>>>> web and vendor directory from composer install
         }
     }
 

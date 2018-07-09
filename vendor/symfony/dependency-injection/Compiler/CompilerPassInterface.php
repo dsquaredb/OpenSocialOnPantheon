@@ -22,11 +22,10 @@ interface CompilerPassInterface
 {
     /**
      * You can modify the container here before it is dumped to PHP code.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param ContainerBuilder $container
->>>>>>> web and vendor directory from composer install
      */
     public function process(ContainerBuilder $container);
 }

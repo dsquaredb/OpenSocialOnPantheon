@@ -8,7 +8,7 @@ module.exports = (filePath, callback) => {
   babel.transformFile(
     filePath,
     {
-      sourceMaps: process.env.NODE_ENV === 'development' ? 'inline' : false,
+      sourceMaps: process.env.NODE_ENV   'development' ? 'inline' : false,
       comments: false,
       plugins: [
         ['add-header-comment', {

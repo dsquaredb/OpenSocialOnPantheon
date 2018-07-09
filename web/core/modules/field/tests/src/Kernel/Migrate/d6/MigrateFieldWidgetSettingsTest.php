@@ -95,7 +95,7 @@ class MigrateFieldWidgetSettingsTest extends MigrateDrupal6TestBase {
     $component = $form_display->getComponent('field_test_datetime');
     $expected['weight'] = 12;
     $this->assertIdentical($expected, $component);
-<<<<<<< HEAD
+ 
 =======
 
     $component = entity_get_form_display('node', 'employee', 'default')
@@ -117,7 +117,6 @@ class MigrateFieldWidgetSettingsTest extends MigrateDrupal6TestBase {
       ->getComponent('field_commander');
     $this->assertInternalType('array', $component);
     $this->assertSame('options_select', $component['type']);
->>>>>>> Update Open Social to 8.x-2.1
   }
 
 }

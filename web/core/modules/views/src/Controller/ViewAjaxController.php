@@ -132,13 +132,12 @@ class ViewAjaxController implements ContainerInjectionInterface {
 
       // Remove all of this stuff from the query of the request so it doesn't
       // end up in pagers and tablesort URLs.
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
       foreach (array('view_name', 'view_display_id', 'view_args', 'view_path', 'view_dom_id', 'pager_element', 'view_base_path', AjaxResponseSubscriber::AJAX_REQUEST_PARAMETER) as $key) {
 =======
 =======
->>>>>>> updating open social
       // @todo Remove this parsing once these are removed from the request in
       //   https://www.drupal.org/node/2504709.
       foreach ([
@@ -153,13 +152,10 @@ class ViewAjaxController implements ContainerInjectionInterface {
           FormBuilderInterface::AJAX_FORM_REQUEST,
           MainContentViewSubscriber::WRAPPER_FORMAT,
         ] as $key) {
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
       foreach (['view_name', 'view_display_id', 'view_args', 'view_path', 'view_dom_id', 'pager_element', 'view_base_path', AjaxResponseSubscriber::AJAX_REQUEST_PARAMETER] as $key) {
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
         $request->query->remove($key);
         $request->request->remove($key);
       }

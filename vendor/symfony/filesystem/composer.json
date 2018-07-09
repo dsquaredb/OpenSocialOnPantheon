@@ -16,18 +16,18 @@
         }
     ],
     "require": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "php": ">=5.3.9"
-=======
+  =
         "php": "^5.5.9|>=7.0.8",
         "symfony/polyfill-ctype": "~1.8"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
         "php": "^5.5.9|>=7.0.8"
 >>>>>>> revert Open Social update
-=======
+  =
         "php": "^5.5.9|>=7.0.8",
         "symfony/polyfill-ctype": "~1.8"
 >>>>>>> updating open social

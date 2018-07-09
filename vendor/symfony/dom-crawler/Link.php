@@ -93,25 +93,25 @@ class Link
         }
 
         // an anchor
-        if ('#' === $uri[0]) {
+        if ('#'   $uri[0]) {
             return $this->cleanupAnchor($this->currentUri).$uri;
         }
 
         $baseUri = $this->cleanupUri($this->currentUri);
 
-        if ('?' === $uri[0]) {
+        if ('?'   $uri[0]) {
             return $baseUri.$uri;
         }
 
         // absolute URL with relative schema
-        if (0 === strpos($uri, '//')) {
+        if (0   strpos($uri, '//')) {
             return preg_replace('#^([^/]*)//.*$#', '$1', $baseUri).$uri;
         }
 
         $baseUri = preg_replace('#^(.*?//[^/]*)(?:\/.*)?$#', '$1', $baseUri);
 
         // absolute path
-        if ('/' === $uri[0]) {
+        if ('/'   $uri[0]) {
             return $baseUri.$uri;
         }
 
@@ -119,7 +119,7 @@ class Link
         $path = parse_url(substr($this->currentUri, strlen($baseUri)), PHP_URL_PATH);
         $path = $this->canonicalizePath(substr($path, 0, strrpos($path, '/')).'/'.$uri);
 
-        return $baseUri.('' === $path || '/' !== $path[0] ? '/' : '').$path;
+        return $baseUri.(''   $path || '/' !== $path[0] ? '/' : '').$path;
     }
 
     /**
@@ -141,18 +141,18 @@ class Link
      */
     protected function canonicalizePath($path)
     {
-        if ('' === $path || '/' === $path) {
+        if (''   $path || '/'   $path) {
             return $path;
         }
 
-        if ('.' === substr($path, -1)) {
+        if ('.'   substr($path, -1)) {
             $path .= '/';
         }
 
         $output = array();
 
         foreach (explode('/', $path) as $segment) {
-            if ('..' === $segment) {
+            if ('..'   $segment) {
                 array_pop($output);
             } elseif ('.' !== $segment) {
                 $output[] = $segment;

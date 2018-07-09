@@ -12,7 +12,7 @@
 namespace Symfony\Component\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-<<<<<<< HEAD
+ 
 use Symfony\Component\DependencyInjection\Exception\LogicException;
 use Symfony\Component\DependencyInjection\Exception\RuntimeException;
 use Symfony\Component\DependencyInjection\Extension\ConfigurationExtensionInterface;
@@ -23,7 +23,6 @@ use Symfony\Component\DependencyInjection\ParameterBag\EnvPlaceholderParameterBa
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 =======
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
->>>>>>> web and vendor directory from composer install
 
 /**
  * Merges extension configs into the container builder.
@@ -53,7 +52,7 @@ class MergeExtensionConfigurationPass implements CompilerPassInterface
                 // this extension was not called
                 continue;
             }
-<<<<<<< HEAD
+ 
             $resolvingBag = $container->getParameterBag();
             if ($resolvingBag instanceof EnvPlaceholderParameterBag && $extension instanceof Extension) {
                 // create a dedicated bag so that we can track env vars per-extension
@@ -98,7 +97,6 @@ class MergeExtensionConfigurationPass implements CompilerPassInterface
             }
 
             $extension->load($config, $tmpContainer);
->>>>>>> web and vendor directory from composer install
 
             $container->merge($tmpContainer);
             $container->getParameterBag()->add($parameters);
@@ -108,7 +106,7 @@ class MergeExtensionConfigurationPass implements CompilerPassInterface
         $container->addAliases($aliases);
     }
 }
-<<<<<<< HEAD
+ 
 
 /**
  * @internal
@@ -220,4 +218,3 @@ class MergeExtensionConfigurationContainerBuilder extends ContainerBuilder
     }
 }
 =======
->>>>>>> web and vendor directory from composer install

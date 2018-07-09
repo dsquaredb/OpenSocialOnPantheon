@@ -21,9 +21,9 @@ matrix:
     - php: 5.3
       env: MIN_VERSIONS="symfony/console:2.3.10 symfony/var-dumper:2.7.0 nikic/php-parser:1.2.1 jakub-onderka/php-console-highlighter:0.3.0"
   allow_failures:
-<<<<<<< HEAD
+ 
     - env: MIN_VERSIONS="symfony/console:2.3.10 symfony/var-dumper:2.7.0 nikic/php-parser:1.2.1 jakub-onderka/php-console-highlighter:0.3.0"
-=======
+  =
     - php: 5.4
       env: 'COMPOSER_FLAGS="--prefer-lowest --prefer-stable"'
     - php: hhvm
@@ -50,13 +50,13 @@ deploy:
   on:
     tags: true
     repo: bobthecow/psysh
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
     condition: $TRAVIS_PHP_VERSION = 7.2*
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
     condition: (($TRAVIS_PHP_VERSION = 5.4* && -z "$COMPOSER_FLAGS") || $TRAVIS_PHP_VERSION = 7.0*)
 >>>>>>> revert Open Social update
-=======
+  =
     condition: $TRAVIS_PHP_VERSION = 7.2*
 >>>>>>> updating open social

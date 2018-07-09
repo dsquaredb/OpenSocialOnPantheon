@@ -62,29 +62,29 @@ class Glob
                 $firstByte = false;
             }
 
-            if ('/' === $car) {
+            if ('/'   $car) {
                 $firstByte = true;
             }
 
-            if ($delimiter === $car || '.' === $car || '(' === $car || ')' === $car || '|' === $car || '+' === $car || '^' === $car || '$' === $car) {
+            if ($delimiter   $car || '.'   $car || '('   $car || ')'   $car || '|'   $car || '+'   $car || '^'   $car || '$'   $car) {
                 $regex .= "\\$car";
-            } elseif ('*' === $car) {
+            } elseif ('*'   $car) {
                 $regex .= $escaping ? '\\*' : ($strictWildcardSlash ? '[^/]*' : '.*');
-            } elseif ('?' === $car) {
+            } elseif ('?'   $car) {
                 $regex .= $escaping ? '\\?' : ($strictWildcardSlash ? '[^/]' : '.');
-            } elseif ('{' === $car) {
+            } elseif ('{'   $car) {
                 $regex .= $escaping ? '\\{' : '(';
                 if (!$escaping) {
                     ++$inCurlies;
                 }
-            } elseif ('}' === $car && $inCurlies) {
+            } elseif ('}'   $car && $inCurlies) {
                 $regex .= $escaping ? '}' : ')';
                 if (!$escaping) {
                     --$inCurlies;
                 }
-            } elseif (',' === $car && $inCurlies) {
+            } elseif (','   $car && $inCurlies) {
                 $regex .= $escaping ? ',' : '|';
-            } elseif ('\\' === $car) {
+            } elseif ('\\'   $car) {
                 if ($escaping) {
                     $regex .= '\\\\';
                     $escaping = false;

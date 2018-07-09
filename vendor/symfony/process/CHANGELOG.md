@@ -1,7 +1,7 @@
 CHANGELOG
-=========
+   
 
-<<<<<<< HEAD
+ 
 3.4.0
 -----
 
@@ -19,7 +19,7 @@ CHANGELOG
  * deprecated configuring enhanced Windows compatibility
  * deprecated configuring enhanced sigchild compatibility
 
-=======
+  =
 >>>>>>> web and vendor directory from composer install
 2.5.0
 -----

@@ -24,7 +24,7 @@ use Symfony\Component\HttpFoundation\File\MimeType\ExtensionGuesser;
  */
 class UploadedFile extends File
 {
-<<<<<<< HEAD
+ 
     private $test = false;
     private $originalName;
     private $mimeType;
@@ -65,7 +65,6 @@ class UploadedFile extends File
      *
      * @var int
      */
->>>>>>> web and vendor directory from composer install
     private $error;
 
     /**
@@ -83,7 +82,7 @@ class UploadedFile extends File
      * Calling any other method on an non-valid instance will cause an unpredictable result.
      *
      * @param string      $path         The full temporary path to the file
-<<<<<<< HEAD
+ 
      * @param string      $originalName The original file name of the uploaded file
      * @param string|null $mimeType     The type of the file as provided by PHP; null defaults to application/octet-stream
      * @param int|null    $size         The file size provided by the uploader
@@ -96,7 +95,6 @@ class UploadedFile extends File
      * @param int|null    $size         The file size
      * @param int|null    $error        The error constant of the upload (one of PHP's UPLOAD_ERR_XXX constants); null defaults to UPLOAD_ERR_OK
      * @param bool        $test         Whether the test mode is active
->>>>>>> web and vendor directory from composer install
      *
      * @throws FileException         If file_uploads is disabled
      * @throws FileNotFoundException If the file does not exist
@@ -214,11 +212,10 @@ class UploadedFile extends File
      */
     public function isValid()
     {
-<<<<<<< HEAD
+ 
         $isOk = UPLOAD_ERR_OK === $this->error;
 =======
         $isOk = $this->error === UPLOAD_ERR_OK;
->>>>>>> web and vendor directory from composer install
 
         return $this->test ? $isOk : $isOk && is_uploaded_file($this->getPathname());
     }
@@ -242,35 +239,29 @@ class UploadedFile extends File
 
             $target = $this->getTargetFile($directory, $name);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
 =======
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> updating open social
             set_error_handler(function ($type, $msg) use (&$error) { $error = $msg; });
             $moved = move_uploaded_file($this->getPathname(), $target);
             restore_error_handler();
             if (!$moved) {
                 throw new FileException(sprintf('Could not move the file "%s" to "%s" (%s)', $this->getPathname(), $target, strip_tags($error)));
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
             if (!@move_uploaded_file($this->getPathname(), $target)) {
                 $error = error_get_last();
                 throw new FileException(sprintf('Could not move the file "%s" to "%s" (%s)', $this->getPathname(), $target, strip_tags($error['message'])));
->>>>>>> web and vendor directory from composer install
 =======
->>>>>>> Update Open Social to 8.x-2.1
 =======
             if (!@move_uploaded_file($this->getPathname(), $target)) {
                 $error = error_get_last();
                 throw new FileException(sprintf('Could not move the file "%s" to "%s" (%s)', $this->getPathname(), $target, strip_tags($error['message'])));
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
             }
 
             @chmod($target, 0666 & ~umask());
@@ -305,7 +296,7 @@ class UploadedFile extends File
 
         switch (substr($iniMax, -1)) {
             case 't': $max *= 1024;
-<<<<<<< HEAD
+ 
             // no break
             case 'g': $max *= 1024;
             // no break
@@ -314,7 +305,6 @@ class UploadedFile extends File
 =======
             case 'g': $max *= 1024;
             case 'm': $max *= 1024;
->>>>>>> web and vendor directory from composer install
             case 'k': $max *= 1024;
         }
 
@@ -339,11 +329,10 @@ class UploadedFile extends File
         );
 
         $errorCode = $this->error;
-<<<<<<< HEAD
+ 
         $maxFilesize = UPLOAD_ERR_INI_SIZE === $errorCode ? self::getMaxFilesize() / 1024 : 0;
 =======
         $maxFilesize = $errorCode === UPLOAD_ERR_INI_SIZE ? self::getMaxFilesize() / 1024 : 0;
->>>>>>> web and vendor directory from composer install
         $message = isset($errors[$errorCode]) ? $errors[$errorCode] : 'The file "%s" was not uploaded due to an unknown error.';
 
         return sprintf($message, $this->getClientOriginalName(), $maxFilesize);

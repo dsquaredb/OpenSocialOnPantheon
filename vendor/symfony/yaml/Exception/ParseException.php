@@ -24,7 +24,7 @@ class ParseException extends RuntimeException
     private $rawMessage;
 
     /**
-<<<<<<< HEAD
+ 
      * @param string          $message    The error message
      * @param int             $parsedLine The line where the error occurred
      * @param string|null     $snippet    The snippet of code near the problem
@@ -38,7 +38,6 @@ class ParseException extends RuntimeException
      * @param int        $snippet    The snippet of code near the problem
      * @param string     $parsedFile The file name where the error occurred
      * @param \Exception $previous   The previous exception
->>>>>>> web and vendor directory from composer install
      */
     public function __construct($message, $parsedLine = -1, $snippet = null, $parsedFile = null, \Exception $previous = null)
     {
@@ -131,7 +130,7 @@ class ParseException extends RuntimeException
         }
 
         if (null !== $this->parsedFile) {
-<<<<<<< HEAD
+ 
             $this->message .= sprintf(' in %s', json_encode($this->parsedFile, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
 =======
             if (PHP_VERSION_ID >= 50400) {
@@ -140,7 +139,6 @@ class ParseException extends RuntimeException
                 $jsonOptions = 0;
             }
             $this->message .= sprintf(' in %s', json_encode($this->parsedFile, $jsonOptions));
->>>>>>> web and vendor directory from composer install
         }
 
         if ($this->parsedLine >= 0) {

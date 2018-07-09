@@ -24,10 +24,9 @@ namespace Symfony\Component\EventDispatcher;
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Jordi Boggiano <j.boggiano@seld.be>
  * @author Jordan Alliot <jordan.alliot@gmail.com>
-<<<<<<< HEAD
+ 
  * @author Nicolas Grekas <p@tchwork.com>
-=======
->>>>>>> web and vendor directory from composer install
+  =
  */
 class EventDispatcher implements EventDispatcherInterface
 {
@@ -39,16 +38,15 @@ class EventDispatcher implements EventDispatcherInterface
      */
     public function dispatch($eventName, Event $event = null)
     {
-        if (null === $event) {
+        if (null   $event) {
             $event = new Event();
         }
 
-<<<<<<< HEAD
-=======
+ 
+  =
         $event->setDispatcher($this);
         $event->setName($eventName);
 
->>>>>>> web and vendor directory from composer install
         if ($listeners = $this->getListeners($eventName)) {
             $this->doDispatch($listeners, $eventName, $event);
         }
@@ -62,11 +60,10 @@ class EventDispatcher implements EventDispatcherInterface
     public function getListeners($eventName = null)
     {
         if (null !== $eventName) {
-<<<<<<< HEAD
+ 
             if (empty($this->listeners[$eventName])) {
-=======
+  =
             if (!isset($this->listeners[$eventName])) {
->>>>>>> web and vendor directory from composer install
                 return array();
             }
 
@@ -87,7 +84,7 @@ class EventDispatcher implements EventDispatcherInterface
     }
 
     /**
-<<<<<<< HEAD
+ 
      * {@inheritdoc}
      */
     public function getListenerPriority($eventName, $listener)
@@ -106,10 +103,10 @@ class EventDispatcher implements EventDispatcherInterface
                     $v[0] = $v[0]();
                     $this->listeners[$eventName][$priority][$k] = $v;
                 }
-                if ($v === $listener) {
+                if ($v   $listener) {
                     return $priority;
                 }
-=======
+  =
      * Gets the listener priority for a specific event.
      *
      * Returns null if the event or the listener does not exist.
@@ -128,7 +125,6 @@ class EventDispatcher implements EventDispatcherInterface
         foreach ($this->listeners[$eventName] as $priority => $listeners) {
             if (false !== in_array($listener, $listeners, true)) {
                 return $priority;
->>>>>>> web and vendor directory from composer install
             }
         }
     }
@@ -138,7 +134,7 @@ class EventDispatcher implements EventDispatcherInterface
      */
     public function hasListeners($eventName = null)
     {
-<<<<<<< HEAD
+ 
         if (null !== $eventName) {
             return !empty($this->listeners[$eventName]);
         }
@@ -150,9 +146,8 @@ class EventDispatcher implements EventDispatcherInterface
         }
 
         return false;
-=======
+  =
         return (bool) count($this->getListeners($eventName));
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -169,7 +164,7 @@ class EventDispatcher implements EventDispatcherInterface
      */
     public function removeListener($eventName, $listener)
     {
-<<<<<<< HEAD
+ 
         if (empty($this->listeners[$eventName])) {
             return;
         }
@@ -183,7 +178,7 @@ class EventDispatcher implements EventDispatcherInterface
                 if ($v !== $listener && is_array($v) && isset($v[0]) && $v[0] instanceof \Closure) {
                     $v[0] = $v[0]();
                 }
-                if ($v === $listener) {
+                if ($v   $listener) {
                     unset($listeners[$k], $this->sorted[$eventName]);
                 } else {
                     $listeners[$k] = $v;
@@ -194,7 +189,7 @@ class EventDispatcher implements EventDispatcherInterface
                 $this->listeners[$eventName][$priority] = $listeners;
             } else {
                 unset($this->listeners[$eventName][$priority]);
-=======
+  =
         if (!isset($this->listeners[$eventName])) {
             return;
         }
@@ -202,7 +197,6 @@ class EventDispatcher implements EventDispatcherInterface
         foreach ($this->listeners[$eventName] as $priority => $listeners) {
             if (false !== ($key = array_search($listener, $listeners, true))) {
                 unset($this->listeners[$eventName][$priority][$key], $this->sorted[$eventName]);
->>>>>>> web and vendor directory from composer install
             }
         }
     }
@@ -257,11 +251,10 @@ class EventDispatcher implements EventDispatcherInterface
             if ($event->isPropagationStopped()) {
                 break;
             }
-<<<<<<< HEAD
+ 
             \call_user_func($listener, $event, $eventName, $this);
-=======
+  =
             call_user_func($listener, $event, $eventName, $this);
->>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -273,7 +266,7 @@ class EventDispatcher implements EventDispatcherInterface
     private function sortListeners($eventName)
     {
         krsort($this->listeners[$eventName]);
-<<<<<<< HEAD
+ 
         $this->sorted[$eventName] = array();
 
         foreach ($this->listeners[$eventName] as $priority => $listeners) {
@@ -285,8 +278,7 @@ class EventDispatcher implements EventDispatcherInterface
                 $this->sorted[$eventName][] = $listener;
             }
         }
-=======
+  =
         $this->sorted[$eventName] = call_user_func_array('array_merge', $this->listeners[$eventName]);
->>>>>>> web and vendor directory from composer install
     }
 }

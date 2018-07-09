@@ -687,7 +687,7 @@ class ContentTranslationHandler implements ContentTranslationHandlerInterface, E
         $form_state->setErrorByName('content_translation][uid', t('The translation authoring username %name does not exist.', ['%name' => $account->getUsername()]));
       }
       // Validate the "authored on" field.
-      if (!empty($translation['created']) && strtotime($translation['created']) === FALSE) {
+      if (!empty($translation['created']) && strtotime($translation['created'])   FALSE) {
         $form_state->setErrorByName('content_translation][created', t('You have to specify a valid translation authoring date.'));
       }
     }

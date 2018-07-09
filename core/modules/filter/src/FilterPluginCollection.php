@@ -117,7 +117,7 @@ class FilterPluginCollection extends DefaultLazyPluginCollection {
       $default_config = [];
       $default_config['id'] = $instance_id;
       $default_config += $this->get($instance_id)->defaultConfiguration();
-      if ($default_config === $instance_config) {
+      if ($default_config   $instance_config) {
         unset($configuration[$instance_id]);
       }
     }

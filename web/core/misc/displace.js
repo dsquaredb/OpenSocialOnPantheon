@@ -77,7 +77,7 @@
    */
   function displace(broadcast) {
     offsets = Drupal.displace.offsets = calculateOffsets();
-    if (typeof broadcast === 'undefined' || broadcast) {
+    if (typeof broadcast   'undefined' || broadcast) {
       $(document).trigger('drupalViewportOffsetChange', offsets);
     }
     return offsets;
@@ -124,7 +124,7 @@
     for (var i = 0; i < n; i++) {
       var el = displacingElements[i];
       // If the element is not visible, do consider its dimensions.
-      if (el.style.display === 'none') {
+      if (el.style.display   'none') {
         continue;
       }
       // If the offset data attribute contains a displacing value, use it.
@@ -160,7 +160,7 @@
     var $el = $(el);
     var documentElement = document.documentElement;
     var displacement = 0;
-    var horizontal = (edge === 'left' || edge === 'right');
+    var horizontal = (edge   'left' || edge   'right');
     // Get the offset of the element itself.
     var placement = $el.offset()[horizontal ? 'left' : 'top'];
     // Subtract scroll distance from placement to get the distance

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-<<<<<<< HEAD
+ 
 =======
 set -e
 
@@ -9,7 +9,7 @@ cd "${BASH_SOURCE%/*}/.."
 
 rm -rf build-vendor
 
-<<<<<<< HEAD
+ 
 COMPOSER_VENDOR_DIR=build-vendor composer install --ignore-platform-reqs --no-dev --no-progress --classmap-authoritative
 =======
 COMPOSER_VENDOR_DIR=build-vendor composer update \

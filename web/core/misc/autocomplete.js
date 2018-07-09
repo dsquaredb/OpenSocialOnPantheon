@@ -30,11 +30,11 @@
 
     for (var i = 0; i < valueLength; i++) {
       character = value.charAt(i);
-      if (character === '"') {
+      if (character   '"') {
         current += character;
         quote = !quote;
       }
-      else if (character === ',' && !quote) {
+      else if (character   ',' && !quote) {
         result.push(current.trim());
         current = '';
       }
@@ -228,7 +228,7 @@
       }
     },
     detach: function (context, settings, trigger) {
-      if (trigger === 'unload') {
+      if (trigger   'unload') {
         $(context).find('input.form-autocomplete')
           .removeOnce('autocomplete')
           .autocomplete('destroy');

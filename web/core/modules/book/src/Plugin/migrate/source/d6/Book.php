@@ -17,18 +17,17 @@ use Drupal\book\Plugin\migrate\source\Book as BookGeneral;
  * \Drupal\book\Plugin\migrate\source\Book instead. See
  * https://www.drupal.org/node/2947487 for more information.
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 =======
->>>>>>> revert Open Social update
 class Book extends DrupalSqlBase {
 
   /**
    * {@inheritdoc}
    */
   public function query() {
-<<<<<<< HEAD
+ 
     $query = $this->select('book', 'b')->fields('b', array('nid', 'bid'));
     $query->join('menu_links', 'ml', 'b.mlid = ml.mlid');
     $ml_fields = array('mlid', 'plid', 'weight', 'has_children', 'depth');
@@ -36,7 +35,6 @@ class Book extends DrupalSqlBase {
     $query = $this->select('book', 'b')->fields('b', ['nid', 'bid']);
     $query->join('menu_links', 'ml', 'b.mlid = ml.mlid');
     $ml_fields = ['mlid', 'plid', 'weight', 'has_children', 'depth'];
->>>>>>> revert Open Social update
     for ($i = 1; $i <= 9; $i++) {
       $field = "p$i";
       $ml_fields[] = $field;
@@ -59,11 +57,10 @@ class Book extends DrupalSqlBase {
    * {@inheritdoc}
    */
   public function fields() {
-<<<<<<< HEAD
+ 
     return array(
 =======
     return [
->>>>>>> revert Open Social update
       'nid' => $this->t('Node ID'),
       'bid' => $this->t('Book ID'),
       'mlid' => $this->t('Menu link ID'),
@@ -78,20 +75,17 @@ class Book extends DrupalSqlBase {
       'p7' => $this->t('The seventh mlid in the materialized path. See p1.'),
       'p8' => $this->t('The eighth mlid in the materialized path. See p1.'),
       'p9' => $this->t('The ninth mlid in the materialized path. See p1.'),
-<<<<<<< HEAD
+ 
     );
   }
 
 }
 =======
 class Book extends BookGeneral {}
->>>>>>> Update Open Social to 8.x-2.1
 =======
     ];
   }
 
 }
->>>>>>> revert Open Social update
 =======
 class Book extends BookGeneral {}
->>>>>>> updating open social

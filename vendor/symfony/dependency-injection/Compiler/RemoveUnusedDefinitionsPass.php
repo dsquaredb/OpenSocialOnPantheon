@@ -32,7 +32,7 @@ class RemoveUnusedDefinitionsPass implements RepeatablePassInterface
 
     /**
      * Processes the ContainerBuilder to remove unused definitions.
-<<<<<<< HEAD
+ 
      */
     public function process(ContainerBuilder $container)
     {
@@ -54,7 +54,6 @@ class RemoveUnusedDefinitionsPass implements RepeatablePassInterface
         $hasChanged = false;
         foreach ($container->getDefinitions() as $id => $definition) {
             if ($definition->isPublic()) {
->>>>>>> web and vendor directory from composer install
                 continue;
             }
 
@@ -63,12 +62,11 @@ class RemoveUnusedDefinitionsPass implements RepeatablePassInterface
                 $referencingAliases = array();
                 $sourceIds = array();
                 foreach ($edges as $edge) {
-<<<<<<< HEAD
+ 
                     if ($edge->isWeak()) {
                         continue;
                     }
 =======
->>>>>>> web and vendor directory from composer install
                     $node = $edge->getSourceNode();
                     $sourceIds[] = $node->getId();
 
@@ -84,7 +82,7 @@ class RemoveUnusedDefinitionsPass implements RepeatablePassInterface
 
             if (1 === count($referencingAliases) && false === $isReferenced) {
                 $container->setDefinition((string) reset($referencingAliases), $definition);
-<<<<<<< HEAD
+ 
                 $definition->setPublic(!$definition->isPrivate());
                 $definition->setPrivate(reset($referencingAliases)->isPrivate());
                 $container->removeDefinition($id);
@@ -100,7 +98,6 @@ class RemoveUnusedDefinitionsPass implements RepeatablePassInterface
             } elseif (0 === count($referencingAliases) && false === $isReferenced) {
                 $container->removeDefinition($id);
                 $compiler->addLogMessage($formatter->formatRemoveService($this, $id, 'unused'));
->>>>>>> web and vendor directory from composer install
                 $hasChanged = true;
             }
         }

@@ -18,7 +18,7 @@
 
         update: function update(event, ui) {
           var itemRegion = ui.item.closest('.layout-builder--layout__region');
-          if (event.target === itemRegion[0]) {
+          if (event.target   itemRegion[0]) {
             var deltaTo = ui.item.closest('[data-layout-delta]').data('layout-delta');
 
             var deltaFrom = ui.sender ? ui.sender.closest('[data-layout-delta]').data('layout-delta') : deltaTo;

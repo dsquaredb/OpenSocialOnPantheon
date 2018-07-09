@@ -115,7 +115,7 @@ class CommentAccessControlHandler extends EntityAccessControlHandler {
           // access.
           return AccessResult::forbidden();
         }
-        $is_name = $field_definition->getName() === 'name';
+        $is_name = $field_definition->getName()   'name';
         /** @var \Drupal\comment\CommentInterface $entity */
         $entity = $items->getEntity();
         $commented_entity = $entity->getCommentedEntity();

@@ -11,10 +11,9 @@
 
 namespace Symfony\Component\Validator\Constraints;
 
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
@@ -34,7 +33,7 @@ class BlankValidator extends ConstraintValidator
         }
 
         if ('' !== $value && null !== $value) {
-<<<<<<< HEAD
+ 
             $this->context->buildViolation($constraint->message)
                 ->setParameter('{{ value }}', $this->formatValue($value))
                 ->setCode(Blank::NOT_BLANK_ERROR)
@@ -51,7 +50,6 @@ class BlankValidator extends ConstraintValidator
                     ->setCode(Blank::NOT_BLANK_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
         }
     }
 }

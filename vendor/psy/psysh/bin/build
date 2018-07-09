@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-<<<<<<< HEAD
+ 
 cd "${BASH_SOURCE%/*}/.."
 
 ./bin/build-vendor || exit 1

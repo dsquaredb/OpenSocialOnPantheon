@@ -14,11 +14,10 @@ namespace Symfony\Component\Validator\Mapping\Factory;
 use Symfony\Component\Validator\Exception\NoSuchMetadataException;
 use Symfony\Component\Validator\Mapping\Cache\CacheInterface;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Validator\Mapping\ClassMetadataInterface;
 use Symfony\Component\Validator\Mapping\Loader\LoaderChain;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\Mapping\Loader\LoaderInterface;
 
 /**
@@ -43,7 +42,7 @@ use Symfony\Component\Validator\Mapping\Loader\LoaderInterface;
  */
 class LazyLoadingMetadataFactory implements MetadataFactoryInterface
 {
-<<<<<<< HEAD
+ 
     protected $loader;
 =======
     /**
@@ -58,7 +57,6 @@ class LazyLoadingMetadataFactory implements MetadataFactoryInterface
      *
      * @var CacheInterface|null
      */
->>>>>>> web and vendor directory from composer install
     protected $cache;
 
     /**
@@ -108,7 +106,7 @@ class LazyLoadingMetadataFactory implements MetadataFactoryInterface
             return $this->loadedClasses[$class];
         }
 
-<<<<<<< HEAD
+ 
         if (!class_exists($class) && !interface_exists($class, false)) {
             throw new NoSuchMetadataException(sprintf('The class or interface "%s" does not exist.', $class));
         }
@@ -125,12 +123,11 @@ class LazyLoadingMetadataFactory implements MetadataFactoryInterface
 
         if (!class_exists($class) && !interface_exists($class)) {
             throw new NoSuchMetadataException(sprintf('The class or interface "%s" does not exist.', $class));
->>>>>>> web and vendor directory from composer install
         }
 
         $metadata = new ClassMetadata($class);
 
-<<<<<<< HEAD
+ 
         if (null !== $this->loader) {
             $this->loader->loadClassMetadata($metadata);
         }
@@ -148,7 +145,6 @@ class LazyLoadingMetadataFactory implements MetadataFactoryInterface
     private function mergeConstraints(ClassMetadata $metadata)
     {
 =======
->>>>>>> web and vendor directory from composer install
         // Include constraints from the parent class
         if ($parent = $metadata->getReflectionClass()->getParentClass()) {
             $metadata->mergeConstraints($this->getMetadataFor($parent->name));
@@ -179,7 +175,7 @@ class LazyLoadingMetadataFactory implements MetadataFactoryInterface
             }
             $metadata->mergeConstraints($this->getMetadataFor($interface->name));
         }
-<<<<<<< HEAD
+ 
 =======
 
         if (null !== $this->loader) {
@@ -191,7 +187,6 @@ class LazyLoadingMetadataFactory implements MetadataFactoryInterface
         }
 
         return $this->loadedClasses[$class] = $metadata;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -205,7 +200,7 @@ class LazyLoadingMetadataFactory implements MetadataFactoryInterface
 
         $class = ltrim(is_object($value) ? get_class($value) : $value, '\\');
 
-<<<<<<< HEAD
+ 
         return class_exists($class) || interface_exists($class, false);
 =======
         if (class_exists($class) || interface_exists($class)) {
@@ -213,6 +208,5 @@ class LazyLoadingMetadataFactory implements MetadataFactoryInterface
         }
 
         return false;
->>>>>>> web and vendor directory from composer install
     }
 }

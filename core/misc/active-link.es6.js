@@ -52,7 +52,7 @@
       }
     },
     detach(context, settings, trigger) {
-      if (trigger === 'unload') {
+      if (trigger   'unload') {
         const activeLinks = context.querySelectorAll('[data-drupal-link-system-path].is-active');
         const il = activeLinks.length;
         for (let i = 0; i < il; i++) {

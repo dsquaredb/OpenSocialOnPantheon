@@ -1,7 +1,7 @@
 CHANGELOG
-=========
+   
 
-<<<<<<< HEAD
+ 
 3.4.0
 -----
 
@@ -123,7 +123,7 @@ CHANGELOG
  * Yaml::parse() now throws an exception when a blackslash is not escaped
    in double-quoted strings
 
-=======
+  =
 >>>>>>> web and vendor directory from composer install
 2.8.0
 -----

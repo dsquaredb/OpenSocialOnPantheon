@@ -9,7 +9,6 @@
 =======
  * (c) 2010 Fabien Potencier
  * (c) 2010 Arnaud Le Blanc
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -33,7 +32,6 @@ class Twig_TokenParserBroker implements Twig_TokenParserBrokerInterface
 =======
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param array|Traversable $parsers                 A Traversable of Twig_TokenParserInterface instances
      * @param array|Traversable $brokers                 A Traversable of Twig_TokenParserBrokerInterface instances
      * @param bool              $triggerDeprecationError
@@ -65,7 +63,6 @@ class Twig_TokenParserBroker implements Twig_TokenParserBrokerInterface
      *
      * @param Twig_TokenParserInterface $parser A Twig_TokenParserInterface instance
      */
->>>>>>> web and vendor directory from composer install
     public function addTokenParser(Twig_TokenParserInterface $parser)
     {
         $this->parsers[$parser->getTag()] = $parser;
@@ -78,7 +75,6 @@ class Twig_TokenParserBroker implements Twig_TokenParserBrokerInterface
      *
      * @param Twig_TokenParserInterface $parser A Twig_TokenParserInterface instance
      */
->>>>>>> web and vendor directory from composer install
     public function removeTokenParser(Twig_TokenParserInterface $parser)
     {
         $name = $parser->getTag();
@@ -96,7 +92,6 @@ class Twig_TokenParserBroker implements Twig_TokenParserBrokerInterface
      * @param Twig_TokenParserBroker $broker A Twig_TokenParserBroker instance
      */
     public function addTokenParserBroker(Twig_TokenParserBroker $broker)
->>>>>>> web and vendor directory from composer install
     {
         $this->brokers[] = $broker;
     }
@@ -110,7 +105,6 @@ class Twig_TokenParserBroker implements Twig_TokenParserBrokerInterface
      * @param Twig_TokenParserBroker $broker A Twig_TokenParserBroker instance
      */
     public function removeTokenParserBroker(Twig_TokenParserBroker $broker)
->>>>>>> web and vendor directory from composer install
     {
         if (false !== $pos = array_search($broker, $this->brokers)) {
             unset($this->brokers[$pos]);

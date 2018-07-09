@@ -22,7 +22,7 @@ use Symfony\Component\EventDispatcher\Event;
  */
 class KernelEvent extends Event
 {
-<<<<<<< HEAD
+ 
     private $kernel;
     private $request;
     private $requestType;
@@ -56,7 +56,6 @@ class KernelEvent extends Event
      */
     private $requestType;
 
->>>>>>> web and vendor directory from composer install
     public function __construct(HttpKernelInterface $kernel, Request $request, $requestType)
     {
         $this->kernel = $kernel;

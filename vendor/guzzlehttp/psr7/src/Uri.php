@@ -12,7 +12,7 @@ use Psr\Http\Message\UriInterface;
  */
 class Uri implements UriInterface
 {
-<<<<<<< HEAD
+ 
     /**
      * Absolute http and https URIs require a host per RFC 7230 Section 2.7
      * but in generic URIs the host can be empty. So for http(s) URIs
@@ -37,7 +37,6 @@ class Uri implements UriInterface
     private static $schemes = [
         'http'  => 80,
         'https' => 443,
->>>>>>> web and vendor directory from composer install
     ];
 
     private static $charUnreserved = 'a-zA-Z0-9_\-\.~';
@@ -70,10 +69,9 @@ class Uri implements UriInterface
      */
     public function __construct($uri = '')
     {
-<<<<<<< HEAD
+ 
         // weak type check to also accept null until we can add scalar type hints
 =======
->>>>>>> web and vendor directory from composer install
         if ($uri != '') {
             $parts = parse_url($uri);
             if ($parts === false) {
@@ -85,11 +83,10 @@ class Uri implements UriInterface
 
     public function __toString()
     {
-<<<<<<< HEAD
+ 
         return self::composeComponents(
 =======
         return self::createUriString(
->>>>>>> web and vendor directory from composer install
             $this->scheme,
             $this->getAuthority(),
             $this->path,
@@ -99,7 +96,7 @@ class Uri implements UriInterface
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Composes a URI reference string from its various components.
      *
      * Usually this method does not need to be called manually but instead is used indirectly via
@@ -329,19 +326,17 @@ class Uri implements UriInterface
 
     /**
      * Resolve a base URI with a relative URI and return a new URI.
->>>>>>> web and vendor directory from composer install
      *
      * @param UriInterface        $base Base URI
      * @param string|UriInterface $rel  Relative URI
      *
      * @return UriInterface
-<<<<<<< HEAD
+ 
      *
      * @deprecated since version 1.4. Use UriResolver::resolve instead.
      * @see UriResolver::resolve
 =======
      * @link http://tools.ietf.org/html/rfc3986#section-5.2
->>>>>>> web and vendor directory from composer install
      */
     public static function resolve(UriInterface $base, $rel)
     {
@@ -349,7 +344,7 @@ class Uri implements UriInterface
             $rel = new self($rel);
         }
 
-<<<<<<< HEAD
+ 
         return UriResolver::resolve($base, $rel);
     }
 
@@ -405,7 +400,6 @@ class Uri implements UriInterface
 
     /**
      * Create a new URI with a specific query string value removed.
->>>>>>> web and vendor directory from composer install
      *
      * Any existing query string values that exactly match the provided key are
      * removed.
@@ -418,11 +412,10 @@ class Uri implements UriInterface
     public static function withoutQueryValue(UriInterface $uri, $key)
     {
         $current = $uri->getQuery();
-<<<<<<< HEAD
+ 
         if ($current === '') {
 =======
         if ($current == '') {
->>>>>>> web and vendor directory from composer install
             return $uri;
         }
 
@@ -435,11 +428,10 @@ class Uri implements UriInterface
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Creates a new URI with a specific query string value.
 =======
      * Create a new URI with a specific query string value.
->>>>>>> web and vendor directory from composer install
      *
      * Any existing query string values that exactly match the provided key are
      * removed and replaced with the given key value pair.
@@ -457,11 +449,10 @@ class Uri implements UriInterface
     {
         $current = $uri->getQuery();
 
-<<<<<<< HEAD
+ 
         if ($current === '') {
 =======
         if ($current == '') {
->>>>>>> web and vendor directory from composer install
             $result = [];
         } else {
             $decodedKey = rawurldecode($key);
@@ -485,7 +476,7 @@ class Uri implements UriInterface
     }
 
     /**
-<<<<<<< HEAD
+ 
      * Creates a URI from a hash of `parse_url` components.
      *
      * @param array $parts
@@ -500,17 +491,15 @@ class Uri implements UriInterface
      * @param array $parts
      *
      * @return self
->>>>>>> web and vendor directory from composer install
      */
     public static function fromParts(array $parts)
     {
         $uri = new self();
         $uri->applyParts($parts);
-<<<<<<< HEAD
+ 
         $uri->validateState();
 
 =======
->>>>>>> web and vendor directory from composer install
         return $uri;
     }
 
@@ -521,7 +510,7 @@ class Uri implements UriInterface
 
     public function getAuthority()
     {
-<<<<<<< HEAD
+ 
         $authority = $this->host;
         if ($this->userInfo !== '') {
 =======
@@ -531,7 +520,6 @@ class Uri implements UriInterface
 
         $authority = $this->host;
         if ($this->userInfo != '') {
->>>>>>> web and vendor directory from composer install
             $authority = $this->userInfo . '@' . $authority;
         }
 
@@ -582,13 +570,12 @@ class Uri implements UriInterface
 
         $new = clone $this;
         $new->scheme = $scheme;
-<<<<<<< HEAD
+ 
         $new->removeDefaultPort();
         $new->validateState();
 
 =======
         $new->port = $new->filterPort($new->port);
->>>>>>> web and vendor directory from composer install
         return $new;
     }
 
@@ -605,11 +592,10 @@ class Uri implements UriInterface
 
         $new = clone $this;
         $new->userInfo = $info;
-<<<<<<< HEAD
+ 
         $new->validateState();
 
 =======
->>>>>>> web and vendor directory from composer install
         return $new;
     }
 
@@ -623,11 +609,10 @@ class Uri implements UriInterface
 
         $new = clone $this;
         $new->host = $host;
-<<<<<<< HEAD
+ 
         $new->validateState();
 
 =======
->>>>>>> web and vendor directory from composer install
         return $new;
     }
 
@@ -641,12 +626,11 @@ class Uri implements UriInterface
 
         $new = clone $this;
         $new->port = $port;
-<<<<<<< HEAD
+ 
         $new->removeDefaultPort();
         $new->validateState();
 
 =======
->>>>>>> web and vendor directory from composer install
         return $new;
     }
 
@@ -660,11 +644,10 @@ class Uri implements UriInterface
 
         $new = clone $this;
         $new->path = $path;
-<<<<<<< HEAD
+ 
         $new->validateState();
 
 =======
->>>>>>> web and vendor directory from composer install
         return $new;
     }
 
@@ -678,10 +661,9 @@ class Uri implements UriInterface
 
         $new = clone $this;
         $new->query = $query;
-<<<<<<< HEAD
+ 
 
 =======
->>>>>>> web and vendor directory from composer install
         return $new;
     }
 
@@ -695,10 +677,9 @@ class Uri implements UriInterface
 
         $new = clone $this;
         $new->fragment = $fragment;
-<<<<<<< HEAD
+ 
 
 =======
->>>>>>> web and vendor directory from composer install
         return $new;
     }
 
@@ -731,7 +712,7 @@ class Uri implements UriInterface
         if (isset($parts['pass'])) {
             $this->userInfo .= ':' . $parts['pass'];
         }
-<<<<<<< HEAD
+ 
 
         $this->removeDefaultPort();
 =======
@@ -798,7 +779,6 @@ class Uri implements UriInterface
     private static function isNonStandardPort($scheme, $port)
     {
         return !isset(self::$schemes[$scheme]) || $port !== self::$schemes[$scheme];
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -853,7 +833,7 @@ class Uri implements UriInterface
             );
         }
 
-<<<<<<< HEAD
+ 
         return $port;
     }
 
@@ -864,7 +844,6 @@ class Uri implements UriInterface
         }
 =======
         return self::isNonStandardPort($this->scheme, $port) ? $port : null;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -915,7 +894,7 @@ class Uri implements UriInterface
     {
         return rawurlencode($match[0]);
     }
-<<<<<<< HEAD
+ 
 
     private function validateState()
     {
@@ -941,5 +920,4 @@ class Uri implements UriInterface
         }
     }
 =======
->>>>>>> web and vendor directory from composer install
 }

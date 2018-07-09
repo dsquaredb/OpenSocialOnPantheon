@@ -11,14 +11,13 @@
 
 namespace Symfony\Component\DependencyInjection\Compiler;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\DependencyInjection\Argument\ArgumentInterface;
 use Symfony\Component\DependencyInjection\Argument\ServiceClosureArgument;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Definition;
 =======
 use Symfony\Component\DependencyInjection\ContainerInterface;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Exception\RuntimeException;
@@ -32,7 +31,7 @@ use Symfony\Component\DependencyInjection\Exception\RuntimeException;
 class ResolveInvalidReferencesPass implements CompilerPassInterface
 {
     private $container;
-<<<<<<< HEAD
+ 
     private $signalingException;
 
     /**
@@ -43,12 +42,11 @@ class ResolveInvalidReferencesPass implements CompilerPassInterface
      * Process the ContainerBuilder to resolve invalid references.
      *
      * @param ContainerBuilder $container
->>>>>>> web and vendor directory from composer install
      */
     public function process(ContainerBuilder $container)
     {
         $this->container = $container;
-<<<<<<< HEAD
+ 
         $this->signalingException = new RuntimeException('Invalid reference.');
 
         try {
@@ -85,14 +83,13 @@ class ResolveInvalidReferencesPass implements CompilerPassInterface
                 }
             }
             $definition->setProperties($properties);
->>>>>>> web and vendor directory from composer install
         }
     }
 
     /**
      * Processes arguments to determine invalid references.
      *
-<<<<<<< HEAD
+ 
      * @throws RuntimeException When an invalid reference is found
      */
     private function processValue($value, $rootLevel = 0, $level = 0)
@@ -185,6 +182,5 @@ class ResolveInvalidReferencesPass implements CompilerPassInterface
         }
 
         return $arguments;
->>>>>>> web and vendor directory from composer install
     }
 }

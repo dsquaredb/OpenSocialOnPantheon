@@ -1,5 +1,5 @@
 RedBeanPHP 4
-============
+    
 
 ![Build Status](https://travis-ci.org/gabordemooij/redbean.svg?branch=master)
 

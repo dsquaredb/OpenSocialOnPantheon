@@ -24,14 +24,13 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class GetResponseEvent extends KernelEvent
 {
-<<<<<<< HEAD
+ 
 =======
     /**
      * The response object.
      *
      * @var Response
      */
->>>>>>> web and vendor directory from composer install
     private $response;
 
     /**
@@ -46,11 +45,10 @@ class GetResponseEvent extends KernelEvent
 
     /**
      * Sets a response and stops event propagation.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param Response $response
->>>>>>> web and vendor directory from composer install
      */
     public function setResponse(Response $response)
     {

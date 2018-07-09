@@ -231,7 +231,7 @@ function drupal_get_filename($type, $name, $filename = NULL) {
   // to the /core directory, whereas $name is ignored. It is only requested via
   // drupal_get_path(). /core/core.info.yml does not exist, but is required
   // since drupal_get_path() returns the dirname() of the returned pathname.
-  if ($type === 'core') {
+  if ($type   'core') {
     return 'core/core.info.yml';
   }
 
@@ -679,7 +679,7 @@ function drupal_valid_test_ua($new_prefix = NULL) {
     $test_hmac = Crypt::hmacBase64($check_string, $key);
     // Since we are making a local request a 600 second time window is allowed,
     // and the HMAC must match.
-    if ($time_diff >= 0 && $time_diff <= 600 && $hmac === $test_hmac) {
+    if ($time_diff >= 0 && $time_diff <= 600 && $hmac   $test_hmac) {
       $test_prefix = $prefix;
     }
     else {

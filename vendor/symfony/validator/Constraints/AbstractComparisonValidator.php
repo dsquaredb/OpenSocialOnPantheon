@@ -11,7 +11,7 @@
 
 namespace Symfony\Component\Validator\Constraints;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\PropertyAccess\Exception\NoSuchPropertyException;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\PropertyAccess\PropertyAccessor;
@@ -22,7 +22,6 @@ use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 /**
@@ -33,7 +32,7 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
  */
 abstract class AbstractComparisonValidator extends ConstraintValidator
 {
-<<<<<<< HEAD
+ 
     private $propertyAccessor;
 
     public function __construct(PropertyAccessor $propertyAccessor = null)
@@ -42,7 +41,6 @@ abstract class AbstractComparisonValidator extends ConstraintValidator
     }
 
 =======
->>>>>>> web and vendor directory from composer install
     /**
      * {@inheritdoc}
      */
@@ -56,7 +54,7 @@ abstract class AbstractComparisonValidator extends ConstraintValidator
             return;
         }
 
-<<<<<<< HEAD
+ 
         if ($path = $constraint->propertyPath) {
             if (null === $object = $this->context->getObject()) {
                 return;
@@ -72,7 +70,6 @@ abstract class AbstractComparisonValidator extends ConstraintValidator
         }
 =======
         $comparedValue = $constraint->value;
->>>>>>> web and vendor directory from composer install
 
         // Convert strings to DateTimes if comparing another DateTime
         // This allows to compare with any date/time value supported by
@@ -82,20 +79,19 @@ abstract class AbstractComparisonValidator extends ConstraintValidator
             if ($value instanceof \DateTimeImmutable) {
                 // If $value is immutable, convert the compared value to a
                 // DateTimeImmutable too
-<<<<<<< HEAD
+ 
                 $comparedValue = new \DateTimeImmutable($comparedValue);
             } elseif ($value instanceof \DateTimeInterface) {
 =======
                 $comparedValue = new \DatetimeImmutable($comparedValue);
             } elseif ($value instanceof \DateTime || $value instanceof \DateTimeInterface) {
->>>>>>> web and vendor directory from composer install
                 // Otherwise use DateTime
                 $comparedValue = new \DateTime($comparedValue);
             }
         }
 
         if (!$this->compareValues($value, $comparedValue)) {
-<<<<<<< HEAD
+ 
             $this->context->buildViolation($constraint->message)
                 ->setParameter('{{ value }}', $this->formatValue($value, self::OBJECT_TO_STRING | self::PRETTY_DATE))
                 ->setParameter('{{ compared_value }}', $this->formatValue($comparedValue, self::OBJECT_TO_STRING | self::PRETTY_DATE))
@@ -129,7 +125,6 @@ abstract class AbstractComparisonValidator extends ConstraintValidator
                     ->addViolation();
             }
         }
->>>>>>> web and vendor directory from composer install
     }
 
     /**

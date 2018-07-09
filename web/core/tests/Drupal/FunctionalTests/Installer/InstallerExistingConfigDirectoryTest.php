@@ -23,7 +23,7 @@ class InstallerExistingConfigDirectoryTest extends InstallerTestBase {
     parent::prepareEnvironment();
     mkdir($this->root . DIRECTORY_SEPARATOR . $this->siteDirectory . '/config_read_only', 0444);
     $this->expectedFilePerms = fileperms($this->siteDirectory . '/config_read_only');
-<<<<<<< HEAD
+ 
     $this->settings['config_directories'][CONFIG_SYNC_DIRECTORY] = (object) array(
       'value' => $this->siteDirectory . '/config_read_only',
       'required' => TRUE,
@@ -33,11 +33,9 @@ class InstallerExistingConfigDirectoryTest extends InstallerTestBase {
       'value' => $this->siteDirectory . '/config_read_only',
       'required' => TRUE,
     ];
-<<<<<<< HEAD:web/core/modules/system/src/Tests/Installer/InstallerExistingConfigDirectoryTest.php
->>>>>>> revert Open Social update
+ :web/core/modules/system/src/Tests/Installer/InstallerExistingConfigDirectoryTest.php
     parent::setUp();
 =======
->>>>>>> updating open social:web/core/tests/Drupal/FunctionalTests/Installer/InstallerExistingConfigDirectoryTest.php
   }
 
   /**

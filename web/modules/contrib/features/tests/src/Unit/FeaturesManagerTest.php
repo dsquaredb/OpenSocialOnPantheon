@@ -92,9 +92,9 @@ class FeaturesManagerTest extends UnitTestCase {
     // ::getConfigDependency() and ::assignInterPackageDependencies().
     $this->moduleHandler->expects($this->any())
       ->method('getModuleList')
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
       ->willReturn(['my_module' => true]);
     $this->featuresManager = new FeaturesManager($this->root, $this->entityManager, $this->configFactory, $this->configStorage, $this->configManager, $this->moduleHandler);
 
@@ -105,7 +105,6 @@ class FeaturesManagerTest extends UnitTestCase {
     \Drupal::setContainer($container);
 =======
 =======
->>>>>>> updating open social
       ->willReturn([
         'my_module' => true,
         'example' => true,
@@ -119,12 +118,10 @@ class FeaturesManagerTest extends UnitTestCase {
         'giraffe_package2' => true,
         'giraffe_package3' => true,
       ]);
-<<<<<<< HEAD
+ 
 =======
       ->willReturn(['my_module' => true]);
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
     $this->configReverter = $this->getMock(ConfigRevertInterface::class);
     $this->configReverter->expects($this->any())
       ->method('import')
@@ -133,7 +130,6 @@ class FeaturesManagerTest extends UnitTestCase {
       ->method('revert')
       ->willReturn(true);
     $this->featuresManager = new FeaturesManager($this->root, $this->entityTypeManager, $this->configFactory, $this->configStorage, $this->configManager, $this->moduleHandler, $this->configReverter);
->>>>>>> Update Open Social to 8.x-2.1
   }
 
   /**

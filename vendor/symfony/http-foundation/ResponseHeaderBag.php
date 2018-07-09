@@ -24,7 +24,7 @@ class ResponseHeaderBag extends HeaderBag
     const DISPOSITION_ATTACHMENT = 'attachment';
     const DISPOSITION_INLINE = 'inline';
 
-<<<<<<< HEAD
+ 
     protected $computedCacheControl = array();
     protected $cookies = array();
     protected $headerNames = array();
@@ -50,7 +50,6 @@ class ResponseHeaderBag extends HeaderBag
      *
      * @param array $headers An array of HTTP headers
      */
->>>>>>> web and vendor directory from composer install
     public function __construct(array $headers = array())
     {
         parent::__construct($headers);
@@ -58,7 +57,7 @@ class ResponseHeaderBag extends HeaderBag
         if (!isset($this->headers['cache-control'])) {
             $this->set('Cache-Control', '');
         }
-<<<<<<< HEAD
+ 
 
         /* RFC2616 - 14.18 says all Responses need to have a Date */
         if (!isset($this->headers['date'])) {
@@ -80,7 +79,6 @@ class ResponseHeaderBag extends HeaderBag
         ksort($this->headerNames);
 
         return parent::__toString().$cookies;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -90,7 +88,7 @@ class ResponseHeaderBag extends HeaderBag
      */
     public function allPreserveCase()
     {
-<<<<<<< HEAD
+ 
         $headers = array();
         foreach ($this->all() as $name => $value) {
             $headers[isset($this->headerNames[$name]) ? $this->headerNames[$name] : $name] = $value;
@@ -109,7 +107,6 @@ class ResponseHeaderBag extends HeaderBag
         return $headers;
 =======
         return array_combine($this->headerNames, $this->headers);
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -124,7 +121,7 @@ class ResponseHeaderBag extends HeaderBag
         if (!isset($this->headers['cache-control'])) {
             $this->set('Cache-Control', '');
         }
-<<<<<<< HEAD
+ 
 
         if (!isset($this->headers['date'])) {
             $this->initDate();
@@ -143,7 +140,6 @@ class ResponseHeaderBag extends HeaderBag
 
         return $headers;
 =======
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -151,7 +147,7 @@ class ResponseHeaderBag extends HeaderBag
      */
     public function set($key, $values, $replace = true)
     {
-<<<<<<< HEAD
+ 
         $uniqueKey = str_replace('_', '-', strtolower($key));
 
         if ('set-cookie' === $uniqueKey) {
@@ -180,7 +176,6 @@ class ResponseHeaderBag extends HeaderBag
 
         // ensure the cache-control header has sensible defaults
         if (in_array($uniqueKey, array('cache-control', 'etag', 'last-modified', 'expires'))) {
->>>>>>> web and vendor directory from composer install
             $computed = $this->computeCacheControlValue();
             $this->headers['cache-control'] = array($computed);
             $this->headerNames['cache-control'] = 'Cache-Control';
@@ -193,7 +188,7 @@ class ResponseHeaderBag extends HeaderBag
      */
     public function remove($key)
     {
-<<<<<<< HEAD
+ 
         $uniqueKey = str_replace('_', '-', strtolower($key));
         unset($this->headerNames[$uniqueKey]);
 
@@ -221,7 +216,6 @@ class ResponseHeaderBag extends HeaderBag
         if ('cache-control' === $uniqueKey) {
             $this->computedCacheControl = array();
         }
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -240,7 +234,7 @@ class ResponseHeaderBag extends HeaderBag
         return array_key_exists($key, $this->computedCacheControl) ? $this->computedCacheControl[$key] : null;
     }
 
-<<<<<<< HEAD
+ 
     public function setCookie(Cookie $cookie)
     {
         $this->cookies[$cookie->getDomain()][$cookie->getPath()][$cookie->getName()] = $cookie;
@@ -254,7 +248,6 @@ class ResponseHeaderBag extends HeaderBag
     public function setCookie(Cookie $cookie)
     {
         $this->cookies[$cookie->getDomain()][$cookie->getPath()][$cookie->getName()] = $cookie;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -279,13 +272,12 @@ class ResponseHeaderBag extends HeaderBag
                 unset($this->cookies[$domain]);
             }
         }
-<<<<<<< HEAD
+ 
 
         if (empty($this->cookies)) {
             unset($this->headerNames['set-cookie']);
         }
 =======
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -393,11 +385,10 @@ class ResponseHeaderBag extends HeaderBag
     protected function computeCacheControlValue()
     {
         if (!$this->cacheControl && !$this->has('ETag') && !$this->has('Last-Modified') && !$this->has('Expires')) {
-<<<<<<< HEAD
+ 
             return 'no-cache, private';
 =======
             return 'no-cache';
->>>>>>> web and vendor directory from composer install
         }
 
         if (!$this->cacheControl) {
@@ -417,7 +408,7 @@ class ResponseHeaderBag extends HeaderBag
 
         return $header;
     }
-<<<<<<< HEAD
+ 
 
     private function initDate()
     {
@@ -426,5 +417,4 @@ class ResponseHeaderBag extends HeaderBag
         $this->set('Date', $now->format('D, d M Y H:i:s').' GMT');
     }
 =======
->>>>>>> web and vendor directory from composer install
 }

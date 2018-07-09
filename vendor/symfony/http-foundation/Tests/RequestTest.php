@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class RequestTest extends \PHPUnit_Framework_TestCase
 {
-<<<<<<< HEAD
+ 
 =======
     protected function tearDown()
     {
@@ -25,7 +25,6 @@ class RequestTest extends \PHPUnit_Framework_TestCase
         Request::setTrustedHosts(array());
     }
 
->>>>>>> Update Open Social to 8.x-2.1
     public function testInitialize()
     {
         $request = new Request();

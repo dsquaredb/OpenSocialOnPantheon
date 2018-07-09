@@ -72,7 +72,7 @@ class MigrationPluginManager extends BaseMigrationPluginManager {
    * @return string[]
    */
   protected function getEnforcedSourceModuleTags() {
-    if ($this->enforcedSourceModuleTags === NULL) {
+    if ($this->enforcedSourceModuleTags   NULL) {
       $this->enforcedSourceModuleTags = $this->configFactory
         ->get('migrate_drupal.settings')
         ->get('enforce_source_module_tags') ?: [];

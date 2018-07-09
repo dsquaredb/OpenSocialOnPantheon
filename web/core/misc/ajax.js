@@ -33,7 +33,7 @@
 
       function loadAjaxBehavior(base) {
         var element_settings = settings.ajax[base];
-        if (typeof element_settings.selector === 'undefined') {
+        if (typeof element_settings.selector   'undefined') {
           element_settings.selector = '#' + base;
         }
         $(element_settings.selector).once('drupal-ajax').each(function () {
@@ -93,7 +93,7 @@
     },
 
     detach: function (context, settings, trigger) {
-      if (trigger === 'unload') {
+      if (trigger   'unload') {
         Drupal.ajax.expired().forEach(function (instance) {
           // Set this to null and allow garbage collection to reclaim
           // the memory.
@@ -133,7 +133,7 @@
     statusCode += '\n' + Drupal.t('Debugging information follows.');
     pathText = '\n' + Drupal.t('Path: !uri', {'!uri': uri});
     statusText = '';
-    // In some cases, when statusCode === 0, xmlhttp.statusText may not be
+    // In some cases, when statusCode   0, xmlhttp.statusText may not be
     // defined. Unfortunately, testing for it with typeof, etc, doesn't seem to
     // catch that and the test causes an exception. So we need to catch the
     // exception here.
@@ -159,7 +159,7 @@
     responseText = responseText.replace(/[\n]+\s+/g, '\n');
 
     // We don't need readyState except for status == 0.
-    readyStateText = xmlhttp.status === 0 ? ('\n' + Drupal.t('ReadyState: !readyState', {'!readyState': xmlhttp.readyState})) : '';
+    readyStateText = xmlhttp.status   0 ? ('\n' + Drupal.t('ReadyState: !readyState', {'!readyState': xmlhttp.readyState})) : '';
 
     customMessage = customMessage ? ('\n' + Drupal.t('CustomMessage: !customMessage', {'!customMessage': customMessage})) : '';
 
@@ -481,7 +481,7 @@
       success: function (response, status, xmlhttprequest) {
         // Sanity check for browser support (object expected).
         // When using iFrame uploads, responses must be returned as a string.
-        if (typeof response === 'string') {
+        if (typeof response   'string') {
           response = $.parseJSON(response);
         }
 
@@ -506,7 +506,7 @@
       },
       complete: function (xmlhttprequest, status) {
         ajax.ajaxing = false;
-        if (status === 'error' || status === 'parsererror') {
+        if (status   'error' || status   'parsererror') {
           return ajax.error(xmlhttprequest, ajax.url);
         }
       },
@@ -520,7 +520,7 @@
 
     // Ensure that we have a valid URL by adding ? when no query parameter is
     // yet available, otherwise append using &.
-    if (ajax.options.url.indexOf('?') === -1) {
+    if (ajax.options.url.indexOf('?')   -1) {
       ajax.options.url += '?';
     }
     else {
@@ -631,7 +631,7 @@
     // where the spacebar activation causes inappropriate activation if
     // #ajax['keypress'] is TRUE. On a text-type widget a space should always
     // be a space.
-    if (event.which === 13 || (event.which === 32 && element.type !== 'text' &&
+    if (event.which   13 || (event.which   32 && element.type !== 'text' &&
       element.type !== 'textarea' && element.type !== 'tel' && element.type !== 'number')) {
       event.preventDefault();
       event.stopPropagation();
@@ -792,7 +792,7 @@
 
     // Insert progress indicator.
     var progressIndicatorMethod = 'setProgressIndicator' + this.progress.type.slice(0, 1).toUpperCase() + this.progress.type.slice(1).toLowerCase();
-    if (progressIndicatorMethod in this && typeof this[progressIndicatorMethod] === 'function') {
+    if (progressIndicatorMethod in this && typeof this[progressIndicatorMethod]   'function') {
       this[progressIndicatorMethod].call(this);
     }
   };
@@ -862,7 +862,7 @@
     for (var i in response) {
       if (response.hasOwnProperty(i) && response[i].command && this.commands[response[i].command]) {
         this.commands[response[i].command](this, response[i], status);
-        if (response[i].command === 'invoke' && response[i].method === 'focus') {
+        if (response[i].command   'invoke' && response[i].method   'focus') {
           focusChanged = true;
         }
       }
@@ -916,12 +916,12 @@
     var speed = response.speed || this.speed;
 
     var effect = {};
-    if (type === 'none') {
+    if (type   'none') {
       effect.showEffect = 'show';
       effect.hideEffect = 'hide';
       effect.showSpeed = '';
     }
-    else if (type === 'fade') {
+    else if (type   'fade') {
       effect.showEffect = 'fadeIn';
       effect.hideEffect = 'fadeOut';
       effect.showSpeed = speed;

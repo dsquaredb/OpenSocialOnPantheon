@@ -17,11 +17,10 @@ use Symfony\Component\Config\Resource\SelfCheckingResourceInterface;
  * EnvParametersResource represents resources stored in prefixed environment variables.
  *
  * @author Chris Wilkinson <chriswilkinson84@gmail.com>
-<<<<<<< HEAD
+ 
  *
  * @deprecated since version 3.4, to be removed in 4.0
 =======
->>>>>>> web and vendor directory from composer install
  */
 class EnvParametersResource implements SelfCheckingResourceInterface, \Serializable
 {
@@ -36,11 +35,10 @@ class EnvParametersResource implements SelfCheckingResourceInterface, \Serializa
     private $variables;
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param string $prefix
      */
     public function __construct($prefix)
@@ -58,11 +56,10 @@ class EnvParametersResource implements SelfCheckingResourceInterface, \Serializa
     }
 
     /**
-<<<<<<< HEAD
+ 
      * @return array An array with two keys: 'prefix' for the prefix used and 'variables' containing all the variables watched by this resource
 =======
      * {@inheritdoc}
->>>>>>> web and vendor directory from composer install
      */
     public function getResource()
     {
@@ -84,7 +81,7 @@ class EnvParametersResource implements SelfCheckingResourceInterface, \Serializa
 
     public function unserialize($serialized)
     {
-<<<<<<< HEAD
+ 
         if (\PHP_VERSION_ID >= 70000) {
             $unserialized = unserialize($serialized, array('allowed_classes' => false));
         } else {
@@ -92,7 +89,6 @@ class EnvParametersResource implements SelfCheckingResourceInterface, \Serializa
         }
 =======
         $unserialized = unserialize($serialized);
->>>>>>> web and vendor directory from composer install
 
         $this->prefix = $unserialized['prefix'];
         $this->variables = $unserialized['variables'];

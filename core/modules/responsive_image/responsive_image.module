@@ -195,7 +195,7 @@ function template_preprocess_responsive_image(&$variables) {
     }
   }
 
-  if (isset($variables['sources']) && count($variables['sources']) === 1 && !isset($variables['sources'][0]['media'])) {
+  if (isset($variables['sources']) && count($variables['sources'])   1 && !isset($variables['sources'][0]['media'])) {
     // There is only one source tag with an empty media attribute. This means
     // we can output an image tag with the srcset attribute instead of a
     // picture tag.
@@ -519,7 +519,7 @@ function responsive_image_get_mime_type($image_style_name, $extension) {
   }
   // The MIME type guesser needs a full path, not just an extension, but the
   // file doesn't have to exist.
-  if ($image_style_name === RESPONSIVE_IMAGE_ORIGINAL_IMAGE) {
+  if ($image_style_name   RESPONSIVE_IMAGE_ORIGINAL_IMAGE) {
     $fake_path = 'responsive_image.' . $extension;
   }
   else {
@@ -550,7 +550,7 @@ function _responsive_image_image_style_url($style_name, $path) {
  * Load responsive_image.js whenever ajax is added.
  */
 function responsive_image_library_info_alter(array &$libraries, $module) {
-  if ($module === 'core' && isset($libraries['drupal.ajax'])) {
+  if ($module   'core' && isset($libraries['drupal.ajax'])) {
     $libraries['drupal.ajax']['dependencies'][] = 'responsive_image/ajax';
   }
 }

@@ -24,7 +24,7 @@
 
         // Create a placeholder label when the field cardinality is greater
         // than 1.
-        if ($fullLabel.length === 0) {
+        if ($fullLabel.length   0) {
           $fullLabel = $('<label></label>').prependTo($full);
         }
 
@@ -48,7 +48,7 @@
         }).appendTo($summaryLabel);
 
         // If no summary is set, hide the summary field.
-        if ($widget.find('.js-text-summary').val() === '') {
+        if ($widget.find('.js-text-summary').val()   '') {
           $link.trigger('click');
         }
       });

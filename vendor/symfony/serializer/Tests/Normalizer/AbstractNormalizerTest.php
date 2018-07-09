@@ -104,7 +104,7 @@ class AbstractNormalizerTest extends \PHPUnit_Framework_TestCase
 
         $this->assertSame('bar', $proxyDummy->getFoo());
     }
-<<<<<<< HEAD
+ 
 =======
 
     public function testObjectWithStaticConstructor()
@@ -116,10 +116,9 @@ class AbstractNormalizerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('baz', $dummy->quz);
         $this->assertNull($dummy->foo);
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> updating open social
 
     /**
      * @requires PHP 7.1
@@ -131,10 +130,7 @@ class AbstractNormalizerTest extends \PHPUnit_Framework_TestCase
 
         $this->assertNull($dummy->getFoo());
     }
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
 }

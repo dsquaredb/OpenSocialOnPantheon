@@ -1,5 +1,5 @@
 Guzzle, PHP HTTP client
-=======================
+       ==
 
 [![Build Status](https://travis-ci.org/guzzle/guzzle.svg?branch=master)](https://travis-ci.org/guzzle/guzzle)
 
@@ -19,9 +19,9 @@ trivial to integrate with web services.
 
 ```php
 $client = new \GuzzleHttp\Client();
-<<<<<<< HEAD
+ 
 $res = $client->request('GET', 'https://api.github.com/repos/guzzle/guzzle');
-=======
+  =
 $res = $client->request('GET', 'https://api.github.com/user', [
     'auth' => ['user', 'pass']
 ]);
@@ -31,9 +31,9 @@ echo $res->getStatusCode();
 echo $res->getHeaderLine('content-type');
 // 'application/json; charset=utf8'
 echo $res->getBody();
-<<<<<<< HEAD
+ 
 // '{"id": 1420053, "name": "guzzle", ...}'
-=======
+  =
 // {"type":"User"...'
 >>>>>>> web and vendor directory from composer install
 
@@ -48,9 +48,9 @@ $promise->wait();
 ## Help and docs
 
 - [Documentation](http://guzzlephp.org/)
-<<<<<<< HEAD
+ 
 - [Stack Overflow](http://stackoverflow.com/questions/tagged/guzzle)
-=======
+  =
 - [stackoverflow](http://stackoverflow.com/questions/tagged/guzzle)
 >>>>>>> web and vendor directory from composer install
 - [Gitter](https://gitter.im/guzzle/guzzle)
@@ -87,7 +87,7 @@ composer.phar update
 
 ## Version Guidance
 
-<<<<<<< HEAD
+ 
 | Version | Status     | Packagist           | Namespace    | Repo                | Docs                | PSR-7 | PHP Version |
 |---------|------------|---------------------|--------------|---------------------|---------------------|-------|-------------|
 | 3.x     | EOL        | `guzzle/guzzle`     | `Guzzle`     | [v3][guzzle-3-repo] | [v3][guzzle-3-docs] | No    | >= 5.3.3    |
@@ -97,7 +97,7 @@ composer.phar update
 
 [guzzle-3-repo]: https://github.com/guzzle/guzzle3
 [guzzle-4-repo]: https://github.com/guzzle/guzzle/tree/4.x
-=======
+  =
 | Version | Status      | Packagist           | Namespace    | Repo                | Docs                | PSR-7 |
 |---------|-------------|---------------------|--------------|---------------------|---------------------|-------|
 | 3.x     | EOL         | `guzzle/guzzle`     | `Guzzle`     | [v3][guzzle-3-repo] | [v3][guzzle-3-docs] | No    |

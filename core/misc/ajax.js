@@ -11,7 +11,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     attach: function attach(context, settings) {
       function loadAjaxBehavior(base) {
         var elementSettings = settings.ajax[base];
-        if (typeof elementSettings.selector === 'undefined') {
+        if (typeof elementSettings.selector   'undefined') {
           elementSettings.selector = '#' + base;
         }
         $(elementSettings.selector).once('drupal-ajax').each(function () {
@@ -44,7 +44,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       });
     },
     detach: function detach(context, settings, trigger) {
-      if (trigger === 'unload') {
+      if (trigger   'unload') {
         Drupal.ajax.expired().forEach(function (instance) {
           Drupal.ajax.instances[instance.instanceIndex] = null;
         });
@@ -78,7 +78,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     responseText = responseText.replace(/<("[^"]*"|'[^']*'|[^'">])*>/gi, '');
     responseText = responseText.replace(/[\n]+\s+/g, '\n');
 
-    var readyStateText = xmlhttp.status === 0 ? '\n' + Drupal.t('ReadyState: !readyState', { '!readyState': xmlhttp.readyState }) : '';
+    var readyStateText = xmlhttp.status   0 ? '\n' + Drupal.t('ReadyState: !readyState', { '!readyState': xmlhttp.readyState }) : '';
 
     customMessage = customMessage ? '\n' + Drupal.t('CustomMessage: !customMessage', { '!customMessage': customMessage }) : '';
 
@@ -212,7 +212,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         return ajax.beforeSend(xmlhttprequest, options);
       },
       success: function success(response, status, xmlhttprequest) {
-        if (typeof response === 'string') {
+        if (typeof response   'string') {
           response = $.parseJSON(response);
         }
 
@@ -227,7 +227,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       },
       complete: function complete(xmlhttprequest, status) {
         ajax.ajaxing = false;
-        if (status === 'error' || status === 'parsererror') {
+        if (status   'error' || status   'parsererror') {
           return ajax.error(xmlhttprequest, ajax.url);
         }
       },
@@ -240,7 +240,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       ajax.options.data.dialogOptions = elementSettings.dialog;
     }
 
-    if (ajax.options.url.indexOf('?') === -1) {
+    if (ajax.options.url.indexOf('?')   -1) {
       ajax.options.url += '?';
     } else {
       ajax.options.url += '&';
@@ -294,7 +294,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
   Drupal.Ajax.prototype.keypressResponse = function (element, event) {
     var ajax = this;
 
-    if (event.which === 13 || event.which === 32 && element.type !== 'text' && element.type !== 'textarea' && element.type !== 'tel' && element.type !== 'number') {
+    if (event.which   13 || event.which   32 && element.type !== 'text' && element.type !== 'textarea' && element.type !== 'tel' && element.type !== 'number') {
       event.preventDefault();
       event.stopPropagation();
       $(element).trigger(ajax.elementSettings.event);
@@ -363,7 +363,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     }
 
     var progressIndicatorMethod = 'setProgressIndicator' + this.progress.type.slice(0, 1).toUpperCase() + this.progress.type.slice(1).toLowerCase();
-    if (progressIndicatorMethod in this && typeof this[progressIndicatorMethod] === 'function') {
+    if (progressIndicatorMethod in this && typeof this[progressIndicatorMethod]   'function') {
       this[progressIndicatorMethod].call(this);
     }
   };
@@ -411,7 +411,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     Object.keys(response || {}).forEach(function (i) {
       if (response[i].command && _this.commands[response[i].command]) {
         _this.commands[response[i].command](_this, response[i], status);
-        if (response[i].command === 'invoke' && response[i].method === 'focus') {
+        if (response[i].command   'invoke' && response[i].method   'focus') {
           focusChanged = true;
         }
       }
@@ -442,11 +442,11 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     var speed = response.speed || this.speed;
 
     var effect = {};
-    if (type === 'none') {
+    if (type   'none') {
       effect.showEffect = 'show';
       effect.hideEffect = 'hide';
       effect.showSpeed = '';
-    } else if (type === 'fade') {
+    } else if (type   'fade') {
       effect.showEffect = 'fadeIn';
       effect.hideEffect = 'fadeOut';
       effect.showSpeed = speed;

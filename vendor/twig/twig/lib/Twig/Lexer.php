@@ -9,7 +9,6 @@
 =======
  * (c) 2009 Fabien Potencier
  * (c) 2009 Armin Ronacher
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -43,7 +42,6 @@ class Twig_Lexer implements Twig_LexerInterface
     private $source;
 
 =======
->>>>>>> web and vendor directory from composer install
     const STATE_DATA = 0;
     const STATE_BLOCK = 1;
     const STATE_VAR = 2;
@@ -88,7 +86,6 @@ class Twig_Lexer implements Twig_LexerInterface
     /**
      * {@inheritdoc}
      */
->>>>>>> web and vendor directory from composer install
     public function tokenize($code, $name = null)
     {
         if (!$code instanceof Twig_Source) {
@@ -105,7 +102,6 @@ class Twig_Lexer implements Twig_LexerInterface
             $source = new Twig_Source($code, $name);
         } else {
             $source = $code;
->>>>>>> web and vendor directory from composer install
         }
 
         if (function_exists('mb_internal_encoding') && ((int) ini_get('mbstring.func_overload')) & 2) {
@@ -121,7 +117,6 @@ class Twig_Lexer implements Twig_LexerInterface
 =======
         $this->code = str_replace(array("\r\n", "\r"), "\n", $source->getCode());
         $this->filename = $source->getName();
->>>>>>> web and vendor directory from composer install
         $this->cursor = 0;
         $this->lineno = 1;
         $this->end = strlen($this->code);
@@ -169,7 +164,6 @@ class Twig_Lexer implements Twig_LexerInterface
             throw new Twig_Error_Syntax(sprintf('Unclosed "%s".', $expect), $lineno, $this->source);
 =======
             throw new Twig_Error_Syntax(sprintf('Unclosed "%s".', $expect), $lineno, $this->filename);
->>>>>>> web and vendor directory from composer install
         }
 
         if ($mbEncoding) {
@@ -180,7 +174,6 @@ class Twig_Lexer implements Twig_LexerInterface
         return new Twig_TokenStream($this->tokens, $this->source);
 =======
         return new Twig_TokenStream($this->tokens, $source);
->>>>>>> web and vendor directory from composer install
     }
 
     protected function lexData()
@@ -272,7 +265,6 @@ class Twig_Lexer implements Twig_LexerInterface
                 throw new Twig_Error_Syntax(sprintf('Unclosed "%s".', self::STATE_BLOCK === $this->state ? 'block' : 'variable'), $this->currentVarBlockLine, $this->source);
 =======
                 throw new Twig_Error_Syntax(sprintf('Unclosed "%s".', $this->state === self::STATE_BLOCK ? 'block' : 'variable'), $this->currentVarBlockLine, $this->filename);
->>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -308,7 +300,6 @@ class Twig_Lexer implements Twig_LexerInterface
                     throw new Twig_Error_Syntax(sprintf('Unexpected "%s".', $this->code[$this->cursor]), $this->lineno, $this->source);
 =======
                     throw new Twig_Error_Syntax(sprintf('Unexpected "%s".', $this->code[$this->cursor]), $this->lineno, $this->filename);
->>>>>>> web and vendor directory from composer install
                 }
 
                 list($expect, $lineno) = array_pop($this->brackets);
@@ -317,7 +308,6 @@ class Twig_Lexer implements Twig_LexerInterface
                     throw new Twig_Error_Syntax(sprintf('Unclosed "%s".', $expect), $lineno, $this->source);
 =======
                     throw new Twig_Error_Syntax(sprintf('Unclosed "%s".', $expect), $lineno, $this->filename);
->>>>>>> web and vendor directory from composer install
                 }
             }
 
@@ -341,7 +331,6 @@ class Twig_Lexer implements Twig_LexerInterface
             throw new Twig_Error_Syntax(sprintf('Unexpected character "%s".', $this->code[$this->cursor]), $this->lineno, $this->source);
 =======
             throw new Twig_Error_Syntax(sprintf('Unexpected character "%s".', $this->code[$this->cursor]), $this->lineno, $this->filename);
->>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -356,7 +345,6 @@ class Twig_Lexer implements Twig_LexerInterface
             throw new Twig_Error_Syntax(sprintf('Unexpected end of file: Unclosed "%s" block.', $tag), $this->lineno, $this->source);
 =======
             throw new Twig_Error_Syntax(sprintf('Unexpected end of file: Unclosed "%s" block.', $tag), $this->lineno, $this->filename);
->>>>>>> web and vendor directory from composer install
         }
 
         $text = substr($this->code, $this->cursor, $match[0][1] - $this->cursor);
@@ -376,7 +364,6 @@ class Twig_Lexer implements Twig_LexerInterface
             throw new Twig_Error_Syntax('Unclosed comment.', $this->lineno, $this->source);
 =======
             throw new Twig_Error_Syntax('Unclosed comment.', $this->lineno, $this->filename);
->>>>>>> web and vendor directory from composer install
         }
 
         $this->moveCursor(substr($this->code, $this->cursor, $match[0][1] - $this->cursor).$match[0][0]);
@@ -400,7 +387,6 @@ class Twig_Lexer implements Twig_LexerInterface
 =======
             if ($this->code[$this->cursor] != '"') {
                 throw new Twig_Error_Syntax(sprintf('Unclosed "%s".', $expect), $lineno, $this->filename);
->>>>>>> web and vendor directory from composer install
             }
 
             $this->popState();
@@ -410,7 +396,6 @@ class Twig_Lexer implements Twig_LexerInterface
             // unlexable
             throw new Twig_Error_Syntax(sprintf('Unexpected character "%s".', $this->code[$this->cursor]), $this->lineno, $this->source);
 =======
->>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -492,4 +477,3 @@ class Twig_Lexer implements Twig_LexerInterface
 
 class_alias('Twig_Lexer', 'Twig\Lexer', false);
 =======
->>>>>>> web and vendor directory from composer install

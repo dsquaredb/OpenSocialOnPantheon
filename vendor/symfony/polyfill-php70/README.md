@@ -1,5 +1,5 @@
 Symfony Polyfill / Php70
-========================
+        
 
 This component provides features unavailable in releases prior to PHP 7.0:
 
@@ -15,7 +15,7 @@ More information can be found in the
 [main Polyfill README](https://github.com/symfony/polyfill/blob/master/README.md).
 
 Compatibility notes
-===================
+      =
 
 To write portable code between PHP5 and PHP7, some care must be taken:
 - `\*Error` exceptions must be caught before `\Exception`;
@@ -23,6 +23,6 @@ To write portable code between PHP5 and PHP7, some care must be taken:
   verified using `isset($e['message'][0])` instead of `null !== $e`.
 
 License
-=======
+  =
 
 This library is released under the [MIT license](LICENSE).

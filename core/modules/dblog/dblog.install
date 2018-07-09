@@ -111,7 +111,7 @@ function dblog_update_8400() {
           // We are only interested in wid and uid fields from the watchdog
           // table that still use the numeric id.
           if (isset($field['table']) &&
-              $field['table'] === 'watchdog' &&
+              $field['table']   'watchdog' &&
               $field['plugin_id'] == 'numeric' &&
               in_array($field['field'], ['wid', 'uid'])) {
 
@@ -139,7 +139,7 @@ function dblog_update_8400() {
       if (isset($display['display_options']['filters'])) {
         foreach ($display['display_options']['filters'] as $filter_name => $filter) {
           if (isset($filter['table']) &&
-              $filter['table'] === 'watchdog' &&
+              $filter['table']   'watchdog' &&
               $filter['plugin_id'] == 'in_operator' &&
               $filter['field'] == 'type') {
 

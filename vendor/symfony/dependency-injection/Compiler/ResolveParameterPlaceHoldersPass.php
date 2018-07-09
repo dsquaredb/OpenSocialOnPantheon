@@ -12,10 +12,9 @@
 namespace Symfony\Component\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-<<<<<<< HEAD
+ 
 use Symfony\Component\DependencyInjection\Definition;
 =======
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException;
 
 /**
@@ -23,7 +22,7 @@ use Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException;
  *
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
  */
-<<<<<<< HEAD
+ 
 class ResolveParameterPlaceHoldersPass extends AbstractRecursivePass
 {
     private $bag;
@@ -43,13 +42,12 @@ class ResolveParameterPlaceHoldersPass implements CompilerPassInterface
      * Processes the ContainerBuilder to resolve parameter placeholders.
      *
      * @param ContainerBuilder $container
->>>>>>> web and vendor directory from composer install
      *
      * @throws ParameterNotFoundException
      */
     public function process(ContainerBuilder $container)
     {
-<<<<<<< HEAD
+ 
         $this->bag = $container->getParameterBag();
 
         try {
@@ -136,6 +134,5 @@ class ResolveParameterPlaceHoldersPass implements CompilerPassInterface
         $container->setAliases($aliases);
 
         $parameterBag->resolve();
->>>>>>> web and vendor directory from composer install
     }
 }

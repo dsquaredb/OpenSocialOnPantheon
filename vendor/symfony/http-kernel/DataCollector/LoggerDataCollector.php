@@ -11,10 +11,9 @@
 
 namespace Symfony\Component\HttpKernel\DataCollector;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\Debug\Exception\SilencedErrorContext;
 =======
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Log\DebugLoggerInterface;
@@ -26,7 +25,7 @@ use Symfony\Component\HttpKernel\Log\DebugLoggerInterface;
  */
 class LoggerDataCollector extends DataCollector implements LateDataCollectorInterface
 {
-<<<<<<< HEAD
+ 
     private $logger;
     private $containerPathPrefix;
 
@@ -67,7 +66,6 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
         if (null !== $logger && $logger instanceof DebugLoggerInterface) {
             $this->logger = $logger;
         }
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -81,7 +79,7 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
     public function reset()
     {
         if ($this->logger && method_exists($this->logger, 'clear')) {
@@ -107,7 +105,6 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
         if (null !== $this->logger) {
             $this->data = $this->computeErrorsCount();
             $this->data['logs'] = $this->sanitizeLogs($this->logger->getLogs());
->>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -136,27 +133,25 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
         return isset($this->data['deprecation_count']) ? $this->data['deprecation_count'] : 0;
     }
 
-<<<<<<< HEAD
+ 
     public function countWarnings()
     {
         return isset($this->data['warning_count']) ? $this->data['warning_count'] : 0;
     }
 
 =======
->>>>>>> web and vendor directory from composer install
     public function countScreams()
     {
         return isset($this->data['scream_count']) ? $this->data['scream_count'] : 0;
     }
 
-<<<<<<< HEAD
+ 
     public function getCompilerLogs()
     {
         return isset($this->data['compiler_logs']) ? $this->data['compiler_logs'] : array();
     }
 
 =======
->>>>>>> web and vendor directory from composer install
     /**
      * {@inheritdoc}
      */
@@ -165,7 +160,7 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
         return 'logger';
     }
 
-<<<<<<< HEAD
+ 
     private function getContainerDeprecationLogs()
     {
         if (null === $this->containerPathPrefix || !file_exists($file = $this->containerPathPrefix.'Deprecations.log')) {
@@ -360,7 +355,6 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
         $count = array(
             'error_count' => $this->logger->countErrors(),
             'deprecation_count' => 0,
->>>>>>> web and vendor directory from composer install
             'scream_count' => 0,
             'priorities' => array(),
         );
@@ -374,7 +368,7 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
                     'name' => $log['priorityName'],
                 );
             }
-<<<<<<< HEAD
+ 
             if ('WARNING' === $log['priorityName']) {
                 ++$count['warning_count'];
             }
@@ -396,18 +390,16 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
                     ++$count['deprecation_count'];
                 } elseif (!($log['context']['type'] & $log['context']['level'])) {
                     ++$count['scream_count'];
->>>>>>> web and vendor directory from composer install
                 }
             }
         }
 
-<<<<<<< HEAD
+ 
         foreach ($containerDeprecationLogs as $deprecationLog) {
             $count['deprecation_count'] += $deprecationLog['context']['exception']->count;
         }
 
 =======
->>>>>>> web and vendor directory from composer install
         ksort($count['priorities']);
 
         return $count;

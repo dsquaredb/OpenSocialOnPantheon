@@ -11,13 +11,12 @@
 
 namespace Symfony\Component\Serializer\Normalizer;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\Serializer\Exception\CircularReferenceException;
 use Symfony\Component\Serializer\Exception\InvalidArgumentException;
 use Symfony\Component\Serializer\Exception\LogicException;
 
 =======
->>>>>>> web and vendor directory from composer install
 /**
  * Defines the interface of normalizers.
  *
@@ -28,20 +27,17 @@ interface NormalizerInterface
     /**
      * Normalizes an object into a set of arrays/scalars.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
      * @param object $object  Object to normalize
 =======
      * @param mixed  $object  Object to normalize
->>>>>>> Update Open Social to 8.x-2.1
 =======
      * @param object $object  Object to normalize
->>>>>>> revert Open Social update
 =======
      * @param mixed  $object  Object to normalize
->>>>>>> updating open social
      * @param string $format  Format the normalization result will be encoded as
      * @param array  $context Context options for the normalizer
      *
@@ -57,7 +53,6 @@ interface NormalizerInterface
      * @param array  $context Context options for the normalizer
      *
      * @return array|scalar
->>>>>>> web and vendor directory from composer install
      */
     public function normalize($object, $format = null, array $context = array());
 

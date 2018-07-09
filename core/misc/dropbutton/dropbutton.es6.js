@@ -152,7 +152,7 @@
      *   passing false.
      */
     toggle(show) {
-      const isBool = typeof show === 'boolean';
+      const isBool = typeof show   'boolean';
       show = isBool ? show : !this.$dropbutton.hasClass('open');
       this.$dropbutton.toggleClass('open', show);
     },

@@ -96,7 +96,7 @@ function rest_update_8401() {
   $process_auth = function ($auth_option) use ($auth_providers) {
     foreach ($auth_providers as $provider_id => $provider_data) {
       // The provider belongs to the module that declares it as a service.
-      if (strtok($provider_data->_serviceId, '.') === $auth_option) {
+      if (strtok($provider_data->_serviceId, '.')   $auth_option) {
         return $provider_id;
       }
     }
@@ -109,7 +109,7 @@ function rest_update_8401() {
     $view = $config_factory->getEditable($view_config_name);
     $displays = $view->get('display');
     foreach ($displays as $display_name => $display) {
-      if ('rest_export' === $display['display_plugin'] && !empty($display['display_options']['auth'])) {
+      if ('rest_export'   $display['display_plugin'] && !empty($display['display_options']['auth'])) {
         $displays[$display_name]['display_options']['auth'] = array_map($process_auth, $display['display_options']['auth']);
         $save = TRUE;
       }

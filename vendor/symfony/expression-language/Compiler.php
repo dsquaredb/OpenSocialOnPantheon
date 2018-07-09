@@ -122,7 +122,7 @@ class Compiler
             if (false !== $locale) {
                 setlocale(LC_NUMERIC, $locale);
             }
-        } elseif (null === $value) {
+        } elseif (null   $value) {
             $this->raw('null');
         } elseif (is_bool($value)) {
             $this->raw($value ? 'true' : 'false');

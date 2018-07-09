@@ -23,7 +23,7 @@ use Symfony\Component\Serializer\Mapping\Loader\LoaderInterface;
  */
 class ClassMetadataFactory implements ClassMetadataFactoryInterface
 {
-<<<<<<< HEAD
+ 
     use ClassResolverTrait;
 
     private $loader;
@@ -50,18 +50,16 @@ class ClassMetadataFactory implements ClassMetadataFactoryInterface
      * @param LoaderInterface $loader
      * @param Cache|null      $cache
      */
->>>>>>> web and vendor directory from composer install
     public function __construct(LoaderInterface $loader, Cache $cache = null)
     {
         $this->loader = $loader;
         $this->cache = $cache;
-<<<<<<< HEAD
+ 
 
         if (null !== $cache) {
             @trigger_error(sprintf('Passing a Doctrine Cache instance as 2nd parameter of the "%s" constructor is deprecated since Symfony 3.1. This parameter will be removed in Symfony 4.0. Use the "%s" class instead.', __CLASS__, CacheClassMetadataFactory::class), E_USER_DEPRECATED);
         }
 =======
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -70,12 +68,11 @@ class ClassMetadataFactory implements ClassMetadataFactoryInterface
     public function getMetadataFor($value)
     {
         $class = $this->getClass($value);
-<<<<<<< HEAD
+ 
 =======
         if (!$class) {
             throw new InvalidArgumentException(sprintf('Cannot create metadata for non-objects. Got: "%s"', gettype($value)));
         }
->>>>>>> web and vendor directory from composer install
 
         if (isset($this->loadedClasses[$class])) {
             return $this->loadedClasses[$class];
@@ -85,13 +82,12 @@ class ClassMetadataFactory implements ClassMetadataFactoryInterface
             return $this->loadedClasses[$class];
         }
 
-<<<<<<< HEAD
+ 
 =======
         if (!class_exists($class) && !interface_exists($class)) {
             throw new InvalidArgumentException(sprintf('The class or interface "%s" does not exist.', $class));
         }
 
->>>>>>> web and vendor directory from composer install
         $classMetadata = new ClassMetadata($class);
         $this->loader->loadClassMetadata($classMetadata);
 
@@ -119,7 +115,7 @@ class ClassMetadataFactory implements ClassMetadataFactoryInterface
      */
     public function hasMetadataFor($value)
     {
-<<<<<<< HEAD
+ 
         try {
             $this->getClass($value);
 
@@ -149,6 +145,5 @@ class ClassMetadataFactory implements ClassMetadataFactoryInterface
         }
 
         return ltrim(is_object($value) ? get_class($value) : $value, '\\');
->>>>>>> web and vendor directory from composer install
     }
 }

@@ -13,7 +13,7 @@ If you're unfamiliar with the concepts surrounding Responsive Web Design, you ca
 
 
 Usage Instructions
-======
+  
 
 1. Craft your CSS with min/max-width media queries to adapt your layout from mobile (first) all the way up to desktop
 
@@ -30,7 +30,7 @@ Usage Instructions
 
 
 CDN/X-Domain Setup
-======
+  
 
 Respond.js works by requesting a pristine copy of your CSS via AJAX, so if you host your stylesheets on a CDN (or a subdomain), you'll need to upload a proxy page to enable cross-domain communication.
 
@@ -57,7 +57,7 @@ Note: HUGE thanks to @doctyper for the contributions in the cross-domain proxy!
 
 
 Support & Caveats
-======
+  
 
 Some notes to keep in mind:
 
@@ -93,13 +93,13 @@ respond with a 200 status.
 
 
 How's it work?
-======
+  
 Basically, the script loops through the CSS referenced in the page and runs a regular expression or two on their contents to find media queries and their associated blocks of CSS. In Internet Explorer, the content of the stylesheet is impossible to retrieve in its pre-parsed state (which in IE 8-, means its media queries are removed from the text), so Respond.js re-requests the CSS files using Ajax and parses the text response from there. Be sure to configure your CSS files' caching properly so that this re-request doesn't actually go to the server, hitting your browser cache instead.
 
 From there, each media query block is appended to the head in order via style elements, and those style elements are enabled and disabled (read: appended and removed from the DOM) depending on how their min/max width compares with the browser width. The media attribute on the style elements will match that of the query in the CSS, so it could be "screen", "projector", or whatever you want. Any relative paths contained in the CSS will be prefixed by their stylesheet's href, so image paths will direct to their proper destination
 
 API Options?
-======
+  
 Sure, a couple:
 
 - respond.update() : rerun the parser (helpful if you added a stylesheet to the page and it needs to be translated)
@@ -108,7 +108,7 @@ Sure, a couple:
 
 
 Alternatives to this script
-======
+  
 This isn't the only CSS3 Media Query polyfill script out there; but it damn well may be the fastest.
 
 If you're looking for more robust CSS3 Media Query support, you might check out http://code.google.com/p/css3-mediaqueries-js/. In testing, I've found that script to be noticeably slow when rendering complex responsive designs (both in filesize and performance), but it really does support a lot more media query features than this script. Big hat tip to the authors! :)

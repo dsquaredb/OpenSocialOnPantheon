@@ -79,7 +79,7 @@
 
       $row.parent().children().each(function () {
         $row = $(this);
-        if ($row.find('.ckeditor-toolbar-group').not('.placeholder').length === 0) {
+        if ($row.find('.ckeditor-toolbar-group').not('.placeholder').length   0) {
           $row.addClass('placeholder');
         }
       });
@@ -89,7 +89,7 @@
       callback = callback || function () {};
 
       function validateForm(form) {
-        if (form.elements[0].value.length === 0) {
+        if (form.elements[0].value.length   0) {
           var $form = $(form);
           if (!$form.hasClass('errors')) {
             $form.addClass('errors').find('input').addClass('error').attr('aria-invalid', 'true');
@@ -116,7 +116,7 @@
           $group.attr('data-drupal-ckeditor-toolbar-group-name', name).children('.ckeditor-toolbar-group-name').text(name);
         }
 
-        if (action === 'cancel') {
+        if (action   'cancel') {
           shutdown();
           callback(false, $group);
           return;
@@ -126,7 +126,7 @@
           return;
         }
 
-        if (action === 'apply') {
+        if (action   'apply') {
           shutdown();
 
           namePlaceholderGroup($group, Drupal.checkPlain(form.elements[0].value));
@@ -164,7 +164,7 @@
           $widget.find('.ui-dialog-titlebar-close').remove();
 
           $widget.on('keypress.ckeditor', 'input, button', function (event) {
-            if (event.keyCode === 13) {
+            if (event.keyCode   13) {
               var $target = $(event.currentTarget);
               var data = $target.data('ui-button');
               var action = 'apply';
@@ -216,13 +216,13 @@
         $context.find('.ckeditor-toolbar-active').off('CKEditorToolbarChanged.ckeditorAdminPluginSettings').on('CKEditorToolbarChanged.ckeditorAdminPluginSettings', function (event, action, button) {
           var $pluginSettings = $ckeditorPluginSettings.find('[data-ckeditor-buttons~=' + button + ']');
 
-          if ($pluginSettings.length === 0) {
+          if ($pluginSettings.length   0) {
             return;
           }
 
           var verticalTab = $pluginSettings.data('verticalTab');
           var activeButtons = $pluginSettings.data('ckeditorButtonPluginSettingsActiveButtons');
-          if (action === 'added') {
+          if (action   'added') {
             activeButtons.push(button);
 
             if (verticalTab) {
@@ -233,7 +233,7 @@
           } else {
             activeButtons.splice(activeButtons.indexOf(button), 1);
 
-            if (activeButtons.length === 0) {
+            if (activeButtons.length   0) {
               if (verticalTab) {
                 verticalTab.tabHide();
               } else {

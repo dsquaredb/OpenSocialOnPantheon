@@ -89,7 +89,7 @@ class ContentEntityCloneTest extends EntityKernelTestBase {
     $this->assertFalse($entity_translation->isNew());
   }
 
-<<<<<<< HEAD
+ 
 =======
   /**
    * Tests if the entity fields are properly cloned.
@@ -323,5 +323,4 @@ class ContentEntityCloneTest extends EntityKernelTestBase {
     }
   }
 
->>>>>>> Update Open Social to 8.x-2.1
 }

@@ -74,28 +74,24 @@ class EntityRevision extends EntityContentBase {
    * {@inheritdoc}
    */
   public function getIds() {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
     if ($key = $this->getKey('revision')) {
       $ids[$key]['type'] = 'integer';
       return $ids;
 =======
 =======
->>>>>>> updating open social
     $ids = [];
 
     $revision_key = $this->getKey('revision');
     if (!$revision_key) {
       throw new MigrateException(sprintf('The "%s" entity type does not support revisions.', $this->storage->getEntityTypeId()));
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
     if ($key = $this->getKey('revision')) {
       return [$key => $this->getDefinitionFromEntity($key)];
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
     }
     $ids[$revision_key] = $this->getDefinitionFromEntity($revision_key);
 

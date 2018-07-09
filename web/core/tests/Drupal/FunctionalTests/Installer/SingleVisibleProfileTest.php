@@ -49,7 +49,6 @@ class SingleVisibleProfileTest extends InstallerTestBase {
    */
   protected function prepareEnvironment() {
     parent::prepareEnvironment();
->>>>>>> updating open social:web/core/tests/Drupal/FunctionalTests/Installer/SingleVisibleProfileTest.php
     $profiles = ['standard', 'demo_umami'];
     foreach ($profiles as $profile) {
       $info = [
@@ -64,10 +63,8 @@ class SingleVisibleProfileTest extends InstallerTestBase {
       file_put_contents("$path/$profile.info.yml", Yaml::encode($info));
     }
 <<<<<<< HEAD:web/core/modules/system/src/Tests/Installer/SingleVisibleProfileTest.php
->>>>>>> revert Open Social update
     parent::setUp();
 =======
->>>>>>> updating open social:web/core/tests/Drupal/FunctionalTests/Installer/SingleVisibleProfileTest.php
   }
 
   /**

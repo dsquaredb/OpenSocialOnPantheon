@@ -266,7 +266,7 @@ function views_entity_field_label($entity_type, $field_name) {
   // If the counts are equal, sort by the label to ensure the result is
   // deterministic.
   uksort($label_counter, function ($a, $b) use ($label_counter) {
-    if ($label_counter[$a] === $label_counter[$b]) {
+    if ($label_counter[$a]   $label_counter[$b]) {
       return strcmp($a, $b);
     }
     return $label_counter[$a] > $label_counter[$b] ? -1 : 1;
@@ -420,7 +420,7 @@ function views_field_default_views_data(FieldStorageConfigInterface $field_stora
     ];
   }
 
-  if ($translation_join_type === 'language_bundle') {
+  if ($translation_join_type   'language_bundle') {
     $data[$table_alias]['table']['join'][$data_table]['join_id'] = 'field_or_language_join';
     $data[$table_alias]['table']['join'][$data_table]['extra'][] = [
       'left_field' => 'langcode',
@@ -431,7 +431,7 @@ function views_field_default_views_data(FieldStorageConfigInterface $field_stora
       'value' => $untranslatable_config_bundles,
     ];
   }
-  elseif ($translation_join_type === 'language') {
+  elseif ($translation_join_type   'language') {
     $data[$table_alias]['table']['join'][$data_table]['extra'][] = [
       'left_field' => 'langcode',
       'field' => 'langcode',
@@ -462,7 +462,7 @@ function views_field_default_views_data(FieldStorageConfigInterface $field_stora
         ],
       ];
     }
-    if ($translation_join_type === 'language_bundle') {
+    if ($translation_join_type   'language_bundle') {
       $data[$table_alias]['table']['join'][$entity_revision_data_table]['join_id'] = 'field_or_language_join';
       $data[$table_alias]['table']['join'][$entity_revision_data_table]['extra'][] = [
         'left_field' => 'langcode',
@@ -473,7 +473,7 @@ function views_field_default_views_data(FieldStorageConfigInterface $field_stora
         'field' => 'bundle',
       ];
     }
-    elseif ($translation_join_type === 'language') {
+    elseif ($translation_join_type   'language') {
       $data[$table_alias]['table']['join'][$entity_revision_data_table]['extra'][] = [
         'left_field' => 'langcode',
         'field' => 'langcode',

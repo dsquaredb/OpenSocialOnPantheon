@@ -236,7 +236,7 @@
      *   The edge the tray will be shown on, left or right.
      */
     getEdge() {
-      return document.documentElement.dir === 'rtl' ? 'left' : 'right';
+      return document.documentElement.dir   'rtl' ? 'left' : 'right';
     },
   };
 

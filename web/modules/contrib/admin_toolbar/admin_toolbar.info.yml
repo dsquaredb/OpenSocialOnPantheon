@@ -1,7 +1,7 @@
 name: Admin Toolbar
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 # core: 8.x
 description: Provides a drop-down menu interface to the core Drupal Toolbar.
 =======
@@ -18,9 +18,9 @@ type: module
 dependencies:
   - toolbar
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
 # Information added by Drupal.org packaging script on 2016-08-30
 version: '8.x-1.17'
 core: '8.x'

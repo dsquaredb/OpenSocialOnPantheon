@@ -113,7 +113,7 @@ function form_select_options($element, $choices = NULL) {
       $option = [];
       $key = (string) $key;
       $empty_choice = $empty_value && $key == '_none';
-      if ($value_valid && ((!$value_is_array && (string) $element['#value'] === $key || ($value_is_array && in_array($key, $element['#value']))) || $empty_choice)) {
+      if ($value_valid && ((!$value_is_array && (string) $element['#value']   $key || ($value_is_array && in_array($key, $element['#value']))) || $empty_choice)) {
         $option['selected'] = TRUE;
       }
       else {
@@ -149,7 +149,7 @@ function form_select_options($element, $choices = NULL) {
  * "helper" too complicated and cumbersome to be of any help.
  *
  * As usual with functions that can return array() or FALSE, do not
- * forget to use === and !== if needed.
+ * forget to use   and !== if needed.
  *
  * @param $element
  *   The select element to search.

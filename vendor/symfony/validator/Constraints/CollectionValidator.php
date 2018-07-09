@@ -13,10 +13,9 @@ namespace Symfony\Component\Validator\Constraints;
 
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 /**
@@ -59,7 +58,7 @@ class CollectionValidator extends ConstraintValidator
 
             if ($existsInArray || $existsInArrayAccess) {
                 if (count($fieldConstraint->constraints) > 0) {
-<<<<<<< HEAD
+ 
                     $context->getValidator()
                         ->inContext($context)
                         ->atPath('['.$field.']')
@@ -99,14 +98,13 @@ class CollectionValidator extends ConstraintValidator
                         ->setCode(Collection::MISSING_FIELD_ERROR)
                         ->addViolation();
                 }
->>>>>>> web and vendor directory from composer install
             }
         }
 
         if (!$constraint->allowExtraFields) {
             foreach ($value as $field => $fieldValue) {
                 if (!isset($constraint->fields[$field])) {
-<<<<<<< HEAD
+ 
                     $context->buildViolation($constraint->extraFieldsMessage)
                         ->atPath('['.$field.']')
                         ->setParameter('{{ field }}', $this->formatValue($field))
@@ -129,7 +127,6 @@ class CollectionValidator extends ConstraintValidator
                             ->setCode(Collection::NO_SUCH_FIELD_ERROR)
                             ->addViolation();
                     }
->>>>>>> web and vendor directory from composer install
                 }
             }
         }

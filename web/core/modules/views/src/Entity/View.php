@@ -302,7 +302,7 @@ class View extends ConfigEntityBase implements ViewEntityInterface {
   }
 
   /**
-<<<<<<< HEAD
+ 
 =======
    * Fixes table names for revision metadata fields of revisionable entities.
    *
@@ -345,7 +345,6 @@ class View extends ConfigEntityBase implements ViewEntityInterface {
   }
 
   /**
->>>>>>> Update Open Social to 8.x-2.1
    * Fills in the cache metadata of this view.
    *
    * Cache metadata is set per view and per display, and ends up being stored in

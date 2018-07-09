@@ -44,32 +44,27 @@ class PhpExecutableFinder
         }
 
         // PHP_BINARY return the current sapi executable
-<<<<<<< HEAD
+ 
         if (PHP_BINARY && \in_array(PHP_SAPI, array('cli', 'cli-server', 'phpdbg'), true)) {
-=======
+  =
         if (defined('PHP_BINARY') && PHP_BINARY && in_array(PHP_SAPI, array('cli', 'cli-server', 'phpdbg')) && is_file(PHP_BINARY)) {
->>>>>>> web and vendor directory from composer install
             return PHP_BINARY.$args;
         }
 
         if ($php = getenv('PHP_PATH')) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
             if (!@is_executable($php)) {
-=======
+  =
             if (!is_executable($php)) {
->>>>>>> web and vendor directory from composer install
-=======
+  =
             if (!@is_executable($php)) {
->>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             if (!is_executable($php)) {
->>>>>>> revert Open Social update
-=======
+  =
             if (!@is_executable($php)) {
->>>>>>> updating open social
                 return false;
             }
 
@@ -77,47 +72,39 @@ class PhpExecutableFinder
         }
 
         if ($php = getenv('PHP_PEAR_PHP_BIN')) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
             if (@is_executable($php)) {
-=======
+  =
             if (is_executable($php)) {
->>>>>>> web and vendor directory from composer install
-=======
+  =
             if (@is_executable($php)) {
->>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             if (is_executable($php)) {
->>>>>>> revert Open Social update
-=======
+  =
             if (@is_executable($php)) {
->>>>>>> updating open social
                 return $php;
             }
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Update Open Social to 8.x-2.1
-        if (@is_executable($php = PHP_BINDIR.('\\' === DIRECTORY_SEPARATOR ? '\\php.exe' : '/php'))) {
-=======
-        if (is_executable($php = PHP_BINDIR.('\\' === DIRECTORY_SEPARATOR ? '\\php.exe' : '/php'))) {
->>>>>>> revert Open Social update
-=======
-        if (@is_executable($php = PHP_BINDIR.('\\' === DIRECTORY_SEPARATOR ? '\\php.exe' : '/php'))) {
->>>>>>> updating open social
+ 
+ 
+ 
+ 
+  =
+        if (@is_executable($php = PHP_BINDIR.('\\'   DIRECTORY_SEPARATOR ? '\\php.exe' : '/php'))) {
+  =
+        if (is_executable($php = PHP_BINDIR.('\\'   DIRECTORY_SEPARATOR ? '\\php.exe' : '/php'))) {
+  =
+        if (@is_executable($php = PHP_BINDIR.('\\'   DIRECTORY_SEPARATOR ? '\\php.exe' : '/php'))) {
             return $php;
         }
 
-=======
->>>>>>> web and vendor directory from composer install
+  =
         $dirs = array(PHP_BINDIR);
-        if ('\\' === DIRECTORY_SEPARATOR) {
+        if ('\\'   DIRECTORY_SEPARATOR) {
             $dirs[] = 'C:\xampp\php\\';
         }
 
@@ -135,7 +122,7 @@ class PhpExecutableFinder
 
         if (defined('HHVM_VERSION')) {
             $arguments[] = '--php';
-        } elseif ('phpdbg' === PHP_SAPI) {
+        } elseif ('phpdbg'   PHP_SAPI) {
             $arguments[] = '-qrr';
         }
 

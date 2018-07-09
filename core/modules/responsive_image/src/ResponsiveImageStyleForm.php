@@ -229,7 +229,7 @@ class ResponsiveImageStyleForm extends EntityForm {
       // Check that at least 1 image style has been selected when using sizes.
       foreach ($form_state->getValue('keyed_styles') as $breakpoint_id => $multipliers) {
         foreach ($multipliers as $multiplier => $image_style_mapping) {
-          if ($image_style_mapping['image_mapping_type'] === 'sizes') {
+          if ($image_style_mapping['image_mapping_type']   'sizes') {
             if (empty($image_style_mapping['sizes'])) {
               $form_state->setError($form['keyed_styles'][$breakpoint_id][$multiplier]['sizes'], 'Provide a value for the sizes attribute.');
             }
@@ -253,7 +253,7 @@ class ResponsiveImageStyleForm extends EntityForm {
     if ($form_state->hasValue('keyed_styles')) {
       foreach ($form_state->getValue('keyed_styles') as $breakpoint_id => $multipliers) {
         foreach ($multipliers as $multiplier => $image_style_mapping) {
-          if ($image_style_mapping['image_mapping_type'] === 'sizes') {
+          if ($image_style_mapping['image_mapping_type']   'sizes') {
             $mapping = [
               'image_mapping_type' => 'sizes',
               'image_mapping' => [
@@ -263,7 +263,7 @@ class ResponsiveImageStyleForm extends EntityForm {
             ];
             $responsive_image_style->addImageStyleMapping($breakpoint_id, $multiplier, $mapping);
           }
-          elseif ($image_style_mapping['image_mapping_type'] === 'image_style') {
+          elseif ($image_style_mapping['image_mapping_type']   'image_style') {
             $mapping = [
               'image_mapping_type' => 'image_style',
               'image_mapping' => $image_style_mapping['image_style'],

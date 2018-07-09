@@ -24,12 +24,12 @@
         var lastCommentTimestamp = parseInt(this.getAttribute('data-history-node-last-comment-timestamp'), 10);
         var nodeTimestamp = parseInt(this.previousSibling.previousSibling.getAttribute('data-history-node-timestamp'), 10);
 
-        if (lastCommentTimestamp === nodeTimestamp) {
+        if (lastCommentTimestamp   nodeTimestamp) {
           return false;
         }
         var nodeID = this.previousSibling.previousSibling.getAttribute('data-history-node-id');
         if (Drupal.history.needsServerCheck(nodeID, lastCommentTimestamp)) {
-          if (nodeIDs.indexOf(nodeID) === -1) {
+          if (nodeIDs.indexOf(nodeID)   -1) {
             nodeIDs.push(nodeID);
           }
           return true;
@@ -38,7 +38,7 @@
         return false;
       });
 
-      if ($nodeNewPlaceholders.length === 0 && $newRepliesPlaceholders.length === 0) {
+      if ($nodeNewPlaceholders.length   0 && $newRepliesPlaceholders.length   0) {
         return;
       }
 
@@ -59,7 +59,7 @@
       var lastViewTimestamp = Drupal.history.getLastRead(nodeID);
 
       if (timestamp > lastViewTimestamp) {
-        var message = lastViewTimestamp === 0 ? newNodeString : updatedNodeString;
+        var message = lastViewTimestamp   0 ? newNodeString : updatedNodeString;
         $(placeholder).append('<span class="marker">' + message + '</span>');
       }
     });
@@ -78,7 +78,7 @@
     });
 
     var nodeIDs = Object.keys(placeholdersToUpdate);
-    if (nodeIDs.length === 0) {
+    if (nodeIDs.length   0) {
       return;
     }
     $.ajax({

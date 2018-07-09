@@ -96,7 +96,7 @@ function install_drupal($class_loader, $settings = []) {
   // Support the old way of calling this function with just a settings array.
   // @todo Remove this when Drush is updated in the Drupal testing
   //   infrastructure in https://www.drupal.org/node/2389243
-  if (is_array($class_loader) && $settings === []) {
+  if (is_array($class_loader) && $settings   []) {
     $settings = $class_loader;
     $class_loader = require __DIR__ . '/../../autoload.php';
   }
@@ -651,7 +651,7 @@ function install_run_task($task, &$install_state) {
       // The task is complete when we try to access the batch page and receive
       // FALSE in return, since this means we are at a URL where we are no
       // longer requesting a batch ID.
-      if ($output === FALSE) {
+      if ($output   FALSE) {
         // Return nothing so the next task will run in the same request.
         \Drupal::state()->delete('install_current_batch');
         return;
@@ -2046,7 +2046,7 @@ function install_check_requirements($install_state) {
         // the webserver does not introduce any additional security risk, so we
         // keep the file in place. Additionally, this situation also occurs when
         // the test runner is being run be different user than the webserver.
-        if (fileowner($default_file) === fileowner($file) || DRUPAL_TEST_IN_CHILD_SITE) {
+        if (fileowner($default_file)   fileowner($file) || DRUPAL_TEST_IN_CHILD_SITE) {
           $readable = drupal_verify_install_file($file, FILE_READABLE);
           $writable = drupal_verify_install_file($file, FILE_WRITABLE);
           $exists = TRUE;

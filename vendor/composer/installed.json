@@ -1,6 +1,6 @@
 [
     {
-<<<<<<< HEAD
+ 
         "name": "asm89/stack-cors",
         "version": "1.2.0",
         "version_normalized": "1.2.0.0",
@@ -30,7 +30,7 @@
             "branch-alias": {
                 "dev-master": "1.2-dev"
             }
-=======
+  =
         "name": "cweagans/composer-patches",
         "version": "1.5.0",
         "version_normalized": "1.5.0.0",
@@ -62,16 +62,16 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-<<<<<<< HEAD
+ 
                 "Asm89\\Stack\\": "src/Asm89/Stack/"
-=======
+  =
                 "cweagans\\Composer\\": "src"
 >>>>>>> web and vendor directory from composer install
             }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-<<<<<<< HEAD
+ 
             "MIT"
         ],
         "authors": [
@@ -100,7 +100,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/composer/installers/zipball/049797d727261bf27f2690430d935067710049c2",
             "reference": "049797d727261bf27f2690430d935067710049c2",
-=======
+  =
             "BSD"
         ],
         "authors": [
@@ -179,11 +179,11 @@
         },
         "require-dev": {
             "composer/composer": "1.0.*@dev",
-<<<<<<< HEAD
+ 
             "phpunit/phpunit": "^4.8.36"
         },
         "time": "2017-12-29T09:13:20+00:00",
-=======
+  =
             "phpunit/phpunit": "4.1.*"
         },
         "time": "2016-08-13 20:53:52",
@@ -217,7 +217,7 @@
         "keywords": [
             "Craft",
             "Dolibarr",
-<<<<<<< HEAD
+ 
             "Eliasis",
             "Hurad",
             "ImageCMS",
@@ -229,7 +229,7 @@
             "OXID",
             "Plentymarkets",
             "Porto",
-=======
+  =
             "Hurad",
             "ImageCMS",
             "MODX Evo",
@@ -254,16 +254,16 @@
             "croogo",
             "dokuwiki",
             "drupal",
-<<<<<<< HEAD
+ 
             "eZ Platform",
-=======
+  =
 >>>>>>> web and vendor directory from composer install
             "elgg",
             "expressionengine",
             "fuelphp",
             "grav",
             "installer",
-<<<<<<< HEAD
+ 
             "itop",
             "joomla",
             "kohana",
@@ -278,7 +278,7 @@
             "modx",
             "moodle",
             "osclass",
-=======
+  =
             "joomla",
             "kohana",
             "laravel",
@@ -293,17 +293,17 @@
             "piwik",
             "ppi",
             "puppet",
-<<<<<<< HEAD
+ 
             "pxcms",
-=======
+  =
 >>>>>>> web and vendor directory from composer install
             "reindex",
             "roundcube",
             "shopware",
             "silverstripe",
-<<<<<<< HEAD
+ 
             "sydes",
-=======
+  =
 >>>>>>> web and vendor directory from composer install
             "symfony",
             "typo3",
@@ -314,8 +314,8 @@
         ]
     },
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
         "name": "composer/semver",
         "version": "1.4.2",
         "version_normalized": "1.4.2.0",
@@ -339,7 +339,7 @@
         },
         "time": "2016-08-30T16:08:34+00:00",
         "type": "library",
-=======
+  =
         "name": "behat/mink-browserkit-driver",
         "version": "1.3.3",
         "version_normalized": "1.3.3.0",
@@ -435,7 +435,7 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "1.3.x-dev"
-=======
+  =
         "name": "dflydev/dot-access-data",
         "version": "v1.0.1",
         "version_normalized": "1.0.1.0",
@@ -464,9 +464,9 @@
         "installation-source": "dist",
         "autoload": {
             "psr-0": {
-<<<<<<< HEAD
+ 
                 "Doctrine\\Common\\Annotations\\": "lib/"
-=======
+  =
                 "Dflydev\\DotAccessData": "src"
 >>>>>>> web and vendor directory from composer install
             }
@@ -477,7 +477,7 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+ 
                 "name": "Roman Borschel",
                 "email": "roman@code-factory.org"
             },
@@ -504,7 +504,7 @@
             "annotations",
             "docblock",
             "parser"
-=======
+  =
                 "name": "Dragonfly Development Inc.",
                 "email": "info@dflydev.com",
                 "homepage": "http://dflydev.com"
@@ -551,9 +551,9 @@
             "predis/predis": "~1.0",
             "satooshi/php-coveralls": "~0.6"
         },
-<<<<<<< HEAD
+ 
         "time": "2016-10-29T11:16:17+00:00",
-=======
+  =
         "time": "2016-10-29 11:16:17",
 >>>>>>> web and vendor directory from composer install
         "type": "library",
@@ -622,9 +622,9 @@
         "require-dev": {
             "phpunit/phpunit": "~4.0"
         },
-<<<<<<< HEAD
+ 
         "time": "2015-04-14T22:21:58+00:00",
-=======
+  =
         "time": "2015-04-14 22:21:58",
 >>>>>>> web and vendor directory from composer install
         "type": "library",
@@ -674,7 +674,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "doctrine/common",
         "version": "v2.6.2",
         "version_normalized": "2.6.2.0",
@@ -705,7 +705,7 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "2.7.x-dev"
-=======
+  =
         "name": "doctrine/inflector",
         "version": "v1.1.0",
         "version_normalized": "1.1.0.0",
@@ -736,10 +736,10 @@
         },
         "installation-source": "dist",
         "autoload": {
-<<<<<<< HEAD
+ 
             "psr-4": {
                 "Doctrine\\Common\\": "lib/Doctrine/Common"
-=======
+  =
             "psr-0": {
                 "Doctrine\\Common\\Inflector\\": "lib/"
 >>>>>>> web and vendor directory from composer install
@@ -771,7 +771,7 @@
                 "email": "schmittjoh@gmail.com"
             }
         ],
-<<<<<<< HEAD
+ 
         "description": "Common Library for Doctrine projects",
         "homepage": "http://www.doctrine-project.org",
         "keywords": [
@@ -788,17 +788,17 @@
         "version_normalized": "1.1.0.0",
         "source": {
             "type": "git",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "url": "https://github.com/doctrine/inflector.git",
             "reference": "90b2128806bfde671b6952ab8bea493942c1fdae"
-=======
+  =
             "url": "git@github.com:jackmoore/autosize.git",
-=======
+  =
             "url": "https://github.com/jackmoore/autosize.git",
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "git@github.com:jackmoore/autosize.git",
 >>>>>>> updating open social
             "reference": "113f1b345868901619d4b01cda02b09aa1690ebd"
@@ -828,7 +828,7 @@
             "psr-0": {
                 "Doctrine\\Common\\Inflector\\": "lib/"
             }
-=======
+  =
         "description": "Common String Manipulations with regard to casing and singular/plural rules.",
         "homepage": "http://www.doctrine-project.org",
         "keywords": [
@@ -871,7 +871,7 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+ 
                 "name": "Roman Borschel",
                 "email": "roman@code-factory.org"
             },
@@ -924,7 +924,7 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "1.0.x-dev"
-=======
+  =
                 "name": "Anthony Ferrara",
                 "email": "ircmaxell@php.net",
                 "homepage": "http://blog.ircmaxell.com"
@@ -971,11 +971,11 @@
         },
         "installation-source": "dist",
         "autoload": {
-<<<<<<< HEAD
+ 
             "psr-0": {
                 "Doctrine\\Common\\Lexer\\": "lib/"
             }
-=======
+  =
             "psr-4": {
                 "Symfony\\Component\\HttpFoundation\\": ""
             },
@@ -990,7 +990,7 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+ 
                 "name": "Roman Borschel",
                 "email": "roman@code-factory.org"
             },
@@ -1101,7 +1101,7 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "2.0.x-dev"
-=======
+  =
                 "name": "Fabien Potencier",
                 "email": "fabien@symfony.com"
             },
@@ -1165,7 +1165,7 @@
         "homepage": "https://symfony.com"
     },
     {
-<<<<<<< HEAD
+ 
         "name": "symfony/dom-crawler",
         "version": "v2.8.13",
         "version_normalized": "2.8.13.0",
@@ -1178,7 +1178,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/a94f3fe6f179d6453e5ed8188cf4bfdf933d85f4",
             "reference": "a94f3fe6f179d6453e5ed8188cf4bfdf933d85f4",
-=======
+  =
         "name": "commerceguys/addressing",
         "version": "v1.0.0",
         "version_normalized": "1.0.0.0",
@@ -1189,16 +1189,16 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://api.github.com/repos/commerceguys/addressing/zipball/ef34ba9f6e5378e56cceb9f45798b464878db031",
             "reference": "ef34ba9f6e5378e56cceb9f45798b464878db031",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://api.github.com/repos/commerceguys/addressing/zipball/f257d08341a64a429b37e65f1194b243a66fc753",
             "reference": "f257d08341a64a429b37e65f1194b243a66fc753",
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "https://api.github.com/repos/commerceguys/addressing/zipball/ef34ba9f6e5378e56cceb9f45798b464878db031",
             "reference": "ef34ba9f6e5378e56cceb9f45798b464878db031",
 >>>>>>> updating open social
@@ -1209,14 +1209,14 @@
             "symfony/polyfill-mbstring": "~1.0"
         },
         "require-dev": {
-<<<<<<< HEAD
+ 
             "symfony/css-selector": "~2.8|~3.0.0"
         },
         "suggest": {
             "symfony/css-selector": ""
         },
         "time": "2016-10-18 15:35:45",
-=======
+  =
             "mikey179/vfsstream": "1.*",
             "phpunit/phpunit": "~4.0",
             "squizlabs/php_codesniffer": "2.*",
@@ -1225,14 +1225,14 @@
         "suggest": {
             "symfony/validator": "to validate addresses"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
         "time": "2018-05-23T13:00:47+00:00",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
         "time": "2018-02-16T01:16:24+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-05-23T13:00:47+00:00",
 >>>>>>> updating open social
         "type": "library",
@@ -1244,11 +1244,11 @@
         },
         "installation-source": "dist",
         "autoload": {
-<<<<<<< HEAD
+ 
             "psr-0": {
                 "Egulias\\": "src/"
             }
-=======
+  =
             "psr-4": {
                 "Symfony\\Component\\DomCrawler\\": ""
             },
@@ -1263,22 +1263,22 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+ 
                 "name": "Eduardo Gulias Davis"
             }
         ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "description": "A library for validating emails",
         "homepage": "https://github.com/egulias/EmailValidator",
-=======
+  =
         "description": "Addressing library powered by CLDR and Google's address data.",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
         "description": "Addressing library powered by Google's address data.",
 >>>>>>> revert Open Social update
-=======
+  =
         "description": "Addressing library powered by CLDR and Google's address data.",
 >>>>>>> updating open social
         "keywords": [
@@ -1290,8 +1290,8 @@
         ]
     },
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
         "name": "guzzlehttp/guzzle",
         "version": "6.3.0",
         "version_normalized": "6.3.0.0",
@@ -1324,7 +1324,7 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "6.2-dev"
-=======
+  =
                 "name": "Fabien Potencier",
                 "email": "fabien@symfony.com"
             },
@@ -1337,12 +1337,12 @@
         "homepage": "https://symfony.com"
     },
     {
-<<<<<<< HEAD
+ 
         "name": "psr/log",
         "version": "1.0.2",
         "version_normalized": "1.0.2.0",
-=======
-=======
+  =
+  =
         "name": "commerceguys/intl",
         "version": "v0.7.5",
         "version_normalized": "0.7.5.0",
@@ -1390,7 +1390,7 @@
     },
     {
 >>>>>>> revert Open Social update
-=======
+  =
 >>>>>>> updating open social
         "name": "composer/installers",
         "version": "v1.5.0",
@@ -1420,13 +1420,13 @@
         },
         "installation-source": "dist",
         "autoload": {
-<<<<<<< HEAD
+ 
             "files": [
                 "src/functions_include.php"
             ],
             "psr-4": {
                 "GuzzleHttp\\": "src/"
-=======
+  =
             "psr-4": {
                 "Psr\\Log\\": "Psr/Log/"
 >>>>>>> web and vendor directory from composer install
@@ -1438,7 +1438,7 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+ 
                 "name": "Michael Dowling",
                 "email": "mtdowling@gmail.com",
                 "homepage": "https://github.com/mtdowling"
@@ -1482,7 +1482,7 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "1.4-dev"
-=======
+  =
                 "name": "PHP-FIG",
                 "homepage": "http://www.php-fig.org/"
             }
@@ -1496,7 +1496,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "symfony/debug",
         "version": "v2.8.13",
         "version_normalized": "2.8.13.0",
@@ -1509,7 +1509,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/symfony/debug/zipball/8c29235936a47473af16fb91c7c4b7b193c5693c",
             "reference": "8c29235936a47473af16fb91c7c4b7b193c5693c",
-=======
+  =
         "name": "consolidation/annotated-command",
         "version": "2.8.4",
         "version_normalized": "2.8.4.0",
@@ -1520,16 +1520,16 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/651541a0b68318a2a202bda558a676e5ad92223c",
             "reference": "651541a0b68318a2a202bda558a676e5ad92223c",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/8f8f5da2ca06fbd3a85f7d551c49f844b7c59437",
             "reference": "8f8f5da2ca06fbd3a85f7d551c49f844b7c59437",
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/651541a0b68318a2a202bda558a676e5ad92223c",
             "reference": "651541a0b68318a2a202bda558a676e5ad92223c",
 >>>>>>> updating open social
@@ -1543,14 +1543,14 @@
             "symfony/http-kernel": ">=2.3,<2.3.24|~2.4.0|>=2.5,<2.5.9|>=2.6,<2.6.2"
         },
         "require-dev": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "symfony/class-loader": "~2.2|~3.0.0",
             "symfony/http-kernel": "~2.3.24|~2.5.9|~2.6,>=2.6.2|~3.0.0"
         },
         "time": "2016-09-06 10:55:00",
-=======
+  =
             "g1a/composer-test-scenarios": "^2",
             "phpunit/phpunit": "^6",
             "satooshi/php-coveralls": "^2",
@@ -1558,7 +1558,7 @@
         },
         "time": "2018-05-25T18:04:25+00:00",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "greg-1-anderson/composer-test-scenarios": "^1",
             "phpunit/phpunit": "^4.8",
             "satooshi/php-coveralls": "^1.0.2 | dev-master",
@@ -1566,7 +1566,7 @@
         },
         "time": "2018-02-23T16:32:04+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
             "g1a/composer-test-scenarios": "^2",
             "phpunit/phpunit": "^6",
             "satooshi/php-coveralls": "^2",
@@ -1584,12 +1584,12 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-<<<<<<< HEAD
+ 
                 "GuzzleHttp\\Promise\\": "src/"
             },
             "files": [
                 "src/functions_include.php"
-=======
+  =
                 "Symfony\\Component\\Debug\\": ""
             },
             "exclude-from-classmap": [
@@ -1603,7 +1603,7 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+ 
                 "name": "Michael Dowling",
                 "email": "mtdowling@gmail.com",
                 "homepage": "https://github.com/mtdowling"
@@ -1615,7 +1615,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "guzzlehttp/psr7",
         "version": "1.4.2",
         "version_normalized": "1.4.2.0",
@@ -1628,7 +1628,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
             "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
-=======
+  =
         "name": "consolidation/output-formatters",
         "version": "3.2.1",
         "version_normalized": "3.2.1.0",
@@ -1639,16 +1639,16 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://api.github.com/repos/consolidation/output-formatters/zipball/d78ef59aea19d3e2e5a23f90a055155ee78a0ad5",
             "reference": "d78ef59aea19d3e2e5a23f90a055155ee78a0ad5",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://api.github.com/repos/consolidation/output-formatters/zipball/da889e4bce19f145ca4ec5b1725a946f4eb625a9",
             "reference": "da889e4bce19f145ca4ec5b1725a946f4eb625a9",
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "https://api.github.com/repos/consolidation/output-formatters/zipball/d78ef59aea19d3e2e5a23f90a055155ee78a0ad5",
             "reference": "d78ef59aea19d3e2e5a23f90a055155ee78a0ad5",
 >>>>>>> updating open social
@@ -1658,10 +1658,10 @@
             "php": ">=5.4.0",
             "psr/http-message": "~1.0"
         },
-<<<<<<< HEAD
+ 
         "provide": {
             "psr/http-message-implementation": "1.0"
-=======
+  =
         "require-dev": {
             "g1a/composer-test-scenarios": "^2",
             "phpunit/phpunit": "^5.7.27",
@@ -1675,24 +1675,24 @@
         "require-dev": {
             "phpunit/phpunit": "~4.0"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "time": "2017-03-20T17:10:46+00:00",
-=======
+  =
         "time": "2018-05-25T18:02:34+00:00",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
         "time": "2018-03-20T15:18:32+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-05-25T18:02:34+00:00",
 >>>>>>> updating open social
         "type": "library",
         "extra": {
             "branch-alias": {
                 "dev-master": "1.4-dev"
-=======
+  =
                 "name": "Fabien Potencier",
                 "email": "fabien@symfony.com"
             },
@@ -1733,12 +1733,12 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-<<<<<<< HEAD
+ 
                 "GuzzleHttp\\Psr7\\": "src/"
             },
             "files": [
                 "src/functions_include.php"
-=======
+  =
                 "Symfony\\Component\\CssSelector\\": ""
             },
             "exclude-from-classmap": [
@@ -1752,7 +1752,7 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+ 
                 "name": "Michael Dowling",
                 "email": "mtdowling@gmail.com",
                 "homepage": "https://github.com/mtdowling"
@@ -1774,7 +1774,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "masterminds/html5",
         "version": "2.3.0",
         "version_normalized": "2.3.0.0",
@@ -1787,7 +1787,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/Masterminds/html5-php/zipball/2c37c6c520b995b761674de3be8455a381679067",
             "reference": "2c37c6c520b995b761674de3be8455a381679067",
-=======
+  =
         "name": "cweagans/composer-patches",
         "version": "1.6.5",
         "version_normalized": "1.6.5.0",
@@ -1798,16 +1798,16 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://api.github.com/repos/cweagans/composer-patches/zipball/2ec4f00ff5fb64de584c8c4aea53bf9053ecb0b3",
             "reference": "2ec4f00ff5fb64de584c8c4aea53bf9053ecb0b3",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://api.github.com/repos/cweagans/composer-patches/zipball/462e65061606dc6149349535d4322241515d1b16",
             "reference": "462e65061606dc6149349535d4322241515d1b16",
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "https://api.github.com/repos/cweagans/composer-patches/zipball/2ec4f00ff5fb64de584c8c4aea53bf9053ecb0b3",
             "reference": "2ec4f00ff5fb64de584c8c4aea53bf9053ecb0b3",
 >>>>>>> updating open social
@@ -1822,24 +1822,24 @@
             "sami/sami": "~2.0",
             "satooshi/php-coveralls": "1.0.*"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "time": "2017-09-04T12:26:28+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
                 "dev-master": "2.2-dev"
-=======
+  =
                 "name": "Jean-François Simon",
                 "email": "jeanfrancois.simon@sensiolabs.com"
             },
-=======
+  =
         "time": "2018-05-11T18:00:16+00:00",
-=======
+  =
         "time": "2017-12-07T16:16:31+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-05-11T18:00:16+00:00",
 >>>>>>> updating open social
         "type": "composer-plugin",
@@ -1911,10 +1911,10 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-<<<<<<< HEAD
+ 
                 "Masterminds\\": "src"
             }
-=======
+  =
                 "Symfony\\Component\\Console\\": ""
             },
             "exclude-from-classmap": [
@@ -1928,7 +1928,7 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+ 
                 "name": "Matt Butcher",
                 "email": "technosophos@gmail.com"
             },
@@ -1978,7 +1978,7 @@
             "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
         },
         "time": "2017-09-27T21:40:39+00:00",
-=======
+  =
                 "name": "Fabien Potencier",
                 "email": "fabien@symfony.com"
             },
@@ -2026,7 +2026,7 @@
         "installation-source": "dist",
         "autoload": {
             "files": [
-<<<<<<< HEAD
+ 
                 "lib/random.php"
             ]
         },
@@ -2077,7 +2077,7 @@
         "autoload": {
             "psr-4": {
                 "Psr\\Container\\": "src/"
-=======
+  =
                 "phpseclib/bootstrap.php"
             ],
             "psr-4": {
@@ -2091,7 +2091,7 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+ 
                 "name": "PHP-FIG",
                 "homepage": "http://www.php-fig.org/"
             }
@@ -2104,7 +2104,7 @@
             "container-interface",
             "container-interop",
             "psr"
-=======
+  =
                 "name": "Jim Wigginton",
                 "email": "terrafrost@php.net",
                 "role": "Lead Developer"
@@ -2154,7 +2154,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "psr/http-message",
         "version": "1.0.1",
         "version_normalized": "1.0.1.0",
@@ -2167,7 +2167,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
             "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
-=======
+  =
         "name": "doctrine/cache",
         "version": "v1.6.1",
         "version_normalized": "1.6.1.0",
@@ -2178,16 +2178,16 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://api.github.com/repos/doctrine/cache/zipball/b6f544a20f4807e81f7044d31e679ccbb1866dc3",
             "reference": "b6f544a20f4807e81f7044d31e679ccbb1866dc3",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://api.github.com/repos/doctrine/cache/zipball/eb152c5100571c7a45470ff2a35095ab3f3b900b",
             "reference": "eb152c5100571c7a45470ff2a35095ab3f3b900b",
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "https://api.github.com/repos/doctrine/cache/zipball/b6f544a20f4807e81f7044d31e679ccbb1866dc3",
             "reference": "b6f544a20f4807e81f7044d31e679ccbb1866dc3",
 >>>>>>> updating open social
@@ -2196,21 +2196,21 @@
         "require": {
             "php": ">=5.3.0"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
         "time": "2016-08-06T14:39:51+00:00",
-=======
+  =
         "time": "2016-08-06 14:39:51",
 >>>>>>> web and vendor directory from composer install
-=======
+  =
         "time": "2016-10-29T11:16:17+00:00",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
         "time": "2017-07-22T12:49:21+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2016-10-29T11:16:17+00:00",
 >>>>>>> updating open social
         "type": "library",
@@ -2247,7 +2247,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "psr/log",
         "version": "1.0.2",
         "version_normalized": "1.0.2.0",
@@ -2270,7 +2270,7 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "1.0.x-dev"
-=======
+  =
         "name": "guzzlehttp/psr7",
         "version": "1.3.1",
         "version_normalized": "1.3.1.0",
@@ -2306,10 +2306,10 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-<<<<<<< HEAD
+ 
                 "Psr\\Log\\": "Psr/Log/"
             }
-=======
+  =
                 "GuzzleHttp\\Psr7\\": "src/"
             },
             "files": [
@@ -2323,7 +2323,7 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+ 
                 "name": "PHP-FIG",
                 "homepage": "http://www.php-fig.org/"
             }
@@ -2337,7 +2337,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "stack/builder",
         "version": "v1.0.5",
         "version_normalized": "1.0.5.0",
@@ -2350,7 +2350,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/stackphp/builder/zipball/fb3d136d04c6be41120ebf8c0cc71fe9507d750a",
             "reference": "fb3d136d04c6be41120ebf8c0cc71fe9507d750a",
-=======
+  =
         "name": "doctrine/common",
         "version": "v2.7.2",
         "version_normalized": "2.7.2.0",
@@ -2361,16 +2361,16 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://api.github.com/repos/doctrine/common/zipball/930297026c8009a567ac051fd545bf6124150347",
             "reference": "930297026c8009a567ac051fd545bf6124150347",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://api.github.com/repos/doctrine/common/zipball/4acb8f89626baafede6ee5475bc5844096eba8a9",
             "reference": "4acb8f89626baafede6ee5475bc5844096eba8a9",
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "https://api.github.com/repos/doctrine/common/zipball/930297026c8009a567ac051fd545bf6124150347",
             "reference": "930297026c8009a567ac051fd545bf6124150347",
 >>>>>>> updating open social
@@ -2382,9 +2382,9 @@
             "symfony/http-kernel": "~2.1|~3.0|~4.0"
         },
         "require-dev": {
-<<<<<<< HEAD
+ 
             "silex/silex": "~1.0"
-=======
+  =
             "phpunit/phpunit": "^5.4.6"
         },
         "time": "2017-01-13T14:02:13+00:00",
@@ -2402,7 +2402,7 @@
 >>>>>>> Update Open Social to 8.x-2.1
         },
         "time": "2017-11-18T14:57:29+00:00",
-=======
+  =
                 "name": "Michael Dowling",
                 "email": "mtdowling@gmail.com",
                 "homepage": "https://github.com/mtdowling"
@@ -2417,7 +2417,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "guzzlehttp/promises",
         "version": "1.2.0",
         "version_normalized": "1.2.0.0",
@@ -2444,7 +2444,7 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "1.0-dev"
-=======
+  =
         "name": "doctrine/inflector",
         "version": "v1.1.0",
         "version_normalized": "1.1.0.0",
@@ -2469,40 +2469,40 @@
         "type": "library",
         "extra": {
             "branch-alias": {
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
                 "dev-master": "1.1.x-dev"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
                 "dev-master": "1.2.x-dev"
 >>>>>>> revert Open Social update
-=======
+  =
                 "dev-master": "1.1.x-dev"
 >>>>>>> updating open social
             }
         },
         "installation-source": "dist",
         "autoload": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
             "psr-0": {
                 "Stack": "src"
-=======
+  =
             "psr-0": {
                 "Doctrine\\Common\\Inflector\\": "lib/"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "psr-4": {
                 "Doctrine\\Common\\Inflector\\": "lib/Doctrine/Common/Inflector"
 >>>>>>> revert Open Social update
-=======
+  =
             "psr-0": {
                 "Doctrine\\Common\\Inflector\\": "lib/"
 >>>>>>> updating open social
             }
-=======
+  =
             "psr-4": {
                 "GuzzleHttp\\Promise\\": "src/"
             },
@@ -2517,7 +2517,7 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+ 
                 "name": "Igor Wiedler",
                 "email": "igor@wiedler.ch"
             }
@@ -2563,7 +2563,7 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "1.4-dev"
-=======
+  =
                 "name": "Michael Dowling",
                 "email": "mtdowling@gmail.com",
                 "homepage": "https://github.com/mtdowling"
@@ -2609,10 +2609,10 @@
         },
         "installation-source": "dist",
         "autoload": {
-<<<<<<< HEAD
+ 
             "psr-4": {
                 "Symfony\\Cmf\\Component\\Routing\\": ""
-=======
+  =
             "files": [
                 "src/functions_include.php"
             ],
@@ -2627,7 +2627,7 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+ 
                 "name": "Symfony CMF Community",
                 "homepage": "https://github.com/symfony-cmf/Routing/contributors"
             }
@@ -2640,7 +2640,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "symfony/class-loader",
         "version": "v3.4.11",
         "version_normalized": "3.4.11.0",
@@ -2653,7 +2653,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/symfony/class-loader/zipball/e63c12699822bb3b667e7216ba07fbcc3a3e203e",
             "reference": "e63c12699822bb3b667e7216ba07fbcc3a3e203e",
-=======
+  =
         "name": "drupal-composer/drupal-scaffold",
         "version": "2.5.2",
         "version_normalized": "2.5.2.0",
@@ -2664,16 +2664,16 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://api.github.com/repos/drupal-composer/drupal-scaffold/zipball/80c7d2794d7d1b347c6f718feaa8ec9b02e43f4f",
             "reference": "80c7d2794d7d1b347c6f718feaa8ec9b02e43f4f",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://api.github.com/repos/drupal-composer/drupal-scaffold/zipball/745f0a2d4141fc83d3b42222beff43d66afb3dc6",
             "reference": "745f0a2d4141fc83d3b42222beff43d66afb3dc6",
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "https://api.github.com/repos/drupal-composer/drupal-scaffold/zipball/80c7d2794d7d1b347c6f718feaa8ec9b02e43f4f",
             "reference": "80c7d2794d7d1b347c6f718feaa8ec9b02e43f4f",
 >>>>>>> updating open social
@@ -2683,7 +2683,7 @@
             "php": "^5.5.9|>=7.0.8"
         },
         "require-dev": {
-<<<<<<< HEAD
+ 
             "symfony/finder": "~2.8|~3.0|~4.0",
             "symfony/polyfill-apcu": "~1.1"
         },
@@ -2692,7 +2692,7 @@
         },
         "time": "2018-01-03T07:37:34+00:00",
         "type": "library",
-=======
+  =
             "composer/composer": "dev-master",
             "g1a/composer-test-scenarios": "^2.1.0",
             "phpunit/phpunit": "^6",
@@ -2717,17 +2717,17 @@
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "MIT"
-=======
+  =
             "GPL-2.0-or-later"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "GPL-2.0+"
 >>>>>>> revert Open Social update
-=======
+  =
             "GPL-2.0-or-later"
 >>>>>>> updating open social
         ],
@@ -2745,7 +2745,7 @@
         "homepage": "https://symfony.com"
     },
     {
-<<<<<<< HEAD
+ 
         "name": "symfony/console",
         "version": "v3.4.11",
         "version_normalized": "3.4.11.0",
@@ -2788,11 +2788,11 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "3.4-dev"
-=======
+  =
                 "name": "Michael Dowling",
                 "email": "mtdowling@gmail.com",
                 "homepage": "https://github.com/mtdowling"
-=======
+  =
         "name": "drupal/address",
         "version": "1.4.0",
         "version_normalized": "1.4.0.0",
@@ -2861,7 +2861,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "gabordemooij/redbean",
         "version": "v4.3.3",
         "version_normalized": "4.3.3.0",
@@ -2875,7 +2875,7 @@
             "url": "https://api.github.com/repos/gabordemooij/redbean/zipball/1c7ec69850e9f7966ff7feb87b01d8f43a9753d3",
             "reference": "1c7ec69850e9f7966ff7feb87b01d8f43a9753d3",
             "shasum": ""
-=======
+  =
         "name": "drupal/addtoany",
         "version": "1.9.0",
         "version_normalized": "1.9.0.0",
@@ -2886,18 +2886,18 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://ftp.drupal.org/files/projects/addtoany-8.x-1.9.zip",
             "reference": "8.x-1.9",
             "shasum": "529592c0c8905b1ecd05a5a9cbe0f4bfb178729a"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://ftp.drupal.org/files/projects/addtoany-8.x-1.8.zip",
             "reference": "8.x-1.8",
             "shasum": "fc3fc0193cb2fd434c0d4112f99287b72f233a41"
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "https://ftp.drupal.org/files/projects/addtoany-8.x-1.9.zip",
             "reference": "8.x-1.9",
             "shasum": "529592c0c8905b1ecd05a5a9cbe0f4bfb178729a"
@@ -2906,14 +2906,14 @@
         "require": {
             "php": ">=5.3.4"
         },
-<<<<<<< HEAD
+ 
         "time": "2016-10-03 21:25:17",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "RedBeanPHP\\": "RedBeanPHP"
-=======
+  =
         "type": "drupal-module",
         "extra": {
             "branch-alias": {
@@ -2947,7 +2947,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "twig/twig",
         "version": "v1.27.0",
         "version_normalized": "1.27.0.0",
@@ -2961,7 +2961,7 @@
             "url": "https://api.github.com/repos/twigphp/Twig/zipball/3c6c0033fd3b5679c6e1cb60f4f9766c2b424d97",
             "reference": "3c6c0033fd3b5679c6e1cb60f4f9766c2b424d97",
             "shasum": ""
-=======
+  =
         "name": "drupal/admin_toolbar",
         "version": "1.24.0",
         "version_normalized": "1.24.0.0",
@@ -2972,18 +2972,18 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.24.zip",
             "reference": "8.x-1.24",
             "shasum": "682ffa443a1e339583022eb6adbb00c1103ea6d4"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.23.zip",
             "reference": "8.x-1.23",
             "shasum": "46d7ed18a9154c35e765ae43ce43aa292c025d65"
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.24.zip",
             "reference": "8.x-1.24",
             "shasum": "682ffa443a1e339583022eb6adbb00c1103ea6d4"
@@ -3000,10 +3000,10 @@
         "type": "library",
         "extra": {
             "branch-alias": {
-<<<<<<< HEAD
+ 
                 "dev-master": "1.27-dev"
 >>>>>>> web and vendor directory from composer install
-=======
+  =
                 "dev-1.x": "1.x-dev"
             },
             "drupal": {
@@ -3018,7 +3018,7 @@
         },
         "installation-source": "dist",
         "autoload": {
-<<<<<<< HEAD
+ 
             "psr-4": {
                 "Symfony\\Component\\Console\\": ""
             },
@@ -3029,7 +3029,7 @@
         "notification-url": "https://packagist.org/downloads/",
         "license": [
             "MIT"
-=======
+  =
             "psr-0": {
                 "Twig_": "lib/"
             }
@@ -3041,21 +3041,21 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
                 "name": "Fabien Potencier",
-<<<<<<< HEAD
+ 
                 "email": "fabien@symfony.com"
-=======
+  =
                 "name": "Wilfrid Roze (eme)",
                 "homepage": "https://www.drupal.org/u/eme",
                 "role": "Maintainer"
-=======
+  =
                 "name": "Mohamed Anis Taktak",
                 "homepage": "https://www.drupal.org/u/matio89"
 >>>>>>> revert Open Social update
-=======
+  =
                 "name": "Wilfrid Roze (eme)",
                 "homepage": "https://www.drupal.org/u/eme",
                 "role": "Maintainer"
@@ -3091,17 +3091,17 @@
                 "homepage": "https://symfony.com/contributors"
             }
         ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "description": "Symfony Console Component",
         "homepage": "https://symfony.com"
-=======
+  =
         "description": "Provides a drop-down menu interface to the core Drupal Toolbar.",
-=======
+  =
         "description": "Admin Toolbar improve the default Drupal Toolbar, it lets the hover of sub menus.",
 >>>>>>> revert Open Social update
-=======
+  =
         "description": "Provides a drop-down menu interface to the core Drupal Toolbar.",
 >>>>>>> updating open social
         "homepage": "http://drupal.org/project/admin_toolbar",
@@ -3145,7 +3145,7 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "3.4-dev"
-=======
+  =
                 "email": "fabien@symfony.com",
                 "homepage": "http://fabien.potencier.org",
                 "role": "Lead Developer"
@@ -3189,10 +3189,10 @@
         "type": "library",
         "extra": {
             "branch-alias": {
-<<<<<<< HEAD
+ 
                 "dev-master": "2.8-dev"
 >>>>>>> web and vendor directory from composer install
-=======
+  =
                 "dev-3.x": "3.x-dev"
             },
             "drupal": {
@@ -3202,15 +3202,15 @@
                     "status": "covered",
                     "message": "Covered by Drupal's security advisory policy"
                 }
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             },
             "patches_applied": {
                 "Not possible to select vertical tabs menu items with keyboard": "https://www.drupal.org/files/issues/bootstrap-vertical-tabs-menu-items-accessibility-2949112-2.patch"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
 >>>>>>> revert Open Social update
-=======
+  =
             },
             "patches_applied": {
                 "Not possible to select vertical tabs menu items with keyboard": "https://www.drupal.org/files/issues/bootstrap-vertical-tabs-menu-items-accessibility-2949112-2.patch"
@@ -3220,9 +3220,9 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-<<<<<<< HEAD
+ 
                 "Symfony\\Component\\Debug\\": ""
-=======
+  =
                 "Symfony\\Component\\Yaml\\": ""
 >>>>>>> web and vendor directory from composer install
             },
@@ -3244,7 +3244,7 @@
                 "homepage": "https://symfony.com/contributors"
             }
         ],
-<<<<<<< HEAD
+ 
         "description": "Symfony Debug Component",
         "homepage": "https://symfony.com"
     },
@@ -3293,7 +3293,7 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "3.4-dev"
-=======
+  =
         "description": "Symfony Yaml Component",
         "homepage": "https://symfony.com"
     },
@@ -3341,9 +3341,9 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-<<<<<<< HEAD
+ 
                 "Symfony\\Component\\DependencyInjection\\": ""
-=======
+  =
                 "Symfony\\Component\\Translation\\": ""
 >>>>>>> web and vendor directory from composer install
             },
@@ -3365,7 +3365,7 @@
                 "homepage": "https://symfony.com/contributors"
             }
         ],
-<<<<<<< HEAD
+ 
         "description": "Symfony DependencyInjection Component",
         "homepage": "https://symfony.com"
     },
@@ -3406,7 +3406,7 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "3.4-dev"
-=======
+  =
         "description": "Symfony Translation Component",
         "homepage": "https://symfony.com"
     },
@@ -3439,9 +3439,9 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-<<<<<<< HEAD
+ 
                 "Symfony\\Component\\EventDispatcher\\": ""
-=======
+  =
                 "Symfony\\Component\\Process\\": ""
 >>>>>>> web and vendor directory from composer install
             },
@@ -3463,7 +3463,7 @@
                 "homepage": "https://symfony.com/contributors"
             }
         ],
-<<<<<<< HEAD
+ 
         "description": "Symfony EventDispatcher Component",
         "homepage": "https://symfony.com"
     },
@@ -3495,7 +3495,7 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "3.4-dev"
-=======
+  =
         "description": "Symfony Process Component",
         "homepage": "https://symfony.com"
     },
@@ -3528,9 +3528,9 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-<<<<<<< HEAD
+ 
                 "Symfony\\Component\\HttpFoundation\\": ""
-=======
+  =
                 "Symfony\\Component\\Finder\\": ""
 >>>>>>> web and vendor directory from composer install
             },
@@ -3552,12 +3552,12 @@
                 "homepage": "https://symfony.com/contributors"
             }
         ],
-<<<<<<< HEAD
+ 
         "description": "Symfony HttpFoundation Component",
         "homepage": "https://symfony.com"
     },
     {
-<<<<<<< HEAD
+ 
         "name": "symfony/http-kernel",
         "version": "v3.4.11",
         "version_normalized": "3.4.11.0",
@@ -3570,7 +3570,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/symfony/http-kernel/zipball/3dac45df55ee0c5134c457a730cd68e2a2ce0445",
             "reference": "3dac45df55ee0c5134c457a730cd68e2a2ce0445",
-=======
+  =
         "name": "drupal/core",
         "version": "8.5.5",
         "version_normalized": "8.5.5.0",
@@ -3581,19 +3581,19 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://api.github.com/repos/drupal/core/zipball/900c28f19d4b5643f43c1cf046684046402eaac4",
             "reference": "900c28f19d4b5643f43c1cf046684046402eaac4",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://api.github.com/repos/drupal/core/zipball/b012f0ae51504880e920f2c6efdbdf03b6fe2129",
             "reference": "b012f0ae51504880e920f2c6efdbdf03b6fe2129",
 >>>>>>> revert Open Social update
             "shasum": ""
         },
         "require": {
-=======
+  =
             "url": "https://api.github.com/repos/drupal/core/zipball/900c28f19d4b5643f43c1cf046684046402eaac4",
             "reference": "900c28f19d4b5643f43c1cf046684046402eaac4",
             "shasum": ""
@@ -3639,7 +3639,7 @@
             "psr/log-implementation": "1.0"
         },
         "require-dev": {
-<<<<<<< HEAD
+ 
             "psr/cache": "~1.0",
             "symfony/browser-kit": "~2.8|~3.0|~4.0",
             "symfony/class-loader": "~2.8|~3.0",
@@ -3656,7 +3656,7 @@
             "symfony/templating": "~2.8|~3.0|~4.0",
             "symfony/translation": "~2.8|~3.0|~4.0",
             "symfony/var-dumper": "~3.3|~4.0"
-=======
+  =
             "behat/mink": "1.7.x-dev",
             "behat/mink-goutte-driver": "^1.2",
             "behat/mink-selenium2-driver": "1.3.x-dev",
@@ -3761,13 +3761,13 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "3.4-dev"
-=======
+  =
         "description": "Symfony Finder Component",
         "homepage": "https://symfony.com"
     },
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
         "name": "symfony/filesystem",
         "version": "v2.8.13",
         "version_normalized": "2.8.13.0",
@@ -3781,9 +3781,9 @@
             "url": "https://api.github.com/repos/symfony/filesystem/zipball/a3784111af9f95f102b6411548376e1ae7c93898",
             "reference": "a3784111af9f95f102b6411548376e1ae7c93898",
             "shasum": ""
-=======
+  =
         "name": "drupal/csv_serialization",
-=======
+  =
         "name": "drupal/csv_serialization",
         "version": "1.3.0",
         "version_normalized": "1.3.0.0",
@@ -3845,12 +3845,12 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
+ 
             "url": "https://ftp.drupal.org/files/projects/csv_serialization-8.x-1.3.zip",
             "reference": "8.x-1.3",
             "shasum": "e1b773848631669cf0a31bc188fb6049a2587493"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://ftp.drupal.org/files/projects/csv_serialization-8.x-1.2.zip",
             "reference": "8.x-1.2",
             "shasum": "4a67589e87c22a45b79fd72e68d8872624e7b016"
@@ -3863,10 +3863,10 @@
         "type": "library",
         "extra": {
             "branch-alias": {
-<<<<<<< HEAD
+ 
                 "dev-master": "2.8-dev"
 >>>>>>> web and vendor directory from composer install
-=======
+  =
                 "dev-1.x": "1.x-dev"
             },
             "drupal": {
@@ -3882,9 +3882,9 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-<<<<<<< HEAD
+ 
                 "Symfony\\Component\\HttpKernel\\": ""
-=======
+  =
                 "Symfony\\Component\\Filesystem\\": ""
 >>>>>>> web and vendor directory from composer install
             },
@@ -3906,7 +3906,7 @@
                 "homepage": "https://symfony.com/contributors"
             }
         ],
-<<<<<<< HEAD
+ 
         "description": "Symfony HttpKernel Component",
         "homepage": "https://symfony.com"
     },
@@ -3933,7 +3933,7 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "1.8-dev"
-=======
+  =
         "description": "Symfony Filesystem Component",
         "homepage": "https://symfony.com"
     },
@@ -3977,12 +3977,12 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-<<<<<<< HEAD
+ 
                 "Symfony\\Polyfill\\Ctype\\": ""
             },
             "files": [
                 "bootstrap.php"
-=======
+  =
                 "Symfony\\Component\\EventDispatcher\\": ""
             },
             "exclude-from-classmap": [
@@ -3996,7 +3996,7 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+ 
                 "name": "Symfony Community",
                 "homepage": "https://symfony.com/contributors"
             },
@@ -4040,7 +4040,7 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "1.8-dev"
-=======
+  =
                 "name": "Fabien Potencier",
                 "email": "fabien@symfony.com"
             },
@@ -4095,12 +4095,12 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-<<<<<<< HEAD
+ 
                 "Symfony\\Polyfill\\Iconv\\": ""
             },
             "files": [
                 "bootstrap.php"
-=======
+  =
                 "Symfony\\Component\\DependencyInjection\\": ""
             },
             "exclude-from-classmap": [
@@ -4114,10 +4114,10 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+ 
                 "name": "Nicolas Grekas",
                 "email": "p@tchwork.com"
-=======
+  =
                 "name": "Fabien Potencier",
                 "email": "fabien@symfony.com"
 >>>>>>> web and vendor directory from composer install
@@ -4127,7 +4127,7 @@
                 "homepage": "https://symfony.com/contributors"
             }
         ],
-<<<<<<< HEAD
+ 
         "description": "Symfony polyfill for the Iconv extension",
         "homepage": "https://symfony.com",
         "keywords": [
@@ -4164,7 +4164,7 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "1.8-dev"
-=======
+  =
         "description": "Symfony DependencyInjection Component",
         "homepage": "https://symfony.com"
     },
@@ -4201,12 +4201,12 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-<<<<<<< HEAD
+ 
                 "Symfony\\Polyfill\\Mbstring\\": ""
             },
             "files": [
                 "bootstrap.php"
-=======
+  =
                 "Symfony\\Component\\Config\\": ""
             },
             "exclude-from-classmap": [
@@ -4220,10 +4220,10 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+ 
                 "name": "Nicolas Grekas",
                 "email": "p@tchwork.com"
-=======
+  =
                 "name": "Fabien Potencier",
                 "email": "fabien@symfony.com"
 >>>>>>> web and vendor directory from composer install
@@ -4233,7 +4233,7 @@
                 "homepage": "https://symfony.com/contributors"
             }
         ],
-<<<<<<< HEAD
+ 
         "description": "Symfony polyfill for the Mbstring extension",
         "homepage": "https://symfony.com",
         "keywords": [
@@ -4268,12 +4268,12 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "1.8-dev"
-=======
+  =
         "description": "Symfony Config Component",
         "homepage": "https://symfony.com"
     },
     {
-<<<<<<< HEAD
+ 
         "name": "dflydev/placeholder-resolver",
         "version": "v1.0.2",
         "version_normalized": "1.0.2.0",
@@ -4290,7 +4290,7 @@
         },
         "require": {
             "php": ">=5.3.2"
-=======
+  =
         "name": "drupal/features",
         "version": "3.7.0",
         "version_normalized": "3.7.0.0",
@@ -4314,10 +4314,10 @@
         "type": "library",
         "extra": {
             "branch-alias": {
-<<<<<<< HEAD
+ 
                 "dev-master": "1.0-dev"
 >>>>>>> web and vendor directory from composer install
-=======
+  =
                 "dev-3.x": "3.x-dev"
             },
             "drupal": {
@@ -4332,7 +4332,7 @@
         },
         "installation-source": "dist",
         "autoload": {
-<<<<<<< HEAD
+ 
             "psr-4": {
                 "Symfony\\Polyfill\\Php70\\": ""
             },
@@ -4342,7 +4342,7 @@
             "classmap": [
                 "Resources/stubs"
             ]
-=======
+  =
             "psr-0": {
                 "Dflydev\\PlaceholderResolver": "src"
             }
@@ -4354,7 +4354,7 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+ 
                 "name": "Nicolas Grekas",
                 "email": "p@tchwork.com"
             },
@@ -4363,9 +4363,9 @@
                 "homepage": "https://symfony.com/contributors"
             }
         ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "description": "Symfony polyfill backporting some PHP 7.0+ features to lower PHP versions",
         "homepage": "https://symfony.com",
         "keywords": [
@@ -4374,12 +4374,12 @@
             "portable",
             "shim"
         ]
-=======
+  =
         "description": "Enables administrators to package configuration into modules",
-=======
+  =
         "description": "Enables administrators to package configuration into modules.",
 >>>>>>> revert Open Social update
-=======
+  =
         "description": "Enables administrators to package configuration into modules",
 >>>>>>> updating open social
         "homepage": "https://www.drupal.org/project/features",
@@ -4411,7 +4411,7 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "3.4-dev"
-=======
+  =
                 "name": "Dragonfly Development Inc.",
                 "email": "info@dflydev.com",
                 "homepage": "http://dflydev.com"
@@ -4465,18 +4465,18 @@
         },
         "installation-source": "dist",
         "autoload": {
-<<<<<<< HEAD
+ 
             "psr-4": {
                 "Symfony\\Component\\Process\\": ""
             },
-<<<<<<< HEAD
+ 
             "exclude-from-classmap": [
                 "/Tests/"
             ]
-=======
+  =
             "psr-0": {
                 "Dflydev\\DotAccessConfiguration": "src"
-=======
+  =
             "drupal": {
                 "version": "8.x-4.0-alpha2",
                 "datestamp": "1521598685",
@@ -4484,22 +4484,22 @@
                     "status": "not-covered",
                     "message": "Alpha releases are not covered by Drupal security advisories."
                 }
-<<<<<<< HEAD
+ 
             },
             "patches_applied": {
                 "Add relationship to flagged entities when Flagging is base table": "https://www.drupal.org/files/issues/2723703_31.patch"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
 >>>>>>> revert Open Social update
             }
 >>>>>>> web and vendor directory from composer install
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
         "notification-url": "https://packagist.org/downloads/",
-=======
+  =
         "installation-source": "dist",
-=======
+  =
         "installation-source": "source",
 >>>>>>> revert Open Social update
         "notification-url": "https://packages.drupal.org/8/downloads",
@@ -4509,7 +4509,7 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+ 
                 "name": "Fabien Potencier",
                 "email": "fabien@symfony.com"
             },
@@ -4552,13 +4552,13 @@
         "type": "symfony-bridge",
         "extra": {
             "branch-alias": {
-<<<<<<< HEAD
+ 
                 "dev-master": "1.0-dev"
-=======
+  =
                 "name": "Dragonfly Development Inc.",
                 "email": "info@dflydev.com",
                 "homepage": "http://dflydev.com"
-=======
+  =
                 "dev-4.x": "4.x-dev"
             },
             "drupal": {
@@ -4643,10 +4643,10 @@
         "type": "library",
         "extra": {
             "branch-alias": {
-<<<<<<< HEAD
+ 
                 "dev-master": "1.0.x-dev"
 >>>>>>> web and vendor directory from composer install
-=======
+  =
                 "dev-1.x": "1.x-dev"
             },
             "drupal": {
@@ -4656,15 +4656,15 @@
                     "status": "not-covered",
                     "message": "RC releases are not covered by Drupal security advisories."
                 }
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             },
             "patches_applied": {
                 "Add computed field for Group reference": "https://www.drupal.org/files/issues/add-computed-field-without-FieldItemListComputedInterface-2718195-34.patch"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
 >>>>>>> revert Open Social update
-=======
+  =
             },
             "patches_applied": {
                 "Add computed field for Group reference": "https://www.drupal.org/files/issues/add-computed-field-without-FieldItemListComputedInterface-2718195-34.patch"
@@ -4673,10 +4673,10 @@
         },
         "installation-source": "dist",
         "autoload": {
-<<<<<<< HEAD
+ 
             "psr-4": {
                 "Symfony\\Bridge\\PsrHttpMessage\\": ""
-=======
+  =
             "psr-0": {
                 "Doctrine\\Common\\Lexer\\": "lib/"
 >>>>>>> web and vendor directory from composer install
@@ -4688,7 +4688,7 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+ 
                 "name": "Symfony Community",
                 "homepage": "http://symfony.com/contributors"
             },
@@ -4751,7 +4751,7 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "3.4-dev"
-=======
+  =
                 "name": "Roman Borschel",
                 "email": "roman@code-factory.org"
             },
@@ -4798,10 +4798,10 @@
         "type": "library",
         "extra": {
             "branch-alias": {
-<<<<<<< HEAD
+ 
                 "dev-master": "1.3.x-dev"
 >>>>>>> web and vendor directory from composer install
-=======
+  =
                 "dev-2.x": "2.x-dev"
             },
             "drupal": {
@@ -4811,15 +4811,15 @@
                     "status": "covered",
                     "message": "Covered by Drupal's security advisory policy"
                 }
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             },
             "patches_applied": {
                 "Initial crop fix": "https://www.drupal.org/files/issues/2018-04-25/2865396-26-apply-default-crop.diff"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
 >>>>>>> revert Open Social update
-=======
+  =
             },
             "patches_applied": {
                 "Initial crop fix": "https://www.drupal.org/files/issues/2018-04-25/2865396-26-apply-default-crop.diff"
@@ -4828,14 +4828,14 @@
         },
         "installation-source": "dist",
         "autoload": {
-<<<<<<< HEAD
+ 
             "psr-4": {
                 "Symfony\\Component\\Routing\\": ""
             },
             "exclude-from-classmap": [
                 "/Tests/"
             ]
-=======
+  =
             "psr-0": {
                 "Doctrine\\Common\\Annotations\\": "lib/"
             }
@@ -4847,7 +4847,7 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+ 
                 "name": "Fabien Potencier",
                 "email": "fabien@symfony.com"
             },
@@ -4918,7 +4918,7 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "3.4-dev"
-=======
+  =
                 "name": "Roman Borschel",
                 "email": "roman@code-factory.org"
             },
@@ -4926,8 +4926,8 @@
                 "name": "Benjamin Eberlei",
                 "email": "kontakt@beberlei.de"
             },
-<<<<<<< HEAD
-=======
+ 
+  =
             "drupal": {
                 "version": "8.x-1.0-alpha2",
                 "datestamp": "1519314784",
@@ -5011,13 +5011,13 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-<<<<<<< HEAD
+ 
                 "Symfony\\Component\\Serializer\\": ""
             },
             "exclude-from-classmap": [
                 "/Tests/"
             ]
-=======
+  =
                 "Alchemy\\Zippy\\": "src/"
             }
 >>>>>>> web and vendor directory from composer install
@@ -5028,7 +5028,7 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+ 
                 "name": "Fabien Potencier",
                 "email": "fabien@symfony.com"
             },
@@ -5082,7 +5082,7 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "3.4-dev"
-=======
+  =
                 "name": "Alchemy",
                 "email": "dev.team@alchemy.fr",
                 "homepage": "http://www.alchemy.fr/"
@@ -5131,7 +5131,7 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-<<<<<<< HEAD
+ 
                 "Symfony\\Component\\Translation\\": ""
             },
             "exclude-from-classmap": [
@@ -5214,7 +5214,7 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "3.4-dev"
-=======
+  =
                 "Zend\\Stdlib\\": "src/"
             }
         },
@@ -5262,7 +5262,7 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-<<<<<<< HEAD
+ 
                 "Symfony\\Component\\Validator\\": ""
             },
             "exclude-from-classmap": [
@@ -5318,11 +5318,11 @@
         "type": "library",
         "extra": {
             "branch-alias": {
-<<<<<<< HEAD
+ 
                 "dev-master": "3.4-dev"
-=======
+  =
                 "Zend\\Escaper\\": "src/"
-=======
+  =
                 "dev-1.x": "1.x-dev"
             },
             "drupal": {
@@ -5332,15 +5332,15 @@
                     "status": "not-covered",
                     "message": "Beta releases are not covered by Drupal security advisories."
                 }
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             },
             "patches_applied": {
                 "Email notification settings are not taken into account": "https://www.drupal.org/files/issues/2910537-2.patch"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
 >>>>>>> revert Open Social update
-=======
+  =
             },
             "patches_applied": {
                 "Email notification settings are not taken into account": "https://www.drupal.org/files/issues/2910537-2.patch"
@@ -5349,9 +5349,9 @@
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-<<<<<<< HEAD
+ 
             "BSD-3-Clause"
-=======
+  =
             "GPL-2.0-or-later"
         ],
         "authors": [
@@ -5425,7 +5425,7 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-<<<<<<< HEAD
+ 
                 "Symfony\\Component\\Yaml\\": ""
             },
             "exclude-from-classmap": [
@@ -5450,7 +5450,7 @@
         "homepage": "https://symfony.com"
     },
     {
-<<<<<<< HEAD
+ 
         "name": "twig/twig",
         "version": "v1.35.3",
         "version_normalized": "1.35.3.0",
@@ -5464,16 +5464,16 @@
             "url": "https://api.github.com/repos/twigphp/Twig/zipball/b48680b6eb7d16b5025b9bfc4108d86f6b8af86f",
             "reference": "b48680b6eb7d16b5025b9bfc4108d86f6b8af86f",
             "shasum": ""
-=======
+  =
         "name": "drupal/r4032login",
         "version": "1.0.0-beta2",
         "version_normalized": "1.0.0.0-beta2",
         "source": {
             "type": "git",
             "url": "https://git.drupal.org/project/r4032login",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+ 
+ 
+  =
 >>>>>>> updating open social
             "reference": "8.x-1.0-beta2"
         },
@@ -5482,12 +5482,12 @@
             "url": "https://ftp.drupal.org/files/projects/r4032login-8.x-1.0-beta2.zip",
             "reference": "8.x-1.0-beta2",
             "shasum": "8a0e4ee6cd2815b50b3b6b2a62b9430cf9720d06"
-<<<<<<< HEAD
+ 
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "reference": "b264078b6b4c4740a749c1a663139e3ca7f552a6"
 >>>>>>> revert Open Social update
-=======
+  =
 >>>>>>> updating open social
         },
         "require": {
@@ -5502,11 +5502,11 @@
         "type": "library",
         "extra": {
             "branch-alias": {
-<<<<<<< HEAD
+ 
                 "dev-master": "1.35-dev"
-=======
+  =
                 "Zend\\Feed\\": "src/"
-=======
+  =
                 "dev-1.x": "1.x-dev"
             },
             "drupal": {
@@ -5567,13 +5567,13 @@
         },
         "installation-source": "dist",
         "autoload": {
-<<<<<<< HEAD
+ 
             "psr-0": {
                 "Twig_": "lib/"
             },
             "psr-4": {
                 "Twig\\": "src/"
-=======
+  =
             "psr-4": {
                 "Zend\\Diactoros\\": "src/"
 >>>>>>> web and vendor directory from composer install
@@ -5581,7 +5581,7 @@
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-<<<<<<< HEAD
+ 
             "BSD-3-Clause"
         ],
         "authors": [
@@ -5640,7 +5640,7 @@
                 "dev-master": "1.3.x-dev"
             },
             "class": "Wikimedia\\Composer\\MergePlugin"
-=======
+  =
             "BSD-2-Clause"
         ],
         "description": "PSR HTTP Message implementations",
@@ -5704,10 +5704,10 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-<<<<<<< HEAD
+ 
                 "Wikimedia\\Composer\\": "src/"
             }
-=======
+  =
                 "Symfony\\Component\\Validator\\": ""
             },
             "exclude-from-classmap": [
@@ -5721,7 +5721,7 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+ 
                 "name": "Bryan Davis",
                 "email": "bd808@wikimedia.org"
             }
@@ -5729,7 +5729,7 @@
         "description": "Composer plugin to merge multiple composer.json files"
     },
     {
-<<<<<<< HEAD
+ 
         "name": "zendframework/zend-diactoros",
         "version": "1.4.1",
         "version_normalized": "1.4.1.0",
@@ -5743,7 +5743,7 @@
             "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/424a840dc3bedcdeea510b42e056c77c2d6c4bef",
             "reference": "424a840dc3bedcdeea510b42e056c77c2d6c4bef",
             "shasum": ""
-=======
+  =
         "name": "drupal/swiftmailer",
         "version": "1.0.0-beta2",
         "version_normalized": "1.0.0.0-beta2",
@@ -5754,18 +5754,18 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://ftp.drupal.org/files/projects/swiftmailer-8.x-1.0-beta2.zip",
             "reference": "8.x-1.0-beta2",
             "shasum": "a63a91e7816a06bf8e52ac9b5e48a892a1e6b1d4"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://ftp.drupal.org/files/projects/swiftmailer-8.x-1.0-beta1.zip",
             "reference": "8.x-1.0-beta1",
             "shasum": "d49a50638a629c24d681181b82255fd50c1b2642"
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "https://ftp.drupal.org/files/projects/swiftmailer-8.x-1.0-beta2.zip",
             "reference": "8.x-1.0-beta2",
             "shasum": "a63a91e7816a06bf8e52ac9b5e48a892a1e6b1d4"
@@ -5788,13 +5788,13 @@
         "type": "library",
         "extra": {
             "branch-alias": {
-<<<<<<< HEAD
+ 
                 "dev-master": "1.4-dev",
                 "dev-develop": "1.5-dev"
-=======
+  =
                 "name": "Fabien Potencier",
                 "email": "fabien@symfony.com"
-=======
+  =
                 "dev-1.x": "1.x-dev"
             },
             "drupal": {
@@ -5876,7 +5876,7 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-<<<<<<< HEAD
+ 
                 "Zend\\Diactoros\\": "src/"
             }
         },
@@ -5920,14 +5920,14 @@
             "branch-alias": {
                 "dev-master": "2.5-dev",
                 "dev-develop": "2.6-dev"
-=======
+  =
                 "Symfony\\Component\\Serializer\\": ""
             },
-<<<<<<< HEAD
+ 
             "exclude-from-classmap": [
                 "/Tests/"
             ]
-=======
+  =
             "drupal": {
                 "version": "8.x-1.0-alpha1",
                 "datestamp": "1483115583",
@@ -6009,7 +6009,7 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-<<<<<<< HEAD
+ 
                 "Zend\\Escaper\\": "src/"
             }
         },
@@ -6065,10 +6065,10 @@
         "type": "library",
         "extra": {
             "branch-alias": {
-<<<<<<< HEAD
+ 
                 "dev-master": "2.7-dev",
                 "dev-develop": "2.8-dev"
-=======
+  =
                 "dev-3.x": "3.x-dev"
             },
             "drupal": {
@@ -6078,15 +6078,15 @@
                     "status": "not-covered",
                     "message": "Alpha releases are not covered by Drupal security advisories."
                 }
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             },
             "patches_applied": {
                 "Delete everywhere": "https://www.drupal.org/files/issues/2018-03-29/delete-everywhere-2957067-2.patch"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
 >>>>>>> revert Open Social update
-=======
+  =
             },
             "patches_applied": {
                 "Delete everywhere": "https://www.drupal.org/files/issues/2018-03-29/delete-everywhere-2957067-2.patch"
@@ -6097,7 +6097,7 @@
         "autoload": {
             "psr-4": {
                 "Zend\\Feed\\": "src/"
-=======
+  =
                 "Symfony\\Component\\Routing\\": ""
             },
             "exclude-from-classmap": [
@@ -6164,7 +6164,7 @@
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-<<<<<<< HEAD
+ 
             "BSD-3-Clause"
         ],
         "description": "provides functionality for consuming RSS and Atom feeds",
@@ -6175,7 +6175,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "zendframework/zend-stdlib",
         "version": "3.0.1",
         "version_normalized": "3.0.1.0",
@@ -6188,7 +6188,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/zendframework/zend-stdlib/zipball/8bafa58574204bdff03c275d1d618aaa601588ae",
             "reference": "8bafa58574204bdff03c275d1d618aaa601588ae",
-=======
+  =
         "name": "drush/drush",
         "version": "8.1.17",
         "version_normalized": "8.1.17.0",
@@ -6199,16 +6199,16 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://api.github.com/repos/drush-ops/drush/zipball/7ea681dc7e639f6ddab906e78611d3558f88d9b0",
             "reference": "7ea681dc7e639f6ddab906e78611d3558f88d9b0",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://api.github.com/repos/drush-ops/drush/zipball/bbaff2dc725a5f3eb22006c5de3dc92a2de54b08",
             "reference": "bbaff2dc725a5f3eb22006c5de3dc92a2de54b08",
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "https://api.github.com/repos/drush-ops/drush/zipball/7ea681dc7e639f6ddab906e78611d3558f88d9b0",
             "reference": "7ea681dc7e639f6ddab906e78611d3558f88d9b0",
 >>>>>>> updating open social
@@ -6222,16 +6222,16 @@
             "fabpot/php-cs-fixer": "1.7.*",
             "phpunit/phpunit": "~4.0"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "time": "2016-04-12T21:19:36+00:00",
-=======
+  =
         "time": "2018-05-23T16:58:54+00:00",
-=======
+  =
         "time": "2018-02-06T21:18:48+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-05-23T16:58:54+00:00",
 >>>>>>> updating open social
         "bin": [
@@ -6246,7 +6246,7 @@
             "branch-alias": {
                 "dev-master": "3.0-dev",
                 "dev-develop": "3.1-dev"
-=======
+  =
             "MIT"
         ],
         "authors": [
@@ -6329,9 +6329,9 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-<<<<<<< HEAD
+ 
                 "Zend\\Stdlib\\": "src/"
-=======
+  =
                 "Symfony\\Component\\HttpKernel\\": ""
             },
             "exclude-from-classmap": [
@@ -6457,7 +6457,7 @@
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-<<<<<<< HEAD
+ 
             "BSD-3-Clause"
         ],
         "homepage": "https://github.com/zendframework/zend-stdlib",
@@ -6465,7 +6465,7 @@
             "stdlib",
             "zf2"
         ]
-=======
+  =
             "MIT"
         ],
         "authors": [
@@ -6482,7 +6482,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "stack/builder",
         "version": "v1.0.4",
         "version_normalized": "1.0.4.0",
@@ -6495,7 +6495,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/stackphp/builder/zipball/59fcc9b448a8ce5e338a04c4e2e4aca893e83425",
             "reference": "59fcc9b448a8ce5e338a04c4e2e4aca893e83425",
-=======
+  =
         "name": "fabpot/goutte",
         "version": "v3.2.3",
         "version_normalized": "3.2.3.0",
@@ -6506,16 +6506,16 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://api.github.com/repos/FriendsOfPHP/Goutte/zipball/3f0eaf0a40181359470651f1565b3e07e3dd31b8",
             "reference": "3f0eaf0a40181359470651f1565b3e07e3dd31b8",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://api.github.com/repos/FriendsOfPHP/Goutte/zipball/395f61d7c2e15a813839769553a4de16fa3b3c96",
             "reference": "395f61d7c2e15a813839769553a4de16fa3b3c96",
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "https://api.github.com/repos/FriendsOfPHP/Goutte/zipball/3f0eaf0a40181359470651f1565b3e07e3dd31b8",
             "reference": "3f0eaf0a40181359470651f1565b3e07e3dd31b8",
 >>>>>>> updating open social
@@ -6529,17 +6529,17 @@
         "require-dev": {
             "silex/silex": "~1.0"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "time": "2016-06-02 06:58:42",
         "type": "library",
-=======
+  =
         "time": "2018-06-29T15:13:57+00:00",
-=======
+  =
         "time": "2017-11-19T08:45:40+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-06-29T15:13:57+00:00",
 >>>>>>> updating open social
         "type": "application",
@@ -6571,7 +6571,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "paragonie/random_compat",
         "version": "v1.4.1",
         "version_normalized": "1.4.1.0",
@@ -6584,7 +6584,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/paragonie/random_compat/zipball/c7e26a21ba357863de030f0b9e701c7d04593774",
             "reference": "c7e26a21ba357863de030f0b9e701c7d04593774",
-=======
+  =
         "name": "facebook/graph-sdk",
         "version": "5.6.3",
         "version_normalized": "5.6.3.0",
@@ -6595,16 +6595,16 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://api.github.com/repos/facebook/php-graph-sdk/zipball/90e92bd1816fe718e55184ab85910dfcf488432c",
             "reference": "90e92bd1816fe718e55184ab85910dfcf488432c",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://api.github.com/repos/facebook/php-graph-sdk/zipball/030f8c5b9b1a6c09e71719fd638b66ea4daa2f10",
             "reference": "030f8c5b9b1a6c09e71719fd638b66ea4daa2f10",
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "https://api.github.com/repos/facebook/php-graph-sdk/zipball/90e92bd1816fe718e55184ab85910dfcf488432c",
             "reference": "90e92bd1816fe718e55184ab85910dfcf488432c",
 >>>>>>> updating open social
@@ -6619,17 +6619,17 @@
         "suggest": {
             "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "time": "2016-03-18 20:34:03",
-=======
+  =
         "time": "2018-07-03T02:25:00+00:00",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
         "time": "2018-02-14T23:24:51+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-07-03T02:25:00+00:00",
 >>>>>>> updating open social
         "type": "library",
@@ -6704,14 +6704,14 @@
                 "email": "technosophos@gmail.com"
             },
             {
-<<<<<<< HEAD
+ 
                 "name": "Asmir Mustafic",
                 "email": "goetas@gmail.com"
             },
             {
                 "name": "Matt Farina",
                 "email": "matt@mattfarina.com"
-=======
+  =
                 "name": "Anant Narayanan",
                 "email": "anant@php.net",
                 "role": "Developer"
@@ -6863,7 +6863,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "egulias/email-validator",
         "version": "1.2.13",
         "version_normalized": "1.2.13.0",
@@ -6876,7 +6876,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/b8bb147f46cc9790326ce2440a13be06cc5a63bb",
             "reference": "b8bb147f46cc9790326ce2440a13be06cc5a63bb",
-=======
+  =
         "name": "google/apiclient",
         "version": "v2.2.2",
         "version_normalized": "2.2.2.0",
@@ -6887,16 +6887,16 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://api.github.com/repos/google/google-api-php-client/zipball/4e0fd83510e579043e10e565528b323b7c2b3c81",
             "reference": "4e0fd83510e579043e10e565528b323b7c2b3c81",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://api.github.com/repos/google/google-api-php-client/zipball/b69b8ac4bf6501793c389d4e013a79d09c85c5f2",
             "reference": "b69b8ac4bf6501793c389d4e013a79d09c85c5f2",
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "https://api.github.com/repos/google/google-api-php-client/zipball/4e0fd83510e579043e10e565528b323b7c2b3c81",
             "reference": "4e0fd83510e579043e10e565528b323b7c2b3c81",
 >>>>>>> updating open social
@@ -6907,11 +6907,11 @@
             "php": ">= 5.3.3"
         },
         "require-dev": {
-<<<<<<< HEAD
+ 
             "phpunit/phpunit": "^4.8.24"
         },
         "time": "2016-07-03 21:52:18",
-=======
+  =
             "cache/filesystem-adapter": "^0.3.2",
             "phpunit/phpunit": "~4.8.36",
             "squizlabs/php_codesniffer": "~2.3",
@@ -6921,14 +6921,14 @@
         "suggest": {
             "cache/filesystem-adapter": "For caching certs and tokens (using Google_Client::setCache)"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
         "time": "2018-06-20T15:52:20+00:00",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
         "time": "2017-11-03T01:19:53+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-06-20T15:52:20+00:00",
 >>>>>>> updating open social
         "type": "library",
@@ -6963,7 +6963,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "easyrdf/easyrdf",
         "version": "0.9.1",
         "version_normalized": "0.9.1.0",
@@ -6976,7 +6976,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/njh/easyrdf/zipball/acd09dfe0555fbcfa254291e433c45fdd4652566",
             "reference": "acd09dfe0555fbcfa254291e433c45fdd4652566",
-=======
+  =
         "name": "google/apiclient-services",
         "version": "v0.64",
         "version_normalized": "0.64.0.0",
@@ -6987,16 +6987,16 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/0250aa8cadbe58e790aa07d736b675f3bdd87a1c",
             "reference": "0250aa8cadbe58e790aa07d736b675f3bdd87a1c",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/fc1821419f0e9d060d83a2864e2a40874b91430d",
             "reference": "fc1821419f0e9d060d83a2864e2a40874b91430d",
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/0250aa8cadbe58e790aa07d736b675f3bdd87a1c",
             "reference": "0250aa8cadbe58e790aa07d736b675f3bdd87a1c",
 >>>>>>> updating open social
@@ -7012,20 +7012,20 @@
             "sami/sami": "~1.4",
             "squizlabs/php_codesniffer": "~1.4.3"
         },
-<<<<<<< HEAD
+ 
         "suggest": {
             "ml/json-ld": "~1.0"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
         "time": "2015-02-27 09:45:49",
-=======
+  =
         "time": "2018-06-30T00:22:51+00:00",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
         "time": "2018-04-28T00:23:39+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-06-30T00:22:51+00:00",
 >>>>>>> updating open social
         "type": "library",
@@ -7988,7 +7988,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "symfony/browser-kit",
         "version": "v3.1.6",
         "version_normalized": "3.1.6.0",
@@ -8001,7 +8001,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/symfony/browser-kit/zipball/901319a31c9b3cee7857b4aeeb81b5d64dfa34fc",
             "reference": "901319a31c9b3cee7857b4aeeb81b5d64dfa34fc",
-=======
+  =
         "name": "nikic/php-parser",
         "version": "v4.0.2",
         "version_normalized": "4.0.2.0",
@@ -8012,16 +8012,16 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/35b8caf75e791ba1b2d24fec1552168d72692b12",
             "reference": "35b8caf75e791ba1b2d24fec1552168d72692b12",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/e4a54fa90a5cd8e8dd3fb4099942681731c5cdd3",
             "reference": "e4a54fa90a5cd8e8dd3fb4099942681731c5cdd3",
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/35b8caf75e791ba1b2d24fec1552168d72692b12",
             "reference": "35b8caf75e791ba1b2d24fec1552168d72692b12",
 >>>>>>> updating open social
@@ -8035,19 +8035,19 @@
             "symfony/css-selector": "~2.8|~3.0",
             "symfony/process": "~2.8|~3.0"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "suggest": {
             "symfony/process": ""
         },
         "time": "2016-09-06 11:02:40",
-=======
+  =
         "time": "2018-06-03T11:33:10+00:00",
-=======
+  =
         "time": "2018-03-25T17:35:16+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-06-03T11:33:10+00:00",
 >>>>>>> updating open social
         "bin": [
@@ -8147,7 +8147,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "behat/mink-browserkit-driver",
         "version": "v1.3.2",
         "version_normalized": "1.3.2.0",
@@ -8160,7 +8160,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/minkphp/MinkBrowserKitDriver/zipball/10e67fb4a295efcd62ea0bf16025a85ea19534fb",
             "reference": "10e67fb4a295efcd62ea0bf16025a85ea19534fb",
-=======
+  =
         "name": "paragonie/random_compat",
         "version": "v2.0.17",
         "version_normalized": "2.0.17.0",
@@ -8171,16 +8171,16 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://api.github.com/repos/paragonie/random_compat/zipball/29af24f25bab834fcbb38ad2a69fa93b867e070d",
             "reference": "29af24f25bab834fcbb38ad2a69fa93b867e070d",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://api.github.com/repos/paragonie/random_compat/zipball/258c89a6b97de7dfaf5b8c7607d0478e236b04fb",
             "reference": "258c89a6b97de7dfaf5b8c7607d0478e236b04fb",
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "https://api.github.com/repos/paragonie/random_compat/zipball/29af24f25bab834fcbb38ad2a69fa93b867e070d",
             "reference": "29af24f25bab834fcbb38ad2a69fa93b867e070d",
 >>>>>>> updating open social
@@ -8203,15 +8203,15 @@
                 "dev-master": "1.3.x-dev"
             }
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+ 
+ 
+ 
+  =
         "time": "2018-07-04T16:31:37+00:00",
-=======
+  =
         "time": "2018-04-04T21:24:14+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-07-04T16:31:37+00:00",
 >>>>>>> updating open social
         "type": "library",
@@ -8236,12 +8236,12 @@
         "description": "Symfony2 BrowserKit driver for Mink framework",
         "homepage": "http://mink.behat.org/",
         "keywords": [
-<<<<<<< HEAD
+ 
             "Mink",
             "Symfony2",
             "browser",
             "testing"
-=======
+  =
             "csprng",
             "polyfill",
             "pseudorandom",
@@ -9567,7 +9567,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "phpunit/php-code-coverage",
         "version": "2.2.4",
         "version_normalized": "2.2.4.0",
@@ -9580,7 +9580,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/eabf68b476ac7d0f73793aada060f1c1a9bf8979",
             "reference": "eabf68b476ac7d0f73793aada060f1c1a9bf8979",
-=======
+  =
         "name": "psy/psysh",
         "version": "v0.9.6",
         "version_normalized": "0.9.6.0",
@@ -9591,16 +9591,16 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://api.github.com/repos/bobthecow/psysh/zipball/4a2ce86f199d51b6e2524214dc06835e872f4fce",
             "reference": "4a2ce86f199d51b6e2524214dc06835e872f4fce",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://api.github.com/repos/bobthecow/psysh/zipball/79c280013cf0b30fa23f3ba8bd3649218075adf4",
             "reference": "79c280013cf0b30fa23f3ba8bd3649218075adf4",
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "https://api.github.com/repos/bobthecow/psysh/zipball/4a2ce86f199d51b6e2524214dc06835e872f4fce",
             "reference": "4a2ce86f199d51b6e2524214dc06835e872f4fce",
 >>>>>>> updating open social
@@ -9615,22 +9615,22 @@
             "sebastian/version": "~1.0"
         },
         "require-dev": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
             "ext-xdebug": ">=2.1.4",
             "phpunit/phpunit": "~4"
-=======
+  =
             "bamarni/composer-bin-plugin": "^1.2",
             "hoa/console": "~2.15|~3.16",
             "phpunit/phpunit": "~4.8.35|~5.0|~6.0|~7.0"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "hoa/console": "~2.15|~3.16",
             "phpunit/phpunit": "~4.8.35|~5.0|~6.0|~7.0",
             "symfony/finder": "~2.1|~3.0|~4.0"
 >>>>>>> revert Open Social update
-=======
+  =
             "bamarni/composer-bin-plugin": "^1.2",
             "hoa/console": "~2.15|~3.16",
             "phpunit/phpunit": "~4.8.35|~5.0|~6.0|~7.0"
@@ -9641,16 +9641,16 @@
             "ext-xdebug": ">=2.2.1",
             "ext-xmlwriter": "*"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "time": "2015-10-06 15:47:00",
-=======
+  =
         "time": "2018-06-10T17:57:20+00:00",
-=======
+  =
         "time": "2018-04-18T12:32:50+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-06-10T17:57:20+00:00",
 >>>>>>> updating open social
         "bin": [
@@ -10284,22 +10284,22 @@
         "description": "Helper class to locate a Drupal installation from a given path."
     },
     {
-<<<<<<< HEAD
+ 
         "name": "stecman/symfony-console-completion",
         "version": "0.7.0",
         "version_normalized": "0.7.0.0",
-=======
+  =
         "name": "symfony/browser-kit",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
         "version": "v3.4.12",
         "version_normalized": "3.4.12.0",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
         "version": "v3.4.9",
         "version_normalized": "3.4.9.0",
 >>>>>>> revert Open Social update
-=======
+  =
         "version": "v3.4.12",
         "version_normalized": "3.4.12.0",
 >>>>>>> updating open social
@@ -10347,22 +10347,22 @@
         "description": "Automatic BASH completion for Symfony Console Component based applications."
     },
     {
-<<<<<<< HEAD
+ 
         "name": "drupal/console-core",
         "version": "1.0.0-rc9",
         "version_normalized": "1.0.0.0-RC9",
-=======
+  =
         "name": "symfony/class-loader",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
         "version": "v3.4.12",
         "version_normalized": "3.4.12.0",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
         "version": "v3.4.9",
         "version_normalized": "3.4.9.0",
 >>>>>>> revert Open Social update
-=======
+  =
         "version": "v3.4.12",
         "version_normalized": "3.4.12.0",
 >>>>>>> updating open social
@@ -10445,7 +10445,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "drupal/console",
         "version": "1.0.0-rc9",
         "version_normalized": "1.0.0.0-RC9",
@@ -10481,7 +10481,7 @@
             "bin/drupal"
         ],
         "type": "project",
-=======
+  =
         "name": "symfony/config",
         "version": "v3.4.12",
         "version_normalized": "3.4.12.0",
@@ -10567,7 +10567,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "symfony/polyfill-iconv",
         "version": "v1.3.0",
         "version_normalized": "1.3.0.0",
@@ -10580,7 +10580,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/symfony/polyfill-iconv/zipball/cba36f3616d9866b3e52662e88da5c090fac1e97",
             "reference": "cba36f3616d9866b3e52662e88da5c090fac1e97",
-=======
+  =
         "name": "symfony/console",
         "version": "v3.4.12",
         "version_normalized": "3.4.12.0",
@@ -10591,16 +10591,16 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://api.github.com/repos/symfony/console/zipball/1b97071a26d028c9bd4588264e101e14f6e7cd00",
             "reference": "1b97071a26d028c9bd4588264e101e14f6e7cd00",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://api.github.com/repos/symfony/console/zipball/5b1fdfa8eb93464bcc36c34da39cedffef822cdf",
             "reference": "5b1fdfa8eb93464bcc36c34da39cedffef822cdf",
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "https://api.github.com/repos/symfony/console/zipball/1b97071a26d028c9bd4588264e101e14f6e7cd00",
             "reference": "1b97071a26d028c9bd4588264e101e14f6e7cd00",
 >>>>>>> updating open social
@@ -10612,17 +10612,17 @@
         "suggest": {
             "ext-iconv": "For best performance"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "time": "2016-11-14 01:06:16",
-=======
+  =
         "time": "2018-05-23T05:02:55+00:00",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
         "time": "2018-04-30T01:22:56+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-05-23T05:02:55+00:00",
 >>>>>>> updating open social
         "type": "library",
@@ -10665,22 +10665,22 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "symfony/polyfill-apcu",
         "version": "v1.3.0",
         "version_normalized": "1.3.0.0",
-=======
+  =
         "name": "symfony/css-selector",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
         "version": "v2.8.42",
         "version_normalized": "2.8.42.0",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
         "version": "v2.8.39",
         "version_normalized": "2.8.39.0",
 >>>>>>> revert Open Social update
-=======
+  =
         "version": "v2.8.42",
         "version_normalized": "2.8.42.0",
 >>>>>>> updating open social
@@ -10736,7 +10736,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "sebastian/recursion-context",
         "version": "1.0.4",
         "version_normalized": "1.0.4.0",
@@ -10749,7 +10749,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/938df7a6478e72795e5f8266cff24d06e3136f2e",
             "reference": "938df7a6478e72795e5f8266cff24d06e3136f2e",
-=======
+  =
         "name": "symfony/debug",
         "version": "v3.4.12",
         "version_normalized": "3.4.12.0",
@@ -10760,16 +10760,16 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://api.github.com/repos/symfony/debug/zipball/47e6788c5b151cf0cfdf3329116bf33800632d75",
             "reference": "47e6788c5b151cf0cfdf3329116bf33800632d75",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://api.github.com/repos/symfony/debug/zipball/1b95888cfd996484527cb41e8952d9a5eaf7454f",
             "reference": "1b95888cfd996484527cb41e8952d9a5eaf7454f",
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "https://api.github.com/repos/symfony/debug/zipball/47e6788c5b151cf0cfdf3329116bf33800632d75",
             "reference": "47e6788c5b151cf0cfdf3329116bf33800632d75",
 >>>>>>> updating open social
@@ -10781,17 +10781,17 @@
         "require-dev": {
             "phpunit/phpunit": "~4.4"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "time": "2016-11-15 06:55:36",
-=======
+  =
         "time": "2018-06-25T11:10:40+00:00",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
         "time": "2018-04-30T16:53:52+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-06-25T11:10:40+00:00",
 >>>>>>> updating open social
         "type": "library",
@@ -10828,7 +10828,7 @@
         "homepage": "http://www.github.com/sebastianbergmann/recursion-context"
     },
     {
-<<<<<<< HEAD
+ 
         "name": "phpunit/phpunit",
         "version": "4.8.28",
         "version_normalized": "4.8.28.0",
@@ -10841,7 +10841,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/558a3a0d28b4cb7e4a593a4fbd2220e787076225",
             "reference": "558a3a0d28b4cb7e4a593a4fbd2220e787076225",
-=======
+  =
         "name": "symfony/dependency-injection",
         "version": "v3.4.12",
         "version_normalized": "3.4.12.0",
@@ -10852,16 +10852,16 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/a0be80e3f8c11aca506e250c00bb100c04c35d10",
             "reference": "a0be80e3f8c11aca506e250c00bb100c04c35d10",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/54ff9d78b56429f9a1ac12e60bfb6d169c0468e3",
             "reference": "54ff9d78b56429f9a1ac12e60bfb6d169c0468e3",
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/a0be80e3f8c11aca506e250c00bb100c04c35d10",
             "reference": "a0be80e3f8c11aca506e250c00bb100c04c35d10",
 >>>>>>> updating open social
@@ -10891,20 +10891,20 @@
         "suggest": {
             "phpunit/php-invoker": "~1.1"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "time": "2016-11-14 06:25:28",
         "bin": [
             "phpunit"
         ],
-=======
+  =
         "time": "2018-06-25T08:36:56+00:00",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
         "time": "2018-04-29T14:04:08+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-06-25T08:36:56+00:00",
 >>>>>>> updating open social
         "type": "library",
@@ -10939,7 +10939,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "consolidation/output-formatters",
         "version": "2.1.3",
         "version_normalized": "2.1.3.0",
@@ -10959,7 +10959,7 @@
             "symfony/console": "~2.5|~3.0",
             "symfony/finder": "~2.5|~3.0",
             "victorjonsson/markdowndocs": "^1.3"
-=======
+  =
         "name": "symfony/dom-crawler",
         "version": "v3.4.12",
         "version_normalized": "3.4.12.0",
@@ -10981,21 +10981,21 @@
 >>>>>>> Update Open Social to 8.x-2.1
         },
         "require-dev": {
-<<<<<<< HEAD
+ 
             "phpunit/phpunit": "4.*",
             "satooshi/php-coveralls": "^1.0",
             "squizlabs/php_codesniffer": "2.*"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
         "time": "2016-11-10 23:25:21",
-=======
+  =
         "time": "2018-05-01T22:53:27+00:00",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
         "time": "2018-03-19T22:32:39+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
             "symfony/css-selector": "~2.8|~3.0|~4.0"
         },
         "suggest": {
@@ -11028,22 +11028,22 @@
         "description": "Format text by applying transformations provided by plug-in formatters."
     },
     {
-<<<<<<< HEAD
+ 
         "name": "consolidation/annotated-command",
         "version": "2.0.3",
         "version_normalized": "2.0.3.0",
-=======
+  =
         "name": "symfony/event-dispatcher",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
         "version": "v3.4.12",
         "version_normalized": "3.4.12.0",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
         "version": "v3.4.9",
         "version_normalized": "3.4.9.0",
 >>>>>>> revert Open Social update
-=======
+  =
         "version": "v3.4.12",
         "version_normalized": "3.4.12.0",
 >>>>>>> updating open social
@@ -11098,7 +11098,7 @@
         "description": "Initialize Symfony Console commands from annotated command class methods."
     },
     {
-<<<<<<< HEAD
+ 
         "name": "fabpot/goutte",
         "version": "v3.2.0",
         "version_normalized": "3.2.0.0",
@@ -11122,7 +11122,7 @@
         },
         "time": "2016-11-15 16:27:29",
         "type": "application",
-=======
+  =
         "name": "symfony/filesystem",
         "version": "v3.4.12",
         "version_normalized": "3.4.12.0",
@@ -11172,7 +11172,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+ 
         "name": "drupal/core",
         "version": "8.2.1",
         "version_normalized": "8.2.1.0",
@@ -11185,7 +11185,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/drupal-composer/drupal-core/zipball/a5549f2a541c0fbb0565e1576a63b917813fadba",
             "reference": "a5549f2a541c0fbb0565e1576a63b917813fadba",
-=======
+  =
         "name": "symfony/finder",
         "version": "v3.4.12",
         "version_normalized": "3.4.12.0",
@@ -11196,16 +11196,16 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "url": "https://api.github.com/repos/symfony/finder/zipball/3a8c3de91d2b2c68cd2d665cf9d00f7ef9eaa394",
             "reference": "3a8c3de91d2b2c68cd2d665cf9d00f7ef9eaa394",
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
             "url": "https://api.github.com/repos/symfony/finder/zipball/bd14efe8b1fabc4de82bf50dce62f05f9a102433",
             "reference": "bd14efe8b1fabc4de82bf50dce62f05f9a102433",
 >>>>>>> revert Open Social update
-=======
+  =
             "url": "https://api.github.com/repos/symfony/finder/zipball/3a8c3de91d2b2c68cd2d665cf9d00f7ef9eaa394",
             "reference": "3a8c3de91d2b2c68cd2d665cf9d00f7ef9eaa394",
 >>>>>>> updating open social
@@ -11242,9 +11242,9 @@
             "zendframework/zend-diactoros": "~1.1",
             "zendframework/zend-feed": "~2.4"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "replace": {
             "drupal/action": "self.version",
             "drupal/aggregator": "self.version",
@@ -11343,12 +11343,12 @@
             "drupal/user": "self.version",
             "drupal/views": "self.version",
             "drupal/views_ui": "self.version"
-=======
+  =
         "time": "2018-06-19T20:52:10+00:00",
-=======
+  =
         "time": "2018-04-04T05:07:11+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-06-19T20:52:10+00:00",
 >>>>>>> updating open social
         "type": "library",
@@ -11393,7 +11393,7 @@
         "description": "Drupal is an open source content management platform powering millions of websites and applications."
     },
     {
-<<<<<<< HEAD
+ 
         "name": "drupal/bootstrap",
         "version": "3.0.0-rc2",
         "version_normalized": "3.0.0.0-RC2",
@@ -11407,7 +11407,7 @@
             "url": "https://ftp.drupal.org/files/projects/bootstrap-8.x-3.0-rc2.zip",
             "reference": null,
             "shasum": "5d93772f4daed07deda17014bb1ae906baa7e71e"
-=======
+  =
         "name": "symfony/http-foundation",
         "version": "v3.4.12",
         "version_normalized": "3.4.12.0",
@@ -11426,16 +11426,16 @@
         "require": {
             "drupal/core": "~8.0"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "type": "drupal-theme",
-=======
+  =
         "time": "2018-06-21T11:10:19+00:00",
-=======
+  =
         "time": "2018-04-30T01:05:13+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-06-21T11:10:19+00:00",
 >>>>>>> updating open social
         "type": "library",
@@ -11474,7 +11474,7 @@
         }
     },
     {
-<<<<<<< HEAD
+ 
         "name": "drupal/token",
         "version": "1.0.0-beta2",
         "version_normalized": "1.0.0.0-beta2",
@@ -11493,7 +11493,7 @@
             "drupal/core": "~8.0"
         },
         "type": "drupal-module",
-=======
+  =
         "name": "symfony/http-kernel",
         "version": "v3.4.12",
         "version_normalized": "3.4.12.0",
@@ -11602,15 +11602,15 @@
         }
     },
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "name": "drupal/search_api",
         "version": "1.0.0-beta2",
         "version_normalized": "1.0.0.0-beta2",
-=======
+  =
         "name": "symfony/polyfill-ctype",
-=======
+  =
         "name": "symfony/polyfill-ctype",
         "version": "v1.8.0",
         "version_normalized": "1.8.0.0",
@@ -11726,7 +11726,7 @@
         ]
     },
     {
-=======
+  =
 >>>>>>> revert Open Social update
         "name": "symfony/polyfill-iconv",
         "version": "v1.8.0",
@@ -11920,7 +11920,7 @@
         }
     },
     {
-<<<<<<< HEAD
+ 
         "name": "drupal/profile",
         "version": "1.0.0-alpha5",
         "version_normalized": "1.0.0.0-alpha5",
@@ -11934,7 +11934,7 @@
             "url": "https://ftp.drupal.org/files/projects/profile-8.x-1.0-alpha5.zip",
             "reference": null,
             "shasum": "58a3efbcc2a2f6689fe3316ef471d31ca7f0fa36"
-=======
+  =
         "name": "symfony/process",
         "version": "v3.4.12",
         "version_normalized": "3.4.12.0",
@@ -11954,16 +11954,16 @@
             "drupal/core": "~8.1",
             "drupal/entity": "*"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "type": "drupal-module",
-=======
+  =
         "time": "2018-05-30T04:24:30+00:00",
-=======
+  =
         "time": "2018-04-03T05:22:50+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-05-30T04:24:30+00:00",
 >>>>>>> updating open social
         "type": "library",
@@ -12057,7 +12057,7 @@
         }
     },
     {
-<<<<<<< HEAD
+ 
         "name": "drupal/message",
         "version": "1.0.0-alpha3",
         "version_normalized": "1.0.0.0-alpha3",
@@ -12071,7 +12071,7 @@
             "url": "https://ftp.drupal.org/files/projects/message-8.x-1.0-alpha3.zip",
             "reference": null,
             "shasum": "475e0da708eda86a274907e5aa91290031dc0255"
-=======
+  =
         "name": "symfony/routing",
         "version": "v3.4.12",
         "version_normalized": "3.4.12.0",
@@ -12091,9 +12091,9 @@
             "drupal/core": "~8.0"
         },
         "require-dev": {
-<<<<<<< HEAD
+ 
             "drupal/coder": "^2.0"
-=======
+  =
             "doctrine/annotations": "~1.0",
             "psr/log": "~1.0",
             "symfony/config": "^3.3.1|~4.0",
@@ -12106,16 +12106,16 @@
         "suggest": {
             "drupal/token": "Required by drupal/message_example"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "type": "drupal-module",
-=======
+  =
         "time": "2018-06-19T20:52:10+00:00",
-=======
+  =
         "time": "2018-04-12T09:01:03+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-06-19T20:52:10+00:00",
 >>>>>>> updating open social
         "type": "library",
@@ -12163,7 +12163,7 @@
         }
     },
     {
-<<<<<<< HEAD
+ 
         "name": "drupal/libraries",
         "version": "dev-3.x",
         "version_normalized": "dev-3.x",
@@ -12176,7 +12176,7 @@
             "drupal/core": "~8.0"
         },
         "type": "drupal-module",
-=======
+  =
         "name": "symfony/serializer",
         "version": "v3.4.12",
         "version_normalized": "3.4.12.0",
@@ -12268,7 +12268,7 @@
         }
     },
     {
-<<<<<<< HEAD
+ 
         "name": "drupal/crop",
         "version": "1.0.0",
         "version_normalized": "1.0.0.0",
@@ -12282,7 +12282,7 @@
             "url": "https://ftp.drupal.org/files/projects/crop-8.x-1.0.zip",
             "reference": null,
             "shasum": "c59b10336821f0ef99f6d2770a72c400e167d979"
-=======
+  =
         "name": "symfony/translation",
         "version": "v3.4.12",
         "version_normalized": "3.4.12.0",
@@ -12304,16 +12304,16 @@
         "suggest": {
             "drupal/media_entity": "Required by drupal/crop_media_entity"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "type": "drupal-module",
-=======
+  =
         "time": "2018-05-21T10:06:52+00:00",
-=======
+  =
         "time": "2018-04-30T01:22:56+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-05-21T10:06:52+00:00",
 >>>>>>> updating open social
         "type": "library",
@@ -12354,7 +12354,7 @@
         }
     },
     {
-<<<<<<< HEAD
+ 
         "name": "drupal/image_widget_crop",
         "version": "1.3.0",
         "version_normalized": "1.3.0.0",
@@ -12372,7 +12372,7 @@
         "require": {
             "drupal/core": "*",
             "drupal/crop": "*"
-=======
+  =
         "name": "symfony/validator",
         "version": "v3.4.12",
         "version_normalized": "3.4.12.0",
@@ -12416,7 +12416,7 @@
 >>>>>>> Update Open Social to 8.x-2.1
         },
         "suggest": {
-<<<<<<< HEAD
+ 
             "drupal/core": "Required by drupal/image_widget_crop_examples",
             "drupal/crop": "Required by drupal/image_widget_crop_examples",
             "drupal/file_entity": "Required by drupal/image_widget_crop",
@@ -12424,11 +12424,11 @@
             "drupal/media_entity": "Required by drupal/image_widget_crop_examples",
             "drupal/media_entity_image": "Required by drupal/image_widget_crop_examples"
         },
-<<<<<<< HEAD
+ 
         "type": "drupal-module",
-=======
+  =
         "time": "2018-06-19T20:52:10+00:00",
-=======
+  =
             "doctrine/annotations": "For using the annotation mapping. You will also need doctrine/cache.",
             "doctrine/cache": "For using the default cached annotation reader and metadata cache.",
             "egulias/email-validator": "Strict (RFC compliant) email validation",
@@ -12440,10 +12440,10 @@
             "symfony/property-access": "For accessing properties within comparison constraints",
             "symfony/yaml": ""
         },
-<<<<<<< HEAD
+ 
         "time": "2018-04-20T10:02:27+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-06-19T20:52:10+00:00",
 >>>>>>> updating open social
         "type": "library",
@@ -12487,7 +12487,7 @@
         }
     },
     {
-<<<<<<< HEAD
+ 
         "name": "drupal/group",
         "version": "1.0.0-beta4",
         "version_normalized": "1.0.0.0-beta4",
@@ -12501,7 +12501,7 @@
             "url": "https://ftp.drupal.org/files/projects/group-8.x-1.0-beta4.zip",
             "reference": null,
             "shasum": "744a5b72d06ca3b70055aede39294470232c123e"
-=======
+  =
         "name": "symfony/var-dumper",
         "version": "v3.4.12",
         "version_normalized": "3.4.12.0",
@@ -12523,16 +12523,16 @@
         "suggest": {
             "drupal/core": "Required by drupal/gnode"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "type": "drupal-module",
-=======
+  =
         "time": "2018-06-15T07:47:49+00:00",
-=======
+  =
         "time": "2018-04-26T12:42:15+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-06-15T07:47:49+00:00",
 >>>>>>> updating open social
         "type": "library",
@@ -12568,7 +12568,7 @@
         }
     },
     {
-<<<<<<< HEAD
+ 
         "name": "drupal/flag",
         "version": "dev-4.x",
         "version_normalized": "dev-4.x",
@@ -12579,7 +12579,7 @@
         },
         "require": {
             "drupal/core": "~8.0"
-=======
+  =
         "name": "symfony/yaml",
         "version": "v3.4.12",
         "version_normalized": "3.4.12.0",
@@ -12608,20 +12608,20 @@
         "suggest": {
             "drupal/core": "Required by drupal/flag_bookmark"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "type": "drupal-module",
-=======
+  =
         "time": "2018-05-03T23:18:14+00:00",
         "type": "library",
 >>>>>>> Update Open Social to 8.x-2.1
         "extra": {
             "branch-alias": {
                 "dev-4.x": "4.x-dev"
-=======
+  =
         "time": "2018-04-08T08:21:29+00:00",
-=======
+  =
         "time": "2018-05-03T23:18:14+00:00",
 >>>>>>> updating open social
         "type": "library",
@@ -12927,7 +12927,7 @@
         }
     },
     {
-<<<<<<< HEAD
+ 
         "name": "drupal/devel",
         "version": "1.0.0-alpha1",
         "version_normalized": "1.0.0.0-alpha1",
@@ -12941,7 +12941,7 @@
             "url": "https://ftp.drupal.org/files/projects/devel-8.x-1.0-alpha1.zip",
             "reference": null,
             "shasum": "f05e874d4ae2515e0a86df3017a081d4cce31fef"
-=======
+  =
         "name": "zendframework/zend-diactoros",
         "version": "1.8.0",
         "version_normalized": "1.8.0.0",
@@ -12963,7 +12963,7 @@
         "suggest": {
             "drupal/core": "Required by drupal/devel_node_access"
         },
-<<<<<<< HEAD
+ 
         "type": "drupal-module",
         "extra": {
             "branch-alias": {
@@ -12974,16 +12974,16 @@
                 "datestamp": "1466970239"
             }
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
         "installation-source": "dist",
         "notification-url": "https://packages.drupal.org/8/downloads",
-=======
+  =
         "time": "2018-06-27T18:52:43+00:00",
-=======
+  =
         "time": "2018-02-26T15:44:50+00:00",
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-06-27T18:52:43+00:00",
 >>>>>>> updating open social
         "type": "library",
@@ -13130,7 +13130,7 @@
         }
     },
     {
-<<<<<<< HEAD
+ 
         "name": "drupal/addtoany",
         "version": "1.6.0",
         "version_normalized": "1.6.0.0",
@@ -13144,7 +13144,7 @@
             "url": "https://ftp.drupal.org/files/projects/addtoany-8.x-1.6.zip",
             "reference": null,
             "shasum": "cbbb724327382829f1eac9a607e90c2a57a9a5e9"
-=======
+  =
         "name": "zendframework/zend-feed",
         "version": "2.10.2",
         "version_normalized": "2.10.2.0",
@@ -13163,9 +13163,9 @@
         "require": {
             "drupal/core": "~8.0"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         "type": "drupal-module",
         "extra": {
             "branch-alias": {
@@ -13174,7 +13174,7 @@
             "drupal": {
                 "version": "8.x-1.6",
                 "datestamp": "1478206740"
-=======
+  =
         "time": "2018-06-18T20:14:01+00:00",
         "type": "library",
         "extra": {
@@ -13182,7 +13182,7 @@
                 "dev-master": "2.10.x-dev",
                 "dev-develop": "2.11.x-dev"
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
         "time": "2017-12-04T17:59:38+00:00",
         "type": "library",
         "extra": {
@@ -13190,7 +13190,7 @@
                 "dev-master": "2.9-dev",
                 "dev-develop": "2.10-dev"
 >>>>>>> revert Open Social update
-=======
+  =
         "time": "2018-06-18T20:14:01+00:00",
         "type": "library",
         "extra": {

@@ -91,11 +91,10 @@ class StaticReflectionProperty extends ReflectionProperty
     /**
      * {@inheritDoc}
      */
-<<<<<<< HEAD
+ 
     public static function export($class, $name, $return = false)
 =======
     public static function export ($class, $name, $return = false)
->>>>>>> web and vendor directory from composer install
     {
         throw new ReflectionException('Method not implemented');
     }
@@ -159,11 +158,10 @@ class StaticReflectionProperty extends ReflectionProperty
     /**
      * {@inheritDoc}
      */
-<<<<<<< HEAD
+ 
     public function setAccessible($accessible)
 =======
     public function setAccessible ($accessible)
->>>>>>> web and vendor directory from composer install
     {
         throw new ReflectionException('Method not implemented');
     }
@@ -171,11 +169,10 @@ class StaticReflectionProperty extends ReflectionProperty
     /**
      * {@inheritDoc}
      */
-<<<<<<< HEAD
+ 
     public function setValue($object, $value = null)
 =======
     public function setValue ($object, $value = null)
->>>>>>> web and vendor directory from composer install
     {
         throw new ReflectionException('Method not implemented');
     }

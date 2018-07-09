@@ -15,11 +15,10 @@ namespace Symfony\Component\Yaml;
  * Dumper dumps PHP variables to YAML strings.
  *
  * @author Fabien Potencier <fabien@symfony.com>
-<<<<<<< HEAD
+ 
  *
  * @final since version 3.4
-=======
->>>>>>> web and vendor directory from composer install
+  =
  */
 class Dumper
 {
@@ -28,7 +27,7 @@ class Dumper
      *
      * @var int
      */
-<<<<<<< HEAD
+ 
     protected $indentation;
 
     /**
@@ -42,29 +41,27 @@ class Dumper
 
         $this->indentation = $indentation;
     }
-=======
+  =
     protected $indentation = 4;
->>>>>>> web and vendor directory from composer install
 
     /**
      * Sets the indentation.
      *
      * @param int $num The amount of spaces to use for indentation of nested nodes
-<<<<<<< HEAD
+ 
      *
      * @deprecated since version 3.1, to be removed in 4.0. Pass the indentation to the constructor instead.
      */
     public function setIndentation($num)
     {
         @trigger_error('The '.__METHOD__.' method is deprecated since Symfony 3.1 and will be removed in 4.0. Pass the indentation to the constructor instead.', E_USER_DEPRECATED);
-=======
+  =
      */
     public function setIndentation($num)
     {
         if ($num < 1) {
             throw new \InvalidArgumentException('The indentation must be greater than zero.');
         }
->>>>>>> web and vendor directory from composer install
 
         $this->indentation = (int) $num;
     }
@@ -72,7 +69,7 @@ class Dumper
     /**
      * Dumps a PHP value to YAML.
      *
-<<<<<<< HEAD
+ 
      * @param mixed $input  The PHP value
      * @param int   $inline The level where you switch to inline YAML
      * @param int   $indent The level of indentation (used internally)
@@ -114,10 +111,10 @@ class Dumper
             $dumpAsMap = Inline::isHash($input);
 
             foreach ($input as $key => $value) {
-                if ($inline >= 1 && Yaml::DUMP_MULTI_LINE_LITERAL_BLOCK & $flags && is_string($value) && false !== strpos($value, "\n") && false === strpos($value, "\r\n")) {
+                if ($inline >= 1 && Yaml::DUMP_MULTI_LINE_LITERAL_BLOCK & $flags && is_string($value) && false !== strpos($value, "\n") && false   strpos($value, "\r\n")) {
                     // If the first line starts with a space character, the spec requires a blockIndicationIndicator
                     // http://www.yaml.org/spec/1.2/spec.html#id2793979
-                    $blockIndentationIndicator = (' ' === substr($value, 0, 1)) ? (string) $this->indentation : '';
+                    $blockIndentationIndicator = (' '   substr($value, 0, 1)) ? (string) $this->indentation : '';
                     $output .= sprintf("%s%s%s |%s\n", $prefix, $dumpAsMap ? Inline::dump($key, $flags).':' : '-', '', $blockIndentationIndicator);
 
                     foreach (preg_split('/\n|\r\n/', $value) as $row) {
@@ -140,7 +137,7 @@ class Dumper
                     $dumpAsMap ? Inline::dump($key, $flags).':' : '-',
                     $willBeInlined ? ' ' : "\n",
                     $this->dump($value, $inline - 1, $willBeInlined ? 0 : $indent + $this->indentation, $flags)
-=======
+  =
      * @param mixed $input                  The PHP value
      * @param int   $inline                 The level where you switch to inline YAML
      * @param int   $indent                 The level of indentation (used internally)
@@ -167,7 +164,6 @@ class Dumper
                     $isAHash ? Inline::dump($key, $exceptionOnInvalidType, $objectSupport).':' : '-',
                     $willBeInlined ? ' ' : "\n",
                     $this->dump($value, $inline - 1, $willBeInlined ? 0 : $indent + $this->indentation, $exceptionOnInvalidType, $objectSupport)
->>>>>>> web and vendor directory from composer install
                 ).($willBeInlined ? "\n" : '');
             }
         }

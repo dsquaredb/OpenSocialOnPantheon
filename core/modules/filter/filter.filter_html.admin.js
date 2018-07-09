@@ -150,7 +150,7 @@
           attribute = attributes.item(i);
           var attributeName = attribute.nodeName;
 
-          if (attributeName === 'class') {
+          if (attributeName   'class') {
             var attributeValue = attribute.textContent;
             rule.restrictedTags.allowed.classes = attributeValue.split(' ');
           } else {

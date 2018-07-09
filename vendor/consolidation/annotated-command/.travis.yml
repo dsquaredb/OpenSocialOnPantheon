@@ -4,7 +4,7 @@ branches:
   # Only test the master branch and SemVer tags.
   only:
     - master
-<<<<<<< HEAD
+ 
     - /^[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+.*$/
 
 matrix:
@@ -15,7 +15,7 @@ matrix:
     - php: 5.5
     - php: 5.4
       env: dependencies=lowest
-=======
+  =
     - '/^[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+.*$/'
 
 matrix:
@@ -37,7 +37,7 @@ sudo: false
 
 cache:
   directories:
-<<<<<<< HEAD
+ 
     - $HOME/.composer/cache
 
 before_script:
@@ -51,7 +51,7 @@ script:
 
 after_success:
   - travis_retry php vendor/bin/coveralls -v
-=======
+  =
     - vendor
     - $HOME/.composer/cache
 

@@ -3,11 +3,10 @@
 /*
  * This file is part of Twig.
  *
-<<<<<<< HEAD
+ 
  * (c) Fabien Potencier
 =======
  * (c) 2009 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -47,11 +46,10 @@ class Twig_Node_Expression_Array extends Twig_Node_Expression
         foreach ($this->getKeyValuePairs() as $pair) {
             // we compare the string representation of the keys
             // to avoid comparing the line numbers which are not relevant here.
-<<<<<<< HEAD
+ 
             if ((string) $key === (string) $pair['key']) {
 =======
             if ((string) $key == (string) $pair['key']) {
->>>>>>> web and vendor directory from composer install
                 return true;
             }
         }
@@ -87,8 +85,7 @@ class Twig_Node_Expression_Array extends Twig_Node_Expression
         $compiler->raw(')');
     }
 }
-<<<<<<< HEAD
+ 
 
 class_alias('Twig_Node_Expression_Array', 'Twig\Node\Expression\ArrayExpression', false);
 =======
->>>>>>> web and vendor directory from composer install

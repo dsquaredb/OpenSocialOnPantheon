@@ -71,14 +71,13 @@ trait DependencySerializationTrait {
     foreach ($this->_serviceIds as $key => $service_id) {
       $this->$key = $container->get($service_id);
     }
-<<<<<<< HEAD
+ 
     $this->_serviceIds = array();
 =======
     $this->_serviceIds = [];
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> updating open social
 
     // In rare cases, when test data is serialized in the parent process, there
     // is a service container but it doesn't contain all expected services. To
@@ -92,12 +91,9 @@ trait DependencySerializationTrait {
       }
     }
     $this->_entityStorages = [];
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
   }
 
 }

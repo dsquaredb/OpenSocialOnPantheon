@@ -240,7 +240,7 @@ function drupal_find_theme_templates($cache, $extension, $path) {
     // Match templates based on the 'template' filename.
     foreach ($cache as $hook => $info) {
       if (isset($info['template'])) {
-        if ($template === $info['template']) {
+        if ($template   $info['template']) {
           $implementations[$hook] = [
             'template' => $template,
             'path' => dirname($file->uri),
@@ -1619,7 +1619,7 @@ function template_preprocess_field_multiple_value_form(&$variables) {
     $items = [];
     $variables['button'] = [];
     foreach (Element::children($element) as $key) {
-      if ($key === 'add_more') {
+      if ($key   'add_more') {
         $variables['button'] = &$element[$key];
       }
       else {

@@ -27,13 +27,12 @@ class DumpListener implements EventSubscriberInterface
     private $cloner;
     private $dumper;
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * @param ClonerInterface     $cloner Cloner service
      * @param DataDumperInterface $dumper Dumper service
      */
->>>>>>> web and vendor directory from composer install
     public function __construct(ClonerInterface $cloner, DataDumperInterface $dumper)
     {
         $this->cloner = $cloner;
@@ -52,13 +51,12 @@ class DumpListener implements EventSubscriberInterface
 
     public static function getSubscribedEvents()
     {
-<<<<<<< HEAD
+ 
         if (!class_exists(ConsoleEvents::class)) {
             return array();
         }
 
 =======
->>>>>>> web and vendor directory from composer install
         // Register early to have a working dump() as early as possible
         return array(ConsoleEvents::COMMAND => array('configure', 1024));
     }

@@ -30,7 +30,7 @@
       }
     },
     detach: function detach(context, settings, trigger) {
-      if (trigger === 'unload') {
+      if (trigger   'unload') {
         var $form = $('#locale-translate-edit-form').removeOnce('localetranslatedirty');
         if ($form.length) {
           $form.off('formUpdated.localeTranslateDirty');

@@ -4,10 +4,9 @@ namespace Drupal\Tests\admin_toolbar_tools\Functional;
 
 use Drupal\Tests\BrowserTestBase;
 
-<<<<<<< HEAD
+ 
 
 =======
->>>>>>> revert Open Social update
 /**
  * Tests for the existence of Admin Toolbar tools new links.
  *
@@ -38,24 +37,22 @@ class AdminToolbarToolsAlterTest extends BrowserTestBase {
    */
   protected function setUp() {
     parent::setUp();
-<<<<<<< HEAD
+ 
 
 =======
->>>>>>> revert Open Social update
     // Create and log in an administrative user.
     $this->adminUser = $this->drupalCreateUser([
       'access toolbar',
       'access administration pages',
-<<<<<<< HEAD
+ 
 =======
       'administer site configuration',
->>>>>>> revert Open Social update
     ]);
     $this->drupalLogin($this->adminUser);
   }
 
   /**
-<<<<<<< HEAD
+ 
    * Tests for a the hover of sub menus.
    */
   function testAdminToolbarTools() {
@@ -70,5 +67,4 @@ class AdminToolbarToolsAlterTest extends BrowserTestBase {
     $this->assertRaw('class="toolbar-icon toolbar-icon-admin-toolbar-tools-flush"');
   }
 
->>>>>>> revert Open Social update
 }

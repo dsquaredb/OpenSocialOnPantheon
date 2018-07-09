@@ -510,7 +510,7 @@ class BaseFieldDefinition extends ListDataDefinition implements FieldDefinitionI
   }
 
   /**
-<<<<<<< HEAD
+ 
 =======
    * Returns the initial value for the field.
    *
@@ -607,7 +607,6 @@ class BaseFieldDefinition extends ListDataDefinition implements FieldDefinitionI
   }
 
   /**
->>>>>>> Update Open Social to 8.x-2.1
    * {@inheritdoc}
    */
   public function getOptionsProvider($property_name, FieldableEntityInterface $entity) {

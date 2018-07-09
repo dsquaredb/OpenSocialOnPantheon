@@ -25,7 +25,7 @@
             "drupal/address": {
                 "Fix form errorElement": "https://www.drupal.org/files/issues/address-2619878-29.patch"
             },
-<<<<<<< HEAD
+ 
             "drupal/core": {
                 "Fix region string issue": "https://www.drupal.org/files/issues/2724283-block-22.patch",
                 "Make sure exposed filters work": "https://www.drupal.org/files/issues/2369119-120.patch",
@@ -47,8 +47,8 @@
             "drupal/private_message": {
                 "Email notification settings are not taken into account": "https://www.drupal.org/files/issues/2910537-2.patch"
             },
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             "drupal/swiftmailer": {
                 "Fix missing filter_format after update to beta2": "https://www.drupal.org/files/issues/2018-03-26/2948607-fix-filter-format-1.patch"
 >>>>>>> Update Open Social to 8.x-2.1
@@ -64,14 +64,14 @@
             "drupal/devel": {
                 "Fix vars in function in entity manager wrapper": "https://www.drupal.org/files/issues/fix_entity_manager_wrapper_2749249_5.patch"
             },
-<<<<<<< HEAD
+ 
             "drupal/group": {
                 "Fix fatal error when uploading files for group": "https://www.drupal.org/files/issues/error-when-uploading-files-2793621-5.patch"
 =======
             "drupal/votingapi": {
                 "Delete everywhere": "https://www.drupal.org/files/issues/2018-03-29/delete-everywhere-2957067-2.patch"
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
             },
             "drupal/bootstrap": {
                 "Not possible to select vertical tabs menu items with keyboard": "https://www.drupal.org/files/issues/bootstrap-vertical-tabs-menu-items-accessibility-2949112-2.patch"
@@ -90,7 +90,7 @@
         "cweagans/composer-patches": "^1.5.0",
         "composer/installers": "^1.0",
         "drupal-composer/drupal-scaffold": "^2.0.0",
-<<<<<<< HEAD
+ 
         "drupal/core": "8.2.1",
         "drupal/crop": "1.0.0",
         "drupal/address": "1.0-rc3",

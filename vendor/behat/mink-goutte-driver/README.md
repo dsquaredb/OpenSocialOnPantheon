@@ -1,5 +1,5 @@
 Mink Goutte Driver
-==================
+      
 
 [![Latest Stable Version](https://poser.pugx.org/behat/mink-goutte-driver/v/stable.svg)](https://packagist.org/packages/behat/mink-goutte-driver)
 [![Latest Unstable Version](https://poser.pugx.org/behat/mink-goutte-driver/v/unstable.svg)](https://packagist.org/packages/behat/mink-goutte-driver)

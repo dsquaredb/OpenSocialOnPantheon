@@ -78,7 +78,7 @@ class MigrateFieldTest extends MigrateDrupal7TestBase {
    * Tests migrating D7 fields to field_storage_config entities.
    */
   public function testFields() {
-<<<<<<< HEAD
+ 
     $this->assertEntity('node.body', 'text_with_summary', FALSE, 1);
     $this->assertEntity('node.field_long_text', 'text_with_summary', FALSE, 1);
     $this->assertEntity('comment.comment_body', 'text_long', FALSE, 1);
@@ -130,7 +130,6 @@ class MigrateFieldTest extends MigrateDrupal7TestBase {
     $this->assertEntity('node.field_term_entityreference', 'entity_reference', TRUE, -1);
     $this->assertEntity('node.field_date_without_time', 'datetime', TRUE, 1);
     $this->assertEntity('node.field_datetime_without_time', 'datetime', TRUE, 1);
->>>>>>> Update Open Social to 8.x-2.1
 
     // Assert that the taxonomy term reference fields are referencing the
     // correct entity type.

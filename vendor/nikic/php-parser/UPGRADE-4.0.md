@@ -1,5 +1,5 @@
 Upgrading from PHP-Parser 3.x to 4.0
-====================================
+            
 
 ### PHP version requirements
 

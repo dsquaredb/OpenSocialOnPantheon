@@ -14,13 +14,12 @@ namespace Symfony\Component\Serializer\Normalizer;
 use Symfony\Component\PropertyAccess\Exception\NoSuchPropertyException;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\PropertyAccess\PropertyAccessorInterface;
-<<<<<<< HEAD
+ 
 use Symfony\Component\PropertyInfo\PropertyTypeExtractorInterface;
 use Symfony\Component\Serializer\Exception\RuntimeException;
 =======
 use Symfony\Component\Serializer\Exception\CircularReferenceException;
 use Symfony\Component\Serializer\Exception\LogicException;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactoryInterface;
 use Symfony\Component\Serializer\NameConverter\NameConverterInterface;
 
@@ -29,7 +28,7 @@ use Symfony\Component\Serializer\NameConverter\NameConverterInterface;
  *
  * @author Kévin Dunglas <dunglas@gmail.com>
  */
-<<<<<<< HEAD
+ 
 class ObjectNormalizer extends AbstractObjectNormalizer
 {
     protected $propertyAccessor;
@@ -112,13 +111,12 @@ class ObjectNormalizer extends AbstractNormalizer
         }
 
         return $data;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
     protected function extractAttributes($object, $format = null, array $context = array())
 =======
     public function supportsDenormalization($data, $type, $format = null)
@@ -212,7 +210,6 @@ class ObjectNormalizer extends AbstractNormalizer
      * @return string[]
      */
     private function extractAttributes($object)
->>>>>>> web and vendor directory from composer install
     {
         // If not using groups, detect manually
         $attributes = array();
@@ -221,11 +218,10 @@ class ObjectNormalizer extends AbstractNormalizer
         $reflClass = new \ReflectionClass($object);
         foreach ($reflClass->getMethods(\ReflectionMethod::IS_PUBLIC) as $reflMethod) {
             if (
-<<<<<<< HEAD
+ 
                 0 !== $reflMethod->getNumberOfRequiredParameters() ||
 =======
                 $reflMethod->getNumberOfRequiredParameters() !== 0 ||
->>>>>>> web and vendor directory from composer install
                 $reflMethod->isStatic() ||
                 $reflMethod->isConstructor() ||
                 $reflMethod->isDestructor()
@@ -234,7 +230,7 @@ class ObjectNormalizer extends AbstractNormalizer
             }
 
             $name = $reflMethod->name;
-<<<<<<< HEAD
+ 
             $attributeName = null;
 
             if (0 === strpos($name, 'get') || 0 === strpos($name, 'has')) {
@@ -263,17 +259,15 @@ class ObjectNormalizer extends AbstractNormalizer
             } elseif (strpos($name, 'is') === 0) {
                 // issers
                 $attributes[lcfirst(substr($name, 2))] = true;
->>>>>>> web and vendor directory from composer install
             }
         }
 
         // properties
         foreach ($reflClass->getProperties(\ReflectionProperty::IS_PUBLIC) as $reflProperty) {
-<<<<<<< HEAD
+ 
             if ($reflProperty->isStatic() || !$this->isAllowedAttribute($object, $reflProperty->name, $format, $context)) {
 =======
             if ($reflProperty->isStatic()) {
->>>>>>> web and vendor directory from composer install
                 continue;
             }
 
@@ -282,7 +276,7 @@ class ObjectNormalizer extends AbstractNormalizer
 
         return array_keys($attributes);
     }
-<<<<<<< HEAD
+ 
 
     /**
      * {@inheritdoc}
@@ -304,5 +298,4 @@ class ObjectNormalizer extends AbstractNormalizer
         }
     }
 =======
->>>>>>> web and vendor directory from composer install
 }

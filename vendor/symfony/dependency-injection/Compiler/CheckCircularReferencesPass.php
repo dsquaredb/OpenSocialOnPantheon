@@ -31,11 +31,10 @@ class CheckCircularReferencesPass implements CompilerPassInterface
 
     /**
      * Checks the ContainerBuilder object for circular references.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param ContainerBuilder $container The ContainerBuilder instances
->>>>>>> web and vendor directory from composer install
      */
     public function process(ContainerBuilder $container)
     {
@@ -54,11 +53,10 @@ class CheckCircularReferencesPass implements CompilerPassInterface
      *
      * @param ServiceReferenceGraphEdge[] $edges An array of Edges
      *
-<<<<<<< HEAD
+ 
      * @throws ServiceCircularReferenceException when a circular reference is found
 =======
      * @throws ServiceCircularReferenceException When a circular reference is found.
->>>>>>> web and vendor directory from composer install
      */
     private function checkOutEdges(array $edges)
     {
@@ -67,7 +65,7 @@ class CheckCircularReferencesPass implements CompilerPassInterface
             $id = $node->getId();
 
             if (empty($this->checkedNodes[$id])) {
-<<<<<<< HEAD
+ 
                 // Don't check circular references for lazy edges
                 if (!$node->getValue() || (!$edge->isLazy() && !$edge->isWeak())) {
                     $searchKey = array_search($id, $this->currentPath);
@@ -90,7 +88,6 @@ class CheckCircularReferencesPass implements CompilerPassInterface
 
                 $this->checkOutEdges($node->getOutEdges());
 
->>>>>>> web and vendor directory from composer install
                 $this->checkedNodes[$id] = true;
                 array_pop($this->currentPath);
             }

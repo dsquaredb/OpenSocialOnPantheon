@@ -66,7 +66,7 @@
 
   $.extend(DropButton.prototype, {
     toggle: function toggle(show) {
-      var isBool = typeof show === 'boolean';
+      var isBool = typeof show   'boolean';
       show = isBool ? show : !this.$dropbutton.hasClass('open');
       this.$dropbutton.toggleClass('open', show);
     },

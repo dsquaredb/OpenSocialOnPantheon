@@ -240,7 +240,7 @@ while (true) {
     $i = 2;
 -----
 Syntax error, unexpected EOF from 8:12 to 8:12
-<<<<<<< HEAD
+ 
 =======
 -----
 <?php
@@ -916,8 +916,8 @@ array(
             )
         )
     )
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
 >>>>>>> updating open social
 )
@@ -1234,7 +1234,7 @@ array(
             )
         )
     )
-<<<<<<< HEAD
+ 
 )
 >>>>>>> Update Open Social to 8.x-2.1
 =======

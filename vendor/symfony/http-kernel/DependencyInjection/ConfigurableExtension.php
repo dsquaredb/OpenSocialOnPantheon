@@ -37,12 +37,11 @@ abstract class ConfigurableExtension extends Extension
 
     /**
      * Configures the passed container according to the merged configuration.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param array            $mergedConfig
      * @param ContainerBuilder $container
->>>>>>> web and vendor directory from composer install
      */
     abstract protected function loadInternal(array $mergedConfig, ContainerBuilder $container);
 }

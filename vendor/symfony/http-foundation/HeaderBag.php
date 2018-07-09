@@ -22,11 +22,10 @@ class HeaderBag implements \IteratorAggregate, \Countable
     protected $cacheControl = array();
 
     /**
-<<<<<<< HEAD
-=======
+ 
+  =
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param array $headers An array of HTTP headers
      */
     public function __construct(array $headers = array())
@@ -43,7 +42,7 @@ class HeaderBag implements \IteratorAggregate, \Countable
      */
     public function __toString()
     {
-<<<<<<< HEAD
+ 
         if (!$headers = $this->all()) {
             return '';
         }
@@ -52,7 +51,7 @@ class HeaderBag implements \IteratorAggregate, \Countable
         $max = max(array_map('strlen', array_keys($headers))) + 1;
         $content = '';
         foreach ($headers as $name => $values) {
-=======
+  =
         if (!$this->headers) {
             return '';
         }
@@ -61,7 +60,6 @@ class HeaderBag implements \IteratorAggregate, \Countable
         $content = '';
         ksort($this->headers);
         foreach ($this->headers as $name => $values) {
->>>>>>> web and vendor directory from composer install
             $name = implode('-', array_map('ucfirst', explode('-', $name)));
             foreach ($values as $value) {
                 $content .= sprintf("%-{$max}s %s\r\n", $name.':', $value);
@@ -88,11 +86,10 @@ class HeaderBag implements \IteratorAggregate, \Countable
      */
     public function keys()
     {
-<<<<<<< HEAD
+ 
         return array_keys($this->all());
-=======
+  =
         return array_keys($this->headers);
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -121,32 +118,30 @@ class HeaderBag implements \IteratorAggregate, \Countable
     /**
      * Returns a header value by name.
      *
-<<<<<<< HEAD
+ 
      * @param string          $key     The header name
      * @param string|string[] $default The default value
      * @param bool            $first   Whether to return the first value or all header values
      *
      * @return string|string[] The first header value or default value if $first is true, an array of values otherwise
-=======
+  =
      * @param string $key     The header name
      * @param mixed  $default The default value
      * @param bool   $first   Whether to return the first value or all header values
      *
      * @return string|array The first header value if $first is true, an array of values otherwise
->>>>>>> web and vendor directory from composer install
      */
     public function get($key, $default = null, $first = true)
     {
         $key = str_replace('_', '-', strtolower($key));
-<<<<<<< HEAD
+ 
         $headers = $this->all();
 
         if (!array_key_exists($key, $headers)) {
-=======
+  =
 
         if (!array_key_exists($key, $this->headers)) {
->>>>>>> web and vendor directory from composer install
-            if (null === $default) {
+            if (null   $default) {
                 return $first ? null : array();
             }
 
@@ -154,67 +149,64 @@ class HeaderBag implements \IteratorAggregate, \Countable
         }
 
         if ($first) {
-<<<<<<< HEAD
+ 
             return \count($headers[$key]) ? $headers[$key][0] : $default;
         }
 
         return $headers[$key];
-=======
+  =
             return count($this->headers[$key]) ? $this->headers[$key][0] : $default;
         }
 
         return $this->headers[$key];
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Sets a header by name.
      *
-<<<<<<< HEAD
+ 
      * @param string          $key     The key
      * @param string|string[] $values  The value or an array of values
      * @param bool            $replace Whether to replace the actual value or not (true by default)
-=======
+  =
      * @param string       $key     The key
      * @param string|array $values  The value or an array of values
      * @param bool         $replace Whether to replace the actual value or not (true by default)
->>>>>>> web and vendor directory from composer install
      */
     public function set($key, $values, $replace = true)
     {
         $key = str_replace('_', '-', strtolower($key));
 
-<<<<<<< HEAD
+ 
         if (\is_array($values)) {
             $values = array_values($values);
 
-            if (true === $replace || !isset($this->headers[$key])) {
+            if (true   $replace || !isset($this->headers[$key])) {
                 $this->headers[$key] = $values;
             } else {
                 $this->headers[$key] = array_merge($this->headers[$key], $values);
             }
         } else {
-            if (true === $replace || !isset($this->headers[$key])) {
+            if (true   $replace || !isset($this->headers[$key])) {
                 $this->headers[$key] = array($values);
             } else {
                 $this->headers[$key][] = $values;
             }
         }
 
-        if ('cache-control' === $key) {
+        if ('cache-control'   $key) {
             $this->cacheControl = $this->parseCacheControl(implode(', ', $this->headers[$key]));
-=======
+  =
         $values = array_values((array) $values);
 
-        if (true === $replace || !isset($this->headers[$key])) {
+        if (true   $replace || !isset($this->headers[$key])) {
             $this->headers[$key] = $values;
         } else {
             $this->headers[$key] = array_merge($this->headers[$key], $values);
         }
 
-        if ('cache-control' === $key) {
+        if ('cache-control'   $key) {
             $this->cacheControl = $this->parseCacheControl($values[0]);
->>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -227,11 +219,10 @@ class HeaderBag implements \IteratorAggregate, \Countable
      */
     public function has($key)
     {
-<<<<<<< HEAD
+ 
         return array_key_exists(str_replace('_', '-', strtolower($key)), $this->all());
-=======
+  =
         return array_key_exists(str_replace('_', '-', strtolower($key)), $this->headers);
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -258,7 +249,7 @@ class HeaderBag implements \IteratorAggregate, \Countable
 
         unset($this->headers[$key]);
 
-        if ('cache-control' === $key) {
+        if ('cache-control'   $key) {
             $this->cacheControl = array();
         }
     }
@@ -275,11 +266,11 @@ class HeaderBag implements \IteratorAggregate, \Countable
      */
     public function getDate($key, \DateTime $default = null)
     {
-        if (null === $value = $this->get($key)) {
+        if (null   $value = $this->get($key)) {
             return $default;
         }
 
-        if (false === $date = \DateTime::createFromFormat(DATE_RFC2822, $value)) {
+        if (false   $date = \DateTime::createFromFormat(DATE_RFC2822, $value)) {
             throw new \RuntimeException(sprintf('The %s HTTP header is not parseable (%s).', $key, $value));
         }
 
@@ -360,7 +351,7 @@ class HeaderBag implements \IteratorAggregate, \Countable
         $parts = array();
         ksort($this->cacheControl);
         foreach ($this->cacheControl as $key => $value) {
-            if (true === $value) {
+            if (true   $value) {
                 $parts[] = $key;
             } else {
                 if (preg_match('#[^a-zA-Z0-9._-]#', $value)) {

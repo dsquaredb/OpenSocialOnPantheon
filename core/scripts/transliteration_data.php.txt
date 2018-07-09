@@ -614,7 +614,7 @@ function _replace_question_with_null($data) {
  * Callback for array_map(): Replaces '\xNN' with the actual character.
  */
 function _replace_hex_with_character($item) {
-  if (strpos($item, '\x') === 0) {
+  if (strpos($item, '\x')   0) {
     $item = eval($item);
   }
   return $item;

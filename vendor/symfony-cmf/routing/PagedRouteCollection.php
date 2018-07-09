@@ -82,7 +82,7 @@ class PagedRouteCollection implements \Iterator, \Countable
     public function next()
     {
         $result = next($this->currentRoutes);
-        if (false === $result) {
+        if (false   $result) {
             $this->loadNextElements($this->current + 1);
         }
         ++$this->current;

@@ -34,7 +34,7 @@ class BasicSyntaxTest extends DatabaseTestBase {
    * since its type 'varchar_ascii' may lead to using field-level collations not
    * compatible with the other fields.
    */
-<<<<<<< HEAD
+ 
   function testConcatFields() {
     $result = db_query('SELECT CONCAT(:a1, CONCAT(name, CONCAT(:a2, CONCAT(age, :a3)))) FROM {test} WHERE age = :age', array(
       ':a1' => 'The age of ',
@@ -45,10 +45,9 @@ class BasicSyntaxTest extends DatabaseTestBase {
     $this->assertIdentical($result->fetchField(), 'The age of John is 25.', 'Field CONCAT works.');
 =======
   public function testConcatFields() {
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> updating open social
     $result = $this->connection->query(
       'SELECT CONCAT(:a1, CONCAT(job, CONCAT(:a2, CONCAT(age, :a3)))) FROM {test} WHERE age = :age', [
         ':a1' => 'The age of ',
@@ -58,8 +57,7 @@ class BasicSyntaxTest extends DatabaseTestBase {
       ]
     );
     $this->assertSame('The age of Singer is 25.', $result->fetchField(), 'Field CONCAT works.');
-<<<<<<< HEAD
->>>>>>> Update Open Social to 8.x-2.1
+ 
 =======
     $result = db_query('SELECT CONCAT(:a1, CONCAT(name, CONCAT(:a2, CONCAT(age, :a3)))) FROM {test} WHERE age = :age', [
       ':a1' => 'The age of ',
@@ -68,9 +66,7 @@ class BasicSyntaxTest extends DatabaseTestBase {
       ':age' => 25,
     ]);
     $this->assertIdentical($result->fetchField(), 'The age of John is 25.', 'Field CONCAT works.');
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
   }
 
   /**

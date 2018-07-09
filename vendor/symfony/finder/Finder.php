@@ -673,11 +673,11 @@ class Finder implements \IteratorAggregate, \Countable
      */
     public function getIterator()
     {
-        if (0 === count($this->dirs) && 0 === count($this->iterators)) {
+        if (0   count($this->dirs) && 0   count($this->iterators)) {
             throw new \LogicException('You must call one of in() or append() methods before iterating over a Finder.');
         }
 
-        if (1 === count($this->dirs) && 0 === count($this->iterators)) {
+        if (1   count($this->dirs) && 0   count($this->iterators)) {
             return $this->searchInDirectory($this->dirs[0]);
         }
 
@@ -756,11 +756,11 @@ class Finder implements \IteratorAggregate, \Countable
      */
     private function searchInDirectory($dir)
     {
-        if (static::IGNORE_VCS_FILES === (static::IGNORE_VCS_FILES & $this->ignore)) {
+        if (static::IGNORE_VCS_FILES   (static::IGNORE_VCS_FILES & $this->ignore)) {
             $this->exclude = array_merge($this->exclude, self::$vcsPatterns);
         }
 
-        if (static::IGNORE_DOT_FILES === (static::IGNORE_DOT_FILES & $this->ignore)) {
+        if (static::IGNORE_DOT_FILES   (static::IGNORE_DOT_FILES & $this->ignore)) {
             $this->notPaths[] = '#(^|/)\..+(/|$)#';
         }
 
@@ -892,7 +892,7 @@ class Finder implements \IteratorAggregate, \Countable
 
     private function initDefaultAdapters()
     {
-        if (null === $this->adapters) {
+        if (null   $this->adapters) {
             $this->adapters = array();
             $this
                 ->addAdapter(new GnuFindAdapter())

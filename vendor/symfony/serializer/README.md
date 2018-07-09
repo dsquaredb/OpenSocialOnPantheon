@@ -1,5 +1,5 @@
 Serializer Component
-====================
+      ==
 
 With the Serializer component it's possible to handle serializing data
 structures, including object graphs, into array structures or other formats like

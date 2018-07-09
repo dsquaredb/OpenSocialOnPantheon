@@ -11,19 +11,18 @@
 
 namespace Symfony\Component\Validator\Mapping\Factory;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\Validator\Exception\NoSuchMetadataException;
 use Symfony\Component\Validator\Mapping\MetadataInterface;
 =======
 use Symfony\Component\Validator\MetadataFactoryInterface as LegacyMetadataFactoryInterface;
->>>>>>> web and vendor directory from composer install
 
 /**
  * Returns {@link \Symfony\Component\Validator\Mapping\MetadataInterface} instances for values.
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
  */
-<<<<<<< HEAD
+ 
 interface MetadataFactoryInterface
 {
     /**
@@ -48,5 +47,4 @@ interface MetadataFactoryInterface
 =======
 interface MetadataFactoryInterface extends LegacyMetadataFactoryInterface
 {
->>>>>>> web and vendor directory from composer install
 }

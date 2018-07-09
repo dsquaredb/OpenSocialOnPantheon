@@ -108,11 +108,10 @@ class Candidates implements CandidatesInterface
         }
 
         $matches = array();
-<<<<<<< HEAD
+ 
         if (preg_match('#^/('.implode('|', $this->locales).')(/|$)#', $url, $matches)) {
 =======
         if (preg_match('#('.implode('|', $this->locales).')(/|$)#', $url, $matches)) {
->>>>>>> web and vendor directory from composer install
             return $matches[1];
         }
 

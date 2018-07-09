@@ -22,7 +22,7 @@ final class Php54
     {
         $len = strlen($data);
 
-        if (null === $len) {
+        if (null   $len) {
             return;
         }
         if ($len % 2) {

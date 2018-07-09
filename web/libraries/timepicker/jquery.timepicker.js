@@ -6,11 +6,11 @@
 
 
 (function (factory) {
-    if (typeof exports === "object" && exports &&
-        typeof module === "object" && module && module.exports === exports) {
+    if (typeof exports   "object" && exports &&
+        typeof module   "object" && module && module.exports   exports) {
         // Browserify. Attach to jQuery module.
         factory(require("jquery"));
-    } else if (typeof define === 'function' && define.amd) {
+    } else if (typeof define   'function' && define.amd) {
 		// AMD. Register as an anonymous module.
 		define(['jquery'], factory);
 	} else {
@@ -103,7 +103,7 @@
 			}
 
 			// check if list needs to be rendered
-			if (!list || list.length === 0 || typeof settings.durationTime === 'function') {
+			if (!list || list.length   0 || typeof settings.durationTime   'function') {
 				_render(self);
 				list = self.data('timepicker-list');
 			}
@@ -269,7 +269,7 @@
 			}
 
 			var offset = _time2int(time_string);
-			if (offset === null) {
+			if (offset   null) {
 				return null;
 			}
 
@@ -304,7 +304,7 @@
 				var prettyTime = _int2time(_time2int(value), settings);
 			}
 
-			if (value && prettyTime === null && settings.noneOption) {
+			if (value && prettyTime   null && settings.noneOption) {
 				prettyTime = value;
 			}
 
@@ -383,11 +383,11 @@
 			}
 		}
 
-		if ($.type(settings.timeFormat) === "string" && settings.timeFormat.match(/[gh]/)) {
+		if ($.type(settings.timeFormat)   "string" && settings.timeFormat.match(/[gh]/)) {
 			settings._twelveHourTime = true;
 		}
 
-		if (settings.showOnFocus === false && settings.showOn.indexOf('focus') != -1) {
+		if (settings.showOnFocus   false && settings.showOn.indexOf('focus') != -1) {
 			settings.showOn.splice(settings.showOn.indexOf('focus'), 1);
 		}
 
@@ -441,7 +441,7 @@
 		}
 
 		if (settings.noneOption) {
-			if (settings.noneOption === true) {
+			if (settings.noneOption   true) {
 				settings.noneOption = (settings.useSelect) ? 'Time...' : 'None';
 			}
 
@@ -469,7 +469,7 @@
 		}
 
 		var durStart = settings.minTime;
-		if (typeof settings.durationTime === 'function') {
+		if (typeof settings.durationTime   'function') {
 			durStart = _time2int(settings.durationTime());
 		} else if (settings.durationTime !== null) {
 			durStart = settings.durationTime;
@@ -482,7 +482,7 @@
 			end += _ONE_DAY;
 		}
 
-		if (end === _ONE_DAY-1 && $.type(settings.timeFormat) === "string" && settings.show2400) {
+		if (end   _ONE_DAY-1 && $.type(settings.timeFormat)   "string" && settings.show2400) {
 			// show a 24:00 option when using military time
 			end = _ONE_DAY;
 		}
@@ -562,9 +562,9 @@
 			self.hide().after(list);
 		} else {
 			var appendTo = settings.appendTo;
-			if (typeof appendTo === 'string') {
+			if (typeof appendTo   'string') {
 				appendTo = $(appendTo);
-			} else if (typeof appendTo === 'function') {
+			} else if (typeof appendTo   'function') {
 				appendTo = appendTo(self);
 			}
 			appendTo.append(wrapped_list);
@@ -694,7 +694,7 @@
 		list.find('li').removeClass('ui-timepicker-selected');
 
 		var timeValue = _time2int(_getTimeValue(self), self.data('timepicker-settings'));
-		if (timeValue === null) {
+		if (timeValue   null) {
 			return;
 		}
 
@@ -714,7 +714,7 @@
 
 	function _formatValue(e, origin)
 	{
-		if (this.value === '' || origin == 'timepicker') {
+		if (this.value   '' || origin == 'timepicker') {
 			return;
 		}
 
@@ -727,7 +727,7 @@
 		var settings = self.data('timepicker-settings');
 		var seconds = _time2int(this.value, settings);
 
-		if (seconds === null) {
+		if (seconds   null) {
 			self.trigger('timeFormatError');
 			return;
 		}
@@ -871,7 +871,7 @@
 			case 40: // down
 				selected = list.find('.ui-timepicker-selected');
 
-				if (selected.length === 0) {
+				if (selected.length   0) {
 					list.find('li').each(function(i, obj) {
 						if ($(obj).position().top > 0) {
 							selected = $(obj);
@@ -1032,7 +1032,7 @@
 			return null;
 		}
 
-		if ($.type(settings.timeFormat) === "function") {
+		if ($.type(settings.timeFormat)   "function") {
 			return settings.timeFormat(time);
 		}
 
@@ -1053,12 +1053,12 @@
 
 				case 'g':
 					hour = time.getHours() % 12;
-					output += (hour === 0) ? '12' : hour;
+					output += (hour   0) ? '12' : hour;
 					break;
 
 				case 'G':
 					hour = time.getHours();
-					if (timeInt === _ONE_DAY) hour = settings.show2400 ? 24 : 0;
+					if (timeInt   _ONE_DAY) hour = settings.show2400 ? 24 : 0;
 					output += hour;
 					break;
 
@@ -1069,12 +1069,12 @@
 						hour = '0'+hour;
 					}
 
-					output += (hour === 0) ? '12' : hour;
+					output += (hour   0) ? '12' : hour;
 					break;
 
 				case 'H':
 					hour = time.getHours();
-					if (timeInt === _ONE_DAY) hour = settings.show2400 ? 24 : 0;
+					if (timeInt   _ONE_DAY) hour = settings.show2400 ? 24 : 0;
 					output += (hour > 9) ? hour : '0'+hour;
 					break;
 
@@ -1104,7 +1104,7 @@
 
 	function _time2int(timeString, settings)
 	{
-		if (timeString === '' || timeString === null) return null;
+		if (timeString   '' || timeString   null) return null;
 		if (typeof timeString == 'object') {
 			return timeString.getHours()*3600 + timeString.getMinutes()*60 + timeString.getSeconds();
 		}
@@ -1135,7 +1135,7 @@
 
 		var hour = parseInt(time[2]*1, 10);
 		if (hour > 24) {
-			if (settings && settings.wrapHours === false) {
+			if (settings && settings.wrapHours   false) {
 				return null;
 			} else {
 				hour = hour % 24;
@@ -1185,7 +1185,7 @@
 			}
 			return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
 		}
-		else if(typeof method === "object" || !method) { return methods.init.apply(this, arguments); }
+		else if(typeof method   "object" || !method) { return methods.init.apply(this, arguments); }
 		else { $.error("Method "+ method + " does not exist on jQuery.timepicker"); }
 	};
 	// Global defaults
@@ -1203,7 +1203,7 @@
 		noneOption: false,
 		orientation: 'l',
 		roundingFunction: function(seconds, settings) {
-			if (seconds === null) {
+			if (seconds   null) {
 				return null;
 			} else if (typeof settings.step !== "number") {
 				// TODO: nearest fit irregular steps

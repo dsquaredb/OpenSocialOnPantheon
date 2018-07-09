@@ -11,19 +11,17 @@
 
 namespace Symfony\Component\EventDispatcher\Tests;
 
-<<<<<<< HEAD
+ 
 use PHPUnit\Framework\TestCase;
 =======
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
-<<<<<<< HEAD
+ 
 abstract class AbstractEventDispatcherTest extends TestCase
 =======
 abstract class AbstractEventDispatcherTest extends \PHPUnit_Framework_TestCase
->>>>>>> web and vendor directory from composer install
 {
     /* Some pseudo events */
     const preFoo = 'pre.foo';
@@ -63,10 +61,9 @@ abstract class AbstractEventDispatcherTest extends \PHPUnit_Framework_TestCase
     {
         $this->dispatcher->addListener('pre.foo', array($this->listener, 'preFoo'));
         $this->dispatcher->addListener('post.foo', array($this->listener, 'postFoo'));
-<<<<<<< HEAD
+ 
         $this->assertTrue($this->dispatcher->hasListeners());
 =======
->>>>>>> web and vendor directory from composer install
         $this->assertTrue($this->dispatcher->hasListeners(self::preFoo));
         $this->assertTrue($this->dispatcher->hasListeners(self::postFoo));
         $this->assertCount(1, $this->dispatcher->getListeners(self::preFoo));
@@ -148,7 +145,7 @@ abstract class AbstractEventDispatcherTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($event, $return);
     }
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * @group legacy
@@ -160,7 +157,6 @@ abstract class AbstractEventDispatcherTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('pre.foo', $event->getName());
     }
 
->>>>>>> web and vendor directory from composer install
     public function testDispatchForClosure()
     {
         $invoked = 0;
@@ -181,11 +177,10 @@ abstract class AbstractEventDispatcherTest extends \PHPUnit_Framework_TestCase
         // be executed
         // Manually set priority to enforce $this->listener to be called first
         $this->dispatcher->addListener('post.foo', array($this->listener, 'postFoo'), 10);
-<<<<<<< HEAD
+ 
         $this->dispatcher->addListener('post.foo', array($otherListener, 'postFoo'));
 =======
         $this->dispatcher->addListener('post.foo', array($otherListener, 'preFoo'));
->>>>>>> web and vendor directory from composer install
         $this->dispatcher->dispatch(self::postFoo);
         $this->assertTrue($this->listener->postFooInvoked);
         $this->assertFalse($otherListener->postFooInvoked);
@@ -282,7 +277,7 @@ abstract class AbstractEventDispatcherTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($this->dispatcher->hasListeners(self::preFoo));
     }
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * @group legacy
@@ -297,7 +292,6 @@ abstract class AbstractEventDispatcherTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($this->dispatcher, $dispatcher);
     }
 
->>>>>>> web and vendor directory from composer install
     public function testEventReceivesTheDispatcherInstanceAsArgument()
     {
         $listener = new TestWithDispatcher();
@@ -346,7 +340,7 @@ abstract class AbstractEventDispatcherTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($this->dispatcher->hasListeners('foo'));
         $this->assertFalse($this->dispatcher->hasListeners());
     }
-<<<<<<< HEAD
+ 
 
     public function testHasListenersIsLazy()
     {
@@ -415,7 +409,6 @@ abstract class AbstractEventDispatcherTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(array('bar' => array(array($test, 'foo'))), $this->dispatcher->getListeners());
     }
 =======
->>>>>>> web and vendor directory from composer install
 }
 
 class CallableClass

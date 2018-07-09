@@ -11,7 +11,7 @@
 
 namespace Symfony\Component\EventDispatcher\DependencyInjection;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\DependencyInjection\Argument\ServiceClosureArgument;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
@@ -22,14 +22,13 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 =======
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
->>>>>>> web and vendor directory from composer install
 
 /**
  * Compiler pass to register tagged services for an event dispatcher.
  */
 class RegisterListenersPass implements CompilerPassInterface
 {
-<<<<<<< HEAD
+ 
     protected $dispatcherService;
     protected $listenerTag;
     protected $subscriberTag;
@@ -57,7 +56,6 @@ class RegisterListenersPass implements CompilerPassInterface
     /**
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param string $dispatcherService Service name of the event dispatcher in processed container
      * @param string $listenerTag       Tag name used for listener
      * @param string $subscriberTag     Tag name used for subscribers
@@ -69,7 +67,7 @@ class RegisterListenersPass implements CompilerPassInterface
         $this->subscriberTag = $subscriberTag;
     }
 
-<<<<<<< HEAD
+ 
     public function setHotPathEvents(array $hotPathEvents, $tagName = 'container.hot_path')
     {
         $this->hotPathEvents = array_flip($hotPathEvents);
@@ -79,7 +77,6 @@ class RegisterListenersPass implements CompilerPassInterface
     }
 
 =======
->>>>>>> web and vendor directory from composer install
     public function process(ContainerBuilder $container)
     {
         if (!$container->hasDefinition($this->dispatcherService) && !$container->hasAlias($this->dispatcherService)) {
@@ -88,7 +85,7 @@ class RegisterListenersPass implements CompilerPassInterface
 
         $definition = $container->findDefinition($this->dispatcherService);
 
-<<<<<<< HEAD
+ 
         foreach ($container->findTaggedServiceIds($this->listenerTag, true) as $id => $events) {
 =======
         foreach ($container->findTaggedServiceIds($this->listenerTag) as $id => $events) {
@@ -101,16 +98,14 @@ class RegisterListenersPass implements CompilerPassInterface
                 throw new \InvalidArgumentException(sprintf('The service "%s" must not be abstract as event listeners are lazy-loaded.', $id));
             }
 
->>>>>>> web and vendor directory from composer install
             foreach ($events as $event) {
                 $priority = isset($event['priority']) ? $event['priority'] : 0;
 
                 if (!isset($event['event'])) {
-<<<<<<< HEAD
+ 
                     throw new InvalidArgumentException(sprintf('Service "%s" must define the "event" attribute on "%s" tags.', $id, $this->listenerTag));
 =======
                     throw new \InvalidArgumentException(sprintf('Service "%s" must define the "event" attribute on "%s" tags.', $id, $this->listenerTag));
->>>>>>> web and vendor directory from composer install
                 }
 
                 if (!isset($event['method'])) {
@@ -121,7 +116,7 @@ class RegisterListenersPass implements CompilerPassInterface
                     $event['method'] = preg_replace('/[^a-z0-9]/i', '', $event['method']);
                 }
 
-<<<<<<< HEAD
+ 
                 $definition->addMethodCall('addListener', array($event['event'], array(new ServiceClosureArgument(new Reference($id)), $event['method']), $priority));
 
                 if (isset($this->hotPathEvents[$event['event']])) {
@@ -209,6 +204,5 @@ class ExtractingEventDispatcher extends EventDispatcher implements EventSubscrib
 
             $definition->addMethodCall('addSubscriberService', array($id, $class));
         }
->>>>>>> web and vendor directory from composer install
     }
 }

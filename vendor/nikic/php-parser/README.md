@@ -1,5 +1,5 @@
 PHP Parser
-==========
+   =
 
 [![Build Status](https://travis-ci.org/nikic/PHP-Parser.svg?branch=master)](https://travis-ci.org/nikic/PHP-Parser) [![Coverage Status](https://coveralls.io/repos/github/nikic/PHP-Parser/badge.svg?branch=master)](https://coveralls.io/github/nikic/PHP-Parser?branch=master)
 
@@ -89,12 +89,12 @@ Documentation
 
 Component documentation:
 
-<<<<<<< HEAD
+ 
  1. [Error](doc/component/Error.markdown)
  2. [Lexer](doc/component/Lexer.markdown)
 
  [doc_1_x]: https://github.com/nikic/PHP-Parser/tree/1.x/doc
-=======
+  =
  * [Walking the AST](doc/component/Walking_the_AST.markdown)
    * Node visitors
    * Modifying the AST from a visitor

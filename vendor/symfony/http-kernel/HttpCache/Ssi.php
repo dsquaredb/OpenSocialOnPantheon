@@ -13,17 +13,16 @@ namespace Symfony\Component\HttpKernel\HttpCache;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\HttpKernel\HttpKernelInterface;
->>>>>>> web and vendor directory from composer install
 
 /**
  * Ssi implements the SSI capabilities to Request and Response instances.
  *
  * @author Sebastian Krebs <krebs.seb@gmail.com>
  */
-<<<<<<< HEAD
+ 
 class Ssi extends AbstractSurrogate
 {
 =======
@@ -46,7 +45,6 @@ class Ssi implements SurrogateInterface
         $this->contentTypes = $contentTypes;
     }
 
->>>>>>> web and vendor directory from composer install
     /**
      * {@inheritdoc}
      */
@@ -58,7 +56,7 @@ class Ssi implements SurrogateInterface
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
 =======
     public function createCacheStrategy()
     {
@@ -91,7 +89,6 @@ class Ssi implements SurrogateInterface
     /**
      * {@inheritdoc}
      */
->>>>>>> web and vendor directory from composer install
     public function addSurrogateControl(Response $response)
     {
         if (false !== strpos($response->getContent(), '<!--#include')) {
@@ -102,7 +99,7 @@ class Ssi implements SurrogateInterface
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
 =======
     public function needsParsing(Response $response)
     {
@@ -116,7 +113,6 @@ class Ssi implements SurrogateInterface
     /**
      * {@inheritdoc}
      */
->>>>>>> web and vendor directory from composer install
     public function renderIncludeTag($uri, $alt = null, $ignoreErrors = true, $comment = '')
     {
         return sprintf('<!--#include virtual="%s" -->', $uri);
@@ -168,7 +164,7 @@ class Ssi implements SurrogateInterface
         $response->headers->set('X-Body-Eval', 'SSI');
 
         // remove SSI/1.0 from the Surrogate-Control header
-<<<<<<< HEAD
+ 
         $this->removeFromControl($response);
 =======
         if ($response->headers->has('Surrogate-Control')) {
@@ -207,6 +203,5 @@ class Ssi implements SurrogateInterface
                 throw $e;
             }
         }
->>>>>>> web and vendor directory from composer install
     }
 }

@@ -32,7 +32,7 @@ abstract class RedirectableUrlMatcher extends UrlMatcher implements Redirectable
             }
 
             try {
-<<<<<<< HEAD
+ 
                 $parameters = parent::match($pathinfo.'/');
 
                 return array_replace($parameters, $this->redirect($pathinfo.'/', isset($parameters['_route']) ? $parameters['_route'] : null));
@@ -40,7 +40,6 @@ abstract class RedirectableUrlMatcher extends UrlMatcher implements Redirectable
                 parent::match($pathinfo.'/');
 
                 return $this->redirect($pathinfo.'/', null);
->>>>>>> web and vendor directory from composer install
             } catch (ResourceNotFoundException $e2) {
                 throw $e;
             }
@@ -55,11 +54,10 @@ abstract class RedirectableUrlMatcher extends UrlMatcher implements Redirectable
     protected function handleRouteRequirements($pathinfo, $name, Route $route)
     {
         // expression condition
-<<<<<<< HEAD
+ 
         if ($route->getCondition() && !$this->getExpressionLanguage()->evaluate($route->getCondition(), array('context' => $this->context, 'request' => $this->request ?: $this->createRequest($pathinfo)))) {
 =======
         if ($route->getCondition() && !$this->getExpressionLanguage()->evaluate($route->getCondition(), array('context' => $this->context, 'request' => $this->request))) {
->>>>>>> web and vendor directory from composer install
             return array(self::REQUIREMENT_MISMATCH, null);
         }
 

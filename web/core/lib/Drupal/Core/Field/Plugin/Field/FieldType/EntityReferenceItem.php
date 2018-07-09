@@ -277,7 +277,7 @@ class EntityReferenceItem extends FieldItemBase implements OptionsProviderInterf
       $values['target_id'] = array_rand($referenceable[$group]);
       return $values;
     }
-<<<<<<< HEAD
+ 
 =======
 
     // Attempt to create a sample entity, avoiding recursion.
@@ -326,7 +326,6 @@ class EntityReferenceItem extends FieldItemBase implements OptionsProviderInterf
       }
       return array_rand($bundle_ids);
     }
->>>>>>> Update Open Social to 8.x-2.1
   }
 
   /**

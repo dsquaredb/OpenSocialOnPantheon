@@ -36,14 +36,13 @@ class GetResponseForExceptionEvent extends GetResponseEvent
      */
     private $exception;
 
-<<<<<<< HEAD
+ 
     /**
      * @var bool
      */
     private $allowCustomResponseCode = false;
 
 =======
->>>>>>> web and vendor directory from composer install
     public function __construct(HttpKernelInterface $kernel, Request $request, $requestType, \Exception $e)
     {
         parent::__construct($kernel, $request, $requestType);
@@ -72,7 +71,7 @@ class GetResponseForExceptionEvent extends GetResponseEvent
     {
         $this->exception = $exception;
     }
-<<<<<<< HEAD
+ 
 
     /**
      * Mark the event as allowing a custom response code.
@@ -92,5 +91,4 @@ class GetResponseForExceptionEvent extends GetResponseEvent
         return $this->allowCustomResponseCode;
     }
 =======
->>>>>>> web and vendor directory from composer install
 }

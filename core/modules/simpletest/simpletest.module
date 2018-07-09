@@ -808,7 +808,7 @@ function simpletest_phpunit_find_testcases(\SimpleXMLElement $element, \SimpleXM
     $parent = $element;
   }
 
-  if ($element->getName() === 'testcase' && (int) $parent->attributes()->tests > 0) {
+  if ($element->getName()   'testcase' && (int) $parent->attributes()->tests > 0) {
     // Add the class attribute if the testcase does not have one. This is the
     // case for tests using a data provider. The name of the parent testsuite
     // will be in the format class::method.

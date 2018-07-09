@@ -108,10 +108,9 @@ class InstallerTest extends TestCase
             array('concrete5-block', true),
             array('concrete5-package', true),
             array('concrete5-theme', true),
-<<<<<<< HEAD
+ 
             array('concrete5-core', true),
 =======
->>>>>>> web and vendor directory from composer install
             array('concrete5-update', true),
             array('craft-plugin', true),
             array('croogo-plugin', true),
@@ -126,7 +125,7 @@ class InstallerTest extends TestCase
             array('ee2-theme', true),
             array('ee2-addon', true),
             array('elgg-plugin', true),
-<<<<<<< HEAD
+ 
             array('eliasis-component', true),
             array('eliasis-module', true),
             array('eliasis-plugin', true),
@@ -134,7 +133,6 @@ class InstallerTest extends TestCase
             array('ezplatform-assets', true),
             array('ezplatform-meta-assets', true),
 =======
->>>>>>> web and vendor directory from composer install
             array('fuel-module', true),
             array('fuel-package', true),
             array('fuel-theme', true),
@@ -144,7 +142,7 @@ class InstallerTest extends TestCase
             array('imagecms-template', true),
             array('imagecms-module', true),
             array('imagecms-library', true),
-<<<<<<< HEAD
+ 
             array('itop-extension', true),
             array('joomla-library', true),
             array('kanboard-plugin', true),
@@ -170,7 +168,6 @@ class InstallerTest extends TestCase
             array('lithium-library', true),
             array('magento-library', true),
             array('mako-package', true),
->>>>>>> web and vendor directory from composer install
             array('modxevo-snippet', true),
             array('modxevo-plugin', true),
             array('modxevo-module', true),
@@ -184,11 +181,10 @@ class InstallerTest extends TestCase
             array('october-module', true),
             array('october-plugin', true),
             array('piwik-plugin', true),
-<<<<<<< HEAD
+ 
             array('pxcms-module', true),
             array('pxcms-theme', true),
 =======
->>>>>>> web and vendor directory from composer install
             array('phpbb-extension', true),
             array('pimcore-plugin', true),
             array('plentymarkets-plugin', true),
@@ -196,10 +192,9 @@ class InstallerTest extends TestCase
             array('prestashop-module', true),
             array('prestashop-theme', true),
             array('puppet-module', true),
-<<<<<<< HEAD
+ 
             array('porto-container', true),
 =======
->>>>>>> web and vendor directory from composer install
             array('radphp-bundle', true),
             array('redaxo-addon', true),
             array('redaxo-bestyle-plugin', true),
@@ -216,11 +211,10 @@ class InstallerTest extends TestCase
             array('silverstripe-theme', true),
             array('smf-module', true),
             array('smf-theme', true),
-<<<<<<< HEAD
+ 
             array('sydes-module', true),
             array('sydes-theme', true),
 =======
->>>>>>> web and vendor directory from composer install
             array('symfony1-plugin', true),
             array('thelia-module', true),
             array('thelia-frontoffice-template', true),
@@ -230,10 +224,9 @@ class InstallerTest extends TestCase
             array('tusk-asset', true),
             array('typo3-flow-plugin', true),
             array('typo3-cms-extension', true),
-<<<<<<< HEAD
+ 
             array('userfrosting-sprinkle', true),
 =======
->>>>>>> web and vendor directory from composer install
             array('vanilla-plugin', true),
             array('vanilla-theme', true),
             array('whmcs-gateway', true),
@@ -249,12 +242,11 @@ class InstallerTest extends TestCase
             array('phifty-bundle', true),
             array('phifty-library', true),
             array('phifty-framework', true),
-<<<<<<< HEAD
+ 
             array('osclass-plugin', true),
             array('osclass-theme', true),
             array('osclass-language', true),
 =======
->>>>>>> web and vendor directory from composer install
         );
     }
 
@@ -298,7 +290,7 @@ class InstallerTest extends TestCase
             array('cockpit-module', 'cockpit/modules/addons/My_module/', 'piotr-cz/cockpit-my_module'),
             array('codeigniter-library', 'application/libraries/my_package/', 'shama/my_package'),
             array('codeigniter-module', 'application/modules/my_package/', 'shama/my_package'),
-<<<<<<< HEAD
+ 
             array('concrete5-block', 'application/blocks/concrete5_block/', 'remo/concrete5_block'),
             array('concrete5-package', 'packages/concrete5_package/', 'remo/concrete5_package'),
             array('concrete5-theme', 'application/themes/concrete5_theme/', 'remo/concrete5_theme'),
@@ -307,7 +299,6 @@ class InstallerTest extends TestCase
             array('concrete5-block', 'blocks/concrete5_block/', 'remo/concrete5_block'),
             array('concrete5-package', 'packages/concrete5_package/', 'remo/concrete5_package'),
             array('concrete5-theme', 'themes/concrete5_theme/', 'remo/concrete5_theme'),
->>>>>>> web and vendor directory from composer install
             array('concrete5-update', 'updates/concrete5/', 'concrete5/concrete5'),
             array('craft-plugin', 'craft/plugins/my_plugin/', 'mdcpepper/my_plugin'),
             array('croogo-plugin', 'Plugin/Sitemaps/', 'fahad19/sitemaps'),
@@ -321,22 +312,20 @@ class InstallerTest extends TestCase
             array('drupal-profile', 'profiles/my_module/', 'shama/my_module'),
             array('drupal-drush', 'drush/my_module/', 'shama/my_module'),
             array('elgg-plugin', 'mod/sample_plugin/', 'test/sample_plugin'),
-<<<<<<< HEAD
+ 
             array('eliasis-component', 'components/my_component/', 'shama/my_component'),
             array('eliasis-module', 'modules/my_module/', 'shama/my_module'),
             array('eliasis-plugin', 'plugins/my_plugin/', 'shama/my_plugin'),
             array('eliasis-template', 'templates/my_template/', 'shama/my_template'),
 =======
->>>>>>> web and vendor directory from composer install
             array('ee3-addon', 'system/user/addons/ee_theme/', 'author/ee_theme'),
             array('ee3-theme', 'themes/user/ee_package/', 'author/ee_package'),
             array('ee2-addon', 'system/expressionengine/third_party/ee_theme/', 'author/ee_theme'),
             array('ee2-theme', 'themes/third_party/ee_package/', 'author/ee_package'),
-<<<<<<< HEAD
+ 
             array('ezplatform-assets', 'web/assets/ezplatform/ezplatform_comp/', 'author/ezplatform_comp'),
             array('ezplatform-meta-assets', 'web/assets/ezplatform/', 'author/ezplatform_comp'),
 =======
->>>>>>> web and vendor directory from composer install
             array('fuel-module', 'fuel/app/modules/module/', 'fuel/module'),
             array('fuel-package', 'fuel/packages/orm/', 'fuel/orm'),
             array('fuel-theme', 'fuel/app/themes/theme/', 'fuel/theme'),
@@ -346,7 +335,7 @@ class InstallerTest extends TestCase
             array('imagecms-template', 'templates/my_template/', 'shama/my_template'),
             array('imagecms-module', 'application/modules/my_module/', 'shama/my_module'),
             array('imagecms-library', 'application/libraries/my_library/', 'shama/my_library'),
-<<<<<<< HEAD
+ 
             array('itop-extension', 'extensions/my_extension/', 'shama/my_extension'),
             array('joomla-plugin', 'plugins/my_plugin/', 'shama/my_plugin'),
             array('kanboard-plugin', 'plugins/my_plugin/', 'shama/my_plugin'),
@@ -374,7 +363,6 @@ class InstallerTest extends TestCase
             array('laravel-library', 'libraries/my_package/', 'shama/my_package'),
             array('lithium-library', 'libraries/li3_test/', 'user/li3_test'),
             array('magento-library', 'lib/foo/', 'test/foo'),
->>>>>>> web and vendor directory from composer install
             array('modxevo-snippet', 'assets/snippets/my_snippet/', 'shama/my_snippet'),
             array('modxevo-plugin', 'assets/plugins/my_plugin/', 'shama/my_plugin'),
             array('modxevo-module', 'assets/modules/my_module/', 'shama/my_module'),
@@ -396,13 +384,12 @@ class InstallerTest extends TestCase
             array('piwik-plugin', 'plugins/VisitSummary/', 'shama/visit-summary'),
             array('prestashop-module', 'modules/a-module/', 'vendor/a-module'),
             array('prestashop-theme', 'themes/a-theme/', 'vendor/a-theme'),
-<<<<<<< HEAD
+ 
             array('pxcms-module', 'app/Modules/Foo/', 'vendor/module-foo'),
             array('pxcms-module', 'app/Modules/Foo/', 'vendor/pxcms-foo'),
             array('pxcms-theme', 'themes/Foo/', 'vendor/theme-foo'),
             array('pxcms-theme', 'themes/Foo/', 'vendor/pxcms-foo'),
 =======
->>>>>>> web and vendor directory from composer install
             array('phpbb-extension', 'ext/test/foo/', 'test/foo'),
             array('phpbb-style', 'styles/foo/', 'test/foo'),
             array('phpbb-language', 'language/foo/', 'test/foo'),
@@ -410,10 +397,9 @@ class InstallerTest extends TestCase
             array('plentymarkets-plugin', 'HelloWorld/', 'plugin-hello-world'),
             array('ppi-module', 'modules/foo/', 'test/foo'),
             array('puppet-module', 'modules/puppet-name/', 'puppet/puppet-name'),
-<<<<<<< HEAD
+ 
             array('porto-container', 'app/Containers/container-name/', 'test/container-name'),
 =======
->>>>>>> web and vendor directory from composer install
             array('radphp-bundle', 'src/Migration/', 'atkrad/migration'),
             array('redaxo-addon', 'redaxo/include/addons/my_plugin/', 'shama/my_plugin'),
             array('redaxo-bestyle-plugin', 'redaxo/include/addons/be_style/plugins/my_plugin/', 'shama/my_plugin'),
@@ -445,10 +431,9 @@ class InstallerTest extends TestCase
             array('typo3-flow-package', 'Packages/Application/my_package/', 'shama/my_package'),
             array('typo3-flow-build', 'Build/my_package/', 'shama/my_package'),
             array('typo3-cms-extension', 'typo3conf/ext/my_extension/', 'shama/my_extension'),
-<<<<<<< HEAD
+ 
             array('userfrosting-sprinkle', 'app/sprinkles/my_sprinkle/', 'shama/my_sprinkle'),
 =======
->>>>>>> web and vendor directory from composer install
             array('vanilla-plugin', 'plugins/my_plugin/', 'shama/my_plugin'),
             array('vanilla-theme', 'themes/my_theme/', 'shama/my_theme'),
             array('whmcs-gateway', 'modules/gateways/gateway_name/', 'vendor/gateway_name'),
@@ -464,12 +449,11 @@ class InstallerTest extends TestCase
             array('phifty-library', 'libraries/my-lib/', 'shama/my-lib'),
             array('phifty-framework', 'frameworks/my-framework/', 'shama/my-framework'),
             array('yawik-module', 'module/MyModule/', 'shama/my_module'),
-<<<<<<< HEAD
+ 
             array('osclass-plugin', 'oc-content/plugins/sample_plugin/', 'test/sample_plugin'),
             array('osclass-theme', 'oc-content/themes/sample_theme/', 'test/sample_theme'),
             array('osclass-language', 'oc-content/languages/sample_lang/', 'test/sample_lang'),
 =======
->>>>>>> web and vendor directory from composer install
         );
     }
 
@@ -605,11 +589,10 @@ class InstallerTest extends TestCase
         $package = new Package('foo', '1.0.0', '1.0.0');
 
         $installer = $this->getMock('Composer\Installers\Installer', array('getInstallPath'), array($this->io, $this->composer));
-<<<<<<< HEAD
+ 
         $installer->expects($this->atLeastOnce())->method('getInstallPath')->with($package)->will($this->returnValue(sys_get_temp_dir().'/foo'));
 =======
         $installer->expects($this->once())->method('getInstallPath')->with($package)->will($this->returnValue(sys_get_temp_dir().'/foo'));
->>>>>>> web and vendor directory from composer install
 
         $repo = $this->getMock('Composer\Repository\InstalledRepositoryInterface');
         $repo->expects($this->once())->method('hasPackage')->with($package)->will($this->returnValue(true));

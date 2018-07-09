@@ -11,10 +11,9 @@
 
 namespace Symfony\Component\Validator\Constraints;
 
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
@@ -51,11 +50,10 @@ class TimeValidator extends ConstraintValidator
             throw new UnexpectedTypeException($constraint, __NAMESPACE__.'\Time');
         }
 
-<<<<<<< HEAD
+ 
         if (null === $value || '' === $value || $value instanceof \DateTimeInterface) {
 =======
         if (null === $value || '' === $value || $value instanceof \DateTime) {
->>>>>>> web and vendor directory from composer install
             return;
         }
 
@@ -66,7 +64,7 @@ class TimeValidator extends ConstraintValidator
         $value = (string) $value;
 
         if (!preg_match(static::PATTERN, $value, $matches)) {
-<<<<<<< HEAD
+ 
             $this->context->buildViolation($constraint->message)
                 ->setParameter('{{ value }}', $this->formatValue($value))
                 ->setCode(Time::INVALID_FORMAT_ERROR)
@@ -83,13 +81,12 @@ class TimeValidator extends ConstraintValidator
                     ->setCode(Time::INVALID_FORMAT_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
 
             return;
         }
 
         if (!self::checkTime($matches[1], $matches[2], $matches[3])) {
-<<<<<<< HEAD
+ 
             $this->context->buildViolation($constraint->message)
                 ->setParameter('{{ value }}', $this->formatValue($value))
                 ->setCode(Time::INVALID_TIME_ERROR)
@@ -106,7 +103,6 @@ class TimeValidator extends ConstraintValidator
                     ->setCode(Time::INVALID_TIME_ERROR)
                     ->addViolation();
             }
->>>>>>> web and vendor directory from composer install
         }
     }
 }

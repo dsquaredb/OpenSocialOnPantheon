@@ -125,11 +125,10 @@ trait MessageTrait
      */
     public function hasHeader($header)
     {
-<<<<<<< HEAD
+ 
         return isset($this->headerNames[strtolower($header)]);
 =======
         return array_key_exists(strtolower($header), $this->headerNames);
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -153,7 +152,7 @@ trait MessageTrait
         }
 
         $header = $this->headerNames[strtolower($header)];
-<<<<<<< HEAD
+ 
 
         return $this->headers[$header];
 =======
@@ -161,7 +160,6 @@ trait MessageTrait
         $value  = is_array($value) ? $value : [$value];
 
         return $value;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -211,7 +209,7 @@ trait MessageTrait
      */
     public function withHeader($header, $value)
     {
-<<<<<<< HEAD
+ 
         $this->assertHeader($header);
 =======
         if (is_string($value)) {
@@ -226,7 +224,6 @@ trait MessageTrait
 
         HeaderSecurity::assertValidName($header);
         self::assertValidHeaderValue($value);
->>>>>>> web and vendor directory from composer install
 
         $normalized = strtolower($header);
 
@@ -234,12 +231,11 @@ trait MessageTrait
         if ($new->hasHeader($header)) {
             unset($new->headers[$new->headerNames[$normalized]]);
         }
-<<<<<<< HEAD
+ 
 
         $value = $this->filterHeaderValue($value);
 
 =======
->>>>>>> web and vendor directory from composer install
         $new->headerNames[$normalized] = $header;
         $new->headers[$header]         = $value;
 
@@ -265,7 +261,7 @@ trait MessageTrait
      */
     public function withAddedHeader($header, $value)
     {
-<<<<<<< HEAD
+ 
         $this->assertHeader($header);
 =======
         if (is_string($value)) {
@@ -280,13 +276,12 @@ trait MessageTrait
 
         HeaderSecurity::assertValidName($header);
         self::assertValidHeaderValue($value);
->>>>>>> web and vendor directory from composer install
 
         if (! $this->hasHeader($header)) {
             return $this->withHeader($header, $value);
         }
 
-<<<<<<< HEAD
+ 
         $header = $this->headerNames[strtolower($header)];
 
         $new = clone $this;
@@ -296,7 +291,6 @@ trait MessageTrait
         $header     = $this->headerNames[$normalized];
 
         $new = clone $this;
->>>>>>> web and vendor directory from composer install
         $new->headers[$header] = array_merge($this->headers[$header], $value);
         return $new;
     }
@@ -375,7 +369,7 @@ trait MessageTrait
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Test that an array contains only strings
      *
@@ -388,13 +382,12 @@ trait MessageTrait
     }
 
     /**
->>>>>>> web and vendor directory from composer install
      * Filter a set of headers to ensure they are in the correct internal format.
      *
      * Used by message constructors to allow setting all initial headers at once.
      *
      * @param array $originalHeaders Headers to filter.
-<<<<<<< HEAD
+ 
      */
     private function setHeaders(array $originalHeaders)
     {
@@ -439,13 +432,12 @@ trait MessageTrait
             if (! is_array($value)) {
                 $value = [ $value ];
             }
->>>>>>> web and vendor directory from composer install
 
             $headerNames[strtolower($header)] = $header;
             $headers[$header] = $value;
         }
 
-<<<<<<< HEAD
+ 
         $this->headerNames = $headerNames;
         $this->headers = $headers;
 =======
@@ -479,7 +471,6 @@ trait MessageTrait
     private static function assertValidHeaderValue(array $values)
     {
         array_walk($values, __NAMESPACE__ . '\HeaderSecurity::assertValid');
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -511,7 +502,7 @@ trait MessageTrait
             ));
         }
     }
-<<<<<<< HEAD
+ 
 
     /**
      * @param mixed $values
@@ -542,5 +533,4 @@ trait MessageTrait
         HeaderSecurity::assertValidName($name);
     }
 =======
->>>>>>> web and vendor directory from composer install
 }

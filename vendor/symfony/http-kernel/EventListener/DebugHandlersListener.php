@@ -35,13 +35,12 @@ class DebugHandlersListener implements EventSubscriberInterface
     private $throwAt;
     private $scream;
     private $fileLinkFormat;
-<<<<<<< HEAD
+ 
     private $scope;
     private $firstCall = true;
     private $hasTerminatedWithException;
 =======
     private $firstCall = true;
->>>>>>> web and vendor directory from composer install
 
     /**
      * @param callable|null        $exceptionHandler A handler that will be called on Exception
@@ -49,7 +48,7 @@ class DebugHandlersListener implements EventSubscriberInterface
      * @param array|int            $levels           An array map of E_* to LogLevel::* or an integer bit field of E_* constants
      * @param int|null             $throwAt          Thrown errors in a bit field of E_* constants, or null to keep the current value
      * @param bool                 $scream           Enables/disables screaming mode, where even silenced errors are logged
-<<<<<<< HEAD
+ 
      * @param string|array         $fileLinkFormat   The format for links to source files
      * @param bool                 $scope            Enables/disables scoping mode
      */
@@ -73,12 +72,11 @@ class DebugHandlersListener implements EventSubscriberInterface
         $this->throwAt = is_numeric($throwAt) ? (int) $throwAt : (null === $throwAt ? null : ($throwAt ? -1 : null));
         $this->scream = (bool) $scream;
         $this->fileLinkFormat = $fileLinkFormat ?: ini_get('xdebug.file_link_format') ?: get_cfg_var('xdebug.file_link_format');
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Configures the error handler.
-<<<<<<< HEAD
+ 
      */
     public function configure(Event $event = null)
     {
@@ -106,12 +104,11 @@ class DebugHandlersListener implements EventSubscriberInterface
             $handler = set_error_handler('var_dump');
             $handler = is_array($handler) ? $handler[0] : null;
             restore_error_handler();
->>>>>>> web and vendor directory from composer install
             if ($handler instanceof ErrorHandler) {
                 if ($this->logger) {
                     $handler->setDefaultLogger($this->logger, $this->levels);
                     if (is_array($this->levels)) {
-<<<<<<< HEAD
+ 
                         $levels = 0;
                         foreach ($this->levels as $type => $log) {
                             $levels |= $type;
@@ -136,7 +133,6 @@ class DebugHandlersListener implements EventSubscriberInterface
                     }
                     if ($this->scream) {
                         $handler->screamAt($scream);
->>>>>>> web and vendor directory from composer install
                     }
                     $this->logger = $this->levels = null;
                 }
@@ -147,7 +143,7 @@ class DebugHandlersListener implements EventSubscriberInterface
         }
         if (!$this->exceptionHandler) {
             if ($event instanceof KernelEvent) {
-<<<<<<< HEAD
+ 
                 if (method_exists($kernel = $event->getKernel(), 'terminateWithException')) {
                     $request = $event->getRequest();
                     $hasRun = &$this->hasTerminatedWithException;
@@ -161,7 +157,6 @@ class DebugHandlersListener implements EventSubscriberInterface
 =======
                 if (method_exists($event->getKernel(), 'terminateWithException')) {
                     $this->exceptionHandler = array($event->getKernel(), 'terminateWithException');
->>>>>>> web and vendor directory from composer install
                 }
             } elseif ($event instanceof ConsoleEvent && $app = $event->getCommand()->getApplication()) {
                 $output = $event->getOutput();
@@ -174,7 +169,7 @@ class DebugHandlersListener implements EventSubscriberInterface
             }
         }
         if ($this->exceptionHandler) {
-<<<<<<< HEAD
+ 
             if ($handler instanceof ErrorHandler) {
                 $h = $handler->setExceptionHandler('var_dump');
                 if (is_array($h) && $h[0] instanceof ExceptionHandler) {
@@ -191,7 +186,6 @@ class DebugHandlersListener implements EventSubscriberInterface
                 $h = $handler->setExceptionHandler('var_dump') ?: $this->exceptionHandler;
                 $handler->setExceptionHandler($h);
                 $handler = is_array($h) ? $h[0] : null;
->>>>>>> web and vendor directory from composer install
             }
             if ($handler instanceof ExceptionHandler) {
                 $handler->setHandler($this->exceptionHandler);
@@ -207,11 +201,10 @@ class DebugHandlersListener implements EventSubscriberInterface
     {
         $events = array(KernelEvents::REQUEST => array('configure', 2048));
 
-<<<<<<< HEAD
+ 
         if ('cli' === PHP_SAPI && defined('Symfony\Component\Console\ConsoleEvents::COMMAND')) {
 =======
         if (defined('Symfony\Component\Console\ConsoleEvents::COMMAND')) {
->>>>>>> web and vendor directory from composer install
             $events[ConsoleEvents::COMMAND] = array('configure', 2048);
         }
 

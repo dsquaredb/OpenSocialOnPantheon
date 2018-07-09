@@ -99,11 +99,10 @@ class NumberFormatter implements NumberFormatterInterface
     ];
 
     /**
-<<<<<<< HEAD
+ 
      * Creaes a NumberFormatter instance.
 =======
      * Creates a NumberFormatter instance.
->>>>>>> revert Open Social update
      *
      * @param NumberFormatInterface $numberFormat The number format.
      * @param int                   $style        The formatting style.
@@ -261,7 +260,7 @@ class NumberFormatter implements NumberFormatterInterface
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
     public function parseCurrency($value, CurrencyInterface $currency)
     {
         $replacements = [
@@ -270,20 +269,18 @@ class NumberFormatter implements NumberFormatterInterface
     {
         $replacements = [
             $this->numberFormat->getGroupingSeparator() => '',
->>>>>>> revert Open Social update
             // Convert the localized symbols back to their original form.
             $this->numberFormat->getDecimalSeparator() => '.',
             $this->numberFormat->getPlusSign() => '+',
             $this->numberFormat->getMinusSign() => '-',
 
-<<<<<<< HEAD
+ 
             // Strip any grouping separators, the currency code or symbol.
             $this->numberFormat->getGroupingSeparator() => '',
             $currency->getCurrencyCode() => '',
             $currency->getSymbol() => '',
 
 =======
->>>>>>> revert Open Social update
             // Strip whitespace (spaces and non-breaking spaces).
             ' ' => '',
             chr(0xC2) . chr(0xA0) => '',
@@ -304,7 +301,7 @@ class NumberFormatter implements NumberFormatterInterface
     }
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * {@inheritdoc}
      */
@@ -321,7 +318,6 @@ class NumberFormatter implements NumberFormatterInterface
     }
 
     /**
->>>>>>> revert Open Social update
      * Replaces digits with their localized equivalents.
      *
      * @param string $value The value being formatted.

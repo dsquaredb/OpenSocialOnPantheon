@@ -8,11 +8,11 @@
 // └───────────────────────────────────────────────────────────────────────────────────────────────────────┘ \\
 
 (function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
+	if(typeof exports   'object' && typeof module   'object')
 		module.exports = factory(require("eve"));
-	else if(typeof define === 'function' && define.amd)
+	else if(typeof define   'function' && define.amd)
 		define(["eve"], factory);
-	else if(typeof exports === 'object')
+	else if(typeof exports   'object')
 		exports["Raphael"] = factory(require("eve"));
 	else
 		root["Raphael"] = factory(root["eve"]);
@@ -462,9 +462,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (type == "array") {
 	            return o instanceof Array;
 	        }
-	        return  (type == "null" && o === null) ||
+	        return  (type == "null" && o   null) ||
 	                (type == typeof o && o !== null) ||
-	                (type == "object" && o === Object(o)) ||
+	                (type == "object" && o   Object(o)) ||
 	                (type == "array" && Array.isArray && Array.isArray(o)) ||
 	                objectToString.call(o).slice(8, -1).toLowerCase() == type;
 	    };
@@ -879,7 +879,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return this.join(",").replace(p2s, "$1");
 	    };
 	    function repush(array, item) {
-	        for (var i = 0, ii = array.length; i < ii; i++) if (array[i] === item) {
+	        for (var i = 0, ii = array.length; i < ii; i++) if (array[i]   item) {
 	            return array.push(array.splice(i, 1)[0]);
 	        }
 	    }
@@ -2216,7 +2216,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            el.prev && (el.prev.next = el.next);
 	        },
 	        tofront = R._tofront = function (el, paper) {
-	            if (paper.top === el) {
+	            if (paper.top   el) {
 	                return;
 	            }
 	            tear(el, paper);
@@ -2226,7 +2226,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            paper.top = el;
 	        },
 	        toback = R._toback = function (el, paper) {
-	            if (paper.bottom === el) {
+	            if (paper.bottom   el) {
 	                return;
 	            }
 	            tear(el, paper);
@@ -3720,7 +3720,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    paperproto.forEach = function (callback, thisArg) {
 	        var bot = this.bottom;
 	        while (bot) {
-	            if (callback.call(thisArg, bot) === false) {
+	            if (callback.call(thisArg, bot)   false) {
 	                return this;
 	            }
 	            bot = bot.next;
@@ -4939,7 +4939,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    \*/
 	    setproto.forEach = function (callback, thisArg) {
 	        for (var i = 0, ii = this.items.length; i < ii; i++) {
-	            if (callback.call(thisArg, this.items[i], i) === false) {
+	            if (callback.call(thisArg, this.items[i], i)   false) {
 	                return this;
 	            }
 	        }
@@ -5625,7 +5625,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    isIE9or10 = function () {
 	      var mode = document.documentMode;
-	      return mode && (mode === 9 || mode === 10);
+	      return mode && (mode   9 || mode   10);
 	    },
 	    fillurl = function (id) {
 	      if (isIE9or10()) {
@@ -6106,7 +6106,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        dif && R.is(dif, "finite") && $(tspans[0], {dy: dif});
 	    },
 	    getRealNode = function (node) {
-	        if (node.parentNode && node.parentNode.tagName.toLowerCase() === "a") {
+	        if (node.parentNode && node.parentNode.tagName.toLowerCase()   "a") {
 	            return node.parentNode;
 	        } else {
 	            return node;
@@ -7159,7 +7159,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                fill.src = params.src;
 	            }
 	            params.fill && (fill.on = true);
-	            if (fill.on == null || params.fill == "none" || params.fill === null) {
+	            if (fill.on == null || params.fill == "none" || params.fill   null) {
 	                fill.on = false;
 	            }
 	            if (fill.on && params.fill) {
@@ -7208,7 +7208,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                params["stroke-linecap"]) {
 	                stroke.on = true;
 	            }
-	            (params.stroke == "none" || params.stroke === null || stroke.on == null || params.stroke == 0 || params["stroke-width"] == 0) && (stroke.on = false);
+	            (params.stroke == "none" || params.stroke   null || stroke.on == null || params.stroke == 0 || params["stroke-width"] == 0) && (stroke.on = false);
 	            var strokeColor = R.getRGB(params.stroke);
 	            stroke.on && params.stroke && (stroke.color = strokeColor.hex);
 	            opacity = ((+a["stroke-opacity"] + 1 || 2) - 1) * ((+a.opacity + 1 || 2) - 1) * ((+strokeColor.o + 1 || 2) - 1);

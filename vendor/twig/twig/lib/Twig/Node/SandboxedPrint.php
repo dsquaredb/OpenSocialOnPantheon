@@ -7,7 +7,6 @@
  * (c) Fabien Potencier
 =======
  * (c) 2010 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -50,7 +49,6 @@ class Twig_Node_SandboxedPrint extends Twig_Node_Print
      * @return Twig_Node
      */
     protected function removeNodeFilter($node)
->>>>>>> web and vendor directory from composer install
     {
         if ($node instanceof Twig_Node_Expression_Filter) {
             return $this->removeNodeFilter($node->getNode('node'));
@@ -63,4 +61,3 @@ class Twig_Node_SandboxedPrint extends Twig_Node_Print
 
 class_alias('Twig_Node_SandboxedPrint', 'Twig\Node\SandboxedPrintNode', false);
 =======
->>>>>>> web and vendor directory from composer install

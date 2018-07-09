@@ -44,27 +44,24 @@ class MigrateVocabularyFieldInstanceTest extends MigrateDrupal6TestBase {
     $this->assertTrue($field->isRequired(), 'Field is required');
 
     $settings = $field->getSettings();
-<<<<<<< HEAD
+ 
     $this->assertIdentical('default:taxonomy_term', $settings['handler'], 'The handler plugin ID is correct.');
     $this->assertIdentical(['tags'], $settings['handler_settings']['target_bundles'], 'The target_bundles handler setting is correct.');
     $this->assertIdentical(TRUE, $settings['handler_settings']['auto_create'], 'The "auto_create" setting is correct.');
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
     $this->assertIdentical(array('node', 'article', 'tags'), $this->getMigration('d6_vocabulary_field_instance')->getIdMap()->lookupDestinationID(array(4, 'article')));
 =======
     $this->assertSame(['node', 'article', 'field_tags'], $this->getMigration('d6_vocabulary_field_instance')->getIdMap()->lookupDestinationId([4, 'article']));
->>>>>>> Update Open Social to 8.x-2.1
 =======
     $this->assertSame(['node', 'article', 'field_tags'], $this->getMigration('d6_vocabulary_field_instance')->getIdMap()->lookupDestinationID([4, 'article']));
->>>>>>> revert Open Social update
 =======
     $this->assertSame('default:taxonomy_term', $settings['handler'], 'The handler plugin ID is correct.');
     $this->assertSame(['field_tags'], $settings['handler_settings']['target_bundles'], 'The target_bundles handler setting is correct.');
     $this->assertSame(TRUE, $settings['handler_settings']['auto_create'], 'The "auto_create" setting is correct.');
 
     $this->assertSame(['node', 'article', 'field_tags'], $this->getMigration('d6_vocabulary_field_instance')->getIdMap()->lookupDestinationId([4, 'article']));
->>>>>>> updating open social
 
     // Test the the field vocabulary_1_i_0_
     $field_id = 'node.story.vocabulary_1_i_0_';

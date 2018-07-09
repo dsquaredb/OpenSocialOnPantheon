@@ -100,7 +100,7 @@ class MigrateFieldInstanceTest extends MigrateDrupal7TestBase {
    * Tests migrating D7 field instances to field_config entities.
    */
   public function testFieldInstances() {
-<<<<<<< HEAD
+ 
     $this->assertEntity('comment.comment_node_page.comment_body', 'Comment', 'text_long', TRUE);
     $this->assertEntity('node.page.body', 'Body', 'text_with_summary', FALSE);
     $this->assertEntity('comment.comment_node_article.comment_body', 'Comment', 'text_long', TRUE);
@@ -228,7 +228,6 @@ class MigrateFieldInstanceTest extends MigrateDrupal7TestBase {
     $message = 'Can\'t migrate source field field_text_sum_plain_filtered of type text_with_summary configured with plain text processing. See https://www.drupal.org/docs/8/upgrade/known-issues-when-upgrading-from-drupal-6-or-7-to-drupal-8#plain-text';
     $this->assertEquals($errors[6], $message);
     $this->assertEquals($errors[7], $message);
->>>>>>> Update Open Social to 8.x-2.1
   }
 
 }

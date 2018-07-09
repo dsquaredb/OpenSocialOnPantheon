@@ -22,12 +22,11 @@ abstract class Dumper implements DumperInterface
 {
     protected $container;
 
-<<<<<<< HEAD
+ 
 =======
     /**
      * @param ContainerBuilder $container The service container to dump
      */
->>>>>>> web and vendor directory from composer install
     public function __construct(ContainerBuilder $container)
     {
         $this->container = $container;

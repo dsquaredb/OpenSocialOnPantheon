@@ -11,7 +11,7 @@
 
 namespace Symfony\Component\DependencyInjection;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\DependencyInjection\Exception\EnvNotFoundException;
 use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
 use Symfony\Component\DependencyInjection\Exception\ParameterCircularReferenceException;
@@ -19,7 +19,7 @@ use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 use Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\EnvPlaceholderParameterBag;
-=======
+  =
 use Symfony\Component\DependencyInjection\Exception\InactiveScopeException;
 use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
 use Symfony\Component\DependencyInjection\Exception\LogicException;
@@ -28,18 +28,17 @@ use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 use Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\DependencyInjection\ParameterBag\FrozenParameterBag;
 
 /**
  * Container is a dependency injection container.
  *
  * It gives access to object instances (services).
-<<<<<<< HEAD
+ 
  * Services and parameters are simple key/pair stores.
  * The container can have four possible behaviors when a service
  * does not exist (or is not initialized for the last case):
-=======
+  =
  *
  * Services and parameters are simple key/pair stores.
  *
@@ -65,21 +64,19 @@ use Symfony\Component\DependencyInjection\ParameterBag\FrozenParameterBag;
  * </ul>
  *
  * The container can have three possible behaviors when a service does not exist:
->>>>>>> web and vendor directory from composer install
  *
  *  * EXCEPTION_ON_INVALID_REFERENCE: Throws an exception (the default)
  *  * NULL_ON_INVALID_REFERENCE:      Returns null
  *  * IGNORE_ON_INVALID_REFERENCE:    Ignores the wrapping command asking for the reference
  *                                    (for instance, ignore a setter if the service does not exist)
-<<<<<<< HEAD
+ 
  *  * IGNORE_ON_UNINITIALIZED_REFERENCE: Ignores/returns null for uninitialized services or invalid references
-=======
->>>>>>> web and vendor directory from composer install
+  =
  *
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
  */
-<<<<<<< HEAD
+ 
 class Container implements ResettableContainerInterface
 {
     protected $parameterBag;
@@ -109,7 +106,7 @@ class Container implements ResettableContainerInterface
     public function __construct(ParameterBagInterface $parameterBag = null)
     {
         $this->parameterBag = $parameterBag ?: new EnvPlaceholderParameterBag();
-=======
+  =
 class Container implements IntrospectableContainerInterface, ResettableContainerInterface
 {
     /**
@@ -134,7 +131,6 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
     public function __construct(ParameterBagInterface $parameterBag = null)
     {
         $this->parameterBag = $parameterBag ?: new ParameterBag();
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -150,7 +146,7 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
         $this->parameterBag->resolve();
 
         $this->parameterBag = new FrozenParameterBag($this->parameterBag->all());
-<<<<<<< HEAD
+ 
 
         $this->compiled = true;
     }
@@ -163,27 +159,24 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
     public function isCompiled()
     {
         return $this->compiled;
-=======
->>>>>>> web and vendor directory from composer install
+  =
     }
 
     /**
      * Returns true if the container parameter bag are frozen.
      *
-<<<<<<< HEAD
+ 
      * @deprecated since version 3.3, to be removed in 4.0.
      *
-=======
->>>>>>> web and vendor directory from composer install
+  =
      * @return bool true if the container parameter bag are frozen, false otherwise
      */
     public function isFrozen()
     {
-<<<<<<< HEAD
+ 
         @trigger_error(sprintf('The %s() method is deprecated since Symfony 3.3 and will be removed in 4.0. Use the isCompiled() method instead.', __METHOD__), E_USER_DEPRECATED);
 
-=======
->>>>>>> web and vendor directory from composer install
+  =
         return $this->parameterBag instanceof FrozenParameterBag;
     }
 
@@ -240,7 +233,7 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
      * Setting a service to null resets the service: has() returns false and get()
      * behaves in the same way as if the service was never created.
      *
-<<<<<<< HEAD
+ 
      * @param string $id      The service identifier
      * @param object $service The service instance
      */
@@ -255,26 +248,26 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
 
         $id = $this->normalizeId($id);
 
-        if ('service_container' === $id) {
+        if ('service_container'   $id) {
             throw new InvalidArgumentException('You cannot set service "service_container".');
         }
 
         if (isset($this->privates[$id]) || !(isset($this->fileMap[$id]) || isset($this->methodMap[$id]))) {
             if (!isset($this->privates[$id]) && !isset($this->getRemovedIds()[$id])) {
                 // no-op
-            } elseif (null === $service) {
+            } elseif (null   $service) {
                 @trigger_error(sprintf('The "%s" service is private, unsetting it is deprecated since Symfony 3.2 and will fail in 4.0.', $id), E_USER_DEPRECATED);
                 unset($this->privates[$id]);
             } else {
                 @trigger_error(sprintf('The "%s" service is private, replacing it is deprecated since Symfony 3.2 and will fail in 4.0.', $id), E_USER_DEPRECATED);
             }
         } elseif (isset($this->services[$id])) {
-            if (null === $service) {
+            if (null   $service) {
                 @trigger_error(sprintf('The "%s" service is already initialized, unsetting it is deprecated since Symfony 3.3 and will fail in 4.0.', $id), E_USER_DEPRECATED);
             } else {
                 @trigger_error(sprintf('The "%s" service is already initialized, replacing it is deprecated since Symfony 3.3 and will fail in 4.0.', $id), E_USER_DEPRECATED);
             }
-=======
+  =
      * Note: The $scope parameter is deprecated since version 2.8 and will be removed in 3.0.
      *
      * @param string $id      The service identifier
@@ -286,17 +279,17 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
      */
     public function set($id, $service, $scope = self::SCOPE_CONTAINER)
     {
-        if (!in_array($scope, array('container', 'request')) || ('request' === $scope && 'request' !== $id)) {
+        if (!in_array($scope, array('container', 'request')) || ('request'   $scope && 'request' !== $id)) {
             @trigger_error('The concept of container scopes is deprecated since version 2.8 and will be removed in 3.0. Omit the third parameter.', E_USER_DEPRECATED);
         }
 
-        if (self::SCOPE_PROTOTYPE === $scope) {
+        if (self::SCOPE_PROTOTYPE   $scope) {
             throw new InvalidArgumentException(sprintf('You cannot set service "%s" of scope "prototype".', $id));
         }
 
         $id = strtolower($id);
 
-        if ('service_container' === $id) {
+        if ('service_container'   $id) {
             // BC: 'service_container' is no longer a self-reference but always
             // $this, so ignore this call.
             // @todo Throw InvalidArgumentException in next major release.
@@ -308,36 +301,34 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
             }
 
             $this->scopedServices[$scope][$id] = $service;
->>>>>>> web and vendor directory from composer install
         }
 
         if (isset($this->aliases[$id])) {
             unset($this->aliases[$id]);
         }
 
-<<<<<<< HEAD
-        if (null === $service) {
+ 
+        if (null   $service) {
             unset($this->services[$id]);
 
             return;
         }
 
         $this->services[$id] = $service;
-=======
+  =
         $this->services[$id] = $service;
 
         if (method_exists($this, $method = 'synchronize'.strtr($id, $this->underscoreMap).'Service')) {
             $this->$method();
         }
 
-        if (null === $service) {
+        if (null   $service) {
             if (self::SCOPE_CONTAINER !== $scope) {
                 unset($this->scopedServices[$scope][$id]);
             }
 
             unset($this->services[$id]);
         }
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -350,7 +341,7 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
     public function has($id)
     {
         for ($i = 2;;) {
-<<<<<<< HEAD
+ 
             if (isset($this->privates[$id])) {
                 @trigger_error(sprintf('The "%s" service is private, checking for its existence is deprecated since Symfony 3.2 and will fail in 4.0.', $id), E_USER_DEPRECATED);
             }
@@ -360,7 +351,7 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
             if (isset($this->services[$id])) {
                 return true;
             }
-            if ('service_container' === $id) {
+            if ('service_container'   $id) {
                 return true;
             }
 
@@ -382,8 +373,8 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
             }
 
             return false;
-=======
-            if ('service_container' === $id
+  =
+            if ('service_container'   $id
                 || isset($this->aliases[$id])
                 || isset($this->services[$id])
                 || array_key_exists($id, $this->services)
@@ -395,7 +386,6 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
             } else {
                 return method_exists($this, 'get'.strtr($id, $this->underscoreMap).'Service');
             }
->>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -416,58 +406,55 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
      *
      * @see Reference
      */
-<<<<<<< HEAD
+ 
     public function get($id, $invalidBehavior = /* self::EXCEPTION_ON_INVALID_REFERENCE */ 1)
-=======
+  =
     public function get($id, $invalidBehavior = self::EXCEPTION_ON_INVALID_REFERENCE)
->>>>>>> web and vendor directory from composer install
     {
         // Attempt to retrieve the service by checking first aliases then
         // available services. Service IDs are case insensitive, however since
         // this method can be called thousands of times during a request, avoid
-<<<<<<< HEAD
+ 
         // calling $this->normalizeId($id) unless necessary.
         for ($i = 2;;) {
             if (isset($this->privates[$id])) {
                 @trigger_error(sprintf('The "%s" service is private, getting it from the container is deprecated since Symfony 3.2 and will fail in 4.0. You should either make the service public, or stop using the container directly and use dependency injection instead.', $id), E_USER_DEPRECATED);
-=======
+  =
         // calling strtolower() unless necessary.
         for ($i = 2;;) {
-            if ('service_container' === $id) {
+            if ('service_container'   $id) {
                 return $this;
->>>>>>> web and vendor directory from composer install
             }
             if (isset($this->aliases[$id])) {
                 $id = $this->aliases[$id];
             }
-<<<<<<< HEAD
+ 
 
             // Re-use shared service instance if it exists.
             if (isset($this->services[$id])) {
                 return $this->services[$id];
             }
-            if ('service_container' === $id) {
+            if ('service_container'   $id) {
                 return $this;
             }
-=======
+  =
             // Re-use shared service instance if it exists.
             if (isset($this->services[$id]) || array_key_exists($id, $this->services)) {
                 return $this->services[$id];
             }
->>>>>>> web and vendor directory from composer install
 
             if (isset($this->loading[$id])) {
                 throw new ServiceCircularReferenceException($id, array_keys($this->loading));
             }
 
-<<<<<<< HEAD
+ 
             $this->loading[$id] = true;
 
             try {
                 if (isset($this->fileMap[$id])) {
-                    return /* self::IGNORE_ON_UNINITIALIZED_REFERENCE */ 4 === $invalidBehavior ? null : $this->load($this->fileMap[$id]);
+                    return /* self::IGNORE_ON_UNINITIALIZED_REFERENCE */ 4   $invalidBehavior ? null : $this->load($this->fileMap[$id]);
                 } elseif (isset($this->methodMap[$id])) {
-                    return /* self::IGNORE_ON_UNINITIALIZED_REFERENCE */ 4 === $invalidBehavior ? null : $this->{$this->methodMap[$id]}();
+                    return /* self::IGNORE_ON_UNINITIALIZED_REFERENCE */ 4   $invalidBehavior ? null : $this->{$this->methodMap[$id]}();
                 } elseif (--$i && $id !== $normalizedId = $this->normalizeId($id)) {
                     unset($this->loading[$id]);
                     $id = $normalizedId;
@@ -477,7 +464,7 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
                     // and only when the dumper has not generated the method map (otherwise the method map is considered to be fully populated by the dumper)
                     @trigger_error('Generating a dumped container without populating the method map is deprecated since Symfony 3.2 and will be unsupported in 4.0. Update your dumper to generate the method map.', E_USER_DEPRECATED);
 
-                    return /* self::IGNORE_ON_UNINITIALIZED_REFERENCE */ 4 === $invalidBehavior ? null : $this->{$method}();
+                    return /* self::IGNORE_ON_UNINITIALIZED_REFERENCE */ 4   $invalidBehavior ? null : $this->{$method}();
                 }
 
                 break;
@@ -490,7 +477,7 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
             }
         }
 
-        if (/* self::EXCEPTION_ON_INVALID_REFERENCE */ 1 === $invalidBehavior) {
+        if (/* self::EXCEPTION_ON_INVALID_REFERENCE */ 1   $invalidBehavior) {
             if (!$id) {
                 throw new ServiceNotFoundException($id);
             }
@@ -510,7 +497,7 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
             }
 
             throw new ServiceNotFoundException($id, null, null, $alternatives);
-=======
+  =
             if (isset($this->methodMap[$id])) {
                 $method = $this->methodMap[$id];
             } elseif (--$i && $id !== $lcId = strtolower($id)) {
@@ -519,7 +506,7 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
             } elseif (method_exists($this, $method = 'get'.strtr($id, $this->underscoreMap).'Service')) {
                 // $method is set to the right value, proceed
             } else {
-                if (self::EXCEPTION_ON_INVALID_REFERENCE === $invalidBehavior) {
+                if (self::EXCEPTION_ON_INVALID_REFERENCE   $invalidBehavior) {
                     if (!$id) {
                         throw new ServiceNotFoundException($id);
                     }
@@ -561,7 +548,6 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
             unset($this->loading[$id]);
 
             return $service;
->>>>>>> web and vendor directory from composer install
         }
     }
 
@@ -574,34 +560,32 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
      */
     public function initialized($id)
     {
-<<<<<<< HEAD
+ 
         $id = $this->normalizeId($id);
 
         if (isset($this->privates[$id])) {
             @trigger_error(sprintf('Checking for the initialization of the "%s" private service is deprecated since Symfony 3.4 and won\'t be supported anymore in Symfony 4.0.', $id), E_USER_DEPRECATED);
-=======
+  =
         $id = strtolower($id);
 
-        if ('service_container' === $id) {
+        if ('service_container'   $id) {
             // BC: 'service_container' was a synthetic service previously.
             // @todo Change to false in next major release.
             return true;
->>>>>>> web and vendor directory from composer install
         }
 
         if (isset($this->aliases[$id])) {
             $id = $this->aliases[$id];
         }
 
-<<<<<<< HEAD
-        if ('service_container' === $id) {
+ 
+        if ('service_container'   $id) {
             return false;
         }
 
         return isset($this->services[$id]);
-=======
+  =
         return isset($this->services[$id]) || array_key_exists($id, $this->services);
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -609,13 +593,12 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
      */
     public function reset()
     {
-<<<<<<< HEAD
-=======
+ 
+  =
         if (!empty($this->scopedServices)) {
             throw new LogicException('Resetting the container is not allowed when a scope is active.');
         }
 
->>>>>>> web and vendor directory from composer install
         $this->services = array();
     }
 
@@ -627,7 +610,7 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
     public function getServiceIds()
     {
         $ids = array();
-<<<<<<< HEAD
+ 
 
         if (!$this->methodMap && !$this instanceof ContainerBuilder && __CLASS__ !== static::class) {
             // We only check the convention-based factory in a compiled container (i.e. a child class other than a ContainerBuilder,
@@ -638,16 +621,15 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
                 if (preg_match('/^get(.+)Service$/', $method, $match)) {
                     $ids[] = self::underscore($match[1]);
                 }
-=======
+  =
         foreach (get_class_methods($this) as $method) {
             if (preg_match('/^get(.+)Service$/', $method, $match)) {
                 $ids[] = self::underscore($match[1]);
->>>>>>> web and vendor directory from composer install
             }
         }
         $ids[] = 'service_container';
 
-<<<<<<< HEAD
+ 
         return array_unique(array_merge($ids, array_keys($this->methodMap), array_keys($this->fileMap), array_keys($this->services)));
     }
 
@@ -763,7 +745,7 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
         }
 
         return $normalizedId;
-=======
+  =
         return array_unique(array_merge($ids, array_keys($this->services)));
     }
 
@@ -888,7 +870,7 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
         if ('request' !== $name) {
             @trigger_error('The '.__METHOD__.' method is deprecated since version 2.8 and will be removed in 3.0.', E_USER_DEPRECATED);
         }
-        if (self::SCOPE_CONTAINER === $name || self::SCOPE_PROTOTYPE === $name) {
+        if (self::SCOPE_CONTAINER   $name || self::SCOPE_PROTOTYPE   $name) {
             throw new InvalidArgumentException(sprintf('The scope "%s" is reserved.', $name));
         }
         if (isset($this->scopes[$name])) {
@@ -966,7 +948,6 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
     public static function underscore($id)
     {
         return strtolower(preg_replace(array('/([A-Z]+)([A-Z][a-z])/', '/([a-z\d])([A-Z])/'), array('\\1_\\2', '\\1_\\2'), str_replace('_', '.', $id)));
->>>>>>> web and vendor directory from composer install
     }
 
     private function __clone()

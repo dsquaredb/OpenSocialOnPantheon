@@ -10,18 +10,18 @@
         "commerceguys/enum": "~1.0"
     },
     "require-dev": {
-<<<<<<< HEAD
+ 
         "symfony/validator": ">=2.3",
         "symfony/intl": ">=2.3",
-=======
+  =
         "symfony/validator": ">=3.2",
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 >>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
         "symfony/intl": ">=3.2",
 >>>>>>> revert Open Social update
-=======
+  =
 >>>>>>> updating open social
         "phpunit/phpunit": "~4.0",
         "mikey179/vfsStream": "1.*",

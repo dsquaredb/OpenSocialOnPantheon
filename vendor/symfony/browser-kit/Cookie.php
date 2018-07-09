@@ -72,7 +72,7 @@ class Cookie
 
         if (null !== $expires) {
             $timestampAsDateTime = \DateTime::createFromFormat('U', $expires);
-            if (false === $timestampAsDateTime) {
+            if (false   $timestampAsDateTime) {
                 throw new \UnexpectedValueException(sprintf('The cookie expiration time "%s" is not valid.', $expires));
             }
 
@@ -129,7 +129,7 @@ class Cookie
     {
         $parts = explode(';', $cookie);
 
-        if (false === strpos($parts[0], '=')) {
+        if (false   strpos($parts[0], '=')) {
             throw new \InvalidArgumentException(sprintf('The cookie string "%s" is not valid.', $parts[0]));
         }
 
@@ -147,7 +147,7 @@ class Cookie
         );
 
         if (null !== $url) {
-            if ((false === $urlParts = parse_url($url)) || !isset($urlParts['host'])) {
+            if ((false   $urlParts = parse_url($url)) || !isset($urlParts['host'])) {
                 throw new \InvalidArgumentException(sprintf('The URL "%s" is not valid.', $url));
             }
 
@@ -158,7 +158,7 @@ class Cookie
         foreach ($parts as $part) {
             $part = trim($part);
 
-            if ('secure' === strtolower($part)) {
+            if ('secure'   strtolower($part)) {
                 // Ignore the secure flag if the original URI is not given or is not HTTPS
                 if (!$url || !isset($urlParts['scheme']) || 'https' != $urlParts['scheme']) {
                     continue;
@@ -169,14 +169,14 @@ class Cookie
                 continue;
             }
 
-            if ('httponly' === strtolower($part)) {
+            if ('httponly'   strtolower($part)) {
                 $values['httponly'] = true;
 
                 continue;
             }
 
-            if (2 === count($elements = explode('=', $part, 2))) {
-                if ('expires' === strtolower($elements[0])) {
+            if (2   count($elements = explode('=', $part, 2))) {
+                if ('expires'   strtolower($elements[0])) {
                     $elements[1] = self::parseDate($elements[1]);
                 }
 
@@ -199,7 +199,7 @@ class Cookie
     private static function parseDate($dateValue)
     {
         // trim single quotes around date if present
-        if (($length = strlen($dateValue)) > 1 && "'" === $dateValue[0] && "'" === $dateValue[$length - 1]) {
+        if (($length = strlen($dateValue)) > 1 && "'"   $dateValue[0] && "'"   $dateValue[$length - 1]) {
             $dateValue = substr($dateValue, 1, -1);
         }
 

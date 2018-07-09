@@ -23,14 +23,13 @@ use Symfony\Component\Validator\Exception\MappingException;
  */
 abstract class FileLoader extends AbstractLoader
 {
-<<<<<<< HEAD
+ 
 =======
     /**
      * The file to load.
      *
      * @var string
      */
->>>>>>> web and vendor directory from composer install
     protected $file;
 
     /**

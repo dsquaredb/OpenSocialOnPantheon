@@ -462,21 +462,18 @@ class Sql extends PluginBase implements MigrateIdMapInterface, ContainerFactoryP
    */
   public function getRowBySource(array $source_id_values) {
     $query = $this->getDatabase()->select($this->mapTableName(), 'map')
-<<<<<<< HEAD
+ 
               ->fields('map');
     $query->condition(static::SOURCE_IDS_HASH, $this->getSourceIDsHash($source_id_values));
 =======
       ->fields('map');
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
     $query->condition(static::SOURCE_IDS_HASH, $this->getSourceIdsHash($source_id_values));
->>>>>>> Update Open Social to 8.x-2.1
 =======
     $query->condition(static::SOURCE_IDS_HASH, $this->getSourceIDsHash($source_id_values));
->>>>>>> revert Open Social update
 =======
     $query->condition(static::SOURCE_IDS_HASH, $this->getSourceIdsHash($source_id_values));
->>>>>>> updating open social
     $result = $query->execute();
     return $result->fetchAssoc();
   }

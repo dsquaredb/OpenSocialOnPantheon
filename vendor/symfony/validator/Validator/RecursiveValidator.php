@@ -11,7 +11,7 @@
 
 namespace Symfony\Component\Validator\Validator;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\Validator\ConstraintValidatorFactoryInterface;
 use Symfony\Component\Validator\Context\ExecutionContextFactoryInterface;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
@@ -27,14 +27,13 @@ use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use Symfony\Component\Validator\MetadataFactoryInterface;
 use Symfony\Component\Validator\ObjectInitializerInterface;
 use Symfony\Component\Validator\ValidatorInterface as LegacyValidatorInterface;
->>>>>>> web and vendor directory from composer install
 
 /**
  * Recursive implementation of {@link ValidatorInterface}.
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
  */
-<<<<<<< HEAD
+ 
 class RecursiveValidator implements ValidatorInterface
 {
     protected $contextFactory;
@@ -61,7 +60,6 @@ class RecursiveValidator implements ValidatorInterface, LegacyValidatorInterface
     /**
      * @var ObjectInitializerInterface[]
      */
->>>>>>> web and vendor directory from composer install
     protected $objectInitializers;
 
     /**
@@ -129,7 +127,7 @@ class RecursiveValidator implements ValidatorInterface, LegacyValidatorInterface
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
     public function validate($value, $constraints = null, $groups = null)
     {
 =======
@@ -148,7 +146,6 @@ class RecursiveValidator implements ValidatorInterface, LegacyValidatorInterface
             $constraints = new Valid(array('traverse' => $traverse, 'deep' => $deep));
         }
 
->>>>>>> web and vendor directory from composer install
         return $this->startContext($value)
             ->validate($value, $constraints, $groups)
             ->getViolations();
@@ -174,7 +171,7 @@ class RecursiveValidator implements ValidatorInterface, LegacyValidatorInterface
             ->validatePropertyValue($objectOrClass, $propertyName, $value, $groups)
             ->getViolations();
     }
-<<<<<<< HEAD
+ 
 =======
 
     /**
@@ -206,5 +203,4 @@ class RecursiveValidator implements ValidatorInterface, LegacyValidatorInterface
     {
         return null === $groups || is_string($groups) || $groups instanceof GroupSequence || (is_array($groups) && (0 === count($groups) || is_string(current($groups)) || current($groups) instanceof GroupSequence));
     }
->>>>>>> web and vendor directory from composer install
 }

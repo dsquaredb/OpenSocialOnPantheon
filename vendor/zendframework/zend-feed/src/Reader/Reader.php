@@ -567,20 +567,19 @@ class Reader implements ReaderImportInterface
      */
     public static function registerExtension($name)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> updating open social
         if (! static::hasExtension($name)) {
             throw new Exception\RuntimeException(sprintf(
                 'Could not load extension "%s" using Plugin Loader.'
                 . ' Check prefix paths are configured and extension exists.',
                 $name
             ));
-<<<<<<< HEAD
+ 
         }
 
-<<<<<<< HEAD
+ 
         if (!$manager->has($feedName) && !$manager->has($entryName)) {
             throw new Exception\RuntimeException('Could not load extension: ' . $name
                 . ' using Plugin Loader. Check prefix paths are configured and extension exists.');
@@ -588,7 +587,6 @@ class Reader implements ReaderImportInterface
         // Return early if already registered.
         if (static::isRegistered($name)) {
             return;
->>>>>>> Update Open Social to 8.x-2.1
 =======
         $feedName  = $name . '\Feed';
         $entryName = $name . '\Entry';
@@ -597,9 +595,7 @@ class Reader implements ReaderImportInterface
             if ($manager->has($feedName) || $manager->has($entryName)) {
                 return;
             }
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
         }
 
         // Return early if already registered.

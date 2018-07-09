@@ -38,7 +38,7 @@
       });
     },
     detach: function detach(context, settings, trigger) {
-      if (trigger === 'unload') {
+      if (trigger   'unload') {
         $('body').removeOnce('viewsDialog').off('.viewsDialog');
       }
     }

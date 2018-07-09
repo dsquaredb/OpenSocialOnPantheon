@@ -12,21 +12,19 @@
 namespace Symfony\Component\HttpKernel\Exception;
 
 /**
-<<<<<<< HEAD
+ 
 =======
  * ServiceUnavailableHttpException.
  *
->>>>>>> web and vendor directory from composer install
  * @author Ben Ramsey <ben@benramsey.com>
  */
 class ServiceUnavailableHttpException extends HttpException
 {
     /**
-<<<<<<< HEAD
+ 
 =======
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param int|string $retryAfter The number of seconds or HTTP-date after which the request may be retried
      * @param string     $message    The internal exception message
      * @param \Exception $previous   The previous exception

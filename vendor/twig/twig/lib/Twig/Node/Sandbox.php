@@ -7,7 +7,6 @@
  * (c) Fabien Potencier
 =======
  * (c) 2010 Fabien Potencier
->>>>>>> web and vendor directory from composer install
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -48,4 +47,3 @@ class Twig_Node_Sandbox extends Twig_Node
 
 class_alias('Twig_Node_Sandbox', 'Twig\Node\SandboxNode', false);
 =======
->>>>>>> web and vendor directory from composer install

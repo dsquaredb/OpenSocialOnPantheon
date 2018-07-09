@@ -17,13 +17,13 @@ Please do not install Drush using `composer global require`. See [Fixing the Com
         # Install a specific version of Drush, e.g. Drush 7.1.0
         cgr update drush/drush:7.1.0
 
-<<<<<<< HEAD
+ 
         # Install master branch as a git clone. Great for contributing back to Drush project.
         composer global require drush/drush:dev-master --prefer-source
 =======
         # Install 8.x branch as a git clone. Great for contributing back to Drush project.
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
         cgr drush/drush:8.x-dev --prefer-source
 
 >>>>>>> Update Open Social to 8.x-2.1

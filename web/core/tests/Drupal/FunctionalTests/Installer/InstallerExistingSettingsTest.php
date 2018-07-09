@@ -6,10 +6,8 @@ namespace Drupal\FunctionalTests\Installer;
 =======
 use Drupal\Core\Site\Settings;
 <<<<<<< HEAD:web/core/modules/system/src/Tests/Installer/InstallerExistingSettingsTest.php
->>>>>>> revert Open Social update
 use Drupal\simpletest\InstallerTestBase;
 =======
->>>>>>> updating open social:web/core/tests/Drupal/FunctionalTests/Installer/InstallerExistingSettingsTest.php
 use Drupal\Core\Database\Database;
 use Drupal\Core\DrupalKernel;
 use Symfony\Component\HttpFoundation\Request;
@@ -55,7 +53,6 @@ class InstallerExistingSettingsTest extends InstallerTestBase {
       'value' => 'minimal',
       'required' => TRUE,
     ];
->>>>>>> revert Open Social update
 
     // Pre-configure database credentials.
     $connection_info = Database::getConnectionInfo();
@@ -72,7 +69,6 @@ class InstallerExistingSettingsTest extends InstallerTestBase {
       'value' => $connection_info,
       'required' => TRUE,
     ];
->>>>>>> revert Open Social update
 
     // Use the kernel to find the site path because the site.path service should
     // not be available at this point in the install process.
@@ -92,7 +88,6 @@ class InstallerExistingSettingsTest extends InstallerTestBase {
         'required' => TRUE,
       ],
     ];
->>>>>>> revert Open Social update
     mkdir($this->settings['config_directories'][CONFIG_SYNC_DIRECTORY]->value, 0777, TRUE);
   }
 
@@ -115,7 +110,6 @@ class InstallerExistingSettingsTest extends InstallerTestBase {
 =======
     $this->assertEqual('testing', \Drupal::installProfile(), 'Profile was changed from minimal to testing during interactive install.');
     $this->assertEqual('testing', Settings::get('install_profile'), 'Profile was correctly changed to testing in Settings.php');
->>>>>>> revert Open Social update
   }
 
 }

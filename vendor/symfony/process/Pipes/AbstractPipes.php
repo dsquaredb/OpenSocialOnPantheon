@@ -11,11 +11,10 @@
 
 namespace Symfony\Component\Process\Pipes;
 
-<<<<<<< HEAD
+ 
 use Symfony\Component\Process\Exception\InvalidArgumentException;
 
 =======
->>>>>>> web and vendor directory from composer install
 /**
  * @author Romain Neutron <imprec@gmail.com>
  *
@@ -23,7 +22,7 @@ use Symfony\Component\Process\Exception\InvalidArgumentException;
  */
 abstract class AbstractPipes implements PipesInterface
 {
-<<<<<<< HEAD
+ 
     public $pipes = array();
 
     private $inputBuffer = '';
@@ -51,7 +50,6 @@ abstract class AbstractPipes implements PipesInterface
     public function __construct($input)
     {
         if (is_resource($input)) {
->>>>>>> web and vendor directory from composer install
             $this->input = $input;
         } elseif (is_string($input)) {
             $this->inputBuffer = $input;
@@ -78,10 +76,10 @@ abstract class AbstractPipes implements PipesInterface
      */
     protected function hasSystemCallBeenInterrupted()
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
         $lastError = $this->lastError;
         $this->lastError = null;
 
@@ -92,27 +90,23 @@ abstract class AbstractPipes implements PipesInterface
 
         // stream_select returns false when the `select` system call is interrupted by an incoming signal
         return isset($lastError['message']) && false !== stripos($lastError['message'], 'interrupted system call');
->>>>>>> web and vendor directory from composer install
 =======
         $lastError = $this->lastError;
         $this->lastError = null;
 
         // stream_select returns false when the `select` system call is interrupted by an incoming signal
         return null !== $lastError && false !== stripos($lastError, 'interrupted system call');
->>>>>>> Update Open Social to 8.x-2.1
 =======
         $lastError = error_get_last();
 
         // stream_select returns false when the `select` system call is interrupted by an incoming signal
         return isset($lastError['message']) && false !== stripos($lastError['message'], 'interrupted system call');
->>>>>>> revert Open Social update
 =======
         $lastError = $this->lastError;
         $this->lastError = null;
 
         // stream_select returns false when the `select` system call is interrupted by an incoming signal
         return null !== $lastError && false !== stripos($lastError, 'interrupted system call');
->>>>>>> updating open social
     }
 
     /**
@@ -127,11 +121,10 @@ abstract class AbstractPipes implements PipesInterface
         foreach ($this->pipes as $pipe) {
             stream_set_blocking($pipe, 0);
         }
-<<<<<<< HEAD
+ 
         if (is_resource($this->input)) {
 =======
         if (null !== $this->input) {
->>>>>>> web and vendor directory from composer install
             stream_set_blocking($this->input, 0);
         }
 
@@ -140,11 +133,10 @@ abstract class AbstractPipes implements PipesInterface
 
     /**
      * Writes input to stdin.
-<<<<<<< HEAD
+ 
      *
      * @throws InvalidArgumentException When an input iterator yields a non supported value
 =======
->>>>>>> web and vendor directory from composer install
      */
     protected function write()
     {
@@ -152,7 +144,7 @@ abstract class AbstractPipes implements PipesInterface
             return;
         }
         $input = $this->input;
-<<<<<<< HEAD
+ 
 
         if ($input instanceof \Iterator) {
             if (!$input->valid()) {
@@ -175,16 +167,14 @@ abstract class AbstractPipes implements PipesInterface
         }
 
 =======
->>>>>>> web and vendor directory from composer install
         $r = $e = array();
         $w = array($this->pipes[0]);
 
         // let's have a look if something changed in streams
-<<<<<<< HEAD
+ 
         if (false === @stream_select($r, $w, $e, 0, 0)) {
 =======
         if (false === $n = @stream_select($r, $w, $e, 0, 0)) {
->>>>>>> web and vendor directory from composer install
             return;
         }
 
@@ -212,7 +202,7 @@ abstract class AbstractPipes implements PipesInterface
                     }
                 }
                 if (feof($input)) {
-<<<<<<< HEAD
+ 
                     if ($this->input instanceof \Iterator) {
                         $this->input->next();
                     } else {
@@ -222,32 +212,28 @@ abstract class AbstractPipes implements PipesInterface
                     // no more data to read on input resource
                     // use an empty buffer in the next reads
                     $this->input = null;
->>>>>>> web and vendor directory from composer install
                 }
             }
         }
 
         // no input to read on resource, buffer is empty
-<<<<<<< HEAD
+ 
         if (!isset($this->inputBuffer[0]) && !($this->input instanceof \Iterator ? $this->input->valid() : $this->input)) {
             $this->input = null;
 =======
         if (null === $this->input && !isset($this->inputBuffer[0])) {
->>>>>>> web and vendor directory from composer install
             fclose($this->pipes[0]);
             unset($this->pipes[0]);
         } elseif (!$w) {
             return array($this->pipes[0]);
         }
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
 =======
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> updating open social
 
     /**
      * @internal
@@ -256,14 +242,10 @@ abstract class AbstractPipes implements PipesInterface
     {
         $this->lastError = $msg;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
->>>>>>> web and vendor directory from composer install
 =======
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
 }

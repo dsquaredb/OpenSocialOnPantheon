@@ -44,11 +44,10 @@ class ArgvInput extends Input
     private $parsed;
 
     /**
-<<<<<<< HEAD
+ 
 =======
      * Constructor.
      *
->>>>>>> web and vendor directory from composer install
      * @param array|null           $argv       An array of parameters from the CLI (in the argv format)
      * @param InputDefinition|null $definition A InputDefinition instance
      */
@@ -151,7 +150,7 @@ class ArgvInput extends Input
 
         if (false !== $pos = strpos($name, '=')) {
             if (0 === strlen($value = substr($name, $pos + 1))) {
-<<<<<<< HEAD
+ 
                 // if no value after "=" then substr() returns "" since php7 only, false before
                 // see http://php.net/manual/fr/migration70.incompatible.php#119151
                 if (\PHP_VERSION_ID < 70000 && false === $value) {
@@ -160,7 +159,6 @@ class ArgvInput extends Input
                 array_unshift($this->parsed, $value);
 =======
                 array_unshift($this->parsed, null);
->>>>>>> web and vendor directory from composer install
             }
             $this->addLongOption(substr($name, 0, $pos), $value);
         } else {
@@ -233,19 +231,18 @@ class ArgvInput extends Input
 
         $option = $this->definition->getOption($name);
 
-<<<<<<< HEAD
+ 
 =======
         // Convert empty values to null
         if (!isset($value[0])) {
             $value = null;
         }
 
->>>>>>> web and vendor directory from composer install
         if (null !== $value && !$option->acceptValue()) {
             throw new RuntimeException(sprintf('The "--%s" option does not accept a value.', $name));
         }
 
-<<<<<<< HEAD
+ 
         if (in_array($value, array('', null), true) && $option->acceptValue() && count($this->parsed)) {
             // if option accepts an optional or mandatory argument
             // let's see if there is one provided
@@ -261,7 +258,6 @@ class ArgvInput extends Input
                 $value = $next;
             } elseif (empty($next)) {
                 $value = null;
->>>>>>> web and vendor directory from composer install
             } else {
                 array_unshift($this->parsed, $next);
             }
@@ -272,13 +268,12 @@ class ArgvInput extends Input
                 throw new RuntimeException(sprintf('The "--%s" option requires a value.', $name));
             }
 
-<<<<<<< HEAD
+ 
             if (!$option->isArray() && !$option->isValueOptional()) {
                 $value = true;
 =======
             if (!$option->isArray()) {
                 $value = $option->isValueOptional() ? $option->getDefault() : true;
->>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -306,16 +301,15 @@ class ArgvInput extends Input
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
     public function hasParameterOption($values, $onlyParams = false)
 =======
     public function hasParameterOption($values)
->>>>>>> web and vendor directory from composer install
     {
         $values = (array) $values;
 
         foreach ($this->tokens as $token) {
-<<<<<<< HEAD
+ 
             if ($onlyParams && '--' === $token) {
                 return false;
             }
@@ -328,7 +322,6 @@ class ArgvInput extends Input
 =======
             foreach ($values as $value) {
                 if ($token === $value || 0 === strpos($token, $value.'=')) {
->>>>>>> web and vendor directory from composer install
                     return true;
                 }
             }
@@ -340,18 +333,17 @@ class ArgvInput extends Input
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
+ 
     public function getParameterOption($values, $default = false, $onlyParams = false)
 =======
     public function getParameterOption($values, $default = false)
->>>>>>> web and vendor directory from composer install
     {
         $values = (array) $values;
         $tokens = $this->tokens;
 
         while (0 < count($tokens)) {
             $token = array_shift($tokens);
-<<<<<<< HEAD
+ 
             if ($onlyParams && '--' === $token) {
                 return false;
             }
@@ -377,7 +369,6 @@ class ArgvInput extends Input
 
                     return array_shift($tokens);
                 }
->>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -391,7 +382,7 @@ class ArgvInput extends Input
      */
     public function __toString()
     {
-<<<<<<< HEAD
+ 
         $tokens = array_map(function ($token) {
             if (preg_match('{^(-[^=]+=)(.+)}', $token, $match)) {
                 return $match[1].$this->escapeToken($match[2]);
@@ -408,7 +399,6 @@ class ArgvInput extends Input
 
             if ($token && $token[0] !== '-') {
                 return $self->escapeToken($token);
->>>>>>> web and vendor directory from composer install
             }
 
             return $token;

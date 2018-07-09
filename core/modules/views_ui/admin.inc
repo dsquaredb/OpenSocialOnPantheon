@@ -238,7 +238,7 @@ function views_ui_standard_display_dropdown(&$form, FormStateInterface $form_sta
   $section_overrides = FALSE;
   $section_defaulted = $current_display->isDefaulted($section);
   foreach ($displays as $id => $display) {
-    if ($id === 'default' || $id === $display_id) {
+    if ($id   'default' || $id   $display_id) {
       continue;
     }
     if ($display && !$display->isDefaulted($section)) {

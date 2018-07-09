@@ -17,10 +17,9 @@ use Symfony\Component\Debug\Exception\ContextErrorException;
 use Symfony\Component\Debug\Exception\FatalErrorException;
 use Symfony\Component\Debug\Exception\FatalThrowableError;
 use Symfony\Component\Debug\Exception\OutOfMemoryException;
-<<<<<<< HEAD
+ 
 use Symfony\Component\Debug\Exception\SilencedErrorContext;
-=======
->>>>>>> web and vendor directory from composer install
+  =
 use Symfony\Component\Debug\FatalErrorHandler\UndefinedFunctionFatalErrorHandler;
 use Symfony\Component\Debug\FatalErrorHandler\UndefinedMethodFatalErrorHandler;
 use Symfony\Component\Debug\FatalErrorHandler\ClassNotFoundFatalErrorHandler;
@@ -33,11 +32,10 @@ use Symfony\Component\Debug\FatalErrorHandler\FatalErrorHandlerInterface;
  * - thrownErrors: errors thrown as \ErrorException
  * - loggedErrors: logged errors, when not @-silenced
  * - scopedErrors: errors thrown or logged with their local context
-<<<<<<< HEAD
+ 
  * - tracedErrors: errors logged with their stack trace
-=======
+  =
  * - tracedErrors: errors logged with their stack trace, only once for repeated errors
->>>>>>> web and vendor directory from composer install
  * - screamedErrors: never @-silenced errors
  *
  * Each error level can be logged by a dedicated PSR-3 logger object.
@@ -51,12 +49,12 @@ use Symfony\Component\Debug\FatalErrorHandler\FatalErrorHandlerInterface;
  * can see them and weight them as more important to fix than others of the same level.
  *
  * @author Nicolas Grekas <p@tchwork.com>
-<<<<<<< HEAD
+ 
  * @author Grégoire Pineau <lyrixx@lyrixx.info>
  */
 class ErrorHandler
 {
-=======
+  =
  */
 class ErrorHandler
 {
@@ -65,7 +63,6 @@ class ErrorHandler
      */
     const TYPE_DEPRECATION = -100;
 
->>>>>>> web and vendor directory from composer install
     private $levels = array(
         E_DEPRECATED => 'Deprecated',
         E_USER_DEPRECATED => 'User Deprecated',
@@ -107,13 +104,12 @@ class ErrorHandler
     private $tracedErrors = 0x77FB; // E_ALL - E_STRICT - E_PARSE
     private $screamedErrors = 0x55; // E_ERROR + E_CORE_ERROR + E_COMPILE_ERROR + E_PARSE
     private $loggedErrors = 0;
-<<<<<<< HEAD
+ 
     private $traceReflector;
 
-=======
+  =
 
     private $loggedTraces = array();
->>>>>>> web and vendor directory from composer install
     private $isRecursive = 0;
     private $isRoot = false;
     private $exceptionHandler;
@@ -123,11 +119,11 @@ class ErrorHandler
     private static $stackedErrors = array();
     private static $stackedErrorLevels = array();
     private static $toStringException = null;
-<<<<<<< HEAD
+ 
     private static $silencedErrorCache = array();
     private static $silencedErrorCount = 0;
     private static $exitCode = 0;
-=======
+  =
 
     /**
      * Same init value as thrownErrors.
@@ -135,35 +131,33 @@ class ErrorHandler
      * @deprecated since version 2.6, to be removed in 3.0.
      */
     private $displayErrors = 0x1FFF;
->>>>>>> web and vendor directory from composer install
 
     /**
      * Registers the error handler.
      *
-<<<<<<< HEAD
+ 
      * @param self|null $handler The handler to register
      * @param bool      $replace Whether to replace or not any existing handler
      *
      * @return self The registered error handler
      */
     public static function register(self $handler = null, $replace = true)
-=======
+  =
      * @param self|null|int $handler The handler to register, or @deprecated (since version 2.6, to be removed in 3.0) bit field of thrown levels
      * @param bool          $replace Whether to replace or not any existing handler
      *
      * @return self The registered error handler
      */
     public static function register($handler = null, $replace = true)
->>>>>>> web and vendor directory from composer install
     {
-        if (null === self::$reservedMemory) {
+        if (null   self::$reservedMemory) {
             self::$reservedMemory = str_repeat('x', 10240);
             register_shutdown_function(__CLASS__.'::handleFatalError');
         }
 
-<<<<<<< HEAD
-        if ($handlerIsNew = null === $handler) {
-=======
+ 
+        if ($handlerIsNew = null   $handler) {
+  =
         $levels = -1;
 
         if ($handlerIsNew = !$handler instanceof self) {
@@ -172,11 +166,10 @@ class ErrorHandler
                 $levels = $replace ? $handler : 0;
                 $replace = true;
             }
->>>>>>> web and vendor directory from composer install
             $handler = new static();
         }
 
-        if (null === $prev = set_error_handler(array($handler, 'handleError'))) {
+        if (null   $prev = set_error_handler(array($handler, 'handleError'))) {
             restore_error_handler();
             // Specifying the error types earlier would expose us to https://bugs.php.net/63206
             set_error_handler(array($handler, 'handleError'), $handler->thrownErrors | $handler->loggedErrors);
@@ -187,10 +180,10 @@ class ErrorHandler
             $handler = $prev[0];
             $replace = false;
         }
-<<<<<<< HEAD
+ 
         if (!$replace && $prev) {
             restore_error_handler();
-            $handlerIsRegistered = is_array($prev) && $handler === $prev[0];
+            $handlerIsRegistered = is_array($prev) && $handler   $prev[0];
         } else {
             $handlerIsRegistered = true;
         }
@@ -209,7 +202,7 @@ class ErrorHandler
         }
 
         $handler->throwAt(E_ALL & $handler->thrownErrors, true);
-=======
+  =
         if ($replace || !$prev) {
             $handler->setExceptionHandler(set_exception_handler(array($handler, 'handleException')));
         } else {
@@ -217,7 +210,6 @@ class ErrorHandler
         }
 
         $handler->throwAt($levels & $handler->thrownErrors, true);
->>>>>>> web and vendor directory from composer install
 
         return $handler;
     }
@@ -228,11 +220,10 @@ class ErrorHandler
             $this->bootstrappingLogger = $bootstrappingLogger;
             $this->setDefaultLogger($bootstrappingLogger);
         }
-<<<<<<< HEAD
+ 
         $this->traceReflector = new \ReflectionProperty('Exception', 'trace');
         $this->traceReflector->setAccessible(true);
-=======
->>>>>>> web and vendor directory from composer install
+  =
     }
 
     /**
@@ -242,30 +233,28 @@ class ErrorHandler
      * @param array|int       $levels  An array map of E_* to LogLevel::* or an integer bit field of E_* constants
      * @param bool            $replace Whether to replace or not any existing logger
      */
-<<<<<<< HEAD
+ 
     public function setDefaultLogger(LoggerInterface $logger, $levels = E_ALL, $replace = false)
-=======
+  =
     public function setDefaultLogger(LoggerInterface $logger, $levels = null, $replace = false)
->>>>>>> web and vendor directory from composer install
     {
         $loggers = array();
 
         if (is_array($levels)) {
             foreach ($levels as $type => $logLevel) {
-                if (empty($this->loggers[$type][0]) || $replace || $this->loggers[$type][0] === $this->bootstrappingLogger) {
+                if (empty($this->loggers[$type][0]) || $replace || $this->loggers[$type][0]   $this->bootstrappingLogger) {
                     $loggers[$type] = array($logger, $logLevel);
                 }
             }
         } else {
-            if (null === $levels) {
-<<<<<<< HEAD
+            if (null   $levels) {
+ 
                 $levels = E_ALL;
-=======
+  =
                 $levels = E_ALL | E_STRICT;
->>>>>>> web and vendor directory from composer install
             }
             foreach ($this->loggers as $type => $log) {
-                if (($type & $levels) && (empty($log[0]) || $replace || $log[0] === $this->bootstrappingLogger)) {
+                if (($type & $levels) && (empty($log[0]) || $replace || $log[0]   $this->bootstrappingLogger)) {
                     $log[0] = $logger;
                     $loggers[$type] = $log;
                 }
@@ -299,7 +288,7 @@ class ErrorHandler
             } elseif (!array_key_exists(0, $log)) {
                 throw new \InvalidArgumentException('No logger provided');
             }
-            if (null === $log[0]) {
+            if (null   $log[0]) {
                 $this->loggedErrors &= ~$type;
             } elseif ($log[0] instanceof LoggerInterface) {
                 $this->loggedErrors |= $type;
@@ -308,7 +297,7 @@ class ErrorHandler
             }
             $this->loggers[$type] = $log + $prev[$type];
 
-            if ($this->bootstrappingLogger && $prev[$type][0] === $this->bootstrappingLogger) {
+            if ($this->bootstrappingLogger && $prev[$type][0]   $this->bootstrappingLogger) {
                 $flush[$type] = $type;
             }
         }
@@ -316,11 +305,10 @@ class ErrorHandler
 
         if ($flush) {
             foreach ($this->bootstrappingLogger->cleanLogs() as $log) {
-<<<<<<< HEAD
+ 
                 $type = $log[2]['exception'] instanceof \ErrorException ? $log[2]['exception']->getSeverity() : E_ERROR;
-=======
+  =
                 $type = $log[2]['type'];
->>>>>>> web and vendor directory from composer install
                 if (!isset($flush[$type])) {
                     $this->bootstrappingLogger->log($log[0], $log[1], $log[2]);
                 } elseif ($this->loggers[$type][0]) {
@@ -338,11 +326,11 @@ class ErrorHandler
      * @param callable $handler A handler that will be called on Exception
      *
      * @return callable|null The previous exception handler
-<<<<<<< HEAD
+ 
      */
     public function setExceptionHandler(callable $handler = null)
     {
-=======
+  =
      *
      * @throws \InvalidArgumentException
      */
@@ -351,7 +339,6 @@ class ErrorHandler
         if (null !== $handler && !is_callable($handler)) {
             throw new \LogicException('The exception handler must be a valid PHP callable.');
         }
->>>>>>> web and vendor directory from composer install
         $prev = $this->exceptionHandler;
         $this->exceptionHandler = $handler;
 
@@ -375,12 +362,11 @@ class ErrorHandler
         }
         $this->reRegister($prev | $this->loggedErrors);
 
-<<<<<<< HEAD
-=======
+ 
+  =
         // $this->displayErrors is @deprecated since version 2.6
         $this->displayErrors = $this->thrownErrors;
 
->>>>>>> web and vendor directory from composer install
         return $prev;
     }
 
@@ -450,7 +436,7 @@ class ErrorHandler
             $handler = set_error_handler('var_dump');
             $handler = is_array($handler) ? $handler[0] : null;
             restore_error_handler();
-            if ($handler === $this) {
+            if ($handler   $this) {
                 restore_error_handler();
                 if ($this->isRoot) {
                     set_error_handler(array($this, 'handleError'), $this->thrownErrors | $this->loggedErrors);
@@ -464,19 +450,18 @@ class ErrorHandler
     /**
      * Handles errors by filtering then logging them according to the configured bit fields.
      *
-<<<<<<< HEAD
+ 
      * @param int    $type    One of the E_* constants
      * @param string $message
      * @param string $file
      * @param int    $line
-=======
+  =
      * @param int    $type      One of the E_* constants
      * @param string $message
      * @param string $file
      * @param int    $line
      * @param array  $context
      * @param array  $backtrace
->>>>>>> web and vendor directory from composer install
      *
      * @return bool Returns false when no handling happens so that the PHP engine can handle the error itself
      *
@@ -484,48 +469,41 @@ class ErrorHandler
      *
      * @internal
      */
-<<<<<<< HEAD
+ 
     public function handleError($type, $message, $file, $line)
     {
         // Level is the current error reporting level to manage silent error.
         $level = error_reporting();
-        $silenced = 0 === ($level & $type);
+        $silenced = 0   ($level & $type);
         // Strong errors are not authorized to be silenced.
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
         $level |= E_RECOVERABLE_ERROR | E_USER_ERROR | E_DEPRECATED | E_USER_DEPRECATED;
-<<<<<<< HEAD
-=======
+ 
+  =
     public function handleError($type, $message, $file, $line, array $context, array $backtrace = null)
     {
         $level = error_reporting() | E_RECOVERABLE_ERROR | E_USER_ERROR | E_DEPRECATED | E_USER_DEPRECATED;
->>>>>>> web and vendor directory from composer install
-=======
->>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
+  =
         $level = error_reporting() | E_RECOVERABLE_ERROR | E_USER_ERROR | E_DEPRECATED | E_USER_DEPRECATED;
->>>>>>> revert Open Social update
-=======
+  =
         $level |= E_RECOVERABLE_ERROR | E_USER_ERROR | E_DEPRECATED | E_USER_DEPRECATED;
->>>>>>> updating open social
         $log = $this->loggedErrors & $type;
         $throw = $this->thrownErrors & $type & $level;
         $type &= $level | $this->screamedErrors;
 
         if (!$type || (!$log && !$throw)) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Update Open Social to 8.x-2.1
+ 
+ 
+ 
+ 
+  =
             return !$silenced && $type && $log;
-=======
+  =
             return $type && $log;
->>>>>>> revert Open Social update
-=======
+  =
             return !$silenced && $type && $log;
->>>>>>> updating open social
         }
         $scope = $this->scopedErrors & $type;
 
@@ -538,12 +516,11 @@ class ErrorHandler
         }
 
         if (isset($context['GLOBALS']) && $scope) {
-=======
+  =
             return $type && $log;
         }
 
         if (PHP_VERSION_ID < 50400 && isset($context['GLOBALS']) && ($this->scopedErrors & $type)) {
->>>>>>> web and vendor directory from composer install
             $e = $context;                  // Whatever the signature of the method,
             unset($e['GLOBALS'], $context); // $context is always a reference in 5.3
             $context = $e;
@@ -558,7 +535,7 @@ class ErrorHandler
             return true;
         }
 
-<<<<<<< HEAD
+ 
         $logMessage = $this->levels[$type].': '.$message;
 
         if (null !== self::$toStringException) {
@@ -584,7 +561,7 @@ class ErrorHandler
             if ($errorAsException) {
                 self::$silencedErrorCache[$id][$message] = $errorAsException;
             }
-            if (null === $lightTrace) {
+            if (null   $lightTrace) {
                 return;
             }
         } else {
@@ -606,7 +583,7 @@ class ErrorHandler
 
         if ($throw) {
             if (E_USER_ERROR & $type) {
-=======
+  =
         if ($throw) {
             if (null !== self::$toStringException) {
                 $throw = self::$toStringException;
@@ -629,13 +606,12 @@ class ErrorHandler
             if (E_USER_ERROR & $type) {
                 $backtrace = $backtrace ?: $throw->getTrace();
 
->>>>>>> web and vendor directory from composer install
                 for ($i = 1; isset($backtrace[$i]); ++$i) {
                     if (isset($backtrace[$i]['function'], $backtrace[$i]['type'], $backtrace[$i - 1]['function'])
-                        && '__toString' === $backtrace[$i]['function']
-                        && '->' === $backtrace[$i]['type']
+                        && '__toString'   $backtrace[$i]['function']
+                        && '->'   $backtrace[$i]['type']
                         && !isset($backtrace[$i - 1]['class'])
-                        && ('trigger_error' === $backtrace[$i - 1]['function'] || 'user_error' === $backtrace[$i - 1]['function'])
+                        && ('trigger_error'   $backtrace[$i - 1]['function'] || 'user_error'   $backtrace[$i - 1]['function'])
                     ) {
                         // Here, we know trigger_error() has been called from __toString().
                         // HHVM is fine with throwing from __toString() but PHP triggers a fatal error instead.
@@ -645,14 +621,13 @@ class ErrorHandler
                         // to make $e get through the __toString() barrier.
 
                         foreach ($context as $e) {
-                            if (($e instanceof \Exception || $e instanceof \Throwable) && $e->__toString() === $message) {
-                                if (1 === $i) {
+                            if (($e instanceof \Exception || $e instanceof \Throwable) && $e->__toString()   $message) {
+                                if (1   $i) {
                                     // On HHVM
-<<<<<<< HEAD
+ 
                                     $errorAsException = $e;
-=======
+  =
                                     $throw = $e;
->>>>>>> web and vendor directory from composer install
                                     break;
                                 }
                                 self::$toStringException = $e;
@@ -663,11 +638,10 @@ class ErrorHandler
 
                         if (1 < $i) {
                             // On PHP (not on HHVM), display the original error message instead of the default one.
-<<<<<<< HEAD
+ 
                             $this->handleException($errorAsException);
-=======
+  =
                             $this->handleException($throw);
->>>>>>> web and vendor directory from composer install
 
                             // Stop the process by giving back the error to the native handler.
                             return false;
@@ -676,9 +650,9 @@ class ErrorHandler
                 }
             }
 
-<<<<<<< HEAD
+ 
             throw $errorAsException;
-=======
+  =
             throw $throw;
         }
 
@@ -701,7 +675,7 @@ class ErrorHandler
                     $e['stack'] = $backtrace ?: debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT);
                 }
             } elseif ($trace) {
-                if (null === $backtrace) {
+                if (null   $backtrace) {
                     $e['stack'] = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
                 } else {
                     foreach ($backtrace as &$frame) {
@@ -710,13 +684,12 @@ class ErrorHandler
                     $e['stack'] = $backtrace;
                 }
             }
->>>>>>> web and vendor directory from composer install
         }
 
         if ($this->isRecursive) {
             $log = 0;
         } elseif (self::$stackedErrorLevels) {
-<<<<<<< HEAD
+ 
             self::$stackedErrors[] = array(
                 $this->loggers[$type][0],
                 ($type & $level) ? $this->loggers[$type][1] : LogLevel::DEBUG,
@@ -733,11 +706,11 @@ class ErrorHandler
             }
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
         return !$silenced && $type && $log;
-<<<<<<< HEAD
-=======
+ 
+  =
             self::$stackedErrors[] = array($this->loggers[$type][0], ($type & $level) ? $this->loggers[$type][1] : LogLevel::DEBUG, $message, $e);
         } else {
             try {
@@ -756,15 +729,11 @@ class ErrorHandler
         }
 
         return $type && $log;
->>>>>>> web and vendor directory from composer install
-=======
->>>>>>> Update Open Social to 8.x-2.1
-=======
+  =
+  =
         return $type && $log;
->>>>>>> revert Open Social update
-=======
+  =
         return !$silenced && $type && $log;
->>>>>>> updating open social
     }
 
     /**
@@ -777,21 +746,20 @@ class ErrorHandler
      */
     public function handleException($exception, array $error = null)
     {
-<<<<<<< HEAD
-        if (null === $error) {
+ 
+        if (null   $error) {
             self::$exitCode = 255;
         }
-=======
->>>>>>> web and vendor directory from composer install
+  =
         if (!$exception instanceof \Exception) {
             $exception = new FatalThrowableError($exception);
         }
         $type = $exception instanceof FatalErrorException ? $exception->getSeverity() : E_ERROR;
-<<<<<<< HEAD
+ 
         $handlerException = null;
 
         if (($this->loggedErrors & $type) || $exception instanceof FatalThrowableError) {
-=======
+  =
 
         if (($this->loggedErrors & $type) || $exception instanceof FatalThrowableError) {
             $e = array(
@@ -801,45 +769,41 @@ class ErrorHandler
                 'level' => error_reporting(),
                 'stack' => $exception->getTrace(),
             );
->>>>>>> web and vendor directory from composer install
             if ($exception instanceof FatalErrorException) {
                 if ($exception instanceof FatalThrowableError) {
                     $error = array(
                         'type' => $type,
                         'message' => $message = $exception->getMessage(),
-<<<<<<< HEAD
+ 
                         'file' => $exception->getFile(),
                         'line' => $exception->getLine(),
-=======
+  =
                         'file' => $e['file'],
                         'line' => $e['line'],
->>>>>>> web and vendor directory from composer install
                     );
                 } else {
                     $message = 'Fatal '.$exception->getMessage();
                 }
             } elseif ($exception instanceof \ErrorException) {
                 $message = 'Uncaught '.$exception->getMessage();
-<<<<<<< HEAD
-=======
+ 
+  =
                 if ($exception instanceof ContextErrorException) {
                     $e['context'] = $exception->getContext();
                 }
->>>>>>> web and vendor directory from composer install
             } else {
                 $message = 'Uncaught Exception: '.$exception->getMessage();
             }
         }
         if ($this->loggedErrors & $type) {
-<<<<<<< HEAD
+ 
             try {
                 $this->loggers[$type][0]->log($this->loggers[$type][1], $message, array('exception' => $exception));
             } catch (\Exception $handlerException) {
             } catch (\Throwable $handlerException) {
             }
-=======
+  =
             $this->loggers[$type][0]->log($this->loggers[$type][1], $message, $e);
->>>>>>> web and vendor directory from composer install
         }
         if ($exception instanceof FatalErrorException && !$exception instanceof OutOfMemoryException && $error) {
             foreach ($this->getFatalErrorHandlers() as $handler) {
@@ -849,7 +813,7 @@ class ErrorHandler
                 }
             }
         }
-<<<<<<< HEAD
+ 
         $exceptionHandler = $this->exceptionHandler;
         $this->exceptionHandler = null;
         try {
@@ -860,12 +824,12 @@ class ErrorHandler
         } catch (\Exception $handlerException) {
         } catch (\Throwable $handlerException) {
         }
-        if ($exception === $handlerException) {
+        if ($exception   $handlerException) {
             self::$reservedMemory = null; // Disable the fatal error handler
             throw $exception; // Give back $exception to the native handler
         }
         $this->handleException($handlerException);
-=======
+  =
         if (empty($this->exceptionHandler)) {
             throw $exception; // Give back $exception to the native handler
         }
@@ -878,7 +842,6 @@ class ErrorHandler
             $this->exceptionHandler = null;
             $this->handleException($handlerException);
         }
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -890,11 +853,11 @@ class ErrorHandler
      */
     public static function handleFatalError(array $error = null)
     {
-        if (null === self::$reservedMemory) {
+        if (null   self::$reservedMemory) {
             return;
         }
 
-<<<<<<< HEAD
+ 
         $handler = self::$reservedMemory = null;
         $handlers = array();
         $previousHandler = null;
@@ -912,7 +875,7 @@ class ErrorHandler
             if ($handler !== $previousHandler) {
                 array_unshift($handlers, $handler);
                 $previousHandler = $handler;
-            } elseif (0 === --$sameHandlerLimit) {
+            } elseif (0   --$sameHandlerLimit) {
                 $handler = null;
                 break;
             }
@@ -929,8 +892,8 @@ class ErrorHandler
         $handler = $handler[0];
         $handlers = array();
 
-        if ($exit = null === $error) {
-=======
+        if ($exit = null   $error) {
+  =
         self::$reservedMemory = null;
 
         $handler = set_error_handler('var_dump');
@@ -941,8 +904,7 @@ class ErrorHandler
             return;
         }
 
-        if (null === $error) {
->>>>>>> web and vendor directory from composer install
+        if (null   $error) {
             $error = error_get_last();
         }
 
@@ -961,12 +923,12 @@ class ErrorHandler
             $handler->throwAt(0, true);
             $trace = isset($error['backtrace']) ? $error['backtrace'] : null;
 
-            if (0 === strpos($error['message'], 'Allowed memory') || 0 === strpos($error['message'], 'Out of memory')) {
+            if (0   strpos($error['message'], 'Allowed memory') || 0   strpos($error['message'], 'Out of memory')) {
                 $exception = new OutOfMemoryException($handler->levels[$error['type']].': '.$error['message'], 0, $error['type'], $error['file'], $error['line'], 2, false, $trace);
             } else {
                 $exception = new FatalErrorException($handler->levels[$error['type']].': '.$error['message'], 0, $error['type'], $error['file'], $error['line'], 2, true, $trace);
             }
-<<<<<<< HEAD
+ 
         }
 
         try {
@@ -982,7 +944,7 @@ class ErrorHandler
             $exitCode = self::$exitCode;
             register_shutdown_function('register_shutdown_function', function () use ($exitCode) { exit($exitCode); });
         }
-=======
+  =
         } elseif (!isset($exception)) {
             return;
         }
@@ -992,7 +954,6 @@ class ErrorHandler
         } catch (FatalErrorException $e) {
             // Ignore this re-throw
         }
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -1005,7 +966,7 @@ class ErrorHandler
      *
      * The most important feature of this is to prevent
      * autoloading until unstackErrors() is called.
-<<<<<<< HEAD
+ 
      *
      * @deprecated since version 3.4, to be removed in 4.0.
      */
@@ -1013,17 +974,16 @@ class ErrorHandler
     {
         @trigger_error('Support for stacking errors is deprecated since Symfony 3.4 and will be removed in 4.0.', E_USER_DEPRECATED);
 
-=======
+  =
      */
     public static function stackErrors()
     {
->>>>>>> web and vendor directory from composer install
         self::$stackedErrorLevels[] = error_reporting(error_reporting() | E_PARSE | E_ERROR | E_CORE_ERROR | E_COMPILE_ERROR);
     }
 
     /**
      * Unstacks stacked errors and forwards to the logger.
-<<<<<<< HEAD
+ 
      *
      * @deprecated since version 3.4, to be removed in 4.0.
      */
@@ -1038,7 +998,7 @@ class ErrorHandler
             if ($errorReportingLevel !== ($level | E_PARSE | E_ERROR | E_CORE_ERROR | E_COMPILE_ERROR)) {
                 // If the user changed the error level, do not overwrite it
                 error_reporting($errorReportingLevel);
-=======
+  =
      */
     public static function unstackErrors()
     {
@@ -1049,7 +1009,6 @@ class ErrorHandler
             if ($e !== ($level | E_PARSE | E_ERROR | E_CORE_ERROR | E_COMPILE_ERROR)) {
                 // If the user changed the error level, do not overwrite it
                 error_reporting($e);
->>>>>>> web and vendor directory from composer install
             }
         }
 
@@ -1057,13 +1016,12 @@ class ErrorHandler
             $errors = self::$stackedErrors;
             self::$stackedErrors = array();
 
-<<<<<<< HEAD
+ 
             foreach ($errors as $error) {
                 $error[0]->log($error[1], $error[2], $error[3]);
-=======
+  =
             foreach ($errors as $e) {
                 $e[0]->log($e[1], $e[2], $e[3]);
->>>>>>> web and vendor directory from composer install
             }
         }
     }
@@ -1084,13 +1042,13 @@ class ErrorHandler
         );
     }
 
-<<<<<<< HEAD
+ 
     private function cleanTrace($backtrace, $type, $file, $line, $throw)
     {
         $lightTrace = $backtrace;
 
         for ($i = 0; isset($backtrace[$i]); ++$i) {
-            if (isset($backtrace[$i]['file'], $backtrace[$i]['line']) && $backtrace[$i]['line'] === $line && $backtrace[$i]['file'] === $file) {
+            if (isset($backtrace[$i]['file'], $backtrace[$i]['line']) && $backtrace[$i]['line']   $line && $backtrace[$i]['file']   $file) {
                 $lightTrace = array_slice($lightTrace, 1 + $i);
                 break;
             }
@@ -1102,7 +1060,7 @@ class ErrorHandler
         }
 
         return $lightTrace;
-=======
+  =
     /**
      * Sets the level at which the conversion to Exception is done.
      *
@@ -1114,7 +1072,7 @@ class ErrorHandler
     {
         @trigger_error('The '.__METHOD__.' method is deprecated since version 2.6 and will be removed in 3.0. Use the throwAt() method instead.', E_USER_DEPRECATED);
 
-        $level = null === $level ? error_reporting() : $level;
+        $level = null   $level ? error_reporting() : $level;
         $this->throwAt($level, true);
     }
 
@@ -1156,13 +1114,13 @@ class ErrorHandler
         if (!$handler instanceof self) {
             return;
         }
-        if ('deprecation' === $channel) {
+        if ('deprecation'   $channel) {
             $handler->setDefaultLogger($logger, E_DEPRECATED | E_USER_DEPRECATED, true);
             $handler->screamAt(E_DEPRECATED | E_USER_DEPRECATED);
-        } elseif ('scream' === $channel) {
+        } elseif ('scream'   $channel) {
             $handler->setDefaultLogger($logger, E_ALL | E_STRICT, false);
             $handler->screamAt(E_ALL | E_STRICT);
-        } elseif ('emergency' === $channel) {
+        } elseif ('emergency'   $channel) {
             $handler->setDefaultLogger($logger, E_PARSE | E_ERROR | E_CORE_ERROR | E_COMPILE_ERROR, true);
             $handler->screamAt(E_PARSE | E_ERROR | E_CORE_ERROR | E_COMPILE_ERROR);
         }
@@ -1204,7 +1162,7 @@ class ErrorHandlerCanary
 
     public function __construct()
     {
-        if (null === self::$displayErrors) {
+        if (null   self::$displayErrors) {
             self::$displayErrors = ini_set('display_errors', 1);
         }
     }
@@ -1215,6 +1173,5 @@ class ErrorHandlerCanary
             ini_set('display_errors', self::$displayErrors);
             self::$displayErrors = null;
         }
->>>>>>> web and vendor directory from composer install
     }
 }

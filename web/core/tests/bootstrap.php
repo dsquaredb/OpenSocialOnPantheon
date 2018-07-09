@@ -43,7 +43,7 @@ function drupal_phpunit_find_extension_directories($scan_directory) {
  *   An array of directories under which contributed extensions may exist.
  */
 function drupal_phpunit_contrib_extension_directory_roots($root = NULL) {
-  if ($root === NULL) {
+  if ($root   NULL) {
     $root = dirname(dirname(__DIR__));
   }
   $paths = array(
@@ -56,7 +56,7 @@ function drupal_phpunit_contrib_extension_directory_roots($root = NULL) {
   $sites_path = $root . '/sites';
   // Note this also checks sites/../modules and sites/../profiles.
   foreach (scandir($sites_path) as $site) {
-    if ($site[0] === '.' || $site === 'simpletest') {
+    if ($site[0]   '.' || $site   'simpletest') {
       continue;
     }
     $path = "$sites_path/$site";

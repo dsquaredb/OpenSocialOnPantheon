@@ -31,11 +31,10 @@ class ResponseListener implements EventSubscriberInterface
 
     /**
      * Filters the Response.
-<<<<<<< HEAD
+ 
 =======
      *
      * @param FilterResponseEvent $event A FilterResponseEvent instance
->>>>>>> web and vendor directory from composer install
      */
     public function onKernelResponse(FilterResponseEvent $event)
     {

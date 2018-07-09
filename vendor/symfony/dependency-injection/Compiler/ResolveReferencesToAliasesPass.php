@@ -11,10 +11,9 @@
 
 namespace Symfony\Component\DependencyInjection\Compiler;
 
-<<<<<<< HEAD
+ 
 =======
 use Symfony\Component\DependencyInjection\Alias;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -24,7 +23,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  *
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
  */
-<<<<<<< HEAD
+ 
 class ResolveReferencesToAliasesPass extends AbstractRecursivePass
 {
     /**
@@ -68,13 +67,12 @@ class ResolveReferencesToAliasesPass implements CompilerPassInterface
             $aliasId = (string) $alias;
             if ($aliasId !== $defId = $this->getDefinitionId($aliasId)) {
                 $container->setAlias($id, new Alias($defId, $alias->isPublic()));
->>>>>>> web and vendor directory from composer install
             }
         }
     }
 
     /**
-<<<<<<< HEAD
+ 
      * {@inheritdoc}
      */
     protected function processValue($value, $isRoot = false)
@@ -134,13 +132,12 @@ class ResolveReferencesToAliasesPass implements CompilerPassInterface
         }
 
         return $factory;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
      * Resolves an alias into a definition id.
      *
-<<<<<<< HEAD
+ 
      * @param string           $id        The definition or alias id to resolve
      * @param ContainerBuilder $container
      *
@@ -159,16 +156,14 @@ class ResolveReferencesToAliasesPass implements CompilerPassInterface
     {
         $seen = array();
         while ($this->container->hasAlias($id)) {
->>>>>>> web and vendor directory from composer install
             if (isset($seen[$id])) {
                 throw new ServiceCircularReferenceException($id, array_keys($seen));
             }
             $seen[$id] = true;
-<<<<<<< HEAD
+ 
             $id = $container->normalizeId($container->getAlias($id));
 =======
             $id = (string) $this->container->getAlias($id);
->>>>>>> web and vendor directory from composer install
         }
 
         return $id;

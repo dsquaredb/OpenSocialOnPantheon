@@ -14,7 +14,7 @@ namespace GuzzleHttp\Promise;
  * }
  * </code>
  *
-<<<<<<< HEAD
+ 
  * @param TaskQueueInterface $assign Optionally specify a new queue instance.
  *
  * @return TaskQueueInterface
@@ -34,7 +34,6 @@ function queue()
     static $queue;
 
     if (!$queue) {
->>>>>>> web and vendor directory from composer install
         $queue = new TaskQueue();
     }
 
@@ -224,11 +223,10 @@ function unwrap($promises)
  *
  * @param mixed $promises Promises or values.
  *
-<<<<<<< HEAD
+ 
  * @return PromiseInterface
 =======
  * @return Promise
->>>>>>> web and vendor directory from composer install
  */
 function all($promises)
 {
@@ -261,11 +259,10 @@ function all($promises)
  * @param int   $count    Total number of promises.
  * @param mixed $promises Promises or values.
  *
-<<<<<<< HEAD
+ 
  * @return PromiseInterface
 =======
  * @return Promise
->>>>>>> web and vendor directory from composer install
  */
 function some($count, $promises)
 {
@@ -321,11 +318,10 @@ function any($promises)
  *
  * @param mixed $promises Promises or values.
  *
-<<<<<<< HEAD
+ 
  * @return PromiseInterface
 =======
  * @return Promise
->>>>>>> web and vendor directory from composer install
  * @see GuzzleHttp\Promise\inspect for the inspection state array format.
  */
 function settle($promises)
@@ -363,11 +359,10 @@ function settle($promises)
  * @param callable $onFulfilled
  * @param callable $onRejected
  *
-<<<<<<< HEAD
+ 
  * @return PromiseInterface
 =======
  * @return Promise
->>>>>>> web and vendor directory from composer install
  */
 function each(
     $iterable,
@@ -393,11 +388,10 @@ function each(
  * @param callable     $onFulfilled
  * @param callable     $onRejected
  *
-<<<<<<< HEAD
+ 
  * @return PromiseInterface
 =======
  * @return mixed
->>>>>>> web and vendor directory from composer install
  */
 function each_limit(
     $iterable,
@@ -421,11 +415,10 @@ function each_limit(
  * @param int|callable $concurrency
  * @param callable     $onFulfilled
  *
-<<<<<<< HEAD
+ 
  * @return PromiseInterface
 =======
  * @return mixed
->>>>>>> web and vendor directory from composer install
  */
 function each_limit_all(
     $iterable,
@@ -479,7 +472,7 @@ function is_settled(PromiseInterface $promise)
 }
 
 /**
-<<<<<<< HEAD
+ 
  * @see Coroutine
  *
  * @param callable $generatorFn
@@ -546,5 +539,4 @@ function __next_coroutine($yielded, \Generator $generator)
             return __next_coroutine($nextYield, $generator);
         }
     );
->>>>>>> web and vendor directory from composer install
 }

@@ -1,5 +1,5 @@
 {
-<<<<<<< HEAD
+ 
   "name":         "paragonie/random_compat",
   "description":  "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
   "keywords": [
@@ -36,7 +36,7 @@
       "lib/random.php"
     ]
   }
-=======
+  =
     "name":         "paragonie/random_compat",
     "description":  "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
     "keywords": [

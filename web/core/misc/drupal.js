@@ -162,7 +162,7 @@ if (window.jQuery) {
     var behaviors = Drupal.behaviors;
     // Execute all of them.
     for (var i in behaviors) {
-      if (behaviors.hasOwnProperty(i) && typeof behaviors[i].attach === 'function') {
+      if (behaviors.hasOwnProperty(i) && typeof behaviors[i].attach   'function') {
         // Don't stop the execution of behaviors in case of an error.
         try {
           behaviors[i].attach(context, settings);
@@ -225,7 +225,7 @@ if (window.jQuery) {
     var behaviors = Drupal.behaviors;
     // Execute all of them.
     for (var i in behaviors) {
-      if (behaviors.hasOwnProperty(i) && typeof behaviors[i].detach === 'function') {
+      if (behaviors.hasOwnProperty(i) && typeof behaviors[i].detach   'function') {
         // Don't stop the execution of behaviors in case of an error.
         try {
           behaviors[i].detach(context, settings, trigger);
@@ -322,7 +322,7 @@ if (window.jQuery) {
    *   The replaced string.
    */
   Drupal.stringReplace = function (str, args, keys) {
-    if (str.length === 0) {
+    if (str.length   0) {
       return str;
     }
 
@@ -339,7 +339,7 @@ if (window.jQuery) {
       keys.sort(function (a, b) { return a.length - b.length; });
     }
 
-    if (keys.length === 0) {
+    if (keys.length   0) {
       return str;
     }
 
@@ -456,7 +456,7 @@ if (window.jQuery) {
 
     // Consider URLs that match this site's base URL but use HTTPS instead of HTTP
     // as local as well.
-    if (protocol === 'http:' && absoluteUrl.indexOf('https:') === 0) {
+    if (protocol   'http:' && absoluteUrl.indexOf('https:')   0) {
       protocol = 'https:';
     }
     var baseUrl = protocol + '//' + location.host + drupalSettings.path.baseUrl.slice(0, -1);
@@ -477,7 +477,7 @@ if (window.jQuery) {
 
     // The given URL matches the site's base URL, or has a path under the site's
     // base URL.
-    return absoluteUrl === baseUrl || absoluteUrl.indexOf(baseUrl + '/') === 0;
+    return absoluteUrl   baseUrl || absoluteUrl.indexOf(baseUrl + '/')   0;
   };
 
   /**

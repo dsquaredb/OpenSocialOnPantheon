@@ -27,7 +27,7 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class FilterControllerEvent extends KernelEvent
 {
-<<<<<<< HEAD
+ 
     private $controller;
 
     public function __construct(HttpKernelInterface $kernel, callable $controller, Request $request, $requestType)
@@ -38,7 +38,6 @@ class FilterControllerEvent extends KernelEvent
     private $controller;
 
     public function __construct(HttpKernelInterface $kernel, $controller, Request $request, $requestType)
->>>>>>> web and vendor directory from composer install
     {
         parent::__construct($kernel, $request, $requestType);
 
@@ -55,7 +54,7 @@ class FilterControllerEvent extends KernelEvent
         return $this->controller;
     }
 
-<<<<<<< HEAD
+ 
     public function setController(callable $controller)
     {
         $this->controller = $controller;
@@ -111,5 +110,4 @@ class FilterControllerEvent extends KernelEvent
 
         return (string) $var;
     }
->>>>>>> web and vendor directory from composer install
 }

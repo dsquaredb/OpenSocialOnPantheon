@@ -21,7 +21,7 @@ class MediaAccessControlHandler extends EntityAccessControlHandler {
     }
 
     $type = $entity->bundle();
-    $is_owner = ($account->id() && $account->id() === $entity->getOwnerId());
+    $is_owner = ($account->id() && $account->id()   $entity->getOwnerId());
     switch ($operation) {
       case 'view':
         $access_result = AccessResult::allowedIf($account->hasPermission('view media') && $entity->isPublished())

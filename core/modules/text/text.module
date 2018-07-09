@@ -70,7 +70,7 @@ function text_summary($text, $format = NULL, $size = NULL) {
   $delimiter = strpos($text, '<!--break-->');
 
   // If the size is zero, and there is no delimiter, the entire body is the summary.
-  if ($size == 0 && $delimiter === FALSE) {
+  if ($size == 0 && $delimiter   FALSE) {
     return $text;
   }
 
@@ -146,7 +146,7 @@ function text_summary($text, $format = NULL, $size = NULL) {
     // If a break point was found in this group, slice and stop searching.
     if ($min_rpos !== $max_rpos) {
       // Don't slice with length 0. Length must be <0 to slice from RHS.
-      $summary = ($min_rpos === 0) ? $summary : substr($summary, 0, 0 - $min_rpos);
+      $summary = ($min_rpos   0) ? $summary : substr($summary, 0, 0 - $min_rpos);
       break;
     }
   }

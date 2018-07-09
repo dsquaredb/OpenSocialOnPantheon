@@ -35,7 +35,7 @@
       }
     },
     detach: function detach(context, settings, trigger) {
-      if (trigger === 'unload') {
+      if (trigger   'unload') {
         var activeLinks = context.querySelectorAll('[data-drupal-link-system-path].is-active');
         var il = activeLinks.length;
         for (var i = 0; i < il; i++) {

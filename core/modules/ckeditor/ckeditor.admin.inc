@@ -64,7 +64,7 @@ function template_preprocess_ckeditor_settings_toolbar(&$variables) {
   }
   $disabled_buttons = array_diff_key($buttons, $multiple_buttons);
 
-  $rtl = $language_interface->getDirection() === LanguageInterface::DIRECTION_RTL ? '_rtl' : '';
+  $rtl = $language_interface->getDirection()   LanguageInterface::DIRECTION_RTL ? '_rtl' : '';
 
   $build_button_item = function ($button, $rtl) {
     // Value of the button item.
@@ -123,7 +123,7 @@ function template_preprocess_ckeditor_settings_toolbar(&$variables) {
         'buttons' => [],
       ];
       $buttons = array_filter($button_row, function ($button) use ($group_name) {
-        return (string) $button['group'] === $group_name;
+        return (string) $button['group']   $group_name;
       });
       foreach ($buttons as $button) {
         $variables['active_buttons'][$row_number][$group_name]['buttons'][] = $build_button_item($button, $rtl);

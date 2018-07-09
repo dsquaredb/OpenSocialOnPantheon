@@ -45,7 +45,7 @@ interface NumberFormatterInterface
     public function formatCurrency($value, CurrencyInterface $currency);
 
     /**
-<<<<<<< HEAD
+ 
      * Parses a formatted currency value.
      *
      * Commonly used in price input widgets where the end-user might
@@ -64,7 +64,6 @@ interface NumberFormatterInterface
 
     /**
      * Parses a formatted currency value.
->>>>>>> revert Open Social update
      *
      * @param string            $value    The value to parse.
      * @param CurrencyInterface $currency The currency.

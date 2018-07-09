@@ -1,6 +1,6 @@
 # CHANGELOG
 
-<<<<<<< HEAD
+ 
 
 ## 1.3.1 - 2016-12-20
 
@@ -64,7 +64,7 @@
 ## 1.0.0 - 2015-05-12
 
 - Initial release
-=======
+  =
 ## 1.2.0 - 2016-05-18
 
 * Update to now catch `\Throwable` on PHP 7+

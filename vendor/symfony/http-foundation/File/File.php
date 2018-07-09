@@ -85,11 +85,10 @@ class File extends \SplFileInfo
      * @param string $directory The destination folder
      * @param string $name      The new file name
      *
-<<<<<<< HEAD
+ 
      * @return self A File object representing the new file
 =======
      * @return File A File object representing the new file
->>>>>>> web and vendor directory from composer install
      *
      * @throws FileException if the target file could not be created
      */
@@ -97,35 +96,29 @@ class File extends \SplFileInfo
     {
         $target = $this->getTargetFile($directory, $name);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
 =======
->>>>>>> Update Open Social to 8.x-2.1
 =======
->>>>>>> updating open social
         set_error_handler(function ($type, $msg) use (&$error) { $error = $msg; });
         $renamed = rename($this->getPathname(), $target);
         restore_error_handler();
         if (!$renamed) {
             throw new FileException(sprintf('Could not move the file "%s" to "%s" (%s)', $this->getPathname(), $target, strip_tags($error)));
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
 =======
         if (!@rename($this->getPathname(), $target)) {
             $error = error_get_last();
             throw new FileException(sprintf('Could not move the file "%s" to "%s" (%s)', $this->getPathname(), $target, strip_tags($error['message'])));
->>>>>>> web and vendor directory from composer install
 =======
->>>>>>> Update Open Social to 8.x-2.1
 =======
         if (!@rename($this->getPathname(), $target)) {
             $error = error_get_last();
             throw new FileException(sprintf('Could not move the file "%s" to "%s" (%s)', $this->getPathname(), $target, strip_tags($error['message'])));
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
         }
 
         @chmod($target, 0666 & ~umask());

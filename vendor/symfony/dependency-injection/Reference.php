@@ -20,7 +20,7 @@ class Reference
 {
     private $id;
     private $invalidBehavior;
-<<<<<<< HEAD
+ 
 
     /**
      * @param string $id              The service identifier
@@ -49,7 +49,6 @@ class Reference
         $this->id = strtolower($id);
         $this->invalidBehavior = $invalidBehavior;
         $this->strict = $strict;
->>>>>>> web and vendor directory from composer install
     }
 
     /**
@@ -69,7 +68,7 @@ class Reference
     {
         return $this->invalidBehavior;
     }
-<<<<<<< HEAD
+ 
 =======
 
     /**
@@ -87,5 +86,4 @@ class Reference
 
         return $this->strict;
     }
->>>>>>> web and vendor directory from composer install
 }

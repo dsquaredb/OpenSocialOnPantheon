@@ -11,11 +11,10 @@
 
 namespace Symfony\Component\HttpKernel\DependencyInjection;
 
-<<<<<<< HEAD
+ 
 use Psr\Container\ContainerInterface;
 =======
 use Symfony\Component\DependencyInjection\ContainerInterface;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpKernel\Fragment\FragmentHandler;
 
@@ -27,7 +26,7 @@ use Symfony\Component\HttpKernel\Fragment\FragmentHandler;
 class LazyLoadingFragmentHandler extends FragmentHandler
 {
     private $container;
-<<<<<<< HEAD
+ 
     /**
      * @deprecated since version 3.3, to be removed in 4.0
      */
@@ -43,12 +42,11 @@ class LazyLoadingFragmentHandler extends FragmentHandler
      *
      * RequestStack will become required in 3.0.
      *
->>>>>>> web and vendor directory from composer install
      * @param ContainerInterface $container    A container
      * @param RequestStack       $requestStack The Request stack that controls the lifecycle of requests
      * @param bool               $debug        Whether the debug mode is enabled or not
      */
-<<<<<<< HEAD
+ 
     public function __construct(ContainerInterface $container, RequestStack $requestStack, $debug = false)
     {
         $this->container = $container;
@@ -68,7 +66,6 @@ class LazyLoadingFragmentHandler extends FragmentHandler
             @trigger_error('The '.__METHOD__.' method now requires a RequestStack instance as '.__CLASS__.'::setRequest method will not be supported anymore in 3.0.', E_USER_DEPRECATED);
         }
 
->>>>>>> web and vendor directory from composer install
         parent::__construct($requestStack, array(), $debug);
     }
 
@@ -77,7 +74,7 @@ class LazyLoadingFragmentHandler extends FragmentHandler
      *
      * @param string $name     The service name
      * @param string $renderer The render service id
-<<<<<<< HEAD
+ 
      *
      * @deprecated since version 3.3, to be removed in 4.0
      */
@@ -89,7 +86,6 @@ class LazyLoadingFragmentHandler extends FragmentHandler
      */
     public function addRendererService($name, $renderer)
     {
->>>>>>> web and vendor directory from composer install
         $this->rendererIds[$name] = $renderer;
     }
 
@@ -98,7 +94,7 @@ class LazyLoadingFragmentHandler extends FragmentHandler
      */
     public function render($uri, $renderer = 'inline', array $options = array())
     {
-<<<<<<< HEAD
+ 
         // BC 3.x, to be removed in 4.0
         if (isset($this->rendererIds[$renderer])) {
             $this->addRenderer($this->container->get($this->rendererIds[$renderer]));
@@ -115,7 +111,6 @@ class LazyLoadingFragmentHandler extends FragmentHandler
             $this->addRenderer($this->container->get($this->rendererIds[$renderer]));
 
             unset($this->rendererIds[$renderer]);
->>>>>>> web and vendor directory from composer install
         }
 
         return parent::render($uri, $renderer, $options);

@@ -12,18 +12,15 @@
 namespace Symfony\Component\HttpKernel\EventListener;
 
 use Psr\Log\LoggerInterface;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
 use Symfony\Component\Debug\ExceptionHandler;
 =======
->>>>>>> Update Open Social to 8.x-2.1
 =======
 use Symfony\Component\Debug\ExceptionHandler;
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
 use Symfony\Component\Debug\Exception\FlattenException;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -31,7 +28,6 @@ use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 =======
 use Symfony\Component\Debug\Exception\FlattenException;
 use Symfony\Component\HttpFoundation\Request;
->>>>>>> web and vendor directory from composer install
 use Symfony\Component\HttpKernel\Log\DebugLoggerInterface;
 use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
@@ -48,7 +44,7 @@ class ExceptionListener implements EventSubscriberInterface
 {
     protected $controller;
     protected $logger;
-<<<<<<< HEAD
+ 
     protected $debug;
 
     public function __construct($controller, LoggerInterface $logger = null, $debug = false)
@@ -56,9 +52,9 @@ class ExceptionListener implements EventSubscriberInterface
         $this->controller = $controller;
         $this->logger = $logger;
         $this->debug = $debug;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
         $this->charset = $charset;
 =======
 
@@ -66,24 +62,19 @@ class ExceptionListener implements EventSubscriberInterface
     {
         $this->controller = $controller;
         $this->logger = $logger;
->>>>>>> web and vendor directory from composer install
 =======
->>>>>>> Update Open Social to 8.x-2.1
 =======
         $this->charset = $charset;
->>>>>>> revert Open Social update
 =======
->>>>>>> updating open social
     }
 
     public function onKernelException(GetResponseForExceptionEvent $event)
     {
         $exception = $event->getException();
         $request = $event->getRequest();
-<<<<<<< HEAD
+ 
         $eventDispatcher = func_num_args() > 2 ? func_get_arg(2) : null;
 =======
->>>>>>> web and vendor directory from composer install
 
         $this->logException($exception, sprintf('Uncaught PHP Exception %s: "%s" at %s line %s', get_class($exception), $exception->getMessage(), $exception->getFile(), $exception->getLine()));
 
@@ -110,7 +101,7 @@ class ExceptionListener implements EventSubscriberInterface
         }
 
         $event->setResponse($response);
-<<<<<<< HEAD
+ 
 
         if ($this->debug && $eventDispatcher instanceof EventDispatcherInterface) {
             $cspRemovalListener = function (FilterResponseEvent $event) use (&$cspRemovalListener, $eventDispatcher) {
@@ -120,7 +111,6 @@ class ExceptionListener implements EventSubscriberInterface
             $eventDispatcher->addListener(KernelEvents::RESPONSE, $cspRemovalListener, -128);
         }
 =======
->>>>>>> web and vendor directory from composer install
     }
 
     public static function getSubscribedEvents()
@@ -158,39 +148,34 @@ class ExceptionListener implements EventSubscriberInterface
     protected function duplicateRequest(\Exception $exception, Request $request)
     {
         $attributes = array(
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
+ 
+ 
 =======
->>>>>>> revert Open Social update
             'exception' => $exception = FlattenException::create($exception),
             '_controller' => $this->controller ?: function () use ($exception) {
                 $handler = new ExceptionHandler($this->debug, $this->charset);
 
                 return new Response($handler->getHtml($exception), $exception->getStatusCode(), $exception->getHeaders());
             },
-<<<<<<< HEAD
+ 
 =======
             '_controller' => $this->controller,
             'exception' => FlattenException::create($exception),
->>>>>>> Update Open Social to 8.x-2.1
             'logger' => $this->logger instanceof DebugLoggerInterface ? $this->logger : null,
 =======
             '_controller' => $this->controller,
             'exception' => FlattenException::create($exception),
 =======
->>>>>>> revert Open Social update
 =======
             '_controller' => $this->controller,
             'exception' => FlattenException::create($exception),
->>>>>>> updating open social
             'logger' => $this->logger instanceof DebugLoggerInterface ? $this->logger : null,
             // keep for BC -- as $format can be an argument of the controller callable
             // see src/Symfony/Bundle/TwigBundle/Controller/ExceptionController.php
             // @deprecated since version 2.4, to be removed in 3.0
             'format' => $request->getRequestFormat(),
->>>>>>> web and vendor directory from composer install
         );
         $request = $request->duplicate(null, null, $attributes);
         $request->setMethod('GET');
