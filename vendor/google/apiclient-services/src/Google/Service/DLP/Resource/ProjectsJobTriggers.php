@@ -93,9 +93,10 @@ class Google_Service_DLP_Resource_ProjectsJobTriggers extends Google_Service_Res
    *
    * Supported fields are:
    *
-   * - `create_time`: corresponds to time the triggeredJob was created. -
-   * `update_time`: corresponds to time the triggeredJob was last updated. -
-   * `name`: corresponds to JobTrigger's name.
+   * - `create_time`: corresponds to time the JobTrigger was created. -
+   * `update_time`: corresponds to time the JobTrigger was last updated. - `name`:
+   * corresponds to JobTrigger's name. - `display_name`: corresponds to
+   * JobTrigger's display name. - `status`: corresponds to JobTrigger's status.
    * @opt_param int pageSize Optional size of the page, can be limited by a
    * server.
    * @return Google_Service_DLP_GooglePrivacyDlpV2ListJobTriggersResponse

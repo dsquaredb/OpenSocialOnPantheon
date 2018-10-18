@@ -34,6 +34,8 @@ class Google_Service_Vision_GoogleCloudVisionV1p2beta1AnnotateImageResponse exte
   protected $labelAnnotationsDataType = 'array';
   protected $landmarkAnnotationsType = 'Google_Service_Vision_GoogleCloudVisionV1p2beta1EntityAnnotation';
   protected $landmarkAnnotationsDataType = 'array';
+  protected $localizedObjectAnnotationsType = 'Google_Service_Vision_GoogleCloudVisionV1p2beta1LocalizedObjectAnnotation';
+  protected $localizedObjectAnnotationsDataType = 'array';
   protected $logoAnnotationsType = 'Google_Service_Vision_GoogleCloudVisionV1p2beta1EntityAnnotation';
   protected $logoAnnotationsDataType = 'array';
   protected $safeSearchAnnotationType = 'Google_Service_Vision_GoogleCloudVisionV1p2beta1SafeSearchAnnotation';
@@ -154,6 +156,20 @@ class Google_Service_Vision_GoogleCloudVisionV1p2beta1AnnotateImageResponse exte
   public function getLandmarkAnnotations()
   {
     return $this->landmarkAnnotations;
+  }
+  /**
+   * @param Google_Service_Vision_GoogleCloudVisionV1p2beta1LocalizedObjectAnnotation
+   */
+  public function setLocalizedObjectAnnotations($localizedObjectAnnotations)
+  {
+    $this->localizedObjectAnnotations = $localizedObjectAnnotations;
+  }
+  /**
+   * @return Google_Service_Vision_GoogleCloudVisionV1p2beta1LocalizedObjectAnnotation
+   */
+  public function getLocalizedObjectAnnotations()
+  {
+    return $this->localizedObjectAnnotations;
   }
   /**
    * @param Google_Service_Vision_GoogleCloudVisionV1p2beta1EntityAnnotation

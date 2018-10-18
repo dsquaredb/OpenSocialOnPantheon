@@ -40,6 +40,8 @@ class Google_Service_AndroidProvisioningPartner extends Google_Service
   public $operations;
   public $partners_customers;
   public $partners_devices;
+  public $partners_vendors;
+  public $partners_vendors_customers;
   
   /**
    * Constructs the internal representation of the AndroidProvisioningPartner
@@ -275,6 +277,14 @@ class Google_Service_AndroidProvisioningPartner extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'pageSize' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
               ),
             ),
           )
@@ -379,6 +389,62 @@ class Google_Service_AndroidProvisioningPartner extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
+                ),
+              ),
+            ),
+          )
+        )
+    );
+    $this->partners_vendors = new Google_Service_AndroidProvisioningPartner_Resource_PartnersVendors(
+        $this,
+        $this->serviceName,
+        'vendors',
+        array(
+          'methods' => array(
+            'list' => array(
+              'path' => 'v1/{+parent}/vendors',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'parent' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'pageSize' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
+              ),
+            ),
+          )
+        )
+    );
+    $this->partners_vendors_customers = new Google_Service_AndroidProvisioningPartner_Resource_PartnersVendorsCustomers(
+        $this,
+        $this->serviceName,
+        'customers',
+        array(
+          'methods' => array(
+            'list' => array(
+              'path' => 'v1/{+parent}/customers',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'parent' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'pageSize' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
               ),
             ),

@@ -15,9 +15,11 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_OrderpaymentsNotifyRefundRequest extends Google_Model
+class Google_Service_ShoppingContent_OrderpaymentsNotifyRefundRequest extends Google_Collection
 {
+  protected $collection_key = 'invoiceIds';
   public $invoiceId;
+  public $invoiceIds;
   public $refundState;
 
   public function setInvoiceId($invoiceId)
@@ -27,6 +29,14 @@ class Google_Service_ShoppingContent_OrderpaymentsNotifyRefundRequest extends Go
   public function getInvoiceId()
   {
     return $this->invoiceId;
+  }
+  public function setInvoiceIds($invoiceIds)
+  {
+    $this->invoiceIds = $invoiceIds;
+  }
+  public function getInvoiceIds()
+  {
+    return $this->invoiceIds;
   }
   public function setRefundState($refundState)
   {

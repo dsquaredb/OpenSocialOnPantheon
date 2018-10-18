@@ -32,6 +32,7 @@ class Google_Service_CloudIot_Device extends Google_Collection
   public $lastEventTime;
   public $lastHeartbeatTime;
   public $lastStateTime;
+  public $logLevel;
   public $metadata;
   public $name;
   public $numId;
@@ -143,6 +144,14 @@ class Google_Service_CloudIot_Device extends Google_Collection
   public function getLastStateTime()
   {
     return $this->lastStateTime;
+  }
+  public function setLogLevel($logLevel)
+  {
+    $this->logLevel = $logLevel;
+  }
+  public function getLogLevel()
+  {
+    return $this->logLevel;
   }
   public function setMetadata($metadata)
   {

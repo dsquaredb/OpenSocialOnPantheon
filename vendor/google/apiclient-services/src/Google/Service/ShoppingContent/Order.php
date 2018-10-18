@@ -36,7 +36,7 @@ class Google_Service_ShoppingContent_Order extends Google_Collection
   protected $paymentMethodDataType = '';
   public $paymentStatus;
   public $placedDate;
-  protected $promotionsType = 'Google_Service_ShoppingContent_OrderPromotion';
+  protected $promotionsType = 'Google_Service_ShoppingContent_OrderLegacyPromotion';
   protected $promotionsDataType = 'array';
   protected $refundsType = 'Google_Service_ShoppingContent_OrderRefund';
   protected $refundsDataType = 'array';
@@ -184,14 +184,14 @@ class Google_Service_ShoppingContent_Order extends Google_Collection
     return $this->placedDate;
   }
   /**
-   * @param Google_Service_ShoppingContent_OrderPromotion
+   * @param Google_Service_ShoppingContent_OrderLegacyPromotion
    */
   public function setPromotions($promotions)
   {
     $this->promotions = $promotions;
   }
   /**
-   * @return Google_Service_ShoppingContent_OrderPromotion
+   * @return Google_Service_ShoppingContent_OrderLegacyPromotion
    */
   public function getPromotions()
   {

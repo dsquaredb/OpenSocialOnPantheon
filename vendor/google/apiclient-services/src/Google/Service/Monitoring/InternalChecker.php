@@ -17,20 +17,11 @@
 
 class Google_Service_Monitoring_InternalChecker extends Google_Model
 {
-  public $checkerId;
   public $displayName;
   public $gcpZone;
+  public $name;
   public $network;
-  public $projectId;
 
-  public function setCheckerId($checkerId)
-  {
-    $this->checkerId = $checkerId;
-  }
-  public function getCheckerId()
-  {
-    return $this->checkerId;
-  }
   public function setDisplayName($displayName)
   {
     $this->displayName = $displayName;
@@ -47,6 +38,14 @@ class Google_Service_Monitoring_InternalChecker extends Google_Model
   {
     return $this->gcpZone;
   }
+  public function setName($name)
+  {
+    $this->name = $name;
+  }
+  public function getName()
+  {
+    return $this->name;
+  }
   public function setNetwork($network)
   {
     $this->network = $network;
@@ -54,13 +53,5 @@ class Google_Service_Monitoring_InternalChecker extends Google_Model
   public function getNetwork()
   {
     return $this->network;
-  }
-  public function setProjectId($projectId)
-  {
-    $this->projectId = $projectId;
-  }
-  public function getProjectId()
-  {
-    return $this->projectId;
   }
 }

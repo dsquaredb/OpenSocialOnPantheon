@@ -26,7 +26,10 @@
 class Google_Service_Dialogflow_Resource_ProjectsAgentSessionsContexts extends Google_Service_Resource
 {
   /**
-   * Creates a context. (contexts.create)
+   * Creates a context.
+   *
+   * If the specified context already exists, overrides the context.
+   * (contexts.create)
    *
    * @param string $parent Required. The session to create a context for. Format:
    * `projects//agent/sessions/`.

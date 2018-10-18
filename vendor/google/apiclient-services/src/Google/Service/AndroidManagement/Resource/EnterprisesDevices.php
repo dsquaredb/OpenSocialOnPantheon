@@ -31,6 +31,9 @@ class Google_Service_AndroidManagement_Resource_EnterprisesDevices extends Googl
    * @param string $name The name of the device in the form
    * enterprises/{enterpriseId}/devices/{deviceId}.
    * @param array $optParams Optional parameters.
+   *
+   * @opt_param string wipeDataFlags Optional flags that control the device wiping
+   * behavior.
    * @return Google_Service_AndroidManagement_AndroidmanagementEmpty
    */
   public function delete($name, $optParams = array())

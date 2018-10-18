@@ -47,6 +47,7 @@ class Google_Service_Bigquery_JobConfigurationLoad extends Google_Collection
   public $sourceUris;
   protected $timePartitioningType = 'Google_Service_Bigquery_TimePartitioning';
   protected $timePartitioningDataType = '';
+  public $useAvroLogicalTypes;
   public $writeDisposition;
 
   public function setAllowJaggedRows($allowJaggedRows)
@@ -268,6 +269,14 @@ class Google_Service_Bigquery_JobConfigurationLoad extends Google_Collection
   public function getTimePartitioning()
   {
     return $this->timePartitioning;
+  }
+  public function setUseAvroLogicalTypes($useAvroLogicalTypes)
+  {
+    $this->useAvroLogicalTypes = $useAvroLogicalTypes;
+  }
+  public function getUseAvroLogicalTypes()
+  {
+    return $this->useAvroLogicalTypes;
   }
   public function setWriteDisposition($writeDisposition)
   {

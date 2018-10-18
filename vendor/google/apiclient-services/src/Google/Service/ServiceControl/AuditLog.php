@@ -31,6 +31,7 @@ class Google_Service_ServiceControl_AuditLog extends Google_Collection
   protected $resourceLocationType = 'Google_Service_ServiceControl_ResourceLocation';
   protected $resourceLocationDataType = '';
   public $resourceName;
+  public $resourceOriginalState;
   public $response;
   public $serviceData;
   public $serviceName;
@@ -132,6 +133,14 @@ class Google_Service_ServiceControl_AuditLog extends Google_Collection
   public function getResourceName()
   {
     return $this->resourceName;
+  }
+  public function setResourceOriginalState($resourceOriginalState)
+  {
+    $this->resourceOriginalState = $resourceOriginalState;
+  }
+  public function getResourceOriginalState()
+  {
+    return $this->resourceOriginalState;
   }
   public function setResponse($response)
   {

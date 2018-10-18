@@ -70,10 +70,13 @@ class Google_Service_AndroidManagement_Policy extends Google_Collection
   public $outgoingCallsDisabled;
   protected $passwordRequirementsType = 'Google_Service_AndroidManagement_PasswordRequirements';
   protected $passwordRequirementsDataType = '';
+  protected $permissionGrantsType = 'Google_Service_AndroidManagement_PermissionGrant';
+  protected $permissionGrantsDataType = 'array';
   protected $permittedInputMethodsType = 'Google_Service_AndroidManagement_PackageNameList';
   protected $permittedInputMethodsDataType = '';
   protected $persistentPreferredActivitiesType = 'Google_Service_AndroidManagement_PersistentPreferredActivity';
   protected $persistentPreferredActivitiesDataType = 'array';
+  public $playStoreMode;
   public $privateKeySelectionEnabled;
   protected $recommendedGlobalProxyType = 'Google_Service_AndroidManagement_ProxyInfo';
   protected $recommendedGlobalProxyDataType = '';
@@ -506,6 +509,20 @@ class Google_Service_AndroidManagement_Policy extends Google_Collection
     return $this->passwordRequirements;
   }
   /**
+   * @param Google_Service_AndroidManagement_PermissionGrant
+   */
+  public function setPermissionGrants($permissionGrants)
+  {
+    $this->permissionGrants = $permissionGrants;
+  }
+  /**
+   * @return Google_Service_AndroidManagement_PermissionGrant
+   */
+  public function getPermissionGrants()
+  {
+    return $this->permissionGrants;
+  }
+  /**
    * @param Google_Service_AndroidManagement_PackageNameList
    */
   public function setPermittedInputMethods(Google_Service_AndroidManagement_PackageNameList $permittedInputMethods)
@@ -532,6 +549,14 @@ class Google_Service_AndroidManagement_Policy extends Google_Collection
   public function getPersistentPreferredActivities()
   {
     return $this->persistentPreferredActivities;
+  }
+  public function setPlayStoreMode($playStoreMode)
+  {
+    $this->playStoreMode = $playStoreMode;
+  }
+  public function getPlayStoreMode()
+  {
+    return $this->playStoreMode;
   }
   public function setPrivateKeySelectionEnabled($privateKeySelectionEnabled)
   {

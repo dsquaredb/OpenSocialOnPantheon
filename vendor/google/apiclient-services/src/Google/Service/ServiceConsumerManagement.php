@@ -19,8 +19,7 @@
  * Service definition for ServiceConsumerManagement (v1).
  *
  * <p>
- * Provides management methods for configuring service producer resources on
- * Google Cloud.</p>
+ * Manages the service consumers of a Service Infrastructure service.</p>
  *
  * <p>
  * For more information about this service, see the API
@@ -98,6 +97,10 @@ class Google_Service_ServiceConsumerManagement extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'filter' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -105,10 +108,6 @@ class Google_Service_ServiceConsumerManagement extends Google_Service
                 'pageSize' => array(
                   'location' => 'query',
                   'type' => 'integer',
-                ),
-                'filter' => array(
-                  'location' => 'query',
-                  'type' => 'string',
                 ),
               ),
             ),
@@ -192,10 +191,6 @@ class Google_Service_ServiceConsumerManagement extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'filter' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -203,6 +198,10 @@ class Google_Service_ServiceConsumerManagement extends Google_Service
                 'pageSize' => array(
                   'location' => 'query',
                   'type' => 'integer',
+                ),
+                'filter' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
               ),
             ),'removeProject' => array(

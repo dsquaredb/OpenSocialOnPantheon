@@ -94,6 +94,10 @@ class Google_Service_FirebaseDynamicLinks extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'sdkVersion' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'durationDays' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -101,6 +105,10 @@ class Google_Service_FirebaseDynamicLinks extends Google_Service
               ),
             ),'installAttribution' => array(
               'path' => 'v1/installAttribution',
+              'httpMethod' => 'POST',
+              'parameters' => array(),
+            ),'reopenAttribution' => array(
+              'path' => 'v1/reopenAttribution',
               'httpMethod' => 'POST',
               'parameters' => array(),
             ),

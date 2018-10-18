@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
+class ComposerStaticInite264e6bd7d97e94bd3ac89acc2b2cf30
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
@@ -117,6 +117,11 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         'L' => 
         array (
             'League\\Csv\\' => 11,
+        ),
+        'J' => 
+        array (
+            'JakubOnderka\\PhpConsoleHighlighter\\' => 35,
+            'JakubOnderka\\PhpConsoleColor\\' => 29,
         ),
         'I' => 
         array (
@@ -392,6 +397,14 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
         array (
             0 => __DIR__ . '/..' . '/league/csv/src',
         ),
+        'JakubOnderka\\PhpConsoleHighlighter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src',
+        ),
+        'JakubOnderka\\PhpConsoleColor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
+        ),
         'Interop\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
@@ -584,17 +597,6 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
             'Prophecy\\' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
-            ),
-        ),
-        'J' => 
-        array (
-            'JakubOnderka\\PhpConsoleHighlighter' => 
-            array (
-                0 => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src',
-            ),
-            'JakubOnderka\\PhpConsoleColor' => 
-            array (
-                0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
             ),
         ),
         'G' => 
@@ -1172,10 +1174,10 @@ class ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitdc153d40c1e90ce7271ef1eafc482043::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInite264e6bd7d97e94bd3ac89acc2b2cf30::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInite264e6bd7d97e94bd3ac89acc2b2cf30::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInite264e6bd7d97e94bd3ac89acc2b2cf30::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInite264e6bd7d97e94bd3ac89acc2b2cf30::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -58,7 +58,8 @@ class Google_Service_Compute_Resource_Instances extends Google_Service_Resource
     return $this->call('addAccessConfig', array($params), "Google_Service_Compute_Operation");
   }
   /**
-   * Retrieves aggregated list of instances. (instances.aggregatedList)
+   * Retrieves aggregated list of all of the instances in your project across all
+   * regions and zones. (instances.aggregatedList)
    *
    * @param string $project Project ID for this request.
    * @param array $optParams Optional parameters.
@@ -250,7 +251,7 @@ class Google_Service_Compute_Resource_Instances extends Google_Service_Resource
     return $this->call('get', array($params), "Google_Service_Compute_Instance");
   }
   /**
-   * Returns the specified instance's serial port output.
+   * Returns the last 1 MB of serial port output from the specified instance.
    * (instances.getSerialPortOutput)
    *
    * @param string $project Project ID for this request.
@@ -298,9 +299,9 @@ class Google_Service_Compute_Resource_Instances extends Google_Service_Resource
    *
    * This field is optional. It can be a full or partial URL. For example, the
    * following are all valid URLs to an instance template:   - https://www.googlea
-   * pis.com/compute/v1/projects/project/global/global/instanceTemplates/instanceT
-   * emplate  - projects/project/global/global/instanceTemplates/instanceTemplate
-   * - global/instancesTemplates/instanceTemplate
+   * pis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
+   * - projects/project/global/instanceTemplates/instanceTemplate  -
+   * global/instanceTemplates/instanceTemplate
    * @return Google_Service_Compute_Operation
    */
   public function insert($project, $zone, Google_Service_Compute_Instance $postBody, $optParams = array())
@@ -750,6 +751,22 @@ class Google_Service_Compute_Resource_Instances extends Google_Service_Resource
     $params = array('project' => $project, 'zone' => $zone, 'instance' => $instance, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('setTags', array($params), "Google_Service_Compute_Operation");
+  }
+  /**
+   * Simulates a maintenance event on the instance.
+   * (instances.simulateMaintenanceEvent)
+   *
+   * @param string $project Project ID for this request.
+   * @param string $zone The name of the zone for this request.
+   * @param string $instance Name of the instance scoping this request.
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_Compute_Operation
+   */
+  public function simulateMaintenanceEvent($project, $zone, $instance, $optParams = array())
+  {
+    $params = array('project' => $project, 'zone' => $zone, 'instance' => $instance);
+    $params = array_merge($params, $optParams);
+    return $this->call('simulateMaintenanceEvent', array($params), "Google_Service_Compute_Operation");
   }
   /**
    * Starts an instance that was stopped using the instances().stop method. For

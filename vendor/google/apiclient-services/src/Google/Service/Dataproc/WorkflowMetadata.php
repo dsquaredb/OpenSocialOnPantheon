@@ -22,9 +22,11 @@ class Google_Service_Dataproc_WorkflowMetadata extends Google_Model
   protected $createClusterDataType = '';
   protected $deleteClusterType = 'Google_Service_Dataproc_ClusterOperation';
   protected $deleteClusterDataType = '';
+  public $endTime;
   protected $graphType = 'Google_Service_Dataproc_WorkflowGraph';
   protected $graphDataType = '';
   public $parameters;
+  public $startTime;
   public $state;
   public $template;
   public $version;
@@ -65,6 +67,14 @@ class Google_Service_Dataproc_WorkflowMetadata extends Google_Model
   {
     return $this->deleteCluster;
   }
+  public function setEndTime($endTime)
+  {
+    $this->endTime = $endTime;
+  }
+  public function getEndTime()
+  {
+    return $this->endTime;
+  }
   /**
    * @param Google_Service_Dataproc_WorkflowGraph
    */
@@ -86,6 +96,14 @@ class Google_Service_Dataproc_WorkflowMetadata extends Google_Model
   public function getParameters()
   {
     return $this->parameters;
+  }
+  public function setStartTime($startTime)
+  {
+    $this->startTime = $startTime;
+  }
+  public function getStartTime()
+  {
+    return $this->startTime;
   }
   public function setState($state)
   {

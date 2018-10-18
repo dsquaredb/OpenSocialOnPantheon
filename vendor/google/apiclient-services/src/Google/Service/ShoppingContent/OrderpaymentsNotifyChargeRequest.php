@@ -15,10 +15,12 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_OrderpaymentsNotifyChargeRequest extends Google_Model
+class Google_Service_ShoppingContent_OrderpaymentsNotifyChargeRequest extends Google_Collection
 {
+  protected $collection_key = 'invoiceIds';
   public $chargeState;
   public $invoiceId;
+  public $invoiceIds;
 
   public function setChargeState($chargeState)
   {
@@ -35,5 +37,13 @@ class Google_Service_ShoppingContent_OrderpaymentsNotifyChargeRequest extends Go
   public function getInvoiceId()
   {
     return $this->invoiceId;
+  }
+  public function setInvoiceIds($invoiceIds)
+  {
+    $this->invoiceIds = $invoiceIds;
+  }
+  public function getInvoiceIds()
+  {
+    return $this->invoiceIds;
   }
 }
